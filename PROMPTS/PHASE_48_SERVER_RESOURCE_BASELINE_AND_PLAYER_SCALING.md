@@ -156,3 +156,25 @@ Báo cáo phải ghi:
 - Không tác động Main VM.
 - Không thay đổi cấu hình hoặc dịch vụ server.
 - Không commit source server.
+
+
+## Bổ sung — trạng thái người dùng trước phép đo C (12/11/2026)
+
+Chủ dự án đã gửi ảnh màn hình xác nhận nhân vật Xiaomi 13T Pro đang ở:
+- Bản đồ: **Ba Lăng Huyện**.
+- Tọa độ hiển thị trên minimap: **209/193**.
+- Nhân vật cấp **119**.
+- Ảnh chụp hiển thị đồng hồ trong game **19:34:21** (chỉ là mốc hiển thị trên ảnh, không dùng thay timestamp hệ thống).
+- Nhân vật đang đứng tại khu vực ngoài trời; ảnh không chứng minh trạng thái chiến đấu hoặc việc đã có hai người chơi cùng kết nối.
+
+### Cách dùng vị trí này trong phép đo bổ sung Mốc C
+1. Dùng Ba Lăng Huyện, tọa độ 209/193 làm **điểm bắt đầu đã biết** cho nhân vật Xiaomi 13T Pro. Không tự suy diễn tọa độ của nhân vật LDPlayer hoặc vị trí tương đối giữa hai nhân vật.
+2. Trước khi yêu cầu chủ dự án thao tác, Claude phải xác nhận collector Guest Metrics đã sẵn sàng, xác minh đúng VM **JX-Test-36**, LDPlayer vẫn đăng nhập, và có cách xác nhận số phiên/người chơi thực tế.
+3. Khi collector báo READY, thông báo chủ dự án đăng nhập/duy trì nhân vật Xiaomi tại Ba Lăng Huyện. Ghi timestamp hệ thống lúc xác nhận đăng nhập và số người chơi thực tế.
+4. Chỉ bắt đầu từng đoạn đo sau khi xác nhận đủ 2 người chơi đồng thời trên server:
+   - Đứng yên: giữ nhân vật Xiaomi tại khu vực Ba Lăng Huyện gần tọa độ 209/193; ghi vị trí thực tế nếu minimap thay đổi.
+   - Di chuyển: chủ dự án di chuyển theo hướng dẫn trực tiếp của Claude; ghi thời điểm bắt đầu/kết thúc, không tự chọn tuyến đường chưa được thống nhất.
+   - Chiến đấu/kỹ năng: chỉ bắt đầu khi chủ dự án xác nhận sẵn sàng; duy trì khoảng 5 phút nếu điều kiện gameplay cho phép. Ghi rõ hai nhân vật có thực sự cùng tham gia chiến đấu, mục tiêu/khu vực và thời lượng thực tế. Không tiêu hao vật phẩm hiếm hoặc thay đổi trạng thái tài khoản ngoài ý muốn.
+5. Không bắt buộc giữ nguyên tọa độ 209/193 trong các đoạn di chuyển/chiến đấu; đây là vị trí xuất phát được xác nhận từ ảnh.
+6. Ảnh màn hình là bằng chứng vị trí ban đầu, **không phải** bằng chứng collector đã READY, server có hai phiên, hay phép đo C đã hoàn thành.
+7. Giữ nguyên toàn bộ giới hạn an toàn và quy tắc Sonnet ở trên: `EXPLORATION_MODE=OFF`; chỉ làm phép đo Phase 48 đã được duyệt; không chạm Main VM, không thay đổi VM/server/config, không restart dịch vụ.
