@@ -5,6 +5,13 @@ Cập nhật: 2026-11-12. Nguồn chính: [FIX_HISTORY/45](FIX_HISTORY/45-fix36-
 Ký hiệu: **[ĐÃ XÁC MINH]** = có log, số đo hoặc kiểm thử thực tế. **[GIẢ THUYẾT]** = chưa kiểm chứng. **[KẾ HOẠCH]** = việc chưa làm.
 Đã lược bỏ IP, tài khoản và thông tin truy cập (ghi dạng `<LAN-IP>`, `<TAILSCALE-IP>`, `<test-account>`...).
 
+## 00. Phase 47 (2026-11-12) – nhấp nháy đối tượng khi di chuyển nhanh
+Báo cáo: [FIX_HISTORY/47](FIX_HISTORY/47-dieu-tra-nhap-nhay-doi-tuong.md); kiến trúc QA mới: [QA_AUTONOMOUS_ARCHITECTURE.md](QA_AUTONOMOUS_ARCHITECTURE.md).
+- [ĐÃ XÁC MINH – video điện thoại + LDPlayer] Toàn bộ lớp đối tượng (cây, đá, quái, NPC, nhân vật) biến mất 53–59 ms mỗi lần camera sang vùng mới giữa 2 nhịp logic: cây đối tượng bị xóa ở pha vẽ (`SetFocusPosition` -> `Fell`) nhưng chỉ dựng lại ở nhịp logic sau (`Preprocess`). Lỗi hồi quy từ Fix31 (có ở Fix33–36, P46), không do nạp trước P46.
+- LDPlayer 30 s: 22 lần đổi vùng, 9 lần trống 45–68 ms, 18 khung 0 đối tượng; video LDPlayer 8 sự kiện khớp log.
+- [ĐÃ XÁC MINH trên LDPlayer, bản THỬ P47] Sửa đã duyệt: dựng lại cây ngay trong cùng khung khi đổi vùng. 58 s/67 lần đổi vùng: 0 khung trống (trước 18/30 s), Preprocess tb 0,47 ms; camera vẫn mượt. Chưa thử điện thoại, chưa chạy đủ 5 phút + video sau sửa.
+- [TẠM DỪNG theo yêu cầu chủ máy] Sonnet QA tự chủ (đã xác minh độc lập lỗi nhấp nháy, đặt FPS game 90): xác minh độc lập + hồ sơ nhân vật + thí nghiệm tiềm năng/kỹ năng ([TEST_RESULTS/47-autonomous-qa-log](TEST_RESULTS/47-autonomous-qa-log.md)).
+
 ## 0. Phase 46 (2026-11-12) – tóm tắt
 Báo cáo: [FIX_HISTORY/46](FIX_HISTORY/46-phase46-giat-ban-do-va-ky-nang.md), kế hoạch QA [TEST_RESULTS/46-qa-plan](TEST_RESULTS/46-qa-plan.md), tri thức game [knowledge/](knowledge/README.md).
 - [ĐÃ XÁC MINH trên LDPlayer] Giật màn hình khi di chuyển = nội suy răng cưa 18 Hz (fix33). Kịch bản chuẩn Phong Lăng Độ -> 162/186: tỉ lệ tốc độ camera khung-sau-nhịp 0,45 -> 0,98; biến thiên vận tốc 0,43 -> 0,09.
