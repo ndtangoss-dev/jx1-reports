@@ -40,4 +40,4 @@ Không đưa lên: mật khẩu, token, khóa, IP riêng, thông tin tài khoả
 
 ## Liên kết
 - Báo cáo chung (không thuộc Visual, chỉ để tham chiếu): [JX1_INVENTORY_RESEARCH](../JX1_INVENTORY_RESEARCH/README.md), trong đó có [TECHNICAL_ARCHITECTURE_REVIEW](../JX1_INVENTORY_RESEARCH/TECHNICAL_RESEARCH/TECHNICAL_ARCHITECTURE_REVIEW.md) (mục A3 nói về render/camera).
-- Báo cáo Visual đầu tiên: [V001](REPORTS/V001_asset-format-research.md).
+- Báo cáo: [V001](REPORTS/V001_asset-format-research.md), [V002](REPORTS/V002_full-technical-feasibility-audit.md).
