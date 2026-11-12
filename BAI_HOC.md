@@ -278,3 +278,4 @@ Ghi ngắn theo mục, cập nhật trong lúc làm. Không ghi mật khẩu và
 - Bản đồ lớn mở bằng CHẠM ĐÚP minimap (<6 nhịp); adb: input tap & sleep 0.12; input tap.
 - Công cụ sửa file GBK theo byte (bpatch): KHÔNG bao giờ gọi với chuỗi tạm/placeholder. Một lần gọi thử đã thay nhầm một dòng thành "x"; phát hiện nhờ kiểm tra lại và khôi phục từ backup-p46. Luôn so file với bản sao lưu sau khi sửa.
 - Phong Lăng Độ: quái đánh nhân vật đứng yên, nhân vật test cấp 200 đã chết một lần (mất ~50% bạc).
+- Phong Lăng Độ là khu vực đặc thù: không dùng trực tiếp Thần Hành Phù; phải dùng Thổ Địa Phù trước rồi mới Thần Hành Phù đi thành thị (chủ dự án xác nhận). Dùng ngay khi HP < 40%.
