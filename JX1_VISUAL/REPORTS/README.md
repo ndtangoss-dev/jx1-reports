@@ -6,6 +6,7 @@
 |---|---|---|---|---|
 | V001 | [V001_asset-format-research.md](V001_asset-format-research.md) | 2026-11-12 | (khởi đầu, chưa có nhiệm vụ Visual) | Định dạng PAK/SPR, hash đường dẫn, đối chiếu 1.113 literal ↔ chỉ mục PAK |
 | V002 | [V002_full-technical-feasibility-audit.md](V002_full-technical-feasibility-audit.md) | 2026-11-12 | (chỉ thị trực tiếp của người dùng, không qua TASKS/) | Thẩm định toàn diện: hệ animation và số khung, cơ chế giới hạn khung, làm chủ asset, client/server riêng, 4 phương án, khuyến nghị |
+| U001 | [U001_unity_combat_prototype.md](U001_unity_combat_prototype.md) | 2026-11-13 | U001 (người dùng giao trực tiếp) | Unity prototype: nhân vật, quái, kỹ năng JX1 thật chạy trong Editor; bàn giao + checkpoint. Chỉ báo cáo văn bản, không có project/asset/ảnh |
 
 **Về V001:** bản sao nguyên văn, không hiệu chỉnh (đã rà: chỉ nêu *tên* hai khóa `accinfo`/`accpint`, không có giá trị). Báo cáo trích dẫn các file `data/*.csv` và `scripts/*.py` ở máy nghiên cứu; các file đó **không** được đưa lên. Các tham chiếu tới báo cáo khác (ví dụ `INVENTORY_GAPS_AND_RISKS.md`) nằm trong [JX1_INVENTORY_RESEARCH](../../JX1_INVENTORY_RESEARCH/README.md).
 
