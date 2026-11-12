@@ -9,7 +9,7 @@ Ký hiệu: **[ĐÃ XÁC MINH]** = có log, số đo hoặc kiểm thử thực 
 Báo cáo: [FIX_HISTORY/47](FIX_HISTORY/47-dieu-tra-nhap-nhay-doi-tuong.md); kiến trúc QA mới: [QA_AUTONOMOUS_ARCHITECTURE.md](QA_AUTONOMOUS_ARCHITECTURE.md).
 - [ĐÃ XÁC MINH – video điện thoại + LDPlayer] Toàn bộ lớp đối tượng (cây, đá, quái, NPC, nhân vật) biến mất 53–59 ms mỗi lần camera sang vùng mới giữa 2 nhịp logic: cây đối tượng bị xóa ở pha vẽ (`SetFocusPosition` -> `Fell`) nhưng chỉ dựng lại ở nhịp logic sau (`Preprocess`). Lỗi hồi quy từ Fix31 (có ở Fix33–36, P46), không do nạp trước P46.
 - LDPlayer 30 s: 22 lần đổi vùng, 9 lần trống 45–68 ms, 18 khung 0 đối tượng; video LDPlayer 8 sự kiện khớp log.
-- [ĐÃ XÁC MINH trên LDPlayer, bản THỬ P47] Sửa đã duyệt: dựng lại cây ngay trong cùng khung khi đổi vùng. 58 s/67 lần đổi vùng: 0 khung trống (trước 18/30 s), Preprocess tb 0,47 ms; camera vẫn mượt. Chưa thử điện thoại, chưa chạy đủ 5 phút + video sau sửa.
+- [ĐÃ XÁC MINH trên LDPlayer, bản THỬ P47] Sửa đã duyệt: dựng lại cây ngay trong cùng khung khi đổi vùng. 58 s/67 lần đổi vùng: 0 khung trống (trước 18/30 s), Preprocess tb 0,47 ms; camera vẫn mượt. Sonnet xác minh lại 70 s ([TEST_RESULTS/47-p47-verification](TEST_RESULTS/47-p47-verification.md)): 0 khung trống, khoảng trống max 1,6 ms, camera 1,00/0,08, p99 24,7 ms; khung dài 240–300 ms là app bị dừng ngoài vòng vẽ lúc chụp/quay màn hình ADB. Chưa thử điện thoại; hồi quy ra chiêu chưa xác nhận.
 - [TẠM DỪNG theo yêu cầu chủ máy] Sonnet QA tự chủ (đã xác minh độc lập lỗi nhấp nháy, đặt FPS game 90): xác minh độc lập + hồ sơ nhân vật + thí nghiệm tiềm năng/kỹ năng ([TEST_RESULTS/47-autonomous-qa-log](TEST_RESULTS/47-autonomous-qa-log.md)).
 
 ## 0. Phase 46 (2026-11-12) – tóm tắt
