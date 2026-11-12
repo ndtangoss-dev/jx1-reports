@@ -5,9 +5,18 @@ Cập nhật: 2026-11-12. Nguồn chính: [FIX_HISTORY/45](FIX_HISTORY/45-fix36-
 Ký hiệu: **[ĐÃ XÁC MINH]** = có log, số đo hoặc kiểm thử thực tế. **[GIẢ THUYẾT]** = chưa kiểm chứng. **[KẾ HOẠCH]** = việc chưa làm.
 Đã lược bỏ IP, tài khoản và thông tin truy cập (ghi dạng `<LAN-IP>`, `<TAILSCALE-IP>`, `<test-account>`...).
 
+## 0. Phase 46 (2026-11-12) – tóm tắt
+Báo cáo: [FIX_HISTORY/46](FIX_HISTORY/46-phase46-giat-ban-do-va-ky-nang.md), kế hoạch QA [TEST_RESULTS/46-qa-plan](TEST_RESULTS/46-qa-plan.md), tri thức game [knowledge/](knowledge/README.md).
+- [ĐÃ XÁC MINH trên LDPlayer] Giật màn hình khi di chuyển = nội suy răng cưa 18 Hz (fix33). Kịch bản chuẩn Phong Lăng Độ -> 162/186: tỉ lệ tốc độ camera khung-sau-nhịp 0,45 -> 0,98; biến thiên vận tốc 0,43 -> 0,09.
+- [ĐÃ XÁC MINH] Khung cực chậm khi di chuyển (dựng ẩn bảng Tự động ~700 ms, giải mã texture vùng mới, glyph tên NPC): khởi động nguội, khung đang di chuyển max 755–939 ms -> 39–69 ms, không còn >= 100 ms.
+- [ĐÃ XÁC MINH] Giật khi ra chiêu (bóng mờ vẽ cả phần trong suốt): ra chiêu liên tục p95 103 -> 45 ms, khung >= 100 ms 58 -> 0.
+- [ĐÃ XÁC MINH] Đạn: vị trí vẽ đổi 43–59 lần/s, hết răng cưa. Khung hình sprite ~17/s do asset (không phải 36 hình/s). Chỉ đo 1 kỹ năng; kỹ năng khác BỊ CHẶN (hạn chế vũ khí).
+- [CHƯA KIỂM THỬ] Chủ máy chưa thử APK P46 trên điện thoại. Server không đổi (36Hz trên VM thử).
+
 ## 1. Client mới nhất
-- Bản mới nhất: **Fix36** (APK `jx-tailscale-8080-fix36.apk`, SHA256 `9ABDF09598D1EC43BB5D9BFC13C71362BAF8B96216A2B740F50D65336D2C1F66`). Chỉ khác Fix35 ở `libMyGame.so`, ký cùng khóa. [ĐÃ XÁC MINH] ([45](FIX_HISTORY/45-fix36-giat-ban-do-va-36hz.md))
-- Fix36 giữ nguyên Fix31, Fix33, Fix34, Fix35.
+- Bản mới nhất: **P46** (APK `jx-tailscale-8080-p46.apk`, SHA256 `235DBD37F35C2B266588B209733E578D7D6528363DD19158F8ECD80BCCB3B847`). Chỉ khác Fix36 ở `libMyGame.so`, ký cùng khóa. [ĐÃ XÁC MINH] ([46](FIX_HISTORY/46-phase46-giat-ban-do-va-ky-nang.md))
+- Bản trước: Fix36 (`jx-tailscale-8080-fix36.apk`, SHA256 `9ABDF095…1F66`) – dùng để rollback.
+- P46 giữ nguyên Fix31, Fix33 (đã sửa phần nội suy), Fix34, Fix35, Fix36.
 
 ## 2. Các bản fix
 | Bản | Nội dung | Trạng thái | Báo cáo |
@@ -17,6 +26,7 @@ Ký hiệu: **[ĐÃ XÁC MINH]** = có log, số đo hoặc kiểm thử thực 
 | Fix34 | Nội suy đạn bay, tối ưu độ mượt | Đã dựng, đã thử | [FIX_HISTORY/34](FIX_HISTORY/34-toi-uu-toan-dien-do-muot.md), [HANDOVER](FIX_HISTORY/HANDOVER-FIX34.md) |
 | Fix35 | Client: `KSubWorld::FindRegion` chặn khi chưa có region. Server: `KPlayer.cpp:7606` sửa format thiếu tham số; `KSortScript.cpp:328` dùng `intptr_t` cho `_findfirst` | Chủ máy đã thử trên điện thoại với server gốc [ĐÃ XÁC MINH] | [45](FIX_HISTORY/45-fix36-giat-ban-do-va-36hz.md), [44](FIX_HISTORY/44-dieu-tra-a2-thoat-som.md) |
 | Fix36 | Hết giật bản đồ: chỉ dọn texture khi cache > 384 MB, kiểm tra mỗi 10 s | QA trên LDPlayer [ĐÃ XÁC MINH]; chủ máy chưa thử trên điện thoại | [45](FIX_HISTORY/45-fix36-giat-ban-do-va-36hz.md) |
+| P46 | Hết răng cưa camera/đạn; nạp trước texture vùng; hoãn dựng bảng Tự động tới lúc đứng yên; nạp trước glyph tên NPC; bóng mờ chỉ vẽ phần nhìn thấy; nội suy Z đạn, khung sprite nửa nhịp, hiệu ứng bám NPC theo vị trí vẽ | QA LDPlayer [ĐÃ XÁC MINH]; điện thoại [CHƯA KIỂM THỬ] | [46](FIX_HISTORY/46-phase46-giat-ban-do-va-ky-nang.md) |
 
 ## 3. Server 18Hz
 - Server gốc (exe của gói) chạy 18Hz trên VM thử, đủ PaySys, Goddess, Bishop, gs001. S3Relay tắt. [ĐÃ XÁC MINH] ([41](TEST_RESULTS/41-xac-nhan-server-18hz.md))

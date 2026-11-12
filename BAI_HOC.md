@@ -271,3 +271,10 @@ Ghi ngắn theo mục, cập nhật trong lúc làm. Không ghi mật khẩu và
 - gs001.exe t? d?ng: `OperationRequest(SSOI_LAUNCH, (unsigned int)pCloneServer)` c?t con tr? IServer -> crash `KPlayerPK::SetNormalPKState` khi dang nh?p (HUD 0/0, "Đang l?y danh sách nhân v?t"). S?a: tham s? uParam c?a OperationRequest/GetGameData/OperationRequestInfo thành uintptr_t, b? ép (unsigned int) ? exe. C̣n ~270 ch? ép con tr? 32 bit khác trong CoreServer (ph?n l?n mă client) chua rà.
 - B? t? d?ng d?y d? (exe+DLL, A2) vào game du?c v?i client Fix36 (HUD dúng, di du?c), tick 18 Hz trung b́nh ~0,8 ms; LogicFps=36 cho SvrFPS 36/36, tick ~0,6 ms.
 - Đ?c log console gs001: b? g? l?i nh? (dbg2.cs) chuy?n stdout ra file; AttachConsole t? tác v? không dùng du?c (l?i 5). Log Bishop n?m trong listbox c?a s?: d?c b?ng LB_GETTEXT (C:\JX\sql\lbdump.ps1).
+
+## Phase 46 (2026-11-12)
+- Giật màn hình khi di chuyển do nội suy răng cưa 18 Hz (fix33 luôn "đi tiếp từ vị trí đang vẽ" nên khung đầu mỗi nhịp đi chậm ~0,47 lần). Đo bằng tỉ lệ tốc độ camera khung-sau-nhịp/khung-khác, không đo bằng số khung chậm. Sửa: chỉ đi tiếp từ vị trí đang vẽ khi vị trí đó lệch khỏi đường nội suy cũ.
+- Khung chậm khi đổi vùng nằm trong pha vẽ (giải mã SPR + tạo texture + đọc SPR từ kho trên luồng chính). Cột "dt" của JXPERF hitch là thời gian khung TRƯỚC, đừng hiểu nhầm thành "thời gian ngoài vòng vẽ".
+- Bản đồ lớn mở bằng CHẠM ĐÚP minimap (<6 nhịp); adb: input tap & sleep 0.12; input tap.
+- Công cụ sửa file GBK theo byte (bpatch): KHÔNG bao giờ gọi với chuỗi tạm/placeholder. Một lần gọi thử đã thay nhầm một dòng thành "x"; phát hiện nhờ kiểm tra lại và khôi phục từ backup-p46. Luôn so file với bản sao lưu sau khi sửa.
+- Phong Lăng Độ: quái đánh nhân vật đứng yên, nhân vật test cấp 200 đã chết một lần (mất ~50% bạc).
