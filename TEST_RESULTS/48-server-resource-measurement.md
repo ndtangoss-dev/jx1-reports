@@ -7,7 +7,7 @@ TÓM TẮT 5 DÒNG
 4. Giới hạn VERIFIED: CPU từng tiến trình đo bằng Windows KHÔNG tin được trong VM này (Windows hầu như không ghi nhận CPU cho tiến trình); dùng CPU guest tổng + thời gian tick gs001 tự đo. gs001 commit ~6,8 GB (Private Bytes) -> guest commit ~10,5 GB > RAM.
 5. Mốc C (2 user): ĐO MỘT PHẦN – 2 user đứng yên 3 phút + di chuyển 1,7 phút (user 2 thoát sớm): user 2 thêm ~+35 KB/s gửi, tick +0,2–0,3 ms; phút đăng xuất có 5 tick hụt (max 55 ms). Chiến đấu 2 user NOT TESTED.
 
-Cần tôi quyết định: có (có đo lại Mốc C đủ 10 phút gồm chiến đấu 2 user không).
+Cần tôi quyết định: có (có điều tra việc phiên rớt/nối lại trong Mốc C bổ sung không).
 
 ## 1. Xác minh môi trường (VERIFIED)
 | Mục | Giá trị |
@@ -81,13 +81,27 @@ User 1: nhân vật jxt36a trên LDPlayer (script tự động theo cùng kịch
 | CPU guest tb | +0,3 điểm % (nhiễu nền lớn hơn) | −1,9 điểm % (nhiễu) |
 Nhận xét: chi phí user thứ 2 về mạng gần bằng user thứ nhất (~+35 KB/s gửi), tick tăng ~0,2–0,3 ms/nhịp; RAM chủ yếu do vùng bản đồ đang hoạt động (đã nạp ở B) chứ không do số user. Hai user có thể ở bản đồ/vùng khác nhau (không kiểm soát được) -> chưa tách được chi phí "nhìn thấy nhau".
 
+### Mốc C bổ sung (C3) – 2 user, 2026-11-12 ~19:44–19:56 (giờ máy thật)
+Điều kiện trước đo (VERIFIED, epoch 1794487063): chỉ JX-Test-36 chạy; gs001 36Hz; 2 phiên ESTABLISHED (LDPlayer jxt36a + Xiaomi 13T Pro, phiên đang hoạt động, không đăng nhập lại; Xiaomi xuất phát Ba Lăng Huyện 209/193 theo ảnh chủ dự án). Mỗi đoạn có file thô riêng: phase48-raw-C3_*.csv, phase48-conn-C3_*.csv; tick: phase48-tick-C3.txt; tổng hợp: phase48-summary-C3.csv; tách theo số người chơi: phase48-C3-by-players.txt (script split_by_players.py).
+Thứ tự thực tế: đứng yên (180 s, epoch 1794487438–1794487618) -> chiến đấu (300 s, 1794487661–1794487961; chủ dự án báo "sẵn sàng đánh" sớm nên đoạn di chuyển dự kiến được hủy trước khi bắt đầu đo) -> di chuyển (180 s, 1794487970–1794488150, theo yêu cầu "Di chuyển"). LDPlayer: đứng yên / đánh liên tục (258 lần nhấn, 3 bình hồi) / chạy qua lại 6 chặng; Xiaomi: chủ dự án tự thao tác theo hướng dẫn.
+**Phát hiện: phiên rớt rồi nối lại nhiều lần** (mẫu kết nối 5 s): đứng yên 2 lần (~18 s, ~36 s), chiến đấu 3 lần (~36 s, ~27 s, cuối đoạn); di chuyển ổn định. Chưa xác định phiên nào (LDPlayer hay Xiaomi) rớt – cần log Bishop/gs để tách. Số liệu dưới đây TÁCH theo số người chơi thực tế từng giây.
+| Đoạn | Giây có 2 user | CPU guest avg/p95 % | RAM avg/max MB | Gửi avg/p95 B/s | Nhận avg B/s | Tick tb theo phút (ms) / max / hụt |
+|---|---|---|---|---|---|---|
+| Đứng yên (2 user) | 126/180 | 14,7 / 34,3 | 2 974 / 3 026 | 88 212 / 113 257 | 8 971 | 0,71–0,81 / 45,6 / 1 |
+| Chiến đấu (2 user) | 223/300 | 18,4 / 36,2 | 3 074 / 3 254 | 79 018 / 106 056 | 9 455 | 0,62–0,96 / 45,6 / 1 |
+| Di chuyển (2 user) | 180/180 | 12,9 / 28,3 | 2 952 / 3 014 | 79 616 / 121 781 | 9 385 | 0,74–0,90 / 14,8 / 0 |
+| (cùng đoạn, lúc chỉ 1 user) đứng yên / chiến đấu | 54 / 77 giây | 13,0 / 18,0 | ~2 985 / 3 094 | 45 675 / 40 732 | 4 829 / 6 437 | – |
+- Tick: 36/36 mọi phút; tb theo phút 0,62–0,96 ms (1 user cùng phiên trước đó 0,59–0,72 ms); 2 tick hụt trong 11 phút (max 45,6 ms).
+- So với 1 user trong cùng đoạn: user thứ 2 thêm ~+38–42 KB/s gửi, ~+3–4 KB/s nhận; CPU guest chênh < 2 điểm % (trong nhiễu nền); RAM gần như không đổi.
+- Chiến đấu 2 user: VERIFIED (223 giây có đủ 2 user). Chưa xác minh 2 nhân vật đánh CÙNG mục tiêu/cùng vùng nhìn thấy nhau.
+
 ## 4. Trạng thái
 | Mục | Trạng thái |
 |---|---|
 | Xác minh VM, guest config, không đụng Main VM | VERIFIED |
 | Mốc A | VERIFIED (600/600) |
 | Mốc B | VERIFIED (600/600, 3 đoạn) |
-| Mốc C (2 user) | PARTIAL – 2 user đứng yên 179 s + di chuyển 101 s VERIFIED; chiến đấu 2 user NOT TESTED (user 2 thoát sớm) |
+| Mốc C (2 user) | VERIFIED (lần 1 một phần + lần 2 bổ sung C3: đứng yên 126 s, chiến đấu 223 s, di chuyển 180 s có đủ 2 user); phiên rớt/nối lại 5 lần – chưa rõ nguyên nhân |
 | CPU từng tiến trình (Windows counters) | BLOCKED/UNRELIABLE (xem mục 5) |
 | gs001 CPU qua tick tự đo | VERIFIED (độ phân giải 1 phút) |
 | VRAM | N/A (không có GPU workload) |

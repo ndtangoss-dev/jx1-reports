@@ -1,0 +1,5 @@
+﻿C3_dung_yen players=2: n=126 cpu avg/p95=14.7/34.3 ram avg/max=2974/3026 tx avg/p95=88212/113257 rx avg=8971
+C3_dung_yen players=1: n=54 cpu avg/p95=13.0/33.1 ram avg/max=2985/3021 tx avg/p95=45675/79033 rx avg=4829
+C3_chien_dau players=2: n=223 cpu avg/p95=18.4/36.2 ram avg/max=3074/3254 tx avg/p95=79018/106056 rx avg=9455
+C3_chien_dau players=1: n=77 cpu avg/p95=18.0/33.5 ram avg/max=3094/3210 tx avg/p95=40732/74099 rx avg=6437
+C3_di_chuyen players=2: n=180 cpu avg/p95=12.9/28.3 ram avg/max=2952/3014 tx avg/p95=79616/121781 rx avg=9385
