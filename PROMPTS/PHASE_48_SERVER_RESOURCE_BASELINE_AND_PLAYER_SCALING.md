@@ -88,12 +88,44 @@ So sánh:
 - Kiểm tra tick 36Hz không bị tụt trong các giai đoạn.
 - Nêu giới hạn: VM ảo hóa không hoàn toàn tương đương VPS; cần lưu cấu hình guest và giới hạn tài nguyên.
 
+## Quy tắc hạn mức Sonnet — BẮT BUỘC
+Chủ dự án có thể điều khiển trạng thái khám phá của Sonnet bằng hai câu lệnh rõ ràng:
+
+### Khi chủ dự án nói: “Dừng Sonnet”
+Hiểu đây là tín hiệu hạn mức token gần chạm ngưỡng. Ngay lập tức:
+- Tắt chế độ tự khám phá game: `EXPLORATION_MODE=OFF`.
+- Sonnet không tiếp tục tự tìm hiểu NPC, bản đồ, vật phẩm, kỹ năng, chỉ số, vũ khí, trang bị hoặc chạy thí nghiệm khám phá mới.
+- Sonnet chỉ tiếp tục các nhiệm vụ QA kỹ thuật cần thiết: kiểm tra lỗi, tái hiện lỗi, xác minh bản sửa, thu thập bằng chứng cho nhiệm vụ đang được chủ dự án phê duyệt.
+- Không tự mở rộng phạm vi công việc, không chạy vòng khám phá dài, không tự khởi chạy thêm nhiệm vụ tiêu tốn token.
+- Lưu checkpoint, tiến độ, trạng thái game/nhân vật test, việc đang dở và bước tiếp theo vào nhật ký/Knowledge Base.
+- Báo ngắn gọn đã chuyển sang chế độ tiết kiệm token.
+
+### Khi chủ dự án nói: “Tiếp tục Sonnet”
+- Đọc checkpoint và trạng thái mới nhất.
+- Bật lại `EXPLORATION_MODE=ON`.
+- Tiếp tục khám phá game từ đúng phần đang dở, không làm lại các thí nghiệm đã VERIFIED trừ khi cần xác minh.
+- Tiếp tục cập nhật Knowledge Base và dữ liệu experiments.
+- Vẫn tuân thủ ranh giới an toàn và quyền phê duyệt.
+
+### Hai trạng thái độc lập
+Duy trì và ghi rõ trong checkpoint:
+- `EXPLORATION_MODE=ON|OFF`
+- `BUG_FIX_QA_MODE=ON|OFF`
+
+“Dừng Sonnet” không có nghĩa là tắt mọi QA. Chỉ tắt khám phá tự do; QA kiểm tra lỗi đã được giao vẫn có thể tiếp tục. “Tiếp tục Sonnet” bật lại khám phá. Không tự suy đoán lệnh; nếu trạng thái chưa rõ, hỏi chủ dự án.
+
+### Áp dụng trong Phase 48
+- Phase 48 là nhiệm vụ đo tài nguyên server đã được chủ dự án phê duyệt, không phải khám phá game tự do. Sonnet/Claude vẫn được phép hoàn thành các mốc đo A và B, thu thập guest metrics và ghi báo cáo ngay cả khi `EXPLORATION_MODE=OFF`, miễn là không mở rộng sang khám phá game.
+- Không để Sonnet chạy khám phá game nền song song trong lúc đo tải Phase 48.
+- Mốc C phải chờ người dùng đăng nhập thực tế; không giả lập dữ liệu.
+- Nếu chủ dự án nói “Dừng Sonnet” trong lúc Phase 48 đang chạy, dừng mọi hoạt động khám phá ngay, nhưng chỉ dừng phép đo Phase 48 nếu chủ dự án yêu cầu dừng nhiệm vụ đo hoặc nếu tiếp tục sẽ tiêu tốn đáng kể hạn mức ngoài phạm vi đã duyệt. Lưu checkpoint trước khi dừng.
+
 ## Sonnet và quy trình QA
 - Sonnet thực hiện thao tác gameplay và thu thập dữ liệu nếu công cụ hiện có cho phép.
 - Claude Code/agent có quyền đọc telemetry guest thực hiện thu thập tự động. Xác minh công cụ trước khi dùng.
 - Sonnet không điều khiển cùng LDPlayer đồng thời với agent khác.
 - Nếu Sonnet không có quyền đọc guest metrics, báo BLOCKED cụ thể; không tự ý cài agent vào VM.
-- Sau khi hoàn tất A/B, Sonnet lưu dữ liệu và tiếp tục khám phá game theo Autonomous QA nếu còn hạn mức. Không chờ Opus giao từng thao tác.
+- Sau khi hoàn tất A/B, Sonnet lưu dữ liệu. Chỉ tiếp tục khám phá game nếu `EXPLORATION_MODE=ON`; nếu OFF thì dừng ở nhiệm vụ QA/đo đã được duyệt.
 - Opus review phương pháp, số liệu và kết luận; không sửa server trong nhiệm vụ benchmark.
 
 ## Đầu ra bắt buộc
@@ -103,6 +135,7 @@ Tạo:
 - `experiments/server-resource/phase48-summary.csv` — số liệu tổng hợp.
 - Script thu thập/phân tích nếu có, kèm hướng dẫn chạy và giới hạn.
 - Cập nhật `00_LATEST_STATUS.md`.
+- Checkpoint ghi `EXPLORATION_MODE`, `BUG_FIX_QA_MODE`, tiến độ và bước tiếp theo.
 
 Báo cáo phải ghi:
 - VM xác minh là JX-Test-36 (không phải Main VM).
@@ -113,6 +146,7 @@ Báo cáo phải ghi:
 - Avg/P95/P99/peak.
 - Delta theo số user và hoạt động.
 - VRAM: đo được hay N/A và lý do.
+- Trạng thái khám phá Sonnet và QA lỗi.
 - Giới hạn, rủi ro ngoại suy và đề xuất cấu hình VPS sơ bộ.
 - Trạng thái từng mục: VERIFIED / NOT TESTED / BLOCKED.
 
