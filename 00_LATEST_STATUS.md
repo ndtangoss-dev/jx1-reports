@@ -5,6 +5,13 @@ Cập nhật: 2026-11-12. Nguồn chính: [FIX_HISTORY/45](FIX_HISTORY/45-fix36-
 Ký hiệu: **[ĐÃ XÁC MINH]** = có log, số đo hoặc kiểm thử thực tế. **[GIẢ THUYẾT]** = chưa kiểm chứng. **[KẾ HOẠCH]** = việc chưa làm.
 Đã lược bỏ IP, tài khoản và thông tin truy cập (ghi dạng `<LAN-IP>`, `<TAILSCALE-IP>`, `<test-account>`...).
 
+## 000. Phase 48 (2026-11-12) – đo tài nguyên server trong guest VM (đo thăm dò)
+Báo cáo: [TEST_RESULTS/48-server-resource-measurement](TEST_RESULTS/48-server-resource-measurement.md); số liệu: experiments/server-resource/.
+- [VERIFIED] VM thử JX-Test-36 (4 vCPU, 6 GB, Win10), gs001 36Hz; Main VM không chạy, không đụng; không đổi cấu hình/dịch vụ.
+- [VERIFIED] Mốc A (0 user, 600 mẫu): CPU guest tb 12,8% (p95 28,8%), RAM dùng 2,64 GB, tick gs001 tb 0,44 ms, 36/36.
+- [VERIFIED] Mốc B (1 user Sonnet, 600 mẫu, 3 đoạn): CPU guest tb 14,4% (p95 33,6%), RAM 2,88 GB (max 3,0), gs001 WS 432–479 MB, tick tb 0,81 ms (max 32,7 ms, 1 hụt/10 phút), mạng gửi 26–58 KB/s theo hoạt động.
+- [BLOCKED/UNRELIABLE] CPU từng tiến trình bằng bộ đếm Windows trong VM này; dùng CPU guest tổng + tick tự đo của gs001.
+- [PENDING USER] Mốc C (2 user): chờ chủ dự án đăng nhập Xiaomi 13T Pro. Sonnet: EXPLORATION_MODE=OFF, BUG_FIX_QA_MODE=ON.
 ## 00. Phase 47 (2026-11-12) – nhấp nháy đối tượng khi di chuyển nhanh
 Báo cáo: [FIX_HISTORY/47](FIX_HISTORY/47-dieu-tra-nhap-nhay-doi-tuong.md); kiến trúc QA mới: [QA_AUTONOMOUS_ARCHITECTURE.md](QA_AUTONOMOUS_ARCHITECTURE.md).
 - [ĐÃ XÁC MINH – video điện thoại + LDPlayer] Toàn bộ lớp đối tượng (cây, đá, quái, NPC, nhân vật) biến mất 53–59 ms mỗi lần camera sang vùng mới giữa 2 nhịp logic: cây đối tượng bị xóa ở pha vẽ (`SetFocusPosition` -> `Fell`) nhưng chỉ dựng lại ở nhịp logic sau (`Preprocess`). Lỗi hồi quy từ Fix31 (có ở Fix33–36, P46), không do nạp trước P46.
