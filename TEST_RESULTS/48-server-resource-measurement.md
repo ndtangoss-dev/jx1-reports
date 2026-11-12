@@ -5,9 +5,9 @@ TÓM TẮT 5 DÒNG
 2. Mốc A (0 user): CPU guest tb 12,8% (p95 28,8%, max 49,6%), RAM dùng ~2,64 GB/6 GB, gs001 tự đo tick tb 0,44 ms (~1,6% một lõi), 36/36 tick, 0 tick hụt.
 3. Mốc B (1 user, Sonnet): CPU guest tb 14,4% (p95 33,6%), RAM ~2,88 GB (max 3,0), gs001 WS 263 -> 432–479 MB, tick tb 0,81 ms (max 32,7 ms, 1 lần hụt trong 10 phút), mạng gửi tb 43,5 KB/s (đi lại 57,8 KB/s).
 4. Giới hạn VERIFIED: CPU từng tiến trình đo bằng Windows KHÔNG tin được trong VM này (Windows hầu như không ghi nhận CPU cho tiến trình); dùng CPU guest tổng + thời gian tick gs001 tự đo. gs001 commit ~6,8 GB (Private Bytes) -> guest commit ~10,5 GB > RAM.
-5. Mốc C (2 user): PENDING USER – chờ chủ dự án đăng nhập Xiaomi 13T Pro. Không ngoại suy tuyến tính khi chưa có C.
+5. Mốc C (2 user): ĐO MỘT PHẦN – 2 user đứng yên 3 phút + di chuyển 1,7 phút (user 2 thoát sớm): user 2 thêm ~+35 KB/s gửi, tick +0,2–0,3 ms; phút đăng xuất có 5 tick hụt (max 55 ms). Chiến đấu 2 user NOT TESTED.
 
-Cần tôi quyết định: có (đăng nhập Xiaomi để đo Mốc C).
+Cần tôi quyết định: có (có đo lại Mốc C đủ 10 phút gồm chiến đấu 2 user không).
 
 ## 1. Xác minh môi trường (VERIFIED)
 | Mục | Giá trị |
@@ -61,13 +61,33 @@ Cần tôi quyết định: có (đăng nhập Xiaomi để đo Mốc C).
 | Mạng nhận | +1,3 đến +4 KB/s |
 | Paging | pages/s tăng mạnh khi di chuyển (157/s) – dữ liệu gs001 bị đẩy ra pagefile vì commit > RAM |
 
+### Mốc C – 2 user, ĐO MỘT PHẦN (epoch 1794479442–1794480042, 600/600 mẫu)
+User 1: nhân vật jxt36a trên LDPlayer (script tự động theo cùng kịch bản, không dùng Sonnet để tiết kiệm hạn mức). User 2: chủ dự án trên Xiaomi 13T Pro (Tailscale, APK P47), thoát sớm vì bận: mẫu 2 người chơi cuối cùng 1794479729 (T0+287 s), từ 1794479738 chỉ còn 1.
+| Đoạn | Người chơi | CPU guest avg/p95/max % | RAM dùng avg/max MB | gs001 WS MB | Gửi avg/p95 B/s | Nhận avg B/s | Gói gửi /s | pages/s |
+|---|---|---|---|---|---|---|---|---|
+| C2 đứng yên (179 s) | 2 | 13,3 / 28,9 / 53,6 | 2 757 / 2 796 | 302 | 60 285 / 80 591 | 7 037 | 60,4 | 0,1 |
+| C2 di chuyển (101 s) | 2 | 14,9 / 30,1 / 87,3 | 2 912 / 2 993 | 472 | 94 609 / 131 221 | 9 027 | 89,2 | 8,2 |
+| Sau khi user 2 thoát (303 s) | 1 | 11,4 / 29,3 / 53,5 | 2 939 / 3 046 | 480 | 43 326 / 69 110 | 5 783 | 40,0 | 7,8 |
+- Tick theo phút: 1 user ngay trước C 0,73 ms; 2 user 0,94–1,02 ms (5 phút); phút user 2 thoát: tb 1,08 ms, max 55,3 ms, **5 tick hụt** (GIẢ THUYẾT: xử lý lưu nhân vật/đăng xuất – cần đo riêng); sau đó 1 user 0,76–0,81 ms. SvrFPS 36/36 mọi phút.
+- KHÔNG có đoạn "chiến đấu" với 2 user (user 2 đã thoát) -> NOT TESTED.
+
+### Delta C − B (thêm user thứ 2), chỉ cho phần đo được
+| Chỉ số | Đứng yên (C2 − B đứng yên) | Di chuyển (C2 − B di chuyển) |
+|---|---|---|
+| Tick gs001 tb | ~+0,3 ms (0,68 -> ~0,98; độ phân giải theo phút) | ~+0,2 ms (0,78 -> ~0,98) |
+| Mạng gửi tb | +34,5 KB/s (25,7 -> 60,3) | +36,8 KB/s (57,8 -> 94,6) |
+| Mạng nhận tb | +2,6 KB/s | +2,0 KB/s |
+| RAM guest tb | ~0 (−10 MB, nhiễu) | +33 MB |
+| CPU guest tb | +0,3 điểm % (nhiễu nền lớn hơn) | −1,9 điểm % (nhiễu) |
+Nhận xét: chi phí user thứ 2 về mạng gần bằng user thứ nhất (~+35 KB/s gửi), tick tăng ~0,2–0,3 ms/nhịp; RAM chủ yếu do vùng bản đồ đang hoạt động (đã nạp ở B) chứ không do số user. Hai user có thể ở bản đồ/vùng khác nhau (không kiểm soát được) -> chưa tách được chi phí "nhìn thấy nhau".
+
 ## 4. Trạng thái
 | Mục | Trạng thái |
 |---|---|
 | Xác minh VM, guest config, không đụng Main VM | VERIFIED |
 | Mốc A | VERIFIED (600/600) |
 | Mốc B | VERIFIED (600/600, 3 đoạn) |
-| Mốc C (2 user) | PENDING USER |
+| Mốc C (2 user) | PARTIAL – 2 user đứng yên 179 s + di chuyển 101 s VERIFIED; chiến đấu 2 user NOT TESTED (user 2 thoát sớm) |
 | CPU từng tiến trình (Windows counters) | BLOCKED/UNRELIABLE (xem mục 5) |
 | gs001 CPU qua tick tự đo | VERIFIED (độ phân giải 1 phút) |
 | VRAM | N/A (không có GPU workload) |
