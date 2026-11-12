@@ -81,3 +81,20 @@ Không ghi “đã hoàn thành” nếu chỉ mới phân tích, sửa code ho�
 Bắt đầu ngay bằng Giai đoạn 0, sau đó tiến hành Giai đoạn 1. Gửi báo cáo ngắn về môi trường đã xác minh và kết quả tái hiện đầu tiên; tiếp tục thực hiện các giai đoạn còn lại mà không chờ người dùng nhắc lại.
 
 **Đây là lệnh triển khai chính thức cho Phase 46 theo nội dung người dùng đã duyệt.**
+
+## 5. Addendum bắt buộc – Game-Aware QA và Knowledge Discovery
+
+Đọc toàn bộ và thực hiện đồng thời tài liệu:
+[PHASE_46_GAME_AWARE_QA_AND_KNOWLEDGE_DISCOVERY.md](PHASE_46_GAME_AWARE_QA_AND_KNOWLEDGE_DISCOVERY.md)
+
+Addendum này là yêu cầu đã được người dùng duyệt, không phải tùy chọn. Tích hợp các module sau vào kế hoạch Phase 46:
+- Xác minh công cụ chụp màn hình/điều khiển game/ADB/OCR/telemetry thực sự khả dụng.
+- QA theo vòng lặp OBSERVE → UNDERSTAND → PLAN → ACT → VERIFY → ADAPT; phát hiện stuck, giới hạn retry và không chạy vô hạn vào vật cản.
+- Tự khám phá minimap, tìm NPC theo tên, xác minh vị trí/đường đi và tương tác; không yêu cầu người dùng cung cấp tọa độ nếu QA có thể tự tìm.
+- Mở và kiểm kê đầy đủ mọi danh mục/menu con/trang cuộn trong lệnh bài GM; phân loại READ_ONLY, REVERSIBLE, GAME_STATE_CHANGE, IRREVERSIBLE_OR_RISKY; không thực thi hành động rủi ro khi chưa có phê duyệt cụ thể.
+- Xây dựng knowledge base có bằng chứng và trạng thái VERIFIED/DISCOVERED/UNKNOWN cho minimap, NPC, navigation, GM token, items, skills và maps.
+- Thu thập frame-time/FPS và đánh giá chất lượng hình ảnh theo khả năng công cụ; phân biệt render, capture, OCR, AI analysis và game tick. Không dùng ảnh tĩnh để kết luận hết hitch.
+- Vai trò mục tiêu: Sonnet QA Lead, Haiku QA Assistant, Opus Developer, Claude Code Orchestrator. Phải xác minh khả năng gọi model/subagent thật; nếu không khả dụng, báo rõ và dùng phương án thay thế, tuyệt đối không giả vờ đã chạy.
+
+Báo cáo Phase 46 phải có thêm báo cáo Game-Aware QA/Knowledge Discovery theo checklist trong addendum. Các mục không thể kiểm tra phải đánh dấu BLOCKED hoặc NOT TESTED, không đánh dấu PASS.
+
