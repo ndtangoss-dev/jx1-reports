@@ -279,3 +279,46 @@ Ghi ngắn theo mục, cập nhật trong lúc làm. Không ghi mật khẩu và
 - Công cụ sửa file GBK theo byte (bpatch): KHÔNG bao giờ gọi với chuỗi tạm/placeholder. Một lần gọi thử đã thay nhầm một dòng thành "x"; phát hiện nhờ kiểm tra lại và khôi phục từ backup-p46. Luôn so file với bản sao lưu sau khi sửa.
 - Phong Lăng Độ: quái đánh nhân vật đứng yên, nhân vật test cấp 200 đã chết một lần (mất ~50% bạc).
 - Phong Lăng Độ là khu vực đặc thù: không dùng trực tiếp Thần Hành Phù; phải dùng Thổ Địa Phù trước rồi mới Thần Hành Phù đi thành thị (chủ dự án xác nhận). Dùng ngay khi HP < 40%.
+
+## 2026-11-13 - Goddess khong len khi bam Start (ket sau 3+ lan)
+- Sword3PaySys (PID 4704) len binh thuong; SQL Server Running; Goddess chay nhung tieu de van "[Disable]", cong 5001 khong nghe.
+- Da thu: (1) ui.ps1 BM_CLICK -> log "clicked [Start]" nhung khong co tac dung; (2) chay lai ui.ps1; (3) WM_COMMAND (id=1) toi cua so cha sau ShowWindow/SetForegroundWindow -> van [Disable].
+- Cua so Goddess khi minimize/khong ve lai; chua xem duoc hop thoai/loi nao. Chua kiem tra: log goddes_log (chi co 2026_11_10, 2026_11_11), ket noi SQL cua Goddess, firewall (khong doc duoc: PowerShell khong Admin).
+- Bai hoc: FindWindow theo tieu de co the tra 0 khi go qua keyboardputstring; dung (Get-Process X).MainWindowHandle. Dung `$'\''` trong bash de chen dau nhay don vao lenh go.
+
+## 2026-11-13 - U003: giai nen PAK doc-only theo ten GBK
+- Hash id phai tinh tren byte GBK cua ten (khong latin-1). Tool: D:\JX1_U003_work\tools\u003_extract.py. Python -I khong doc PYTHONIOENCODING: dung sys.stdout.reconfigure(encoding='utf-8').
+- File thu tu ve that la 贴图顺序表.txt (kind file chi toi .txt), ban .ini nho hon khong duoc nap.
+- Lenh restart Goddess bi ngat: Stop-Process bi Access denied (khong kill duoc), Goddess PID 9968 van chay, tieu de [Disable]; khong co thay doi.
+
+## 2026-11-13 - U003 G0: ban sort-table that va thu tu nap PAK
+- Client nap PAK theo thu tu package.ini, PAK dau tien co id thang (KPakList.cpp:66-77, 171-200). Khong dung "ban moi nhat" hay "ban lon nhat". Tool: D:\JX1_U003_work\tools\pak_winner.py.
+- Sort-table MainMan that nam trong updata02 (44 section, 12 slot, khong co canh); setting-new.pak khong nam trong danh sach nap -> khong phan tich file tu setting-new.
+- Heredoc python trong bash lam hong dau `\` -> luon dung Write cho script co duong dan Windows/ten \settings\...
+
+## 2026-11-13 - U003 G0 bo sung: skill -> missle, package.ini
+- Skill co BaseSkill=1 thi ChildSkillId la MISSLE id (KSkills.cpp:1775,1929), MisslesForm chi la enum hinh dang (SkillDef.h:117). Dung de truy projectile: 375 -> Missles 181 (雷动九天.spr) ; va cham 387 -> Missles 193 (雷击术.spr).
+- Xac dinh package.ini that bang md5 assets/package.ini trong cac APK da build (data_cdn\apk): ban A (Resources). Khong dung data/data/package.ini.
+- Header SPR: <HHHHHHHH> W,H,cx,cy,frames,colors,dirs,interval o offset 4; khop AnimFileInfo cua Missles.
+
+## U003 G0 bổ sung lần cuối (báo cáo 53)
+- Sửa nhận định cũ: UI cooldown gốc CÓ (`KgameWorld.cpp:5527-5540`, `timeLoopLayer`); tìm bằng grep `_nextUseTime`/`cdLabel`, không chỉ grep "cooldown". Bài học: grep theo tên biến thật, không theo từ khoá tiếng Anh.
+- `FillLineObstacle` là che sáng, không phải vật cản đi lại; đừng nhầm khi dựng vật cản Unity.
+- AttackSpeed (NpcS) = số khung game, nạp ở `KNpcTemplate.cpp:50`.
+
+## U003 G0.5 (báo cáo 55)
+- `pak_extract.py` chỉ xử lý nén cả file; entry cờ byte cao 0x11 (TYPE_FRAME, nén từng khung) báo "lookbehind overrun" (66 entry trong spr+skills mẫu). Giải bằng đường khung (`XPackFile.cpp:597-741`); cần bổ sung vào công cụ.
+- `interval` SPR không thống nhất: vật thể cảnh = ms thật; quái/người không dùng (kéo giãn theo khung logic); đạn dùng cột Missles.txt.
+- Skill 375 sinh 16 đạn (4x4) trễ ngẫu nhiên, KHÔNG phải 4 (sửa báo cáo 52-54). 193 sinh tại vị trí đạn 181 va chạm.
+- Bảng sắp xếp bộ phận tra bằng chỉ số hướng sprite 0-based (DirN-1); LineN khớp số khung tuyệt đối.
+- Dump file GBK: dùng tools/dump_src.py, Read không đọc được; heredoc làm mất dấu `\` trong đường dẫn.
+- Quét spr.pak chỉ lấy mẫu 2500/14616 entry (0 lỗi); phần còn lại chưa kiểm.
+
+## U003 G0.6 (báo cáo 56)
+- Client KHÔNG tính sát thương/Hit từ va chạm đạn (`KMissle::ProcessDamage` rỗng, `DoCollision` chỉ sinh hiệu ứng/193). Hit của NPC chỉ chạy khi nhận gói server `s2c_npchurt`; tìm bằng cách truy ngược `DoHurt` -> `ProcNetCommand` -> `NetCommandHurt`.
+- Skill 375 và 387 có `DoHurt=0` (cột bảng Skills); đòn thường skill 1 có `DoHurt=80`. Không có Hit cho 375 theo gốc; Hit nếu thêm là DESIGN DECISION.
+- `DoHurt` bị bỏ qua khi đang hurt/death: Hit không chồng, không kéo dài; Death ghi đè Hit.
+- Damage number gốc = hiệu số máu giữa hai gói đồng bộ (gộp), font `number_16_r.fnt`, tối đa 5 tầng/quái, 50 lần vẽ. U003 dùng từng lần nhận sát thương là khác gốc.
+- `DmgInterval` ở server là khoảng chặn gây sát thương mỗi missile (`KMissle.cpp:1788-1796` server).
+- Cooldown gốc 375: `TimePerCast=0` nên không có độ dài cooldown; cơ chế UI cooldown vẫn có (BC 53). Cooldown 1 s của U003 là luật thiết kế riêng.
+- Bảng NpcS/Skills trích nằm ở file tên `38ebcb17__script_skill.bin` (NpcS) và `ec1243ff__script_skill.bin` (Skills): tên file extract không phản ánh nội dung, kiểm cột header trước khi dùng.
