@@ -26,8 +26,8 @@ namespace U003
         public const float CastSeconds = 1.0f;
         public const float CooldownSeconds = 1.0f;   // tinh tu luc bat dau cast
         public const float CastEventFraction = 0.6f; // goc: IsReachFrame(60) (KNpc.cpp:6852). Gia dinh ap dung cho cast 1 s.
-        public const int AoeDamage = 20;
-        public const float AoeTick1 = 0.5f, AoeTick2 = 1.0f;
+        public const int DamageMin = 15, DamageMax = 25;   // moi lan va cham: damage ngau nhien rieng 15..25 (yeu cau nguoi dung)
+        public const int Missile193Life = 12;              // khung logic (goc LifeTime=12)
         public const float RespawnSeconds = 2.0f;
         public const float DamageNumberSeconds = 1.0f;
         public const int Missile181Life = 12;        // khung logic (goc LifeTime=12)

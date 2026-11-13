@@ -10,7 +10,7 @@ namespace U003
     }
     public class Missile193
     {
-        public int castId, aoeId, fromK; public Vector2 pos; public float spawnT, activateT; public bool t1Done, t2Done, done;
+        public int castId, aoeId, fromK; public Vector2 pos; public float spawnT, activateT; public bool hitDone, done;
         public GameObject go; public SpriteRenderer sr;
     }
     public class Fx
@@ -104,6 +104,7 @@ namespace U003
                         if (mo.Alive && Mathf.Abs(mo.CellX - cx) <= 2 && Mathf.Abs(mo.CellY - cy) <= 2) { hit = true; break; }
                     if (hit)
                     {
+                        HitMonstersInRange(now, cx, cy, "cast#" + m.castId + " 181[" + m.k + "]", false);
                         m.collided = true; collided181++; m.bzT = Mathf.Max(now, m.startT + 4f / Cfg.DataHz);
                         var a = new Missile193 { castId = m.castId, aoeId = ++aoeSeq, fromK = m.k, pos = m.pos, spawnT = now, activateT = now + Cfg.Delay193 / Cfg.DataHz };
                         m193.Add(a); spawned193++;
@@ -118,7 +119,8 @@ namespace U003
                     m.done = true;
                 }
             }
-            // 3) 193 / AOE
+            // 3) 193: sau 5 tick bat dau; moi tick logic kiem tra va cham (+-2 o); va cham dau tien gay damage 1 lan (goc: ColVanish);
+            //    hinh 27 khung chay het doi 12 tick roi no Bz_dian3 (khong cat som, nhu 181).
             for (int i = m193.Count - 1; i >= 0; i--)
             {
                 var a = m193[i];
@@ -130,10 +132,14 @@ namespace U003
                     a.go.transform.position = Mps.ToWorld(a.pos.x, a.pos.y);
                     a.sr.sortingOrder = g.map.OrderForY(a.pos.y) + 9;
                 }
-                float el = now - a.activateT;
-                a.sr.sprite = s193.Get(Mathf.Clamp((int)(el / Cfg.AoeTick2 * s193.FrameCount), 0, s193.FrameCount - 1));
-                if (!a.t1Done && el >= Cfg.AoeTick1) { a.t1Done = true; AoeTick(now, a, 1); }
-                if (!a.t2Done && el >= Cfg.AoeTick2) { a.t2Done = true; AoeTick(now, a, 2); a.done = true; SpawnBz(now, a.pos); }   // no Bz_dian3 khi 193 het doi (goc, BC 55)
+                float el = now - a.activateT, life = Cfg.Missile193Life / Cfg.DataHz;
+                a.sr.sprite = s193.Get(Mathf.Clamp((int)(el / life * s193.FrameCount), 0, s193.FrameCount - 1));
+                if (!a.hitDone && newTick)
+                {
+                    int n = HitMonstersInRange(now, Mps.CellOf(a.pos.x), Mps.CellOf(a.pos.y), "cast#" + a.castId + " 193#" + a.aoeId, true);
+                    if (n > 0) a.hitDone = true;
+                }
+                if (el >= life) { a.done = true; SpawnBz(now, a.pos); }
             }
             // 4) hieu ung phu (no)
             for (int i = fxs.Count - 1; i >= 0; i--)
@@ -152,20 +158,24 @@ namespace U003
             fxs.Add(f);
         }
 
-        void AoeTick(float now, Missile193 a, int tickNo)
+        System.Random dmgRng;
+        // Moi va cham: moi quai trong vung va cham (+-2 o) nhan damage rieng ngau nhien 15..25. Tra ve so quai trung.
+        int HitMonstersInRange(float now, int cx, int cy, string src, bool from193)
         {
-            int cx = Mps.CellOf(a.pos.x), cy = Mps.CellOf(a.pos.y);
-            int hits = 0;
+            if (dmgRng == null) dmgRng = new System.Random(fixedSeed ? Cfg.TestSeed + 777 : System.Environment.TickCount);
+            int n = 0;
             foreach (var mo in g.monsters)
             {
                 if (!mo.Alive) continue;
-                if (Mathf.Abs(mo.CellX - cx) <= 1 && Mathf.Abs(mo.CellY - cy) <= 1)
+                if (Mathf.Abs(mo.CellX - cx) <= 2 && Mathf.Abs(mo.CellY - cy) <= 2)
                 {
-                    hits++; damageEvents++; totalDamage += Cfg.AoeDamage; aoeTicks++;
-                    g.DamageMonster(mo, Cfg.AoeDamage, now, false, "cast#" + a.castId + " aoe#" + a.aoeId + " tick" + tickNo);
+                    int d = dmgRng.Next(Cfg.DamageMin, Cfg.DamageMax + 1);
+                    n++; damageEvents++; totalDamage += d; if (from193) aoeTicks++;
+                    Evt.Log(now, src + " hit monster#" + mo.id + " dmg=" + d);
+                    g.DamageMonster(mo, d, now, false, src + " dmg=" + d);
                 }
             }
-            Evt.Log(now, "cast#" + a.castId + " aoe#" + a.aoeId + " tick" + tickNo + " hits=" + hits);
+            return n;
         }
 
         void Cleanup(Missile181 m) { if (m.go != null) Object.Destroy(m.go); }

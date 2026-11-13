@@ -44,8 +44,8 @@ Windows (960×540): 52–60 FPS, GC ~7 MB. **Android chưa đo.**
 
 ## 11. APK
 - Đường dẫn: `D:\JX1_U003_build\android\JX1_U003_debug.apk` (ngoài repo)
-- Dung lượng: 34.293.211 byte
-- SHA256: `18642de5a0ea761eb4a01fad9cdc68292c556ea55201cd3db0e4b1c009a215c3`
+- Dung lượng: 34.292.511 byte
+- SHA256: `f28996be8122c927604be223f192ed9702124d288da989c5cbb8c8ee62e88cc8`
 - Cấu hình: Unity 6000.2.14f1, IL2CPP, ARM64, minSdk 24, Development build, `com.u003.jx1proto`, ký bằng keystore debug.
 - Bản này: quái tự tìm nhân vật trên toàn bản đồ (bán kính phát hiện không giới hạn), theo yêu cầu người dùng. Bản Windows chưa chạy lại sau thay đổi này.
 
@@ -64,3 +64,10 @@ Người dùng cài thử APK (Taildrop qua Tailscale, bật "cài ứng dụng 
 - Tách `DataHz = 18` (đổi tick dữ liệu gốc sang giây, cố định theo server `GAME_FPS 18`) khỏi `LogicHz` (nhịp xét bắt đầu bay/va chạm/đổi khung đạn), chọn **18/36/60/120/240** bằng nút "Hz" trên màn hình. Thời lượng giây của dữ liệu gốc không đổi. Bước mô phỏng = 1/max(60, LogicHz).
 - Chưa biết Hz client gốc; chọn Hz cao chỉ làm mịn thời điểm xét sự kiện, không chứng minh sát gốc hơn. Muốn chốt nhịp thật cần đo từ video client gốc.
 - Test bản Windows (seed cố định, quái đứng yên): cả 5 mức cho cùng kết quả 16 đạn / 16 va chạm / 16 AOE / 18 lần sát thương / tổng 360. Chưa đo tải CPU/FPS ở 120/240 Hz trên Android (Windows: 63–67 FPS ở 120/240).
+
+## Đổi luật sát thương theo yêu cầu người dùng (thay luật tick 500/1000 ms)
+- **Bỏ tick 500/1000 ms.** Mỗi va chạm tự gây sát thương ngay: va chạm của **181** (kiểm tra ±2 ô) và va chạm của **193** (kiểm tra mỗi tick logic từ lúc bắt đầu, sống 12 tick, va chạm đầu tiên gây sát thương một lần rồi thôi – giống `ColVanish` gốc).
+- Mỗi lần va chạm, **mỗi quái trong vùng va chạm (±2 ô)** nhận một sát thương ngẫu nhiên riêng **15–25**, độc lập giữa các missile; mỗi sát thương một damage number riêng; một quái bị nhiều missile thì cộng dồn từng lần.
+- **Khác nguồn gốc (cần lưu ý):** gốc xét va chạm ±2 ô nhưng chỉ gây sát thương cho quái trong vùng 3×3 quanh đạn; U003 dùng chính vùng va chạm ±2 ô để "có va chạm là có sát thương". Gốc dùng dữ liệu 80–470 (375) và 25–250 (387); U003 dùng 15–25.
+- Hình 193 chạy đủ 27 khung trong 12 tick (0,67 s) rồi nổ `Bz_dian3` (không còn trải 1 s).
+- Test Windows (seed cố định, quái đứng yên, Hz 18 và 240): 16 đạn, 16 va chạm 181, 16 va chạm 193, 32 lần sát thương, tổng 625 (HP quái 15000→14375); 46 giá trị trong test hai lần cast: min 15, max 25, đủ 11 giá trị 15..25.
