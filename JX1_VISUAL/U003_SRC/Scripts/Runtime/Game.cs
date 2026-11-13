@@ -43,6 +43,7 @@ namespace U003
         void Start()
         {
             testMode = System.Environment.GetEnvironmentVariable("U003_AUTOTEST") != null;
+            var hz = System.Environment.GetEnvironmentVariable("U003_HZ"); if (!string.IsNullOrEmpty(hz)) Cfg.LogicHz = float.Parse(hz);
             var camGo = new GameObject("Main Camera"); camGo.tag = "MainCamera"; cam = camGo.AddComponent<Camera>();
             cam.orthographic = true; cam.orthographicSize = viewH / 2f; cam.backgroundColor = new Color(0.05f, 0.05f, 0.07f); cam.clearFlags = CameraClearFlags.SolidColor;
             camGo.transform.position = new Vector3(0, 0, -10);
@@ -283,7 +284,7 @@ namespace U003
                     }
                     break;
                 case MState.Hit:
-                    if (m.stateT >= 8f / Cfg.LogicHz) { m.state = MState.Idle; m.stateT = 0; }
+                    if (m.stateT >= 8f / Cfg.DataHz) { m.state = MState.Idle; m.stateT = 0; }
                     break;
                 case MState.Idle:
                 case MState.Chase:
@@ -339,7 +340,7 @@ namespace U003
             {
                 case MState.Chase: s = a_wlk; fr = ActFrame(s, t, s.meta.interval, true); break;
                 case MState.Attack: s = a_at; fr = ActFrame(s, t, s.meta.interval, false); break;
-                case MState.Hit: s = a_bat; fr = Mathf.Min((int)(t / (8f / Cfg.LogicHz) * s.FramesPerDir), s.FramesPerDir - 1); break;   // bat 8 khung ep vao thoi luong Hit 8 tick
+                case MState.Hit: s = a_bat; fr = Mathf.Min((int)(t / (8f / Cfg.DataHz) * s.FramesPerDir), s.FramesPerDir - 1); break;   // bat 8 khung ep vao thoi luong Hit 8 tick
                 case MState.Die: s = a_die; fr = ActFrame(s, t, s.meta.interval, false); break;
                 default: s = a_st; fr = ActFrame(s, simTime - m.id * 0.13f, s.meta.interval, true); break;
             }

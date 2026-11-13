@@ -13,6 +13,7 @@ namespace U003
         Rect SkillRect { get { float s = S; return new Rect(Screen.width - 120 * s, Screen.height - 140 * s, 96 * s, 96 * s); } }
         Rect AutoRect { get { float s = S; return new Rect(Screen.width - 215 * s, Screen.height - 110 * s, 76 * s, 60 * s); } }
         Rect DbgRect { get { float s = S; return new Rect(Screen.width - 80 * s, 8 * s, 70 * s, 40 * s); } }
+        Rect HzRect { get { float s = S; return new Rect(Screen.width - 80 * s, 54 * s, 70 * s, 40 * s); } }
         Vector2 JoyCenter { get { float s = S; return new Vector2(140 * s, Screen.height - 140 * s); } }
         GUIStyle label, btn; float lastFps; int frames; float fpsT; public float fps;
 
@@ -54,6 +55,7 @@ namespace U003
             if (SkillRect.Contains(p)) { g.TryCast(); return; }
             if (AutoRect.Contains(p)) { g.pl.autoOn = !g.pl.autoOn; return; }
             if (DbgRect.Contains(p)) { showOverlay = !showOverlay; return; }
+            if (HzRect.Contains(p)) { Cfg.LogicHz = Cfg.LogicHz < 20f ? 36f : Cfg.LogicHz < 40f ? 60f : Cfg.LogicHz < 70f ? 120f : Cfg.LogicHz < 130f ? 240f : 18f; return; }
             if (p.x < Screen.width * 0.5f && joyId == -99) { joyId = id; Drag(id, p); }
         }
         void Drag(int id, Vector2 p)
@@ -102,7 +104,7 @@ namespace U003
         public string OverlayText()
         {
             var sk = g.skill; var sb = new StringBuilder();
-            sb.AppendLine("FPS " + fps.ToString("F0") + "  tick(18Hz) " + Mathf.FloorToInt(g.simTime * Cfg.LogicHz) + "  sim " + g.simTime.ToString("F2") + "s");
+            sb.AppendLine("FPS " + fps.ToString("F0") + "  tick(" + (int)Cfg.LogicHz + "Hz) " + Mathf.FloorToInt(g.simTime * Cfg.LogicHz) + "  sim " + g.simTime.ToString("F2") + "s");
             sb.AppendLine("quai song " + g.AliveMonsters + "/15  chet(tong) " + g.totalMonsterKills + "  hoi sinh " + g.monsterRespawns);
             var n = g.Nearest(g.pl.pos, 100000f);
             sb.AppendLine("HP nguoi " + g.pl.hp + "/" + Cfg.PlayerHp + (n != null ? "  HP quai gan nhat " + n.hp + "/" + Cfg.MonsterHp : ""));

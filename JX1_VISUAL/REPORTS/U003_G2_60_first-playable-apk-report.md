@@ -44,8 +44,8 @@ Windows (960×540): 52–60 FPS, GC ~7 MB. **Android chưa đo.**
 
 ## 11. APK
 - Đường dẫn: `D:\JX1_U003_build\android\JX1_U003_debug.apk` (ngoài repo)
-- Dung lượng: 34.291.845 byte
-- SHA256: `3426c060e490998d33af5a612b218d4c296e33eb866416f8342480c534453a78`
+- Dung lượng: 34.293.211 byte
+- SHA256: `18642de5a0ea761eb4a01fad9cdc68292c556ea55201cd3db0e4b1c009a215c3`
 - Cấu hình: Unity 6000.2.14f1, IL2CPP, ARM64, minSdk 24, Development build, `com.u003.jx1proto`, ký bằng keystore debug.
 - Bản này: quái tự tìm nhân vật trên toàn bản đồ (bán kính phát hiện không giới hạn), theo yêu cầu người dùng. Bản Windows chưa chạy lại sau thay đổi này.
 
@@ -59,3 +59,8 @@ Người dùng cài thử APK (Taildrop qua Tailscale, bật "cài ứng dụng 
 - **Tia sét 181 mất phần gần mặt đất:** nguyên nhân là code xoá đạn 181 ngay tick đầu khi va chạm nên chỉ hiện khung 0 (khung 2–5 mới chạm đất, dữ liệu sprite đáy y≈355 so với tâm 345). Sửa: chuỗi sát thương giữ nguyên, hình tia sét chạy đủ 6 khung (2 tick/khung), nổ `Bz_dian3` lúc chạm đất (startT + 4 tick); thêm nổ `Bz_dian3` khi 193 hết đời. Kiểm bằng chuỗi ảnh cục bộ.
 - **Damage number theo bản gốc** (BC 56 mục C + ảnh client người dùng gửi): xếp tầng dọc theo từng quái, tối đa 5 tầng, số mới ở tầng thấp nhất, số cũ bị đẩy lên một tầng, đẩy quá tầng 5 thì mất; căn giữa, không lệch ngang, bay lên 5 px, font `number_16_r` kích thước gốc, không mờ dần. Khoảng tầng 18 px đo từ ảnh gốc (nguồn ghi 12 đơn vị – chưa đối chiếu được). Mỗi lần áp dụng sát thương vẫn tính 1 số (bộ đếm), nhưng chỉ tối đa 5 số hiển thị cùng lúc mỗi quái.
 - Kết quả test logic không đổi: 16 đạn, 16 va chạm, 16 AOE, 18 lần sát thương, tổng 360.
+
+## Nhịp logic chọn được (yêu cầu người dùng)
+- Tách `DataHz = 18` (đổi tick dữ liệu gốc sang giây, cố định theo server `GAME_FPS 18`) khỏi `LogicHz` (nhịp xét bắt đầu bay/va chạm/đổi khung đạn), chọn **18/36/60/120/240** bằng nút "Hz" trên màn hình. Thời lượng giây của dữ liệu gốc không đổi. Bước mô phỏng = 1/max(60, LogicHz).
+- Chưa biết Hz client gốc; chọn Hz cao chỉ làm mịn thời điểm xét sự kiện, không chứng minh sát gốc hơn. Muốn chốt nhịp thật cần đo từ video client gốc.
+- Test bản Windows (seed cố định, quái đứng yên): cả 5 mức cho cùng kết quả 16 đạn / 16 va chạm / 16 AOE / 18 lần sát thương / tổng 360. Chưa đo tải CPU/FPS ở 120/240 Hz trên Android (Windows: 63–67 FPS ở 120/240).

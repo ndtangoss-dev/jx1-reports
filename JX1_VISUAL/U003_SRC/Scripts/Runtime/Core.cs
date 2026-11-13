@@ -18,8 +18,9 @@ namespace U003
     public static class Cfg
     {
         // Luat U003 (bao cao 59, muc 3) -- DESIGN, khong phai du lieu goc
-        public const float LogicHz = 18f;            // 18 tick/giay: lua chon prototype, KHONG khang dinh Hz client goc
-        public const float SimStep = 1f / 60f;       // buoc mo phong co dinh cho timer/damage, khong phu thuoc FPS render
+        public const float DataHz = 18f;             // doi tick du lieu goc (WaitTime, LifeTime, interval...) sang giay: 1 tick = 1/18 s (server GAME_FPS 18). KHONG khang dinh Hz client goc
+        public static float LogicHz = 18f;           // nhip xet su kien dan (bat dau bay, va ccham, doi khung hinh): chon 18/36/60, khong doi thoi luong giay cua du lieu goc
+        public static float SimStep { get { return 1f / Mathf.Max(60f, LogicHz); } }   // buoc mo phong co dinh: 1/60 s, hoac 1/LogicHz khi LogicHz > 60; khong phu thuoc FPS render
         public const int MonsterHp = 1000;
         public const int PlayerHp = 500;
         public const float CastSeconds = 1.0f;

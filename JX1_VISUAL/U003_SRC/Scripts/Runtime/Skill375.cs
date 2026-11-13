@@ -57,8 +57,10 @@ namespace U003
             return wait + k * data - rng.Next(data / 2);
         }
 
+        long lastTick = -1;
         public void Step(float now)
         {
+            long tk = (long)Mathf.Floor(now * Cfg.LogicHz); bool newTick = tk != lastTick; lastTick = tk; float qNow = tk / Cfg.LogicHz;   // luoi tick logic
             // 1) sinh 16 dan 181 tai moc su kien cast
             for (int i = pending.Count - 1; i >= 0; i--)
             {
@@ -73,7 +75,7 @@ namespace U003
                         int k = a * Cfg.GridN + b;
                         var m = new Missile181 { castId = p.castId, k = k, pos = new Vector2(bx + b * Mps.Cell, by + a * Mps.Cell), spawnT = now };
                         m.delayTicks = DelayTicks(rng, k);
-                        m.startT = now + m.delayTicks / Cfg.LogicHz; m.endT = m.startT + Cfg.Missile181Life / Cfg.LogicHz;
+                        m.startT = now + m.delayTicks / Cfg.DataHz; m.endT = m.startT + Cfg.Missile181Life / Cfg.DataHz;
                         m181.Add(m); spawned181++;
                     }
                 Evt.Log(now, "cast#" + p.castId + " spawn 16x181");
@@ -84,7 +86,7 @@ namespace U003
             {
                 var m = m181[i];
                 if (m.done) { Cleanup(m); m181.RemoveAt(i); continue; }
-                if (!m.started && now >= m.startT)
+                if (!m.started && newTick && now >= m.startT)
                 {
                     m.started = true;
                     m.go = new GameObject("m181_" + m.castId + "_" + m.k); m.sr = m.go.AddComponent<SpriteRenderer>();
@@ -92,9 +94,9 @@ namespace U003
                     m.sr.sortingOrder = g.map.OrderForY(m.pos.y) + 8;
                 }
                 if (!m.started) continue;
-                int fi = Mathf.Min((int)((now - m.startT) * Cfg.LogicHz / 2f), s181.FrameCount - 1);   // AnimFile2 "6,1,2": 2 tick/khung
+                int fi = Mathf.Clamp((int)(Mathf.Max(0f, qNow - m.startT) * Cfg.DataHz / 2f), 0, s181.FrameCount - 1);   // AnimFile2 "6,1,2": 2 tick/khung
                 if (m.sr != null) m.sr.sprite = s181.Get(fi);
-                if (!m.collided)
+                if (!m.collided && newTick)
                 {
                     int cx = Mps.CellOf(m.pos.x), cy = Mps.CellOf(m.pos.y);
                     bool hit = false;
@@ -102,8 +104,8 @@ namespace U003
                         if (mo.Alive && Mathf.Abs(mo.CellX - cx) <= 2 && Mathf.Abs(mo.CellY - cy) <= 2) { hit = true; break; }
                     if (hit)
                     {
-                        m.collided = true; collided181++; m.bzT = Mathf.Max(now, m.startT + 4f / Cfg.LogicHz);
-                        var a = new Missile193 { castId = m.castId, aoeId = ++aoeSeq, fromK = m.k, pos = m.pos, spawnT = now, activateT = now + Cfg.Delay193 / Cfg.LogicHz };
+                        m.collided = true; collided181++; m.bzT = Mathf.Max(now, m.startT + 4f / Cfg.DataHz);
+                        var a = new Missile193 { castId = m.castId, aoeId = ++aoeSeq, fromK = m.k, pos = m.pos, spawnT = now, activateT = now + Cfg.Delay193 / Cfg.DataHz };
                         m193.Add(a); spawned193++;
                         Evt.Log(now, "cast#" + m.castId + " 181[" + m.k + "] collide -> 193 aoe#" + a.aoeId + " activate@" + a.activateT.ToString("F3"));
                     }
