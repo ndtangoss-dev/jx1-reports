@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace U003
 {
-    public class DmgNum { public GameObject go; public SpriteRenderer[] srs; public float t0; public Vector3 start; public float jitter; }
+    public class DmgNum { public GameObject go; public SpriteRenderer[] srs; public float t0; public Monster m; public int layer; }
 
     // U003 first playable: dieu phoi mo phong co dinh (Cfg.SimStep), quai, nhan vat, skill 375, damage number.
     public class Game : MonoBehaviour
@@ -393,24 +393,39 @@ namespace U003
         }
 
         // ---------- damage number (moi lan ap dung sat thuong = 1 so rieng) ----------
+        // Kieu goc (KNpc.cpp SetBlood + KgameWorld.cpp:9259): toi da 5 tang moi quai, so moi o tang 0 (thap nhat), so cu bi day len 1 tang;
+        // day qua tang 5 thi mat; chu so do font number_16_r, can giua, bay len rat nhe (tong 5 px). Khoang tang = chieu cao chu (~18 px, do tu anh client goc).
+        const int MaxNumLayers = 5; const float LayerSpacing = 18f, NumBaseHeight = 35f, NumRise = 5f;
         void SpawnDamageNumber(Monster m, int dmg, float now)
         {
+            dmgNumbersSpawned++;
+            for (int i = nums.Count - 1; i >= 0; i--)
+            {
+                if (nums[i].m != m) continue;
+                nums[i].layer++;
+                if (nums[i].layer >= MaxNumLayers) { Destroy(nums[i].go); nums.RemoveAt(i); }
+            }
             string txt = dmg.ToString();
-            var n = new DmgNum { go = new GameObject("dmg"), t0 = now, start = Mps.ToWorld(m.pos.x, m.pos.y) + new Vector3(0, 95f, 0) };
-            n.jitter = ((dmgNumbersSpawned % 5) - 2) * 7f;
+            var n = new DmgNum { go = new GameObject("dmg"), t0 = now, m = m, layer = 0 };
             n.srs = new SpriteRenderer[txt.Length];
-            float w = 0; foreach (char c in txt) w += digitSize[c - '0'].x + 1;
+            float w = 0; foreach (char c in txt) w += digitSize[c - '0'].x;
             float x = -w / 2f;
             for (int i = 0; i < txt.Length; i++)
             {
                 int d = txt[i] - '0';
                 var go = new GameObject("d"); go.transform.SetParent(n.go.transform, false);
                 var sr = go.AddComponent<SpriteRenderer>(); sr.sprite = digitSp[d]; sr.sortingOrder = MapView.OrderTop + 10;
-                go.transform.localPosition = new Vector3(x + digitSize[d].x / 2f, 0, 0); go.transform.localScale = Vector3.one * 1.6f;
-                x += digitSize[d].x + 1; n.srs[i] = sr;
+                go.transform.localPosition = new Vector3(x + digitSize[d].x / 2f, 0, 0);
+                x += digitSize[d].x; n.srs[i] = sr;
             }
-            n.go.transform.position = n.start + new Vector3(n.jitter, 0, 0);
-            nums.Add(n); dmgNumbersSpawned++;
+            PlaceNum(n, 0f);
+            nums.Add(n);
+        }
+
+        void PlaceNum(DmgNum n, float el)
+        {
+            var b = Mps.ToWorld(n.m.pos.x, n.m.pos.y);
+            n.go.transform.position = b + new Vector3(0, NumBaseHeight + n.layer * LayerSpacing + NumRise * Mathf.Clamp01(el / Cfg.DamageNumberSeconds), 0);
         }
 
         void UpdateNums()
@@ -419,9 +434,7 @@ namespace U003
             {
                 var n = nums[i]; float el = simTime - n.t0;
                 if (el >= Cfg.DamageNumberSeconds) { Destroy(n.go); nums.RemoveAt(i); continue; }
-                float k = el / Cfg.DamageNumberSeconds;
-                n.go.transform.position = n.start + new Vector3(n.jitter, 40f * k, 0);
-                var c = new Color(1, 1, 1, 1f - k * k); foreach (var sr in n.srs) sr.color = c;
+                PlaceNum(n, el);
             }
         }
         public int ActiveNums { get { return nums.Count; } }

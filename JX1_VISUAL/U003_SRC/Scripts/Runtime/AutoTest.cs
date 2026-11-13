@@ -88,6 +88,13 @@ namespace U003
             res.AppendLine("cast#" + sk.lastCastId + " spawned181=" + sk.spawned181 + " collided=" + sk.collided181 + " spawned193=" + sk.spawned193 + " aoeTicks=" + sk.aoeTicks + " damageEvents=" + sk.damageEvents + " totalDamage(skill)=" + sk.totalDamage);
             res.AppendLine("tong HP quai sau = " + hp1 + " (giam " + (hp0 - hp1) + ")  dmgNumbersSpawned=" + g.dmgNumbersSpawned + " totalDamageAll=" + g.totalDamageAll);
             res.AppendLine("sim " + g.simTime.ToString("F2") + "s steps " + g.simSteps + " fps(avg last) " + g.ui.fps.ToString("F1") + " mem(MB, GC) " + (System.GC.GetTotalMemory(false) / 1048576));
+            // canh o cho trong: dat quai gan nhat o khoang trong ben phai, cast lai, chup chuoi anh tia set
+            var mo = g.Nearest(g.pl.pos, 100000f);
+            mo.pos = g.pl.pos + new Vector2(240f, 100f);
+            yield return new WaitForSeconds(0.3f);
+            g.TryCast();
+            yield return new WaitForSeconds(0.9f);
+            for (int s = 0; s < 8; s++) { yield return Shot("g2_06_strike_" + s); yield return new WaitForSeconds(0.2f); }
             res.AppendLine("--- events ---"); res.Append(g.DumpEvents());
             File.WriteAllText(Path.Combine(dir, "autotest_result.txt"), res.ToString());
             Debug.Log("[U003][AUTOTEST] done");

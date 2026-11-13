@@ -6,7 +6,7 @@ namespace U003
     public class Missile181
     {
         public int castId, k; public Vector2 pos; public float spawnT, startT, endT; public int delayTicks;
-        public bool started, done; public GameObject go; public SpriteRenderer sr;
+        public bool started, done, collided, bzDone; public float bzT; public GameObject go; public SpriteRenderer sr;
     }
     public class Missile193
     {
@@ -78,7 +78,8 @@ namespace U003
                     }
                 Evt.Log(now, "cast#" + p.castId + " spawn 16x181");
             }
-            // 2) 181: bat dau, kiem tra va cham 5x5 o, het doi
+            // 2) 181: bat dau, kiem tra va cham 5x5 o. Chuoi sat thuong chay ngay khi va ccham, con HINH tia set van chay du 6 khung
+            //    (khung 2-5 cham dat) roi no Bz_dian3 luc tia set cham dat (startT + 4 tick = khung 2).
             for (int i = m181.Count - 1; i >= 0; i--)
             {
                 var m = m181[i];
@@ -91,21 +92,29 @@ namespace U003
                     m.sr.sortingOrder = g.map.OrderForY(m.pos.y) + 8;
                 }
                 if (!m.started) continue;
-                if (m.sr != null) m.sr.sprite = s181.Get(((int)((now - m.startT) * Cfg.LogicHz / 2f)) % s181.FrameCount);
-                // va cham: co quai song trong +-2 o
-                int cx = Mps.CellOf(m.pos.x), cy = Mps.CellOf(m.pos.y);
-                bool hit = false;
-                foreach (var mo in g.monsters)
-                    if (mo.Alive && Mathf.Abs(mo.CellX - cx) <= 2 && Mathf.Abs(mo.CellY - cy) <= 2) { hit = true; break; }
-                if (hit)
+                int fi = Mathf.Min((int)((now - m.startT) * Cfg.LogicHz / 2f), s181.FrameCount - 1);   // AnimFile2 "6,1,2": 2 tick/khung
+                if (m.sr != null) m.sr.sprite = s181.Get(fi);
+                if (!m.collided)
                 {
-                    collided181++; m.done = true;
-                    SpawnBz(now, m.pos);
-                    var a = new Missile193 { castId = m.castId, aoeId = ++aoeSeq, fromK = m.k, pos = m.pos, spawnT = now, activateT = now + Cfg.Delay193 / Cfg.LogicHz };
-                    m193.Add(a); spawned193++;
-                    Evt.Log(now, "cast#" + m.castId + " 181[" + m.k + "] collide -> 193 aoe#" + a.aoeId + " activate@" + a.activateT.ToString("F3"));
+                    int cx = Mps.CellOf(m.pos.x), cy = Mps.CellOf(m.pos.y);
+                    bool hit = false;
+                    foreach (var mo in g.monsters)
+                        if (mo.Alive && Mathf.Abs(mo.CellX - cx) <= 2 && Mathf.Abs(mo.CellY - cy) <= 2) { hit = true; break; }
+                    if (hit)
+                    {
+                        m.collided = true; collided181++; m.bzT = Mathf.Max(now, m.startT + 4f / Cfg.LogicHz);
+                        var a = new Missile193 { castId = m.castId, aoeId = ++aoeSeq, fromK = m.k, pos = m.pos, spawnT = now, activateT = now + Cfg.Delay193 / Cfg.LogicHz };
+                        m193.Add(a); spawned193++;
+                        Evt.Log(now, "cast#" + m.castId + " 181[" + m.k + "] collide -> 193 aoe#" + a.aoeId + " activate@" + a.activateT.ToString("F3"));
+                    }
                 }
-                else if (now >= m.endT) { m.done = true; Evt.Log(now, "cast#" + m.castId + " 181[" + m.k + "] expire"); }
+                if (m.collided && !m.bzDone && now >= m.bzT) { m.bzDone = true; SpawnBz(now, m.pos); }
+                if (now >= m.endT)
+                {
+                    if (!m.collided) Evt.Log(now, "cast#" + m.castId + " 181[" + m.k + "] expire");
+                    if (m.collided && !m.bzDone) { m.bzDone = true; SpawnBz(now, m.pos); }
+                    m.done = true;
+                }
             }
             // 3) 193 / AOE
             for (int i = m193.Count - 1; i >= 0; i--)
@@ -122,7 +131,7 @@ namespace U003
                 float el = now - a.activateT;
                 a.sr.sprite = s193.Get(Mathf.Clamp((int)(el / Cfg.AoeTick2 * s193.FrameCount), 0, s193.FrameCount - 1));
                 if (!a.t1Done && el >= Cfg.AoeTick1) { a.t1Done = true; AoeTick(now, a, 1); }
-                if (!a.t2Done && el >= Cfg.AoeTick2) { a.t2Done = true; AoeTick(now, a, 2); a.done = true; }
+                if (!a.t2Done && el >= Cfg.AoeTick2) { a.t2Done = true; AoeTick(now, a, 2); a.done = true; SpawnBz(now, a.pos); }   // no Bz_dian3 khi 193 het doi (goc, BC 55)
             }
             // 4) hieu ung phu (no)
             for (int i = fxs.Count - 1; i >= 0; i--)
