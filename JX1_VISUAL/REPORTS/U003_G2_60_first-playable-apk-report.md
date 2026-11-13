@@ -7,7 +7,7 @@ Vertical slice: map 45, 15 quái ani001 (HP 1.000, hồi sinh 2 s), nhân vật 
 
 ## 2. Đã làm
 - **Quái:** 15 điểm spawn cố định (lưới 5×3 quanh tâm vùng chơi, lệch cố định seed 12345, cách ~520×760 MPS); tối đa 15 sống; chết → hồi sinh sau 2 s tại điểm spawn; thanh HP trên đầu.
-- **Nhân vật:** joystick (ảnh gốc `yaoganz/x`), 8 hướng, HP 500, nút AUTO bật/tắt (mặc định bật). Tự đánh: tìm quái gần nhất trong 650 px, dùng skill khi sẵn sàng và trong 320 px, ngược lại tiến tới đánh thường (30 dmg/1 s, Hit 65% theo công thức server, BC 58 mục A2). Quái đuổi trong 230 px, đánh 8 dmg/1,5 s (**các số này là giả định chưa được duyệt**, BC 54 mục G còn mở).
+- **Nhân vật:** joystick (ảnh gốc `yaoganz/x`), 8 hướng, HP 500, nút AUTO bật/tắt (mặc định bật). Tự đánh: tìm quái gần nhất trong 650 px, dùng skill khi sẵn sàng và trong 320 px, ngược lại tiến tới đánh thường (30 dmg/1 s, Hit 65% theo công thức server, BC 58 mục A2). Quái tự tìm và đuổi nhân vật từ mọi khoảng cách, đánh 8 dmg/1,5 s (**các số này là giả định chưa được duyệt**, BC 54 mục G còn mở).
 - **Skill Lôi Động Cửu Thiên** (`Skill375.cs`): nút + icon gốc, cast 1,0 s, cooldown 1,0 s tính từ lúc bắt đầu cast, mỗi lần có `castId`, mỗi AOE có `aoeId`. Tại 60% cast (0,6 s – áp dụng quy tắc `IsReachFrame(60)` của gốc, **giả định** cho cast 1 s) sinh 16 đạn 181 lưới 4×4 ô 32×32 MPS quanh mục tiêu; độ trễ `2+5k+(+rand(5) | −rand(2))` tick, 18 tick/s, seed cố định ở chế độ test; 181 đứng yên, sống 12 tick, va chạm khi có quái trong ±2 ô → nổ Bz_dian3 + sinh 193 tại vị trí 181 sau 5 tick; 181 **không gây damage**; mỗi 193 là AOE độc lập vùng 3×3 ô, 2 tick 20 dmg tại +500 ms/+1000 ms từ lúc kích hoạt, cộng dồn khi chồng lấn; mỗi lần áp dụng sinh một damage number riêng (font `number_16_r` gốc, bay lên 40 px, sống 1 s).
 - **Mô phỏng** bước cố định 1/60 s, không phụ thuộc FPS render.
 - **Overlay (G2.4):** FPS, tick 18 Hz, quái sống/chết/hồi sinh, HP người và quái gần nhất, tổng damage, số cast/castId, số 181/193/AOE, damage đang bay, tọa độ MPS/ô; nút DBG tắt overlay.
@@ -44,10 +44,10 @@ Windows (960×540): 52–60 FPS, GC ~7 MB. **Android chưa đo.**
 
 ## 11. APK
 - Đường dẫn: `D:\JX1_U003_build\android\JX1_U003_debug.apk` (ngoài repo)
-- Dung lượng: 30.604.847 byte
-- SHA256: `dfbc9020097e62bf17ea62f4ff45284d48698ce4c9a905ea691ab551ab9ae808`
+- Dung lượng: 31.260.937 byte
+- SHA256: `b34c4bcdfe17c2bf6b8146b1f84a4efb5389bab484798ea1af7b253167aa92d0`
 - Cấu hình: Unity 6000.2.14f1, IL2CPP, ARM64, minSdk 24, Development build, `com.u003.jx1proto`, ký bằng keystore debug.
-- Lưu ý: APK dựng trước khi tôi chỉnh kịch bản `AutoTest` (chỉ chạy khi có biến môi trường, không ảnh hưởng chơi).
+- Bản này: quái tự tìm nhân vật trên toàn bản đồ (bán kính phát hiện không giới hạn), theo yêu cầu người dùng. Bản Windows chưa chạy lại sau thay đổi này.
 
 ## 12. Giới hạn/rủi ro
 Chưa biết APK chạy trên điện thoại (RAM, FPS: ~6.800 sprite, atlas RGBA32 không nén); IMGUI trên màn hình lớn; Y-sort thay KIpoTree; giả định chiến đấu chưa duyệt; dữ liệu asset gốc nằm trong APK (chỉ để dùng nội bộ, không phát tán).

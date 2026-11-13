@@ -26,7 +26,7 @@ namespace U003
         static Sprite whiteSp; Sprite[] digitSp = new Sprite[10]; Vector2[] digitSize = new Vector2[10];
         readonly List<DmgNum> nums = new List<DmgNum>(); public int dmgNumbersSpawned;
         public Vector2[] spawnPoints = new Vector2[15];
-        const float MonsterSpeed = 70f, PlayerSpeed = 140f, AggroPx = 230f, AttackRangePx = 52f, PlayerRangePx = 70f, SkillRangePx = 320f;
+        const float MonsterSpeed = 70f, PlayerSpeed = 140f, AggroPx = 100000f /* quai tu tim nhan vat tren toan ban do */, AttackRangePx = 52f, PlayerRangePx = 70f, SkillRangePx = 320f;
 
         static Sprite White()
         {
