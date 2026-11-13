@@ -322,3 +322,12 @@ Ghi ngắn theo mục, cập nhật trong lúc làm. Không ghi mật khẩu và
 - `DmgInterval` ở server là khoảng chặn gây sát thương mỗi missile (`KMissle.cpp:1788-1796` server).
 - Cooldown gốc 375: `TimePerCast=0` nên không có độ dài cooldown; cơ chế UI cooldown vẫn có (BC 53). Cooldown 1 s của U003 là luật thiết kế riêng.
 - Bảng NpcS/Skills trích nằm ở file tên `38ebcb17__script_skill.bin` (NpcS) và `ec1243ff__script_skill.bin` (Skills): tên file extract không phản ánh nội dung, kiểm cột header trước khi dùng.
+
+## U003 G0.7 (báo cáo 58)
+- `Attrib` trong bảng Skills là phân loại kỹ năng (`m_nAttrib`), KHÔNG chứa sát thương. Sát thương nằm ở `LvlSetting/LvlData` (`lightingdamage_v`...) trong Lua cấp độ (`kunlun.lua`); cả 375 lẫn 387 đều có. Đừng suy nguồn sát thương từ tên cột; lần theo hàm tiêu thụ (`CalcDamage`).
+- Missile mang dữ liệu sát thương của skill sinh ra nó: 181 = dữ liệu 375, 193 = dữ liệu 387. Gốc: sát thương tức thì khi va chạm, mỗi missile chạm tối đa một lần (`ColVanish`); không có tick 500/1000 ms (đó là luật U003).
+- `nWaitTime` của lần cast người chơi mặc định 0; độ trễ 16 đạn = `WaitTime + k*Data + (+rand(Data) | -rand(Data/2))` tính theo tick logic. Hz client chưa xác minh, không quy ra giây.
+- Tên hàm trong báo cáo cũ có thể nhầm biến thể: `ccgetTxtData` (NPC), `_g`, `_p` khác nhau; kiểm lại tên hàm trước khi trích dòng.
+- Anchor NPC: `REF_SPOT` + header Center=(0,0) + Width>160 ⇒ trừ (160,192); khớp hình học ani001.
+- Toạ độ buildin trong `Region_C.dat` là MPS tuyệt đối, không phải cục bộ vùng. Map 45 thiếu 18/140 Region_C và không có Tree.
+- Bảng tên action quái thường (`npc动作表.txt`): chỉ số 7 = Wound, 8 = Die, khớp enum `CLIENTACTION`.
