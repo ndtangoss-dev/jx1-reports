@@ -331,3 +331,11 @@ Ghi ngắn theo mục, cập nhật trong lúc làm. Không ghi mật khẩu và
 - Anchor NPC: `REF_SPOT` + header Center=(0,0) + Width>160 ⇒ trừ (160,192); khớp hình học ani001.
 - Toạ độ buildin trong `Region_C.dat` là MPS tuyệt đối, không phải cục bộ vùng. Map 45 thiếu 18/140 Region_C và không có Tree.
 - Bảng tên action quái thường (`npc动作表.txt`): chỉ số 7 = Wound, 8 = Die, khớp enum `CLIENTACTION`.
+
+## U003 G1/G2 (báo cáo 59, 60)
+- Entry SPR trong PAK có cờ 0x10000000 và dữ liệu bắt đầu bằng `SPR\0` là nén theo từng khung (TYPE_FRAME): header+palette thô, bảng (csize,lsize), khung UCL riêng. `pak_extract.extract` báo `lookbehind overrun`; phải tự ghép lại (đã làm trong Tools của project U003).
+- Đạn: `AnimFile2 "6,1,2"` = 6 khung, 1 hướng, interval 2 tick logic mỗi khung; không dùng `interval` ms trong header SPR.
+- Hiệu ứng skill neo theo Center của header (181: 196,345): tia sét rơi xuống từ trên cao so với ô sinh; đừng dùng neo (160,192) cho chúng.
+- Sửa file Python/Shell bằng heredoc trong Git Bash làm mất `\` và có thể chèn byte NUL; dùng Write/Edit.
+- Test skill phải cố định AI quái, nếu không mục tiêu chạy khỏi ô 181 đứng yên và không có va chạm.
+- Unity batchmode: Start-Process -Wait có thể treo sau khi build xong; dùng WaitForExit có timeout và đọc log.
