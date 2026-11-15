@@ -53,6 +53,39 @@
       ],
       "approved_by": "ndtangoss-dev",
       "approved_at": "2026-11-15T04:42:30Z"
+    },
+    {
+      "task_id": "DISPATCHER-RECOVERY-20261115-01",
+      "status": "APPROVED",
+      "scope": "Repair local JX1 Task Dispatcher polling, non-interactive safe autonomy, popup suppression and read-only access design for AMOLX external source. No Main VM or production changes.",
+      "approved_commit": "1a83a896097743b884add6e466c69cd054db3f19",
+      "prompt_path": "PROMPTS/DISPATCHER-RECOVERY-20261115.md",
+      "prompt_sha": "23f98fff2bc10208cbf9c99c0bbe97410829980b",
+      "allowed_paths": [
+        "docs-analysis/scripts/jx1_task_dispatcher.py",
+        "docs-analysis/scripts/install_jx1_task_dispatcher.ps1",
+        "docs-analysis/scripts/status_jx1_task_dispatcher.ps1",
+        "docs-analysis/scripts/enable_jx1_task_dispatcher.ps1",
+        "docs-analysis/scripts/disable_jx1_task_dispatcher.ps1",
+        "docs-analysis/scripts/test_jx1_task_dispatcher.py",
+        "TEST_RESULTS/DISPATCHER-RECOVERY-20261115.md"
+      ],
+      "references": [
+        {
+          "path": "WORKFLOW_JX1.md",
+          "sha": "81cb88d2f24e5fe5cc75aa1a7faad103fb27d9e4"
+        },
+        {
+          "path": "TEST_RESULTS/72-jx1-task-dispatcher-va-font.md",
+          "sha": "92e284b1589d45b571f25309db97f6c5ce12e915"
+        },
+        {
+          "path": "PROMPTS/AMOLX-01-client-compatibility-2026-11-15.md",
+          "sha": "1c80574c508996b9d27c8a5c6cd1ad4cfbe630af"
+        }
+      ],
+      "approved_by": "ndtangoss-dev",
+      "approved_at": "2026-11-15T05:00:00Z"
     }
   ]
 }
