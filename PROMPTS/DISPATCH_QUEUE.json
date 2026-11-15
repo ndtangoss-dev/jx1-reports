@@ -29,7 +29,7 @@
     },
     {
       "task_id": "AMOLX-20261115-01",
-      "status": "APPROVED",
+      "status": "BLOCKED",
       "scope": "Read-only audit of AMOLX client source at C:\\JX1\\jx1client-amol-main\\jx1client-amol-main; assess buildability and compatibility with current JX1 server. No source modifications; report only.",
       "approved_commit": "19f0fa4a8d33f364ced2f8058d8fd3bfb0f149f0",
       "prompt_path": "PROMPTS/AMOLX-01-client-compatibility-2026-11-15.md",
@@ -48,15 +48,16 @@
         },
         {
           "path": "TEST_RESULTS/72-jx1-task-dispatcher-va-font.md",
-          "sha": "92e284b1589d45b571f25309db97f6c5ce12e915"
+          "sha": "15e03ffeca49d8794532035c3eaede24e4fbfeae"
         }
       ],
       "approved_by": "ndtangoss-dev",
-      "approved_at": "2026-11-15T04:42:30Z"
+      "approved_at": "2026-11-15T04:42:30Z",
+      "blocked_reason": "Prompt cũ trỏ nhầm amol thay vì axmol; đã sửa đường dẫn cục bộ và kiểm tra quyền đọc riêng, nhưng không chạy audit trong task recovery. Cần Task ID mới được duyệt để thực hiện audit sau."
     },
     {
       "task_id": "DISPATCHER-RECOVERY-20261115-01",
-      "status": "APPROVED",
+      "status": "BLOCKED",
       "scope": "Repair local JX1 Task Dispatcher polling, non-interactive safe autonomy, popup suppression and read-only access design for AMOLX external source. No Main VM or production changes.",
       "approved_commit": "1a83a896097743b884add6e466c69cd054db3f19",
       "prompt_path": "PROMPTS/DISPATCHER-RECOVERY-20261115.md",
@@ -77,7 +78,7 @@
         },
         {
           "path": "TEST_RESULTS/72-jx1-task-dispatcher-va-font.md",
-          "sha": "92e284b1589d45b571f25309db97f6c5ce12e915"
+          "sha": "15e03ffeca49d8794532035c3eaede24e4fbfeae"
         },
         {
           "path": "PROMPTS/AMOLX-01-client-compatibility-2026-11-15.md",
@@ -85,7 +86,24 @@
         }
       ],
       "approved_by": "ndtangoss-dev",
-      "approved_at": "2026-11-15T05:00:00Z"
+      "approved_at": "2026-11-15T05:00:00Z",
+      "blocked_reason": "Đang hoàn thiện sửa lỗi và kiểm thử recovery; sẽ cập nhật COMPLETED sau khi báo cáo được lưu và Dispatcher được khởi động lại."
+    },
+    {
+      "task_id": "LIVEFIX-RECOVERY-20261115-01",
+      "status": "APPROVED",
+      "scope": "Safe live end-to-end dispatcher fixture only; create exactly one text artifact and required report under the two listed paths. No source, build, script, network, VM, or server changes.",
+      "approved_commit": "035439f1c3b4d863c78fb6b3260732f96fca86d6",
+      "prompt_path": "PROMPTS/TEST_DISPATCHER_RECOVERY_E2E_2026-11-15.md",
+      "prompt_sha": "3069bc92306ffa5372ab9ed418420cacae194f09",
+      "allowed_paths": [
+        "docs-analysis/out/jx1-dispatcher-fixture-20261115/DISPATCHER_RECOVERY_E2E_OK.txt",
+        "TEST_RESULTS/dispatcher-livefix-recovery-20261115-01.md"
+      ],
+      "references": [],
+      "approved_by": "ndtangoss-dev",
+      "approved_at": "2026-11-15T08:37:00Z",
+      "result_report": "TEST_RESULTS/dispatcher-livefix-recovery-20261115-01.md"
     }
   ]
 }
