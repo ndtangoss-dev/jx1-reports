@@ -26,6 +26,33 @@
       "approved_at": "2026-11-15T03:49:19.858Z",
       "completed_at": "2026-11-15T04:10:59.339Z",
       "result_report": "TEST_RESULTS/dispatcher-livefix-20261115-dispatcher-01.md"
+    },
+    {
+      "task_id": "AMOLX-20261115-01",
+      "status": "APPROVED",
+      "scope": "Read-only audit of AMOLX client source at C:\\JX1\\jx1client-amol-main\\jx1client-amol-main; assess buildability and compatibility with current JX1 server. No source modifications; report only.",
+      "approved_commit": "19f0fa4a8d33f364ced2f8058d8fd3bfb0f149f0",
+      "prompt_path": "PROMPTS/AMOLX-01-client-compatibility-2026-11-15.md",
+      "prompt_sha": "1c80574c508996b9d27c8a5c6cd1ad4cfbe630af",
+      "allowed_paths": [
+        "TEST_RESULTS/AMOLX-01-client-compatibility.md"
+      ],
+      "references": [
+        {
+          "path": "WORKFLOW_JX1.md",
+          "sha": "81cb88d2f24e5fe5cc75aa1a7faad103fb27d9e4"
+        },
+        {
+          "path": "00_LATEST_STATUS.md",
+          "sha": "992f9e81b30e6b3a9673f68d105ef8a9d18881cc"
+        },
+        {
+          "path": "TEST_RESULTS/72-jx1-task-dispatcher-va-font.md",
+          "sha": "92e284b1589d45b571f25309db97f6c5ce12e915"
+        }
+      ],
+      "approved_by": "ndtangoss-dev",
+      "approved_at": "2026-11-15T04:42:30Z"
     }
   ]
 }
