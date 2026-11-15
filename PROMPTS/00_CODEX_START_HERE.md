@@ -4,27 +4,32 @@ Repository: `ndtangoss-dev/jx1-reports`
 Quy trình chính: [WORKFLOW_JX1.md](../WORKFLOW_JX1.md)
 Trạng thái dự án: [00_LATEST_STATUS.md](../00_LATEST_STATUS.md)
 
-## Khi người dùng kích hoạt hoặc bắt đầu phiên làm việc
+## Khi Dispatcher nhận task hoặc khi mở phiên thủ công
 
-1. Xác minh trạng thái phiên bằng `/status`: model, provider, reasoning effort và working directory.
-   - Mặc định dự kiến cho phiên JX1: `gpt-6.1-sol`, provider `xingchi`, reasoning `max`.
-   - Nếu sai hoặc không xác minh được, báo **BỊ CHẶN**; không âm thầm dùng provider/model khác.
-2. Đọc đầy đủ `WORKFLOW_JX1.md` và `00_LATEST_STATUS.md`.
-3. Kiểm tra `PROMPTS/` và các chỉ thị bắt đầu để tìm nhiệm vụ có trạng thái **ĐƯỢC DUYỆT / BẮT ĐẦU THỰC HIỆN**.
-4. Đọc đầy đủ prompt nhiệm vụ được chỉ định và mọi tài liệu được prompt tham chiếu. Không tự thực hiện bản nháp/chưa được duyệt.
-5. Xác minh đúng source, branch, working directory, công cụ build/test, emulator/ADB và VM thử nghiệm trước khi thao tác. **Không can thiệp Main VM.**
-6. Kiểm tra trạng thái Git (branch, working tree, thay đổi chưa commit) trước khi sửa; không ghi đè thay đổi có sẵn của người dùng.
-7. Xác định backup/rollback phù hợp trước thay đổi có rủi ro.
-8. Xác nhận ngắn gọn nhiệm vụ, phạm vi, model/provider, môi trường và các bước đầu tiên; bắt đầu thực hiện mà không hỏi lại các bước thông thường đã được duyệt.
-9. Nếu không có nhiệm vụ đã duyệt, báo rõ không có nhiệm vụ mới và không tự chọn một bản nháp để chạy.
+1. Dispatcher dùng `codex exec` với model `gpt-6.1-sol`, provider `xingchi`, reasoning `max`; chạy preflight chỉ đọc trước prompt. Nếu preflight không thành công/không xác minh được cấu hình thì ghi **BỊ CHẶN**.
+2. Đọc đầy đủ `WORKFLOW_JX1.md`, `00_LATEST_STATUS.md`, mục tương ứng trong `PROMPTS/DISPATCH_QUEUE.json`, prompt và toàn bộ tài liệu tham chiếu được ghim SHA.
+3. Chỉ nhận manifest có trạng thái `APPROVED` hoặc `ĐƯỢC DUYỆT`; bỏ qua prompt cũ đã có trước lần khởi tạo đầu.
+4. Kiểm tra Task ID, commit/SHA, working directory, branch, trạng thái Git, môi trường build/test và quyền. Không ghi đè thay đổi có sẵn của người dùng; **không can thiệp Main VM**.
+5. Chạy một task tại một thời điểm với sandbox `workspace-write` và approval policy `on-request`. Không bỏ qua sandbox/phê duyệt. Nếu có yêu cầu phê duyệt tương tác, dừng và ghi **BỊ CHẶN**.
+6. Tạo báo cáo tiếng Việt tại `docs-analysis/reports/dispatcher-<task_id>.md`; hoàn thành, lỗi hoặc chặn đều phải có trạng thái rõ ràng. Task ID đã bắt đầu không được dispatch lại.
+7. Nếu task đang chạy bị gián đoạn, chỉ resume session ID đã lưu; nếu không thể phục hồi thì **BỊ CHẶN**, không chạy prompt lần nữa.
+8. Nếu không có task mới đã duyệt trong manifest, chỉ ghi trạng thái chờ; không tự chọn prompt khác.
 
-## Lệnh kích hoạt mặc định
+## Dispatcher và kích hoạt thủ công
 
-Người dùng mở phiên Codex CLI và gửi:
+Khi Task Scheduler `JX1-Task-Dispatcher` đang bật, người dùng không cần mở terminal hay gửi prompt thủ công. Dispatcher polling `PROMPTS/DISPATCH_QUEUE.json` mỗi 60 giây.
 
-> Đọc `PROMPTS/00_CODEX_START_HERE.md` trong `ndtangoss-dev/jx1-reports`, kiểm tra nhiệm vụ mới đã được duyệt và thực hiện theo quy trình.
+Khi Dispatcher tắt hoặc cần xử lý sự cố, người dùng có thể mở phiên Codex CLI thủ công và gửi:
 
-GitHub không tự động đánh thức phiên Codex CLI. Không được giả định rằng chỉ vì prompt đã được push lên GitHub thì Codex đã nhận hoặc chạy.
+> Đọc `PROMPTS/00_CODEX_START_HERE.md` trong `ndtangoss-dev/jx1-reports`, kiểm tra `PROMPTS/DISPATCH_QUEUE.json` và thực hiện đúng task đã duyệt.
+
+Chỉ báo Codex đã nhận/chạy sau khi có state/log phù hợp; GitHub commit đơn thuần không chứng minh task đã được thực thi.
+
+### Manifest task được duyệt
+
+Mỗi mục trong `PROMPTS/DISPATCH_QUEUE.json` phải có Task ID duy nhất, trạng thái `APPROVED` hoặc `ĐƯỢC DUYỆT`, phạm vi, commit ghim, blob SHA prompt, `allowed_paths` và danh sách tài liệu tham chiếu kèm SHA. Prompt tồn tại ngoài manifest không được chạy. Khi nội dung đã duyệt thay đổi, phát hành Task ID mới.
+
+Trạng thái local: `QUEUED`, `RUNNING`, `COMPLETED`, `BLOCKED`, `FAILED`. File state, status và log nằm tại `%LOCALAPPDATA%\JX1TaskDispatcher`; không chứa token/credential. Git Credential Manager chỉ được dùng khi push báo cáo và không có credential thì báo **BỊ CHẶN – CHƯA PUSH**.
 
 ## Trong khi thực hiện
 
