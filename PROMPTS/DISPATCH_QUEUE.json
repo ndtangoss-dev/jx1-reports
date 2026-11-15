@@ -1,0 +1,5 @@
+{
+  "schema_version": 1,
+  "description": "Approved task queue for JX1 Task Dispatcher. Add an entry only after explicit user approval; an empty list dispatches no tasks.",
+  "tasks": []
+}
