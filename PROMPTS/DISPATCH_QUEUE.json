@@ -4,7 +4,7 @@
   "tasks": [
     {
       "task_id": "LIVEFIX-20261115-DISPATCHER-01",
-      "status": "APPROVED",
+      "status": "COMPLETED",
       "scope": "End-to-end dispatcher fixture only; create one text file in the listed fixture directory and a required local report.",
       "approved_commit": "806ff7e88b5ec165a4f1a2faf3be08a223818dc1",
       "prompt_path": "PROMPTS/TEST_DISPATCHER_END_TO_END_2026-11-15.md",
@@ -23,7 +23,9 @@
         }
       ],
       "approved_by": "ndtangoss-dev",
-      "approved_at": "2026-11-15T03:49:19.858Z"
+      "approved_at": "2026-11-15T03:49:19.858Z",
+      "completed_at": "2026-11-15T04:10:59.339Z",
+      "result_report": "TEST_RESULTS/dispatcher-livefix-20261115-dispatcher-01.md"
     }
   ]
 }
