@@ -1,23 +1,33 @@
-# WORKFLOW — Quy trình thống nhất
+# WORKFLOW — QUY TRÌNH ĐIỀU PHỐI JX1
 
-1. Chủ dự án nêu mục tiêu; CTRL tự phân loại, chọn một Primary Owner và tạo mã task (ENG-001, VIS-001, GAME-001, SRV-001, QA-001, AST-001, REL-001, SEC-001).
-2. Phòng chuyên môn nghiên cứu/đề xuất; nếu chưa rõ, hỏi một câu trọng yếu. Không tự giao Claude.
-3. CTRL kiểm tra xung đột, phạm vi, rủi ro và điều kiện duyệt.
-4. Khi có nhiều task hoặc vùng code dùng chung, CTRL bắt buộc lập đợt tích hợp theo INTEGRATION_PLAN.md: tổng hợp yêu cầu, kiểm tra baseline, lập bản đồ phụ thuộc/xung đột, sắp thứ tự và tạo gói thực thi thống nhất.
-5. Chủ dự án phê duyệt thay đổi cần duyệt. CTRL đưa task vào TASKS của phòng và chỉ chuyển gói thực thi sang APPROVED sau khi đủ điều kiện.
-6. Claude Code là coder dùng chung; chỉ thực thi một gói đã duyệt, tuần tự từng bước trên branch/worktree tích hợp riêng, có checkpoint/commit và test sau từng bước. Không nhận lệnh code chen ngang từ các phòng.
-7. QA/phòng độc lập kiểm tra; chạy test mục tiêu, tích hợp và hồi quy theo kế hoạch.
-8. CTRL phân phối báo cáo theo từng task/phòng; cập nhật MASTER_TASK_BOARD, DECISION_LOG, BLOCKERS_AND_RISKS và DAILY_WORK_LOG.
+Đối với JX1, quy trình thực thi hiện hành là **Codex Direct CLI**, theo [WORKFLOW_JX1.md](../WORKFLOW_JX1.md) và [CODEX_DIRECT_CLI_RULES.md](../PROMPTS/CODEX_DIRECT_CLI_RULES.md). Tài liệu này thay thế quy định cũ giao Claude Code làm coder dùng chung cho JX1.
 
-## Trạng thái
-INTAKE · PROPOSED · APPROVED · IN_PROGRESS · BLOCKED · REVIEW · DONE_VERIFIED · DONE_UNVERIFIED · NOT_DONE · DEFERRED.
+1. Người dùng nêu mục tiêu và quyết định ưu tiên.
+2. CTRL/ChatGPT xác định một Primary Owner, phạm vi, rủi ro và tiêu chí nghiệm thu.
+3. ChatGPT kiểm tra đúng các báo cáo nền liên quan; không yêu cầu kiểm kê/lặp lại việc đã hoàn thành.
+4. ChatGPT soạn một prompt có đường dẫn cụ thể, đầu ra duy nhất, quyền, kiểm chứng thiết yếu và điều kiện dừng; người dùng duyệt.
+5. ChatGPT đưa prompt lên GitHub và cung cấp commit SHA cùng chỉ thị kích hoạt ngắn.
+6. Người dùng kích hoạt Codex CLI trực tiếp. Một task, một executor, không chạy Dispatcher/queue trong quy trình hiện tại.
+7. Codex làm trong phạm vi, tạo báo cáo cuối, kiểm tra và commit/push báo cáo nếu có quyền.
+8. ChatGPT đọc báo cáo, phản biện bằng chứng, cập nhật quyết định và đề xuất bước tiếp theo.
 
-## Độ tin cậy
-VERIFIED = có kiểm chứng trực tiếp; PROBABLE = có cơ sở nhưng chưa đủ; UNKNOWN = chưa rõ; BLOCKED = bị chặn; NOT TESTED = chưa chạy test.
+## Vai trò
+
+- CTRL: điều phối tổng thể và kiểm soát phạm vi.
+- Phòng chuyên môn: phân tích/đề xuất trong lĩnh vực phụ trách.
+- Codex CLI: executor JX1 mặc định khi được kích hoạt trực tiếp.
+- Claude hoặc agent khác: chỉ QA/review/nhiệm vụ riêng khi được giao rõ; không sửa chồng chéo.
+
+## Trạng thái và độ tin cậy
+
+INTAKE · PROPOSED · APPROVED · IN_PROGRESS · BLOCKED · REVIEW · DONE · PARTIAL · FAILED · DEFERRED.
+
+VERIFIED = có bằng chứng trực tiếp; PROBABLE = có cơ sở nhưng chưa đủ; UNKNOWN = chưa rõ; NOT TESTED = chưa chạy; BLOCKED = bị chặn.
 
 ## Chống chồng chéo và vòng lặp
-- Một task có một Primary Owner. Một vùng source chỉ một executor sửa tại một thời điểm.
-- Không code trực tiếp trên main; mỗi đợt có baseline và branch/worktree riêng. Không reset/clean/ghi đè thay đổi chưa commit của người dùng.
-- Mỗi lỗi tối đa 2 vòng sửa có kiểm soát trong một đợt. Sau đó dừng và báo CTRL, không lặp vô hạn.
-- Phát hiện xung đột: dừng phần thay đổi liên quan, không ghi đè; báo CTRL đánh giá.
-- Mọi báo cáo nêu task ID, phạm vi, file, commit, phương pháp, test/bằng chứng, kết quả, phần chưa làm, blocker và đề xuất tiếp theo.
+
+- Một task có một Primary Owner và một executor.
+- Không sửa trực tiếp main nếu prompt không cho phép; không reset/clean/ghi đè thay đổi người dùng.
+- Mỗi lỗi tối đa 2 vòng sửa có kiểm soát; sau đó dừng, báo blocker và đề xuất quyết định.
+- Không lặp kiểm tra chuẩn bị, không đọc lại toàn bộ tài liệu và không mở rộng nghiên cứu vô hạn.
+- Báo cáo nêu task, phạm vi, file/symbol/line, kiểm tra/bằng chứng, kết quả, phần chưa làm và blocker.
