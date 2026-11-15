@@ -20,7 +20,7 @@
 - Không tuyên bố Codex đã nhận/chạy lệnh nếu chưa có bằng chứng.
 
 ### Codex CLI – Agent thực thi kỹ thuật chính
-- Là agent thực thi mặc định cho JX1; chạy trong terminal tương tác trên máy Windows.
+- Là agent thực thi mặc định cho JX1; khi Dispatcher bật, nhận việc bằng `codex exec` không tương tác trên Windows. TUI là phương án thủ công khi Dispatcher tắt.
 - Đọc chỉ thị, workflow, trạng thái mới nhất và prompt đã duyệt từ GitHub.
 - Xác minh đúng repo, working directory, model/provider/session và quyền trước khi thao tác.
 - Tự kiểm tra source, môi trường, build tools, emulator/ADB và VM trong phạm vi được cấp.
@@ -36,7 +36,7 @@
 ## 2. Model và phiên làm việc Codex
 
 - Phiên Codex CLI hiện được dự kiến sử dụng Xingchi provider, model `gpt-6.1-sol`, reasoning effort `max`.
-- Đây là cấu hình phiên đã được kiểm tra gọi API thực tế; mỗi phiên mới vẫn phải xác minh bằng `/status`.
+- Đây là cấu hình phiên đã được kiểm tra gọi API thực tế. Phiên TUI được xác minh bằng `/status`; Dispatcher truyền tường minh ba giá trị và chạy preflight chỉ đọc trước mỗi task.
 - Trước khi thực thi nhiệm vụ JX1, Codex phải xác nhận:
   - Working directory đúng repo/source được giao.
   - Model/provider/effort thực tế đúng yêu cầu nhiệm vụ (mặc định: `gpt-6.1-sol` / `xingchi` / `max`).
@@ -50,7 +50,7 @@
 2. ChatGPT phân tích, xác định phạm vi, rủi ro, phương án và tiêu chí nghiệm thu.
 3. ChatGPT soạn prompt; người dùng duyệt trước khi giao nhiệm vụ, trừ các thao tác đã được ủy quyền rõ.
 4. ChatGPT tạo/cập nhật prompt và chỉ thị trên repository báo cáo.
-5. Người dùng kích hoạt Codex CLI bằng lệnh ngắn theo `PROMPTS/00_CODEX_START_HERE.md`.
+5. Khi Dispatcher đã cài, nó tự nhận task từ manifest mỗi 60 giây. Nếu Dispatcher tắt, người dùng có thể kích hoạt CLI thủ công theo `PROMPTS/00_CODEX_START_HERE.md`.
 6. Codex đọc workflow, trạng thái mới nhất, chỉ thị bắt đầu và đầy đủ prompt nhiệm vụ đã được duyệt.
 7. Codex xác minh phiên, source, môi trường, backup và quyền; sau đó xác nhận nhiệm vụ đã nhận rồi thực hiện trong phạm vi đã duyệt.
 8. Codex tự kiểm thử/tái hiện, chạy hồi quy và thu thập bằng chứng phù hợp. Nếu có agent QA độc lập được giao riêng, phải ghi rõ agent và bằng chứng; không giả vờ đã giao subagent khi không có.
@@ -114,22 +114,32 @@ Build thành công không đồng nghĩa nhiệm vụ hoàn thành. Báo cáo ph
 - Nếu Computer Use bị policy chặn, chuyển sang terminal/tool thực thi lệnh được cấp quyền; không tìm cách vượt chính sách.
 - ChatGPT không nhìn thấy phiên Codex CLI đang chạy trên máy người dùng nếu không có báo cáo/kết nối tương ứng; phải phân biệt rõ đã đăng prompt, Codex đã tải prompt và Codex đã thực thi.
 
-## 8. Cơ chế nhận nhiệm vụ từ GitHub
+## 8. Nhận nhiệm vụ bằng JX1 Task Dispatcher
 
-GitHub không tự động đánh thức Codex CLI. Codex chỉ đọc file khi người dùng kích hoạt phiên CLI hoặc khi đã cài và kiểm thử một watcher/automation riêng.
+### Hàng đợi được duyệt
+- Dispatcher Windows cài bằng Task Scheduler tên `JX1-Task-Dispatcher`, chạy tại đăng nhập của người dùng hiện tại với quyền `Limited`; không lưu mật khẩu.
+- Dispatcher kiểm tra `PROMPTS/DISPATCH_QUEUE.json` trên nhánh `main` mặc định mỗi 60 giây. Chỉ các mục có `status` bằng `APPROVED` hoặc `ĐƯỢC DUYỆT` mới được nhận. Có file prompt nhưng không có mục trong hàng đợi thì không có quyền thực thi.
+- Sau khi người dùng duyệt prompt, ChatGPT:
+  1. Đưa prompt và tài liệu tham chiếu lên GitHub.
+  2. Lấy commit SHA chứa các nội dung đó cùng Git blob SHA của từng file.
+  3. Thêm một mục vào `PROMPTS/DISPATCH_QUEUE.json` với các trường `task_id`, `status`, `scope`, `approved_commit`, `prompt_path`, `prompt_sha`, `allowed_paths`, `references` (mỗi mục gồm `path` và `sha`), `approved_by` và `approved_at`.
+  4. Dùng Task ID duy nhất; không tái sử dụng Task ID đã chạy, bị chặn hoặc thất bại.
+- Dispatcher ghim prompt và tài liệu theo `approved_commit`, xác minh blob SHA, đường dẫn tương đối và giới hạn kích thước trước khi truyền nội dung cho Codex. Các file chỉ được tải về như dữ liệu; không có trường lệnh shell trong manifest.
+- Khi khởi tạo lần đầu, các mục đã có sẵn được bỏ qua để tránh chạy lại prompt cũ. Task mới chuyển qua `QUEUED`, `RUNNING`, `COMPLETED`, `BLOCKED` hoặc `FAILED`; state, lock, status và log được giữ tại `%LOCALAPPDATA%\JX1TaskDispatcher`.
+- Khóa file và Task Scheduler `IgnoreNew` bảo đảm chỉ một task chạy tại một thời điểm. Task ID chỉ được dispatch một lần. Sau reboot, task đang dở chỉ được resume bằng session ID đã lưu; nếu session không thể xác minh/phục hồi thì chuyển `BLOCKED`, không chạy prompt lại.
 
-Quy trình mặc định:
-1. ChatGPT tạo prompt và file chỉ thị trên GitHub sau khi người dùng duyệt.
-2. Người dùng mở phiên Codex CLI đang dùng cho JX1 và gửi lệnh ngắn:
+### Cấu hình thực thi
+- Mỗi lượt dùng `CODEX_HOME=C:\Users\PC\.codex`, working directory `C:\Jx1CocoV3`, provider `xingchi`, model `gpt-6.1-sol`, reasoning `max`.
+- Dispatcher gọi `codex exec --json`, sandbox `workspace-write`, approval policy `on-request`; cấm `--dangerously-bypass-approvals-and-sandbox`. Một lệnh cần phê duyệt tương tác, model không khớp, report thiếu hoặc thay đổi ngoài `allowed_paths` sẽ dừng và ghi `BLOCKED`.
+- Agent chỉ ghi bên trong repo làm việc. Dispatcher so sánh Git working tree trước/sau và chặn việc công bố nếu có file ngoài phạm vi. Việc này là kiểm tra hậu kỳ, còn sandbox giới hạn bên ngoài working directory.
+- Báo cáo tiếng Việt được tạo tại `docs-analysis/reports/dispatcher-<task_id>.md`. Dispatcher quét thông tin bí mật trước khi tải báo cáo lên `TEST_RESULTS/dispatcher-<task_id>.md`. Upload dùng Git Credential Manager nếu đã có credential phù hợp; không có credential thì giữ báo cáo local và ghi `BLOCKED – CHƯA PUSH`.
 
-   > Đọc `PROMPTS/00_CODEX_START_HERE.md` trong `ndtangoss-dev/jx1-reports`, kiểm tra nhiệm vụ mới đã được duyệt và thực hiện theo quy trình.
-
-3. Codex xác minh model/provider/effort và working directory bằng trạng thái phiên; đọc `WORKFLOW_JX1.md`, `00_LATEST_STATUS.md`, `PROMPTS/00_CODEX_START_HERE.md`, rồi prompt nhiệm vụ được chỉ định.
-4. Codex chỉ thực hiện prompt có trạng thái **ĐƯỢC DUYỆT / BẮT ĐẦU THỰC HIỆN**. Không tự chạy bản nháp hoặc yêu cầu chưa được duyệt.
-5. Codex xác nhận nhiệm vụ đã đọc, môi trường truy cập được và bắt đầu; không chờ người dùng duyệt lại các bước đã được ủy quyền.
-6. Khi hoàn tất hoặc bị chặn, Codex cập nhật báo cáo và bàn giao theo mục 3.
-
-Nếu muốn tự động nhận mà không cần nhắc Codex, phải cài một cơ chế riêng (ví dụ GitHub Actions/webhook hoặc tiến trình polling chạy trên máy có agent/API được cấu hình). Cơ chế đó cần xác thực an toàn, giới hạn repository, tránh chạy lặp và yêu cầu phê duyệt cho hành động rủi ro. Chưa được coi là đã bật tự động cho tới khi cài đặt và kiểm thử thành công.
+### Vận hành và phương án thủ công
+- Cài: `docs-analysis/scripts/install_jx1_task_dispatcher.ps1`.
+- Xem trạng thái: `docs-analysis/scripts/status_jx1_task_dispatcher.ps1`; state và log nằm trong `%LOCALAPPDATA%\JX1TaskDispatcher`.
+- Tạm dừng/tiếp tục: `disable_jx1_task_dispatcher.ps1` / `enable_jx1_task_dispatcher.ps1`.
+- Gỡ Task Scheduler (giữ state, log và báo cáo): `uninstall_jx1_task_dispatcher.ps1`.
+- Nếu Dispatcher tắt, Codex chỉ nhận task khi người dùng kích hoạt thủ công. Không coi GitHub push là bằng chứng Codex đã tải hoặc thực thi prompt.
 
 ## 9. Nguyên tắc bất di bất dịch
 
