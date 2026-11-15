@@ -47,3 +47,11 @@ Khi hoàn tất hoặc bị chặn, phải:
 8. Push báo cáo lên GitHub nếu có quyền và remote phù hợp. Nếu không, ghi **BỊ CHẶN – CHƯA PUSH**, lưu báo cáo cục bộ và cung cấp đường dẫn.
 9. Không tuyên bố hoàn thành chỉ vì build thành công; chờ ChatGPT đối chiếu và người dùng nghiệm thu.
 
+
+
+## Ngôn ngữ bắt buộc
+
+- Mặc định giao tiếp, xác nhận, hỏi làm rõ, cập nhật tiến độ và bàn giao bằng **tiếng Việt**.
+- Báo cáo và giải thích lỗi phải bằng tiếng Việt.
+- Giữ nguyên tên code/API/model/provider, lệnh terminal và thông báo lỗi gốc bằng tiếng Anh khi cần; luôn giải thích chúng bằng tiếng Việt.
+- Không trả lời toàn bộ bằng tiếng Anh trừ khi người dùng yêu cầu.
