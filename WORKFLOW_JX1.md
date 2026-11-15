@@ -1,164 +1,73 @@
-# QUY TRÌNH LÀM VIỆC CHÍNH THỨC – DỰ ÁN JX1
+# QUY TRÌNH LÀM VIỆC CHÍNH THỨC – JX1
 
-Áp dụng cho toàn bộ các Phase JX1 từ ngày tài liệu này được cập nhật.
+**Chuẩn thực thi Codex Direct CLI:** [PROMPTS/CODEX_DIRECT_CLI_RULES.md](PROMPTS/CODEX_DIRECT_CLI_RULES.md)  
+**Trạng thái dự án:** [00_LATEST_STATUS.md](00_LATEST_STATUS.md)  
+**Repository báo cáo:** `ndtangoss-dev/jx1-reports`
+
+Tài liệu Direct CLI Rules là chuẩn chi tiết về cách Codex thực thi, giới hạn thao tác, tiết kiệm token, kiểm chứng và bàn giao. Nội dung dưới đây xác định vai trò, quy trình quyết định và ranh giới an toàn.
 
 ## 1. Vai trò
 
-### Chủ dự án – Người dùng
-- Quyết định mục tiêu sản phẩm, gameplay và ưu tiên.
-- Mô tả yêu cầu/lỗi bằng lời, ảnh, video hoặc trải nghiệm thực tế.
-- Duyệt prompt trước khi giao nhiệm vụ, trừ các thao tác đã được ủy quyền rõ.
-- Duyệt phương án ảnh hưởng lớn đến kiến trúc, gameplay, dữ liệu hoặc Main VM.
-- Trải nghiệm APK trên điện thoại thật và nghiệm thu.
+- **Người dùng:** quyết định mục tiêu, ưu tiên, phê duyệt thay đổi rủi ro và nghiệm thu.
+- **ChatGPT:** phân tích yêu cầu, xác định phạm vi, viết prompt ngắn và đủ, tạo prompt sau khi được duyệt, đọc/đối chiếu báo cáo và đề xuất bước tiếp theo.
+- **Codex CLI:** executor kỹ thuật mặc định cho JX1; làm trực tiếp trong workspace được chỉ định, theo prompt đã duyệt và quy tắc Direct CLI.
+- **Claude Code/agent khác:** chỉ tham gia khi được giao riêng cho QA độc lập hoặc nhiệm vụ phụ; không đồng thời sửa cùng vùng source với Codex.
 
-### ChatGPT – Phân tích và điều phối
-- Phân tích yêu cầu, làm rõ vấn đề và xác định phạm vi.
-- Đề xuất phương án kỹ thuật, rủi ro và tiêu chí nghiệm thu.
-- Soạn prompt/chỉ thị thực thi rõ ràng, có phạm vi và điều kiện dừng.
-- Sau khi người dùng duyệt, tạo/cập nhật prompt trên GitHub.
-- Đọc báo cáo, phản biện kết quả, tổng hợp tiến độ và đề xuất bước tiếp theo.
-- Không tuyên bố Codex đã nhận/chạy lệnh nếu chưa có bằng chứng.
+## 2. Quy trình chuẩn — Direct CLI
 
-### Codex CLI – Agent thực thi kỹ thuật chính
-- Là agent thực thi mặc định cho JX1; khi Dispatcher bật, nhận việc bằng `codex exec` không tương tác trên Windows. TUI là phương án thủ công khi Dispatcher tắt.
-- Đọc chỉ thị, workflow, trạng thái mới nhất và prompt đã duyệt từ GitHub.
-- Xác minh đúng repo, working directory, model/provider/session và quyền trước khi thao tác.
-- Tự kiểm tra source, môi trường, build tools, emulator/ADB và VM trong phạm vi được cấp.
-- Thực hiện phân tích, sửa code, build, test, thu thập log và báo cáo theo prompt đã duyệt.
-- Cập nhật tài liệu, trạng thái và kết quả trên GitHub khi có quyền truy cập.
-- Không tự ý can thiệp Main VM, dữ liệu quan trọng, xóa/ghi đè source hoặc commit nhánh chính nếu chưa được phép.
+1. Người dùng nêu mục tiêu hoặc vấn đề.
+2. ChatGPT kiểm tra trạng thái/báo cáo nền có liên quan, tránh yêu cầu làm lại việc đã hoàn thành.
+3. ChatGPT soạn một prompt có mục tiêu, phạm vi, file/path đã biết, quyền, đầu ra, tiêu chí nghiệm thu và giới hạn thời gian/công việc.
+4. Người dùng duyệt; ChatGPT đưa prompt lên GitHub và cung cấp commit SHA + chỉ thị kích hoạt ngắn.
+5. Người dùng kích hoạt **phiên Codex CLI hiện có**. Codex đọc prompt ghim một lần và làm thẳng vào phần việc chính. Không Dispatcher, không polling queue.
+6. Codex tạo một báo cáo cuối, kiểm tra diff/status một lần, commit/push báo cáo nếu có quyền.
+7. Người dùng báo đã có báo cáo; ChatGPT đọc đúng file, kiểm chứng kết luận và cùng người dùng quyết định nhiệm vụ tiếp theo.
 
-### Claude Code – Công cụ phụ/đối chiếu (nếu được giao riêng)
-- Không còn là agent thực thi mặc định trong quy trình này.
-- Chỉ thực hiện QA độc lập, review hoặc nhiệm vụ riêng khi ChatGPT/người dùng giao rõ.
-- Không đồng thời sửa cùng file/nhánh với Codex CLI.
+Không coi việc tạo prompt là bằng chứng Codex đã nhận/chạy. Không coi dòng tiến độ là bằng chứng hoàn thành. Chỉ xác nhận thực thi khi có bằng chứng trong phiên; chỉ xác nhận push khi có commit SHA và URL.
 
-## 2. Model và phiên làm việc Codex
+## 3. Prompt bắt buộc phải ngắn và có điểm kết thúc
 
-- Phiên Codex CLI hiện được dự kiến sử dụng Xingchi provider, model `gpt-6.1-sol`, reasoning effort `max`.
-- Đây là cấu hình phiên đã được kiểm tra gọi API thực tế. Phiên TUI được xác minh bằng `/status`; Dispatcher truyền tường minh ba giá trị và chạy preflight chỉ đọc trước mỗi task.
-- Trước khi thực thi nhiệm vụ JX1, Codex phải xác nhận:
-  - Working directory đúng repo/source được giao.
-  - Model/provider/effort thực tế đúng yêu cầu nhiệm vụ (mặc định: `gpt-6.1-sol` / `xingchi` / `max`).
-  - Đã đọc đúng prompt và trạng thái mới nhất.
-- Nếu model/provider/effort không đúng hoặc không xác minh được, báo **BỊ CHẶN** và không âm thầm tiếp tục bằng model/provider khác.
-- Không ghi API Key, token, mật khẩu hoặc thông tin xác thực vào prompt, báo cáo hay GitHub.
+Mỗi prompt chỉ gồm:
+- Mục tiêu và kết quả cần bàn giao.
+- Phạm vi file/thư mục cụ thể; đường dẫn đã biết.
+- Những việc được phép và bị cấm.
+- Các kiểm tra thiết yếu và bằng chứng phải ghi.
+- Một đường dẫn báo cáo cuối.
+- Giới hạn thời gian/công việc; điều kiện dừng khi thiếu dữ liệu hoặc bị chặn.
 
-## 3. Quy trình chuẩn cho mỗi nhiệm vụ
+Không yêu cầu Codex tự khám phá lại toàn dự án, kiểm tra cấu hình lặp, đọc lại toàn bộ lịch sử hoặc tạo báo cáo trung gian. Chi tiết áp dụng tại [CODEX_DIRECT_CLI_RULES.md](PROMPTS/CODEX_DIRECT_CLI_RULES.md).
 
-1. Người dùng mô tả yêu cầu hoặc kết quả mong muốn.
-2. ChatGPT phân tích, xác định phạm vi, rủi ro, phương án và tiêu chí nghiệm thu.
-3. ChatGPT soạn prompt; người dùng duyệt trước khi giao nhiệm vụ, trừ các thao tác đã được ủy quyền rõ.
-4. ChatGPT tạo/cập nhật prompt và chỉ thị trên repository báo cáo.
-5. Khi Dispatcher đã cài, nó tự nhận task từ manifest mỗi 60 giây. Nếu Dispatcher tắt, người dùng có thể kích hoạt CLI thủ công theo `PROMPTS/00_CODEX_START_HERE.md`.
-6. Codex đọc workflow, trạng thái mới nhất, chỉ thị bắt đầu và đầy đủ prompt nhiệm vụ đã được duyệt.
-7. Codex xác minh phiên, source, môi trường, backup và quyền; sau đó xác nhận nhiệm vụ đã nhận rồi thực hiện trong phạm vi đã duyệt.
-8. Codex tự kiểm thử/tái hiện, chạy hồi quy và thu thập bằng chứng phù hợp. Nếu có agent QA độc lập được giao riêng, phải ghi rõ agent và bằng chứng; không giả vờ đã giao subagent khi không có.
-9. Codex cập nhật báo cáo, diff, backup, log, APK và SHA256 nếu có; cập nhật `00_LATEST_STATUS.md` khi trạng thái dự án thực sự thay đổi.
-10. Codex bàn giao trong phiên CLI: việc đã làm, chưa làm, file thay đổi, lệnh/test và kết quả, bằng chứng, rủi ro, việc còn chặn, đường dẫn báo cáo và commit/PR GitHub nếu có.
-11. ChatGPT đọc/đối chiếu kết quả và trình bày cho người dùng.
-12. Người dùng kiểm tra thực tế và nghiệm thu hoặc yêu cầu vòng sửa tiếp theo.
+## 4. Quyền và an toàn
 
-## 4. Phân cấp quyền
-
-### Có thể tự thực hiện trong phạm vi nhiệm vụ đã duyệt
-- Đọc source/tài liệu, phân tích log, chạy test và build thử.
-- Tạo backup, diff, log và artifact phiên bản mới.
-- Sửa code trong phạm vi đã duyệt, kiểm thử trên môi trường thử nghiệm.
-- Cập nhật báo cáo và trạng thái GitHub.
-- Chạy các lệnh quản trị thông thường cần thiết trong môi trường thử nghiệm nếu không làm phát sinh rủi ro ngoài phạm vi.
-
-### Phải hỏi người dùng trước
-- Thay đổi kiến trúc lớn hoặc hành vi gameplay chưa được duyệt.
+Codex được tự thực hiện thao tác kỹ thuật thông thường nằm trong prompt đã duyệt. Phải hỏi người dùng trước khi:
 - Tác động Main VM, server production hoặc dữ liệu quan trọng.
-- Xóa/ghi đè dữ liệu không thể khôi phục, source chính hoặc bản phát hành.
-- Thay đổi quyền truy cập, bảo mật hoặc thông tin đăng nhập.
-- Thao tác không thể đảo ngược hoặc có thể làm gián đoạn dịch vụ đang chạy.
+- Xóa/ghi đè dữ liệu không thể khôi phục hoặc source chính.
+- Thay đổi kiến trúc lớn, quyền truy cập, bảo mật hoặc credential.
+- Thực hiện thao tác có thể gián đoạn dịch vụ.
 
-## 5. Quy tắc GitHub
+Bất di bất dịch:
+- Giữ nguyên Cocos client canonical nếu chưa được duyệt.
+- Không can thiệp Main VM/production nếu chưa được duyệt.
+- Không reset/clean/ghi đè thay đổi local của người dùng.
+- Không tiết lộ secret/token/mật khẩu.
+- Không bypass sandbox/approval policy.
+- Không tuyên bố test/build/runtime thành công nếu chưa có bằng chứng.
 
-Repository báo cáo: `ndtangoss-dev/jx1-reports`.
+## 5. Báo cáo và trạng thái
 
-- `00_LATEST_STATUS.md`: trạng thái mới nhất đã xác minh.
-- `PROMPTS/`: prompt và chỉ thị thực thi.
-- `FIX_HISTORY/`: lịch sử các bản Fix.
-- `TEST_RESULTS/`: kết quả QA.
-- `PATCH_NOTES/`: ghi chú patch.
-- `CLIENT/`: công việc Client.
-- `SERVER/`: công việc Server.
+Mọi báo cáo phải phân biệt:
+- **ĐÃ XÁC MINH:** có bằng chứng trực tiếp.
+- **CHƯA KIỂM THỬ:** chưa chạy kiểm thử cần thiết.
+- **CHƯA XÁC MINH:** thiếu bằng chứng để kết luận.
+- **GIẢ THUYẾT:** nhận định cần kiểm chứng.
+- **BỊ CHẶN:** không thể tiếp tục do quyền/phụ thuộc/môi trường.
 
-Quy tắc:
-- ChatGPT tạo/cập nhật prompt sau khi người dùng duyệt.
-- Codex CLI đọc prompt đã duyệt khi được kích hoạt; không tự nhận nhiệm vụ chỉ vì file xuất hiện trên GitHub.
-- Codex cập nhật báo cáo sau khi làm việc, chỉ ghi kết quả có bằng chứng.
-- Không commit source chính nếu chưa được người dùng cho phép.
-- Không đưa API Key, token, mật khẩu, IP/tài khoản nhạy cảm hoặc dữ liệu truy cập vào GitHub.
-- Nếu Codex không có quyền GitHub hoặc không có local clone/remote phù hợp, báo **BỊ CHẶN**; không tuyên bố đã push. Có thể lưu báo cáo cục bộ và bàn giao đường dẫn để ChatGPT cập nhật GitHub.
+Trạng thái cuối của task: `DONE`, `PARTIAL`, `BLOCKED`, hoặc `FAILED`. Báo cáo phải nêu phát hiện, file/symbol/line, kiểm tra đã chạy, phần chưa xác minh, blocker và commit/link nếu đã push.
 
-## 6. Trạng thái báo cáo bắt buộc
+## 6. Dispatcher
 
-- **ĐÃ XÁC MINH:** có log, số đo, test hoặc bằng chứng thực tế.
-- **CHƯA KIỂM THỬ:** đã sửa/build nhưng chưa kiểm tra đủ.
-- **BỊ CHẶN:** thiếu quyền, môi trường hoặc điều kiện.
-- **GIẢ THUYẾT:** nhận định chưa được xác minh.
+Dispatcher và `PROMPTS/DISPATCH_QUEUE.json` là cơ chế cũ/legacy, **không thuộc quy trình Direct CLI hiện hành**. Không bật, polling, sửa queue hoặc gọi Dispatcher cho nhiệm vụ mới trừ khi người dùng chọn lại cơ chế đó một cách rõ ràng.
 
-Build thành công không đồng nghĩa nhiệm vụ hoàn thành. Báo cáo phải nêu rõ phần đã làm, chưa làm, lỗi còn lại và bằng chứng.
+## 7. Ngôn ngữ
 
-## 7. Quy tắc giao tiếp và tự chủ
-
-- Codex tự làm thao tác kỹ thuật thông thường nếu có quyền và công cụ.
-- Ưu tiên tự đọc file, chạy lệnh và lấy log; không yêu cầu người dùng copy/paste lệnh hoặc log nếu Codex có thể tự thực hiện.
-- Người dùng thường điều khiển máy bằng điện thoại qua remote desktop; vì vậy ưu tiên chỉ thị ngắn, thao tác ít, không yêu cầu nhập lệnh dài thủ công.
-- Không hỏi duyệt lại từng bước nhỏ đã nằm trong phạm vi.
-- Chỉ hỏi khi có rủi ro hoặc quyết định ngoài phạm vi.
-- Nếu Computer Use bị policy chặn, chuyển sang terminal/tool thực thi lệnh được cấp quyền; không tìm cách vượt chính sách.
-- ChatGPT không nhìn thấy phiên Codex CLI đang chạy trên máy người dùng nếu không có báo cáo/kết nối tương ứng; phải phân biệt rõ đã đăng prompt, Codex đã tải prompt và Codex đã thực thi.
-
-## 8. Nhận nhiệm vụ bằng JX1 Task Dispatcher
-
-### Hàng đợi được duyệt
-- Dispatcher Windows cài bằng Task Scheduler tên `JX1-Task-Dispatcher`, chạy tại đăng nhập của người dùng hiện tại với quyền `Limited`; không lưu mật khẩu.
-- Dispatcher kiểm tra `PROMPTS/DISPATCH_QUEUE.json` trên nhánh `main` mặc định mỗi 60 giây. Chỉ các mục có `status` bằng `APPROVED` hoặc `ĐƯỢC DUYỆT` mới được nhận. Có file prompt nhưng không có mục trong hàng đợi thì không có quyền thực thi.
-- Sau khi người dùng duyệt prompt, ChatGPT:
-  1. Đưa prompt và tài liệu tham chiếu lên GitHub.
-  2. Lấy commit SHA chứa các nội dung đó cùng Git blob SHA của từng file.
-  3. Thêm một mục vào `PROMPTS/DISPATCH_QUEUE.json` với các trường `task_id`, `status`, `scope`, `approved_commit`, `prompt_path`, `prompt_sha`, `allowed_paths`, `references` (mỗi mục gồm `path` và `sha`), `approved_by` và `approved_at`.
-  4. Dùng Task ID duy nhất; không tái sử dụng Task ID đã chạy, bị chặn hoặc thất bại.
-- Dispatcher ghim prompt và tài liệu theo `approved_commit`, xác minh blob SHA, đường dẫn tương đối và giới hạn kích thước trước khi truyền nội dung cho Codex. Các file chỉ được tải về như dữ liệu; không có trường lệnh shell trong manifest.
-- Khi khởi tạo lần đầu, các mục đã có sẵn được bỏ qua để tránh chạy lại prompt cũ. Task mới chuyển qua `QUEUED`, `RUNNING`, `COMPLETED`, `BLOCKED` hoặc `FAILED`; state, lock, status và log được giữ tại `%LOCALAPPDATA%\JX1TaskDispatcher`.
-- Khóa file và Task Scheduler `IgnoreNew` bảo đảm chỉ một task chạy tại một thời điểm. Task ID chỉ được dispatch một lần. Sau reboot, task đang dở chỉ được resume bằng session ID đã lưu; nếu session không thể xác minh/phục hồi thì chuyển `BLOCKED`, không chạy prompt lại.
-
-### Cấu hình thực thi
-- Mỗi lượt dùng `CODEX_HOME=C:\Users\PC\.codex`, working directory `C:\Jx1CocoV3`, provider `xingchi`, model `gpt-6.1-sol`, reasoning `max`.
-- Dispatcher gọi `codex exec --json`, sandbox `workspace-write`, approval policy `on-request`; cấm `--dangerously-bypass-approvals-and-sandbox`. Một lệnh cần phê duyệt tương tác, model không khớp, report thiếu hoặc thay đổi ngoài `allowed_paths` sẽ dừng và ghi `BLOCKED`.
-- Agent chỉ ghi bên trong repo làm việc. Dispatcher so sánh Git working tree trước/sau và chặn việc công bố nếu có file ngoài phạm vi. Việc này là kiểm tra hậu kỳ, còn sandbox giới hạn bên ngoài working directory.
-- Báo cáo tiếng Việt được tạo tại `docs-analysis/reports/dispatcher-<task_id>.md`. Dispatcher quét thông tin bí mật trước khi tải báo cáo lên `TEST_RESULTS/dispatcher-<task_id>.md`. Upload dùng Git Credential Manager nếu đã có credential phù hợp; không có credential thì giữ báo cáo local và ghi `BLOCKED – CHƯA PUSH`.
-
-### Vận hành và phương án thủ công
-- Cài: `docs-analysis/scripts/install_jx1_task_dispatcher.ps1`.
-- Xem trạng thái: `docs-analysis/scripts/status_jx1_task_dispatcher.ps1`; state và log nằm trong `%LOCALAPPDATA%\JX1TaskDispatcher`.
-- Tạm dừng/tiếp tục: `disable_jx1_task_dispatcher.ps1` / `enable_jx1_task_dispatcher.ps1`.
-- Gỡ Task Scheduler (giữ state, log và báo cáo): `uninstall_jx1_task_dispatcher.ps1`.
-- Nếu Dispatcher tắt, Codex chỉ nhận task khi người dùng kích hoạt thủ công. Không coi GitHub push là bằng chứng Codex đã tải hoặc thực thi prompt.
-
-## 9. Nguyên tắc bất di bất dịch
-
-1. Người dùng quyết định hướng phát triển và nghiệm thu.
-2. ChatGPT phân tích, lập kế hoạch, viết nhiệm vụ và phản biện báo cáo.
-3. Codex CLI là agent thực thi mặc định cho JX1.
-4. Claude chỉ tham gia khi được giao vai trò phụ/đối chiếu riêng.
-5. Không bịa kết quả hoặc tuyên bố test khi chưa có bằng chứng.
-6. Bảo vệ Main VM, source chính và dữ liệu quan trọng.
-7. Mọi thay đổi quan trọng có backup, diff và báo cáo.
-8. Chỉ đóng nhiệm vụ khi có bằng chứng và người dùng nghiệm thu.
-
-
-## 10. Ngôn ngữ giao tiếp và báo cáo (bắt buộc)
-
-- Ngôn ngữ mặc định khi Codex trao đổi với người dùng là **tiếng Việt**.
-- Mọi xác nhận nhận nhiệm vụ, câu hỏi làm rõ, kế hoạch, cập nhật tiến độ, giải thích lỗi, kết luận và báo cáo bàn giao phải viết bằng tiếng Việt.
-- Giữ nguyên tiếng Anh đối với tên model/provider, tên file/thư mục, tên biến/hàm/class, API, lệnh terminal, thông báo lỗi gốc và thuật ngữ kỹ thuật khi cần chính xác.
-- Khi trích dẫn log hoặc lỗi tiếng Anh, giữ nguyên đoạn gốc cần thiết và giải thích ý nghĩa bằng tiếng Việt ngay bên cạnh.
-- Không tự chuyển toàn bộ câu trả lời sang tiếng Anh chỉ vì log, tài liệu hoặc source code sử dụng tiếng Anh.
-- Chỉ dùng tiếng Anh cho phần giao tiếp/báo cáo khi người dùng yêu cầu rõ ràng.
-- Nếu prompt nhiệm vụ hoặc tài liệu kỹ thuật yêu cầu định dạng đầu ra cụ thể, giữ nguyên cấu trúc đó nhưng viết nội dung diễn giải bằng tiếng Việt.
+Trao đổi và báo cáo bằng tiếng Việt. Giữ nguyên tên file, symbol, API, lệnh và thông báo lỗi gốc khi cần chính xác; giải thích bằng tiếng Việt.
