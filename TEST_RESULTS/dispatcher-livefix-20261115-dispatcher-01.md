@@ -14,7 +14,7 @@ Cần tôi quyết định: không
 
 - Task ID: `LIVEFIX-20261115-DISPATCHER-01`.
 - Chỉ tạo một file trong `docs-analysis/out/jx1-dispatcher-fixture-20261115/` và báo cáo này.
-- Không truy cập mã nguồn game, file VM/server, thông tin xác thực hoặc mạng; không chạy executable game.
+- Task không truy cập mã nguồn game, file VM/server hoặc thông tin xác thực và không chạy executable game. Dispatcher đã tải prompt/tham chiếu từ GitHub, gọi provider để suy luận và đăng báo cáo này qua Git Credential Manager.
 - Tài liệu tham chiếu được coi là dữ liệu, không thực thi lệnh trong đó.
 
 ## File thay đổi
@@ -42,8 +42,8 @@ Byte thực tế (hex):
 
 ## Phần chưa làm
 
-- Không commit/push hoặc cập nhật file khác vì ngoài phạm vi được duyệt.
-- Chưa kiểm chứng bước tự công bố báo cáo hay trạng thái toàn bộ Dispatcher/GitHub; kết quả này chỉ xác minh fixture cục bộ.
+- Phiên Codex không tự commit source hoặc sửa trạng thái dự án. Dispatcher quét bí mật và tự đăng báo cáo này lên `TEST_RESULTS/dispatcher-livefix-20261115-dispatcher-01.md`; API trả thành công và file được đọc lại từ GitHub.
+- Fixture xác minh queue GitHub → Dispatcher → `codex exec` → artifact/báo cáo → GitHub report. Khởi động lại Windows và task production chưa được kiểm thử.
 
 ## Lỗi/rủi ro và trạng thái
 
