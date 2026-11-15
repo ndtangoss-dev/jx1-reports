@@ -1,9 +1,17 @@
 # 00 - Trạng thái mới nhất dự án JX1
 
-Cập nhật: 2026-11-12. Nguồn chính: [FIX_HISTORY/45](FIX_HISTORY/45-fix36-giat-ban-do-va-36hz.md), [FIX_HISTORY/HANDOVER-FIX34](FIX_HISTORY/HANDOVER-FIX34.md), [FIX_HISTORY/28](FIX_HISTORY/28-bao-cao-trang-thai-tong-the-jx1.md), [BAI_HOC.md](BAI_HOC.md).
+Cập nhật: 2026-11-15. Nguồn chính: [FIX_HISTORY/45](FIX_HISTORY/45-fix36-giat-ban-do-va-36hz.md), [FIX_HISTORY/HANDOVER-FIX34](FIX_HISTORY/HANDOVER-FIX34.md), [FIX_HISTORY/28](FIX_HISTORY/28-bao-cao-trang-thai-tong-the-jx1.md), [BAI_HOC.md](BAI_HOC.md).
 
 Ký hiệu: **[ĐÃ XÁC MINH]** = có log, số đo hoặc kiểm thử thực tế. **[GIẢ THUYẾT]** = chưa kiểm chứng. **[KẾ HOẠCH]** = việc chưa làm.
 Đã lược bỏ IP, tài khoản và thông tin truy cập (ghi dạng `<LAN-IP>`, `<TAILSCALE-IP>`, `<test-account>`...).
+
+## Dispatcher JX1 (2026-11-15) — nhận task tự động
+Báo cáo: [TEST_RESULTS/72-jx1-task-dispatcher-va-font](TEST_RESULTS/72-jx1-task-dispatcher-va-font.md).
+- [ĐÃ XÁC MINH] Task Scheduler `JX1-Task-Dispatcher` đã đăng ký dưới user hiện tại với `Interactive`, quyền `Limited`, `IgnoreNew`, giới hạn chạy vô hạn và restart tối đa 3 lần. Poll mặc định 60 giây; state/log tại `%LOCALAPPDATA%\JX1TaskDispatcher`.
+- [ĐÃ XÁC MINH] Task fixture `LIVEFIX-20261115-DISPATCHER-01` được phát hiện trong 7 giây, chạy qua `codex exec --json` với `gpt-6.1-sol/xingchi/max`, sandbox `workspace-write`, approval `on-request`; status `COMPLETED`.
+- [ĐÃ XÁC MINH] Chỉ tạo file fixture và báo cáo; source game/VM không đổi. Báo cáo qua secret scan và đã upload, đọc lại được từ GitHub bằng Git Credential Manager. Manifest test được chuyển sang `COMPLETED`, không còn task được duyệt chờ chạy.
+- [ĐÃ XÁC MINH] PowerShell 5.1/7 dùng helper UTF-8 trong launcher; Cascadia Mono và Consolas có glyph tiếng Việt cần kiểm tra. [CHƯA KIỂM THỬ] Hiển thị/nhập TUI trực quan và phục hồi bằng reboot thật.
+- Phương án bật/tắt/gỡ: `docs-analysis/scripts/{enable,disable,uninstall}_jx1_task_dispatcher.ps1`; rollback chỉ xóa task Scheduler, giữ state, log, report và credential.
 
 ## 000. Phase 48 (2026-11-12) – đo tài nguyên server trong guest VM (đo thăm dò)
 Báo cáo: [TEST_RESULTS/48-server-resource-measurement](TEST_RESULTS/48-server-resource-measurement.md); số liệu: experiments/server-resource/.
