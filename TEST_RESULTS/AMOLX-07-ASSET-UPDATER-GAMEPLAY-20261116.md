@@ -49,5 +49,7 @@ Các thay đổi trên chỉ nằm trong bản sao AMOLX/build của workspace. 
 
 - Phần đạt: sửa lỗi state/log/retry trong bản sao AMOLX; build APK ARM64 thành công; xác minh hash và metadata.
 - Phần còn dang dở: cài/mở APK mới và thu bằng chứng updater bị chặn ở bước runtime. Do đó login, server selection, nhân vật và map chưa được thử.
-- Commit SHA và link GitHub của báo cáo: ghi nhận trong phản hồi bàn giao sau khi publish; SHA tự tham chiếu không nhúng vào cùng commit tạo báo cáo.
+- Commit SHA tạo bản báo cáo đầu tiên: `5b9717c4329452621e70426fdef0ac7e1041bb5b`. Commit cuối cùng của bản cập nhật metadata được bàn giao trong phản hồi vì SHA mới tự tham chiếu không thể nhúng vào chính commit đó.
+- Link GitHub đã xác minh: https://github.com/ndtangoss-dev/jx1-reports/blob/main/TEST_RESULTS/AMOLX-07-ASSET-UPDATER-GAMEPLAY-20261116.md
+- Chỉ báo cáo này được push. Bản sao source AMOLX, script kiểm thử, APK, build cache và log vẫn ở workspace; không đẩy cả source tree hoặc artifact vào repository báo cáo.
 - Cần tôi quyết định: **có** — cho phép chạy script ADB đã kiểm tra cú pháp ngoài sandbox nếu lượt duyệt tự động tiếp tục hết thời gian; script chỉ thao tác trên LDPlayer 9 đã xác định, không xóa app data và dừng nếu hash ứng dụng cài không khớp AMOLX-04.
