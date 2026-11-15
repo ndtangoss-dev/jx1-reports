@@ -141,3 +141,14 @@ Nếu muốn tự động nhận mà không cần nhắc Codex, phải cài mộ
 6. Bảo vệ Main VM, source chính và dữ liệu quan trọng.
 7. Mọi thay đổi quan trọng có backup, diff và báo cáo.
 8. Chỉ đóng nhiệm vụ khi có bằng chứng và người dùng nghiệm thu.
+
+
+## 10. Ngôn ngữ giao tiếp và báo cáo (bắt buộc)
+
+- Ngôn ngữ mặc định khi Codex trao đổi với người dùng là **tiếng Việt**.
+- Mọi xác nhận nhận nhiệm vụ, câu hỏi làm rõ, kế hoạch, cập nhật tiến độ, giải thích lỗi, kết luận và báo cáo bàn giao phải viết bằng tiếng Việt.
+- Giữ nguyên tiếng Anh đối với tên model/provider, tên file/thư mục, tên biến/hàm/class, API, lệnh terminal, thông báo lỗi gốc và thuật ngữ kỹ thuật khi cần chính xác.
+- Khi trích dẫn log hoặc lỗi tiếng Anh, giữ nguyên đoạn gốc cần thiết và giải thích ý nghĩa bằng tiếng Việt ngay bên cạnh.
+- Không tự chuyển toàn bộ câu trả lời sang tiếng Anh chỉ vì log, tài liệu hoặc source code sử dụng tiếng Anh.
+- Chỉ dùng tiếng Anh cho phần giao tiếp/báo cáo khi người dùng yêu cầu rõ ràng.
+- Nếu prompt nhiệm vụ hoặc tài liệu kỹ thuật yêu cầu định dạng đầu ra cụ thể, giữ nguyên cấu trúc đó nhưng viết nội dung diễn giải bằng tiếng Việt.
