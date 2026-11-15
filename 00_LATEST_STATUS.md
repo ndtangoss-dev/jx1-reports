@@ -11,6 +11,7 @@ Báo cáo: [TEST_RESULTS/72-jx1-task-dispatcher-va-font](TEST_RESULTS/72-jx1-tas
 - [ĐÃ XÁC MINH] Task fixture `LIVEFIX-20261115-DISPATCHER-01` được phát hiện trong 7 giây, chạy qua `codex exec --json` với `gpt-6.1-sol/xingchi/max`, sandbox `workspace-write`, approval `on-request`; status `COMPLETED`.
 - [ĐÃ XÁC MINH] Chỉ tạo file fixture và báo cáo; source game/VM không đổi. Báo cáo qua secret scan và đã upload, đọc lại được từ GitHub bằng Git Credential Manager. Manifest test được chuyển sang `COMPLETED`, không còn task được duyệt chờ chạy.
 - [ĐÃ XÁC MINH] PowerShell 5.1/7 dùng helper UTF-8 trong launcher; Cascadia Mono và Consolas có glyph tiếng Việt cần kiểm tra. [CHƯA KIỂM THỬ] Hiển thị/nhập TUI trực quan và phục hồi bằng reboot thật.
+- [ĐÃ XÁC MINH] 10/10 unit tests đạt; kiểm thử disable/enable đưa Scheduler từ `Disabled` về `Running`, state giữ nguyên và fixture không chạy lại. Lệnh `--status` đã sửa lỗi stdout `cp1252`; vẫn chưa thử reboot Windows thật.
 - Phương án bật/tắt/gỡ: `docs-analysis/scripts/{enable,disable,uninstall}_jx1_task_dispatcher.ps1`; rollback chỉ xóa task Scheduler, giữ state, log, report và credential.
 
 ## 000. Phase 48 (2026-11-12) – đo tài nguyên server trong guest VM (đo thăm dò)
