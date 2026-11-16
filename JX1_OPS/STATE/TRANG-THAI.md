@@ -1,9 +1,10 @@
 # TRẠNG THÁI DỰ ÁN
 
-Cập nhật: 2026-11-16 – Opus (lập kế hoạch). Sonnet cập nhật file này ở mỗi điểm lưu.
+Cập nhật: 2026-11-16 – Sonnet PM (bắt đầu giai đoạn 0). Sonnet cập nhật file này ở mỗi điểm lưu.
 
 ## Dự án đang ở đâu
-- Giai đoạn: **chờ chủ dự án duyệt kế hoạch** (`KE-HOACH-TONG-THE.md`). Chưa triển khai gì.
+- Giai đoạn: **0 – Dựng đội, đang làm.** Kế hoạch đã duyệt; D1–D6 đã chốt (Q-10…Q-16).
+- 0-01: đã chép 3 lệnh vào `C:\Jx1CocoV3\.claude\commands\`. **Chưa áp `settings.json`**: hệ thống chặn việc tự ghi cấu hình quyền; chờ chủ dự án cho phép hoặc tự chép `TOOLS/settings.mau.json` (bỏ khóa `_ghi_chu`) thành `.claude/settings.json`.
 - Đang chạy được [BÁO CÁO, chưa kiểm lại]: client Cocos P46/P47 trên LDPlayer; server tự dựng 36 Hz trên VM thử `JX-Test-36`; APK mới nhất P46.
 - Worker đang chạy: không có.
 
@@ -18,7 +19,7 @@ Cập nhật: 2026-11-16 – Opus (lập kế hoạch). Sonnet cập nhật file
 | Thứ | Ở đâu |
 |---|---|
 | Thư mục dự án trên máy | `C:\Jx1CocoV3` |
-| Bản sao làm việc của nhánh `jx1-ops` | Sonnet chọn ở task 0-01 và ghi vào đây |
+| Bản sao làm việc của nhánh `jx1-ops` | `D:\jx1-ops-wt` (git worktree của `D:\jx1-reports`) |
 | Client đã vá mới nhất | `D:\Android\b\Client\Classes` [BÁO CÁO] |
 | Server source đã vá (A2, 36 Hz) | `D:\JX-build\src18` [BÁO CÁO] |
 | Gói server gốc | `C:\Jx1CocoV3\Folder\ServerNew-…\ServerNew\_bin_v2_` [BÁO CÁO] |
