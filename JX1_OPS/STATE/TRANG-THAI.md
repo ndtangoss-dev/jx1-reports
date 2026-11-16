@@ -137,3 +137,5 @@ Ket luan so bo: voi viec nho doc-tom-tat, effort khong doi toc do ro (nhieu hon 
 
 ## [ĐANG CHỜ hạn mức Codex, tiếp tục khi het 429] (Sonnet, 2026-11-17 01:27)
 Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low) sau khi A-08a-d xong. A-07b (da giao, max) va B-02 (da co KVisibility.cpp/.h dang do) bi ngat; worktree D:\JX-wt\A-07b va D:\JX-wt\B-02 giu nguyen. Thu lai moi ~20 phut bang AB-ping; khi OK thi chay lai A-07b, B-02 (-Effort high), dong thoi toi da 3 worker de tranh 429.
+
+[02:18] Codex het 429; chay lai A-07b va B-02 (high), toi da 2 worker dong thoi.
