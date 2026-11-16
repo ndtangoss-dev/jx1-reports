@@ -106,8 +106,17 @@ try {
             if ($mainPid -and $mainPid -eq $targetPid) { Fail ('TU CHOI: PID ' + $targetPid + ' trung PID Main VM') }
             $p = Get-Process -Id $targetPid -ErrorAction SilentlyContinue
             if (-not $p) { Finish $true ('tien trinh ' + $targetPid + ' khong con') }
-            if ($p.ProcessName -ne 'VBoxHeadless' -or -not $p.Path -or -not $p.Path.StartsWith($VBDIR, [StringComparison]::OrdinalIgnoreCase)) {
-                Fail ('PID ' + $targetPid + ' khong phai VBoxHeadless cua VirtualBox (' + $p.ProcessName + ')')
+            # Duong dan anh tien trinh: Get-Process.Path co the rong voi tien trinh VirtualBox -> dung QueryFullProcessImageName (quyen toi thieu).
+            $nat = @(
+                '[DllImport("kernel32.dll", SetLastError=true)] public static extern IntPtr OpenProcess(uint a, bool i, int pid);',
+                '[DllImport("kernel32.dll", SetLastError=true)] public static extern bool QueryFullProcessImageName(IntPtr h, uint f, System.Text.StringBuilder s, ref uint n);',
+                '[DllImport("kernel32.dll")] public static extern bool CloseHandle(IntPtr h);') -join [Environment]::NewLine
+            Add-Type -Namespace JX -Name Nat -MemberDefinition $nat
+            $img = $null
+            $h = [JX.Nat]::OpenProcess(0x1000, $false, $targetPid)
+            if ($h -ne [IntPtr]::Zero) { $sb = New-Object Text.StringBuilder 1024; $n = [uint32]1024; if ([JX.Nat]::QueryFullProcessImageName($h, 0, $sb, [ref]$n)) { $img = $sb.ToString() }; [void][JX.Nat]::CloseHandle($h) }
+            if ($p.ProcessName -ne 'VBoxHeadless' -or -not $img -or -not $img.StartsWith($VBDIR + '', [StringComparison]::OrdinalIgnoreCase) -or [IO.Path]::GetFileName($img) -ine 'VBoxHeadless.exe') {
+                Fail ('PID ' + $targetPid + ' khong phai VBoxHeadless cua VirtualBox (' + $p.ProcessName + '; anh=' + $img + ')')
             }
             if ($DryRun) { Finish $true ('DRYRUN: se diet VBoxHeadless PID ' + $targetPid + ' (VM ' + $cfg.testvm + '); Main PID ' + $mainPid) }
             Stop-Process -Id $targetPid -Force
