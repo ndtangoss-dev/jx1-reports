@@ -147,3 +147,11 @@ git add -- JX1_OPS/TASKS/A-07.md JX1_OPS/REPORTS/A-07-goc-re-crash-gs001.md JX1_
 git commit -m 'A-07: Phan tich crash gs001 va soan cong cu debug'
 git log -1 --format=%H
 ~~~
+
+## Bo sung 2026-11-17 01:25 - THI NGHIEM HIGHENTROPYVA (Sonnet, tren JX-Test-36)
+Ket qua: **gs001 tu dung chi crash khi co co HighEntropyVA.** Cung ma, chi doi co DllCharacteristics.
+- Ban A (goc tu dung, DllCharacteristics 0x8060, SHA-256 2C2E0A8C...2571): chay luc 01:15, ket thuc voi ma 3221225477 = 0xC0000005 (LastTaskResult cua task JX-gs001), khong thay log moi.
+- Ban B (ban sao editbin /HIGHENTROPYVA:NO, 0x8040, SHA-256 D41A273C...4F62; ban A khong bi sua): chay luc 01:05, nap map xong ~01:08, noi du 5001/5003/5004/5005/56732, nghe 51189, luong chinh o Sleep (vong lap binh thuong); chay it nhat 10 phut khong crash. Da lay dump full 1.5 GB va xoa (khong can).
+- Ket luan: nguyen nhan goc rat co the la **cat con tro 64->32 bit** (dia chi cao khi ASLR cao). Cac dong nghi ngo: KSOServer.cpp:960, :4966, KSortScript.cpp:328 (xem phan tren). Chua kiem: chua co client/bot vao game de thu tai thuc te voi ban B; chua kiem ban B qua nhieu gio.
+- Viec tiep: A-07b - ra soat moi cho ep con tro/handle sang unsigned int/long/DWORD/int trong server (S\ va Core\), doi sang uintptr_t/intptr_t, dung lai khong can co.
+- Muc tieu van hanh ngay: dung ban B (hoac ban dung 32-bit-safe) cho B-02/test, khong dung ban A.

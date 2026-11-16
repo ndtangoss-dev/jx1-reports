@@ -52,3 +52,9 @@
 - #012.4 (Q-34): DA TAO bot01..bot05 (Account_Info+Account_Habitus) trong DB cua JX-Test-36; mat khau ngau nhien o C:\Users\PC\.jx-secrets\bot-accounts.txt (ngoai repo). Nhan vat: chua tao (E-01 chua co goi tao nhan vat).
 - #005/#006/#010/#011: da them -Effort vao chay_codex.ps1; dang chay A/B 3 muc effort (AB-low/medium/high) tren tom tat faction.ini; ket qua se vao TRANG-THAI.
 - #008: chua lam (xep sau A-07).
+
+## [01:25] #004 moc A-07 - THI NGHIEM HIGHENTROPYVA XONG (Sonnet)
+- Bat/tat co HighEntropyVA tren ban sao gs001 tu dung: co co = crash 0xC0000005; tat co (editbin /HIGHENTROPYVA:NO) = chay on dinh, noi du dich vu, nghe 51189 (JX-Test-36, khong dung Main VM).
+- => Nguyen nhan rat co the: cat con tro 64->32 bit. Xin duyet (O-01) truoc khi chay B-02 tren ban nao; de xuat dung ban tat co lam ban test.
+- De xuat A-07b (Codex): ra soat moi cho ep con tro/handle sang 32-bit trong S\ va Core\ de ban dung khong can co. Se giao ngay, chi dung tinh + build, khong chay.
+- Chi tiet: REPORTS/A-07-goc-re-crash-gs001.md (muc Bo sung 01:25).
