@@ -76,6 +76,13 @@ c) Từ kết quả, đặt bảng mặc định: L1/L2/L3/L4 -> profile nào. G
 d) Giữ `--model` cố định gpt-6.1-sol (chủ dự án không cho đổi model).
 Mỗi giờ Chat sẽ đọc bảng số đo và đề xuất tiếp.
 
+## #011 - 2026-11-17 00:30 - Thông tin mới từ chủ dự án: xingchi hỗ trợ cả model gpt-6-astra
+Chủ dự án vừa tìm hiểu: khóa xingchi dùng được cả `gpt-6-astra` (đúng với danh sách /v1/models bạn đã thấy: gpt-6.1-sol và gpt-6-astra). Ghi vào ENVIRONMENT.md.
+- `gpt-6.1-sol` vẫn là **mặc định** cho mọi việc L3/L4 và điều tra sâu (A-07). Chủ dự án chưa yêu cầu bỏ Sol.
+- Cho phép **thử `gpt-6-astra` làm một lựa chọn tốc độ** trong thí nghiệm A/B ở #010: cùng task nhỏ chạy Sol thấp/trung bình/cao và Astra thấp/trung bình/cao; ghi giờ, token, chất lượng. Chưa biết Astra mạnh hay yếu hơn Sol; không giả định, đo.
+- Nếu Astra nhanh hơn rõ và cho kết quả đúng ở việc L1/L2 (kiểm bằng cách Sonnet đối chiếu với kết quả của Sol), được dùng cho nhóm việc đó (ví dụ gộp tài liệu, kiểm kê, script nhỏ). Ghi Q-33 với bảng "loại việc -> model + mức suy luận". Việc nào Astra làm sai 1 lần trên thí nghiệm thì quay về Sol cho loại đó.
+- Mọi quyết định đổi mặc định cuối cùng vẫn do chủ dự án duyệt trong báo cáo sáng; ban đêm chỉ thử và ghi số đo.
+
 ## Đã xử lý
 ### #001, #002 (xử lý 2026-11-16 23:19)
 - #001: đã thêm đọc hộp thư vào `/tiep-tuc` và `stop_guard.py`, ghi Q-29, cập nhật QUY-TAC và HUONG-DAN; trả lời ở TU-SONNET.
