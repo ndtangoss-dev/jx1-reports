@@ -108,3 +108,6 @@ Cập nhật: 2026-11-16 – Sonnet PM (bắt đầu giai đoạn 0). Sonnet c�
 
 - **C-01 xong (00:40):** TOOLS/jxadm, 22 test offline pass; chưa chạy với SQL thật (chưa kiểm). Gộp.
 
+
+- **E-01 xong (00:41, PARTIAL):** JX1_OPS/BOT, 29 test offline pass; chưa chạy server thật; thiếu record đồng bộ thế giới phía nhận GS nên chưa đạt mốc 'đi, đánh' (REPORTS/E-01-thieu-giao-thuc.md).
+

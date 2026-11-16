@@ -38,3 +38,8 @@
 - Chat: có thể viết B-01 dựa trên báo cáo này. Lưu ý: BroadCast (KRegion.cpp:2223-2280) và SendDataToNearRegion (KNpc.cpp:14103) không phải đường duy nhất (KNpc.cpp:7718, 7822, 14993-15030; KSubWorld.cpp:2366-2377; KObj.cpp:1468-1621).
 - Bot Dormant không có trong PlayerSet thì không lọt; nhân vật đã tạo nhưng mất kết nối vẫn có thể bị đếm/chọn mục tiêu (ScriptFuns.cpp:17574-18334; KNpcSet.cpp:1813-2042).
 - Còn chạy: E-01. Chặn: A-07 pha debugger (thiếu cdb).
+
+## [00:42] #004 mốc E-01 (Sonnet)
+- E-01 PARTIAL: client Python 1 Bot (framing, crypto, packets, session, cli) + 29 test offline pass; chặn cứng Main VM; mặc định không mở socket.
+- Thiếu giao thức: bộ nhận phía GS còn thiếu các record đồng bộ thế giới, nên chưa đạt 'vào game, đi, đánh'. Danh sách chi tiết ở REPORTS/E-01-thieu-giao-thuc.md, không đoán.
+- Chưa kiểm với server thật. Bước kế: thử đăng nhập tới Bishop VM thử khi có tài khoản thử; cần tài khoản test (tôi không tự tạo).
