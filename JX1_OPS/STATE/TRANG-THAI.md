@@ -41,6 +41,22 @@ Cập nhật: 2026-11-16 – Sonnet PM (bắt đầu giai đoạn 0). Sonnet c�
 | VM thử | `JX-Test-36` [BÁO CÁO] |
 | Worktree task | `D:\JX-wt\<ID>` (đề xuất) |
 
+## Tiến độ task
+(Bảng này do PM cập nhật; `TOOLS/bang_tien_do.py` đọc để dựng Bảng tiến độ. Trạng thái: xong | đang chạy | chờ | lỗi.)
+
+| ID | Trạng thái | Ghi chú |
+|---|---|---|
+| 0-01 | xong | |
+| 0-02 | xong | kiểm kê môi trường |
+| 0-03 | xong | Codex, gộp 13fe679 |
+| 0-04 | xong | Graphify server + client |
+| 0-05 | xong | jx1-source đã đẩy, tag baseline-20261116 |
+| 0-06 | xong | Q-19 ghi vào CLAUDE.md và AGENTS.md |
+| 0-07 | đang chạy | thử nguội đạt; còn thử qua tắt bật VM, nối ensure Main VM |
+| 0-09 | đang chạy | sandbox Codex chặn ghi D:\JX-wt nhưng ghi được C:\Users\Public |
+| 0-10 | chờ | |
+| 0-08 | chờ | |
+
 ## Ngân sách Codex
 - Tổng: khoảng 2.000 USD (chủ dự án cho biết)
 - **Trần cứng của khóa xingchi** (chủ dự án báo 16/11 21:25): 50 USD / 5 giờ, 200 USD / ngày, 1.000 USD / 7 ngày [BÁO CÁO]
