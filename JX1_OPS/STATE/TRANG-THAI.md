@@ -114,3 +114,6 @@ Cập nhật: 2026-11-16 – Sonnet PM (bắt đầu giai đoạn 0). Sonnet c�
 
 - **D-01 xong (00:43):** REPORTS/D-01-bang-hoat-dong.md (tĩnh). Gộp. Không còn worker chạy.
 
+
+- **C-03, P-02 giao (00:46)** Codex; 2/6 worker.
+
