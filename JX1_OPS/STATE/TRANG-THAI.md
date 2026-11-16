@@ -126,3 +126,11 @@ Cập nhật: 2026-11-16 – Sonnet PM (bắt đầu giai đoạn 0). Sonnet c�
 
 - **A-04 xong (01:10):** REPORTS/A-04-kien-truc-tong.md (tổng hợp, có nhãn tin cậy).
 
+
+## A/B Codex effort (Sonnet, 2026-11-17 01:12) - tom tat faction.ini, Sol, 1 lan moi muc
+| Effort | Thoi gian | Token vao/ra/suy luan | Chat luong |
+|---|---|---|---|
+| low | 112 s | 284k / 1533 / 76 | Dung: 16 muc, co so dong |
+| medium | 96 s | 359k / 2024 / 158 | Dung, day tuong tu |
+| high | 89 s | 357k / 2034 / 407 | Dung, day tuong tu |
+Ket luan so bo: voi viec nho doc-tom-tat, effort khong doi toc do ro (nhieu hon sai so, moi muc 1 mau); thoi gian chu yeu do doc file. Chua thu Astra, service_tier=fast, profiles (con lai #010/#011). Giu Sol; effort L1 low, L2 medium, L3 high; A-08/B-02 dang chay high.

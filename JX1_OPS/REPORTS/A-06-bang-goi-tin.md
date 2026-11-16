@@ -1,4 +1,4 @@
-Tóm tắt 1: Đối chiếu source hoàn tất; commit BỊ CHẶN bởi quyền ghi metadata Git ngoài workspace, chưa có commit SHA.
+﻿Tóm tắt 1: Đối chiếu source hoàn tất; commit BỊ CHẶN bởi quyền ghi metadata Git ngoài workspace, chưa có commit SHA.
 Tóm tắt 2: s2c có 190 mục khớp mã; c2s client/gameserver có 167 mục, chỉ khác tên login mã 65 (C/KProtocolDef.h:20,218; S/KProtocolDef.h:21,220).
 Tóm tắt 3: Gateway thiếu bốn symbol c2s làm lệch mã từ 185; client thiếu ba relay và bốn chat (C/KProtocolDef.h:370,431,440; S/KProtocolDef.h:372,434,446; G/KProtocolDef.h:372).
 Tóm tắt 4: KProtocol.h có 18 struct chung khác khai báo; KTongProtocol.h lệch ID và payload; bảng độ dài client còn dư mục trước chestpwsync (C/KProtocol.cpp:171-173).
@@ -167,7 +167,7 @@ Payload lấy từ khai báo header, ép kiểu trong handler hoặc biểu th�
 | `s2c_clientbegin` | 64 | 64 | 64 | Mốc/ID | Mốc/alias; không có payload riêng. | C-D:52; S-D:53; G-D:53 |
 | `s2c_login` | 65 | 65 | 65 | server → client | Bảng `-1` (CP:17) | C-D:53; S-D:54; G-D:54 |
 | `s2c_logout` | 66 | 66 | 66 | server → client | Bảng `-1` (CP:18) | C-D:54; S-D:55; G-D:55 |
-| `s2c_syncclientend` | 67 | 67 | 67 | Mốc/ID | Mốc/alias; không có payload riêng. | C-D:55; S-D:56; G-D:56 |
+| `s2c_syncclientend` | 67 | 67 | 67 | ID đồng bộ (đã sửa) | SỬA (E-01, 17/11): KHÔNG phải mốc. Đây là gói đồng bộ kết thúc có handler và payload (client trả struct 9 byte theo Cocos; xem E-01-thieu-giao-thuc.md dòng "A-06 đánh dấu nhầm", C/gamecore/KProtocol.cpp:19, SS/Core/Src/KProtocol.cpp:174). | C-D:55; S-D:56; G-D:56 |
 | `s2c_synonlineplayer` | 68 | 68 | 68 | server → client | Bảng `sizeof(CURPLAYER_SYNC)` (CP:20) | C-D:56; S-D:57; G-D:57 |
 | `s2c_synccurplayerskill` | 69 | 69 | 69 | server → client | Handler `SKILL_SEND_ALL_SYNC` (`C/KProtocol.h:1353`; `S/KProtocol.h:1406`); CX:3303; Bảng `-1` (CP:21) | C-D:57; S-D:58; G-D:58 |
 | `s2c_synccurplayernormal` | 70 | 70 | 70 | server → client | Handler `CURPLAYER_NORMAL_SYNC` (`C/KProtocol.h:1208`; `S/KProtocol.h:1261`); CX:2071; Bảng `sizeof(CURPLAYER_NORMAL_SYNC)` (CP:22) | C-D:58; S-D:59; G-D:59 |
@@ -360,7 +360,7 @@ Payload lấy từ khai báo header, ép kiểu trong handler hoặc biểu th�
 | `c2s_login` | 65 | — | — | client → server | Bảng `-1` (SP:172) | C-D:249 |
 | `c2s_login_fhgyrinhkmvnsheypo` | — | 65 | 65 | client → server | Bảng `-1` (SP:172) | S-D:251; G-D:251 |
 | `c2s__loginfs_kfjghtueodnchsf` | 66 | 66 | 66 | client → server | Bảng `sizeof(tagLogicLogin)` (SP:173); `S/KProtocol.h:1770` | C-D:250; S-D:252; G-D:252 |
-| `c2s_syncclientend` | 67 | 67 | 67 | Mốc/ID | Mốc/alias; không có payload riêng. | C-D:251; S-D:253; G-D:253 |
+| `c2s_syncclientend` | 67 | 67 | 67 | ID đồng bộ (đã sửa) | SỬA (E-01, 17/11): KHÔNG phải mốc. Đây là gói đồng bộ kết thúc có handler và payload (client trả struct 9 byte theo Cocos; xem E-01-thieu-giao-thuc.md dòng "A-06 đánh dấu nhầm", C/gamecore/KProtocol.cpp:19, SS/Core/Src/KProtocol.cpp:174). | C-D:251; S-D:253; G-D:253 |
 | `c2s_loadplayer` | 68 | 68 | 68 | client → server | Bảng `-1` (SP:175) | C-D:252; S-D:254; G-D:254 |
 | `c2s_newplayer` | 69 | 69 | 69 | client → server | Bảng `-1` (SP:176) | C-D:253; S-D:255; G-D:255 |
 | `c2s_removeplayer` | 70 | 70 | 70 | client → server | Bảng `-1` (SP:177) | C-D:254; S-D:256; G-D:256 |
