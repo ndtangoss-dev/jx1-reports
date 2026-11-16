@@ -78,3 +78,9 @@ Việc "VM thử chạy server" [XÁC MINH một phần]: gs001 `A2T2` (exe gố
 - Kết quả từ máy thật (21:33): 5985 mở, 1433 mở [XÁC MINH]. 5002 vẫn đóng: tiến trình nghe `0.0.0.0:5002` nhưng có luật chặn chủ ý `JX no-in Sword3PaySys` (Block, mọi profile); luật chặn thắng luật cho phép. Máy thật không cần 5002 nên **không gỡ** luật chặn. Luật `JX-Q20-Host-5002` vì thế không có tác dụng.
 - Hoàn tác (chạy trong PowerShell Admin của VM):
   `foreach($p in 5985,1433,5002){ netsh advfirewall firewall delete rule name=JX-Q20-Host-$p }`
+
+## WinRM tới VM thử `JX-Test-36` (2026-11-16 21:36)
+- Chủ dự án đã chạy TrustedHosts (có `192.168.56.150`) [XÁC MINH]. Cổng 5985 vẫn đóng vì luật WinRM trong VM chỉ cho IP cũ (cùng nguyên nhân Main VM).
+- Đã thêm trong VM thử (Q-19): luật `JX-Q20-Host-5985` (Inbound, Allow, TCP 5985, `remoteip=192.168.56.101`, mọi profile). Sau đó `Invoke-Command` bằng `Get-JxCred` chạy được; VM thử đang có đủ 6 tiến trình chuỗi server [XÁC MINH].
+- Hoàn tác (trong PowerShell Admin của VM thử): `netsh advfirewall firewall delete rule name=JX-Q20-Host-5985`.
+- Lưu ý: tên máy của VM thử là `DESKTOP-KT7DU78`, trùng Main VM (VM gốc nhân bản). Hai VM nằm hai mạng khác nhau nên chưa gây lỗi; đổi tên VM thử là việc của 0-07/0-02b [CHƯA LÀM].
