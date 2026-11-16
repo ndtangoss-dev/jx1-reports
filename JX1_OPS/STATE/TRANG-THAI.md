@@ -134,3 +134,6 @@ Cập nhật: 2026-11-16 – Sonnet PM (bắt đầu giai đoạn 0). Sonnet c�
 | medium | 96 s | 359k / 2024 / 158 | Dung, day tuong tu |
 | high | 89 s | 357k / 2034 / 407 | Dung, day tuong tu |
 Ket luan so bo: voi viec nho doc-tom-tat, effort khong doi toc do ro (nhieu hon sai so, moi muc 1 mau); thoi gian chu yeu do doc file. Chua thu Astra, service_tier=fast, profiles (con lai #010/#011). Giu Sol; effort L1 low, L2 medium, L3 high; A-08/B-02 dang chay high.
+
+## [ĐANG CHỜ hạn mức Codex, tiếp tục khi het 429] (Sonnet, 2026-11-17 01:27)
+Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low) sau khi A-08a-d xong. A-07b (da giao, max) va B-02 (da co KVisibility.cpp/.h dang do) bi ngat; worktree D:\JX-wt\A-07b va D:\JX-wt\B-02 giu nguyen. Thu lai moi ~20 phut bang AB-ping; khi OK thi chay lai A-07b, B-02 (-Effort high), dong thoi toi da 3 worker de tranh 429.
