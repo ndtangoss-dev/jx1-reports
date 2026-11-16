@@ -68,3 +68,7 @@ Cập nhật: 2026-11-16 – Sonnet PM (bắt đầu giai đoạn 0). Sonnet c�
 
 ## Môi trường đang bật lúc lưu
 (Sonnet ghi: VM nào đang chạy, server nào đang lên, LDPlayer, worker.)
+
+- **Bảng tiến độ (22:10):** `TOOLS/bang_tien_do.py` dựng `D:\JX-dash\index.html` từ BACKLOG.md, TRANG-THAI.md (bảng "Tiến độ task") và KHOA.md; tự dựng lại sau mỗi commit nhờ hook `post-commit` của kho `D:\jx1-reports` (hook nằm ngoài git). Bản Artifact riêng tư: https://claude.ai/artifact/7bUxS1STLrmZ6btueV3eiy (PM xuất bản lại khi cập nhật). Bản Tailscale (cổng 8092, kèm nút sơ đồ Graphify): `docs-analysis/scripts/dash_server_tailscale.py`, chờ Tailscale bật (máy thật báo stopped, không có địa chỉ 100.x) và chờ chủ máy chạy `mo_cong_dash_8092.ps1` bằng Admin (hoàn tác `huy_cong_dash_8092.ps1`) [CHƯA KIỂM: chưa phục vụ được].
+- **Graphify install (22:05):** chủ dự án cho áp dụng; `graphify claude install` tại `C:\Jx1CocoV3`: CLAUDE.md thêm 11 dòng, `.claude/settings.json` thêm 3 hook (PreToolUse Bash|Grep, Read|Glob; SessionStart compact). Hook SessionStart cũ giữ nguyên [XÁC MINH]; sao lưu `.claude/settings.json.bak-truoc-graphify`; gỡ bằng `graphify claude uninstall`. Hook chỉ có tác dụng ở phiên mới; `/tiep-tuc` chưa chạy lại thật trong phiên mới [CHƯA KIỂM].
+- **0-09 thử sandbox (22:00):** Codex `workspace-write` ghi được trong worktree, bị chặn ghi `D:\JX-wt\` ngoài worktree, nhưng ghi được `C:\Users\Public\` (đã xóa file thử) [XÁC MINH].
