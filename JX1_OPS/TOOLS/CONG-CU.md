@@ -1,0 +1,22 @@
+# ĐÁNH GIÁ CÔNG CỤ, PLUGIN, SKILL, KẾT NỐI
+
+Ngày 2026-11-16. Opus đánh giá dựa trên tài liệu công khai (không truy cập được trang GitHub gốc của các công cụ từ môi trường lập kế hoạch; thông tin lấy qua kết quả tìm kiếm). **Chưa cài thử cái nào.** Sonnet cài thử trên máy Windows ở task 0-04 và ghi kết quả thật vào cột cuối.
+
+Nguyên tắc: dùng công cụ để **nhanh hơn và tốn ít token hơn**; không công cụ nào được thành nơi lưu trạng thái duy nhất; không chạy hai lớp cùng chức năng (hai hệ bộ nhớ, hai lớp nén, hai bộ định tuyến).
+
+| Công cụ | Làm gì | Quyết định | Lý do | Kết quả thử thật (Sonnet điền) |
+|---|---|---|---|---|
+| **Graphify** | Biến source thành đồ thị tri thức để agent tra thay vì đọc từng file; phân tích code bằng tree-sitter chạy cục bộ, không gửi code ra ngoài; có bản cho Claude Code và Codex, có cài đặt riêng cho Windows | **Bắt buộc, cài ngày đầu** | Source hơn 700 nghìn dòng C++: đây là chỗ tiết kiệm token lớn nhất. Lưu ý: nó thêm một hook trước mỗi lệnh tìm file và ghi một đoạn vào CLAUDE.md, phải ghi lại trong `JX1_OPS/ENVIRONMENT.md` | |
+| **Agent Orchestrator** (orchestrator.inc) | Chạy nhiều agent (Claude Code, Codex…) song song trong worktree riêng, theo dõi CI, đưa lỗi review về đúng agent, có app điện thoại | **Có thể cài sau** | Danh sách nền tảng công bố không có Windows; mặc định chạy bằng tmux, nên trên Windows nhiều khả năng phải qua WSL. Sonnet tự gọi `codex exec` đã đủ cho 3 worker. Thử lại khi cần nhiều worker hoặc muốn theo dõi bằng điện thoại | |
+| **Claude-Mem** | Ghi lại mọi thao tác của Claude Code, nén bằng AI, nạp lại vào phiên sau | **Không cài** | Lưu trong SQLite cục bộ trên một máy, không theo tài khoản hay GitHub; trùng chức năng với nhánh `jx1-ops`; tự nạp ngữ cảnh vào mỗi phiên nên tốn thêm token; giấy phép AGPL-3.0 | |
+| **Headroom** | Nén ngữ cảnh: chạy như proxy, bọc lệnh `claude`/`codex`, hoặc máy chủ MCP; tự công bố giảm 60–95% với dữ liệu JSON nhưng chỉ khoảng 15–20% với agent viết code | **Thử sau khi có số đo** | Lợi ích thực tế với việc viết code nhỏ; thêm một lớp trung gian thay đổi thứ model nhìn thấy. Chỉ thử sau giai đoạn A, đo trước/sau trên cùng một task. Không chạy cùng OmniRoute | |
+| **OmniRoute** | Cổng định tuyến tới hàng trăm nhà cung cấp model, tự chuyển khi hết hạn mức, có cả kiểu truy cập bằng cookie web | **Không dùng** | Gửi source tới nhà cung cấp không rõ là vi phạm quy tắc "không đưa source ra dịch vụ ngoài"; cách truy cập bằng cookie web có thể trái điều khoản dịch vụ. Chuyển model khi hết hạn mức đã có quy trình riêng (`QUY-TAC-VAN-HANH.md` mục 8) | |
+| **Archify** | Tạo sơ đồ kiến trúc HTML cho người đọc | **Có thể cài sau** | Chưa xác minh được thông tin. Graphify đã xuất được trang `graph.html` tương tác; chỉ thêm nếu cần sơ đồ dễ đọc hơn cho chủ dự án | |
+| **Task Observer** | Theo dõi agent con, shell, tác vụ nền | **Có thể cài sau** | Chưa xác minh được thông tin. Thử nếu Sonnet thấy khó theo dõi worker chạy nền | |
+| **Claude Code Setup** | Đề xuất cấu hình Claude Code (MCP, skill, hook, lệnh) cho dự án | **Dùng một lần ở task 0-01** | Chạy để rà cấu hình, sau đó tắt. Chưa xác minh tên gói chính xác | |
+| **Kết nối GitHub** (claude.ai) | Phiên Claude trên web và điện thoại đọc, ghi repository | **Đã có** | Đã liên kết tài khoản `ndtangoss-dev`; dùng để xem báo cáo và làm việc đọc source khi máy tắt (sau D1) | Đã đẩy được nhánh lên `jx1-reports` [XÁC MINH] |
+| **Agent con của Claude Code** | Sonnet chạy việc song song với model Haiku, Sonnet, Opus | **Bắt buộc** | Có sẵn, không cài | |
+| **Lệnh tự tạo** `/tiep-tuc`, `/ket-thuc-ca`, `/bao-cao` | Tạm dừng, tiếp tục, báo cáo nhanh | **Bắt buộc, cài ngày đầu** | `TOOLS/commands/`; chép vào `.claude/commands/` của thư mục dự án | |
+| **Windows Credential Manager** | Giữ mật khẩu thử, mật khẩu bot | **Dùng tiếp** | Dự án đang dùng (`Get-JxCred`); không xây kho bí mật riêng | |
+
+Nguồn: tài liệu và trang giới thiệu công khai của từng công cụ, tra ngày 2026-11-16 (danh sách liên kết trong tin nhắn bàn giao của Opus).

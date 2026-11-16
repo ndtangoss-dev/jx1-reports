@@ -1,0 +1,18 @@
+{
+  "_ghi_chu": "Mau quyen cho Claude Code o thu muc du an (.claude/settings.json). Sonnet kiem tra cu phap voi phien ban Claude Code thuc te o task 0-01 truoc khi dung. Danh sach cam la lop bao ve phu, khong thay the QUY-TAC-VAN-HANH muc 3.",
+  "permissions": {
+    "defaultMode": "acceptEdits",
+    "allow": [
+      "Read", "Edit", "Write", "Glob", "Grep",
+      "Bash(git:*)", "Bash(codex:*)", "Bash(python:*)", "Bash(py:*)",
+      "Bash(msbuild:*)", "Bash(cmake:*)", "Bash(ninja:*)", "Bash(gradle:*)",
+      "Bash(adb:*)", "Bash(VBoxManage:*)", "Bash(powershell:*)", "Bash(pwsh:*)",
+      "Bash(graphify:*)"
+    ],
+    "deny": [
+      "Bash(*JxStudio.exe*)", "Bash(*str_tool.exe*)", "Bash(*Autoupdate.exe*)",
+      "Bash(*JX-Server-D*)",
+      "Bash(git push --force*)", "Bash(git push -f*)"
+    ]
+  }
+}
