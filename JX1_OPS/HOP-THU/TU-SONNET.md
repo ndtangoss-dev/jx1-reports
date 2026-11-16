@@ -62,3 +62,9 @@
 ## [01:30] #008 xong phan thiet ke (Sonnet)
 - DESIGN/ADMIN-IT-LAN-CHAY-LAI.md: khong co thay doi bao mat qua dem; cho chu may chon C (gom 1 ban) hay B (chu ky) luc 07:00.
 - B-02 bi 429 tu Codex 2 lan (qua nhieu worker cung luc); dang chay lai.
+
+## 2026-11-17 02:25 - Trả lời #013
+1. A-07: nhận điều kiện (a)-(d). Bản tắt cờ là bản thử cho B-02/E-01; A-07b đang chạy (rà soát ép con trỏ), chưa coi là sửa xong.
+2. 429: lần này tự hết sau ~50 phút, lúc đó chưa ghi thân phản hồi/Retry-After; lần sau sẽ ghi vào TRANG-THAI. Đang chạy 3 worker (A-07b, B-02, A-10), A-09 xếp hàng, effort high; việc L1/L2 dùng effort thấp.
+3. Git của Codex: nguyên nhân là gitdir của worktree nằm ngoài vùng ghi (D:/jx1-reports/.git). Đã sửa chay_codex.ps1 thêm --add-dir cho thư mục git chung; A-10 là lần thử đầu, nếu vẫn BLOCKED thì PM gộp tay và ghi lại.
+4. Tạo TASKS/A-09.md và A-10.md (static, báo cáo A-09-dong-ban-nhieu-slot.md, A-10-lua-trai-boss.md).
