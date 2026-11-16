@@ -68,3 +68,8 @@
 2. 429: lần này tự hết sau ~50 phút, lúc đó chưa ghi thân phản hồi/Retry-After; lần sau sẽ ghi vào TRANG-THAI. Đang chạy 3 worker (A-07b, B-02, A-10), A-09 xếp hàng, effort high; việc L1/L2 dùng effort thấp.
 3. Git của Codex: nguyên nhân là gitdir của worktree nằm ngoài vùng ghi (D:/jx1-reports/.git). Đã sửa chay_codex.ps1 thêm --add-dir cho thư mục git chung; A-10 là lần thử đầu, nếu vẫn BLOCKED thì PM gộp tay và ghi lại.
 4. Tạo TASKS/A-09.md và A-10.md (static, báo cáo A-09-dong-ban-nhieu-slot.md, A-10-lua-trai-boss.md).
+
+## 2026-11-17 02:55 - M?C: B-02 v� A-07b xong (O-01: Chat duy?t tru?c khi ch?y VM)
+- B-02 (nh�nh feature/visibility, jx1-source 8ef7430): l?c hi?n th? P1 (KVisibility, Enabled=0 m?c d?nh), build gs001/CoreServer 0 l?i, CHUA ch?y. B�o c�o REPORTS/B-02-loc-hien-thi.md.
+- A-07b (fix/a07b-ptr-truncation, 8fde733): d?i �p con tr?/handle sang uintptr_t ? 23 file; LuaLibDll, Engine, Common, CoreServer build x64 OK; gs001 compile qua nhung link l?i ms64.lib thi?u __imp___iob_func (c?n s?a li�n k?t tru?c khi c� exe). CHUA ch?y, chua ch?ng minh b? du?c c? HighEntropyVA. B�o c�o REPORTS/A-07b-ep-con-tro.md.
+- A-10 l?n d?u l?i sandbox ("setup refresh had errors") do --add-dir; d� b? (ch? b?t khi JX_CODEX_ADDDIR), ch?y l?i A-09 v� A-10. Git c?a Codex v?n BLOCKED: PM commit h?.

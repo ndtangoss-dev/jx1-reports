@@ -13,7 +13,7 @@ $log = "$wt.codex.log"
 # Git cua worktree nam ngoai thu muc lam viec (vd D:\jx1-reports\.git): cho phep ghi de worker commit duoc.
 $gd = (Get-Content "$wt\.git" -ErrorAction SilentlyContinue | Select-Object -First 1) -replace '^gitdir:\s*',''
 $addDir = ''
-if ($gd) { $common = Split-Path (Split-Path $gd -Parent) -Parent; if (Test-Path $common) { $addDir = " --add-dir '$common'" } }
+if ($gd -and $env:JX_CODEX_ADDDIR) { $common = Split-Path (Split-Path $gd -Parent) -Parent; if (Test-Path $common) { $addDir = " --add-dir '$common'" } }
 $run = "$wt.run.ps1"
 @"
 `$env:CODEX_HOME = 'C:\Users\PC\.codex'; `$env:PYTHONUTF8 = '1'
@@ -27,5 +27,6 @@ $s = New-ScheduledTaskSettingsSet -ExecutionTimeLimit ([TimeSpan]::Zero) -AllowS
 Register-ScheduledTask -TaskName $n -Action $a -Settings $s -Force | Out-Null
 Start-ScheduledTask $n
 "Da giao ${Id}: task $n; model $Model; log $log; xong khi co $wt.done. Don task sau khi xong: Unregister-ScheduledTask $n -Confirm:`$false"
+
 
 

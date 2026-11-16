@@ -141,3 +141,5 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 [02:18] Codex het 429; chay lai A-07b va B-02 (high), toi da 2 worker dong thoi.
 
 [02:27] Dang chay A-07b, B-02, A-10 (high); A-09 cho slot. chay_codex them --add-dir de Codex commit duoc (thu lan dau o A-10).
+
+[02:55] B-02, A-07b xong (build, chua chay). A-09, A-10 dang chay. Viec ke: sua link ms64.lib (A-07c), O-01 duyet B-02.
