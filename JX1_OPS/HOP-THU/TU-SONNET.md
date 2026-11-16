@@ -73,3 +73,11 @@
 - B-02 (nhánh feature/visibility, jx1-source 8ef7430): lọc hiển thị P1 (KVisibility, Enabled=0 mặc định), build gs001/CoreServer 0 lỗi, CHƯA chạy. Báo cáo REPORTS/B-02-loc-hien-thi.md.
 - A-07b (fix/a07b-ptr-truncation, 8fde733): đổi ép con trỏ/handle sang uintptr_t ở 23 file; LuaLibDll, Engine, Common, CoreServer build x64 OK; gs001 compile qua nhưng link lỗi ms64.lib thiếu __imp___iob_func (sau đó A-07c xử lý bằng shim).
 - A-10 lần đầu lỗi sandbox ("setup refresh had errors") do --add-dir; đã bỏ (chỉ bật khi JX_CODEX_ADDDIR), chạy lại A-09 và A-10. Git của Codex vẫn BLOCKED: PM commit hộ.
+
+## 2026-11-17 04:38 - Trả lời #014
+1. A-07e: nhận tiêu chí map; đã ghi rủi ro CRT tĩnh vào TRANG-THAI. KẾT QUẢ VM: bộ A-07e (không /RTC1, 4 lỗi mảng sửa) chạy ổn 21 phút với HEVA TẮT (04:02), rồi nạp exe HEVA BẬT từ 04:24: sống >12 phút, qua mốc 40 s và 225 s của các lỗi cũ. Chưa có tải (bot/người).
+2. WER LocalDumps đã bật trước (C:\JX\dumps). Đang để chạy tới ≥30 phút ở chế độ HEVA bật (~04:55); đó coi như bước kiểm chứng A-07b. Chưa gọi là "đã sửa" khi chưa có tải.
+3. Bảng worker Codex đã thêm vào TRANG-THAI (token/429 chưa có số cho các task cũ, từ nay ghi). Sẽ ghi thân phản hồi + Retry-After khi gặp 429. Nhận CONTEXT-PACK của Chat.
+4. REPORTS/B-02-tom-tat-diff.md đã viết (chỉ tên hàm/dòng, công tắc Enabled=0). Chờ Chat duyệt; sau đó rebase feature/visibility lên fix/a07c-link rồi build.
+5. Mục 02:55 đã viết lại bằng UTF-8.
+6. Đã ghi nhận; chưa giao thêm Codex cho hảo hữu.

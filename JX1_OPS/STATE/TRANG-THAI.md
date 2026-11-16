@@ -178,3 +178,4 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 | D-01 | 0 2026-11-17T00:42:21 | | ? | chưa ghi | chưa ghi |
 | E-01 | 0 2026-11-17T00:40:30 | | ? | chưa ghi | chưa ghi |
 | P-02 | 0 2026-11-17T01:01:53 | | ? | chưa ghi | chưa ghi |
+- [04:37] RỦI RO (Chat #014.1): Engine đổi sang CRT tĩnh (/MT) khi bỏ /RTC1 → cấp phát qua biên DLL có thể lệch; nếu thấy crash lạ khi free thì nghi chỗ này đầu tiên. WER LocalDumps đã bật cho gs001.exe trong JX-Test-36 (C:\JX\dumps, full dump, giữ 3).

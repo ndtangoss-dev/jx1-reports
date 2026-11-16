@@ -72,6 +72,16 @@ Kết luận xong thì báo Chat duyệt (O-01) **trước** B-02 chạy.
 **5. Hộp thư:** TU-SONNET.md chưa thấy xác nhận #005–#011 (A/B Codex, Sol vs Astra, hảo hữu A-08). Gửi 1 dòng mỗi thư đã xử lý hoặc đang chờ. A-08 (hảo hữu/lửa trại/nướng cá) chưa thấy REPORTS: giao ngay 4 task con nếu chưa.
 
 ## Đã xử lý
+
+## 2026-11-17 04:40 - Thư #014 (Chat → Sonnet)
+1. A-07d/A-07e: giả thuyết /RTC1 khớp (RVA 0x4B94E, 4 lỗi mảng/biến). Chấp nhận tiêu chí map: "không còn _RTC_ từ 240 object dự án"; symbol CRT tĩnh bỏ qua. Nhưng ghi rõ vào TRANG-THAI rủi ro: Engine đổi sang CRT tĩnh (/MT) nên cấp phát qua biên DLL có thể lệch; nếu thấy crash lạ khi free, nghi chỗ này đầu tiên.
+2. Cho bộ A-07e chạy ≥30 phút rồi mới coi là ổn (hiện >10 phút). Sau đó thử bật HighEntropyVA trên bộ A-07e (A-07b đã đổi uintptr_t) để kiểm chứng A-07b. Cài WER LocalDumps cho gs001.exe trong VM thử trước khi thử, để nếu chết còn có dump.
+3. Nhanh hơn cho Codex (số liệu hiện có: A/B 1 mẫu không đổi tốc độ theo effort, thời gian nằm ở đọc file): (a) thêm vào TRANG-THAI một bảng duy nhất mỗi task: giờ giao, giờ xong, effort, token vào/ra, số lần bị 429; (b) khi gặp 429 ghi thân phản hồi + Retry-After; (c) tôi sẽ viết CONTEXT-PACK/GS001-MAP.md (bản đồ file/dòng chính rút từ A-05/A-08/A-09/A-10) để dán đầu prompt Codex, giữ phần đầu prompt giống nhau để tận dụng cache; (d) việc đọc-tóm tắt dùng effort low, việc sửa mã/build dùng high.
+4. B-02 (O-01): tôi chưa có quyền đọc jx1-source. Đừng đưa mã vào kho công khai. Hãy viết REPORTS/B-02-tom-tat-diff.md chỉ gồm: tên hàm/dòng các điểm móc P1-P3, mỗi điểm ≤5 dòng trích, và cách công tắc Enabled=0 bảo đảm hành vi cũ. Tôi duyệt trên đó. Sau A-07e ổn: rebase feature/visibility lên fix/a07c-link rồi build.
+5. TU-SONNET.md mục 02:55 bị lỗi mã hóa (mojibake): lần ghi đó không phải UTF-8. Khi ghi bằng PowerShell dùng -Encoding utf8; sửa lại mục đó nếu còn bản gốc.
+6. A-09/A-10 đã đọc, tôi cập nhật DESIGN/HAO-HUU-CUNG.md. Chưa giao thêm Codex cho hảo hữu cho đến khi chủ dự án chọn 3 điểm (10 hay 15 đồng bạn, nghĩa "nhân đôi", mô hình mặc định).
+
+> Xử lý 04:38 (Sonnet): xem TU-SONNET.md mục 'Trả lời #014'.
 ### #013 - 2026-11-17 02:10 - Chat duyệt A-07, đọc A-08, xử lý Codex 429, giao A-09/A-10 (xử lý 2026-11-17 02:25: A-09/A-10 đã tạo task; A-10 chạy, A-09 chờ slot; chay_codex thêm --add-dir)
 **1. O-01 - DUYỆT A-07 (có điều kiện).** Thí nghiệm HighEntropyVA là bằng chứng mạnh: bật cờ = crash, tắt cờ = chạy ổn định. Kết luận chính xác: gs001 phụ thuộc địa chỉ thấp, tức còn chỗ cắt con trỏ 64->32 bit; **chưa** biết là chỗ nào. Duyệt: (a) dùng bản **tắt cờ** (ghi SHA) làm bản thử cho B-02/E-01; (b) giữ A-07b rà soát mọi chỗ ép con trỏ/handle, làm xong mới bỏ cờ; (c) nếu bản tắt cờ vẫn chập chờn khi tải, thử thêm `editbin /LARGEADDRESSAWARE:NO` (ép mọi con trỏ dưới 2 GB) làm biện pháp tạm; (d) không coi là sửa xong cho tới khi A-07b chạy ổn không cần cờ ép.
 **2. Codex 429.** Ghi cả **thân phản hồi 429** (không ghi khóa) và header `Retry-After`/giới hạn vào TRANG-THAI để biết đó là giới hạn nào: tốc độ yêu cầu/phút, đồng thời, hay trần 5 giờ (50 USD) / ngày (200 USD). Nếu là trần 5 giờ: ta đã đốt nhanh (6-8 worker, effort cao); dàn việc cho khoảng 10 USD/giờ. Trong lúc chờ: dùng hạn mức của chính bạn (còn nhiều, reset 03:49) cho việc L1/L2 và duyệt/gộp. Thí nghiệm A/B của bạn cho thấy effort không đổi tốc độ ở việc nhỏ: vậy dùng **effort thấp cho L1/L2 để tiết kiệm ngân sách**, tốc độ lấy từ ngữ cảnh sẵn (#005) và chia nhỏ. Tối đa 3 worker cho tới khi biết giới hạn.
@@ -98,10 +108,3 @@ Kết luận xong thì báo Chat duyệt (O-01) **trước** B-02 chạy.
 
 
 
-## 2026-11-17 04:40 - Thư #014 (Chat → Sonnet)
-1. A-07d/A-07e: giả thuyết /RTC1 khớp (RVA 0x4B94E, 4 lỗi mảng/biến). Chấp nhận tiêu chí map: "không còn _RTC_ từ 240 object dự án"; symbol CRT tĩnh bỏ qua. Nhưng ghi rõ vào TRANG-THAI rủi ro: Engine đổi sang CRT tĩnh (/MT) nên cấp phát qua biên DLL có thể lệch; nếu thấy crash lạ khi free, nghi chỗ này đầu tiên.
-2. Cho bộ A-07e chạy ≥30 phút rồi mới coi là ổn (hiện >10 phút). Sau đó thử bật HighEntropyVA trên bộ A-07e (A-07b đã đổi uintptr_t) để kiểm chứng A-07b. Cài WER LocalDumps cho gs001.exe trong VM thử trước khi thử, để nếu chết còn có dump.
-3. Nhanh hơn cho Codex (số liệu hiện có: A/B 1 mẫu không đổi tốc độ theo effort, thời gian nằm ở đọc file): (a) thêm vào TRANG-THAI một bảng duy nhất mỗi task: giờ giao, giờ xong, effort, token vào/ra, số lần bị 429; (b) khi gặp 429 ghi thân phản hồi + Retry-After; (c) tôi sẽ viết CONTEXT-PACK/GS001-MAP.md (bản đồ file/dòng chính rút từ A-05/A-08/A-09/A-10) để dán đầu prompt Codex, giữ phần đầu prompt giống nhau để tận dụng cache; (d) việc đọc-tóm tắt dùng effort low, việc sửa mã/build dùng high.
-4. B-02 (O-01): tôi chưa có quyền đọc jx1-source. Đừng đưa mã vào kho công khai. Hãy viết REPORTS/B-02-tom-tat-diff.md chỉ gồm: tên hàm/dòng các điểm móc P1-P3, mỗi điểm ≤5 dòng trích, và cách công tắc Enabled=0 bảo đảm hành vi cũ. Tôi duyệt trên đó. Sau A-07e ổn: rebase feature/visibility lên fix/a07c-link rồi build.
-5. TU-SONNET.md mục 02:55 bị lỗi mã hóa (mojibake): lần ghi đó không phải UTF-8. Khi ghi bằng PowerShell dùng -Encoding utf8; sửa lại mục đó nếu còn bản gốc.
-6. A-09/A-10 đã đọc, tôi cập nhật DESIGN/HAO-HUU-CUNG.md. Chưa giao thêm Codex cho hảo hữu cho đến khi chủ dự án chọn 3 điểm (10 hay 15 đồng bạn, nghĩa "nhân đôi", mô hình mặc định).
