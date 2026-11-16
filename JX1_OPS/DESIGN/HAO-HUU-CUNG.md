@@ -20,9 +20,10 @@ Nguồn yêu cầu: `owner-inputs/08`. Đây là bản nháp, chưa xác minh b�
 - Nếu hảo hữu là **thực thể server (kiểu NPC/pet/đồng bạn)** thì không tốn chỗ người online. Đây là hướng nên ưu tiên nếu hệ thống đồng bạn gốc dùng được.
 - Hảo hữu tự trang bị, có EXP, kỹ năng riêng: dễ với nhân vật thật, khó với pet nếu không có sẵn kho trang bị. Phải xem hệ thống đồng bạn gốc hỗ trợ đến đâu.
 
-## Cân bằng cần chủ dự án duyệt (gợi ý mặc định)
-- +0,5% kinh nghiệm cấp/giây = 30%/phút = lên 1 cấp trong ~3,3 phút (chưa tính x2). Rất mạnh. Mặc định đề xuất: lửa trại cháy có thời hạn (ví dụ 5 phút), có hồi chiêu và trần số lần/ngày, tất cả đặt trong `.ini`; cấu hình được.
-- Chống lạm dụng: nhiều acc cùng đốt lửa trại, hảo hữu của acc phụ chia kinh nghiệm.
+## Cân bằng (chủ dự án đã chốt một phần, 2026-11-16 23:37)
+- **Lửa trại tồn tại 120 giây.** Mỗi giây +0,5% kinh nghiệm của cấp hiện tại: một lần đốt cho tối đa ~60% một cấp (chưa tính hệ số nhân đôi khi đốt cùng tổ đội; hiểu "nhân đôi" thế nào cần xác nhận lại: nhân đôi lượng đó, hay nhân đôi kinh nghiệm đánh quái trong lúc cháy).
+- Thời hạn, % mỗi giây, hệ số nhân đặt trong `.ini` để chỉnh được.
+- Chống lạm dụng: nhiều acc cùng đốt lửa trại, hảo hữu của acc phụ chia kinh nghiệm; cần hồi chiêu hoặc trần số lần mỗi ngày nếu thấy có lạm dụng.
 
 ## Việc kế (giao qua HOP-THU)
 A-08: kiểm kê môn phái, đồng bạn, lửa trại, nướng cá, kinh nghiệm theo giây, thân mật. Sau đó Chat viết thiết kế chi tiết (B/E-phase) và chọn kiến trúc.
