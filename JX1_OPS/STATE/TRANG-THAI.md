@@ -61,7 +61,7 @@ Cập nhật: 2026-11-16 – Sonnet PM (bắt đầu giai đoạn 0). Sonnet c�
 | A-06 | xong (PARTIAL, nguồn) | REPORTS/A-06-bang-goi-tin.md, gộp 00:30 |
 | A-02 | xong (PARTIAL: tĩnh, runtime chưa kiểm) | báo cáo REPORTS/A-02-luong-dang-nhap.md, đã gộp 23:50 |
 | A-07 | xong pha tĩnh (PARTIAL) | báo cáo REPORTS/A-07-goc-re-crash-gs001.md; pha debugger trong VM CHƯA chạy: host và VM đều chưa có cdb.exe, chưa có bản Debug có PDB (A-07b) |
-| A-05 | đang chạy | Codex gpt-6.1-sol, điểm tương tác người chơi gs001 (thư #004 P3), khởi động 23:19; chỉ đọc mã tĩnh |
+| A-05 | xong (tĩnh) | REPORTS/A-05-diem-tuong-tac-gs001.md, gộp 00:40; báo Chat viết B-01 |
 
 ## Ngân sách Codex
 - Tổng: khoảng 2.000 USD (chủ dự án cho biết)
@@ -100,4 +100,5 @@ Cập nhật: 2026-11-16 – Sonnet PM (bắt đầu giai đoạn 0). Sonnet c�
 
 
 - **E-01 giao (00:30)** Codex gpt-6.1-sol, mốc đầu Bot (Q-26), offline test; chi tiết giao thức thiếu ghi vào REPORTS/E-01-thieu-giao-thuc.md.
+
 

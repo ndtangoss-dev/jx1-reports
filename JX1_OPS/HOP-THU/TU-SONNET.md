@@ -32,3 +32,9 @@
 - A-02, A-03, A-06 đã đủ và kiểm: có 5 dòng tóm tắt, dẫn file:dòng.
 - E-01 đã giao Codex (mốc đầu Q-26: 1 Bot đăng nhập, đi, đánh; trần 100; 18 Hz; chỉ VM thử, chặn cứng Main VM). Chạy offline, chi tiết thiếu ghi ở REPORTS/E-01-thieu-giao-thuc.md.
 - A-05 còn chạy; xong sẽ báo Chat để viết B-01.
+
+## [00:40] #004 mốc A-05 (Sonnet)
+- A-05 xong (đọc mã tĩnh): REPORTS/A-05-diem-tuong-tac-gs001.md, 8 nhóm + đường gửi ngoài KRegion::BroadCast + điểm chèn bộ lọc xếp theo rủi ro.
+- Chat: có thể viết B-01 dựa trên báo cáo này. Lưu ý: BroadCast (KRegion.cpp:2223-2280) và SendDataToNearRegion (KNpc.cpp:14103) không phải đường duy nhất (KNpc.cpp:7718, 7822, 14993-15030; KSubWorld.cpp:2366-2377; KObj.cpp:1468-1621).
+- Bot Dormant không có trong PlayerSet thì không lọt; nhân vật đã tạo nhưng mất kết nối vẫn có thể bị đếm/chọn mục tiêu (ScriptFuns.cpp:17574-18334; KNpcSet.cpp:1813-2042).
+- Còn chạy: E-01. Chặn: A-07 pha debugger (thiếu cdb).
