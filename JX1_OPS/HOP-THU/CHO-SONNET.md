@@ -39,12 +39,6 @@ Lời chủ dự án: "ngân sách 2000 đô, cứ tiêu tẹt đi, làm sao hi�
 4. **Chất lượng không được hạ:** việc nhẹ chạy mức thấp vẫn phải qua bước kiểm của Sonnet trước khi gộp. Nếu một loại task chạy mức thấp cho kết quả sai nhiều lần thì tự nâng mức loại đó.
 5. **Phanh an toàn giữ nguyên:** kẹt 15 phút, lỗi 3 lần liên tiếp thì dừng và đổi cách; không chạy exe server trên máy thật; không đụng Main VM.
 
-## #008 - 2026-11-17 00:05 - Giảm số lần bắt chủ dự án chạy lại setup Admin [ĐANG CHỜ]
-Chủ dự án vắng nhà nhiều và không muốn chạy lại setup nhiều lần. Từ giờ:
-1. Mỗi lần sửa runner/setup Admin, **gom tất cả lỗi đã biết vào một bản**, thử dry-run mọi ca (kể cả đọc đường dẫn tiến trình dưới SYSTEM: dùng `QueryFullProcessImageName` hoặc đọc PID từ VBox.log, kiểm tra cả hai) trước khi yêu cầu chủ dự án chạy.
-2. Thiết kế để các sửa lỗi nhỏ sau này **không cần chạy lại setup**: ví dụ cho phép runner tự nạp bản cập nhật từ một thư mục chỉ Admin ghi, kèm kiểm chữ ký/băm do chủ dự án đã duyệt; hoặc tách phần "logic hay đổi" thành các file `.ps1` trong `ProgramData\JX1_ADMIN\bin` mà setup chỉ cần cài một lần, rồi chủ dự án duyệt bản cập nhật bằng một lệnh đơn giản. Giữ nguyên nguyên tắc: không có đường nào để tài khoản thường sửa mã chạy dưới SYSTEM.
-3. Lần này: chủ dự án có thể diệt PID kẹt bằng `Stop-Process -Id 132960 -Force` (Admin, một dòng). Nếu VM thử đã được giải phóng, bỏ qua và tiếp tục A-07.
-
 ## #010 - 2026-11-17 00:20 - Tăng tốc Codex: các "núm vặn" thật của Codex CLI (Chat đã tra tài liệu công khai) [ĐANG CHỜ]
 Chủ dự án giao Chat tối ưu tốc độ Codex qua đêm. Theo tài liệu công khai về Codex CLI, tốc độ có 4 núm độc lập (kiểm lại bằng `codex exec --help`, `codex features list` và cấu hình thật vì tên/giá trị có thể khác với model gpt-6.1-sol qua xingchi):
 1. **Mức suy luận** `-c model_reasoning_effort="..."` (thấp nhất đến cao nhất; giá trị hợp lệ tùy model). Đây là núm lớn nhất: mức cao làm model "nghĩ" lâu hơn. Việc phạm vi rõ, đọc/ghi tài liệu dùng thấp hoặc trung bình; việc điều tra sâu (A-07) mới dùng cao nhất.
@@ -89,4 +83,6 @@ Kết luận xong thì báo Chat duyệt (O-01) **trước** B-02 chạy.
 ### #009 - 2026-11-17 00:10 - CA ĐÊM: chủ dự án đi ngủ, máy chạy qua đêm, dậy 7h sáng (giờ Việt Nam). Chat sẽ đọc kho lúc khoảng 03:30 và 06:45.
 - Xu ly 2026-11-17 01:15: #007 da giao A-08a/b/c/d (Codex, effort high, doc tinh); #009 da nhan, dang theo luat ca dem.
 
+### #008 - 2026-11-17 00:05 - Giảm số lần bắt chủ dự án chạy lại setup Admin
+- Xu ly 2026-11-17 01:30: viet DESIGN/ADMIN-IT-LAN-CHAY-LAI.md (3 phuong an, khuyen nghi C ngay, B neu chu may muon); khong trien khai qua dem. Cau hoi dong cho 07:00 trong bao cao dem.
 

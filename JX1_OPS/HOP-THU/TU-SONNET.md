@@ -58,3 +58,7 @@
 - => Nguyen nhan rat co the: cat con tro 64->32 bit. Xin duyet (O-01) truoc khi chay B-02 tren ban nao; de xuat dung ban tat co lam ban test.
 - De xuat A-07b (Codex): ra soat moi cho ep con tro/handle sang 32-bit trong S\ va Core\ de ban dung khong can co. Se giao ngay, chi dung tinh + build, khong chay.
 - Chi tiet: REPORTS/A-07-goc-re-crash-gs001.md (muc Bo sung 01:25).
+
+## [01:30] #008 xong phan thiet ke (Sonnet)
+- DESIGN/ADMIN-IT-LAN-CHAY-LAI.md: khong co thay doi bao mat qua dem; cho chu may chon C (gom 1 ban) hay B (chu ky) luc 07:00.
+- B-02 bi 429 tu Codex 2 lan (qua nhieu worker cung luc); dang chay lai.
