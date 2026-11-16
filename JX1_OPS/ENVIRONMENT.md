@@ -65,3 +65,8 @@ Việc "VM thử chạy server" [XÁC MINH một phần]: gs001 `A2T2` (exe gố
 1. 0-02b: bật `JX-Test-36` (bridged, `.150`), giải quyết WinRM/đăng nhập, kiểm server 36 Hz. Mật khẩu lấy từ Credential Manager, không ghi vào file.
 2. 0-03: thử `codex exec` bằng đường dẫn đầy đủ ở trên.
 3. Máy hiện chạy Main VM 6 GB; bật thêm VM thử 6 GB vẫn đủ RAM (khoảng 24 GB trống).
+
+## Cửa sổ ngữ cảnh phiên PM (2026-11-16 21:xx)
+- Đặt về chuẩn 200k theo yêu cầu chủ dự án: `.claude/settings.json` của dự án có `env.CLAUDE_CODE_DISABLE_1M_CONTEXT = "1"` [XÁC MINH, JSON hợp lệ]; mẫu `TOOLS/settings.mau.json` cũng đã thêm mục này.
+- Đã gỡ `modelSettings.claude-sonnet-5-5.autoCompactWindow: 400000` khỏi `~/.claude/settings.json` (không còn cấu hình 400k ở settings người dùng) [XÁC MINH].
+- Không đụng cấu hình Codex. Có hiệu lực từ phiên Claude Code mới (phiên hiện tại giữ cài đặt cũ tới khi khởi động lại) [GIẢ THUYẾT, chưa kiểm].
