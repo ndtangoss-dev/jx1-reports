@@ -47,6 +47,7 @@ Kích thước một task: 15–60 phút làm việc, có kết quả kiểm ch�
 3. Đưa source hoặc dữ liệu lên dịch vụ ngoài, trừ repository riêng tư đã được duyệt (D1).
 4. Phát sinh chi phí tiền.
 5. Đổi mật khẩu, quyền tài khoản thật, cấu hình mạng hay tường lửa của máy thật.
+6. **Bật bất kỳ VM nào ở chế độ bridged** hoặc cách khác nối thẳng vào LAN nhà (Q-17). VM thử chỉ dùng Host-only hoặc NAT.
 
 **Giữ từ bộ cũ (đã có lý do thật):**
 - Không bao giờ chạy `JxStudio.exe`, `str_tool.exe`, `Autoupdate.exe`. Exe trong gói game chỉ chạy trong VM.

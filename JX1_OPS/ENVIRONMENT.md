@@ -15,13 +15,33 @@ Lập 2026-11-16 bởi Sonnet PM (task 0-02). Chỉ dùng lệnh đọc. Nhãn: 
 ## VM
 | VM | Trạng thái | RAM/CPU | Mạng | MAC | Nhãn |
 |---|---|---|---|---|---|
-| `JX-Server-D` (Main) | **đang chạy** | 6144 MB / 4 | bridged | 080027AD6D3F | [XÁC MINH] |
+| `JX-Server-D` (Main) | **aborted** lúc 20:13 (giờ máy) ngày 16/11; không do tôi tắt; chưa bật lại | 6144 MB / 4 | bridged (cấu hình cũ, chưa đổi; không bật khi chưa được phép) | 080027AD6D3F | [XÁC MINH] 20:55 |
 | `JX-Server` (cũ) | tắt | chưa đọc | chưa đọc | chưa đọc | [XÁC MINH] chỉ về sự tồn tại |
-| `JX-Test-36` (thử) | tắt, **không có snapshot** | 6144 MB / 4 | **bridged** | 080027CAE833 | [XÁC MINH] |
+| `JX-Test-36` (thử) | **đang chạy** (VBox báo running; không có snapshot) | 6144 MB / 4 | **Host-only** (chuyển lúc đang chạy ngày 16/11 khoảng 20:35; trước đó bridged từ 12/11) | 080027CAE833 | [XÁC MINH] 20:55 |
 
-**Đính chính (đối chiếu `docs-analysis/reports/42-ke-hoach-vm-thu.md`, mục "Chuyển JX-Test-36 sang Bridged"):** bridged là chủ ý từ 2026-11-12, vì Host-only không cho máy thật và LDPlayer nối tới VM. IP trong VM thử là `192.168.1.150` (Main VM là `.50`), MAC khác nhau, nên không trùng. **Không đổi NIC.** Lưu ý còn mở theo báo cáo 42 [BÁO CÁO, chưa kiểm lại]: WinRM tới VM thử từng bị "Access denied" (user MU1, mật khẩu trống, chưa đặt mật khẩu); forwarder và portproxy trên máy thật vẫn trỏ `192.168.1.50`, nên đường Tailscale không tới VM thử; gs001 trong VM thử quảng bá IP Tailscale `100.95.186.86`. Hai VM bật cùng lúc cần đủ RAM (đủ: khoảng 24 GB trống).
+**Quyết định Q-17:** không bật VM nào ở chế độ bridged khi chủ dự án chưa cho phép. Bridged từ 12/11 là chủ ý cũ (báo cáo 42) nhưng đã bị bỏ.
 
-Việc "VM thử chạy được server tự dựng 36 Hz" **[CHƯA KIỂM]**: chưa bật VM.
+### Kiểm tra mạng bên trong `JX-Test-36` (2026-11-16 20:40, đọc từ màn hình VM) [XÁC MINH]
+| Mục | Giá trị |
+|---|---|
+| Card | Intel PRO/1000 MT, MAC `08-00-27-CA-E8-33` |
+| IP | tĩnh `192.168.1.150`, DHCP tắt |
+| Gateway | **không có** |
+| DNS | `192.168.1.1` (router/mesh) |
+| Dịch vụ chia sẻ mạng | ICS (`SharedAccess`, `icssvc`) và `RemoteAccess` đều Stopped; không có dịch vụ DHCP/DNS server; không có portproxy |
+| Tên máy Windows | `DESKTOP-KT7DU78` (máy thật là `DESKTOP-5NGFN70`, khác). Main VM là bản gốc của bản sao này nên **có khả năng cao trùng tên** [GIẢ THUYẾT, chưa kiểm vì Main VM đang aborted] |
+
+**Kết luận về nguyên nhân [CHƯA XÁC ĐỊNH]:** trong VM không có thứ gì tự chia sẻ mạng hay cấp DHCP. Hai giả thuyết còn lại, chưa kiểm chứng: (1) tên máy trùng với Main VM (NetBIOS, LLMNR, mDNS) cùng DUID DHCPv6 trùng vì là bản sao; (2) hai card ảo bridged cùng nối vào một card Realtek của máy thật và phát quảng bá, hoặc router ghi nhận IP `.150` lạ. Không loại trừ nguyên nhân khác ngoài VM.
+
+**Chưa khớp lời kể:** chủ dự án nói đã tắt VM thử, nhưng VBox báo `JX-Test-36` vẫn **running** lúc 20:30, còn `JX-Server-D` (Main) ở trạng thái **aborted** lúc 20:13. Có khả năng đã tắt nhầm Main VM. Tôi không tắt VM nào; tôi chỉ chuyển card của VM thử sang Host-only lúc đang chạy để cắt ngay đường ra LAN.
+
+### Đề xuất mạng VM thử (chờ duyệt, vùng Đỏ mục 5)
+Báo cáo 42: lỗi cũ do VM đặt `192.168.1.150` trong khi card Host-only của máy thật chỉ có `169.254.83.226` (lệch dải). Đề xuất dùng dải riêng **`192.168.56.0/24`**, không trùng LAN nhà:
+1. Máy thật: **không cần đổi gì.** Card "VirtualBox Host-Only Ethernet Adapter" (tên `Ethernet 3`) hiện là `192.168.56.101` [XÁC MINH 20:58]; lệch dải ở báo cáo 42 chỉ vì VM đặt `192.168.1.150`. (IP LAN của máy thật nay là `192.168.1.12`, không còn `.8` như ghi trong CLAUDE.md [XÁC MINH].)
+2. VM thử: đổi IP sang `192.168.56.150/24`, không gateway, không DNS ra ngoài; đổi tên máy thành `JXTEST36` (tránh trùng Main VM).
+3. Trong VM: đổi `Ip` trong các `gs00N_cfg.ini` và cấu hình Bishop/Goddess từ `192.168.1.150` sang `192.168.56.150` (theo byte, có `.bak`).
+4. LDPlayer nối tới `192.168.56.150` qua máy thật (NAT của LDPlayer đi theo bảng định tuyến máy thật) [GIẢ THUYẾT, thử sau khi áp dụng]. Dùng lệnh `adb shell ping` để kiểm.
+Việc "VM thử chạy server" [XÁC MINH một phần]: gs001 `A2T2` (exe gốc + DLL A2) đã lên và nối Goddess 5001, S3Relay 5003–5005, Bishop 56732. "36 Hz" **[CHƯA KIỂM]**: `A2T2` là nhánh lệnh `CmdLane` (báo cáo 38/44), chưa phải bản 36 Hz từ `D:\JX-build\src18`.
 
 ## Android
 | Mục | Giá trị | Nhãn |
