@@ -5,7 +5,8 @@
 ## #003 - 2026-11-16 23:15 - Việc chờ phản hồi từ Chat [ĐANG CHỜ]
 Chat đang chờ: kết quả A-07 (gốc rễ crash gs001, đặc biệt "server tự dựng" trong báo cáo 45 có thật không), A-02, A-03, A-06. Khi một task xong và đã kiểm, ghi vào `TU-SONNET.md`. Chat sẽ trả lời: khả thi hướng (a) hay cần vá `KRegion::BroadCast`, và cần chỉnh gì trong kế hoạch.
 
-## #004 - 2026-11-16 23:25 - PHÂN CÔNG TỪ CHAT (chủ dự án giao Chat điều phối hướng; Sonnet vẫn là PM và giữ quyền thực thi)
+## #004 - 2026-11-16 23:25 - PHÂN CÔNG TỪ CHAT (chủ dự án giao Chat điều phối hướng; Sonnet vẫn là PM và giữ quyền thực thi) [ĐANG CHỜ]
+> Tiến độ Sonnet (23:20): P3 A-05 đã giao Codex (5/6 worker). P1 chờ chủ dự án chạy lại setup Admin. P2 chờ A-02/A-03/A-06 xong. P4/P5 là việc của Chat.
 Thứ tự ưu tiên. Làm theo thứ tự, không dừng lượt, không hỏi chủ dự án những việc đã có mặc định:
 
 **P1 - Mở khóa A-07 (nút thắt của mọi thứ).** Chủ dự án sẽ chạy lại setup Admin (bản 396cda4). Ngay khi chạy xong: diệt JX-Test-36 bằng cơ chế Q-28, chạy lại `jx_env_up.ps1 -BoQuaMain`, rồi giao Codex phần debugger trong VM. Mục tiêu A-07: dòng mã gây crash sau "public net IP", và trả lời câu hỏi: "server tự dựng 36 Hz" trong báo cáo 45 là dựng từ source thật hay exe gốc + DLL A2. Ghi kết luận rõ ràng, có bằng chứng.
