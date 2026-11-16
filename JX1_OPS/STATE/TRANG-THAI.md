@@ -52,10 +52,10 @@ Cập nhật: 2026-11-16 – Sonnet PM (bắt đầu giai đoạn 0). Sonnet c�
 | 0-04 | xong | Graphify server + client |
 | 0-05 | xong | jx1-source đã đẩy, tag baseline-20261116 |
 | 0-06 | xong | Q-19 ghi vào CLAUDE.md và AGENTS.md |
-| 0-07 | đang chạy | thử nguội đạt; còn thử qua tắt bật VM, nối ensure Main VM |
+| 0-07 | đang chạy | `jx_env_up.ps1` chạy tốt khi môi trường đã lên (exit 0, 22:14); thử qua tắt bật VM cần chủ: VM thử không tự đăng nhập mu1 (đề nghị bật AutoAdminLogon trong VM thử); Main VM không trả ping lúc 22:14 |
 | 0-09 | đang chạy | sandbox Codex chặn ghi D:\JX-wt nhưng ghi được C:\Users\Public |
 | 0-10 | xong | chưa có đơn giá USD; có số token và trần tạm Q-22 |
-| 0-08 | chờ | |
+| 0-08 | chờ | đã cập nhật BAN-GIAO; thử phiên mới bị chặn do giới hạn tuần của tài khoản Claude |
 
 ## Ngân sách Codex
 - Tổng: khoảng 2.000 USD (chủ dự án cho biết)
@@ -79,3 +79,5 @@ Cập nhật: 2026-11-16 – Sonnet PM (bắt đầu giai đoạn 0). Sonnet c�
 - **Graphify install (22:05):** chủ dự án cho áp dụng; `graphify claude install` tại `C:\Jx1CocoV3`: CLAUDE.md thêm 11 dòng, `.claude/settings.json` thêm 3 hook (PreToolUse Bash|Grep, Read|Glob; SessionStart compact). Hook SessionStart cũ giữ nguyên [XÁC MINH]; sao lưu `.claude/settings.json.bak-truoc-graphify`; gỡ bằng `graphify claude uninstall`. Hook chỉ có tác dụng ở phiên mới; `/tiep-tuc` chưa chạy lại thật trong phiên mới [CHƯA KIỂM].
 - **0-09 thử sandbox (22:00):** Codex `workspace-write` ghi được trong worktree, bị chặn ghi `D:\JX-wt\` ngoài worktree, nhưng ghi được `C:\Users\Public\` (đã xóa file thử) [XÁC MINH].
 - **Hook Stop + Q-21 (22:25):** `TOOLS/stop_guard.py` khai báo trong `C:\Jx1CocoV3\.claude\settings.json` (mục `hooks.Stop`). Đã thử bằng dữ liệu giả: còn task → chặn kèm task kế tiếp (0-07); có `/ket-thuc-ca`, thẻ `[DUNG-CAN-CHU]` còn hiệu lực, hoặc `Hôm nay: 210 USD` → im lặng cho dừng [XÁC MINH]. Chưa thử trong phiên Claude Code thật sau khi khai báo [CHƯA KIỂM]; mục lỗi 3 lần chưa thử riêng. Gỡ: xóa khóa `Stop` trong settings.json.
+- **Giới hạn tuần Claude (22:50):** thử mở phiên mới không đầu (`claude -p`, bước đọc BAN-GIAO của 0-08) trả về "You've hit your weekly limit · resets Nov 19, 1am (Asia/Bangkok)" [XÁC MINH, nguyên văn thông báo]. Nghĩa là phiên PM có thể không chạy được cho tới 19/11 01:00 (giờ Bangkok). 0-08 và `/tiep-tuc` trong phiên thật CHƯA thử.
+- [DUNG-CAN-CHU 2026-11-16 22:50] Lý do: tài khoản Claude chạm giới hạn tuần, 0-07 chờ chủ (đăng nhập mu1 trong VM thử), 0-08 cần phiên mới. Xóa thẻ này khi làm tiếp.
