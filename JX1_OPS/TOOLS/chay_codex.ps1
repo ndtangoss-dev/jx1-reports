@@ -10,10 +10,14 @@ if (-not (Test-Path $wt)) { throw "Khong co worktree $wt" }
 if (-not $PromptFile) { $PromptFile = "$wt.prompt.txt" }
 if (-not (Test-Path $PromptFile)) { throw "Khong co prompt $PromptFile" }
 $log = "$wt.codex.log"
+# Git cua worktree nam ngoai thu muc lam viec (vd D:\jx1-reports\.git): cho phep ghi de worker commit duoc.
+$gd = (Get-Content "$wt\.git" -ErrorAction SilentlyContinue | Select-Object -First 1) -replace '^gitdir:\s*',''
+$addDir = ''
+if ($gd) { $common = Split-Path (Split-Path $gd -Parent) -Parent; if (Test-Path $common) { $addDir = " --add-dir '$common'" } }
 $run = "$wt.run.ps1"
 @"
 `$env:CODEX_HOME = 'C:\Users\PC\.codex'; `$env:PYTHONUTF8 = '1'
-Get-Content -Raw -Encoding UTF8 '$PromptFile' | & '$Codex' exec --json --sandbox workspace-write --model '$Model' --config 'model_provider="xingchi"' --config 'model_reasoning_effort="$Effort"' --config 'approval_policy="never"' -C '$wt' - *> '$log'
+Get-Content -Raw -Encoding UTF8 '$PromptFile' | & '$Codex' exec --json --sandbox workspace-write --model '$Model' --config 'model_provider="xingchi"' --config 'model_reasoning_effort="$Effort"' --config 'approval_policy="never"' -C '$wt'$addDir - *> '$log'
 Set-Content -Encoding UTF8 '$wt.done' ('exit=' + `$LASTEXITCODE + ' ' + (Get-Date -Format s))
 "@ | Set-Content -Encoding UTF8 $run
 Remove-Item "$wt.done" -ErrorAction SilentlyContinue
@@ -23,4 +27,5 @@ $s = New-ScheduledTaskSettingsSet -ExecutionTimeLimit ([TimeSpan]::Zero) -AllowS
 Register-ScheduledTask -TaskName $n -Action $a -Settings $s -Force | Out-Null
 Start-ScheduledTask $n
 "Da giao ${Id}: task $n; model $Model; log $log; xong khi co $wt.done. Don task sau khi xong: Unregister-ScheduledTask $n -Confirm:`$false"
+
 
