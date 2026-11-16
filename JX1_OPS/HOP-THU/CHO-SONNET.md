@@ -23,6 +23,14 @@ Thứ tự ưu tiên. Làm theo thứ tự, không dừng lượt, không hỏi 
 
 **Ngân sách/worker:** trần Q-24 (3→6 worker) và trần Q-22 vẫn giữ. Khi Codex rảnh mà hàng đợi còn việc không phụ thuộc, giao tiếp, đừng để rảnh.
 
+## #005 - 2026-11-16 23:35 - Tăng tốc Codex (chủ dự án thấy worker chậm; KHÔNG đổi model)
+1. Đo trước: ghi vào `TRANG-THAI.md` (bảng nhỏ) thời gian chạy thật từng task Codex: giờ bắt đầu, giờ xong, số phút im log dài nhất, số token. Sau 3–5 task có số thì mới kết luận chậm ở đâu.
+2. Cho Codex ngữ cảnh đã tiêu hóa sẵn thay vì để nó tự mò mã: trong file task ghi sẵn danh sách file cần đọc (lấy từ đồ thị Graphify của server `src18` và client, báo cáo A-01, báo cáo JIBS, hàm đã biết như `KRegion::BroadCast`), cùng câu hỏi cụ thể cần trả lời và dạng báo cáo mong muốn. Task có phạm vi hẹp và câu hỏi rõ thì chạy nhanh hơn nhiều so với "khảo sát cả hệ thống".
+3. Chia nhỏ: task L3 trở lên mà phạm vi rộng (A-02, A-05) tách thành 2–3 task con độc lập (ví dụ A-05: đồng bộ thực thể / PK + tổ đội / giao dịch + chat) chạy song song, trong trần 6 worker.
+4. Mức suy luận theo độ khó: hỏi lại chủ dự án chỉ nếu bạn thấy cần đổi; đề xuất cụ thể sau khi có số đo ở mục 1 (ví dụ chỉ dùng mức max cho L3–L4 như A-07; việc L1–L2 như gộp tài liệu dùng mức thấp hơn của cùng model gpt-6.1-sol). Không đổi model. Ghi đề xuất vào `TU-SONNET.md`, chủ dự án quyết.
+5. Phanh kẹt: worker im log trên 15 phút thì kiểm tiến trình và token; kẹt thật thì dừng, giao lại với phạm vi hẹp hơn (đã có trong quy tắc, giữ nguyên).
+6. Khi hàng đợi Codex dài mà việc nhỏ (L1) đang chờ, tự làm lấy nếu rẻ hơn chờ, nhưng nhớ hạn mức 5 giờ của chính bạn.
+
 ## Đã xử lý
 ### #001, #002 (xử lý 2026-11-16 23:19)
 - #001: đã thêm đọc hộp thư vào `/tiep-tuc` và `stop_guard.py`, ghi Q-29, cập nhật QUY-TAC và HUONG-DAN; trả lời ở TU-SONNET.
