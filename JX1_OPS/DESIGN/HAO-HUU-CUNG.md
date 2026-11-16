@@ -36,3 +36,13 @@ A-08: kiểm kê môn phái, đồng bạn, lửa trại, nướng cá, kinh ngh
 **Lửa trại:** game gốc có script đốt lửa bằng vật phẩm (`huozhong.lua`, `gouhuo.lua`), sống 1.800/3.600 giây (không phải 120), EXP bảng cố định 5.000-15.000 mỗi 10 giây (`GouHouTime=10`). Chưa có: lửa sinh từ boss tinh anh, x2 khi cùng tổ đội, +0,5%/giây. Boss tinh anh xanh nước biển = `GoldType` 2-4 (client tô RGB 100,100,255, `KNpcGold.cpp`): có điểm móc để sinh lửa khi boss chết hoặc xuất hiện.
 **Nướng cá:** game gốc chỉ có ăn cá trực tiếp; câu cá có callback nhưng thiếu bảng tọa độ. Nướng cá + thân mật là tính năng mới.
 **Kinh nghiệm:** `AddOwnExp` chỉ cộng cho một người; `AddExp(exp,level,1)` chia theo tổ đội (cùng map, cách <= 768). `GetNextExp()` = ngưỡng EXP của cấp hiện tại. `SetTimer(18,id)` = 1 giây. Lưu ý `DirectAddExp` mất phần EXP vượt ngưỡng khi lên cấp: lửa trại +0,5%/giây phải tự xử lý lên cấp.
+
+
+## KẾT QUẢ A-09/A-10 (Chat, 04:40)
+- Số NPC: gs001 chọn MAX_NPC=100000 (nguồn); 100 người x 15 đồng bạn = 1500 NPC, chưa phải nút thắt. Chưa đo binary thực.
+- m_TongBanNum là một DWORD đơn: nhiều slot cần viết lại quản lý slot/Lua/AI/trang bị/đồng bộ client. Roster 10-15 chưa tồn tại, cần bảng lưu riêng mỗi đồng bạn (task 10000 ID dùng chung buffer 128 KiB nên không đủ).
+- Skill môn phái cho NPC có đường gán/cast; AI có hai điểm móc chọn vai (trước SetActiveSkill, FollowAttackCompanion) → chia vai đánh đơn/AOE làm được ở đó.
+- Offline xóa NPC, đổi map teleport/xóa theo lockMap; chủ chết chưa có chính sách → phải định nghĩa.
+- Lửa trại: boss xanh = GoldType 2-4; điểm móc là KNpc::OnDeath (OnGoldDeath đang comment, đồng bạn kết liễu không gọi callback). Lửa mẫu NPC 2078 skill 1705, sống 1800/3600 s; yêu cầu mới 120 s. Skill 1705/1706 thiếu trong Skills.txt; chưa chứng minh aura, x2 đội, 0,5%/giây chạy.
+- Nướng cá và thân mật: chưa có gì, làm mới hoàn toàn.
+- Quyết định chờ chủ dự án: số đồng bạn (10/15), nghĩa "nhân đôi", mô hình mặc định.

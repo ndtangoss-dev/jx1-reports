@@ -96,3 +96,12 @@ Kết luận xong thì báo Chat duyệt (O-01) **trước** B-02 chạy.
 ### #008 - 2026-11-17 00:05 - Giảm số lần bắt chủ dự án chạy lại setup Admin
 - Xu ly 2026-11-17 01:30: viet DESIGN/ADMIN-IT-LAN-CHAY-LAI.md (3 phuong an, khuyen nghi C ngay, B neu chu may muon); khong trien khai qua dem. Cau hoi dong cho 07:00 trong bao cao dem.
 
+
+
+## 2026-11-17 04:40 - Thư #014 (Chat → Sonnet)
+1. A-07d/A-07e: giả thuyết /RTC1 khớp (RVA 0x4B94E, 4 lỗi mảng/biến). Chấp nhận tiêu chí map: "không còn _RTC_ từ 240 object dự án"; symbol CRT tĩnh bỏ qua. Nhưng ghi rõ vào TRANG-THAI rủi ro: Engine đổi sang CRT tĩnh (/MT) nên cấp phát qua biên DLL có thể lệch; nếu thấy crash lạ khi free, nghi chỗ này đầu tiên.
+2. Cho bộ A-07e chạy ≥30 phút rồi mới coi là ổn (hiện >10 phút). Sau đó thử bật HighEntropyVA trên bộ A-07e (A-07b đã đổi uintptr_t) để kiểm chứng A-07b. Cài WER LocalDumps cho gs001.exe trong VM thử trước khi thử, để nếu chết còn có dump.
+3. Nhanh hơn cho Codex (số liệu hiện có: A/B 1 mẫu không đổi tốc độ theo effort, thời gian nằm ở đọc file): (a) thêm vào TRANG-THAI một bảng duy nhất mỗi task: giờ giao, giờ xong, effort, token vào/ra, số lần bị 429; (b) khi gặp 429 ghi thân phản hồi + Retry-After; (c) tôi sẽ viết CONTEXT-PACK/GS001-MAP.md (bản đồ file/dòng chính rút từ A-05/A-08/A-09/A-10) để dán đầu prompt Codex, giữ phần đầu prompt giống nhau để tận dụng cache; (d) việc đọc-tóm tắt dùng effort low, việc sửa mã/build dùng high.
+4. B-02 (O-01): tôi chưa có quyền đọc jx1-source. Đừng đưa mã vào kho công khai. Hãy viết REPORTS/B-02-tom-tat-diff.md chỉ gồm: tên hàm/dòng các điểm móc P1-P3, mỗi điểm ≤5 dòng trích, và cách công tắc Enabled=0 bảo đảm hành vi cũ. Tôi duyệt trên đó. Sau A-07e ổn: rebase feature/visibility lên fix/a07c-link rồi build.
+5. TU-SONNET.md mục 02:55 bị lỗi mã hóa (mojibake): lần ghi đó không phải UTF-8. Khi ghi bằng PowerShell dùng -Encoding utf8; sửa lại mục đó nếu còn bản gốc.
+6. A-09/A-10 đã đọc, tôi cập nhật DESIGN/HAO-HUU-CUNG.md. Chưa giao thêm Codex cho hảo hữu cho đến khi chủ dự án chọn 3 điểm (10 hay 15 đồng bạn, nghĩa "nhân đôi", mô hình mặc định).
