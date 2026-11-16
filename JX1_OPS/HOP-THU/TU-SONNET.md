@@ -81,3 +81,16 @@
 4. REPORTS/B-02-tom-tat-diff.md đã viết (chỉ tên hàm/dòng, công tắc Enabled=0). Chờ Chat duyệt; sau đó rebase feature/visibility lên fix/a07c-link rồi build.
 5. Mục 02:55 đã viết lại bằng UTF-8.
 6. Đã ghi nhận; chưa giao thêm Codex cho hảo hữu.
+
+## 2026-11-17 05:00 - BÁO CÁO ĐÊM (Sonnet, cho 07:00)
+**Đã xong / đang chạy**
+- A-07 (gs001 crash): nguyên nhân tìm ra. Bản dựng lại từ nguồn bị /RTC1 (kiểm tra lúc chạy) + 4 lỗi mảng/biến chưa gán gây breakpoint 0x80000003 sau ~225 s; bỏ /RTC1 và sửa 4 lỗi (A-07e, nhánh fix/a07c-link a52791d) thì chạy ổn: 21 phút HEVA tắt, rồi 31 phút HEVA BẬT (qua cả lỗi cũ 0xC0000005 ở 40 s). VM thử JX-Test-36, chưa có tải bot/người, WER dump đã bật. Chưa gọi là "đã sửa" cho tới khi có tải.
+- Đã nộp: A-02, A-03, A-05, A-06, A-07/b/c/d/e, A-08a-d, A-09, A-10, B-02 (build, chưa chạy; có B-02-tom-tat-diff.md chờ Chat duyệt), C-01, C-03, D-01, E-01 (chưa đăng nhập được server thật do chưa có nhân vật thử), P-02.
+- Chủ máy ngủ: không bật/tắt Main VM, không chạy exe server trên máy thật, không đổi Windows ngoài danh sách Q-28, không xóa dữ liệu, không push main.
+**Codex**: không có số token/chi phí (xingchi không trả); các task đêm dùng effort high, 429 xảy ra 2 lần với B-02 (nhiều worker cùng lúc), tự hết ~50 phút. Hiện không worker nào chạy.
+**Lỗi/rủi ro**: Codex không commit được (git ngoài vùng ghi) nên PM commit hộ; Engine đã đổi CRT tĩnh (/MT) nên nghi chỗ free lệch nếu có crash lạ; build tự dựng chưa quét Defender được (0x80004005). Phiên đêm không có sự cố ngoài những điều trên.
+**3 câu cần chủ máy chốt lúc 07:00 (đóng)**
+1. Hảo hữu cứng: dùng 10 đồng bạn hay 15? (Chat ghi 11 phái vào được.)
+2. "Nhân đôi" của lửa trại hiểu là: nhân đôi lượng kinh nghiệm nhận, hay nhân đôi số người hưởng?
+3. Model/effort mặc định cho Codex: giữ gpt-6.1-sol effort high cho việc sửa/build và low cho đọc-tóm tắt, hay hạ mọi thứ xuống low? (A/B 1 mẫu: effort không đổi tốc độ.)
+- Việc #008 (admin IT chạy lại): mặc định phương án C (gom một bản setup) trừ khi chủ máy nói khác.
