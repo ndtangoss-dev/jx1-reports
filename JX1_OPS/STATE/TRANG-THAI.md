@@ -54,7 +54,7 @@ Cập nhật: 2026-11-16 – Sonnet PM (bắt đầu giai đoạn 0). Sonnet c�
 | 0-06 | xong | Q-19 ghi vào CLAUDE.md và AGENTS.md |
 | 0-07 | đang chạy | thử nguội đạt; còn thử qua tắt bật VM, nối ensure Main VM |
 | 0-09 | đang chạy | sandbox Codex chặn ghi D:\JX-wt nhưng ghi được C:\Users\Public |
-| 0-10 | chờ | |
+| 0-10 | xong | chưa có đơn giá USD; có số token và trần tạm Q-22 |
 | 0-08 | chờ | |
 
 ## Ngân sách Codex
@@ -64,6 +64,12 @@ Cập nhật: 2026-11-16 – Sonnet PM (bắt đầu giai đoạn 0). Sonnet c�
 - **Khóa hết hạn 14/02/2027. Nhắc chủ dự án trước 7 ngày (từ 07/02/2027)**
 - Quy tắc khi Codex bị từ chối vì chạm trần: coi là hết hạn mức, không phải lỗi code. Không thử lại liên tục; chuyển việc cho agent con Sonnet hoặc chờ tới khung giờ sau
 - Khi tăng số worker: giữ tổng chi trong 5 giờ dưới 50 USD (mỗi lần tăng phải tính lại)
+- **Đo token Codex (0-10, 22:30) [XÁC MINH từ log `D:\JX-wt\*.codex*.log`, dòng `turn.completed`]:**
+  - 0-03 lần 4 (task nhỏ có ích, đọc nhiều file): đầu vào 1.248.292 token (cache 1.173.120), đầu ra 12.860 (suy luận 8.380).
+  - 0-09 lần 1 (thử sandbox, 1 lượt ngắn): đầu vào 280.808 (cache 148.480), đầu ra 436.
+  - 0-03 lần 3: log không có dòng usage (lỗi sớm).
+  - **Không có đơn giá USD** cho nhà cung cấp xingchi / gpt-6.1-sol trong máy này, nên chưa quy ra USD [CHƯA KIỂM]. Cách đo tiền thật: chủ dự án đọc "Đã dùng" ở bảng điều khiển khóa trước và sau một đợt chạy; số trên cho biết tỉ lệ: một task vừa ~1,2 triệu token đầu vào, 90% là cache.
+- **Trần tạm của PM (Q-22):** tối đa 3 worker song song; một lượt giao việc không quá 2 task L2 cùng lúc; PM tự dừng giao Codex khi `Đã dùng` 7 ngày ≥ 700 USD hoặc trong ngày tăng ≥ 150 USD (75% trần cứng 200). Cập nhật dòng `Hôm nay: N USD` ở mục này khi chủ dự án báo số mới; hook Stop dùng dòng đó.
 - Số worker hiện tại: 0 (bậc khởi đầu: 3)
 
 ## Môi trường đang bật lúc lưu
