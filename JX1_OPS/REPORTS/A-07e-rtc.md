@@ -96,3 +96,6 @@ Bằng chứng trong checkpoint-a07e-final: source-sha256.json; snapshot project
 ## Bàn giao PM
 
 Đã sửa source, bỏ cờ RTC khi compile, build và gom artifact trong workspace. Hai điều kiện chưa đạt nguyên văn: chép đến thư mục ngoài workspace và map không còn bất kỳ _RTC_. Không chạy/load sản phẩm; chưa xác nhận lỗi dừng ~225 giây, VM/SQL, gameplay hoặc runtime/allocator sau chỉnh link Engine. Không sửa task, không stage/commit/push. PM review bốn file source/helper thay đổi và báo cáo này; không gom toàn bộ JX1_OPS untracked hoặc checkpoint vào commit.
+## Thu trong VM thu (PM, 04:13)
+- Bo A-07e (exe HEVA tat SHA 91BC8EB67058 = 988175A7... da editbin; CoreServer D508A609F29F, Engine 639E64C0B3FC, LuaLibDll ED8012A037EC) trong JX-Test-36 tu 04:02:49: SONG QUA MOC ~225 s (bo A-07c cu chet o moc nay 3/3 lan), >610 s, nghe 51189, bo nho rieng 6,3 GB. Ket luan so bo: nguyen nhan 0x80000003 la /RTC1 (hoac cac loi mang P1), da het khi bo.
+- CHUA thu: bat HEVA (cho dung khong can co); chua co nguoi/bot vao; chua chay du lau. Con theo doi.

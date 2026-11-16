@@ -147,3 +147,4 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 [03:06] A-07c: build tu nguon chay duoc khi tat HighEntropyVA, bat co thi crash 0xC0000005 ~40s. Can A-07d (tim cho cat con tro bang dump). VM thu dang chay ban A-07c nohe.
 - [03:30] A-07: bo A-07c moi chet 0x80000003 sau ~225 s (HEVA bat/tat deu vay), chua biet dong console cuoi. VM thu da khoi phuc bo on dinh (nohe exe D41A273C0F12 + DLL goc). Tao TASKS/A-07d.
 - [04:05] A-07d xong (nghi /RTC1 + 4 loi mang), A-07e xong (build khong RTC, SHA gs001 988175A7.., HEVA tat 91BC8EB67058, nhanh fix/a07c-link a52791d). Dang thu trong JX-Test-36 tu 04:02:49 (bo A-07e moi, DLL moi).
+- [04:13] A-07e: bo moi song >10 phut (cu chet 225 s), nghe 51189. Dang giu chay de do on dinh; chua thu HEVA bat.
