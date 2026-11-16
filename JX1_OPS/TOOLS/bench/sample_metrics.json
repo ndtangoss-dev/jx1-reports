@@ -1,0 +1,20 @@
+{
+  "sample_kind": "synthetic_offline",
+  "target": {"name": "JX-Test-36", "ip": "192.168.56.150"},
+  "network_mode": "cumulative",
+  "network_adapter": "fixture-guest-interface",
+  "tick_samples": [
+    {"tick_ms": 48.0}, {"tick_ms": 50.0}, {"tick_ms": 52.0}, {"tick_ms": 54.0}
+  ],
+  "network_samples": [
+    {"time_s": 0.0, "rx_bytes": 50000000, "tx_bytes": 25000000},
+    {"time_s": 1.0, "rx_bytes": 51000000, "tx_bytes": 25500000},
+    {"time_s": 3.0, "rx_bytes": 53000000, "tx_bytes": 26500000},
+    {"time_s": 4.5, "rx_bytes": 54500000, "tx_bytes": 27250000}
+  ],
+  "frame_samples": [
+    {"frames": 60, "interval_s": 1.0},
+    {"frames": 118, "interval_s": 2.0},
+    {"fps": 58.0, "interval_s": 1.0}
+  ]
+}
