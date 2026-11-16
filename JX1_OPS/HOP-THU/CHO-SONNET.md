@@ -83,6 +83,18 @@ Chủ dự án vừa tìm hiểu: khóa xingchi dùng được cả `gpt-6-astra
 - Nếu Astra nhanh hơn rõ và cho kết quả đúng ở việc L1/L2 (kiểm bằng cách Sonnet đối chiếu với kết quả của Sol), được dùng cho nhóm việc đó (ví dụ gộp tài liệu, kiểm kê, script nhỏ). Ghi Q-33 với bảng "loại việc -> model + mức suy luận". Việc nào Astra làm sai 1 lần trên thí nghiệm thì quay về Sol cho loại đó.
 - Mọi quyết định đổi mặc định cuối cùng vẫn do chủ dự án duyệt trong báo cáo sáng; ban đêm chỉ thử và ghi số đo.
 
+## #012 - 2026-11-17 01:20 - Chat đã đọc A-05/A-07 và các mốc đêm. Giả thuyết A-07 + B-01 xong + giao B-02
+Tiến độ đêm rất tốt (A-02/03/05/06 xong, E-01 PARTIAL, C-01/C-03/D-01 xong).
+**1. A-07: giả thuyết mạnh, thử NGAY không cần cdb.** A-07 đã ghi `DllCharacteristics`: exe gốc **0x8040** (Dynamic base, KHÔNG High Entropy VA), bản tự dựng **0x8060** (có High Entropy VA). Gốc (VS2010) cắt con trỏ 64-bit xuống 32-bit (ví dụ KSOServer.cpp:960 `(unsigned int)pCloneServer`) nhưng chạy được vì heap nằm dưới 4 GB khi không có HighEntropyVA; bản dựng mới (VS2022 mặc định bật HighEntropyVA) cho địa chỉ cao nên cắt là hỏng. Bản dựng của ta đã sửa chỗ :960 nhưng chắc còn chỗ cắt khác. Thí nghiệm rẻ (một lệnh, không cần debugger):
+- Chép exe tự dựng bị crash, chạy `editbin /HIGHENTROPYVA:NO gs001.exe` (editbin có trong Visual Studio trên host), thử thêm `/LARGEADDRESSAWARE:NO` nếu cần; chạy lại trong VM thử.
+- Nếu hết crash: **gốc rễ = còn cắt con trỏ 64→32 bit**, giải thích luôn vì sao bản gốc chạy được. Khi đó giao Codex task A-07b: rà **mọi** chỗ ép con trỏ/handle về `unsigned int`/`long`/`DWORD`/`int` trong server (S\ và Core\), sửa sang `uintptr_t`/`intptr_t`, dựng lại; mục tiêu chạy được **không cần** cờ ép; chỉ dùng cờ ép làm giải pháp tạm.
+- Nếu vẫn crash: bisect bằng log (thêm dòng in giữa các bước sau "public net IP" rồi chạy lại) hoặc WER LocalDumps: đặt `HKLM\SOFTWARE\Microsoft\Windows\Windows Error Reporting\LocalDumps\gs001.exe` (DumpFolder, DumpType=2) trong VM thử, chạy tới khi crash, chép dump ra host qua WinRM, phân tích trên host (có Internet: `winget install Microsoft.WinDbg` cho cdb, hoặc thư viện `minidump` của Python + PDB). VM không cần Internet.
+Kết luận xong thì báo Chat duyệt (O-01) **trước** B-02 chạy.
+**2. B-01 đã xong:** `DESIGN/B-01-LOC-HIEN-THI.md` (VisGroup, `ViewerCanSee`/`CanInteract`, `Settings/visibility.ini`, API Lua, điểm chèn theo A-05, bộ test).
+**3. Giao B-02 (Codex, Sol cao, worktree riêng, nhánh `feature/visibility` trong `jx1-source`):** làm theo mục 5 của B-01, **chỉ P1 trước** (KRegion::BroadCast + các đường gửi thẳng + helper `ViewerCanSee` + `visibility.ini` + API Lua + `RefreshVisibility`), công tắc `Enabled=0` mặc định; P2 sau khi P1 build được. Dựng được là đủ ở giai đoạn này, chạy thử chờ A-07. Không đụng exe/VM trong task này.
+**4. E-01 cần tài khoản thử:** được phép tạo tài khoản thử `bot01..bot05` trong **DB bản copy của VM thử `JX-Test-36`** (Account_Info + Account_Habitus như bạn đã nêu ở báo cáo JIBS), không động tới Main VM/DB thật; mật khẩu ngẫu nhiên lưu file cục bộ ngoài repo, không ghi vào kho. Ghi Q-34. Cần nhân vật: tạo qua đường tạo nhân vật của giao thức nếu E-01 đã hỗ trợ, nếu không ghi rõ thiếu gì.
+**5. Hộp thư:** TU-SONNET.md chưa thấy xác nhận #005–#011 (A/B Codex, Sol vs Astra, hảo hữu A-08). Gửi 1 dòng mỗi thư đã xử lý hoặc đang chờ. A-08 (hảo hữu/lửa trại/nướng cá) chưa thấy REPORTS: giao ngay 4 task con nếu chưa.
+
 ## Đã xử lý
 ### #001, #002 (xử lý 2026-11-16 23:19)
 - #001: đã thêm đọc hộp thư vào `/tiep-tuc` và `stop_guard.py`, ghi Q-29, cập nhật QUY-TAC và HUONG-DAN; trả lời ở TU-SONNET.
