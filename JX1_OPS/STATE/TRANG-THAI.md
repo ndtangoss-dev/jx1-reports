@@ -148,3 +148,4 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 - [03:30] A-07: bo A-07c moi chet 0x80000003 sau ~225 s (HEVA bat/tat deu vay), chua biet dong console cuoi. VM thu da khoi phuc bo on dinh (nohe exe D41A273C0F12 + DLL goc). Tao TASKS/A-07d.
 - [04:05] A-07d xong (nghi /RTC1 + 4 loi mang), A-07e xong (build khong RTC, SHA gs001 988175A7.., HEVA tat 91BC8EB67058, nhanh fix/a07c-link a52791d). Dang thu trong JX-Test-36 tu 04:02:49 (bo A-07e moi, DLL moi).
 - [04:13] A-07e: bo moi song >10 phut (cu chet 225 s), nghe 51189. Dang giu chay de do on dinh; chua thu HEVA bat.
+- [04:35] A-07: bo A-07e (build khong RTC, 4 loi mang sua) chay on voi HEVA BAT >10 phut (hai loi cu 0xC0000005 va 0x80000003 deu het). Chua co tai. Can giu chay lau + cho Chat duyet O-01.

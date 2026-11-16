@@ -99,3 +99,6 @@ Bằng chứng trong checkpoint-a07e-final: source-sha256.json; snapshot project
 ## Thu trong VM thu (PM, 04:13)
 - Bo A-07e (exe HEVA tat SHA 91BC8EB67058 = 988175A7... da editbin; CoreServer D508A609F29F, Engine 639E64C0B3FC, LuaLibDll ED8012A037EC) trong JX-Test-36 tu 04:02:49: SONG QUA MOC ~225 s (bo A-07c cu chet o moc nay 3/3 lan), >610 s, nghe 51189, bo nho rieng 6,3 GB. Ket luan so bo: nguyen nhan 0x80000003 la /RTC1 (hoac cac loi mang P1), da het khi bo.
 - CHUA thu: bat HEVA (cho dung khong can co); chua co nguoi/bot vao; chua chay du lau. Con theo doi.
+
+## Thu HEVA BAT (PM, 04:35)
+- Sau 21 phut on dinh voi HEVA tat, nap gs001.exe nguyen ban tu build (HEVA BAT, SHA 988175A79C24...) + cung 3 DLL A-07e: chay tu 04:24:14, >10 phut, qua moc 40 s (bo cu chet 0xC0000005) va 225 s (0x80000003). => Bo A-07e chay duoc KHONG can tat co. Can giu chay lau hon va co tai (bot/nguoi) truoc khi ket luan "da sua".
