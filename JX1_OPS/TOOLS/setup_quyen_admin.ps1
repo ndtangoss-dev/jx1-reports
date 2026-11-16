@@ -18,8 +18,20 @@ if ($Remove) {
 }
 
 $sid = (New-Object Security.Principal.NTAccount($UserName)).Translate([Security.Principal.SecurityIdentifier]).Value
+# Chong gai-san: neu thu muc da ton tai tu truoc (co the do tai khoan thuong tao), khong tin ACL/chu so huu/lien ket cu.
+$ps = 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe'
+if (Test-Path $Base) {
+    $it = Get-Item $Base -Force
+    if ($it.Attributes -band [IO.FileAttributes]::ReparsePoint) { throw "$Base la lien ket/junction, dung lai. Xoa no (Admin) roi chay lai." }
+    & takeown.exe /F $Base /R /D Y | Out-Null
+    & icacls $Base /setowner '*S-1-5-32-544' /T /C | Out-Null
+    & icacls $Base /reset /T /C | Out-Null
+    # xoa moi lien ket con sot ben trong
+    Get-ChildItem $Base -Recurse -Force -ErrorAction SilentlyContinue | Where-Object { $_.Attributes -band [IO.FileAttributes]::ReparsePoint } | ForEach-Object { throw "Co lien ket trong ${Base}: $($_.FullName). Xoa roi chay lai." }
+}
 foreach ($d in 'bin', 'config', 'req', 'log') { New-Item -ItemType Directory -Force -Path (Join-Path $Base $d) | Out-Null }
-# Quyen: SYSTEM + Administrators toan quyen; nguoi dung chi doc/chay, rieng req\ duoc ghi
+# Quyen: SYSTEM + Administrators toan quyen, chu so huu Administrators; nguoi dung chi doc/chay, rieng req\ duoc ghi (khong co quyen doi ACL)
+& icacls $Base /setowner '*S-1-5-32-544' /T /C | Out-Null
 & icacls $Base /inheritance:r /grant:r '*S-1-5-18:(OI)(CI)F' '*S-1-5-32-544:(OI)(CI)F' "*${sid}:(OI)(CI)RX" | Out-Null
 & icacls (Join-Path $Base 'req') /grant:r "*${sid}:(OI)(CI)M" | Out-Null
 
@@ -58,9 +70,18 @@ try {
 
     $reqPath = Join-Path $Base ('req\' + $Job + '.json')
     if (-not (Test-Path $reqPath)) { Fail 'khong co yeu cau' }
-    if ((Get-Item $reqPath).Length -gt 4096) { Remove-Item $reqPath -Force; Fail 'yeu cau qua lon' }
-    $raw = Get-Content -Raw -Encoding UTF8 $reqPath
+    # Doc DUNG MOT LAN, khoa doc quyen (FileShare None), toi da 4097 byte, tu choi lien ket (reparse point); roi xoa. Khong kiem-roi-doc tach doi nen khong the bi doi tep giua chung.
+    if ((Get-Item $reqPath -Force).Attributes -band [IO.FileAttributes]::ReparsePoint) { Remove-Item $reqPath -Force; Fail 'yeu cau la lien ket (reparse point)' }
+    $fs = $null
+    try {
+        $fs = [IO.File]::Open($reqPath, [IO.FileMode]::Open, [IO.FileAccess]::Read, [IO.FileShare]::None)
+        $buf = New-Object byte[] 4097
+        $n = $fs.Read($buf, 0, 4097)
+    }
+    finally { if ($fs) { $fs.Dispose() } }
     Remove-Item $reqPath -Force   # doc mot lan, khong cho chay lai yeu cau cu
+    if ($n -gt 4096) { Fail 'yeu cau qua lon' }
+    $raw = [Text.Encoding]::UTF8.GetString($buf, 0, $n)
     try { $req = $raw | ConvertFrom-Json } catch { Fail 'yeu cau khong phai JSON' }
     if ($req.id -isnot [string] -or $req.id -notmatch '^[A-Za-z0-9_-]{1,40}$') { Fail 'id yeu cau khong hop le' }
     $reqId = $req.id
@@ -163,7 +184,7 @@ catch {
     Finish $false ('ngoai le: ' + $_.Exception.Message)
 }
 '@
-Set-Content -Path $runner -Value $code -Encoding UTF8
+Set-Content -Path $runner -Value $code -Encoding UTF8   # ban chep nam trong ProgramData (Admin-only); tac vu chi chay ban nay, khong doc tu repo/worktree
 
 $cfgPath = Join-Path $Base 'config\allowed.json'
 if (-not (Test-Path $cfgPath)) {
@@ -182,13 +203,15 @@ $sddl = "D:(A;;FA;;;SY)(A;;FA;;;BA)(A;;GRGX;;;$sid)"
 $svcCom = New-Object -ComObject 'Schedule.Service'; $svcCom.Connect()
 foreach ($j in $jobs) {
     $n = "JX1-ADMIN-$j"
-    $a = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument "-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File `"$runner`" -Job $j"
+    $a = New-ScheduledTaskAction -Execute $ps -Argument "-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File `"$runner`" -Job $j"
     $p = New-ScheduledTaskPrincipal -UserId 'SYSTEM' -LogonType ServiceAccount -RunLevel Highest
     $s = New-ScheduledTaskSettingsSet -ExecutionTimeLimit (New-TimeSpan -Minutes 5) -MultipleInstances IgnoreNew -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries
     Register-ScheduledTask -TaskName $n -Action $a -Principal $p -Settings $s -Force | Out-Null
     $svcCom.GetFolder('\').GetTask($n).SetSecurityDescriptor($sddl, 0)
     Write-Host "Da dang ky $n"
 }
+Write-Host ('Quyen thu muc: ' + ((& icacls $Base) -join ' | '))
+Write-Host ('allowed.json hien hanh (kiem lai): ' + (Get-Content -Raw $cfgPath))
 $h = (Get-FileHash $runner -Algorithm SHA256).Hash
 Write-Host "Xong. SHA256 bo thuc thi: $h"
 Write-Host "Sua danh sach cho phep (IP, cong, dich vu) tai $cfgPath (can Admin). Thu: schtasks /run /tn JX1-ADMIN-service (can req\service.json)."

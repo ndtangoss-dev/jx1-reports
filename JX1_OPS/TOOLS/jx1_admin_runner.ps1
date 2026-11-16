@@ -31,9 +31,18 @@ try {
 
     $reqPath = Join-Path $Base ('req\' + $Job + '.json')
     if (-not (Test-Path $reqPath)) { Fail 'khong co yeu cau' }
-    if ((Get-Item $reqPath).Length -gt 4096) { Remove-Item $reqPath -Force; Fail 'yeu cau qua lon' }
-    $raw = Get-Content -Raw -Encoding UTF8 $reqPath
+    # Doc DUNG MOT LAN, khoa doc quyen (FileShare None), toi da 4097 byte, tu choi lien ket (reparse point); roi xoa. Khong kiem-roi-doc tach doi nen khong the bi doi tep giua chung.
+    if ((Get-Item $reqPath -Force).Attributes -band [IO.FileAttributes]::ReparsePoint) { Remove-Item $reqPath -Force; Fail 'yeu cau la lien ket (reparse point)' }
+    $fs = $null
+    try {
+        $fs = [IO.File]::Open($reqPath, [IO.FileMode]::Open, [IO.FileAccess]::Read, [IO.FileShare]::None)
+        $buf = New-Object byte[] 4097
+        $n = $fs.Read($buf, 0, 4097)
+    }
+    finally { if ($fs) { $fs.Dispose() } }
     Remove-Item $reqPath -Force   # doc mot lan, khong cho chay lai yeu cau cu
+    if ($n -gt 4096) { Fail 'yeu cau qua lon' }
+    $raw = [Text.Encoding]::UTF8.GetString($buf, 0, $n)
     try { $req = $raw | ConvertFrom-Json } catch { Fail 'yeu cau khong phai JSON' }
     if ($req.id -isnot [string] -or $req.id -notmatch '^[A-Za-z0-9_-]{1,40}$') { Fail 'id yeu cau khong hop le' }
     $reqId = $req.id

@@ -191,3 +191,5 @@ Nếu việc cần VM thử dồn hàng chờ, Sonnet được tạo thêm một
 - **Tách worker khỏi phiên (Q-23):** giao Codex bằng `TOOLS/chay_codex.ps1 -Id <ID>` (cần `D:\JX-wt\<ID>` và `<ID>.prompt.txt`), không `Start-Process` trực tiếp. Khi hạn mức phiên PM >80%, giao sẵn hàng đợi (tối đa 3 worker, Q-22) trước khi nghỉ.
 
 **Việc Admin tự chủ (Q-28).** Sau khi chủ máy chạy `TOOLS/setup_quyen_admin.ps1` một lần, PM làm 4 loại việc Admin bằng `TOOLS/admin_chay.ps1 -Job <kill-test-vm|firewall|trustedhosts|service> -Json '{...}'` (qua `schtasks /run`, không UAC). Cấm: diệt hay đụng `JX-Server-D`, thêm việc mới vào danh sách không có chủ máy, sửa `allowed.json` hoặc runner (thuộc Admin). Mở cổng/IP ngoài danh sách vẫn phải xin chủ máy. Kết quả đọc ở `C:\ProgramData\JX1_ADMIN\log\<job>.result.json`; ghi lại vào báo cáo.
+
+Siết Q-28 (16/11): tác vụ SYSTEM chỉ chạy bản chép `C:\ProgramData\JX1_ADMINin\jx1_admin_runner.ps1` (chủ sở hữu Administrators, tài khoản thường chỉ đọc/chạy, chỉ ghi `req\`); setup tự đặt lại chủ sở hữu/ACL nếu thư mục đã có sẵn và từ chối liên kết; yêu cầu đọc đúng một lần, khóa độc quyền, tối đa 4096 byte, từ chối reparse point.
