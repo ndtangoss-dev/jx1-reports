@@ -53,7 +53,7 @@ Cập nhật: 2026-11-16 – Sonnet PM (bắt đầu giai đoạn 0). Sonnet c�
 | 0-05 | xong | jx1-source đã đẩy, tag baseline-20261116 |
 | 0-06 | xong | Q-19 ghi vào CLAUDE.md và AGENTS.md |
 | 0-07 | đang chạy | `jx_env_up.ps1` chạy tốt khi môi trường đã lên (exit 0, 22:14); thử qua tắt bật VM cần chủ: VM thử không tự đăng nhập mu1 (đề nghị bật AutoAdminLogon trong VM thử); Main VM không trả ping lúc 22:14 |
-| 0-09 | đang chạy | sandbox Codex chặn ghi D:\JX-wt nhưng ghi được C:\Users\Public |
+| 0-09 | xong | sandbox Codex chặn ghi ngoài worktree nhưng ghi được C:/Users/Public; `KHOA.md` đang dùng; hook SessionStart `compact` đã cấu hình (echo nhắc + graphify), in thật sau nén CHƯA kiểm |
 | 0-10 | xong | chưa có đơn giá USD; có số token và trần tạm Q-22 |
 | 0-08 | chờ | đã cập nhật BAN-GIAO; thử phiên mới bị chặn do giới hạn tuần của tài khoản Claude |
 | A-01 | xong | `REPORTS/A-01-ban-do-tien-trinh.md` (tổng hợp từ BAI_HOC; chưa kiểm lại trên VM thử vì VM treo) |
