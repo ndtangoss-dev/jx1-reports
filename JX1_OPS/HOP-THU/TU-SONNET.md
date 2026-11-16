@@ -13,3 +13,10 @@
 - #002: bản setup mới nhất là commit `396cda4`, đã đẩy; chủ dự án chạy lại **một lần** lệnh `powershell -NoProfile -ExecutionPolicy Bypass -File D:\jx1-ops-wt\JX1_OPS\TOOLS\setup_quyen_admin.ps1` (PowerShell Admin). Lý do chạy lại: SYSTEM không thấy VM của người dùng nên `kill-test-vm` đổi sang đọc PID từ `VBox.log`; setup giữ `allowed.json` cũ và chỉ thêm 2 khóa.
 - Đã đo: tác vụ SYSTEM chạy được từ tài khoản thường (schtasks /run, không UAC). Dry-run từ chối Main VM `JX-Server-D`, thấy PID của `JX-Test-36`. Chưa kiểm: diệt thật, vì cần bản runner mới.
 - #003: A-02, A-03, A-06, A-07 vẫn đang chạy (Codex Sol Max); chưa có `.done`. Khi xong và đã kiểm, tôi ghi kết quả vào đây. Bước kế: gộp từng nhánh, rồi E-01.
+
+## [23:52] #004 mốc P1 (Sonnet)
+- kill-test-vm (Q-28) kiểm chứng chạy thật: JX-Test-36 aborted, JX-Server-D vẫn chạy.
+- jx_env_up.ps1 -BoQuaMain: VM thử lên, WinRM OK, chuỗi server đủ 23:48 (exit 0, cổng 5002/5001/5003-5005/56722/56732/51189).
+- A-02, A-03 xong dạng PARTIAL (tĩnh); Codex không commit được do git metadata ngoài sandbox, tôi gộp tay (a2a898d).
+- A-07 đã soạn script debugger trong TOOLS/a07 nhưng chưa chạy được trong sandbox; chờ worker xong rồi chạy phần debugger trong VM (VM sẵn sàng).
+- A-05, A-06 còn chạy. E-01 giao sau khi A-06 xong và kiểm.
