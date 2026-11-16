@@ -123,3 +123,6 @@ Cập nhật: 2026-11-16 – Sonnet PM (bắt đầu giai đoạn 0). Sonnet c�
 
 - **P-02 xong (01:03):** TOOLS/bench, test offline trên dữ liệu mẫu; chưa đo thật. Không còn worker chạy; việc kế: A-04 (Sonnet).
 
+
+- **A-04 xong (01:10):** REPORTS/A-04-kien-truc-tong.md (tổng hợp, có nhãn tin cậy).
+
