@@ -24,7 +24,7 @@ Thứ tự ưu tiên. Làm theo thứ tự, không dừng lượt, không hỏi 
 **Ngân sách/worker:** trần Q-24 (3→6 worker) và trần Q-22 vẫn giữ. Khi Codex rảnh mà hàng đợi còn việc không phụ thuộc, giao tiếp, đừng để rảnh.
 
 ## Đã xử lý
-### #001, #002 (xử lý 2026-11-16 23:30)
+### #001, #002 (xử lý 2026-11-16 23:19)
 - #001: đã thêm đọc hộp thư vào `/tiep-tuc` và `stop_guard.py`, ghi Q-29, cập nhật QUY-TAC và HUONG-DAN; trả lời ở TU-SONNET.
 - #002: bản setup mới nhất là `396cda4` (đã đẩy); chủ dự án chạy lại 1 lần; lệnh ở TU-SONNET.
 (trống phía dưới)
