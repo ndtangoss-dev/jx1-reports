@@ -145,3 +145,4 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 [02:55] B-02, A-07b xong (build, chua chay). A-09, A-10 dang chay. Viec ke: sua link ms64.lib (A-07c), O-01 duyet B-02.
 
 [03:06] A-07c: build tu nguon chay duoc khi tat HighEntropyVA, bat co thi crash 0xC0000005 ~40s. Can A-07d (tim cho cat con tro bang dump). VM thu dang chay ban A-07c nohe.
+- [03:30] A-07: bo A-07c moi chet 0x80000003 sau ~225 s (HEVA bat/tat deu vay), chua biet dong console cuoi. VM thu da khoi phuc bo on dinh (nohe exe D41A273C0F12 + DLL goc). Tao TASKS/A-07d.

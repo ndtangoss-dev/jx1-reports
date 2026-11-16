@@ -84,3 +84,9 @@ Không sửa task ops. Không stage/commit/push. PM review/stage đúng hai file
 - gs001 build A-07c, HighEntropyVA BẬT (SHA-256 0C142506...FBE5C): crash 0xC0000005 sau ~40 giây. => A-07b chưa đủ, còn chỗ cắt con trỏ.
 - Cùng bản, HighEntropyVA TẮT (SHA-256 D2EABEDC...BE24D): chạy, cổng 51189 nghe, không crash trong lúc theo dõi (vài phút; chưa đo dài hạn).
 - Kết luận: bản dựng từ nguồn dùng được khi tắt cờ (build tái lập được); lỗi nằm ở logic con trỏ, cần A-07d (tìm bằng dump/gỡ lỗi). Bản đang chạy trong VM thử: bản tắt cờ A-07c.
+
+## Bo sung 03:30 - bo moi chet 0x80000003 co dinh (PM)
+- Bo moi (exe A-07c + CoreServer/Engine/LuaLibDll dung lai tu nguon), co HEVA tat: chay 3 lan, chet sau ~225 s moi lan (03:14, 03:22), ma 0x80000003 (breakpoint). Co HEVA bat cung chet 0x80000003 o ~4 phut.
+- Khong co su kien Application Error trong VM; chup console that bai (console.ps1 "attach failed 5" khi chay qua WinRM sau khi bo execution policy) -> CHUA biet dong console cuoi. Dung theo luat 3 lan.
+- Do deu ~225 s: nghi mot tac vu dinh ky/timer hoac assert/DebugBreak trong ma dung lai; can dump hoac WinDbg/cdb trong VM thu (A-07d, Codex doc ma tim DebugBreak/_CrtDbgBreak/assert trong Core\ Engine\ + de xuat bat WER LocalDumps).
+- VM thu da khoi phuc bo on dinh: gs001 = gs001_nohe.exe (SHA D41A273C0F12) + 3 DLL goc (.orig-a07c). Bo moi luu o *.a07c-new / gs001.exe.a07c-new-nohe. Chay on (2.7 GB sau 60 s).
