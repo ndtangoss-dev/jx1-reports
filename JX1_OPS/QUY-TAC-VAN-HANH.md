@@ -29,6 +29,8 @@ lấy việc kế tiếp trong TASKS/BACKLOG.md (ưu tiên, phụ thuộc đã x
 → cập nhật trạng thái, điểm lưu (mục 6)
 → lặp
 ```
+**Làm liên tục (chủ dự án chốt 2026-11-16):** không dừng lượt chỉ để báo cáo. Xong một việc thì lấy ngay việc kế tiếp trong backlog. Chỉ dừng lượt khi: (a) hết việc làm được, (b) cần chủ dự án quyết định việc thuộc vùng Đỏ, hoặc (c) chủ dự án gõ `/ket-thuc-ca`. Báo cáo thường chỉ ghi vào file trạng thái, không phải lý do để dừng.
+
 Số worker song song và cách tăng: mục 13. Một VM thử và một LDPlayer chỉ do một agent điều khiển tại một thời điểm (khóa ở mục 12).
 
 **Sonnet giữ phiên chính gọn:** không tự đọc file lớn, log dài hay source; giao việc đó cho worker hoặc agent con và chỉ nhận kết luận ngắn. Ngữ cảnh của Sonnet càng nhỏ thì càng ít bị nén và càng ít quên (mục 11).
