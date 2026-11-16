@@ -79,3 +79,8 @@ Snapshot checkpoint-a07c trước đó dùng tái hiện lỗi và link thăm d�
 Chưa chạy gs001 hoặc DLL sản phẩm; không kết nối VM/SQL/server. Chưa kiểm stdout runtime, đường lỗi MIRACL, crypto/round-trip, crash HighEntropyVA hoặc tương thích triển khai. Chưa build Win32, VS100 hoặc Debug gốc. DLL cùng snapshot đã rebuild; cần môi trường được phép chạy để xác nhận runtime.
 
 Không sửa task ops. Không stage/commit/push. PM review/stage đúng hai file sản phẩm và báo cáo này; thư mục ops đã untracked từ đầu, không gom toàn bộ nó. git diff --check thành công.
+
+## Thử trong VM thử (PM, 2026-11-17 03:05, JX-Test-36)
+- gs001 build A-07c, HighEntropyVA BẬT (SHA-256 0C142506...FBE5C): crash 0xC0000005 sau ~40 giây. => A-07b chưa đủ, còn chỗ cắt con trỏ.
+- Cùng bản, HighEntropyVA TẮT (SHA-256 D2EABEDC...BE24D): chạy, cổng 51189 nghe, không crash trong lúc theo dõi (vài phút; chưa đo dài hạn).
+- Kết luận: bản dựng từ nguồn dùng được khi tắt cờ (build tái lập được); lỗi nằm ở logic con trỏ, cần A-07d (tìm bằng dump/gỡ lỗi). Bản đang chạy trong VM thử: bản tắt cờ A-07c.

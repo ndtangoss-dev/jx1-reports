@@ -143,3 +143,5 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 [02:27] Dang chay A-07b, B-02, A-10 (high); A-09 cho slot. chay_codex them --add-dir de Codex commit duoc (thu lan dau o A-10).
 
 [02:55] B-02, A-07b xong (build, chua chay). A-09, A-10 dang chay. Viec ke: sua link ms64.lib (A-07c), O-01 duyet B-02.
+
+[03:06] A-07c: build tu nguon chay duoc khi tat HighEntropyVA, bat co thi crash 0xC0000005 ~40s. Can A-07d (tim cho cat con tro bang dump). VM thu dang chay ban A-07c nohe.
