@@ -39,6 +39,17 @@ Lời chủ dự án: "ngân sách 2000 đô, cứ tiêu tẹt đi, làm sao hi�
 4. **Chất lượng không được hạ:** việc nhẹ chạy mức thấp vẫn phải qua bước kiểm của Sonnet trước khi gộp. Nếu một loại task chạy mức thấp cho kết quả sai nhiều lần thì tự nâng mức loại đó.
 5. **Phanh an toàn giữ nguyên:** kẹt 15 phút, lỗi 3 lần liên tiếp thì dừng và đổi cách; không chạy exe server trên máy thật; không đụng Main VM.
 
+## #007 - 2026-11-16 23:55 - TÍNH NĂNG MỚI: HẢO HỮU CỨNG + LỬA TRẠI + NƯỚNG CÁ (chỉ thị #08). Ghi Q-31, thêm task A-08.
+Đọc `owner-inputs/08-HAO-HUU-CUNG-VA-LUA-TRAI.md` (nguyên văn chủ dự án) và `DESIGN/HAO-HUU-CUNG.md` (bản nháp của Chat). Chat nhận thấy server có thể đã có sẵn nhiều cơ chế (hệ thống "同伴" đồng bạn, lửa trại, nướng cá). Giao **A-08** cho Codex (chia 4 task con song song, đọc mã tĩnh, KHÔNG chạy server, ưu tiên nếu Codex rảnh; A-07 vẫn P1):
+- **A-08a Môn phái:** đọc `Settingsactionaction.ini`, `MonPhai.ini`, `script\headeractionhead.lua`: danh sách môn phái chính xác (số lượng, tên, hệ Kim/Mộc/Thủy/Hỏa/Thổ). Với mỗi môn phái: kỹ năng tấn công chính, phân loại **đơn mục tiêu** hay **diện rộng (AOE)** (tầm, số mục tiêu, vũ khí), vai trò (sát thương/hồi máu/trợ lực). Xuất bảng `REPORTS/A-08a-mon-phai-ky-nang.md`.
+- **A-08b Đồng bạn (同伴):** `script\skill\partner\*`, `Settings\maps\partner\*`, `script\deadth\同伴死亡`, và mã C++ liên quan (`Partner`, `同伴`, tìm trong `src18` và client `Classes`): hệ thống đồng bạn gốc là gì? Thực thể loại nào (NPC hay người chơi), có chiếm chỗ online không, sinh ra thế nào, chiến đấu theo người chơi ra sao, có trang bị/cấp/EXP/độ thân mật không, lưu ở đâu (roledb/biến Lua), giới hạn số lượng, khi người chơi đổi map/chết/offline thì sao. Xuất `REPORTS/A-08b-dong-ban.md`.
+- **A-08c Lửa trại & nướng cá:** `script\skill\special\篝火.lua`, `两湖区
+pc\篝火.lua`, `两湖区
+pc\烤鱼.lua`, `script	askishing.lua`: cơ chế thật (sinh khi nào, ai thấy, thời hạn, x kinh nghiệm thế nào, cá lấy ở đâu), có gắn với boss tinh anh xanh nước biển không (tìm cách server đánh dấu boss tinh anh và màu). Xuất `REPORTS/A-08c-lua-trai-nuong-ca.md`.
+- **A-08d Kinh nghiệm:** hàm cộng kinh nghiệm cho người chơi và tổ đội (AddOwnExp và chỗ gọi), cách tính "kinh nghiệm cấp hiện tại", hàm gọi theo giây, nơi gắn được (tick/timer Lua). Xuất `REPORTS/A-08d-kinh-nghiem.md`.
+Mỗi báo cáo ghi file:dòng làm bằng chứng và mục "Chưa kiểm". Khi xong, báo Chat ở `TU-SONNET.md`. Chat sẽ chọn kiến trúc: **hảo hữu là thực thể server hay nhân vật thật** (nhân vật thật bị trần 500 người online của gs001, nên chỉ dùng được khi số hảo hữu nhỏ).
+Quyết định ghi Q-31: tính năng hảo hữu/lửa trại/nướng cá được duyệt về nguyên tắc; thiết kế chi tiết chờ A-08.
+
 ## Đã xử lý
 ### #001, #002 (xử lý 2026-11-16 23:19)
 - #001: đã thêm đọc hộp thư vào `/tiep-tuc` và `stop_guard.py`, ghi Q-29, cập nhật QUY-TAC và HUONG-DAN; trả lời ở TU-SONNET.
