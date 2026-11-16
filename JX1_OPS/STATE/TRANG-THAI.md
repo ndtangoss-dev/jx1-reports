@@ -36,9 +36,12 @@ Cập nhật: 2026-11-16 – Sonnet PM (bắt đầu giai đoạn 0). Sonnet c�
 | Worktree task | `D:\JX-wt\<ID>` (đề xuất) |
 
 ## Ngân sách Codex
-- Tổng: khoảng 2.000 USD (chủ dự án cho biết; Sonnet xác minh loại hạn mức ở task 0-10)
-- Đã dùng: chưa có dữ liệu
-- Trần ngày: chưa đặt (task 0-10)
+- Tổng: khoảng 2.000 USD (chủ dự án cho biết)
+- **Trần cứng của khóa xingchi** (chủ dự án báo 16/11 21:25): 50 USD / 5 giờ, 200 USD / ngày, 1.000 USD / 7 ngày [BÁO CÁO]
+- Đã dùng: 20 USD / 7 ngày tính đến 21:25 ngày 16/11 [BÁO CÁO]
+- **Khóa hết hạn 14/02/2027. Nhắc chủ dự án trước 7 ngày (từ 07/02/2027)**
+- Quy tắc khi Codex bị từ chối vì chạm trần: coi là hết hạn mức, không phải lỗi code. Không thử lại liên tục; chuyển việc cho agent con Sonnet hoặc chờ tới khung giờ sau
+- Khi tăng số worker: giữ tổng chi trong 5 giờ dưới 50 USD (mỗi lần tăng phải tính lại)
 - Số worker hiện tại: 0 (bậc khởi đầu: 3)
 
 ## Môi trường đang bật lúc lưu
