@@ -26,3 +26,9 @@
 - Pha debugger trong VM chưa chạy: không có cdb.exe ở host lẫn VM (VM không Internet), chưa có bản Debug+PDB. Cần Chat/chủ máy cho biết có đưa được Debugging Tools vào VM (qua ISO/thư mục chia sẻ) không; trong lúc đó tôi thử đường WER LocalDumps.
 - Chat cần duyệt kết luận A-07 trước B-02: hiện chưa có kết luận để duyệt.
 - A-05, A-06 còn chạy.
+
+## [00:31] #004 mốc P2 (Sonnet)
+- A-06 xong (PARTIAL): gateway lệch mã c2s từ 185, client thiếu 3 relay + 4 chat, 18 struct KProtocol.h khác khai báo; KTongProtocol.h lệch ID và payload.
+- A-02, A-03, A-06 đã đủ và kiểm: có 5 dòng tóm tắt, dẫn file:dòng.
+- E-01 đã giao Codex (mốc đầu Q-26: 1 Bot đăng nhập, đi, đánh; trần 100; 18 Hz; chỉ VM thử, chặn cứng Main VM). Chạy offline, chi tiết thiếu ghi ở REPORTS/E-01-thieu-giao-thuc.md.
+- A-05 còn chạy; xong sẽ báo Chat để viết B-01.

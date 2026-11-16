@@ -58,7 +58,7 @@ Cập nhật: 2026-11-16 – Sonnet PM (bắt đầu giai đoạn 0). Sonnet c�
 | 0-08 | chờ | đã cập nhật BAN-GIAO; thử phiên mới bị chặn do giới hạn tuần của tài khoản Claude |
 | A-01 | xong | `REPORTS/A-01-ban-do-tien-trinh.md` (tổng hợp từ BAI_HOC; chưa kiểm lại trên VM thử vì VM treo) |
 | A-03 | xong (PARTIAL: tĩnh, runtime chưa kiểm) | báo cáo REPORTS/A-03-kiem-ke-cau-hinh.md, đã gộp 23:50 |
-| A-06 | đang chạy | Codex gpt-6.1-sol (Q-25), khởi động 22:53 |
+| A-06 | xong (PARTIAL, nguồn) | REPORTS/A-06-bang-goi-tin.md, gộp 00:30 |
 | A-02 | xong (PARTIAL: tĩnh, runtime chưa kiểm) | báo cáo REPORTS/A-02-luong-dang-nhap.md, đã gộp 23:50 |
 | A-07 | xong pha tĩnh (PARTIAL) | báo cáo REPORTS/A-07-goc-re-crash-gs001.md; pha debugger trong VM CHƯA chạy: host và VM đều chưa có cdb.exe, chưa có bản Debug có PDB (A-07b) |
 | A-05 | đang chạy | Codex gpt-6.1-sol, điểm tương tác người chơi gs001 (thư #004 P3), khởi động 23:19; chỉ đọc mã tĩnh |
@@ -97,4 +97,7 @@ Cập nhật: 2026-11-16 – Sonnet PM (bắt đầu giai đoạn 0). Sonnet c�
 
 
 - **A-07 (00:20):** pha tĩnh xong, gộp. Pha debugger bị chặn bởi thiếu cdb.exe (không thấy trong Windows Kits trên host, VM không có Internet) và chưa dựng bản Debug trong D:\JX-build\a07. Hướng thay thế không cần cdb: WER LocalDumps (script đã có) rồi đọc dump bằng công cụ có sẵn; chưa làm.
+
+
+- **E-01 giao (00:30)** Codex gpt-6.1-sol, mốc đầu Bot (Q-26), offline test; chi tiết giao thức thiếu ghi vào REPORTS/E-01-thieu-giao-thuc.md.
 
