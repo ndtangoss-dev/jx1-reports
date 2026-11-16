@@ -4,7 +4,7 @@ Cập nhật: 2026-11-16 – Sonnet PM (bắt đầu giai đoạn 0). Sonnet c�
 
 ## Dự án đang ở đâu
 - Giai đoạn: **0 – Dựng đội, đang làm.** Kế hoạch đã duyệt; D1–D6 đã chốt (Q-10…Q-16).
-- 0-01: đã chép 3 lệnh vào `C:\Jx1CocoV3\.claude\commands\`. **Chưa áp `settings.json`**: hệ thống chặn việc tự ghi cấu hình quyền; chờ chủ dự án cho phép hoặc tự chép `TOOLS/settings.mau.json` (bỏ khóa `_ghi_chu`) thành `.claude/settings.json`.
+- 0-01: **xong.** Đã chép 3 lệnh và áp `.claude/settings.json` (chủ dự án cho phép); `/tiep-tuc`, `/ket-thuc-ca`, `/bao-cao` hiện trong danh sách kỹ năng. Bước tiếp: 0-02.
 - Đang chạy được [BÁO CÁO, chưa kiểm lại]: client Cocos P46/P47 trên LDPlayer; server tự dựng 36 Hz trên VM thử `JX-Test-36`; APK mới nhất P46.
 - Worker đang chạy: không có.
 
