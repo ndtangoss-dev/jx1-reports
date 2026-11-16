@@ -149,3 +149,32 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 - [04:05] A-07d xong (nghi /RTC1 + 4 loi mang), A-07e xong (build khong RTC, SHA gs001 988175A7.., HEVA tat 91BC8EB67058, nhanh fix/a07c-link a52791d). Dang thu trong JX-Test-36 tu 04:02:49 (bo A-07e moi, DLL moi).
 - [04:13] A-07e: bo moi song >10 phut (cu chet 225 s), nghe 51189. Dang giu chay de do on dinh; chua thu HEVA bat.
 - [04:35] A-07: bo A-07e (build khong RTC, 4 loi mang sua) chay on voi HEVA BAT >10 phut (hai loi cu 0xC0000005 va 0x80000003 deu het). Chua co tai. Can giu chay lau + cho Chat duyet O-01.
+
+## Bảng worker Codex (Chat #014.3a; từ nay ghi đủ cột khi giao/xong)
+| Task | Xong | exit | Effort | Token vào/ra | Số 429 |
+|---|---|---|---|---|---|
+| A-02 | 0 2026-11-16T23:42:35 | | ? | chưa ghi | chưa ghi |
+| A-03 | 0 2026-11-16T23:45:06 | | ? | chưa ghi | chưa ghi |
+| A-05 | 0 2026-11-17T00:26:12 | | ? | chưa ghi | chưa ghi |
+| A-06 | 0 2026-11-17T00:23:11 | | ? | chưa ghi | chưa ghi |
+| A-07 | 0 2026-11-17T00:20:11 | | ? | chưa ghi | chưa ghi |
+| A-07b | 0 2026-11-17T02:45:11 | | high | chưa ghi | chưa ghi |
+| A-07c | 0 2026-11-17T03:00:35 | | high | chưa ghi | chưa ghi |
+| A-07d | 0 2026-11-17T03:43:11 | | high | chưa ghi | chưa ghi |
+| A-07e | 0 2026-11-17T04:02:07 | | high | chưa ghi | chưa ghi |
+| A-08a | 0 2026-11-17T01:12:16 | | ? | chưa ghi | chưa ghi |
+| A-08b | 0 2026-11-17T01:16:56 | | ? | chưa ghi | chưa ghi |
+| A-08c | 1 2026-11-17T01:15:41 | | ? | chưa ghi | chưa ghi |
+| A-08d | 0 2026-11-17T01:11:53 | | ? | chưa ghi | chưa ghi |
+| A-09 | 0 2026-11-17T02:56:11 | | high | chưa ghi | chưa ghi |
+| A-10 | 0 2026-11-17T02:51:19 | | high | chưa ghi | chưa ghi |
+| AB-high | 0 2026-11-17T01:09:15 | | high | chưa ghi | chưa ghi |
+| AB-low | 0 2026-11-17T01:09:36 | | low | chưa ghi | chưa ghi |
+| AB-medium | 0 2026-11-17T01:09:21 | | medium | chưa ghi | chưa ghi |
+| AB-ping | 0 2026-11-17T02:17:09 | | ? | chưa ghi | chưa ghi |
+| B-02 | 0 2026-11-17T02:36:13 | | high | chưa ghi | chưa ghi |
+| C-01 | 0 2026-11-17T00:39:12 | | ? | chưa ghi | chưa ghi |
+| C-03 | 0 2026-11-17T00:55:56 | | ? | chưa ghi | chưa ghi |
+| D-01 | 0 2026-11-17T00:42:21 | | ? | chưa ghi | chưa ghi |
+| E-01 | 0 2026-11-17T00:40:30 | | ? | chưa ghi | chưa ghi |
+| P-02 | 0 2026-11-17T01:01:53 | | ? | chưa ghi | chưa ghi |
