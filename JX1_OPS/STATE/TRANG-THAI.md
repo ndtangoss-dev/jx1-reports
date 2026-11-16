@@ -182,3 +182,4 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 - [05:00] 429 lần nữa (B-02b, giao 04:57, chỉ 1 worker chạy): codex báo 'stream disconnected: Upstream service temporarily unavailable' rồi 'exceeded retry limit, last status: 429 Too Many Requests', request id 37959130de3cf31c83d8f18437264ba4. Không thấy Retry-After trong log. Thử lại sau ~10 phút.
 - [05:11] B-02b: 429 lan 2 (giao lai 05:00, request id e6ba3a47a26c576fb07134a49f1d5371). Cho 20 phut roi thu lan 3; neu van 429 thi ghi [DANG CHO han muc] va bao trong bao cao dem.
 - [05:36] B-02b: 429 lan 3 (request id 3d3e1be9...). Codex dung xong Engine+LuaLibDll roi chet. PM tu dung tiep CoreServer+GameServer (checkpoint-b02b-a07e, --resume). Khong giao lai Codex.
+- [05:45] B-02b XONG: build 5/5 exit 0 (PM tu dung, Codex 429 x3). Xem REPORTS/B-02b-build-tren-a07e.md. Chua chay VM. gs001 A-07e HEVA-on van song (>4300s).
