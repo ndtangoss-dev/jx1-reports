@@ -189,3 +189,5 @@ Nếu việc cần VM thử dồn hàng chờ, Sonnet được tạo thêm một
 - Review chéo bằng một phiên Codex khác (không phải phiên đã viết code) được tính là kiểm tra độc lập cho task L2. L3 Sonnet kiểm tra; L4–L5 Opus.
 
 - **Tách worker khỏi phiên (Q-23):** giao Codex bằng `TOOLS/chay_codex.ps1 -Id <ID>` (cần `D:\JX-wt\<ID>` và `<ID>.prompt.txt`), không `Start-Process` trực tiếp. Khi hạn mức phiên PM >80%, giao sẵn hàng đợi (tối đa 3 worker, Q-22) trước khi nghỉ.
+
+**Việc Admin tự chủ (Q-28).** Sau khi chủ máy chạy `TOOLS/setup_quyen_admin.ps1` một lần, PM làm 4 loại việc Admin bằng `TOOLS/admin_chay.ps1 -Job <kill-test-vm|firewall|trustedhosts|service> -Json '{...}'` (qua `schtasks /run`, không UAC). Cấm: diệt hay đụng `JX-Server-D`, thêm việc mới vào danh sách không có chủ máy, sửa `allowed.json` hoặc runner (thuộc Admin). Mở cổng/IP ngoài danh sách vẫn phải xin chủ máy. Kết quả đọc ở `C:\ProgramData\JX1_ADMIN\log\<job>.result.json`; ghi lại vào báo cáo.

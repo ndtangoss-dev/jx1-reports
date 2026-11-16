@@ -84,3 +84,14 @@ Mọi việc khác Sonnet tự làm.
 - Vì source sẽ nằm trên GitHub riêng tư, có thể giao Claude trên web hoặc điện thoại làm việc đọc source khi máy tắt. Không bắt buộc.
 - Nếu thấy Sonnet làm lẫn lộn (giao việc lặp, quên việc đang làm), gõ `/ket-thuc-ca`, rồi `/clear`, rồi `/tiep-tuc`. Phiên mới đọc lại mọi thứ từ GitHub.
 - Kế hoạch đánh giá việc chuyển server là khả thi, nhưng thời gian thật chỉ biết sau giai đoạn A. Sonnet sẽ báo con số thật, không đoán.
+
+## Cấp quyền Admin tự chủ một lần (Q-28)
+Mở PowerShell bằng *Run as administrator*, chạy:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File D:\jx1-ops-wt\JX1_OPS\TOOLS\setup_quyen_admin.ps1
+```
+
+1. Script tạo thư mục `C:\ProgramData\JX1_ADMIN` (chỉ Admin sửa được) và 4 task SYSTEM cho đúng 4 việc cố định: diệt VBoxHeadless của `JX-Test-36` (từ chối `JX-Server-D`), luật tường lửa `JX1-AUTO-*`, TrustedHosts, bật dịch vụ.
+2. Mỗi việc chỉ nhận cổng, IP, dịch vụ nằm trong `configllowed.json` (anh sửa file này bằng Admin, thêm IP điện thoại Tailscale vào `ips` nếu cần); mọi lần chạy ghi `logdmin.log`.
+3. Gỡ bỏ: `powershell -ExecutionPolicy Bypass -File ...\setup_quyen_admin.ps1 -Remove` (xóa 4 task và các luật `JX1-AUTO-*`).
