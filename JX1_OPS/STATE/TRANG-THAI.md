@@ -1,4 +1,4 @@
-# TRẠNG THÁI DỰ ÁN
+﻿# TRẠNG THÁI DỰ ÁN
 
 Cập nhật: 2026-11-16 – Sonnet PM (bắt đầu giai đoạn 0). Sonnet cập nhật file này ở mỗi điểm lưu.
 
@@ -57,9 +57,9 @@ Cập nhật: 2026-11-16 – Sonnet PM (bắt đầu giai đoạn 0). Sonnet c�
 | 0-10 | xong | chưa có đơn giá USD; có số token và trần tạm Q-22 |
 | 0-08 | chờ | đã cập nhật BAN-GIAO; thử phiên mới bị chặn do giới hạn tuần của tài khoản Claude |
 | A-01 | xong | `REPORTS/A-01-ban-do-tien-trinh.md` (tổng hợp từ BAI_HOC; chưa kiểm lại trên VM thử vì VM treo) |
-| A-03 | đang chạy | Codex gpt-6.1-sol (Q-25), khởi động 22:53 |
+| A-03 | xong (PARTIAL: tĩnh, runtime chưa kiểm) | báo cáo REPORTS/A-03-kiem-ke-cau-hinh.md, đã gộp 23:50 |
 | A-06 | đang chạy | Codex gpt-6.1-sol (Q-25), khởi động 22:53 |
-| A-02 | đang chạy | Codex gpt-6.1-sol, khởi động 22:53 |
+| A-02 | xong (PARTIAL: tĩnh, runtime chưa kiểm) | báo cáo REPORTS/A-02-luong-dang-nhap.md, đã gộp 23:50 |
 | A-07 | đang chạy | Codex gpt-6.1-sol, gốc crash gs001 (Q-26), khởi động 22:56; chỉ dựng và phân tích, không chạy exe |
 | A-05 | đang chạy | Codex gpt-6.1-sol, điểm tương tác người chơi gs001 (thư #004 P3), khởi động 23:19; chỉ đọc mã tĩnh |
 
@@ -92,3 +92,6 @@ Cập nhật: 2026-11-16 – Sonnet PM (bắt đầu giai đoạn 0). Sonnet c�
 - **Worker Codex tách phiên (22:45, Q-23):** shell của Claude Code nằm trong Job Object và tiến trình con cùng job (đã đo); có bị giết khi đóng phiên không CHƯA kiểm. Đã làm `TOOLS/chay_codex.ps1` giao qua Task Scheduler (thử với worker giả: chạy xong, ghi log và cờ `.done`); chưa thử với codex thật. Quy tắc giao sẵn hàng đợi khi hạn mức phiên >80% ghi ở QUY-TAC mục 13 và Q-23.
 - **Codex lỗi model (22:58):** A-03 và A-06 thoát `exit=1` ngay: `404 Model "gpt-6-luna" is not supported by any configured account in this group` (xingchiapi.com). `~/.codex/config.toml` dòng 1 đang đặt `gpt-6-luna`. Theo quy tắc không đổi model/cấu hình Codex nên tôi không sửa; chủ dự án cần kiểm tài khoản/nhóm xingchi hoặc cho biết model đúng. Tăng worker (Q-24) vô ích khi Codex chưa gọi được. Launcher tách phiên chạy đúng (log, cờ `.done`). Trong lúc đó PM tự làm việc Sonnet được (A-01).
 - **Codex khôi phục (22:56):** model cố định `gpt-6.1-sol` + reasoning max (Q-25); A-02, A-03, A-06, A-07 chạy tách phiên (4/6 worker; 5/6 từ 23:19 khi thêm A-05). Lỗi 404 cũ coi như xong. Hướng Bot (a), mốc đầu, trần 100, nhịp 18 Hz: Q-26, Q-27.
+
+- **kill-test-vm kiểm chứng (16/11 ~23:40):** JX-Test-36 aborted; jx_env_up -BoQuaMain lên chuỗi đủ 23:48 (cổng 5002,5001,5003-5005,56722,56732,51189). A-02/A-03 xong; Codex không commit được (git metadata ngoài sandbox), PM gộp tay.
+
