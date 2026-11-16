@@ -27,6 +27,7 @@ Sonnet lấy việc từ trên xuống, theo phụ thuộc. Khi bắt đầu m�
 | A-04 | Tài liệu kiến trúc tổng (một file) gộp A-01…A-03 và báo cáo cũ, có nhãn tin cậy | L2 | Sonnet | A-01…A-03 |
 | A-05 | **Đường đồng bộ thực thể và mọi chỗ người chơi tương tác nhau** trong gs001: gói đồng bộ NPC/người chơi theo vùng, chọn mục tiêu, sát thương diện rộng, tổ đội, giao dịch, PK, chat, xếp hạng, hàm Lua đếm người chơi. Đầu vào cho giai đoạn B | L4 | **Opus** | 0-04 |
 | A-06 | Đồng bộ tài liệu `KProtocolDef.h` giữa client và server, ghi bảng gói tin | L2 | Codex | 0-04 |
+| A-07 | Gốc rễ crash gs001 tự dựng sau dòng "public net IP": dựng Debug có symbol, bật crash dump / chạy dưới debugger (chỉ trong VM thử), so cờ biên dịch và thư viện với A2T2 chạy được; mục tiêu là dòng mã gây lỗi | L4 | Codex | 0-04 |
 
 ## Giai đoạn B – Thử chuyển đổi server
 
@@ -57,7 +58,7 @@ Sonnet lấy việc từ trên xuống, theo phụ thuộc. Khi bắt đầu m�
 
 | ID | Việc | Cấp | Ai |
 |---|---|---|---|
-| E-01 | Client không giao diện Python: đăng nhập, vào game, đứng yên (bản sơ bộ dùng cho B-03) | L3 | Codex |
+| E-01 | Client không giao diện Python: đăng nhập, vào game, đứng yên (bản sơ bộ dùng cho B-03). **Mốc đầu của Bot (Q-26): 1 Bot đăng nhập, đi, đánh; trần online ban đầu 100** | L3 | Codex |
 | E-02 | Hành vi: đi, săn quái, kỹ năng, hồi máu, đổi bản đồ | L3 | Codex |
 | E-03 | Bộ điều phối dân số theo bản đồ và giờ | L3 | Codex |
 | E-04 | Xã hội theo `DESIGN/BOT/SHARED_BOT_SOCIAL_AND_INTERACTION_SYSTEM.md` | L4 | Opus thiết kế, Codex làm |

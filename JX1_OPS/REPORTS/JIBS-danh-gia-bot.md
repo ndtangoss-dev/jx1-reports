@@ -21,6 +21,8 @@ Nhãn: "Chứng cứ" = đã đọc mã/báo cáo; "Chưa kiểm" = chưa chạy
 - Báo cáo 41/43/59: đã xác nhận 18 Hz; thử 36/54 Hz có kế hoạch riêng.
 - Chưa kiểm: số online thật chịu được trước khi tick trễ (chưa đo); 500 cứng nên bot + người thật dùng chung 500 chỗ.
 
+**Nhịp (Q-27):** 18 Hz là bản chạy thật; 36 Hz nhánh thử, 54 Hz kế hoạch.
+
 ## 3. Lọc hiển thị
 - Gửi đồng bộ theo vùng: `KNpc::SendDataToNearRegion` (`KNpc.cpp:14103`) gọi `KRegion::BroadCast` cho ô của NPC và 8 ô lân cận (bảng `POff`/`m_nConnectRegion`).
 - `KRegion::BroadCast` (`KRegion.cpp:2223`): duyệt `m_PlayerList`, tối đa `MAX_BROADCAST_COUNT = 100` người/ô (`KRegion.h:15`), gửi cho người có `m_nNetConnectIdx >= 0` và `m_bSleepMode == FALSE`. Điều kiện khoảng cách (`MAX_SYNC_RANGE 32`) **bị comment**, nên không có lọc theo bán kính.

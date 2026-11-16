@@ -57,8 +57,10 @@ Cập nhật: 2026-11-16 – Sonnet PM (bắt đầu giai đoạn 0). Sonnet c�
 | 0-10 | xong | chưa có đơn giá USD; có số token và trần tạm Q-22 |
 | 0-08 | chờ | đã cập nhật BAN-GIAO; thử phiên mới bị chặn do giới hạn tuần của tài khoản Claude |
 | A-01 | xong | `REPORTS/A-01-ban-do-tien-trinh.md` (tổng hợp từ BAI_HOC; chưa kiểm lại trên VM thử vì VM treo) |
-| A-03 | chờ | Codex lỗi model gpt-6-luna (404), chờ chủ dự án sửa tài khoản xingchi |
-| A-06 | chờ | như A-03 |
+| A-03 | đang chạy | Codex gpt-6.1-sol (Q-25), khởi động 22:53 |
+| A-06 | đang chạy | Codex gpt-6.1-sol (Q-25), khởi động 22:53 |
+| A-02 | đang chạy | Codex gpt-6.1-sol, khởi động 22:53 |
+| A-07 | đang chạy | Codex gpt-6.1-sol, gốc crash gs001 (Q-26), khởi động 22:56; chỉ dựng và phân tích, không chạy exe |
 
 ## Ngân sách Codex
 - Tổng: khoảng 2.000 USD (chủ dự án cho biết)
@@ -88,4 +90,4 @@ Cập nhật: 2026-11-16 – Sonnet PM (bắt đầu giai đoạn 0). Sonnet c�
 - **Main VM 192.168.1.50 (22:40):** hiện trả ping bình thường (đã đo lại, chỉ đọc theo Q-18). Máy thật đang là 192.168.1.12 (không phải .8), cùng lớp mạng. Log VBox của Main VM chỉ ghi đến 21:13 rồi đứng (`AHCI#0 Port 0 reset`, `Cancelling all active requests`), tức có một lần đĩa ảo/ổ D: bị đứng khoảng 21:13, trùng thời điểm log VM thử đứng; lúc 22:14 mất ping là khớp với đợt đứng này [SUY LUẬN, chưa chứng minh]. Không có lỗi đĩa trong nhật ký System 4 giờ qua.
 - **Worker Codex tách phiên (22:45, Q-23):** shell của Claude Code nằm trong Job Object và tiến trình con cùng job (đã đo); có bị giết khi đóng phiên không CHƯA kiểm. Đã làm `TOOLS/chay_codex.ps1` giao qua Task Scheduler (thử với worker giả: chạy xong, ghi log và cờ `.done`); chưa thử với codex thật. Quy tắc giao sẵn hàng đợi khi hạn mức phiên >80% ghi ở QUY-TAC mục 13 và Q-23.
 - **Codex lỗi model (22:58):** A-03 và A-06 thoát `exit=1` ngay: `404 Model "gpt-6-luna" is not supported by any configured account in this group` (xingchiapi.com). `~/.codex/config.toml` dòng 1 đang đặt `gpt-6-luna`. Theo quy tắc không đổi model/cấu hình Codex nên tôi không sửa; chủ dự án cần kiểm tài khoản/nhóm xingchi hoặc cho biết model đúng. Tăng worker (Q-24) vô ích khi Codex chưa gọi được. Launcher tách phiên chạy đúng (log, cờ `.done`). Trong lúc đó PM tự làm việc Sonnet được (A-01).
-
+- **Codex khôi phục (22:56):** model cố định `gpt-6.1-sol` + reasoning max (Q-25); A-02, A-03, A-06, A-07 chạy tách phiên (4/6 worker). Lỗi 404 cũ coi như xong. Hướng Bot (a), mốc đầu, trần 100, nhịp 18 Hz: Q-26, Q-27.

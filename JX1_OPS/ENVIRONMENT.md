@@ -59,6 +59,7 @@ Việc "VM thử chạy server" [XÁC MINH một phần]: gs001 `A2T2` (exe gố
 | Không có trong PATH | | [XÁC MINH] |
 | Tệp chạy được | `C:\Users\PC\.codex\.sandbox-bin\codex.exe` → `codex-cli 0.166.0-alpha.5.1` | [XÁC MINH] |
 | Cấu hình | `C:\Users\PC\.codex\config.toml`; tôi không đọc nội dung và không sửa (giữ nguyên model và cấu hình theo Q-12) | [XÁC MINH] |
+| Model Codex cố định (Q-25) | `gpt-6.1-sol` (Sol Max) + reasoning `max`, qua `--model` và `--config` trong `TOOLS/chay_codex.ps1`; `/v1/models` xingchi trả `gpt-6.1-sol`, `gpt-6-astra`; `gpt-6-luna` mặc định trong config.toml bị 404 | [XÁC MINH 16/11] |
 | `codex exec` nền | **Chạy được** (0-03, 21:24). Gọi đúng như Dispatcher cũ (`jx1_task_dispatcher.py`): `C:\Users\PC\AppData\Local\OpenAI\Codex\bin\b6c7fc9497179c98\codex.exe exec --json --sandbox workspace-write --model gpt-6.1-sol --config model_provider="xingchi" --config model_reasoning_effort="max" --config approval_policy="never" --config sandbox_mode="workspace-write" -C <worktree> -o <file> -`, env `CODEX_HOME=C:\Users\PC\.codex`, `PYTHONUTF8=1`, prompt qua stdin. Không sửa config.toml (mặc định gpt-6-luna bị xingchi từ chối). Lệnh shell đầu có thể lỗi 1223, worker tự xử lý | [XÁC MINH] |
 
 ## Việc kế tiếp từ kiểm kê này

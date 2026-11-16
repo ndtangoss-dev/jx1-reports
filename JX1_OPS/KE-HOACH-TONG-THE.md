@@ -326,3 +326,9 @@ Danh sách việc chi tiết: `TASKS/BACKLOG.md`.
 | Đánh giá công cụ để trống | `TOOLS/CONG-CU.md` |
 
 **Vẫn giữ:** quy tắc thế giới Bot dùng chung; yêu cầu thay thế AI không gián đoạn; thang tự sửa lỗi 9 bước; giảm báo cáo nội bộ; phân cấp L0–L5; báo cáo ngày 7 câu; không làm Secret Vault.
+
+## Cập nhật 16/11 (sau đánh giá JIBS, Q-26, Q-27)
+- Hướng Bot: (a) bot thô qua giao thức, chưa vá server. Mốc đầu: 1 Bot đăng nhập, đi, đánh (E-01, E-02). Trần Bot online ban đầu 100, đo tải ở 18 Hz rồi mới tăng (sức chứa cứng 500 người, một luồng; `reports/JIBS-danh-gia-bot.md`).
+- Dormant/Background: Bot ngoại tuyến, EXP và vật phẩm tăng qua Lua server (`AddOwnExp`, `AddItem`), không chiếm chỗ online.
+- Nhịp server: bản chạy thật là 18 Hz; 36 Hz là nhánh thử, 54 Hz là kế hoạch (Q-27). Các chỗ ghi "36 Hz" ở trên là mục tiêu/nhánh thử, không phải bản đang chạy.
+- Song song: A-07 tìm gốc crash gs001 tự dựng (cần để vá `KRegion::BroadCast` sau này).
