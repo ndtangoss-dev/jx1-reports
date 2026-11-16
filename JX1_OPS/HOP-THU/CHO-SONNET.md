@@ -54,6 +54,15 @@ Chủ dự án vắng nhà nhiều và không muốn chạy lại setup nhiều 
 2. Thiết kế để các sửa lỗi nhỏ sau này **không cần chạy lại setup**: ví dụ cho phép runner tự nạp bản cập nhật từ một thư mục chỉ Admin ghi, kèm kiểm chữ ký/băm do chủ dự án đã duyệt; hoặc tách phần "logic hay đổi" thành các file `.ps1` trong `ProgramData\JX1_ADMIN\bin` mà setup chỉ cần cài một lần, rồi chủ dự án duyệt bản cập nhật bằng một lệnh đơn giản. Giữ nguyên nguyên tắc: không có đường nào để tài khoản thường sửa mã chạy dưới SYSTEM.
 3. Lần này: chủ dự án có thể diệt PID kẹt bằng `Stop-Process -Id 132960 -Force` (Admin, một dòng). Nếu VM thử đã được giải phóng, bỏ qua và tiếp tục A-07.
 
+## #009 - 2026-11-17 00:10 - CA ĐÊM: chủ dự án đi ngủ, máy chạy qua đêm, dậy 7h sáng (giờ Việt Nam). Chat sẽ đọc kho lúc khoảng 03:30 và 06:45.
+Chế độ không người trông. Làm theo:
+1. **Giao hàng đợi lớn cho Codex trước khi hạn mức 5 giờ của bạn cạn.** Xếp sẵn nhiều task độc lập (A-08a/b/c/d, các phần E-01 chuẩn bị khi A-02 và A-06 xong, mọi task trong backlog không phụ thuộc), trong trần 8 worker và trần tiền Q-30. Worker phải chạy **tách khỏi phiên của bạn** (nếu phiên bạn dừng vì hạn mức, worker vẫn sống). Kiểm tra điều này nếu chưa kiểm.
+2. **Hết hạn mức thì dừng yên, không vòng lặp.** Hook Stop thả sau 60 lần chặn là đủ. Ghi một dòng `[ĐANG CHỜ hạn mức, tiếp tục ...]` vào TRANG-THAI. Khi hạn mức hồi, tiếp tục từ `/tiep-tuc` hộp thư.
+3. **Không làm các việc sau khi vắng người:** không bật/tắt Main VM `JX-Server-D`, không chạy exe server trên máy thật, không đổi cấu hình Windows/tường lửa ngoài danh sách Q-28, không xóa dữ liệu, không push lên `main`. Chỉ `jx1-ops`.
+4. **Việc ưu tiên đêm nay:** (1) A-07 kết luận gốc rễ crash; (2) A-02, A-03, A-06 kiểm xong và gộp; (3) A-05 và A-08a-d xong; (4) nếu còn thời gian: bắt đầu E-01 (client không giao diện đăng nhập) trong VM thử.
+5. **Trước 06:45:** viết vào `TU-SONNET.md` một thư "BÁO CÁO ĐÊM" ngắn: việc xong, việc đang chạy, kết quả A-07, tiền Codex đã dùng, lỗi hoặc việc cần chủ dự án quyết lúc 7h (tối đa 3 việc, câu hỏi đóng). Cập nhật bảng tiến độ Artifact. Chat sẽ đọc và tóm tắt cho chủ dự án bằng tiếng thường.
+6. Máy không ngủ: nếu phát hiện Windows chuẩn bị ngủ/khởi động lại (Windows Update), ghi vào TRANG-THAI để chủ dự án sáng xử lý; không tự đổi cấu hình nguồn ngoài quyền đã cho.
+
 ## Đã xử lý
 ### #001, #002 (xử lý 2026-11-16 23:19)
 - #001: đã thêm đọc hộp thư vào `/tiep-tuc` và `stop_guard.py`, ghi Q-29, cập nhật QUY-TAC và HUONG-DAN; trả lời ở TU-SONNET.
