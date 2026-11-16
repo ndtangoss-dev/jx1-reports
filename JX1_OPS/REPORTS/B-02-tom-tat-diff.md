@@ -22,9 +22,9 @@ Nhánh `feature/visibility` (jx1-source, 8ef7430), 14 file, +537/-5. Chỉ liệ
 - Gói REMOVE: chỉ gửi nếu viewer đã từng nhận ADD (`m_VisibleNpcs`), tránh "người ma".
 - Hảo hữu (`m_nOwnerPlayer`): chỉ chủ hoặc cùng tổ đội thấy (có kiểm `m_dwID` chủ để tránh slot tái dùng).
 - Bot (`m_bIsBot`) thấy bởi mọi người nếu `botsVisible`; chế độ Open như gốc; cùng tổ đội nếu `partyVisible`; chế độ Group chỉ khi cùng `m_nVisGroup` khác 0.
-- Chưa cài trần `MaxVisible` trong lọc này (nhóm con do Lua gán), chưa có P2 (chặn tương tác).
+- Trần `MaxVisible` (mặc định 60, đọc ở KVisibility.cpp:136) dùng khi `JoinActivityGroup` chọn nhóm con; lọc chỉ so `m_nVisGroup`. Chưa có P2 (chặn tương tác).
 
 ## Khác
-- Lua: 4 hàm mới trong ScriptFuns.cpp:25671-25725 (SetVisGroup, GetVisGroup, IsBotPlayer...), KPlayer.h thêm `m_nVisGroup`, `m_bIsBot`, `m_VisibleNpcs`.
-- Đội: KPlayerTeam.cpp:500, 850, 885 gọi làm mới hiển thị khi tổ đội đổi.
+- Lua: 8 hàm Lua mới (ScriptFuns.cpp:25671-25725): SetVisGroup, GetVisGroup, JoinActivityGroup, LeaveActivityGroup, IsBotPlayer, RefreshVisibility, SetBotPlayer, SetNpcVisibilityOwner, KPlayer.h:258-260 thêm `m_nVisGroup`, `m_nVisActivity`, `m_bIsBot`, `m_VisibleNpcs`.
+- Đội: KPlayerTeam.cpp:500, 850, 885 gọi `RefreshAllVisibility()` khi tổ đội đổi (nhận mời, giải tán, rời).
 - Build: gs001/CoreServer 0 lỗi (A-07b nền), CHƯA chạy. Sẽ rebase lên `fix/a07c-link` (A-07e) rồi build, sau khi Chat duyệt.
