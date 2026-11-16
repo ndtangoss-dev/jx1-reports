@@ -111,3 +111,6 @@ Cập nhật: 2026-11-16 – Sonnet PM (bắt đầu giai đoạn 0). Sonnet c�
 
 - **E-01 xong (00:41, PARTIAL):** JX1_OPS/BOT, 29 test offline pass; chưa chạy server thật; thiếu record đồng bộ thế giới phía nhận GS nên chưa đạt mốc 'đi, đánh' (REPORTS/E-01-thieu-giao-thuc.md).
 
+
+- **D-01 xong (00:43):** REPORTS/D-01-bang-hoat-dong.md (tĩnh). Gộp. Không còn worker chạy.
+
