@@ -48,6 +48,12 @@ Lời chủ dự án: "ngân sách 2000 đô, cứ tiêu tẹt đi, làm sao hi�
 Mỗi báo cáo ghi file:dòng làm bằng chứng và mục "Chưa kiểm". Khi xong, báo Chat ở `TU-SONNET.md`. Chat sẽ chọn kiến trúc: **hảo hữu là thực thể server hay nhân vật thật** (nhân vật thật bị trần 500 người online của gs001, nên chỉ dùng được khi số hảo hữu nhỏ).
 Quyết định ghi Q-31: tính năng hảo hữu/lửa trại/nướng cá được duyệt về nguyên tắc; thiết kế chi tiết chờ A-08.
 
+## #008 - 2026-11-17 00:05 - Giảm số lần bắt chủ dự án chạy lại setup Admin
+Chủ dự án vắng nhà nhiều và không muốn chạy lại setup nhiều lần. Từ giờ:
+1. Mỗi lần sửa runner/setup Admin, **gom tất cả lỗi đã biết vào một bản**, thử dry-run mọi ca (kể cả đọc đường dẫn tiến trình dưới SYSTEM: dùng `QueryFullProcessImageName` hoặc đọc PID từ VBox.log, kiểm tra cả hai) trước khi yêu cầu chủ dự án chạy.
+2. Thiết kế để các sửa lỗi nhỏ sau này **không cần chạy lại setup**: ví dụ cho phép runner tự nạp bản cập nhật từ một thư mục chỉ Admin ghi, kèm kiểm chữ ký/băm do chủ dự án đã duyệt; hoặc tách phần "logic hay đổi" thành các file `.ps1` trong `ProgramData\JX1_ADMIN\bin` mà setup chỉ cần cài một lần, rồi chủ dự án duyệt bản cập nhật bằng một lệnh đơn giản. Giữ nguyên nguyên tắc: không có đường nào để tài khoản thường sửa mã chạy dưới SYSTEM.
+3. Lần này: chủ dự án có thể diệt PID kẹt bằng `Stop-Process -Id 132960 -Force` (Admin, một dòng). Nếu VM thử đã được giải phóng, bỏ qua và tiếp tục A-07.
+
 ## Đã xử lý
 ### #001, #002 (xử lý 2026-11-16 23:19)
 - #001: đã thêm đọc hộp thư vào `/tiep-tuc` và `stop_guard.py`, ghi Q-29, cập nhật QUY-TAC và HUONG-DAN; trả lời ở TU-SONNET.
