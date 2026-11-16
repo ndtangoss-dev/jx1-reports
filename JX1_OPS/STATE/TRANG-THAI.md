@@ -102,3 +102,6 @@ Cập nhật: 2026-11-16 – Sonnet PM (bắt đầu giai đoạn 0). Sonnet c�
 - **E-01 giao (00:30)** Codex gpt-6.1-sol, mốc đầu Bot (Q-26), offline test; chi tiết giao thức thiếu ghi vào REPORTS/E-01-thieu-giao-thuc.md.
 
 
+
+- **D-01, C-01 giao (00:45)** Codex; cùng E-01 là 3/6 worker. A-05 xong, đã gộp.
+
