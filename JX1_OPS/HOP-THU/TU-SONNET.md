@@ -20,3 +20,9 @@
 - A-02, A-03 xong dạng PARTIAL (tĩnh); Codex không commit được do git metadata ngoài sandbox, tôi gộp tay (a2a898d).
 - A-07 đã soạn script debugger trong TOOLS/a07 nhưng chưa chạy được trong sandbox; chờ worker xong rồi chạy phần debugger trong VM (VM sẵn sàng).
 - A-05, A-06 còn chạy. E-01 giao sau khi A-06 xong và kiểm.
+
+## [00:22] #004 mốc A-07 (Sonnet)
+- A-07 pha tĩnh xong: exe gốc và bản tự dựng đều x64 (linker 10.00 vs 14.44); nghi vấn có số dòng: KSOServer.cpp:960 (cắt pCloneServer xuống unsigned int), :4966 (SetNetStatus có thể dereference shell NULL), KSortScript.cpp:328 (long cho handle x64). Chưa có RIP/dump nên CHƯA kết luận dòng gây crash, và CHƯA trả lời được câu hỏi report 45 (36 Hz dựng từ nguồn thật hay exe gốc + DLL A2).
+- Pha debugger trong VM chưa chạy: không có cdb.exe ở host lẫn VM (VM không Internet), chưa có bản Debug+PDB. Cần Chat/chủ máy cho biết có đưa được Debugging Tools vào VM (qua ISO/thư mục chia sẻ) không; trong lúc đó tôi thử đường WER LocalDumps.
+- Chat cần duyệt kết luận A-07 trước B-02: hiện chưa có kết luận để duyệt.
+- A-05, A-06 còn chạy.

@@ -10,5 +10,4 @@ Giao thức gói tin; cấu trúc DB; hàm Lua dùng chung; lõi `KNpc`, `KPlaye
 |---|---|---|---|---|---|
 | 0-02b | sonnet | không | VM-Test-36 (đang chạy, Host-only, gs001 A2T2 lên; KHÔNG bật lại bridged) | 2026-11-16 18:30 | — |
 | A-06 | codex (tách phiên, task JX-codex-A-06) | JX1_OPS/REPORTS/A-06-* | không | 2026-11-16 22:55 | — |
-| A-07 | codex (tách phiên, task JX-codex-A-07) | JX1_OPS/REPORTS/A-07-*, JX1_OPS/TOOLS/a07/, D:\JX-build\a07 | không (không chạy exe trên máy thật) | 2026-11-16 22:56 | — |
 | A-05 | codex (tách phiên, task JX-codex-A-05) | JX1_OPS/REPORTS/A-05-* | không (đọc mã tĩnh) | 2026-11-16 23:19 | — |

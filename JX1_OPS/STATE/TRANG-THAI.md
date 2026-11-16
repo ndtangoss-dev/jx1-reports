@@ -60,7 +60,7 @@ Cập nhật: 2026-11-16 – Sonnet PM (bắt đầu giai đoạn 0). Sonnet c�
 | A-03 | xong (PARTIAL: tĩnh, runtime chưa kiểm) | báo cáo REPORTS/A-03-kiem-ke-cau-hinh.md, đã gộp 23:50 |
 | A-06 | đang chạy | Codex gpt-6.1-sol (Q-25), khởi động 22:53 |
 | A-02 | xong (PARTIAL: tĩnh, runtime chưa kiểm) | báo cáo REPORTS/A-02-luong-dang-nhap.md, đã gộp 23:50 |
-| A-07 | đang chạy | Codex gpt-6.1-sol, gốc crash gs001 (Q-26), khởi động 22:56; chỉ dựng và phân tích, không chạy exe |
+| A-07 | xong pha tĩnh (PARTIAL) | báo cáo REPORTS/A-07-goc-re-crash-gs001.md; pha debugger trong VM CHƯA chạy: host và VM đều chưa có cdb.exe, chưa có bản Debug có PDB (A-07b) |
 | A-05 | đang chạy | Codex gpt-6.1-sol, điểm tương tác người chơi gs001 (thư #004 P3), khởi động 23:19; chỉ đọc mã tĩnh |
 
 ## Ngân sách Codex
@@ -94,4 +94,7 @@ Cập nhật: 2026-11-16 – Sonnet PM (bắt đầu giai đoạn 0). Sonnet c�
 - **Codex khôi phục (22:56):** model cố định `gpt-6.1-sol` + reasoning max (Q-25); A-02, A-03, A-06, A-07 chạy tách phiên (4/6 worker; 5/6 từ 23:19 khi thêm A-05). Lỗi 404 cũ coi như xong. Hướng Bot (a), mốc đầu, trần 100, nhịp 18 Hz: Q-26, Q-27.
 
 - **kill-test-vm kiểm chứng (16/11 ~23:40):** JX-Test-36 aborted; jx_env_up -BoQuaMain lên chuỗi đủ 23:48 (cổng 5002,5001,5003-5005,56722,56732,51189). A-02/A-03 xong; Codex không commit được (git metadata ngoài sandbox), PM gộp tay.
+
+
+- **A-07 (00:20):** pha tĩnh xong, gộp. Pha debugger bị chặn bởi thiếu cdb.exe (không thấy trong Windows Kits trên host, VM không có Internet) và chưa dựng bản Debug trong D:\JX-build\a07. Hướng thay thế không cần cdb: WER LocalDumps (script đã có) rồi đọc dump bằng công cụ có sẵn; chưa làm.
 
