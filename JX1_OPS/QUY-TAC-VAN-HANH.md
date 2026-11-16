@@ -187,3 +187,5 @@ Nếu việc cần VM thử dồn hàng chờ, Sonnet được tạo thêm một
 - Mỗi báo cáo ngày ghi: đã dùng hôm nay, tổng đã dùng, còn lại (khi có số liệu).
 - Báo chủ dự án ngay khi đã dùng 50% và 80% tổng ngân sách.
 - Review chéo bằng một phiên Codex khác (không phải phiên đã viết code) được tính là kiểm tra độc lập cho task L2. L3 Sonnet kiểm tra; L4–L5 Opus.
+
+- **Tách worker khỏi phiên (Q-23):** giao Codex bằng `TOOLS/chay_codex.ps1 -Id <ID>` (cần `D:\JX-wt\<ID>` và `<ID>.prompt.txt`), không `Start-Process` trực tiếp. Khi hạn mức phiên PM >80%, giao sẵn hàng đợi (tối đa 3 worker, Q-22) trước khi nghỉ.
