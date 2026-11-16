@@ -94,3 +94,7 @@
 2. "Nhân đôi" của lửa trại hiểu là: nhân đôi lượng kinh nghiệm nhận, hay nhân đôi số người hưởng?
 3. Model/effort mặc định cho Codex: giữ gpt-6.1-sol effort high cho việc sửa/build và low cho đọc-tóm tắt, hay hạ mọi thứ xuống low? (A/B 1 mẫu: effort không đổi tốc độ.)
 - Việc #008 (admin IT chạy lại): mặc định phương án C (gom một bản setup) trừ khi chủ máy nói khác.
+
+### Cập nhật 05:45 (bổ sung BÁO CÁO ĐÊM 05:00)
+- **B-02b XONG:** `feature/visibility` dựng trên nền A-07e, 5/5 dự án exit 0 (Codex 429 ba lần, PM tự dựng nốt CoreServer+GameServer). Chưa chạy VM, chờ Chat duyệt `B-02-tom-tat-diff.md`. Báo cáo: `REPORTS/B-02b-build-tren-a07e.md`.
+- **A-07e:** gs001 HEVA-on sống >4.300 s (~72 phút) trên VM thử, chưa có tải. Chưa tuyên bố "đã sửa" A-07 cho tới khi có bot/người thật.
