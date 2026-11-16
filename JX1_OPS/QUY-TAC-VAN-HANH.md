@@ -49,8 +49,10 @@ Kích thước một task: 15–60 phút làm việc, có kết quả kiểm ch�
 5. Đổi mật khẩu, quyền tài khoản thật, cấu hình mạng hay tường lửa của máy thật.
 6. **Bật bất kỳ VM nào ở chế độ bridged** hoặc cách khác nối thẳng vào LAN nhà (Q-17). VM thử chỉ dùng Host-only hoặc NAT.
 
+**Exe server (Q-19), không cần hỏi:** chuỗi server game (PaySys, Goddess, S3Relay, Bishop, gs001 và exe server đi kèm đã biết) PM tự khởi động, dừng, khởi động lại trong `JX-Test-36` bất cứ lúc nào; trong Main VM chỉ khởi động theo Q-18. Exe lạ chưa từng chạy: chỉ chạy trong VM thử, sau khi lưu SHA-256 và quét Defender. Quy định "mỗi exe server cần phê duyệt riêng" của AGENTS.md cũ và CLAUDE.md cũ đã hết hiệu lực.
+
 **Giữ từ bộ cũ (đã có lý do thật):**
-- Không bao giờ chạy `JxStudio.exe`, `str_tool.exe`, `Autoupdate.exe`. Exe trong gói game chỉ chạy trong VM.
+- Không bao giờ chạy `JxStudio.exe`, `str_tool.exe`, `Autoupdate.exe` ở bất kỳ đâu. Không chạy exe của gói game trên máy thật; chỉ chạy trong VM.
 - Không bật mạng hai VM trùng MAC cùng lúc. Không chụp snapshot khi VM đang chạy (đã từng làm `VBoxSVC` crash). Không dừng `ReportServer`.
 - Không làm hồi quy Fix31, Fix33–36, P46, P47: sửa client phải chạy lại bộ kiểm tra đã có.
 - Không ghi mật khẩu, token, IP riêng vào Git hay báo cáo. Mật khẩu dùng Windows Credential Manager như dự án đang làm (`Get-JxCred`). Không xây hệ thống bí mật riêng.

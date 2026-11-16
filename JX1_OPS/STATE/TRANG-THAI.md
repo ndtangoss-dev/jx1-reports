@@ -11,6 +11,9 @@ Cập nhật: 2026-11-16 – Sonnet PM (bắt đầu giai đoạn 0). Sonnet c�
 - WinRM từ máy thật tới `192.168.56.150` đang bị chặn vì TrustedHosts chưa có IP này; cần chủ dự án chạy `docs-analysis/scripts/themTrustedHost_vm_thu_56.ps1` (Admin, có `-Undo`). Chưa chạy.
 - Lúc lưu 2026-11-16 21:00: `JX-Server-D` aborted; `JX-Test-36` đang chạy (Host-only); LDPlayer chạy; worker Codex 0-03 (PID 135400) chạy lâu chưa có kết quả.
 - Đang chạy được [BÁO CÁO, chưa kiểm lại]: client Cocos P46/P47 trên LDPlayer; server tự dựng 36 Hz trên VM thử `JX-Test-36`; APK mới nhất P46.
+- **Main VM `JX-Server-D` (bật headless 21:02, Q-18):** Windows lên tới desktop, ping và ARP đúng MAC `08:00:27:AD:6D:3F` [XÁC MINH 21:13]; có hộp lỗi "VMware Tools Error 0xc0000096" (VM gốc từ VMware, chưa động tới). WinRM 5985, 1433, 80, 445, 135 đều đóng [XÁC MINH]; chuỗi server **chưa lên**, không đọc được tiến trình. Chưa rõ nguyên nhân (khai: tường lửa/profile mạng, hoặc dịch vụ chưa chạy) [CHƯA XÁC ĐỊNH]. Chưa sửa gì trong VM.
+- Q-18, Q-19 đã ghi; luật cấm cụ thể cho Main VM đã vào `.claude/settings.json` (thử: `echo` chuỗi poweroff bị chặn, `showvminfo` chạy được). Script `docs-analysis/scripts/jx_mainvm_ensure.ps1` mới (bật VM + chờ chuỗi, chỉ đọc).
+- Codex 0-03 thất bại 3/3 (model `gpt-6-luna` bị xingchi từ chối; tắt MCP không giúp): dừng theo lệnh chủ dự án.
 - Worker đang chạy: không có.
 
 ## Đang chờ chủ dự án
