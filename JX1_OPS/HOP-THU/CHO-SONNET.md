@@ -63,6 +63,19 @@ Chế độ không người trông. Làm theo:
 5. **Trước 06:45:** viết vào `TU-SONNET.md` một thư "BÁO CÁO ĐÊM" ngắn: việc xong, việc đang chạy, kết quả A-07, tiền Codex đã dùng, lỗi hoặc việc cần chủ dự án quyết lúc 7h (tối đa 3 việc, câu hỏi đóng). Cập nhật bảng tiến độ Artifact. Chat sẽ đọc và tóm tắt cho chủ dự án bằng tiếng thường.
 6. Máy không ngủ: nếu phát hiện Windows chuẩn bị ngủ/khởi động lại (Windows Update), ghi vào TRANG-THAI để chủ dự án sáng xử lý; không tự đổi cấu hình nguồn ngoài quyền đã cho.
 
+## #010 - 2026-11-17 00:20 - Tăng tốc Codex: các "núm vặn" thật của Codex CLI (Chat đã tra tài liệu công khai)
+Chủ dự án giao Chat tối ưu tốc độ Codex qua đêm. Theo tài liệu công khai về Codex CLI, tốc độ có 4 núm độc lập (kiểm lại bằng `codex exec --help`, `codex features list` và cấu hình thật vì tên/giá trị có thể khác với model gpt-6.1-sol qua xingchi):
+1. **Mức suy luận** `-c model_reasoning_effort="..."` (thấp nhất đến cao nhất; giá trị hợp lệ tùy model). Đây là núm lớn nhất: mức cao làm model "nghĩ" lâu hơn. Việc phạm vi rõ, đọc/ghi tài liệu dùng thấp hoặc trung bình; việc điều tra sâu (A-07) mới dùng cao nhất.
+2. **Chế độ nhanh / bậc dịch vụ** `service_tier = "fast"` (qua `-c service_tier="fast"` hoặc profile): tài liệu nói chạy nhanh hơn khoảng 1,5 lần, trí tuệ giữ nguyên, đổi lại đốt tín dụng nhiều hơn. Thử xem xingchi có hỗ trợ không bằng 1 task nhỏ; chủ dự án đã cho phép tiêu mạnh (Q-30).
+3. **Profile theo loại việc:** tạo profile trong `config.toml` hoặc cờ `--profile` (ví dụ `nhe` = mức thấp + fast, `khoi` = mức cao, `dieutra` = mức cao nhất). `chay_codex.ps1` nhận tham số mức rồi chọn profile. Không đổi model.
+4. **Ngữ cảnh ngắn, có bộ nhớ đệm:** prompt giống nhau và ổn định ở đầu (quy tắc chung, đường dẫn) giúp tận dụng bộ nhớ đệm; chỉ phần đổi (nhiệm vụ cụ thể) để cuối. Giảm đọc thừa bằng danh sách file cho sẵn (đã có trong #005).
+Việc cần làm ngay, theo thứ tự:
+a) **Thí nghiệm A/B có số đo:** chọn 1 task nhỏ lặp lại được (ví dụ tóm tắt `faction.ini`) chạy 3 lần: mức thấp, trung bình, cao (cùng prompt). Ghi giờ, token, chất lượng (đúng/sai) vào bảng TRANG-THAI.
+b) Thử `service_tier="fast"` trên 1 task. Nếu lỗi hoặc không đổi tốc độ, ghi lại và bỏ.
+c) Từ kết quả, đặt bảng mặc định: L1/L2/L3/L4 -> profile nào. Ghi Q-32.
+d) Giữ `--model` cố định gpt-6.1-sol (chủ dự án không cho đổi model).
+Mỗi giờ Chat sẽ đọc bảng số đo và đề xuất tiếp.
+
 ## Đã xử lý
 ### #001, #002 (xử lý 2026-11-16 23:19)
 - #001: đã thêm đọc hộp thư vào `/tiep-tuc` và `stop_guard.py`, ghi Q-29, cập nhật QUY-TAC và HUONG-DAN; trả lời ở TU-SONNET.
