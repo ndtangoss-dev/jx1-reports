@@ -70,3 +70,11 @@ Việc "VM thử chạy server" [XÁC MINH một phần]: gs001 `A2T2` (exe gố
 - Đặt về chuẩn 200k theo yêu cầu chủ dự án: `.claude/settings.json` của dự án có `env.CLAUDE_CODE_DISABLE_1M_CONTEXT = "1"` [XÁC MINH, JSON hợp lệ]; mẫu `TOOLS/settings.mau.json` cũng đã thêm mục này.
 - Đã gỡ `modelSettings.claude-sonnet-5-5.autoCompactWindow: 400000` khỏi `~/.claude/settings.json` (không còn cấu hình 400k ở settings người dùng) [XÁC MINH].
 - Không đụng cấu hình Codex. Có hiệu lực từ phiên Claude Code mới (phiên hiện tại giữ cài đặt cũ tới khi khởi động lại) [GIẢ THUYẾT, chưa kiểm].
+
+## Tường lửa Main VM `JX-Server-D` (Q-20, 2026-11-16 21:32)
+- Hồ sơ mạng `Network 2` (Ethernet) đã là **Private**, không phải đổi [XÁC MINH bằng ảnh chụp console 21:31]. Tường lửa Domain/Private/Public đều ON.
+- Nguyên nhân cổng đóng: luật có sẵn `Windows Remote Management (HTTP-In)` (5985) và bản Compatibility Mode (80) có `RemoteIP = 192.168.1.8/32`; máy thật nay là `192.168.1.12` [XÁC MINH].
+- Luật cũ **không sửa**. Đã thêm 3 luật mới (qua cửa sổ PowerShell Admin trong VM, đã đóng sau khi làm): `JX-Q20-Host-5985`, `JX-Q20-Host-1433`, `JX-Q20-Host-5002`; Inbound, Allow, TCP, `remoteip=192.168.1.12`, `profile=private`.
+- Kết quả từ máy thật (21:33): 5985 mở, 1433 mở [XÁC MINH]. 5002 vẫn đóng: tiến trình nghe `0.0.0.0:5002` nhưng có luật chặn chủ ý `JX no-in Sword3PaySys` (Block, mọi profile); luật chặn thắng luật cho phép. Máy thật không cần 5002 nên **không gỡ** luật chặn. Luật `JX-Q20-Host-5002` vì thế không có tác dụng.
+- Hoàn tác (chạy trong PowerShell Admin của VM):
+  `foreach($p in 5985,1433,5002){ netsh advfirewall firewall delete rule name=JX-Q20-Host-$p }`
