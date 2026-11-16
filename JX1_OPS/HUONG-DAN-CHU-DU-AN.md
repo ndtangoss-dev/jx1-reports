@@ -6,10 +6,9 @@ Viết cho người không lập trình. Anh chỉ cần làm các bước dư�
 
 ## 1. Xem và duyệt kế hoạch
 
-Đọc `KE-HOACH-TONG-THE.md`, ít nhất Phần 0 (tóm tắt) và Phần 11 (quyết định). Anh cần quyết:
+Đọc `KE-HOACH-TONG-THE.md`, ít nhất Phần 0 (tóm tắt) và Phần 11 (quyết định).
 
-- **D1 (bắt buộc):** có cho đưa source lên repository GitHub **riêng tư** `jx1-source` không. Chỉ mã nguồn, script, cấu hình đã lọc; không dữ liệu tài khoản, không file game nặng.
-- **D2–D6:** nếu đồng ý với mặc định thì không cần nói gì.
+Đã ghi các quyết định của anh: đưa source lên GitHub riêng tư; bỏ hẳn AMOLX; Codex giữ model Sol Max, dùng nhiều worker. D3–D6: nếu đồng ý mặc định thì không cần nói gì.
 
 ---
 
@@ -19,22 +18,18 @@ Trên máy Windows có thư mục `C:\Jx1CocoV3`:
 
 1. Mở **Claude Code** trong thư mục `C:\Jx1CocoV3` (như anh vẫn mở).
 2. Gõ `/model` và chọn **Sonnet**.
-3. Dán nguyên đoạn dưới đây, sửa dòng D1 theo ý anh, rồi Enter:
+3. Dán nguyên đoạn dưới đây rồi Enter:
 
 ```
 Bạn là Project Manager của dự án JX1, toàn quyền điều hành theo kế hoạch đã duyệt.
 Kế hoạch và quy trình ở repository ndtangoss-dev/jx1-reports, nhánh jx1-ops, thư mục JX1_OPS.
 Lấy nhánh đó về máy, đọc JX1_OPS/README.md và làm theo thứ tự đọc của PM.
 
-Tôi đã duyệt KE-HOACH-TONG-THE.md.
-D1: ĐỒNG Ý tạo repository riêng tư jx1-source cho source (đã lọc dữ liệu tài khoản).
-D2–D6: dùng mặc định.
-
-Ghi các quyết định trên vào STATE/QUYET-DINH.md, rồi bắt đầu giai đoạn 0 trong TASKS/BACKLOG.md.
+Tôi đã duyệt KE-HOACH-TONG-THE.md. Các quyết định đã ghi trong STATE/QUYET-DINH.md.
+D3–D6: dùng mặc định. Ghi thành quyết định rồi bắt đầu giai đoạn 0 trong TASKS/BACKLOG.md.
+Codex giữ nguyên model và cấu hình hiện tại.
 Làm tự động, không hỏi tôi việc thông thường. Báo tôi một lần mỗi ngày.
 ```
-
-(Nếu chưa muốn đưa source lên GitHub, đổi dòng D1 thành: `D1: CHƯA ĐỒNG Ý, dùng Git cục bộ.`)
 
 4. Sonnet sẽ tự cài lệnh `/tiep-tuc`, `/ket-thuc-ca`, `/bao-cao` vào dự án trong ngày đầu (task 0-01). Từ đó trở đi anh dùng ba lệnh này.
 
@@ -77,6 +72,7 @@ Chỉ khi:
 - Cần đổi mật khẩu, mạng, tường lửa của máy thật.
 - Một **quyết định gameplay** chưa chốt (ví dụ: hoạt động nào cho người thật thấy nhau, bao nhiêu người).
 - Mốc quan trọng cần anh **thử trên điện thoại**.
+- Ngân sách Codex đã dùng tới **50%** và **80%**.
 
 Mọi việc khác Sonnet tự làm.
 
@@ -85,5 +81,6 @@ Mọi việc khác Sonnet tự làm.
 ## 6. Điều nên biết
 
 - Khi máy tắt, những việc cần VM thử hoặc LDPlayer sẽ dừng. Đây là giới hạn của việc chạy trên máy cá nhân, không phải lỗi.
-- Nếu anh đồng ý D1, có thể giao Claude trên web hoặc điện thoại làm việc đọc source khi máy tắt. Không bắt buộc.
+- Vì source sẽ nằm trên GitHub riêng tư, có thể giao Claude trên web hoặc điện thoại làm việc đọc source khi máy tắt. Không bắt buộc.
+- Nếu thấy Sonnet làm lẫn lộn (giao việc lặp, quên việc đang làm), gõ `/ket-thuc-ca`, rồi `/clear`, rồi `/tiep-tuc`. Phiên mới đọc lại mọi thứ từ GitHub.
 - Kế hoạch đánh giá việc chuyển server là khả thi, nhưng thời gian thật chỉ biết sau giai đoạn A. Sonnet sẽ báo con số thật, không đoán.

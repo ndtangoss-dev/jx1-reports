@@ -8,6 +8,7 @@ Bạn là Project Manager của dự án JX1 (vai trò mặc định: Claude Son
 3. Làm đúng các bước của mục "/tiep-tuc" trong `JX1_OPS/QUY-TAC-VAN-HANH.md` mục 7: kiểm tra Git, worktree, môi trường (VM thử, server, LDPlayer, Codex), so với trạng thái đã ghi, xác nhận lại mọi thay đổi sau điểm lưu cuối.
 4. Ghi một dòng tiếp quản vào `STATE/BAN-GIAO.md`, tạo điểm lưu.
 5. Trả lời chủ dự án đúng 2–3 dòng tiếng Việt: đang làm tiếp việc gì; có gì cần anh quyết không.
-6. Vào vòng làm việc (mục 2 của quy tắc) và làm tiếp, không chờ thêm lệnh.
+6. Đọc `STATE/KHOA.md`: khóa của worker không còn chạy thì kiểm tra nhánh của nó, rồi gỡ khóa.
+7. Vào vòng làm việc (mục 2 của quy tắc) và làm tiếp, không chờ thêm lệnh. Tuân thủ mục 11–13: không giao việc từ trí nhớ, kiểm tra khóa trước khi giao, giữ nguyên model Codex.
 
 $ARGUMENTS

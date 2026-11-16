@@ -10,9 +10,11 @@ Sonnet lấy việc từ trên xuống, theo phụ thuộc. Khi bắt đầu m�
 | 0-02 | Kiểm tra môi trường thật so với `STATE/TRANG-THAI.md`: VM nào tồn tại, VM thử chạy được server tự dựng 36 Hz, LDPlayer, APK hiện tại, Codex CLI, Git Credential Manager. Tạo và điền `JX1_OPS/ENVIRONMENT.md` (dựa trên khung `FABLE_HANDOVER_v0.3/docs/ENVIRONMENT-AND-TOOLS.md`) | L2 | Sonnet | Bảng môi trường có trạng thái thật |
 | 0-03 | Thử vòng giao việc: Sonnet gọi `codex exec` chạy nền trong một worktree, với một task nhỏ có ích (ví dụ script sinh bảng trạng thái từ `TASKS/`); đọc kết quả; đo thời gian và hạn mức | L2 | Sonnet + Codex | Một task Codex xong không cần chủ dự án bấm |
 | 0-04 | Cài Graphify và dựng đồ thị cho source server và client (bản đã vá); thử các công cụ "có thể cài sau" nếu thấy cần; điền cột kết quả trong `TOOLS/CONG-CU.md` | L2 | Sonnet | Agent tra cứu được đồ thị; bảng có kết quả thật |
-| 0-05 | **Sau D1:** tạo repository riêng tư `jx1-source`; `.gitignore` chặn PAK, APK, exe, dll, pdb, obj, dump, log, `.sql`, DB, `accinfo.ini`, file cấu hình có mật khẩu; nhập client `D:\Android\b\Client\Classes`, server `D:\JX-build\src18`, Lua và cấu hình đã lọc; quét bí mật; tag `baseline-20261116`. **Chưa có D1:** Git cục bộ cùng cấu trúc + sao lưu sang ổ khác | L3 | Sonnet + Codex | Dựng lại được client và server từ repository |
-| 0-06 | Trên nhánh `main` của `jx1-reports`: thay `AGENTS.md` bằng con trỏ sang `JX1_OPS/QUY-TAC-VAN-HANH.md` (giữ rào chắn an toàn); ghi chú hết hiệu lực vào `WORKFLOW_JX1.md`, `PROMPTS/00_CODEX_START_HERE.md`, `00_PROJECT_CONTROL/README.md`. Ghi lại trạng thái AMOLX rồi dừng (D2) | L1 | Sonnet | Codex mới mở không còn đọc quy tắc cũ |
+| 0-05 | **D1 đã đồng ý:** tạo repository riêng tư `jx1-source`; `.gitignore` chặn PAK, APK, exe, dll, pdb, obj, dump, log, `.sql`, DB, `accinfo.ini`, file cấu hình có mật khẩu; nhập client `D:\Android\b\Client\Classes`, server `D:\JX-build\src18`, Lua và cấu hình đã lọc; quét bí mật; tag `baseline-20261116` | L3 | Sonnet + Codex | Dựng lại được client và server từ repository |
+| 0-06 | Trên nhánh `main` của `jx1-reports`: thay `AGENTS.md` bằng con trỏ sang `JX1_OPS/QUY-TAC-VAN-HANH.md` (giữ rào chắn an toàn); ghi chú hết hiệu lực vào `WORKFLOW_JX1.md`, `PROMPTS/00_CODEX_START_HERE.md`, `00_PROJECT_CONTROL/README.md`. **Bỏ hẳn AMOLX (Q-11):** đóng phiên Codex AMOLX nếu còn chạy, ghi trạng thái cuối vào `REPORTS/AMOLX-DONG.md`, không giao thêm việc AMOLX. Giữ nguyên file và báo cáo cũ (không xóa) | L1 | Sonnet | Codex mới mở không còn đọc quy tắc cũ |
 | 0-07 | Script một lệnh bật và tắt môi trường thử (VM `JX-Test-36` → dịch vụ theo đúng thứ tự → `gs001` 36 Hz → kiểm tra cổng), kèm kiểm tra sức khỏe; thử qua một lần tắt bật máy | L2 | Codex | Sau khởi động máy, một lệnh đưa môi trường thử về sẵn sàng |
+| 0-09 | Dựng các biện pháp mục 11–12: áp hook nhắc sau nén ngữ cảnh và kiểm tra nó chạy thật; thử Codex với `--sandbox workspace-write` trong worktree không ghi được ra ngoài; tạo quy trình khóa `STATE/KHOA.md` | L2 | Sonnet | Thử ghi ra ngoài worktree bị chặn; hook in được lời nhắc (hoặc ghi rõ không hỗ trợ) |
+| 0-10 | Đo chi phí Codex thật trên 3–5 task mẫu; đặt trần ngày; ghi vào `STATE/TRANG-THAI.md` mục Ngân sách | L1 | Sonnet | Có số đo hoặc ghi "không có dữ liệu" và trần tạm |
 | 0-08 | Thử trọn vòng tạm dừng: `/ket-thuc-ca`, đóng Claude Code, mở lại, `/tiep-tuc` | L1 | Sonnet | Làm tiếp đúng việc đang dở |
 
 ## Giai đoạn A – Khảo sát, làm chủ
@@ -69,3 +71,9 @@ Sonnet lấy việc từ trên xuống, theo phụ thuộc. Khi bắt đầu m�
 | P-01 | Nhắc chủ dự án thử APK P46/P47 và server 36 Hz trên điện thoại khi tiện; ghi kết quả | L0 | Sonnet |
 | P-02 | Bộ đo chuẩn một lệnh (tick, băng thông, khung hình) | L2 | Codex |
 | P-03 | Đường cong tải theo số Bot | L3 | Codex (sau E-01) |
+
+## Kiểm tra định kỳ
+
+| ID | Việc | Cấp | Ai | Khi nào |
+|---|---|---|---|---|
+| O-01 | Phiên Opus mới, chỉ đọc kế hoạch, `QUYET-DINH.md`, backlog và task đã làm; báo việc lệch hướng, task không có mã backlog, quyết định bị làm trái. Ghi `REPORTS/KIEM-TRA-DOC-LAP-YYYY-MM-DD.md` | L4 | Opus | Khoảng 3 ngày một lần, và trước mỗi lần gộp vào `main` |

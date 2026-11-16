@@ -8,8 +8,7 @@ Cập nhật: 2026-11-16 – Opus (lập kế hoạch). Sonnet cập nhật file
 - Worker đang chạy: không có.
 
 ## Đang chờ chủ dự án
-- D1 (bắt buộc): cho phép repository riêng tư `jx1-source`.
-- D2–D6: có mặc định, xem kế hoạch Phần 11.
+- D1, D2 đã quyết (Q-10, Q-11). D3–D6 có mặc định, xem kế hoạch Phần 11.
 
 ## Bước tiếp theo (theo thứ tự)
 1. Chủ dự án duyệt kế hoạch và bàn giao cho Sonnet (`HUONG-DAN-CHU-DU-AN.md`).
@@ -25,6 +24,12 @@ Cập nhật: 2026-11-16 – Opus (lập kế hoạch). Sonnet cập nhật file
 | Gói server gốc | `C:\Jx1CocoV3\Folder\ServerNew-…\ServerNew\_bin_v2_` [BÁO CÁO] |
 | VM thử | `JX-Test-36` [BÁO CÁO] |
 | Worktree task | `D:\JX-wt\<ID>` (đề xuất) |
+
+## Ngân sách Codex
+- Tổng: khoảng 2.000 USD (chủ dự án cho biết; Sonnet xác minh loại hạn mức ở task 0-10)
+- Đã dùng: chưa có dữ liệu
+- Trần ngày: chưa đặt (task 0-10)
+- Số worker hiện tại: 0 (bậc khởi đầu: 3)
 
 ## Môi trường đang bật lúc lưu
 (Sonnet ghi: VM nào đang chạy, server nào đang lên, LDPlayer, worker.)

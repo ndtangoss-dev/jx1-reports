@@ -5,7 +5,7 @@
 | Ngày | 2026-11-16 |
 | Người lập | Claude Opus (nghiên cứu, kiến trúc, kế hoạch) |
 | Người điều hành sau phê duyệt | Claude Sonnet (Project Manager) |
-| Trạng thái | **CHỜ CHỦ DỰ ÁN PHÊ DUYỆT.** Chưa triển khai gì |
+| Trạng thái | **CHỜ CHỦ DỰ ÁN PHÊ DUYỆT.** Chưa triển khai gì. Bản 1.1: đã ghi D1, D2 và thêm phần chống lỗi, mở rộng worker |
 | Nơi lưu | Repository `ndtangoss-dev/jx1-reports`, nhánh `jx1-ops`, thư mục `JX1_OPS/` |
 | Căn cứ | `owner-inputs/05` và `06` (mới nhất, ưu tiên cao nhất); bộ Fable v0.3 (`FABLE_HANDOVER_v0.3/`); toàn bộ báo cáo trên nhánh `main` |
 
@@ -21,7 +21,8 @@ Nhãn độ tin cậy dùng trong tài liệu này (thống nhất cho cả dự
 3. **Cách chuyển đổi đề xuất:** thêm một bộ lọc hiển thị phía server, kèm chặn tương tác giữa người chơi thật, điều khiển bằng một file cấu hình hoạt động. Bot là tài khoản được đánh dấu "bot" nên ai cũng thấy. Vì Bot là thực thể thật của server, việc A giết Bot thì B thấy Bot chết là tự nhiên đúng.
 4. **Tổ chức mới:** bỏ ChatGPT, 8 phòng ban, Dispatcher. Sonnet là PM duy nhất, có toàn quyền trên máy phát triển và VM thử. Sonnet tự khởi chạy Codex và các agent con, không cần anh bấm từng task. Opus chỉ được gọi cho việc khó.
 5. **Không gián đoạn:** mọi trạng thái nằm trên nhánh `jx1-ops`, đẩy lên GitHub thường xuyên. Anh gõ `/ket-thuc-ca` trước khi tắt máy và `/tiep-tuc` khi quay lại. Đổi tài khoản hay đổi model cũng chỉ cần `/tiep-tuc`.
-6. **Cần anh quyết 1 việc bắt buộc:** cho phép đưa source (chỉ mã nguồn, đã lọc dữ liệu tài khoản) lên một repository GitHub **riêng tư**. Các quyết định còn lại đều có phương án mặc định; anh không trả lời thì Sonnet làm theo mặc định (Phần 11).
+6. **Đã quyết:** đưa source lên repository GitHub riêng tư `jx1-source`; bỏ hẳn AMOLX, chỉ dùng client Cocos V3; Codex giữ model Sol Max, được dùng nhiều worker. Các quyết định còn lại có mặc định (Phần 11).
+7. **Chống lỗi đội AI:** Sonnet không giao việc từ trí nhớ; worker bị khóa trong worktree riêng; vùng file chồng nhau thì làm lần lượt; Opus kiểm tra độc lập khoảng 3 ngày một lần (`QUY-TAC-VAN-HANH.md` mục 11–13).
 
 ---
 
@@ -40,7 +41,7 @@ Nhãn độ tin cậy dùng trong tài liệu này (thống nhất cho cả dự
 | Tài nguyên | 44 file `.pak` ≈ 3,3 GB, phục vụ qua CDN cổng 8080 | [XÁC MINH] |
 | Đường mạng | Điện thoại → Tailscale → forwarder trên máy thật (56722, 51189) → VM | [XÁC MINH] |
 | VM | `JX-Server-D` (Main VM, không đụng), `JX-Server` (archive), `JX-Test-36` (VM thử) | [BÁO CÁO] |
-| Client thứ hai | AMOLX (bản port Axmol): đang thử, chưa vào được gameplay | [XÁC MINH, AMOLX-09] |
+| Client thứ hai | AMOLX (bản port Axmol): **đã bỏ** theo quyết định Q-11; giữ báo cáo cũ | [XÁC MINH, AMOLX-09] |
 
 ### 1.2. Những gì đã làm được
 - Client: Fix31 (nội suy), Fix33 (mất sát thương), Fix34 (đạn), Fix35 (crash vùng), Fix36 (giật bản đồ), P46 (răng cưa camera, giật ra chiêu), P47 (nhấp nháy đối tượng).
@@ -105,7 +106,7 @@ Mặc định người chơi thật không thấy nhau ở bản đồ thường
 - **Làm rõ:** luồng đăng nhập client → `Bishop` → `PaySys`/`Goddess` → `gs001`; bảng nào trong SQL giữ gì; `roledb` lưu nhân vật thế nào, sao lưu ra sao.
 - **Công cụ quản trị tối thiểu (dòng lệnh trước, giao diện sau):** tạo, khóa, mở khóa tài khoản; đặt lại mật khẩu; xem danh sách nhân vật; xem ai đang online; đánh dấu tài khoản bot; sao lưu và khôi phục dữ liệu nhân vật.
 - **Tài khoản bot:** tạo hàng loạt theo mẫu, có cờ `is_bot`, mật khẩu do máy sinh và lưu trong Windows Credential Manager (cơ chế dự án đang dùng), không ghi vào Git.
-- **Bảo mật cơ bản:** client AMOLX lưu mật khẩu dạng rõ trong `accinfo.ini` [NGUỒN]; client Cocos cần kiểm tra tương tự trước khi có người chơi thật.
+- **Bảo mật cơ bản:** client AMOLX từng lưu mật khẩu dạng rõ trong `accinfo.ini` [NGUỒN]; client Cocos cần kiểm tra xem có lỗi tương tự không trước khi có người chơi thật.
 - **Web Admin / Mobile Admin:** làm sau khi công cụ dòng lệnh ổn định; một trang web nội bộ chạy trên máy thật, xem được từ điện thoại qua Tailscale là đủ cho cả hai nhu cầu.
 
 ---
@@ -206,7 +207,7 @@ Lý do chọn E1 trước: nhanh có kết quả, dùng lại toàn bộ gamepla
 | Chủ dự án | Anh | Mục tiêu, quyết định trong Phần 11, xem kết quả, đọc báo cáo ngày |
 | Project Manager | **Claude Sonnet**, phiên Claude Code chính trên máy Windows | Toàn quyền điều hành: chia việc, khởi chạy worker, kiểm tra, sửa lỗi, tích hợp, merge, quản lý VM thử và môi trường, lưu trạng thái, báo cáo |
 | Chuyên gia | **Claude Opus** | Sonnet gọi khi cần: thiết kế mức L4–L5 (bộ lọc hiển thị, kiến trúc Bot), lỗi khó, review độc lập việc quan trọng |
-| Worker thực thi | **Codex CLI** (`codex exec`), agent con Sonnet | Viết code, build, test theo task |
+| Worker thực thi | **Codex CLI** (`codex exec`, model Sol Max qua xingchi, không đổi), agent con Sonnet | Gánh phần lớn việc: viết code, đọc source, build, test, review chéo |
 | Việc nhẹ | Agent con Haiku | Tóm tắt log, đối chiếu checklist, soạn nháp báo cáo |
 
 **Bỏ:** ChatGPT, 8 phòng ban, Dispatcher, quy trình anh bấm chạy từng prompt.
@@ -222,7 +223,7 @@ Sonnet là vòng lặp điều hành duy nhất. Sonnet tự gọi `codex exec` 
 | L3 | Nhiều module, tích hợp | Codex / Sonnet | Sonnet PM kiểm tra phần quan trọng |
 | L4–L5 | Bộ lọc hiển thị, kiến trúc Bot, giao thức | Opus thiết kế | Agent khác nhà cung cấp review + test |
 
-Song song tối đa ban đầu: 3 worker. Một LDPlayer và một VM thử chỉ do một agent điều khiển tại một thời điểm.
+**Mở rộng worker:** bắt đầu 3 worker Codex, lên 5 rồi 8 khi không có xung đột và Sonnet kiểm tra kịp; xuống bậc ngay khi có vấn đề. Codex gánh phần lớn việc để tiết kiệm hạn mức Claude. Ngân sách Codex khoảng 2.000 USD: đo chi phí thật ngày đầu, trần ngày ban đầu khoảng 5%, cảnh báo ở 50% và 80%. Việc cần VM thử hoặc LDPlayer luôn chạy lần lượt; có thể tạo VM thử thứ hai nếu hàng chờ dồn. Chi tiết: `QUY-TAC-VAN-HANH.md` mục 11–13.
 
 ---
 
@@ -266,8 +267,8 @@ Theo `QUY-TAC-VAN-HANH.md` mục 6–8: điểm lưu thường xuyên, `/ket-thu
 
 | # | Câu hỏi | Mặc định nếu anh không trả lời |
 |---|---|---|
-| **D1** | Đưa source (mã nguồn, Lua, cấu hình đã lọc; **không** dữ liệu tài khoản, PAK, exe) lên repository GitHub riêng tư `jx1-source`? | **Không có mặc định, cần anh đồng ý.** Chưa đồng ý thì Sonnet dùng Git cục bộ trên máy (vẫn chạy được, nhưng mất máy là mất source và phiên web không đọc được source) |
-| D2 | Client AMOLX (Axmol): tạm dừng, chỉ dùng client Cocos V3? | Tạm dừng, giữ báo cáo để dùng sau |
+| **D1** | Đưa source (đã lọc) lên repository GitHub riêng tư `jx1-source`? | **Đã quyết: ĐỒNG Ý** (Q-10) |
+| D2 | Client AMOLX | **Đã quyết: BỎ HẲN**, chỉ dùng Cocos V3 (Q-11) |
 | D3 | Nền thử chuyển đổi: VM thử `JX-Test-36` với server tự dựng 36 Hz; Main VM không đụng | Như vậy |
 | D4 | Hoạt động nào cho người thật thấy nhau, bao nhiêu người | Giao hàng với tất cả tắt; anh bật sau |
 | D5 | Ở bản đồ thường, người chơi thật có chat kênh thế giới với nhau không? (Tổ đội, giao dịch, PK, chat mật đều chặn theo thiết kế Bot đã duyệt) | Giữ kênh thế giới như game gốc |
@@ -278,12 +279,15 @@ Theo `QUY-TAC-VAN-HANH.md` mục 6–8: điểm lưu thường xuyên, `/ket-thu
 | Rủi ro | Mức | Giảm thiểu |
 |---|---|---|
 | Nhiều chỗ trong code giả định người chơi thấy nhau | Cao | A-05 liệt kê hết; cùng một hàm kiểm tra cho hiển thị và tương tác; test hai người chơi |
-| Source chỉ nằm trên một máy | Cao | D1; trong lúc chờ, Git cục bộ + sao lưu sang ổ khác |
+| Source chỉ nằm trên một máy | Cao | Repository riêng tư `jx1-source` (task 0-05) |
+| Sonnet quên ngữ cảnh, giao việc lệch | Trung bình | Quy tắc mục 11; kiểm tra độc lập O-01 |
+| Worker xung đột, ghi đè nhau | Trung bình | Quy tắc mục 12 |
+| Nhiều worker tiêu ngân sách Codex nhanh | Trung bình | Quy tắc mục 13.3 |
 | Dữ liệu nhạy cảm lọt lên GitHub | Cao | `.gitignore` chặt, quét trước mỗi lần đẩy, repository riêng tư |
 | Hết hạn mức Claude giữa chừng | Trung bình | Điểm lưu thường xuyên; Codex làm tiếp; kế nhiệm theo `QUY-TAC-VAN-HANH.md` mục 8 |
 | Bot không giao diện quá nặng khi đông | Trung bình | Đo ở E6; có phương án điều khiển trong server |
 | Bản quyền: client, server, tài nguyên JX1 thuộc chủ sở hữu gốc; nguồn gói server không rõ | Cao nếu phát hành | Giữ repository riêng tư; quyết định phát hành là của anh; nên hỏi tư vấn pháp lý trước khi kinh doanh |
-| Máy tắt thì việc cần VM, LDPlayer dừng | Thấp | Đã tính trong quy trình tạm dừng/tiếp tục; việc đọc source có thể chạy trên phiên web nếu D1 = đồng ý |
+| Máy tắt thì việc cần VM, LDPlayer dừng | Thấp | Đã tính trong quy trình tạm dừng/tiếp tục; việc đọc source có thể chạy trên phiên web vì source sẽ ở GitHub riêng tư |
 | Exe trong gói game không rõ nguồn gốc | Trung bình | Chỉ chạy trong VM, giữ các lệnh cấm cũ |
 
 ### 11.3. Phụ thuộc chính
@@ -305,7 +309,7 @@ A (khảo sát) → B (chuyển đổi hiển thị) → E (Bot). C (account) v�
 
 **Làm ngay sau khi duyệt:** giai đoạn 0; A-04 (tổng hợp kiến trúc từ báo cáo có sẵn); A-05 (đường đồng bộ thực thể, Opus); P1 (anh thử APK P46/P47 và server 36 Hz trên điện thoại khi tiện).
 **Phải thử nghiệm trước khi tin:** bộ lọc hiển thị; Bot không giao diện kết nối được bản server tự dựng; tải nhiều Bot.
-**Cần anh quyết:** D1 (bắt buộc), D2–D6 (có mặc định).
+**Cần anh quyết:** D3–D6 (có mặc định). D1, D2 đã quyết.
 
 Danh sách việc chi tiết: `TASKS/BACKLOG.md`.
 

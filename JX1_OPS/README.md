@@ -4,11 +4,12 @@ Nhánh `jx1-ops` của `ndtangoss-dev/jx1-reports` là **nơi duy nhất** giữ
 
 ## Bạn là ai?
 - **PM (mặc định Claude Sonnet) hoặc PM kế nhiệm:** đọc theo thứ tự dưới đây, rồi làm theo mục "/tiep-tuc" trong `QUY-TAC-VAN-HANH.md` mục 7.
-- **Worker (Codex, agent con):** chỉ đọc `QUY-TAC-VAN-HANH.md` mục 3–5 và file task được giao. Không đọc gì khác nếu task không yêu cầu.
+- **Worker (Codex, agent con):** chỉ đọc `QUY-TAC-VAN-HANH.md` mục 3–5, mục 12.1 và file task được giao; làm phần "Worker kiểm tra trước khi làm" trong file task trước tiên. Không đọc gì khác nếu task không yêu cầu.
 
 ## Thứ tự đọc của PM
 1. `STATE/BAN-GIAO.md` – PM trước để lại gì.
-2. `STATE/TRANG-THAI.md` – dự án đang ở đâu, bước tiếp theo, đường dẫn.
+2. `STATE/TRANG-THAI.md` – dự án đang ở đâu, bước tiếp theo, đường dẫn, ngân sách.
+   `STATE/KHOA.md` – worker nào đang giữ vùng file, tài nguyên nào.
 3. `QUY-TAC-VAN-HANH.md` – cách làm việc, quyền hạn, điểm lưu.
 4. `KE-HOACH-TONG-THE.md` – kế hoạch (đọc kỹ lần đầu; các lần sau chỉ mở phần cần).
 5. `TASKS/BACKLOG.md` và các file task đang `active`, `review`.

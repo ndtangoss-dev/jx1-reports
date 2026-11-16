@@ -13,6 +13,9 @@ Chỉ ghi quyết định đã chốt. Muốn đổi thì thêm dòng mới, kh�
 | Q-07 | 2026-11-16 | Toàn bộ quy trình và tiến độ lưu trên một nhánh riêng (`jx1-ops`) | Chủ dự án | `owner-inputs/06` |
 | Q-08 | 2026-11-16 | Thay AI, tài khoản, model bất cứ lúc nào không mất tiến độ | Chủ dự án | `FABLE_HANDOVER_v0.3/docs/owner-inputs/04` |
 | Q-09 | 2026-11-16 | Bot chỉ triển khai sau khi mô hình server mới được thử nghiệm và kiểm chứng | Chủ dự án | `owner-inputs/05` |
+| Q-10 | 2026-11-16 | **Đồng ý** đưa source (đã lọc dữ liệu tài khoản, không PAK, APK, exe) lên repository GitHub riêng tư `jx1-source` (D1) | Chủ dự án | Tin nhắn 16:41 |
+| Q-11 | 2026-11-16 | **Bỏ hẳn AMOLX**, chỉ dùng client Cocos V3 (D2) | Chủ dự án | Tin nhắn 16:41 |
+| Q-12 | 2026-11-16 | Codex CLI dùng model Sol Max qua xingchi, **không đổi model**; ngân sách khoảng 2.000 USD; được dùng nhiều worker Codex để đẩy nhanh tiến độ | Chủ dự án | Tin nhắn 16:41 |
 
-## Chờ chủ dự án (từ kế hoạch Phần 11)
-D1 (bắt buộc), D2–D6 (có mặc định). Khi chủ dự án trả lời hoặc khi Sonnet áp dụng mặc định, chuyển thành dòng Q mới.
+## Chờ chủ dự án
+D3–D6 (có mặc định, kế hoạch Phần 11). Không trả lời thì Sonnet áp mặc định và ghi thành dòng Q mới.
