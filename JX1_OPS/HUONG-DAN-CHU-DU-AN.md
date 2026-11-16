@@ -93,5 +93,5 @@ powershell -ExecutionPolicy Bypass -File D:\jx1-ops-wt\JX1_OPS\TOOLS\setup_quyen
 ```
 
 1. Script tạo thư mục `C:\ProgramData\JX1_ADMIN` (chỉ Admin sửa được) và 4 task SYSTEM cho đúng 4 việc cố định: diệt VBoxHeadless của `JX-Test-36` (từ chối `JX-Server-D`), luật tường lửa `JX1-AUTO-*`, TrustedHosts, bật dịch vụ.
-2. Mỗi việc chỉ nhận cổng, IP, dịch vụ nằm trong `configllowed.json` (anh sửa file này bằng Admin, thêm IP điện thoại Tailscale vào `ips` nếu cần); mọi lần chạy ghi `logdmin.log`.
+2. Mỗi việc chỉ nhận cổng, IP, dịch vụ nằm trong `config\allowed.json` (anh sửa file này bằng Admin, thêm IP điện thoại Tailscale vào `ips` nếu cần); mọi lần chạy ghi `log\admin.log`.
 3. Gỡ bỏ: `powershell -ExecutionPolicy Bypass -File ...\setup_quyen_admin.ps1 -Remove` (xóa 4 task và các luật `JX1-AUTO-*`).
