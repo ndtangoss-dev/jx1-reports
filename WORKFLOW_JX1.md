@@ -1,3 +1,5 @@
+> **HẾT HIỆU LỰC từ 2026-11-16.** Quy trình hiện hành nằm trên nhánh `jx1-ops`, thư mục `JX1_OPS/` (bắt đầu từ `JX1_OPS/README.md`). Nội dung dưới đây giữ lại để tra cứu lịch sử.
+
 # QUY TRÌNH LÀM VIỆC CHÍNH THỨC – JX1
 
 **Chuẩn thực thi Codex Direct CLI:** [PROMPTS/CODEX_DIRECT_CLI_RULES.md](PROMPTS/CODEX_DIRECT_CLI_RULES.md)  

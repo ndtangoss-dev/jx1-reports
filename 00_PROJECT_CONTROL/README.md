@@ -1,3 +1,5 @@
+> **HẾT HIỆU LỰC từ 2026-11-16.** Quy trình hiện hành nằm trên nhánh `jx1-ops`, thư mục `JX1_OPS/` (bắt đầu từ `JX1_OPS/README.md`). Nội dung dưới đây giữ lại để tra cứu lịch sử.
+
 # 00_PROJECT_CONTROL — Bàn làm việc điều phối JX1
 
 Đây là khu vực của ChatGPT điều phối tổng thể, không chứa source/binary/asset/dữ liệu người chơi.

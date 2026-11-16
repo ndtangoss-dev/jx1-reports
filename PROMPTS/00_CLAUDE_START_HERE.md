@@ -1,3 +1,5 @@
+> **HẾT HIỆU LỰC từ 2026-11-16.** Quy trình hiện hành nằm trên nhánh `jx1-ops`, thư mục `JX1_OPS/` (bắt đầu từ `JX1_OPS/README.md`). Nội dung dưới đây giữ lại để tra cứu lịch sử.
+
 # CLAUDE – TÀI LIỆU KHỞI ĐỘNG CŨ (ĐÃ CHUYỂN SANG CODEX CLI)
 
 Từ khi quy trình JX1 chuyển agent thực thi mặc định sang Codex CLI, file này chỉ được giữ lại để tương thích với liên kết/tài liệu cũ. Không dùng file này để nhận nhiệm vụ mới.
