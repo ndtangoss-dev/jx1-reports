@@ -9,10 +9,13 @@ Cho phep dung (thoat 0, khong in gi) khi:
   3. Moi task con lai deu bi chan: task loi 3 lan lien tiep (TASKS/<ID>.md co dong "lỗi liên tiếp: 3", hoac ghi chu bang tien do co "lỗi 3 lần"),
      hoac dang cho chu du an (ghi chu/trang thai co "chờ chủ" hoac "cần chủ").
   4. Co the [DUNG-CAN-CHU yyyy-mm-dd HH:MM] trong TRANG-THAI.md, con hieu luc 12 gio. PM PHAI ghi the nay (kem ly do) truoc khi dung, xoa khi lam tiep.
+  6. (Q-29) Con thu chua xu ly trong HOP-THU/CHO-SONNET.md thi CHAN (tru khi 1-3 o tren); thu cho ket qua danh dau [ĐANG CHỜ] trong tieu de thi khong chan.
   5. Het task, hoac da chan >= 60 lan trong mot phien (an toan chong vong lap vo han), hoac loi bat ky cua hook (an toan: khong chan).
 Chan: in JSON {"decision":"block","reason":...} ra stdout.
 """
 import json, os, re, sys, time, tempfile
+
+HOPTHU = 'HOP-THU'
 
 ROOT = os.environ.get('JX1_OPS_ROOT', r'D:\jx1-ops-wt\JX1_OPS')
 DAILY_CAP, WEEK_CAP, MAX_BLOCKS, MARK_HOURS = 200.0, 1000.0, 60, 12
@@ -46,6 +49,20 @@ def num(s):
     return float(s.replace('.', '').replace(',', '.')) if re.search(r'[.,]\d{3}\b', s) else float(s.replace(',', '.'))
 
 
+def pending_letters():
+    """Thu chua xu ly trong HOP-THU/CHO-SONNET.md (muc 'Chua xu ly'); bo qua thu co the [DANG CHO]."""
+    try:
+        s = open(os.path.join(ROOT, HOPTHU, 'CHO-SONNET.md'), encoding='utf-8').read()
+    except OSError:
+        return []
+    a = s.find('## Chưa xử lý')
+    if a < 0:
+        return []
+    b = s.find('## Đã xử lý', a)
+    sec = s[a:b if b > 0 else len(s)]
+    return [h.strip() for h in re.findall(r'^## (#\d+[^\n]*)', sec, re.M) if '[ĐANG CHỜ]' not in h]
+
+
 def main():
     try:
         data = json.load(sys.stdin)
@@ -56,6 +73,8 @@ def main():
     if 'ket-thuc-ca' in last_user_text(data.get('transcript_path', '')).lower().replace('_', '-'):
         allow()
     state = B.read(os.path.join(ROOT, 'STATE', 'TRANG-THAI.md'))
+    # 0. Hop thu (Q-29): con thu chua xu ly thi lam truoc khi dung (khong qua mat cac dieu kien dung cung ben duoi neu tran Codex)
+    letters = pending_letters()
     # 4. dung can chu du an (hieu luc co han)
     for m in re.finditer(r'\[DUNG-CAN-CHU\s+(\d{4}-\d\d-\d\d)\s+(\d\d:\d\d)\]', state):
         try:
@@ -70,6 +89,19 @@ def main():
     if m and num(m.group(1)) >= DAILY_CAP: allow()
     b = B.budget(state)
     if b['used7'] is not None and b['used7'] >= WEEK_CAP: allow()
+    if letters:
+        sf0 = os.path.join(tempfile.gettempdir(), 'jx_stop_guard_%s.json' % re.sub(r'\W', '', data.get('session_id', 'x'))[:40])
+        try:
+            n0 = json.load(open(sf0))['n']
+        except Exception:
+            n0 = 0
+        if n0 < MAX_BLOCKS:
+            try:
+                json.dump({'n': n0 + 1}, open(sf0, 'w'))
+            except OSError:
+                pass
+            print(json.dumps({'decision': 'block', 'reason': 'HOP-THU (Q-29): còn %d thư chưa xử lý trong HOP-THU/CHO-SONNET.md: %s. Làm các thư này trước, chuyển xuống mục "Đã xử lý" kèm giờ và 1 dòng kết quả, trả lời ngắn vào TU-SONNET.md nếu thư yêu cầu. Không dừng lượt.' % (len(letters), '; '.join(x[:80] for x in letters))}))
+            return
     # 3/5. task con lai
     phases = B.parse_backlog(B.read(os.path.join(ROOT, 'TASKS', 'BACKLOG.md')))
     table = B.status_table(state)
