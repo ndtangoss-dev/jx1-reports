@@ -56,6 +56,9 @@ Cập nhật: 2026-11-16 – Sonnet PM (bắt đầu giai đoạn 0). Sonnet c�
 | 0-09 | đang chạy | sandbox Codex chặn ghi D:\JX-wt nhưng ghi được C:\Users\Public |
 | 0-10 | xong | chưa có đơn giá USD; có số token và trần tạm Q-22 |
 | 0-08 | chờ | đã cập nhật BAN-GIAO; thử phiên mới bị chặn do giới hạn tuần của tài khoản Claude |
+| A-01 | xong | `REPORTS/A-01-ban-do-tien-trinh.md` (tổng hợp từ BAI_HOC; chưa kiểm lại trên VM thử vì VM treo) |
+| A-03 | chờ | Codex lỗi model gpt-6-luna (404), chờ chủ dự án sửa tài khoản xingchi |
+| A-06 | chờ | như A-03 |
 
 ## Ngân sách Codex
 - Tổng: khoảng 2.000 USD (chủ dự án cho biết)
