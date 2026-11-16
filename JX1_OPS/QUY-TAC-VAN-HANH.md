@@ -29,7 +29,7 @@ lấy việc kế tiếp trong TASKS/BACKLOG.md (ưu tiên, phụ thuộc đã x
 → cập nhật trạng thái, điểm lưu (mục 6)
 → lặp
 ```
-**Làm liên tục (chủ dự án chốt 2026-11-16):** không dừng lượt chỉ để báo cáo. Xong một việc thì lấy ngay việc kế tiếp trong backlog. Chỉ dừng lượt khi: (a) hết việc làm được, (b) cần chủ dự án quyết định việc thuộc vùng Đỏ, hoặc (c) chủ dự án gõ `/ket-thuc-ca`. Báo cáo thường chỉ ghi vào file trạng thái, không phải lý do để dừng. **Có câu hỏi đang chờ chủ dự án (Q-20):** hỏi xong vẫn làm các việc khác trong backlog, không dừng lượt để chờ trả lời.
+**Làm liên tục (chủ dự án chốt 2026-11-16):** không dừng lượt chỉ để báo cáo. Xong một việc thì lấy ngay việc kế tiếp trong backlog. Chỉ dừng lượt khi: (a) hết việc làm được, (b) cần chủ dự án quyết định việc thuộc vùng Đỏ, hoặc (c) chủ dự án gõ `/ket-thuc-ca`. Báo cáo thường chỉ ghi vào file trạng thái, không phải lý do để dừng. **Có câu hỏi đang chờ chủ dự án (Q-20):** hỏi xong vẫn làm các việc khác trong backlog, không dừng lượt để chờ trả lời. **Q-21:** không bao giờ kết thúc lượt bằng câu hỏi; việc nhỏ/có mặc định thì tự quyết và ghi QUYET-DINH; chỉ hỏi khi không đảo ngược được hoặc cần quyền của chủ. Hook Stop `TOOLS/stop_guard.py` chặn dừng khi còn task (điều kiện dừng ở Q-21).
 
 Số worker song song và cách tăng: mục 13. Một VM thử và một LDPlayer chỉ do một agent điều khiển tại một thời điểm (khóa ở mục 12).
 
