@@ -92,20 +92,17 @@ try {
             $vm = [string]$req.vm
             if ($vm -ieq [string]$cfg.mainvm) { Fail ('TU CHOI: ' + $vm + ' la Main VM, khong bao gio diet') }
             if ($vm -cne [string]$cfg.testvm) { Fail ('chi chap nhan VM ' + $cfg.testvm + ', nhan: ' + $vm) }
-            if (-not (Test-Path $VBM)) { Fail 'khong thay VBoxManage' }
-            function Get-VmPid([string]$name) {
-                $info = & $VBM showvminfo $name --machinereadable 2>$null
-                $lf = ($info | Where-Object { $_ -like 'LogFldr=*' } | Select-Object -First 1)
-                if (-not $lf) { return $null }
-                $dir = ($lf -replace '^LogFldr="', '' -replace '"$', '') -replace '\\\\', '\'
+            # SYSTEM co registry VirtualBox rieng (khong thay VM cua nguoi dung) nen KHONG dung VBoxManage: doc PID tu VBox.log o thu muc ghi trong allowed.json (testlogdir/mainlogdir).
+            function Get-VmPid([string]$dir) {
+                if (-not $dir) { return $null }
                 $log = Join-Path $dir 'VBox.log'
                 if (-not (Test-Path $log)) { return $null }
                 $m = Select-String -Path $log -Pattern 'Process ID:\s+(\d+)' | Select-Object -First 1
                 if ($m) { return [int]$m.Matches[0].Groups[1].Value } else { return $null }
             }
-            $targetPid = Get-VmPid $cfg.testvm
-            if (-not $targetPid) { Fail ('khong xac dinh duoc PID cua ' + $cfg.testvm + ' tu VBox.log') }
-            $mainPid = Get-VmPid $cfg.mainvm
+            $targetPid = Get-VmPid ([string]$cfg.testlogdir)
+            if (-not $targetPid) { Fail ('khong xac dinh duoc PID cua ' + $cfg.testvm + ' tu VBox.log trong testlogdir') }
+            $mainPid = Get-VmPid ([string]$cfg.mainlogdir)
             if ($mainPid -and $mainPid -eq $targetPid) { Fail ('TU CHOI: PID ' + $targetPid + ' trung PID Main VM') }
             $p = Get-Process -Id $targetPid -ErrorAction SilentlyContinue
             if (-not $p) { Finish $true ('tien trinh ' + $targetPid + ' khong con') }
@@ -191,12 +188,23 @@ if (-not (Test-Path $cfgPath)) {
     $cfg = [ordered]@{
         testvm       = 'JX-Test-36'
         mainvm       = 'JX-Server-D'
+        testlogdir   = 'D:\VMs\Test\JX-Test-36\Logs'
+        mainlogdir   = 'D:\VMs\JX-Server-D\Logs'
         ips          = @('192.168.1.50', '192.168.56.150', '192.168.56.1')
         ports        = @(56722, 51189, 8080, 8091, 8092)
         trustedhosts = @('192.168.1.50', '192.168.56.150')
         services     = @('WinRM', 'DoSvc', 'BITS', 'wuauserv', 'InstallService', 'Tailscale')
     }
     $cfg | ConvertTo-Json | Set-Content -Path $cfgPath -Encoding UTF8
+}
+else {
+    # config co san: bo sung khoa con thieu (khong ghi de gia tri hien co)
+    $c = Get-Content -Raw -Encoding UTF8 $cfgPath | ConvertFrom-Json
+    $changed = $false
+    foreach ($kv in @(@('testlogdir', 'D:\VMs\Test\JX-Test-36\Logs'), @('mainlogdir', 'D:\VMs\JX-Server-D\Logs'))) {
+        if (-not $c.PSObject.Properties[$kv[0]]) { $c | Add-Member -NotePropertyName $kv[0] -NotePropertyValue $kv[1]; $changed = $true }
+    }
+    if ($changed) { $c | ConvertTo-Json | Set-Content -Path $cfgPath -Encoding UTF8 }
 }
 
 $sddl = "D:(A;;FA;;;SY)(A;;FA;;;BA)(A;;GRGX;;;$sid)"
