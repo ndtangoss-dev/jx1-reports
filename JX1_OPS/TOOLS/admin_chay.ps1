@@ -8,7 +8,7 @@ $id = 'r' + (Get-Date -Format 'HHmmssfff')
 $o | Add-Member -NotePropertyName id -NotePropertyValue $id -Force
 $res = Join-Path $Base "log\$Job.result.json"
 Remove-Item $res -ErrorAction SilentlyContinue
-($o | ConvertTo-Json -Compress) | Set-Content -Path (Join-Path $Base "req\$Job.json") -Encoding UTF8
+[IO.File]::WriteAllText((Join-Path $Base "req\$Job.json"), ($o | ConvertTo-Json -Compress), (New-Object Text.UTF8Encoding($false)))   # khong BOM
 & schtasks.exe /run /tn "JX1-ADMIN-$Job" | Out-Null
 if ($LASTEXITCODE -ne 0) { throw "schtasks /run loi (chua chay setup_quyen_admin.ps1?)" }
 $t = [Diagnostics.Stopwatch]::StartNew()
