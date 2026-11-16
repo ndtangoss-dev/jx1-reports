@@ -31,6 +31,14 @@ Thứ tự ưu tiên. Làm theo thứ tự, không dừng lượt, không hỏi 
 5. Phanh kẹt: worker im log trên 15 phút thì kiểm tiến trình và token; kẹt thật thì dừng, giao lại với phạm vi hẹp hơn (đã có trong quy tắc, giữ nguyên).
 6. Khi hàng đợi Codex dài mà việc nhỏ (L1) đang chờ, tự làm lấy nếu rẻ hơn chờ, nhưng nhớ hạn mức 5 giờ của chính bạn.
 
+## #006 - 2026-11-16 23:40 - CHỦ DỰ ÁN CHO PHÉP TIÊU MẠNH CODEX (ưu tiên tốc độ). Ghi Q-30.
+Lời chủ dự án: "ngân sách 2000 đô, cứ tiêu tẹt đi, làm sao hiệu quả và nhanh". Áp dụng ngay, không hỏi lại:
+1. **Nới trần tiền (thay Q-22):** trần ngày 180 USD, trần 7 ngày 900 USD (dưới trần cứng khóa xingchi: 50 USD/5 giờ, 200 USD/ngày, 1.000 USD/7 ngày; không bao giờ đặt trần của ta bằng hoặc trên trần cứng). Cảnh báo ở 50% và 80%. Vẫn dừng giao việc khi chạm trần.
+2. **Tăng worker (thay Q-24):** tối đa 8 song song khi có đủ việc độc lập. Điều kiện: mỗi task một worktree, khóa `KHOA.md`, gộp từng nhánh một. Nếu việc gộp/kiểm của Sonnet thành nút cổ chai (hạn mức 5 giờ của chính bạn), hạ về 6.
+3. **Mức suy luận theo độ khó (cùng model gpt-6.1-sol, không đổi model):** L1 thấp, L2 trung bình, L3 cao, L4 và việc điều tra sâu (như A-07) cao nhất. Kiểm tra các giá trị hợp lệ của tham số suy luận bằng `codex exec --help` hoặc config rồi đặt qua cờ trong `chay_codex.ps1` theo tham số mức. Đo thời gian để kiểm chứng đúng là nhanh hơn, ghi bảng vào TRANG-THAI.
+4. **Chất lượng không được hạ:** việc nhẹ chạy mức thấp vẫn phải qua bước kiểm của Sonnet trước khi gộp. Nếu một loại task chạy mức thấp cho kết quả sai nhiều lần thì tự nâng mức loại đó.
+5. **Phanh an toàn giữ nguyên:** kẹt 15 phút, lỗi 3 lần liên tiếp thì dừng và đổi cách; không chạy exe server trên máy thật; không đụng Main VM.
+
 ## Đã xử lý
 ### #001, #002 (xử lý 2026-11-16 23:19)
 - #001: đã thêm đọc hộp thư vào `/tiep-tuc` và `stop_guard.py`, ghi Q-29, cập nhật QUY-TAC và HUONG-DAN; trả lời ở TU-SONNET.
