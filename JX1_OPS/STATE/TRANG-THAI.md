@@ -105,3 +105,6 @@ Cập nhật: 2026-11-16 – Sonnet PM (bắt đầu giai đoạn 0). Sonnet c�
 
 - **D-01, C-01 giao (00:45)** Codex; cùng E-01 là 3/6 worker. A-05 xong, đã gộp.
 
+
+- **C-01 xong (00:40):** TOOLS/jxadm, 22 test offline pass; chưa chạy với SQL thật (chưa kiểm). Gộp.
+
