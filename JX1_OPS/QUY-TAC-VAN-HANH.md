@@ -42,7 +42,7 @@ Kích thước một task: 15–60 phút làm việc, có kết quả kiểm ch�
 **Sonnet có toàn quyền**, không hỏi, với mọi việc trên máy phát triển, repository, VM thử `JX-Test-36`, LDPlayer: đọc, sửa, build, test, cài công cụ, cài APK lên LDPlayer, khởi động lại server và dịch vụ trong VM thử, tạo tài khoản thử và tài khoản bot trong DB thử, tạo và xóa branch/worktree, merge, sửa cấu hình phát triển, dọn file tạm.
 
 **Vùng Đỏ – chỉ làm khi chủ dự án nói rõ:**
-1. Mọi thao tác trên Main VM `JX-Server-D` và dữ liệu thật của nó.
+1. Main VM `JX-Server-D` và dữ liệu thật của nó, **trừ phần được tự làm theo Q-18**. Được tự làm, không hỏi: bật headless khi đang tắt; xem trạng thái; kiểm tra Windows và chuỗi server game đã lên chưa (chỉ đọc); khởi động chuỗi server game đúng thứ tự trong `docs-analysis/scripts/KHOI_DONG_CHUOI_SERVER_D.md` nếu chưa lên. Vẫn cấm nếu chủ dự án chưa nói rõ: tắt, reset, sửa cấu hình VM, đổi mạng, chụp snapshot, xóa hay sửa dữ liệu, cài đặt, sửa file trong Main VM. (Main VM giữ cấu hình bridged sẵn có; việc bật nó theo Q-18 không vi phạm mục 6.)
 2. Xóa dữ liệu không khôi phục được (kể cả VM, snapshot, bản sao lưu).
 3. Đưa source hoặc dữ liệu lên dịch vụ ngoài, trừ repository riêng tư đã được duyệt (D1).
 4. Phát sinh chi phí tiền.

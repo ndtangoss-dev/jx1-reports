@@ -21,6 +21,7 @@ Chỉ ghi quyết định đã chốt. Muốn đổi thì thêm dòng mới, kh�
 | Q-15 | 2026-11-16 | D5: giữ kênh chat thế giới như game gốc ở bản đồ thường | Chủ dự án (duyệt mặc định) | Tin nhắn giao PM |
 | Q-16 | 2026-11-16 | D6: Sonnet dùng danh sách cho phép + danh sách cấm (`TOOLS/settings.mau.json`), không bỏ qua mọi hỏi đáp. Chủ dự án duyệt `KE-HOACH-TONG-THE.md`; Codex giữ nguyên model và cấu hình; PM tự động, báo một lần mỗi ngày | Chủ dự án (duyệt mặc định) | Tin nhắn giao PM |
 | Q-17 | 2026-11-16 | **Không bật VM nào ở chế độ bridged (hoặc nối thẳng vào LAN nhà) khi chủ dự án chưa cho phép.** Thay Q-13 ở điểm "dùng bridged": `JX-Test-36` dùng Host-only. Lý do: mạng nhà (mesh) sập tối 16/11 sau khi bật VM thử, chưa xác định nguyên nhân | Chủ dự án | Tin nhắn tối 16/11 |
+| Q-18 | 2026-11-16 | Quyền tự chủ với Main VM `JX-Server-D`. **Được tự làm, không hỏi:** bật headless khi đang tắt; xem trạng thái; kiểm tra Windows và chuỗi server game đã lên chưa (chỉ đọc); khởi động chuỗi server đúng thứ tự trong `KHOI_DONG_CHUOI_SERVER_D.md` nếu chưa lên. **Vẫn cấm nếu chưa nói rõ:** tắt, reset, sửa cấu hình VM, đổi mạng, chụp snapshot, xóa hay sửa dữ liệu, cài đặt, sửa file trong Main VM | Chủ dự án | Tin nhắn tối 16/11 |
 
 ## Chờ chủ dự án
 Không còn mục chờ về mạng: máy thật đã có Host-only `192.168.56.101`, không cần đổi. Chủ dự án chỉ cần xác nhận đã đọc báo cáo mạng trong `ENVIRONMENT.md` trước khi tôi tiếp tục dùng VM thử.
