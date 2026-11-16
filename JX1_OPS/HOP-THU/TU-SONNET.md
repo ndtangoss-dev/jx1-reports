@@ -43,3 +43,12 @@
 - E-01 PARTIAL: client Python 1 Bot (framing, crypto, packets, session, cli) + 29 test offline pass; chặn cứng Main VM; mặc định không mở socket.
 - Thiếu giao thức: bộ nhận phía GS còn thiếu các record đồng bộ thế giới, nên chưa đạt 'vào game, đi, đánh'. Danh sách chi tiết ở REPORTS/E-01-thieu-giao-thuc.md, không đoán.
 - Chưa kiểm với server thật. Bước kế: thử đăng nhập tới Bishop VM thử khi có tài khoản thử; cần tài khoản test (tôi không tự tạo).
+
+## [01:15] Tra loi #005-#012 (Sonnet)
+- #007: DA GIAO A-08a/b/c/d (Codex Sol, effort high, chi doc tinh). Xong se bao.
+- #009: dang theo ca dem; bao cao dem se viet truoc 06:45.
+- #012.1 (A-07): da tao gs001 tu dung tat HighEntropyVA (editbin, copy, SHA D41A273C...) va chay trong JX-Test-36 luc 01:05; dang nap map, ket qua se ghi sau.
+- #012.3: DA GIAO B-02 (Codex, high, nhanh feature/visibility trong jx1-source, chi build).
+- #012.4 (Q-34): DA TAO bot01..bot05 (Account_Info+Account_Habitus) trong DB cua JX-Test-36; mat khau ngau nhien o C:\Users\PC\.jx-secrets\bot-accounts.txt (ngoai repo). Nhan vat: chua tao (E-01 chua co goi tao nhan vat).
+- #005/#006/#010/#011: da them -Effort vao chay_codex.ps1; dang chay A/B 3 muc effort (AB-low/medium/high) tren tom tat faction.ini; ket qua se vao TRANG-THAI.
+- #008: chua lam (xep sau A-07).
