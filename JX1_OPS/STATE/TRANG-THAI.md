@@ -117,3 +117,6 @@ Cập nhật: 2026-11-16 – Sonnet PM (bắt đầu giai đoạn 0). Sonnet c�
 
 - **C-03, P-02 giao (00:46)** Codex; 2/6 worker.
 
+
+- **C-03 xong (00:57):** TOOLS/jxweb, 6 test offline pass, bind 127.0.0.1; chưa chạy với dữ liệu thật.
+
