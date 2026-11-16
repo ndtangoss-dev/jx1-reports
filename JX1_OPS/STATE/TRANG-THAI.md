@@ -5,8 +5,9 @@ Cập nhật: 2026-11-16 – Sonnet PM (bắt đầu giai đoạn 0). Sonnet c�
 ## Dự án đang ở đâu
 - Giai đoạn: **0 – Dựng đội, đang làm.** Kế hoạch đã duyệt; D1–D6 đã chốt (Q-10…Q-16).
 - 0-01: **xong.** Đã chép 3 lệnh và áp `.claude/settings.json` (chủ dự án cho phép); `/tiep-tuc`, `/ket-thuc-ca`, `/bao-cao` hiện trong danh sách kỹ năng.
-- 0-02: **xong phần kiểm kê** (xem `ENVIRONMENT.md`). Phát hiện `JX-Test-36` đang bridged chứ không phải Host-only; chưa bật. Bước tiếp: 0-02b đổi sang Host-only rồi kiểm server 36 Hz; 0-03 thử `codex exec` (Codex ở `C:\Users\PC\.codex\.sandbox-bin\codex.exe`, không có trong PATH).
-- Lúc 2026-11-16: `JX-Server-D` (Main) đang chạy; `JX-Test-36` tắt; LDPlayer đang chạy; worker 0.
+- 0-02: **xong phần kiểm kê** (xem `ENVIRONMENT.md`). `JX-Test-36` bridged là chủ ý (báo cáo 42), IP `.150`, không phải sai lệch. Bước tiếp: 0-02b bật VM thử và kiểm server 36 Hz; 0-03 thử `codex exec` (Codex ở `C:\Users\PC\.codex\.sandbox-bin\codex.exe`, không có trong PATH).
+- 0-02b (dở): đã bật `JX-Test-36` (headless). Ping `.150` được; WinRM bằng `Get-JxCred` vào được (máy `DESKTOP-KT7DU78`); chỉ `sqlservr` đang chạy, chuỗi game server chưa khởi động. Bước tiếp: khởi động chuỗi theo `docs-analysis/scripts/KHOI_DONG_CHUOI_SERVER_D.md` (cần gõ phím qua `VBoxManage controlvm`, gs001 nạp 6–7 phút, cấm kết nối cổng 51189 lúc nạp), rồi kiểm 36 Hz. Sau đó 0-07 tự động hóa chuỗi này.
+- Lúc 2026-11-16 (cập nhật: `JX-Test-36` đang chạy): `JX-Server-D` (Main) đang chạy; `JX-Test-36` tắt; LDPlayer đang chạy; worker 0.
 - Đang chạy được [BÁO CÁO, chưa kiểm lại]: client Cocos P46/P47 trên LDPlayer; server tự dựng 36 Hz trên VM thử `JX-Test-36`; APK mới nhất P46.
 - Worker đang chạy: không có.
 

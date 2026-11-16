@@ -19,7 +19,7 @@ Lập 2026-11-16 bởi Sonnet PM (task 0-02). Chỉ dùng lệnh đọc. Nhãn: 
 | `JX-Server` (cũ) | tắt | chưa đọc | chưa đọc | chưa đọc | [XÁC MINH] chỉ về sự tồn tại |
 | `JX-Test-36` (thử) | tắt, **không có snapshot** | 6144 MB / 4 | **bridged** | 080027CAE833 | [XÁC MINH] |
 
-**Sai lệch cần xử lý trước khi bật `JX-Test-36`:** kế hoạch và báo cáo 42 nói VM thử dùng mạng Host-only, nhưng cấu hình thật là bridged. Bật nó trên LAN cùng Main VM có nguy cơ trùng IP (cấu hình bên trong trùng bản sao) và có thể ra ngoài LAN. MAC hai VM khác nhau (không trùng). Việc tiếp theo (0-02b): đổi NIC1 sang Host-only bằng `VBoxManage modifyvm` khi VM tắt, rồi mới bật. Đây là sửa VM thử, thuộc quyền PM. Chưa làm.
+**Đính chính (đối chiếu `docs-analysis/reports/42-ke-hoach-vm-thu.md`, mục "Chuyển JX-Test-36 sang Bridged"):** bridged là chủ ý từ 2026-11-12, vì Host-only không cho máy thật và LDPlayer nối tới VM. IP trong VM thử là `192.168.1.150` (Main VM là `.50`), MAC khác nhau, nên không trùng. **Không đổi NIC.** Lưu ý còn mở theo báo cáo 42 [BÁO CÁO, chưa kiểm lại]: WinRM tới VM thử từng bị "Access denied" (user MU1, mật khẩu trống, chưa đặt mật khẩu); forwarder và portproxy trên máy thật vẫn trỏ `192.168.1.50`, nên đường Tailscale không tới VM thử; gs001 trong VM thử quảng bá IP Tailscale `100.95.186.86`. Hai VM bật cùng lúc cần đủ RAM (đủ: khoảng 24 GB trống).
 
 Việc "VM thử chạy được server tự dựng 36 Hz" **[CHƯA KIỂM]**: chưa bật VM.
 
@@ -42,6 +42,6 @@ Việc "VM thử chạy được server tự dựng 36 Hz" **[CHƯA KIỂM]**: c
 | `codex exec` nền, sandbox workspace-write, cấu hình xingchi có hoạt động không | chưa thử | [CHƯA KIỂM] (task 0-03, 0-09) |
 
 ## Việc kế tiếp từ kiểm kê này
-1. 0-02b: đổi mạng `JX-Test-36` sang Host-only (cần VM tắt, có sẵn), bật thử, kiểm server 36 Hz.
+1. 0-02b: bật `JX-Test-36` (bridged, `.150`), giải quyết WinRM/đăng nhập, kiểm server 36 Hz. Mật khẩu lấy từ Credential Manager, không ghi vào file.
 2. 0-03: thử `codex exec` bằng đường dẫn đầy đủ ở trên.
 3. Máy hiện chạy Main VM 6 GB; bật thêm VM thử 6 GB vẫn đủ RAM (khoảng 24 GB trống).
