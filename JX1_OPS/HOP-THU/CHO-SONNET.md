@@ -750,3 +750,17 @@ Chủ hỏi khi chủ báo lỗi, Sonnet có tra sơ đồ Graphify và báo cá
 - Áp dụng NGAY cho #090: điền BUG-001/002 (mục "ĐÃ TRA GÌ" bắt buộc: đồ thị client + H-04, L-01, L-02, L-03), rồi sửa. Khi báo chủ nêu 1 dòng "đã tra: ...".
 - Đưa quy trình vào CLAUDE.md/AGENTS.md và skill của tiểu yêu (M-02) để mọi sửa lỗi sau này theo đúng đường. Đồ thị cũ thì mở file thật xác nhận dòng; nếu thấy đồ thị/báo cáo sai, sửa và ghi.
 - Mục tiêu của chủ: mỗi lỗi sửa xong đều để lại tri thức đủ cho AI thay thế. Đa tạ.
+
+---
+## #093 (Chat 22:50, 17/11) — CHỦ DUYỆT: TẬN DỤNG SƠ ĐỒ GRAPHIFY, LÀM MỚI LIÊN TỤC, QUY TRÌNH ĐỌC-HIỂU-XỬ LÝ NHANH, GOM TRI THỨC THƯỜNG XUYÊN
+Mục tiêu của chủ: tiết kiệm thời gian, Sonnet làm việc hiệu quả hơn, người khác (AI thay thế hoặc chủ) xem lại hiểu nhanh. Chủ nói rõ: "tận dụng sơ đồ Graphify, làm mới sơ đồ liên tục, cập nhật cả cách xem sơ đồ và cách xem tài liệu, tạo quy trình đọc hiểu - tìm nguyên nhân - xử lý nhanh và hiệu quả, mọi tìm hiểu về game phải tổng hợp và liên kết kiến thức thường xuyên hơn."
+
+1. ĐỒ THỊ GRAPHIFY LUÔN MỚI
+ - Chủ cho phép Sonnet cài hook cập nhật (việc này làm trên máy thật bởi Sonnet, không để tiểu yêu làm trong sandbox). Cập nhật đồ thị client (bản A) và server (src18) sau mỗi lần gộp mã; ghi thời điểm/commit của đồ thị vào đầu GRAPH_REPORT hoặc file STATE/DO-THI.md. Nếu đồ thị cũ hơn commit mới nhất thì chạy lại trước khi tra.
+ - Đồ thị client hiện phải gồm bản A (không phải Classes cũ): kiểm gốc đúng (bài học L-01 đọc nhầm bản).
+2. CÁCH XEM (làm thành HƯỚNG DẪN TRA CỨU): tạo `DESIGN/HUONG-DAN-TRA-CUU.md` (1-2 trang): (a) tra đồ thị: hỏi gì thì mở phần nào (GRAPH_REPORT.md, graph.html, tìm hàm/caller/callee), kèm 5 ví dụ thật của dự án (vd "ai quyết định thứ tự vẽ vũ khí"); (b) tra tài liệu: nhìn MỤC LỤC TRI THỨC trước; (c) khi nào tin đồ thị, khi nào mở file thật.
+3. MỤC LỤC TRI THỨC: tạo/cập nhật `DESIGN/MUC-LUC-TRI-THUC.md`: mỗi chủ đề (đồ họa/vẽ bộ phận, trang bị, cường hóa, kỹ năng, mạng, server exe, Bot...) → báo cáo/DESIGN liên quan, hàm/file chính, trạng thái (đã chắc / giả thuyết), cập nhật mỗi lần gộp báo cáo. Gom và liên kết kiến thức ít nhất mỗi lần có báo cáo mới (không để rời rạc): báo cáo mới phải có dòng "liên quan: ...".
+4. QUY TRÌNH ĐỌC-HIỂU-TÌM NGUYÊN NHÂN-XỬ LÝ: cập nhật `DESIGN/QUY-TRINH-SUA-LOI.md` để bước 2 trỏ tới HUONG-DAN-TRA-CUU và MUC-LUC; sau mỗi lần sửa xong ghi vào phiếu BUG: đường đi từ triệu chứng → file:dòng → nguyên nhân (để lần sau tra nhanh), và cập nhật MUC-LUC.
+5. BÁO CÁO CỦA TIỂU YÊU: bắt buộc kèm 1 sơ đồ chữ Mermaid (luồng/quan hệ chính) và dòng "liên quan: ...". Cập nhật mẫu task/báo cáo và skill M-02 (bản nháp đã có).
+6. TRONG LÚC ĐÓ (chủ đồng ý các đề xuất của Chat): chạy U-02 SONG SONG với U-01 (cả hai chỉ đọc); tách U-01 thành vài phần nhỏ (vd: vẽ bộ phận/đồ họa, trang bị, kỹ năng) để chạy nhanh; dùng thêm khóa xingchi theo #071 (cap 20).
+7. Thứ tự: (1)(2) làm ngay vì đồ thị cũ là gốc của nhiều chậm trễ; (3)(5) trong khi tiểu yêu chạy; (4) sau. Báo chủ 3-4 dòng khi xong. Đa tạ.
