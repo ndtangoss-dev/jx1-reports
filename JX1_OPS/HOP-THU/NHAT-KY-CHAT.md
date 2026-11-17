@@ -94,3 +94,4 @@
 - 19:20 #083: APK-A đã dựng xong 19:04 và Sonnet đã gửi chủ link (chủ bảo không thử LD trước); build mất ~1,5 giờ; chủ yêu cầu tìm nguyên nhân và khắc phục; giao chẩn đoán + build tăng dần + chạy nền.
 - 19:30 Kiểm: chưa có trả lời #083 (gửi 19:14); chủ đã cho Sonnet nâng ưu tiên build về Normal; APK-A đã gửi chủ, chưa có phản hồi hình ảnh từ chủ. Không báo chủ.
 - 19:38 #084: chủ tải APK-A rất chậm (457KB/79MB, còn 46 phút) qua Tailscale; giao chẩn đoán tốc độ + tạo file thông tin tài khoản test (không commit, không ghi mật khẩu vào kho).
+- 19:42 #085: chủ tải được file; duyệt tạo thêm 1 tài khoản test và thử APK-A trên LDPlayer (ẩn cửa sổ); chủ báo lỗi trực tiếp cho Sonnet.

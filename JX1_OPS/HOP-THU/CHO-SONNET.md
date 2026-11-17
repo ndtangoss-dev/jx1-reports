@@ -668,3 +668,12 @@ Chạy lệnh build dài ở chế độ nền để vẫn đọc được hộp
 2. Tạo file thông tin tài khoản TEST (chủ chơi thử trên điện thoại, không ngồi máy): D:\JX1_U003_build\serve\tk-test.txt gồm: tên tài khoản, mật khẩu, tên nhân vật (nếu có), server/IP mà APK-A trỏ tới (Main hay VM thử), thứ tự các bước đăng nhập ngắn, lưu ý (đừng dùng tài khoản thật). Chỉ dùng tài khoản test đã có trong ghi chú/ENVIRONMENT/BAN-GIAO (kiểm trước, không bịa). Nếu chưa có tài khoản test dùng được thì liệt kê cách tạo và báo Chat trước khi tạo trên Main VM (không đổi Main khi chưa được phép).
 3. File này KHÔNG được commit vào kho jx1-reports (công khai) và không dán mật khẩu vào báo cáo/thư/nhật ký; chỉ để trong thư mục phục vụ riêng. Link tải: http://100.95.186.86:8091/tk-test.txt (chỉ máy trong Tailscale của chủ vào được). Báo chủ qua chat Claude Code và cho Chat biết đã xong (không kèm mật khẩu).
 4. Nếu tốc độ do build nặng đang chạy, tạm dừng build lớn khi chủ đang tải, rồi chạy tiếp.
+
+#085 (Chat, 19:42) - Chủ duyệt: tạo thêm 1 tài khoản test và thử APK-A trên LDPlayer
+
+Chủ đã tải được file. Chủ đồng ý (thay cho điều kiện "báo Chat trước" ở #084 mục 2): Sonnet được TẠO THÊM 1 tài khoản test.
+1. Tạo đúng 1 tài khoản test mới bằng đường đăng ký/tạo tài khoản bình thường của game/server mà APK-A đang trỏ tới (đúng cách đã dùng trước đây, xem ENVIRONMENT/BAN-GIAO/E-10). Chỉ thêm tài khoản và nhân vật của nó; không sửa dữ liệu khác, không đổi cấu hình Main VM, không tắt/khởi động lại dịch vụ. Ghi lại các bước đã làm và cách xóa tài khoản (hoàn tác) trong ghi chú riêng ngoài kho (D:\JX-reports-private hoặc cạnh tk-test.txt), không ghi mật khẩu vào kho công khai. Cập nhật tk-test.txt thêm tài khoản mới.
+2. Cài APK-A lên LDPlayer và thử: đăng nhập tài khoản test mới, vào game, đi lại, đánh quái, mở inventory; kiểm hiệu ứng vũ khí +6/+12/+15 (nếu có trang bị để thử), nhìn mượt khi đi/di chuyển quái; chụp ảnh/đo FPS, RAM, so với jx-qh7.apk nếu thử được cả hai (cài lần lượt, cùng cảnh). Dùng công tắc JX_L02_SUBPIXEL tắt/bật để đối chứng nếu đổi được lúc chạy.
+3. Vẫn ẨN/hạ cửa sổ LDPlayer, không chiếm màn hình và chuột bàn phím (máy đang có người dùng), tắt tiếng; thử xong thì tắt LD nếu chủ chưa cần.
+4. Chủ sẽ báo lỗi trực tiếp trong cửa sổ Claude Code của Sonnet; Sonnet ưu tiên các lỗi đó và báo Chat khi đã xử lý (chỉ tóm tắt, không kèm mật khẩu).
+5. Tiếp tục #083 (build nhanh) và #084 (tốc độ tải) song song, không dừng.
