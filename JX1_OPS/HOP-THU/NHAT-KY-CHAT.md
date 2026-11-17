@@ -12,3 +12,4 @@
 - 2026-11-17 07:20 Sửa A-12: đồ không theo phái (gửi #018).
 - 2026-11-17 07:35 Chủ dự án hỏi subagent/phiên lồng; gửi #019 (A-13 thử).
 - 2026-11-17 07:45 Chủ dự án muốn nhanh hơn: gửi #020 (Q-37 không chờ Chat); Chat thức ~30 phút/lần ban ngày.
+- 2026-11-17 07:56 Chat kiểm: chưa có A-11/A-12/A-13 xong, không có [CẦN-CHAT-GẤP]; Sonnet giao E-01b (Bot tách bản ghi đồng bộ thế giới). Không thư mới.
