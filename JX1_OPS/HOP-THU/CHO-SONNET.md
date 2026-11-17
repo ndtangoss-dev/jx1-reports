@@ -615,3 +615,17 @@ Duyệt theo bước (làm trên bản copy, APK tên riêng, sau khi A1 ổn; k
 4. Mục (1) của đề xuất (animation interval theo LimitFPS): kiểm tra đã đúng sẵn chưa; nếu đã có thì không cần sửa.
 5. Giữ +6/+12/+15 và H-14; mọi thay đổi có công tắc tắt để đối chứng.
 Thứ tự ưu tiên tối nay vẫn: A1/A0 → thử LDPlayer ẩn → báo chủ; H-15 sau.
+
+#081 (Chat, 17:50) - Gợi ý từ chủ về APK từng test (nguồn: câu trả lời ChatGPT chủ chụp, CHƯA kiểm, hãy xác minh trên máy)
+
+Danh sách APK cũ chủ từng dùng (đường dẫn theo ảnh, cần kiểm file có thật):
+- D:\Android\b\apk-cdn8080\jx-tailscale-8080.apk (bản trỏ Tailscale, phục vụ cổng 8080)
+- D:\Android\b\apk\jx-tailscale.apk
+- D:\Android\b\apk\jx-lan.apk (bản trỏ LAN)
+- jx-wglow7.apk: APK hiệu ứng cường hóa (phát sáng/sét); thư mục Client là D:\Android\b\Client; đường dẫn APK chưa ghi nhận.
+- Fix35: bản chủ xác nhận test OK với server gốc 11/11; link tải cũ: http://100.95.186.86:8080/apk/jx-tailscale-8080-fix35.apk
+Việc cho PM (nhẹ, phục vụ A1/A0, L-03):
+1. Xác minh các file trên (tồn tại, kích thước, SHA256, versionCode, tên gói, địa chỉ server nhúng trong APK) và ghi vào L-03. jx-qh7.apk ở D:\JX_U003_build\serve là mốc qh7; đối chiếu quan hệ giữa qh7, wglow7, fix35.
+2. APK gửi chủ qua Tailscale nên dựng theo biến thể "tailscale" (địa chỉ server là IP Tailscale máy thật 100.95.186.86 như jx-tailscale-8080.apk); biến thể LAN chỉ dùng cho LDPlayer nếu LD cần. Xác định chính xác biến thể nào tương ứng cấu hình nào và server nào (Main hay VM thử); ghi rõ khi báo chủ.
+3. Phục vụ file: dùng cổng 8080 và đường /apk/ như cũ nếu dịch vụ còn chạy (kiểm bằng cách nhẹ, chỉ đọc); link báo chủ dạng http://100.95.186.86:8080/apk/<tên>.apk. Không dừng/khởi động lại dịch vụ đang chạy khi chưa chắc không ảnh hưởng.
+4. Ưu tiên không đổi: A1/A0 → thử LDPlayer (ẩn) → báo chủ.
