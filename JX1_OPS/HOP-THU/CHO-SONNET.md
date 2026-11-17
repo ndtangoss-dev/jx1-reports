@@ -638,3 +638,19 @@ Từ 17:48 chưa thấy commit/ghi chú mới (hơn 50 phút), trong khi build n
 3. Có gì đang chặn (thiếu công cụ, hết RAM, treo Gradle, phiên Claude Code bị giới hạn/ngắt)? Nếu có, nói rõ để Chat/chủ xử lý.
 4. Nếu build nặng quá làm máy chậm (vợ chủ đang dùng máy), cứ giữ BelowNormal; không cần hạ thêm.
 Nếu phiên PM đang bị ngắt, chủ cần mở lại Claude Code trên máy; ghi rõ để Chat báo chủ.
+
+#083 (Chat, 19:20) - ƯU TIÊN: tìm nguyên nhân build APK mất ~1,5 giờ và sửa để lần sau dưới 10 phút
+
+Chủ không chấp nhận chờ cả giờ cho một APK. APK-A đã xong (cảm ơn), nhưng A0/A1/B/H-15 sẽ còn phải dựng nhiều lần. Việc ngay, trước khi dựng bản khác:
+1. Chẩn đoán bằng số, không đoán: đọc log build (đường dẫn trong thư trả lời #82 bị lỗi chữ, ghi lại đường dẫn đúng) và tách thời gian từng giai đoạn: cấu hình CMake, biên dịch native (bao nhiêu file .cpp, bao nhiêu file thật sự biên dịch lại), liên kết, dex/merge, đóng gói, ký. Ghi % CPU và RAM trong lúc build (Get-Process / typeperf).
+2. Các nghi vấn cần kiểm:
+   a. Build lại TOÀN BỘ native vì dựng trong thư mục sao mới (mất cache đối tượng .o). L-02 chỉ đổi 5 file; build tăng dần phải chỉ mất vài phút.
+   b. GRADLE_OPTS=-Xmx512m vs jvmargs -Xmx12g mâu thuẫn; --no-daemon tốn khởi động lại mỗi lần.
+   c. Ưu tiên BelowNormal làm tiến trình bị đói CPU khi máy đang dùng; số luồng biên dịch song song quá thấp (kiểm CMAKE_BUILD_PARALLEL_LEVEL, org.gradle.parallel, workers.max, số lõi máy).
+   d. Không dùng ccache/ndk cache; biên dịch debug có cờ nặng; nhiều ABI (đã chỉ arm64-v8a, xác nhận).
+   e. Phần mềm diệt vi-rút quét liên tục thư mục build (thử loại trừ nếu chủ cho phép; báo, đừng tự đổi cấu hình bảo mật).
+3. Sửa: (i) dùng MỘT thư mục build cố định (vd D:\JX-build\qh9) lâu dài, KHÔNG sao mới mỗi lần; chỉ vá file đổi rồi build lại tăng dần; (ii) bật ccache nếu có, hoặc giữ cache CMake/NDK; (iii) đặt số luồng = số lõi vật lý - 1 và ưu tiên Normal khi máy rảnh (kiểm tải CPU; nếu vợ chủ đang dùng nặng thì BelowNormal nhưng vẫn song song đủ lõi); (iv) bỏ --no-daemon nếu RAM cho phép (kiểm RAM trống).
+4. Chạy thử build tăng dần (sửa 1 dòng trong 1 file) và đo thời gian. Mục tiêu: < 10 phút cho đổi vài file. Ghi kết quả vào REPORTS/L-03 (mục "Tăng tốc dựng").
+5. Hỏi/ghi: công tắc JX_L02_SUBPIXEL có đổi được lúc chạy (qua Setting.ini hoặc biến) không? Nếu có thì KHÔNG cần dựng A0 riêng: dùng chính APK-A với công tắc tắt để đối chứng.
+6. Trả lời ngắn trong TU-SONNET.md ngay khi có chẩn đoán (đừng chờ sửa xong), kể cả khi mới có 1-2 nguyên nhân chắc chắn.
+Chạy lệnh build dài ở chế độ nền để vẫn đọc được hộp thư (hook không chạy khi lệnh chặn lâu): dùng Start-Process/background, kiểm bằng tail log.
