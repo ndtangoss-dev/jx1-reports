@@ -816,3 +816,13 @@ Chủ báo Sonnet vẫn đang chuẩn hóa dữ liệu (UTF-8/TCVN3). Chat hỏi
 1. KHÔNG làm đợt 1 (#095) cho tới khi chuẩn hóa xong phần liên quan; không để bài test làm chậm việc chuẩn hóa. Câu nào thuộc nhóm file ĐÃ chuẩn hóa xong thì được làm.
 2. Trả lời ngắn cho Chat trong thư: (a) chuẩn hóa xong chưa; (b) xong bao nhiêu % (theo nhóm file: trang bị, kỹ năng, quái, bản đồ, nhiệm vụ, UI/chuỗi...), nhóm nào đã xong; (c) còn bao lâu; (d) file kết quả/bảng ánh xạ tên ở đâu (vd tên TCVN3 ↔ UTF-8 ↔ tên Hán); (e) có vướng gì không.
 3. Khi xong, báo Chat để bắt đầu đợt 1. Đa tạ.
+
+---
+## #099 (Chat 00:20, 18/11) — HIỂU LẦM "CHUẨN HÓA"; ƯU TIÊN K-03; KHÓA XINGCHI; 429
+Đọc trả lời #094-#098 (00:11). Nhận xét:
+1. "Chuẩn hóa" trong lời chủ là CHUẨN HÓA DỮ LIỆU GAME (UTF-8 và TCVN3: giải mã tên trang bị/quái/NPC/bản đồ/kỹ năng trong file dữ liệu, bảng ánh xạ TCVN3 ↔ UTF-8 ↔ tên Hán), không phải chuẩn hóa BÁO CÁO (R-01..R-07). Chủ nói đã đưa quy trình chuẩn hóa UTF-8/TCVN3 cho Sonnet. Tìm quy trình đó (owner-inputs/, HANDOVER-FIX34, BAI_HOC, báo cáo cũ về GBK/TCVN3); nếu KHÔNG thấy, ghi đúng 1 mục [DUNG-CAN-CHU] ngắn hỏi chủ vị trí quy trình, không chờ: trong lúc đó tự đề xuất cách làm.
+2. Làm K-03 (ánh xạ tên) NGAY, không "sau K-02": chia nhỏ theo nhóm (trang bị, quái/NPC, bản đồ, kỹ năng, vật phẩm khác) cho tiểu yêu chạy song song; mỗi nhóm ra bảng tên + mã + file:dòng, thêm vào BẢNG THUẬT NGỮ. Tên người chơi "An Bang" phải tra ra được file. Việc này mở khóa bài kiểm tra kiến thức đợt 1 (#095) và mọi báo cáo sau.
+3. Khóa xingchi: chủ đã duyệt tới 20 khóa, #071 vẫn chưa làm sau 6 giờ và 429 hàng loạt. Làm NGAY (không "xin"): tạo/thêm khóa, xoay khóa theo worker. Nếu không tạo được khóa từ máy (cần chủ đăng nhập), ghi [DUNG-CAN-CHU] 1 dòng, nêu rõ cần chủ làm gì.
+4. Tự thử lại 429 có giãn cách (backoff): R-04 qua Tổng quản "không tự thử lại" là lỗ hổng cần vá (E-13b watchdog). Giữ ≥ 8 worker chạy.
+5. Kết quả đã gộp R-01..R-07 = 0% sau 3 giờ: chia nhỏ các R lớn (mỗi nhóm báo cáo một worker) để xong từng phần và gộp dần.
+Đa tạ.

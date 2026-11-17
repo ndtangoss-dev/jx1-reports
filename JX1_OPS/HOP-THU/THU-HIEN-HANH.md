@@ -12,3 +12,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Kiểm tra kiến thức: 10 câu đợt 1 | #095 | bổ sung #096; tiêu chí chấm theo #097 | đợt 1 TẠM DỪNG theo #098 |
 | Tiêu chí chấm (dẫn đúng file mang tên) | #097 | thay phần "đáp án tham khảo" #096 | |
 | Chuẩn hóa dữ liệu xong mới test | #098 | | chờ Sonnet trả lời tình trạng |
+| Hiểu lầm 'chuẩn hóa' (dữ liệu game ≠ báo cáo); K-03 ưu tiên; khóa xingchi; 429 | #099 | làm rõ #098 | K-03 mở khóa test đợt 1 |
