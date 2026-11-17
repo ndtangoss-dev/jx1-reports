@@ -53,3 +53,4 @@
 - 2026-11-17 12:57 Chủ dự án bỏ Groq; gửi #052 hủy #051, vô hiệu khóa.
 - 2026-11-17 13:15 Chủ hỏi về nghẽn xingchi; gửi #053 watchdog phát hiện đứng im (E-13 ưu tiên 1).
 - 2026-11-17 13:20 Kiểm 30 phút: sự cố đứng im #2 (10 worker im 12:36-13:09, 429 xingchi), Sonnet chạy lại; F-01 xong; E-09..E-13 chưa nộp. Gửi #054 (hạ 8 worker, mở từng bước, watchdog).
+- 2026-11-17 13:22 Chủ dự án xác nhận sự cố chung xingchi (nhóm người dùng); gửi #055 sửa #054, giữ quân số, giữ watchdog.
