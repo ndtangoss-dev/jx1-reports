@@ -70,3 +70,4 @@
 - 15:02 #066: chủ trả lời H-15 (FPS tối đa 120, chiêu định hướng đều bị, server cũ = qh7) và J-xx = Phi Phong.
 - 15:09 #067: giao K-01 bản đồ truyền tín hiệu client-server (chủ duyệt).
 - 15:20 #068: giao L-01 làm mượt hình ảnh (chủ duyệt: giữ nét gốc, máy mạnh).
+- 15:23 Kiểm 30 phút: đã có H-13, H-14, H-15 (đều PARTIAL tĩnh, chưa đo runtime), I-01/02/04/07/08, J-01..J-04,J-06 đã giao, K-01 giao (K4), L-01 trong hàng đợi. H-15: logic 18 Hz cố định, FPS chỉ đổi interval render; nghi joystick gửi theo frame + va chạm không quét đoạn; slider UI max 90 nhưng chủ nói 120 → hỏi nguồn.
