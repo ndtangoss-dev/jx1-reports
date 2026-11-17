@@ -79,3 +79,10 @@ Sonnet lấy việc từ trên xuống, theo phụ thuộc. Khi bắt đầu m�
 | ID | Việc | Cấp | Ai | Khi nào |
 |---|---|---|---|---|
 | O-01 | Phiên Opus mới, chỉ đọc kế hoạch, `QUYET-DINH.md`, backlog và task đã làm; báo việc lệch hướng, task không có mã backlog, quyết định bị làm trái. Ghi `REPORTS/KIEM-TRA-DOC-LAP-YYYY-MM-DD.md` | L4 | Opus | Khoảng 3 ngày một lần, và trước mỗi lần gộp vào `main` |
+
+## Hàng chờ giao khi có chỗ trống (Chat #042, thêm 11:50)
+- A-16 khảo sát hoạt động Tống Kim / JoinActivityGroup / trần hiển thị (tĩnh)
+- A-17 bảng rơi đồ boss + trang bị theo cấp/giới (tĩnh)
+- A-15d..k tách tiếp các phái còn lại nếu A-15a/b/c quá lớn
+- T-01..T-07 mỗi kịch bản TESTER một task (đăng nhập, di chuyển, đánh, nhặt, giao dịch, đổi bản đồ, thoát/vào lại)
+- E-04 bot xã hội, E-03 nối server
