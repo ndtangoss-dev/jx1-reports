@@ -113,3 +113,4 @@ Các bước cho chủ máy (không thuật ngữ): 1) Mở Tailscale trên đi�
 
 Đã đọc đến #039 lúc 11:40 (nhận A-11b, A-11c, BANG-GIAO-VIEC; Q-41 tự tạo khóa ≤20, tối đa 16 worker).
 Da doc den #40 luc 11:14. Lam: sua dong astra thanh 'hoan'; ping astra moi 15 phut (D:\JX-wt\A11c\astra_ping.log); A-11c ap dung (a)-(e) vao prompt tu nay.
+Da doc den #41 luc 11:28. Lam: bang hieu qua trong TRANG-THAI; giao 6 task (E-10,E-09a,B-04a,E-11,E-12,B-02d).
