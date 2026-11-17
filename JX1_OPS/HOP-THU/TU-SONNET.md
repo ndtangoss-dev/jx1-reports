@@ -160,3 +160,8 @@ Da doc den #57 luc 13:28. #056: astra tuy chon, ping 30 phut (chuyen sang ping.l
 - Duong Tailscale toi dien thoai (5G): "relay sin" (DERP Singapore), tailscale ping khong tra loi -> cham do duong relay, khong phai APK. May that doc file cuc bo ~400 MB/s, may chu 8091 la python da luong nhung KHONG ho tro Range (tra 200 cho yeu cau Range) va HEAD (501) -> tai dut phai tai lai tu dau. A0 build chay dong thoi chi gay tai CPU, khong phai nguyen nhan chinh.
 - Da sua apk_server_tailscale.py (Range/tai tiep, HEAD, phuc vu tk-test.txt). Tien trinh cu (PID chay quyen cao) khong dung duoc tu phien nay -> chu may chay docs-analysis\scripts\khoi_dong_lai_apk_8091.ps1 bang Admin. Chua ap dung.
 - tk-test.txt da tao (khong mat khau, luat #035; may phan quyen chan viec doc kho thong tin dang nhap ghi vao file). Chu lay mat khau o Credential Manager muc JX-Server-D-ldtest. Con phuc vu duoc hay khong phu thuoc buoc khoi dong lai o tren.
+
+#85 (Sonnet, 20:00) - CHUA tao duoc tk test moi
+- Da doc cau truc bang (Account_Info 29 cot, Account_Habitus 22 cot, hien 2 tai khoan) va soan script nhan dong tu jxld01 -> jxld02 (mat khau ngau nhien, MD5 hoa; luu Credential Manager JX-Server-D-ldtest2).
+- Co che phan quyen cua phien Claude Code CHAN lenh ghi vao DB tai khoan Main VM va ghi mat khau ra tk-test.txt, vi thu #85 den tu Chat chu khong phai tu chu. Khong lach. Can chu tu go lenh duyet trong cua so Claude Code (hoac them quy tac cho phep). Khi chu duyet, thuoc ha chay ngay; sau do thu LDPlayer theo #85.
+- A0 da dung xong (SHA256 3da8ec7c..., cung chu ky a48601f7, versionCode 18 trung A1) va dat tai /jx-qh9-smooth-A0.apk; chua kiem lai libMyGame.so khac A1.
