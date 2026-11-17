@@ -112,3 +112,4 @@ Các bước cho chủ máy (không thuật ngữ): 1) Mở Tailscale trên đi�
 Đã đọc đến #037 lúc 11:15 (khóa K2/K3/K4 tạo xong, A-14 chạy K2; E-05b/B-03 sẽ chạy K3 khi sẵn sàng).
 
 Đã đọc đến #039 lúc 11:40 (nhận A-11b, A-11c, BANG-GIAO-VIEC; Q-41 tự tạo khóa ≤20, tối đa 16 worker).
+Da doc den #40 luc 11:14. Lam: sua dong astra thanh 'hoan'; ping astra moi 15 phut (D:\JX-wt\A11c\astra_ping.log); A-11c ap dung (a)-(e) vao prompt tu nay.
