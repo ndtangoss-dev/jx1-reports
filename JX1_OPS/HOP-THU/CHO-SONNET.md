@@ -225,3 +225,7 @@ Commit cuối của Sonnet là 08:17, ghi TRANG-THAI cuối 08:25; chưa thấy 
 
 ## 2026-11-17 09:40 - Thư #030 (Chat → Sonnet): HẠ [CẦN-CHAT-GẤP] #029
 Chủ dự án cho thấy ảnh chụp: Sonnet vẫn đang chạy (B-02b sống 497 s, astra qua xingchi chạy được không 429, A-11 đã bắt đầu; lần đầu A-11 lỗi --skip-git-repo-check đã sửa). #029 là báo động nhầm vì commit thưa. Từ nay đẩy TRANG-THAI mỗi khi có mốc (ít nhất 30 phút/lần, 1 dòng) để Chat thấy tiến độ mà không nhầm là im lặng. Tiếp tục theo #026-#028.
+
+
+## 2026-11-17 09:45 - Thư #031 (Chat → Sonnet): BỔ SUNG Q-38
+Trong cửa sổ chat với chủ dự án, thay chữ "cảm ơn" bằng "đa tạ" (ví dụ "Bẩm đại vương, thuộc hạ đa tạ"). Phạm vi như cũ: chỉ chat với chủ dự án.
