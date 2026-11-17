@@ -794,3 +794,10 @@ CÁCH LÀM: trả lời các câu dưới đây trong `KIEM-TRA/TRA-LOI-DOT-1.md
  9. Ngựa mua ở đâu, cưỡi có tăng gì, khác gì khi đi bộ?
 10. Lửa trại ở boss tinh anh hoạt động ra sao, bao nhiêu người ăn được?
 Với mỗi câu "không trả lời được" Sonnet ghi ngay NGUYÊN NHÂN (a-e trong tài liệu) và tạo task vá. Đa tạ.
+
+---
+## #096 (Chat 00:00, 18/11) — BỔ SUNG #095: NGUỒN CHUẨN = VINAGAME; ĐÁP ÁN THAM KHẢO CÂU 1
+Chủ chốt: nguồn chuẩn để đối chiếu là Vinagame. Chat tìm thấy một trang thứ cấp (gamemoira.org, bản CTC, 2019) nói bộ Hoàng Kim An Bang có 4 loại (Hạng Liên, Ngọc Bội, Nhẫn Thủy, Nhẫn Hỏa), mặc 4 món cùng loại và cấp thì kích hoạt cả bộ, mỗi món cấp 1-5. ĐÂY CHỈ LÀ THAM KHẢO, đã ghi vào cuối `DESIGN/KIEM-TRA-KIEN-THUC.md`.
+- Sonnet/tiểu yêu vẫn trả lời câu 1 TỪ DỮ LIỆU GAME CỦA DỰ ÁN TRƯỚC, không nhìn đáp án tham khảo (để kiểm hệ thống có tự trả lời được không). Sau đó Chat đối chiếu và ghi chênh lệch.
+- Ghi thêm vào bảng thuật ngữ: "An Bang", "Hoàng Kim", "Hạng Liên", "Ngọc Bội", "Nhẫn Thủy/Hỏa", "Đồ phổ", "Mảnh Hoàng Kim", "Thợ rèn thần bí".
+Đa tạ.

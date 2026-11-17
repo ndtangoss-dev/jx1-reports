@@ -12,7 +12,11 @@ Mục đích (chủ giao 17/11 23:46): Chat cũng phải nắm tri thức game. 
 
 ## Lưu ý tin cậy
 - Server của dự án có thể khác bản chính thức bên ngoài (bản qh7, dữ liệu tự chỉnh): đáp án đúng là THEO DỮ LIỆU CỦA DỰ ÁN, không theo wiki/diễn đàn. Thông tin trên mạng chỉ để gợi ý thuật ngữ và đối chiếu, ghi rõ "tham khảo mạng".
-- Chat chưa tìm thấy nguồn mạng đáng tin cho "bộ An Bang" (17/11 23:50): không đưa đáp án từ trí nhớ; chờ đáp án từ dữ liệu game.
+- Chủ chốt (17/11 23:48): nguồn chuẩn để đối chiếu là VINAGAME (nhà phát hành VLTK). Chat ưu tiên trang/tài liệu Vinagame; nếu chỉ tìm được trang người chơi chép lại, ghi rõ "nguồn thứ cấp" và phiên bản.
+- Đáp án đúng cuối cùng vẫn là DỮ LIỆU CỦA DỰ ÁN (đối chiếu hai bên; khác nhau thì ghi chênh lệch, không tự sửa).
+
+## ĐÁP ÁN THAM KHẢO (nguồn mạng, KHÔNG phải đáp án của dự án; Sonnet trả lời từ dữ liệu game TRƯỚC, rồi Chat mới đối chiếu)
+- Câu 1 (bộ An Bang), 17/11 23:58: gamemoira.org "Trang Bị Hoàng Kim An Bang phiên bản CTC - VLTK (JX1)" (đăng 13/11/2019, nguồn thứ cấp, bản Công Thành Chiến): bộ Hoàng Kim An Bang gồm 4 loại: Hạng Liên, Ngọc Bội, Nhẫn (Thủy), Nhẫn (Hỏa); mặc 4 món cùng loại và cấp thì kích hoạt thuộc tính của cả bộ; mỗi món cấp 1-5, dòng thuộc tính cố định theo loại, mọi món đều có Nội lực và Sinh lực 161-200; không phân biệt môn phái. Ví dụ Hạng Liên cấp 1: kháng tất cả 16-20, kháng lôi 11-15, thời gian trúng độc 2-10. Trang không nói có món nào khác ngoài 4 món này. Bản CTC có thể khác bản của dự án (qh7). Cách lấy: đồ phổ Hoàng Kim + Mảnh Hoàng Kim (An Bang cần 6 mảnh/món theo trang tinh luyện của gamemoira) tại Thợ rèn thần bí Lâm An.
 
 ## Mẫu một dòng trong NHAT-KY-HOI-DAP.md
 `| # | giờ | câu hỏi (lời người chơi) | đáp án của Sonnet | nguồn | đường tra | tin cậy | chấm | nguyên nhân lỗ hổng / vì sao được | cách vá |`

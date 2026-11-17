@@ -115,3 +115,4 @@
 - 23:40 Chủ giao giám sát Sonnet qua đêm, báo chủ mỗi giờ. Sonnet đang chạy: U-02, U-03, S-01, R-01..R-07 (chuẩn báo cáo mới, R-04..R-07 qua Tổng quản Q-42), K-02 sắp giao. Đã thay lịch kiểm: 30 phút/lần, báo chủ mỗi giờ (:35). BÁO CHỦ 23:40.
 - 23:45 Chủ đốc thúc Sonnet tăng tốc + chê giám sát chưa kỹ. Gửi #094: ≥8-10 worker song song, tạo thêm khóa xingchi (#071 chưa làm), bảng TRẠNG THÁI SỐNG mỗi 30 phút, mốc A3, 3 số mỗi giờ. Chat sẽ đo lại mỗi giờ.
 - 23:55 Chủ giao Chat kiểm tra kiến thức game bằng câu hỏi người chơi. Tạo DESIGN/KIEM-TRA-KIEN-THUC.md, KIEM-TRA/NHAT-KY-HOI-DAP.md; gửi #095 (10 câu đợt 1). Web không có nguồn tin cậy cho 'bộ An Bang', không đưa đáp án từ trí nhớ.
+- 00:00 Chủ chốt nguồn chuẩn là Vinagame. Chat tìm được trang thứ cấp (gamemoira, bản CTC 2019) cho câu 1 An Bang: 4 loại Hạng Liên/Ngọc Bội/Nhẫn Thủy/Nhẫn Hỏa; ghi vào KIEM-TRA-KIEN-THUC.md làm đáp án tham khảo; gửi #096. Chưa tìm được trang Vinagame chính thức.
