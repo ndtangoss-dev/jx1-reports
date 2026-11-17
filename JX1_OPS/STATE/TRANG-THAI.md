@@ -205,3 +205,17 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 - [11:16] E-08 xong (gói 69/76/77/91/92, C2S 77; killerID không có → xác nhận kill [CHƯA KIỂM]). Chờ E-07.
 - [11:23] E-02 xong (BOT 65/65 offline). Chờ E-07 rồi E-09.
 - [11:27] E-07 xong (gói tạo nhân vật/logout, tĩnh). Tiếp: E-09.
+
+## Bảng hiệu quả tiểu yêu (Q: thư #041; cập nhật mỗi 30 phút)
+[11:28] Nguồn: dashboard xingchi 11:25 (số Chat chụp) + log codex.
+| Chỉ số | Giá trị | Mục tiêu |
+|---|---|---|
+| Đồng thời TB (Little: RPM/60 × 42,76 s) | ≈1,4 (lúc 11:25, gần như không worker nào chạy) | ≥6 |
+| Đồng thời hiện tại | 6 worker chạy (K2:2, K3:2, K4:2) từ 11:28 | ≥6 liên tục |
+| Task xong/giờ | 38 marker .done hôm nay (tính cả đo thử); 7 task thật xong từ 10:57 đến 11:27 | — |
+| USD/task | 38,60 USD / 2.140 yc (tổng); hôm nay 18,25 USD cho 988 yc; mỗi task thật ≈ [CHƯA TÍNH từ dashboard] | — |
+| % cache | 111,1M/134,7M ≈ 82% (hôm nay) | ≥85% |
+| % token ra / tổng | 854,6K/134,7M ≈ 0,63% | cao hơn = đỡ đọc lại |
+| % yêu cầu lỗi | 503 astra 100% (9 yc astra đã trả tiền hôm nay; ping 15 phút ghi D:\JX-wt\A11c\astra_ping.log); sol: chưa thấy 429 | ~0 |
+| % rảnh vì chờ PM/duyệt/build | 11:16–11:24: chỉ 1–2 worker chạy (PM trễ giao việc) | <10% |
+**Nút thắt hiện tại:** hàng đợi giao việc của PM, không phải model/khóa; đã giao 6 task độc lập (E-10, E-09a, B-04a, E-11, E-12, B-02d) để chạm ≥6 đồng thời. Cần thêm task khi 1 xong (giữ ≥6 sẵn sàng).
