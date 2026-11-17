@@ -98,3 +98,11 @@
 ### Cập nhật 05:45 (bổ sung BÁO CÁO ĐÊM 05:00)
 - **B-02b XONG:** `feature/visibility` dựng trên nền A-07e, 5/5 dự án exit 0 (Codex 429 ba lần, PM tự dựng nốt CoreServer+GameServer). Chưa chạy VM, chờ Chat duyệt `B-02-tom-tat-diff.md`. Báo cáo: `REPORTS/B-02b-build-tren-a07e.md`.
 - **A-07e:** gs001 HEVA-on sống >4.300 s (~72 phút) trên VM thử, chưa có tải. Chưa tuyên bố "đã sửa" A-07 cho tới khi có bot/người thật.
+
+Đã đọc đến #034 lúc 10:50. Hook thư 10 phút (TOOLS/mailbox_hook.py, Q-40) đã gắn vào .claude/settings.json (PostToolUse) + nhắc "Bẩm đại vương," ở SessionStart/compact.
+VIỆC CHỦ MÁY: (1) đăng nhập xingchi trong trình duyệt trong app (hoặc tự tạo khóa #2, cất ngoài kho) để thuộc hạ thử khóa mới; (2) 0-08: đóng/mở lại Claude Code.
+
+## 10:55 - Kiểm JX-Test-36 qua Tailscale (#026 mục 6)
+Đo được: JX-Test-36 (192.168.56.150, mạng host-only) KHÔNG có Tailscale; gs001 nghe 51189, Bishop 56722 trên 0.0.0.0. Máy thật có Tailscale 100.95.186.86; điện thoại xiaomi-13t-pro 100.123.183.6 đang offline (thấy lần cuối 1 giờ trước). Chưa kiểm: APK P46 đang trỏ địa chỉ nào; `Ip` trong gs001 cfg của VM thử có khớp địa chỉ client dùng không.
+Đường ngắn nhất (đề xuất, chưa làm): để forwarder máy thật (cổng 56722/51189) trỏ tạm sang 192.168.56.150 thay vì Main VM 192.168.1.50 → điện thoại vào qua 100.95.186.86 sẽ nối VM thử. Cần chủ máy duyệt vì đổi đích của đường Main đang chạy.
+Các bước cho chủ máy (không thuật ngữ): 1) Mở Tailscale trên điện thoại cho nó online. 2) Bảo thuộc hạ "chuyển đường thử sang VM thử" (thuộc hạ đổi đích forwarder, ghi bản hoàn tác). 3) Mở app game P46, đăng nhập tài khoản thử bot/test. 4) Báo kết quả (vào được/không, thấy gì). 5) Bảo thuộc hạ "trả đường về Main".
