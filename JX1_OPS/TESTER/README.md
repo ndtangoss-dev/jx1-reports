@@ -92,3 +92,39 @@ không tin cậy hoặc chứa symlink.
 **gs001 thật: chưa kiểm.** PASS offline không chứng minh login/gameplay thật.
 Các BUG/báo cáo mẫu trong `REPORTS/TEST` do fixture tổng hợp, không phải lỗi
 đã xác nhận trên gs001. Không chạy exe game/server, không kết nối VM/mạng ngoài.
+
+## E-05b — full_cycle
+
+```text
+python -I JX1_OPS/TESTER/run.py --scenario full_cycle --bots bot01..bot05 --host 127.0.0.1 --port PORT_MAY_CHU_GIA --out JX1_OPS/REPORTS/TEST --workers 5
+```
+
+Chỉ dùng fixture `test_full_cycle.cycle_server`, khác giao thức hội thoại của
+fixture smoke. Mỗi bot có hai phiên Bishop/game liên tiếp. Kịch bản dùng API
+`packets`/`Channel` cho login/role list/permit, `Session.poll/run/hold/skill/close`
+cho game. Không dùng `Session.login` vì API đó gắn guard VM; giữ guard nguyên.
+Permit vẫn được validate theo đích logic BOT, nhưng socket luôn mở đúng cổng
+loopback trong Config; không mở địa chỉ permit. Nhân vật, map, tọa độ, skill,
+NPC đều là dữ liệu fixture; mật khẩu ngẫu nhiên chỉ ở RAM, không đọc credential
+thật và không log payload auth/GUID/khóa. Giá trị sync tổng hợp lấy từ cổng fixture.
+
+`full_cycle` có 10 bước theo thứ tự:
+
+| Bước | Hành vi offline / giới hạn |
+| --- | --- |
+| login | Kiểm login response và role list bằng API BOT |
+| create_character | BỎ QUA nếu đã có; nếu chưa có, ghi thiếu request/response tạo nhân vật |
+| enter_game | SELECT_ROLE, permit, LOGIC_LOGIN, poll tới IN_GAME |
+| walk_30s | Gửi RUN một lần, hold đủ 30 s; chưa chứng minh nhân vật di chuyển liên tục hay tới đích |
+| attack_one | Gửi một SKILL tới một NPC fixture; chưa chứng minh hit/kill |
+| verify_kill | BỎ QUA: BOT chỉ tách/bỏ qua NPC/death/skill, chưa giải mã kết quả chiến đấu |
+| logout | Đóng socket BOT; BỎ QUA xác nhận logout vì thiếu request/response ứng dụng |
+| reenter | Login và sync lại; BỎ QUA nếu nhân vật chưa được tạo |
+| verify_role | So sánh tên/giới tính/hệ/level trong role list trước/sau; khác là FAIL |
+| verify_persistence | BỎ QUA: chưa có snapshot/giải mã toàn bộ trạng thái và xác nhận lưu |
+
+Khi chưa có nhân vật, login PASS, 9 bước sau BỎ QUA có lý do; không gửi gói tạo
+nhân vật suy đoán. Phiên giả bình thường: 6 PASS, 4 BỎ QUA/bot. Exit 0 có thể
+có BỎ QUA, không có nghĩa toàn bộ gameplay đã được kiểm. Test CLI chạy hai bot
+song song với 30 s thật (không rút ngắn thời gian); thời hạn bước đi là 35 s.
+Thông tin nhân vật còn nguyên trên gs001 thật: **[CHƯA KIỂM]**.

@@ -15,7 +15,7 @@ if __package__ in (None, ""):
 
 from .core import Config, run_scenario
 from .reporting import write_report
-from .scenarios import SMOKE_LOGIN
+from .scenarios import FULL_CYCLE, SMOKE_LOGIN
 
 
 def bot_list(value):
@@ -31,8 +31,9 @@ def bot_list(value):
 
 
 def main(argv=None):
-    parser = argparse.ArgumentParser(description="E-05a: smoke_login với máy chủ giả; gs001 thật chưa kiểm")
-    parser.add_argument("--scenario", choices=("smoke_login",), required=True)
+    scenarios = {scenario.name: scenario for scenario in (SMOKE_LOGIN, FULL_CYCLE)}
+    parser = argparse.ArgumentParser(description="TESTER offline với máy chủ giả; gs001 thật chưa kiểm")
+    parser.add_argument("--scenario", choices=tuple(scenarios), required=True)
     parser.add_argument("--bots", type=bot_list, required=True)
     parser.add_argument("--host", required=True, help="Chỉ 127.0.0.1")
     parser.add_argument("--port", type=int, required=True)
@@ -44,8 +45,9 @@ def main(argv=None):
     except ValueError as error:
         parser.error(str(error))
     try:
-        results = run_scenario(SMOKE_LOGIN, args.bots, config, args.workers)
-        path = write_report(args.out, SMOKE_LOGIN, args.bots, results)
+        scenario = scenarios[args.scenario]
+        results = run_scenario(scenario, args.bots, config, args.workers)
+        path = write_report(args.out, scenario, args.bots, results)
     except (OSError, RuntimeError, ValueError):
         print("Không chạy/ghi báo cáo được; kiểm tra cấu hình, quyền ghi và .tester.lock.", file=sys.stderr)
         return 2
