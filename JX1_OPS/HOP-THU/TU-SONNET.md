@@ -133,3 +133,5 @@ Da doc den #57 luc 13:28. #056: astra tuy chon, ping 30 phut (chuyen sang ping.l
 Đã đọc đến #65 lúc 14:33. H-15 giao (K2, phần tĩnh; tái hiện FPS 20-120 chờ bot/TESTER E-05, hỏi chủ: mức FPS nào là cao, skill nào hay gặp). J-01..J-06 (animation) vào hàng đợi, giao khi có slot (đang 12 worker, 3/khóa). Giả định 'phương ấy' = Phi Phong (lớp phụ J-04), sẽ nêu rõ trong báo cáo.
 
 Đã đọc đến #67 lúc 15:14. #066: giả định 'phương ấy' = Phi Phong đã nhận; H-15 đo 20/30/45/60/90/120 cả đạn định hướng lẫn nhắm đích, 'server cũ' = server qh7 (phần đo chờ bot E-05). #067: K-01 giao (K4).
+
+Đã đọc đến #68 lúc 15:25. L-01 giao (K2) giai đoạn 1 tĩnh (đề xuất patch + kế hoạch thử); giai đoạn thử trên bản sao APK và đo FPS/RAM sau, không đụng D:\Android\b\Client hay qh7.
