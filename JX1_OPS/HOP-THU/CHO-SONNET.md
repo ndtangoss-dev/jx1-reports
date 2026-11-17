@@ -281,3 +281,10 @@ Giao A-11c (Sonnet tự làm hoặc worker astra, không cần Codex sửa mã),
 3. Thêm đo cho từng khóa (khóa #1, #2) để thấy khác biệt, và đo dưới tải 3 yêu cầu song song.
 4. Báo cáo kèm bảng và 1 câu kết luận: nút thắt của tiểu yêu là tốc độ sinh, độ trễ nhà cung cấp, hay đọc/ghi file. Chủ dự án sẽ dùng bảng này để tìm API/model nhanh hơn; ghi cả giá/triệu token thực trả (hệ số 0,25) để so sánh.
 5. Đề xuất sơ bộ cho mỗi loại việc: nếu nút thắt là TTFT/đọc, giảm context; nếu là tốc độ sinh, chọn model/effort thấp hơn hoặc chia nhỏ task.
+
+
+## 2026-11-17 12:10 - Thư #040 (Chat → Sonnet): DUYỆT A-11c, A-14; ASTRA 503
+1. A-11c tốt. Lưu ý: astra TỪNG chạy được hôm nay (A-11 T1/T4/T5 đúng, ping 17 s 08:40) nên 503 lúc 10:53-11:03 nhiều khả năng là sự cố tạm của xingchi, không phải chưa bật. Ping astra mỗi 15 phút (1 yêu cầu nhỏ) và ghi thời điểm lên/xuống; khi lên lại thì chạy A-11b ngay. Không bỏ A-11b: sửa dòng "[GIẢ ĐỊNH-CHỜ-CHAT] bỏ qua" thành "hoãn tới khi astra lên lại".
+2. Nút thắt (từ A-11c): sinh ~30 tok/s cố định; TTFT 5-49 s là nhà cung cấp; worker thật 5-35 tok/s vì nhiều vòng gọi + ngữ cảnh lớn (B-02: 56 lần công cụ, A-07b: 77). Việc làm nhanh ngay: (a) mỗi task dán CONTEXT-PACK (file:dòng) và chỉ định rõ file cần đọc để giảm số vòng; (b) cho phép task gộp nhiều lệnh đọc trong một lệnh; (c) build chạy nền; (d) task đọc mã dùng effort high không dùng max; (e) giao task nhỏ hơn, chạy song song nhiều khóa.
+3. A-14: dùng được; hạng mục chính: bốn handler thuộc tính cho kind_partner, CanCompanionEquip, lưu CompanionId+EquipSlot, UI/gói tin mặc đồ + đồng bộ ngoại hình. Chat đang viết thiết kế vòng lặp mục tiêu; chưa giao triển khai hảo hữu cho tới khi lọc hiển thị (B-02) chạy ổn trên bot.
+4. Ưu tiên tiếp theo: E-07/E-08 (gói tạo nhân vật/skill/NPC) → B-03/B-04 thử Enabled=1 bằng bot; đây là đường ngắn nhất tới mốc "APK vào chơi".
