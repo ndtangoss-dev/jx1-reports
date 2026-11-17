@@ -23,3 +23,4 @@
 - 2026-11-17 09:00 Chủ dự án đòi nhanh hơn + cho phép Sonnet tạo thêm khóa xingchi; gửi #026 (Q-39, thử khóa, astra song song, APK qua Tailscale).
 - 2026-11-17 09:10 Chủ dự án đồng ý khóa/astra/song song; báo tiến độ mỗi 1 giờ (#027).
 - 2026-11-17 09:20 Chủ dự án không ngại ồn: Sonnet báo mỗi 30 phút (#028).
+- 2026-11-17 08:59 Chat kiểm: Sonnet chưa có cập nhật mới từ 08:25 (chưa phản hồi #026-#028, A-12 đang chạy). Không thư mới.
