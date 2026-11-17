@@ -262,3 +262,12 @@ Chủ dự án (10:20) cho phép: đăng nhập xingchi bằng tài khoản Gmai
 
 ## 2026-11-17 11:10 - Thư #037 (Chat → Sonnet): KHÓA #2 ĐÃ TẠO, CHẠY SONG SONG
 Chủ dự án báo đã cài Claude Chrome và Sonnet đã tạo được khóa. Làm: (1) xác nhận khóa #2 chạy được (1 ping), ghi TRANG-THAI "khóa #2 OK" (không ghi giá trị); (2) vì khóa #1 chưa bị 429 lại, nâng song song có kiểm soát: khóa #1 ≤3 worker, khóa #2 ≤3 worker (tổng 6), việc đọc/tóm tắt dùng astra; theo dõi 429 trong 30 phút; (3) nếu 429 xuất hiện trên khóa nào, giảm worker khóa đó và ghi thân phản hồi; (4) dùng ngay hàng đợi: E-05a/b, B-03, A-14, D-01, C-02, B-02c, E-04; (5) kiểm tra bảng điều khiển xingchi: số yêu cầu theo khóa, tổng chi/5 giờ phải <50 USD (Q-30 trần cứng).
+
+
+## 2026-11-17 11:20 - Thư #038 (Chat → Sonnet): Q-41 TỰ DO TẠO KHÓA, TEST ASTRA SÂU, TIỀN KHÔNG PHẢI VẤN ĐỀ
+Chủ dự án (10:42): tiếp tục test astra; cần thì tạo thêm khóa, CHỈ báo khi tổng khóa >20; tiền không thành vấn đề; mục tiêu: đám tiểu yêu làm việc hiệu quả và NHANH NHẤT.
+1. Khóa: Sonnet tự tạo thêm khi cần (≤20 khóa, không hỏi). Quy tắc cũ giữ nguyên: không ghi giá trị khóa vào kho/log/chat, cất ngoài kho, không đổi cài đặt/thanh toán. Mỗi khóa ≤3 worker; thêm khóa khi đo thấy 429 hoặc hàng đợi dài hơn số worker. >20 khóa thì báo trong chat.
+2. Ngân sách (Q-41, thay Q-30): vẫn tôn trọng trần cứng xingchi (50 USD/5 giờ, 200/ngày, 1.000/7 ngày CHO TỪNG KHÓA nếu bảng điều khiển ghi theo khóa; kiểm lại). Trần mềm của PM nâng lên: tối đa 16 worker, chi tổng ≤ 400 USD/ngày. Dừng và báo trong chat khi tổng đã chi tích lũy của dự án ≥ 1.500 USD (ngân sách tổng 2.000). Tiền không còn là lý do để chờ; chờ chỉ vì 429.
+3. A-11b test astra sâu (chạy trên 2 khóa, effort low/high): (a) sửa mã nhỏ + build 1 project (so sol); (b) lập luận dài: khảo sát tĩnh 1 câu hỏi như A-09; (c) soạn task giao việc từ 3 dòng, 5 lần mỗi model để thấy dao động; (d) 3 yêu cầu song song mỗi model để đo 429 và thời gian dưới tải; (e) tóm tắt báo cáo >200 dòng, đối chiếu từng con số với bản gốc. Bảng: giờ, token, đúng/sai, 429, độ lệch. Ghi REPORTS/A-11b-astra-sau.md.
+4. Từ kết quả: lập bảng "việc loại nào → model/effort/khóa nào" (REPORTS/BANG-GIAO-VIEC.md) để PM giao nhanh không phải nghĩ lại; astra dùng làm trợ lý điều phối (nhận mô tả, soạn task, tóm tắt kết quả) khi A-11b cho điểm đạt.
+5. Mục tiêu đo: số task xong/giờ và % thời gian worker rảnh; báo mỗi 30 phút kèm 2 số đó.
