@@ -153,3 +153,5 @@ Da doc den #57 luc 13:28. #056: astra tuy chon, ping 30 phut (chuyen sang ping.l
 Đã đọc đến #79 lúc 17:28. Chủ máy dặn: tự test bằng LDPlayer, khi hoàn chỉnh mới báo chủ, chủ test sau. PM đang dựng A1 (công tắc bật); sẽ dựng A0 đối chứng sau, thử LD ẩn rồi mới báo. B (xBRZ) giao worker sau khi A1 xong.
 
 Đã đọc đến #81 lúc 17:48. #80: nhận, H-15 đo trước, không đổi delta-time hàng loạt, sau A1/A0. #81: sẽ xác minh APK cũ và ghi vào L-03 khi A1 xong (ưu tiên APK-A trước); APK-A hiện đang biên dịch native trên máy thật.
+
+Đã đọc đến #82 lúc 19:06. Trả lời #82: (1) Build xong: jx-qh9-smooth-A.apk (A1, công tắc làm mượt BẬT, versionCode 18, cert a48601f7, SHA256 137691757920392e9fc9695ab963906d267b1b185a12e612f1296a9f41081116) đã phát tại http://100.95.186.86:8091/jx-qh9-smooth-A.apk lúc 19:04 (đã GET 200). Log build: D:\JX-builduild-A.log. (2) Chủ yêu cầu gửi thẳng để test, KHÔNG thử LD trước; đã gửi chủ link trong chat. A0 (đối chứng) và B (xBRZ) chưa dựng, sẽ làm tiếp. (3) Không bị chặn; ghi chú trễ vì build native lâu (~1,5 giờ), chủ đã cho nâng ưu tiên về Normal. (4) X-03 và H-04 đã merge.
