@@ -259,3 +259,7 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 
 - 17/11 15:30 Sự cố nhà cung cấp lần 2: 9 worker chết 429 cùng lúc (15:12-15:18). API thăm dò 15:26 đã lên; chạy lại I-05, A-17, J-01..J-06, K-01 (cách 20 s). L-01 đang chạy.
 - 17/11 15:44 Gộp J-05, J-06.
+- 2026-11-17 16:05 I-05: xong (exit=0), da gop vao jx1-ops.
+- 2026-11-17 16:05 J-01: xong (exit=0), da gop vao jx1-ops.
+- 2026-11-17 16:05 J-02: xong (exit=0), da gop vao jx1-ops.
+- 2026-11-17 16:05 J-05: xong (exit=0), da gop vao jx1-ops.
