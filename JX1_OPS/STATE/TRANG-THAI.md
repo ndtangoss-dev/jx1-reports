@@ -222,3 +222,4 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 - [11:44] Tạo khóa K5 (không cần mật khẩu/2FA; lưu .jx1keys). Khóa riêng có hiệu lực (khóa giả → 401). Dashboard xingchi cập nhật usage theo khóa chậm vài phút. Giao thêm A-15a/b/c (K5). Tổng 12 worker (K2:3 K3:3 K4:3 K5:3).
 - [11:45] Dựng lại monitor b55akq14o (30 phút, theo dõi mọi .done của 12 worker); monitor cũ b1mop5z3c hết hạn. Phút không có monitor: 0.
 - [11:53] Merge A-15a (bốn phái đầu, khảo sát tĩnh). Giao H-01 (K5) theo #045; H-02..H-08 xếp hàng chờ chỗ trống; H-04 theo #046 là gom ghi chép cũ, không khảo sát lại.
+- [11:58] Merge A-15b; giao H-02 (K5).
