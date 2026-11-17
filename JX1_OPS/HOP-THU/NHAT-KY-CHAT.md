@@ -15,3 +15,4 @@
 - 2026-11-17 07:56 Chat kiểm: chưa có A-11/A-12/A-13 xong, không có [CẦN-CHAT-GẤP]; Sonnet giao E-01b (Bot tách bản ghi đồng bộ thế giới). Không thư mới.
 - 2026-11-17 08:10 Chủ dự án chốt xưng hô: đại vương / thuộc hạ / đám tiểu yêu (Codex); gửi #021 (Q-38).
 - 2026-11-17 08:15 Sửa Q-38: xưng hô chỉ trong cửa sổ chat với chủ dự án; hộp thư giữ văn phong thường (#022).
+- 2026-11-17 08:20 Bổ sung Q-38: mỗi báo cáo trong chat mở đầu "Bẩm đại vương," (#023).
