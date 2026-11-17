@@ -43,3 +43,60 @@ Mỗi phiên chỉ có một Bot. `--observed-online` phải là 0..99 trước 
 Profile wire là little-endian Windows, pack(1), int/uint/BOOL 32 bit, bool 1 byte, GUID giữ nguyên 16 byte. Riêng luồng thế giới nhận dùng layout **header GS**: normal hiện tại 55 byte và NPC normal 227 byte; client Cocos khai báo tương ứng 31/223 byte. Không tự dò hoặc fallback ABI theo byte trong payload. Chưa xác minh profile này với binary. ASCII là mặc định cho chuỗi; `--encoding` chỉ dùng khi đã xác minh encoding runtime. Không suy encoding runtime từ encoding source.
 
 Không lưu payload, mật khẩu, MD5, GUID hay khóa phiên. Các literal tài khoản/khóa trong test là dữ liệu tổng hợp offline. CLI đóng socket khi lỗi và không tự đăng nhập lại; thao tác logout có payload tùy biến chưa triển khai.
+
+## E-02 — Vòng săn offline
+
+`behavior.py` cung cấp `decode_record`, `attack_target`, `Hunt.feed` và
+`Hunt.step`. Dùng cùng package `jx1bot` như CLI/test hiện có; không cần pip.
+Module không mở socket, không gọi Session/CLI và không tự gửi các lệnh trả ra.
+`feed` nhận một frame plaintext đã bỏ framing/XOR, kiểm toàn frame trước khi
+cập nhật bảng `npcs` theo wire UINT ID. Các ID ngoài hành vi nhưng nằm trong
+bảng `worldsync` được tách và bỏ qua. Profile duy nhất là GS 227 byte cho
+S2C 77, không đoán/fallback Cocos 223 byte; ABI binary [CHƯA KIỂM].
+
+Ví dụ API trong ứng dụng đã nạp package (giá trị tầm/thời gian chỉ minh họa):
+
+```python
+from jx1bot.behavior import Hunt
+
+hunt = Hunt(("offline-session", 1, 1), search_range=500,
+            attack_range=20, action_interval=1)
+hunt.feed(plaintext_frame)  # vector 69/76/77/91/92, không phải capture mạng
+action = hunt.step(x=1000, y=2000, map_id=1, now=0,
+                   skill_id=7, eligible_ids={0x12345678})
+# action là None hoặc Action(kind="run"/"attack", target_id=..., payload=...).
+```
+
+Bên gọi cung cấp vị trí quan sát bằng MPS, map ID, thời gian monotonic không
+giảm, skill ID có level>0 trong danh sách S2C 69, và allowlist `eligible_ids`
+đã được xác định là quái hợp lệ. Không mặc định mọi kind_normal đều thù địch.
+Chọn gần nhất trong `search_range`, hòa khoảng cách lấy ID nhỏ hơn; chỉ dùng
+NPC có kind_normal từ 76, không chết, không doing death/revive. Không tin
+field nKind của 77 vì sender khảo sát chưa gán. ID vượt 0x7FFFFFFF vẫn lưu
+UINT nhưng không chọn/gửi đánh vì handler C2S nhận Y signed và từ chối Y âm.
+
+Ngoài `attack_range` trả RUN tới tọa độ NPC, trong tầm trả C2S 77 với X=-1,
+Y=wire ID; mỗi lần tối đa một lệnh, cách nhau `action_interval`. RUN không
+tự cập nhật vị trí BOT; cần vị trí quan sát mới để chuyển sang đánh. Tầm và
+cooldown do bên gọi chọn, giá trị runtime [CHƯA KIỂM]. Không hardcode skill 7
+từ fixture. Thay danh sách skill bằng 69 rỗng sẽ chặn hành động tiếp theo.
+
+91 chỉ lưu vị trí/phản ứng hurt theo frame, không suy damage. Chỉ 92 xác nhận
+dead, giữ tombstone kể cả khi chưa thấy spawn, không hồi sinh bởi snapshot
+76/77 trễ. `target_deaths` ghi mỗi target đang chọn tối đa một lần/context;
+không xác nhận BOT gây chết, không phải kill counter. Không có sequence hay
+timestamp trên wire để nhận biết death stale trong cùng context [CHƯA KIỂM].
+`reset_context` xóa NPC/skill/target/timer khi đổi map/phiên hoặc đã xác định
+vòng đời ID mới; bên gọi phải chặn dữ liệu context cũ, không tự suy respawn.
+Mất NPC/ra khỏi vùng nhìn không được coi là chết; xử lý remove/TTL chưa có.
+
+Tên 76 giữ byte thô, tên 92 chỉ đọc trước NUL, không dùng tail bất định;
+encoding tên thật [CHƯA KIỂM]. HP chỉ là ước lượng max×ratio/1000, ratio=0
+không xác nhận chết; giới hạn pipeline INT/HP lớn và các thang trị khác của
+E-08 vẫn [CHƯA KIỂM]. `nLifeYu` không phải lượng HP thiếu và không được dùng.
+Hồi máu: **[CHƯA KIỂM] TODO** — chưa đủ packet/điều kiện hồi máu; `heal()`
+báo `ProtocolError`, không dựng gói SIT/item/skill giả định.
+
+Vòng săn độc lập với `population`: bên gọi có thể coi đang theo target là bận,
+nhưng chưa có executor/ACK, đồng bộ busy hoặc tích hợp runtime giữa hai module.
+Kiểm tra bằng `python -I -m unittest discover -s JX1_OPS/BOT -v`.
