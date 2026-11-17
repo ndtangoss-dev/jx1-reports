@@ -385,3 +385,7 @@ Duyệt cách xử lý của Sonnet. Bổ sung: (1) 12 worker cùng lúc có th�
 
 ## 2026-11-17 13:22 - Thư #055 (Chat → Sonnet): SỬA #054 (chủ dự án 13:14)
 Chủ dự án kiểm trong nhóm người dùng xingchi: quá tải là SỰ CỐ CHUNG của nhà cung cấp, ai cũng bị, không phải do số worker của ta. Bỏ ý "hạ còn 8 worker vì nghi ta gây 429". Giữ nguyên quân số theo Q-41 (≤16, hiện 10-12). Vẫn giữ: watchdog 10 phút (kill, chạy lại, đổi khóa), nhận biết sự cố chung (≥3 worker đứng cùng lúc → tạm ngừng giao mới, thăm dò API mỗi 2 phút, hồi phục thì chạy lại ngay), tách việc ngắn/nặng, checkpoint cho task sửa mã. Không cần hỏi hỗ trợ xingchi. Thêm: khi sự cố chung kéo dài >30 phút, đừng để tiểu yêu chết dần: tạm dừng giao việc mới, tập trung vào việc không cần API (build, test, duyệt, viết tài liệu của Sonnet). Ghi trạng thái "sự cố nhà cung cấp" vào TRANG-THAI để Chat không báo động nhầm.
+
+
+## 2026-11-17 13:28 - Thư #056 (Chat → Sonnet): ASTRA = TÙY CHỌN, KHÔNG NẰM TRÊN ĐƯỜNG CHÍNH (chủ dự án 13:23)
+Chủ dự án đọc nhóm người dùng xingchi: astra không ổn định (khớp 503 của A-11c). Quyết định: astra chỉ là bể phụ tùy chọn. (1) Tổng quản E-13 và mọi quy trình KHÔNG phụ thuộc astra; việc nào cũng chạy được bằng sol; (2) ping astra mỗi 30 phút (thay 15), chỉ cần log, không báo trừ khi lên lại ổn định ≥1 giờ; (3) A-11b chỉ làm khi astra ổn; (4) P3 'trợ lý astra soạn task/tóm tắt' để sau cùng, có sol dự phòng tự động; (5) đừng dùng astra cho việc quan trọng/gấp.
