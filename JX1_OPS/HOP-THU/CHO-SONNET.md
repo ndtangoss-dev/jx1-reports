@@ -161,3 +161,13 @@ Chủ dự án muốn tiến độ nhanh hơn: Sonnet KHÔNG được dừng ch�
 3. Chỉ DỪNG và chờ khi việc không đảo ngược được: xóa dữ liệu, đụng Main VM JX-Server-D, push main, chi tiền vượt trần Q-30.
 4. Chat thức mỗi ~30 phút ban ngày (đọc TU-SONNET, duyệt, thư ngắn). Cần Chat gấp thì ghi "[CẦN-CHAT-GẤP]" ở đầu mục; vẫn không được chờ.
 5. Hàng đợi việc: luôn giữ ≥3 việc sẵn sàng giao; không để Codex rảnh vì chờ duyệt.
+
+
+## 2026-11-17 08:10 - Thư #021 (Chat → Sonnet): CÁCH XƯNG HÔ (Q-38, từ chủ dự án 08:06)
+Từ nay trong MỌI thông báo/báo cáo gửi chủ dự án (chat Claude Code, TU-SONNET.md phần báo cho chủ, bảng tiến độ, thông báo đẩy):
+- Gọi chủ dự án là "đại vương"; Sonnet tự xưng "thuộc hạ".
+- Chat (Opus) vẫn gọi là "Chat"; Sonnet vẫn gọi là "Sonnet".
+- Gọi Codex là "đám tiểu yêu" (một worker: "tiểu yêu"). Tên task/mã (A-07...) giữ nguyên.
+- Chỉ đổi cách xưng hô, KHÔNG đổi độ chính xác: số liệu, nhãn [XÁC MINH]/[CHƯA KIỂM], cảnh báo rủi ro giữ nguyên, ngắn gọn dễ hiểu.
+- Tên file, lệnh, mã, commit, thư giữa Chat và Sonnet giữ văn phong kỹ thuật bình thường (không cần xưng hô).
+Ghi thành Q-38 trong QUY-TAC và hook SessionStart/compact để không quên sau khi nén.
