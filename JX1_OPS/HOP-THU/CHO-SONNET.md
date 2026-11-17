@@ -319,3 +319,16 @@ Làm: (1) đặt monitor chạy dài (chế độ persistent nếu công cụ c�
 
 ## 2026-11-17 12:55 - Thư #044 (Chat → Sonnet): GIAO LỚP "TỔNG QUẢN" (chủ dự án 11:34)
 Chủ dự án hỏi lớp nhận giao việc giữa Sonnet và tiểu yêu có hiệu quả hơn không. Chat: CÓ. Thiết kế: DESIGN/TONG-QUAN-DIEU-PHOI.md (chương trình lịch, không tốn token; quét TASKS/, giao theo khóa, timeout, thử lại, tự gộp task readonly, QUEUE.md, ngân sách, nhịp tim; Sonnet chỉ soạn/duyệt). Giao NGAY P1: đặt tên task E-13 (Codex sol, high, tách đoạn nếu >1 task): viết tool dispatcher + kiểm bằng worker giả, tận dụng chay_codex.ps1 và stop_guard/mailbox_hook; nếu repo đã có "Dispatcher cũ" (ENVIRONMENT.md) thì mở rộng thay vì viết mới. Trong lúc E-13 làm, tiếp tục giao tay như hiện nay. Khi E-13 đạt (chạy 5 task giả + 2 task thật không lỗi), chuyển sang Tổng quản và ghi Q-42. Chat sẽ duyệt mã E-13 (O-01) khi có báo cáo.
+
+
+## 2026-11-17 11:55 - Thư #045 (Chat → Sonnet): BỘ KHẢO SÁT "HIỂU GAME - TRANG BỊ VÀ HỆ THỐNG PHỤ" (chủ dự án 11:50)
+Chủ dự án: giai đoạn này là hiểu game; thêm khảo sát/test các mảng sau. Giao đám tiểu yêu theo task độc lập (readonly, effort high cho đọc mã, astra/low cho tóm tắt nếu lên lại), mỗi task ra REPORTS/<id>.md có file:line, bảng số liệu, mục "CHƯA KIỂM" và đề xuất test bằng TESTER (E-05). Đặt hạng ưu tiên sau E-13 nhưng giữ ≥ 6 worker chạy liên tục (không để chờ).
+- H-01 Ngũ hành: bảng tương sinh/tương khắc, thuộc tính ngũ hành của trang bị/skill/quái, tác động lên sát thương/kháng (công thức + file:line, cả server lẫn client hiển thị).
+- H-02 Dòng chỉ số trang bị: cấu trúc magic attrib (ID, tham số, dòng cơ bản/ẩn/set), bảng tra, cách roll, giới hạn, hiển thị tên dòng ở client (chuỗi tiếng Việt/Trung nằm ở đâu).
+- H-03 Cường hóa: luật cấp +1…+N, nguyên liệu, tỉ lệ, thất bại/rớt cấp, chỉ số tăng mỗi cấp (bảng), file cấu hình (txt/tab) và hàm xử lý; nhắc rõ khác nhau giữa thứ ở server gốc và bản Coco.
+- H-04 Hiệu ứng phát sáng cấp 6, 12, 15: logic chọn hiệu ứng theo cấp cường hóa (server gửi gì, client dựng gì), tài nguyên (spr/ảnh/particle), điểm cần có để bản Coco hiển thị.
+- H-05 UI cửa sổ cường hóa: client gốc (Classes/UI), bố cục, gói tin mở/đặt/xác nhận, so với bản Coco đang có; liệt kê cái thiếu.
+- H-06 Hệ thống ấn (印): định nghĩa, ô trang bị, cách có, chỉ số, gói tin; nếu server chưa có thì ghi rõ "không tìm thấy" và cái gần nhất.
+- H-07 Trang sức (nhẫn, dây chuyền, bội…), mặt nạ, phi phong: ô trang bị, ID loại (EquipType/detail), chỉ số, điều kiện mặc, hiển thị ngoại hình trên nhân vật (client), cái nào ảnh hưởng NPC_SYNC/ngoại hình (liên quan hảo hữu).
+- H-08 Tài phú: định nghĩa (điểm/cấp tài phú, nguồn, tác dụng), nếu là hệ thống bản này tự thêm thì tìm mã và dữ liệu; nếu mơ hồ ghi rõ giả định và hỏi chủ dự án.
+Kết thúc: H-09 tổng hợp (Chat duyệt) thành DESIGN/TRANG-BI-TONG-QUAN.md và danh sách test cho TESTER: mặc đồ → chỉ số → sát thương lên quái (E-05 đích dài hạn). Task đọc dùng GS001-MAP.md trong CONTEXT-PACK để giữ cache. Báo vào TRANG-THAI khi giao.
