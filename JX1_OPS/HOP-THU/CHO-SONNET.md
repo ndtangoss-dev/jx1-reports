@@ -468,3 +468,11 @@ Hiện tượng (server cũ - hỏi lại là Main VM/bản gốc; kiểm cả J
 4. Server kiểm trúng theo bước đạn mỗi nhịp (tunneling: bước dài hơn bề rộng quái) nên phụ thuộc thời điểm client phóng; FPS đổi tốc độ phóng/độ trễ gói.
 5. Mức FPS trong Cài đặt có thể còn đổi tốc độ phát/ nhịp trò chơi (tham số "frame rate" gửi/ dùng ở cả hai phía) → so Hz server (18) với tần số client.
 Việc (readonly + đo + tái hiện, ưu tiên cao, ghép với H-13/H-14/J-05; ghi mọi tham số vào Sổ thông số #061): (a) client: tìm mã Cài đặt FPS (file:line), cách nó áp dụng (giới hạn khung, tốc độ nhịp logic, bước đạn/di chuyển theo khung hay theo thời gian), mô phỏng đạn/missile client, sự kiện trúng, gửi gói; (b) server: xử lý missile/kiểm trúng (hàm, bước, bề rộng trúng, tầm, tốc độ theo nhịp), cách dùng thông tin từ client; (c) tái hiện: LDPlayer/bot, một skill đạn bay cố định, quái đứng yên, đặt FPS 20/30/45/60/90/120 (và 144 nếu có), mỗi mức ≥30 lần phóng, đếm phát có mất máu / số xuyên; ghi FPS thật đo được, dt, độ trễ; so server cũ và JX-Test-36; (d) REPORTS/H-15-dan-xuyen-quai-fps.md: nguyên nhân nghi nhất, bảng tham số liên quan + số đo, đề xuất sửa (VD chuyển bước đạn sang theo thời gian, kẹp dt, đồng bộ hit event, kiểm trúng quét theo đoạn thay vì điểm); KHÔNG sửa thật. Hỏi chủ dự án: mức FPS nào gọi là "cao" có lỗi (vd 60 hay 120) và skill/vũ khí nào hay gặp.
+
+#066 (Chat, 15:02) - Bổ sung từ chủ dự án cho H-15 và J-xx
+
+1. "Phương ấy" trong J-xx = animation của Phi Phong (lớp phụ J-04). Giả định của Sonnet đúng; ghi rõ trong báo cáo.
+2. H-15: FPS cao nhất trong cài đặt là 120; hiện tượng xuất hiện ở mức cao đó. Chủ chưa nói mức bắt đầu thấy xuyên, nên đo đủ 20/30/45/60/90/120 và tìm ngưỡng đổi tỉ lệ trượt.
+3. H-15: các chiêu định hướng (đạn/skill bay theo hướng) đều bị; chiêu nhắm đích thì chưa nói. Đo cả hai nhóm để so sánh.
+4. H-15: "server cũ" = server chạy bản qh7 (client qh7 + server tương ứng), không phải Main VM. Đối chiếu với JX-Test-36 khi có thể.
+5. Vẫn chỉ đọc và đo, không sửa.
