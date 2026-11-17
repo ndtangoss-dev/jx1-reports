@@ -101,3 +101,4 @@
 - 20:30 Chủ báo animation vẫn giật sau khi vào game thử APK-A. Sonnet đo qh7 trên LD ~30 FPS. Gửi thư #087: đo A1, kiểm trần FPS, nội suy vị trí/frame SPR (chỉ phần vẽ), A2 versionCode 19.
 - 20:33 Chủ chốt bỏ qh7, chỉ sửa trên bản A. Gửi #088.
 - 20:42 Kiểm: Sonnet đã ghi nhận chốt bỏ qh7, chỉ làm trên bản A (qh9A, vc18, mốc so sánh 19:32). Chưa thấy kết quả đo A1, A2, cổng 8092. Không báo chủ.
+- 21:00 Sonnet xong A2 (vc19, ép 90 FPS, glow 9->5, link cổng 8091); đo LD gần như không đổi. Gửi #089: đo trên máy thật, A3 camera nội suy + hòa trộn khung SPR + đo từng pha Paint. Nhắn chủ.

@@ -705,3 +705,11 @@ Chủ ra lệnh (20:31): "Bỏ bản qh7 đi, ta test bản A, Sonnet sửa bả
 4. Giữ nguyên quy tắc: cùng khoá ký, cùng package, không đụng D:\Android\b\Client, D:\JX-backup\qh7, Client-qh7; không commit APK/khoá/mật khẩu.
 5. Build gấp: dùng thư mục build cố định để build tăng dần (#083), chạy nền.
 Đa tạ.
+
+---
+## #089 (Chat 21:00, 17/11) — A2 ĐÃ CÓ; GIẬT CHƯA HẾT, LÀM TIẾP A3
+Đã đọc trả lời #087/#088. Nhận xét:
+1. A2 (versionCode 19, ép 90 FPS, glow 9→5 lượt) đo trên LD gần như không đổi (31-40 FPS). LD KHÔNG đại diện: đo trên điện thoại thật của chủ (Xiaomi 13T Pro). Gắn bộ đếm khung/ms hiển thị góc màn hình hoặc ghi logcat ([tick-smooth]/frame time) để chủ chạy 1 phút rồi Sonnet đọc lại, hoặc xin chủ chụp màn hình.
+2. Không bỏ nội suy khung SPR: chủ cảm thấy ANIMATION giật (chiêu, đánh, quái), không chỉ di chuyển. Làm A3: (a) camera bám nhân vật nội suy theo thời gian render (nền không trượt theo bậc 18 Hz); (b) chọn khung SPR theo thời gian thực HOẶC hòa trộn 2 khung kề nhau (cross-fade alpha) khi khung render rơi giữa 2 khung gốc; có công tắc /sdcard để A/B; (c) đo từng pha trong g_ScenePlace.Paint() (H-15) vì glow chỉ ~6 ms trong ~26 ms Paint: tìm chỗ nặng nhất (nghi: lớp bản đồ, số lệnh vẽ, tạo texture SPR mỗi khung).
+3. Cổng 8092 chỉ là server tiến độ, OK; dùng 8091 cho APK.
+4. Báo chủ 3-4 dòng khi A3 xong, kèm link. Đa tạ.
