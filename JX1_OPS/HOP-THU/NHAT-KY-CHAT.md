@@ -118,3 +118,4 @@
 - 00:00 Chủ chốt nguồn chuẩn là Vinagame. Chat tìm được trang thứ cấp (gamemoira, bản CTC 2019) cho câu 1 An Bang: 4 loại Hạng Liên/Ngọc Bội/Nhẫn Thủy/Nhẫn Hỏa; ghi vào KIEM-TRA-KIEN-THUC.md làm đáp án tham khảo; gửi #096. Chưa tìm được trang Vinagame chính thức.
 - 00:05 Chủ chốt tiêu chí chấm: dẫn được tới file mang tên (An Bang...) = đúng; Chat chỉ nắm sơ bộ, không sa đà nguồn mạng; dữ liệu chuẩn hóa UTF-8/TCVN3 bởi Sonnet. Gửi #097; cập nhật KIEM-TRA-KIEN-THUC.md.
 - 00:10 Chủ báo Sonnet đang chuẩn hóa dữ liệu: hoãn đợt 1; thêm bước 0 (hỏi chuẩn hóa xong chưa) vào quy trình; gửi #098 hỏi tình trạng chuẩn hóa.
+- 00:03 Chủ dặn giữ thông tin không loạn: tạo HOP-THU/THU-HIEN-HANH.md (bảng thư hiệu lực/thay thế), cập nhật mỗi lần gửi thư.
