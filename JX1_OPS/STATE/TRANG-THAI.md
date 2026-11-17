@@ -254,3 +254,5 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 - 17/11 14:32 Gộp I-03 (quái vật).
 
 - 17/11 14:53 Gộp H-13. Giao J-05 (K4). Hàng đợi: J-01..J-04, J-06, I-06, H-09.
+
+- 17/11 15:14 Gộp H-12, H-14, H-15, I-01, I-02, I-04, I-07, I-08. Chạy lại I-05, A-17, J-05 (429). Giao J-01..J-04, J-06. Đang chạy 8 worker.
