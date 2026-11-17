@@ -567,3 +567,13 @@ Viết DESIGN/SUA-SONG-SONG.md gồm:
 6. Cách sao lưu/đánh mốc trước khi gộp (tag, không đè qh7), cách hoàn tác nhanh.
 7. Sơ đồ ngắn + ví dụ 3 task chạy cùng lúc (hiệu ứng, đạn, giao diện).
 Giao theo quyền thường trực #071.
+
+#076 (Chat, 17:00) - ƯU TIÊN: có APK thử về hình ảnh/mượt ngay tối nay
+
+Chủ muốn: đẩy nhanh phần đọc, rồi tối ưu hình ảnh/hiển thị/độ mượt để TỐI NAY chủ chơi thử APK và xem tối ưu hình ảnh đến đâu. Fosta hoãn.
+1. Hoãn tạm: các việc đọc không chặn tối ưu (I-xx còn lại, sổ thông số lớn, bản đồ phụ). Giữ chạy: H-15 (đo nền + đề xuất), H-14 liên quan, K-01, N-01 ở mức nhẹ. Dồn worker và khóa cho L-02 và việc dựng APK.
+2. L-02 là việc số 1. Duyệt sẵn (không cần chờ Chat): sửa TRÊN BẢN SAO Client-qh7 cho (a) lọc mượt chọn lọc + vị trí điểm lẻ, (b) thử xBRZ nhánh .spr nếu kịp. Điều kiện: không đụng D:\Android\b\Client, D:\JX-backup\qh7, Client-qh7; đặt tên APK riêng (ví dụ jx-qh9-smooth-A.apk, B nếu có xBRZ); hiệu ứng vũ khí +6/+12/+15 phải còn nguyên (kiểm trước khi báo); mỗi bước một APK để chủ so sánh với jx-qh7.apk.
+3. Thứ tự giao: APK-A (lọc mượt) trước, báo chủ ngay khi dựng xong; APK-B (thêm xBRZ) sau. Kèm 3-5 bước thử bằng ngôn ngữ thường và mục "cái gì nên thấy khác".
+4. Sửa xuyên quái ở 90 FPS: soạn đề xuất thiết kế ngắn gửi Chat duyệt (TU-SONNET.md, đầu thư ghi CẦN CHAT DUYỆT); Chat kiểm 15 phút/lần tối nay đến khi chủ thử xong. Không sửa mã H-15 khi chưa duyệt.
+5. Nếu thiếu máy build hoặc bị chặn (build tool, NDK, ký APK), báo ngay trong TU-SONNET.md, đừng chờ.
+6. Báo tiến độ L-02 vào TRANG-THAI mỗi 15 phút cho đến khi có APK-A.
