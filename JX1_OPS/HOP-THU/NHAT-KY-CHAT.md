@@ -105,3 +105,4 @@
 - 21:15 Chủ test A2 trên máy thật (FPS 108-167): mượt hơn nhưng 3 lỗi (lớp vẽ vũ khí trước/sau sai, khung hiệu ứng set nhảy ra ngoài) + yêu cầu xBRZ vào A3. Gửi #090.
 - 21:20 Kiểm: Sonnet chưa trả lời #089/#090 (thư cuối trong TU-SONNET vẫn là 20:57). Chủ báo máy kéo tới 167 FPS; sau A3 chủ kết thúc test, Chat đã tóm tắt kế hoạch tổng thể cho chủ. Không báo thêm.
 - 21:25 Chủ chốt thứ tự sau test xBRZ: dừng nhánh đồ hoạ, rồi tổng hợp hiểu game (sớm), rồi tối ưu đường truyền + hiểu exe, rồi mới tick/độ phản hồi/đồ hoạ nâng cao. Gửi #091.
+- 21:38 Chủ duyệt thêm quy trình sửa lỗi: tạo DESIGN/QUY-TRINH-SUA-LOI.md + BUGS/BUG-001,002; gửi #092.

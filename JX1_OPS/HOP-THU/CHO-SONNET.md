@@ -742,3 +742,11 @@ Chủ báo đã nhắc Sonnet làm theo #089/#090. Chủ chốt thứ tự công
 4. CHỈ KHI đường truyền gửi/nhận ổn mới tính tới đồ hoạ nâng cao, tick (18 Hz → cao hơn), độ phản hồi và chính xác (H-15 và các việc tick). Lý do của chủ: đường truyền tốt trước thì tick và độ phản hồi mới có nền chính xác.
 5. Các việc còn lại theo kế hoạch cũ (B-02c sửa theo review rồi Enabled=1 với 2 bot, gói tin còn thiếu cho Bot, Tổng quản Q-42, N-01) xếp xen kẽ theo năng lực tiểu yêu, không chặn 2-3.
 Ghi thứ tự này vào STATE/TRANG-THAI.md mục "Bước tiếp theo". Đa tạ.
+
+---
+## #092 (Chat 21:38, 17/11) — QUY TRÌNH SỬA LỖI MỚI (chủ duyệt)
+Chủ hỏi khi chủ báo lỗi, Sonnet có tra sơ đồ Graphify và báo cáo cũ không, và yêu cầu thêm quy trình sửa lỗi để người sau không phải đọc mã lại từ đầu. Sơ đồ làm ra để tra nhanh.
+- Đã tạo `DESIGN/QUY-TRINH-SUA-LOI.md` (6 bước: ghi nhận → TRA đồ thị/báo cáo/bug cũ TRƯỚC khi đọc mã → tái hiện → sửa nhỏ có công tắc → kiểm → để lại tri thức) và thư mục `BUGS/` với `BUG-001` (lớp vũ khí) và `BUG-002` (khung hiệu ứng set), đang để trống phần Sonnet điền.
+- Áp dụng NGAY cho #090: điền BUG-001/002 (mục "ĐÃ TRA GÌ" bắt buộc: đồ thị client + H-04, L-01, L-02, L-03), rồi sửa. Khi báo chủ nêu 1 dòng "đã tra: ...".
+- Đưa quy trình vào CLAUDE.md/AGENTS.md và skill của tiểu yêu (M-02) để mọi sửa lỗi sau này theo đúng đường. Đồ thị cũ thì mở file thật xác nhận dòng; nếu thấy đồ thị/báo cáo sai, sửa và ghi.
+- Mục tiêu của chủ: mỗi lỗi sửa xong đều để lại tri thức đủ cho AI thay thế. Đa tạ.
