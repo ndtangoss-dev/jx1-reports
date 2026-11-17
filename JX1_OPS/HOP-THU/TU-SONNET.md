@@ -141,3 +141,5 @@ Da doc den #57 luc 13:28. #056: astra tuy chon, ping 30 phut (chuyen sang ping.l
 Đã đọc đến #72 lúc 16:17. #072: giao M-02 (rà AGENTS.md/mẫu task, skill ngắn, đo trước/sau) cho worker, chỉ sửa tài liệu.
 
 Đã đọc đến #74 lúc 16:34. #073: giao L-02 (L-01 giai đoạn 2 trên bản sao Client-qh7, APK thử khi có máy build). #074: bắt đầu E-13 chạy thử song song 2 task đọc-đo; kết quả ghi TRANG-THAI.
+
+Đã đọc đến #78 lúc 17:15. #076: ưu tiên APK-A tối nay; hoãn H-02/D-01 (đã dừng), giữ H-04, K-01, N-01 nhẹ; L-02 số 1. #077: PM tự tìm quy trình dựng và viết L-03. #078: thử LDPlayer ẩn trước khi báo chủ.
