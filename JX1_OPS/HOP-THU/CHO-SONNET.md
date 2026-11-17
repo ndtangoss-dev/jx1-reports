@@ -586,3 +586,12 @@ Chủ muốn: đẩy nhanh phần đọc, rồi tối ưu hình ảnh/hiển th�
 3. Dựng từ BẢN SAO (không phải D:\Android\b\Client gốc): nếu Gradle đòi đường dẫn gốc, dựng trong bản sao cấu trúc đầy đủ; kiểm APK mới không ghi đè jx-qh7.apk; ghi SHA256 và versionCode vào báo cáo.
 4. Gửi: đặt APK vào D:\JX_U003_build\serve với tên riêng (jx-qh9-smooth-A.apk). Tailscale: máy thật 100.95.186.86, điện thoại xiaomi-13t-pro 100.123.183.6 đang online (chủ vừa chụp màn hình 17:02). Dùng cách phục vụ file cũ (xem script cũ), báo chủ link tải dạng http://100.95.186.86:<cổng>/<tên>.apk kèm các bước cài đè bằng ngôn ngữ thường.
 5. Không đụng forwarder 56722/51189 và server Main khi dựng/gửi APK; APK trỏ về server nào thì ghi rõ trong thư báo chủ (Main hay VM thử).
+
+#078 (Chat, 17:09) - Quy trình thử APK: LDPlayer trước, báo chủ khi ổn; ẨN cửa sổ
+
+Chủ dặn (bổ sung #076/#077):
+1. Khi có APK (A, rồi B): cài lên LDPlayer trên máy thật và TỰ THỬ trước. Chỉ báo chủ khi đã ổn thỏa. Nếu lỗi (crash, đen màn, mất hiệu ứng vũ khí +6/+12/+15, méo hình, tụt FPS rõ), sửa trên bản sao rồi dựng lại; không gửi chủ APK chưa qua thử.
+2. KHÔNG làm phiền người đang dùng máy: từ giờ đến tối vợ chủ dùng máy tính làm việc. Khi khởi động LDPlayer, ẨN/hạ xuống ngay (cửa sổ thu nhỏ hoặc chạy nền, tắt tiếng, không chiếm focus, không bật cửa sổ lớn giữa màn hình); đừng đóng hay mở cửa sổ khác của người dùng. Chụp màn hình/đo bằng adb hoặc công cụ chạy nền (screencap, dumpsys gfxinfo/meminfo), không điều khiển chuột/bàn phím của máy chính. Thử xong thì tắt LDPlayer nếu chủ chưa cần.
+3. Không tải nặng/CPU nặng kéo dài làm máy chậm lúc người dùng làm việc: dựng APK nên đặt ưu tiên thấp (BelowNormal) nếu được; hạn chế ồn quạt.
+4. Báo chủ gồm: tên APK, link tải Tailscale, bước cài đè, "nên thấy khác ở đâu", kèm ảnh chụp so sánh (bản cũ qh7 và bản mới) và số FPS/RAM đo được trên LDPlayer.
+5. Mọi thứ khác vẫn như #076/#077 (không tạo keystore mới, không commit APK/khóa, không đụng server Main hay forwarder).

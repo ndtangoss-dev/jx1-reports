@@ -82,3 +82,4 @@
 - 16:56 Kiểm 30 phút: J-03, M-02 đã gộp; E-13 chạy thật thử X-01..X-04 (lỗi do max-seconds 60s, đã chạy lại); L-02 giao; I-06b giao; N-01 chưa có báo cáo. Chủ hỏi Cloudflare Worker và API Fosta: bàn riêng, chưa giao Sonnet.
 - 17:00 #076: chủ muốn APK thử hình ảnh tối nay; duyệt sẵn L-02 trên bản sao qh7; Chat kiểm 15 phút/lần; Fosta hoãn.
 - 17:05 #077: chủ nhắc máy thật dựng được APK, cài đè qua Tailscale cùng khóa ký; giao L-03 ghi quy trình dựng APK; điện thoại và máy thật đang online trên Tailscale.
+- 17:09 #078: chủ dặn thử APK trên LDPlayer trước, ổn mới báo; ẨN cửa sổ vì vợ chủ dùng máy tối nay.
