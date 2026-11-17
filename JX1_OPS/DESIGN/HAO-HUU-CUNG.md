@@ -50,3 +50,6 @@ A-08: kiểm kê môn phái, đồng bạn, lửa trại, nướng cá, kinh ngh
 ## Quyết định chủ dự án 17/11 07:01
 - Lửa trại: nhân đôi kinh nghiệm mỗi người nhận (đã chốt). 
 - Phân biệt: Pet (thú cưng, đi theo, 1 con, không phái) khác Hảo hữu cứng (đồng bạn NPC theo phái, có cấp, trang bị, thân mật, vai đánh đơn/AOE) khác Bạn bè (người chơi thật). Chủ dự án đang hình dung hảo hữu như đồng hành dạng pet; cần giải thích và chốt số lượng.
+
+## Chốt 17/11 07:08
+- 10 hảo hữu mỗi người (Q-36). Mục tiêu chơi: người chơi tự kiếm trang bị cho hảo hữu để tổ đội mạnh lên (A-12 khảo sát khả năng mặc đồ).

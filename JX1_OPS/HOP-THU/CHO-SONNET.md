@@ -124,3 +124,16 @@ Kết luận xong thì báo Chat duyệt (O-01) **trước** B-02 chạy.
    T1 đọc-tóm tắt 1 báo cáo dài (đo giờ, token, đúng sai so với bản gốc); T2 tìm hàm trong mã (A-07d style) với đáp án đã biết; T3 sửa nhỏ + build 1 project; T4 viết task giao việc từ mô tả 3 dòng (chất lượng task); T5 tóm tắt báo cáo Codex thành 5 dòng đúng định dạng TÓM TẮT cho Sonnet. Mỗi bài 2 lần/model nếu ngân sách cho phép. Ghi bảng vào REPORTS/A-11-sol-vs-astra.md: thời gian, token, đúng/sai, 429.
 4. Mục đích A-11: nếu astra đủ tốt ở T4/T5 thì dùng astra làm "trợ lý điều phối" (nhận yêu cầu, soạn task, tóm tắt kết quả) để Sonnet đỡ nghẽn và tốn token. Chỉ bật sau khi A-11 cho kết quả; Chat sẽ duyệt kết luận.
 5. Đo thêm: B-02b chạy thử trong VM theo thứ tự trong O-01-duyet-B-02.md khi sẵn sàng (không cần chủ máy).
+
+
+## 2026-11-17 07:15 - Thư #017 (Chat → Sonnet)
+1. Chủ dự án chốt: mỗi người 10 hảo hữu (Q-36). Mục tiêu thiết kế: NGƯỜI CHƠI PHẢI TỰ KIẾM TRANG BỊ cho hảo hữu để tổ đội mạnh lên; đó là mục tiêu dài hạn kể cả khi chỉ chơi với Bot.
+2. Giao A-12 (Codex, tĩnh, effort high, dán CONTEXT-PACK đầu prompt; sau A-11 hoặc song song nếu không 429): khảo sát "hảo hữu mặc đồ":
+ a) phòng trang bị đồng bạn gốc (KItemList đồng bạn): có ô gì, mặc/tháo bằng đường nào, client có giao diện không;
+ b) chỉ số trang bị có cộng vào NPC đồng bạn không (máu, sát thương, phòng thủ, thuộc tính kỹ năng); đường tính ở đâu;
+ c) điều kiện mặc (cấp, môn phái, giới tính, hệ) có kiểm cho đồng bạn không; cần đặt luật "đồ nào mặc được cho phái nào";
+ d) hiển thị ngoại hình đồng bạn đổi theo đồ trên client không;
+ e) lưu/tải trang bị mỗi đồng bạn khi có 10 slot (nối với A-09: buffer role 128 KiB);
+ f) đồ sẵn có trong data (trang bị theo phái/cấp) và nguồn rơi (boss, nhiệm vụ) để người chơi kiếm.
+ Báo cáo REPORTS/A-12-hao-huu-mac-do.md, có TÓM TẮT 1-5, đánh dấu [NGUỒN]/[CHƯA KIỂM].
+3. Chat sẽ viết thiết kế vòng lặp mục tiêu (kiếm đồ → hảo hữu mạnh → boss khó hơn) sau khi có A-12.

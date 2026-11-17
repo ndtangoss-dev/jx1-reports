@@ -8,3 +8,4 @@
 - 2026-11-17 05:35 Chat duyệt B-02 có điều kiện (O-01-duyet-B-02.md), tạo CONTEXT-PACK/GS001-MAP.md, gửi #015 (astra khi sol 429).
 - 2026-11-17 06:45 Chat đọc báo cáo đêm 05:00/05:45 của Sonnet, soạn báo cáo sáng cho chủ dự án (đăng trong chat).
 - 2026-11-17 07:10 Chủ dự án dậy: chốt lửa trại x2 mỗi người, admin gom, repo giữ public, ưu tiên tự động; gửi #016 (A-11 test sol vs astra).
+- 2026-11-17 07:15 Chủ dự án chốt 10 hảo hữu, muốn hảo hữu mặc đồ do người chơi kiếm; gửi #017 (A-12).
