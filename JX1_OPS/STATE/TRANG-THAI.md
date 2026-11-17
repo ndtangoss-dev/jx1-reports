@@ -184,3 +184,4 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 - [05:36] B-02b: 429 lan 3 (request id 3d3e1be9...). Codex dung xong Engine+LuaLibDll roi chet. PM tu dung tiep CoreServer+GameServer (checkpoint-b02b-a07e, --resume). Khong giao lai Codex.
 - [05:45] B-02b XONG: build 5/5 exit 0 (PM tu dung, Codex 429 x3). Xem REPORTS/B-02b-build-tren-a07e.md. Chua chay VM. gs001 A-07e HEVA-on van song (>4300s).
 - [05:50] B-02b: da gỡ HEVA ban sao (D:\JX-build\b02b\gs001_nohe.exe), Defender may that loi lan 2. 0-08 doi chu may (can dong/mo Claude Code).
+- [05:55] E-01b giao Codex (high): bo tach ban ghi dong bo the gioi cho Bot (worktree D:\JX-wt\E-01b). 0-08 cho chu may.
