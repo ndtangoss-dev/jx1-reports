@@ -283,3 +283,4 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 - 2026-11-17 19:05 X-03 xong, đã merge (REPORTS/X-03*.md).
 - 2026-11-17 19:05 H-04 xong, đã merge (REPORTS/H-04*.md).
 - [DUNG-CAN-CHU 2026-11-17 19:46] Cho chu: (1) go duyet truc tiep tao tk test jxld02 tren Main VM + ghi mat khau vao tk-test.txt (thu #85, phan quyen chan vi lenh den tu Chat); (2) chay Admin khoi_dong_lai_apk_8091.ps1 bang duong dan day du. Dang do: A0 gradle van chay, chua xac nhan APK A0 la ban moi; #83 chan doan build; H-15.
+- 17/11 19:51 Da tao tk test jxld02 tren Main VM theo chu duyet (thu #85); chi them 1 dong Account_Info + 1 Account_Habitus. Ghi chu hoan tac o D:\JX-reports-private. Tiep: thu LDPlayer APK-A.
