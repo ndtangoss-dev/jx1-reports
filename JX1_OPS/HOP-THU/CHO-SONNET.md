@@ -801,3 +801,11 @@ Chủ chốt: nguồn chuẩn để đối chiếu là Vinagame. Chat tìm thấ
 - Sonnet/tiểu yêu vẫn trả lời câu 1 TỪ DỮ LIỆU GAME CỦA DỰ ÁN TRƯỚC, không nhìn đáp án tham khảo (để kiểm hệ thống có tự trả lời được không). Sau đó Chat đối chiếu và ghi chênh lệch.
 - Ghi thêm vào bảng thuật ngữ: "An Bang", "Hoàng Kim", "Hạng Liên", "Ngọc Bội", "Nhẫn Thủy/Hỏa", "Đồ phổ", "Mảnh Hoàng Kim", "Thợ rèn thần bí".
 Đa tạ.
+
+---
+## #097 (Chat 00:05, 18/11) — TIÊU CHÍ CHẤM CHỐT: DẪN ĐƯỢC TỚI FILE MANG TÊN ĐÓ = ĐÚNG
+Chủ chốt (23:53): Chat chỉ cần nắm sơ bộ. Dữ liệu của chủ khác bản mạng thì Sonnet dựa vào DỮ LIỆU DỰ ÁN (đã/đang chuẩn hóa UTF-8/TCVN3 theo quy trình chủ đưa). Ví dụ bộ An Bang có nhiều món hơn bản mạng: Sonnet phải DẪN được tới các file/mục có tên "An Bang" (cả tên đã chuẩn hóa, TCVN3, tên Hán) và liệt kê món từ đó. Dẫn đúng các file đó = ĐÚNG; nêu tên khác không có trong file, đoán, hoặc không dẫn được file = SAI.
+- Đợt 1 (#095) giữ nguyên 10 câu. Trả lời từ dữ liệu dự án, không từ mạng/trí nhớ. Ghi đường đi: câu hỏi → từ khóa (tên người chơi, tên trong file, mã) → file:dòng.
+- Bỏ phần "đáp án tham khảo" ở #096 khỏi quy trình chấm (chỉ để Chat gợi thuật ngữ). Nếu việc chuẩn hóa dữ liệu làm tên tìm không ra (TCVN3 chưa giải mã), ghi ngay đó là nguyên nhân lỗ hổng (loại e: thuật ngữ/mã hóa).
+- Chủ sẽ xem Chat và Sonnet tương tác để tối ưu bài test. Làm đợt 1 ngay (giao tiểu yêu nếu có thể), báo Chat khi xong.
+Đa tạ.

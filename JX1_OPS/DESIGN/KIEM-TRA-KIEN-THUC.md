@@ -20,3 +20,9 @@ Mục đích (chủ giao 17/11 23:46): Chat cũng phải nắm tri thức game. 
 
 ## Mẫu một dòng trong NHAT-KY-HOI-DAP.md
 `| # | giờ | câu hỏi (lời người chơi) | đáp án của Sonnet | nguồn | đường tra | tin cậy | chấm | nguyên nhân lỗ hổng / vì sao được | cách vá |`
+
+## TIÊU CHÍ CHẤM (chủ chốt 17/11 23:53, thay cho phần kiểm chéo nặng ở trên)
+- Chat chỉ cần nắm SƠ BỘ về game, không cần chuẩn từng chi tiết; không sa đà tìm nguồn mạng. Dữ liệu của chủ đã/đang được chuẩn hóa UTF-8 và TCVN3 bởi Sonnet (quy trình chủ đưa), nên dữ liệu dự án là nguồn đúng.
+- Nếu bản của chủ khác bản mạng (vd bộ An Bang nhiều món hơn): Sonnet phải DẪN ĐƯỢC tới các file/mục dữ liệu có tên "An Bang" (gồm cả tên chuẩn hóa/TCVN3/tên Hán nếu có), liệt kê món từ đó. ĐÚNG = dẫn được tới đúng các file/mục mang tên đó và đáp án khớp nội dung file. SAI = đưa ra tên khác không có trong file, đoán, hoặc không dẫn được file.
+- Chat không tự quyết đúng sai theo trí nhớ/mạng; chấm theo: có dẫn đúng file mang tên đó không, đáp án có khớp file không. Đáp án mạng chỉ là gợi ý thuật ngữ.
+- Chủ sẽ xem cách Chat và Sonnet tương tác rồi tối ưu bài test cho Chat; Chat ghi lại những chỗ vướng khi chấm (khó chấm, câu hỏi chưa rõ) vào cuối NHAT-KY-HOI-DAP.md để chủ tối ưu.
