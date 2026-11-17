@@ -117,3 +117,4 @@ Da doc den #41 luc 11:28. Lam: bang hieu qua trong TRANG-THAI; giao 6 task (E-10
 Da doc den #44 luc 11:38. Lam: monitor chong (bew2owsey, theo moi .done); giao E-13 (tong quan P1), G-01 (lua trai), F-01 (UI hao huu); them khoa K5+ de len 12 worker.
 Da doc den #46 luc 11:53
 Da doc den #47 luc 12:05
+Da doc den #49 luc 12:26. Lam: #48 (1)(2) xong, (3) chua can; #49 F-02 hoan vi can chu tu dang nhap Groq (xem TRANG-THAI).
