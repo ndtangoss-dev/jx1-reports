@@ -280,3 +280,5 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 - 2026-11-17 17:05 X-04: xong (exit=0), da gop.
 - 2026-11-17 17:05 E-13 chay that: X-04 xong qua dispatcher dung; X-03 bi dispatcher danh dau blocked:timeout (~15 phut, log ngung 16:53), PM chay lai tay; X-01/X-02 lan dau im sau khi dispatcher thoat (state 1), chay lai tay xong. Chua du dieu kien chuyen han Q-42.
 - 2026-11-17 19:04 APK-A: jx-qh9-smooth-A.apk (versionCode 18, cert a48601f7, SHA256 137691757920392e9fc9695ab963906d267b1b185a12e612f1296a9f41081116) dựng xong, phát ở D:\JX1_U003_build\serve, link http://100.95.186.86:8091/jx-qh9-smooth-A.apk; chủ yêu cầu gửi test thẳng, chưa thử LD. A0 đối chứng, APK-B và H-15 chưa làm.
+- 2026-11-17 19:05 X-03 xong, đã merge (REPORTS/X-03*.md).
+- 2026-11-17 19:05 H-04 xong, đã merge (REPORTS/H-04*.md).
