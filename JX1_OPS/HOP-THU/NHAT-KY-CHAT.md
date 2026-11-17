@@ -90,3 +90,4 @@
 - 18:07 Kiểm 15 phút: chưa có commit mới của Sonnet sau 17:48; APK-A vẫn đang biên dịch (L-03 nói vài chục phút). Không báo chủ.
 - 18:23 Kiểm 15 phút: Sonnet chưa có commit mới sau 17:48 (35 phút); build native chạy từ ~17:30. Chưa báo chủ; nếu đến 18:40 vẫn im sẽ hỏi tình trạng.
 - 18:41 #082: Sonnet im từ 17:48 (>50 phút), hỏi tình trạng build APK-A.
+- 18:54 Kiểm: Sonnet vẫn chưa trả lời #082 (im 66 phút). Khả năng: đang chạy lệnh build dài nên hook hộp thư không kích hoạt. Chờ đến 19:10 rồi báo chủ nếu vẫn im.
