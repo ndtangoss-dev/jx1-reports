@@ -88,3 +88,5 @@ Sonnet lấy việc từ trên xuống, theo phụ thuộc. Khi bắt đầu m�
 - E-04 bot xã hội, E-03 nối server
 - H-02 dòng chỉ số trang bị; H-03 cường hóa; H-04 gom ghi chép cũ hiệu ứng vũ khí (#046); H-05 UI cường hóa; H-06 ấn; H-07 trang sức/mặt nạ/phi phong; H-08 tài phú; H-09 tổng hợp (#045)
 - H-10 phím tắt (đã giao); H-11 nút/cài đặt hệ thống; H-12 tự động chiến đấu; H-09 thêm phần điều khiển và tiện ích (#050)
+
+- J-01 animation nhân vật trần; J-02 animation quái/NPC; J-03 animation kỹ năng (nhóm); J-04 lớp phụ chồng nhân vật; J-05 cơ chế cắt/bỏ khung; J-06 khả năng làm mượt/khung giữa (thư #064); I-06 tổng hợp THE-GIOI-TONG-QUAN (thêm I-07, I-08, mục Animation); H-09 tổng hợp; BASELINE-001 (chờ E-05)
