@@ -53,3 +53,6 @@ A-08: kiểm kê môn phái, đồng bạn, lửa trại, nướng cá, kinh ngh
 
 ## Chốt 17/11 07:08
 - 10 hảo hữu mỗi người (Q-36). Mục tiêu chơi: người chơi tự kiếm trang bị cho hảo hữu để tổ đội mạnh lên (A-12 khảo sát khả năng mặc đồ).
+
+## Sửa 17/11 07:13
+- Đồ trong game không theo phái; điều kiện mặc: giới tính, cấp, yêu cầu thuộc tính (sức mạnh, thân pháp...). Hảo hữu cần các thuộc tính này để mặc đồ theo luật gốc. Không làm luật "đồ theo phái".

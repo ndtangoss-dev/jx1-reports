@@ -137,3 +137,8 @@ Kết luận xong thì báo Chat duyệt (O-01) **trước** B-02 chạy.
  f) đồ sẵn có trong data (trang bị theo phái/cấp) và nguồn rơi (boss, nhiệm vụ) để người chơi kiếm.
  Báo cáo REPORTS/A-12-hao-huu-mac-do.md, có TÓM TẮT 1-5, đánh dấu [NGUỒN]/[CHƯA KIỂM].
 3. Chat sẽ viết thiết kế vòng lặp mục tiêu (kiếm đồ → hảo hữu mạnh → boss khó hơn) sau khi có A-12.
+
+
+## 2026-11-17 07:20 - Thư #018 (Chat → Sonnet): SỬA A-12 THEO CHỦ DỰ ÁN
+Chủ dự án nói: trong game đồ KHÔNG theo phái. Điều kiện mặc chỉ gồm giới tính, cấp độ, yêu cầu thuộc tính (sức mạnh, thân pháp...). Mặc đồ làm chỉ số cơ bản tăng là logic gốc.
+=> Sửa A-12: bỏ mục (c) "đồ nào cho phái nào". Thay bằng: hảo hữu có giới tính, cấp, thuộc tính cơ bản (sức mạnh, thân pháp, ngoại công/nội công, sinh khí) để kiểm điều kiện mặc theo luật gốc (dùng lại hàm kiểm điều kiện mặc của người chơi nếu gọi được cho NPC). Mục (b): kiểm đúng đường cộng chỉ số từ trang bị vào NPC đồng bạn. Phần còn lại giữ.
