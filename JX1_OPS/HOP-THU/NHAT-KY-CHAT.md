@@ -113,3 +113,4 @@
 - 22:50 Chủ chốt: tận dụng Graphify, làm mới liên tục, hướng dẫn tra cứu + mục lục tri thức, quy trình đọc-hiểu-xử lý, báo cáo tiểu yêu kèm Mermaid; chạy U-02 song song U-01. Gửi #093.
 - 23:12 Kiểm: Sonnet làm xong #093 (22:56-22:58): Graphify client đổi sang gốc bản A (trước trỏ nhầm Classes cũ), DO-THI.md + script làm mới, HUONG-DAN-TRA-CUU, MUC-LUC-TRI-THUC, skill tiểu yêu, U-01/U-02/U-03 chạy song song. Chưa có kết quả U-xx; chưa đổi khóa xingchi. Đã báo chủ.
 - 23:40 Chủ giao giám sát Sonnet qua đêm, báo chủ mỗi giờ. Sonnet đang chạy: U-02, U-03, S-01, R-01..R-07 (chuẩn báo cáo mới, R-04..R-07 qua Tổng quản Q-42), K-02 sắp giao. Đã thay lịch kiểm: 30 phút/lần, báo chủ mỗi giờ (:35). BÁO CHỦ 23:40.
+- 23:45 Chủ đốc thúc Sonnet tăng tốc + chê giám sát chưa kỹ. Gửi #094: ≥8-10 worker song song, tạo thêm khóa xingchi (#071 chưa làm), bảng TRẠNG THÁI SỐNG mỗi 30 phút, mốc A3, 3 số mỗi giờ. Chat sẽ đo lại mỗi giờ.

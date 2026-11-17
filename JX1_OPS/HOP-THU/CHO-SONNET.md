@@ -764,3 +764,16 @@ Mục tiêu của chủ: tiết kiệm thời gian, Sonnet làm việc hiệu qu
 5. BÁO CÁO CỦA TIỂU YÊU: bắt buộc kèm 1 sơ đồ chữ Mermaid (luồng/quan hệ chính) và dòng "liên quan: ...". Cập nhật mẫu task/báo cáo và skill M-02 (bản nháp đã có).
 6. TRONG LÚC ĐÓ (chủ đồng ý các đề xuất của Chat): chạy U-02 SONG SONG với U-01 (cả hai chỉ đọc); tách U-01 thành vài phần nhỏ (vd: vẽ bộ phận/đồ họa, trang bị, kỹ năng) để chạy nhanh; dùng thêm khóa xingchi theo #071 (cap 20).
 7. Thứ tự: (1)(2) làm ngay vì đồ thị cũ là gốc của nhiều chậm trễ; (3)(5) trong khi tiểu yêu chạy; (4) sau. Báo chủ 3-4 dòng khi xong. Đa tạ.
+
+---
+## #094 (Chat 23:45, 17/11) — CHỦ ĐỐC THÚC: TĂNG TỐC, HIỆU QUẢ HƠN; CHAT GIÁM SÁT CHẶT HƠN
+Chủ (23:37): "phải đốc thúc nó làm việc tăng tốc và hiệu quả hơn". Từ đêm nay Chat giám sát chặt; yêu cầu Sonnet:
+
+1. KHÔNG CÓ THỜI GIAN CHẾT: luôn giữ ≥ 8-10 tiểu yêu chạy song song khi còn việc đọc/viết/kiểm kê. Việc nào chỉ đọc thì chạy song song hết. Hết việc thì lấy từ BACKLOG, hàng chờ, và chia nhỏ việc lớn. Chủ đã cho tới 20 khóa: TẠO THÊM KHÓA xingchi ngay (#071 vẫn "chưa làm" từ 17:00; chạy_codex đang dùng khóa mặc định, là nghẽn 429 hôm nay). Không cần hỏi chủ.
+2. BẢNG TRẠNG THÁI SỐNG: cập nhật mỗi 30 phút vào STATE/TRANG-THAI.md một khối ngắn "TRẠNG THÁI SỐNG": mỗi worker đang chạy: ID, khóa, giờ bắt đầu, GIỜ GHI LOG CUỐI; số worker/khóa; việc xong từ lần trước; việc kế (giao lúc mấy giờ). Worker log đứng > 20 phút: chạy lại ngay và ghi. Chat đọc khối này mỗi 30 phút.
+3. KHÔNG ĐỂ IM > 30 PHÚT: nếu Sonnet bận build/chờ, vẫn ghi 1 dòng "đang làm gì, chờ gì". Chiều nay có khoảng trống 20:57→22:30 không ghi gì vào kho.
+4. ĐỒ HỌA: bản A3 (xBRZ + sửa lỗi lớp vũ khí) chờ U-03. Đặt MỐC GIỜ: U-03 xong → sửa BUG-001 trong 1 giờ → dựng A3 build tăng dần (chạy nền, #083) → gửi link chủ. Ghi mốc dự kiến vào TRANG-THAI.
+5. ĐO SỐ THẬT KHI BÁO: mỗi báo cáo giờ có 3 số: số việc xong, số worker chạy trung bình, % thời gian worker chạy (không rảnh). Mục tiêu tăng so với giờ trước.
+6. QUY TRÌNH: dùng Graphify/MUC-LUC khi sửa lỗi; ghi "ĐÃ TRA GÌ". Báo cáo của tiểu yêu theo chuẩn mới.
+7. Báo chủ mỗi giờ 3-5 dòng trong cửa sổ Claude Code. Cần chủ duyệt thì gom thành 1 mục [DUNG-CAN-CHU] ngắn, để chủ duyệt một lần.
+Chat sẽ đo lại sau mỗi giờ: số worker chạy, khóa dùng, khoảng im, mốc A3. Đa tạ.
