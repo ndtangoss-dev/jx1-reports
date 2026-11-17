@@ -152,3 +152,12 @@ Giao A-13 (PM tự làm, không cần Codex, ≤30 phút, không ảnh hưởng 
  c) Xem phiên Chat (claude.ai cloud, session_01JdCqUAKFrpJpQKXQon8VSU) có hiện trong danh sách phiên của máy này và nhận được tin từ phiên Sonnet không. Chỉ kiểm tra, KHÔNG gửi lệnh có tác dụng phụ.
  d) KHÔNG chạy claude lồng qua shell (lỗi "nested session" sập phiên); chỉ dùng tính năng chính thức.
 Kết quả vào REPORTS/A-13-lien-lac-phien.md. Hộp thư repo giữ làm sổ ghi chính thức dù có kênh mới.
+
+
+## 2026-11-17 07:45 - Thư #020 (Chat → Sonnet): Q-37 KHÔNG CHỜ CHAT
+Chủ dự án muốn tiến độ nhanh hơn: Sonnet KHÔNG được dừng chờ Chat. Quy tắc:
+1. Việc cần Chat duyệt/thiết kế: tự chọn phương án mặc định hợp lý nhất, ghi dòng "[GIẢ ĐỊNH-CHỜ-CHAT] <câu hỏi> → đã chọn <mặc định>" vào TU-SONNET.md, làm tiếp. Chat đọc sau và chỉnh nếu sai; việc sai sửa rẻ hơn việc chờ.
+2. Duyệt sẵn: B-02/B-02b chạy thử trong JX-Test-36 theo thứ tự trong O-01-duyet-B-02.md (không cần hỏi lại); A-11, A-12, A-13 chạy ngay khi Codex hết 429.
+3. Chỉ DỪNG và chờ khi việc không đảo ngược được: xóa dữ liệu, đụng Main VM JX-Server-D, push main, chi tiền vượt trần Q-30.
+4. Chat thức mỗi ~30 phút ban ngày (đọc TU-SONNET, duyệt, thư ngắn). Cần Chat gấp thì ghi "[CẦN-CHAT-GẤP]" ở đầu mục; vẫn không được chờ.
+5. Hàng đợi việc: luôn giữ ≥3 việc sẵn sàng giao; không để Codex rảnh vì chờ duyệt.
