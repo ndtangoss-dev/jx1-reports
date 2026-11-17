@@ -185,3 +185,4 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 - [05:45] B-02b XONG: build 5/5 exit 0 (PM tu dung, Codex 429 x3). Xem REPORTS/B-02b-build-tren-a07e.md. Chua chay VM. gs001 A-07e HEVA-on van song (>4300s).
 - [05:50] B-02b: da gỡ HEVA ban sao (D:\JX-build\b02b\gs001_nohe.exe), Defender may that loi lan 2. 0-08 doi chu may (can dong/mo Claude Code).
 - [05:55] E-01b giao Codex (high): bo tach ban ghi dong bo the gioi cho Bot (worktree D:\JX-wt\E-01b). 0-08 cho chu may.
+- [08:05] 0-10 (do chi phi Codex, 9 task xong, tu log `turn.completed`): input trung binh ~6,5 trieu token (~95% la cache), output trung binh ~31,5 nghin (min C-01 1,7M/24,7k; max A-07b 13,9M/42,4k, A-05 10,2M/49,3k). Chua co don gia/tran 5 gio tu xingchi nen KHONG tinh tien; tran tam: toi da 3 worker dong thoi (#013), 429 xuat hien khi chay lien tuc ~3 worker + retry (B-02b 3 lan 429 luc 04:59-05:34).
