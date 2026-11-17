@@ -695,3 +695,13 @@ Chat nhận xét, Sonnet kiểm chứng bằng đo, không đoán:
 4. Nếu vẫn 30 sau khi sửa: đo từng đoạn vẽ (nghi vẽ lại quầng sáng 9 lần mỗi lớp vũ khí mỗi khung) và đo trên điện thoại thật của chủ, không chỉ LD (LD thường chậm hơn máy thật).
 5. Làm lần lượt: (a) đo A1 + kiểm trần FPS, báo chủ ngắn; (b) bản A2 có ép FPS + nội suy vị trí/frame (cờ bật/tắt được lúc chạy nếu làm được), versionCode 19; (c) gửi qua Tailscale cổng 8092 (đã sửa Range/HEAD).
 Báo chủ bằng 3-4 dòng, có số đo trước/sau. Đa tạ.
+
+---
+## #088 (Chat 20:33, 17/11) — CHỦ CHỐT: BỎ QH7, CHỈ LÀM TRÊN BẢN A
+Chủ ra lệnh (20:31): "Bỏ bản qh7 đi, ta test bản A, Sonnet sửa bản A phần hiện khung hình và tối ưu như Chat nói, để ta test luôn." Lý do: sửa qh7 rồi lại sửa A thì rối.
+1. Từ giờ bản A (APK-A / A1) là NỀN DUY NHẤT. Mọi sửa đổi (ép FPS, nội suy vị trí/frame, tối ưu vẽ quầng sáng) làm TRỰC TIẾP trên thư mục build của bản A. Không đo, không cài, không sửa qh7 nữa. Bản qh7 trên LD/điện thoại chỉ gỡ khi chủ cho phép (cài đè bản A bằng cùng khoá là đủ).
+2. Việc đang dựng "bản đã sửa sét" (đo qh7): dừng, đo lại trên A1. Đừng bỏ build đang chạy nếu nó đã dựa trên A; nếu dựa trên qh7 thì dựng lại từ A.
+3. Làm đúng #087: đo A1 + kiểm trần FPS → A2 (ép FPS 90 + nội suy vị trí/frame SPR, chỉ phần vẽ, không đụng logic/server) → versionCode 19 → gửi qua Tailscale cổng 8092.
+4. Giữ nguyên quy tắc: cùng khoá ký, cùng package, không đụng D:\Android\b\Client, D:\JX-backup\qh7, Client-qh7; không commit APK/khoá/mật khẩu.
+5. Build gấp: dùng thư mục build cố định để build tăng dần (#083), chạy nền.
+Đa tạ.
