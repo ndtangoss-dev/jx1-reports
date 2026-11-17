@@ -56,3 +56,12 @@ A-08: kiểm kê môn phái, đồng bạn, lửa trại, nướng cá, kinh ngh
 
 ## Sửa 17/11 07:13
 - Đồ trong game không theo phái; điều kiện mặc: giới tính, cấp, yêu cầu thuộc tính (sức mạnh, thân pháp...). Hảo hữu cần các thuộc tính này để mặc đồ theo luật gốc. Không làm luật "đồ theo phái".
+
+## Vòng lặp mục tiêu (Chat, 17/11 12:40) - bản nháp
+Mục tiêu dài hạn: người chơi luôn có việc để làm kể cả chơi với Bot.
+1. Đánh boss/hoạt động → rơi đồ (đồ theo giới tính, cấp, yêu cầu thuộc tính; không theo phái).
+2. Chọn hảo hữu (10 phái khác phái mình) hợp đồ: đủ cấp và thuộc tính (sức mạnh, thân pháp...). Hảo hữu cần chỉ số riêng để mặc.
+3. Mặc đồ → chỉ số cơ bản và sát thương tăng theo công thức gốc → đội mạnh hơn.
+4. Đội mạnh → đánh được boss/hoạt động khó hơn (boss xanh, Tống Kim) → đồ tốt hơn. Quay lại bước 1.
+Phụ: lửa trại tại boss xanh (nhân đôi kinh nghiệm mỗi người nhận) và nướng cá tăng thân mật là phần thưởng xã hội trong vòng lặp; thân mật cao có thể mở thêm vai đánh (đơn/AOE) hoặc ô trang bị.
+Việc cần làm trước khi thiết kế chi tiết: A-15 (10 phái: bộ skill và vai), bảng rơi đồ boss, kiểm tra đo chỉ số/sát thương bằng TESTER (E-05), khảo sát giao diện client cho trang bị hảo hữu (A-14).

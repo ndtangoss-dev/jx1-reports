@@ -41,3 +41,4 @@
 - 2026-11-17 12:35 Chủ dự án: tăng quân số; gửi #042 (8-12 worker, chia ≥12 task độc lập, gợi ý cắt 11 phái/hoạt động/tester).
 - 2026-11-17 12:45 Chủ dự án hỏi monitor hết hạn; gửi #043 (monitor persistent/chồng nhau, hook tự gắn lại).
 - 2026-11-17 12:55 Chủ dự án hỏi lớp điều phối; viết DESIGN/TONG-QUAN-DIEU-PHOI.md, gửi #044 (E-13 Tổng quản P1).
+- 2026-11-17 11:37 Kiểm 30 phút: Sonnet chưa có commit mới sau 11:28 (6 task đang chạy theo #041). Thêm vòng lặp mục tiêu hảo hữu vào DESIGN. Không thư mới.
