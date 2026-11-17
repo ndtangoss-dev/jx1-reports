@@ -7,6 +7,53 @@ TÓM TẮT 5 DÒNG
 
 # E-12 — Khảo sát tĩnh giao thức tương tác cho E-04
 
+Loại: khảo sát
+Chủ đề: Định vị gói chat, tổ đội, giao dịch và xem trang bị cùng giới hạn quyền tương tác BOT.
+Từ khóa: tương tác, trò chuyện, tổ đội, giao dịch, trang bị, BOT, c2s_extendchat, CHAT_SOMEONECHAT_CMD, CanInteract
+Trạng thái: DONE — chuẩn hóa R-04c; kết luận khảo sát cũ và các khoảng trống quyền BOT được giữ nguyên.
+Độ phủ: đã phủ 11 trên tổng 14 hạng mục đối chiếu; 11 dạng gói phía client đã mở nguồn, 3 hạng mục server/codec/quyền BOT chưa phủ đầy đủ.
+Liên quan: JX1_OPS/REPORTS/E-11-hoi-mau-vat-pham-doi-ban-do.md; JX1_OPS/DESIGN/B-01-LOC-HIEN-THI.md; DESIGN/BOT/SHARED_BOT_SOCIAL_AND_INTERACTION_SYSTEM.md; JX1_OPS/REPORTS/R-04c.md
+Cần tôi quyết định: có — các luật BOT và task kiểm runtime tiếp theo do PM quyết định; không chặn chuẩn hóa tài liệu.
+
+## Sơ đồ quan hệ chính
+
+[NGUỒN] Sơ đồ tóm lược hai họ chat và các nhóm tương tác trong nội dung gốc; không xác nhận quyền BOT đã được triển khai.
+
+```mermaid
+flowchart LR
+    A["Thao tác tương tác"] --> B["Chat legacy"]
+    A --> C["Chat relay: channel hoặc someone"]
+    A --> D["Đội, giao dịch, xem trang bị"]
+    B --> E["Handler server được dẫn trong báo cáo gốc"]
+    C --> F["GameServer và S3Relay được dẫn trong báo cáo gốc"]
+    D --> E
+    E --> G["Đối chiếu quyền BOT: còn khoảng trống"]
+    F --> G
+```
+
+## Phạm vi và độ phủ
+
+[NGUỒN] R-04c ngày 18/11/2026 đọc Q = `D:/JX-build/qh9A/Classes/gamecore/`. Các root C/S/R/H trong thân gốc là nguồn lịch sử riêng; Q không thay thế chúng. Mẫu 11 gói được đối chiếu theo các struct hiện có trong `Q/KProtocol.h` và symbol trong `Q/KProtocolDef.h`; 3 hàng cuối thể hiện các khoảng trống của báo cáo. “Đã phủ” là định vị schema client, không xác nhận gói được server chấp nhận hoặc đo lại opcode/ABI.
+
+| Hạng mục | Độ phủ R-04c | Nguồn và giới hạn |
+|---|---|---|
+| Chat legacy `PLAYER_SEND_CHAT_COMMAND` | đã phủ | `Q/KProtocol.h:711`; `Q/KProtocolDef.h:278`. |
+| Chat relay tới người `CHAT_SOMEONECHAT_CMD` | đã phủ | `Q/KProtocol.h:2432`; `Q/KProtocolDef.h:443`. |
+| Chat relay tới kênh `CHAT_CHANNELCHAT_CMD` | đã phủ | `Q/KProtocol.h:2442`; `Q/KProtocolDef.h:444`. |
+| Đội trưởng nhận người xin vào | đã phủ | `Q/KProtocolDef.h:271`; mới xác nhận symbol `c2s_teamacceptmember`, chưa mở lại sender/handler. |
+| Mời vào đội | đã phủ | `Q/KProtocol.h:2040`; `Q/KProtocolDef.h:303`. |
+| Trả lời lời mời đội | đã phủ | `Q/KProtocol.h:2060`; `Q/KProtocolDef.h:305`. |
+| Xin giao dịch | đã phủ | `Q/KProtocol.h:1964`; `Q/KProtocolDef.h:299`. |
+| Trả lời giao dịch | đã phủ | `Q/KProtocol.h:1979`; `Q/KProtocolDef.h:318`. |
+| Đặt tiền giao dịch | đã phủ | `Q/KProtocol.h:1986`; `Q/KProtocolDef.h:300`. |
+| Quyết định giao dịch | đã phủ | `Q/KProtocol.h:1998`; `Q/KProtocolDef.h:301`. |
+| Xem trang bị | đã phủ | `Q/KProtocol.h:1451`; `Q/KProtocolDef.h:321`. |
+| Handler C++ GameServer/S3Relay và guard độ dài đầy đủ | chưa phủ nguồn hiện hành | Thân gốc dẫn `S/Sources/Core/Src/KProtocolProcess.cpp:5682`, `R/ChannelMgr.cpp:854`; các cây C++ này ngoài root server dữ liệu được giao lần này. |
+| Codec tiếng Việt và ABI/lớp truyền đầy đủ | chưa phủ | Thân gốc dẫn `C/gamescene/KgameWorld.cpp:3096`, `C/network/ClientStage.cpp:136`; không coi ASCII fixture là kiểm codec. |
+| Quyền BOT, cạnh tranh phiên, timeout/mất kết nối | chưa phủ runtime | Giữ nguyên 7 hàng yêu cầu thiết kế trong mục 7; chưa có phép thử chứng minh cơ chế quyền. |
+
+## Nội dung khảo sát gốc
+
 Ngày: 2026-11-17. Nhánh được kiểm tra: `task/E-12`, thư mục được người dùng xác nhận: `D:\JX-wt\E-12`.
 Nhãn [NGUỒN] là kết luận từ source đã đọc; vector là dữ liệu giả dựng offline, không phải capture hoặc kết quả server chấp nhận.
 
@@ -211,3 +258,20 @@ Tiếp theo của E-04: dùng bảng opcode/layout và các điểm chặn trên
 - Build/test game, VM, socket/capture, binary matching: không chạy theo giới hạn task. Kiểm offline chỉ chứng minh phép dựng byte và công thức độ dài, không chứng minh runtime.
 - Commit SHA: không có; `git add -- JX1_OPS/REPORTS/E-12-khao-sat-goi-tuong-tac.md JX1_OPS/TASKS/E-12.md` thất bại: `fatal: Unable to create 'D:/jx1-reports/.git/worktrees/E-12/index.lock': Permission denied`. Git metadata ngoài writable root; không đổi quyền, không thử vượt sandbox và không retry cùng lỗi.
 - **BỊ CHẶN – CHƯA PUSH**: giữ hai file local; chưa stage/commit. Người dùng cấm mạng thật nên không push, không gọi GitHub. Bước lưu tiếp theo: phiên có quyền Git metadata stage đúng hai file, commit bắt đầu E-12 và ghi SHA khi thực sự thành công; chỉ push khi được cho phép mạng.
+
+## Đã xác minh / Chưa xác minh (R-04c)
+
+- **ĐÃ XÁC MINH:** đã mở các vị trí Q trong bảng, thấy đủ 11 dạng/symbol gói thuộc mẫu. Giới hạn tên, câu và prefix còn được định nghĩa tại `Q/GameDataDef.h:152`, `Q/GameDataDef.h:24`, `Q/GameDataDef.h:485`; đây là định nghĩa source.
+- **ĐÃ XÁC MINH:** các tài liệu trong dòng Liên quan tồn tại. Báo cáo đầu vào là UTF-8 không BOM; comment header có mã hóa cũ/lẫn, các kết luận đối chiếu mới chỉ dùng token ASCII. Chưa xác định toàn bộ code page wire GBK/TCVN3/UTF-8.
+- **CHƯA XÁC MINH:** server C++ lịch sử, guard đầy đủ, codec và runtime BOT; không chạy lại Python/vector, build, exe, VM hoặc mạng. Các dòng PASS và lỗi Git phía trên thuộc E-12, không phải phép kiểm hay lỗi mới của R-04c.
+
+## Bàn giao chuẩn hóa R-04c
+
+Chỉ mục nằm tại `JX1_OPS/REPORTS/_CHIMUC/R-04c.tsv`; báo cáo tổng hợp và trạng thái commit của lượt chuẩn hóa tại `JX1_OPS/REPORTS/R-04c.md`. SHA thực được trả sau commit trong phản hồi bàn giao. PM giữ các khoảng trống codec/guard/quyền BOT làm điều kiện cho task xác minh riêng.
+
+## Phát hiện khi chuẩn hóa
+
+1. **[NGUỒN] Khác root kiểm tra:** E-12 dùng client canonical C và server C++ S/R/H; R-04c chỉ đối chiếu client bản A Q và root server dữ liệu gs được giao. Các symbol/struct đã thấy không chứng minh hai phiên bản hay binary giống nhau; không thay bằng chứng cũ bằng số dòng Q.
+2. **[NGUỒN] Mức kiểm hạng mục đội trưởng:** hàng `c2s_teamacceptmember` chỉ xác nhận enum tại `Q/KProtocolDef.h:271`; khác với việc đọc lại toàn bộ đường AddTeamMember. Độ phủ 11/14 phải đọc cùng giới hạn từng hàng.
+3. **[NGUỒN] Tóm tắt gốc được giữ nguyên:** các dòng 1–4 chưa có nhãn nguồn riêng theo chuẩn mới. Nhãn mới không được dùng để nâng mức xác minh của các kết luận cũ.
+4. **[CHƯA KIỂM] Kết quả Git lịch sử:** lỗi `index.lock` và các dòng “chưa commit/push” trong thân mô tả E-12. Kết quả Git R-04c chỉ được ghi ở bàn giao tổng hợp sau thao tác thực tế; 11/14 không phải độ phủ toàn bộ tương tác hay quyền BOT.

@@ -5,6 +5,66 @@ TÓM TẮT 5 DÒNG
 4. 26/26 test offline đạt; [CHƯA KIỂM] runtime thật/API/VM/Task Scheduler.
 5. Đã cập nhật README, giữ thay đổi local trong vùng cho phép; chưa commit/push.
 
+# E-13b — Theo dõi worker đứng và sự cố nhà cung cấp
+
+Loại: công cụ
+Chủ đề: Ghi nhận watchdog, giãn giao do 429, thăm dò phục hồi và dấu hoàn thành theo mtime.
+Từ khóa: điều phối, worker đứng, watchdog, mtime, 429, provider_incident, probe, .seen-all, P1b
+Trạng thái: DONE — chuẩn hóa R-04c; giữ nguyên kết quả triển khai và kiểm thử offline cũ.
+Độ phủ: đã phủ 3 trên tổng 3 file công cụ hiện có; định vị đủ 15 trên 15 định nghĩa kiểm thử bổ sung P1b; 11 ca nền được liệt kê ở E-13, chưa tái chạy.
+Liên quan: JX1_OPS/REPORTS/E-13-dispatcher-p1.md; JX1_OPS/TOOLS/dispatcher/README.md; JX1_OPS/DESIGN/TONG-QUAN-DIEU-PHOI.md; JX1_OPS/REPORTS/R-04c.md
+Cần tôi quyết định: không
+
+## Sơ đồ quan hệ chính
+
+[NGUỒN] Sơ đồ tóm lược logic được báo cáo và source hiện hành mô tả; không biểu diễn thăm dò API hay dừng task đã thực hiện trong R-04c.
+
+```mermaid
+flowchart LR
+    A["mtime log và dấu done mới"] --> B["Phát hiện worker đứng"]
+    B --> C["Dừng có xác nhận hoặc giữ blocked"]
+    C --> D["Retry watchdog có giới hạn"]
+    B --> E["Ít nhất ba worker: sự cố nhà cung cấp"]
+    E --> F["Ngừng giao, probe theo chu kỳ"]
+    F --> G["Phục hồi hoặc tiếp tục đợi"]
+    H["429 retry-limit"] --> I["Bộ đếm riêng và giãn giao"]
+    G --> D
+```
+
+## Phạm vi và độ phủ
+
+[NGUỒN] R-04c ngày 18/11/2026 liệt kê trực tiếp thư mục `JX1_OPS/TOOLS/dispatcher`, thấy đúng 3 file. Bộ test hiện có 11 định nghĩa nền P1 và 15 định nghĩa bổ sung P1b; bảng này đếm định nghĩa, không đếm phép thử đã chạy lại.
+
+| File gốc | Độ phủ R-04c | Bằng chứng đọc tĩnh |
+|---|---|---|
+| `JX1_OPS/TOOLS/dispatcher/dispatcher.py` | đã phủ | `JX1_OPS/TOOLS/dispatcher/dispatcher.py:146` ngưỡng watchdog; `JX1_OPS/TOOLS/dispatcher/dispatcher.py:232` dấu hoàn thành; `JX1_OPS/TOOLS/dispatcher/dispatcher.py:256` phục hồi; `JX1_OPS/TOOLS/dispatcher/dispatcher.py:392` phát hiện đứng/retry. |
+| `JX1_OPS/TOOLS/dispatcher/test_dispatcher.py` | đã phủ | Các định nghĩa bổ sung bắt đầu tại `JX1_OPS/TOOLS/dispatcher/test_dispatcher.py:248`, kết thúc ở ca bắt đầu tại `JX1_OPS/TOOLS/dispatcher/test_dispatcher.py:481`; liệt kê đủ bên dưới. |
+| `JX1_OPS/TOOLS/dispatcher/README.md` | đã phủ | `JX1_OPS/TOOLS/dispatcher/README.md:64` giãn giao; `JX1_OPS/TOOLS/dispatcher/README.md:67` watchdog; `JX1_OPS/TOOLS/dispatcher/README.md:78` sự cố; `JX1_OPS/TOOLS/dispatcher/README.md:105` kết quả test lịch sử. |
+
+| Định nghĩa kiểm thử P1b hiện có | Độ phủ định nghĩa | Nguồn |
+|---|---|---|
+| `test_watchdog_thresholds_and_log_progress` | đã phủ — chưa chạy lại | `JX1_OPS/TOOLS/dispatcher/test_dispatcher.py:248` |
+| `test_watchdog_missing_log_and_two_retries_only` | đã phủ — chưa chạy lại | `JX1_OPS/TOOLS/dispatcher/test_dispatcher.py:272` |
+| `test_watchdog_prefers_less_loaded_key` | đã phủ — chưa chạy lại | `JX1_OPS/TOOLS/dispatcher/test_dispatcher.py:284` |
+| `test_stop_failure_keeps_slot_and_blocks_new_launch` | đã phủ — chưa chạy lại | `JX1_OPS/TOOLS/dispatcher/test_dispatcher.py:294` |
+| `test_watchdog_key_load_preference_survives_waiting_for_slot` | đã phủ — chưa chạy lại | `JX1_OPS/TOOLS/dispatcher/test_dispatcher.py:306` |
+| `test_retry_limit_does_not_consume_failures_and_paces_all_launches` | đã phủ — chưa chạy lại | `JX1_OPS/TOOLS/dispatcher/test_dispatcher.py:322` |
+| `test_retry_limit_detection_requires_exit_one_and_transport_diagnostic` | đã phủ — chưa chạy lại | `JX1_OPS/TOOLS/dispatcher/test_dispatcher.py:353` |
+| `test_provider_incident_pauses_probes_every_120_seconds_and_recovers` | đã phủ — chưa chạy lại | `JX1_OPS/TOOLS/dispatcher/test_dispatcher.py:365` |
+| `test_incident_restart_and_fake_probe_never_reads_keys` | đã phủ — chưa chạy lại | `JX1_OPS/TOOLS/dispatcher/test_dispatcher.py:395` |
+| `test_two_stalls_do_not_trigger_incident_and_fresh_done_wins_deadline` | đã phủ — chưa chạy lại | `JX1_OPS/TOOLS/dispatcher/test_dispatcher.py:407` |
+| `test_seen_all_tracks_mtime_and_survives_restart` | đã phủ — chưa chạy lại | `JX1_OPS/TOOLS/dispatcher/test_dispatcher.py:417` |
+| `test_stale_done_is_ignored_until_mtime_changes` | đã phủ — chưa chạy lại | `JX1_OPS/TOOLS/dispatcher/test_dispatcher.py:436` |
+| `test_real_probe_request_is_mocked_and_secrets_never_persist` | đã phủ — chưa chạy lại | `JX1_OPS/TOOLS/dispatcher/test_dispatcher.py:449` |
+| `test_watchdog_kills_and_reaps_actual_isolated_fake_worker` | đã phủ — chưa chạy lại | `JX1_OPS/TOOLS/dispatcher/test_dispatcher.py:468` |
+| `test_real_stop_command_is_mocked_and_checks_scheduled_task` | đã phủ — chưa chạy lại | `JX1_OPS/TOOLS/dispatcher/test_dispatcher.py:481` |
+
+| Phần vận hành ngoài xác minh R-04c | Độ phủ | Giới hạn |
+|---|---|---|
+| Dừng Scheduled Task và toàn bộ cây tiến trình thật | chưa phủ runtime | `JX1_OPS/TOOLS/dispatcher/dispatcher.py:377` là mã, chưa phải kết quả thực thi. |
+| Endpoint, payload và hồi phục provider thật | chưa phủ runtime | `JX1_OPS/TOOLS/dispatcher/README.md:107` còn ghi chưa gọi API. |
+| STATE, mtime/log và `.seen-all` ngoài fixture | chưa phủ runtime | `JX1_OPS/TOOLS/dispatcher/dispatcher.py:232` mô tả cơ chế; không mở dữ liệu vận hành. |
+
 ## Phạm vi và thay đổi
 
 Đã đọc task, README và source ban đầu. Chỉ ghi source, test, README trong
@@ -112,3 +172,20 @@ ba file source/test/README.
 **DONE** phần triển khai và test offline trong vùng được phép. 26/26 test đạt.
 Không có blocker kỹ thuật còn tồn tại trong test; các mục runtime thật ở trên
 chưa được xác minh. Chưa cập nhật file task ngoài vùng ghi; chưa commit/push.
+
+## Đã xác minh / Chưa xác minh (R-04c)
+
+- **ĐÃ XÁC MINH:** bảng đã liệt kê 3 file và 15 định nghĩa P1b từ nguồn thật; 11 định nghĩa P1 được liên kết sang E-13. Source hiện hành có ngưỡng 300/600 giây tại `JX1_OPS/TOOLS/dispatcher/dispatcher.py:146`, ngưỡng sự cố tại `JX1_OPS/TOOLS/dispatcher/dispatcher.py:404`, chu kỳ 120 giây tại `JX1_OPS/TOOLS/dispatcher/dispatcher.py:262`, giãn giao 20 giây tại `JX1_OPS/TOOLS/dispatcher/dispatcher.py:446`.
+- **ĐÃ XÁC MINH:** báo cáo/source công cụ đọc được UTF-8; báo cáo đầu vào không BOM; các tài liệu Liên quan có thật. Không cần dùng dữ liệu game client/server cho mẫu file công cụ này.
+- **CHƯA XÁC MINH:** không tái chạy suite 26 test, không sinh worker giả, không import dispatcher, không gọi API, Scheduled Task, build, exe hay VM. Các lần 22/23, 25/25 và 26/26 trong thân gốc là lịch sử E-13b được giữ nguyên.
+
+## Bàn giao chuẩn hóa R-04c
+
+Chỉ mục: `JX1_OPS/REPORTS/_CHIMUC/R-04c.tsv`. Trạng thái commit chuẩn hóa được ghi tại `JX1_OPS/REPORTS/R-04c.md`; SHA thực được trả sau commit trong phản hồi bàn giao. PM giữ giới hạn stop/probe thật của bản gốc làm bước xác minh riêng, không thực hiện trong R-04c.
+
+## Phát hiện khi chuẩn hóa
+
+1. **[NGUỒN] Đếm đúng phạm vi kiểm thử:** 26 định nghĩa hiện có = 11 P1 + 15 P1b, không phải 26 ca mới do E-13b bổ sung. Báo cáo gốc đã phân biệt hai nhóm; bảng mới làm rõ từng phần tử, không thay kết quả cũ.
+2. **[NGUỒN] Chưa đạt hình thức tóm tắt mới tuyệt đối:** dòng 5 gốc là bàn giao, không phải dòng giới hạn build/exe/VM; nhiều dòng thiếu nhãn riêng. Theo yêu cầu bảo toàn tóm tắt, không viết lại hoặc chuyển vị trí các dòng; mục xác minh mới nêu giới hạn của R-04c.
+3. **[NGUỒN] Phạm vi task lịch sử:** đoạn gốc nói không cập nhật task E-13b vì mâu thuẫn vùng ghi là lịch sử được giữ nguyên; không dùng làm căn cứ bỏ yêu cầu cập nhật mục Kết quả của task R-04c đã được người dùng chỉ định rõ.
+4. **[CHƯA KIỂM] Kết quả vận hành và Git:** source không xác nhận stop/probe thật; các dòng “chưa commit/push” gốc chỉ thuộc E-13b, khác kết quả Git của lượt chuẩn hóa được bàn giao riêng.

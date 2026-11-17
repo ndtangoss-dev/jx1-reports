@@ -6,6 +6,56 @@
 4. Cổng Ba Lăng đã đọc chỉ SetPos/FightState cùng map; NewWorld gọi ChangeWorld, đổi map cùng GS gửi S2C 73/49 (304 byte theo profile nêu dưới).
 5. Không sửa source, không mạng/VM/exe/build; vector là dữ liệu tổng hợp, ABI binary/runtime [CHƯA KIỂM]; chưa commit/push vì chưa được yêu cầu.
 
+# E-11 — Hồi máu, dùng vật phẩm và đổi bản đồ
+
+Loại: khảo sát
+Chủ đề: Khảo sát tĩnh gói dùng vật phẩm, ngồi hồi phục và đồng bộ khi đổi bản đồ.
+Từ khóa: hồi máu, vật phẩm, Ba Lăng, c2s_playereatitem, NPC_SIT_SYNC, NPC_RUN_COMMAND, ChangeWorld, WORLD_SYNC
+Trạng thái: DONE — chuẩn hóa R-04c; giữ nguyên kết luận khảo sát cũ và các giới hạn runtime.
+Độ phủ: đã phủ 12 trên tổng 16 hạng mục đối chiếu nguồn hiện hành; 7 gói và 5 script đã đọc, 4 hạng mục server/dữ liệu chưa phủ; gói chạy có khác biệt phiên bản.
+Liên quan: JX1_OPS/REPORTS/E-08-goi-danh-quai-xac-nhan-kill.md; JX1_OPS/REPORTS/E-12-khao-sat-goi-tuong-tac.md; JX1_OPS/REPORTS/R-04c.md; JX1_OPS/DESIGN/CHUAN-BAO-CAO.md
+Cần tôi quyết định: có — PM xác định profile gói chạy trước khi dùng lại vector cho bản A; không chặn chuẩn hóa tài liệu.
+
+## Sơ đồ quan hệ chính
+
+[NGUỒN] Sơ đồ định vị các nhánh trong nội dung gốc; không biểu diễn một phép thử game đã chạy.
+
+```mermaid
+flowchart LR
+    A["Dùng vật phẩm"] --> B["Yêu cầu theo ô chứa"]
+    B --> C["Thuốc hoặc script bùa hồi thành"]
+    D["Ngồi hồi phục"] --> E["Trạng thái NPC và HP bản thân"]
+    C --> E
+    F["Đi hoặc chạy tới trap"] --> G["Script cổng Ba Lăng: SetPos và FightState"]
+    C --> H["Đổi world theo nhánh server"]
+    H --> I["WORLD_SYNC khi đổi map cùng GS"]
+```
+
+## Phạm vi và độ phủ
+
+[NGUỒN] Đối chiếu R-04c ngày 18/11/2026, chỉ đọc. Q = `D:/JX-build/qh9A/Classes/gamecore/` (client bản A); G-R = `C:/Jx1CocoV3/Folder/ServerNew-20260116T043145Z-3-001/ServerNew/_bin_v2_/gs/`. Các ký hiệu C/DC/S/SS/H/G trong thân gốc vẫn giữ đúng nghĩa cũ, không thay bằng Q.
+
+Mẫu gồm 7 bản ghi được nêu trong bảng gói gốc, 4 file duy nhất trong thư mục cổng Ba Lăng, 1 script bùa hồi thành và 4 khoảng trống đã nêu trong thân gốc. “Đã phủ” chỉ là đã mở nguồn hiện hành để đối chiếu phần được ghi; không xác nhận sender/handler server C++ hoặc ABI binary.
+
+| Hạng mục | Độ phủ R-04c | Nguồn và giới hạn |
+|---|---|---|
+| Dùng vật phẩm `PLAYER_EAT_ITEM_COMMAND` | đã phủ | `Q/KProtocol.h:896`; trường ô chứa và item, chưa kiểm lại handler server. |
+| Yêu cầu ngồi `NPC_SIT_COMMAND` | đã phủ | `Q/KProtocol.h:2111`; `Q/KProtocol.cpp:652`. |
+| Đồng bộ ngồi `NPC_SIT_SYNC` | đã phủ | `Q/KProtocol.h:395`; `Q/KProtocol.cpp:96`. |
+| HP bản thân `CURPLAYER_NORMAL_SYNC` | đã phủ | `Q/KProtocol.h:1208`; `Q/KProtocol.cpp:22`. |
+| Đi bộ `NPC_WALK_COMMAND` | đã phủ | `Q/KProtocol.h:502`; `Q/KProtocol.cpp:230`. |
+| Chạy `NPC_RUN_COMMAND` | đã phủ — có khác biệt | `Q/KProtocol.h:515`; `Q/KProtocol.cpp:219`; xem phát hiện cuối file. |
+| Đồng bộ world `WORLD_SYNC` | đã phủ | `Q/KProtocol.h:1367`; `Q/KProtocol.cpp:25`; chưa đo ABI. |
+| Cổng `cong10h.lua` | đã phủ | `G-R/script/trap/thon/balang/cong10h.lua:7`. |
+| Cổng `cong2h.lua` | đã phủ | `G-R/script/trap/thon/balang/cong2h.lua:7`. |
+| Cổng `cong4h.lua` | đã phủ | `G-R/script/trap/thon/balang/cong4h.lua:7`. |
+| Cổng `cong8h.lua` | đã phủ | `G-R/script/trap/thon/balang/cong8h.lua:7`. |
+| Bùa hồi thành `TownPortal` | đã phủ | `G-R/script/system/usetownportal.lua:8`, `G-R/script/system/usetownportal.lua:21`, `G-R/script/system/usetownportal.lua:60`; chỉ kiểm script. |
+| Công thức hồi máu/ngồi trong server C++ | chưa phủ nguồn hiện hành | Nguồn gián tiếp giữ ở `SS/KNpc.cpp:1637`; cây SS cũ ngoài root server dữ liệu được giao lần này. |
+| `NewWorld` / `ChangeWorld` trong server C++ | chưa phủ nguồn hiện hành | Nguồn gián tiếp `SS/ScriptFuns.cpp:6728`, `SS/KNpc.cpp:15223`; không dùng script để suy thay handler. |
+| Bảng thuốc, độ lớn hiệu ứng và cooldown | chưa phủ | Bản gốc chưa chỉ định tên bảng thuốc đã đọc; không mở rộng thành toàn bộ thuốc trong game. |
+| Ánh xạ ô trap trong dữ liệu đóng gói | chưa phủ | Bản gốc chưa giải PAK hoặc chỉ định file ánh xạ; 4 script không chứng minh trap đã nạp. |
+
 ## Phạm vi và nguồn
 
 Ngày 17/11/2026, workspace `D:\JX-wt\E-11`, branch `task/E-11`.
@@ -390,3 +440,20 @@ không có bằng chứng GitHub và không tuyên bố đã công bố.
 
 Bước tiếp theo: PM sửa metadata và review báo cáo; chỉ sau một task kiểm thử riêng
 được duyệt mới đo ABI/capture, xác nhận hồi máu, trigger trap và đổi map runtime.
+
+## Đã xác minh / Chưa xác minh (R-04c)
+
+- **ĐÃ XÁC MINH:** đã đọc các vị trí Q/G-R trong bảng; thư mục `script/trap/thon/balang` có đúng 4 file đã liệt kê. Bốn cổng có `SetPos` và `SetFightState`; script bùa có lời gọi `UseTownPortal` tại dòng 21 và 60.
+- **ĐÃ XÁC MINH:** tài liệu đầu vào đọc được bằng UTF-8 không BOM; các đoạn thêm được lưu cùng mã hóa. Lua được đọc theo GBK/CP936; comment C++ có mã hóa cũ/lẫn, chỉ dùng symbol và biểu thức ASCII để đối chiếu.
+- **CHƯA XÁC MINH:** toàn bộ C++ server cũ, binary/ABI, dữ liệu thuốc và trap đóng gói, hành vi runtime; không chạy lại phép dựng vector của E-11, không build, exe, VM hoặc mạng trong R-04c. Các kết quả kiểm cũ ở trên là lịch sử E-11.
+
+## Bàn giao chuẩn hóa R-04c
+
+Kết quả và trạng thái commit của lượt chuẩn hóa nằm tại `JX1_OPS/REPORTS/R-04c.md`; SHA thực có sau commit được trả trong phản hồi bàn giao. Chỉ mục: `JX1_OPS/REPORTS/_CHIMUC/R-04c.tsv`. Bước PM: review khác biệt profile trước khi tái dùng vector; không coi chuẩn hóa là quyền chạy thử.
+
+## Phát hiện khi chuẩn hóa
+
+1. **[NGUỒN] Khác phiên bản gói chạy:** `Q/KProtocol.h:520` có thêm `int nMapID`; `Q/KProtocol.cpp:225` gán trường này và `Q/KProtocol.cpp:227` gửi `sizeof(NetCommand)`. Theo profile BYTE=1, int=4, pack(1) tại `Q/KProtocol.h:11`, layout này là `1 + 4 + 4 + 4 = 13` byte (suy từ source, chưa đo compiler/binary). Bản gốc mô tả 9 byte trên cây nguồn cũ; giữ nguyên số liệu, bằng chứng và vector cũ, không áp 9 byte mặc định cho Q.
+2. **[NGUỒN] Dòng sender đã lệch:** bản gốc dẫn `C/KProtocol.cpp:214` cho di chuyển và `C/KProtocol.cpp:557` cho ngồi; tại Q, các điểm tương ứng nằm ở `Q/KProtocol.cpp:219`, `Q/KProtocol.cpp:230`, `Q/KProtocol.cpp:652`. Đây là dẫn nguồn riêng của bản A, không thay số dòng C trong lịch sử.
+3. **[NGUỒN] Tóm tắt gốc được bảo toàn:** các dòng 1–4 chưa có nhãn nguồn riêng theo chuẩn mới; không thêm nhãn vào phát biểu cũ để tránh nâng mức xác minh. Nhãn và giới hạn mới đặt trong các mục R-04c.
+4. **[CHƯA KIỂM] Phạm vi hữu hạn:** 12/16 không phải tỷ lệ toàn bộ vật phẩm, bản đồ hoặc giao thức game. Các dòng “chưa commit/push” trong thân gốc chỉ mô tả lượt E-11, không phải kết quả Git của R-04c.
