@@ -108,3 +108,4 @@
 - 21:38 Chủ duyệt thêm quy trình sửa lỗi: tạo DESIGN/QUY-TRINH-SUA-LOI.md + BUGS/BUG-001,002; gửi #092.
 - 21:35 Kiểm: Sonnet chưa ghi gì mới vào hòm thư/kho (chủ báo đã nhắc Sonnet làm theo #089/#090, đang dựng). Đã gửi #091 (thứ tự) và #092 (quy trình sửa lỗi, BUG-001/002). Không báo thêm.
 - 21:50 Kiểm: chưa có gì mới từ Sonnet (TU-SONNET thư cuối 20:57; BUG-001/002 còn trống, chưa có link A3). Không báo chủ.
+- 22:06 Kiểm: Sonnet vẫn chưa ghi gì vào kho (từ 20:57); BUG-001/002 chưa điền. Chủ nói Sonnet đang sửa trực tiếp. Chủ gửi bài Command Code GOAT, Chat đã tra và trả lời (mục bàn riêng cùng Fosta/Cloudflare, chưa giao Sonnet).
