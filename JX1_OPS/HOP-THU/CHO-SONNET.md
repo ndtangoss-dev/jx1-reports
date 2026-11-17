@@ -713,3 +713,22 @@ Chủ ra lệnh (20:31): "Bỏ bản qh7 đi, ta test bản A, Sonnet sửa bả
 2. Không bỏ nội suy khung SPR: chủ cảm thấy ANIMATION giật (chiêu, đánh, quái), không chỉ di chuyển. Làm A3: (a) camera bám nhân vật nội suy theo thời gian render (nền không trượt theo bậc 18 Hz); (b) chọn khung SPR theo thời gian thực HOẶC hòa trộn 2 khung kề nhau (cross-fade alpha) khi khung render rơi giữa 2 khung gốc; có công tắc /sdcard để A/B; (c) đo từng pha trong g_ScenePlace.Paint() (H-15) vì glow chỉ ~6 ms trong ~26 ms Paint: tìm chỗ nặng nhất (nghi: lớp bản đồ, số lệnh vẽ, tạo texture SPR mỗi khung).
 3. Cổng 8092 chỉ là server tiến độ, OK; dùng 8091 cho APK.
 4. Báo chủ 3-4 dòng khi A3 xong, kèm link. Đa tạ.
+
+---
+## #090 (Chat 21:15, 17/11) — CHỦ TEST A2 TRÊN MÁY THẬT: MƯỢT HƠN, NHƯNG 3 LỖI; GỘP xBRZ VÀO A3
+Chủ gửi 3 ảnh chụp (21:07-21:08, bộ đếm FPS góc trái: 108 / 122 / 167, ping 83-106 ms). Kết luận chủ: "mượt có cải thiện", nhưng có 3 lỗi mới và yêu cầu áp dụng xBRZ vào A3.
+
+LỖI 1 — SAI THỨ TỰ LỚP VẼ VŨ KHÍ (chủ báo): khi nhân vật cầm thương ở PHÍA TRƯỚC thì thân hình lại che mất thương; khi thương quay VỀ SAU thì thương lại nằm TRƯỚC thân hình. Tức thứ tự lớp (trước/sau theo hướng) bị đảo hoặc mất. Nghi theo thứ tự:
+ a. A2 giảm lượt vẽ glow 9→5 và "bỏ lượt trùng vị trí": nếu các lượt vẽ cũ đồng thời đảm nhiệm thứ tự lớp theo hướng thì bỏ lượt làm mất thứ tự. Thử bản tắt A2 (/sdcard/jxa2off) và A1 để biết lỗi từ A1 hay A2.
+ b. Chiếu float/sub-pixel (A1) làm khóa sắp xếp (y/z) thay đổi: so sánh khóa sắp xếp lớp trước/sau khi tắt JX_L02_SUBPIXEL.
+ c. Nhân vật cưỡi ngựa (ảnh 3) cũng có thương lệch: kiểm cả 2 trạng thái đi bộ/cưỡi.
+ Làm: tái hiện 8 hướng × (đứng, chạy, đánh) với một vũ khí +12/+15, chụp so sánh A1/A2/jxa2off, sửa tận gốc. Khóa lại bằng ảnh chuẩn từng hướng.
+
+LỖI 2 — HIỆU ỨNG BỘ (SET, +12/+15, tia sét) CÓ KHUNG NHẢY RA NGOÀI: một số khung của hiệu ứng vẽ lệch vị trí xa thân, nhảy ra ngoài. Nghi: tia sét vẽ bằng jxDrawBolts dùng vị trí nguyên trong khi thân dùng vị trí float (A1), hoặc khung nội suy/dedupe của A2 dùng sai tick. Kiểm tra: khung nào lệch (tick/khung SPR), toạ độ trước/sau; thống nhất cùng một hệ toạ độ cho thân và hiệu ứng.
+
+YÊU CẦU 3 — xBRZ vào A3 (chủ chốt). Giữ nguyên nét gốc, chỉ làm mịn răng cưa:
+ - Đường .spr: phóng xBRZ ×2 (hoặc ×3 nếu máy ổn) khi nạp khung, ĐỒNG THỜI chia lại toạ độ/neo/kích thước vẽ cho đúng 1/N để vị trí và thứ tự lớp KHÔNG đổi (nếu quên bước này sẽ gây đúng lỗi 2). Không xBRZ lớp glow cộng (additive) và bolts; không xBRZ chữ UI nếu bị nhòe.
+ - Giữ bộ nhớ: cache theo khung, giới hạn dung lượng; đo RAM/FPS trước-sau trên máy thật; có công tắc /sdcard để A/B (xbrz on/off).
+ - Làm sau khi sửa xong LỖI 1 và 2, để ảnh chụp A/B không lẫn lỗi.
+
+Thứ tự: (1) sửa lỗi 1+2 trước (build gấp, versionCode 20 nếu cần chủ thử lẻ), (2) xBRZ + A3 (versionCode 21), (3) giữ camera mượt/hòa trộn khung đã giao ở #089. Gửi qua 8091; báo chủ 3-4 dòng với ảnh trước/sau. Mốc đo của chủ: FPS 108-167 trên máy thật (A2), hơn hẳn LD. Đa tạ.
