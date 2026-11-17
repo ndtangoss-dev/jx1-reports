@@ -219,3 +219,4 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 | % yêu cầu lỗi | 503 astra 100% (9 yc astra đã trả tiền hôm nay; ping 15 phút ghi D:\JX-wt\A11c\astra_ping.log); sol: chưa thấy 429 | ~0 |
 | % rảnh vì chờ PM/duyệt/build | 11:16–11:24: chỉ 1–2 worker chạy (PM trễ giao việc) | <10% |
 **Nút thắt hiện tại:** hàng đợi giao việc của PM, không phải model/khóa; đã giao 6 task độc lập (E-10, E-09a, B-04a, E-11, E-12, B-02d) để chạm ≥6 đồng thời. Cần thêm task khi 1 xong (giữ ≥6 sẵn sàng).
+- [11:44] Tạo khóa K5 (không cần mật khẩu/2FA; lưu .jx1keys). Khóa riêng có hiệu lực (khóa giả → 401). Dashboard xingchi cập nhật usage theo khóa chậm vài phút. Giao thêm A-15a/b/c (K5). Tổng 12 worker (K2:3 K3:3 K4:3 K5:3).
