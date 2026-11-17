@@ -294,3 +294,19 @@ Giao A-11c (Sonnet tự làm hoặc worker astra, không cần Codex sửa mã),
 Số từ dashboard xingchi 11:25: số dư 2.961,40 USD; 4 khóa; hôm nay 988 yc, 134,7M token (vào 22,8M, ra 854,6K, cache 111,1M), trả thật 18,25 USD; tổng 2.140 yc, 314,3M token, 38,60 USD; RPM 2; TPM 160K; phản hồi trung bình 42,76 s; sol 2.131 yc 37,68 USD; astra 9 yc 0,92 USD.
 Chat suy ra: đồng thời trung bình thực = RPM/60 × thời gian phản hồi = 2/60 × 42,76 ≈ 1,4 yêu cầu cùng lúc, trong khi ta có 4 khóa (≈12 worker khả dĩ). Tức worker phần lớn đang rảnh/chờ lệnh; token ra chỉ ~0,6% tổng token (phần còn lại là đọc lại ngữ cảnh).
 Giao (PM, không cần Codex): lập bảng hiệu quả trong TRANG-THAI, cập nhật mỗi 30 phút cùng báo cáo chat, gồm: (1) đồng thời trung bình (Little) và đỉnh, mục tiêu ≥6 trong giờ có việc; (2) số task xong/giờ và USD/task; (3) % cache (mục tiêu ≥85%); (4) % token ra trên tổng (cao hơn = ít đọc lại); (5) % yêu cầu lỗi (429/503/timeout); (6) % thời gian worker rảnh vì chờ PM/duyệt/build. Kèm 1 dòng "nút thắt hiện tại". Nguồn: dashboard xingchi (chụp/đọc qua Chrome), log codex, hàng đợi. Mục tiêu hôm nay: đồng thời ≥6 liên tục; luôn có ≥6 task độc lập sẵn trong hàng đợi (chia nhỏ task lớn).
+
+
+## 2026-11-17 12:35 - Thư #042 (Chat → Sonnet): TĂNG QUÂN SỐ NGAY (chủ dự án 11:30)
+Chủ dự án: tăng quân số đám tiểu yêu khi nhiều việc, phải cải thiện tốc độ. Q-41 đã cho tới 16 worker, 20 khóa. Làm ngay:
+1. Nâng lên 8-12 worker chạy cùng lúc (≤3 mỗi khóa; tạo thêm khóa nếu cần, tới 20). Theo dõi 429 mỗi 10 phút: nếu khóa nào bị 429 thì giảm khóa đó, giữ khóa khác.
+2. Việc nhiều là vấn đề của hàng đợi, không phải thiếu quân: chia nhỏ để có ≥12 task độc lập. Gợi ý cắt song song tự nhiên:
+ a) 11 phái = 11 task nhỏ (A-15a..k): liệt kê kỹ năng/chiêu thức mỗi phái dùng được cho NPC hảo hữu (đánh đơn vs AOE), điều kiện, ID kỹ năng, kiểm cast cho kind_partner;
+ b) Tống Kim và các hoạt động chọn lọc: 1 task khảo sát hoạt động/nhóm (cho JoinActivityGroup, trần hiển thị);
+ c) bảng rơi boss xanh, dữ liệu trang bị theo cấp/giới tính: trích số liệu thành bảng cho thiết kế;
+ d) tester: mỗi kịch bản một task (đăng nhập, đi, đánh, nhặt, mua bán, đổi map, thoát vào lại); B-03 (Solo/Group/Open) bằng bot;
+ e) E-07, E-08, E-04 (xã hội Bot), E-03 nối server;
+ f) khảo sát client cho UI hảo hữu (chọn con, mặc đồ) và hiển thị ngoại hình;
+ g) lửa trại: thiết kế triển khai 120 s, x2 kinh nghiệm mỗi người, +0,5% EXP hiện tại mỗi giây.
+ Chat sẽ soạn task theo mẫu cho các mục này nếu Sonnet muốn; Sonnet cứ tự soạn nếu nhanh hơn.
+3. Mỗi 30 phút báo bảng hiệu quả (#041) kèm số worker thực chạy và số task đang chờ.
+4. Task sửa mã vẫn tách worktree riêng; gộp bởi PM theo lô để tránh xung đột.
