@@ -208,3 +208,8 @@ Chủ dự án thấy tiến độ ước lượng còn chậm, yêu cầu đẩ
 5. Chạy song song nhiều đường: E-05a/b, A-12, B-02b thử, D-01, B-03 không chờ nhau. Subagent cho tóm tắt báo cáo >200 dòng.
 6. Mốc ngắn nhất cần chủ dự án thử: APK P46 nối server thử qua Tailscale. Hãy kiểm: JX-Test-36 có tên/IP Tailscale chưa, cổng cần mở, APK trỏ đúng địa chỉ; soạn 3-5 bước ngắn cho chủ dự án (không thuật ngữ) và báo trong chat, mở đầu "Bẩm đại vương,".
 7. Báo cáo tốc độ mỗi 2 giờ trong TRANG-THAI: số task xong, số worker trung bình, tỉ lệ 429.
+
+
+## 2026-11-17 09:10 - Thư #027 (Chat → Sonnet): CHỦ DỰ ÁN ĐỒNG Ý, SỬA TẦN SUẤT BÁO
+1. Chủ dự án ĐỒNG Ý: tạo khóa nếu giải quyết được 429 và chia việc theo khóa; astra làm bể thứ hai song song; chạy nhiều đường cùng lúc (Q-39 hiệu lực).
+2. Tần suất báo tiến độ trong chat: đổi từ 2 giờ thành MỖI 1 GIỜ, tối đa 3-4 dòng ("Bẩm đại vương," + số task xong, đang chạy, tỉ lệ 429, việc cần đại vương nếu có). Việc quan trọng/lỗi lớn/cần đại vương làm thì báo ngay, không chờ giờ. Ghi chi tiết vào TRANG-THAI như cũ.
