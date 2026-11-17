@@ -20,3 +20,4 @@ Giao thức gói tin; cấu trúc DB; hàm Lua dùng chung; lõi `KNpc`, `KPlaye
 | R-06 | codex | REPORTS/I-*, J-* | không | 2026-11-17 | — đang chạy (Tổng quản) |
 | R-07 | codex | REPORTS/L,M,X,JIBS,TEST,daily | không | 2026-11-17 | — đang chạy (Tổng quản) |
 | S-01 | codex | DESIGN/BANG-KY-NANG-THEO-PHAI.md, REPORTS/S-01.md | không | 2026-11-17 | — đang chạy |
+| T-01 | task/T-01 | chạy 18/11 | đội test tính năng |
