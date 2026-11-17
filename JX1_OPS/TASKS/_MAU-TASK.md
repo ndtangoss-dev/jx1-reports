@@ -33,7 +33,7 @@ worker không tự bỏ dở phạm vi đã duyệt khi hết mốc thời gian.
   không tự checkout/reset. Thiếu trường mẫu không tự chặn mục tiêu/phạm vi đã rõ.
 
 ## Báo cáo cuối
-`JX1_OPS/REPORTS/<MA-TASK>.md` — nếu đã triển khai, dùng `jx1-report`, thêm
+`JX1_OPS/REPORTS/<MA-TASK>.md` — bắt buộc (#093): 1 sơ đồ Mermaid (luồng, quan hệ chính) và dòng `liên quan: ...`. Nếu đã triển khai, dùng `jx1-report`, thêm
 `jx1-parameters` khi cần; thiếu skill thì dùng trực tiếp mẫu dưới, không tự cài.
 Một báo cáo: `TOM TAT 5 DONG`, `DA XAC MINH / CHUA XAC MINH`, `file:dòng`, test thực
 chạy/chưa chạy, mọi lỗi/cách thử/kết quả, `DONE/PARTIAL/BLOCKED/FAILED`, SHA/link hoặc

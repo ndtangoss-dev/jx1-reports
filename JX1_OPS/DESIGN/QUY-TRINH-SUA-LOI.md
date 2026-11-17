@@ -6,6 +6,7 @@ Mục đích: mọi lỗi chủ báo hoặc tự phát hiện đều đi qua cù
 - Mở một mục trong `JX1_OPS/BUGS/BUG-<số>.md` (mẫu bên dưới). Ghi nguyên văn lời chủ, ảnh chụp (đường dẫn), bản/phiên bản đang chạy (vd A2, versionCode 19), máy (điện thoại thật / LD).
 
 ## Bước 2. TRA TRƯỚC KHI ĐỌC MÃ (bắt buộc)
+0. Mở `DESIGN/MUC-LUC-TRI-THUC.md` (chủ đề → báo cáo/hàm chính) và làm theo `DESIGN/HUONG-DAN-TRA-CUU.md`.
 1. Tra đồ thị Graphify đúng gốc (client: `graphify-out/` của client; server: của `src18`): tìm hàm/lớp liên quan (caller, callee).
 2. Tra `REPORTS/` bằng từ khoá (grep) và `DESIGN/`: lỗi này đã có báo cáo nào chưa (vd lớp vẽ/hiệu ứng vũ khí: H-04, L-01, L-02, L-03; mạng: K-01, A-06; hoạt động: D-01).
 3. Tra `STATE/BAI_HOC` và `BUGS/` cũ: lỗi giống thế đã gặp chưa, đã sửa thế nào.
@@ -25,6 +26,7 @@ Mục đích: mọi lỗi chủ báo hoặc tự phát hiện đều đi qua cù
 - Đo FPS/ms nếu động tới vẽ.
 
 ## Bước 6. Để lại tri thức (làm xong mới tính là xong)
+- Ghi vào phiếu BUG đường đi: triệu chứng → file:dòng → nguyên nhân; thêm/sửa hàng của chủ đề trong `DESIGN/MUC-LUC-TRI-THUC.md`.
 - Hoàn thành mục bug: nguyên nhân gốc, file:dòng, cách sửa, cách kiểm, ảnh trước/sau, commit/patch.
 - Thêm 1–3 dòng vào `STATE/BAI_HOC` nếu lỗi có thể lặp lại.
 - Nếu phát hiện chỗ trong báo cáo/đồ thị sai hoặc thiếu: sửa báo cáo (dòng "cập nhật <ngày>"), hoặc ghi vào bug để cập nhật đồ thị sau.
