@@ -11,10 +11,64 @@ import re
 import subprocess
 import sys
 import time
+from urllib import error, parse, request
 
 ID = re.compile(r"[A-Za-z0-9][A-Za-z0-9_-]{0,63}\Z")
 TERMINAL = {"done", "needs_review", "blocked"}
 MODEL = {"sol": "gpt-6.1-sol", "astra": "gpt-6-astra"}
+
+
+def mtime(path):
+    try:
+        return path.stat().st_mtime_ns
+    except FileNotFoundError:
+        return None
+
+
+def retry_limit_429(text):
+    """Only terminal transport diagnostics, never successful model output."""
+    for line in reversed(text[-65536:].splitlines()):
+        try:
+            obj = json.loads(line)
+        except ValueError:
+            obj = None
+        if isinstance(obj, dict):
+            if obj.get("type") not in {"error", "turn.failed"}:
+                continue
+            line = json.dumps(obj.get("error", obj.get("message", "")))
+        elif not re.search(r"\b(?:error|failed|fatal|429|503)\b|stream disconnected|exceeded retry limit", line, re.I):
+            continue
+        return bool(re.search(r"\b429\b.{0,200}exceeded retry limit|exceeded retry limit.{0,200}\b429\b", line, re.I))
+    return False
+
+
+class NoRedirect(request.HTTPRedirectHandler):
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        return None
+
+
+def probe_provider(url, keys_dir, key, model):
+    """Explicit real-mode endpoint only. Never log credentials or response bodies."""
+    target = parse.urlsplit(url)
+    if (target.scheme != "https" or not target.hostname or target.username or target.password
+            or target.query or target.fragment or target.path != "/v1/responses"
+            or not ID.fullmatch(key)):
+        return False
+    try:
+        secret = (keys_dir / (key + ".txt")).read_text(encoding="utf-8-sig").strip()
+        if not secret:
+            return False
+        payload = json.dumps({"model": model, "input": "Reply OK.",
+                              "max_output_tokens": 16, "store": False}).encode("utf-8")
+        req = request.Request(url, data=payload, method="POST", headers={
+            "Authorization": "Bearer " + secret, "Content-Type": "application/json",
+            "User-Agent": "codex_cli_rs/0.166.0"})
+        # Do not forward a credential to a redirect target.
+        with request.build_opener(NoRedirect()).open(req, timeout=15) as response:
+            body = json.loads(response.read(65536))
+            return response.status == 200 and body.get("status") == "completed" and not body.get("error")
+    except (OSError, ValueError, TypeError, AttributeError, error.URLError):
+        return False
 
 
 def utc():
@@ -89,6 +143,7 @@ def scan(tasks_dir, worktree_root, fake=False, retry_ids=()):
                               model=model, effort=effort, priority=priority,
                               age=path.stat().st_mtime, retry=retry,
                               timeout_s=number(data.get("timeout_s"), 900, 0.01),
+                              watchdog_s=300 if data.get("readonly", "false").lower() == "true" else 600,
                               readonly=data.get("readonly", "false").lower() == "true",
                               depends_on=sequence(data.get("depends_on")),
                               resources=sequence(data.get("tai_nguyen")),
@@ -114,7 +169,7 @@ def atomic(path, value):
 
 
 class Dispatcher:
-    def __init__(self, args):
+    def __init__(self, args, probe=None):
         self.a = args
         self.state_dir = args.state_dir
         self.state_dir.mkdir(parents=True, exist_ok=True)
@@ -126,12 +181,15 @@ class Dispatcher:
         self.last_heartbeat = 0
         self.cooldown = {}
         self.streak = Counter()
+        # Fake mode cannot reach the network, even if a probe URL was supplied.
+        self.probe = probe if probe is not None else (lambda: False) if args.fake_worker else self.real_probe
         try:
             path = self.state_dir / "QUEUE.json"
             self.state = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {"tasks": {}}
             if self.state.get("mode", args.mode) != args.mode:
                 raise ValueError("state mode mismatch; use a separate state directory")
             self.state["mode"] = args.mode
+            self.state.setdefault("scan_errors", [])
             self.cooldown = self.state.get("key_cooldown", {})
             self.streak = Counter(self.state.get("key_429_streak", {}))
             for row in self.state["tasks"].values():
@@ -152,6 +210,73 @@ class Dispatcher:
         with (self.state_dir / "SU-KIEN.log").open("a", encoding="utf-8") as out:
             out.write(f"{utc()} {tid} {event}\n")
 
+    def real_probe(self):
+        key = min(self.keys, key=lambda k: self.cooldown.get(k, 0))
+        return probe_provider(getattr(self.a, "probe_url", ""), self.a.keys_dir, key, MODEL["sol"])
+
+    def provider_status(self):
+        incident = self.state.get("provider_incident", {})
+        if not incident:
+            return
+        path = self.state_dir / "TRANG-THAI.md"
+        old = path.read_text(encoding="utf-8") if path.exists() else "# TRANG-THAI\n"
+        block = ("<!-- dispatcher-provider:start -->\n"
+                 + ("sự cố nhà cung cấp: tạm ngừng giao mới; thăm dò mỗi 120 giây."
+                    if incident.get("active") else "Nhà cung cấp đã hồi phục; tiếp tục giao worker.")
+                 + "\n<!-- dispatcher-provider:end -->")
+        pattern = r"<!-- dispatcher-provider:start -->.*?<!-- dispatcher-provider:end -->"
+        updated = re.sub(pattern, lambda _: block, old, flags=re.S) if re.search(pattern, old, re.S) else old.rstrip() + "\n\n" + block + "\n"
+        if updated != old:
+            atomic(path, updated)
+
+    def observe_completions(self):
+        """Persist mtimes, so a rerun with the same name is announced again."""
+        path = self.state_dir / ".seen-all"
+        try:
+            seen = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
+        except ValueError:
+            seen = {}  # Legacy name-only text: announce existing markers once.
+        if not isinstance(seen, dict):
+            seen = {}
+        directory = self.state_dir if self.a.fake_worker else self.a.worktree_root
+        changed = False
+        for marker in list(directory.glob("*.done")) + list(self.a.tasks_dir.glob("*.done")):
+            stamp = mtime(marker)
+            name = str(marker.resolve())
+            if stamp is not None and seen.get(name) != stamp:
+                seen[name] = stamp
+                # Do not echo arbitrary filesystem names into the event log.
+                tid = marker.stem.split(".")[0]
+                if ID.fullmatch(tid):
+                    self.event(tid, "done-observed mtime_ns=" + str(stamp))
+                changed = True
+        if changed:
+            atomic(path, json.dumps(seen, ensure_ascii=True, indent=2))
+
+    def check_provider(self):
+        incident = self.state.get("provider_incident", {})
+        if not incident.get("active"):
+            return False
+        if time.time() >= incident["next_probe_at"]:
+            # Persist the next deadline before the call; a failed probe never busy-loops.
+            incident["next_probe_at"] = time.time() + 120
+            self.save()
+            try:
+                recovered = self.probe()
+            except Exception:
+                recovered = False  # No provider exception/response may reach a log.
+            if recovered:
+                incident.update(active=False, recovered_at=utc())
+                for row in self.state["tasks"].values():
+                    if row["status"] == "ready" and row.get("watchdog_pending"):
+                        row["next_at"] = 0
+                self.event("provider", "recovered")
+                self.provider_status()
+                return False
+            self.event("provider", "probe failed; next in 120s")
+        self.provider_status()
+        return True
+
     def save(self):
         self.state["updated_at"] = utc()
         self.state["key_cooldown"] = self.cooldown
@@ -168,6 +293,7 @@ class Dispatcher:
                       str(max(0, r.get("attempts", 0) - 1)), r.get("reason", "")]
             lines.append("| " + " | ".join(fields) + " |")
         atomic(self.state_dir / "QUEUE.md", "\n".join(lines) + "\n")
+        self.provider_status()
         if time.monotonic() - self.last_heartbeat >= 60:
             atomic(self.state_dir / "QUEUE.heartbeat", utc() + "\n")
             self.last_heartbeat = time.monotonic()
@@ -197,6 +323,9 @@ class Dispatcher:
     def launch(self, task, key, row):
         tid = task["id"]
         attempt = row.get("attempts", 0) + 1
+        log = self.state_dir / f"{tid}.{attempt}.log" if self.a.fake_worker else Path(task["worktree"] + ".codex.log")
+        done = self.state_dir / f"{tid}.{attempt}.done" if self.a.fake_worker else Path(task["worktree"] + ".done")
+        previous_done = mtime(done)
         # Persist intent before creating a worker: crash recovery must not duplicate it.
         row.update(status="launching", key=key, attempts=attempt, started_at=utc(),
                    reserved_usd=row.get("reserved_usd", 0) + task["reserve_usd"], reserved_at=utc())
@@ -235,7 +364,13 @@ class Dispatcher:
             proc = None
         row.update(status="running", key=key, attempts=attempt, started_at=utc(),
                    start_epoch=time.time(), reason="", log=str(log), done=str(done))
+        row.pop("watchdog_pending", None)
         self.running[tid] = dict(proc=proc, task=task, log=log, done=done, start=time.monotonic())
+        self.running[tid].update(log_mtime=mtime(log), last_progress=time.monotonic(),
+                                 previous_done=previous_done)
+        row.update(log_mtime_ns=mtime(log), last_log_at=utc())
+        if self.state.get("rate_limit_pacing"):
+            self.state["dispatch_not_before"] = time.time() + 20 * self.a.backoff_scale
         self.event(tid, "running")
         self.save()
 
@@ -246,28 +381,50 @@ class Dispatcher:
                 proc.kill()
             proc.wait(timeout=10)
         else:
-            # Stop-ScheduledTask terminates the worker job; do not launch a retry
-            # until the operator has verified that its descendants are gone.
+            # Stop the named Scheduled Task and confirm it is no longer Running.
             result = subprocess.run(["powershell.exe", "-NoProfile", "-NonInteractive", "-Command",
-                                     f"$ErrorActionPreference='Stop'; Stop-ScheduledTask -TaskName 'JX-codex-{tid}'"],
+                                     f"$ErrorActionPreference='Stop'; Stop-ScheduledTask -TaskName 'JX-codex-{tid}'; "
+                                     f"if ((Get-ScheduledTask -TaskName 'JX-codex-{tid}').State -eq 'Running') {{ exit 1 }}"],
                                     capture_output=True, timeout=30)
             if result.returncode:
                 raise RuntimeError("cannot confirm stop")
 
     def poll(self):
+        stalled = set()
+        for tid, run in self.running.items():
+            stamp = mtime(run["log"])
+            if stamp is not None and (run["log_mtime"] is None or stamp > run["log_mtime"]):
+                run.update(log_mtime=stamp, last_progress=time.monotonic())
+                self.state["tasks"][tid].update(log_mtime_ns=stamp, last_log_at=utc())
+            fresh_done = mtime(run["done"]) not in (None, run["previous_done"])
+            exited = self.a.fake_worker and run["proc"].poll() is not None
+            if (not fresh_done and not exited and not run.get("stop_failed")
+                    and time.monotonic() - run["last_progress"] >= run["task"]["watchdog_s"]):
+                stalled.add(tid)
+        if len(stalled) >= 3 and not self.state.get("provider_incident", {}).get("active"):
+            self.state["provider_incident"] = dict(active=True, started_at=utc(),
+                                                  next_probe_at=time.time() + 120,
+                                                  workers=sorted(stalled))
+            self.event("provider", "sự cố nhà cung cấp: >=3 stalled workers")
+            self.save()
         for tid, run in list(self.running.items()):
+            if run.get("stop_failed"):
+                continue
             row, task = self.state["tasks"][tid], run["task"]
             elapsed = time.monotonic() - run["start"]
-            timedout = elapsed >= task["timeout_s"]
-            done = run["done"].exists()
+            done = mtime(run["done"]) not in (None, run["previous_done"])
             exited = self.a.fake_worker and run["proc"].poll() is not None
-            if not (timedout or done or exited):
+            watchdog = tid in stalled
+            timedout = not done and not exited and elapsed >= task["timeout_s"]
+            if not (watchdog or timedout or done or exited):
                 continue
-            if timedout or (self.a.fake_worker and done):
+            if watchdog or timedout or (self.a.fake_worker and done):
                 try:
                     self.stop(tid, run)
                 except (OSError, RuntimeError, subprocess.TimeoutExpired):
                     row.update(status="blocked", reason="stop unconfirmed; operator must verify")
+                    run["stop_failed"] = True
+                    self.event(tid, row["reason"])
                     # Keep the slot/resources reserved; never duplicate a live worker.
                     continue
             text = run["log"].read_text(encoding="utf-8", errors="replace") if run["log"].exists() else ""
@@ -275,11 +432,20 @@ class Dispatcher:
             row["429"] = row.get("429", 0) + sum(x == "429" for x in errors)
             row["tokens"] = row.get("tokens", 0) + tokens(text)
             marker = run["done"].read_text(encoding="utf-8-sig").strip() if done else ""
-            success = bool(re.match(r"exit=0(?:\s|$)", marker)) and not errors and not timedout
+            success = bool(re.match(r"exit=0(?:\s|$)", marker)) and not errors and not timedout and not watchdog
             row.update(seconds=elapsed, finished_at=utc())
             if success:
                 row.update(status="done" if task["readonly"] else "needs_review", reason="")
                 self.streak[row["key"]] = 0
+            elif watchdog:
+                retries = row.get("watchdog_retries", 0)
+                row.update(status="ready" if retries < 2 else "blocked", reason="watchdog: log stalled",
+                           next_at=0, watchdog_retries=retries + (retries < 2), watchdog_pending=retries < 2)
+                self.event(tid, "watchdog stopped; log stalled >= " + str(task["watchdog_s"]) + "s")
+            elif re.match(r"exit=1(?:\s|$)", marker) and retry_limit_429(text):
+                row.update(status="ready", reason="429 exceeded retry limit", next_at=time.time() + 20 * self.a.backoff_scale,
+                           rate_limit_retries=row.get("rate_limit_retries", 0) + 1)
+                self.state.update(rate_limit_pacing=True, dispatch_not_before=time.time() + 20 * self.a.backoff_scale)
             else:
                 reason = "timeout" if timedout else "429" if "429" in errors else "503" if "503" in errors else "stream disconnected" if errors else "worker exit/missing done"
                 retryable = self.a.fake_worker or (bool(errors) and done)
@@ -289,8 +455,9 @@ class Dispatcher:
                         self.cooldown[row["key"]] = time.time() + 600
                 else:
                     self.streak[row["key"]] = 0
-                if retryable and row["attempts"] <= task["retry"]:
-                    delay = (30, 120, 600)[min(row["attempts"] - 1, 2)] * self.a.backoff_scale
+                row["failures"] = row.get("failures", 0) + 1
+                if retryable and row["failures"] <= task["retry"]:
+                    delay = (30, 120, 600)[min(row["failures"] - 1, 2)] * self.a.backoff_scale
                     row.update(status="ready", reason=reason, next_at=time.time() + delay)
                     if reason == "503" and task["readonly"] and task["model"] == "astra":
                         row["fallback_model"] = "sol"
@@ -301,11 +468,16 @@ class Dispatcher:
 
     def tick(self):
         self.poll()
+        self.observe_completions()
+        if self.check_provider():
+            self.save()
+            return
         retry_ids = {tid for tid, r in self.state["tasks"].items()
                      if r["status"] == "ready" and r.get("attempts", 0)}
         tasks, errors = scan(self.a.tasks_dir, self.a.worktree_root, self.a.fake_worker, retry_ids)
         self.state["scan_errors"] = errors
-        if not self.a.fake_worker and any(r.get("reason", "").startswith(("restart:", "launcher", "stop unconfirmed", "dispatcher stopped", "timeout"))
+        if any((r.get("reason", "").startswith(("restart:", "launcher", "stop unconfirmed", "dispatcher stopped"))
+                or (not self.a.fake_worker and r.get("reason") == "timeout"))
                                           for r in self.state["tasks"].values() if r["status"] == "blocked"):
             self.state["budget_status"] = "BLOCKED: verify previous worker before new launches"
             self.save()
@@ -316,6 +488,8 @@ class Dispatcher:
                 continue
             row = self.state["tasks"].setdefault(tid, {"status": "ready", "attempts": 0})
             if row["status"] in TERMINAL or tid in self.running or row.get("next_at", 0) > time.time():
+                continue
+            if time.time() < self.state.get("dispatch_not_before", 0):
                 continue
             if any(self.state["tasks"].get(dep, {}).get("status") != "done" and
                    not (self.a.tasks_dir / (dep + ".done")).is_file()
@@ -333,7 +507,8 @@ class Dispatcher:
                 row["reason"] = "waiting for key slot"
                 continue
             # Prefer another key after a transient failure, then lowest load.
-            key = min(available, key=lambda k: (k == row.get("key"), loads[k], k))
+            key = min(available, key=lambda k: (loads[k], k == row.get("key"), k)
+                      if row.get("watchdog_pending") else (k == row.get("key"), loads[k], k))
             if not self.budget_ok(task):
                 row["reason"] = "budget gate"
                 continue
@@ -401,6 +576,7 @@ def main(argv=None):
     p.add_argument("--allow-task", action="append", default=[])
     p.add_argument("--fake-keys", default="fake-a,fake-b")
     p.add_argument("--budget-file", type=Path)
+    p.add_argument("--probe-url", default="", help="explicit HTTPS endpoint ending /v1/responses (real mode only)")
     p.add_argument("--interval", type=float, default=20)
     p.add_argument("--backoff-scale", type=float, default=1)
     p.add_argument("--max-seconds", type=float, default=0)
@@ -410,6 +586,11 @@ def main(argv=None):
         p.error("invalid timing")
     if a.run_real and (not a.allow_task or not a.budget_file or a.backoff_scale != 1):
         p.error("real mode requires --allow-task and --budget-file; backoff-scale must be 1")
+    if a.run_real:
+        endpoint = parse.urlsplit(a.probe_url)
+        if (endpoint.scheme != "https" or not endpoint.hostname or endpoint.username or endpoint.password
+                or endpoint.query or endpoint.fragment or endpoint.path != "/v1/responses"):
+            p.error("real mode requires --probe-url with an explicit HTTPS /v1/responses endpoint")
     if not all(ID.fullmatch(t) for t in a.allow_task):
         p.error("invalid task id")
     if a.fake_worker and not (a.tasks_dir.resolve() / ".fake-tasks-only").is_file():
@@ -426,8 +607,8 @@ def main(argv=None):
     try:
         while True:
             d.tick()
-            if a.until_idle and not d.running and not any(r["status"] == "ready" and r.get("next_at", 0)
-                                                         for r in d.state["tasks"].values()):
+            if (a.until_idle and not d.running and not d.state.get("provider_incident", {}).get("active")
+                    and not any(r["status"] == "ready" for r in d.state["tasks"].values())):
                 break
             if a.max_seconds and time.monotonic() - start >= a.max_seconds:
                 break

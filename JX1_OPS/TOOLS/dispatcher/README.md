@@ -1,4 +1,4 @@
-# Dispatcher P1 — E-13
+# Dispatcher P1b — E-13 / E-13b
 
 Chạy bằng Python chuẩn, không cần cài thư viện. Mặc định chỉ lập kế hoạch,
 không ghi STATE và không khởi chạy worker:
@@ -19,12 +19,16 @@ python -I JX1_OPS/TOOLS/dispatcher/dispatcher.py --fake-worker --tasks-dir <TASK
 ## Giao thật — PM thực hiện riêng, chưa kiểm runtime
 
 Chỉ PM chạy khi đã duyệt prompt/worktree và ngân sách. Bắt buộc
-`--run-real --allow-task <ID>` (lặp cho từng task) và `--budget-file <snapshot.json>`.
+`--run-real --allow-task <ID>` (lặp cho từng task), `--budget-file <snapshot.json>`
+và `--probe-url <HTTPS-endpoint>/v1/responses` do PM xác nhận.
 Không bỏ allowlist để quét/giao toàn bộ backlog. Công cụ không tự sinh prompt;
 cần `<worktree>.prompt.txt` đã duyệt, worktree đúng `<worktree-root>/<ID>`.
 Không sửa `chay_codex.ps1`; gọi launcher hiện có với `-Id`, `-PromptFile`,
 `-Model`, `-Effort`, env `JX_CODEX_KEY` chỉ là tên khóa. Launcher hiện có mới
-chịu trách nhiệm đọc khóa khi PM giao thật. Dispatcher chỉ glob tên `*.txt`.
+chịu trách nhiệm đọc khóa khi PM giao thật. Dispatcher chỉ glob tên `*.txt`
+khi lập kế hoạch/giao việc; chỉ hàm thăm dò trong chế độ thật mới đọc nội dung
+khóa từ `--keys-dir` (mặc định `C:\Users\PC\.jx1keys`). Không ghi khóa,
+response body hoặc chi tiết exception vào STATE/log; không theo HTTP redirect.
 
 Snapshot ngân sách JSON do PM/dashboard cấp, UTF-8, thời gian UTC có timezone:
 
@@ -55,6 +59,35 @@ token chỉ thống kê từ `turn.completed`, không suy tiền từ token.
   thử lại, ưu tiên đổi khóa. 3 lỗi 429 liên tiếp: khóa nghỉ 600 giây, lưu STATE.
   astra 503 + `readonly: true`: lượt sau dùng sol. Output/usage có số 429/503
   không được coi là lỗi. Lỗi vĩnh viễn hoặc hết lượt: `blocked`.
+- Riêng `.done` có `exit=1` và chẩn đoán transport cuối là
+  `429 exceeded retry limit` (cũng nhận thứ tự `exceeded retry limit ... 429`):
+  chờ 20 giây, không tăng `failures` hay dùng hết `retry`. Từ lần đó, mọi lượt
+  giao cách nhau ít nhất 20 giây, kể cả khi đổi khóa; trạng thái giãn giao được
+  lưu qua restart. `attempts` vẫn đếm mọi lượt, `rate_limit_retries` đếm riêng.
+- Watchdog theo `st_mtime_ns` của `<worktree>.codex.log`: mtime không tăng
+  600 giây thì dừng worker; task `readonly: true` dùng 300 giây cho khảo sát
+  đọc/tóm tắt. Log chưa xuất hiện cũng tính từ lúc giao. Mtime mới được lưu vào
+  QUEUE; hạn chờ dùng đồng hồ monotonic. Watchdog chạy lại tối đa hai lần riêng
+  (`watchdog_retries`), ưu tiên khóa ít worker hơn trong `key_pool` được phép.
+  Với khóa có cùng tải, ưu tiên đổi khóa. `.done` mới hợp lệ được xử lý trước
+  watchdog/timeout, còn `.done` từ lượt trước không kết thúc lượt mới.
+- Watchdog thật gọi `Stop-ScheduledTask JX-codex-<ID>` và kiểm tra Scheduled
+  Task không còn `Running` trước khi cho chạy lại. Stop lỗi/chưa xác nhận:
+  giữ slot/tài nguyên, `blocked`, dừng giao mới để PM xử lý. Không thử stop lặp
+  mỗi tick. **[CHƯA KIỂM]** cây tiến trình con thực tế trên Task Scheduler.
+- Nếu ít nhất ba worker cùng quá hạn watchdog trong một vòng quét, lưu
+  `provider_incident.active`, dừng các worker đứng và tạm ngừng mọi giao mới.
+  Thăm dò đầu sau 120 giây, rồi mỗi 120 giây: POST nhỏ `/v1/responses`, model
+  `gpt-6.1-sol`, `max_output_tokens: 16`, `store: false`, timeout 15 giây,
+  User-Agent `codex_cli_rs/0.166.0`. Chỉ response HTTP 200 với
+  `status: completed` và không có `error` mới mở lại giao việc ngay trong tick.
+  Thăm dò lỗi vẫn giữ trạng thái dừng; không tự thay endpoint/config provider.
+  `--fake-worker` mặc định dùng probe giả thất bại; test tiêm hàm giả để hồi phục.
+- `STATE/TRANG-THAI.md` có khối `dispatcher-provider` ghi “sự cố nhà cung cấp”
+  hoặc đã hồi phục; giữ nguyên nội dung PM bên ngoài khối này. `.seen-all`
+  trong STATE là JSON ánh xạ đường dẫn `.done` sang mtime nanosecond: mỗi lần
+  mtime đổi phát lại `done-observed` vào `SU-KIEN.log`, kể cả cùng tên, qua restart.
+  File `.seen-all` kiểu chỉ lưu tên cũ được chuyển đổi khi thấy marker.
 - Timeout giả: kill/reap và thử lại. Timeout thật: Stop-ScheduledTask rồi
   `blocked`, chặn giao mới để PM xác minh cây tiến trình đã hết trước khi reset;
   không tự thử lại khi chưa chắc worker cũ đã chết.
@@ -68,3 +101,7 @@ token chỉ thống kê từ `turn.completed`, không suy tiền từ token.
 - Chạy thật kế thừa giới hạn launcher: đường dẫn worktree mặc định `D:\JX-wt`,
   launcher chưa có tham số `--skip-git-repo-check`; không truyền tham số không
   được hỗ trợ. Kiểm runtime hai task thật do PM làm sau E-13.
+
+E-13b được kiểm bằng 26 test offline, gồm worker Python giả có kill/reap thật,
+đồng hồ giả cho mốc 300/600/120/20 giây, HTTP/Stop-ScheduledTask đều mock.
+Chưa chạy Codex thật, chưa đọc khóa thật, chưa gọi API hoặc điều khiển VM.

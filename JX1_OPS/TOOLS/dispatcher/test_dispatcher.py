@@ -9,7 +9,7 @@ import tempfile
 import time
 from types import SimpleNamespace
 import unittest
-from unittest.mock import patch
+from unittest.mock import Mock, patch
 
 sys.dont_write_bytecode = True
 HERE = Path(__file__).resolve().parent
@@ -18,7 +18,7 @@ D = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(D)
 
 
-class DispatcherTests(unittest.TestCase):
+class Fixture(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory(prefix="test-", dir=HERE)
         self.root = Path(self.temp.name)
@@ -40,8 +40,9 @@ class DispatcherTests(unittest.TestCase):
         self.temp.cleanup()
 
     def task(self, tid, extra=""):
+        readonly = "" if "readonly:" in extra else "readonly: true\n"
         (self.tasks / (tid + ".md")).write_text(
-            f"---\nid: {tid}\nstatus: active\nreadonly: true\nworktree: {self.root / tid}\n{extra}---\nFake task only.\n",
+            f"---\nid: {tid}\nstatus: active\n{readonly}worktree: {self.root / tid}\n{extra}---\nFake task only.\n",
             encoding="utf-8")
 
     def make(self):
@@ -57,6 +58,8 @@ class DispatcherTests(unittest.TestCase):
             time.sleep(0.03)
         self.fail("fake workers did not finish in 10 seconds")
 
+
+class DispatcherTests(Fixture):
     def test_five_fake_tasks_and_key_capacity(self):
         for n in range(5):
             self.task(f"FAKE-{n}")
@@ -205,6 +208,287 @@ class DispatcherTests(unittest.TestCase):
         self.assertIn("max", call.args[0])
         # The mocked external worker never existed, so do not issue Stop-ScheduledTask.
         d.running.clear()
+
+
+class FakeProcess:
+    """Deterministic worker for multi-minute deadlines; no real executable."""
+    def __init__(self):
+        self.returncode = None
+
+    def poll(self):
+        return self.returncode
+
+    def kill(self):
+        self.returncode = -9
+
+    def wait(self, timeout=None):
+        return self.returncode
+
+
+class WatchdogTests(Fixture):
+    def attach(self, d, tid, *, key="fake-a", extra="", marker=None):
+        if not (self.tasks / (tid + ".md")).exists():
+            self.task(tid, extra)
+        task = next(t for t in D.scan(self.tasks, self.args.worktree_root, True, {tid})[0] if t["id"] == tid)
+        row = d.state["tasks"].setdefault(tid, {})
+        row.update(status="running", key=key, attempts=row.get("attempts", 0) + 1)
+        log = self.args.state_dir / (tid + ".log")
+        done = self.args.state_dir / (tid + ".done")
+        log.write_text("", encoding="utf-8")
+        if done.exists():
+            done.unlink()
+        if marker:
+            done.write_text(marker, encoding="utf-8")
+        run = dict(proc=FakeProcess(), task=task, log=log, done=done, start=100,
+                   last_progress=100, log_mtime=D.mtime(log), previous_done=None)
+        row.update(log=str(log), done=str(done))
+        d.running[tid] = run
+        return row, run
+
+    def test_watchdog_thresholds_and_log_progress(self):
+        d = self.make()
+        row, run = self.attach(d, "READ")
+        with patch.object(D.time, "monotonic", return_value=399.9):
+            d.poll()
+        self.assertEqual(row["status"], "running")
+        stamp = D.mtime(run["log"]) + 1_000_000_000
+        os.utime(run["log"], ns=(stamp, stamp))
+        with patch.object(D.time, "monotonic", return_value=400):
+            d.poll()
+        self.assertEqual(run["last_progress"], 400)
+        with patch.object(D.time, "monotonic", return_value=700):
+            d.poll()
+        self.assertEqual((row["status"], row["watchdog_retries"]), ("ready", 1))
+        self.assertEqual(row["log_mtime_ns"], stamp)
+        row, run = self.attach(d, "WRITE", extra="readonly: false\n")
+        self.assertEqual(run["task"]["watchdog_s"], 600)
+        with patch.object(D.time, "monotonic", return_value=699.9):
+            d.poll()
+        self.assertEqual(row["status"], "running")
+        with patch.object(D.time, "monotonic", return_value=700):
+            d.poll()
+        self.assertEqual(row["reason"], "watchdog: log stalled")
+
+    def test_watchdog_missing_log_and_two_retries_only(self):
+        d = self.make()
+        for attempt in range(3):
+            row, run = self.attach(d, "STUCK")
+            run["log"].unlink()
+            run["log_mtime"] = None
+            with patch.object(D.time, "monotonic", return_value=400):
+                d.poll()
+            self.assertEqual(run["proc"].returncode, -9)
+            self.assertEqual(row["status"], "ready" if attempt < 2 else "blocked")
+        self.assertEqual((row["attempts"], row["watchdog_retries"]), (3, 2))
+
+    def test_watchdog_prefers_less_loaded_key(self):
+        d = self.make()
+        row, _ = self.attach(d, "STUCK")
+        _, busy = self.attach(d, "BUSY", key="fake-a")
+        busy["last_progress"] = 400
+        with patch.object(D.time, "monotonic", return_value=400):
+            d.tick()
+        self.assertEqual(row["key"], "fake-b")
+        self.assertEqual(row["attempts"], 2)
+
+    def test_stop_failure_keeps_slot_and_blocks_new_launch(self):
+        d = self.make()
+        row, _ = self.attach(d, "STUCK")
+        self.task("NEW")
+        with patch.object(d, "stop", side_effect=RuntimeError("fake stop failed")) as stop:
+            with patch.object(D.time, "monotonic", return_value=400):
+                d.tick()
+                d.tick()
+        self.assertEqual(stop.call_count, 1)
+        self.assertEqual(list(d.running), ["STUCK"])
+        self.assertEqual(row["status"], "blocked")
+
+    def test_watchdog_key_load_preference_survives_waiting_for_slot(self):
+        d = self.make()
+        row, _ = self.attach(d, "STUCK", key="fake-a")
+        _, busy = self.attach(d, "BUSY", key="fake-b")
+        busy["last_progress"] = 400
+        d.cooldown.update({k: time.time() + 1000 for k in d.keys})
+        with patch.object(D.time, "monotonic", return_value=400):
+            d.tick()
+            self.assertEqual(row["reason"], "waiting for key slot")
+            self.assertTrue(row["watchdog_pending"])
+            d.cooldown.clear()
+            d.tick()
+        # Old key has zero workers, alternate has one: keep the less loaded key.
+        self.assertEqual(row["key"], "fake-a")
+        self.assertNotIn("watchdog_pending", row)
+
+    def test_retry_limit_does_not_consume_failures_and_paces_all_launches(self):
+        self.args.backoff_scale = 1
+        d = self.make()
+        for attempt in range(4):
+            row, run = self.attach(d, "RATE", marker="exit=1\n", extra="retry: 1\n")
+            run["log"].write_text("429 exceeded retry limit\n", encoding="utf-8")
+            with patch.object(D.time, "time", return_value=1000), patch.object(D.time, "monotonic", return_value=101):
+                d.poll()
+            self.assertEqual(row["status"], "ready")
+            self.assertEqual(row.get("failures", 0), 0)
+        self.assertEqual(row["rate_limit_retries"], 4)
+        self.assertEqual(row["next_at"], 1020)
+        self.assertEqual(d.streak["fake-a"], 0)
+        self.task("NEW")
+        with patch.object(D.time, "time", return_value=1019):
+            d.tick()
+        self.assertFalse(d.running)
+        with patch.object(D.time, "time", return_value=1020):
+            d.tick()
+        self.assertEqual(len(d.running), 1)
+        self.assertEqual(d.state["dispatch_not_before"], 1040)
+        # Four provider retries still leave the first true-error retry available.
+        for tid, active in list(d.running.items()):
+            d.stop(tid, active)
+        d.running.clear()
+        row, run = self.attach(d, "RATE", marker="exit=1\n")
+        run["log"].write_text("503\n", encoding="utf-8")
+        with patch.object(D.time, "monotonic", return_value=101):
+            d.poll()
+        self.assertEqual((row["status"], row["failures"]), ("ready", 1))
+
+    def test_retry_limit_detection_requires_exit_one_and_transport_diagnostic(self):
+        self.assertFalse(D.retry_limit_429('{"type":"item.completed","item":{"text":"429 exceeded retry limit"}}'))
+        self.assertTrue(D.retry_limit_429('{"type":"error","message":"exceeded retry limit, last status: 429"}'))
+        self.assertFalse(D.retry_limit_429('429 exceeded retry limit\n{"type":"turn.failed","error":{"message":"fatal invalid input"}}'))
+        d = self.make()
+        row, run = self.attach(d, "FAIL", marker="exit=2\n", extra="retry: 0\n")
+        run["log"].write_text("429 exceeded retry limit\n", encoding="utf-8")
+        with patch.object(D.time, "monotonic", return_value=101):
+            d.poll()
+        self.assertEqual((row["status"], row["failures"]), ("blocked", 1))
+        self.assertNotIn("rate_limit_retries", row)
+
+    def test_provider_incident_pauses_probes_every_120_seconds_and_recovers(self):
+        d = self.make()
+        d.probe = Mock(side_effect=[False, True])
+        status = self.args.state_dir / "TRANG-THAI.md"
+        status.write_text("# PM notes\nKeep this text.\n", encoding="utf-8")
+        for tid in ("A", "B", "C"):
+            self.attach(d, tid)
+        self.task("NEW")
+        with patch.object(D.time, "time", return_value=1000), patch.object(D.time, "monotonic", return_value=400):
+            d.tick()
+        self.assertTrue(d.state["provider_incident"]["active"])
+        self.assertFalse(d.running)
+        self.assertIn("sự cố nhà cung cấp", status.read_text(encoding="utf-8"))
+        self.assertIn("Keep this text.", status.read_text(encoding="utf-8"))
+        with patch.object(D.time, "time", return_value=1119):
+            d.tick()
+        d.probe.assert_not_called()
+        with patch.object(D.time, "time", return_value=1120):
+            d.tick()
+        self.assertEqual(d.probe.call_count, 1)
+        with patch.object(D.time, "time", return_value=1239):
+            d.tick()
+        self.assertEqual(d.probe.call_count, 1)
+        with patch.object(D.time, "time", return_value=1240):
+            d.tick()
+        self.assertEqual(d.probe.call_count, 2)
+        self.assertFalse(d.state["provider_incident"]["active"])
+        self.assertEqual(len(d.running), 4)
+        self.assertIn("đã hồi phục", status.read_text(encoding="utf-8"))
+
+    def test_incident_restart_and_fake_probe_never_reads_keys(self):
+        d = self.make()
+        d.state["provider_incident"] = dict(active=True, next_probe_at=0)
+        d.save()
+        d.close()
+        self.dispatcher = None
+        d = self.make()
+        with patch.object(D, "probe_provider", side_effect=AssertionError("real probe called")):
+            self.assertTrue(d.check_provider())
+        self.assertTrue(d.state["provider_incident"]["active"])
+        self.assertGreater(d.state["provider_incident"]["next_probe_at"], time.time() + 119)
+
+    def test_two_stalls_do_not_trigger_incident_and_fresh_done_wins_deadline(self):
+        d = self.make()
+        for tid in ("A", "B"):
+            self.attach(d, tid)
+        row, _ = self.attach(d, "COMPLETE", marker="exit=0\n")
+        with patch.object(D.time, "monotonic", return_value=2000):
+            d.poll()
+        self.assertFalse(d.state.get("provider_incident"))
+        self.assertEqual(row["status"], "done")
+
+    def test_seen_all_tracks_mtime_and_survives_restart(self):
+        d = self.make()
+        marker = self.args.state_dir / "SAME.done"
+        marker.write_text("exit=0", encoding="utf-8")
+        d.observe_completions()
+        d.observe_completions()
+        events = self.args.state_dir / "SU-KIEN.log"
+        self.assertEqual(events.read_text(encoding="utf-8").count("done-observed"), 1)
+        stamp = D.mtime(marker) + 1_000_000_000
+        os.utime(marker, ns=(stamp, stamp))
+        d.observe_completions()
+        self.assertEqual(events.read_text(encoding="utf-8").count("done-observed"), 2)
+        d.save()
+        d.close()
+        self.dispatcher = None
+        d = self.make()
+        d.observe_completions()
+        self.assertEqual(events.read_text(encoding="utf-8").count("done-observed"), 2)
+
+    def test_stale_done_is_ignored_until_mtime_changes(self):
+        d = self.make()
+        row, run = self.attach(d, "RERUN", marker="exit=0\n")
+        run["previous_done"] = D.mtime(run["done"])
+        with patch.object(D.time, "monotonic", return_value=101):
+            d.poll()
+        self.assertEqual(row["status"], "running")
+        stamp = D.mtime(run["done"]) + 1_000_000_000
+        os.utime(run["done"], ns=(stamp, stamp))
+        with patch.object(D.time, "monotonic", return_value=102):
+            d.poll()
+        self.assertEqual(row["status"], "done")
+
+    def test_real_probe_request_is_mocked_and_secrets_never_persist(self):
+        response = Mock(status=200)
+        response.read.return_value = b'{"status":"completed"}'
+        response.__enter__ = Mock(return_value=response)
+        response.__exit__ = Mock(return_value=False)
+        opener = Mock()
+        opener.open.return_value = response
+        # Synthetic value stays in memory; no credential file is created/read.
+        with patch.object(Path, "read_text", return_value="synthetic-test-value"), patch.object(D.request, "build_opener", return_value=opener):
+            self.assertTrue(D.probe_provider("https://example.invalid/v1/responses", self.root, "fake-a", D.MODEL["sol"]))
+        req = opener.open.call_args.args[0]
+        self.assertEqual(req.method, "POST")
+        self.assertEqual(req.get_header("User-agent"), "codex_cli_rs/0.166.0")
+        self.assertEqual(json.loads(req.data)["max_output_tokens"], 16)
+        self.assertEqual(opener.open.call_args.kwargs["timeout"], 15)
+        self.assertIsNone(D.NoRedirect().redirect_request(req, None, 302, "", {}, "https://example.invalid/other"))
+        with patch.object(Path, "read_text", side_effect=AssertionError("unexpected key read")):
+            self.assertFalse(D.probe_provider("http://example.invalid/v1/responses", self.root, "fake-a", "fake"))
+
+    def test_watchdog_kills_and_reaps_actual_isolated_fake_worker(self):
+        self.task("PROCESS", "fake_result: timeout\n")
+        d = self.make()
+        d.tick()
+        active = d.running["PROCESS"]
+        active["last_progress"] = time.monotonic() - 301
+        # Avoid treating initial file creation as progress in this artificial jump.
+        active["log_mtime"] = D.mtime(active["log"])
+        d.poll()
+        self.assertIsNotNone(active["proc"].poll())
+        self.assertNotIn("PROCESS", d.running)
+        self.assertEqual(d.state["tasks"]["PROCESS"]["reason"], "watchdog: log stalled")
+
+    def test_real_stop_command_is_mocked_and_checks_scheduled_task(self):
+        d = self.make()
+        d.a.fake_worker = False
+        with patch.object(D.subprocess, "run", return_value=SimpleNamespace(returncode=0)) as stop:
+            d.stop("SAFE-ID", {})
+        command = stop.call_args.args[0][-1]
+        self.assertIn("Stop-ScheduledTask -TaskName 'JX-codex-SAFE-ID'", command)
+        self.assertIn("Get-ScheduledTask", command)
+        with patch.object(D.subprocess, "run", return_value=SimpleNamespace(returncode=1)):
+            with self.assertRaises(RuntimeError):
+                d.stop("SAFE-ID", {})
 
 
 if __name__ == "__main__":
