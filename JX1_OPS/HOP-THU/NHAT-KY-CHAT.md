@@ -117,3 +117,4 @@
 - 23:55 Chủ giao Chat kiểm tra kiến thức game bằng câu hỏi người chơi. Tạo DESIGN/KIEM-TRA-KIEN-THUC.md, KIEM-TRA/NHAT-KY-HOI-DAP.md; gửi #095 (10 câu đợt 1). Web không có nguồn tin cậy cho 'bộ An Bang', không đưa đáp án từ trí nhớ.
 - 00:00 Chủ chốt nguồn chuẩn là Vinagame. Chat tìm được trang thứ cấp (gamemoira, bản CTC 2019) cho câu 1 An Bang: 4 loại Hạng Liên/Ngọc Bội/Nhẫn Thủy/Nhẫn Hỏa; ghi vào KIEM-TRA-KIEN-THUC.md làm đáp án tham khảo; gửi #096. Chưa tìm được trang Vinagame chính thức.
 - 00:05 Chủ chốt tiêu chí chấm: dẫn được tới file mang tên (An Bang...) = đúng; Chat chỉ nắm sơ bộ, không sa đà nguồn mạng; dữ liệu chuẩn hóa UTF-8/TCVN3 bởi Sonnet. Gửi #097; cập nhật KIEM-TRA-KIEN-THUC.md.
+- 00:10 Chủ báo Sonnet đang chuẩn hóa dữ liệu: hoãn đợt 1; thêm bước 0 (hỏi chuẩn hóa xong chưa) vào quy trình; gửi #098 hỏi tình trạng chuẩn hóa.

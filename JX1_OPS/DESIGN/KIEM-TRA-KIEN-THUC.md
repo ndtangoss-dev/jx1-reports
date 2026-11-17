@@ -3,6 +3,7 @@
 Mục đích (chủ giao 17/11 23:46): Chat cũng phải nắm tri thức game. Chat hỏi Sonnet bằng ngôn ngữ NGƯỜI CHƠI, xem hệ thống (báo cáo, MUC-LUC-TRI-THUC, đồ thị Graphify, dữ liệu game) có trả lời được không; không trả lời được thì tìm vì sao và vá; trả lời được thì ghi lại vì sao được. Nâng dần độ hiểu sâu.
 
 ## Quy trình mỗi câu
+0. TRƯỚC KHI HỎI, Chat hỏi Sonnet: việc chuẩn hóa dữ liệu (UTF-8/TCVN3) đã xong chưa, xong phần nào (tỉ lệ/ngày giờ, nhóm file nào đã chuẩn, nhóm nào chưa). Chưa xong thì chỉ hỏi trong phần đã chuẩn hóa xong hoặc chờ; không chấm SAI vì lý do dữ liệu chưa chuẩn (ghi là 'chờ chuẩn hóa').
 1. Chat đặt câu hỏi kiểu người chơi (vd "Bộ An Bang gồm những trang bị nào?"). Mỗi lần Chat xem báo cáo của Sonnet/tiểu yêu, hỏi thêm ÍT NHẤT 1 câu liên quan; chủ cũng có thể đặt câu.
 2. Sonnet (hoặc 1 tiểu yêu) trả lời, BẮT BUỘC có: đáp án; NGUỒN (file dữ liệu game/báo cáo + dòng); đường tra (mục lục / đồ thị / báo cáo / phải đọc mã hoặc dữ liệu thô); thời gian tra; độ tin (chắc / chưa chắc / không biết). KHÔNG ĐOÁN: không có nguồn thì ghi "không biết".
 3. Chat chấm: ĐẠT (đúng và có nguồn) / MỘT PHẦN / KHÔNG. Kiểm chéo bằng ít nhất một đường độc lập (dữ liệu game trong game, tiểu yêu thứ 2 trả lời riêng, hoặc chủ xác nhận).

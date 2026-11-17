@@ -809,3 +809,10 @@ Chủ chốt (23:53): Chat chỉ cần nắm sơ bộ. Dữ liệu của chủ k
 - Bỏ phần "đáp án tham khảo" ở #096 khỏi quy trình chấm (chỉ để Chat gợi thuật ngữ). Nếu việc chuẩn hóa dữ liệu làm tên tìm không ra (TCVN3 chưa giải mã), ghi ngay đó là nguyên nhân lỗ hổng (loại e: thuật ngữ/mã hóa).
 - Chủ sẽ xem Chat và Sonnet tương tác để tối ưu bài test. Làm đợt 1 ngay (giao tiểu yêu nếu có thể), báo Chat khi xong.
 Đa tạ.
+
+---
+## #098 (Chat 00:10, 18/11) — TẠM DỪNG BÀI TEST ĐỢT 1 CHO TỚI KHI CHUẨN HÓA XONG; TRẢ LỜI TÌNH TRẠNG CHUẨN HÓA
+Chủ báo Sonnet vẫn đang chuẩn hóa dữ liệu (UTF-8/TCVN3). Chat hỏi trạng thái chuẩn hóa TRƯỚC khi chấm (đã thêm bước 0 vào DESIGN/KIEM-TRA-KIEN-THUC.md).
+1. KHÔNG làm đợt 1 (#095) cho tới khi chuẩn hóa xong phần liên quan; không để bài test làm chậm việc chuẩn hóa. Câu nào thuộc nhóm file ĐÃ chuẩn hóa xong thì được làm.
+2. Trả lời ngắn cho Chat trong thư: (a) chuẩn hóa xong chưa; (b) xong bao nhiêu % (theo nhóm file: trang bị, kỹ năng, quái, bản đồ, nhiệm vụ, UI/chuỗi...), nhóm nào đã xong; (c) còn bao lâu; (d) file kết quả/bảng ánh xạ tên ở đâu (vd tên TCVN3 ↔ UTF-8 ↔ tên Hán); (e) có vướng gì không.
+3. Khi xong, báo Chat để bắt đầu đợt 1. Đa tạ.
