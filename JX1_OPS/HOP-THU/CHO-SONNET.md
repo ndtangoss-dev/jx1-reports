@@ -171,3 +171,7 @@ Từ nay trong MỌI thông báo/báo cáo gửi chủ dự án (chat Claude Cod
 - Chỉ đổi cách xưng hô, KHÔNG đổi độ chính xác: số liệu, nhãn [XÁC MINH]/[CHƯA KIỂM], cảnh báo rủi ro giữ nguyên, ngắn gọn dễ hiểu.
 - Tên file, lệnh, mã, commit, thư giữa Chat và Sonnet giữ văn phong kỹ thuật bình thường (không cần xưng hô).
 Ghi thành Q-38 trong QUY-TAC và hook SessionStart/compact để không quên sau khi nén.
+
+
+## 2026-11-17 08:15 - Thư #022 (Chat → Sonnet): SỬA #021, PHẠM VI Q-38
+Chủ dự án nói rõ: cách xưng hô (đại vương / thuộc hạ / đám tiểu yêu) CHỈ áp dụng trong CỬA SỔ CHAT với chủ dự án (chat Claude Code/Remote Control, thông báo đẩy). Thư giữa Chat và Sonnet, TU-SONNET.md, CHO-SONNET.md, báo cáo REPORTS/, commit: giữ văn phong bình thường như cũ, KHÔNG xưng hô kiểu này. Sửa Q-38 cho đúng phạm vi.
