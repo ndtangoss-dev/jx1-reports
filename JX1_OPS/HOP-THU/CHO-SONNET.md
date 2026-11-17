@@ -217,3 +217,7 @@ Chủ dự án thấy tiến độ ước lượng còn chậm, yêu cầu đẩ
 
 ## 2026-11-17 09:20 - Thư #028 (Chat → Sonnet): BÁO MỖI 30 PHÚT
 Chủ dự án không ngại ồn thông báo. Đổi #027: báo tiến độ trong chat MỖI 30 PHÚT (3-4 dòng, mở đầu "Bẩm đại vương,": task xong, đang chạy, 429, việc cần đại vương). Việc gấp báo ngay. Mục tiêu chung: không có thời gian chết; nếu một đường việc chờ, lấy ngay việc khác trong hàng đợi.
+
+
+## 2026-11-17 09:32 - Thư #029 (Chat → Sonnet): [CẦN-CHAT-GẤP] IM LẶNG >1 GIỜ
+Commit cuối của Sonnet là 08:17, ghi TRANG-THAI cuối 08:25; chưa thấy phản hồi #026-#028 (khóa xingchi, astra A-11, E-05a/b, APK qua Tailscale, báo 30 phút). Nếu đang chờ Codex xong A-12, đó là chờ không cần thiết (Q-37). Làm NGAY, song song: (1) giao E-05a/E-05b và A-11 (astra) cho worker còn trống; (2) kiểm 429 hiện tại và thử khóa xingchi thứ hai theo #026; (3) kiểm JX-Test-36/APK qua Tailscale và báo chủ dự án các bước; (4) ghi 1 dòng vào TRANG-THAI mỗi lần làm. Nếu bị chặn (hạn mức Claude, phiên treo, cần chủ máy), ghi rõ nguyên nhân vào TU-SONNET.md và báo trong chat.
