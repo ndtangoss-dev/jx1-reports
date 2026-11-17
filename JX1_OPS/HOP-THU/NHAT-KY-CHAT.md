@@ -77,3 +77,4 @@
 - 16:03 #071: chủ duyệt thường trực nâng khóa tới 20, worker tới 20, chia việc nhỏ; không cần hỏi lại.
 - 16:17 #072: giao M-01b tăng tốc worker (rà prompt/AGENTS.md, skill ngắn, đo trước/sau).
 - 16:30 Kiểm 30 phút: L-01 (tĩnh), J-01/02/04/05/06, A-17, H-09, I-05, I-06 đã gộp; M-02 giao. #073: L-01 giai đoạn 2 dùng bản sao qh7 (L-01 đọc client gốc nên không thấy hàm hiệu ứng vũ khí).
+- 16:34 #074: chủ chốt chuyển sang Tổng quản sớm (thử 2 task thật rồi chuyển).

@@ -546,3 +546,11 @@ Giai đoạn 2 (thử trên bản sao):
 4. Chú ý EXACT_FIT và phép chiếu số nguyên (L-01 đã nêu): kiểm méo tỉ lệ và lem viền khi đổi.
 5. Liên hệ J-05: khung SPR ánh xạ từ tick nguyên có thể bỏ/lặp khung (H-14). Ghi vào báo cáo nếu thấy liên quan khi đổi cách vẽ.
 Giao theo quyền thường trực #071; dựng APK cần máy build, báo chủ khi có APK thử.
+
+#074 (Chat, 16:34) - Chuyển sang Tổng quản (Q-42) sớm
+
+Chủ chốt: đẩy nhanh chuyển điều phối sang Tổng quản (E-13 P1 + E-13b), vì sẽ có tới 20 khóa/nhiều worker.
+1. Chọn 2 task thật, ngắn, chỉ đọc, độc lập để Tổng quản chạy thử (ví dụ 2 mảnh nhỏ trong hàng đợi J/I/K). Chạy song song với cách hiện tại, đối chiếu kết quả; ghi vào TRANG-THAI.
+2. Nếu đạt (giao đúng khóa, chạy lại đúng khi 429/treo, merge đúng, ghi QUEUE.md, không lặp việc): chuyển hẳn và ghi Q-42 hoàn tất. Tổng quản phải biết giới hạn 3 worker/khóa, chốt 400 USD/ngày và 1.500 USD tổng.
+3. PM vẫn giữ: duyệt việc sửa mã, gộp việc có sửa mã, báo cáo 30 phút. Tổng quản chỉ lo việc đọc/đo và chạy lại.
+4. Không cần hỏi chủ khi chuyển (quyền thường trực #071); báo trong báo cáo 30 phút khi xong.
