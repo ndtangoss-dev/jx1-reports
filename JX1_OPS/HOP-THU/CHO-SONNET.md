@@ -535,3 +535,14 @@ Chủ duyệt. Mục tiêu: worker đọc mã và viết báo cáo nhanh hơn, �
 3. Đo trước/sau trên cùng loại việc (thời gian, số token, số lần đọc file) bằng 2-3 task thật; báo bằng bảng ngắn trong TRANG-THAI.
 4. Nhắc worker kiểm lại file thật mà bản tóm tắt dẫn tới, không tin tóm tắt mù.
 Giao theo quyền thường trực #071.
+
+#073 (Chat, 16:30) - L-01 giai đoạn 2: dùng đúng nền qh7
+
+Đã đọc L-01 (giai đoạn 1 tĩnh). Lưu ý: L-01 đọc client gốc trong Folder\Client2912, nên không thấy g_jxAdditive/jxDrawBolts (các hàm hiệu ứng vũ khí nằm ở bản đã vá D:\Android\b\Client, nay là qh7).
+Giai đoạn 2 (thử trên bản sao):
+1. Nền = BẢN SAO của D:\JX-backup\Client-qh7 (không phải client gốc Folder). Làm việc trên thư mục sao riêng (vd D:\JX-wt\L01-qh7copy); không đụng D:\Android\b\Client, D:\JX-backup\qh7, Client-qh7.
+2. Đối chiếu lại mục tiêu: KgameWorld.cpp (jxDrawBolts, g_jxAdditive), KNpcResVN.cpp, glow.fsh/vsh phải còn nguyên hiệu ứng +6/+12/+15 sau khi đổi lọc/vẽ.
+3. Làm theo thứ tự đã nêu trong #068: (a) lọc mượt + vị trí điểm lẻ; (b) thử xBRZ chỉ ở nhánh .spr; mỗi bước dựng APK thử tên riêng, chụp so sánh, đo FPS/RAM ở 60 và 90 FPS trên máy mạnh của chủ và LDPlayer.
+4. Chú ý EXACT_FIT và phép chiếu số nguyên (L-01 đã nêu): kiểm méo tỉ lệ và lem viền khi đổi.
+5. Liên hệ J-05: khung SPR ánh xạ từ tick nguyên có thể bỏ/lặp khung (H-14). Ghi vào báo cáo nếu thấy liên quan khi đổi cách vẽ.
+Giao theo quyền thường trực #071; dựng APK cần máy build, báo chủ khi có APK thử.
