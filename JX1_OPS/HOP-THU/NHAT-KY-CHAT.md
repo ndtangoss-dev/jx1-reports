@@ -119,3 +119,4 @@
 - 00:05 Chủ chốt tiêu chí chấm: dẫn được tới file mang tên (An Bang...) = đúng; Chat chỉ nắm sơ bộ, không sa đà nguồn mạng; dữ liệu chuẩn hóa UTF-8/TCVN3 bởi Sonnet. Gửi #097; cập nhật KIEM-TRA-KIEN-THUC.md.
 - 00:10 Chủ báo Sonnet đang chuẩn hóa dữ liệu: hoãn đợt 1; thêm bước 0 (hỏi chuẩn hóa xong chưa) vào quy trình; gửi #098 hỏi tình trạng chuẩn hóa.
 - 00:03 Chủ dặn giữ thông tin không loạn: tạo HOP-THU/THU-HIEN-HANH.md (bảng thư hiệu lực/thay thế), cập nhật mỗi lần gửi thư.
+- 00:07 Kiểm: Sonnet chưa push gì kể từ 23:31 (36 phút, dưới ngưỡng 60). Chưa có TRẠNG THÁI SỐNG (#094), chưa trả lời #094-#098 (chuẩn hóa dữ liệu đang chạy theo chủ). U-01/02/03, S-01, R-01..R-07 đều đang chạy theo KHOA.md; chưa có báo cáo U/R/S nào xong. Chưa báo chủ (giờ báo đầu tiên 00:35).
