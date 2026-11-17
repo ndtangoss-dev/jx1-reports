@@ -231,4 +231,4 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 - [12:26] #49 F-02 (Groq/Cerebras): hoãn. [GIẢ ĐỊNH-CHỜ-CHAT] tạo tài khoản + đăng nhập cần chủ tự làm (mật khẩu/2FA, quy tắc #035); ưu tiên thấp, không chặn việc khác. Phần script đo HTTP sẽ soạn khi có khóa.
 - [12:38] Monitor brxg9r2zm hết hạn; dựng lại ngay (phút hở ≈0-1, không có .done nào bị lỡ: quét lại .seen-all).
 - [12:38] Merge A-15c (phái 9-cuối; A-15 xong cả 3 phần). Đọc #50. Giao H-05, H-10 (K5). Hàng chờ: H-06,H-07,H-08,H-11,H-12,H-09. Monitor bjbhhhbj9 dựng lại 12:38; A-15c .done 12:29 bị trễ ~9 phút do monitor hết hạn.
-- [12:47] F-02 xong: Groq gpt-oss-120b ~550 tok/s (sol ~30). Khóa ở .jx1keys\GROQ.txt, không vào kho.
+- [12:47] F-02 xong: Groq gpt-oss-120b ~550 tok/s (sol ~30). Khóa ở .jx1keys\JX-GROQ.txt, không vào kho.

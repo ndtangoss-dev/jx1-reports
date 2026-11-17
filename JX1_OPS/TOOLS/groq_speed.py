@@ -1,5 +1,5 @@
 import json, sys, time, urllib.request
-key = open(r'C:\Users\PC\.jx1keys\GROQ.txt').read().strip()
+key = open(r'C:\Users\PC\.jx1keys\JX-GROQ.txt').read().strip()
 model = sys.argv[1] if len(sys.argv) > 1 else 'openai/gpt-oss-120b'
 PROMPT = "Tóm tắt trong khoảng 400 từ tiếng Việt: lịch sử ngắn của trò chơi nhập vai trực tuyến thập niên 2000 ở châu Á, gồm cách chơi, mô hình thu phí, và lý do chúng được yêu thích."
 body = json.dumps({"model": model, "stream": True, "max_tokens": 1500,

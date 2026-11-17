@@ -1,4 +1,4 @@
-TÓM TẮT 1: Groq (gói miễn phí, khóa lưu ở C:\Users\PC\.jx1keys\GROQ.txt, ngoài kho) đo ngày 17/11/2026 bằng HTTP trực tiếp, không qua Codex.
+TÓM TẮT 1: Groq (gói miễn phí, khóa lưu ở C:\Users\PC\.jx1keys\JX-GROQ.txt, ngoài kho) đo ngày 17/11/2026 bằng HTTP trực tiếp, không qua Codex.
 TÓM TẮT 2: openai/gpt-oss-120b: độ trễ chữ đầu 0,8–1,7 s, sinh ~530–563 tok/s (3 lần đo, ~1.200–1.400 token ra mỗi lần); openai/gpt-oss-20b: ~1.164 tok/s (1 lần đo). So với gpt-6.1-sol ~27–34 tok/s: nhanh hơn khoảng 16–20 lần (120b) và hơn 35 lần (20b).
 TÓM TẮT 3: llama-3.3-70b-versatile trả 404 (không có quyền/không tồn tại trên khóa này).
 TÓM TẮT 4: Hạn mức theo thư #049 (30 RPM, 1.000 yêu cầu/ngày, 200K token/ngày, 8K token/phút cho gpt-oss-120b) lấy từ Chat, [CHƯA KIỂM] bằng header thực tế; mỗi việc tiểu yêu ~6,5M token vào nên không dùng làm tiểu yêu chính.
