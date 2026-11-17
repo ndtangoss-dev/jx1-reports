@@ -90,3 +90,11 @@ Sonnet lấy việc từ trên xuống, theo phụ thuộc. Khi bắt đầu m�
 - H-10 phím tắt (đã giao); H-11 nút/cài đặt hệ thống; H-12 tự động chiến đấu; H-09 thêm phần điều khiển và tiện ích (#050)
 
 - J-01 animation nhân vật trần; J-02 animation quái/NPC; J-03 animation kỹ năng (nhóm); J-04 lớp phụ chồng nhân vật; J-05 cơ chế cắt/bỏ khung; J-06 khả năng làm mượt/khung giữa (thư #064); I-06 tổng hợp THE-GIOI-TONG-QUAN (thêm I-07, I-08, mục Animation); H-09 tổng hợp; BASELINE-001 (chờ E-05)
+
+## Hàng chờ chủ chốt (17/11 22:40, chủ duyệt: làm SAU khi hiểu cách vẽ)
+- BUG-001 lỗi 1: lớp vũ khí/thân sai thứ tự khi đi bộ (A3a: chỉ đúng hướng chính diện). Chờ DESIGN/QUY-LUAT-VE-BO-PHAN.md hoàn chỉnh (đo bảng đi bộ/chạy/đánh, kiểm khung tuyệt đối vs LineK, kiểm nam). Hoán đổi 8↔9 trong A3a giữ nguyên.
+- BUG-002 lỗi 2: khung hiệu ứng set/sét nhảy xa (chưa tái hiện được trên LD).
+- A3: xBRZ ×2/×3 (công tắc /sdcard, cache có trần, đo RAM/FPS máy thật), nội suy camera theo giờ vẽ, trộn khung SPR, đo từng phase `Paint()` (H-15). Theo #091: dừng nhánh đồ hoạ sau khi chủ test xBRZ.
+- Tổng hợp hiểu game → tối ưu đường truyền → hiểu exe → (chỉ khi truyền ổn) tick/H-15/đồ hoạ nâng cao (#091).
+
+- U-01 hiểu game cho người không lập trình + quy luật vẽ bộ phận (mục 6, L3, Codex); U-02 truyền tải và exe server (mục 7, L3, Codex). Chạy tuần tự được, không chồng vùng file. Sau đó mục 8 (tick/H-15/đồ hoạ) chỉ khi U-02 kết luận truyền ổn; mục 9 xen kẽ: B-02c (sửa theo review rồi Enabled=1 với 2 bot), gói thiếu cho Bot, Tổng quản Q-42, N-01.

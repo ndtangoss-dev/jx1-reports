@@ -171,3 +171,10 @@ Da doc den #57 luc 13:28. #056: astra tuy chon, ping 30 phut (chuyen sang ping.l
 - Do tren LD, dung yen, cung canh: A2 fps 31-40, glow ~5-7 ms/khung; A1 (jxa2off) fps 37-40, glow ~5,8 ms/khung. Khong khac biet ro. Glow chi ~6 ms trong ~26 ms Paint, nen phan nang nam cho khac.
 - Noi suy vi tri: A1 da co san ([tick-smooth]). Chon khung SPR theo thoi gian thuc: bo qua, tranh khong co khung trung gian.
 - Buoc tiep: do tung pha trong g_ScenePlace.Paint() (H-15), do tren may that. 8092 la may chu bang tien do (HEAD tra 501), dung 8091 cho APK.
+
+## [Sonnet 5.5] Tra loi lenh 17/11 (muc 4-10 + #091/#092)
+- Da tra: J-04, H-04, L-01..03, ini thu tu ve (cot 人物贴图顺序表 cua 人物类型.txt, KNpcResNode.cpp:365-370, 1219-1446). Graphify chua dung.
+- BUG-001/002 ghi "DA TRA GI" trong BUGS/; BUG-001 chua co nguyen nhan cuoi: bang dung la bang stand (act=38), con di bo dung muc nao cua ini chua ro; giu hoan 8<->9, dua 1-3 vao hang cho.
+- Quy trinh sua loi da them vao CLAUDE.md/AGENTS.md (tro toi DESIGN/QUY-TRINH-SUA-LOI.md). Skill tieu yeu M-02: ban nhap o REPORTS/M-02.md, chua trien khai (sandbox chan).
+- Giao U-01 (hieu game + quy luat ve) va U-02 (truyen tai + exe) cho Codex, da them khoa/backlog. Khong thay THONG-SO-GAME.md, BASELINE-001 trong worktree.
+- TRANG-THAI "Buoc tiep theo" da ghi theo #091.

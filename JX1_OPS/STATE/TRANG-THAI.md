@@ -25,10 +25,12 @@ Cập nhật: 2026-11-16 – Sonnet PM (bắt đầu giai đoạn 0). Sonnet c�
 ## Đang chờ chủ dự án
 - D1, D2 đã quyết (Q-10, Q-11). D3–D6 có mặc định, xem kế hoạch Phần 11.
 
-## Bước tiếp theo (theo thứ tự)
-1. Chờ chủ dự án đọc báo cáo mạng trước khi bật thêm VM; không bật lại `JX-Server-D` (Main) khi chưa được phép.
-2. 0-03: xử lý worker Codex PID 135400 (chạy lâu, log rỗng): kiểm tra, dừng và giao lại nếu treo.
-3. Giai đoạn 0 theo backlog: 0-04 (Graphify; xác minh gói trước khi cài), 0-05, 0-06, 0-07, 0-09, 0-10, 0-08.
+## Bước tiếp theo (theo thứ tự, #091 + chủ 17/11 22:40)
+1. Tổng hợp hiểu game (giao tiểu yêu đọc song song H-xx, I-xx, J-xx, A-08/15/16/17, THONG-SO-GAME, BASELINE-001), kể cả quy luật vẽ bộ phận (DESIGN/QUY-LUAT-VE-BO-PHAN.md).
+2. Tối ưu đường truyền client↔server và hiểu các exe (K-01, A-01, A-06); chưa đụng server production.
+3. Chỉ khi truyền ổn: tick (18 Hz→cao hơn), H-15, đồ hoạ nâng cao.
+4. Xen kẽ: B-02c (sửa theo review, Enabled=1 với 2 bot), gói tin còn thiếu cho Bot, Tổng quản Q-42, N-01.
+5. Hàng chờ (chủ duyệt sau khi hiểu cách vẽ): BUG-001, BUG-002, A3 (xBRZ...).
 
 ## Đường dẫn
 | Thứ | Ở đâu |
