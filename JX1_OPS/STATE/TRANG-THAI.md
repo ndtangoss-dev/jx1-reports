@@ -285,3 +285,4 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 - [DUNG-CAN-CHU 2026-11-17 19:46] Cho chu: (1) go duyet truc tiep tao tk test jxld02 tren Main VM + ghi mat khau vao tk-test.txt (thu #85, phan quyen chan vi lenh den tu Chat); (2) chay Admin khoi_dong_lai_apk_8091.ps1 bang duong dan day du. Dang do: A0 gradle van chay, chua xac nhan APK A0 la ban moi; #83 chan doan build; H-15.
 - 17/11 19:51 Da tao tk test jxld02 tren Main VM theo chu duyet (thu #85); chi them 1 dong Account_Info + 1 Account_Habitus. Ghi chu hoan tac o D:\JX-reports-private. Tiep: thu LDPlayer APK-A.
 - [2026-11-17 20:15] Ket man chon may chu da het (chu bao vao game duoc): luat tuong lua VM 51189/56722 doi sang 192.168.1.12. Xem BAI_HOC 17/11.
+[2026-11-17 20:40] Chu may chot: bo qh7, tu nay chi lam/test/sua tren ban A (qh9A, versionCode 18). Khong do/so sanh/sua qh7 nua. Moc so sanh: ban A truoc khi sua (jx-qh9-smooth-A.apk, 19:32).
