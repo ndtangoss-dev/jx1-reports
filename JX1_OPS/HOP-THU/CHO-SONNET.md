@@ -683,3 +683,15 @@ Chủ đã tải được file. Chủ đồng ý (thay cho điều kiện "báo 
 1. Tải APK (#84): nhận chẩn đoán (đường relay DERP Singapore, máy chủ 8091 thiếu Range/HEAD). Chủ đang ở ngoài, không ngồi máy nên KHÔNG chạy được script Admin. Hãy chạy máy chủ file ĐÃ SỬA (apk_server_tailscale.py có Range/HEAD) bằng quyền người dùng thường trên CỔNG MỚI 8092 (cùng địa chỉ 100.95.186.86), phục vụ cùng thư mục D:\JX1_U003_build\serve; để nguyên 8091 cũ, không dừng. Kiểm bằng curl Range/HEAD, rồi báo chủ link mới: http://100.95.186.86:8092/<tên>.apk. Nếu Tailscale nối trực tiếp được (khi điện thoại ở Wi-Fi nhà) thì tải sẽ nhanh hơn; ghi chú trong báo cáo.
 2. Tạo tài khoản test (#85): đúng, KHÔNG lách cơ chế phân quyền. Chủ sẽ duyệt lệnh trực tiếp trong cửa sổ Claude Code (qua điều khiển từ xa trên điện thoại). Giữ nguyên thiết kế: một tài khoản jxld02 nhân bản từ jxld01, mật khẩu ngẫu nhiên lưu Credential Manager, ghi lệnh hoàn tác. Khi chủ duyệt thì chạy ngay, rồi thử LDPlayer theo #85 (ẩn cửa sổ). Với tk-test.txt: để KHÔNG chứa mật khẩu (đúng luật #035), chủ lấy mật khẩu ở Credential Manager hoặc chủ nhập đã nhớ; nếu cần gửi mật khẩu cho chủ qua điện thoại thì hỏi chủ cách an toàn (không qua kho, không qua thư này).
 3. Trong lúc chờ chủ duyệt: tiếp tục A0 (kiểm libMyGame.so của A0 khác A1 thật, SHA256 các APK), #083 build nhanh, H-15 đo trước.
+
+---
+## #087 (Chat 20:30, 17/11) — CHỦ BÁO: ANIMATION VẪN GIẬT, CHƯA MƯỢT
+Chủ nhắn (20:25): "Cảm giác các animation vẫn giật, chưa được mượt nữa" (đã vào game thử). Sonnet đo trên LD bản qh7: trung vị 33 ms (~30 FPS), tối đa 50 ms. Đây là việc ưu tiên số 1 tối nay.
+
+Chat nhận xét, Sonnet kiểm chứng bằng đo, không đoán:
+1. Đo phải trên APK-A (A1), không phải qh7. Ghi bảng: qh7 vs A1, cùng cảnh, cùng thao tác (đi bộ, đứng yên có animation, đánh quái, cast chiêu), trung vị/p95/tối đa ms.
+2. 30 FPS có thể là trần do cấu hình, không phải do máy nặng: kiểm tra giá trị setAnimationInterval/setFrameRate lúc khởi động, vsync/swap interval, và mặc định thanh FPS (UI chỉ kéo tới 90, KuiOptions.cpp:182-192). Nếu máy nhàn mà vẫn 30 thì là trần cấu hình: ép 90 (hoặc mặc định 90 cho bản test).
+3. Dù render lên 90, animation nhân vật/quái vẫn CÓ THỂ giật vì logic chạy 18 Hz và SPR chọn frame theo tick nguyên (J-05: nhảy/lặp frame). Vị trí nhân vật cũng cập nhật theo tick 18 Hz. Cần nội suy theo thời gian render (đã thống nhất "frame giữa"): vị trí vẽ = nội suy giữa 2 tick logic; chọn frame SPR theo thời gian thực chứ không theo tick nguyên. Chỉ sửa phần VẼ, KHÔNG đụng logic/server (đúng #080).
+4. Nếu vẫn 30 sau khi sửa: đo từng đoạn vẽ (nghi vẽ lại quầng sáng 9 lần mỗi lớp vũ khí mỗi khung) và đo trên điện thoại thật của chủ, không chỉ LD (LD thường chậm hơn máy thật).
+5. Làm lần lượt: (a) đo A1 + kiểm trần FPS, báo chủ ngắn; (b) bản A2 có ép FPS + nội suy vị trí/frame (cờ bật/tắt được lúc chạy nếu làm được), versionCode 19; (c) gửi qua Tailscale cổng 8092 (đã sửa Range/HEAD).
+Báo chủ bằng 3-4 dòng, có số đo trước/sau. Đa tạ.

@@ -98,3 +98,4 @@
 - 20:05 #086: Sonnet cần chủ duyệt lệnh tạo tk test (DB Main VM) trong Claude Code; tải chậm do relay DERP Singapore + server 8091 thiếu Range; chạy server sửa trên cổng 8092 không cần Admin.
 - 20:05 Kiểm: chủ đã duyệt, Sonnet tạo tk test jxld02 trên Main VM lúc 19:51 (1 dòng Account_Info + 1 Account_Habitus, có ghi chú hoàn tác); đang chuyển sang thử LDPlayer APK-A; chưa thấy Sonnet đọc #086, chưa có kết quả thử. Không báo chủ.
 - 20:24 Kiểm: Sonnet đã xử lý lỗi kẹt màn chọn máy chủ (luật tường lửa VM 51189/56722 đổi sang 192.168.1.12, chủ báo vào game được lúc 20:15). Chưa đọc #086, chưa thấy kết quả thử LDPlayer/cổng 8092. Không báo chủ.
+- 20:30 Chủ báo animation vẫn giật sau khi vào game thử APK-A. Sonnet đo qh7 trên LD ~30 FPS. Gửi thư #087: đo A1, kiểm trần FPS, nội suy vị trí/frame SPR (chỉ phần vẽ), A2 versionCode 19.
