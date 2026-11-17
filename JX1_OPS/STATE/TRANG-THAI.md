@@ -236,3 +236,4 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 - [12:51] E-13, G-01, F-01: log đứng ở ~5KB suốt 70 phút từ 11:38 (trùng sự cố xingchi 522 lúc 12:00) => chạy lại (lần 1, chưa có tiến độ nào mất). Các worker khác sống, log cập nhật 12:36.
 - [12:53] Nghi van nha cung cap nghen: phan lon log worker khong ghi tu ~12:36 (E-13/G-01/F-01 da chay lai). Khong giao them cho den khi log cua worker song lai; monitor bh7nuaktn dem log hoat dong moi phut (het han ~13:25).
 - [13:04] #052: Groq huy, khoa .revoked, P3 danh dau huy.
+- [13:05] F-01 xong (merge). Lan cuoi bi 429 Too Many Requests tren K4 (retry limit) => 429 la nguyen nhan nghen; 10 worker im tu 12:36 co the dang cho retry 429.
