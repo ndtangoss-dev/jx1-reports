@@ -336,3 +336,14 @@ Kết thúc: H-09 tổng hợp (Chat duyệt) thành DESIGN/TRANG-BI-TONG-QUAN.m
 
 ## 2026-11-17 11:58 - Thư #046 (Chat → Sonnet): SỬA #045 mục H-04 (chủ dự án 11:51)
 Hiệu ứng vũ khí: phát sáng ở cấp cường hóa 6/12/15; "sét chạy dọc vũ khí" ở 12/15. Chủ dự án nói mục hiệu ứng này ĐÃ nghiên cứu và sửa thành công trước đây. Vì vậy H-04 đổi: KHÔNG khảo sát lại từ đầu. Việc: (1) tìm trong kho/nhật ký/báo cáo cũ ghi chép về lần sửa đó (commit, file, thay đổi client/server) và gom thành 1 trang REPORTS/H-04-hieu-ung-vu-khi.md: mốc, tài nguyên, nơi sửa, cách kiểm; (2) nếu không tìm thấy ghi chép, ghi "không có tài liệu" và hỏi chủ dự án nơi chứa bản sửa (không đoán, không làm lại); (3) thêm 1 ca vào danh sách test của H-09: đổi cấp cường hóa 5→6→12→15 và xác nhận phát sáng/sét đúng mốc. Giảm effort xuống low cho H-04.
+
+
+## 2026-11-17 12:00 - Thư #047 (Chat → Sonnet): H-04 - DẤU VẾT BẢN SỬA PHÁT SÁNG/SÉT (chủ dự án 11:55, từ ChatGPT cũ)
+Chủ dự án hỏi ChatGPT (cũng tham gia lúc đó; người thực hiện là Claude Code tài khoản cũ). Thông tin ChatGPT trả lời (chưa kiểm, chỉ là gợi ý tìm):
+- Cột mốc nghiệm thu: "qh7" ngày 14/11; APK nghiệm thu hiệu ứng phát sáng: `jx-wglow7.apk`.
+- Thư mục Client: `D:\Android\b\Client`.
+- Báo cáo phân tích liên quan: "61–66".
+- qh8 từng bị dang dở phần Phi Phong và mất đá cường hóa; nên truy lại bản qh7 trước khi sửa tiếp (đừng lấy qh8 làm gốc).
+- Logic cấp cường hóa nằm ở KItem.cpp (EnChanceBao, BaoShiGetDesc); hình ảnh/ánh sáng/sét ở hệ thống hiệu ứng + tài nguyên animation/particle của client, chưa rõ file.
+- Mốc: +6 phát sáng; +12 sáng mạnh hơn, sét chạy từ chuôi lên mũi; +15 sáng nhất, sét rõ nhất.
+Việc cho H-04 (readonly, effort low): (1) tìm trên máy chủ dự án: D:\Android\b\Client, jx-wglow7.apk (so với các APK khác), thư mục báo cáo 61–66 (D:\... tìm theo tên); (2) đọc nhật ký/ghi nhớ của Claude Code tài khoản cũ trong `C:\Users\PC\.claude` (projects/*.jsonl, memory, plans, todos, history) tìm từ khóa: wglow, qh7, qh8, glow, sét/lightning, EnChanceBao, BaoShiGetDesc, Phi Phong; CHỈ ĐỌC, không sửa/di chuyển/xóa, không dán nội dung hội thoại thô vào kho công khai (chỉ trích tên file, đường dẫn, mốc, lệnh build, không bí mật/khóa); (3) từ đó khôi phục: file nào đã sửa (client/server), diff/commit, cách dựng jx-wglow7.apk, cách kiểm; (4) ghi REPORTS/H-04-hieu-ung-vu-khi.md với phần "ĐÃ XÁC MINH" và "CHƯA XÁC MINH"; nếu có bản qh7 nguyên vẹn thì nêu cách bảo quản (sao lưu, tag) để không bị qh8 ghi đè. Nhắc: kho jx1-reports công khai.
