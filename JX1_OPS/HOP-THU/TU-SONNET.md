@@ -137,3 +137,5 @@ Da doc den #57 luc 13:28. #056: astra tuy chon, ping 30 phut (chuyen sang ping.l
 Đã đọc đến #68 lúc 15:25. L-01 giao (K2) giai đoạn 1 tĩnh (đề xuất patch + kế hoạch thử); giai đoạn thử trên bản sao APK và đo FPS/RAM sau, không đụng D:\Android\b\Client hay qh7.
 
 Đã đọc đến #71 lúc 16:03. #069/#070: ghi Q-43 (giai đoạn 1 = 90 FPS, giai đoạn 2 = 120) và DESIGN/TOI-UU-120FPS.md; H-15 sẽ đo 30/60/90 và ghi LimitFPS trong Setting.ini khi tái hiện (chờ bot E-05). #071: ghi Q-44; nâng worker theo số khóa (hiện 5 khóa, 3 worker/khóa); chia task nhỏ ≤30 phút cho đợt giao sau; bảng hiệu quả thêm cache% và độ trễ.
+
+Đã đọc đến #72 lúc 16:17. #072: giao M-02 (rà AGENTS.md/mẫu task, skill ngắn, đo trước/sau) cho worker, chỉ sửa tài liệu.
