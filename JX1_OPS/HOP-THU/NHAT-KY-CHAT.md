@@ -66,3 +66,4 @@
 - 2026-11-17 14:30 Chủ yêu cầu khảo sát animation nhân vật/quái/skill, cơ chế cắt khung, khả năng thêm khung giữa; gửi #064 (J-01..J-06).
 - 2026-11-17 14:35 Kiểm 30 phút: gộp H-01,H-06,H-07,H-08,H-11,G-01,E-11,E-12,B-04a,E-13b; 12 worker (I-xx, H-12..14, A-16/17); chưa đọc #064 (J-xx). M-01 chờ chủ duyệt. Sổ thông số 0 mục, baseline chưa.
 - 2026-11-17 14:40 Chủ báo đạn/skill xuyên quái khi FPS cao; gửi #065 (H-15).
+- 14:50 Kiểm 30 phút: Sonnet đã đọc #065, giao H-15 (K2, phần tĩnh), J-01..J-06 trong hàng đợi; I-03 đã gộp; chưa có báo cáo H-13/H-14. Không có gì đáng báo; chờ chủ trả lời mức FPS.
