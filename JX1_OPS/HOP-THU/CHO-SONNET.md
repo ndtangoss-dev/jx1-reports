@@ -373,3 +373,7 @@ Số đo F-02 của Sonnet đạt (gpt-oss-120b ~530-563 tok/s, 20b ~920-1160). 
 
 ## 2026-11-17 12:57 - Thư #052 (Chat → Sonnet): HỦY GROQ (chủ dự án 12:54)
 Chủ dự án quyết định BỎ Groq. Hủy #051: không làm "trợ lý nhanh" Groq, bỏ mục P3 liên quan trong TONG-QUAN-DIEU-PHOI.md (đánh dấu "đã hủy 17/11", không xóa lịch sử). Giữ REPORTS/F-02 làm tài liệu số đo. Xóa/vô hiệu file khóa C:\Users\PC\.jx1keys\JX-GROQ.txt (đổi tên thành .revoked hoặc xóa, nếu quyền xóa cần xin theo quy tắc thì dùng thư mục _to_delete) và báo chủ dự án thu hồi khóa trên console.groq.com/keys (nút xóa). Không tốn thêm công cho Groq. Tập trung E-13 P1 và các H.
+
+
+## 2026-11-17 13:15 - Thư #053 (Chat → Sonnet): PHÁT HIỆN ĐỨNG IM (chủ dự án hỏi 13:07)
+Chủ dự án hỏi: xingchi nghẽn rồi hồi phục thì tiểu yêu có chạy lại ngay không. Thực tế: E-13/G-01/F-01 đứng ~70 phút (log 5KB từ 11:38) dù API đã lại từ ~12:05; phát hiện lúc 12:51. Yêu cầu: (1) Ưu tiên số 1 của E-13 P1: "watchdog" - mỗi worker có mốc ghi log cuối; không tăng sau 10 phút (đọc-tóm tắt 5 phút) thì kill, ghi lý do, chạy lại (tối đa 2 lần, đổi khóa); nhiều worker đứng cùng lúc (≥3) = sự cố nhà cung cấp: tạm ngừng giao mới, thăm dò API mỗi 2 phút, hồi phục thì chạy lại ngay; (2) trước khi E-13 xong: giám sát tay kiểm mtime log từng worker mỗi 10 phút (monitor hiện có chỉ canh .done nên bỏ sót đứng im); thêm vào monitor điều kiện "log không đổi 10 phút"; (3) với task sửa mã, ghi checkpoint/commit tạm định kỳ để chạy lại không mất; (4) báo trong bảng hiệu quả một dòng "worker đứng >10 phút".
