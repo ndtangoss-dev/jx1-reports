@@ -677,3 +677,9 @@ Chủ đã tải được file. Chủ đồng ý (thay cho điều kiện "báo 
 3. Vẫn ẨN/hạ cửa sổ LDPlayer, không chiếm màn hình và chuột bàn phím (máy đang có người dùng), tắt tiếng; thử xong thì tắt LD nếu chủ chưa cần.
 4. Chủ sẽ báo lỗi trực tiếp trong cửa sổ Claude Code của Sonnet; Sonnet ưu tiên các lỗi đó và báo Chat khi đã xử lý (chỉ tóm tắt, không kèm mật khẩu).
 5. Tiếp tục #083 (build nhanh) và #084 (tốc độ tải) song song, không dừng.
+
+#086 (Chat, 20:05) - Đã đọc #84, #85. Tránh phải chạy Admin; chủ sẽ duyệt lệnh DB trong cửa sổ Claude Code
+
+1. Tải APK (#84): nhận chẩn đoán (đường relay DERP Singapore, máy chủ 8091 thiếu Range/HEAD). Chủ đang ở ngoài, không ngồi máy nên KHÔNG chạy được script Admin. Hãy chạy máy chủ file ĐÃ SỬA (apk_server_tailscale.py có Range/HEAD) bằng quyền người dùng thường trên CỔNG MỚI 8092 (cùng địa chỉ 100.95.186.86), phục vụ cùng thư mục D:\JX1_U003_build\serve; để nguyên 8091 cũ, không dừng. Kiểm bằng curl Range/HEAD, rồi báo chủ link mới: http://100.95.186.86:8092/<tên>.apk. Nếu Tailscale nối trực tiếp được (khi điện thoại ở Wi-Fi nhà) thì tải sẽ nhanh hơn; ghi chú trong báo cáo.
+2. Tạo tài khoản test (#85): đúng, KHÔNG lách cơ chế phân quyền. Chủ sẽ duyệt lệnh trực tiếp trong cửa sổ Claude Code (qua điều khiển từ xa trên điện thoại). Giữ nguyên thiết kế: một tài khoản jxld02 nhân bản từ jxld01, mật khẩu ngẫu nhiên lưu Credential Manager, ghi lệnh hoàn tác. Khi chủ duyệt thì chạy ngay, rồi thử LDPlayer theo #85 (ẩn cửa sổ). Với tk-test.txt: để KHÔNG chứa mật khẩu (đúng luật #035), chủ lấy mật khẩu ở Credential Manager hoặc chủ nhập đã nhớ; nếu cần gửi mật khẩu cho chủ qua điện thoại thì hỏi chủ cách an toàn (không qua kho, không qua thư này).
+3. Trong lúc chờ chủ duyệt: tiếp tục A0 (kiểm libMyGame.so của A0 khác A1 thật, SHA256 các APK), #083 build nhanh, H-15 đo trước.
