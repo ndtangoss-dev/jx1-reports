@@ -62,3 +62,4 @@
 - 2026-11-17 14:10 Chủ hỏi tick server/độ trễ đòn; gửi #060 (H-13 khảo sát + đo).
 - 2026-11-17 14:15 Chủ: tìm hiểu và đo luôn các số để tối ưu sau; gửi #061 (sổ thông số + baseline-001, chỉ đọc/đo).
 - 2026-11-17 14:20 Chủ báo lỗi mất khung hiệu ứng sáng/sét khi vung kiếm di chuyển; gửi #062 (H-14: nguyên nhân giả thuyết + thông số + đo).
+- 2026-11-17 14:25 Chủ xác nhận bản test lỗi là qh7; gửi #063 (H-14 lấy qh7 gốc, bisect qua các bản qh1..qh7).
