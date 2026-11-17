@@ -1,10 +1,10 @@
 # Thế giới game JX1 — tổng quan I-06
 
-Ngày tổng hợp: 17/11/2026. Trạng thái: **DONE trong phạm vi tổng hợp tài liệu hiện có**; các khoảng trống khảo sát và runtime bên dưới vẫn chưa được xác minh.
+Ngày tổng hợp: 17/11/2026. I-06 **DONE trong phạm vi tổng hợp tài liệu hiện có**; cập nhật I-06b **PARTIAL về độ phủ J-01..J-06 do thiếu báo cáo J-06**. Các khoảng trống khảo sát và runtime bên dưới vẫn chưa được xác minh.
 
 ## Phạm vi và cách đọc bằng chứng
 
-Chỉ tổng hợp báo cáo trong `JX1_OPS`; không đọc lại source, cấu hình hoặc dữ liệu game gốc. Mọi số liệu kỹ thuật là **dẫn lại kết quả tĩnh của báo cáo nguồn**, không phải phép đo mới của I-06. Tên file/symbol/vị trí source được giữ để truy vết; đường dẫn đầy đủ và dấu vân tay dữ liệu xem tại nguồn. Không dùng Main VM, mạng, binary game/server, build hay test runtime.
+Chỉ tổng hợp báo cáo trong `JX1_OPS`; không đọc lại source, cấu hình hoặc dữ liệu game gốc. Mọi số liệu kỹ thuật là **dẫn lại kết quả tĩnh của báo cáo nguồn**, không phải phép đo mới của I-06/I-06b. I-06b cập nhật Animation và độ phủ ngày 17/11/2026; đã có J-01..J-05 và L-01, chưa tìm thấy báo cáo J-06 trong worktree. Tên file/symbol/vị trí source được giữ để truy vết; đường dẫn đầy đủ và dấu vân tay dữ liệu xem tại nguồn. Không dùng Main VM, mạng, binary game/server, build hay test runtime.
 
 | Phần | Nguồn trong worktree | Độ hoàn tất/giới hạn của nguồn |
 |---|---|---|
@@ -17,8 +17,11 @@ Chỉ tổng hợp báo cáo trong `JX1_OPS`; không đọc lại source, cấu 
 | I-08: nhiệm vụ | [Hệ thống nhiệm vụ](../REPORTS/I-08-he-thong-nhiem-vu.md) | DONE tĩnh; chưa chứng minh TASKSYS/binding và lưu DB thực tế |
 | J-01: nhân vật trần | [Animation nhân vật](../REPORTS/J-01-animation-nhan-vat-tran.md) | PARTIAL; chưa có cặp asset gốc/Coco có nguồn gốc rõ |
 | J-02: quái/NPC | [Animation quái/NPC](../REPORTS/J-02-animation-quai-npc.md) | Bản nháp PARTIAL; số liệu metadata, chưa đọc SPR thực |
+| J-03: kỹ năng | [Hoạt ảnh kỹ năng](../REPORTS/J-03-hoat-anh-ky-nang.md) | PARTIAL; bảy nhóm, mẫu data và vòng đời source; thiếu header SPR/Settings client thực nạp và thời lượng thực |
+| J-04: lớp nhân vật | [Lớp chồng nhân vật](../REPORTS/J-04-lop-chong-nhan-vat.md) | PARTIAL; đã phân biệt sức chứa/nhánh cập nhật, sort và appearance override; thiếu asset/SORT từng hướng và runtime |
 | J-05: chọn/cắt khung | [Cắt khung animation](../REPORTS/J-05-cat-khung-animation.md) | Có kết quả tĩnh; chưa có tỷ lệ mất khung đo được |
-| J-03/J-04/J-06 | Chưa có báo cáo tương ứng trong `REPORTS` hiện có | J-06 có [task](../TASKS/J-06.md) ghi `done`, nhưng chưa có đầu ra để xác nhận kết luận; không suy kết quả từ trạng thái task |
+| J-06: làm mượt animation | Chưa tìm thấy báo cáo `J-06-*.md` trong `REPORTS` | [Task J-06](../TASKS/J-06.md) ghi `done`, nhưng chưa có đầu ra để chốt thêm khung giữa, dung lượng hoặc công sức; độ phủ J-01..J-06 còn PARTIAL |
+| L-01: làm mượt hình ảnh | [Làm mượt hình ảnh](../REPORTS/L-01-lam-muot-hinh-anh.md) | DONE giai đoạn 1 tĩnh; A/B là thiết kế thử, chưa patch/build/chụp ảnh/đo FPS-RAM; không thay kết quả J-06 |
 
 Trạng thái BLOCKED của I-07 là lịch sử của nguồn, không phải blocker giao việc I-06: người dùng đã giao trực tiếp việc tổng hợp tài liệu hiện có. Không sửa trạng thái task/báo cáo nguồn và không coi phần khảo sát còn thiếu đã hoàn tất.
 
@@ -33,7 +36,7 @@ Người chơi vào map, tương tác NPC hoặc nhận mục tiêu, đánh quá
 | Hạ quái → EXP/đồ | EXP cơ sở → hệ số/chia đội/chênh cấp; bảng rơi map/spawn/golden | I-03 bổ sung đầu vào cho I-01; không lấy EXP bảng quái làm EXP cuối |
 | Nhiệm vụ → kinh tế | Điều kiện/state → tiến độ → trừ vật phẩm → thưởng → lưu/đồng bộ | I-08 có luồng mẫu; tính nguyên tử, reset và binding thực chưa kiểm |
 | Shop → phát triển | Goods/template → giá/thuế → đúng ví → hành trang → item | I-02/I-07 khớp mapping tiền; chưa thử mua và khôi phục phiên |
-| Trạng thái → hình ảnh | Action/tick/hướng → resource/SPR → frame/lớp vẽ | J-01/J-02/J-05 có source/metadata; chưa xác nhận chất lượng hình hoặc FPS thật |
+| Trạng thái → hình ảnh | Action/tick/hướng → resource/SPR → frame/lớp vẽ → vòng đời effect/sampler | J-01..J-05 có source/metadata; L-01 bổ sung lọc ảnh/phép chiếu; thiếu J-06, chưa xác nhận chất lượng hình hoặc FPS thật |
 
 Hảo hữu chưa có đủ bằng chứng để nối thành vòng chơi riêng: không suy thêm bạn sẽ tăng EXP, cho chuyển đồ ràng buộc, mở NPC đồng bạn hoặc hoàn tất nhiệm vụ đồng bạn. Những liên kết này phải có dữ liệu/binding và kết quả kiểm chứng riêng.
 
@@ -101,19 +104,63 @@ Truy vết: I-03 mục Template, Chỉ số theo cấp, Golden, Kiểm kê spawn
 
 Truy vết: I-08 mục Bảng số liệu, Cấu trúc, Trạng thái, Điểm không khớp; `KPlayerTask.h:13`, `S3DBInterface.h:193`, `KPlayerDBFuns.cpp:1844,1862`, `ScriptFuns.cpp:3842` theo nguồn.
 
-## Animation — J-01..J-06 khi có
+## Animation — J-01..J-06 và L-01
+
+Độ phủ hiện có là **J-01..J-05 và L-01**; J-06 còn thiếu báo cáo. Các kết quả dưới đây được kiểm ở cấp tài liệu, không xác minh lại source hay binary. Đặc biệt phải tách số ảnh asset, số bước logic, số lần draw và chất lượng lấy mẫu texture; mỗi tầng có thể tạo triệu chứng hình ảnh khác nhau.
+
+### Nhân vật trần và quái/NPC — J-01/J-02
 
 J-01 xác nhận loader SPR có metadata tổng frame, hướng, interval, kích thước/offset từng frame. Đường VN dùng `KNpcResVN`; một số file gốc/Coco khác hash, nên không xem hai cây source là cùng bản. Header bốn PAK local đã được nguồn kiểm tra nhưng chưa có manifest/cặp asset trước–sau để chốt số khung nhân vật trần, giới tính, kích thước hoặc độ đủ khung chuyển đổi.
 
 J-02 ghép 1.412 template Kind=0 với **379 appearance type**; `FightStand` có metadata hợp lệ cho **1.398 template**, min/trung vị/max tổng frame **1/80/192**. Trong mẫu hợp lệ, 1.303 template có 8 hướng, 95 có 1 hướng; 14 template thiếu metadata. Năm type `boss160..164` thiếu hàng resource/info. Đây là mẫu theo template, không phải thống kê SPR duy nhất và không xác nhận quái di động một frame. 16 loại golden, 135 type `boss*` và số boss runtime là ba đại lượng khác nhau.
 
-J-05 xác nhận ánh xạ frame bằng chia nguyên và bộ đếm tick; có thể bỏ mẫu hoặc lặp khung tùy số ảnh nguồn/số bước logic. Nhánh `GetNextFrame` chỉ tăng một khung khi thời gian engine đổi; nhánh `ChangeCurFrame` có xử lý khác. Cần kiểm call site và đường VN trước khi gán nguyên nhân mất khung. `setAnimationInterval(1/60)` là nhịp render mục tiêu, không phải FPS đo được; interval SPR không mặc định có đơn vị millisecond. Tốc độ đánh/niệm đổi thời lượng logic, không chứng minh client mất asset.
+Truy vết báo cáo: `J-01-animation-nhan-vat-tran.md:24` (metadata), `:27` (đường VN), `:48` (thời lượng logic), `:54` (PAK); `J-02-animation-quai-npc.md:11` (ghép template), `:18` (phân bố), `:48` (metadata không chia hết hướng). Nguồn tiêu biểu theo báo cáo: `KbugInfo.h:238`, `KNpcResVN.cpp:28`, `KNpcResNode.cpp:447`.
+
+### Kỹ năng và vòng đời hiệu ứng — J-03
+
+J-03 lần ra mục tiêu **18 tick logic/giây** ở đường gọi `g_pCoreShell->Breathe()` trong `KgameWorld.cpp`, khác render mục tiêu 60 Hz; chưa đo cadence hoặc đồng bộ client/server. Với N tổng frame, D hướng, F=floor(N/D), I interval, c tuổi bay và L thời gian bay logic, nhánh missile loop chọn `floor(c/I)%F`, non-loop chọn `floor(F*c/L)`. Interval có tác dụng khác nhau theo đường phát, không thể dùng một công thức FPS cho mọi SPR. Mẫu metadata server missile 68/6/412 có F=4/3/5 và chu kỳ loop tính được 4/3/10 tick; chưa đối chiếu header SPR hoặc Settings client thực nạp.
+
+| Nhóm hiệu ứng đã khảo sát | Kết quả tĩnh và giới hạn |
+|---|---|
+| Niệm/tiền chiêu | `PreCastSpr` riêng với action cast; thiếu header để chốt số ảnh và thời lượng nhìn thấy |
+| Bay/đạn | Chọn frame theo tuổi bay ở nhánh loop/non-loop; lifetime không bảo đảm mọi frame đã được vẽ |
+| Trúng/va chạm/biến mất | Deadline `begin + I*N/D` khác nhịp tiến ảnh; điều kiện damage/event và hình có thể khác nhau |
+| Vùng đất | Đường Zone phát missile con theo lưới/lọc tròn; chưa thấy renderer mặt đất riêng trong đường đã khảo sát |
+| Aura/buff | State hình riêng với thời hạn buff; caller GetInfo truyền trùng biến D/I và tọa độ, nên chưa dùng metadata để suy tốc độ hiệu dụng |
+| Chém/vệt vũ khí | Phân biệt part vũ khí, blur và missile hình chém; chưa có số frame/duration chung theo phái/ngũ hành |
+| Hiệu ứng treo | Có đường bám target match-ID và slot NPC đơn; cùng tên SPR không restart, tên khác có thể thay ảnh |
+
+J-03 chỉ ra thứ tự **tiến frame → CheckEnd/release → draw**, nguy cơ frame cuối bị giải phóng trước vẽ; effect thuộc list missile cũng có đường bị xóa khi owner bị remove. Đây là nghi vấn từ thứ tự câu lệnh, chưa phải lỗi trong game đã tái hiện. Không kéo dài LifeTime, đổi damage/cooldown hoặc thêm khung chỉ để che triệu chứng này.
+
+Truy vết: `J-03-hoat-anh-ky-nang.md:28` (18 tick), `:34` (missile), `:43` (bảy nhóm), `:57` (release/owner), `:61` (alias state), `:71` (mẫu data), `:115` (giới hạn). Nguồn theo J-03: `KgameWorld.cpp:5624`, `KMissleRes.cpp:154`, `KNpcResVN.cpp:176`, `KNpcRes.cpp:2143`.
+
+### Lớp ghép nhân vật và thứ tự che — J-04
+
+Sức chứa legacy là **24 section/6 nhóm**, hai layer `BASE/EFFECT`; nhánh `ChangeFeature` được báo cáo chỉ cập nhật BASE của **5 nhóm** đầu/áo/vũ khí/ngựa/Phi Phong. Không coi sức chứa là số lớp đang hiển thị hoặc bằng chứng cánh/EFFECT đã hoạt động. `shiping` thay appearance vũ khí, `yinjian` thay appearance áo trong nhánh Equip; chúng không thêm section độc lập ở đường này. Nhãn UI Phi Phong cũng khác sprite áo choàng.
+
+Mỗi part/layer nhận tiến độ action chung nhưng có N/D riêng, nên có thể chọn index khác nhau. Sort tra theo **action × hướng × frame**, không có thứ tự che cố định cho mọi tư thế; khóa hướng/frame đưa vào sort còn phụ thuộc vòng lặp part/layer. Cần metadata và bảng SORT thực nạp để kết luận lệch lớp hay che vũ khí. J-04 phân biệt source gốc với mirror có glow/sét tùy biến: đường mirror vẽ lại ảnh weapon đã chọn, không chứng minh glow là SPR có cùng action riêng.
+
+Truy vết: `J-04-lop-chong-nhan-vat.md:22` (section), `:33` (nhánh hiện hành), `:39` (appearance), `:56` (frame), `:62` (sort), `:66` (mirror), `:72` (chưa xác minh). Nguồn theo J-04: `KNpcResNode.h:23`, `KNpcRes.cpp:1703`, `KItemList.cpp:1318`, `KNpcResVN.cpp:439`.
+
+### Chọn/cắt khung và nhịp phát — J-05 đối chiếu J-03/J-04
+
+J-05 xác nhận ánh xạ frame bằng chia nguyên và bộ đếm tick; khi số ảnh mỗi hướng lớn hơn số bước logic, có thể bỏ mẫu; ít hơn thì lặp khung. Nhánh `GetNextFrame` chỉ tăng một khung khi tick engine đổi, không gate theo interval và không bù nhiều tick đã trễ; nhánh `ChangeCurFrame` có xử lý elapsed khác. J-03/J-04 bổ sung đường VN thực được khai báo, tránh lấy mọi kết quả renderer base làm hành vi VN. `setAnimationInterval(1/60)` là nhịp render mục tiêu, không phải FPS đo được; interval SPR không mặc định có đơn vị millisecond. Tốc độ đánh/niệm đổi thời lượng logic, không chứng minh client mất asset.
 
 Có cờ ẩn NPC/người/đạn và pool missile 30.000, slot skill state 18/NPC; chưa có bằng chứng chắc về LOD tự động theo mật độ. Không dùng dung lượng pool làm số hiệu ứng đang vẽ. Tỷ lệ rơi khung ở đứng/đi/đông, nguyên nhân H-14/H-15 và chi phí APK/RAM/texture đều **chưa đo**; không ghi 0% hoặc ước lượng lợi ích định lượng.
 
-J-03/J-04 chưa có báo cáo trong tập hiện tại. J-06 mới có mô tả task đánh giá làm mượt; không khẳng định cần hay không cần khung giữa, không đưa ước lượng dung lượng/công sức như kết quả đã có.
+Truy vết: `J-05-cat-khung-animation.md:18` (render), `:20` (hai controller), `:22` (bỏ/lặp mẫu), `:33` (ẩn/pool), `:48` (các cảnh chưa đo). Nguồn theo J-05: `KSprControl.cpp:297,342`, `KNpc.cpp:3732`, `AppDelegate.cpp:119`.
 
-Truy vết: J-01 mục Metadata, Đối chiếu O/C, PAK; J-02 mục Phân bố metadata; J-05 mục Tick/dt, Tốc độ, Culling. Nguồn tiêu biểu: `KNpcResVN.cpp:28`, `KNpcRes.cpp:261`, `KSprControl.cpp:297,342`, `KNpc.cpp:3732`, `AppDelegate.cpp:119` theo từng bản được nguồn định nghĩa.
+### Làm mượt hình ảnh — L-01; khoảng trống J-06
+
+L-01 xác nhận tĩnh đường SPR giải mã từng frame sang RGBA và texture raw mặc định dùng **GL_LINEAR, một mip**; bật lại linear toàn cục chưa phải cải thiện mới. Thiết kế 1040 × 603,2, policy `EXACT_FIT`, phép chiếu world dùng int và canvas map 512 × 512 logic là các tầng khác nhau. Macro subpixel mặc định 1 không khôi phục phần lẻ đã mất upstream. Nhánh `nIsClear` có bất nhất giữa RGB đã premultiply và cờ texture alpha thẳng; chưa biết asset nào thực đi nhánh đó.
+
+**A chỉ là đề xuất thử:** giữ sampler hiện có, thêm phép chiếu float riêng cho render và migrate đồng bộ các lớp; thử mật độ target map cao hơn cho một region, giữ footprint/crop/điểm neo, chưa đổi policy/design size toàn cục. **B chỉ là prototype dự kiến** bộ lọc cạnh 2× theo mục tiêu xBRZ, chưa có port/shader đã thẩm định hay build. Ban đầu chỉ dùng frame SPR riêng có hợp đồng alpha rõ; giữ vũ khí/glow/sét, shadow/state và font ngoài B đến khi ánh xạ đường vẽ. Map ghép có hợp đồng alpha/biên khác, phải đủ điều kiện mới thử B.
+
+Kế hoạch L-01 so baseline/A/A+B trên nhân vật, quái, ô map, icon UI; kiểm +6/+12/+15 trên nền sáng/tối, đứng/đánh/di chuyển và đo FPS/frame-time/RAM riêng trên điện thoại và LDPlayer trong task sau được duyệt. Ví dụ target RGBA8888 ở content scale 1, không padding: 512² → 1024² tăng màu từ 1 → 4 MiB/target; đây là **phép tính điều kiện**, không phải RAM đo hoặc tăng APK do thêm frame. Chưa có ảnh, chất lượng/hiệu năng đạt hay patch áp dụng.
+
+J-06 hiện chỉ có task `done` và yêu cầu đánh giá nhịp phát độc lập tick, nội suy vị trí, thêm khung giữa/chọn lọc và điều chỉnh thời lượng. **Chưa đủ đầu ra để kết luận cần/không cần khung giữa, số khung bổ sung, chi phí APK/RAM/texture hoặc công sức.** L-01 xử lý lấy mẫu/phép chiếu, không thay báo cáo làm mượt animation theo thời gian của J-06. Điểm tiếp tục là bổ sung đúng báo cáo J-06 vào worktree rồi đối chiếu với các tầng timing, vòng đời và lớp ghép ở trên.
+
+Truy vết: `L-01-lam-muot-hinh-anh.md:19` (policy/sampler), `:27` (alpha), `:32` (lượng tử), `:41` (A), `:74` (target), `:82` (phép tính RAM), `:88` (B), `:158` (kế hoạch), `:170` (giới hạn); `TASKS/J-06.md:4,11,12` chỉ là trạng thái/phạm vi/đầu ra yêu cầu. Nguồn theo L-01: `CCTexture2D.cpp:641,714`, `KSubWorld.cpp:188`, `KgameWorld.cpp:7461,7665`, `Kgetinidata.cpp:289`.
 
 ## Đối chiếu và khoảng trống còn mở
 
@@ -124,6 +171,9 @@ Truy vết: J-01 mục Metadata, Đối chiếu O/C, PAK; J-02 mục Phân bố 
 | I-07 chưa có I-02; I-01 bổ sung danh vọng | Đối chiếu được mapping shop và trần danh vọng ở cấp báo cáo | Chưa đối chiếu byte bộ dữ liệu/binary thực nạp |
 | Task 192 dùng cho Tống Kim và bit thưởng phụ tuyến | Ghi là nguy cơ dùng chung key trong các đường script | Chọn tập script nạp và kiểm tương tác; chưa kết luận collision runtime |
 | J-02 chưa thấy PAK trong cây client; J-01 thấy PAK local ngoài cây | Hai phạm vi tìm khác nhau; đã có dữ liệu local nhưng chưa rõ nguồn gốc | Cần manifest và asset đúng bản, không coi thiếu file rời là mất tài nguyên |
+| J-01..J-04 từng ghi chưa có J-05; J-05 hiện đã có | Đó là giới hạn thời điểm khảo sát của nguồn; I-06b đã đối chiếu báo cáo J-05 | Không lặp kết luận thiếu J-05 như trạng thái hiện tại; không sửa báo cáo nguồn |
+| J-03: logic 18 tick/giây; J-05/L-01: render 60 Hz | Hai nhịp mục tiêu khác nhau, đều là source tĩnh | Đo tick/draw/frame-time thực, không suy 60 frame animation mới mỗi giây |
+| J-04 có mirror glow/sét; L-01 không tìm thấy symbol tương ứng ở source gốc | Hai snapshot/phạm vi khác nhau; không ghép vị trí patch giữa chúng | Khóa đúng source/build, ánh xạ blend/alpha/sort trước thử B cho vũ khí |
 | J-06 task done nhưng thiếu báo cáo | Chưa có kết quả để tổng hợp | Nhận đầu ra J-06 rồi bổ sung trong đơn vị tài liệu tiếp theo |
 
 ## MUC SO THONG SO
@@ -149,6 +199,13 @@ Sổ rút gọn dưới đây dẫn lại nguồn, chưa đo live. **CẨN THẬ
 | Task | Buffer role / lô load | 128 KiB / 20 | byte/role; record/lô | CẨN THẬN | I-08; `KPlayer.h:284`, `KPlayerDef.h:8` |
 | Render | Animation interval | 1/60 | giây/khung mục tiêu, chưa đo FPS | CẨN THẬN | J-05; `AppDelegate.cpp:119` |
 | Animation | FightStand hợp lệ; min/median/max | 1.398; 1/80/192 | template; tổng frame metadata | KHÔNG sửa theo thống kê | J-02; mục Phân bố metadata |
+| Animation | Nhịp logic mục tiêu | 18 | tick/giây theo source, khác render 60 Hz | CẨN THẬN | J-03:28; `KgameWorld.cpp:5624` |
+| Lớp nhân vật | Sức chứa / nhánh cập nhật | 24 section, 6 nhóm, 2 layer / 5 nhóm BASE | cấu trúc / ChangeFeature; không là số lớp đang hiện | KHÔNG coi là núm cân bằng | J-04:22,33,41; `KNpcResNode.h:23`, `KNpcRes.cpp:1703` |
+| Lọc SPR | Sampler / số mip raw | GL_LINEAR min/mag / 1 | lấy mẫu texture, không thêm frame | CẨN THẬN | L-01:21,27; `CCTexture2D.cpp:641,714` |
+| Render | Thiết kế / policy | 1040 × 603,2 / EXACT_FIT | đơn vị thiết kế; không phải framebuffer đo | CẨN THẬN | L-01:19,36; `AppDelegate.cpp:55,128` |
+| Render | Subpixel Node / SpriteBatchNode | 1 / 1 mặc định | macro; không phục hồi phần lẻ đã mất | CẨN THẬN | L-01:26,32; `ccConfig.h:145,154`, `KSubWorld.cpp:188` |
+| Render map | Canvas / mật độ thử A | 512 × 512 logic / q=2 dự kiến | giữ footprint; màu 1→4 MiB/target chỉ khi CSF=1, không padding | CẨN THẬN; chưa triển khai | L-01:74,82; `KgameWorld.cpp:7461,7665` |
+| Lọc cạnh | Tỷ lệ thử B | 2× dự kiến | prototype shader, chưa có port xBRZ được kiểm | CẨN THẬN; chưa triển khai | L-01:88,92; hook `KgameWorld.cpp:11374,11386` |
 | Render | MAX_MISSLE / MAX_SKILL_STATE | 30.000 / 18 | chỉ số pool / slot trạng thái mỗi NPC | KHÔNG coi là LOD | J-05; `KMissle.h:6`, `GameDataDef.h:132` |
 
 ## DE XUAT TOI UU
@@ -157,8 +214,8 @@ Sổ rút gọn dưới đây dẫn lại nguồn, chưa đo live. **CẨN THẬ
 2. **Bảo toàn tiến trình và tiền:** thiết kế kiểm biên 255/256 record khác 0, task 192, login/reset và phát thưởng lặp; kiểm mua/đổi Xu khi túi đầy, cộng thất bại, logout hoặc mất kết nối. Chưa cấp thêm hàng loạt key hảo hữu trước khi kiểm persistence/ABI.
 3. **Hoàn thiện atlas chức năng có giới hạn:** nối mẫu map → region → template → script/menu cho shop, kho và quest; dùng kết quả PAK I-03 làm đầu vào, giữ riêng 38 map chưa khớp và spawn động. Không tự tăng Count hoặc sửa MapType để che khoảng trống.
 4. **Đo gameplay theo chuỗi:** đối chiếu EXP cơ sở quái → EXP cuối người chơi, cấp/ngũ hành override, đội/cự ly và bảng rơi; giữ riêng các đường AddSelfExp/DirectAddExp/lửa trại. Bộ ca chỉ được chạy ở task/môi trường đã duyệt, không Main VM trong I-06.
-5. **Animation: thu bằng chứng trước đổi tốc độ/khung:** có manifest asset đúng bản, đếm frame/hướng/action rồi đo tick, delta, frame index, FPS, thời gian khung, RAM/texture và dung lượng. Đọc đầu ra J-06 khi có trước quyết định làm mượt hoặc thêm khung; không tăng FPS mục tiêu hay giảm frame metadata chỉ dựa giả thuyết H-14/H-15.
+5. **Animation: kiểm đúng tầng trước đổi tốc độ/khung:** có manifest asset đúng bản, đếm frame/hướng/action và bảng SORT; kiểm alias state, release trước draw và cleanup owner theo J-03, rồi đo tick/delta/frame index/draw/FPS/frame-time/RAM/texture/dung lượng. Với L-01, hoàn thiện bản thử A cô lập, kiểm alpha/điểm neo/footprint rồi mới cân nhắc B theo whitelist và ma trận +6/+12/+15. Nhận báo cáo J-06 trước quyết định khung giữa hay chi phí APK; không tăng FPS mục tiêu, giảm metadata hoặc đổi LifeTime để che giả thuyết H-14/H-15.
 
 ## Kiểm chứng và bàn giao
 
-Đã đối chiếu tài liệu hiện có của bảy phần I và ba phần J, giữ rõ nguồn tĩnh, trạng thái và chênh lệch cách đếm. Chưa kiểm chứng độc lập source/dữ liệu gốc, chưa chạy game, build, TESTER, benchmark, DB round-trip hoặc thử nghiệm VM. Các đề xuất trên là công việc tiếp nối, không phải thay đổi đã triển khai. Báo cáo thực hiện và thông tin commit được bàn giao tại [I-06](../REPORTS/I-06.md).
+I-06 đã đối chiếu bảy phần I; I-06b cập nhật độ phủ thành năm báo cáo J-01..J-05 và L-01, giữ rõ nguồn tĩnh, trạng thái và chênh lệch phạm vi. **Độ phủ Animation J-01..J-06 còn PARTIAL do thiếu báo cáo J-06 trong worktree.** Chưa kiểm chứng độc lập source/dữ liệu gốc, chưa chạy game, build, TESTER, benchmark, DB round-trip hoặc thử nghiệm VM. Các đề xuất trên là công việc tiếp nối, không phải thay đổi đã triển khai. Bàn giao gốc tại [I-06](../REPORTS/I-06.md); phần cập nhật, kiểm tra tài liệu và giới hạn tại [I-06b](../REPORTS/I-06b.md).
