@@ -199,3 +199,4 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 - [11:30] B-02c dựng xong, đã lên VM thử (gs001 sống ≥207 s, Enabled=0). Defender VM sạch. Việc tiếp: thử Enabled=1 Solo bằng 2 bot (cần E-05b/TESTER), đo B-04. Đang chạy: A-14 (K2), E-05b (K3), E-03 (K4).
 - [11:35] Gộp E-03 (điều phối dân số, 53 test BOT đạt, chưa nối server).
 - [11:50] Gộp E-05b (full_cycle, TESTER 18 test; bước tạo nhân vật/kill/logout BỎ QUA vì thiếu gói tin).
+- [11:5x] A-14 xong, gộp vào jx1-ops. Giao E-07 (gói tạo nhân vật/logout, K2), E-08 (gói skill/NPC/kill, K3), high. A-11c còn chạy.
