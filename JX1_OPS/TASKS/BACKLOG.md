@@ -87,3 +87,4 @@ Sonnet lấy việc từ trên xuống, theo phụ thuộc. Khi bắt đầu m�
 - T-01..T-07 mỗi kịch bản TESTER một task (đăng nhập, di chuyển, đánh, nhặt, giao dịch, đổi bản đồ, thoát/vào lại)
 - E-04 bot xã hội, E-03 nối server
 - H-02 dòng chỉ số trang bị; H-03 cường hóa; H-04 gom ghi chép cũ hiệu ứng vũ khí (#046); H-05 UI cường hóa; H-06 ấn; H-07 trang sức/mặt nạ/phi phong; H-08 tài phú; H-09 tổng hợp (#045)
+- H-10 phím tắt (đã giao); H-11 nút/cài đặt hệ thống; H-12 tự động chiến đấu; H-09 thêm phần điều khiển và tiện ích (#050)
