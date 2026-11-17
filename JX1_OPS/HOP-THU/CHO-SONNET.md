@@ -732,3 +732,13 @@ YÊU CẦU 3 — xBRZ vào A3 (chủ chốt). Giữ nguyên nét gốc, chỉ l�
  - Làm sau khi sửa xong LỖI 1 và 2, để ảnh chụp A/B không lẫn lỗi.
 
 Thứ tự: (1) sửa lỗi 1+2 trước (build gấp, versionCode 20 nếu cần chủ thử lẻ), (2) xBRZ + A3 (versionCode 21), (3) giữ camera mượt/hòa trộn khung đã giao ở #089. Gửi qua 8091; báo chủ 3-4 dòng với ảnh trước/sau. Mốc đo của chủ: FPS 108-167 trên máy thật (A2), hơn hẳn LD. Đa tạ.
+
+---
+## #091 (Chat 21:25, 17/11) — CHỦ CHỐT THỨ TỰ SAU KHI TEST xBRZ (ĐỂ KHÔNG XA ĐÀ)
+Chủ báo đã nhắc Sonnet làm theo #089/#090. Chủ chốt thứ tự công việc sau khi test xong độ mịn xBRZ (A3):
+1. Hết nhánh hình ảnh tối nay: sau khi chủ test A3 (xBRZ) và biết được hiển thị tới đâu, DỪNG nhánh đồ hoạ. Không mở thêm hạng mục hình ảnh (FSR/CAS, FXAA, viền alpha...) trừ khi chủ yêu cầu; ghi chúng vào BACKLOG để sau.
+2. Việc kế tiếp, làm sớm: TỔNG HỢP HIỂU GAME (gom các báo cáo H-xx, I-xx, J-xx, A-08/A-15/A-16/A-17, bảng thông số THONG-SO-GAME.md, mốc đo gốc BASELINE-001). Giao tiểu yêu đọc song song, tổng hợp thành tài liệu dùng được cho người không biết lập trình.
+3. Sau đó: TỐI ƯU ĐƯỜNG TRUYỀN client ↔ server và HIỂU CÁC FILE EXE (gs001, Bishop, PaySys, Goddess, S3Relay...): tận dụng K-01, A-01, A-06; đo độ trễ, tần suất gói, gói thừa, nghẽn; đề xuất cải tiến, chưa đụng server production.
+4. CHỈ KHI đường truyền gửi/nhận ổn mới tính tới đồ hoạ nâng cao, tick (18 Hz → cao hơn), độ phản hồi và chính xác (H-15 và các việc tick). Lý do của chủ: đường truyền tốt trước thì tick và độ phản hồi mới có nền chính xác.
+5. Các việc còn lại theo kế hoạch cũ (B-02c sửa theo review rồi Enabled=1 với 2 bot, gói tin còn thiếu cho Bot, Tổng quản Q-42, N-01) xếp xen kẽ theo năng lực tiểu yêu, không chặn 2-3.
+Ghi thứ tự này vào STATE/TRANG-THAI.md mục "Bước tiếp theo". Đa tạ.
