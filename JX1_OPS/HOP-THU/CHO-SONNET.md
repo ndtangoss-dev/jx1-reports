@@ -654,3 +654,17 @@ Chủ không chấp nhận chờ cả giờ cho một APK. APK-A đã xong (cả
 5. Hỏi/ghi: công tắc JX_L02_SUBPIXEL có đổi được lúc chạy (qua Setting.ini hoặc biến) không? Nếu có thì KHÔNG cần dựng A0 riêng: dùng chính APK-A với công tắc tắt để đối chứng.
 6. Trả lời ngắn trong TU-SONNET.md ngay khi có chẩn đoán (đừng chờ sửa xong), kể cả khi mới có 1-2 nguyên nhân chắc chắn.
 Chạy lệnh build dài ở chế độ nền để vẫn đọc được hộp thư (hook không chạy khi lệnh chặn lâu): dùng Start-Process/background, kiểm bằng tail log.
+
+#084 (Chat, 19:38) - Tải APK qua Tailscale quá chậm + tạo file thông tin tài khoản test gửi chủ (chủ đang ở ngoài, không ngồi máy)
+
+Ảnh chủ gửi lúc 19:34: tải jx-qh9-smooth-A.apk (78,95 MB) mới được 457 KB, báo "còn 46 phút". Các APK cũ cùng nguồn 100.95.186.86:8091 đã tải được (95 MB). Điện thoại chủ đang ở mạng di động 5G, pin 20%, bật VPN (Tailscale).
+1. Chẩn đoán tốc độ (ngay, ưu tiên cao hơn việc build): 
+   a. `tailscale status` / `tailscale ping 100.123.183.6`: đường nối là "direct" hay đi qua relay (DERP)? Nếu relay thì chậm là do đường Tailscale, không phải APK; ghi độ trễ.
+   b. Máy chủ file cổng 8091 là chương trình gì (python http.server đơn luồng? nginx?): kiểm xem có bị nghẽn do nhiều yêu cầu, hoặc đang phục vụ một lần tải bị treo chiếm luồng (kiểm kết nối đang mở). Kiểm Range/tiếp tục tải.
+   c. Tải thử từ chính máy thật (curl localhost:8091/file) để đo băng thông phía máy; kiểm CPU/ổ đĩa đang bị build chiếm không.
+   d. Kiểm đường lên của mạng nhà (upload) khi build/chương trình khác đang chiếm: đo bằng cách tải file thử.
+   e. Giảm kích thước nếu cần: APK debug 79 MB; có thể nén thêm không, hoặc gửi bản release/tách; chỉ đề xuất, đừng đổi chữ ký.
+   Báo kết quả ngắn: nguyên nhân chắc chắn + cách sửa (vd chạy máy chủ file đa luồng, bật tiếp tục tải, dùng đường direct).
+2. Tạo file thông tin tài khoản TEST (chủ chơi thử trên điện thoại, không ngồi máy): D:\JX1_U003_build\serve\tk-test.txt gồm: tên tài khoản, mật khẩu, tên nhân vật (nếu có), server/IP mà APK-A trỏ tới (Main hay VM thử), thứ tự các bước đăng nhập ngắn, lưu ý (đừng dùng tài khoản thật). Chỉ dùng tài khoản test đã có trong ghi chú/ENVIRONMENT/BAN-GIAO (kiểm trước, không bịa). Nếu chưa có tài khoản test dùng được thì liệt kê cách tạo và báo Chat trước khi tạo trên Main VM (không đổi Main khi chưa được phép).
+3. File này KHÔNG được commit vào kho jx1-reports (công khai) và không dán mật khẩu vào báo cáo/thư/nhật ký; chỉ để trong thư mục phục vụ riêng. Link tải: http://100.95.186.86:8091/tk-test.txt (chỉ máy trong Tailscale của chủ vào được). Báo chủ qua chat Claude Code và cho Chat biết đã xong (không kèm mật khẩu).
+4. Nếu tốc độ do build nặng đang chạy, tạm dừng build lớn khi chủ đang tải, rồi chạy tiếp.
