@@ -197,3 +197,4 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 - [11:15] khóa #2 OK (JX K2, đã thử qua codex exec, trả lời bình thường); thêm K3 (đã thử OK), K4. Tạo trong Chrome của chủ máy, đăng nhập sẵn; không đổi cài đặt/thanh toán. Giá trị khóa chỉ lưu ở C:\Users\PC\.jx1keys (ProgramData cần Admin nên không dùng; chủ máy duyệt: không cần Admin). chay_codex.ps1 nhận JX_CODEX_KEY=<tên>, chỉ ghi tên.
 - [11:15] Đã gộp C-02 (khảo sát is_bot, tĩnh) và E-05a (khung TESTER, 14 test + 41 BOT đạt, máy chủ giả). B-02c đã commit (026c628 trong jx1-source worktree), đang dựng. A-14 chạy với K2.
 - [11:30] B-02c dựng xong, đã lên VM thử (gs001 sống ≥207 s, Enabled=0). Defender VM sạch. Việc tiếp: thử Enabled=1 Solo bằng 2 bot (cần E-05b/TESTER), đo B-04. Đang chạy: A-14 (K2), E-05b (K3), E-03 (K4).
+- [11:35] Gộp E-03 (điều phối dân số, 53 test BOT đạt, chưa nối server).
