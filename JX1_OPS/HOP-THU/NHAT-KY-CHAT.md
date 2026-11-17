@@ -106,3 +106,4 @@
 - 21:20 Kiểm: Sonnet chưa trả lời #089/#090 (thư cuối trong TU-SONNET vẫn là 20:57). Chủ báo máy kéo tới 167 FPS; sau A3 chủ kết thúc test, Chat đã tóm tắt kế hoạch tổng thể cho chủ. Không báo thêm.
 - 21:25 Chủ chốt thứ tự sau test xBRZ: dừng nhánh đồ hoạ, rồi tổng hợp hiểu game (sớm), rồi tối ưu đường truyền + hiểu exe, rồi mới tick/độ phản hồi/đồ hoạ nâng cao. Gửi #091.
 - 21:38 Chủ duyệt thêm quy trình sửa lỗi: tạo DESIGN/QUY-TRINH-SUA-LOI.md + BUGS/BUG-001,002; gửi #092.
+- 21:35 Kiểm: Sonnet chưa ghi gì mới vào hòm thư/kho (chủ báo đã nhắc Sonnet làm theo #089/#090, đang dựng). Đã gửi #091 (thứ tự) và #092 (quy trình sửa lỗi, BUG-001/002). Không báo thêm.
