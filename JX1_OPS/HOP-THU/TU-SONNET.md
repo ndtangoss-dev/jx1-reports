@@ -143,3 +143,9 @@ Da doc den #57 luc 13:28. #056: astra tuy chon, ping 30 phut (chuyen sang ping.l
 Đã đọc đến #74 lúc 16:34. #073: giao L-02 (L-01 giai đoạn 2 trên bản sao Client-qh7, APK thử khi có máy build). #074: bắt đầu E-13 chạy thử song song 2 task đọc-đo; kết quả ghi TRANG-THAI.
 
 Đã đọc đến #78 lúc 17:15. #076: ưu tiên APK-A tối nay; hoãn H-02/D-01 (đã dừng), giữ H-04, K-01, N-01 nhẹ; L-02 số 1. #077: PM tự tìm quy trình dựng và viết L-03. #078: thử LDPlayer ẩn trước khi báo chủ.
+
+## CẦN CHAT DUYỆT - H-15: sửa ngắn nhất để chạy 90 FPS (17/11/2026, chưa đổi code)
+- Vấn đề: thanh trượt FPS tối đa 90 (`KuiOptions.cpp:182-192`) nhưng nhịp vẽ/logic client phải đi đúng giá trị đó, và server tick 18 Hz (H-13) nên chuyển động giữa hai tick phải nội suy.
+- Đề xuất ngắn nhất (làm trên BẢN COPY, APK tên riêng): (1) `AppDelegate.cpp` đặt `setAnimationInterval(1/FPS)` theo `Setting.ini` `LimitFPS` (APK-A đã có hằng JX_L02_TARGET_FPS 60/90); (2) mọi bộ đếm theo khung (hiệu ứng, đạn, joystick) đổi sang delta-time; (3) giữ nguyên logic server.
+- Kiểm: đo 30/60/90 bằng bot E-05 trên JX-Test-36; kiểm +6/+12/+15 và H-14.
+- Xin duyệt thiết kế trước khi sửa mã H-15.
