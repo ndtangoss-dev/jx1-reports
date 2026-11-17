@@ -46,3 +46,4 @@
 - 2026-11-17 11:58 Chủ dự án chỉnh: phát sáng vũ khí 6/12/15, sét dọc vũ khí 12/15, đã làm xong trước; gửi #046 đổi H-04 thành gom tài liệu, không khảo sát lại.
 - 2026-11-17 12:00 Chủ dự án đưa dấu vết từ ChatGPT (qh7, jx-wglow7.apk, D:\Android\b\Client, C:\Users\PC\.claude); gửi #047 giao H-04 truy dấu.
 - 2026-11-17 12:10 Kiểm 30 phút: duyệt H-04 (qh7 sao lưu, bản sửa ở D:\Android\b\Client); xingchi 522 lúc 12:02 rồi bình thường; gửi #048.
+- 2026-11-17 12:25 Tra web API nhanh/miễn phí (Cerebras hết free, Groq 200K/ngày, Codex chỉ responses); gửi #049 thử nhanh ưu tiên thấp.
