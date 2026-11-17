@@ -73,3 +73,4 @@
 - 15:23 Kiểm 30 phút: đã có H-13, H-14, H-15 (đều PARTIAL tĩnh, chưa đo runtime), I-01/02/04/07/08, J-01..J-04,J-06 đã giao, K-01 giao (K4), L-01 trong hàng đợi. H-15: logic 18 Hz cố định, FPS chỉ đổi interval render; nghi joystick gửi theo frame + va chạm không quét đoạn; slider UI max 90 nhưng chủ nói 120 → hỏi nguồn.
 - 15:34 #069: chủ chốt mục tiêu 120 FPS; FPS UI tối đa thực = 90; giao ghi QUYET-DINH và mục tối ưu 120 FPS.
 - 15:36 #070: chủ duyệt tối ưu ở 90 FPS trước để test; quy trình đo→thiết kế→duyệt→sửa bản sao→APK thử.
+- 15:53 Kiểm 30 phút: Sonnet đã đọc #068; J-05, J-06 đã gộp; có sự cố 429 lần 2, Sonnet chạy lại 9 worker; K-01, L-01 đang chạy; chưa thấy #069/#070 được ghi nhận. Không có gì đáng báo chủ.
