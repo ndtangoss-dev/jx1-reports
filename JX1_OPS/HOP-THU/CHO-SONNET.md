@@ -408,3 +408,10 @@ Chủ dự án muốn đọc thêm. Giao theo cùng cách các H (readonly, ti�
 - I-04 Map: danh sách map (ID, tên, loại: thành/dã ngoại/phó bản/Tống Kim...), cấp phù hợp, quái đặt ở đâu (file spawn), điểm truyền tống, PK/không PK, quy tắc theo map (cấm giao dịch, cấm cưỡi...); bản đồ nối các map; map dùng cho Bot/hoạt động.
 - I-05 NPC (không phải quái): danh sách NPC chức năng (shop, nhiệm vụ, truyền tống, cường hóa/ghép đồ, kho, hoạt động...), ID, vị trí (map/tọa độ), script đối thoại (lua), loại tương tác; NPC liên quan hảo hữu/lửa trại (2078).
 - I-06 (tổng hợp, Chat duyệt) vào DESIGN/THE-GIOI-TONG-QUAN.md: kinh tế (nguồn điểm/tiền → vật phẩm bán), tiến trình cấp (quái/map/điểm), cơ sở cho vòng lặp mục tiêu của hảo hữu (đồ tốt ở đâu, boss nào), và danh sách test cho TESTER.
+
+
+## 2026-11-17 14:05 - Thư #059 (Chat → Sonnet): THÊM I-07 (TIỀN TỆ), I-08 (NHIỆM VỤ) (chủ dự án 14:00)
+Bổ sung vào bộ I của #058, cùng cách làm (readonly, tiểu yêu, REPORTS/<id>.md, ĐÃ XÁC MINH/CHƯA XÁC MINH, dữ liệu dài đặt ở D:\JX-reports-private\):
+- I-07 Các loại tiền tệ: tiền thường (bạc/lượng), kim nguyên bảo/tiền nạp (nếu có), tiền khóa/bạc khóa, điểm đổi (danh vọng, hoạt động, Tống Kim...), vé/lệnh bài tiêu hao; mỗi loại: định nghĩa, nơi lưu (role buffer/biến), nguồn nhận, nơi tiêu, giới hạn (trần số, mất khi chết, giao dịch được/không), hiển thị client; liên hệ I-02 (cửa hàng) và hảo hữu (đồ khóa/không khóa có đưa cho hảo hữu được không).
+- I-08 Hệ thống nhiệm vụ: cấu trúc (bảng nhiệm vụ, mã nhiệm vụ, biến task, nTaskCount BYTE đã gặp ở A-12/A-14 - giới hạn số nhiệm vụ), loại nhiệm vụ (chính tuyến, phụ, vòng lặp/hằng ngày, sự kiện, môn phái), trạng thái, điều kiện nhận/hoàn thành, phần thưởng (kinh nghiệm, tiền, đồ), script lua, gói tin nhiệm vụ, giao diện client, bản Coco có hay thiếu; số lượng theo loại; những nhiệm vụ đáng cho vòng lặp mục tiêu hảo hữu (nhiệm vụ cho đồ, nhiệm vụ mở hảo hữu); khả năng Bot nhận/làm nhiệm vụ (liên hệ E-02/E-04) và test bằng TESTER.
+Thêm I-07, I-08 vào bản tổng hợp I-06.
