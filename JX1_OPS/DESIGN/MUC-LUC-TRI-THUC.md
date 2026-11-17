@@ -17,6 +17,7 @@ Cập nhật: 17/11/2026. Quy tắc: mỗi báo cáo mới phải có dòng "li�
 | Crash, gốc lỗi gs001 | A-07, A-07b..e | `gs001` | xem từng báo cáo |
 | Bạn bè, đồng bản, hoạt động | A-09, A-12, A-13, A-14, D-01 | `S3Relay`, Lua | khảo sát tĩnh |
 | Bot, tester, điều phối | E-01..E-13b, B-02..B-03, C-01..C-03, JIBS, TESTER | `TOOLS/jxadm`, `jxweb` | xem từng báo cáo |
+| Đồ thị Graphify, cách làm mới | `STATE/DO-THI.md`, `TOOLS/lam_moi_do_thi.ps1` | `D:JX-toolsgraphify-venv` | chắc |
 | Công cụ, quy trình, môi trường | `QUY-TAC-VAN-HANH.md`, `TOOLS/CONG-CU.md`, `ENVIRONMENT.md`, `DESIGN/QUY-TRINH-SUA-LOI.md`, `DESIGN/HUONG-DAN-TRA-CUU.md` | | chắc |
 
 ## Báo cáo chờ tổng hợp
