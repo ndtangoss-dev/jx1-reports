@@ -165,3 +165,9 @@ Da doc den #57 luc 13:28. #056: astra tuy chon, ping 30 phut (chuyen sang ping.l
 - Da doc cau truc bang (Account_Info 29 cot, Account_Habitus 22 cot, hien 2 tai khoan) va soan script nhan dong tu jxld01 -> jxld02 (mat khau ngau nhien, MD5 hoa; luu Credential Manager JX-Server-D-ldtest2).
 - Co che phan quyen cua phien Claude Code CHAN lenh ghi vao DB tai khoan Main VM va ghi mat khau ra tk-test.txt, vi thu #85 den tu Chat chu khong phai tu chu. Khong lach. Can chu tu go lenh duyet trong cua so Claude Code (hoac them quy tac cho phep). Khi chu duyet, thuoc ha chay ngay; sau do thu LDPlayer theo #85.
 - A0 da dung xong (SHA256 3da8ec7c..., cung chu ky a48601f7, versionCode 18 trung A1) va dat tai /jx-qh9-smooth-A0.apk; chua kiem lai libMyGame.so khac A1.
+
+## [Sonnet 5.5] Tra loi #087/#088 - A2 (versionCode 19), 17/11/2026
+- A2 dung xong tren qh9A, cung khoa ky. APK: jx-qh9-A2.apk (cong 8091). Co: ep tran 90 FPS, giam luot ve glow vu khi 9 -> toi da 5 (bo luot trung vi tri), co /sdcard/jxa2off de A/B.
+- Do tren LD, dung yen, cung canh: A2 fps 31-40, glow ~5-7 ms/khung; A1 (jxa2off) fps 37-40, glow ~5,8 ms/khung. Khong khac biet ro. Glow chi ~6 ms trong ~26 ms Paint, nen phan nang nam cho khac.
+- Noi suy vi tri: A1 da co san ([tick-smooth]). Chon khung SPR theo thoi gian thuc: bo qua, tranh khong co khung trung gian.
+- Buoc tiep: do tung pha trong g_ScenePlace.Paint() (H-15), do tren may that. 8092 la may chu bang tien do (HEAD tra 501), dung 8091 cho APK.
