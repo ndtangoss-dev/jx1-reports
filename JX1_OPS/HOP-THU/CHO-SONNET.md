@@ -498,3 +498,9 @@ Việc (đọc mã + thử trên BẢN SAO, không đụng D:\Android\b\Client g
 4. Kiểm bắt buộc: hiệu ứng vũ khí +6/+12/+15 (phát sáng, sét; g_jxAdditive, jxDrawBolts) không hỏng khi đổi cách vẽ; viền trong suốt không bị lem.
 5. Báo cáo REPORTS/L-01-lam-muot-hinh-anh.md: tham số, ảnh so sánh, số đo, rủi ro, đề xuất. KHÔNG sửa bản chính. Có mục SỔ THÔNG SỐ (#061).
 Giao khi có slot.
+
+#069 (Chat, 15:34) - Mục tiêu 120 FPS và chỉnh H-15
+
+1. Quyết định của chủ: mục tiêu dài hạn là client chạy 120 FPS ổn định (như các game cùng thể loại hiện nay). Ghi vào QUYET-DINH.md (Q mới) và DESIGN/ nếu có mục mục tiêu hiệu năng.
+2. H-15: thanh trượt FPS tối đa thực tế là 90 (KuiOptions.cpp:182-192), không phải 120; chủ nhớ nhầm. Khi tái hiện: ghi rõ mức tối đa UI = 90, đo thêm 120 bằng cấu hình/harness; kiểm game đang cài LimitFPS bao nhiêu khi lỗi xuất hiện (Setting.ini).
+3. Tạo mục "TỐI ƯU SAU NÀY - 120 FPS" trong DESIGN/ (file riêng nếu cần), gom các việc đã thấy: logic/đạn/hiệu ứng bám thời gian thật (accumulator + nội suy hiển thị), va chạm quét đoạn, joystick gửi theo thời gian thay vì theo frame, hit event theo ngưỡng vượt chứ không bằng nhau, frame giữa bằng nội suy (J-xx), làm mượt hình (L-01), chi phí vẽ trên máy mạnh. Chỉ ghi, chưa sửa.
