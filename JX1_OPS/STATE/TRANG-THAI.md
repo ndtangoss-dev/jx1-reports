@@ -289,3 +289,6 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 - [2026-11-17 20:15] Ket man chon may chu da het (chu bao vao game duoc): luat tuong lua VM 51189/56722 doi sang 192.168.1.12. Xem BAI_HOC 17/11.
 [2026-11-17 20:40] Chu may chot: bo qh7, tu nay chi lam/test/sua tren ban A (qh9A, versionCode 18). Khong do/so sanh/sua qh7 nua. Moc so sanh: ban A truoc khi sua (jx-qh9-smooth-A.apk, 19:32).
 - 2026-11-17 23:35 Chủ duyệt chuẩn báo cáo mới (DESIGN/CHUAN-BAO-CAO.md) cho toàn bộ báo cáo + dùng Tổng quản (Q-42 thử thật). Giao tay S-01, R-01..R-03 (K mặc định). Giao qua Tổng quản R-04..R-07 (state D:\JX-wt\_dispatcher-state3, khóa K2..K5, timeout_s 2700, ngân sách snapshot tạm daily=0 chưa có số thật). Việc kế: kiểm kê asset K-02 tách nhỏ theo loại, chỉ đọc, giao qua Tổng quản; U-02/U-03 chạy tay. [GIẢ ĐỊNH-CHỜ-CHAT] Tổng quản chạy 4 việc song song là đạt thử nếu không 429/timeout.
+
+## TRẠNG THÁI SỐNG (18/11 00:11)
+Đang chạy: S-01, R-01, R-02, R-03, R-05 (K3, mở lại 00:09 sau 429), R-06, R-07, U-03 (relaunch 00:0x, khóa xoay K2-K5); R-04 qua Tổng quản (K2). Xong chưa gộp: U-01?, U-02 (exit=0). Việc kế: gộp R/S, K-02, K-03 (ánh xạ tên TCVN3). Giám sát: Monitor .done mỗi 90 s.

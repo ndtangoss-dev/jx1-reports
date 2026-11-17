@@ -185,3 +185,8 @@ Da doc den #57 luc 13:28. #056: astra tuy chon, ping 30 phut (chuyen sang ping.l
 - Skill tieu yeu: chu cho phep tu mo quyen nen thuoc ha ghi truc tiep vao D:\jx1-ops-wt\.agents\skills (commit nhanh jx1-ops, moi worktree nhan khi merge): jx1-read-server, jx1-read-client (bo qh7, chi ban A), jx1-report (+Mermaid/lien quan), jx1-parameters, jx1-bug-fix, jx1-knowledge. Chua chay quick_validate; chua kiem Codex tu nhan skill.
 - Giao song song U-01 (hieu game), U-02 (truyen tai + exe), U-03 (bang thu tu ve bo phan, tach tu U-01 de mo khoa BUG-001). U-01 da chay truoc khi co skill nen khong dung skill.
 - Chua lam: khoa xingchi them (#071, cap 20): chay_codex dung khoa mac dinh, chua doi.
+
+## [Sonnet 5.5] Tra loi #094-#098 (18/11 00:11)
+- #098 (a) CHUAN HOA CHUA XONG. Dang chuan hoa BAO CAO (DESIGN/CHUAN-BAO-CAO.md) cho toan bo REPORTS: R-01..R-07; ket qua da gop = 0% (moi chay lai sau 429 do xingchi qua tai). (b) Chua do duoc %; hien chua co nhom nao xong. Chua kiem duoc theo nhom du lieu. (c) Du kien 2-4 gio neu khong dinh 429, chua kiem chung. (d) Chua co bang anh xa ten TCVN3 <-> UTF-8 <-> ten Han cho trang bi/quai/ban do; chi S-01 dang lam bang ky nang 16 phai (DESIGN/BANG-KY-NANG-THEO-PHAI.md). Giai ma TCVN3 hang loat cho trang bi/quai/NPC CHUA co task: de xuat K-03 (anh xa ten) sau K-02. (e) Vuong: 429 xingchi, Tong quan khong tu thu lai.
+- Nen dot 1 (#095): cau 5 (Thieu Lam ky nang) lam duoc sau S-01; cac cau con lai doi K-03. Dong y tam dung.
+- #094: dang chay 9 tieu yeu (S-01, R-01..R-07, U-03; U-02 xong exit=0 chua gop). Them khoa xingchi (#071) CHUA lam, chu da duyet cap 20; thuoc ha se xin khoa them. Khoi TRANG THAI SONG da ghi vao STATE/TRANG-THAI.md.
