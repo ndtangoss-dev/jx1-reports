@@ -271,3 +271,13 @@ Chủ dự án (10:42): tiếp tục test astra; cần thì tạo thêm khóa, C
 3. A-11b test astra sâu (chạy trên 2 khóa, effort low/high): (a) sửa mã nhỏ + build 1 project (so sol); (b) lập luận dài: khảo sát tĩnh 1 câu hỏi như A-09; (c) soạn task giao việc từ 3 dòng, 5 lần mỗi model để thấy dao động; (d) 3 yêu cầu song song mỗi model để đo 429 và thời gian dưới tải; (e) tóm tắt báo cáo >200 dòng, đối chiếu từng con số với bản gốc. Bảng: giờ, token, đúng/sai, 429, độ lệch. Ghi REPORTS/A-11b-astra-sau.md.
 4. Từ kết quả: lập bảng "việc loại nào → model/effort/khóa nào" (REPORTS/BANG-GIAO-VIEC.md) để PM giao nhanh không phải nghĩ lại; astra dùng làm trợ lý điều phối (nhận mô tả, soạn task, tóm tắt kết quả) khi A-11b cho điểm đạt.
 5. Mục tiêu đo: số task xong/giờ và % thời gian worker rảnh; báo mỗi 30 phút kèm 2 số đó.
+
+
+## 2026-11-17 11:30 - Thư #039 (Chat → Sonnet): A-11c ĐO TỐC ĐỘ TOKEN/GIÂY (chủ dự án 10:49)
+Chủ dự án muốn biết đám tiểu yêu chạy được bao nhiêu token/giây để tìm API có model nhanh hơn. Số tạm từ A-11 (chỉ là đầu ra / tổng giây, đã gồm đọc 60-80K input và suy luận ẩn nên THẤP hơn tốc độ sinh thật): sol 0,9-7,1 tok/s; astra 2,0-9,0 tok/s. Cần số thật.
+Giao A-11c (Sonnet tự làm hoặc worker astra, không cần Codex sửa mã), ghi REPORTS/A-11c-toc-do-token.md:
+1. Gọi trực tiếp API xingchi (tương thích OpenAI, streaming) bằng khóa cục bộ, mỗi model (sol, astra) × effort (low, high) × 3 lần ở các thời điểm khác nhau; prompt cố định yêu cầu sinh ~1.500 token văn bản; đo: TTFT (giây tới token đầu), tok/s lúc sinh (token đầu ra / thời gian sau token đầu), tổng giây. Không dùng công cụ/đọc file để tách riêng tốc độ sinh.
+2. Đo thêm "tốc độ thực tế mỗi task" từ codex: tổng token (vào/ra), tổng giây, số lượt công cụ, và phần trăm thời gian chờ mô hình so với chạy lệnh; dùng log đã có (D:\JX-wt\*.codex*.log, dòng turn.completed và dấu thời gian).
+3. Thêm đo cho từng khóa (khóa #1, #2) để thấy khác biệt, và đo dưới tải 3 yêu cầu song song.
+4. Báo cáo kèm bảng và 1 câu kết luận: nút thắt của tiểu yêu là tốc độ sinh, độ trễ nhà cung cấp, hay đọc/ghi file. Chủ dự án sẽ dùng bảng này để tìm API/model nhanh hơn; ghi cả giá/triệu token thực trả (hệ số 0,25) để so sánh.
+5. Đề xuất sơ bộ cho mỗi loại việc: nếu nút thắt là TTFT/đọc, giảm context; nếu là tốc độ sinh, chọn model/effort thấp hơn hoặc chia nhỏ task.
