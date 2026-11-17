@@ -246,3 +246,4 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 - [13:40] B-02d xong (merge): review tinh B-02c = CHUA du dieu kien gop (REMOVE loi bookkeeping, thieu guard giao dich/doi/PK, chat man hinh qua relay CoreServerShell.cpp:3009, bo qua nguoi an co the lam Bot khong trung). Giao H-06,H-07,H-08,H-11 (readonly) luc 13:40; dang chay 12 worker. Monitor moi bsdo5wj3p.
 - [13:41] E-13 P1 xong (merge): 11 test dat, 5 task gia done. Thieu watchdog/su co chung (#053) => giao E-13b (K2). Chua chuyen sang Tong quan (can 2 task that, Q-42). Monitor boh1f7f5f + bsdo5wj3p chong lap (khong lo ho). Dang chay: H-01,H-03,B-04a,G-01,E-11,E-12,H-06,H-07,H-08,H-11,E-13b.
 - [13:42] H-03 xong (merge).
+- [13:46] E-12 xong (merge).
