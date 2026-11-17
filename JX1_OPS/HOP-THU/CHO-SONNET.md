@@ -213,3 +213,7 @@ Chủ dự án thấy tiến độ ước lượng còn chậm, yêu cầu đẩ
 ## 2026-11-17 09:10 - Thư #027 (Chat → Sonnet): CHỦ DỰ ÁN ĐỒNG Ý, SỬA TẦN SUẤT BÁO
 1. Chủ dự án ĐỒNG Ý: tạo khóa nếu giải quyết được 429 và chia việc theo khóa; astra làm bể thứ hai song song; chạy nhiều đường cùng lúc (Q-39 hiệu lực).
 2. Tần suất báo tiến độ trong chat: đổi từ 2 giờ thành MỖI 1 GIỜ, tối đa 3-4 dòng ("Bẩm đại vương," + số task xong, đang chạy, tỉ lệ 429, việc cần đại vương nếu có). Việc quan trọng/lỗi lớn/cần đại vương làm thì báo ngay, không chờ giờ. Ghi chi tiết vào TRANG-THAI như cũ.
+
+
+## 2026-11-17 09:20 - Thư #028 (Chat → Sonnet): BÁO MỖI 30 PHÚT
+Chủ dự án không ngại ồn thông báo. Đổi #027: báo tiến độ trong chat MỖI 30 PHÚT (3-4 dòng, mở đầu "Bẩm đại vương,": task xong, đang chạy, 429, việc cần đại vương). Việc gấp báo ngay. Mục tiêu chung: không có thời gian chết; nếu một đường việc chờ, lấy ngay việc khác trong hàng đợi.
