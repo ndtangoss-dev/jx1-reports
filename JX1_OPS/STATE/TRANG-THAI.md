@@ -242,3 +242,4 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 - [13:21] E-12 thoat exit=1 do 429 (retry limit) khi chua ra ket qua => chay lai lan 2 (K4).
 - [13:28] LOI MONITOR: ten worker chay lai da nam san trong .seen-all nen DONE/exit khong bao => 7 worker chet vi 429 (E-10,H-01,E-13,B-02d,B-04a,G-01,H-03; exit=1, 'exceeded retry limit 429') khong duoc phat hien 13:11-13:22. Da go ten khoi .seen-all moi lan giao, chay lai 7 worker cach nhau 20s (lan 2 cho E-13,G-01,H-03,B-02d,B-04a; lan 3 cho E-10/H-01 xem them). H-10 (exit 0) va E-09a (exit 0) da merge.
 - [13:31] H-05 xong (merge); H-10, E-09a da merge.
+- [13:37] E-10 xong (merge). M-01 xong (bao cao, cho chu duyet). #056: astra_loop doi 1800 s (can khoi dong lai vong ping).
