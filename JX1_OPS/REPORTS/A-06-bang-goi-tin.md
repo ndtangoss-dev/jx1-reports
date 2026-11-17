@@ -1,10 +1,68 @@
-﻿Tóm tắt 1: Đối chiếu source hoàn tất; commit BỊ CHẶN bởi quyền ghi metadata Git ngoài workspace, chưa có commit SHA.
+TÓM TẮT 1: [NGUỒN] Giữ nguyên bảng s2c 190 mục, c2s client/gameserver 167 mục và các chênh lệch gateway của khảo sát gốc.
+TÓM TẮT 2: [NGUỒN] Enum, alias và sentinel không đồng nghĩa số gói có payload hoặc endpoint mạng đã xác định.
+TÓM TẮT 3: [NGUỒN] Khai báo struct, bảng kích thước và handler chỉ là bằng chứng tĩnh, chưa chứng minh ABI/runtime.
+TÓM TẮT 4: [NGUỒN] CA/gamecore/KProtocolDef.h có SHA-256 trùng bản C lịch sử; server/gateway chưa được đối chiếu lại.
+TÓM TẮT 5: [CHƯA KIỂM] R-01 không chạy build, exe, VM hoặc mạng; kết quả build/VM có trong thân là ghi nhận lịch sử, chưa tái kiểm.
+
+# A-06 — Bảng gói tin client, gameserver và gateway
+
+Loại: khảo sát
+Chủ đề: Enum, payload, kích thước và handler giao thức ở ba cây nguồn lịch sử.
+Từ khóa: gói tin, protocol, KProtocolDef, KProtocol, KTongProtocol, KRelayProtocol, s2c, c2s, gateway, ABI
+Trạng thái: PARTIAL — đối chiếu khai báo tĩnh; endpoint, ABI và đính chính sync còn cần khảo sát riêng.
+Độ phủ: đã phủ 20 trên tổng 21 hạng mục giao thức trong nội dung gốc; đối chiếu mới và phần chưa phủ ghi riêng trong bảng.
+Liên quan: `JX1_OPS/REPORTS/A-02-luong-dang-nhap.md`; `JX1_OPS/REPORTS/A-04-kien-truc-tong.md`; `JX1_OPS/REPORTS/A-05-diem-tuong-tac-gs001.md`; `JX1_OPS/DESIGN/CHUAN-BAO-CAO.md`; `JX1_OPS/DESIGN/MUC-LUC-TRI-THUC.md`; `JX1_OPS/DESIGN/HUONG-DAN-TRA-CUU.md`
+Cần tôi quyết định: không (đối với đợt chuẩn hóa R-01).
+
+## Sơ đồ chính
+
+```mermaid
+flowchart LR
+  C["Client C / qh9A đối chiếu"] <-->|"s2c / c2s"| S["Gameserver S lịch sử"]
+  S <-->|"relay / chat"| G["Gateway G lịch sử"]
+  C --> D["Enum / payload / độ dài / handler"]
+  S --> D
+  G --> D
+```
+
+## Phạm vi và độ phủ
+
+[NGUỒN] Đơn vị đếm là hạng mục ghi trong bảng, không phải toàn bộ hệ thống JX1. “Đã phủ” chỉ phần đã được mô tả trong báo cáo gốc; cột cuối phân biệt phần trực tiếp đối chiếu trong R-01 với phần chưa phủ dữ liệu gốc. Không nâng bằng chứng cũ thành xác minh mới.
+
+Ký hiệu riêng của phần chuẩn hóa: `GS/` = `C:\Jx1CocoV3\Folder\ServerNew-20260116T043145Z-3-001\ServerNew\_bin_v2_\gs\`; `CA/` = `D:\JX-build\qh9A\Classes\`. Alias trong thân gốc giữ nguyên ý nghĩa lịch sử.
+
+| Hạng mục | Độ phủ nội dung gốc | Bằng chứng trong báo cáo này | Đối chiếu dữ liệu gốc R-01 / phần chưa phủ |
+|---|---|---|---|
+| s2c_PROTOCOL | Đã phủ (theo mức chắc ghi trong thân) | `A-06-bang-goi-tin.md:194` | CA/gamecore/KProtocolDef.h:20; đếm gốc 190/190/190, chưa tính lại server/gateway. |
+| c2s_PROTOCOL | Đã phủ (theo mức chắc ghi trong thân) | `A-06-bang-goi-tin.md:389` | CA/gamecore/KProtocolDef.h:218; đếm gốc 167/167/163. |
+| c2c_PROTOCOL | Đã phủ (theo mức chắc ghi trong thân) | `A-06-bang-goi-tin.md:562` | CA/gamecore/KProtocolDef.h:394; khai báo có ở client A. |
+| gm_PROTOCOL | Đã phủ (theo mức chắc ghi trong thân) | `A-06-bang-goi-tin.md:576` | CA/gamecore/KProtocolDef.h:410; khai báo có ở client A. |
+| relay_PROTOCOL | Đã phủ (theo mức chắc ghi trong thân) | `A-06-bang-goi-tin.md:597` | CA/gamecore/KProtocolDef.h:431; chưa đọc lại server/gateway để xác nhận chênh lệch. |
+| chat_PROTOCOL | Đã phủ (theo mức chắc ghi trong thân) | `A-06-bang-goi-tin.md:610` | CA/gamecore/KProtocolDef.h:440; chưa đọc lại server/gateway. |
+| playercomm_PROTOCOL | Đã phủ (theo mức chắc ghi trong thân) | `A-06-bang-goi-tin.md:628` | CA/gamecore/KProtocolDef.h:453; khai báo có ở client A. |
+| enumTONG_SYNC_ID_CREATE_FAIL | Đã phủ (theo mức chắc ghi trong thân) | `A-06-bang-goi-tin.md:647` | CA/gamecore/KProtocolDef.h:474; lớp ID phụ, không nhập với KTongProtocol. |
+| enumTONG_COMMAND_ID_START | Đã phủ (theo mức chắc ghi trong thân) | `A-06-bang-goi-tin.md:671` | CA/gamecore/KProtocolDef.h:498; giữ chênh lệch NUM trong khảo sát cũ. |
+| enumC2S_PLAYERCOMMAND_ID_LOCKSTATE | Đã phủ (theo mức chắc ghi trong thân) | `A-06-bang-goi-tin.md:699` | CA/gamecore/KProtocolDef.h:524; khai báo có ở client A. |
+| enum_COMMAND_ID_MAP | Đã phủ (theo mức chắc ghi trong thân) | `A-06-bang-goi-tin.md:711` | Theo bảng gốc không có ở C; chưa tái kiểm S/G. |
+| enum_ITEM_ID_FIND | Đã phủ (theo mức chắc ghi trong thân) | `A-06-bang-goi-tin.md:729` | Theo bảng gốc không có ở C; chưa tái kiểm S/G. |
+| KTongProtocol: C2S | Đã phủ (theo mức chắc ghi trong thân) | `A-06-bang-goi-tin.md:739` | CA/gamecore/KTongProtocol.h:24 có enumC2S_TONG_CREATE. |
+| KTongProtocol: SET | Đã phủ (theo mức chắc ghi trong thân) | `A-06-bang-goi-tin.md:770` | CA/gamecore/KTongProtocol.h:48 có enumC2S_TONG_SET_LEVEL. |
+| KTongProtocol: S2C/S3C | Đã phủ (theo mức chắc ghi trong thân) | `A-06-bang-goi-tin.md:790` | CA/gamecore/KTongProtocol.h:67 có enumS2C_TONG_CREATE_SUCCESS. |
+| KTongProtocol: friend | Đã phủ (theo mức chắc ghi trong thân) | `A-06-bang-goi-tin.md:828` | CA/gamecore/KTongProtocol.h:100 có friend_c2c_askaddfriend. |
+| KTongProtocol: extend | Đã phủ (theo mức chắc ghi trong thân) | `A-06-bang-goi-tin.md:845` | CA/gamecore/KTongProtocol.h:119 có extend_s2c_passtosomeone. |
+| Struct KProtocol C/S | Đã phủ (theo mức chắc ghi trong thân) | `A-06-bang-goi-tin.md:116` | Chưa tái so 327 tên chung và 18 khác khai báo; không dùng hash KProtocolDef thay ABI. |
+| Header gateway và KRelayProtocol | Đã phủ (theo mức chắc ghi trong thân) | `A-06-bang-goi-tin.md:167` | Chưa tái kiểm G/S và 14 struct relay trong gốc. |
+| Bảng kích thước và handler | Đã phủ (theo mức chắc ghi trong thân) | `A-06-bang-goi-tin.md:153` | Giữ cảnh báo chestpwsync và nhánh _SERVER; chưa compiler/ABI/bắt gói. |
+| Endpoint, ABI và payload sync mã 67 | Chưa phủ | `A-06-bang-goi-tin.md:866` | Chưa phủ runtime; A-04 đã dẫn đính chính sync, giữ nguyên bảng cũ. |
+
+## Nội dung gốc (bảo toàn)
+
+Tóm tắt 1: Đối chiếu source hoàn tất; commit BỊ CHẶN bởi quyền ghi metadata Git ngoài workspace, chưa có commit SHA.
 Tóm tắt 2: s2c có 190 mục khớp mã; c2s client/gameserver có 167 mục, chỉ khác tên login mã 65 (C/KProtocolDef.h:20,218; S/KProtocolDef.h:21,220).
 Tóm tắt 3: Gateway thiếu bốn symbol c2s làm lệch mã từ 185; client thiếu ba relay và bốn chat (C/KProtocolDef.h:370,431,440; S/KProtocolDef.h:372,434,446; G/KProtocolDef.h:372).
 Tóm tắt 4: KProtocol.h có 18 struct chung khác khai báo; KTongProtocol.h lệch ID và payload; bảng độ dài client còn dư mục trước chestpwsync (C/KProtocol.cpp:171-173).
 Tóm tắt 5: Chưa build/test/runtime theo task; mọi kết luận chỉ ở mức source, endpoint thực tế và ABI chưa xác minh.
 
-# A-06 — Bảng gói tin client, gameserver và gateway
 
 ## Phạm vi và quy ước dẫn nguồn
 
@@ -813,3 +871,22 @@ Payload lấy từ khai báo header, ép kiểu trong handler hoặc biểu th�
 - Chưa truy toàn bộ đường gửi/nhận cho mọi ID; cột payload ghi rõ biểu thức bảng, ép kiểu handler hoặc chưa kiểm. Những ánh xạ chỉ giống tên ở bảng KTongProtocol.h được ghi chưa kiểm liên kết call-site.
 - Chưa kiểm mọi header ngoài phạm vi, protocol multi-server/login/framing/serialize, giới hạn độ dài hoặc bảo mật parser.
 - Chưa tạo commit và chưa push do blocker quyền Git mô tả ở trên.
+
+
+## Đã xác minh / Chưa xác minh
+
+**ĐÃ XÁC MINH — R-01:** SHA-256 CA/gamecore/KProtocolDef.h = 78cc6d34999b4ce8cfe1adfe13f358e15fcc4d9fc3985ec7bdacb752f2441810, khớp giá trị C trong báo cáo. Đã mở vị trí enum ở KProtocolDef.h:20, :218, :394, :410, :431, :440, :453, :474, :498, :524 và KTongProtocol.h:24, :48, :67, :100, :119. Đọc chú thích legacy bằng GBK/CP936, chỉ đưa symbol vào phần bổ sung. Báo cáo được đọc UTF-8 nghiêm ngặt, lưu UTF-8 không BOM; bảo toàn phần thân gốc, gồm tóm tắt, kết luận, số liệu và bằng chứng.
+
+**CHƯA XÁC MINH — R-01:** các phần ghi chưa phủ trong bảng; tính tương thích giữa nguồn lịch sử, dữ liệu hiện có và binary đang chạy; mọi kết quả build/test/VM cũ chưa được tái hiện. Các gốc source server hoặc checkpoint ngoài GS/CA không được đọc mở rộng trong nhiệm vụ này.
+
+## Bàn giao
+
+Đợt chuẩn hóa thuộc `task/R-01`, commit theo nhóm tối đa 5 file, không push. SHA thực tế được ghi ở phản hồi hoàn tất; xem `JX1_OPS/REPORTS/R-01.md` và chỉ mục `JX1_OPS/REPORTS/_CHIMUC/R-01.tsv`. Trạng thái Git trong thân là lịch sử của nhiệm vụ gốc. Bước tiếp theo: PM gộp chỉ mục, giao khảo sát riêng nếu cần bù phần chưa phủ; R-01 không cấp quyền chạy lệnh vận hành có trong thân.
+
+## Phát hiện khi chuẩn hóa
+
+- Bản đầu vào có BOM UTF-8; đã bỏ BOM khi ghi theo chuẩn.
+- A-04 đã nêu bảng A-06 gán nhầm gói sync enum 67 là mốc không payload và dẫn E-01; R-01 ghi nhận cảnh báo, không sửa bảng hoặc kết luận cũ.
+- Hash client A trùng KProtocolDef.h lịch sử chỉ xác nhận file đó; không chứng minh KProtocol.h, server/gateway hoặc ABI binary tương thích.
+- Trạng thái commit bị chặn trong tóm tắt gốc là lịch sử; R-01 cũng gặp lỗi index.lock riêng, ghi ở báo cáo R-01.
+- git diff --check ban đầu báo CR cuối dòng tóm tắt cũ sau khi bỏ BOM; đã chuẩn hóa riêng kết thúc dòng đó sang LF, giữ nguyên từng ký tự nội dung.

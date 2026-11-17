@@ -1,10 +1,58 @@
+TÓM TẮT 1: [NGUỒN] Báo cáo mô tả sáu chặng từ client qua Bishop, PaySys, Goddess đến gs001 bằng GUID.
+TÓM TẮT 2: [NGUỒN] Hai bảng tài khoản và cấu trúc roledb được giữ theo nguồn lịch sử; R-01 không đọc dữ liệu tài khoản.
+TÓM TẮT 3: [NGUỒN] Sao lưu .bak và thiết kế is_bot là hai mục riêng; chất lượng phục hồi và triển khai chưa kiểm.
+TÓM TẮT 4: [NGUỒN] CA/gameui/KSelPlayer.cpp còn các điểm chọn nhân vật và gửi tagLogicLogin để đối chiếu phía client.
+TÓM TẮT 5: [CHƯA KIỂM] R-01 không chạy build, exe, VM hoặc mạng; kết quả build/VM có trong thân là ghi nhận lịch sử, chưa tái kiểm.
+
+# A-02 — Luồng đăng nhập và tài khoản
+
+Loại: khảo sát
+Chủ đề: Xác thực tài khoản, chọn nhân vật, vào gs001 và lưu dữ liệu nhân vật.
+Từ khóa: đăng nhập, login, tài khoản, Account_Info, Account_Habitus, roledb, GUID, is_bot
+Trạng thái: PARTIAL — kết luận nguồn và thiết kế cũ; schema, sao lưu và runtime chưa kiểm.
+Độ phủ: đã phủ 9 trên tổng 10 hạng mục (6 chặng đăng nhập và 4 phần dữ liệu/kiểm chứng) trong nội dung gốc; đối chiếu mới và phần chưa phủ ghi riêng trong bảng.
+Liên quan: `JX1_OPS/REPORTS/A-01-ban-do-tien-trinh.md`; `JX1_OPS/REPORTS/A-03-kiem-ke-cau-hinh.md`; `JX1_OPS/REPORTS/A-04-kien-truc-tong.md`; `JX1_OPS/REPORTS/A-06-bang-goi-tin.md`; `JX1_OPS/DESIGN/CHUAN-BAO-CAO.md`; `JX1_OPS/DESIGN/MUC-LUC-TRI-THUC.md`; `JX1_OPS/DESIGN/HUONG-DAN-TRA-CUU.md`
+Cần tôi quyết định: không (đối với đợt chuẩn hóa R-01).
+
+## Sơ đồ chính
+
+```mermaid
+flowchart LR
+  C["Client"] --> B["Bishop"]
+  B --> P["PaySys / tài khoản"]
+  B --> G["Goddess / nhân vật"]
+  B --> S["gs001 / dữ liệu + GUID"]
+  B --> C
+  C -->|"GUID"| S
+```
+
+## Phạm vi và độ phủ
+
+[NGUỒN] Đơn vị đếm là hạng mục ghi trong bảng, không phải toàn bộ hệ thống JX1. “Đã phủ” chỉ phần đã được mô tả trong báo cáo gốc; cột cuối phân biệt phần trực tiếp đối chiếu trong R-01 với phần chưa phủ dữ liệu gốc. Không nâng bằng chứng cũ thành xác minh mới.
+
+Ký hiệu riêng của phần chuẩn hóa: `GS/` = `C:\Jx1CocoV3\Folder\ServerNew-20260116T043145Z-3-001\ServerNew\_bin_v2_\gs\`; `CA/` = `D:\JX-build\qh9A\Classes\`. Alias trong thân gốc giữ nguyên ý nghĩa lịch sử.
+
+| Hạng mục | Độ phủ nội dung gốc | Bằng chứng trong báo cáo này | Đối chiếu dữ liệu gốc R-01 / phần chưa phủ |
+|---|---|---|---|
+| 1. Client gửi đăng nhập | Đã phủ (theo mức chắc ghi trong thân) | `A-02-luong-dang-nhap.md:107` | CA/gameui/Klogin.cpp:480, :485: cờ yêu cầu và lời gọi băm; chưa kiểm PaySys. |
+| 2. Bishop xác thực tài khoản | Đã phủ (theo mức chắc ghi trong thân) | `A-02-luong-dang-nhap.md:108` | GS/gs001_cfg.ini:1 chỉ xác nhận nhóm Gateway; chưa phủ source Bishop/PaySys. |
+| 3. Lấy danh sách nhân vật | Đã phủ (theo mức chắc ghi trong thân) | `A-02-luong-dang-nhap.md:109` | GS/gs001_cfg.ini:5 chỉ có nhóm Database; chưa phủ Goddess/SQL/roledb. |
+| 4. Client chọn nhân vật | Đã phủ (theo mức chắc ghi trong thân) | `A-02-luong-dang-nhap.md:110` | CA/gameui/KSelPlayer.cpp:1176, :1185 có EnterGame và c2s_dbplayerselect. |
+| 5. Bishop cấp GUID và nơi vào game | Đã phủ (theo mức chắc ghi trong thân) | `A-02-luong-dang-nhap.md:111` | CA/gameui/KSelPlayer.cpp:1073, :1083 có kiểm bPermit; chưa phủ phần Bishop. |
+| 6. Client nối game server và gửi GUID | Đã phủ (theo mức chắc ghi trong thân) | `A-02-luong-dang-nhap.md:112` | CA/gameui/KSelPlayer.cpp:1128, :1129, :1134 có tagLogicLogin và gửi gói. |
+| Bảng SQL và trạng thái phiên | Đã phủ (theo mức chắc ghi trong thân) | `A-02-luong-dang-nhap.md:116` | Chưa phủ schema/dữ liệu thật: không đọc account, dump hoặc roledb. |
+| roledb, chỉ mục, lưu và phục hồi | Đã phủ (theo mức chắc ghi trong thân) | `A-02-luong-dang-nhap.md:130` | Chưa phủ source Goddess và bản sao DB trong R-01. |
+| Thiết kế is_bot | Đã phủ (theo mức chắc ghi trong thân) | `A-02-luong-dang-nhap.md:153` | Đã phủ dưới dạng đề xuất lịch sử; chưa có bằng chứng đã triển khai. |
+| Schema, chất lượng phục hồi và runtime | Chưa phủ | `A-02-luong-dang-nhap.md:176` | Chưa phủ kiểm thử thật; ngoài phạm vi R-01. |
+
+## Nội dung gốc (bảo toàn)
+
 1. Luồng đọc từ nguồn: client → Bishop:56722 → Sword3PaySys:5002 (tài khoản) / Goddess:5001 (nhân vật) → client nối gs001:51189 bằng GUID; `BH:9-17`, `Bishop/GamePlayer.cpp:734-738`, `CLIENT/gameui/KSelPlayer.cpp:1117-1134`.
 2. Đăng nhập cần `Account_Info` và `Account_Habitus`; mật khẩu được client băm MD5, PaySys so chuỗi có phân biệt hoa/thường và kiểm hạn/điểm; `CLIENT/gameui/Klogin.cpp:471-495`, `PAY/S3PAccount.cpp:50-99,582-647`, `R/02-b2-account-db.md:19`.
 3. `roledb` là Berkeley DB B-tree, khóa chính là tên nhân vật, giá trị là blob `TRoleData`; `roledb.0` lập chỉ mục tài khoản; `Goddess/DBTable.cpp:107-128`, `Goddess/IDBRoleServer.cpp:65-74,334-343,876`.
 4. Sao lưu tích hợp ghi dump `.bak` theo từng cặp khóa/dữ liệu trong thư mục thời gian, không phải chép nguyên file B-tree; phục hồi/chất lượng bản sao hiện tại **chưa kiểm**; `Goddess/DBBackup.cpp:353-424`, `Goddess/DBDumpLoad.cpp:48-70,140-174`.
 5. Đề xuất lưu `is_bot` ở bảng metadata SQL mới theo `cAccName`; tránh tái dùng cờ tính phí, trạng thái phiên hoặc sửa blob nhân vật; đây là thiết kế chưa triển khai; `PAY/S3PAccount.cpp:50-99,593-638`, `Goddess/IDBRoleServer.cpp:947-962`.
 
-# A-02 — Luồng đăng nhập và tài khoản
 
 Trạng thái: **PARTIAL — báo cáo hoàn tất, commit bị chặn**, ngày 16/11/2026. Kết luận nguồn không thay cho kiểm chứng runtime. Phạm vi theo `JX1_OPS/TASKS/A-02.md:16-28`.
 
@@ -143,3 +191,20 @@ Liên kết logic hai bảng người chơi là `cAccName` (các câu truy vấn
 - Kiểm tra nội dung bằng PowerShell đạt: đúng 5 dòng tóm tắt, đủ các mục bắt buộc và không có ký tự Unicode thay thế trong báo cáo. Đây là kiểm tra tài liệu, không phải test/build/runtime.
 - **Commit bị chặn:** `git -c core.fsmonitor=false add -- JX1_OPS/REPORTS/A-02-luong-dang-nhap.md JX1_OPS/TASKS/A-02.md` thoát 1 với lỗi nguyên văn `fatal: Unable to create 'D:/jx1-reports/.git/worktrees/A-02/index.lock': Permission denied`. Git metadata của worktree nằm ngoài writable root `D:\JX-wt\A-02`; không thử lại cùng lỗi, không sửa quyền/config hoặc chuyển Git directory để vượt sandbox. Chưa stage, chưa commit, không có SHA mới. Hai file được giữ local; diff của file mới được xem bằng chế độ `git diff --no-index` chỉ đọc.
 - **BỊ CHẶN – CHƯA PUSH.** Người dùng chỉ yêu cầu commit local; không thực hiện push. Bước tiếp tục khi có phiên được phép ghi Git metadata: stage đúng hai file trên và commit với tiêu đề `A-02 Mô tả luồng đăng nhập và tài khoản`; các lệnh đầy đủ nằm trong mục Kết quả của task.
+
+
+## Đã xác minh / Chưa xác minh
+
+**ĐÃ XÁC MINH — R-01:** Đã mở file client bản A tại CA/gameui/Klogin.cpp:480, :485 và CA/gameui/KSelPlayer.cpp:1073, :1083, :1128, :1129, :1134, :1176, :1185. Các vị trí này chỉ đối chiếu phía client, không chứng minh server tương thích. Báo cáo được đọc UTF-8 nghiêm ngặt, lưu UTF-8 không BOM; bảo toàn phần thân gốc, gồm tóm tắt, kết luận, số liệu và bằng chứng.
+
+**CHƯA XÁC MINH — R-01:** các phần ghi chưa phủ trong bảng; tính tương thích giữa nguồn lịch sử, dữ liệu hiện có và binary đang chạy; mọi kết quả build/test/VM cũ chưa được tái hiện. Các gốc source server hoặc checkpoint ngoài GS/CA không được đọc mở rộng trong nhiệm vụ này.
+
+## Bàn giao
+
+Đợt chuẩn hóa thuộc `task/R-01`, commit theo nhóm tối đa 5 file, không push. SHA thực tế được ghi ở phản hồi hoàn tất; xem `JX1_OPS/REPORTS/R-01.md` và chỉ mục `JX1_OPS/REPORTS/_CHIMUC/R-01.tsv`. Trạng thái Git trong thân là lịch sử của nhiệm vụ gốc. Bước tiếp theo: PM gộp chỉ mục, giao khảo sát riêng nếu cần bù phần chưa phủ; R-01 không cấp quyền chạy lệnh vận hành có trong thân.
+
+## Phát hiện khi chuẩn hóa
+
+- Các gốc Bishop/Goddess/PAY/CLIENT trong thân là gốc lịch sử; CA của R-01 là qh9A, không tự thay thế các alias đó.
+- Trạng thái commit bị chặn trong thân là của A-02 ngày trước; trạng thái bàn giao đợt chuẩn hóa nằm ở R-01.
+- Giữ nguyên thiết kế is_bot và mọi giới hạn sao lưu; không truy cập dữ liệu tài khoản để bù phần chưa kiểm.

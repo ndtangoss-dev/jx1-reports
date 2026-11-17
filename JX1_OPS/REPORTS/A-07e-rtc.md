@@ -1,10 +1,73 @@
+TÓM TẮT 1: [NGUỒN] Giữ bốn sửa P1 và đổi BasicRuntimeChecks trong build snapshot; không chuyển lỗi hoặc hash sang binary khác.
+TÓM TẮT 2: [NGUỒN] Năm project và verifier có kết quả thành công lịch sử; tiêu chí map không có _RTC_ literal đã báo rõ chưa đạt.
+TÓM TẮT 3: [NGUỒN] Engine có ngoại lệ lựa chọn CRT trong project snapshot; tương thích allocator qua biên DLL chưa kiểm.
+TÓM TẮT 4: [NGUỒN] Các ghi nhận VM PM có mốc thời gian riêng, không được tái hiện bởi chuẩn hóa R-01.
+TÓM TẮT 5: [CHƯA KIỂM] R-01 không chạy build, exe, VM hoặc mạng; kết quả build/VM có trong thân là ghi nhận lịch sử, chưa tái kiểm.
+
+# A-07e — Bỏ /RTC1 và sửa lỗi mảng/biến chưa gán
+
+Loại: sửa lỗi
+Chủ đề: Bản ghi sửa lỗi P1, cấu hình RTC trong snapshot, build và giới hạn literal map.
+Từ khóa: RTC, /RTC1, gs001, mảng, biến chưa gán, HighEntropyVA, GameServer.map, Engine.map, MSVC
+Trạng thái: PARTIAL — tiêu chí không có _RTC_ literal trong mọi map chưa đạt; runtime chỉ là mốc PM lịch sử.
+Độ phủ: đã phủ 23 trên tổng 25 hạng mục sửa/kiểm chứng trong nội dung gốc; đối chiếu mới và phần chưa phủ ghi riêng trong bảng.
+Liên quan: `JX1_OPS/REPORTS/A-07-goc-re-crash-gs001.md`; `JX1_OPS/REPORTS/A-07b-ep-con-tro.md`; `JX1_OPS/REPORTS/A-07c-link-gs001.md`; `JX1_OPS/REPORTS/A-07d-breakpoint.md`; `JX1_OPS/DESIGN/CHUAN-BAO-CAO.md`; `JX1_OPS/DESIGN/MUC-LUC-TRI-THUC.md`; `JX1_OPS/DESIGN/HUONG-DAN-TRA-CUU.md`
+Cần tôi quyết định: không (đối với đợt chuẩn hóa R-01).
+
+## Sơ đồ chính
+
+```mermaid
+flowchart TD
+  F["Bốn sửa P1"] --> B["Build snapshot năm project"]
+  C["Cờ RTC / lựa chọn CRT"] --> B
+  B --> V["Verifier và map"]
+  V -->|"symbol dự án không còn"| P["Kết quả theo tiêu chí"]
+  V -->|"map còn literal từ CRT"| N["Tiêu chí literal chưa đạt"]
+  N --> R["Runtime chưa tái kiểm"]
+```
+
+## Phạm vi và độ phủ
+
+[NGUỒN] Đơn vị đếm là hạng mục ghi trong bảng, không phải toàn bộ hệ thống JX1. “Đã phủ” chỉ phần đã được mô tả trong báo cáo gốc; cột cuối phân biệt phần trực tiếp đối chiếu trong R-01 với phần chưa phủ dữ liệu gốc. Không nâng bằng chứng cũ thành xác minh mới.
+
+Ký hiệu riêng của phần chuẩn hóa: `GS/` = `C:\Jx1CocoV3\Folder\ServerNew-20260116T043145Z-3-001\ServerNew\_bin_v2_\gs\`; `CA/` = `D:\JX-build\qh9A\Classes\`. Alias trong thân gốc giữ nguyên ý nghĩa lịch sử.
+
+| Hạng mục | Độ phủ nội dung gốc | Bằng chứng trong báo cáo này | Đối chiếu dữ liệu gốc R-01 / phần chưa phủ |
+|---|---|---|---|
+| Helper: BasicRuntimeChecks | Đã phủ (theo mức chắc ghi trong thân) | `A-07e-rtc.md:80` | Giữ thay đổi lịch sử tại build-check.py:55; không chạy helper. |
+| P1: KPlayer.cpp / nRItemLevel | Đã phủ (theo mức chắc ghi trong thân) | `A-07e-rtc.md:81` | Giữ chỉ số [5] được sửa trong snapshot; chưa đọc lại source snapshot. |
+| P1: KItemList.cpp / nMagRows | Đã phủ (theo mức chắc ghi trong thân) | `A-07e-rtc.md:82` | Giữ bỏ lần ghi [6]; chưa đọc lại source snapshot. |
+| P1: ScriptFuns.cpp / LuaGetShopItemData | Đã phủ (theo mức chắc ghi trong thân) | `A-07e-rtc.md:83` | Giữ chỉ số [5] trong sửa cũ; chưa đọc lại source snapshot. |
+| P1: ScriptFuns.cpp / LuaITEM_DropOneItem | Đã phủ (theo mức chắc ghi trong thân) | `A-07e-rtc.md:84` | Giữ biến nItemIdx được trả về; chưa tái kiểm runtime. |
+| Ngoại lệ cấu hình link Engine | Đã phủ (theo mức chắc ghi trong thân) | `A-07e-rtc.md:88` | Giữ lựa chọn CRT trong snapshot; allocator qua DLL chưa kiểm. |
+| Build LuaLibDll | Đã phủ (theo mức chắc ghi trong thân) | `A-07e-rtc.md:110` | Exit 0 lịch sử; chưa build lại. |
+| Build Engine | Đã phủ (theo mức chắc ghi trong thân) | `A-07e-rtc.md:111` | Exit 0 lịch sử; chưa build lại. |
+| Build Common | Đã phủ (theo mức chắc ghi trong thân) | `A-07e-rtc.md:112` | Exit 0 lịch sử; chưa build lại. |
+| Build CoreServer | Đã phủ (theo mức chắc ghi trong thân) | `A-07e-rtc.md:113` | Exit 0 lịch sử; chưa build lại. |
+| Build GameServer | Đã phủ (theo mức chắc ghi trong thân) | `A-07e-rtc.md:114` | Exit 0 lịch sử; chưa build lại. |
+| Verifier compile và object | Đã phủ (theo mức chắc ghi trong thân) | `A-07e-rtc.md:116` | 239 lệnh / 240 object là số lịch sử; chưa chạy verifier. |
+| GameServer.map | Đã phủ (theo mức chắc ghi trong thân) | `A-07e-rtc.md:124` | Giữ 8 dòng _rtc_ lịch sử từ CRT; tiêu chí literal chưa đạt. |
+| CoreServer.map | Đã phủ (theo mức chắc ghi trong thân) | `A-07e-rtc.md:125` | Giữ 8 dòng _rtc_ lịch sử; tiêu chí literal chưa đạt. |
+| LuaLibDll.map | Đã phủ (theo mức chắc ghi trong thân) | `A-07e-rtc.md:126` | Giữ 8 dòng _rtc_ lịch sử; tiêu chí literal chưa đạt. |
+| Engine.map | Đã phủ (theo mức chắc ghi trong thân) | `A-07e-rtc.md:127` | Giữ 32 dòng _rtc_ lịch sử; tiêu chí literal chưa đạt. |
+| Artifact gs001.exe | Đã phủ (theo mức chắc ghi trong thân) | `A-07e-rtc.md:137` | Giữ hash/kích thước snapshot; GS gốc không thay thế được. |
+| Artifact CoreServer.dll | Đã phủ (theo mức chắc ghi trong thân) | `A-07e-rtc.md:138` | Giữ bảng artifact; chưa đọc checkpoint A-07e. |
+| Artifact Engine.dll | Đã phủ (theo mức chắc ghi trong thân) | `A-07e-rtc.md:139` | Giữ bảng artifact; chưa đọc checkpoint A-07e. |
+| Artifact LuaLibDll.dll | Đã phủ (theo mức chắc ghi trong thân) | `A-07e-rtc.md:140` | Giữ bảng artifact; chưa đọc checkpoint A-07e. |
+| Bàn giao PM | Đã phủ (theo mức chắc ghi trong thân) | `A-07e-rtc.md:159` | Hai điều kiện chưa đạt nguyên văn được thân ghi rõ. |
+| Thử VM 04:13 | Đã phủ (theo mức chắc ghi trong thân) | `A-07e-rtc.md:162` | Ghi nhận PM lịch sử, chưa chạy lại. |
+| Thử HEVA BAT 04:35 | Đã phủ (theo mức chắc ghi trong thân) | `A-07e-rtc.md:166` | Ghi nhận PM lịch sử, chưa chạy lại. |
+| Literal map hoàn toàn không có _RTC_ | Chưa phủ | `A-07e-rtc.md:120` | Chưa đạt nguyên văn dù không có instrumentation trong object dự án. |
+| Đóng gói ngoài workspace và runtime lâu/có tải | Chưa phủ | `A-07e-rtc.md:161` | Chưa đạt hoặc chưa kiểm; không mở rộng thao tác R-01. |
+
+## Nội dung gốc (bảo toàn)
+
 TÓM TẮT 1/5: Đã sửa 4 lỗi P1, đặt BasicRuntimeChecks=Default; không có /RTC trong 239 lệnh compile x64 đã kiểm.
 TÓM TẮT 2/5: LuaLibDll, Engine, Common, CoreServer và GameServer đều build exit 0; cần chỉnh link CRT của Engine trên project snapshot khi bỏ /RTC1.
 TÓM TẮT 3/5: gs001.exe 1.286.656 byte; SHA-256 988175a79c24c57b07d24d62b5f43e7acdd135e03e911bf347b123d92ff48a91; bộ EXE/DLL/PDB/map ở checkpoint-a07e-final/a07e.
 TÓM TẮT 4/5: CHƯA ĐẠT điều kiện “không còn _RTC_ trong map”: không còn _RTC_CheckStackVars hoặc tham chiếu _RTC_ từ 240 object dự án, nhưng thư viện CRT vẫn mang symbol _RTC_.
 TÓM TẮT 5/5: D:\JX-build\a07e bị từ chối quyền ghi; bộ bàn giao sẵn trong workspace, có lệnh copy cho PM. Không chạy EXE/DLL sản phẩm, không stage/commit/push.
 
-# A-07e — bỏ /RTC1 và sửa lỗi mảng/biến chưa gán
 
 Ngày 2026-11-17, Asia/Bangkok. Đã đọc task A-07e và báo cáo A-07d mục 2. Nhánh `fix/a07c-link`, HEAD `3802d29`. Không thấy AGENTS.md trong worktree hoặc thư mục cha đã kiểm. Ban đầu Git chỉ có `?? JX1_OPS/`.
 
@@ -102,3 +165,21 @@ Bằng chứng trong checkpoint-a07e-final: source-sha256.json; snapshot project
 
 ## Thu HEVA BAT (PM, 04:35)
 - Sau 21 phut on dinh voi HEVA tat, nap gs001.exe nguyen ban tu build (HEVA BAT, SHA 988175A79C24...) + cung 3 DLL A-07e: chay tu 04:24:14, >10 phut, qua moc 40 s (bo cu chet 0xC0000005) va 225 s (0x80000003). => Bo A-07e chay duoc KHONG can tat co. Can giu chay lau hon va co tai (bot/nguoi) truoc khi ket luan "da sua".
+
+
+## Đã xác minh / Chưa xác minh
+
+**ĐÃ XÁC MINH — R-01:** Đối chiếu các heading và bảng dự án/map/artifact trong bản gốc; không đọc snapshot A-07e ngoài các gốc R-01, không chạy verifier/dumpbin/build. Hash máy hiện có tại GS là binary gốc O và khác hash gs001 build A-07e trong thân. Báo cáo được đọc UTF-8 nghiêm ngặt, lưu UTF-8 không BOM; bảo toàn phần thân gốc, gồm tóm tắt, kết luận, số liệu và bằng chứng.
+
+**CHƯA XÁC MINH — R-01:** các phần ghi chưa phủ trong bảng; tính tương thích giữa nguồn lịch sử, dữ liệu hiện có và binary đang chạy; mọi kết quả build/test/VM cũ chưa được tái hiện. Các gốc source server hoặc checkpoint ngoài GS/CA không được đọc mở rộng trong nhiệm vụ này.
+
+## Bàn giao
+
+Đợt chuẩn hóa thuộc `task/R-01`, commit theo nhóm tối đa 5 file, không push. SHA thực tế được ghi ở phản hồi hoàn tất; xem `JX1_OPS/REPORTS/R-01.md` và chỉ mục `JX1_OPS/REPORTS/_CHIMUC/R-01.tsv`. Trạng thái Git trong thân là lịch sử của nhiệm vụ gốc. Bước tiếp theo: PM gộp chỉ mục, giao khảo sát riêng nếu cần bù phần chưa phủ; R-01 không cấp quyền chạy lệnh vận hành có trong thân.
+
+## Phát hiện khi chuẩn hóa
+
+- Bản đầu vào có 5 dòng tóm tắt trước tiêu đề; phần chuẩn hóa đặt 5 dòng mới theo khuôn và giữ đủ 5 dòng cũ trong thân.
+- Phần literal_no_rtc_in_all_maps đã ghi không đạt dù verifier exit 0. Giữ phân biệt hai kết quả, không đổi trạng thái thành đạt.
+- Các thử VM BAT/HighEntropyVA là cập nhật PM trong báo cáo; R-01 giữ nhãn lịch sử, không dùng làm kết quả thử mới.
+- Tiếng Việt không dấu trong thân gốc và SHA không đổi; metadata mới dùng tiếng Việt có dấu.

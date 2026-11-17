@@ -1,10 +1,66 @@
-﻿TÓM TẮT 1/5: Phân tích tĩnh tại D:\JX-wt\A-07d, nhánh fix/a07c-link, HEAD 3802d29; không build/chạy sản phẩm, không stage/commit/push.
+TÓM TẮT 1: [NGUỒN] Báo cáo chưa xác định nguyên nhân gốc của lần dừng khoảng 225 giây.
+TÓM TẮT 2: [NGUỒN] Giữ bốn ứng viên P1 về mảng/biến chưa gán, phân biệt với lỗi con trỏ và assertion bị guard.
+TÓM TẮT 3: [NGUỒN] Inventory 687 file, 619 token tại 88 file là kiểm kê lexical lịch sử, không phải 619 breakpoint runtime.
+TÓM TẮT 4: [NGUỒN] Lua khởi động và timer hiện có trong GS, nhưng không xác nhận là bộ script lúc thử A-07c.
+TÓM TẮT 5: [CHƯA KIỂM] R-01 không chạy build, exe, VM hoặc mạng; kết quả build/VM có trong thân là ghi nhận lịch sử, chưa tái kiểm.
+
+# A-07d — Điều tra breakpoint 0x80000003 của gs001
+
+Loại: khảo sát
+Chủ đề: Phân biệt assertion, /RTC1, lịch định kỳ và pointer khi gs001 dừng sau khoảng 225 giây.
+Từ khóa: breakpoint, 0x80000003, /RTC1, assertion, 225 giây, WER, cdb, gs001, timer, con trỏ
+Trạng thái: PARTIAL — có ứng viên tĩnh và kế hoạch dump; thiếu stack/dump đúng lần dừng.
+Độ phủ: đã phủ 15 trên tổng 16 hạng mục điều tra trong nội dung gốc; đối chiếu mới và phần chưa phủ ghi riêng trong bảng.
+Liên quan: `JX1_OPS/REPORTS/A-07-goc-re-crash-gs001.md`; `JX1_OPS/REPORTS/A-07b-ep-con-tro.md`; `JX1_OPS/REPORTS/A-07c-link-gs001.md`; `JX1_OPS/REPORTS/A-07e-rtc.md`; `JX1_OPS/DESIGN/CHUAN-BAO-CAO.md`; `JX1_OPS/DESIGN/MUC-LUC-TRI-THUC.md`; `JX1_OPS/DESIGN/HUONG-DAN-TRA-CUU.md`
+Cần tôi quyết định: không (đối với đợt chuẩn hóa R-01).
+
+## Sơ đồ chính
+
+```mermaid
+flowchart TD
+  X["0x80000003 / khoảng 225 giây"] --> A["Assertion / guard"]
+  X --> R["RTC / bốn P1"]
+  X --> T["Timer / script / GC"]
+  X --> P["Pointer / lifetime / ABI"]
+  A --> D["Cần dump đúng bộ binary"]
+  R --> D
+  T --> D
+  P --> D
+```
+
+## Phạm vi và độ phủ
+
+[NGUỒN] Đơn vị đếm là hạng mục ghi trong bảng, không phải toàn bộ hệ thống JX1. “Đã phủ” chỉ phần đã được mô tả trong báo cáo gốc; cột cuối phân biệt phần trực tiếp đối chiếu trong R-01 với phần chưa phủ dữ liệu gốc. Không nâng bằng chứng cũ thành xác minh mới.
+
+Ký hiệu riêng của phần chuẩn hóa: `GS/` = `C:\Jx1CocoV3\Folder\ServerNew-20260116T043145Z-3-001\ServerNew\_bin_v2_\gs\`; `CA/` = `D:\JX-build\qh9A\Classes\`. Alias trong thân gốc giữ nguyên ý nghĩa lịch sử.
+
+| Hạng mục | Độ phủ nội dung gốc | Bằng chứng trong báo cáo này | Đối chiếu dữ liệu gốc R-01 / phần chưa phủ |
+|---|---|---|---|
+| Nguồn Core | Đã phủ (theo mức chắc ghi trong thân) | `A-07d-breakpoint.md:71` | Có trong vùng khảo sát gốc; R-01 chưa mở lại server snapshot. |
+| Nguồn Engine | Đã phủ (theo mức chắc ghi trong thân) | `A-07d-breakpoint.md:71` | Có trong vùng khảo sát gốc; R-01 chưa mở lại server snapshot. |
+| Nguồn MultiServer/GameServer | Đã phủ (theo mức chắc ghi trong thân) | `A-07d-breakpoint.md:71` | Có trong vùng khảo sát gốc; chưa tái kiểm guard/project. |
+| Nguồn Library/LuaLib | Đã phủ (theo mức chắc ghi trong thân) | `A-07d-breakpoint.md:71` | Đường thực LuaLibDll được gốc xác định; chưa tái kiểm source Lua 4. |
+| Breakpoint/assertion và guard | Đã phủ (theo mức chắc ghi trong thân) | `A-07d-breakpoint.md:75` | Giữ bảng phân loại comment/guard/excluded; chưa tái xác minh binary. |
+| P1: BuyItem nRItemLevel | Đã phủ (theo mức chắc ghi trong thân) | `A-07d-breakpoint.md:103` | Chưa phủ Core/Src/KPlayer.cpp đúng snapshot A-07c. |
+| P1: BlueBianShi nMagRows | Đã phủ (theo mức chắc ghi trong thân) | `A-07d-breakpoint.md:104` | Chưa phủ Core/Src/KItemList.cpp đúng snapshot A-07c. |
+| P1: LuaGetShopItemData | Đã phủ (theo mức chắc ghi trong thân) | `A-07d-breakpoint.md:105` | Chưa phủ Core/Src/ScriptFuns.cpp đúng snapshot A-07c. |
+| P1: LuaITEM_DropOneItem | Đã phủ (theo mức chắc ghi trong thân) | `A-07d-breakpoint.md:106` | Chưa phủ biến chưa gán đúng snapshot A-07c. |
+| Các ứng viên P2 | Đã phủ (theo mức chắc ghi trong thân) | `A-07d-breakpoint.md:107` | Giữ các nhóm format/lifetime/recursion/worker; chưa kiểm stack. |
+| Lịch GS/worker/autosave/network/GC/timer | Đã phủ (theo mức chắc ghi trong thân) | `A-07d-breakpoint.md:114` | Giữ mười đường định kỳ trong bảng gốc; chưa đo chu kỳ runtime. |
+| Script khởi động và timer | Đã phủ (theo mức chắc ghi trong thân) | `A-07d-breakpoint.md:125` | GS/script/system/serverscript.lua:13 và GS/script/servertimer.lua:23 có StartGame/Main bằng ASCII; chưa biết đúng bộ lúc thử. |
+| Pointer/handle đã sửa và nợ ngoài phạm vi | Đã phủ (theo mức chắc ghi trong thân) | `A-07d-breakpoint.md:131` | Giữ toàn bộ bảng producer/consumer và giới hạn vendor; chưa đọc lại snapshot. |
+| Đề xuất WER/cdb/offline | Đã phủ (theo mức chắc ghi trong thân) | `A-07d-breakpoint.md:152` | Chỉ giữ kế hoạch; không bật WER, attach hoặc phân tích dump mới. |
+| Inventory assertion source/header | Đã phủ (theo mức chắc ghi trong thân) | `A-07d-breakpoint.md:254` | 687 file / 619 token / 88 file là đếm lịch sử; chưa quét lại. |
+| Dump, stack và dòng lỗi quyết định | Chưa phủ | `A-07d-breakpoint.md:73` | Chưa phủ, không dùng thời gian 225 giây để chốt nguyên nhân. |
+
+## Nội dung gốc (bảo toàn)
+
+TÓM TẮT 1/5: Phân tích tĩnh tại D:\JX-wt\A-07d, nhánh fix/a07c-link, HEAD 3802d29; không build/chạy sản phẩm, không stage/commit/push.
 TÓM TẮT 2/5: Không thấy breakpoint trực tiếp còn hiệu lực trong bốn vùng nguồn; SceneMath.cpp:164 là comment, int3 của Common/Macro.h chỉ thuộc _DEBUG.
 TÓM TẮT 3/5: Ưu tiên kiểm /RTC1: KPlayer.cpp:1377, KItemList.cpp:4141, ScriptFuns.cpp:1068 ghi quá mảng; ScriptFuns.cpp:9441 dùng biến chưa khởi tạo; chưa chứng minh gây lần dừng đang xét.
 TÓM TẮT 4/5: Chưa thấy lịch cố định 225 giây; có worker ~1 s/~300 s, script theo phút UTC, Lua GC theo cấp phát; nhiều nhánh autosave 5 phút đã comment.
 TÓM TẮT 5/5: Đề xuất WER LocalDumps riêng gs001.exe và cdb first-chance trong VM thử; custom exception filter có thể ngăn WER, cần dump và EXE/DLL/PDB đúng phiên bản để kết luận.
 
-# A-07d — Điều tra breakpoint 0x80000003 của gs001
 
 ## Phạm vi và bằng chứng
 
@@ -302,3 +358,21 @@ Quet 687 file tracked .c/.cpp/.h/.hpp/.inl/.inc/.ch trong bon vung, co 619 token
 | `Library/LuaLib/src/opt.c` | LUA_ASSERT | 24 |
 | `Library/LuaLib/src/stubs.c` | LUA_ASSERT | 82, 88, 95 |
 | `MultiServer/GameServer/KSOServer.cpp` | _ASSERT | 1738, 1754, 2798, 2799, 2856, 2861, 3113, 3509 |
+
+
+## Đã xác minh / Chưa xác minh
+
+**ĐÃ XÁC MINH — R-01:** Kiểm đủ bốn vùng nguồn được báo cáo nêu, bốn hàng P1, bảng lịch, bảng pointer và phụ lục assertion trong bản gốc. Đọc trực tiếp GS/script/system/serverscript.lua:13 và GS/script/servertimer.lua:23 bằng symbol ASCII vì cả UTF-8/GBK nghiêm ngặt đều lỗi; chưa gắn script hiện có với lần thử lịch sử. Báo cáo được đọc UTF-8 nghiêm ngặt, lưu UTF-8 không BOM; bảo toàn phần thân gốc, gồm tóm tắt, kết luận, số liệu và bằng chứng.
+
+**CHƯA XÁC MINH — R-01:** các phần ghi chưa phủ trong bảng; tính tương thích giữa nguồn lịch sử, dữ liệu hiện có và binary đang chạy; mọi kết quả build/test/VM cũ chưa được tái hiện. Các gốc source server hoặc checkpoint ngoài GS/CA không được đọc mở rộng trong nhiệm vụ này.
+
+## Bàn giao
+
+Đợt chuẩn hóa thuộc `task/R-01`, commit theo nhóm tối đa 5 file, không push. SHA thực tế được ghi ở phản hồi hoàn tất; xem `JX1_OPS/REPORTS/R-01.md` và chỉ mục `JX1_OPS/REPORTS/_CHIMUC/R-01.tsv`. Trạng thái Git trong thân là lịch sử của nhiệm vụ gốc. Bước tiếp theo: PM gộp chỉ mục, giao khảo sát riêng nếu cần bù phần chưa phủ; R-01 không cấp quyền chạy lệnh vận hành có trong thân.
+
+## Phát hiện khi chuẩn hóa
+
+- Bản đầu vào có BOM UTF-8; đã bỏ BOM khi ghi theo chuẩn.
+- Thân gốc ghi không có script/config runtime trong tracked source. Hai file GS hiện tại có thật nhưng ở gốc dữ liệu khác; không sửa nhận định cũ hoặc suy chúng đã chạy ở mốc 225 giây.
+- A-07d nêu không tắt RTC/HEVA để coi như chữa xong; A-07e tiếp tục xử lý bốn P1 và đổi RTC ở nhiệm vụ riêng. Giữ cả diễn tiến và giới hạn, không hợp thức hóa kết quả runtime.
+- 619 token assertion không tương đương 619 breakpoint; phụ lục có guard/file không build và chưa được R-01 quét lại.

@@ -1,10 +1,66 @@
+TÓM TẮT 1: [NGUỒN] Số 0 INI/Lua/TAB/PAK của A-03 thuộc cây source cũ; không phải số của thư mục gs được giao cho R-01.
+TÓM TẮT 2: [NGUỒN] R-01 đếm Settings có 2022 file, script có 4085 file và maps có 503 file; chỉ là kiểm kê file rời.
+TÓM TẮT 3: [NGUỒN] Các điểm nạp cấu hình, script, PAK và quy tắc mã hóa trong thân báo cáo được bảo toàn.
+TÓM TẮT 4: [NGUỒN] Hai Lua khởi động/timer không qua được giải mã UTF-8 và GBK nghiêm ngặt; chỉ dùng symbol ASCII.
+TÓM TẮT 5: [CHƯA KIỂM] R-01 không chạy build, exe, VM hoặc mạng; kết quả build/VM có trong thân là ghi nhận lịch sử, chưa tái kiểm.
+
+# A-03 — Kiểm kê cấu hình và script
+
+Loại: khảo sát
+Chủ đề: Phạm vi file cấu hình, bảng dữ liệu, script và mã hóa trong khảo sát cũ.
+Từ khóa: cấu hình, configuration, script, Lua, INI, TAB, PAK, GBK, UTF-8, gs001
+Trạng thái: PARTIAL — cây source cũ và dữ liệu gs hiện tại khác phạm vi; chưa kiểm nội dung toàn bộ dữ liệu.
+Độ phủ: đã phủ 18 trên tổng 19 nhóm cấu hình/script trong nội dung gốc; đối chiếu mới và phần chưa phủ ghi riêng trong bảng.
+Liên quan: `JX1_OPS/REPORTS/A-01-ban-do-tien-trinh.md`; `JX1_OPS/REPORTS/A-02-luong-dang-nhap.md`; `JX1_OPS/REPORTS/A-04-kien-truc-tong.md`; `JX1_OPS/REPORTS/A-05-diem-tuong-tac-gs001.md`; `JX1_OPS/DESIGN/CHUAN-BAO-CAO.md`; `JX1_OPS/DESIGN/MUC-LUC-TRI-THUC.md`; `JX1_OPS/DESIGN/HUONG-DAN-TRA-CUU.md`
+Cần tôi quyết định: không (đối với đợt chuẩn hóa R-01).
+
+## Sơ đồ chính
+
+```mermaid
+flowchart TD
+  I["Khởi tạo theo báo cáo cũ"] --> C["INI / bảng dữ liệu"]
+  I --> P["package.ini / PAK"]
+  I --> L["script.txt / Lua"]
+  C --> M["WorldSet / bản đồ"]
+  L --> T["StartGame / Main"]
+```
+
+## Phạm vi và độ phủ
+
+[NGUỒN] Đơn vị đếm là hạng mục ghi trong bảng, không phải toàn bộ hệ thống JX1. “Đã phủ” chỉ phần đã được mô tả trong báo cáo gốc; cột cuối phân biệt phần trực tiếp đối chiếu trong R-01 với phần chưa phủ dữ liệu gốc. Không nâng bằng chứng cũ thành xác minh mới.
+
+Ký hiệu riêng của phần chuẩn hóa: `GS/` = `C:\Jx1CocoV3\Folder\ServerNew-20260116T043145Z-3-001\ServerNew\_bin_v2_\gs\`; `CA/` = `D:\JX-build\qh9A\Classes\`. Alias trong thân gốc giữ nguyên ý nghĩa lịch sử.
+
+| Hạng mục | Độ phủ nội dung gốc | Bằng chứng trong báo cáo này | Đối chiếu dữ liệu gốc R-01 / phần chưa phủ |
+|---|---|---|---|
+| gs001_cfg.ini | Đã phủ (theo mức chắc ghi trong thân) | `A-03-kiem-ke-cau-hinh.md:104` | GS/gs001_cfg.ini:1, :21 có Gateway và GameServer. |
+| ServerCfg.ini | Đã phủ (theo mức chắc ghi trong thân) | `A-03-kiem-ke-cau-hinh.md:105` | GS/ServerCfg.ini không có ở vị trí được chỉ định; chưa tái kiểm hàm SetServerPort. |
+| package.ini / PAK | Đã phủ (theo mức chắc ghi trong thân) | `A-03-kiem-ke-cau-hinh.md:106` | GS/package.ini:1 có [Package]; chưa giải nén hoặc kiểm ưu tiên PAK. |
+| gamesetting_gs001.ini | Đã phủ (theo mức chắc ghi trong thân) | `A-03-kiem-ke-cau-hinh.md:107` | GS/Settings/gamesetting_gs001.ini:419, :455, :548, :556 có các nhóm và khóa giới hạn. |
+| WorldSet_gs001.ini | Đã phủ (theo mức chắc ghi trong thân) | `A-03-kiem-ke-cau-hinh.md:108` | GS/maps/WorldSet_gs001.ini:1, :2, :3: Init, Count, World; đếm 872 khóa World, chưa suy số map nạp. |
+| MapList / drop-rate | Đã phủ (theo mức chắc ghi trong thân) | `A-03-kiem-ke-cau-hinh.md:109` | GS/Settings/MapList.ini và Settings/mapdroprate/tongyong.ini hiện hữu; chưa kiểm toàn bộ nội dung. |
+| RevivePos | Đã phủ (theo mức chắc ghi trong thân) | `A-03-kiem-ke-cau-hinh.md:110` | GS/Settings/RevivePos.ini hiện hữu; chưa kiểm nội dung/nhánh hồi sinh runtime. |
+| AbradeRate | Đã phủ (theo mức chắc ghi trong thân) | `A-03-kiem-ke-cau-hinh.md:111` | GS/Settings/item/AbradeRate.ini hiện hữu; chưa kiểm giá sửa và hao mòn. |
+| Skills / Missles / NpcS | Đã phủ (theo mức chắc ghi trong thân) | `A-03-kiem-ke-cau-hinh.md:112` | Cả ba file GS/Settings/Skills.txt, Missles.txt, NpcS.txt hiện hữu; chưa kiểm schema. |
+| Vật phẩm và missions | Đã phủ (theo mức chắc ghi trong thân) | `A-03-kiem-ke-cau-hinh.md:113` | Bốn file GS/Settings/item/004/{questkey,mine,fusion}.txt và Settings/task/missions.txt đều hiện hữu; chưa kiểm dữ liệu. |
+| Dịch chuyển và giá | Đã phủ (theo mức chắc ghi trong thân) | `A-03-kiem-ke-cau-hinh.md:114` | Cả sáu file GS/Settings/{WayPoint,Station,StationPrice,WayPointPrice,Wharf,WharfPrice}.txt hiện hữu; chưa kiểm giá trị. |
+| Tái sinh và VIP | Đã phủ (theo mức chắc ghi trong thân) | `A-03-kiem-ke-cau-hinh.md:115` | GS/Settings/ReBorn/rebornsetting.txt và Settings/RoleVip/rolevipsetting.txt hiện hữu; chưa kiểm dữ liệu. |
+| script/ và script.txt | Đã phủ (theo mức chắc ghi trong thân) | `A-03-kiem-ke-cau-hinh.md:125` | GS/script/script.txt:1: đếm 442 dòng không rỗng, giải mã GBK được; chưa coi là 442 script hiệu lực. |
+| system/serverscript.lua | Đã phủ (theo mức chắc ghi trong thân) | `A-03-kiem-ke-cau-hinh.md:126` | GS/script/system/serverscript.lua:13 có function StartGame() theo byte ASCII. |
+| servertimer.lua | Đã phủ (theo mức chắc ghi trong thân) | `A-03-kiem-ke-cau-hinh.md:127` | GS/script/servertimer.lua:23 có function Main() theo byte ASCII. |
+| gm_operation.lua | Đã phủ (theo mức chắc ghi trong thân) | `A-03-kiem-ke-cau-hinh.md:128` | GS/script/system/gm_operation.lua hiện hữu; chưa đọc quyền GM hoặc chạy script. |
+| script/task | Đã phủ (theo mức chắc ghi trong thân) | `A-03-kiem-ke-cau-hinh.md:129` | GS/script/task là thư mục hiện hữu; chưa chứng minh scheduler hoạt động. |
+| Script trap theo ID | Đã phủ (theo mức chắc ghi trong thân) | `A-03-kiem-ke-cau-hinh.md:130` | Có điểm gọi trong báo cáo; chưa ánh xạ đầy đủ trap/map. |
+| Nội dung, mã hóa và ưu tiên toàn bộ dữ liệu | Chưa phủ | `A-03-kiem-ke-cau-hinh.md:156` | Chưa phủ từng file/PAK và trạng thái nạp thực tế. |
+
+## Nội dung gốc (bảo toàn)
+
 Trạng thái: **PARTIAL** – đã kiểm tra source; runtime chưa kiểm [E05]; commit **BLOCKED** do quyền ghi Git metadata.
 Phạm vi: chỉ đọc cây source được giao; không chạy exe, kết nối VM hoặc build/test (task:15–17,26–27).
 Số file vật lý: INI 0, Lua 0, TAB 0, PAK 0; 31 TXT chưa được coi là 31 bảng gameplay [E02–E03].
 Tên cấu hình sinh từ tham số GS: `%s_cfg.ini`, `gamesetting_%s.ini`, `WorldSet_%s.ini` (KSOServer.cpp:708; KCore.cpp:262,654).
 Mã hóa source có cả GBK và UTF-8 BOM; mã hóa của script/bảng runtime **chưa kiểm** (bảng mã hóa bên dưới).
 
-# A-03 – Kiểm kê cấu hình và script
 
 Ngày kiểm tra: 2026-11-16. Gốc source: `C:\Jx1CocoV3\SwordOnline\SwordOnline\jxOnline`.
 Trong các dẫn chứng, `G/` = `gameserver/Sources/`, `H/` = `header/`; mọi số dòng tính từ 1.
@@ -133,3 +189,21 @@ Tiếp tục từ hai file local bằng phiên có quyền ghi Git metadata, tr�
 git -C "D:\JX-wt\A-03" add -- JX1_OPS/REPORTS/A-03-kiem-ke-cau-hinh.md JX1_OPS/TASKS/A-03.md
 git -C "D:\JX-wt\A-03" commit -m "A-03 Kiem ke cau hinh va script gs001"
 ~~~
+
+
+## Đã xác minh / Chưa xác minh
+
+**ĐÃ XÁC MINH — R-01:** Kiểm kê file rời bằng Get-ChildItem -File -Recurse tại đúng ba thư mục GS/Settings, GS/script, GS/maps: Settings 2022 file (767 INI, 1240 TXT, 0 Lua, 0 TAB); script 4085 file (3 INI, 4029 Lua, 10 TXT, 0 TAB); maps 503 file (14 INI, 1 WOR). Không đọc account, DumpInfo hoặc log. Số tổng gồm cả phần mở rộng khác, không được cộng các cột đã chọn rồi coi là tổng. Báo cáo được đọc UTF-8 nghiêm ngặt, lưu UTF-8 không BOM; bảo toàn phần thân gốc, gồm tóm tắt, kết luận, số liệu và bằng chứng.
+
+**CHƯA XÁC MINH — R-01:** các phần ghi chưa phủ trong bảng; tính tương thích giữa nguồn lịch sử, dữ liệu hiện có và binary đang chạy; mọi kết quả build/test/VM cũ chưa được tái hiện. Các gốc source server hoặc checkpoint ngoài GS/CA không được đọc mở rộng trong nhiệm vụ này.
+
+## Bàn giao
+
+Đợt chuẩn hóa thuộc `task/R-01`, commit theo nhóm tối đa 5 file, không push. SHA thực tế được ghi ở phản hồi hoàn tất; xem `JX1_OPS/REPORTS/R-01.md` và chỉ mục `JX1_OPS/REPORTS/_CHIMUC/R-01.tsv`. Trạng thái Git trong thân là lịch sử của nhiệm vụ gốc. Bước tiếp theo: PM gộp chỉ mục, giao khảo sát riêng nếu cần bù phần chưa phủ; R-01 không cấp quyền chạy lệnh vận hành có trong thân.
+
+## Phát hiện khi chuẩn hóa
+
+- Số 5226/0 INI/Lua/TAB/PAK trong thân mô tả cây jxOnline lịch sử. Kiểm kê GS của R-01 là gốc khác nên không sửa hoặc cộng vào số cũ.
+- GS/maps/WorldSet_gs001.ini có 872 khóa World; chưa so sánh Count, danh sách ID, PAK và lỗi nạp, nên chưa kết luận số bản đồ hoạt động.
+- GS/script/system/serverscript.lua và GS/script/servertimer.lua đều lỗi khi giải mã UTF-8/GBK nghiêm ngặt. Không sửa byte gốc, không đoán TCVN3; chỉ trích các symbol ASCII.
+- Đối chiếu trực tiếp cho thấy đủ các file runtime được gọi tên trong bảng (trừ GS/ServerCfg.ini không có đúng vị trí); sự hiện hữu không chứng minh file được nạp hoặc cấu hình có hiệu lực.

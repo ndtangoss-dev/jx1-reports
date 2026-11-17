@@ -1,4 +1,73 @@
-# A-07b - Ra soat ep con tro 64 -> 32 bit trong server
+TÓM TẮT 1: [NGUỒN] Giữ bản ghi 23 file đã sửa và ba điểm baseline không làm lại trong khảo sát A-07b.
+TÓM TẮT 2: [NGUỒN] 1151 file và 6169 hit lexical là kiểm kê lịch sử, không phải số lỗi xác nhận.
+TÓM TẮT 3: [NGUỒN] Bốn thành phần build được ghi thành công; gs001 compile qua nhưng link vướng __imp___iob_func.
+TÓM TẮT 4: [NGUỒN] Chưa có bằng chứng runtime x64, USEOLD, LZO hoặc ABI vendor; R-01 không đọc/sửa snapshot source ngoài gốc.
+TÓM TẮT 5: [CHƯA KIỂM] R-01 không chạy build, exe, VM hoặc mạng; kết quả build/VM có trong thân là ghi nhận lịch sử, chưa tái kiểm.
+
+# A-07b — Rà soát ép con trỏ 64 → 32 bit trong server
+
+Loại: sửa lỗi
+Chủ đề: Bản ghi sửa 23 file con trỏ/handle, phân loại cast và giới hạn build server x64.
+Từ khóa: con trỏ, pointer truncation, intptr_t, uintptr_t, x64, Lua, LZO, ABI, ms64.lib, gs001
+Trạng thái: PARTIAL — build thành phần được ghi đạt nhưng gs001 link bị chặn; runtime chưa kiểm.
+Độ phủ: đã phủ 31 trên tổng 32 hạng mục sửa/kiểm chứng trong nội dung gốc; đối chiếu mới và phần chưa phủ ghi riêng trong bảng.
+Liên quan: `JX1_OPS/REPORTS/A-07-goc-re-crash-gs001.md`; `JX1_OPS/REPORTS/A-07c-link-gs001.md`; `JX1_OPS/REPORTS/A-07d-breakpoint.md`; `JX1_OPS/REPORTS/A-07e-rtc.md`; `JX1_OPS/DESIGN/CHUAN-BAO-CAO.md`; `JX1_OPS/DESIGN/MUC-LUC-TRI-THUC.md`; `JX1_OPS/DESIGN/HUONG-DAN-TRA-CUU.md`
+Cần tôi quyết định: không (đối với đợt chuẩn hóa R-01).
+
+## Sơ đồ chính
+
+```mermaid
+flowchart LR
+  S["Inventory cast lịch sử"] --> P["Phân loại pointer / ID / offset"]
+  P --> F["23 file sửa"]
+  F --> B["Build thành phần x64"]
+  B --> X["gs001 link bị chặn"]
+  X --> C["A-07c"]
+```
+
+## Phạm vi và độ phủ
+
+[NGUỒN] Đơn vị đếm là hạng mục ghi trong bảng, không phải toàn bộ hệ thống JX1. “Đã phủ” chỉ phần đã được mô tả trong báo cáo gốc; cột cuối phân biệt phần trực tiếp đối chiếu trong R-01 với phần chưa phủ dữ liệu gốc. Không nâng bằng chứng cũ thành xác minh mới.
+
+Ký hiệu riêng của phần chuẩn hóa: `GS/` = `C:\Jx1CocoV3\Folder\ServerNew-20260116T043145Z-3-001\ServerNew\_bin_v2_\gs\`; `CA/` = `D:\JX-build\qh9A\Classes\`. Alias trong thân gốc giữ nguyên ý nghĩa lịch sử.
+
+| Hạng mục | Độ phủ nội dung gốc | Bằng chứng trong báo cáo này | Đối chiếu dữ liệu gốc R-01 / phần chưa phủ |
+|---|---|---|---|
+| Core/Src/CoreServerShell.cpp | Đã phủ (theo mức chắc ghi trong thân) | `A-07b-ep-con-tro.md:93` | Chưa phủ source/snapshot đã sửa trong R-01; giữ phân loại và bằng chứng lịch sử ở thân. |
+| Core/Src/CoreServerShell.h | Đã phủ (theo mức chắc ghi trong thân) | `A-07b-ep-con-tro.md:94` | Chưa phủ source/snapshot đã sửa trong R-01; giữ phân loại và bằng chứng lịch sử ở thân. |
+| Core/Src/KInventory.cpp | Đã phủ (theo mức chắc ghi trong thân) | `A-07b-ep-con-tro.md:95` | Chưa phủ source/snapshot đã sửa trong R-01; giữ phân loại và bằng chứng lịch sử ở thân. |
+| Core/Src/KPlayer.cpp | Đã phủ (theo mức chắc ghi trong thân) | `A-07b-ep-con-tro.md:96` | Chưa phủ source/snapshot đã sửa trong R-01; giữ phân loại và bằng chứng lịch sử ở thân. |
+| Core/Src/LuaFuns.cpp | Đã phủ (theo mức chắc ghi trong thân) | `A-07b-ep-con-tro.md:97` | Chưa phủ source/snapshot đã sửa trong R-01; giữ phân loại và bằng chứng lịch sử ở thân. |
+| Core/Src/S3PDBConnection.cpp | Đã phủ (theo mức chắc ghi trong thân) | `A-07b-ep-con-tro.md:98` | Chưa phủ source/snapshot đã sửa trong R-01; giữ phân loại và bằng chứng lịch sử ở thân. |
+| Core/Src/S3PDBConnection.h | Đã phủ (theo mức chắc ghi trong thân) | `A-07b-ep-con-tro.md:99` | Chưa phủ source/snapshot đã sửa trong R-01; giữ phân loại và bằng chứng lịch sử ở thân. |
+| Core/Src/ScriptFuns.cpp | Đã phủ (theo mức chắc ghi trong thân) | `A-07b-ep-con-tro.md:100` | Chưa phủ source/snapshot đã sửa trong R-01; giữ phân loại và bằng chứng lịch sử ở thân. |
+| Engine/Src/KCodecLzo.cpp | Đã phủ (theo mức chắc ghi trong thân) | `A-07b-ep-con-tro.md:101` | Chưa phủ source/snapshot đã sửa trong R-01; giữ phân loại và bằng chứng lịch sử ở thân. |
+| Engine/Src/KForBitGua----.cpp | Đã phủ (theo mức chắc ghi trong thân) | `A-07b-ep-con-tro.md:102` | Chưa phủ source/snapshot đã sửa trong R-01; giữ phân loại và bằng chứng lịch sử ở thân. |
+| Engine/Src/KForBitGua--.cpp | Đã phủ (theo mức chắc ghi trong thân) | `A-07b-ep-con-tro.md:103` | Chưa phủ source/snapshot đã sửa trong R-01; giữ phân loại và bằng chứng lịch sử ở thân. |
+| Engine/Src/KForBitGua.cpp | Đã phủ (theo mức chắc ghi trong thân) | `A-07b-ep-con-tro.md:104` | Chưa phủ source/snapshot đã sửa trong R-01; giữ phân loại và bằng chứng lịch sử ở thân. |
+| Engine/Src/KMemManager.cpp | Đã phủ (theo mức chắc ghi trong thân) | `A-07b-ep-con-tro.md:105` | Chưa phủ source/snapshot đã sửa trong R-01; giữ phân loại và bằng chứng lịch sử ở thân. |
+| Engine/Src/KNetServerNode.cpp | Đã phủ (theo mức chắc ghi trong thân) | `A-07b-ep-con-tro.md:106` | Chưa phủ source/snapshot đã sửa trong R-01; giữ phân loại và bằng chứng lịch sử ở thân. |
+| Engine/Src/KStepLuaScript.cpp | Đã phủ (theo mức chắc ghi trong thân) | `A-07b-ep-con-tro.md:107` | Chưa phủ source/snapshot đã sửa trong R-01; giữ phân loại và bằng chứng lịch sử ở thân. |
+| Engine/Src/LuaFuns.cpp | Đã phủ (theo mức chắc ghi trong thân) | `A-07b-ep-con-tro.md:108` | Chưa phủ source/snapshot đã sửa trong R-01; giữ phân loại và bằng chứng lịch sử ở thân. |
+| Engine/Src/S3PDBConnection.cpp | Đã phủ (theo mức chắc ghi trong thân) | `A-07b-ep-con-tro.md:109` | Chưa phủ source/snapshot đã sửa trong R-01; giữ phân loại và bằng chứng lịch sử ở thân. |
+| Library/LuaLib/src/llimits.h | Đã phủ (theo mức chắc ghi trong thân) | `A-07b-ep-con-tro.md:110` | Chưa phủ source/snapshot đã sửa trong R-01; giữ phân loại và bằng chứng lịch sử ở thân. |
+| Library/LuaLib/src/lstring.c | Đã phủ (theo mức chắc ghi trong thân) | `A-07b-ep-con-tro.md:111` | Chưa phủ source/snapshot đã sửa trong R-01; giữ phân loại và bằng chứng lịch sử ở thân. |
+| Library/LuaLib/src/ltable.c | Đã phủ (theo mức chắc ghi trong thân) | `A-07b-ep-con-tro.md:112` | Chưa phủ source/snapshot đã sửa trong R-01; giữ phân loại và bằng chứng lịch sử ở thân. |
+| MultiServer/Common/Buffer.cpp | Đã phủ (theo mức chắc ghi trong thân) | `A-07b-ep-con-tro.md:113` | Chưa phủ source/snapshot đã sửa trong R-01; giữ phân loại và bằng chứng lịch sử ở thân. |
+| MultiServer/Common/OpaqueUserData.h | Đã phủ (theo mức chắc ghi trong thân) | `A-07b-ep-con-tro.md:114` | Chưa phủ source/snapshot đã sửa trong R-01; giữ phân loại và bằng chứng lịch sử ở thân. |
+| MultiServer/GameServer/KSOServer.cpp | Đã phủ (theo mức chắc ghi trong thân) | `A-07b-ep-con-tro.md:115` | Chưa phủ source/snapshot đã sửa trong R-01; giữ phân loại và bằng chứng lịch sử ở thân. |
+| Baseline launch/GetGameData/_findfirst | Đã phủ (theo mức chắc ghi trong thân) | `A-07b-ep-con-tro.md:83` | Ba điểm baseline đã được mô tả; chưa tái kiểm server snapshot. |
+| Nhóm cast an toàn và nợ legacy/client/vendor | Đã phủ (theo mức chắc ghi trong thân) | `A-07b-ep-con-tro.md:117` | Giữ bảng phân loại an toàn cùng bảng chưa sửa; chưa compiler/ABI/runtime. |
+| Build LuaLibDll | Đã phủ (theo mức chắc ghi trong thân) | `A-07b-ep-con-tro.md:156` | Kết quả lịch sử trong bảng build; chưa build lại theo quyền R-01. |
+| Build Engine | Đã phủ (theo mức chắc ghi trong thân) | `A-07b-ep-con-tro.md:156` | Kết quả lịch sử trong bảng build; chưa build lại theo quyền R-01. |
+| Build Common | Đã phủ (theo mức chắc ghi trong thân) | `A-07b-ep-con-tro.md:156` | Kết quả lịch sử trong bảng build; chưa build lại theo quyền R-01. |
+| Build CoreServer | Đã phủ (theo mức chắc ghi trong thân) | `A-07b-ep-con-tro.md:157` | Kết quả lịch sử trong bảng build; chưa build lại theo quyền R-01. |
+| Build GameServer/gs001 | Đã phủ (theo mức chắc ghi trong thân) | `A-07b-ep-con-tro.md:158` | Kết quả lịch sử trong bảng build; chưa build lại theo quyền R-01. |
+| Inventory và source/snapshot manifest | Đã phủ (theo mức chắc ghi trong thân) | `A-07b-ep-con-tro.md:171` | Đếm lịch sử 1151 file, 6169 hit, 23/23 khớp snapshot; chưa chạy scan/build helper. |
+| Runtime, USEOLD, LZO và thư viện vendor | Chưa phủ | `A-07b-ep-con-tro.md:183` | Chưa phủ theo giới hạn gốc và phạm vi R-01. |
+
+## Nội dung gốc (bảo toàn)
+
 
 ## TOM TAT
 1. Dung worktree `D:\JX-wt\A-07b`, nhanh `fix/a07b-ptr-truncation`; luc tiep tuc Git sach, chi co baseline `18c6f18`.
@@ -138,3 +207,21 @@ git commit -m 'A-07b: Fix server x64 pointer truncation and record build audit'
 Truoc khi stage bang duong dan thu muc o tren, kiem `git status` de khong gom thay doi moi cua nguoi khac. Khong co commit SHA vi thao tac stage bi chan. `git diff --check` cuoi thanh cong.
 
 Buoc tiep theo: xu ly __imp___iob_func trong ms64.lib de link gs001 bang toolchain v143/UCRT, ghi hash/header exe moi, sau do nguoi van hanh thu trong moi truong duoc cap phep va thu dump. Nhanh client x64/adapter vendor cu can task rieng neu duoc dua vao pham vi hoat dong.
+
+
+## Đã xác minh / Chưa xác minh
+
+**ĐÃ XÁC MINH — R-01:** Đối chiếu đủ 23 hàng file ở bảng thay đổi gốc và ba điểm baseline trong đoạn phạm vi. Không mở snapshot A-07b, checkpoint, source server hoặc thư viện vendor ngoài hai gốc R-01; các kết quả build/source-manifest giữ nhãn lịch sử. Báo cáo được đọc UTF-8 nghiêm ngặt, lưu UTF-8 không BOM; bảo toàn phần thân gốc, gồm tóm tắt, kết luận, số liệu và bằng chứng.
+
+**CHƯA XÁC MINH — R-01:** các phần ghi chưa phủ trong bảng; tính tương thích giữa nguồn lịch sử, dữ liệu hiện có và binary đang chạy; mọi kết quả build/test/VM cũ chưa được tái hiện. Các gốc source server hoặc checkpoint ngoài GS/CA không được đọc mở rộng trong nhiệm vụ này.
+
+## Bàn giao
+
+Đợt chuẩn hóa thuộc `task/R-01`, commit theo nhóm tối đa 5 file, không push. SHA thực tế được ghi ở phản hồi hoàn tất; xem `JX1_OPS/REPORTS/R-01.md` và chỉ mục `JX1_OPS/REPORTS/_CHIMUC/R-01.tsv`. Trạng thái Git trong thân là lịch sử của nhiệm vụ gốc. Bước tiếp theo: PM gộp chỉ mục, giao khảo sát riêng nếu cần bù phần chưa phủ; R-01 không cấp quyền chạy lệnh vận hành có trong thân.
+
+## Phát hiện khi chuẩn hóa
+
+- Phần thân gốc dùng tiếng Việt không dấu. Giữ nguyên chữ và kết luận cũ; tiêu đề, metadata, bảng phủ và phát hiện mới dùng tiếng Việt có dấu.
+- 6169 hit gồm cast số/offset/nhánh client, không được đổi thành 6169 lỗi con trỏ.
+- 23/23 file khớp snapshot là xác minh lịch sử của A-07b, chưa tái kiểm source snapshot trong R-01.
+- GS/ hiện có binary gốc, không có căn cứ dùng nó thay DLL mới của A-07b; không bổ sung hash gs001 mới khi báo cáo gốc chưa link được.

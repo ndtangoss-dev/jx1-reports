@@ -1,4 +1,53 @@
-# A-07 – Crash gs001 tự dựng: bằng chứng tĩnh và cách bắt dòng lỗi
+TÓM TẮT 1: [NGUỒN] Giữ năm giả thuyết crash và thứ tự kiểm theo khảo sát gốc, chưa xác định RIP/dòng lỗi.
+TÓM TẮT 2: [NGUỒN] GS/gs001.exe hiện tại khớp hash và kích thước binary gốc O được bảng PE ghi nhận.
+TÓM TẮT 3: [NGUỒN] Đề xuất Debug, WER và cdb trong thân không phải các lệnh đã chạy bởi R-01.
+TÓM TẮT 4: [NGUỒN] Phụ lục 01:25 về HighEntropyVA có mốc VM riêng, không thay mọi giới hạn của phần khảo sát ban đầu.
+TÓM TẮT 5: [CHƯA KIỂM] R-01 không chạy build, exe, VM hoặc mạng; kết quả build/VM có trong thân là ghi nhận lịch sử, chưa tái kiểm.
+
+# A-07 — Crash gs001 tự dựng: bằng chứng tĩnh và cách bắt dòng lỗi
+
+Loại: khảo sát
+Chủ đề: Giả thuyết crash, đối chiếu binary và phương án thu bằng chứng lỗi.
+Từ khóa: crash, gs001, HighEntropyVA, ASLR, con trỏ, pointer, QueryInterface, WER, cdb, PE
+Trạng thái: PARTIAL — chưa chốt dòng crash; phần bổ sung VM là ghi nhận lịch sử chưa tái kiểm.
+Độ phủ: đã phủ 10 trên tổng 11 hạng mục điều tra trong nội dung gốc; đối chiếu mới và phần chưa phủ ghi riêng trong bảng.
+Liên quan: `JX1_OPS/REPORTS/A-04-kien-truc-tong.md`; `JX1_OPS/REPORTS/A-07b-ep-con-tro.md`; `JX1_OPS/REPORTS/A-07c-link-gs001.md`; `JX1_OPS/REPORTS/A-07d-breakpoint.md`; `JX1_OPS/REPORTS/A-07e-rtc.md`; `JX1_OPS/DESIGN/CHUAN-BAO-CAO.md`; `JX1_OPS/DESIGN/MUC-LUC-TRI-THUC.md`; `JX1_OPS/DESIGN/HUONG-DAN-TRA-CUU.md`
+Cần tôi quyết định: không (đối với đợt chuẩn hóa R-01).
+
+## Sơ đồ chính
+
+```mermaid
+flowchart TD
+  L["Log cuối / crash"] --> H["Năm giả thuyết"]
+  H --> P["So PE / pointer / ABI"]
+  H --> D["Đề xuất dump đúng binary"]
+  P --> U["Chưa chốt dòng lỗi"]
+  D --> U
+  V["Phụ lục VM lịch sử"] --> H
+```
+
+## Phạm vi và độ phủ
+
+[NGUỒN] Đơn vị đếm là hạng mục ghi trong bảng, không phải toàn bộ hệ thống JX1. “Đã phủ” chỉ phần đã được mô tả trong báo cáo gốc; cột cuối phân biệt phần trực tiếp đối chiếu trong R-01 với phần chưa phủ dữ liệu gốc. Không nâng bằng chứng cũ thành xác minh mới.
+
+Ký hiệu riêng của phần chuẩn hóa: `GS/` = `C:\Jx1CocoV3\Folder\ServerNew-20260116T043145Z-3-001\ServerNew\_bin_v2_\gs\`; `CA/` = `D:\JX-build\qh9A\Classes\`. Alias trong thân gốc giữ nguyên ý nghĩa lịch sử.
+
+| Hạng mục | Độ phủ nội dung gốc | Bằng chứng trong báo cáo này | Đối chiếu dữ liệu gốc R-01 / phần chưa phủ |
+|---|---|---|---|
+| Luồng sau public net IP | Đã phủ (theo mức chắc ghi trong thân) | `A-07-goc-re-crash-gs001.md:79` | Chưa tái kiểm KSOServer/CoreServerShell/KCore của server. |
+| Giả thuyết 1: QueryInterface/Core/biên DLL | Đã phủ (theo mức chắc ghi trong thân) | `A-07-goc-re-crash-gs001.md:98` | Chưa phủ source đúng snapshot, HRESULT và stack thực tế. |
+| Giả thuyết 2: callback khi shell NULL | Đã phủ (theo mức chắc ghi trong thân) | `A-07-goc-re-crash-gs001.md:99` | Chưa phủ thứ tự callback thực tế trong runtime. |
+| Giả thuyết 3: clone NULL/cắt con trỏ | Đã phủ (theo mức chắc ghi trong thân) | `A-07-goc-re-crash-gs001.md:100` | Chưa phủ producer/consumer trong binary đang vận hành. |
+| Giả thuyết 4: IServerFactory/size_t | Đã phủ (theo mức chắc ghi trong thân) | `A-07-goc-re-crash-gs001.md:101` | Chưa phủ header mà DLL thật đã biên dịch. |
+| Giả thuyết 5: _findfirst | Đã phủ (theo mức chắc ghi trong thân) | `A-07-goc-re-crash-gs001.md:102` | Chưa tái kiểm handle ở đúng snapshot tự dựng. |
+| Binary gốc và bản tự dựng | Đã phủ (theo mức chắc ghi trong thân) | `A-07-goc-re-crash-gs001.md:106` | Đã đọc byte GS/gs001.exe, CoreServer.dll, Engine.dll, LuaLibDll.dll, Heaven.dll; bản tự dựng R ngoài gốc không kiểm lại. |
+| Kế hoạch Debug và cờ build | Đã phủ (theo mức chắc ghi trong thân) | `A-07-goc-re-crash-gs001.md:127` | Chỉ giữ hướng dẫn lịch sử; không thực thi MSBuild hoặc script build. |
+| Kế hoạch WER/cdb/dump | Đã phủ (theo mức chắc ghi trong thân) | `A-07-goc-re-crash-gs001.md:147` | Chỉ giữ hướng dẫn; không sửa registry, attach hoặc thu dump. |
+| Phụ lục HighEntropyVA 01:25 | Đã phủ (theo mức chắc ghi trong thân) | `A-07-goc-re-crash-gs001.md:200` | Giữ ghi nhận VM lịch sử, chưa kiểm hash/bản B/runtime hiện tại. |
+| RIP, dump và dòng crash gốc | Chưa phủ | `A-07-goc-re-crash-gs001.md:94` | Chưa phủ bằng chứng quyết định ở đúng lần crash. |
+
+## Nội dung gốc (bảo toàn)
+
 
 ## Tóm tắt 5 dòng
 
@@ -155,3 +204,21 @@ Ket qua: **gs001 tu dung chi crash khi co co HighEntropyVA.** Cung ma, chi doi c
 - Ket luan: nguyen nhan goc rat co the la **cat con tro 64->32 bit** (dia chi cao khi ASLR cao). Cac dong nghi ngo: KSOServer.cpp:960, :4966, KSortScript.cpp:328 (xem phan tren). Chua kiem: chua co client/bot vao game de thu tai thuc te voi ban B; chua kiem ban B qua nhieu gio.
 - Viec tiep: A-07b - ra soat moi cho ep con tro/handle sang unsigned int/long/DWORD/int trong server (S\ va Core\), doi sang uintptr_t/intptr_t, dung lai khong can co.
 - Muc tieu van hanh ngay: dung ban B (hoac ban dung 32-bit-safe) cho B-02/test, khong dung ban A.
+
+
+## Đã xác minh / Chưa xác minh
+
+**ĐÃ XÁC MINH — R-01:** Chỉ đọc byte binary trong GS: gs001.exe 543232 byte, SHA-256 dd44d425e205fd482fd287144bdc3d95ad90f42bda92556a66c1214a463d4295; CoreServer.dll 1893376 byte, Engine.dll 1195520 byte, LuaLibDll.dll 350720 byte. Các kích thước và hash exe khớp cột O trong bảng gốc. Không chạy dumpbin hoặc binary; không xác nhận PE/import mới từ kích thước/hash. Báo cáo được đọc UTF-8 nghiêm ngặt, lưu UTF-8 không BOM; bảo toàn phần thân gốc, gồm tóm tắt, kết luận, số liệu và bằng chứng.
+
+**CHƯA XÁC MINH — R-01:** các phần ghi chưa phủ trong bảng; tính tương thích giữa nguồn lịch sử, dữ liệu hiện có và binary đang chạy; mọi kết quả build/test/VM cũ chưa được tái hiện. Các gốc source server hoặc checkpoint ngoài GS/CA không được đọc mở rộng trong nhiệm vụ này.
+
+## Bàn giao
+
+Đợt chuẩn hóa thuộc `task/R-01`, commit theo nhóm tối đa 5 file, không push. SHA thực tế được ghi ở phản hồi hoàn tất; xem `JX1_OPS/REPORTS/R-01.md` và chỉ mục `JX1_OPS/REPORTS/_CHIMUC/R-01.tsv`. Trạng thái Git trong thân là lịch sử của nhiệm vụ gốc. Bước tiếp theo: PM gộp chỉ mục, giao khảo sát riêng nếu cần bù phần chưa phủ; R-01 không cấp quyền chạy lệnh vận hành có trong thân.
+
+## Phát hiện khi chuẩn hóa
+
+- Tóm tắt khảo sát ban đầu và phụ lục 01:25 có mức bằng chứng khác nhau: một phần là kế hoạch chưa chạy, phần sau ghi thử VM. Giữ cả hai theo đúng mốc.
+- Khuyến nghị /RTC1 của A-07 không còn là kết luận cuối chuỗi A-07; A-07d/e phân tích riêng. Không chỉnh lặng hướng dẫn cũ.
+- Bản GS gốc không phải snapshot A-07b/c/e. Hash khớp cột O không xác nhận bản đang chạy trong VM hoặc hiệu quả sửa lỗi.
+- Phụ lục cũ có tiếng Việt không dấu; giữ nguyên để tránh diễn giải lại kết luận, phần chuẩn hóa dùng tiếng Việt có dấu.

@@ -1,4 +1,51 @@
-# A-05 – Điểm tương tác người chơi trong gs001
+TÓM TẮT 1: [NGUỒN] Báo cáo mô tả tám nhóm từ đồng bộ thực thể đến danh sách/xếp hạng người chơi.
+TÓM TẮT 2: [NGUỒN] Đường gửi trực tiếp, near-region và relay được tách riêng; vá BroadCast không bao phủ tất cả.
+TÓM TẮT 3: [NGUỒN] Bot chưa có slot và slot tồn tại nhưng mất kết nối là hai trường hợp khác nhau trong kết luận gốc.
+TÓM TẮT 4: [NGUỒN] Đề xuất lọc viewer/target được giữ dưới dạng thiết kế chưa triển khai hoặc chạy thử.
+TÓM TẮT 5: [CHƯA KIỂM] R-01 không chạy build, exe, VM hoặc mạng; kết quả build/VM có trong thân là ghi nhận lịch sử, chưa tái kiểm.
+
+# A-05 — Điểm tương tác người chơi trong gs001
+
+Loại: khảo sát
+Chủ đề: Tám nhóm đường tương tác và điểm chèn lọc người chơi được khảo sát tĩnh.
+Từ khóa: tương tác, visibility, BroadCast, Bot Dormant, PlayerSet, AoE, trade, chat, PK, ladder
+Trạng thái: PARTIAL — tám nhóm được mô tả; một số đường, private chat và runtime còn thiếu.
+Độ phủ: đã phủ 8 trên tổng 8 nhóm tương tác trong nội dung gốc; đối chiếu mới và phần chưa phủ ghi riêng trong bảng.
+Liên quan: `JX1_OPS/REPORTS/A-01-ban-do-tien-trinh.md`; `JX1_OPS/REPORTS/A-03-kiem-ke-cau-hinh.md`; `JX1_OPS/REPORTS/A-04-kien-truc-tong.md`; `JX1_OPS/REPORTS/A-06-bang-goi-tin.md`; `JX1_OPS/DESIGN/CHUAN-BAO-CAO.md`; `JX1_OPS/DESIGN/MUC-LUC-TRI-THUC.md`; `JX1_OPS/DESIGN/HUONG-DAN-TRA-CUU.md`
+Cần tôi quyết định: không (đối với đợt chuẩn hóa R-01).
+
+## Sơ đồ chính
+
+```mermaid
+flowchart TD
+  P["Hành động người chơi"] --> T["Chọn mục tiêu / gameplay"]
+  T --> B["Near-region / BroadCast"]
+  T --> D["Gửi trực tiếp"]
+  T --> R["Chat / Tong / S3Relay"]
+  B --> V["Người nhận"]
+  D --> V
+  R --> V
+```
+
+## Phạm vi và độ phủ
+
+[NGUỒN] Đơn vị đếm là hạng mục ghi trong bảng, không phải toàn bộ hệ thống JX1. “Đã phủ” chỉ phần đã được mô tả trong báo cáo gốc; cột cuối phân biệt phần trực tiếp đối chiếu trong R-01 với phần chưa phủ dữ liệu gốc. Không nâng bằng chứng cũ thành xác minh mới.
+
+Ký hiệu riêng của phần chuẩn hóa: `GS/` = `C:\Jx1CocoV3\Folder\ServerNew-20260116T043145Z-3-001\ServerNew\_bin_v2_\gs\`; `CA/` = `D:\JX-build\qh9A\Classes\`. Alias trong thân gốc giữ nguyên ý nghĩa lịch sử.
+
+| Hạng mục | Độ phủ nội dung gốc | Bằng chứng trong báo cáo này | Đối chiếu dữ liệu gốc R-01 / phần chưa phủ |
+|---|---|---|---|
+| Đồng bộ thực thể | Đã phủ (theo mức chắc ghi trong thân) | `A-05-diem-tuong-tac-gs001.md:67` | Chưa tái kiểm source server; các điểm BroadCast/direct vẫn là bằng chứng lịch sử. |
+| Chọn mục tiêu | Đã phủ (theo mức chắc ghi trong thân) | `A-05-diem-tuong-tac-gs001.md:89` | Chưa tái kiểm FindNpc, FindAround và GetRelation của server. |
+| Sát thương diện rộng / hiệu ứng | Đã phủ (theo mức chắc ghi trong thân) | `A-05-diem-tuong-tac-gs001.md:108` | Chưa tái kiểm ProcessCollision và ReceiveDamage của server. |
+| Đội / bang / bạn bè / relay | Đã phủ (theo mức chắc ghi trong thân) | `A-05-diem-tuong-tac-gs001.md:125` | GS/gs001_cfg.ini:9, :13, :17 có nhóm Transfer/Chat/Tong; chưa phủ đường gửi. |
+| Giao dịch / cửa hàng / vật phẩm | Đã phủ (theo mức chắc ghi trong thân) | `A-05-diem-tuong-tac-gs001.md:143` | Chưa tái kiểm source hoặc cặp trade runtime. |
+| Chat / thông báo | Đã phủ (theo mức chắc ghi trong thân) | `A-05-diem-tuong-tac-gs001.md:160` | GS/gs001_cfg.ini:13 có nhóm Chat; phần thân private chat sau dòng 524 chưa được khảo sát đầy đủ. |
+| PK / thù / chiến đấu / hồi sinh | Đã phủ (theo mức chắc ghi trong thân) | `A-05-diem-tuong-tac-gs001.md:179` | Chưa tái kiểm server hoặc trạng thái offline runtime. |
+| Xếp hạng / đếm / danh sách Lua | Đã phủ (theo mức chắc ghi trong thân) | `A-05-diem-tuong-tac-gs001.md:199` | Chưa phủ lifecycle mission/ladder và script ngoài vùng source cũ. |
+
+## Nội dung gốc (bảo toàn)
+
 
 ## TÓM TẮT
 
@@ -203,3 +250,20 @@ Chỗ vá tối thiểu: không đổi semantics hàm đếm gameplay. Thêm API
 - rg không có trong môi trường nên tìm kiếm dùng Select-String/đọc dòng PowerShell; các số dòng trong bảng là từ kết quả đọc file thực tế.
 - JIBS-danh-gia-bot.md được dùng làm bối cảnh; kết luận mới được đối chiếu với source, không suy diễn runtime.
 
+
+
+## Đã xác minh / Chưa xác minh
+
+**ĐÃ XÁC MINH — R-01:** Đối chiếu đủ tám tiêu đề nhóm và các bảng bằng chứng của bản gốc. GS/gs001_cfg.ini:9, :13, :17 xác nhận có nhóm cấu hình relay tương ứng; không dùng source client để xác minh thuật toán server. Báo cáo được đọc UTF-8 nghiêm ngặt, lưu UTF-8 không BOM; bảo toàn phần thân gốc, gồm tóm tắt, kết luận, số liệu và bằng chứng.
+
+**CHƯA XÁC MINH — R-01:** các phần ghi chưa phủ trong bảng; tính tương thích giữa nguồn lịch sử, dữ liệu hiện có và binary đang chạy; mọi kết quả build/test/VM cũ chưa được tái hiện. Các gốc source server hoặc checkpoint ngoài GS/CA không được đọc mở rộng trong nhiệm vụ này.
+
+## Bàn giao
+
+Đợt chuẩn hóa thuộc `task/R-01`, commit theo nhóm tối đa 5 file, không push. SHA thực tế được ghi ở phản hồi hoàn tất; xem `JX1_OPS/REPORTS/R-01.md` và chỉ mục `JX1_OPS/REPORTS/_CHIMUC/R-01.tsv`. Trạng thái Git trong thân là lịch sử của nhiệm vụ gốc. Bước tiếp theo: PM gộp chỉ mục, giao khảo sát riêng nếu cần bù phần chưa phủ; R-01 không cấp quyền chạy lệnh vận hành có trong thân.
+
+## Phát hiện khi chuẩn hóa
+
+- Độ phủ 8/8 ở đây là tám nhóm đã được mô tả trong khảo sát, không có nghĩa mọi hàm hoặc đường runtime đều đã kiểm.
+- Thân đã ghi private chat chưa đọc hết sau dòng 524, lifecycle mission/ladder chưa đầy đủ và GetAllPlayer* chưa thấy ngoài vùng đã đọc. Giữ các khoảng trống này.
+- Cảnh báo nMaxCount truyền chung qua region không tương đương 100 người độc lập mỗi ô được giữ nguyên; chưa đặt sổ thông số mới để đổi mức an toàn.
