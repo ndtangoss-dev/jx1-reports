@@ -28,3 +28,4 @@
 - 2026-11-17 09:40 Hạ #029: Sonnet vẫn chạy (A-11 astra bắt đầu, B-02b sống); yêu cầu đẩy TRANG-THAI ≥30 phút/lần (#030).
 - 2026-11-17 09:45 Q-38: "cảm ơn" → "đa tạ" (#031).
 - 2026-11-17 10:01 Chat kiểm: kho chưa có commit Sonnet từ 08:17 nhưng chat Claude Code cho thấy Sonnet đang chạy (A-11, B-02b); chờ TRANG-THAI theo #030. Không thư mới.
+- 2026-11-17 10:15 Chủ dự án hỏi kết quả astra/khóa mới; kho chưa có; gửi #032 yêu cầu đẩy lên kho và báo chat.

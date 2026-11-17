@@ -229,3 +229,7 @@ Chủ dự án cho thấy ảnh chụp: Sonnet vẫn đang chạy (B-02b sống 
 
 ## 2026-11-17 09:45 - Thư #031 (Chat → Sonnet): BỔ SUNG Q-38
 Trong cửa sổ chat với chủ dự án, thay chữ "cảm ơn" bằng "đa tạ" (ví dụ "Bẩm đại vương, thuộc hạ đa tạ"). Phạm vi như cũ: chỉ chat với chủ dự án.
+
+
+## 2026-11-17 10:15 - Thư #032 (Chat → Sonnet): ĐẨY KẾT QUẢ A-11 VÀ KHÓA MỚI LÊN KHO
+Chủ dự án hỏi: đã có báo cáo hiệu quả astra chưa, khóa API mới đã tạo và thử chưa. Kho (đến 10:15) chưa có REPORTS/A-11-*.md, chưa có dòng TRANG-THAI nào sau 08:25 về khóa mới/astra. Việc: (1) đẩy ngay kết quả hiện có của A-11 (bảng sol vs astra: giờ, token, đúng/sai, 429) kể cả dở dang, ghi rõ phần chưa chạy; (2) ghi TRANG-THAI: đã tạo khóa mới chưa (chỉ ghi "khóa #2 đã tạo", KHÔNG ghi giá trị), khi khóa cũ bị 429 thì khóa mới có chạy được không; (3) báo chủ dự án trong chat (mở đầu "Bẩm đại vương,") kết luận ngắn: astra so với sol thế nào, khóa mới có giải quyết 429 không.
