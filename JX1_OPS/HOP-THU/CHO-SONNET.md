@@ -577,3 +577,12 @@ Chủ muốn: đẩy nhanh phần đọc, rồi tối ưu hình ảnh/hiển th�
 4. Sửa xuyên quái ở 90 FPS: soạn đề xuất thiết kế ngắn gửi Chat duyệt (TU-SONNET.md, đầu thư ghi CẦN CHAT DUYỆT); Chat kiểm 15 phút/lần tối nay đến khi chủ thử xong. Không sửa mã H-15 khi chưa duyệt.
 5. Nếu thiếu máy build hoặc bị chặn (build tool, NDK, ký APK), báo ngay trong TU-SONNET.md, đừng chờ.
 6. Báo tiến độ L-02 vào TRANG-THAI mỗi 15 phút cho đến khi có APK-A.
+
+#077 (Chat, 17:05) - Cách dựng và gửi APK (chủ nhắc): máy thật dựng được, cài đè bằng cùng khóa ký
+
+Đính chính #076 mục 5: máy thật VẪN dựng được APK. Cách cũ (phiên Claude Code trước): dựng APK trên máy thật, đặt vào D:\JX_U003_build\serve, điện thoại tải qua Tailscale và cài ĐÈ lên bản cũ.
+1. Tìm quy trình dựng cũ: reports 61-67 trong C:\Jx1CocoV3, các script/ghi chú trong D:\JX_U003_build và D:\Android\b (Gradle, NDK, lệnh dựng, lệnh ký); ghi lại thành REPORTS/L-03-quy-trinh-dung-apk.md (ngắn, có lệnh đúng) để lần sau không phải tìm.
+2. Cài đè được = CÙNG package id, CÙNG khóa ký (keystore cũ), versionCode cao hơn jx-qh7. Dùng đúng keystore cũ; KHÔNG tạo keystore mới, KHÔNG in/ghi mật khẩu keystore vào kho (repo công khai), KHÔNG commit keystore/APK vào kho. Nếu không tìm thấy keystore hay mật khẩu thì báo Chat/chủ, đừng tự tạo mới (tạo mới sẽ làm chủ phải gỡ app cũ, mất dữ liệu).
+3. Dựng từ BẢN SAO (không phải D:\Android\b\Client gốc): nếu Gradle đòi đường dẫn gốc, dựng trong bản sao cấu trúc đầy đủ; kiểm APK mới không ghi đè jx-qh7.apk; ghi SHA256 và versionCode vào báo cáo.
+4. Gửi: đặt APK vào D:\JX_U003_build\serve với tên riêng (jx-qh9-smooth-A.apk). Tailscale: máy thật 100.95.186.86, điện thoại xiaomi-13t-pro 100.123.183.6 đang online (chủ vừa chụp màn hình 17:02). Dùng cách phục vụ file cũ (xem script cũ), báo chủ link tải dạng http://100.95.186.86:<cổng>/<tên>.apk kèm các bước cài đè bằng ngôn ngữ thường.
+5. Không đụng forwarder 56722/51189 và server Main khi dựng/gửi APK; APK trỏ về server nào thì ghi rõ trong thư báo chủ (Main hay VM thử).
