@@ -88,3 +88,4 @@
 - 17:50 #081: chủ gửi danh sách APK cũ (tailscale-8080, lan, wglow7, fix35); chuyển Sonnet xác minh, biến thể Tailscale, cổng 8080 /apk/.
 - 17:55 Kiểm 15 phút: Sonnet đã đọc #80, #81; APK-A đang biên dịch native trên máy thật; L-03 đã có (khóa debug cũ, cổng phục vụ 8091 chứ không phải 8080, Sonnet sẽ xác minh khi A1 xong). Chưa có APK, không báo chủ.
 - 18:07 Kiểm 15 phút: chưa có commit mới của Sonnet sau 17:48; APK-A vẫn đang biên dịch (L-03 nói vài chục phút). Không báo chủ.
+- 18:23 Kiểm 15 phút: Sonnet chưa có commit mới sau 17:48 (35 phút); build native chạy từ ~17:30. Chưa báo chủ; nếu đến 18:40 vẫn im sẽ hỏi tình trạng.
