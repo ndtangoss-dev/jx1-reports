@@ -237,3 +237,4 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 - [12:53] Nghi van nha cung cap nghen: phan lon log worker khong ghi tu ~12:36 (E-13/G-01/F-01 da chay lai). Khong giao them cho den khi log cua worker song lai; monitor bh7nuaktn dem log hoat dong moi phut (het han ~13:25).
 - [13:04] #052: Groq huy, khoa .revoked, P3 danh dau huy.
 - [13:05] F-01 xong (merge). Lan cuoi bi 429 Too Many Requests tren K4 (retry limit) => 429 la nguyen nhan nghen; 10 worker im tu 12:36 co the dang cho retry 429.
+- [13:10] SU CO DUNG IM #2: 10 worker im 12:36-13:09 (SSE idle timeout + 429 xingchi), API da thong; chay lai het 10 (lan 1), chia lai khoa <=3/khoa. Monitor bao STALL>10min. Bang hieu qua: worker dung >10 phut = 10 luc 13:09.
