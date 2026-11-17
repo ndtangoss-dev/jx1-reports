@@ -111,3 +111,4 @@
 - 22:06 Kiểm: Sonnet vẫn chưa ghi gì vào kho (từ 20:57); BUG-001/002 chưa điền. Chủ nói Sonnet đang sửa trực tiếp. Chủ gửi bài Command Code GOAT, Chat đã tra và trả lời (mục bàn riêng cùng Fosta/Cloudflare, chưa giao Sonnet).
 - 22:38 Kiểm: Sonnet báo 22:30 (hàng chờ BUG-001/002/A3 theo lệnh chủ; U-01 đang chạy, U-02 chờ). Chưa có kết quả U-01. Đã đề nghị chủ cho chạy U-02 song song và tách U-01 (chờ chủ đồng ý).
 - 22:50 Chủ chốt: tận dụng Graphify, làm mới liên tục, hướng dẫn tra cứu + mục lục tri thức, quy trình đọc-hiểu-xử lý, báo cáo tiểu yêu kèm Mermaid; chạy U-02 song song U-01. Gửi #093.
+- 23:12 Kiểm: Sonnet làm xong #093 (22:56-22:58): Graphify client đổi sang gốc bản A (trước trỏ nhầm Classes cũ), DO-THI.md + script làm mới, HUONG-DAN-TRA-CUU, MUC-LUC-TRI-THUC, skill tiểu yêu, U-01/U-02/U-03 chạy song song. Chưa có kết quả U-xx; chưa đổi khóa xingchi. Đã báo chủ.
