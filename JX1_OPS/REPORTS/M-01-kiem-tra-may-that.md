@@ -1,6 +1,6 @@
 # M-01 - Kiểm tra máy thật: tiến trình ẩn, RAM, ổ C (17/11/2026 13:35)
 
-Chỉ đọc/đo, không tắt, gỡ hay xóa gì. Chi tiết (đường dẫn, PID) ở D:\JX-reports-private\ (ngoài kho). Mọi con số bên dưới là đo lúc 13:30-13:35.
+Chỉ đọc/đo, không tắt, gỡ hay xóa gì. Không đưa PID hay khóa vào báo cáo. Mọi con số bên dưới là đo lúc 13:30-13:35.
 
 ## TÓM TẮT
 1. RAM: tổng working set ~16 GB (máy thật; WMI lỗi nên không đọc được tổng RAM vật lý). Nhóm lớn: Chrome 24 tiến trình ~4,7 GB; Claude desktop + Claude Code 16 tiến trình ~3,1 GB; ChatGPT/Codex app 12 tiến trình ~1,1 GB; Memory Compression ~1 GB; codex (worker) 8 tiến trình ~0,8 GB; node 11 ~0,45 GB; VBoxHeadless 6 ~0,14 GB.
