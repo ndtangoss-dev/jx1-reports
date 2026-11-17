@@ -282,3 +282,4 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 - 2026-11-17 19:04 APK-A: jx-qh9-smooth-A.apk (versionCode 18, cert a48601f7, SHA256 137691757920392e9fc9695ab963906d267b1b185a12e612f1296a9f41081116) dựng xong, phát ở D:\JX1_U003_build\serve, link http://100.95.186.86:8091/jx-qh9-smooth-A.apk; chủ yêu cầu gửi test thẳng, chưa thử LD. A0 đối chứng, APK-B và H-15 chưa làm.
 - 2026-11-17 19:05 X-03 xong, đã merge (REPORTS/X-03*.md).
 - 2026-11-17 19:05 H-04 xong, đã merge (REPORTS/H-04*.md).
+- [DUNG-CAN-CHU 2026-11-17 19:46] Cho chu: (1) go duyet truc tiep tao tk test jxld02 tren Main VM + ghi mat khau vao tk-test.txt (thu #85, phan quyen chan vi lenh den tu Chat); (2) chay Admin khoi_dong_lai_apk_8091.ps1 bang duong dan day du. Dang do: A0 gradle van chay, chua xac nhan APK A0 la ban moi; #83 chan doan build; H-15.
