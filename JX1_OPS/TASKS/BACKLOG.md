@@ -64,6 +64,7 @@ Sonnet lấy việc từ trên xuống, theo phụ thuộc. Khi bắt đầu m�
 | E-04 | Xã hội theo `DESIGN/BOT/SHARED_BOT_SOCIAL_AND_INTERACTION_SYSTEM.md` | L4 | Opus thiết kế, Codex làm |
 | E-05 | Bot trong hoạt động | L3 | Codex |
 | E-06 | Đo tải; quyết định có chuyển điều khiển Bot vào trong server không | L4 | Opus |
+| E-09 | Chạy BOT/TESTER thật vào gs001 trên VM thử (Config cho phép đúng IP 192.168.56.150, tài khoản thử trong DB VM), kịch bản login→role→vào game; Enabled=1 Solo bằng 2 phiên + bot | L3 | Codex + Sonnet (VM) | E-07, E-08, B-02c |
 
 ## Hiệu năng (song song)
 
