@@ -15,9 +15,17 @@ $gd = (Get-Content "$wt\.git" -ErrorAction SilentlyContinue | Select-Object -Fir
 $addDir = ''
 if ($gd -and $env:JX_CODEX_ADDDIR) { $common = Split-Path (Split-Path $gd -Parent) -Parent; if (Test-Path $common) { $addDir = " --add-dir '$common'" } }
 $run = "$wt.run.ps1"
+# Khoa rieng cho worker (JX_CODEX_KEY=<ten>): doc luc chay tu C:\Users\PC\.jx1keys\<ten>.txt, KHONG ghi gia tri vao script/log. Khong dat = dung khoa mac dinh trong config.toml.
+$keyCfg = ''; $keyLine = ''
+if ($env:JX_CODEX_KEY) {
+  if (-not (Test-Path "C:\Users\PC\.jx1keys\$($env:JX_CODEX_KEY).txt")) { throw "Khong co khoa $($env:JX_CODEX_KEY)" }
+  $keyLine = "`$k = (Get-Content -Raw 'C:\Users\PC\.jx1keys\$($env:JX_CODEX_KEY).txt').Trim()"
+  $keyCfg = " --config `"model_providers.xingchi.experimental_bearer_token=```"`$k```"`""
+}
 @"
 `$env:CODEX_HOME = 'C:\Users\PC\.codex'; `$env:PYTHONUTF8 = '1'
-Get-Content -Raw -Encoding UTF8 '$PromptFile' | & '$Codex' exec --json --sandbox workspace-write --model '$Model' --config 'model_provider="xingchi"' --config 'model_reasoning_effort="$Effort"' --config 'approval_policy="never"' -C '$wt'$addDir - *> '$log'
+$keyLine
+Get-Content -Raw -Encoding UTF8 '$PromptFile' | & '$Codex' exec --json --sandbox workspace-write --model '$Model' --config 'model_provider="xingchi"' --config 'model_reasoning_effort="$Effort"' --config 'approval_policy="never"'$keyCfg -C '$wt'$addDir - *> '$log'
 Set-Content -Encoding UTF8 '$wt.done' ('exit=' + `$LASTEXITCODE + ' ' + (Get-Date -Format s))
 "@ | Set-Content -Encoding UTF8 $run
 Remove-Item "$wt.done" -ErrorAction SilentlyContinue
