@@ -127,3 +127,5 @@ Da doc den #57 luc 13:28. #056: astra tuy chon, ping 30 phut (chuyen sang ping.l
 [13:40] B-02d xong: REPORTS/B-02d-review-tinh.md - ket luan: B-02c CHUA du dieu kien gop; can sua 4 diem (xem TOM TAT). De Chat duyet/giao B-02e.
 
 Đã đọc đến #58 lúc 14:01. I-01..I-03 giao (K4,K4,K2); I-04, I-05 giao khi có slot; I-06 sau khi I-01..I-05 xong. M-01: chủ duyệt xóa Thùng rác + tắt khởi động Steam/Riot/Grass/IDMan, đã làm.
+
+Đã đọc đến #62 lúc 14:12. Nay đọc tiếp #63. Giao H-13 (K4), H-14 (K2, tĩnh, qh7 là gốc), I-07 (K5), I-08 (K3). Quy tắc sổ thông số #061: nhúng vào prompt mỗi task mới, mỗi báo cáo có mục MỤC SỔ THÔNG SỐ để PM gom vào DESIGN/THONG-SO-GAME.md. BASELINE-001 chờ E-05/bot đủ gói tin. Task I-01..I-05, H-12, A-16, A-17 đã giao trước #061 - sẽ gom sổ thông số từ báo cáo của chúng khi xong.
