@@ -68,3 +68,4 @@
 - 2026-11-17 14:40 Chủ báo đạn/skill xuyên quái khi FPS cao; gửi #065 (H-15).
 - 14:50 Kiểm 30 phút: Sonnet đã đọc #065, giao H-15 (K2, phần tĩnh), J-01..J-06 trong hàng đợi; I-03 đã gộp; chưa có báo cáo H-13/H-14. Không có gì đáng báo; chờ chủ trả lời mức FPS.
 - 15:02 #066: chủ trả lời H-15 (FPS tối đa 120, chiêu định hướng đều bị, server cũ = qh7) và J-xx = Phi Phong.
+- 15:09 #067: giao K-01 bản đồ truyền tín hiệu client-server (chủ duyệt).

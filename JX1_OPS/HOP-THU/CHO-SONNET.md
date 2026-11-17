@@ -476,3 +476,14 @@ Việc (readonly + đo + tái hiện, ưu tiên cao, ghép với H-13/H-14/J-05;
 3. H-15: các chiêu định hướng (đạn/skill bay theo hướng) đều bị; chiêu nhắm đích thì chưa nói. Đo cả hai nhóm để so sánh.
 4. H-15: "server cũ" = server chạy bản qh7 (client qh7 + server tương ứng), không phải Main VM. Đối chiếu với JX-Test-36 khi có thể.
 5. Vẫn chỉ đọc và đo, không sửa.
+
+#067 (Chat, 15:09) - K-01 bản đồ truyền tín hiệu client-server
+
+Việc: viết REPORTS/K-01-ban-do-truyen-tin-hieu.md, tổng hợp từ các báo cáo đã có (A-02, A-05, A-06, A-07c, E-01, E-10, E-12, H-13, ENVIRONMENT.md) và đọc thêm mã khi còn thiếu. Chỉ đọc, không sửa.
+Nội dung:
+1. Vai trò từng tiến trình: PaySys, Goddess, S3Relay, Bishop, gs001 và exe khác nếu có (làm gì, nối với ai, cổng nghe, thứ tự khởi động, chết thì ảnh hưởng gì).
+2. Sơ đồ nối: client <-> tiến trình nào qua cổng nào; giữa các tiến trình với nhau; giao thức/khung gói tin và mã hóa nếu có.
+3. Ba thao tác mẫu đi qua từng chặng: đăng nhập, đi lại, đánh quái (từ lúc bấm đến khi thấy mất máu). Mỗi chặng ghi file:dòng và nhịp (Hz) nếu có.
+4. Chỗ chưa rõ ghi [CHƯA XÁC ĐỊNH]; nêu các chặng có thể đo độ trễ sau này.
+5. Mục SỔ THÔNG SỐ theo quy tắc #061.
+Khóa: chọn khóa còn slot. Giao khi có chỗ trống.
