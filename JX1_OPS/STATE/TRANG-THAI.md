@@ -189,3 +189,4 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 - [08:12] E-01b XONG (PARTIAL): worldsync.py, 41 test offline pass, chua chay server that; xem REPORTS/E-01b-thieu-giao-thuc.md. gs001 A-07e HEVA-on song 13.465s (~3h45).
 - [08:25] [Q-37] B-02b dua len JX-Test-36 (bo A-07e giu *.a07e-set tren VM), Enabled=0 mac dinh; theo doi uptime. Giao A-12 (high, worktree D:\JX-wt\A-12) theo #017/#018. Con: A-11 (sol vs astra), A-13 (PM tu lam). Dang cho Codex xong A-12.
 - [08:40] Ping astra qua xingchi OK (17s, 'OK', khong 429). Bat dau A-11 (sol vs astra) bang script D:\JX-wt\A11\run_ab.ps1.
+- [10:25] A-12 XONG, da gop vao jx1-ops (REPORTS/A-12-hao-huu-mac-do.md, khao sat tinh). A-11 dang do: T1 sol 26s vs astra 20s, khong 429; T4 sol treo >2h (da kill, chay lai co gioi han 400s); xem REPORTS/A-11-sol-vs-astra.md. Giao E-05a (high, D:\JX-wt\E-05a). Khoa xingchi thu hai: CHUA tao (dang kiem trang).
