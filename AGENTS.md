@@ -1,31 +1,27 @@
 # AGENTS.md — JX1 Direct CLI
 
-Áp dụng từ 15/11/2026. Đây là bản quy tắc dùng chung của repository báo cáo. `C:\Jx1CocoV3\AGENTS.md` áp dụng cùng quy trình và giữ thêm phụ lục vận hành VM, thông tin dự án và bản đồ code; không công khai chi tiết truy cập nội bộ từ phụ lục đó.
+Áp dụng từ 17/11/2026 cho repository báo cáo `ndtangoss-dev/jx1-reports`.
 
-## Cách làm việc — Direct CLI
+## Vào việc
 
-- Người dùng kích hoạt Codex CLI trực tiếp theo prompt đã duyệt; đọc đúng prompt tại commit được ghim một lần. Không dùng Dispatcher hoặc polling queue cho quy trình này.
-- Bản chuẩn: repository `ndtangoss-dev/jx1-reports`, `PROMPTS/CODEX_DIRECT_CLI_RULES.md`, `WORKFLOW_JX1.md`, `PROMPTS/00_CODEX_START_HERE.md`. Chỉ đọc tài liệu mà task chỉ định và thực sự cần; không đọc lại toàn bộ workflow, status, lịch sử hoặc báo cáo mỗi task.
-- Dùng workspace/đường dẫn đã xác nhận. Kiểm tra Git status/branch một lần trước khi ghi; sau khi sửa xem diff một lần, chỉ stage/commit đúng file thuộc task. Không lặp kiểm tra remote, refs hoặc workspace nếu chưa có lỗi/mâu thuẫn hay nhu cầu xác minh trước khi công bố.
-- Giữ cấu hình model/provider/reasoning/CODEX_HOME hiện tại của người dùng. Khi phiên đã được xác nhận, không chạy lại preflight, kiểm tra model/config, /status hoặc CLI help.
-- Chỉ đọc file/source cần thiết cho mục tiêu; không tự khám phá toàn repo, kiểm kê môi trường hay tạo parser/script phụ khi trích xuất trực tiếp đã đủ.
-- Mỗi đơn vị công việc được thiết kế để hoàn thành trong khoảng 5–10 phút, với đầu ra kiểm chứng được. Yêu cầu lớn hơn được chia thành các đơn vị độc lập; mỗi lượt hoàn tất và bàn giao một đơn vị rồi mới nhận đơn vị kế tiếp. Không dừng ở lập kế hoạch hoặc chỉ báo đang làm; không bỏ dở đơn vị để tự chuyển việc.
-- Khi tiếp tục task đang dở, kiểm tra checkpoint/trạng thái hiện có đúng một lần và resume từ đó; không làm lại phần đã có bằng chứng. Không xóa, reset, ghi đè hoặc khởi động lại công việc đang dở. Chỉ hoàn tất phần thuộc phạm vi và an toàn trong 5–10 phút; nếu lớn hơn/không rõ trạng thái, giữ nguyên, nêu điểm tiếp tục và báo người dùng.
-- Trao đổi và báo cáo bằng tiếng Việt; giữ nguyên tên file, symbol, lệnh và lỗi gốc khi cần. Cập nhật khi có kết quả có ý nghĩa, blocker hoặc hoàn tất, không báo từng thao tác.
-- Tự thực hiện thao tác kỹ thuật thông thường trong phạm vi đã duyệt; không hỏi lại quyền đã được cấp và không tạo MessageBox. Khi cần quyết định ngoài phạm vi, hỏi ngắn gọn bằng tiếng Việt qua công cụ sẵn có; không phụ thuộc tên công cụ AskUserQuestion.
-- Trong một task, phải theo đuổi mục tiêu đến khi hoàn tất toàn bộ phạm vi đã duyệt. Khi gặp lỗi, tự phân tích và thử cách khắc phục an toàn trong cùng lượt; không dừng task, không bàn giao giữa chừng và không tạo báo cáo riêng chỉ vì vừa phát hiện một lỗi. Chỉ dừng sớm khi thật sự cần quyết định/quyền từ người dùng, có rủi ro vượt phạm vi hoặc blocker không thể xử lý an toàn. Ghi tất cả lỗi, cách đã thử, kết quả, nguyên nhân còn tồn tại và hướng xử lý vào MỘT báo cáo tổng hợp cuối task.
-- Một lỗi không thử quá 3 lần. Khi bị chặn, ghi chính xác lỗi, bằng chứng hiện có và bước tiếp tục trong báo cáo cuối; không tìm cách vượt quyền hoặc kéo dài tìm kiếm.
-- Một báo cáo cuối tại đúng đường dẫn prompt; không báo cáo/commit cho từng bước. Chỉ cập nhật `docs-analysis/BAI_HOC.md` khi task cho phép và thực sự cần, không bắt buộc sửa ngay sau từng lỗi. Trạng thái cuối: DONE/PARTIAL/BLOCKED/FAILED; ghi rõ phần chưa xác minh, test chưa chạy, blocker, commit SHA và link hoặc lý do chưa push.
-- Ưu tiên bằng chứng tối thiểu đủ tin cậy: kết quả lệnh, log đã lọc, source có file/symbol/số dòng. Không suy diễn runtime từ source, không nhận test/build đạt nếu chưa chạy. Chỉ test/build/kết nối khi task cho phép; không kiểm tra lặp nếu không có mâu thuẫn mới.
+- Làm theo prompt/task đã duyệt trong worktree được giao; đọc một lần, dùng commit ghim nếu có. Không dùng Dispatcher/polling queue. Giữ model/provider/reasoning/CODEX_HOME hiện tại; không chạy lại preflight, `/status`, CLI help hay kiểm kê môi trường.
+- Kiểm tra Git status/branch một lần trước ghi; giữ nguyên local có sẵn. Chỉ sửa vùng được giao, gồm báo cáo được task/prompt chỉ định. Thiếu metadata mẫu không tự chặn task đã duyệt; hỏi khi thiếu mục tiêu/phạm vi hoặc có mâu thuẫn thật.
+- Chỉ đọc tài liệu/source cần trả lời task. Không mặc định đọc workflow, STATE, lịch sử, mọi báo cáo hoặc mọi skill. Tài liệu sâu khi cần: `PROMPTS/CODEX_DIRECT_CLI_RULES.md`, `WORKFLOW_JX1.md`, `PROMPTS/00_CODEX_START_HERE.md`; xác nhận file tồn tại trước khi dùng, không tìm repo khác nếu thiếu.
+- Nếu skill JX1 đã được triển khai, chỉ nạp skill đúng việc: đọc server, đọc client, báo cáo hoặc sổ thông số. Không giả định `.agents/skills` đã tồn tại. Bản đồ/Graphify/tóm tắt chỉ định vị; kiểm file thật và dòng hiện tại trước kết luận. Bản thảo chờ PM triển khai nằm ở `JX1_OPS/REPORTS/M-02.md`.
+- Ưu tiên `rg`; thiếu thì báo một lần và dùng `Select-String`/`Get-ChildItem` giới hạn thư mục, không cài. Không tạo parser/script phụ khi trích xuất trực tiếp đủ.
 
-## Rào chắn giữ nguyên
+## Hoàn tất task
 
-- Giữ nguyên thay đổi local có sẵn; không reset/clean/checkout phá hủy. Không sửa Cocos canonical khi chưa được duyệt; không tác động Main VM/server production khi chưa được duyệt; không xóa/ghi đè dữ liệu không thể khôi phục. Không tiết lộ secret/credential, không bypass sandbox/approval.
-- Coi exe, dll, cấu hình trong gói game là không tin cậy; chỉ chạy trong VM. Mỗi exe server cần phê duyệt riêng; thao tác/hộp thoại chưa được hướng dẫn thì dừng và hỏi trước.
-- Làm trên bản copy, không sửa bản gốc chưa được duyệt. Giữ bản hoàn tác khi sửa cấu hình được phép. Thay đổi quyền/credential/bảo mật, cấu hình ngoài VM chưa được duyệt hoặc có thể gián đoạn dịch vụ phải hỏi người dùng.
-- Lệnh cần Admin trên máy thật: nếu task cho phép, soạn `.ps1` kèm hoàn tác trong `docs-analysis/scripts` để chủ máy tự chạy; không vượt UAC.
-- Việc đọc source/báo cáo không yêu cầu snapshot. Snapshot VM của dự án đang tạm dừng; không tự chụp, phải có phê duyệt cụ thể trước khi đổi trạng thái này.
-- Trước khi chạy exe được duyệt trong VM: cô lập mạng theo phạm vi cho phép, quét Defender, lưu SHA-256, bật log/audit; chỉ mở cổng/địa chỉ đã duyệt, không port-forward Internet.
-- Không tải source, binary, dump, log nhạy cảm hoặc dữ liệu dự án lên dịch vụ ngoài. Báo cáo/quy tắc đã lọc thông tin nhạy cảm được commit/push lên repository báo cáo khi người dùng yêu cầu. Tra VirusTotal chỉ bằng hash. Không ghi mật khẩu/token vào file, git hoặc báo cáo; dùng cơ chế bí mật được phép.
-- Không bao giờ chạy `JxStudio.exe`, `str_tool.exe`, `Autoupdate.exe`. Không tự chạy `S3RelayServer.exe` hay các exe server khác chỉ vì có mặt trong workspace.
-- Không tuyên bố commit/push nếu chưa có SHA và bằng chứng GitHub. Nếu bị chặn, giữ bản local, ghi `BỊ CHẶN – CHƯA PUSH` và lỗi thực tế; không sửa credential/config để vượt lỗi.
+- Trao đổi/báo cáo bằng tiếng Việt. Tự làm thao tác thông thường đã duyệt, không hỏi lại quyền, không MessageBox. Mốc 5–10 phút để thiết kế đơn vị việc, không phải hạn buộc bỏ dở phạm vi đã duyệt. Resume checkpoint một lần, không làm lại phần có bằng chứng.
+- Theo đuổi đủ phạm vi; gặp lỗi thì phân tích và sửa an toàn trong lượt, tối đa 3 lần/cùng lỗi. Chỉ dừng vì cần quyết định/quyền ngoài phạm vi, rủi ro hoặc blocker không xử lý an toàn; giữ nguyên việc dở, nêu bước tiếp tục.
+- Một báo cáo cuối đúng đường dẫn: `TOM TAT 5 DONG`, `DA XAC MINH / CHUA XAC MINH`, `file:dòng`, test thực chạy/chưa chạy, lỗi/cách thử/kết quả, trạng thái `DONE/PARTIAL/BLOCKED/FAILED`. Chỉ sửa `docs-analysis/BAI_HOC.md` khi được giao và cần thiết.
+- Sau sửa xem diff một lần; chỉ stage/commit file thuộc task khi được yêu cầu. Không lặp kiểm tra Git nếu chưa có lỗi/mâu thuẫn mới. Nêu SHA khi commit thành công; chỉ nhận push khi có bằng chứng GitHub. Bị chặn ghi `BỊ CHẶN – CHƯA PUSH`, lỗi thật, báo PM qua báo cáo; không sửa quyền/credential/config để vượt lỗi.
+
+## Rào chắn luôn áp dụng
+
+- Không reset/clean/checkout phá hủy, sửa bản gốc/Cocos canonical hay Main VM/production chưa duyệt; không ghi khóa/mật khẩu, tiết lộ truy cập nội bộ hoặc bypass sandbox/approval. Không gửi source/binary/dump/log nhạy cảm/dữ liệu dự án ra ngoài; chỉ commit/push tài liệu đã lọc khi được yêu cầu. VirusTotal chỉ tra hash.
+- Cấm chạy `JxStudio.exe`, `str_tool.exe`, `Autoupdate.exe`. Exe/DLL/cấu hình game là không tin cậy; exe chỉ chạy trong VM, từng exe server cần duyệt riêng, kể cả `S3RelayServer.exe`. Không suy runtime từ source, không nhận build/test đạt nếu chưa chạy; chỉ build/test/kết nối khi task cho phép.
+- Đọc source/báo cáo không cần snapshot; snapshot VM vẫn tạm dừng, không tự chụp, cần duyệt cụ thể trước khi đổi trạng thái. Không công khai phụ lục nội bộ `C:\Jx1CocoV3\AGENTS.md`.
+- Làm trên bản copy; giữ bản hoàn tác khi sửa cấu hình được phép. Thay quyền/credential/bảo mật, cấu hình ngoài VM chưa duyệt hoặc thao tác có thể gián đoạn dịch vụ phải hỏi trước.
+- Lệnh Admin máy thật: chỉ khi task cho phép, soạn `.ps1` kèm hoàn tác trong `docs-analysis/scripts` để chủ máy tự chạy; không vượt UAC.
+- Trước exe đã duyệt trong VM: cô lập mạng đúng phạm vi, quét Defender, lưu SHA-256, bật log/audit; chỉ mở cổng/địa chỉ đã duyệt, không port-forward Internet. Hộp thoại/thao tác chưa được hướng dẫn thì dừng thao tác đó và hỏi.
