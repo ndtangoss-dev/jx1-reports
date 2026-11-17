@@ -15,8 +15,8 @@ Giao thức gói tin; cấu trúc DB; hàm Lua dùng chung; lõi `KNpc`, `KPlaye
 | R-01 | codex | REPORTS/A-01..A-07*, _CHIMUC/R-01.tsv | không | 2026-11-17 | — đang chạy |
 | R-02 | codex | REPORTS/A-08..A-17*, AMOLX-DONG | không | 2026-11-17 | — đang chạy |
 | R-03 | codex | REPORTS/B,C,D,F,G,K,O,P-* | không | 2026-11-17 | — đang chạy |
-| R-04 | codex | REPORTS/E-* | không | 2026-11-17 | — chờ chạy |
-| R-05 | codex | REPORTS/H-* | không | 2026-11-17 | — chờ chạy |
-| R-06 | codex | REPORTS/I-*, J-* | không | 2026-11-17 | — chờ chạy |
-| R-07 | codex | REPORTS/L,M,X,JIBS,TEST,daily | không | 2026-11-17 | — chờ chạy |
+| R-04 | codex | REPORTS/E-* | không | 2026-11-17 | — đang chạy (Tổng quản) |
+| R-05 | codex | REPORTS/H-* | không | 2026-11-17 | — đang chạy (Tổng quản) |
+| R-06 | codex | REPORTS/I-*, J-* | không | 2026-11-17 | — đang chạy (Tổng quản) |
+| R-07 | codex | REPORTS/L,M,X,JIBS,TEST,daily | không | 2026-11-17 | — đang chạy (Tổng quản) |
 | S-01 | codex | DESIGN/BANG-KY-NANG-THEO-PHAI.md, REPORTS/S-01.md | không | 2026-11-17 | — đang chạy |
