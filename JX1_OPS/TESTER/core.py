@@ -44,12 +44,24 @@ class Config:
     host: str
     port: int
     secrets: tuple = ()
+    allow_test_vm: bool = False
 
     def __post_init__(self):
-        # E-05a chỉ cho máy chủ giả cục bộ. Không sửa guard của BOT.
-        if (self.host != "127.0.0.1" or isinstance(self.port, bool)
-                or not isinstance(self.port, int) or not 1 <= self.port <= 65535):
-            raise ValueError("E-05a chỉ cho 127.0.0.1 và cổng 1..65535 của máy chủ giả")
+        if not isinstance(self.allow_test_vm, bool):
+            raise ValueError("allow_test_vm phải là bool")
+        self.validate_endpoint(self.host, self.port)
+
+    def validate_endpoint(self, host, port, *, game=False):
+        # Literal chính xác; không DNS, subnet, alias hay redirect ra host khác.
+        if (isinstance(port, bool) or not isinstance(port, int)
+                or not 1 <= port <= 65535):
+            raise ValueError("Cổng phải là số nguyên 1..65535")
+        if self.host == host == "127.0.0.1":
+            return
+        if (self.allow_test_vm and self.host == host == "192.168.56.150"
+                and port == (51189 if game else 56722)):
+            return
+        raise ValueError("Chỉ cho 127.0.0.1; VM thử cần allow_test_vm và đúng host/cổng")
 
 
 class Redactor:

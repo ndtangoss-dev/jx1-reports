@@ -23,7 +23,8 @@ python -I JX1_OPS/TESTER/run.py --scenario smoke_login --bots bot01..bot05 --hos
 
 `PORT_MAY_CHU_GIA` phải là số cổng fixture đang nghe; không tự chạy gs001.
 Thiếu/sai cấu hình: usage và exit 2. Có FAIL: exit 1; tất cả PASS/BỎ QUA: exit 0.
-Chỉ chấp nhận IPv4 literal `127.0.0.1`, cổng 1..65535. Không DNS, VM hay server thật.
+Mặc định chỉ chấp nhận literal `127.0.0.1`, cổng 1..65535. Không DNS.
+Ngoại lệ opt-in VM thử chỉ dành cho `real_login`, xem E-09a bên dưới.
 `smoke_login` không cần tài khoản, mật khẩu hay khóa thật.
 
 Cú pháp module có cùng CLI khi Python đã tìm thấy package:
@@ -58,8 +59,8 @@ severity="major")`. Tên scenario dùng `[a-z][a-z0-9_]*`; tên bước không t
   GUID, password, login payload hay body unknown.
 
 `run_scenario(scenario, bots, Config(...), workers=1)` trả `Result` theo thứ tự
-bot rồi bước. Cấu hình bí mật thật khi E-05b nối sau phải lấy từ môi trường/tệp
-ngoài kho và truyền mọi giá trị vào `Config.secrets` trong bộ nhớ; không ghi vào
+bot rồi bước. Bí mật thật chỉ lấy từ biến môi trường, đăng ký mọi giá trị với
+redactor trong bộ nhớ; không đọc/ghi credential vào file, không ghi vào
 source/CLI/report. Redactor tự nhận các biến môi trường có tên chứa
 PASSWORD/PASSWD/SECRET/TOKEN/KEY/ACCOUNT/ROLE, che giá trị, hex, MD5 và biến thể
 uint32 của khóa, cùng cặp nhãn bí mật. Hàm kịch bản phải đăng ký bí mật tự đọc
@@ -89,9 +90,10 @@ không chờ vô hạn. Nếu host bị tắt đột ngột, người vận hàn
 trước khi tự xóa lock cũ. Không ghi đè báo cáo. Không dùng thư mục báo cáo
 không tin cậy hoặc chứa symlink.
 
-**gs001 thật: chưa kiểm.** PASS offline không chứng minh login/gameplay thật.
+**gs001 thật: [CHƯA KIỂM].** PASS offline không chứng minh login/gameplay thật.
 Các BUG/báo cáo mẫu trong `REPORTS/TEST` do fixture tổng hợp, không phải lỗi
-đã xác nhận trên gs001. Không chạy exe game/server, không kết nối VM/mạng ngoài.
+đã xác nhận trên gs001. Task E-09a chỉ kiểm loopback, không chạy exe game/server,
+không kết nối VM/mạng ngoài.
 
 ## E-05b — full_cycle
 
@@ -153,3 +155,60 @@ kill/death thật **[CHƯA KIỂM]**. Tiêu chí 5 đối chiếu trace MaxVisib
 từng byte hai trace baseline/Enabled=0 fixture, chưa có capture/ảnh gốc thật.
 Tiêu chí 3/4 có hàm TODO, trả BỎ QUA và ghi gói/semantic thiếu theo E-07/E-08;
 tiêu chí 8 thuộc B-04, **[CHƯA KIỂM]**. Exit 0 có thể chứa BỎ QUA.
+
+## E-09a — real_login (chuẩn bị, chưa chạy VM)
+
+`--scenario real_login` dùng profile codec/packet BOT hiện có, gồm năm bước:
+`real_login` kiểm response login; `role` đối chiếu role yêu cầu (thiếu là FAIL,
+không tự tạo); `enter_game` kiểm permit rồi LOGIC_LOGIN, SYNC_END/ACK đủ 9 byte
+và CP_LOCK; `hold_session` giữ TCP 30 s, xử lý PING khi nhận; `close` đóng TCP.
+Không gửi RUN/SKILL và không nhận đóng TCP là logout ứng dụng hay xác nhận lưu.
+Không đoán client key, region, map hoặc chọn role đầu tiên.
+
+`Config(..., allow_test_vm=False)` và CLI mặc định vẫn chỉ loopback. Cờ
+`--allow-test-vm` chỉ hợp lệ với `real_login`; khi bật, Bishop chỉ được là
+literal `192.168.56.150:56722`, permit game phải cùng host và cổng `51189`.
+Main VM, host khác, hostname, IPv6, subnet, alias, khoảng trắng và cổng khác
+bị chặn trước `socket.create_connection`/DNS. Không có tham số mở rộng allowlist.
+Config được kiểm khi tạo và ngay trước mỗi socket; permit không được dùng để
+đổi từ loopback sang VM hoặc từ VM về loopback. Các kịch bản `smoke_login`,
+`full_cycle`, `visibility` chỉ dùng fixture loopback kể cả qua API trực tiếp.
+Với fixture `real_login`, permit phải trả loopback; cho cổng ngẫu nhiên để test.
+
+Thông tin mỗi bot lấy riêng từ biến môi trường (ví dụ tiền tố `JX1_BOT01_`,
+tương tự tới BOT05). Không có cờ CLI truyền credential, không đọc file:
+
+| Hậu tố | Bắt buộc / ý nghĩa |
+| --- | --- |
+| ACCOUNT | Tài khoản theo profile BOT, 1..16 byte |
+| PASSWORD | Mật khẩu theo profile BOT, 1..16 byte |
+| ROLE | Tên nhân vật có sẵn, 1..63 byte |
+| CLIENT_KEY | uint32 đã biết đúng cho phiên; không tự suy/đoán |
+| REGION | uint32 >0, cấu hình đăng nhập được xác nhận |
+| ENTER_MAP | uint32, cấu hình được xác nhận |
+| OBSERVED_ONLINE | Số online quan sát 0..99 trước thêm bot |
+| ENCODING | Tùy chọn, mặc định ascii; phải khớp profile/encoding thực |
+
+Số nhận decimal hoặc tiền tố `0x`. Thiếu/sai biến bị FAIL trước mở Bishop.
+Biến được đọc ở worker; account/password/role/key cùng giá trị cấu hình được
+đăng ký redactor trước validation. Không log payload auth/GUID/key, không ghi
+credential vào Config, source, report hoặc BUG. Nạp biến bằng cơ chế bí mật đã
+được duyệt; không ghi giá trị vào script/lịch sử shell. Không dùng chung cùng
+tài khoản khi chạy nhiều bot. Admission chỉ dựa trên số online được cung cấp,
+không tự truy vấn server hay điều phối tổng online giữa các worker.
+
+Task này **không chạy** lệnh opt-in. Việc chạy VM thật cần phạm vi phê duyệt
+riêng. Để xem CLI và kiểm offline:
+
+```text
+python -I JX1_OPS/TESTER/run.py --help
+python -I -m unittest discover -s JX1_OPS/TESTER -p test_real_login.py -v
+```
+
+Test chính dùng fixture loopback, credential/GUID sinh ngẫu nhiên trong RAM,
+key tổng hợp từ cổng fixture; không đọc credential thật. Test allowlist dùng
+mock socket/DNS cho các địa chỉ ngoài loopback. Luồng dương kiểm đủ 30 s và
+PING_REPLY; case âm kiểm thiếu role, env, permit sai host/cổng, chế độ CLI sai.
+ABI/layout binary, client key thật, login/giữ phiên/gameplay/lưu trên gs001:
+**[CHƯA KIỂM]**. Report `real_login` ghi kết quả theo profile BOT tại endpoint
+cấu hình; PASS fixture không chứng minh nghiệm thu VM thật.

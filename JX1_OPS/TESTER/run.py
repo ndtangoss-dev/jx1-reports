@@ -17,6 +17,7 @@ from .core import Config, run_scenario
 from .reporting import write_report
 from .scenarios import FULL_CYCLE, SMOKE_LOGIN
 from .visibility import VISIBILITY
+from .real_login import REAL_LOGIN
 
 
 def bot_list(value):
@@ -32,17 +33,20 @@ def bot_list(value):
 
 
 def main(argv=None):
-    scenarios = {scenario.name: scenario for scenario in (SMOKE_LOGIN, FULL_CYCLE, VISIBILITY)}
+    scenarios = {scenario.name: scenario for scenario in (SMOKE_LOGIN, FULL_CYCLE, VISIBILITY, REAL_LOGIN)}
     parser = argparse.ArgumentParser(description="TESTER offline với máy chủ giả; gs001 thật chưa kiểm")
     parser.add_argument("--scenario", choices=tuple(scenarios), required=True)
     parser.add_argument("--bots", type=bot_list, required=True)
-    parser.add_argument("--host", required=True, help="Chỉ 127.0.0.1")
+    parser.add_argument("--host", required=True, help="127.0.0.1; VM thử cần --allow-test-vm")
+    parser.add_argument("--allow-test-vm", action="store_true", help="Chỉ real_login tới đúng VM thử; mặc định tắt")
     parser.add_argument("--port", type=int, required=True)
     parser.add_argument("--out", type=Path, required=True)
     parser.add_argument("--workers", type=int, choices=range(1, 6), default=1)
     args = parser.parse_args(argv)
     try:
-        config = Config(args.host, args.port)
+        config = Config(args.host, args.port, allow_test_vm=args.allow_test_vm)
+        if args.allow_test_vm and args.scenario != "real_login":
+            raise ValueError("--allow-test-vm chỉ dùng cho real_login")
     except ValueError as error:
         parser.error(str(error))
     try:

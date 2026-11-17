@@ -10,6 +10,8 @@ from .core import Redactor, Scenario, SkipStep, Step
 
 
 def connect_fake(context):
+    if context.config.host != "127.0.0.1":
+        raise ValueError("smoke_login chỉ cho máy chủ giả 127.0.0.1")
     channel = Channel(socket.create_connection((context.config.host, context.config.port), timeout=2))
     context.state["channel"] = channel
     channel.handshake(time.monotonic() + 2)

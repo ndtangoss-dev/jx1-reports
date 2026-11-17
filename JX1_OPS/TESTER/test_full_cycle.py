@@ -23,7 +23,7 @@ from JX1_OPS.TESTER.scenarios import FULL_CYCLE
 
 
 @contextmanager
-def cycle_server(missing=False, changed=False, bad_permit=False):
+def cycle_server(missing=False, changed=False, bad_permit=False, real=False, permit_host=None, permit_port=None):
     listener = socket.socket()
     listener.bind(("127.0.0.1", 0))
     listener.listen(10)
@@ -77,7 +77,9 @@ def cycle_server(missing=False, changed=False, bad_permit=False):
                     permits[guid] = account
                     send(packets.PERMIT.pack(packets.S2C.PERMIT_LOGIN, guid,
                          account.ljust(64, b"\0"), account.ljust(32, b"\0"), bytes(64), 1,
-                         socket.inet_aton("192.168.1.50" if bad_permit else TEST_HOST), GS_PORT))
+                         socket.inet_aton(permit_host or ("192.168.1.50" if bad_permit else
+                                             "127.0.0.1" if real else TEST_HOST)),
+                         permit_port if permit_port is not None else port if real else GS_PORT))
                     if receive() is not None:
                         raise AssertionError("Gateway phải đóng sau chọn role")
                 elif first[0] == packets.C2S.LOGIC_LOGIN:
@@ -85,8 +87,14 @@ def cycle_server(missing=False, changed=False, bad_permit=False):
                     send(b"\x49" + bytes(303) + packets.PING.pack(packets.S2C.PING, 1)
                          + packets.SYNC.pack(packets.S2C.SYNC_END, 1, port))
                     messages, actions, run_at, skill_at = [], [], None, None
+                    if real:
+                        sock.settimeout(.2)
                     while True:
-                        message = receive()
+                        try:
+                            message = receive()
+                        except socket.timeout:
+                            send(packets.PING.pack(packets.S2C.PING, 1))
+                            continue
                         if message is None:
                             break
                         messages.append(message[0])

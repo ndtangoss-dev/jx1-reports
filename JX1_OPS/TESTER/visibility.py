@@ -58,6 +58,8 @@ class ThreeSessions:
 
 
 def connect_visibility(context):
+    if context.config.host != "127.0.0.1":
+        raise ValueError("visibility chỉ cho máy chủ giả 127.0.0.1")
     group = ThreeSessions()
     context.state["visibility"] = group
     for npc in (A, B, BOT):

@@ -84,7 +84,7 @@ def _bug(out, scenario, step, result, branch, commit, redactor):
             f"Kịch bản: {scenario.name}\n\nBot: {result.bot}\n\n"
             f"Bước lỗi: {cell(redactor.clean(step.name))}\n\nĐộ nặng: {step.severity}\n\n"
             f"Nhánh: {cell(redactor.clean(branch))}\n\nCommit: {cell(redactor.clean(commit))}\n\n"
-            f"Bước tái hiện (cùng endpoint máy chủ giả và cấu hình lượt chạy):\n\n{reproduction}\n\n"
+            f"Bước tái hiện (cùng endpoint đã duyệt và cấu hình lượt chạy):\n\n{reproduction}\n\n"
             f"Kỳ vọng: {cell(redactor.clean(step.expected))}\n\nThực tế: {cell(message)}\n\n"
             f"Thời gian: {result.seconds:.3f}s\n\n{evidence(result, redactor)}\n")
     with path.open("x", encoding="utf-8") as stream:
@@ -104,8 +104,11 @@ def write_report(out, scenario, bots, results, secrets=(), branch=None, commit=N
             if result.status == "FAIL":
                 step = next(s for s in scenario.steps if s.name == result.step)
                 bugs[(result.bot, result.step)] = _bug(out, scenario, step, result, branch, commit, redactor)
-        lines = [f"# {scenario.name} — {date.today().isoformat()}", "",
-                 "gs001 thật: **chưa kiểm**. Chỉ máy chủ giả cục bộ; không đăng nhập thật.", "",
+        scope = ("Kịch bản real_login; PASS chỉ xác nhận bước theo profile BOT tại endpoint được cấu hình. "
+                 "ABI/gameplay/lưu dữ liệu gs001 thật: **[CHƯA KIỂM]**."
+                 if scenario.name == "real_login" else
+                 "gs001 thật: **chưa kiểm**. Chỉ máy chủ giả cục bộ; không đăng nhập thật.")
+        lines = [f"# {scenario.name} — {date.today().isoformat()}", "", scope, "",
                  f"Nhánh: {cell(redactor.clean(branch))}; commit: {cell(redactor.clean(commit))}", "",
                  "| Bot | " + " | ".join(cell(redactor.clean(s.name)) for s in scenario.steps) + " |",
                  "| --- | " + " | ".join("---" for _ in scenario.steps) + " |"]
