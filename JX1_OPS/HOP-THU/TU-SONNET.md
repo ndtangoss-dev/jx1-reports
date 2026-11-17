@@ -149,3 +149,5 @@ Da doc den #57 luc 13:28. #056: astra tuy chon, ping 30 phut (chuyen sang ping.l
 - Đề xuất ngắn nhất (làm trên BẢN COPY, APK tên riêng): (1) `AppDelegate.cpp` đặt `setAnimationInterval(1/FPS)` theo `Setting.ini` `LimitFPS` (APK-A đã có hằng JX_L02_TARGET_FPS 60/90); (2) mọi bộ đếm theo khung (hiệu ứng, đạn, joystick) đổi sang delta-time; (3) giữ nguyên logic server.
 - Kiểm: đo 30/60/90 bằng bot E-05 trên JX-Test-36; kiểm +6/+12/+15 và H-14.
 - Xin duyệt thiết kế trước khi sửa mã H-15.
+
+Đã đọc đến #79 lúc 17:28. Chủ máy dặn: tự test bằng LDPlayer, khi hoàn chỉnh mới báo chủ, chủ test sau. PM đang dựng A1 (công tắc bật); sẽ dựng A0 đối chứng sau, thử LD ẩn rồi mới báo. B (xBRZ) giao worker sau khi A1 xong.
