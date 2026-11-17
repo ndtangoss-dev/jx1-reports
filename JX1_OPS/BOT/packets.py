@@ -208,18 +208,6 @@ def ping_reply(payload, now_ms):
 
 
 def game_messages(payload):
-    """Chỉ tách record đã biết; không quét byte 0x43/0x8F bên trong dữ liệu."""
-    offset = 0
-    result = []
-    sizes = {S2C.SYNC_END: SYNC.size, S2C.PING: PING.size}
-    while offset < len(payload):
-        protocol = payload[offset]
-        size = sizes.get(protocol)
-        if size is None:
-            raise ProtocolError("Gói GS chưa hỗ trợ: ID=" + str(protocol) +
-                                "; xem E-01-thieu-giao-thuc.md")
-        if offset + size > len(payload):
-            raise ProtocolError("Record GS bị cắt")
-        result.append(payload[offset:offset + size])
-        offset += size
-    return result
+    """API cũ dùng chung bộ tách record với Session."""
+    from .worldsync import split_records
+    return split_records(payload)
