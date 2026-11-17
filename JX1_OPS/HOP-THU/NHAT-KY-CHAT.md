@@ -86,3 +86,4 @@
 - 17:20 Kiểm: L-02 PARTIAL (patch A xong, chưa build vì thiếu Java trong sandbox worker); K-01, I-06b, X-01/02/04 gộp; E-13 chưa đủ điều kiện chuyển Q-42. #079: PM tự dựng APK A0/A1 trên máy thật, worker làm B.
 - 17:40 #080: duyệt có điều kiện thiết kế H-15 (đo trước, sửa theo bằng chứng, không đổi delta-time hàng loạt, không sửa server). Sonnet đang dựng A1, đọc #079 lúc 17:28.
 - 17:50 #081: chủ gửi danh sách APK cũ (tailscale-8080, lan, wglow7, fix35); chuyển Sonnet xác minh, biến thể Tailscale, cổng 8080 /apk/.
+- 17:55 Kiểm 15 phút: Sonnet đã đọc #80, #81; APK-A đang biên dịch native trên máy thật; L-03 đã có (khóa debug cũ, cổng phục vụ 8091 chứ không phải 8080, Sonnet sẽ xác minh khi A1 xong). Chưa có APK, không báo chủ.
