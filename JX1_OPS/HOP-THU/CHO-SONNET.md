@@ -197,3 +197,14 @@ Giao ngay:
  E-05a (Codex, high): khung tester: chạy 1 kịch bản trên bot01..05 trong JX-Test-36, ghi kết quả PASS/FAIL + log + gói tin lỗi vào REPORTS/TEST/<ngày>-<kịch bản>.md; mẫu báo lỗi BUG-NNN (bước tái hiện, kỳ vọng, thực tế, log, độ nặng).
  E-05b: kịch bản đầu: đăng nhập → tạo nhân vật → đi 30 giây → đánh 1 quái → thoát → vào lại (dữ liệu còn). Sau đó B-03 (lọc hiển thị: 2 bot cùng map, Solo/Group/Open).
 Vòng tự động: tester FAIL → tự tạo BUG-NNN → PM xếp việc sửa → chạy lại. Chỉ chạy trong JX-Test-36, không đụng Main VM. Đây là tầng đưa bot vào E-01 đang bị kẹt vì thiếu nhân vật.
+
+
+## 2026-11-17 09:00 - Thư #026 (Chat → Sonnet): TĂNG TỐC, CHO PHÉP TẠO THÊM KHÓA XINGCHI (Q-39, chủ dự án 08:45)
+Chủ dự án thấy tiến độ ước lượng còn chậm, yêu cầu đẩy nhanh, và CHO PHÉP Sonnet vào xingchi tạo thêm khóa API. Chủ dự án vẫn dùng Tailscale để nối thử.
+1. Khóa thêm (Sonnet làm, dùng trình duyệt có sẵn phiên đăng nhập của chủ máy): tạo tối đa 3 khóa mới. Quy tắc: không ghi khóa vào kho, log, báo cáo hay chat; cất trong biến môi trường/tệp cục bộ ngoài kho (ví dụ C:\ProgramData\JX1_ADMIN\keys, quyền chỉ tài khoản máy); đặt hạn mức theo khóa nếu trang cho phép (không vượt trần Q-30); không đổi mật khẩu, thanh toán, hay cài đặt khác của tài khoản. Nếu trang đòi xác minh/trả phí ngoài dự tính: dừng, ghi [CẦN-CHAT-GẤP], làm việc khác.
+2. Thử trước khi tin: 429 có thể do nhà cung cấp (kèm "Upstream service temporarily unavailable") nên khóa thêm chưa chắc giúp. Thử 1 khóa mới với 1 worker khi khóa cũ đang bị 429; ghi kết quả vào TRANG-THAI. Nếu khóa mới chạy được lúc khóa cũ bị 429 → chia worker theo khóa (mỗi khóa ≤3 worker), nâng tổng tới tối đa 8 (Q-30). Nếu cùng 429 → dừng tạo, báo.
+3. chay_codex.ps1 nhận tham số khóa (biến môi trường theo worker), mỗi worker ghi khóa nào đã dùng (chỉ tên khóa, không giá trị).
+4. Dùng astra làm bể thứ hai: việc đọc-tóm tắt, soạn task, A-11 chạy song song với sol.
+5. Chạy song song nhiều đường: E-05a/b, A-12, B-02b thử, D-01, B-03 không chờ nhau. Subagent cho tóm tắt báo cáo >200 dòng.
+6. Mốc ngắn nhất cần chủ dự án thử: APK P46 nối server thử qua Tailscale. Hãy kiểm: JX-Test-36 có tên/IP Tailscale chưa, cổng cần mở, APK trỏ đúng địa chỉ; soạn 3-5 bước ngắn cho chủ dự án (không thuật ngữ) và báo trong chat, mở đầu "Bẩm đại vương,".
+7. Báo cáo tốc độ mỗi 2 giờ trong TRANG-THAI: số task xong, số worker trung bình, tỉ lệ 429.
