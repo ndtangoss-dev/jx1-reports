@@ -97,4 +97,4 @@ Sonnet lấy việc từ trên xuống, theo phụ thuộc. Khi bắt đầu m�
 - A3: xBRZ ×2/×3 (công tắc /sdcard, cache có trần, đo RAM/FPS máy thật), nội suy camera theo giờ vẽ, trộn khung SPR, đo từng phase `Paint()` (H-15). Theo #091: dừng nhánh đồ hoạ sau khi chủ test xBRZ.
 - Tổng hợp hiểu game → tối ưu đường truyền → hiểu exe → (chỉ khi truyền ổn) tick/H-15/đồ hoạ nâng cao (#091).
 
-- U-01 hiểu game cho người không lập trình + quy luật vẽ bộ phận (mục 6, L3, Codex); U-02 truyền tải và exe server (mục 7, L3, Codex). Chạy tuần tự được, không chồng vùng file. Sau đó mục 8 (tick/H-15/đồ hoạ) chỉ khi U-02 kết luận truyền ổn; mục 9 xen kẽ: B-02c (sửa theo review rồi Enabled=1 với 2 bot), gói thiếu cho Bot, Tổng quản Q-42, N-01.
+- U-01 (hiểu game), U-02 (truyền tải + exe), U-03 (bảng thứ tự vẽ bộ phận) đang chạy song song (Codex, chỉ đọc). Sau đó mục 8 chỉ khi U-02 kết luận truyền ổn; mục 9 xen kẽ.

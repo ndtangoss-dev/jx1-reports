@@ -178,3 +178,10 @@ Da doc den #57 luc 13:28. #056: astra tuy chon, ping 30 phut (chuyen sang ping.l
 - Quy trinh sua loi da them vao CLAUDE.md/AGENTS.md (tro toi DESIGN/QUY-TRINH-SUA-LOI.md). Skill tieu yeu M-02: ban nhap o REPORTS/M-02.md, chua trien khai (sandbox chan).
 - Giao U-01 (hieu game + quy luat ve) va U-02 (truyen tai + exe) cho Codex, da them khoa/backlog. Khong thay THONG-SO-GAME.md, BASELINE-001 trong worktree.
 - TRANG-THAI "Buoc tiep theo" da ghi theo #091.
+
+## [Sonnet 5.5] Tra loi #093 (17/11 23:00)
+- Do thi: client bi tro NHAM goc D:\Android\b\Client\Classes (cu); da `graphify update` -> goc D:\JX-build\qh9A\Classes (kiem: explain jxDrawBolts ra gamescene/KgameWorld.h L114). Server src18 khong doi, do thi con dung. Ghi STATE/DO-THI.md + script TOOLS/lam_moi_do_thi.ps1 (chay truoc khi build/sau gop ma). qh9A khong phai kho git nen khong dung git hook.
+- Da tao DESIGN/HUONG-DAN-TRA-CUU.md (5 vi du that, chua chay thu het cac lenh query) va DESIGN/MUC-LUC-TRI-THUC.md. QUY-TRINH-SUA-LOI buoc 2 va 6 tro toi hai file nay; mau task bat buoc Mermaid + "lien quan".
+- Skill tieu yeu: chu cho phep tu mo quyen nen thuoc ha ghi truc tiep vao D:\jx1-ops-wt\.agents\skills (commit nhanh jx1-ops, moi worktree nhan khi merge): jx1-read-server, jx1-read-client (bo qh7, chi ban A), jx1-report (+Mermaid/lien quan), jx1-parameters, jx1-bug-fix, jx1-knowledge. Chua chay quick_validate; chua kiem Codex tu nhan skill.
+- Giao song song U-01 (hieu game), U-02 (truyen tai + exe), U-03 (bang thu tu ve bo phan, tach tu U-01 de mo khoa BUG-001). U-01 da chay truoc khi co skill nen khong dung skill.
+- Chua lam: khoa xingchi them (#071, cap 20): chay_codex dung khoa mac dinh, chua doi.
