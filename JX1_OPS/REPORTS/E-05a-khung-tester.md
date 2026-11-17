@@ -1,11 +1,51 @@
+TÓM TẮT 5 DÒNG
+1. [NGUỒN] Đã làm kiểm tra trước: đúng worktree/nhánh, cây sạch, đọc đủ nguồn bắt buộc; chỉ sửa vùng task cho phép.
+2. [NGUỒN] Có Scenario/Step, process riêng từng bot, tuần tự/song song 1..5, watchdog timeout, PASS/FAIL/BỎ QUA và log/hex đã che.
+3. [NGUỒN] Có báo cáo Markdown và BUG-NNN tăng số, khử trùng BUG mở, ghi tái hiện lần N; máy chủ giả chứng minh 15/15 bước PASS.
+4. [NGUỒN] TESTER 14/14 đạt; BOT 41/41 đạt; không chạy exe, không kết nối VM/mạng ngoài; gs001 thật chưa kiểm.
+5. [CHƯA KIỂM] PARTIAL: cú pháp nguyên văn `python -I -m JX1_OPS.TESTER.run` chưa đạt; CLI file trực tiếp giữ -I đã đạt; Git bị chặn index.lock, PM cần commit. R-04a không chạy lại test/build/exe/VM.
+
 # E-05a — Khung tester nhiều bot, chỉ kiểm offline
 
-## TÓM TẮT 5 DÒNG
-1. Đã làm kiểm tra trước: đúng worktree/nhánh, cây sạch, đọc đủ nguồn bắt buộc; chỉ sửa vùng task cho phép.
-2. Có Scenario/Step, process riêng từng bot, tuần tự/song song 1..5, watchdog timeout, PASS/FAIL/BỎ QUA và log/hex đã che.
-3. Có báo cáo Markdown và BUG-NNN tăng số, khử trùng BUG mở, ghi tái hiện lần N; máy chủ giả chứng minh 15/15 bước PASS.
-4. TESTER 14/14 đạt; BOT 41/41 đạt; không chạy exe, không kết nối VM/mạng ngoài; gs001 thật chưa kiểm.
-5. PARTIAL: cú pháp nguyên văn `python -I -m JX1_OPS.TESTER.run` chưa đạt; CLI file trực tiếp giữ -I đã đạt; Git bị chặn index.lock, PM cần commit.
+Loại: công cụ
+Chủ đề: Khung kịch bản nhiều Bot, kiểm thời hạn, ghi kết quả và BUG từ máy chủ giả.
+Từ khóa: khung kiểm thử, TESTER, Scenario, Step, smoke_login, watchdog, BUG-NNN, isolated, E-05a
+Trạng thái: PARTIAL — giữ kết luận gốc: tiêu chí CLI nguyên văn -I -m chưa đạt và Git lịch sử bị chặn.
+Độ phủ: đã phủ 4 trên tổng 5 mục tiêu chức năng; CLI đúng nguyên văn còn chưa phủ. Fixture lịch sử phủ 5 Bot × 3 bước = 15/15 ô; không phải độ phủ gs001 thật.
+Liên quan: [E-01b](E-01b-thieu-giao-thuc.md), [E-02](E-02-hanh-vi-bot.md), [fixture 15 PASS](TEST/2026-11-17-smoke_login-2.md), [BUG tổng hợp](TEST/BUG-002.md), [R-04a](R-04a.md).
+Cần tôi quyết định: có — theo bàn giao gốc: chấp nhận cú pháp CLI file trực tiếp giữ -I hoặc giao việc đóng gói để hỗ trợ nguyên văn -I -m.
+
+## Sơ đồ chính
+
+```mermaid
+flowchart LR
+    CLI["CLI và cấu hình"] --> RUN["Scenario cho bot01..bot05"]
+    RUN --> PROCESS["Process riêng, watchdog từng Step"]
+    PROCESS --> STATUS["PASS / FAIL / BỎ QUA"]
+    STATUS --> REPORT["Markdown, thời gian và log đã che"]
+    STATUS -->|"FAIL"| BUG["BUG-NNN hoặc tái hiện BUG mở"]
+    PROCESS --> FAKE["Fixture smoke_login tổng hợp"]
+```
+
+## Phạm vi và độ phủ
+
+[ĐÃ XÁC MINH — đọc tĩnh R-04a] Năm mục tiêu lấy trực tiếp từ `JX1_OPS/TASKS/E-05a.md:22` đến mục CLI tại dòng 26. Ba bước lấy từ `JX1_OPS/TESTER/scenarios.py:48`; năm Bot lấy đủ từ bảng fixture đã lưu, không chạy lại máy chủ giả. Tài liệu và mã TESTER đọc bằng UTF-8.
+
+| Phần tử của phạm vi | Đã phủ / chưa phủ | Nguồn file:dòng và giới hạn |
+| --- | --- | --- |
+| 1. Scenario/Step, cách ly Bot, tuần tự/song song, lỗi và timeout | Đã phủ offline | `JX1_OPS/TESTER/core.py:14`, `JX1_OPS/TESTER/core.py:31`, `JX1_OPS/TESTER/core.py:201`; không đo thời gian thực trong R-04a. |
+| 2. Báo cáo Bot × bước, thời gian, log/hex có hướng và ID, giới hạn 256 byte | Đã phủ offline | `JX1_OPS/TESTER/core.py:112`, `JX1_OPS/TESTER/reporting.py:95`; body gói bị che theo thiết kế gốc. |
+| 3. BUG-NNN, khử trùng BUG mở, tái hiện lần N | Đã phủ offline | `JX1_OPS/TESTER/reporting.py:64`, `JX1_OPS/TESTER/test_tester.py:292`; BUG mẫu là lỗi tổng hợp, không phải lỗi gs001. |
+| 4. smoke_login dùng máy chủ giả | Đã phủ fixture lịch sử | `JX1_OPS/TESTER/scenarios.py:48`, `JX1_OPS/TESTER/test_tester.py:217`; không gọi fixture trong R-04a. |
+| 5. CLI nguyên văn `python -I -m JX1_OPS.TESTER.run` | Chưa phủ đúng nguyên văn; CLI file trực tiếp đã đạt ở lượt gốc | `JX1_OPS/TASKS/E-05a.md:26`, `JX1_OPS/TESTER/run.py:8`; không sửa resolve môi trường hoặc chạy CLI để đổi kết luận cũ. |
+| bot01: connect_fake / sync_fake / close_fake | Đã phủ 3/3 PASS lịch sử | `JX1_OPS/REPORTS/TEST/2026-11-17-smoke_login-2.md:9`. |
+| bot02: connect_fake / sync_fake / close_fake | Đã phủ 3/3 PASS lịch sử | `JX1_OPS/REPORTS/TEST/2026-11-17-smoke_login-2.md:10`. |
+| bot03: connect_fake / sync_fake / close_fake | Đã phủ 3/3 PASS lịch sử | `JX1_OPS/REPORTS/TEST/2026-11-17-smoke_login-2.md:11`. |
+| bot04: connect_fake / sync_fake / close_fake | Đã phủ 3/3 PASS lịch sử | `JX1_OPS/REPORTS/TEST/2026-11-17-smoke_login-2.md:12`. |
+| bot05: connect_fake / sync_fake / close_fake | Đã phủ 3/3 PASS lịch sử | `JX1_OPS/REPORTS/TEST/2026-11-17-smoke_login-2.md:13`. |
+| Đăng nhập/tạo nhân vật/gameplay gs001 thật | Chưa phủ — ngoài E-05a | `JX1_OPS/TASKS/E-05a.md:27`, `JX1_OPS/REPORTS/TEST/2026-11-17-smoke_login-2.md:3`; phần mã TESTER bổ sung về sau không đổi phạm vi lịch sử. |
+
+## Nội dung gốc E-05a
 
 ## Worker kiểm tra trước khi làm
 
@@ -93,3 +133,27 @@ git -C D:\JX-wt\E-05a commit -m "E-05a: thêm khung tester offline nhiều bot v
 ```
 
 Không cần làm lại code/test đã có bằng chứng nếu PM không thay đổi nội dung. Phần cần quyết định tiếp là chấp nhận cú pháp file trực tiếp giữ `-I` hoặc giao riêng đóng gói để hỗ trợ nguyên văn `-I -m`; chưa kiểm gs001 thật.
+
+## Sổ thông số bổ sung khi chuẩn hóa
+
+| Nhóm | Tên/hằng số | file:dòng | Giá trị | Đơn vị | Ảnh hưởng | Đổi an toàn (CÓ/CẨN THẬN/KHÔNG) | Nguồn đo |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Song song | `workers` | `JX1_OPS/TESTER/core.py:201`, `JX1_OPS/TESTER/run.py:44` | 1..5 | process Bot | Cách ly trạng thái và mức song song offline | CẨN THẬN — chưa đo tải thật | Đọc tĩnh |
+| Gói lỗi | Độ dài lưu tối đa | `JX1_OPS/TESTER/core.py:129` | 256 | byte/gói | Giới hạn bằng chứng hex đã che | CẨN THẬN — phải giữ che dữ liệu | Đọc tĩnh; không capture |
+| Watchdog | Khoảng poll | `JX1_OPS/TESTER/core.py:267` | 0.005 | giây | Nhịp kiểm tiến trình, không bảo đảm real-time cứng | CẨN THẬN | Đọc tĩnh; chưa đo lại |
+| Fixture | Timeout connect / sync / close | `JX1_OPS/TESTER/scenarios.py:49` | 3 / 3 / 1 | giây/bước | Chỉ kịch bản smoke_login | CẨN THẬN | Đọc tĩnh; 15 PASS là lịch sử |
+
+## Đã xác minh / Chưa xác minh
+
+- **ĐÃ XÁC MINH:** năm mục tiêu, code khung và đủ 15 ô PASS trong fixture đã lưu. Các liên kết TEST/BUG tồn tại. Mã hiện tại có bootstrap tại `JX1_OPS/TESTER/run.py:8` và các kịch bản thêm tại `JX1_OPS/TESTER/run.py:18`; chỉ ghi nhận có thay đổi sau mốc gốc.
+- **CHƯA XÁC MINH:** không chạy lại TESTER 14/BOT 41 test, fixture, CLI -I -m, build, exe, VM hoặc mạng. Các kết quả thời gian, lỗi CLI và commit trong thân là lịch sử E-05a; chưa xác nhận gameplay thật.
+
+## Bàn giao chuẩn hóa R-04a
+
+Giữ nguyên PARTIAL và quyết định CLI cần PM/chủ xử lý theo phần gốc. Chỉ mục và commit chuẩn hóa xem `JX1_OPS/REPORTS/R-04a.md`; không sửa mã hoặc môi trường để giải tiêu chí CLI.
+
+## Phát hiện khi chuẩn hóa
+
+- Tóm tắt gốc đặt sau tiêu đề, thiếu nhãn nguồn, metadata, Mermaid và bảng độ phủ. Đã chuyển tóm tắt lên đầu, giữ nguyên nội dung năm dòng và bổ sung giới hạn R-04a.
+- `JX1_OPS/TASKS/E-05a.md:4` ghi `status: done`, trong khi phần Kết quả task và báo cáo gốc ghi PARTIAL do CLI/Git; giữ PARTIAL trong metadata báo cáo và chỉ mục, không tự sửa task E-05a.
+- Code hiện tại có bootstrap và các kịch bản ngoài smoke_login; không dùng phần thêm sau để xóa lỗi CLI hay nâng trạng thái báo cáo lịch sử.

@@ -1,4 +1,45 @@
+TÓM TẮT 5 DÒNG
+1. [NGUỒN] PARTIAL: client một Bot có mã và test offline; đăng nhập/gameplay thật chưa kiểm.
+2. [NGUỒN] Đã triển khai năm mô-đun framing, crypto, packets, session, cli; bộ nhận đồng bộ GS còn thiếu tại mốc E-01.
+3. [NGUỒN] Báo cáo gốc ghi 29 test đạt; bảng phạm vi R-04a đối chiếu đủ 5/5 mô-đun hiện có.
+4. [CHƯA KIỂM] ABI binary, role list, khóa ứng dụng, encoding, online và kết quả hành động còn giới hạn như thân báo cáo.
+5. [CHƯA KIỂM] R-04a chỉ đọc và chuẩn hóa; không chạy lại test, build, exe, VM hoặc mạng; trạng thái Git lịch sử giữ nguyên.
+
 # E-01 — Client một Bot và phần giao thức còn thiếu
+
+Loại: công cụ
+Chủ đề: Client Python một Bot và các phần giao thức còn thiếu tại mốc E-01.
+Từ khóa: Bot, đăng nhập, login, Bishop, gs001, framing, RollingXor, SYNC_END, E-01
+Trạng thái: PARTIAL — giữ kết luận gốc: offline có mã/test, đồng bộ GS và gameplay thật chưa hoàn chỉnh.
+Độ phủ: đã phủ 5 trên tổng 5 mô-đun offline; chưa phủ 1 trên tổng 1 phiên đăng nhập/gameplay thật. Đếm mô-đun không đồng nghĩa hoàn tất Bot online.
+Liên quan: [A-02](A-02-luong-dang-nhap.md), [A-06](A-06-bang-goi-tin.md), [E-01b](E-01b-thieu-giao-thuc.md), [R-04a](R-04a.md), [chuẩn báo cáo](../DESIGN/CHUAN-BAO-CAO.md).
+Cần tôi quyết định: không — R-04a chỉ chuẩn hóa; bước chạy thật phải được giao riêng như bàn giao gốc.
+
+## Sơ đồ chính
+
+```mermaid
+flowchart LR
+    CLI["CLI một Bot"] --> SESSION["Phiên Bishop rồi GS"]
+    SESSION --> PACKETS["Codec đăng nhập và hành động"]
+    SESSION --> CRYPTO["XOR theo khung"]
+    CRYPTO --> FRAME["Khung TCP có WORD độ dài"]
+    SESSION -.-> LIMIT["Đồng bộ GS và gameplay còn thiếu tại E-01"]
+```
+
+## Phạm vi và độ phủ
+
+[ĐÃ XÁC MINH — đọc tĩnh R-04a] Năm mô-đun lấy từ `JX1_OPS/TASKS/E-01.md:22`, đối chiếu file thật trong worktree. Các kết quả test phía dưới là bằng chứng lịch sử của E-01, không phải lần chạy R-04a. Báo cáo và mã BOT đọc bằng UTF-8; mã hóa đường truyền runtime chưa xác minh.
+
+| Phần tử của phạm vi | Đã phủ / chưa phủ | Nguồn file:dòng và giới hạn |
+| --- | --- | --- |
+| `framing` | Đã phủ — đọc tĩnh mô-đun và test | `JX1_OPS/BOT/framing.py:10`, `JX1_OPS/BOT/test_bot.py:34`; không chạy TCP. |
+| `crypto` | Đã phủ — đọc tĩnh mô-đun và test | `JX1_OPS/BOT/crypto.py:15`, `JX1_OPS/BOT/test_bot.py:72`; không dùng khóa thật. |
+| `packets` | Đã phủ — codec login, role, permit, sync, ping, Run, skill, Sit/Stand | `JX1_OPS/BOT/packets.py:18`, `JX1_OPS/BOT/packets.py:88`, `JX1_OPS/BOT/packets.py:219`, `JX1_OPS/BOT/test_bot.py:126`; file hiện tại có bổ sung sau E-01. |
+| `session` | Đã phủ — luồng Bishop/GS, admission, chờ sync, giữ phiên và hành động offline | `JX1_OPS/BOT/session.py:121`, `JX1_OPS/BOT/session.py:172`, `JX1_OPS/BOT/test_bot.py:236`; không chứng minh server chấp nhận. |
+| `cli` | Đã phủ — tham số, chế độ kết nối tường minh | `JX1_OPS/BOT/cli.py:24`, `JX1_OPS/BOT/cli.py:43`; không gọi CLI trong R-04a. |
+| Một phiên đăng nhập/vào game/đứng yên/đi/đánh/ngồi-đứng trên server thật | Chưa phủ | `JX1_OPS/TASKS/E-01.md:21`, `JX1_OPS/BOT/README.md:3`; toàn bộ giới hạn runtime/ABI giữ nguyên ở phần gốc. |
+
+## Nội dung gốc E-01
 
 Trạng thái: **PARTIAL**. Ngày 17/11/2026. Mã và test offline đã triển khai; đăng nhập/vào game/hành động trên server thật **chưa kiểm**. Không suy runtime từ source. Bộ nhận GS còn thiếu các record đồng bộ thế giới, nên chưa đạt mục tiêu Bot online hoàn chỉnh.
 
@@ -109,3 +150,28 @@ git -C D:\JX-wt\E-01 commit -m "E-01: thêm client Bot và kiểm thử giao th�
 ```
 
 Tiếp tục từ mã local: xác minh ABI và build client/server trong bản copy VM thử; hoàn thiện bộ chia record đồng bộ thế giới, đối chiếu role list và khóa ứng dụng, rồi mới thử một tài khoản tổng hợp khi gs001 nạp xong. Chưa đạt/chưa kiểm không được chuyển thành DONE chỉ vì test offline pass.
+
+## Sổ thông số bổ sung khi chuẩn hóa
+
+[ĐÃ XÁC MINH — đọc tĩnh] Chỉ ghi lại hợp đồng liên quan; không thay cấu hình hay giá trị trong nội dung gốc.
+
+| Nhóm | Tên/hằng số | file:dòng | Giá trị | Đơn vị | Ảnh hưởng | Đổi an toàn (CÓ/CẨN THẬN/KHÔNG) | Nguồn đo |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Framing | Miền độ dài payload | `JX1_OPS/BOT/framing.py:10` | 1..65533 | byte | Ranh giới khung có header 2 byte | KHÔNG — hợp đồng giao thức | Đọc tĩnh; chưa đo runtime |
+| Admission | `MAX_ONLINE` | `JX1_OPS/BOT/session.py:20`, `JX1_OPS/BOT/session.py:37` | 100; quan sát 0..99 trước thêm Bot | phiên | Chỉ là điều kiện đầu vào, không đặt chỗ toàn server | CẨN THẬN | Đọc tĩnh; chưa đo online |
+| Nhịp | `SERVER_HZ` | `JX1_OPS/BOT/session.py:21` | 18 | hành động/giây theo limiter | Không phải số đo tick server | CẨN THẬN | Đọc tĩnh; chưa đo tick |
+
+## Đã xác minh / Chưa xác minh
+
+- **ĐÃ XÁC MINH:** đã đọc đủ năm file mô-đun theo bảng phạm vi; các liên kết báo cáo tồn tại. Client bản A được phép đọc là `D:\JX-build\qh9A`; các root C/B/GH/SH/SS/H trong phần gốc là dẫn nguồn lịch sử, chưa được tái đối chiếu bằng root đó trong R-04a.
+- **CHƯA XÁC MINH:** không chạy lại 29 test, CLI hay bất kỳ build/exe/VM/mạng nào; không nâng nhãn của ABI, đồng bộ, encoding, gameplay hoặc Git lịch sử.
+
+## Bàn giao chuẩn hóa R-04a
+
+Chỉ sửa cấu trúc tài liệu, giữ nguyên toàn bộ nội dung gốc dưới mục tương ứng. Chỉ mục: `JX1_OPS/REPORTS/_CHIMUC/R-04a.tsv`; commit chuẩn hóa và tình trạng bàn giao xem `JX1_OPS/REPORTS/R-04a.md`. PM tiếp tục các phần thiếu theo báo cáo gốc khi có task riêng.
+
+## Phát hiện khi chuẩn hóa
+
+- Bản gốc chưa có tóm tắt năm dòng, metadata, Mermaid và bảng phạm vi; đã bổ sung, không đổi trạng thái PARTIAL.
+- `JX1_OPS/BOT/README.md:3` và `JX1_OPS/BOT/worldsync.py:47` hiện đã có phần bổ sung E-01b; `JX1_OPS/BOT/packets.py:124` cũng ghi cập nhật role list từ E-07. Đây là chênh lệch thời điểm, không dùng để viết lại kết luận thiếu giao thức tại E-01.
+- Kết quả 29 test và lỗi Git trong thân là lịch sử E-01; R-04a không xác nhận lại hoặc nhận là kết quả hiện tại.

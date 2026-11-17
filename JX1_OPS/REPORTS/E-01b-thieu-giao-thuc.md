@@ -1,4 +1,45 @@
+TÓM TẮT 5 DÒNG
+1. [NGUỒN] PARTIAL khi bàn giao E-01b do Git bị chặn; phần triển khai/test offline được báo cáo gốc ghi DONE.
+2. [NGUỒN] Bộ tách có 50 ID cố định và 25 ID biến độ dài, kiểm toàn frame trước ACK SYNC_END 9 byte rồi CP_LOCK.
+3. [NGUỒN] Đã liệt kê đủ 156 ID trong dải 65..220 thành 75 ID hỗ trợ ranh giới và 81 ID chưa hỗ trợ.
+4. [CHƯA KIỂM] ABI binary, nội dung phần lớn record biến độ dài và gameplay thật chưa xác minh; 41 test là kết quả lịch sử.
+5. [CHƯA KIỂM] R-04a không chạy lại test, build, exe, VM hoặc mạng; giữ nguyên kết luận và tình trạng Git lịch sử.
+
 # E-01b — Bộ tách record đồng bộ thế giới GS
+
+Loại: công cụ
+Chủ đề: Chia bản ghi đồng bộ thế giới nhận từ GS và kiểm điều kiện ACK cuối đồng bộ.
+Từ khóa: đồng bộ thế giới, worldsync, record, gs001, SYNC_END, CP_LOCK, ABI, E-01b
+Trạng thái: PARTIAL — giữ kết luận gốc: offline DONE, Git bị chặn và runtime chưa kiểm.
+Độ phủ: đã phủ ranh giới 75 trên tổng 156 ID trong dải 65..220, gồm 50 cố định và 25 biến độ dài; 81 ID chưa phủ. Không đếm semantic hay mọi ID mở rộng.
+Liên quan: [E-01](E-01-thieu-giao-thuc.md), [A-06](A-06-bang-goi-tin.md), [E-02](E-02-hanh-vi-bot.md), [E-05a](E-05a-khung-tester.md), [R-04a](R-04a.md).
+Cần tôi quyết định: không — chỉ chuẩn hóa; xác minh binary và chạy thật cần task riêng.
+
+## Sơ đồ chính
+
+```mermaid
+flowchart LR
+    FRAME["Payload đã giải framing và XOR"] --> SPLIT["Kiểm toàn bộ record"]
+    SPLIT -->|"ID lạ, cắt hoặc length sai"| CLOSE["ProtocolError và đóng phiên"]
+    SPLIT -->|"Ranh giới hợp lệ"| CHECK["SYNC_END hợp lệ, đúng trạng thái"]
+    CHECK --> ACK["ACK 9 byte rồi CP_LOCK"]
+    ACK --> GAME["IN_GAME theo profile nguồn"]
+```
+
+## Phạm vi và độ phủ
+
+[ĐÃ XÁC MINH — đọc tĩnh R-04a] Hai tập ID lấy trực tiếp từ `JX1_OPS/BOT/worldsync.py:24` và `JX1_OPS/BOT/worldsync.py:39`; mẫu số 220 - 65 + 1 = 156. Bảng liệt kê toàn bộ tập trong dải, không suy từ tên comment. Báo cáo/BOT là UTF-8. Client bản A `D:\JX-build\qh9A\Classes\gamecore\KProtocol.cpp:17` đối chiếu loại độ dài; `CoreShell.cpp:2750` đối chiếu cách tra bảng. Những kích thước GS cũ vẫn là bằng chứng lịch sử trong thân, chưa xác nhận binary.
+
+| Phần tử của phạm vi | Đã phủ / chưa phủ | Nguồn file:dòng và giới hạn |
+| --- | --- | --- |
+| 50 ID cố định: 67, 68, 70, 73, 74, 75, 77, 78, 80, 81, 82, 83, 84, 85, 86, 89, 90, 91, 92, 93, 94, 95, 96, 118, 119, 120, 121, 122, 143, 144, 145, 147, 150, 154, 155, 158, 159, 160, 174, 177, 188, 189, 192, 197, 203, 204, 206, 207, 210, 213 | Đã phủ ranh giới | `JX1_OPS/BOT/worldsync.py:24`; không đồng nghĩa giải mã nội dung hoặc khớp ABI runtime. |
+| 25 ID biến độ dài: 65, 66, 69, 71, 72, 76, 79, 87, 88, 97, 112, 123, 129, 136, 139, 141, 148, 149, 162, 163, 170, 172, 195, 215, 216 | Đã phủ ranh giới | `JX1_OPS/BOT/worldsync.py:39`; 69/76/79 có giới hạn riêng tại `JX1_OPS/BOT/worldsync.py:44`; 22 ID còn lại chỉ kiểm header/range. |
+| 81 ID: 98..111, 113..117, 124..128, 130..135, 137..138, 140, 142, 146, 151..153, 156..157, 161, 164..169, 171, 173, 175..176, 178..187, 190..191, 193..194, 196, 198..202, 205, 208..209, 211..212, 214, 217..220 | Chưa phủ; gặp thì từ chối | Phần bù của hai tập trên; `JX1_OPS/BOT/worldsync.py:65`. ID ngoài dải không thuộc mẫu số và không mặc nhiên được hỗ trợ. |
+| Nối bộ tách vào phiên và API cũ | Đã phủ — đọc tĩnh | `JX1_OPS/BOT/session.py:172`, `JX1_OPS/BOT/packets.py:249`; không cộng vào số ID. |
+| ACK, replay và frame bị cắt | Đã phủ hợp đồng/test nguồn; chưa chạy lại | `JX1_OPS/BOT/test_worldsync.py:97`, `JX1_OPS/BOT/test_worldsync.py:119`, `JX1_OPS/BOT/test_worldsync.py:137`. |
+| Đúng binary GS, nội dung thế giới và gameplay thật | Chưa phủ | `JX1_OPS/TASKS/E-01b.md:23`; các giới hạn gốc được giữ nguyên bên dưới. |
+
+## Nội dung gốc E-01b
 
 Ngày 17/11/2026. Trạng thái bàn giao: **PARTIAL** do Git bị chặn. Nội dung triển khai/test offline: **DONE**. Runtime server thật: **chưa kiểm**.
 
@@ -109,3 +150,26 @@ PM tiếp tục khi có quyền ghi metadata Git, trên nhánh `task/E-01b-bot-s
 git -C D:\JX-wt\E-01b add -- JX1_OPS/BOT/worldsync.py JX1_OPS/BOT/test_worldsync.py JX1_OPS/BOT/session.py JX1_OPS/BOT/packets.py JX1_OPS/BOT/README.md JX1_OPS/REPORTS/E-01b-thieu-giao-thuc.md JX1_OPS/TASKS/E-01b.md
 git -C D:\JX-wt\E-01b commit -m "E-01b: thêm bộ tách record đồng bộ thế giới GS"
 ```
+
+## Sổ thông số bổ sung khi chuẩn hóa
+
+| Nhóm | Tên/hằng số | file:dòng | Giá trị | Đơn vị | Ảnh hưởng | Đổi an toàn (CÓ/CẨN THẬN/KHÔNG) | Nguồn đo |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Đồng bộ | `FIXED_SIZES` / `VARIABLE_IDS` | `JX1_OPS/BOT/worldsync.py:24`, `JX1_OPS/BOT/worldsync.py:39` | 50 / 25 | ID | Tập record nhận được | KHÔNG — cần layout có bằng chứng | Đọc tĩnh, không chạy parser |
+| Độ dài | Skill 69 / NPC 76 / OBJ 79 | `JX1_OPS/BOT/worldsync.py:44` | 3..643 / 42..106 / 62..142 | byte/record | Giới hạn prefix và nội dung | KHÔNG — hợp đồng wire | Đọc tĩnh, chưa đối chiếu binary |
+| ACK | `SYNC` | `JX1_OPS/BOT/packets.py:45`, `JX1_OPS/BOT/packets.py:209` | 9 | byte payload | Không gồm header TCP 2 byte | KHÔNG — không thử fallback | Đọc tĩnh; kết quả test ở thân là lịch sử |
+
+## Đã xác minh / Chưa xác minh
+
+- **ĐÃ XÁC MINH:** bảng ID hiện có, chỗ nối parser và test nguồn; client bản A có bảng độ dài tại `D:\JX-build\qh9A\Classes\gamecore\KProtocol.cpp:14`, cách tra tại `CoreShell.cpp:2750` và nhánh tăng con trỏ tại `D:\JX-build\qh9A\Classes\gamescene\KgameWorld.cpp:5143`. Các file này đọc UTF-8; symbol ASCII trong `KProtocolDef.h:52` đọc được nhưng mã hóa comment của header chưa xác minh.
+- **CHƯA XÁC MINH:** R-04a không chạy lại 41 test; không build, exe, VM, mạng, ABI/binary hay ACK runtime. Các root C/S/SS/H gốc không phải root server dữ liệu `gs` được giao cho R-04a, nên không tự chuyển bằng chứng lịch sử thành bằng chứng hiện tại.
+
+## Bàn giao chuẩn hóa R-04a
+
+Giữ trạng thái PARTIAL lịch sử; chuẩn hóa đủ cấu trúc và chỉ mục, không sửa bảng độ dài hoặc kết luận cũ. Commit chuẩn hóa xem `JX1_OPS/REPORTS/R-04a.md`; việc kiểm ABI/semantic/runtime tiếp tục theo phần gốc khi được giao.
+
+## Phát hiện khi chuẩn hóa
+
+- Bản gốc thiếu tóm tắt, metadata, Mermaid và bảng độ phủ tổng thể. Bảng mới làm rõ 75/156 ID chỉ là độ phủ ranh giới; không phải 75 record đã giải mã semantic.
+- Dòng gốc dẫn `KgameWorld.cpp:5136-5145`; ở client bản A hiện tại, nhánh record biến độ dài nằm tại `D:\JX-build\qh9A\Classes\gamescene\KgameWorld.cpp:5146`. Giữ nguyên bằng chứng cũ, ghi vị trí hiện tại ở đây.
+- Tập ngoài 65..220 không được khảo sát lại; không suy bản đồ/Graphify hoặc test offline chứng minh tương thích binary.
