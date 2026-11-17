@@ -17,3 +17,4 @@
 - 2026-11-17 08:15 Sửa Q-38: xưng hô chỉ trong cửa sổ chat với chủ dự án; hộp thư giữ văn phong thường (#022).
 - 2026-11-17 08:20 Bổ sung Q-38: mỗi báo cáo trong chat mở đầu "Bẩm đại vương," (#023).
 - 2026-11-17 08:25 Sonnet sót "Bẩm đại vương," ở tin tường thuật; gửi #024.
+- 2026-11-17 08:30 Chat kiểm: A-13 xong (subagent dùng được, phiên Chat không nối được, giữ hộp thư), E-01b xong offline (41 test), gs001 A-07e sống ~3h45, B-02b đã lên VM thử (Enabled=0), A-12 đang chạy. Không thư mới.
