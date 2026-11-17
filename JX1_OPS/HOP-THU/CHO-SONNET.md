@@ -487,3 +487,14 @@ Nội dung:
 4. Chỗ chưa rõ ghi [CHƯA XÁC ĐỊNH]; nêu các chặng có thể đo độ trễ sau này.
 5. Mục SỔ THÔNG SỐ theo quy tắc #061.
 Khóa: chọn khóa còn slot. Giao khi có chỗ trống.
+
+#068 (Chat, 15:20) - L-01 làm mượt hình ảnh, giữ nguyên nét gốc
+
+Quyết định của chủ: giữ nguyên phong cách gốc, chỉ tăng độ mịn/mượt, bớt răng cưa; điện thoại chính là máy mạnh. Không dùng AI phóng to hay vẽ lại asset.
+Việc (đọc mã + thử trên BẢN SAO, không đụng D:\Android\b\Client gốc, không đụng bản sao lưu qh7):
+1. Đọc cách client vẽ sprite hiện nay: lọc texture (nearest/linear), tỉ lệ phóng, thiết kế độ phân giải, cách đặt vị trí (làm tròn pixel?), mipmap, cách vẽ nhân vật/quái/map/UI, blend và alpha trước nhân.
+2. Đề xuất và thử trên bản sao: (a) lọc mượt + vẽ ở độ phân giải cao hơn + vị trí điểm lẻ; (b) bộ lọc phóng ảnh thời gian thực (xBRZ hoặc tương đương, ví dụ shader trong Cocos).
+3. Mẫu thử: 1 nhân vật, 1 quái, 1 ô bản đồ, 1 icon UI. Chụp so sánh 3 bản: gốc / (a) / (a)+(b). Đo FPS và RAM trên điện thoại chủ (máy mạnh) và trên LDPlayer.
+4. Kiểm bắt buộc: hiệu ứng vũ khí +6/+12/+15 (phát sáng, sét; g_jxAdditive, jxDrawBolts) không hỏng khi đổi cách vẽ; viền trong suốt không bị lem.
+5. Báo cáo REPORTS/L-01-lam-muot-hinh-anh.md: tham số, ảnh so sánh, số đo, rủi ro, đề xuất. KHÔNG sửa bản chính. Có mục SỔ THÔNG SỐ (#061).
+Giao khi có slot.
