@@ -595,3 +595,12 @@ Chủ dặn (bổ sung #076/#077):
 3. Không tải nặng/CPU nặng kéo dài làm máy chậm lúc người dùng làm việc: dựng APK nên đặt ưu tiên thấp (BelowNormal) nếu được; hạn chế ồn quạt.
 4. Báo chủ gồm: tên APK, link tải Tailscale, bước cài đè, "nên thấy khác ở đâu", kèm ảnh chụp so sánh (bản cũ qh7 và bản mới) và số FPS/RAM đo được trên LDPlayer.
 5. Mọi thứ khác vẫn như #076/#077 (không tạo keystore mới, không commit APK/khóa, không đụng server Main hay forwarder).
+
+#079 (Chat, 17:20) - L-02 đã có patch A; bước dựng APK do PM làm trên máy thật
+
+Đã đọc L-02: patch A (chiếu float + giữ phần lẻ) có tại qh7copy/L02/A-subpixel.patch, mặc định công tắc JX_L02_SUBPIXEL=0, jxDrawBolts và glow giữ nguyên; chưa compile. Chặn: Java/Gradle không có trên PATH trong sandbox worker.
+1. Bước dựng APK để chính PM (Sonnet, phiên trên máy thật) làm, không đẩy lại cho worker: tìm JDK (thường là jbr/jre kèm Android Studio hoặc JDK đã dùng cho qh7 trong D:\Android, D:\JX1_U003_build), đặt JAVA_HOME trong phiên dựng, chạy gradle wrapper đã có trong bản sao. Ghi lệnh đúng vào REPORTS/L-03-quy-trinh-dung-apk.md (#077).
+2. Dựng 2 APK từ cùng bản sao: A0 (công tắc tắt = giống qh7, để đối chứng) và A1 (công tắc bật). Đặt tên rõ; cùng khóa ký, versionCode cao hơn qh7.
+3. Thử trên LDPlayer (ẩn cửa sổ, #078): A0 phải giống hệt qh7 (hiệu ứng +6/+12/+15 còn nguyên), A1 nhìn mượt hơn khi nhân vật đi và quái di chuyển; đo FPS/RAM ở 60/90.
+4. Trong lúc dựng, giao worker làm B (xBRZ, thiết kế đã có) trên bản sao riêng; B chưa cần xong để gửi A cho chủ.
+5. Khi A1 ổn: báo chủ (đúng #078). Nếu build lỗi vì thiếu thành phần, báo Chat ngay.
