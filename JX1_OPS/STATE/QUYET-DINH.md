@@ -40,3 +40,5 @@ Chỉ ghi quyết định đã chốt. Muốn đổi thì thêm dòng mới, kh�
 
 ## Chờ chủ dự án
 Không còn mục chờ về mạng: máy thật đã có Host-only `192.168.56.101`, không cần đổi. Chủ dự án chỉ cần xác nhận đã đọc báo cáo mạng trong `ENVIRONMENT.md` trước khi tôi tiếp tục dùng VM thử.
+
+| Q-46 | 2026-11-18 | Chủ xác nhận: "chuẩn hóa" = CHUẨN HÓA DỮ LIỆU GAME (giải mã TCVN3 ↔ UTF-8 ↔ tên Hán; bảng ánh xạ tên trang bị/quái/NPC/bản đồ/kỹ năng), không phải chuẩn hóa báo cáo. K-03 làm trước; R-* chỉ chạy tiếp con nào đang chạy, không mở lại con chết. Model Codex chưa đổi (thử gpt-6/gpt-5.6 đều lỗi/timeout). | Chủ (chat) |
