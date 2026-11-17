@@ -19,3 +19,4 @@
 - 2026-11-17 08:25 Sonnet sót "Bẩm đại vương," ở tin tường thuật; gửi #024.
 - 2026-11-17 08:30 Chat kiểm: A-13 xong (subagent dùng được, phiên Chat không nối được, giữ hộp thư), E-01b xong offline (41 test), gs001 A-07e sống ~3h45, B-02b đã lên VM thử (Enabled=0), A-12 đang chạy. Không thư mới.
 - 2026-11-17 08:50 Chủ dự án hỏi Codex test game; gửi #025 (E-05 tester 3 tầng).
+- 2026-11-17 08:55 Chủ dự án: mục đích tester sau này là kiểm mặc đồ/chỉ số/sát thương; làm sau, ghi DESIGN/E-05-TESTER-GHI-NHO.md.
