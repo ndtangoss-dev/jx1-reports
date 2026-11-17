@@ -16,6 +16,7 @@ if __package__ in (None, ""):
 from .core import Config, run_scenario
 from .reporting import write_report
 from .scenarios import FULL_CYCLE, SMOKE_LOGIN
+from .visibility import VISIBILITY
 
 
 def bot_list(value):
@@ -31,7 +32,7 @@ def bot_list(value):
 
 
 def main(argv=None):
-    scenarios = {scenario.name: scenario for scenario in (SMOKE_LOGIN, FULL_CYCLE)}
+    scenarios = {scenario.name: scenario for scenario in (SMOKE_LOGIN, FULL_CYCLE, VISIBILITY)}
     parser = argparse.ArgumentParser(description="TESTER offline với máy chủ giả; gs001 thật chưa kiểm")
     parser.add_argument("--scenario", choices=tuple(scenarios), required=True)
     parser.add_argument("--bots", type=bot_list, required=True)

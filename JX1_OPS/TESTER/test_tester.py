@@ -38,7 +38,7 @@ PING = bytes.fromhex("8f04030201")
 
 
 @contextmanager
-def fake_server(count, malformed=False):
+def fake_server(count, malformed=False, visibility_fault=None, visibility=False):
     listener = socket.socket()
     listener.bind(("127.0.0.1", 0))
     listener.listen(5)
@@ -50,6 +50,9 @@ def fake_server(count, malformed=False):
             with sock:
                 sock.settimeout(4)
                 tx, rx = RollingXor(0x12345678), RollingXor(0x89ABCDEF)
+                if visibility:
+                    visibility_dialogue(sock, tx, rx, received, visibility_fault)
+                    return
                 payload = b"\xff" + bytes(400) if malformed else b"\x49" + bytes(303) + PING + END
                 wire = pack_frame(HELLO) + pack_frame(tx.apply(payload))
                 # TCP fragmentation/coalescing qua BOT.Channel, không phát minh codec.
@@ -84,6 +87,90 @@ def fake_server(count, malformed=False):
         thread.join(1)
         for handler in handlers:
             handler.join(1)
+
+
+def visibility_dialogue(sock, tx, rx, received, fault):
+    """Script trace độc lập; không gọi luật/observer visibility để tạo đáp án.
+
+    NPC identity offset chỉ là hợp đồng dữ liệu giả, không khẳng định ABI thật.
+    Hai viewer người thật 101/102, Bot 201; phase điều khiển qua RUN tổng hợp.
+    """
+    def record(protocol, npc):
+        size = {76: 42, 77: 227, 84: 9}[protocol]
+        data = bytearray(size)
+        data[0] = protocol
+        if protocol == 76:
+            struct.pack_into("<H", data, 1, size - 1)
+        struct.pack_into("<I", data, 3 if protocol == 76 else 1, npc)
+        return bytes(data)
+
+    sock.sendall(pack_frame(HELLO))
+    decoder, viewer, last_phase, attacked = FrameDecoder(), None, 0, False
+    summary = {"viewer": None, "phases": [], "skills": 0}
+    received.append(summary)
+    while True:
+        data = sock.recv(4096)
+        if not data:
+            return
+        for frame in decoder.feed(data):
+            request = rx.apply(frame)
+            protocol, x, y, map_id = packets_action(request)
+            if protocol == 77:
+                assert viewer == 101 and last_phase == 1 and (x, y, map_id) == (1, -1, 201)
+                attacked = True
+                summary["skills"] += 1
+                continue
+            assert protocol == 76 and map_id == 1 and x == last_phase + 1
+            if viewer is None:
+                assert y in (101, 102, 201)
+                viewer = summary["viewer"] = y
+            assert y == viewer
+            last_phase = x
+            summary["phases"].append(x)
+            other = 102 if viewer == 101 else 101
+            # Scripts cố định theo viewer/phase; Bot luôn có cả A/B trong trace.
+            if x == 1:
+                ids = (101, 102, 201) if viewer == 201 else (viewer, 201)
+                events = [(76, npc) for npc in ids] + [(77, 201)]
+            elif x == 2:
+                if viewer == 101:
+                    assert attacked
+                events = [(84, 201)]
+            elif x == 3:
+                events = ([] if viewer == 201 else [(76, other)]) + [(76, 201), (77, 201)]
+            elif x in (4, 6):
+                events = ([] if viewer == 201 else [(84, other)]) + [(77, 201)]
+            elif x in (5, 7):
+                events = ([] if viewer == 201 else [(76, other)]) + [(77, 201)]
+            else:
+                events = [(77, npc) for npc in (101, 102, 201)]
+            if viewer == 102:
+                if fault == "hidden_sync" and x == 1:
+                    events.append((77, 101))
+                if fault == "hidden_add_remove" and x == 1:
+                    events.extend(((76, 101), (84, 101)))
+                if fault == "shared_remove" and x == 2:
+                    events = [(77, 102)]
+                if fault == "missing_remove" and x == 6:
+                    events = [(77, 201)]
+                if fault == "missing_add" and x == 7:
+                    events = [(77, 101), (77, 201)]
+                if fault == "cap_leak" and x == 4:
+                    events = [(77, 201)]
+                if fault == "cap_bot" and x == 4:
+                    events.append((84, 201))
+            payload = b"".join(record(*event) for event in events)
+            if fault == "disabled_diff" and viewer == 102 and x == 9:
+                payload = payload[:-1] + b"\x01"
+            wire = pack_frame(tx.apply(payload))
+            for offset in range(0, len(wire), 7):
+                sock.sendall(wire[offset:offset + 7])
+
+
+def packets_action(request):
+    # Chỉ giải action fixture, không giữ payload trong log/kết quả.
+    assert len(request) == 13
+    return struct.unpack("<Biii", request)
 
 
 def okay(context):

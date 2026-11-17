@@ -128,3 +128,28 @@ nhân vật suy đoán. Phiên giả bình thường: 6 PASS, 4 BỎ QUA/bot. Ex
 có BỎ QUA, không có nghĩa toàn bộ gameplay đã được kiểm. Test CLI chạy hai bot
 song song với 30 s thật (không rút ngắn thời gian); thời hạn bước đi là 35 s.
 Thông tin nhân vật còn nguyên trên gs001 thật: **[CHƯA KIỂM]**.
+
+## B-03 — visibility (fixture)
+
+`--scenario visibility --bots bot01` chạy một nhóm gồm hai phiên người chơi
+A/B và một phiên Bot trong cùng worker. Mỗi bí danh bổ sung tạo một nhóm ba
+phiên độc lập; workers chỉ điều phối số nhóm. Dùng duy nhất fixture
+`test_tester.fake_server(3, visibility=True)`; không trỏ vào gs001 thật.
+
+```text
+python -I -m unittest discover -s JX1_OPS/TESTER -p test_visibility.py -v
+```
+
+Các bước `solo`, `shared_bot_remove`, `group_cap`, `refresh`, `disabled` kiểm
+trace nhận theo tiêu chí 1,2,5,6,7 của B-01 mục 8. Parser BOT kiểm ranh giới;
+`visibility.NpcView` theo dõi ADD(76), SYNC(77), REMOVE(84). Offset identity là
+hợp đồng fixture, **[CHƯA KIỂM] với ABI binary**. RUN có x=phase/y=viewer chỉ
+điều khiển script fixture, không phải lệnh đổi nhóm thật. Ba phiên không login
+hoặc tạo người chơi trên server. Không ghi mật khẩu/khóa mới, không sửa BOT.
+
+Tiêu chí 2 chỉ kiểm A gửi một SKILL và cả A/B nhận REMOVE cùng Bot; kết quả
+kill/death thật **[CHƯA KIỂM]**. Tiêu chí 5 đối chiếu trace MaxVisible=2 rồi =1
+(Bot không tính vào trần), chưa kiểm bộ cấp nhóm con server. Tiêu chí 7 so
+từng byte hai trace baseline/Enabled=0 fixture, chưa có capture/ảnh gốc thật.
+Tiêu chí 3/4 có hàm TODO, trả BỎ QUA và ghi gói/semantic thiếu theo E-07/E-08;
+tiêu chí 8 thuộc B-04, **[CHƯA KIỂM]**. Exit 0 có thể chứa BỎ QUA.
