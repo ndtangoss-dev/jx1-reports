@@ -224,3 +224,4 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 - [11:53] Merge A-15a (bốn phái đầu, khảo sát tĩnh). Giao H-01 (K5) theo #045; H-02..H-08 xếp hàng chờ chỗ trống; H-04 theo #046 là gom ghi chép cũ, không khảo sát lại.
 - [11:58] Merge A-15b; giao H-02 (K5).
 - [12:02] xingchiapi.com trả 522 (Cloudflare, máy chủ gốc timeout); speed.py K2 không trả lời 100s; log 9 worker đứng từ ~11:55. Nghi sự cố nhà cung cấp, đo lại sau. K6: bấm Create lúc 12:00, chưa xác nhận có tạo; chủ lệnh tạo khóa từ từ, tạm dừng.
+- [12:05] H-04 (#047): PM tự làm, REPORTS/H-04-hieu-ung-vu-khi.md; qh7 sao lưu D:\JX-backup\qh7. API xingchi bình thường lại (K3 test 109s/2,9k token). Đã đọc #47.
