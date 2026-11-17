@@ -125,3 +125,5 @@ Da doc den #53 luc 13:10. Lam (2): monitor moi bao DONE + 'log khong doi 10 phut
 Da doc den #55 luc 13:16. Giu nguyen quan so (Q-41, khong ha 8 worker); watchdog 10 phut + nhan biet su co chung (>=3 dung cung luc) nam trong E-13 P1; ghi 'su co nha cung cap' vao TRANG-THAI; tach viec ngan/nang khi giao; su co >30 phut thi lam viec khong can API.
 Da doc den #57 luc 13:28. #056: astra tuy chon, ping 30 phut (chuyen sang ping.log, khong bao tru khi UP >=1h), E-13 khong phu thuoc astra. #057: M-01 kiem tra may that - dang do, chi doc; bao cao chi tiet de o D:\JX-reports-private, tom tat vao kho; khong tat/xoa gi khi chua duoc duyet.
 [13:40] B-02d xong: REPORTS/B-02d-review-tinh.md - ket luan: B-02c CHUA du dieu kien gop; can sua 4 diem (xem TOM TAT). De Chat duyet/giao B-02e.
+
+Đã đọc đến #58 lúc 14:01. I-01..I-03 giao (K4,K4,K2); I-04, I-05 giao khi có slot; I-06 sau khi I-01..I-05 xong. M-01: chủ duyệt xóa Thùng rác + tắt khởi động Steam/Riot/Grass/IDMan, đã làm.
