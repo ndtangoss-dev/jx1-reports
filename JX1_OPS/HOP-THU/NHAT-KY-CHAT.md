@@ -59,3 +59,4 @@
 - 2026-11-17 13:45 Kiểm 30 phút: nộp E-10, E-13 P1 (thiếu watchdog→E-13b), B-02d (B-02c chưa đủ điều kiện gộp), H-03, H-05, H-10, E-09a, M-01 (chờ chủ duyệt). 12 worker chạy. Báo chủ M-01 + tiến độ.
 - 2026-11-17 14:00 Chủ thêm khảo sát điểm/vật phẩm bán/quái/map/NPC; gửi #058 (I-01..I-06).
 - 2026-11-17 14:05 Chủ thêm tiền tệ và nhiệm vụ; gửi #059 (I-07, I-08).
+- 2026-11-17 14:10 Chủ hỏi tick server/độ trễ đòn; gửi #060 (H-13 khảo sát + đo).
