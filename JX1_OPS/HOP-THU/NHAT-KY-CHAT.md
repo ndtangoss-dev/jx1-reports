@@ -120,3 +120,4 @@
 - 00:10 Chủ báo Sonnet đang chuẩn hóa dữ liệu: hoãn đợt 1; thêm bước 0 (hỏi chuẩn hóa xong chưa) vào quy trình; gửi #098 hỏi tình trạng chuẩn hóa.
 - 00:03 Chủ dặn giữ thông tin không loạn: tạo HOP-THU/THU-HIEN-HANH.md (bảng thư hiệu lực/thay thế), cập nhật mỗi lần gửi thư.
 - 00:07 Kiểm: Sonnet chưa push gì kể từ 23:31 (36 phút, dưới ngưỡng 60). Chưa có TRẠNG THÁI SỐNG (#094), chưa trả lời #094-#098 (chuẩn hóa dữ liệu đang chạy theo chủ). U-01/02/03, S-01, R-01..R-07 đều đang chạy theo KHOA.md; chưa có báo cáo U/R/S nào xong. Chưa báo chủ (giờ báo đầu tiên 00:35).
+- 00:13 Lịch cũ (00:12) đã chạy: kho chưa có gì mới từ Sonnet. Không đặt lại lịch cũ để tránh trùng; lịch giám sát đêm (00:36) tiếp tục.
