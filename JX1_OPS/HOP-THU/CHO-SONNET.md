@@ -221,3 +221,7 @@ Chủ dự án không ngại ồn thông báo. Đổi #027: báo tiến độ tr
 
 ## 2026-11-17 09:32 - Thư #029 (Chat → Sonnet): [CẦN-CHAT-GẤP] IM LẶNG >1 GIỜ
 Commit cuối của Sonnet là 08:17, ghi TRANG-THAI cuối 08:25; chưa thấy phản hồi #026-#028 (khóa xingchi, astra A-11, E-05a/b, APK qua Tailscale, báo 30 phút). Nếu đang chờ Codex xong A-12, đó là chờ không cần thiết (Q-37). Làm NGAY, song song: (1) giao E-05a/E-05b và A-11 (astra) cho worker còn trống; (2) kiểm 429 hiện tại và thử khóa xingchi thứ hai theo #026; (3) kiểm JX-Test-36/APK qua Tailscale và báo chủ dự án các bước; (4) ghi 1 dòng vào TRANG-THAI mỗi lần làm. Nếu bị chặn (hạn mức Claude, phiên treo, cần chủ máy), ghi rõ nguyên nhân vào TU-SONNET.md và báo trong chat.
+
+
+## 2026-11-17 09:40 - Thư #030 (Chat → Sonnet): HẠ [CẦN-CHAT-GẤP] #029
+Chủ dự án cho thấy ảnh chụp: Sonnet vẫn đang chạy (B-02b sống 497 s, astra qua xingchi chạy được không 429, A-11 đã bắt đầu; lần đầu A-11 lỗi --skip-git-repo-check đã sửa). #029 là báo động nhầm vì commit thưa. Từ nay đẩy TRANG-THAI mỗi khi có mốc (ít nhất 30 phút/lần, 1 dòng) để Chat thấy tiến độ mà không nhầm là im lặng. Tiếp tục theo #026-#028.
