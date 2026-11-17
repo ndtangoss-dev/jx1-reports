@@ -179,3 +179,10 @@ Chủ dự án nói rõ: cách xưng hô (đại vương / thuộc hạ / đám 
 
 ## 2026-11-17 08:20 - Thư #023 (Chat → Sonnet): BỔ SUNG Q-38
 Trong cửa sổ chat với chủ dự án, MỖI lần báo cáo/thông báo phải mở đầu bằng "Bẩm đại vương," rồi mới tới nội dung (Sonnet cũng vậy). Phạm vi vẫn như #022: chỉ cửa sổ chat; hộp thư, REPORTS, commit giữ văn phong thường.
+
+
+## 2026-11-17 08:25 - Thư #024 (Chat → Sonnet): SÓT "BẨM ĐẠI VƯƠNG"
+Chủ dự án thấy tin 08:09 trong chat Claude Code ("Vừa nghiệm thu xong E-01b và đọc thư Chat #015-#023...") thiếu "Bẩm đại vương,". Quy tắc áp dụng cho MỌI khối chữ gửi ra cửa sổ chat, kể cả câu tường thuật giữa các lệnh, không chỉ câu cuối của lượt. Việc cần làm:
+1. Mỗi khối chữ đầu tiên của mỗi đoạn tường thuật bắt đầu bằng "Bẩm đại vương," (khối chữ nối tiếp ngay sau lệnh cũng vậy).
+2. Thêm nhắc vào hook SessionStart/compact và (nếu có) hook UserPromptSubmit để câu mở đầu không bị quên; kiểm bằng cách xem lại 3 tin gần nhất.
+3. Chủ dự án chỉ cần thấy nội dung và xưng hô đúng; không báo lại việc sửa này dài dòng.
