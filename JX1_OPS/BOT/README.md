@@ -42,7 +42,42 @@ Mỗi phiên chỉ có một Bot. `--observed-online` phải là 0..99 trước 
 
 Profile wire là little-endian Windows, pack(1), int/uint/BOOL 32 bit, bool 1 byte, GUID giữ nguyên 16 byte. Riêng luồng thế giới nhận dùng layout **header GS**: normal hiện tại 55 byte và NPC normal 227 byte; client Cocos khai báo tương ứng 31/223 byte. Không tự dò hoặc fallback ABI theo byte trong payload. Chưa xác minh profile này với binary. ASCII là mặc định cho chuỗi; `--encoding` chỉ dùng khi đã xác minh encoding runtime. Không suy encoding runtime từ encoding source.
 
-Không lưu payload, mật khẩu, MD5, GUID hay khóa phiên. Các literal tài khoản/khóa trong test là dữ liệu tổng hợp offline. CLI đóng socket khi lỗi và không tự đăng nhập lại; thao tác logout có payload tùy biến chưa triển khai.
+Không lưu payload, mật khẩu, MD5, GUID hay khóa phiên. Các literal tài khoản/khóa trong test là dữ liệu tổng hợp offline. CLI đóng socket khi lỗi và không tự đăng nhập lại.
+
+## E-10 — Tạo role và logout offline
+
+Hợp đồng và vector: [E-07-goi-tao-nhan-vat-logout.md](../REPORTS/E-07-goi-tao-nhan-vat-logout.md).
+`packets.new_player(name, gender, series, native_place, region)` trả payload
+rõ C2S 69: header 14 byte + gender/series/map LE16 + tên byte + NUL.
+`name` là `bytes` 6..16 byte theo giới hạn Bishop; bên gọi chịu trách nhiệm
+codec và bộ lọc tên. Gender/series chỉ kiểm độ rộng BYTE, map kiểm uint16,
+region kiểm uint32 >0; giá trị được runtime chấp nhận **[CHƯA KIỂM]**.
+Identity và bLeave đặt 0; bLeave là chuẩn hóa BOT vì client nguồn không gán.
+
+`packets.new_player_response(plaintext)` nhận đúng 66 byte ID 157, trả bool
+ở byte 65; bỏ toàn bộ trường tên có tail chưa khởi tạo. Không dùng tên để
+khớp request, không đoán mã lỗi. ID này dùng chung create/delete: bên gọi
+phải đang chờ create trên Bishop. `packets.role_list` kiểm ID 55,
+`nDataLen=1+67*N`, count, tổng độ dài và tên NUL; Level là một BYTE.
+Các API nhận đúng một payload đã bỏ framing/XOR; không tự tách bundle Bishop.
+
+Ví dụ payload offline: `packets.new_player(b"BotAbc", 0, 0, 53, 1)` khớp
+vector 25 byte E-07; giá trị này chỉ là fixture. API chưa ghép vào luồng
+login hay CLI tạo nhân vật. E-07 ghi create thành công đi thẳng permit/game,
+không push role list mới; không tự gửi select-role hoặc login lại sau create.
+Role list sau re-login thật, ABI/binary, tên có dấu và DB bền vững **[CHƯA KIỂM]**.
+
+`Session.logout()` dùng cùng cleanup với `close()`: chặn hành động bằng
+trạng thái CLOSED, đóng game trước rồi Bishop còn sót, giải phóng tham chiếu
+và dữ liệu phiên. Channel chặn I/O sau close, bỏ pending/frame dở và trạng
+thái XOR. Đóng lặp là no-op; OSError vẫn được báo sau khi thử đóng cả hai.
+Thứ tự hai kênh là chính sách cleanup BOT; E-07 không chứng minh thứ tự TCP
+FIN/RST runtime. Không có thread nền trong Session hiện tại.
+Logout tạo **0 application byte**, không gửi frame rỗng hoặc gói save nội bộ,
+không chờ ACK 56/sentinel 791030. Xác nhận lưu DB **[CHƯA KIỂM]**.
+
+Test `test_roles_logout.py` dùng nguyên vector E-07 và socket giả; chạy cùng
+lệnh unittest offline phía trên. Không cần VM, DB, exe hoặc kết nối loopback.
 
 ## E-02 — Vòng săn offline
 

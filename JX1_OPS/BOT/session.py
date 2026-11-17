@@ -45,6 +45,7 @@ class Channel:
         self.decoder = FrameDecoder()
         self.pending = deque()
         self.rx = self.tx = None
+        self.closed = False
 
     @classmethod
     def connect(cls, host, port, timeout):
@@ -58,6 +59,8 @@ class Channel:
         return channel
 
     def _frame(self, deadline=None):
+        if self.closed:
+            raise ProtocolError("Kênh đã đóng")
         while not self.pending:
             if deadline is not None:
                 remaining = deadline - time.monotonic()
@@ -72,23 +75,37 @@ class Channel:
         return self.pending.popleft()
 
     def handshake(self, deadline=None):
+        if self.closed:
+            raise ProtocolError("Kênh đã đóng")
         if self.rx is not None:
             raise ProtocolError("ACCOUNT_BEGIN đã được xử lý")
         self.rx, self.tx = from_account_begin(self._frame(deadline))
 
     def send(self, payload):
+        if self.closed:
+            raise ProtocolError("Kênh đã đóng")
         if self.tx is None:
             raise ProtocolError("Chưa nhận ACCOUNT_BEGIN")
         pack_frame(payload)  # kiểm kích thước trước khi tiến khóa
         self.sock.sendall(pack_frame(self.tx.apply(payload)))
 
     def receive(self, deadline=None):
+        if self.closed:
+            raise ProtocolError("Kênh đã đóng")
         if self.rx is None:
             raise ProtocolError("Chưa nhận ACCOUNT_BEGIN")
         return self.rx.apply(self._frame(deadline))
 
     def close(self):
-        self.sock.close()
+        if self.closed:
+            return
+        self.closed = True  # chặn I/O trước khi giải phóng tài nguyên
+        try:
+            self.sock.close()
+        finally:
+            self.pending.clear()
+            self.decoder.buffer.clear()
+            self.rx = self.tx = None
 
 
 class State(Enum):
@@ -212,8 +229,24 @@ class Session:
                 break
 
     def close(self):
-        for channel in (self.gateway, self.game):
-            if channel is not None:
-                channel.close()
+        # E-07: logout không có application payload/ACK lưu. BOT chặn hành
+        # động trước, đóng game rồi Bishop còn sót, kể cả một close bị lỗi.
+        channels = (self.game, self.gateway)
         self.gateway = self.game = None
         self.state = State.CLOSED
+        self.client_key = None
+        self.next_action = 0.0
+        error = None
+        for channel in channels:
+            if channel is not None:
+                try:
+                    channel.close()
+                except OSError as exc:
+                    if error is None:
+                        error = exc
+        if error is not None:
+            raise error
+
+    def logout(self):
+        """Thoát bằng đóng socket; không xác nhận DB persistence [CHƯA KIỂM]."""
+        self.close()

@@ -19,6 +19,7 @@ class C2S(IntEnum):
     LOGIN = 65
     LOGIC_LOGIN = 66
     SYNC_END = 67
+    NEW_PLAYER = 69
     RUN = 76
     SKILL = 77
     SELECT_ROLE = 108
@@ -33,11 +34,13 @@ class S2C(IntEnum):
     LOGIN = 65
     SYNC_END = 67
     PING = 143
+    ROLE_NEW_DEL_RESPONSE = 157
 
 
 LOGIN = struct.Struct("<BHiI32s64sIII16sIII")
 ROLE_HEADER = struct.Struct("<BIIBI")  # pDataBuffer offset 14; sizeof có [1] =15
 ROLE = struct.Struct("<64sBBB")
+NEW_PLAYER = struct.Struct("<BBH")
 PERMIT = struct.Struct("<B16s64s32s64sB4sH")
 SYNC = struct.Struct("<BiI")
 PING = struct.Struct("<BI")
@@ -119,11 +122,13 @@ class Role:
 
 
 def role_list(payload):
-    # KProtocol.h:1819-1826; Klogin.cpp:1033-1065.
+    # E-07: nDataLen=1+67*N; không dùng quy tắc này cho message khác.
     if len(payload) < ROLE_HEADER.size + 1 or payload[0] != S2C.ROLE_LIST:
         raise ProtocolError("Danh sách nhân vật bị cắt hoặc sai ID")
     count = payload[ROLE_HEADER.size]
-    # Trường nDataLen có biến thể đóng gói: chưa dùng để đoán ranh giới.
+    data_len = ROLE_HEADER.unpack_from(payload)[1]
+    if data_len != 1 + count * ROLE.size:
+        raise ProtocolError("nDataLen role list không khớp count")
     if len(payload) != ROLE_HEADER.size + 1 + count * ROLE.size:
         raise ProtocolError("Role list gộp/đệm hoặc layout chưa hỗ trợ")
     result = []
@@ -134,6 +139,40 @@ def role_list(payload):
             raise ProtocolError("Tên nhân vật rỗng")
         result.append(Role(name, sex, series, level))
     return result
+
+
+def new_player(name, gender, series, native_place, region):
+    """Payload rõ C2S 69 theo E-07, không framing/XOR hay gửi mạng.
+
+    name là byte đã chọn codec bên ngoài; codec/runtime [CHƯA KIỂM].
+    6..16 byte theo guard Bishop; không giả lập bộ lọc tên TCVN3.
+    bLeave=0 là chuẩn hóa BOT vì client nguồn không gán byte này.
+    """
+    if not isinstance(name, bytes) or not 6 <= len(name) <= 16 or b"\0" in name:
+        raise ProtocolError("Tên role cần 6..16 byte và không chứa NUL")
+    for value, field, limit in ((gender, "gender", 255), (series, "series", 255),
+                                (native_place, "native_place", 65535)):
+        uint32(value, field)
+        if value > limit:
+            raise ProtocolError(field + " vượt độ rộng wire")
+    uint32(region, "region")
+    if region == 0:
+        raise ProtocolError("region phải >0")
+    body = NEW_PLAYER.pack(gender, series, native_place) + name + b"\0"
+    return ROLE_HEADER.pack(C2S.NEW_PLAYER, len(body), 0, 0, region) + body
+
+
+def new_player_response(payload):
+    """Đọc bool của S2C 157 (dùng chung new/delete), không đọc/log tên rác.
+
+    Bên gọi chỉ dùng trong lúc chờ create trên kênh Bishop; không có
+    request ID, echo tên đáng tin hoặc mã lỗi chi tiết trong hợp đồng E-07.
+    """
+    if len(payload) != 66 or payload[0] != S2C.ROLE_NEW_DEL_RESPONSE:
+        raise ProtocolError("Phản hồi tạo/xóa role phải là ID 157, 66 byte")
+    if payload[65] not in (0, 1):
+        raise ProtocolError("Bool kết quả tạo/xóa role không hợp lệ")
+    return payload[65] == 1
 
 
 def select_role(name):
