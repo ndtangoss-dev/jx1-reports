@@ -310,3 +310,8 @@ Chủ dự án: tăng quân số đám tiểu yêu khi nhiều việc, phải c�
  Chat sẽ soạn task theo mẫu cho các mục này nếu Sonnet muốn; Sonnet cứ tự soạn nếu nhanh hơn.
 3. Mỗi 30 phút báo bảng hiệu quả (#041) kèm số worker thực chạy và số task đang chờ.
 4. Task sửa mã vẫn tách worktree riêng; gộp bởi PM theo lô để tránh xung đột.
+
+
+## 2026-11-17 12:45 - Thư #043 (Chat → Sonnet): MONITOR KHÔNG ĐƯỢC HẾT HẠN LÚC ĐANG CÓ VIỆC
+Chủ dự án hỏi "monitor cũ hết hạn là sao" (ảnh 11:31). Giải thích cho chủ: monitor là bộ canh nền, hết thời hạn thì dừng; trong khoảng chưa có monitor mới, Sonnet không được báo khi tiểu yêu xong việc = thời gian chết.
+Làm: (1) đặt monitor chạy dài (chế độ persistent nếu công cụ có; nếu không thì thời hạn tối đa) và BẬT monitor mới TRƯỚC khi cái cũ hết (chồng lên nhau, không để hở); (2) monitor theo .done/cờ hoàn thành của mọi worker, ghi TRANG-THAI mỗi lần gắn lại; (3) hook Stop/PostToolUse kiểm "còn worker đang chạy mà không có monitor" thì tự gắn lại; (4) đưa vào bảng hiệu quả số phút "không có monitor khi có việc" (mục tiêu 0).

@@ -39,3 +39,4 @@
 - 2026-11-17 12:10 Chat duyệt A-11c (sol ~30 tok/s, astra 503 tạm), A-14; gửi #040. Báo chủ dự án nút thắt.
 - 2026-11-17 12:25 Chủ dự án hỏi cách biết dùng tiểu yêu hiệu quả (dashboard 11:25): đồng thời thực ~1,4; gửi #041 (bảng hiệu quả 6 chỉ số).
 - 2026-11-17 12:35 Chủ dự án: tăng quân số; gửi #042 (8-12 worker, chia ≥12 task độc lập, gợi ý cắt 11 phái/hoạt động/tester).
+- 2026-11-17 12:45 Chủ dự án hỏi monitor hết hạn; gửi #043 (monitor persistent/chồng nhau, hook tự gắn lại).
