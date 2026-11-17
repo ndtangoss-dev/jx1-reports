@@ -272,3 +272,10 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 - 2026-11-17 16:39 #074 E-13 chay that thu: X-01/X-02 giao dung (K2,K3) nhung dispatcher thoat sau 60s nen QUEUE danh dau blocked 'dispatcher stopped' (loi do thuoc ha dat max-seconds ngan; worker van chay). Chay lai X-03/X-04 voi --until-idle --max-seconds 1500, state D:\JX-wt\_dispatcher-state2, snapshot ngan sach tam daily=0 (CHUA co so that, can doi soat). Cho ket qua 2 cap de doi chieu.
 - 2026-11-17 16:39 J-03: xong (exit=0), da gop.
 - 2026-11-17 16:39 M-02: xong (exit=0), da gop.
+- 2026-11-17 17:04 K-01: xong (exit=0), da gop.
+- 2026-11-17 17:04 L-02: xong (exit=0), da gop.
+- 2026-11-17 17:04 I-06b: xong (exit=0), da gop.
+- 2026-11-17 17:04 X-01: xong (exit=0), da gop.
+- 2026-11-17 17:05 X-02: xong (exit=0), da gop.
+- 2026-11-17 17:05 X-04: xong (exit=0), da gop.
+- 2026-11-17 17:05 E-13 chay that: X-04 xong qua dispatcher dung; X-03 bi dispatcher danh dau blocked:timeout (~15 phut, log ngung 16:53), PM chay lai tay; X-01/X-02 lan dau im sau khi dispatcher thoat (state 1), chay lai tay xong. Chua du dieu kien chuyen han Q-42.
