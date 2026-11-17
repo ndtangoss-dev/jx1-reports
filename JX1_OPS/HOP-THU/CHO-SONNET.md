@@ -554,3 +554,16 @@ Chủ chốt: đẩy nhanh chuyển điều phối sang Tổng quản (E-13 P1 +
 2. Nếu đạt (giao đúng khóa, chạy lại đúng khi 429/treo, merge đúng, ghi QUEUE.md, không lặp việc): chuyển hẳn và ghi Q-42 hoàn tất. Tổng quản phải biết giới hạn 3 worker/khóa, chốt 400 USD/ngày và 1.500 USD tổng.
 3. PM vẫn giữ: duyệt việc sửa mã, gộp việc có sửa mã, báo cáo 30 phút. Tổng quản chỉ lo việc đọc/đo và chạy lại.
 4. Không cần hỏi chủ khi chuyển (quyền thường trực #071); báo trong báo cáo 30 phút khi xong.
+
+#075 (Chat, 16:38) - N-01 Quy trình sửa mã song song, không xung đột
+
+Chủ duyệt. Hiện chỉ đọc/đo; khi sang giai đoạn sửa sẽ có nhiều việc sửa cùng lúc. Cần thiết kế sẵn. Chỉ viết thiết kế, chưa sửa mã.
+Viết DESIGN/SUA-SONG-SONG.md gồm:
+1. Bảng vùng mã (client: vẽ hình, hoạt ảnh, đạn/va chạm, giao diện, giao thức; server: gs001, Bishop, các exe khác) và file thuộc từng vùng; mỗi vùng chỉ một "chủ" việc tại một thời điểm. Cơ chế khóa vùng (mở rộng KHOA.md) để Tổng quản đọc khi giao việc: hai việc đụng cùng vùng thì xếp hàng, khác vùng thì song song.
+2. Quy tắc nhánh và thư mục làm việc: một nhánh + một worktree cho mỗi task sửa mã, đặt tên, vòng đời ngắn (<= vài giờ), gộp thường xuyên.
+3. Hàng đợi gộp: một cổng duy nhất gộp tuần tự vào nhánh tích hợp; trước khi gộp phải qua bộ kiểm tự động; xung đột thì trả lại task, không tự giải bằng đoán.
+4. Bộ kiểm tự động tối thiểu trước khi gộp: kịch bản bot (E-05) đánh quái, đi lại, FPS 30/60/90, hiệu ứng vũ khí +6/+12/+15, đăng nhập; xác định cái nào đã có, cái nào chưa.
+5. Quy tắc cho tệp nhạy cảm: KgameWorld.cpp, KNpcResVN.cpp và các file lớn dùng chung (chia nhỏ hay chỉ một task được sửa).
+6. Cách sao lưu/đánh mốc trước khi gộp (tag, không đè qh7), cách hoàn tác nhanh.
+7. Sơ đồ ngắn + ví dụ 3 task chạy cùng lúc (hiệu ứng, đạn, giao diện).
+Giao theo quyền thường trực #071.
