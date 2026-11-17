@@ -504,3 +504,14 @@ Giao khi có slot.
 1. Quyết định của chủ: mục tiêu dài hạn là client chạy 120 FPS ổn định (như các game cùng thể loại hiện nay). Ghi vào QUYET-DINH.md (Q mới) và DESIGN/ nếu có mục mục tiêu hiệu năng.
 2. H-15: thanh trượt FPS tối đa thực tế là 90 (KuiOptions.cpp:182-192), không phải 120; chủ nhớ nhầm. Khi tái hiện: ghi rõ mức tối đa UI = 90, đo thêm 120 bằng cấu hình/harness; kiểm game đang cài LimitFPS bao nhiêu khi lỗi xuất hiện (Setting.ini).
 3. Tạo mục "TỐI ƯU SAU NÀY - 120 FPS" trong DESIGN/ (file riêng nếu cần), gom các việc đã thấy: logic/đạn/hiệu ứng bám thời gian thật (accumulator + nội suy hiển thị), va chạm quét đoạn, joystick gửi theo thời gian thay vì theo frame, hit event theo ngưỡng vượt chứ không bằng nhau, frame giữa bằng nội suy (J-xx), làm mượt hình (L-01), chi phí vẽ trên máy mạnh. Chỉ ghi, chưa sửa.
+
+#070 (Chat, 15:36) - Điều chỉnh #069: giai đoạn 1 = tối ưu ở 90 FPS để chủ test
+
+Chủ duyệt: tối ưu ở 90 FPS trước (mức tối đa của thanh trượt), để chủ chơi thử; 120 FPS tính sau khi có kết quả.
+1. Cập nhật mục tiêu trong QUYET-DINH.md: giai đoạn 1 = 90 FPS; 120 FPS là giai đoạn 2, chưa làm.
+2. Làm từng bước, trên BẢN SAO client (không đụng D:\Android\b\Client gốc, không đụng backup qh7):
+   a. Hoàn tất đo H-15 ở FPS 30/60/90 (có bot E-05 hoặc cách khác) để có số nền trước khi sửa.
+   b. Đề xuất sửa ngắn nhất cho lỗi đạn xuyên quái ở 90 FPS, gửi Chat duyệt thiết kế trước khi sửa mã.
+   c. Sau khi duyệt: sửa trên bản sao, dựng APK thử (tên riêng, không ghi đè jx-qh7.apk), đo lại cùng kịch bản, báo cáo trước/sau.
+3. Khi có APK thử, báo chủ trong chat để chủ cài và chơi thử; kèm 3-5 bước thử bằng ngôn ngữ thường.
+4. Kiểm hiệu ứng vũ khí +6/+12/+15 và các phần H-14 không bị ảnh hưởng.
