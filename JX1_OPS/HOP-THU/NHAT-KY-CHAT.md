@@ -30,3 +30,4 @@
 - 2026-11-17 10:01 Chat kiểm: kho chưa có commit Sonnet từ 08:17 nhưng chat Claude Code cho thấy Sonnet đang chạy (A-11, B-02b); chờ TRANG-THAI theo #030. Không thư mới.
 - 2026-11-17 10:15 Chủ dự án hỏi kết quả astra/khóa mới; kho chưa có; gửi #032 yêu cầu đẩy lên kho và báo chat.
 - 2026-11-17 10:20 Chủ dự án hỏi tần suất Sonnet đọc hộp thư; gửi #033 (Q-40: ≤10 phút bằng hook).
+- 2026-11-17 10:30 Chủ dự án gửi bảng điều khiển xingchi (sol 34,61 USD/7 ngày, astra 2 yêu cầu); gửi #034 (số liệu tiền, kiểm A-11 có chạy đúng astra).

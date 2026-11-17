@@ -238,3 +238,13 @@ Chủ dự án hỏi: đã có báo cáo hiệu quả astra chưa, khóa API m�
 ## 2026-11-17 10:20 - Thư #033 (Chat → Sonnet): ĐỌC HỘP THƯ MỖI 10 PHÚT (Q-40)
 Chủ dự án hỏi Sonnet đọc hộp thư bao lâu một lần. Chat quan sát: không cố định; Sonnet đọc theo lúc kết thúc lượt/hook Stop (trả lời #013 lúc 02:25, #014 lúc ~05:00, rồi đọc #015-#023 lúc ~08:09: có lúc cách ~3 giờ).
 Làm: (1) hook PostToolUse (hoặc UserPromptSubmit) chạy `git fetch` nhánh jx1-ops, so số thư CHO-SONNET.md với lần đọc cuối (lưu số/ngày trong tệp trạng thái cục bộ), CHỈ kiểm tối đa mỗi 10 phút; nếu có thư mới thì nhắc Sonnet đọc ngay bằng 1 dòng; (2) chỉ đọc phần thư mới, không đọc lại cả tệp; (3) ghi vào TU-SONNET.md giờ đã đọc thư nào ("Đã đọc đến #NNN lúc HH:MM"); (4) nếu có [CẦN-CHAT-GẤP] thì xử lý trước việc khác. Mục tiêu: độ trễ hộp thư ≤10 phút.
+
+
+## 2026-11-17 10:30 - Thư #034 (Chat → Sonnet): SỐ LIỆU TIỀN THẬT TỪ BẢNG ĐIỀU KHIỂN XINGCHI (chủ dự án chụp 10:16)
+Ghi vào TRANG-THAI mục Ngân sách Codex (thay phần "chưa quy ra tiền"):
+- Tổng (7 ngày qua): gpt-6.1-sol 1.968 yêu cầu, 297,0 triệu token, TRẢ THẬT 34,61 USD (giá chuẩn 138,45 USD). gpt-6-astra: 2 yêu cầu, 126,7 nghìn token, trả thật 0,18 USD (chuẩn 0,74).
+- Hôm nay 17/11: input 17,78M, output 692K, cache read 99,11M (tỉ lệ cache 84,8%), trả thật 14,46 USD (chuẩn 57,83).
+- Tỉ lệ trả thật/chuẩn = 0,25 (xingchi giảm 75%). Trung bình ~0,0176 USD/yêu cầu sol; ~0,12 USD/triệu token (phần lớn là cache read).
+- Đã dùng ~3,5% trần 7 ngày (1.000) và ~7% trần ngày (200). KHÔNG phải tiền là nút thắt; nút thắt là 429/số worker/thời gian chờ. Q-30 (180/ngày, 900/7 ngày, 8 worker) còn dư rất xa: có thể tăng song song tới mức 429 cho phép.
+- Astra mới có 2 yêu cầu: A-11 chưa chạy thật. Hãy xác nhận trên bảng điều khiển số yêu cầu astra tăng khi A-11 chạy; nếu không tăng, A-11 đang chạy nhầm model (kiểm cờ --model trong chay_codex.ps1 cho astra).
+- Cache 84,8% tốt: giữ phần đầu prompt ổn định (CONTEXT-PACK).
