@@ -13,3 +13,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Tiêu chí chấm (dẫn đúng file mang tên) | #097 | thay phần "đáp án tham khảo" #096 | |
 | Chuẩn hóa dữ liệu xong mới test | #098 | | chờ Sonnet trả lời tình trạng |
 | Hiểu lầm 'chuẩn hóa' (dữ liệu game ≠ báo cáo); K-03 ưu tiên; khóa xingchi; 429 | #099 | làm rõ #098 | K-03 mở khóa test đợt 1 |
+| Nhắc: im 85 phút, đọc #099, làm K-03, ghi trạng thái 30 phút/lần | #100 | nhắc lại #099/#094 | chờ Sonnet |
