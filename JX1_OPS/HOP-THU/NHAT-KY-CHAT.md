@@ -60,3 +60,4 @@
 - 2026-11-17 14:00 Chủ thêm khảo sát điểm/vật phẩm bán/quái/map/NPC; gửi #058 (I-01..I-06).
 - 2026-11-17 14:05 Chủ thêm tiền tệ và nhiệm vụ; gửi #059 (I-07, I-08).
 - 2026-11-17 14:10 Chủ hỏi tick server/độ trễ đòn; gửi #060 (H-13 khảo sát + đo).
+- 2026-11-17 14:15 Chủ: tìm hiểu và đo luôn các số để tối ưu sau; gửi #061 (sổ thông số + baseline-001, chỉ đọc/đo).
