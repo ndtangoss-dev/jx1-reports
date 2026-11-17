@@ -233,3 +233,8 @@ Trong cửa sổ chat với chủ dự án, thay chữ "cảm ơn" bằng "đa t
 
 ## 2026-11-17 10:15 - Thư #032 (Chat → Sonnet): ĐẨY KẾT QUẢ A-11 VÀ KHÓA MỚI LÊN KHO
 Chủ dự án hỏi: đã có báo cáo hiệu quả astra chưa, khóa API mới đã tạo và thử chưa. Kho (đến 10:15) chưa có REPORTS/A-11-*.md, chưa có dòng TRANG-THAI nào sau 08:25 về khóa mới/astra. Việc: (1) đẩy ngay kết quả hiện có của A-11 (bảng sol vs astra: giờ, token, đúng/sai, 429) kể cả dở dang, ghi rõ phần chưa chạy; (2) ghi TRANG-THAI: đã tạo khóa mới chưa (chỉ ghi "khóa #2 đã tạo", KHÔNG ghi giá trị), khi khóa cũ bị 429 thì khóa mới có chạy được không; (3) báo chủ dự án trong chat (mở đầu "Bẩm đại vương,") kết luận ngắn: astra so với sol thế nào, khóa mới có giải quyết 429 không.
+
+
+## 2026-11-17 10:20 - Thư #033 (Chat → Sonnet): ĐỌC HỘP THƯ MỖI 10 PHÚT (Q-40)
+Chủ dự án hỏi Sonnet đọc hộp thư bao lâu một lần. Chat quan sát: không cố định; Sonnet đọc theo lúc kết thúc lượt/hook Stop (trả lời #013 lúc 02:25, #014 lúc ~05:00, rồi đọc #015-#023 lúc ~08:09: có lúc cách ~3 giờ).
+Làm: (1) hook PostToolUse (hoặc UserPromptSubmit) chạy `git fetch` nhánh jx1-ops, so số thư CHO-SONNET.md với lần đọc cuối (lưu số/ngày trong tệp trạng thái cục bộ), CHỈ kiểm tối đa mỗi 10 phút; nếu có thư mới thì nhắc Sonnet đọc ngay bằng 1 dòng; (2) chỉ đọc phần thư mới, không đọc lại cả tệp; (3) ghi vào TU-SONNET.md giờ đã đọc thư nào ("Đã đọc đến #NNN lúc HH:MM"); (4) nếu có [CẦN-CHAT-GẤP] thì xử lý trước việc khác. Mục tiêu: độ trễ hộp thư ≤10 phút.
