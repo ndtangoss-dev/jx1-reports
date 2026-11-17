@@ -226,3 +226,4 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 - [12:02] xingchiapi.com trả 522 (Cloudflare, máy chủ gốc timeout); speed.py K2 không trả lời 100s; log 9 worker đứng từ ~11:55. Nghi sự cố nhà cung cấp, đo lại sau. K6: bấm Create lúc 12:00, chưa xác nhận có tạo; chủ lệnh tạo khóa từ từ, tạm dừng.
 - [12:05] H-04 (#047): PM tự làm, REPORTS/H-04-hieu-ung-vu-khi.md; qh7 sao lưu D:\JX-backup\qh7. API xingchi bình thường lại (K3 test 109s/2,9k token). Đã đọc #47.
 - [12:11] Merge H-02 (magic attrib; PARTIAL do thiếu quyền commit, khảo sát tĩnh đủ). Giao H-03 (K5).
+- [12:13] Chủ duyệt sao lưu: robocopy D:\Android\b\Client -> D:\JX-backup\Client-qh7 (13261 file, 2,19 GB, 0 lỗi; chỉ copy, không xóa gốc).
