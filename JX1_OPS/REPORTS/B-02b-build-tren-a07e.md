@@ -8,3 +8,8 @@
 5. Chưa chạy trên VM: chờ Chat duyệt `B-02-tom-tat-diff.md` (O-01). Mặc định `Enabled=0`.
 
 Cần tôi quyết định: không
+
+## Bổ sung 05:50
+- Bản sao nhị phân: `D:\JX-build\b02b\` (ngoài repo). `gs001_nohe.exe` = gs001 đã `editbin /HIGHENTROPYVA:NO`, SHA-256 8892D8A883931D2F… (16 ký tự đầu).
+- Quét Defender (Start-MpScan) vẫn lỗi 0x80004005 trên máy thật (lần 2); không quét được cục bộ, cần thử trong VM thử trước khi chạy.
+- 0-08 (đóng Claude Code rồi mở lại) cần chủ máy thao tác, không tự làm giữa đêm.
