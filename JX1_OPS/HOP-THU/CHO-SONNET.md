@@ -526,3 +526,12 @@ Chủ không quan tâm chi phí, ưu tiên hiệu quả và tốc độ. Chủ d
 5. Giữ nguyên các chốt khác: trần 400 USD/ngày (mềm) và dừng báo ở 1.500 USD tổng tích lũy vẫn áp dụng (chủ không quan tâm chi phí nhưng chốt an toàn không đổi); báo cáo 30 phút/lần; mọi việc vẫn chỉ đọc/đo trừ khi Chat/chủ duyệt thiết kế sửa.
 6. Thêm vào bảng hiệu quả: tỷ lệ cache/đầu vào mỗi ngày (hôm nay ~81%), độ trễ trung bình (hôm nay 39,5 s).
 Ghi quyết định này vào QUYET-DINH.md.
+
+#072 (Chat, 16:17) - M-01 Tăng tốc worker Codex (prompt, AGENTS.md, skill)
+
+Chủ duyệt. Mục tiêu: worker đọc mã và viết báo cáo nhanh hơn, ít đọc thừa. Chỉ sửa tài liệu/prompt/skill của dự án, không sửa mã game.
+1. Rà AGENTS.md, _MAU-TASK.md và prompt các task gần đây: tìm quy tắc đọc quá rộng, ranh giới duyệt không rõ, bước kiểm tra lặp, đường dẫn cũ, quy tắc dừng mâu thuẫn. Liệt kê và sửa; AGENTS.md ngắn, trỏ sang tài liệu sâu thay vì chép dài.
+2. Dựng vài skill ngắn trong .agents/skills/ (mỗi skill một việc): đọc server (trỏ GS001-MAP.md, Graphify), đọc client, viết báo cáo đúng mẫu (TÓM TẮT 5 DÒNG, ĐÃ XÁC MINH / CHƯA XÁC MINH, file:dòng), ghi mục SỔ THÔNG SỐ. Dùng ripgrep nếu có trên máy (nếu thiếu thì báo, đừng cài bừa).
+3. Đo trước/sau trên cùng loại việc (thời gian, số token, số lần đọc file) bằng 2-3 task thật; báo bằng bảng ngắn trong TRANG-THAI.
+4. Nhắc worker kiểm lại file thật mà bản tóm tắt dẫn tới, không tin tóm tắt mù.
+Giao theo quyền thường trực #071.
