@@ -38,3 +38,9 @@ Soạn/duyệt task, gộp task sửa mã, giải quyết blocked, đọc TÓM T
 P1 (hôm nay, Codex 1-2 task): quét + giao + timeout + thử lại + QUEUE.md + worker giả kiểm.
 P2: gộp tự động cho task readonly, bảng hiệu quả, tự dừng theo ngân sách.
 P3: trợ lý astra soạn task/tóm tắt (sau A-11b).
+
+## P3 - Trợ lý nhanh (Groq) - thêm theo thư #051
+- Gọi HTTP trực tiếp tới Groq (không qua Codex), khóa JX-GROQ đọc từ file ngoài kho; script mẫu `TOOLS/groq_speed.py`.
+- Chỉ nhận việc NGẮN, KHÔNG nhạy cảm (tóm tắt báo cáo, soạn task từ mô tả 3 dòng, lọc nhật ký). Cấm mã nguồn jx1-source/nội dung riêng tư; Sonnet kiểm đầu ra trước khi vào hàng đợi.
+- Bộ đếm: TPM 8.000 và yêu cầu/ngày 1.000 (header thật), đọc `x-ratelimit-remaining-*` sau mỗi gọi; còn dưới 10% hoặc gặp 429 thì chuyển sang sol/astra qua Dispatcher thường.
+- Ưu tiên sau E-13 P1; chưa cài đặt.

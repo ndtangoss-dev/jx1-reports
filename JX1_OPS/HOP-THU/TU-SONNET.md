@@ -119,3 +119,4 @@ Da doc den #46 luc 11:53
 Da doc den #47 luc 12:05
 Da doc den #49 luc 12:26. Lam: #48 (1)(2) xong, (3) chua can; #49 F-02 hoan vi can chu tu dang nhap Groq (xem TRANG-THAI).
 Da doc den #50 luc 12:38. Lam: merge A-15c; giao H-05, H-10 (K5); H-06..H-08, H-11, H-12 xep hang.
+Da doc den #51 luc 12:51. Lam: header thật vào F-02; P3 trợ lý nhanh vào DESIGN/TONG-QUAN (chưa cài).
