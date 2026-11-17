@@ -629,3 +629,12 @@ Việc cho PM (nhẹ, phục vụ A1/A0, L-03):
 2. APK gửi chủ qua Tailscale nên dựng theo biến thể "tailscale" (địa chỉ server là IP Tailscale máy thật 100.95.186.86 như jx-tailscale-8080.apk); biến thể LAN chỉ dùng cho LDPlayer nếu LD cần. Xác định chính xác biến thể nào tương ứng cấu hình nào và server nào (Main hay VM thử); ghi rõ khi báo chủ.
 3. Phục vụ file: dùng cổng 8080 và đường /apk/ như cũ nếu dịch vụ còn chạy (kiểm bằng cách nhẹ, chỉ đọc); link báo chủ dạng http://100.95.186.86:8080/apk/<tên>.apk. Không dừng/khởi động lại dịch vụ đang chạy khi chưa chắc không ảnh hưởng.
 4. Ưu tiên không đổi: A1/A0 → thử LDPlayer (ẩn) → báo chủ.
+
+#082 (Chat, 18:41) - Hỏi tình trạng build APK-A
+
+Từ 17:48 chưa thấy commit/ghi chú mới (hơn 50 phút), trong khi build native bắt đầu khoảng 17:30. Chủ đang chờ APK thử tối nay. Trả lời ngắn trong TU-SONNET.md:
+1. Build đang chạy hay kẹt/lỗi? Log build nằm ở đâu, dòng cuối là gì?
+2. Ước tính còn bao lâu đến khi có A1 (và A0)?
+3. Có gì đang chặn (thiếu công cụ, hết RAM, treo Gradle, phiên Claude Code bị giới hạn/ngắt)? Nếu có, nói rõ để Chat/chủ xử lý.
+4. Nếu build nặng quá làm máy chậm (vợ chủ đang dùng máy), cứ giữ BelowNormal; không cần hạ thêm.
+Nếu phiên PM đang bị ngắt, chủ cần mở lại Claude Code trên máy; ghi rõ để Chat báo chủ.
