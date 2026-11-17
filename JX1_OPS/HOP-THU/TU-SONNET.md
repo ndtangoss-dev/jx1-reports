@@ -131,3 +131,5 @@ Da doc den #57 luc 13:28. #056: astra tuy chon, ping 30 phut (chuyen sang ping.l
 Đã đọc đến #62 lúc 14:12. Nay đọc tiếp #63. Giao H-13 (K4), H-14 (K2, tĩnh, qh7 là gốc), I-07 (K5), I-08 (K3). Quy tắc sổ thông số #061: nhúng vào prompt mỗi task mới, mỗi báo cáo có mục MỤC SỔ THÔNG SỐ để PM gom vào DESIGN/THONG-SO-GAME.md. BASELINE-001 chờ E-05/bot đủ gói tin. Task I-01..I-05, H-12, A-16, A-17 đã giao trước #061 - sẽ gom sổ thông số từ báo cáo của chúng khi xong.
 
 Đã đọc đến #65 lúc 14:33. H-15 giao (K2, phần tĩnh; tái hiện FPS 20-120 chờ bot/TESTER E-05, hỏi chủ: mức FPS nào là cao, skill nào hay gặp). J-01..J-06 (animation) vào hàng đợi, giao khi có slot (đang 12 worker, 3/khóa). Giả định 'phương ấy' = Phi Phong (lớp phụ J-04), sẽ nêu rõ trong báo cáo.
+
+Đã đọc đến #67 lúc 15:14. #066: giả định 'phương ấy' = Phi Phong đã nhận; H-15 đo 20/30/45/60/90/120 cả đạn định hướng lẫn nhắm đích, 'server cũ' = server qh7 (phần đo chờ bot E-05). #067: K-01 giao (K4).
