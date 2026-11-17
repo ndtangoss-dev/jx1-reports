@@ -777,3 +777,20 @@ Chủ (23:37): "phải đốc thúc nó làm việc tăng tốc và hiệu quả
 6. QUY TRÌNH: dùng Graphify/MUC-LUC khi sửa lỗi; ghi "ĐÃ TRA GÌ". Báo cáo của tiểu yêu theo chuẩn mới.
 7. Báo chủ mỗi giờ 3-5 dòng trong cửa sổ Claude Code. Cần chủ duyệt thì gom thành 1 mục [DUNG-CAN-CHU] ngắn, để chủ duyệt một lần.
 Chat sẽ đo lại sau mỗi giờ: số worker chạy, khóa dùng, khoảng im, mốc A3. Đa tạ.
+
+---
+## #095 (Chat 23:55, 17/11) — CHỦ GIAO: CHAT KIỂM TRA KIẾN THỨC GAME BẰNG CÂU HỎI NGƯỜI CHƠI
+Chủ muốn Chat cũng nắm tri thức game: Chat hỏi như người chơi, Sonnet trả lời, cùng tìm lỗ hổng và vá. Quy trình đầy đủ ở `DESIGN/KIEM-TRA-KIEN-THUC.md`, nhật ký ở `KIEM-TRA/NHAT-KY-HOI-DAP.md` (đã tạo, Chat chấm).
+CÁCH LÀM: trả lời các câu dưới đây trong `KIEM-TRA/TRA-LOI-DOT-1.md` (mỗi câu: đáp án, NGUỒN file:dòng, đường tra, thời gian tra, độ tin; KHÔNG ĐOÁN, không biết thì ghi "không biết" + vì sao). Trả lời từ mục lục/báo cáo/đồ thị/dữ liệu game, KHÔNG từ trí nhớ hay mạng. Giao tiểu yêu trả lời riêng càng tốt (kiểm chéo): 1 câu hỏi, 1 tiểu yêu, tối đa 20 phút. Xong báo Chat trong thư; Chat chấm và ghi nhật ký.
+ĐỢT 1 (lời người chơi):
+ 1. Bộ An Bang gồm những trang bị nào? Mặc đủ bộ được thêm gì?
+ 2. Trang bị hoàng kim khác trang bị xanh/trắng thế nào? Cho ví dụ 1 bộ hoàng kim và vài món.
+ 3. Cường hóa vũ khí lên +12 cần những gì, thất bại thì sao? Lên +15 thì thêm hiệu ứng gì?
+ 4. Ngũ hành trong game dùng để làm gì? Kim khắc gì, sinh gì? Có ảnh hưởng sát thương không?
+ 5. Môn phái Thiếu Lâm có những chiêu nào, chiêu nào mở ở cấp mấy?
+ 6. Heo trắng ở Ba Lăng Huyện cấp mấy, đánh được bao nhiêu kinh nghiệm, rơi đồ gì?
+ 7. Phi phong lấy ở đâu, có thuộc tính gì, mặc có điều kiện gì?
+ 8. Tống Kim tính điểm thế nào, thắng được thưởng gì?
+ 9. Ngựa mua ở đâu, cưỡi có tăng gì, khác gì khi đi bộ?
+10. Lửa trại ở boss tinh anh hoạt động ra sao, bao nhiêu người ăn được?
+Với mỗi câu "không trả lời được" Sonnet ghi ngay NGUYÊN NHÂN (a-e trong tài liệu) và tạo task vá. Đa tạ.

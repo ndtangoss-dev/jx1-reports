@@ -114,3 +114,4 @@
 - 23:12 Kiểm: Sonnet làm xong #093 (22:56-22:58): Graphify client đổi sang gốc bản A (trước trỏ nhầm Classes cũ), DO-THI.md + script làm mới, HUONG-DAN-TRA-CUU, MUC-LUC-TRI-THUC, skill tiểu yêu, U-01/U-02/U-03 chạy song song. Chưa có kết quả U-xx; chưa đổi khóa xingchi. Đã báo chủ.
 - 23:40 Chủ giao giám sát Sonnet qua đêm, báo chủ mỗi giờ. Sonnet đang chạy: U-02, U-03, S-01, R-01..R-07 (chuẩn báo cáo mới, R-04..R-07 qua Tổng quản Q-42), K-02 sắp giao. Đã thay lịch kiểm: 30 phút/lần, báo chủ mỗi giờ (:35). BÁO CHỦ 23:40.
 - 23:45 Chủ đốc thúc Sonnet tăng tốc + chê giám sát chưa kỹ. Gửi #094: ≥8-10 worker song song, tạo thêm khóa xingchi (#071 chưa làm), bảng TRẠNG THÁI SỐNG mỗi 30 phút, mốc A3, 3 số mỗi giờ. Chat sẽ đo lại mỗi giờ.
+- 23:55 Chủ giao Chat kiểm tra kiến thức game bằng câu hỏi người chơi. Tạo DESIGN/KIEM-TRA-KIEN-THUC.md, KIEM-TRA/NHAT-KY-HOI-DAP.md; gửi #095 (10 câu đợt 1). Web không có nguồn tin cậy cho 'bộ An Bang', không đưa đáp án từ trí nhớ.
