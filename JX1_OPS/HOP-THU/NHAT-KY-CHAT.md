@@ -37,3 +37,4 @@
 - 2026-11-17 11:20 Chủ dự án: tự tạo khóa (báo khi >20), test astra sâu, tiền không là vấn đề; gửi #038 (Q-41, A-11b, bảng giao việc).
 - 2026-11-17 11:30 Chủ dự án muốn đo token/giây của tiểu yêu; gửi #039 (A-11c); số tạm từ A-11: sol 0,9-7,1, astra 2,0-9,0 tok/s đầu ra thực tế.
 - 2026-11-17 12:10 Chat duyệt A-11c (sol ~30 tok/s, astra 503 tạm), A-14; gửi #040. Báo chủ dự án nút thắt.
+- 2026-11-17 12:25 Chủ dự án hỏi cách biết dùng tiểu yêu hiệu quả (dashboard 11:25): đồng thời thực ~1,4; gửi #041 (bảng hiệu quả 6 chỉ số).
