@@ -122,3 +122,4 @@
 - 00:07 Kiểm: Sonnet chưa push gì kể từ 23:31 (36 phút, dưới ngưỡng 60). Chưa có TRẠNG THÁI SỐNG (#094), chưa trả lời #094-#098 (chuẩn hóa dữ liệu đang chạy theo chủ). U-01/02/03, S-01, R-01..R-07 đều đang chạy theo KHOA.md; chưa có báo cáo U/R/S nào xong. Chưa báo chủ (giờ báo đầu tiên 00:35).
 - 00:13 Lịch cũ (00:12) đã chạy: kho chưa có gì mới từ Sonnet. Không đặt lại lịch cũ để tránh trùng; lịch giám sát đêm (00:36) tiếp tục.
 - 00:20 BÁO CHỦ: Sonnet trả lời #094-#098: 'chuẩn hóa' Sonnet làm là chuẩn hóa BÁO CÁO (R-01..R-07, kết quả 0%), chưa có bảng ánh xạ TCVN3 dữ liệu game; khóa xingchi chưa thêm, 429 nhiều. Gửi #099 (K-03 ngay, khóa, backoff 429, chia nhỏ R).
+- 00:38 BÁO CHỦ 00:38 (giờ đầu): Sonnet làm thêm: tạo khóa K6 (xingchi, có K2-K6), Q-45 đội test tính năng game T-01..T-04 (chủ duyệt), vẫn chưa thấy K-03/ánh xạ TCVN3; R-01..R-07 và S-01, U-03 đang chạy; chưa đọc #099 (trả lời lúc 00:11 là cho #094-#098).
