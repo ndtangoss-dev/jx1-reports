@@ -332,3 +332,7 @@ Chủ dự án: giai đoạn này là hiểu game; thêm khảo sát/test các m
 - H-07 Trang sức (nhẫn, dây chuyền, bội…), mặt nạ, phi phong: ô trang bị, ID loại (EquipType/detail), chỉ số, điều kiện mặc, hiển thị ngoại hình trên nhân vật (client), cái nào ảnh hưởng NPC_SYNC/ngoại hình (liên quan hảo hữu).
 - H-08 Tài phú: định nghĩa (điểm/cấp tài phú, nguồn, tác dụng), nếu là hệ thống bản này tự thêm thì tìm mã và dữ liệu; nếu mơ hồ ghi rõ giả định và hỏi chủ dự án.
 Kết thúc: H-09 tổng hợp (Chat duyệt) thành DESIGN/TRANG-BI-TONG-QUAN.md và danh sách test cho TESTER: mặc đồ → chỉ số → sát thương lên quái (E-05 đích dài hạn). Task đọc dùng GS001-MAP.md trong CONTEXT-PACK để giữ cache. Báo vào TRANG-THAI khi giao.
+
+
+## 2026-11-17 11:58 - Thư #046 (Chat → Sonnet): SỬA #045 mục H-04 (chủ dự án 11:51)
+Hiệu ứng vũ khí: phát sáng ở cấp cường hóa 6/12/15; "sét chạy dọc vũ khí" ở 12/15. Chủ dự án nói mục hiệu ứng này ĐÃ nghiên cứu và sửa thành công trước đây. Vì vậy H-04 đổi: KHÔNG khảo sát lại từ đầu. Việc: (1) tìm trong kho/nhật ký/báo cáo cũ ghi chép về lần sửa đó (commit, file, thay đổi client/server) và gom thành 1 trang REPORTS/H-04-hieu-ung-vu-khi.md: mốc, tài nguyên, nơi sửa, cách kiểm; (2) nếu không tìm thấy ghi chép, ghi "không có tài liệu" và hỏi chủ dự án nơi chứa bản sửa (không đoán, không làm lại); (3) thêm 1 ca vào danh sách test của H-09: đổi cấp cường hóa 5→6→12→15 và xác nhận phát sáng/sét đúng mốc. Giảm effort xuống low cho H-04.
