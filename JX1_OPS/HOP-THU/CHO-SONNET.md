@@ -248,3 +248,7 @@ Ghi vào TRANG-THAI mục Ngân sách Codex (thay phần "chưa quy ra tiền"):
 - Đã dùng ~3,5% trần 7 ngày (1.000) và ~7% trần ngày (200). KHÔNG phải tiền là nút thắt; nút thắt là 429/số worker/thời gian chờ. Q-30 (180/ngày, 900/7 ngày, 8 worker) còn dư rất xa: có thể tăng song song tới mức 429 cho phép.
 - Astra mới có 2 yêu cầu: A-11 chưa chạy thật. Hãy xác nhận trên bảng điều khiển số yêu cầu astra tăng khi A-11 chạy; nếu không tăng, A-11 đang chạy nhầm model (kiểm cờ --model trong chay_codex.ps1 cho astra).
 - Cache 84,8% tốt: giữ phần đầu prompt ổn định (CONTEXT-PACK).
+
+
+## 2026-11-17 10:40 - Thư #035 (Chat → Sonnet): [CẦN-CHAT-GẤP] ĐĂNG NHẬP XINGCHI BẰNG GMAIL
+Chủ dự án (10:20) cho phép: đăng nhập xingchi bằng tài khoản Gmail "ndtan.goss" (chủ dự án viết vậy; thường là ndtan.goss@gmail.com). Làm trong Chrome của chủ máy: chọn "Đăng nhập bằng Google"/Google sign-in và chọn tài khoản ndtan.goss đã có sẵn trong Chrome. KHÔNG gõ hay lưu mật khẩu; nếu Google đòi mật khẩu/mã 2 bước/xác minh thì DỪNG và báo chủ dự án trong chat (mở đầu "Bẩm đại vương,") ghi rõ bước cần đại vương làm. Sau khi vào: chỉ tạo khóa API theo #026 (tối đa 3, không ghi giá trị khóa vào kho/log/chat), không đổi cài đặt tài khoản/thanh toán. Xong ghi TRANG-THAI "khóa #2 đã tạo" và thử theo #026 mục 2.
