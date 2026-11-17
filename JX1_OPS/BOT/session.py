@@ -11,6 +11,7 @@ from enum import Enum
 from . import packets
 from .crypto import from_account_begin
 from .framing import FrameDecoder, ProtocolError, pack_frame
+from .worldsync import split_records
 
 TEST_HOST = "192.168.56.150"
 MAIN_HOST = "192.168.1.50"
@@ -155,7 +156,14 @@ class Session:
         if self.state not in (State.SYNCING, State.IN_GAME):
             raise ProtocolError("Chưa có kết nối game")
         try:
-            messages = packets.game_messages(self.game.receive(deadline))
+            messages = split_records(self.game.receive(deadline))
+            # Không ACK một frame có SYNC_END lặp/sai key ở phía sau.
+            ends = [m for m in messages if m[0] == packets.S2C.SYNC_END]
+            if ends:
+                self._expect(State.SYNCING)
+                if len(ends) != 1:
+                    raise ProtocolError("SYNC_END lặp trong frame")
+                packets.sync_reply(ends[0], self.client_key)
             for message in messages:
                 if message[0] == packets.S2C.PING:
                     self.game.send(packets.ping_reply(message, int(time.monotonic() * 1000) & 0xFFFFFFFF))

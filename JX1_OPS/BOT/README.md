@@ -1,8 +1,8 @@
 # E-01 — Client một Bot, thử nghiệm offline
 
-Trạng thái **PARTIAL**: codec và phiên theo profile nguồn đã có; chưa phải client đã đăng nhập được server thật. Bộ nhận GS hiện chỉ tách `CLIENT_SYNC_END` và `PING_COMMAND`. Khi nhận các gói đồng bộ thế giới khác, client đóng kết nối và báo ID chưa hỗ trợ. Không bỏ qua hay quét tìm byte sync bên trong payload.
+Trạng thái runtime **chưa kiểm**: E-01b bổ sung `worldsync.py`, tách và bỏ qua các record world/NPC/player/skill/item trước `CLIENT_SYNC_END`, rồi gửi ACK 9 byte và CP_LOCK. Bộ tách kiểm toàn bộ frame trước khi trả record, từ chối ID ngoài bảng, độ dài sai/cắt và SYNC_END lặp; không quét tìm byte sync trong dữ liệu. Record phải trọn trong frame; TCP bị chia/gộp được xử lý ở `FrameDecoder`.
 
-Chi tiết còn thiếu và dẫn nguồn: [E-01-thieu-giao-thuc.md](../REPORTS/E-01-thieu-giao-thuc.md).
+Chi tiết bảng độ dài, ID chưa hỗ trợ, hai biến thể ACK và giới hạn ABI: [E-01b-thieu-giao-thuc.md](../REPORTS/E-01b-thieu-giao-thuc.md). Các giới hạn login/gameplay còn lại: [E-01-thieu-giao-thuc.md](../REPORTS/E-01-thieu-giao-thuc.md).
 
 ## Chạy offline
 
@@ -40,6 +40,6 @@ Chỉ cho phép IPv4 literal `192.168.56.150`, cổng Bishop 56722 và gs001 511
 
 Mỗi phiên chỉ có một Bot. `--observed-online` phải là 0..99 trước khi thêm Bot, theo mức tối đa 100 của task. Đây là số người vận hành cung cấp; chưa có gói đo online hay cơ chế giữ chỗ nguyên tử để bảo đảm giới hạn toàn server khi người khác đồng thời đăng nhập.
 
-Profile wire là little-endian Windows, pack(1), int/uint/BOOL 32 bit, bool 1 byte, GUID giữ nguyên 16 byte. ASCII là mặc định cho chuỗi; `--encoding` chỉ dùng khi đã xác minh encoding runtime. Không suy encoding runtime từ encoding source.
+Profile wire là little-endian Windows, pack(1), int/uint/BOOL 32 bit, bool 1 byte, GUID giữ nguyên 16 byte. Riêng luồng thế giới nhận dùng layout **header GS**: normal hiện tại 55 byte và NPC normal 227 byte; client Cocos khai báo tương ứng 31/223 byte. Không tự dò hoặc fallback ABI theo byte trong payload. Chưa xác minh profile này với binary. ASCII là mặc định cho chuỗi; `--encoding` chỉ dùng khi đã xác minh encoding runtime. Không suy encoding runtime từ encoding source.
 
 Không lưu payload, mật khẩu, MD5, GUID hay khóa phiên. Các literal tài khoản/khóa trong test là dữ liệu tổng hợp offline. CLI đóng socket khi lỗi và không tự đăng nhập lại; thao tác logout có payload tùy biến chưa triển khai.
