@@ -55,3 +55,4 @@
 - 2026-11-17 13:20 Kiểm 30 phút: sự cố đứng im #2 (10 worker im 12:36-13:09, 429 xingchi), Sonnet chạy lại; F-01 xong; E-09..E-13 chưa nộp. Gửi #054 (hạ 8 worker, mở từng bước, watchdog).
 - 2026-11-17 13:22 Chủ dự án xác nhận sự cố chung xingchi (nhóm người dùng); gửi #055 sửa #054, giữ quân số, giữ watchdog.
 - 2026-11-17 13:28 Nhóm xingchi nói astra không ổn định; gửi #056 hạ astra thành tùy chọn.
+- 2026-11-17 13:30 Chủ yêu cầu kiểm tra máy thật (tiến trình ẩn, RAM, ổ C) để duyệt tắt/gỡ; gửi #057 (M-01, chỉ đọc, báo để duyệt).
