@@ -84,3 +84,4 @@
 - 17:05 #077: chủ nhắc máy thật dựng được APK, cài đè qua Tailscale cùng khóa ký; giao L-03 ghi quy trình dựng APK; điện thoại và máy thật đang online trên Tailscale.
 - 17:09 #078: chủ dặn thử APK trên LDPlayer trước, ổn mới báo; ẨN cửa sổ vì vợ chủ dùng máy tối nay.
 - 17:20 Kiểm: L-02 PARTIAL (patch A xong, chưa build vì thiếu Java trong sandbox worker); K-01, I-06b, X-01/02/04 gộp; E-13 chưa đủ điều kiện chuyển Q-42. #079: PM tự dựng APK A0/A1 trên máy thật, worker làm B.
+- 17:40 #080: duyệt có điều kiện thiết kế H-15 (đo trước, sửa theo bằng chứng, không đổi delta-time hàng loạt, không sửa server). Sonnet đang dựng A1, đọc #079 lúc 17:28.

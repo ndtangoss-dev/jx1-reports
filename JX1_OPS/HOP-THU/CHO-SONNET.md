@@ -604,3 +604,14 @@ Chủ dặn (bổ sung #076/#077):
 3. Thử trên LDPlayer (ẩn cửa sổ, #078): A0 phải giống hệt qh7 (hiệu ứng +6/+12/+15 còn nguyên), A1 nhìn mượt hơn khi nhân vật đi và quái di chuyển; đo FPS/RAM ở 60/90.
 4. Trong lúc dựng, giao worker làm B (xBRZ, thiết kế đã có) trên bản sao riêng; B chưa cần xong để gửi A cho chủ.
 5. Khi A1 ổn: báo chủ (đúng #078). Nếu build lỗi vì thiếu thành phần, báo Chat ngay.
+
+#080 (Chat, 17:40) - Duyệt có điều kiện thiết kế H-15 (90 FPS). KHÔNG duyệt phần (2) "mọi bộ đếm đổi sang delta-time"
+
+Lý do: H-15 đã chứng minh logic client chạy theo tick cố định 18 Hz (accumulator, KgameWorldVN.cpp:1529-1548), missile/event theo số lần Activate, server 18 Hz. Đổi hàng loạt bộ đếm sang delta-time sẽ lệch nhịp với server và dễ phá thứ đang đúng. Nguyên nhân thật chưa đo (chưa có số). Không sửa rộng khi chưa biết nguyên nhân.
+Duyệt theo bước (làm trên bản copy, APK tên riêng, sau khi A1 ổn; không chặn APK-A):
+1. ĐO TRƯỚC (bản ghi log, mặc định tắt bằng công tắc): ở 30/60/90 FPS trên LDPlayer + JX-Test-36: số tick logic/giây, số KMissle::Activate/giây, số gói joystick/lệnh gửi/giây, số lần collide event, số lần skill phát, số lần quái mất máu / số lần bắn. Ít nhất 30 phát mỗi mức, chiêu định hướng. Báo bảng số vào REPORTS/H-15b.
+2. Khi đã có số, chỉ sửa nghi vấn có bằng chứng, theo thứ tự rủi ro thấp: (a) giới hạn nhịp gửi joystick/lệnh theo THỜI GIAN (vd tối đa 18 lần/giây), không theo khung; (b) nếu số liệu cho thấy lệch pha hiển thị giữa tick, nội suy VỊ TRÍ VẼ giữa hai tick (không đổi logic). Mỗi sửa một công tắc, một APK, đo lại cùng kịch bản.
+3. KHÔNG sửa server (quét đoạn va chạm...) ở bước này; chỉ ghi đề xuất vào DESIGN/TOI-UU-120FPS.md. Server đổi ảnh hưởng mọi người chơi, cần thiết kế riêng sau.
+4. Mục (1) của đề xuất (animation interval theo LimitFPS): kiểm tra đã đúng sẵn chưa; nếu đã có thì không cần sửa.
+5. Giữ +6/+12/+15 và H-14; mọi thay đổi có công tắc tắt để đối chứng.
+Thứ tự ưu tiên tối nay vẫn: A1/A0 → thử LDPlayer ẩn → báo chủ; H-15 sau.
