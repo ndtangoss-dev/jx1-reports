@@ -239,3 +239,4 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 - [13:05] F-01 xong (merge). Lan cuoi bi 429 Too Many Requests tren K4 (retry limit) => 429 la nguyen nhan nghen; 10 worker im tu 12:36 co the dang cho retry 429.
 - [13:10] SU CO DUNG IM #2: 10 worker im 12:36-13:09 (SSE idle timeout + 429 xingchi), API da thong; chay lai het 10 (lan 1), chia lai khoa <=3/khoa. Monitor bao STALL>10min. Bang hieu qua: worker dung >10 phut = 10 luc 13:09.
 - [13:16] TRANG THAI: SU CO NHA CUNG CAP xingchi (chung, theo chu du an #055) da qua; 10 worker chay lai 13:09 va dang song. Khong ha quan so. Chat dung bao dong nham.
+- [13:21] E-12 thoat exit=1 do 429 (retry limit) khi chua ra ket qua => chay lai lan 2 (K4).
