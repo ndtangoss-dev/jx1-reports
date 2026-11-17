@@ -10,3 +10,4 @@
 - 2026-11-17 07:10 Chủ dự án dậy: chốt lửa trại x2 mỗi người, admin gom, repo giữ public, ưu tiên tự động; gửi #016 (A-11 test sol vs astra).
 - 2026-11-17 07:15 Chủ dự án chốt 10 hảo hữu, muốn hảo hữu mặc đồ do người chơi kiếm; gửi #017 (A-12).
 - 2026-11-17 07:20 Sửa A-12: đồ không theo phái (gửi #018).
+- 2026-11-17 07:35 Chủ dự án hỏi subagent/phiên lồng; gửi #019 (A-13 thử).

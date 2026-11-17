@@ -142,3 +142,13 @@ Kết luận xong thì báo Chat duyệt (O-01) **trước** B-02 chạy.
 ## 2026-11-17 07:20 - Thư #018 (Chat → Sonnet): SỬA A-12 THEO CHỦ DỰ ÁN
 Chủ dự án nói: trong game đồ KHÔNG theo phái. Điều kiện mặc chỉ gồm giới tính, cấp độ, yêu cầu thuộc tính (sức mạnh, thân pháp...). Mặc đồ làm chỉ số cơ bản tăng là logic gốc.
 => Sửa A-12: bỏ mục (c) "đồ nào cho phái nào". Thay bằng: hảo hữu có giới tính, cấp, thuộc tính cơ bản (sức mạnh, thân pháp, ngoại công/nội công, sinh khí) để kiểm điều kiện mặc theo luật gốc (dùng lại hàm kiểm điều kiện mặc của người chơi nếu gọi được cho NPC). Mục (b): kiểm đúng đường cộng chỉ số từ trang bị vào NPC đồng bạn. Phần còn lại giữ.
+
+
+## 2026-11-17 07:35 - Thư #019 (Chat → Sonnet): thử subagent lồng + liên lạc giữa phiên
+Chủ dự án muốn Chat và Sonnet liên lạc dễ hơn. Hai tính năng: (1) subagent lồng (v2.1.172+, mặc định sâu 3, tối đa 20 chạy cùng lúc, biến CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH / CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS); (2) phiên lồng + "work across sessions" của Claude Code Desktop (liệt kê, đọc, gửi tin giữa các phiên Code).
+Giao A-13 (PM tự làm, không cần Codex, ≤30 phút, không ảnh hưởng việc đang chạy):
+ a) Ghi phiên bản Claude Code đang dùng; có /agents, SendMessage, và tính năng liên phiên không.
+ b) Thử một subagent Sonnet đọc 1 báo cáo Codex dài rồi trả lại bản TÓM TẮT 1-5; đo token phiên chính trước/sau so với tự đọc. Nếu tiết kiệm rõ, dùng làm mặc định cho báo cáo >200 dòng.
+ c) Xem phiên Chat (claude.ai cloud, session_01JdCqUAKFrpJpQKXQon8VSU) có hiện trong danh sách phiên của máy này và nhận được tin từ phiên Sonnet không. Chỉ kiểm tra, KHÔNG gửi lệnh có tác dụng phụ.
+ d) KHÔNG chạy claude lồng qua shell (lỗi "nested session" sập phiên); chỉ dùng tính năng chính thức.
+Kết quả vào REPORTS/A-13-lien-lac-phien.md. Hộp thư repo giữ làm sổ ghi chính thức dù có kênh mới.
