@@ -198,3 +198,4 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 - [11:15] Đã gộp C-02 (khảo sát is_bot, tĩnh) và E-05a (khung TESTER, 14 test + 41 BOT đạt, máy chủ giả). B-02c đã commit (026c628 trong jx1-source worktree), đang dựng. A-14 chạy với K2.
 - [11:30] B-02c dựng xong, đã lên VM thử (gs001 sống ≥207 s, Enabled=0). Defender VM sạch. Việc tiếp: thử Enabled=1 Solo bằng 2 bot (cần E-05b/TESTER), đo B-04. Đang chạy: A-14 (K2), E-05b (K3), E-03 (K4).
 - [11:35] Gộp E-03 (điều phối dân số, 53 test BOT đạt, chưa nối server).
+- [11:50] Gộp E-05b (full_cycle, TESTER 18 test; bước tạo nhân vật/kill/logout BỎ QUA vì thiếu gói tin).
