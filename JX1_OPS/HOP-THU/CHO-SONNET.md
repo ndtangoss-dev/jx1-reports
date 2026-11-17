@@ -515,3 +515,14 @@ Chủ duyệt: tối ưu ở 90 FPS trước (mức tối đa của thanh trư�
    c. Sau khi duyệt: sửa trên bản sao, dựng APK thử (tên riêng, không ghi đè jx-qh7.apk), đo lại cùng kịch bản, báo cáo trước/sau.
 3. Khi có APK thử, báo chủ trong chat để chủ cài và chơi thử; kèm 3-5 bước thử bằng ngôn ngữ thường.
 4. Kiểm hiệu ứng vũ khí +6/+12/+15 và các phần H-14 không bị ảnh hưởng.
+
+#071 (Chat, 16:03) - Mở rộng số worker, chia việc nhỏ (chủ đã duyệt, không cần hỏi lại)
+
+Chủ không quan tâm chi phí, ưu tiên hiệu quả và tốc độ. Chủ duyệt thường trực: PM tự quyết thêm worker và khóa, không cần hỏi chủ từng lần.
+1. Khóa: có thể có tới 20 khóa (Q-41). Hiện 5 khóa hoạt động. Tạo thêm khóa khi cần (cách đã dùng cho K2..K5/K6), ghi vào STATE/KHOA.md.
+2. Worker: nâng số worker song song theo số khóa, giữ <=3 worker/khóa, trần Q-41 (16 worker) có thể nâng lên 20 nếu khóa đủ. Không cần hỏi chủ khi nâng.
+3. Chia việc: tách task lớn thành mảnh nhỏ (độc lập, mỗi mảnh <=30 phút, có checkpoint commit tạm) để một lần nghẽn/429 chỉ mất một mảnh. Việc quan trọng/ngắn chạy trước.
+4. Giữ watchdog E-13b (log không đổi 10 phút thì chạy lại trên khóa khác; >=3 worker im cùng lúc = sự cố nhà cung cấp, tạm dừng giao mới và thăm dò 2 phút/lần).
+5. Giữ nguyên các chốt khác: trần 400 USD/ngày (mềm) và dừng báo ở 1.500 USD tổng tích lũy vẫn áp dụng (chủ không quan tâm chi phí nhưng chốt an toàn không đổi); báo cáo 30 phút/lần; mọi việc vẫn chỉ đọc/đo trừ khi Chat/chủ duyệt thiết kế sửa.
+6. Thêm vào bảng hiệu quả: tỷ lệ cache/đầu vào mỗi ngày (hôm nay ~81%), độ trễ trung bình (hôm nay 39,5 s).
+Ghi quyết định này vào QUYET-DINH.md.

@@ -74,3 +74,4 @@
 - 15:34 #069: chủ chốt mục tiêu 120 FPS; FPS UI tối đa thực = 90; giao ghi QUYET-DINH và mục tối ưu 120 FPS.
 - 15:36 #070: chủ duyệt tối ưu ở 90 FPS trước để test; quy trình đo→thiết kế→duyệt→sửa bản sao→APK thử.
 - 15:53 Kiểm 30 phút: Sonnet đã đọc #068; J-05, J-06 đã gộp; có sự cố 429 lần 2, Sonnet chạy lại 9 worker; K-01, L-01 đang chạy; chưa thấy #069/#070 được ghi nhận. Không có gì đáng báo chủ.
+- 16:03 #071: chủ duyệt thường trực nâng khóa tới 20, worker tới 20, chia việc nhỏ; không cần hỏi lại.
