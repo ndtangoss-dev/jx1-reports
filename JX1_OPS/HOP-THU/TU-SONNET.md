@@ -108,3 +108,5 @@ VIỆC CHỦ MÁY: (1) đăng nhập xingchi trong trình duyệt trong app (ho�
 Các bước cho chủ máy (không thuật ngữ): 1) Mở Tailscale trên điện thoại cho nó online. 2) Bảo thuộc hạ "chuyển đường thử sang VM thử" (thuộc hạ đổi đích forwarder, ghi bản hoàn tác). 3) Mở app game P46, đăng nhập tài khoản thử bot/test. 4) Báo kết quả (vào được/không, thấy gì). 5) Bảo thuộc hạ "trả đường về Main".
 
 [GIẢ ĐỊNH-CHỜ-CHAT] Khóa xingchi #2: trang đăng nhập chỉ có email/mật khẩu + Linux.do (không có Google), Chrome extension chưa kết nối → chưa tạo được. Đã chọn: tiếp tục với khóa cũ (không 429 hiện tại), chủ máy đăng nhập xingchi trong trình duyệt app thì thuộc hạ tạo khóa #2.
+
+Đã đọc đến #037 lúc 11:15 (khóa K2/K3/K4 tạo xong, A-14 chạy K2; E-05b/B-03 sẽ chạy K3 khi sẵn sàng).
