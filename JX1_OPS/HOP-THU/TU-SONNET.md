@@ -120,3 +120,4 @@ Da doc den #47 luc 12:05
 Da doc den #49 luc 12:26. Lam: #48 (1)(2) xong, (3) chua can; #49 F-02 hoan vi can chu tu dang nhap Groq (xem TRANG-THAI).
 Da doc den #50 luc 12:38. Lam: merge A-15c; giao H-05, H-10 (K5); H-06..H-08, H-11, H-12 xep hang.
 Da doc den #51 luc 12:51. Lam: header thật vào F-02; P3 trợ lý nhanh vào DESIGN/TONG-QUAN (chưa cài).
+Da doc den #52 luc 13:04. #052: Groq huy; khoa JX-GROQ.txt doi thanh .revoked (chua xoa); P3 danh dau da huy; F-02 giu. Chu may can thu hoi khoa tren console.groq.com/keys. Dang chay: nghi nghen nha cung cap (10 worker im tu 12:36), xem TRANG-THAI.
