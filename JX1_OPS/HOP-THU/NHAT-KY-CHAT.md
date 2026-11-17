@@ -64,3 +64,4 @@
 - 2026-11-17 14:20 Chủ báo lỗi mất khung hiệu ứng sáng/sét khi vung kiếm di chuyển; gửi #062 (H-14: nguyên nhân giả thuyết + thông số + đo).
 - 2026-11-17 14:25 Chủ xác nhận bản test lỗi là qh7; gửi #063 (H-14 lấy qh7 gốc, bisect qua các bản qh1..qh7).
 - 2026-11-17 14:30 Chủ yêu cầu khảo sát animation nhân vật/quái/skill, cơ chế cắt khung, khả năng thêm khung giữa; gửi #064 (J-01..J-06).
+- 2026-11-17 14:35 Kiểm 30 phút: gộp H-01,H-06,H-07,H-08,H-11,G-01,E-11,E-12,B-04a,E-13b; 12 worker (I-xx, H-12..14, A-16/17); chưa đọc #064 (J-xx). M-01 chờ chủ duyệt. Sổ thông số 0 mục, baseline chưa.
