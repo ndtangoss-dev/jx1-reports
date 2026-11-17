@@ -269,3 +269,4 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 - 2026-11-17 16:16 H-09: xong (exit=0), da gop. bao cao=True
 - 2026-11-17 16:16 I-06: xong (exit=0), da gop. bao cao=True
 - 2026-11-17 16:16 I-06 chay khi J-03/J-04/J-06 chua co bao cao: can chay lai muc Animation (I-06b) sau khi J-03, K-01 xong. H-09/I-06 khong commit duoc trong sandbox worker (index.lock); PM da commit ho.
+- 2026-11-17 16:39 #074 E-13 chay that thu: X-01/X-02 giao dung (K2,K3) nhung dispatcher thoat sau 60s nen QUEUE danh dau blocked 'dispatcher stopped' (loi do thuoc ha dat max-seconds ngan; worker van chay). Chay lai X-03/X-04 voi --until-idle --max-seconds 1500, state D:\JX-wt\_dispatcher-state2, snapshot ngan sach tam daily=0 (CHUA co so that, can doi soat). Cho ket qua 2 cap de doi chieu.
