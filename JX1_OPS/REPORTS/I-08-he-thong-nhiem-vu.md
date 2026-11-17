@@ -1,10 +1,56 @@
+TÓM TẮT 1: [NGUỒN] Giữ kết luận DONE khảo sát tĩnh I-08; biến task lưu bền/tạm không phải danh mục quest hoạt động.
+TÓM TẮT 2: [NGUỒN] Bảng phạm vi bổ sung 8 nhóm dữ liệu nhiệm vụ và 3 mặt cắt lưu bền, UI/gói tin, Bot.
+TÓM TẮT 3: [NGUỒN] R-06b đối chiếu G: 14 dòng guide, 4 loại random, 17 mẫu kill, 33 mission, 47 timer, 117/107 tên entity/rate.
+TÓM TẮT 4: [CHƯA KIỂM] Runtime, binding TASKSYS, PAK thực nạp, ABI/DB và quest mở hảo hữu còn theo giới hạn khảo sát gốc.
+TÓM TẮT 5: [NGUỒN] Chỉ chuẩn hóa tài liệu, giữ nguyên tóm tắt/kết luận/sổ thông số cũ; không build, chạy test game, exe, VM hoặc mạng.
+
+# I-08 — Hệ thống nhiệm vụ
+
+Loại: khảo sát
+Chủ đề: Phân loại dữ liệu nhiệm vụ, biến trạng thái, nhận/trả/thưởng, UI và khả năng Bot theo khảo sát tĩnh.
+Từ khóa: nhiệm vụ, quest, TASKSYS, GetTask, nTaskCount, daily, random, mission, taskguide, Bot
+Trạng thái: DONE — chỉ trong phạm vi khảo sát tĩnh I-08, giữ nguyên giới hạn chưa chạy.
+Độ phủ: đã phủ mô tả tĩnh 11 trên tổng 11 nhóm (8 nhóm dữ liệu và 3 mặt cắt); runtime chưa phủ; tổng quest hoạt động chưa đếm được vì thiếu manifest/binding thực nạp.
+Liên quan: [I-07](I-07-cac-loai-tien-te.md), [I-06](I-06.md), [A-12](A-12-hao-huu-mac-do.md), [A-14](A-14-hao-huu-trang-bi-thiet-ke.md), [E-02](E-02-hanh-vi-bot.md), [Tổng quan thế giới](../DESIGN/THE-GIOI-TONG-QUAN.md)
+Cần tôi quyết định: không — các ca TESTER/binding/DB cần task riêng theo bàn giao cũ.
+
+```mermaid
+flowchart LR
+    D["Bảng guide, random, daily, mission"] --> S["Script nhận - mục tiêu - thưởng"]
+    S --> T["Task lưu bền / tạm"]
+    T --> U["Đồng bộ và giao diện client"]
+    T -.-> B["DB/ABI: chưa kiểm runtime"]
+    S -.-> Q["Bot nhận/trả quest: chưa có"]
+    U -.-> R["PAK/binding thực nạp: chưa xác minh"]
+```
+
+## Phạm vi và độ phủ
+
+[ĐÃ XÁC MINH ở cấp dữ liệu/source] Bảng gồm đủ 8 nhóm dữ liệu của khảo sát gốc và 3 mặt cắt kỹ thuật; **đã phủ mô tả tĩnh** không có nghĩa đã hoàn tất mọi quest hoặc đã chạy hệ đó. `G/` = `C:/Jx1CocoV3/Folder/ServerNew-20260116T043145Z-3-001/ServerNew/_bin_v2_/gs/`; `A/` = `D:/JX-build/qh9A/`. R-06b chỉ đọc G/A; các root S/H/L/C/O trong thân vẫn là bằng chứng lịch sử, chưa tái kiểm. Legacy đọc GB18030; chỉ dùng tên cột, token và số khi chữ Việt không tin cậy. Báo cáo lưu UTF-8 không BOM.
+
+| Phần tử | Độ phủ | Bằng chứng trực tiếp R-06b / phần còn thiếu |
+|---|---|---|
+| Chính tuyến | Đã phủ mô tả tĩnh | G `script/task/newtask/master/newtaskprize.lua:15`/`:16`/`:17` đọc 1001/1002/1003; chưa thử thưởng |
+| Phụ tuyến | Đã phủ mô tả tĩnh | G `script/task/newtask/branch/branch_prize.lua:51` có gate 1050/bit 192; 36 cổng là số lịch sử giữ nguyên, chưa đếm lại mọi gate |
+| Daily | Đã phủ mô tả tĩnh | G `Settings/Task/taskguide.txt:6` đến `:8`; G `Settings/Task/dailytask/killmonster.txt:2` có 17 TaskId duy nhất, KillCount đều 20; reset/kill credit chưa kiểm |
+| Random/vòng lặp | Đã phủ mô tả tĩnh | G `Settings/Task/task_type.txt:2` đến `:5` có 4 loại; các bảng random đọc lại được 117/107 tên; loop runtime chưa kiểm |
+| Sự kiện/mission | Đã phủ mô tả tĩnh | G `Settings/Task/missions.txt:2`: 33 bản ghi; G `Settings/TimerTask.txt:2`: 47 bản ghi; không cộng thành số quest |
+| Lịch định kỳ | Đã phủ mô tả tĩnh | G `Settings/Task/tasklist.ini:2` Count=1; `Settings/Task/tasklist_default.ini:2` Count=39; chưa biết loader chọn bản nào |
+| Môn phái/kỹ năng | Đã phủ mô tả tĩnh | G `Settings/Task/taskguide.txt:3`/`:4`; G `script/task/lv120skill/item/lv120skillbook.lua:12` và `lv150skillbook.lua:12`; chưa có tổng quest từng phái |
+| Đồng bạn | Đã phủ dấu vết tĩnh | G `Settings/Task/taskguide.txt:10`/`:11`/`:12`; G `script/task/random/task_head.lua:24` IncludeLib PARTNER; chưa phủ chuỗi mở roster thực |
+| Kho task và lưu bền | Đã phủ mô tả tĩnh | A `Classes/gamecore/KPlayerTask.h:13`/`:30`; G `Settings/TaskID.txt:1` chỉ header; BYTE/save/DB là bằng chứng server lịch sử chưa tái kiểm |
+| UI và gói tin | Đã phủ mô tả tĩnh | A `Classes/gameui/KuiTaskInfo.cpp:124`/`:955`; A `Classes/gamecore/KProtocolProcess.cpp:1552`; G guide có 16 đường Lua riêng, 0 file rời tại G; chưa kiểm PAK/APK |
+| Hảo hữu/Bot/TESTER | Đã phủ phân tích và kế hoạch | Nguồn gián tiếp: mục Vòng lặp mục tiêu hảo hữu và ma trận Q01..Q14 trong thân; chưa phủ nhận/trả quest Bot hoặc chạy TESTER |
+
+Cách đếm R-06b: bỏ header và dòng trắng ở guide/kill/mission/timer; random bỏ thêm dòng mô tả vật lý 2 và đếm TaskName duy nhất theo từng bảng. Kết quả talk/coll/kill/next: entity 9/32/32/44, rate 5/28/32/42; tổng lần lượt 117/107, không phải 117 quest hoạt động. Nguồn: G `Settings/Task/random/{talk,coll,kill,next}/entity.txt:3` và `Settings/Task/random/rate_{talk,coll,kill,nexttask}.txt:3`. Hai cột đường script của G `Settings/Task/taskguide.txt:2` có tổng 16 đường khác nhau; chỉ kiểm file rời, chưa tra PAK.
+
+## Nội dung báo cáo gốc
+
 TÓM TẮT 1: [NGUỒN] Server dùng biến task lưu bền và tạm; task ID hợp lệ 0..9999, không đồng nghĩa 10.000 nhiệm vụ.
 TÓM TẮT 2: [NGUỒN] nTaskCount là BYTE; save đếm mọi biến khác 0 rồi thu hẹp, cần kiểm biên 255/256 trước mở rộng hảo hữu.
 TÓM TẮT 3: [NGUỒN] Random có 117 tên nội dung/107 tên bảng chọn; daily kill có 17 mẫu nhưng script chọn 1..16; 36 cổng thưởng phụ tuyến.
 TÓM TẮT 4: [NGUỒN] Coco có panel/trace/gói task; 16 đường script hướng dẫn không có file rời, IncludeLib TASKSYS trong source là no-op; Bot chưa có nhận/trả quest.
 TÓM TẮT 5: DONE khảo sát tĩnh ngày 17/11/2026; có ma trận TESTER và sổ thông số; chưa chạy test/build/runtime, chưa commit/push, không mạng/VM/exe.
-
-# I-08 — Hệ thống nhiệm vụ
 
 ## Phạm vi và điểm tiếp tục
 
@@ -315,3 +361,14 @@ Chưa thay đổi thông số; không ước đoán ms/FPS/lợi kinh tế hoặ
 | Bảng loop | mainlink.level20 | G/Settings/Task/tasklink_mainlink.txt:2 | 0..7000 | trọng số | Chọn kiểu bước cuối | CẨN THẬN | Min/max cột, max :5 |
 
 Các dòng min/max là thống kê ô số của **một tham số/cột**, không khẳng định mọi giá trị trung gian tồn tại và không phải thông số mới đề nghị. Giá trị ID trạng thái/packet/test vector, số đếm kiểm kê và kích thước ABI suy ra là hợp đồng/bằng chứng ở phần trên, không phải nút cân bằng để chỉnh. Các bảng item/treasure/tọa độ chỉ được nhận diện tên/schema để định vị; I-08 không xuất lại hàng loạt thông số của các hệ đó.
+
+## Bàn giao chuẩn hóa R-06b
+
+[ĐÃ XÁC MINH] Thêm khối thông tin, sơ đồ, bảng đủ 11 nhóm và các số đếm dữ liệu G/A nêu trên. Tóm tắt, kết luận, ma trận TESTER và sổ thông số gốc giữ nguyên. [CHƯA XÁC MINH] Không kiểm runtime, DB, ABI, nội dung PAK hoặc chạy test game/build/exe/VM/mạng. Kết quả kiểm tài liệu và commit chuẩn hóa ghi tại [R-06b](R-06b.md); việc tiếp theo về nghiệp vụ vẫn theo các ca Q01..Q14 gốc.
+
+## Phát hiện khi chuẩn hóa
+
+- [ĐÃ XÁC MINH] Các phép đếm guide/random/kill/mission/timer nêu trong bảng bổ sung khớp dữ liệu G được đọc lại; chỉ xác nhận đơn vị dữ liệu, không nâng kết luận runtime hoặc tổng quest hoạt động.
+- [ĐÃ XÁC MINH ở bản A] Mốc TaskId của UI hiện tại là `D:/JX-build/qh9A/Classes/gameui/KuiTaskInfo.cpp:955`, callback SetSaveVal là `Classes/gamecore/KProtocolProcess.cpp:1552`. Các mốc C/O 936/1548/1546 trong thân thuộc source lịch sử khác; giữ nguyên thay vì gán sang bản A.
+- [CHƯA XÁC MINH] Thư viện TASKSYS/PARTNER, count BYTE và ABI/DB không được R-06b đọc lại ở root S/H/L cũ. Không dùng client A làm bằng chứng đã sửa hay đã chạy server.
+- [CHƯA XÁC MINH về mã hóa] Các bí danh legacy DLY/DLH/LOOP trong thân có tên hiển thị dạng mojibake. Giữ nguyên bằng chứng cũ, không dịch/sửa tên file hoặc suy đường dẫn mới; báo cáo UTF-8 không có U+FFFD.

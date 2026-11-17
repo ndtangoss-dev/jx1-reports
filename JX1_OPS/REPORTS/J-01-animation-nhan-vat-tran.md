@@ -1,4 +1,49 @@
+TÓM TẮT 1: [NGUỒN] Giữ PARTIAL của J-01: có khảo sát tĩnh loader/schema/chọn hướng và khung, chưa chứng minh độ đủ khung sau chuyển đổi.
+TÓM TẮT 2: [NGUỒN] Bảng bổ sung liệt kê đủ 10 nhóm trạng thái; đối chiếu bản A có 15 giá trị CLIENTACTION trước cdo_count và nhánh cưỡi riêng.
+TÓM TẮT 3: [CHƯA KIỂM] Chưa có cặp asset O/C có nguồn gốc rõ để đo khung/hướng, interval, kích thước, nam/nữ hoặc FPS/ms.
+TÓM TẮT 4: [NGUỒN] Số liệu hash, header 4 PAK và sổ thông số của khảo sát J-01 giữ nguyên; R-06b không tái kiểm các gói hoặc source O/C/S cũ.
+TÓM TẮT 5: [NGUỒN] R-06b chỉ chuẩn hóa và đọc source bản A; không sửa mã, giải nén, build, chạy test game, exe, VM hoặc mạng.
+
 # J-01 — Khảo sát animation nhân vật trần
+
+Loại: khảo sát
+Chủ đề: Metadata SPR, ánh xạ hành động/hướng/khung và khoảng trống đối chiếu asset nhân vật trần.
+Từ khóa: hoạt ảnh, animation, nhân vật trần, SPRHEAD, Frames, Directions, nInterval, CLIENTACTION, OnHorse, NoHorse
+Trạng thái: PARTIAL — giữ kết luận gốc; chưa có ma trận asset O/C được đo.
+Độ phủ: đã phủ mô tả tĩnh 10 trên tổng 10 nhóm trạng thái; đo asset/runtime 0/10; số cặp giới × part × hướng chưa đếm được vì thiếu manifest đúng bản.
+Liên quan: [J-02](J-02-animation-quai-npc.md), [J-03](J-03-hoat-anh-ky-nang.md), [J-04](J-04-lop-chong-nhan-vat.md), [J-05](J-05-cat-khung-animation.md), [H-14](H-14-mat-khung-hieu-ung.md), [I-06b](I-06b.md)
+Cần tôi quyết định: không — việc xác định cặp asset và công cụ đọc tiếp theo đã nêu ở bàn giao gốc.
+
+```mermaid
+flowchart LR
+    A["CLIENTACTION và cờ cưỡi"] --> T["Bảng action - equip - part"]
+    T --> S["SPR: Frames, Directions, nInterval"]
+    S --> F["Chọn hướng và khung"]
+    F --> D["Vẽ nhân vật"]
+    O["Cặp asset O/C chưa định danh"] -.-> S
+    D -.-> R["FPS/ms và đủ khung: chưa đo"]
+```
+
+## Phạm vi và độ phủ
+
+[ĐÃ XÁC MINH ở cấp danh mục source] Mười nhóm lấy từ ma trận yêu cầu của J-01 và đối chiếu danh mục thật ở client A `D:/JX-build/qh9A/Classes/gamecore/KNpc.h:106` đến `:120`: 15 giá trị trước sentinel, gồm cả `cdo_none`. Cưỡi là chiều chọn bảng riêng ở `Classes/gamecore/KNpcResNode.cpp:316`/`:326`/`:348`, không được cộng thành một giá trị CLIENTACTION thứ 16. Bảng dưới đếm nhóm, không đếm số SPR hay mặc định mọi tổ hợp đều tồn tại.
+
+| Phần tử | Độ phủ tĩnh | Độ phủ asset/runtime | Bằng chứng bản A |
+|---|---|---|---|
+| Đứng | Đã phủ danh mục | Chưa phủ số ảnh/hướng/nam/nữ/FPS | `Classes/gamecore/KNpc.h:106`/`:107`/`:108`, gồm fightstand/stand/stand1 |
+| Đi | Đã phủ danh mục | Chưa phủ số ảnh/hướng/nam/nữ/FPS | `Classes/gamecore/KNpc.h:109`/`:110`, fightwalk/walk |
+| Chạy | Đã phủ danh mục | Chưa phủ số ảnh/hướng/nam/nữ/FPS | `Classes/gamecore/KNpc.h:111`/`:112`, fightrun/run |
+| Đánh thường | Đã phủ danh mục | Chưa phủ số ảnh/hướng/nam/nữ/FPS | `Classes/gamecore/KNpc.h:115`/`:116`, attack/attack1 |
+| Niệm | Đã phủ danh mục | Chưa phủ số ảnh/hướng/nam/nữ/FPS | `Classes/gamecore/KNpc.h:117`, magic |
+| Bị đánh | Đã phủ danh mục | Chưa phủ số ảnh/hướng/nam/nữ/FPS | `Classes/gamecore/KNpc.h:113`, hurt |
+| Chết | Đã phủ danh mục | Chưa phủ số ảnh/hướng/nam/nữ/FPS | `Classes/gamecore/KNpc.h:114`, death |
+| Ngồi | Đã phủ danh mục | Chưa phủ số ảnh/hướng/nam/nữ/FPS | `Classes/gamecore/KNpc.h:118`, sit |
+| Cưỡi, người không trang bị | Đã phủ nhánh chọn bảng | Chưa phủ ma trận người/ngựa/part/hướng | `Classes/gamecore/KNpcResNode.cpp:316`/`:326`/`:348`, NoHorse/OnHorse |
+| Khác: nhảy, none và biến thể chiến đấu | Đã phủ danh mục | Chưa phủ asset tồn tại và timing từng biến thể | `Classes/gamecore/KNpc.h:119`/`:120`; biến thể đã tách ở các hàng đứng/đi/chạy/đánh |
+
+Các chiều ngang còn thiếu áp dụng cho cả 10 nhóm: hash/cặp asset đúng bản, giới × part × equip, header và kích thước từng frame, mọi hướng tồn tại, quy đổi thời gian, tỷ lệ bỏ khung. A `Classes/engine/KbugInfo.h:245`/`:247`/`:248` và `:264` đến `:267` xác nhận các trường cần đo; không phải số đo đã điền. Legacy đọc GB18030, chỉ tin token/số khi comment lỗi; file báo cáo UTF-8 không BOM. Các root O/C/S cùng số dòng/hash bên dưới giữ nguyên lịch sử, không được R-06b tái xác minh.
+
+## Nội dung báo cáo gốc
 
 **TÓM TẮT 5 DÒNG**
 1. **PARTIAL** — đã xác minh tĩnh đường nạp SPR, cấu trúc metadata, chọn hướng/khung và khác biệt mã giữa source gốc với `D:\JX-source`.
@@ -145,3 +190,13 @@ H-14 ghi rõ việc thiếu SPR/item cụ thể khiến không thể đánh số
 | SPR header | `nInterval` | E `KbugInfo.h:248` | Theo asset, chưa đọc | game frame | Chưa quy ra ms/FPS | CẨN THẬN | TĨNH schema |
 | Hướng | Quantization | G `KNpcRes.cpp:282–287`; O `Classes/vn/gamecore/KNpcResVN.cpp:55–60` | offset `32/D`, miền `64` | đơn vị góc | Chọn direction slice | KHÔNG | TĨNH |
 | Sprite control | Interval tối thiểu | G `KSprControl.cpp:350–351` | 1 | giá trị interval | Chỉ clamp biến trong hàm; không throttle bước | CẨN THẬN | TĨNH |
+
+## Bàn giao chuẩn hóa R-06b
+
+[ĐÃ XÁC MINH] Đã bổ sung khối thông tin, sơ đồ và bảng đủ 10 nhóm; đọc enum, nhánh OnHorse/NoHorse và schema SPR ở client A. Ma trận chưa đo, hash, số liệu PAK, kết luận và sổ thông số J-01 được giữ nguyên. [CHƯA XÁC MINH] Không mở/giải mã lại gói, đo FPS/ms, build, chạy test game/exe/VM/mạng. Kết quả kiểm tài liệu và commit chuẩn hóa ghi tại [R-06b](R-06b.md); bước tiếp theo vẫn là xác định manifest/cặp asset O/C đúng bản như báo cáo gốc.
+
+## Phát hiện khi chuẩn hóa
+
+- [ĐÃ XÁC MINH ở cấp tài liệu] Các câu chưa có J-05 trong thân phản ánh thời điểm J-01. Nay `J-05-cat-khung-animation.md` có trong worktree, được liên kết tại `JX1_OPS/DESIGN/THE-GIOI-TONG-QUAN.md:22`; chưa dùng nội dung mới để sửa kết luận J-01.
+- [CHƯA XÁC MINH] Source O/C/S và bốn PAK lịch sử khác phạm vi nguồn G/A được giao cho R-06b. Không chạy lại hash hoặc nhận cặp asset là tương đương chỉ từ enum/schema bản A.
+- [ĐÃ XÁC MINH ở mức văn bản] Một số comment bản A tại `Classes/gamecore/KNpcRes.cpp:1184` đến `:1205` hiển thị dạng mojibake khi đọc GB18030; chỉ dùng symbol để định vị, không sửa source. Báo cáo UTF-8 không có U+FFFD; chưa xác minh mã hóa chuẩn của từng comment hay chữ trong game.

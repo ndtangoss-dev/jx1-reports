@@ -1,3 +1,51 @@
+TÓM TẮT 1: [NGUỒN] BLOCKED về điều kiện giao việc lịch sử I-07; báo cáo có khảo sát tĩnh một phần, chưa được mở rộng kết luận.
+TÓM TẮT 2: [NGUỒN] Đã phân biệt bạc trong túi/rương, XU nhân vật, điểm nạp ExtPoint, danh vọng và điểm Tống Kim/vinh dự.
+TÓM TẮT 3: [NGUỒN] moneyunit_money và moneyunit_moneya cùng dùng bạc thường tại các nhánh đã đọc; ví bạc khóa độc lập chưa xác minh.
+TÓM TẮT 4: [CHƯA KIỂM] UI, điểm hoạt động, vé/lệnh bài, trần, phạt chết và hành vi giao dịch thực còn thiếu bằng chứng.
+TÓM TẮT 5: [NGUỒN] R-06b chỉ chuẩn hóa tài liệu, giữ nguyên tóm tắt/kết luận I-07 bên dưới; không sửa source, build, chạy exe, VM hoặc mạng.
+
+# I-07 — Các loại tiền tệ
+
+Loại: khảo sát
+Chủ đề: Phân biệt ví tiền, điểm, đơn vị cửa hàng và điều kiện giao dịch theo kết quả tĩnh I-07.
+Từ khóa: tiền tệ, bạc, XU, ExtPoint, MONEYUNIT, danh vọng, vinh dự, Tống Kim, bạc khóa
+Trạng thái: BLOCKED — trạng thái lịch sử của I-07; chuẩn hóa R-06b được giao trực tiếp.
+Độ phủ: đã phủ một phần 8 trên tổng 11 nhóm tiền/điểm/vật phẩm quy đổi; 3 nhóm chưa phủ, chưa xác minh runtime toàn bộ.
+Liên quan: [I-01](I-01-cac-loai-diem.md), [I-02](I-02-vat-pham-ban.md), [I-06](I-06.md), [I-08](I-08-he-thong-nhiem-vu.md), [Tổng quan thế giới](../DESIGN/THE-GIOI-TONG-QUAN.md)
+Cần tôi quyết định: có — theo bàn giao I-07 cũ về điều kiện tiếp tục khảo sát; không chặn chuẩn hóa đã duyệt.
+
+```mermaid
+flowchart LR
+    E["Nguồn nhận: Earn, EarnXu, điểm/thưởng"] --> B["Ví túi/rương và điểm riêng"]
+    B --> M["MONEYUNIT của shop/đấu giá"]
+    M --> P["Đường tiêu đúng loại số dư"]
+    B --> T["Trade bạc và điều kiện vật phẩm"]
+    P -.-> R["UI, persistence, rollback: chưa thử"]
+    T -.-> R
+```
+
+## Phạm vi và độ phủ
+
+Đơn vị đếm là nhóm nghiệp vụ của ma trận và các khoảng trống I-07, không phải số enum hoặc số ví độc lập. Tám nhóm đầu có bằng chứng tĩnh từng phần trong thân; ba nhóm cuối chưa có mô hình đầy đủ. `A/` = `D:/JX-build/qh9A/`; `G/` = server gs của task R-06b. `S/` và `C/` trong thân là root lịch sử của I-07, **không được R-06b đọc lại**. Legacy đối chiếu bằng GB18030, chỉ dùng token; không diễn giải chuỗi Việt bị lỗi. Báo cáo lưu UTF-8 không BOM.
+
+| Phần tử | Độ phủ của báo cáo gốc | Nguồn và giới hạn đối chiếu R-06b |
+|---|---|---|
+| Bạc trong túi | Đã phủ tĩnh một phần | A `Classes/gamecore/KInventory.h:10`; lưu role/pay server là bằng chứng S lịch sử |
+| Bạc trong rương | Đã phủ tĩnh một phần | A `Classes/gamecore/GameDataDef.h:243` mở enum room; ngữ nghĩa rút/tiêu dựa S trong thân, chưa tái kiểm |
+| XU nhân vật | Đã phủ tĩnh một phần | A `Classes/gamecore/KInventory.h:15`; G `script/mineitem/kimnguyenbao.lua:7` |
+| Điểm nạp ExtPoint | Đã phủ tĩnh một phần | G `script/global/npcchucnang/tientrang.lua:68`/`:78`/`:80`; chưa kiểm PaySys/DB |
+| Danh vọng | Đã phủ tĩnh một phần | A `Classes/gamecore/GameDataDef.h:237`; lưu/trần server dẫn lại thân, chưa tái kiểm |
+| Phúc duyên | Đã phủ tĩnh một phần | A `Classes/gamecore/GameDataDef.h:236`; nguồn nhận/UI còn thiếu |
+| Vinh dự, task 2051 | Đã phủ tĩnh một phần | A `Classes/gamecore/GameDataDef.h:238` chỉ xác nhận tên enum; mapping task dựa S trong thân |
+| Tích lũy Tống Kim, task 192 | Đã phủ tĩnh một phần | A `Classes/gamecore/GameDataDef.h:239` chỉ xác nhận enum; mapping và script thực nạp còn cần kiểm |
+| Bạc khóa độc lập | Chưa phủ | A `Classes/gamecore/GameDataDef.h:233`/`:234` có hai tên; không đủ chứng minh hai ví |
+| Vé/lệnh bài tiêu hao | Chưa phủ | Chưa chốt template/script/stack theo mục CHƯA XÁC MINH gốc; không suy từ tên file |
+| Điểm hoạt động cụ thể | Chưa phủ | Mục CHƯA XÁC MINH gốc chưa định danh đầy đủ; không gộp với ExtPoint/XU |
+
+R-06b đọc trực tiếp 7 giá trị `MONEYUNIT` tại A `Classes/gamecore/GameDataDef.h:233` đến `:239` (không tính sentinel `moneyunit_num`). Đây là kiểm danh mục enum, không xác nhận ánh xạ server hoặc nâng độ phủ UI. Các chiều ngang nhận/tiêu/lưu/giới hạn/khóa/hảo hữu/UI và 11 ca TESTER vẫn giữ nguyên trong nội dung gốc.
+
+## Nội dung báo cáo gốc
+
 # TÓM TẮT 5 DÒNG
 
 1. **BLOCKED về điều kiện giao việc:** không tìm thấy `I-07` trong `JX1_OPS/TASKS/BACKLOG.md`; quy tắc vận hành mục 11.4 yêu cầu worker dừng khảo sát khi thiếu mã backlog.
@@ -182,3 +230,14 @@ Chỉ ghi số tác động đến tiền/điểm/khóa đã gặp; ID/enum đư
 | Script mẫu đã thấy | PayXu | G/script/mineitem/gmroleitem.lua:371 | giờ 20 trả 6, giờ khác trả 3 | XU | Giá theo giờ; chưa chốt hiệu lực | CẨN THẬN | kết quả tìm tĩnh |
 | Script GM | AddDiemTongKim | G/script/mineitem/gmroleitem.lua:2534 | 9999 | điểm | Chưa chốt quyền truy cập/hàm định nghĩa | CẨN THẬN | kết quả tìm tĩnh |
 | Script áp tiêu | EarnXu | G/script/deadth/yabiao.lua:68 | tonumber(nJB)*2 | XU | Nhánh thưởng dùng biến nJB, chưa đọc nguồn biến | CẨN THẬN | kết quả tìm tĩnh |
+
+## Bàn giao chuẩn hóa R-06b
+
+[ĐÃ XÁC MINH] Bổ sung cấu trúc và bảng 11 nhóm, đọc riêng enum bản A cùng hai đoạn Lua G đã dẫn; không sửa ma trận/sổ thông số cũ. [CHƯA XÁC MINH] Không tái kiểm source S/C lịch sử hoặc thực chạy các ca I07-T01..T11; không build/exe/VM/mạng. Kết quả kiểm tài liệu và commit chuẩn hóa ghi tại [R-06b](R-06b.md). Bước tiếp theo của khảo sát vẫn theo bàn giao I-07 gốc.
+
+## Phát hiện khi chuẩn hóa
+
+- [ĐÃ XÁC MINH ở cấp tài liệu] `I-02-vat-pham-ban.md` nay tồn tại, liên kết tại `JX1_OPS/DESIGN/THE-GIOI-TONG-QUAN.md:12`; câu thiếu I-02 trong thân được giữ đúng bối cảnh lịch sử, chưa đối chiếu lại toàn bộ nội dung I-02.
+- [CHƯA XÁC MINH] Không rà lại backlog hay giải quyết blocker giao việc I-07; không thay BLOCKED thành DONE. R-06b là task chuẩn hóa đã được giao và không bị điều kiện lịch sử này chặn.
+- [ĐÃ XÁC MINH ở mức token] G `script/mineitem/kimnguyenbao.lua:4`/`:5` vẫn là comment, `:7` gọi EarnXu; G `script/global/npcchucnang/tientrang.lua:68`/`:78`/`:80` giữ ngưỡng/thứ tự lệnh đã dẫn. Không suy ra khả năng nhân XU hay tính nguyên tử runtime.
+- [CHƯA XÁC MINH về chữ game] Lua tiền trang giải mã GB18030 có chuỗi Việt lẫn ký tự lỗi; chỉ trích token/số, không sửa encoding nguồn hoặc đoán lời thoại. File báo cáo UTF-8 không có U+FFFD; không đồng nghĩa dữ liệu game đã sạch mã hóa.
