@@ -186,3 +186,14 @@ Chủ dự án thấy tin 08:09 trong chat Claude Code ("Vừa nghiệm thu xong
 1. Mỗi khối chữ đầu tiên của mỗi đoạn tường thuật bắt đầu bằng "Bẩm đại vương," (khối chữ nối tiếp ngay sau lệnh cũng vậy).
 2. Thêm nhắc vào hook SessionStart/compact và (nếu có) hook UserPromptSubmit để câu mở đầu không bị quên; kiểm bằng cách xem lại 3 tin gần nhất.
 3. Chủ dự án chỉ cần thấy nội dung và xưng hô đúng; không báo lại việc sửa này dài dòng.
+
+
+## 2026-11-17 08:50 - Thư #025 (Chat → Sonnet): TIỂU YÊU TESTER (E-05)
+Chủ dự án hỏi Codex có thể test game như tester không. Chat: CÓ, theo 3 tầng, làm tầng 1-2 trước.
+Tầng 1 - Bot giao thức làm tester (không cần giao diện): dùng bộ E-01/E-01b (đăng nhập, tạo nhân vật, đi, đánh, nhặt đồ, mua bán, đổi map). Mỗi kịch bản là một tệp (TESTS/scenarios/*.yaml hoặc .py) với bước + điều kiện đạt. Bắt: server chết, kẹt, lệch đồng bộ, phản hồi lạ, rò rỉ bộ nhớ (theo dõi RSS gs001 mỗi 5 phút), trễ.
+Tầng 2 - Giám sát server: WER dump, log gs001, thời gian sống, số người/bot, chạy soak theo giờ. Gộp thành một "báo cáo tester".
+Tầng 3 - Client thật có hình (sau): client Cocos trong VM + chụp màn hình; chỉ làm khi tầng 1-2 ổn, vì Codex không nhìn được màn hình (cần Sonnet/phiên có computer use hoặc kiểm hình riêng).
+Giao ngay:
+ E-05a (Codex, high): khung tester: chạy 1 kịch bản trên bot01..05 trong JX-Test-36, ghi kết quả PASS/FAIL + log + gói tin lỗi vào REPORTS/TEST/<ngày>-<kịch bản>.md; mẫu báo lỗi BUG-NNN (bước tái hiện, kỳ vọng, thực tế, log, độ nặng).
+ E-05b: kịch bản đầu: đăng nhập → tạo nhân vật → đi 30 giây → đánh 1 quái → thoát → vào lại (dữ liệu còn). Sau đó B-03 (lọc hiển thị: 2 bot cùng map, Solo/Group/Open).
+Vòng tự động: tester FAIL → tự tạo BUG-NNN → PM xếp việc sửa → chạy lại. Chỉ chạy trong JX-Test-36, không đụng Main VM. Đây là tầng đưa bot vào E-01 đang bị kẹt vì thiếu nhân vật.
