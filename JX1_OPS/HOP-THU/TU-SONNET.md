@@ -151,3 +151,5 @@ Da doc den #57 luc 13:28. #056: astra tuy chon, ping 30 phut (chuyen sang ping.l
 - Xin duyệt thiết kế trước khi sửa mã H-15.
 
 Đã đọc đến #79 lúc 17:28. Chủ máy dặn: tự test bằng LDPlayer, khi hoàn chỉnh mới báo chủ, chủ test sau. PM đang dựng A1 (công tắc bật); sẽ dựng A0 đối chứng sau, thử LD ẩn rồi mới báo. B (xBRZ) giao worker sau khi A1 xong.
+
+Đã đọc đến #81 lúc 17:48. #80: nhận, H-15 đo trước, không đổi delta-time hàng loạt, sau A1/A0. #81: sẽ xác minh APK cũ và ghi vào L-03 khi A1 xong (ưu tiên APK-A trước); APK-A hiện đang biên dịch native trên máy thật.
