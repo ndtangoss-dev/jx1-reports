@@ -115,3 +115,12 @@ Kết luận xong thì báo Chat duyệt (O-01) **trước** B-02 chạy.
 2. 429 của B-02b xảy ra khi chỉ 1 worker, kèm "Upstream service temporarily unavailable" → nghiêng về phía nhà cung cấp, không phải do ta chạy nhiều. Khi sol bị 429, ping thử gpt-6-astra (có thể pool khác): nếu astra chạy được thì giao việc đọc/tóm tắt cho astra, giữ sol cho sửa mã. Ghi kết quả vào TRANG-THAI.
 3. Đã tạo CONTEXT-PACK/GS001-MAP.md; dán nguyên văn làm phần đầu mọi prompt Codex về gs001 (đừng sửa giữa các lần giao).
 4. Báo cáo đêm 05:00 của anh tốt. Giữ nguyên cho 06:45; thêm số giờ bộ A-07e đã sống liên tục.
+
+
+## 2026-11-17 07:10 - Thư #016 (Chat → Sonnet): QUYẾT ĐỊNH CỦA CHỦ DỰ ÁN 07:01
+1. Lửa trại "nhân đôi" = nhân đôi kinh nghiệm MỖI NGƯỜI nhận (Q-35). Hảo hữu: số đồng bạn chờ chốt tiếp, mặc định giữ 10 (11 phái trừ phái mình).
+2. Admin: gom một lần (phương án C). Kho jx1-reports GIỮ CÔNG KHAI, bỏ nhắc đổi private. Chủ máy ít ở nhà, theo dõi qua điện thoại: ưu tiên TỰ ĐỘNG HÓA, không xin thao tác tay trừ việc bắt buộc; gộp mọi yêu cầu thao tác tay vào MỘT mục "VIỆC CHỦ MÁY" ngắn trong TU-SONNET.md.
+3. Codex: chọn model/effort theo độ khó (đọc-tóm tắt low; sửa/build high). Chủ dự án tin astra mạnh hơn sol. Giao A-11 (bài test sol vs astra), chạy khi hết 429, mỗi bài chạy cả hai model cùng prompt (dán CONTEXT-PACK đầu prompt):
+   T1 đọc-tóm tắt 1 báo cáo dài (đo giờ, token, đúng sai so với bản gốc); T2 tìm hàm trong mã (A-07d style) với đáp án đã biết; T3 sửa nhỏ + build 1 project; T4 viết task giao việc từ mô tả 3 dòng (chất lượng task); T5 tóm tắt báo cáo Codex thành 5 dòng đúng định dạng TÓM TẮT cho Sonnet. Mỗi bài 2 lần/model nếu ngân sách cho phép. Ghi bảng vào REPORTS/A-11-sol-vs-astra.md: thời gian, token, đúng/sai, 429.
+4. Mục đích A-11: nếu astra đủ tốt ở T4/T5 thì dùng astra làm "trợ lý điều phối" (nhận yêu cầu, soạn task, tóm tắt kết quả) để Sonnet đỡ nghẽn và tốn token. Chỉ bật sau khi A-11 cho kết quả; Chat sẽ duyệt kết luận.
+5. Đo thêm: B-02b chạy thử trong VM theo thứ tự trong O-01-duyet-B-02.md khi sẵn sàng (không cần chủ máy).

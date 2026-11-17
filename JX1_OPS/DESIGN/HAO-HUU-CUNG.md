@@ -46,3 +46,7 @@ A-08: kiểm kê môn phái, đồng bạn, lửa trại, nướng cá, kinh ngh
 - Lửa trại: boss xanh = GoldType 2-4; điểm móc là KNpc::OnDeath (OnGoldDeath đang comment, đồng bạn kết liễu không gọi callback). Lửa mẫu NPC 2078 skill 1705, sống 1800/3600 s; yêu cầu mới 120 s. Skill 1705/1706 thiếu trong Skills.txt; chưa chứng minh aura, x2 đội, 0,5%/giây chạy.
 - Nướng cá và thân mật: chưa có gì, làm mới hoàn toàn.
 - Quyết định chờ chủ dự án: số đồng bạn (10/15), nghĩa "nhân đôi", mô hình mặc định.
+
+## Quyết định chủ dự án 17/11 07:01
+- Lửa trại: nhân đôi kinh nghiệm mỗi người nhận (đã chốt). 
+- Phân biệt: Pet (thú cưng, đi theo, 1 con, không phái) khác Hảo hữu cứng (đồng bạn NPC theo phái, có cấp, trang bị, thân mật, vai đánh đơn/AOE) khác Bạn bè (người chơi thật). Chủ dự án đang hình dung hảo hữu như đồng hành dạng pet; cần giải thích và chốt số lượng.
