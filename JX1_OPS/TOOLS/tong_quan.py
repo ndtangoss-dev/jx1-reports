@@ -317,9 +317,9 @@ def sonnet_song():
         pass
     top = sorted(top, reverse=True)[:5]
     return ('Sonnet: hoạt động cuối %s (%d phút trước); commit cuối %s; mức %s (<10 SONG / 10-30 IM / >30 TREO). Cập nhật %s\n'
-            'RAM: trống %.1f/%.1f GB (%.0f%%). Top 5 bộ nhớ: %s') % (
+            'RAM%s: trống %.1f/%.1f GB (%.0f%%). Top 5 bộ nhớ: %s') % (
         hm(last, '%H:%M:%S'), mins, hm(cm, '%H:%M'), lv, time.strftime('%H:%M:%S'),
-        gb(m.ap), gb(m.tp), 100.0 * m.ap / m.tp, '; '.join('%s %.2f GB' % (n, v) for v, n in top))
+        ' RAM-THAP (<8 GB, #199)' if gb(m.ap) < 8 else '', gb(m.ap), gb(m.tp), 100.0 * m.ap / m.tp, '; '.join('%s %.2f GB' % (n, v) for v, n in top))
 
 
 def main():
