@@ -295,3 +295,7 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 
 - 18/11 00:20 Chủ duyệt: tự tạo khóa xingchi từng cái một khi cần, trần 20 (Chrome đã cài). Đã tạo JX K6 (nhóm GPT từ thiện, file C:\Users\PC\.jx1keys\JX-K6.txt, ping /v1/models = 200; không ghi giá trị). Hiện K2-K6 + JX TEST. Chưa gán worker cho K6 (chờ K-02).
 
+
+## ĐANG LÀM DỞ (2026-11-18 09:20, hook PreCompact)
+- Sắp nén ngữ cảnh. PM mới đọc LUAT-COT-LOI.md, TIEN-DO.md, THU-HIEN-HANH.md, QUYET-DINH.md rồi lịch sử chat.
+- Việc đang dở, bước và lệnh chạy lại: xem dòng trạng thái cuối trong TRANG-THAI.md và TASKS/*.md (status running); PM ghi chi tiết ở đây nếu kịp.
