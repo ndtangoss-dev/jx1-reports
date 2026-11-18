@@ -320,3 +320,4 @@
 [TỔNG QUẢN 19/11 05:39] CAU DAO xingchi: DONG
 [TỔNG QUẢN 19/11 05:41] CAU DAO xingchi: DONG
 [TỔNG QUẢN 19/11 05:43] CAU DAO xingchi: DONG
+[TỔNG QUẢN 19/11 05:45] CAU DAO xingchi: DONG; XD-HG16d giao bang JX-K4
