@@ -1,8 +1,8 @@
 TÓM TẮT 1: [NGUỒN][THẤY] DONE phạm vi XD-E09: đã đối chiếu 8 vế từ yêu cầu E-09 tại `JX1_OPS/TASKS/BACKLOG.md:67`; chưa đủ bằng chứng đóng E-09.
-TÓM TẮT 2: [NGUỒN][THẤY] Lệnh K1 chạy lại 4 test có sẵn dùng mock: 4/4 đạt trong 0.012 s; 0 lỗi, 0 bỏ qua, 0 sự kiện socket/DNS/tiến trình con bị chặn.
-TÓM TẮT 3: [NGUỒN][THẤY] Đầu ra là báo cáo này và mục Kết quả cuối `JX1_OPS/TASKS/XD-E09.md`; không thay báo cáo E-09a hoặc mã nguồn.
-TÓM TẮT 4: [CHƯA KIỂM] 7/8 vế cần bằng chứng Test-36; 3/7 test E-09a dùng loopback không chạy lại vì phạm vi cấm mạng (`JX1_OPS/TESTER/test_real_login.py:107`, `:133`, `:156`).
-TÓM TẮT 5: [CHƯA KIỂM] Không build/chạy exe game, VM hoặc mạng; không commit/push theo giao việc. PM tiếp nhận danh sách Test-36 tại mục Chưa kiểm; chưa có SHA mới.
+TÓM TẮT 2: [THẤY] K1 chạy 4 test mock, 4/4 đạt trong 0.012 s; 0 lỗi/bỏ qua/sự kiện socket-DNS-tiến trình con (lệnh và kết quả tại `JX1_OPS/REPORTS/XD-E09.md:80–127`).
+TÓM TẮT 3: [THẤY] Đầu ra là báo cáo này; mục Kết quả task đã ghi tại `JX1_OPS/TASKS/XD-E09.md:28–33`. Không thay báo cáo E-09a hoặc mã nguồn.
+TÓM TẮT 4: [CHƯA KIỂM] 7/8 vế cần bằng chứng Test-36; 3/7 test E-09a dùng loopback không chạy lại (`JX1_OPS/TESTER/test_real_login.py:107`, `:133`, `:156`; phần bàn giao thiếu tại `JX1_OPS/REPORTS/XD-E09.md:164–185`).
+TÓM TẮT 5: [CHƯA KIỂM] Không build/chạy exe game, VM hoặc mạng (`JX1_OPS/REPORTS/XD-E09.md:164–185`); không commit/push theo chỉ đạo task. PM tiếp nhận danh sách Test-36; chưa có SHA mới.
 
 # XD-E09 — Đối chiếu tiêu chí đóng E-09 và kiểm lại bot allowlist
 Loại: kiểm thử
