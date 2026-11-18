@@ -295,3 +295,5 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 - 18/11 11:40 Sonnet: nhận #137, Tổng quản trần 10 đồng thời; #136 đã trả lời; gõ cửa/claude -p bị chặn quyền.
 
 - 18/11 11:50 Sonnet: #138.1 guard thêm quyền RemoteTrigger/claude; nhận #139 (nghiên cứu B xếp sau).
+
+- 18/11 11:39 Sonnet: #140 thử wire_api=chat 4 lần đều bị Codex từ chối; chờ xingchi sửa.
