@@ -89,3 +89,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Tiếp tục: đã đọc #169; làm #170, #172, gộp K-02 | #173 | nhắc | chờ Sonnet |
 | Hết việc không-Đỏ: gộp R-05a rồi dừng vòng, chờ chủ quyết | #174 | phanh hết việc | chờ Sonnet |
 | Chủ duyệt 1–5 (Q-50): Gemini thử, client C01+C03, A-07 bước 2–6, 0-05; vòng chạy lại | #175 | sau #174 | chờ Sonnet |
+| Đã đọc #175; chờ chủ làm tay (a)-(d); vòng tạm dừng | #176 | | chờ chủ |
