@@ -8,7 +8,7 @@ Cho phep dung (thoat 0, khong in gi) khi:
      hoac co the [CODEX-CHAM-TRAN] trong TRANG-THAI.md.
   3. Moi task con lai deu bi chan: task loi 3 lan lien tiep (TASKS/<ID>.md co dong "lỗi liên tiếp: 3", hoac ghi chu bang tien do co "lỗi 3 lần"),
      hoac dang cho chu du an (ghi chu/trang thai co "chờ chủ" hoac "cần chủ").
-  4. Co the [DUNG-CAN-CHU yyyy-mm-dd HH:MM] trong TRANG-THAI.md, con hieu luc 12 gio. PM PHAI ghi the nay (kem ly do) truoc khi dung, xoa khi lam tiep.
+  4. Co the [DUNG-CAN-CHU yyyy-mm-dd HH:MM] trong TRANG-THAI.md, con hieu luc 60 phut (#107, L2). PM PHAI ghi the nay (kem ly do) truoc khi dung, xoa khi lam tiep.
   6. (Q-29) Con thu chua xu ly trong HOP-THU/CHO-SONNET.md thi CHAN (tru khi 1-3 o tren); thu cho ket qua danh dau [ĐANG CHỜ] trong tieu de thi khong chan.
   5. Het task, hoac da chan >= 60 lan trong mot phien (an toan chong vong lap vo han), hoac loi bat ky cua hook (an toan: khong chan).
 Chan: in JSON {"decision":"block","reason":...} ra stdout.
@@ -18,7 +18,7 @@ import json, os, re, sys, time, tempfile
 HOPTHU = 'HOP-THU'
 
 ROOT = os.environ.get('JX1_OPS_ROOT', r'D:\jx1-ops-wt\JX1_OPS')
-DAILY_CAP, WEEK_CAP, MAX_BLOCKS, MARK_HOURS = 200.0, 1000.0, 60, 12
+DAILY_CAP, WEEK_CAP, MAX_BLOCKS, MARK_HOURS = 200.0, 1000.0, 60, 1
 
 
 def allow():
@@ -39,6 +39,27 @@ def last_user_text(path):
                     c = m.get('content')
                     t = c if isinstance(c, str) else ' '.join(x.get('text', '') for x in c if isinstance(x, dict) and x.get('type') == 'text')
                     if t.strip() and '<system-reminder>' not in t[:20] and '<task-notification>' not in t[:40]:
+                        last = t
+        return last
+    except OSError:
+        return ''
+
+
+def last_assistant_text(path):
+    """Doan text cuoi cung cua tro ly trong transcript (de bat luot ket thuc bang cau hoi, #107.3)."""
+    try:
+        last = ''
+        with open(path, encoding='utf-8') as f:
+            for ln in f:
+                try:
+                    o = json.loads(ln)
+                except ValueError:
+                    continue
+                m = o.get('message') or {}
+                if o.get('type') == 'assistant' and m.get('role') == 'assistant':
+                    c = m.get('content')
+                    t = c if isinstance(c, str) else ' '.join(x.get('text', '') for x in c if isinstance(x, dict) and x.get('type') == 'text')
+                    if t.strip():
                         last = t
         return last
     except OSError:
@@ -75,6 +96,21 @@ def main():
     state = B.read(os.path.join(ROOT, 'STATE', 'TRANG-THAI.md'))
     # 0. Hop thu (Q-29): con thu chua xu ly thi lam truoc khi dung (khong qua mat cac dieu kien dung cung ben duoi neu tran Codex)
     letters = pending_letters()
+    # 0b. (#107.3, L2) luot ket thuc bang cau hoi cho chu: chan, tru khi dung can chu that su (the con han) hoac /ket-thuc-ca
+    lt = last_assistant_text(data.get('transcript_path', '')).strip()
+    if lt.endswith(('?', '?**', '?*')) and not re.search(r'\[DUNG-CAN-CHU\s+\d{4}-\d\d-\d\d\s+\d\d:\d\d\]', state):
+        sfq = os.path.join(tempfile.gettempdir(), 'jx_stop_guard_q_%s.json' % re.sub(r'\W', '', data.get('session_id', 'x'))[:40])
+        try:
+            nq = json.load(open(sfq))['n']
+        except Exception:
+            nq = 0
+        if nq < 5:
+            try:
+                json.dump({'n': nq + 1}, open(sfq, 'w'))
+            except OSError:
+                pass
+            print(json.dumps({'decision': 'block', 'reason': 'LUAT-COT-LOI L2: khong ket thuc luot bang cau hoi. Viec dao nguoc duoc thi tu quyet, ghi [TU QUYET] vao STATE/QUYET-DINH.md va lam tiep; chi cho chu khi: Main VM, tien qua tran, khoa vuot 20, xoa du lieu, dua APK moi cho chu thu. Khi do ghi [DUNG-CAN-CHU yyyy-mm-dd HH:MM] (toi da 60 phut) vao TRANG-THAI.md. Neu bi ket, viet [HOI-CHAT] vao TU-SONNET.md va lam viec khac.'}))
+            return
     # 4. dung can chu du an (hieu luc co han)
     for m in re.finditer(r'\[DUNG-CAN-CHU\s+(\d{4}-\d\d-\d\d)\s+(\d\d:\d\d)\]', state):
         try:

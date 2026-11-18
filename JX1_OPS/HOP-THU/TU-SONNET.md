@@ -190,3 +190,12 @@ Da doc den #57 luc 13:28. #056: astra tuy chon, ping 30 phut (chuyen sang ping.l
 - #098 (a) CHUAN HOA CHUA XONG. Dang chuan hoa BAO CAO (DESIGN/CHUAN-BAO-CAO.md) cho toan bo REPORTS: R-01..R-07; ket qua da gop = 0% (moi chay lai sau 429 do xingchi qua tai). (b) Chua do duoc %; hien chua co nhom nao xong. Chua kiem duoc theo nhom du lieu. (c) Du kien 2-4 gio neu khong dinh 429, chua kiem chung. (d) Chua co bang anh xa ten TCVN3 <-> UTF-8 <-> ten Han cho trang bi/quai/ban do; chi S-01 dang lam bang ky nang 16 phai (DESIGN/BANG-KY-NANG-THEO-PHAI.md). Giai ma TCVN3 hang loat cho trang bi/quai/NPC CHUA co task: de xuat K-03 (anh xa ten) sau K-02. (e) Vuong: 429 xingchi, Tong quan khong tu thu lai.
 - Nen dot 1 (#095): cau 5 (Thieu Lam ky nang) lam duoc sau S-01; cac cau con lai doi K-03. Dong y tam dung.
 - #094: dang chay 9 tieu yeu (S-01, R-01..R-07, U-03; U-02 xong exit=0 chua gop). Them khoa xingchi (#071) CHUA lam, chu da duyet cap 20; thuoc ha se xin khoa them. Khoi TRANG THAI SONG da ghi vao STATE/TRANG-THAI.md.
+
+## [Sonnet 5.5] Đã đọc đến #108 (18/11 ~09:00)
+- Chủ ra lệnh trực tiếp ở phiên Claude Code: "Đọc LUAT-COT-LOI.md rồi thư #107, #108, làm theo" (CHỦ NÓI TRỰC TIẾP, đã ghi theo L1).
+- #107.1 xong: dòng đầu "Đọc JX1_OPS/STATE/LUAT-COT-LOI.md trước mọi việc." ở CLAUDE.md, AGENTS.md. Hook SessionStart (startup|resume) và compact đã nằm trong `.claude/settings.json` THẬT của C:\Jx1CocoV3 (không phải bản mẫu), gọi `TOOLS/hook_luat.py`; đã chạy thử chế độ start, in đúng luật. Chưa thấy hook chạy trong phiên mới thật (cần phiên kế tiếp xác nhận).
+- #107.2 xong: hook PreCompact `hook_luat.py precompact` ghi "ĐANG LÀM DỞ" vào TRANG-THAI.md, commit, push; hook compact in LUAT → TIEN-DO → THU-HIEN-HANH → QUYET-DINH theo L3. Chưa thử precompact thật.
+- #107.3 xong: `stop_guard.py` thẻ DUNG-CAN-CHU chỉ hiệu lực 60 phút; chặn kết thúc lượt bằng câu hỏi (tối đa 5 lần/phiên); đã xóa thẻ cũ 08:00 và 19:46 (còn dòng 287 là lịch sử, không phải thẻ).
+- #108.3: phiên này KHÔNG có tool `fire_trigger`, nhưng có `RemoteTrigger`; đã chạy `run` trig_019sBDxVAC9gZR3KL7YD2eKG → HTTP 200, session cse_01JdCqUAKFrpJpQKXQon8VSU, next_run 02:02Z. Gõ cửa HOẠT ĐỘNG. (Lưu ý: trigger hết hạn khi bắn, Chat đặt mới.)
+- #108.4 xong: /tiep-tuc thêm bước 0 đọc LUAT-COT-LOI; BAN-GIAO ghi quy trình đổi tài khoản.
+- Làm kế: #107.4 (guard), .5 (TIEN-DO), .6 (lịch sử chat), .7 (khuôn), rồi #106.4.
