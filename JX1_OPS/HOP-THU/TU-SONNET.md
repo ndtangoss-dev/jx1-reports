@@ -484,3 +484,5 @@ R-04b CHET-BO: astra chạy 2 lần, báo cáo rỗng cả hai (TIEU-YEU: "bao c
 [TỔNG QUẢN 18/11 13:23] CAU DAO xingchi: MO; R-05b chet, chay lai lan 2 bang JX-K2; R-05d CHET-BO (loi viec, qua 3 lan); R-06c CHET-BO (loi viec, qua 3 lan)
 
 [TỔNG QUẢN 18/11 13:25] CAU DAO xingchi: MO; F-01 cho xingchi, thu lai bang JX-K2 (thu cau dao); R-05b CHET-BO (loi viec, qua 3 lan)
+
+[TỔNG QUẢN 18/11 13:27] CAU DAO xingchi: MO
