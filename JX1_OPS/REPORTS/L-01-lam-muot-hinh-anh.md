@@ -1,10 +1,47 @@
-## TÓM TẮT 5 DÒNG
+TÓM TẮT 1 [NGUỒN] Cocos2d-x hiện khởi tạo texture với lọc tuyến tính (`GL_LINEAR`); đường tải `.spr` giải mã mỗi frame thành RGBA rồi dùng làm texture.\
+TÓM TẮT 2 [NGUỒN] Client đặt thiết kế 1040 × 603,2 với `EXACT_FIT`; phép chiếu world dùng số nguyên và có canvas map 512 × 512, là các điểm cần xét trước khi tăng độ phân giải.\
+TÓM TẮT 3 [NGUỒN] Phương án an toàn để thử là lọc tuyến tính có chọn lọc + render/subpixel, sau đó mới so sánh bộ upscale xBRZ ở nhánh vẽ sprite `.spr`; không upscale offline hay vẽ lại asset.\
+TÓM TẮT 4 [CHƯA KIỂM] Chưa áp dụng patch. Cần xác định trước đường hiệu ứng vũ khí cụ thể vì không tìm thấy `g_jxAdditive` hoặc `jxDrawBolts` trong `Classes` đã khảo sát.\
+TÓM TẮT 5 [NGUỒN] Chưa chạy client/build/đo FPS-RAM; đây là kết quả đọc source tĩnh, không phải xác nhận runtime. Trong R-07a chưa build, chạy exe hay VM.
 
-- Cocos2d-x hiện khởi tạo texture với lọc tuyến tính (`GL_LINEAR`); đường tải `.spr` giải mã mỗi frame thành RGBA rồi dùng làm texture.
-- Client đặt thiết kế 1040 × 603,2 với `EXACT_FIT`; phép chiếu world dùng số nguyên và có canvas map 512 × 512, là các điểm cần xét trước khi tăng độ phân giải.
-- Phương án an toàn để thử là lọc tuyến tính có chọn lọc + render/subpixel, sau đó mới so sánh bộ upscale xBRZ ở nhánh vẽ sprite `.spr`; không upscale offline hay vẽ lại asset.
-- Chưa áp dụng patch. Cần xác định trước đường hiệu ứng vũ khí cụ thể vì không tìm thấy `g_jxAdditive` hoặc `jxDrawBolts` trong `Classes` đã khảo sát.
-- Chưa chạy client/build/đo FPS-RAM; đây là kết quả đọc source tĩnh, không phải xác nhận runtime.
+# L-01 — Làm mượt hình ảnh, giữ nét gốc
+
+Loại: khảo sát
+Chủ đề: Khảo sát đường vẽ và đề xuất làm mượt hình ảnh client.
+Từ khóa: làm mượt hình ảnh, nội suy, hiệu ứng vũ khí, L-01, GL_LINEAR, EXACT_FIT, SPR, xBRZ
+Trạng thái: DONE — Hoàn tất giai đoạn đọc tĩnh và thiết kế thử theo báo cáo gốc.
+Độ phủ: đã phủ 9 trên tổng 12 hạng mục đọc tĩnh, thiết kế và hạng mục thử đã nêu trong báo cáo.
+Liên quan: [L-02](L-02.md), [L-03](L-03-quy-trinh-dung-apk.md), [H-14](H-14-mat-khung-hieu-ung.md), [Tối ưu 120 FPS](../DESIGN/TOI-UU-120FPS.md).
+Cần tôi quyết định: không
+
+```mermaid
+flowchart LR
+    A[Đọc frame SPR] --> B[Giải mã RGBA và lên texture]
+    B --> C[Chiếu tọa độ và ghép lớp]
+    C --> D[Phương án A cho render và subpixel]
+    C --> E[Đề xuất B thử lọc cạnh 2x]
+    D --> F[So ảnh và đo trên bộ mẫu]
+    E --> F
+```
+
+## Phạm vi và độ phủ
+
+Tóm tắt dẫn từ báo cáo gốc. Bảng đếm các hạng mục và phần thử đã nêu trong L-01. Đường dẫn source mới tương đối với client bản A `D:/JX-build/qh9A`. Tệp C++ có cả UTF-8 và tệp giải mã được bằng GBK. Bằng chứng gốc vẫn theo thư mục nêu ở mục Phạm vi và trạng thái.
+
+| Hạng mục | Độ phủ | Căn cứ và giới hạn |
+|---|---|---|
+| Kích thước thiết kế, chính sách và zoom | Đã phủ | `Classes/AppDelegate.cpp:56` và `Classes/AppDelegate.cpp:129` có kích thước và `EXACT_FIT`. `Classes/gameui/KuiOptions.cpp:163` ghi dải zoom. |
+| Lọc texture và mipmap | Đã phủ | `cocos2d/cocos/renderer/CCTexture2D.cpp:643` và `cocos2d/cocos/renderer/CCTexture2D.cpp:1334`. |
+| Frame SPR và alpha | Đã phủ | `Classes/engine/Kgetinidata.cpp:101`, `Classes/engine/Kgetinidata.cpp:268` và `Classes/engine/Kgetinidata.cpp:378`. Khâu lên texture RGBA tại `cocos2d/cocos/renderer/CCTextureCache.cpp:557`. |
+| Chiếu tọa độ và subpixel | Đã phủ | Bản A có hai phép chiếu tại `Classes/gamecore/KSubWorld.cpp:191` và `Classes/gamecore/KSubWorld.cpp:197`. Hai macro tại `cocos2d/cocos/base/ccConfig.h:145` và `cocos2d/cocos/base/ccConfig.h:154`. |
+| Nhân vật, quái và các lớp hình | Đã phủ | `Classes/gamecore/KNpcRes.cpp:247` và điểm vẽ `Classes/gamescene/KgameWorld.cpp:11476`. |
+| Bản đồ và vật thể | Đã phủ | `Classes/gamescene/KScenePlaceRegionC.cpp:1046` và `Classes/gamescene/KScenePlaceRegionC.cpp:1134` gọi vẽ bản đồ. `Classes/gamescene/KgameWorld.cpp:7462` tạo canvas và `Classes/gamescene/KgameWorld.cpp:7914` là đường vẽ vật thể. |
+| PNG/JPG và UI | Đã phủ | `Classes/engine/Kgetinidata.cpp:580` là nhánh ảnh riêng. Chưa chọn icon vào bộ mẫu. |
+| A. Thiết kế render và tọa độ lẻ | Đã phủ | `L-01-lam-muot-hinh-anh.md:76` ghi đề xuất. `L-01-lam-muot-hinh-anh.md:82` ghi vị trí dự kiến. |
+| B. Thiết kế thử lọc cạnh 2× | Đã phủ | `L-01-lam-muot-hinh-anh.md:123`. Thiết kế còn ở mức thử nghiệm dự kiến. |
+| Glow và sét cho +6, +12, +15 trong nguồn gốc | Chưa phủ | `L-01-lam-muot-hinh-anh.md:211`. Bản A có điểm tương ứng tại `Classes/vn/gamecore/KNpcResVN.cpp:517` và `Classes/vn/gamecore/KNpcResVN.cpp:618`. |
+| Bộ mẫu cụ thể và patch A/B của L-01 | Chưa phủ | `L-01-lam-muot-hinh-anh.md:210` ghi chưa chọn asset. Patch trong báo cáo chỉ là đề xuất. |
+| Ảnh so sánh và số đo FPS/RAM | Chưa phủ | `L-01-lam-muot-hinh-anh.md:214` ghi chưa chạy phép thử. |
 
 ## Phạm vi và trạng thái
 
@@ -182,3 +219,8 @@ Chưa có số đo. Tiêu chí chất lượng: giữ palette/chi tiết gốc k
 ## Bàn giao
 
 DONE cho giai đoạn tĩnh L-01. Đã ghi một báo cáo tổng hợp và mục kết quả task, không ghi source/asset hay script phụ. Đã kiểm cấu trúc tóm tắt 5 dòng, các mục bắt buộc và diff whitespace của hai file đầu ra; không chạy test game/build. Các diff minh họa là thiết kế cần hoàn thiện trên bản copy được duyệt, không phải patch đã build. Chưa có ảnh so sánh hoặc số đo FPS/RAM; không kết luận cải thiện hình/hiệu năng thực tế. Bước tiếp tục: chốt asset mẫu, chuẩn hóa alpha và phép chiếu render trong bản copy, triển khai A trước rồi mới prototype B và chạy ma trận kiểm. Chưa commit, chưa push: không được yêu cầu trong task này, không có SHA/link commit để công bố.
+
+## Phát hiện khi chuẩn hóa
+
+- Bản A có `g_jxAdditive` ở `Classes/vn/gamecore/KNpcResVN.cpp:560`, lời gọi `jxDrawBolts` ở `Classes/vn/gamecore/KNpcResVN.cpp:618` và định nghĩa ở `Classes/gamescene/KgameWorld.cpp:15025`. L-01 ghi chưa tìm được trên bản source của lượt cũ (`L-01-lam-muot-hinh-anh.md:211`). Hai lượt dùng hai thư mục source khác nhau.
+- `Classes/gamecore/KSubWorld.cpp:191` ở bản A có thêm phép chiếu float. Mô tả đường chiếu nguyên trong L-01 vẫn là bằng chứng của bản gốc.
