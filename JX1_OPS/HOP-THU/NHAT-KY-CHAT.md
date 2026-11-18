@@ -176,3 +176,4 @@
 - 10:33 Chủ hỏi Tổng quản có báo gì không. Thấy: Tổng quản không tự đẩy, chỉ lên kho khi Sonnet commit. Gửi #127.
 - 10:36 Sonnet nộp log: người gác ĐÃ gọi 10:19, 10:29 nhưng claude chết vì lỗi dấu nháy (-File); sửa xong thì claude -p báo hết hạn mức tuần (reset 1am). Lệnh treo #125 là find / chứ không phải git. Tổng quản đã tự đẩy. Gửi #128 (thử --model sonnet).
 - 10:40 Chủ nghi người gác dùng tài khoản cũ (reset 1am ≠ 07:00 thứ Tư). Gửi #129.
+- 10:42 Sonnet xong #121/#122/#123 (BAN-GIAO tự ghi đè, DUONG-DAN.md, MAT-KET-NOI-CHAT, cầu dao 3 trạng thái, lỗi xingchi không tính lần). Khóa cũ vẫn nằm trong config.toml + 2 bản .bak → báo chủ xoay khóa. 10:35 Tổng quản chạy lại hàng loạt, cần khóa mới cho T-03/T-04 (không tạo khi cầu dao mở). Chờ #128/#129. BÁO CHỦ 10:42.
