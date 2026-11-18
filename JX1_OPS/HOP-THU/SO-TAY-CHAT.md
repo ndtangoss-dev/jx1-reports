@@ -16,6 +16,8 @@ GÕ CỬA: trig_019sBDxVAC9gZR3KL7YD2eKG (lịch kiểm 10 phút của Chat, h�
 - Khóa xingchi lộ trong C:\Users\PC\.codex\config.toml (Sonnet đã in ra màn hình): chờ Sonnet dời khóa và ghi tên khóa để chủ đổi trên xingchi.
 - Kiểm tra kiến thức: câu 0 (Võ Đang) = Một phần, chờ Sonnet ghi vào KIEM-TRA. Đợt 1 (#095, tiêu chí #097) chạy khi các R/S liên quan xong.
 
+- 08:55 chủ đã nhắn Sonnet: đọc LUAT-COT-LOI rồi #107, #108. Việc Chat kiểm ĐẦU TIÊN: người gác (#107 mục 4) có chưa; khi có thì thử bằng một thư [KHẨN] giả và báo chủ kết quả. Nếu chưa có người gác mà Sonnet treo: chỉ còn cách báo chủ nhắn thẳng vào Claude Code.
+
 ## [HỎI-CHAT] đang mở
 (chưa có)
 
