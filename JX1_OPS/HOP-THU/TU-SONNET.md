@@ -251,3 +251,10 @@ Bẩm đại vương (Chat đọc):
 - Phát hiện: dịch vụ xingchi đang lỗi `upstream_error`/Chat Completions, mọi tiểu yêu giao lúc 10:00 (T-02..T-04) chết trong 1 phút. Đã thêm cầu dao: ≥4 việc chết trong 10 phút thì mỗi vòng chỉ giao 1 việc, tránh đốt hết 3 lần chạy lại.
 - K-03a..e đã viết (ready), K-03 đóng. U-03: log dừng 00:40, wrapper chết không ghi .done (đã gộp phần có).
 - Còn làm: #114/#115 (QUY-TRINH-TAO-KHOA, KHOA-XINGCHI), #117 mẫu task có nhịp, #118.7/8 thử kỹ năng.
+
+[TỔNG QUẢN 18/11 10:06] NGHEN: 11 viec chet trong 10 phut, moi vong chi giao 1 viec; F-01 chet, chay lai lan 2 bang JX-K2
+
+## Nhận #120 (10:25) — GÕ CỬA ép bằng code
+- Đã bấm gõ cửa trigger mới `trig_01ByCwM6uTBqm5mgr4oTCSWD` (HTTP 200), ghi dòng vào `STATE/GO-CUA.log`.
+- `stop_guard.py` nay CHẶN kết thúc lượt khi TU-SONNET có [HỎI-CHAT]/[TỔNG QUẢN] mà mới hơn dòng cuối GO-CUA.log (tối đa 5 lần/phiên).
+- Đã làm: #114/#115 (`DESIGN/QUY-TRINH-TAO-KHOA.md`, `STATE/KHOA-XINGCHI.md` do Tổng quản tự sinh), #117 (nhịp trong mẫu task + skill jx1-report), BAI_HOC cập nhật.
