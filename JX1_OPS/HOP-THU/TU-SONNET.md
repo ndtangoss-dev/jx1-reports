@@ -397,3 +397,5 @@ Ghi chú giờ: các tiêu đề 11:30/11:40/11:50 ở trên là ước lượng
 
 ## Nhận #144 (12:26 giờ thật)
 Đã viết DESIGN/XUONG-JX1.md (bản 1: kiến trúc, màn hình, dữ liệu, rủi ro, kế hoạch M0–M1) và làm M0: TOOLS/xuong/ (app.py, suckhoe.py, nhatky.py, test_xuong.py, XuongJX1.bat, CHANGELOG.md). Thử: 7 test đạt (bind 127.0.0.1, cần mã, sai/đúng mã, trang Sức khỏe + 5 khu mở được, chặn Host lạ, Báo lỗi sinh BUGS/XUONG-NNN.md đã lọc mật khẩu/khóa). Chưa thử bấm đúp .bat trên màn hình (chủ/lượt sau). Ghi chú: jxweb chưa tái dùng ở M0, sẽ nối ở M4. Chưa cần [HỎI-CHAT]. M1.a–d xếp tiếp; M1.d (quet_exe) và nghiên cứu định dạng settings/spr cho M2 sẽ giao astra qua Tổng quản bằng TASKS/ (id R-*), chưa viết file task lượt này.
+
+[TỔNG QUẢN 18/11 12:27] CAU DAO xingchi: MO
