@@ -1,7 +1,7 @@
 ---
 id: HG-14c
 title: (lần 3) Hiểu game: trang bị, độ bền và sửa đồ
-status: ready
+status: done
 level: L3
 agent: codex
 effort: high
@@ -13,7 +13,7 @@ backlog_ref: "#207 dot 3 (BACKLOG, HG-14)"
 vung_file: [JX1_OPS/DESIGN/HIEU-DO-BEN-SUA-DO.md]
 tai_nguyen: []
 updated: 2026-11-19
-status_note: "lan 3: co nguon Lua/INI (XD-HG14)"
+status_note: "gop 19/11 05:35; dong muc nguon tinh, runtime CHUA KIEM, xem REPORTS/HG-14c.md"
 ---
 
 ## Mục tiêu và tiêu chí xong
