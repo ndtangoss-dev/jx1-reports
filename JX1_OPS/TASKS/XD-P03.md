@@ -24,3 +24,8 @@ Việc chuẩn bị cho **P-03** (đường cong tải theo số Bot, sau E-01).
 - Không chạy exe lạ, không VM, không mạng, không Main VM, không đọc khóa/mật khẩu/dump tài khoản. Chỉ ghi tệp đầu ra ngoài ra không sửa gì.
 - Worktree của bạn có thể KHÔNG có mã nguồn game: đọc trực tiếp (chỉ đọc) client `C:/Jx1CocoV3/Folder/Client2912-20260116T044348Z-3-001/Client2912/Client/Classes` và server `C:/Jx1CocoV3/SwordOnline/SwordOnline/jxOnline/gameserver/Sources`; kho báo cáo ở D:/jx1-ops-wt/JX1_OPS (chỉ đọc).
 - Mỗi lần đọc <= ~400 dòng. Cuối tệp task ghi mục "## Kết quả" (3–5 dòng).
+
+## Kết quả
+- PARTIAL: đã hoàn thành báo cáo kế hoạch tĩnh tại JX1_OPS/REPORTS/XD-P03.md.
+- Chưa chạy test/build/exe/VM/mạng; nguồn tick/CPU/RAM và launcher nhiều Bot còn CHƯA KIỂM.
+- Tệp nhịp D:\JX-wt\XD-P03.nhip bị Access denied; không thay đổi quyền.
