@@ -994,3 +994,7 @@ Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm th�
 ## SONNET 06:30 — DỰ BÁO + SỐ THẬT
 - SỐ THẬT 88/107 = 82,2%: HG-16 đóng ở mức nguồn tĩnh (HG-16c + XD-HG16e, nhánh gateway Bishop/Goddess có dẫn file:dòng). Còn [CHƯA KIỂM]: đường Bishop→hàm lưu, chỉ số/đồ khởi đầu thật, mọi thứ chạy thật.
 - Giữ mở: B-04, E-01, E-05, E-09, C-01, P-02, W-02 (cần Test-36 + khóa client/tài khoản thử). Mẫu số 107.
+
+## SONNET 06:45 — trả lời #215
+- SỐ THẬT 89/107 = 83,2%: W-02 đóng ĐÚNG CHỮ TÊN VIỆC ("quan sát tái hiện hiệu ứng trên Test-36": đã thấy +6/+12/+15, có ảnh `ANH/W02-*`). Giới hạn ghi thẳng: cấp phải ép bằng cờ, đường cấp thật server→client chưa tái hiện, vung kiếm và video H4/H5 [CHƯA KIỂM]; giả thuyết mới từ XD-W02c: vũ khí trắng bị client bỏ cập nhật cường hóa (KProtocolProcess.cpp:1560–1562) — đề xuất thử bằng vũ khí xanh/tím/vàng.
+- B-04 (đo trước/sau) và P-02 (đo tick, băng thông, khung hình): cần Test-36 bật lại + pha đo; chưa làm kịp, giữ mở. Khóa client/tài khoản Bot đã nằm ở BAO-CAO-CHU.
