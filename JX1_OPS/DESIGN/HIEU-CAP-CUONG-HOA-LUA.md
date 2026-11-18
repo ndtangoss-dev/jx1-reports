@@ -63,3 +63,11 @@ CHƯA XÁC MINH: trường hàm sửa, payload s2cSyncItem, client dùng nEnChan
 ## Bàn giao
 PARTIAL. Tiếp tục khi có đúng source server và file client chứa nEnChance. Không sửa mã, không chạy build/exe/VM, không commit theo yêu cầu.
 Kỹ năng đã dùng: jx1-retrofit, jx1-read-server, jx1-read-client, jx1-parameters, jx1-knowledge, jx1-report.
+
+## Bổ sung xác minh HG-03b — 2026-11-19
+[THẤY] LuaSetItemEnChance đọc chỉ số item, lượng thay đổi và cờ đồng bộ; lấy EnChance hiện tại, cộng lượng thay đổi, rồi gọi SynPlayerItem khi có player và cờ >= 1 (ScriptFuns.cpp:10912-10931 tại root nguồn task).
+[THẤY] Bộ nhận s2cSyncItem đọc ITEM_SYNC.m_EnChance và đưa giá trị vào các nhánh tạo item; bản client đăng ký và xử lý gói này (server KProtocolProcess.cpp:1720-1797; client KProtocolProcess.cpp:98,1707-1782).
+[CHƯA KIỂM] Chưa đọc định nghĩa SynPlayerItem nên chưa xác minh việc dựng/gửi payload hoặc bước hỏng thực tế.
+[CHƯA KIỂM] Chưa xác định hàm giao diện định dạng tooltip “+N”; phần nhận gói chỉ chứng minh trường được chuyển vào item.
+[THẤY] Trong bản server được task dẫn, s2cSyncItem ở dòng 1720; dòng 2976 thuộc SyncObjectState và dòng 3098 đọc FightMode, không phải xử lý EnChance.
+Phần bổ sung này thêm bằng chứng trực tiếp; nội dung và kết luận cũ được giữ nguyên.
