@@ -1,7 +1,7 @@
 ---
 id: XD-E09
 title: Đóng E-09: kiểm bot allowlist
-status: ready
+status: done
 level: L3
 agent: codex
 effort: high

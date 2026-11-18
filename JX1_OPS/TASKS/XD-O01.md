@@ -1,7 +1,7 @@
 ---
 id: XD-O01
 title: Đóng O-01: vận hành định kỳ
-status: ready
+status: done
 level: L3
 agent: codex
 effort: high

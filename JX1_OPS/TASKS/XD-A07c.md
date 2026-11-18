@@ -1,7 +1,7 @@
 ---
 id: XD-A07c
 title: Đóng A-07c: kiểm sản phẩm build
-status: ready
+status: done
 level: L3
 agent: codex
 effort: high

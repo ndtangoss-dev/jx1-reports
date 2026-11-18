@@ -1,7 +1,7 @@
 ---
 id: XD-V01
 title: Đóng V-01: vòng Chat⇄Sonnet
-status: ready
+status: done
 level: L3
 agent: codex
 effort: high

@@ -1,7 +1,7 @@
 ---
 id: XD-M01
 title: Đóng M-01: bảo trì mục lục
-status: ready
+status: done
 level: L3
 agent: codex
 effort: high
