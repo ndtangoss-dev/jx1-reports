@@ -1,6 +1,6 @@
-# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-18 21:00, đừng sửa tay)
+# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-18 22:22, đừng sửa tay)
 
-ĐANG LÀM: R-05a
+ĐANG LÀM: W-01a, W-01b, W-01c, W-01d
 KẾ TIẾP: 0-05, 0-08, B-05, CL-01, D-02, E-04
 BỊ CHẶN: T-04
 
@@ -9,12 +9,15 @@ Ba chặng #091: 1 hiểu game (chuẩn hóa) → 2 đường truyền + exe →
 ```mermaid
 flowchart LR
   subgraph S1["Chặng 1 hiểu game"]
-    R_05a["R-05a chạy"]
   end
   subgraph S2["Chặng 2 truyền tải + exe"]
     T_04["T-04 chặn"]
   end
   subgraph S3["Chặng 3 tick và đồ họa"]
+    W_01a["W-01a chạy"]
+    W_01b["W-01b chạy"]
+    W_01c["W-01c chạy"]
+    W_01d["W-01d chạy"]
     0_05["0-05 chờ"]
     0_08["0-08 chờ"]
     B_05["B-05 chờ"]
@@ -28,4 +31,4 @@ flowchart LR
   end
 ```
 
-Tổng: 129 việc, 1 đang làm (+0 chết, 0 chờ gộp), 10 chờ, 1 bị chặn, 117 xong.
+Tổng: 133 việc, 4 đang làm (+0 chết, 0 chờ gộp), 10 chờ, 1 bị chặn, 118 xong.
