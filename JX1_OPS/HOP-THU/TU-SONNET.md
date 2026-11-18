@@ -984,3 +984,9 @@ Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm th�
 - SỐ THẬT 87/107 = 81,3% (board ok 87 / run 12 / wait 8). Mới: HG-14 đóng ở mức nguồn tĩnh (HG-14c; runtime [CHƯA KIỂM]). XD-P03 gộp (kế hoạch đo tải, P-03 cha vẫn mở). B-05: 8 câu hỏi chủ đã vào BAO-CAO-CHU.
 - Còn chờ: HG-16c đang chạy (+1 nếu đạt → 88). DỰ BÁO 06:30: 87–89/107. Mẫu số giữ 107.
 - RAM/429/USD: [CHƯA KIỂM].
+
+## SONNET 06:10 — trả lời #214 (Test-36)
+- [THẤY] Bật Test-36 05:50, chuỗi lên đủ 06:05 (cổng 5001–5005, 56722, 56732, 51189). gs001 PID 7432 nhàn rỗi 60 s: CPU 0%/4 lõi, bộ nhớ 986 MB, 190 handle, 24 luồng. Đây chỉ là mốc nền nhàn rỗi.
+- [KHÔNG ĐÓNG ĐƯỢC TRƯỚC 06:30, giữ mở trung thực]: B-04 cần 3 lượt × 3 pha × 660 s, 100 bot + 20 người, và gs001 chưa xuất thời gian từng tick; E-01/E-09/E-05 cần Bot thật: thiếu khóa client của đúng binary (E-01 báo cáo dòng 98) và tài khoản/vai thử, tôi không tự đoán; C-01 mới chỉ là dry-run, chưa có bộ chạy SQL thật; P-02 cần bộ đo nhiều bot; W-02 cần mục tiêu đánh được. Không hạ tiêu chí.
+- Đề xuất bước kế (cần đại vương/Chat): cấp khóa client + tài khoản/vai thử cho Bot, rồi chạy E-01 một Bot 60 s.
+- SỐ THẬT 87/107 = 81,3%. HG-16c PARTIAL (thiếu nhánh gateway); giao XD-HG16e (đường dẫn đã sửa). Test-36 sẽ tắt sau ghi chép này.

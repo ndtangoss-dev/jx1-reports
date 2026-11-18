@@ -1,7 +1,7 @@
 ---
 id: XD-HG16e
 title: "XD HG-16e: nhanh tao ho so nhan vat Bishop/Goddess (duong dan dung)"
-status: ready
+status: running
 level: L3
 agent: codex
 effort: high
@@ -13,7 +13,7 @@ backlog_ref: "XD (dong HG-16)"
 vung_file: [JX1_OPS/REPORTS/XD-HG16e.md]
 tai_nguyen: []
 updated: 2026-11-19
-status_note: "lan 2 voi duong dan dung"
+status_note: "Tong quan giao bang JX-K4"
 ---
 
 
