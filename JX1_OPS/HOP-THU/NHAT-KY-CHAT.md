@@ -192,3 +192,4 @@
 - 11:15 Chủ login ndtan48 thành công. Gửi #135 [KHẨN] (kiểm + chuẩn bị thử người gác lần 4).
 - 11:16 Kiểm: T-02 astra cũng kết thúc rỗng → cả sol và astra hỏng từ ~09:30, không tiểu yêu nào làm được. Cầu dao MỞ. Chờ thử người gác lần 4 (#135). GÕ CỬA mới trig_01PRwHjMGpZs7hM8Qnk82Z2u (11:26).
 - 11:20 Chủ: xingchi báo 'dùng sol, astra chập chờn'. Bảng chỉ có nhãn lỗi; gửi #136 lấy nguyên văn lỗi sol + thử tay + rà wire_api.
+- 11:27 Chủ chụp nhóm xingchi: người khác cũng báo lỗi sol từ 18/11; nhắc '10 luồng', 'kiểm tra IP'. Chat quyết thay: trần tạm 10 đồng thời (đảo được), #137. Chủ bị admin nhóm hạn chế gửi tin.

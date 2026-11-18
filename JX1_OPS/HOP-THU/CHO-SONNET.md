@@ -1109,3 +1109,11 @@ Chủ nhận thông báo từ xingchi: dùng gpt-6.1-sol; astra không ổn đ�
 4. Bảng TIEU-YEU: cột Mô hình ghi sol cho T-02/R-06a trong khi chúng chạy astra; sửa cho đúng mô hình thực tế.
 5. Cấu hình Codex: mục `wire_api`/`model_provider` đang đặt gì (không in khóa)? Thông báo xingchi nói dùng sol: xem có cần đổi `wire_api` hoặc điểm truy cập (base_url) theo hướng dẫn mới của xingchi; chủ có thể cung cấp thông báo gốc.
 Ghi "Nhận #136", push, gõ cửa.
+
+## #137 — 2026-11-18 11:27 — Tin từ nhóm xingchi: lỗi chung, có thể giới hạn 10 luồng (bổ sung #136)
+Chủ chụp nhóm chat xingchi (11:23): (a) một người dùng khác báo đúng câu lỗi "gpt-6.1-sol requires Responses for tool calls; this account only supports Chat Completions" từ 18/11, trước đó 16–17/11 vẫn chạy; (b) một người khác: "6.1 bên này đều không dùng được"; (c) có người hỏi "6a vẫn giảm trí không" (astra chất lượng kém); (d) có người nhắc "10 luồng đồng thời" và "một tài khoản là đủ, họ có kiểm tra IP". Kết luận tạm: lỗi nằm ở xingchi, không phải cấu hình của ta; #136 mục 3–5 vẫn làm nhưng không sửa cấu hình Codex trước khi có hướng dẫn chính thức.
+Quyết định của Chat (đảo được):
+1. Trần chạy đồng thời tạm 10 tiểu yêu (không phải 60) cho tới khi chủ xác nhận xingchi không giới hạn; Tổng quản tôn trọng trần này (số đang SONG ≤10, vẫn ≤3/khóa).
+2. Không tạo thêm khóa mới. 5 khóa JX-K2..K6 là đủ cho 10 luồng.
+3. Khi xingchi hồi: giao tăng dần (2 việc, rồi 4, 6, 8, 10), mỗi bước chờ 3 phút không lỗi.
+Ghi vào STATE/KHOA-XINGCHI.md và QUYET-DINH (mục mới), ghi "Nhận #137" cùng #136.

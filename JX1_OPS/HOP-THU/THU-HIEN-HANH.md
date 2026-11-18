@@ -50,3 +50,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | [KHẨN] #129 sai: người gác dùng tk cũ ndtan.goss, tk đang dùng ndtan48; chuyển đăng nhập PC | #134 | sửa #129 | chờ Sonnet |
 | [KHẨN] Chủ đã login ndtan48; kiểm email, ping, rồi dừng lượt để thử người gác lần 4 | #135 | thực hiện #134 | chờ Sonnet |
 | Lấy nguyên văn lỗi sol, thử tay codex exec nhỏ, sửa cột Mô hình, rà wire_api/base_url | #136 | — | chờ Sonnet |
+| Lỗi sol là chung của xingchi; trần tạm 10 tiểu yêu đồng thời, không tạo khóa mới, giao tăng dần | #137 | tạm hạn chế #115 (20 khóa/60) | chờ Sonnet |
