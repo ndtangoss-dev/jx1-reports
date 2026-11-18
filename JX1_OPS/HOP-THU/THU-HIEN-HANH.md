@@ -15,3 +15,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Hiểu lầm 'chuẩn hóa' (dữ liệu game ≠ báo cáo); K-03 ưu tiên; khóa xingchi; 429 | #099 | làm rõ #098 | K-03 mở khóa test đợt 1 |
 | Nhắc: im 85 phút, đọc #099, làm K-03, ghi trạng thái 30 phút/lần | #100 | nhắc lại #099/#094 | chờ Sonnet |
 | Báo cáo ngay vì sao dừng; tự quyết sau 10 phút khi chủ vắng; xử lý lỗi xingchi; K-03 | #101 | bổ sung #100 | chờ Sonnet |
+| Lỗi xingchi: chỉ sol/astra, dò /v1/responses từng khóa, so cấu hình Codex | #102 | thay thế mục 3 của #101 | chờ Sonnet |

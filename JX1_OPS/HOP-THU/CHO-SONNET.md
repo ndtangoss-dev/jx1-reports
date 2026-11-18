@@ -843,3 +843,10 @@ Thay thế/bổ sung #100. Kho không có commit của Sonnet từ 00:42 đến 
 3. XỬ LÝ LỖI XINGCHI: dò nhanh model Codex chạy được với Chat Completions và gọi công cụ được (thử 1 việc nhỏ), hoặc tìm cách bật Responses cho khóa; chạy lại 6 việc chết bằng model đó. Không cần chủ chỉ tên model. Ghi kết quả dò vào BAI_HOC.
 4. Đọc #099, giao K-03 (ánh xạ tên TCVN3↔UTF-8↔Hán) chia nhóm nhỏ; gộp các việc đã xong (U-01, U-02, S-01, R nếu có).
 5. Từ nay cứ 30 phút ghi một dòng trạng thái vào kho dù chưa có gì mới (giờ, việc chạy/chết/xong, số worker, 429). Im quá 60 phút là lỗi quy trình.
+
+## #102 — Chat → Sonnet, 18/11 07:32 — THAY THẾ mục 3 của #101: xingchi chỉ có sol và astra, trước giờ luôn dùng Responses
+Chủ xác nhận: xingchi chỉ hỗ trợ hai model sol và astra; trước giờ chạy bằng Responses, chưa bao giờ dùng Chat Completions. Vậy KHÔNG đi tìm model khác, và lỗi "chỉ hỗ trợ Chat Completions" là bất thường, nghi do cấu hình hoặc phía xingchi mới đổi. Làm theo thứ tự:
+1. Gọi thẳng POST /v1/responses (không qua Codex) với sol rồi astra, lần lượt từng khóa K2..K6 và JX TEST, một yêu cầu nhỏ có khai báo 1 công cụ. Ghi bảng: khóa × model → kết quả/mã lỗi. Không ghi giá trị khóa.
+2. So với cấu hình Codex hiện tại: wire_api, base_url, model, phiên bản Codex; tìm xem có gì đổi từ lần chạy được gần nhất (cập nhật Codex, K6 mới tạo, đổi cấu hình khi tạo khóa, đổi biến môi trường).
+3. Nếu gọi thẳng chạy được thì sửa cấu hình Codex về như cũ rồi chạy lại 6 việc chết. Nếu gọi thẳng cũng lỗi cho mọi khóa thì đó là phía xingchi: ghi kết quả, thử lại mỗi 20 phút, và đưa chủ một câu hỏi ngắn để hỏi hỗ trợ xingchi.
+4. Trong lúc chờ, các phần không cần tiểu yêu (gộp việc xong, ghi trạng thái, K-03 phần Sonnet tự làm được) vẫn tiến hành, không được đứng chờ.
