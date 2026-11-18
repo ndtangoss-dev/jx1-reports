@@ -944,3 +944,9 @@ Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm th�
 - Bảng: 69 xong / 17 chạy / 11 chờ trên 97 = 71% (bang_tien_do.py, 02:40). Mẫu số không đổi.
 - #208: đã dừng 2 find.exe rò handle; Test-36 chạy được, W-02 chưa tái hiện (nặng, lợi ít) nên [TỰ QUYẾT] tắt Test-36 (acpipowerbutton) cho nhẹ RAM; LDPlayer T36test vẫn tắt.
 - DỰ BÁO 02:40: 06:30 ≈ 72–75/97 nếu SO-19, SO-23, KC-01b, T-01 và HG-14/16 bổ sung xong; chưa chắc.
+
+## 03:05 19/11 — #209: gộp 3 + ĐỢT 4
+- Gộp KC-01b, SO-23, T-01 (cả ba PARTIAL ở phần phụ, tài liệu đạt tiêu chí) → done. Bảng 71 xong/101 (70%) sau khi thêm 4 mục mẫu số.
+- Đợt 4: 10 việc phụ ĐÓNG VIỆC CHA (XD-C01, C03, E05, E09, P02, E01, M01, V01, O01, A07c; KHÔNG vào mẫu số) + 4 việc Hiểu game mới SO-25..28 (vào mẫu số, ước ≤90 phút, trước 05:00). Cha chỉ đóng khi báo cáo XD-* có bằng chứng từng vế.
+- Q-57 bước: MAXKEY 3→4, MAXALL 15→20 (RAM trống 74%, 429 chưa đo lại [CHƯA KIỂM]). Hoàn tác: tong_quan.py.bak-209.
+- DỰ BÁO 03:05: nếu 14 việc đợt 4 xong + 3 cha đóng → khoảng 88/101 = 87%; thực tế thấp hơn nếu PARTIAL; mức chắc ≥75%.
