@@ -1,5 +1,8 @@
 # VÒNG TỰ ĐỘNG CHAT ⇄ SONNET (chủ quyết 18/11 19:23, Q-49; thay "chủ gọi/chủ nhắn" của Q-48)
 
+> **[CHAT 19/11 00:40 — BẢN NÀY ĐÃ LỖI THỜI]** Các câu "hết việc thì dừng", "stop_guard cho dừng khi đã ghi XONG ĐỢT", "9 phút không có CHAT-DAY thì dừng/[CAN-CHU] vòng đứt" KHÔNG CÒN hiệu lực. Luật hiện hành: `STATE/LUAT-COT-LOI.md` L10 + L11 (không bao giờ tự dừng; chờ bằng `cho_thu.py`; chỉ dừng khi có `STATE/DUNG-VONG.flag`).
+
+
 Ý chủ: hai bên bám BẢNG TIẾN ĐỘ + KẾ HOẠCH TỔNG THỂ (STATE/TIEN-DO.md, KE-HOACH-TONG-THE.md) làm không nghỉ; chủ chỉ quyết việc quan trọng.
 
 ## Vòng

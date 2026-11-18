@@ -112,3 +112,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Phân vai bảng tiến độ; Sonnet cập nhật TASKS/BACKLOG (0-05 done, CL-01 active, thêm W/G/V/T/M) | #196 | | chờ Sonnet |
 | Nhịp tim độc lập: Tổng quản ghi STATE/SONNET-SONG.md (mtime phiên + RAM) | #197 | thay vai nhịp tim của cho_thu.py | chờ Sonnet |
 | Vá stop_guard.py (bỏ 'XONG ĐỢT thì dừng', hết việc → chặn + cho_thu.py; cờ DUNG-VONG.flag) | #198 | | chờ Sonnet |
+| Kiểm toàn bộ quy trình tự động; vá cho_thu 9 phút, stop_guard 150 lần, biển lỗi thời 2 tài liệu; 8 câu hỏi Sonnet | #199 | | chờ Sonnet |

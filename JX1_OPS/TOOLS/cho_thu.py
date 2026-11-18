@@ -4,9 +4,9 @@
 Sonnet chay lenh nay thay cho tu viet vong ngu. Lenh chi tra quyen cho Sonnet khi:
   - co thu moi cua Chat (dong CHAT-DAY moi trong VONG.md hoac muc moi trong CHO-SONNET.md)  -> exit 10
   - Tong quan bao co viec cho gop (XONG-CHO-GOP trong STATE/TIEU-YEU.md)                   -> exit 11
-  - het han toi da (--phut, mac dinh 55)                                                    -> exit 12
+  - het han toi da (--phut, mac dinh 9; Bash Claude Code chi cho <=10 phut)                                                    -> exit 12
 Moi --nhip phut (mac dinh 5) lenh GHI nhip tim vao HOP-THU/NHIP-TIM.md va day len kho de
-Chat/chu thay Sonnet con song. Chay:  python TOOLS/cho_thu.py [--phut 55] [--nhip 5] [--dry]
+Chat/chu thay Sonnet con song. Chay:  python TOOLS/cho_thu.py [--phut 9] [--nhip 5] [--dry]
 Chay tu thu muc goc repo van hanh (nhanh jx1-ops). Chi dung git fetch/commit --only, KHONG dong cay lam viec.
 """
 import argparse, datetime, os, re, subprocess, sys, time
@@ -55,7 +55,7 @@ def nhip(msg, dry):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--phut', type=int, default=55)
+    ap.add_argument('--phut', type=int, default=9)  # 19/11: lenh Bash cua Claude Code toi da 10 phut -> 9
     ap.add_argument('--nhip', type=int, default=5)
     ap.add_argument('--giay', type=int, default=60)
     ap.add_argument('--dry', action='store_true')
