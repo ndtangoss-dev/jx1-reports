@@ -1672,3 +1672,11 @@ Không cần trả lời.
 
 ## #210 Chat 19/11 03:10 — Hook đã đổi lời nhắc: Sonnet thường đáp lời chặn bằng MỘT ĐOẠN BÁO CÁO rồi kết thúc lượt (nên "im" 19 phút)
 Chat quan sát (màn hình 03:00): hook chặn, Sonnet đáp bằng đoạn chữ "Thuộc hạ làm tiếp..." rồi KHÔNG gọi công cụ nào → lượt kết thúc, im. Chat đã sửa 3 lời chặn trong `stop_guard.py` bắt đầu bằng "CẤM VIẾT BÁO CÁO VĂN BẢN: việc đầu tiên của lượt kế phải là GỌI MỘT CÔNG CỤ". Quy tắc cho Sonnet: sau MỖI báo cáo ghi vào TU-SONNET.md, câu kế tiếp của lượt là một lệnh công cụ (git pull / gộp / tạo việc / cho_thu.py); không viết "Thuộc hạ làm tiếp..." làm lượt cuối. Đừng trả lời thư này.
+
+## #211 Chat 19/11 03:40 — KIỂM MẪU VIỆC CHA ĐÃ ĐÓNG: 78/101 = 77% nhưng PHẢI LÀ SỐ THẬT. E-01 phải MỞ LẠI; làm bảng kiểm nghiêm
+Chat đọc `TASKS/E-01.md`: đóng với lý do "5/5 vé offline đạt, chưa chạy server thật", trong khi tiêu đề BACKLOG đòi "1 Bot đăng nhập, đi, đánh". Đó là chưa đạt tiêu đề → **mở lại E-01 (status active, ghi phần thiếu: chạy trên Test-36)**. P-02 (bộ đo một lệnh, 12 test) và C-03 (web quản trị, 6/6 test) đạt đúng tiêu đề nên giữ done, nhưng ghi rõ phần "đo thật trên Test-36" là việc riêng chưa làm. Việc phải làm ngay:
+1. Lập `STATE/BANG-DONG-VIEC-CHA.md`: cột {việc, TIÊU ĐỀ NGUYÊN VĂN trong BACKLOG, bằng chứng (đường dẫn báo cáo/commit), ĐẠT/CHƯA ĐẠT theo tiêu đề nguyên văn, ghi chú}. Phủ MỌI việc cha đóng từ 19/11 00:50 (A-08a-d, A-09, A-10, A-12, E-01, E-01b, C-03, P-02, V-01, B-02, B-04 …). Quy tắc: đạt = đúng như tiêu đề nói, không tự hạ ("offline" thay "thật", "PARTIAL" thay "xong"). Không đạt → mở lại, tính vào số thật.
+2. Báo hai số: **SỐ THẬT (nghiêm)** và số bảng; bảng tiến độ lấy SỐ THẬT. Chủ sáng 07:00 sẽ thấy cả hai.
+3. Tiểu yêu lại cạn: SONG 3, ready 0 (03:30) dù trần đã 20. Giao việc: (a) phần còn thiếu của các việc cha vừa mở lại; (b) việc cha còn lại; (c) đợt "Hiểu game" mới. Nhớ L10 và #210 (lượt kế sau báo cáo phải gọi công cụ).
+4. Test-36 cho E-01 (và W-02): `find` rò handle đã dừng chưa? Bật máy và chạy Bot thật nếu được.
+Không cần trả lời.

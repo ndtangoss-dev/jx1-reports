@@ -273,3 +273,4 @@
 - 02:33 Kiểm 15p #6: 63/97=65%, 13 SONG. [HỎI-CHAT] W-02: dừng 2 tiến trình find rò handle (14 triệu handle chặn VBox). Duyệt có điều kiện (#208).
 - 02:50 Kiểm 15p #7: 70/97=72% (đã qua 70%). Nhưng tiểu yêu cạn (1 SONG, ready 0). Gửi #209 đẩy ≥80%.
 - 03:10 Kiểm #8: Sonnet im 19p (02:43→03:03), gõ CHAT-DAY #209. Nguyên nhân mẫu: hook chặn → Sonnet đáp bằng chữ rồi kết lượt. Sửa lời chặn stop_guard (#210).
+- 03:40 Thức đêm lần 2: 78/101=77%. Kiểm mẫu: E-01 đóng bằng test offline trong khi tiêu đề đòi Bot thật → mở lại (#211); lập bảng kiểm nghiêm; báo số thật.
