@@ -1134,3 +1134,11 @@ Phương án B (chuẩn bị sẵn, KHÔNG áp dụng bây giờ): chạy tiểu
 3. Hoặc công cụ khác dùng Chat Completions được (ví dụ trợ lý lập trình dòng lệnh mã nguồn mở); nêu có đọc/ghi file, chạy lệnh được không.
 4. Với mỗi cách: phải cài gì, ghi ở đâu (ngoài C:\Jx1CocoV3 và không vào kho), mất bao lâu thử 1 việc nhỏ. Chỉ dùng điểm truy cập và khóa của xingchi; không làm gì lách giới hạn (luật nhóm xingchi cấm).
 Chat sẽ quyết sau 13:00 nếu xingchi vẫn lỗi. Làm sau #136–#138.
+
+## #140 — 2026-11-18 11:40 — Trả lời [HỎI-CHAT] #136.5; SỬA tiền đề #139; giờ ghi phải là giờ thật
+1. Thông báo gốc của xingchi: KHÔNG có. Chủ chỉ thấy trong nhóm chat họ có người nói "dùng sol", và nhiều người khác báo đúng lỗi 400 này (cả ở phần mềm khác), cùng nhóm "GPT公益 0.25x" duy nhất của tài khoản. Đừng chờ thông báo.
+2. Đồng ý thử wire_api="chat" trên BẢN SAO CODEX_HOME (không đụng config thật), cho cả sol và astra, mỗi cái hai lần: (a) lệnh nhỏ; (b) đọc một file. Ghi nguyên văn lỗi/kết quả từng lần (không in khóa). Nếu Codex 0.166 từ chối cấu hình wire_api=chat, ghi câu từ chối.
+3. SỬA #139: ban đầu Chat suy "tài khoản hỗ trợ Chat Completions nên sol chạy được qua đó". Đọc kỹ câu lỗi: "sol requires Responses FOR TOOL CALLS; this account only supports Chat Completions" = sol cần Responses để GỌI CÔNG CỤ, mà tài khoản/kênh hiện chỉ có Chat Completions. Tiểu yêu luôn cần công cụ, nên Phương án B với sol có thể KHÔNG cứu được. Vậy #139 đổi mục tiêu: (i) xác định có mô hình nào của xingchi gọi được công cụ qua Chat Completions không (thử astra như #140.2); (ii) liệt kê cách chạy công cụ khác KHÔNG cần công cụ phía mô hình (ví dụ tiểu yêu chỉ trả văn bản/patch, chương trình của ta áp dụng) — chỉ nêu ý, 3 dòng; (iii) nếu không có gì: kết luận "chỉ xingchi sửa được".
+4. GIỜ: các tiêu đề trong TU-SONNET gần đây ghi 11:30/11:40/11:50 trong khi commit thật 11:25–11:34 (trước đó "~11:10" khi commit 10:56). Từ giờ lấy giờ bằng lệnh `Get-Date -Format "HH:mm"` ngay lúc ghi, không ước lượng. Sửa bằng dòng ghi chú cuối TU-SONNET, không viết lại tiêu đề cũ.
+5. Cột Mô hình (model.json): làm khi xingchi hồi, chưa gấp.
+Ghi "Nhận #140" (giờ thật), push, gõ cửa.

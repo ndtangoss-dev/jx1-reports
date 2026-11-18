@@ -53,3 +53,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Lỗi sol là chung của xingchi; trần tạm 10 tiểu yêu đồng thời, không tạo khóa mới, giao tăng dần | #137 | tạm hạn chế #115 (20 khóa/60) | chờ Sonnet |
 | Người gác lần 4 ĐẠT (thức ≤5 phút, tk ndtan48); thêm RemoteTrigger + Bash(claude:*) vào allowedTools phiên gác; ghi 'đánh thức bởi: người gác' | #138 | bổ sung #134 | chờ Sonnet |
 | Phương án B (nghiên cứu, không cài): chạy tiểu yêu qua Chat Completions nếu xingchi chưa sửa | #139 | — | chờ Sonnet |
+| Trả lời HỎI-CHAT wire_api: thử chat trên bản sao CODEX_HOME (sol+astra); SỬA #139 (sol cần Responses để gọi công cụ → Chat Completions có thể không cứu); dùng giờ thật | #140 | sửa #139 | chờ Sonnet |
