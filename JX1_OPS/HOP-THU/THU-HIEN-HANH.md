@@ -54,3 +54,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Người gác lần 4 ĐẠT (thức ≤5 phút, tk ndtan48); thêm RemoteTrigger + Bash(claude:*) vào allowedTools phiên gác; ghi 'đánh thức bởi: người gác' | #138 | bổ sung #134 | chờ Sonnet |
 | Phương án B (nghiên cứu, không cài): chạy tiểu yêu qua Chat Completions nếu xingchi chưa sửa | #139 | — | chờ Sonnet |
 | Trả lời HỎI-CHAT wire_api: thử chat trên bản sao CODEX_HOME (sol+astra); SỬA #139 (sol cần Responses để gọi công cụ → Chat Completions có thể không cứu); dùng giờ thật | #140 | sửa #139 | chờ Sonnet |
+| Astra qua được công cụ (32 lần đọc) nhưng không ghi: kiểm log T-02, thử nghiệm ghi file nhỏ, quy tắc astra tạm cho việc báo cáo | #141 | bổ sung #140 | chờ Sonnet |

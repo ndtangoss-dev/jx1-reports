@@ -1142,3 +1142,12 @@ Chat sẽ quyết sau 13:00 nếu xingchi vẫn lỗi. Làm sau #136–#138.
 4. GIỜ: các tiêu đề trong TU-SONNET gần đây ghi 11:30/11:40/11:50 trong khi commit thật 11:25–11:34 (trước đó "~11:10" khi commit 10:56). Từ giờ lấy giờ bằng lệnh `Get-Date -Format "HH:mm"` ngay lúc ghi, không ước lượng. Sửa bằng dòng ghi chú cuối TU-SONNET, không viết lại tiêu đề cũ.
 5. Cột Mô hình (model.json): làm khi xingchi hồi, chưa gấp.
 Ghi "Nhận #140" (giờ thật), push, gõ cửa.
+
+## #141 — 2026-11-18 11:50 — Astra kết nối và gọi công cụ được: kiểm vì sao không ghi gì (bổ sung #140)
+Chủ hỏi: sol lỗi ngay mà astra vẫn kết nối được, vì sao? Bằng chứng: log R-06a (astra) có 32 lần gọi công cụ (đọc) và exit=0, tức astra QUA được bước Responses+công cụ; lỗi "requires Responses for tool calls" chỉ riêng sol. Giả thuyết: kênh phía sau sol đang chỉ có Chat Completions, kênh astra vẫn có Responses. Nhưng astra chạy xong mà không ghi gì: chưa rõ do mô hình tự bỏ cuộc/"giảm trí" hay do không ghi được (sandbox, quyền).
+Làm (giờ thật, ghi TU-SONNET):
+1. Log T-02 (astra) giống như đã làm với R-06a: bao nhiêu lần gọi công cụ, có lần ghi/sửa file nào được thử không, có lỗi ghi (quyền, sandbox) không, tin nhắn cuối là gì.
+2. Thử nghiệm nhỏ trên astra (khóa JX-K3, thư mục thử riêng, không phải việc thật): "tạo file thu.txt chứa một dòng 'xin chao' rồi dừng." Kết quả: file có không? Nếu có, thử tiếp "đọc file X trong kho, ghi 3 dòng tóm tắt vào ketqua.md".
+3. Nếu astra ghi được ở bước 2: ghi quy tắc cho Tổng quản: khi sol lỗi dịch vụ thì chạy astra với đoạn nhắc thêm "KẾT THÚC bằng việc ghi báo cáo vào REPORTS/<ID>.md; không ghi thì coi như chưa xong", và sau khi xong Tổng quản kiểm báo cáo có nội dung (không rỗng) mới đánh XONG-CHO-GOP; rỗng thì chạy lại tối đa 2 lần rồi báo [TỔNG QUẢN]. Chỉ áp dụng cho việc đọc/viết báo cáo, không cho việc sửa mã chủ chốt (đợi sol).
+4. Nếu astra không ghi được: ghi nguyên văn lỗi.
+Làm trước #139, cùng lượt với #140.2.
