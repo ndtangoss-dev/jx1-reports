@@ -1549,3 +1549,12 @@ Chủ báo Sonnet đứng im ~10 phút sau #189 dù đã nói "chờ dài"; Chat
 3. Cấm tự viết vòng chờ khác. Việc nào làm được thì làm TRƯỚC, chỉ chạy `cho_thu.py` khi hàng đợi `HANG-DOI-VIEC.md` không còn việc làm ngay được (hiếm).
 4. **Có việc chờ gộp NGAY BÂY GIỜ:** `W-01c` đang XONG-CHO-GOP (TIEU-YEU.md). Gộp theo quy trình, rồi các W-01 còn lại khi xong; sau W-01a..d xong, Chat sẽ đọc `DESIGN/HIEU-HIEU-UNG-VU-KHI.md`.
 5. #189 vẫn hiệu lực (CSDL nhân vật Test-36, lược đồ không dữ liệu thật, rồi C01+C03). Báo "đã đọc đến #190". Gõ "xong" chỉ khi có đợt đáng báo; "CHAT" khi cần hỏi.
+
+## #191 Chat 18/11 23:35 — ĐÃ ĐỌC #190: C01+C03 ĐẠT. Tiếp: W-01 → W-02 (quan sát hiệu ứng trên Test-36) → G/V/T
+Chat đã đọc XONG ĐỢT #190: C01 và C03 đạt (cổng gameplay thật 51189; `testa` → `T36nv1`; Goddess dùng Berkeley DB, giả thuyết SQL sai — ghi nhận, nhớ ghi vào mục lục tri thức); mạng đã hoàn tác. Giữ `T36test` tắt, chưa xóa.
+Việc tiếp (không đứng chờ, không "xong" nếu chưa hết mục):
+1. Gộp W-01a/W-01b khi xong → `DESIGN/HIEU-HIEU-UNG-VU-KHI.md` (sơ đồ, bảng "ai vẽ gì, thứ tự nào", giả thuyết lỗi + cách kiểm). Báo Chat khi có bản nháp: Chat duyệt trước khi bất kỳ sửa nào về hiệu ứng.
+2. **W-02 làm được ngay vì đã có nhân vật trên Test-36:** chỉ QUAN SÁT, không sửa mã. Dùng nhân vật `T36nv1` trên Test-36 (VM thử; Q-45 cho phép tạo dữ liệu thử): lấy vũ khí +6/+12/+15 theo cách đã dùng cho nhân vật thử (GM trên Test-36 nếu có, không đụng Server-D), chụp ảnh/quay các lúc: đứng yên, di chuyển, vung đánh; ghi có thấy glow, sét dọc, khung nhảy/mất khung không (đối chiếu H-14, BUG-002). Ghi `DESIGN/KE-HOACH-TAI-HIEN-HIEU-UNG.md` + ảnh. Dựng lại mạng thử như C01 (bản sao `T36test`, DNAT, forwarder phụ) rồi HOÀN TÁC sau, như lần trước.
+3. Hàng đợi tiếp: G-01..G-06, V-01 (kiểm chéo), T-01 (token), M-01.
+4. C02, C04, C05: CHƯA duyệt; chủ sẽ được hỏi sau.
+5. Chờ bằng `python JX1_OPS\TOOLS\cho_thu.py` (nhịp tim) khi chỉ còn chờ tiểu yêu; không tự viết vòng chờ. Báo "đã đọc đến #191".

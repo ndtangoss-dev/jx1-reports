@@ -104,3 +104,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Q-53: Sonnet gõ 'CHAT' khi cần hỏi Chat (ngoài 'xong') | #188 | | chờ Sonnet |
 | Trả lời HOI-188a: cho tạo/khôi phục CSDL nhân vật Test-36 (chỉ lược đồ, không dữ liệu thật) rồi làm lại C01+C03 | #189 | | chờ Sonnet |
 | Q-54: chờ dài bằng cho_thu.py + nhịp tim NHIP-TIM.md; gộp W-01c | #190 | thay vòng ngủ tự viết | chờ Sonnet |
+| C01+C03 đạt; giao W-01 gộp, W-02 quan sát hiệu ứng trên Test-36, G/V/T | #191 | | chờ Sonnet |
