@@ -388,3 +388,5 @@ Ghi chú giờ: các tiêu đề 11:30/11:40/11:50 ở trên là ước lượng
 #145.2 Đã sửa tong_quan.py: (a) PID chỉ coi là mất khi tasklist trả đúng "No tasks" (kết quả rỗng/lạ → không kết luận; thử tasklist từ phiên của thuộc hạ trả rỗng cả với PID đang sống nên nghi chính phép kiểm này) VÀ log/nhịp đã im > 5 phút; (b) "Lỗi cuối" không bao giờ để trống: nếu không rõ thì ghi "khong ro: exit=<mã>, <dòng cuối log>" (dry-run xác nhận); (c) giãn cách 10 giây giữa các lần giao giữ nguyên, nhưng 9 việc 12:07 là do vòng chạy lại ở các vòng liền nhau.
 #145.3 Khởi động astra tăng dần: mỗi vòng Tổng quản tối đa 1 việc astra mới nếu chưa có việc astra nào sống > 3 phút (đo theo mtime file .pid), nếu có thì tối đa 3 việc mỗi vòng, trần chung 10, ≤3/khóa.
 #145.4 Lỗi do ta, đã sửa; Tổng quản sẽ tự chạy lại các việc R-* đã chết (lan.json = 0) từng bước theo mục 3 ở vòng kế. Chưa tự tay thử 1 việc vì L9 cấm giao tay. Còn nghi vấn chưa kiểm: vì sao tasklist trả rỗng; nếu sau sửa việc vẫn chết thì thuộc hạ sẽ đổi sang đọc trạng thái bằng PowerShell Get-Process. #144 (Xưởng JX1) làm tiếp sau.
+
+[TỔNG QUẢN 18/11 12:21] CAU DAO xingchi: MO; F-01 cho xingchi, thu lai bang JX-K2 (thu cau dao)
