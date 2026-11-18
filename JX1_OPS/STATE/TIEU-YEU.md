@@ -1,4 +1,4 @@
-# TIỂU YÊU (Tổng quản tự sinh lúc 2026-11-18 15:21, đừng sửa tay)
+# TIỂU YÊU (Tổng quản tự sinh lúc 2026-11-18 15:25, đừng sửa tay)
 
 **CẦU DAO xingchi: ĐÓNG (bình thường)**
 
@@ -7,11 +7,7 @@ Mức: SONG / IM-NHUNG-SONG (20–60 phút) / TREO (>60, bị dừng chạy lạ
 | Mã | Mức | Khóa | Log cuối | Dấu hiệu sống cuối | Lỗi cuối | Lần chạy lại | Mô hình | PID | Chờ token (giây) |
 |---|---|---|---|---|---|---|---|---|---|
 | F-01 | CHET-BO | JX-K3 | 14:37 | 14:37 | rong (exit=0, khong thay doi) | 3 | sol | - | - |
-| K-03a | XONG-CHO-GOP | JX-K4 | 14:52 | 14:52 | - | 0 | sol | - | - |
-| K-03b | XONG-CHO-GOP | JX-K3 | 14:56 | 14:56 | - | 0 | sol | - | - |
-| K-03c | SONG | JX-K6 | 15:16 | 15:16 | - | 0 | sol | - | - |
-| K-03d | XONG-CHO-GOP | JX-K2 | 15:09 | 15:09 | - | 0 | sol | - | - |
-| K-03e | XONG-CHO-GOP | JX-K2 | 14:53 | 14:53 | - | 0 | sol | - | - |
+| K-03c | SONG | JX-K6 | 15:24 | 15:24 | - | 0 | sol | - | - |
 | R-05b | CHET-BO | JX-K2 | 13:24 | 13:24 | bao cao rong (astra) | 2 | astra | - | - |
 | R-05c | CHET-BO | JX-K2 | 13:12 | 13:12 | bao cao rong (astra) | 2 | astra | - | <=127 |
 | R-05d | CHET-BO | JX-K5 | 13:22 | 13:22 | bao cao rong (astra) | 2 | astra | - | - |
@@ -19,9 +15,6 @@ Mức: SONG / IM-NHUNG-SONG (20–60 phút) / TREO (>60, bị dừng chạy lạ
 | R-06c | CHET-BO | JX-K6 | 13:22 | 13:22 | bao cao rong (astra) | 2 | astra | - | - |
 | R-07a | CHET-BO | JX-K6 | 13:15 | 13:15 | bao cao rong (astra) | 2 | astra | - | - |
 | R-07b | CHET-BO | JX-K4 | 13:20 | 13:20 | bao cao rong (astra) | 2 | astra | - | - |
-| T-02 | XONG-CHO-GOP | JX-K3 | 15:08 | 15:08 | - | 0 | sol | - | <=56 |
-| T-03 | XONG-CHO-GOP | JX-K4 | 14:44 | 14:44 | - | 0 | sol | - | - |
-| T-04 | XONG-CHO-GOP | JX-K5 | 14:56 | 14:56 | - | 0 | sol | - | <=17 |
 
 Khóa đang dùng: JX-K6=1 / khóa có: JX-K2, JX-K3, JX-K4, JX-K5, JX-K6
 Đang chạy theo Task Scheduler: 1.
