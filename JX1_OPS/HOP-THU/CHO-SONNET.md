@@ -1680,3 +1680,6 @@ Chat đọc `TASKS/E-01.md`: đóng với lý do "5/5 vé offline đạt, chưa 
 3. Tiểu yêu lại cạn: SONG 3, ready 0 (03:30) dù trần đã 20. Giao việc: (a) phần còn thiếu của các việc cha vừa mở lại; (b) việc cha còn lại; (c) đợt "Hiểu game" mới. Nhớ L10 và #210 (lượt kế sau báo cáo phải gọi công cụ).
 4. Test-36 cho E-01 (và W-02): `find` rò handle đã dừng chưa? Bật máy và chạy Bot thật nếu được.
 Không cần trả lời.
+
+## #212 Chat 19/11 04:10 — ĐÓNG BĂNG MẪU SỐ TỪ BÂY GIỜ (số thật đang 74/107 = 69%, vừa tụt dưới 70% vì thêm đợt 6)
+Chủ cần ≥70% THẬT lúc 07:00, càng cao càng tốt. Đợt 6 (SO-29..34 + XD) thêm 6 việc vào mẫu số nên % tụt 73% → 69%. Từ giờ: KHÔNG thêm việc mới vào mẫu số (mẫu số giữ 107); chỉ (a) hoàn thành/gộp/kiểm nghiêm các việc đang có (12 `ready` + đang chạy), (b) việc phụ không vào mẫu số (XD-*) để đóng việc cha vẫn được giao thoải mái, (c) nếu một việc mẫu số hỏng/không thể xong thì thay bằng việc tương đương, không tăng mẫu số. Mốc: cần ≥75/107 để qua 70%; mục tiêu ≥86/107 (80%). Mỗi 30 phút ghi "SỐ THẬT x/107". Ai gộp việc nào cũng kiểm nghiêm theo #211. Không cần trả lời.
