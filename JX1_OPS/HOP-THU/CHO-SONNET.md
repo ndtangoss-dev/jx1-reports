@@ -1441,3 +1441,10 @@ Chủ thấy tiểu yêu hay chết ngang hoặc chậm vì khóa xingchi chỉ 
 2. Soạn `nhap_khoa.bat` bấm đúp: hỏi chủ dán khóa, lưu vào tệp ngoài kho, không hiện lại khóa; kèm 5 dòng hướng dẫn cho chủ không biết lập trình.
 3. Soạn bộ so sánh (chưa chạy): chạy CÙNG một việc đọc đã xong (chọn 3 việc, vd R-06a, R-07a, K-03a) trên mỗi nhà cung cấp trong worktree nháp; đo: có ra báo cáo không rỗng, độ đủ so với báo cáo đã gộp, thời gian đến token đầu, tổng thời gian, số lần lỗi, token dùng. Trần thử nhỏ.
 4. KHÔNG chạy so sánh, KHÔNG tạo khóa, KHÔNG gửi mã ra ngoài cho tới khi Chat báo "chủ duyệt nhà cung cấp X, trần Y".
+
+## #172 Chat 18/11 20:20 — SỬA #171: nhà cung cấp thử là GEMINI MIỄN PHÍ (thư #171 giữ nguyên, thư này thay phần chọn nhà cung cấp)
+Chủ muốn MIỄN PHÍ, không dùng Meta (chặn vùng, không dùng VPN) và chưa trả tiền OpenAI. Đổi hướng chuẩn bị, vẫn CHỈ CHUẨN BỊ:
+1. Nhà cung cấp thử: Google Gemini gói miễn phí (AI Studio). Gemini không có Responses API mà Codex 0.166 cần, nên thiết kế MỘT lớp chuyển đổi nhỏ chạy trên máy chủ (cổng cục bộ, vd 127.0.0.1) nhận kiểu Responses rồi gọi Gemini; ưu tiên công cụ có sẵn (vd LiteLLM) nếu cài được bằng pip, không viết lớp chuyển từ đầu nếu không cần. Ghi rõ trong `DESIGN/THU-NHA-CUNG-CAP.md`: cách cài, cách chạy, cách trỏ CODEX_HOME riêng vào cổng cục bộ, hạn mức miễn phí (số lượt/phút, /ngày; kiểm tra tài liệu hiện hành, ghi nguồn), và việc gói miễn phí có thể dùng dữ liệu để huấn luyện.
+2. Giữ xingchi làm đường chính; Gemini là đường dự phòng/so sánh. Giữ phần OpenAI/Meta trong tài liệu dưới dạng "đã loại, lý do" (Meta chặn vùng; OpenAI trả phí).
+3. `nhap_khoa.bat` và bộ so sánh như #171, thêm đo: số lượt bị giới hạn (429) khi chạy 2/4/7 tiểu yêu song song để biết trần song song của gói miễn phí.
+4. Vùng Đỏ vẫn giữ: chưa tạo khóa, chưa chạy so sánh, chưa gửi mã ra ngoài. Chủ cần duyệt thêm vì gói miễn phí có thể dùng dữ liệu để huấn luyện; Chat sẽ báo "chủ duyệt Gemini miễn phí" khi chủ nói. Dùng thử chỉ với việc đọc không nhạy cảm.

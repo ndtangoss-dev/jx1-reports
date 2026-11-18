@@ -233,3 +233,4 @@
 - 20:15 Tin 'xong' 19:47 = Sonnet (kiểm kho: XONG ĐỢT #168 thật). Gửi #169; ghi 2 việc cần chủ quyết vào BAO-CAO-CHU.
 - 20:10 Chủ gửi link bảng tiến độ artifact: lỗi thời (17/11 05:36). Chạy lại bang_tien_do.py ra 6/38 vì bảng Tiến độ task đã bỏ. Gửi #170 đồng bộ. Việc Chat kế: B-01.
 - 20:25 Chủ muốn thay nhà cung cấp tiểu yêu. Gửi #171 (chuẩn bị bộ thử, nhap_khoa.bat); chờ chủ chọn nhà cung cấp và trần.
+- 20:20 Chủ muốn miễn phí, không VPN. Gửi #172 sửa #171: thử Gemini miễn phí (lớp chuyển Responses); chờ chủ duyệt rủi ro dữ liệu huấn luyện.
