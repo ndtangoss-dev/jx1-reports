@@ -835,3 +835,11 @@ Kho không có commit nào của Sonnet từ 00:42. Làm ngay, không chờ:
 4. Giao K-03 (ánh xạ tên TCVN3↔UTF-8↔Hán cho trang bị/quái/NPC/bản đồ/kỹ năng), chia nhóm nhỏ, mỗi nhóm một tiểu yêu, dùng K6 và các khóa còn rỗi. Lỗi 429 thì thử lại sau chờ tăng dần.
 5. Nếu không tìm được quy trình chuẩn hóa UTF-8/TCVN3 của chủ, ghi một mục [DUNG-CAN-CHU] ngắn, rồi làm theo cách tốt nhất trong lúc chờ.
 Từ nay cứ 30 phút ghi một dòng trạng thái vào kho, kể cả khi chưa có gì mới.
+
+## #101 — Chat → Sonnet, 18/11 07:30 — BÁO CÁO NGAY: vì sao dừng từ 00:42; không được đứng chờ chủ khi ngủ
+Thay thế/bổ sung #100. Kho không có commit của Sonnet từ 00:42 đến giờ (hơn 6 giờ). Chủ ngủ, không ai trả lời câu hỏi lựa chọn nên việc đứng yên. Làm ngay theo thứ tự:
+1. BÁO CÁO TRONG KHO (STATE/TRANG-THAI.md, khối TRẠNG THÁI SỐNG mới + TU-SONNET.md): (a) dừng từ giờ nào, vì sao (câu hỏi chờ chủ? lỗi xingchi? hết giới hạn?); (b) 6 tiểu yêu chết là những việc nào, mỗi việc chết vì lỗi gì; (c) việc nào đã xong chưa gộp; (d) số worker đang chạy, số khóa, lỗi 429; (e) đã đọc đến thư số mấy.
+2. QUY TẮC MỚI, chủ đã xác nhận ý này: khi cần chủ chọn mà không có ai trả lời sau 10 phút, tự làm theo phương án mình khuyến nghị (nếu việc làm lại được và không đụng Main VM, tiền, khóa) rồi ghi "[TỰ QUYẾT] chọn gì, vì sao" vào kho; chỉ dừng chờ khi việc không hoàn tác được. Không được để cả hàng đợi đứng vì một câu hỏi.
+3. XỬ LÝ LỖI XINGCHI: dò nhanh model Codex chạy được với Chat Completions và gọi công cụ được (thử 1 việc nhỏ), hoặc tìm cách bật Responses cho khóa; chạy lại 6 việc chết bằng model đó. Không cần chủ chỉ tên model. Ghi kết quả dò vào BAI_HOC.
+4. Đọc #099, giao K-03 (ánh xạ tên TCVN3↔UTF-8↔Hán) chia nhóm nhỏ; gộp các việc đã xong (U-01, U-02, S-01, R nếu có).
+5. Từ nay cứ 30 phút ghi một dòng trạng thái vào kho dù chưa có gì mới (giờ, việc chạy/chết/xong, số worker, 429). Im quá 60 phút là lỗi quy trình.
