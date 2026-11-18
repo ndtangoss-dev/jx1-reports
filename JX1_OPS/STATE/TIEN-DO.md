@@ -1,6 +1,6 @@
-# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-18 18:29, đừng sửa tay)
+# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-18 18:44, đừng sửa tay)
 
-ĐANG LÀM: N-01, N-02, N-03, N-04, N-05, N-06, R-05b, R-05c, R-05d, R-07b
+ĐANG LÀM: N-01, N-03, N-04, N-05, R-05b, R-05c, R-05d, R-07b
 KẾ TIẾP: K-02
 BỊ CHẶN: A-07, R-04b, R-05a, T-04
 
@@ -20,15 +20,13 @@ flowchart LR
   end
   subgraph S2["Chặng 2 truyền tải + exe"]
     N_01["N-01 chạy"]
-    N_02["N-02 chạy"]
     N_03["N-03 chạy"]
     N_04["N-04 chạy"]
     N_05["N-05 chạy"]
-    N_06["N-06 chạy"]
     T_04["T-04 chặn"]
   end
   subgraph S3["Chặng 3 tick và đồ họa"]
   end
 ```
 
-Tổng: 91 việc, 10 đang làm (+0 chết, 0 chờ gộp), 1 chờ, 4 bị chặn, 76 xong.
+Tổng: 91 việc, 8 đang làm (+0 chết, 0 chờ gộp), 1 chờ, 4 bị chặn, 78 xong.

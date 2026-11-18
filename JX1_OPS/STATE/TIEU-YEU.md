@@ -1,4 +1,4 @@
-# TIỂU YÊU (Tổng quản tự sinh lúc 2026-11-18 18:41, đừng sửa tay)
+# TIỂU YÊU (Tổng quản tự sinh lúc 2026-11-18 18:47, đừng sửa tay)
 
 **CẦU DAO xingchi: ĐÓNG (bình thường)**
 
@@ -6,19 +6,17 @@ Mức: SONG / IM-NHUNG-SONG (20–60 phút) / TREO (>60, bị dừng chạy lạ
 
 | Mã | Mức | Khóa | Log cuối | Dấu hiệu sống cuối | Lỗi cuối | Lần chạy lại | Mô hình | PID | Chờ token (giây) |
 |---|---|---|---|---|---|---|---|---|---|
-| N-01 | SONG | JX-K6 | 18:41 | 18:41 | loi mang | 0 | sol | - | - |
-| N-02 | XONG-CHO-GOP | JX-K4 | 18:36 | 18:36 | - | 0 | sol | - | - |
-| N-03 | SONG | JX-K5 | 18:41 | 18:41 | loi mang | 0 | sol | - | - |
-| N-04 | SONG | JX-K6 | 18:40 | 18:40 | - | 0 | sol | - | - |
-| N-05 | SONG | JX-K2 | 18:38 | 18:38 | - | 0 | sol | - | - |
-| N-06 | SONG | JX-K3 | 18:41 | 18:41 | - | 0 | sol | - | - |
-| R-05b | SONG | JX-K2 | 18:41 | 18:41 | - | 1 | sol | - | - |
-| R-05c | SONG | JX-K4 | 18:40 | 18:40 | - | 0 | sol | - | <=127 |
-| R-05d | SONG | JX-K5 | 18:41 | 18:41 | loi mang | 0 | sol | - | - |
-| R-07b | SONG | JX-K3 | 18:41 | 18:41 | loi mang | 0 | sol | - | - |
+| N-01 | SONG | JX-K6 | 18:46 | 18:46 | loi mang | 0 | sol | - | - |
+| N-03 | SONG | JX-K5 | 18:46 | 18:46 | loi mang | 0 | sol | - | - |
+| N-04 | SONG | JX-K6 | 18:46 | 18:46 | loi mang | 0 | sol | - | - |
+| N-05 | SONG | JX-K2 | 18:47 | 18:47 | - | 0 | sol | - | - |
+| R-05b | SONG | JX-K2 | 18:47 | 18:47 | - | 1 | sol | - | - |
+| R-05c | SONG | JX-K4 | 18:47 | 18:47 | - | 0 | sol | - | <=127 |
+| R-05d | SONG | JX-K5 | 18:46 | 18:46 | loi mang | 0 | sol | - | - |
+| R-07b | SONG | JX-K3 | 18:47 | 18:47 | - | 0 | sol | - | - |
 
-Khóa đang dùng: JX-K2=2, JX-K3=2, JX-K4=1, JX-K5=2, JX-K6=2 / khóa có: JX-K2, JX-K3, JX-K4, JX-K5, JX-K6
-Đang chạy theo Task Scheduler: 9.
+Khóa đang dùng: JX-K2=2, JX-K3=1, JX-K4=1, JX-K5=2, JX-K6=2 / khóa có: JX-K2, JX-K3, JX-K4, JX-K5, JX-K6
+Đang chạy theo Task Scheduler: 8.
 
 Việc vòng này:
 - CAU DAO xingchi: DONG
