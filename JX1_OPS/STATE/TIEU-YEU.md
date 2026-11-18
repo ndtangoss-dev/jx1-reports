@@ -1,4 +1,4 @@
-# TIỂU YÊU (Tổng quản tự sinh lúc 2026-11-18 15:03, đừng sửa tay)
+# TIỂU YÊU (Tổng quản tự sinh lúc 2026-11-18 15:05, đừng sửa tay)
 
 **CẦU DAO xingchi: ĐÓNG (bình thường)**
 
@@ -10,7 +10,7 @@ Mức: SONG / IM-NHUNG-SONG (20–60 phút) / TREO (>60, bị dừng chạy lạ
 | K-03a | XONG-CHO-GOP | JX-K4 | 14:52 | 14:52 | - | 0 | sol | - | - |
 | K-03b | XONG-CHO-GOP | JX-K3 | 14:56 | 14:56 | - | 0 | sol | - | - |
 | K-03c | SONG | JX-K6 | 14:56 | 14:56 | - | 0 | sol | - | - |
-| K-03d | SONG | JX-K2 | 15:02 | 15:02 | - | 0 | sol | - | - |
+| K-03d | SONG | JX-K2 | 15:05 | 15:05 | - | 0 | sol | - | - |
 | K-03e | XONG-CHO-GOP | JX-K2 | 14:53 | 14:53 | - | 0 | sol | - | - |
 | R-05b | CHET-BO | JX-K2 | 13:24 | 13:24 | bao cao rong (astra) | 2 | astra | - | - |
 | R-05c | CHET-BO | JX-K2 | 13:12 | 13:12 | bao cao rong (astra) | 2 | astra | - | <=127 |
@@ -19,7 +19,7 @@ Mức: SONG / IM-NHUNG-SONG (20–60 phút) / TREO (>60, bị dừng chạy lạ
 | R-06c | CHET-BO | JX-K6 | 13:22 | 13:22 | bao cao rong (astra) | 2 | astra | - | - |
 | R-07a | CHET-BO | JX-K6 | 13:15 | 13:15 | bao cao rong (astra) | 2 | astra | - | - |
 | R-07b | CHET-BO | JX-K4 | 13:20 | 13:20 | bao cao rong (astra) | 2 | astra | - | - |
-| T-02 | SONG | JX-K3 | 15:02 | 15:02 | - | 0 | sol | - | <=56 |
+| T-02 | SONG | JX-K3 | 15:04 | 15:04 | - | 0 | sol | - | <=56 |
 | T-03 | XONG-CHO-GOP | JX-K4 | 14:44 | 14:44 | - | 0 | sol | - | - |
 | T-04 | XONG-CHO-GOP | JX-K5 | 14:56 | 14:56 | - | 0 | sol | - | <=17 |
 
