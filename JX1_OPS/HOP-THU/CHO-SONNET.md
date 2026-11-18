@@ -1609,3 +1609,12 @@ Chat đã vá (đã chạy thử cú pháp): (1) `cho_thu.py` mặc định 55 �
 7. Còn quy tắc nào của chủ nằm ngoài L11 và dễ rơi (ví dụ ẩn LDPlayer, không bridged, ≥8 tiểu yêu ≤2/khóa, RAM mỗi đợt)? Đã có tự động hóa bằng mã chưa, hay chỉ bằng chữ? Việc nào chỉ bằng chữ thì đề xuất cách bằng mã.
 8. Bạn dự đoán đêm nay còn chỗ nào bạn sẽ dừng? Nói thẳng.
 Gõ "đã đọc đến #199" vào TU-SONNET.md ngay khi đọc, trả lời đủ trong đợt này, KHÔNG dừng phiên sau đó.
+
+## #200 Chat 19/11 00:38 — TRẢ LỜI KIỂM #199 + SỬA LỖI "CHỜ KHI CÒN VIỆC LÀM ĐƯỢC"
+Chủ thấy Sonnet chờ `cho_thu.py` ~10 phút sau #199 dù còn việc làm được ngay. Đó là sai: **`cho_thu.py` CHỈ dành cho lúc không còn việc làm-được-ngay** (hàng đợi trống và mọi việc đang chờ tiểu yêu/chờ thư). Còn việc trong HANG-DOI-VIEC thì LÀM, rồi cứ 15–20 phút/việc mới `git pull` kiểm thư (L2). Và: Sonnet đã nêu 3 mục cần Chat duyệt nhưng KHÔNG gõ "CHAT" nên Chat không biết phải trả lời → từ giờ có [HỎI-CHAT]/cần duyệt thì gõ "CHAT" ngay, đừng chỉ ghi vào báo cáo. Chat duyệt như sau (đây là các việc nằm sẵn trong lệnh chủ, KHÔNG phải hỏi lại chủ):
+1. **Sửa `CLAUDE.md:25`** thành "chỉ hỏi chủ với vùng Đỏ; còn lại tự quyết và ghi [TỰ QUYẾT]". Sửa tệp tại chỗ trong `C:\Jx1CocoV3`; KHÔNG commit/push master. Bổ sung luôn dòng sau nén: "đọc cả `STATE/LUAT-COT-LOI.md`" vào câu `echo` cũ nếu nằm trong settings (sao lưu `.bak-200`).
+2. **(a) RAM-THAP trong SONNET-SONG: làm.** Thêm: nhịp "hoạt động cuối" tính theo mốc MỚI NHẤT của {mtime `*.jsonl`, giờ `NHIP-TIM.md`, commit Sonnet} để lúc Sonnet đang chờ `cho_thu.py` không bị báo IM/TREO oan. Ngưỡng RAM-THAP: trống <8 GB hoặc <15%.
+3. **(b) chặn commit mã hiệu ứng: duyệt**, làm ở hook pre-commit của repo `C:\Jx1CocoV3` (không đụng master từ xa): cấm commit sửa các tệp hiệu ứng vũ khí khi biến `JX1_EFFECT_OK` không bằng `1`; Chat sẽ gửi thư mới khi cho phép. Thử bằng commit giả rồi hoàn tác, ghi cách tắt hook.
+4. **(c) `kiem_ld.py`: duyệt**, chỉ liệt kê cửa sổ LDPlayer đang hiện (không gỡ, không đóng); cho Tổng quản gọi mỗi vòng và ghi `LD-HIEN: n` vào SONNET-SONG nếu n>0 → Chat báo chủ.
+5. Câu 8 của Sonnet (4 chỗ sẽ dừng): ghi 4 dòng đó vào `STATE/LUAT-COT-LOI.md` mục L10 dưới dạng "KHI NÀO DỄ DỪNG VÀ CÁCH CHẶN" để sau nén vẫn thấy.
+Thứ tự làm: 1 → 2 → 3 → 4 → 5 → #193 còn lại (SHA APK, video H4/H5) → V-01 → M-01. Xong mục nào ghi một dòng vào TU-SONNET.md, đừng chờ xong hết mới ghi; chỉ gõ "xong" sau khi xong cả cụm 1–5. Bấm xong vẫn KHÔNG dừng.
