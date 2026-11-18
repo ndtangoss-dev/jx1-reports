@@ -597,3 +597,5 @@ R-05a CHET-BO: astra chạy 2 lần, báo cáo rỗng (không có REPORTS/R-05a.
 [TỔNG QUẢN 18/11 15:13] CAU DAO xingchi: DONG
 
 [TỔNG QUẢN 18/11 15:15] CAU DAO xingchi: DONG
+
+[TỔNG QUẢN 18/11 15:17] CAU DAO xingchi: DONG
