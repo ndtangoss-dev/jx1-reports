@@ -3,7 +3,7 @@
 Cập nhật: 18/11/2026 08:55 (giờ VN)
 
 ## GÕ CỬA
-GÕ CỬA: trig_011gHLCSKkXejcirTNAHisk6 (lịch kiểm của Chat; Sonnet bấm bằng RemoteTrigger run; Chat cập nhật mỗi lần đặt lịch mới)
+GÕ CỬA: trig_01HMgEApMQ7J8Cu79NsHd4Ux (lịch kiểm 30 phút của Chat mới, đặt 15:57 18/11, kiểm kế 16:27; Sonnet bấm bằng RemoteTrigger run; Chat cập nhật mỗi lần đặt lịch mới)
 
 ## Hướng đi hiện tại
 - Chủ chỉ giao lệnh cho Chat; Chat viết thư; Sonnet làm. Chat quyết thay chủ mọi việc không thuộc vùng Đỏ, báo chủ trong báo cáo giờ để chủ gạt nếu muốn.
@@ -32,3 +32,5 @@ GÕ CỬA: trig_011gHLCSKkXejcirTNAHisk6 (lịch kiểm của Chat; Sonnet bấm
 - Kiểm 10 phút một lần khi có việc mở hoặc [HỎI-CHAT]; 30 phút khi rảnh. Báo chủ mỗi giờ (≈:35–:40) và báo ngay khi: Sonnet im > 60 phút, 429 hàng loạt, sự cố server/VM, chi phí bất thường, cần chủ duyệt vùng Đỏ.
 
 - [XONG 11:14] Chủ đã /login ndtan48 cho lệnh claude trên PC (#134).
+
+- 15:57 18/11 Chat MỚI nhận ca (phiên mới, đã có quyền đẩy repo + send_later). Chủ yêu cầu tiết kiệm hạn mức: lịch kiểm 30 phút (không phải 10), chỉ báo chủ khi có chuyện, trả lời ngắn. Chat quyết: giữ #153/#154 nguyên, không gửi thêm việc mới khi chưa cần.

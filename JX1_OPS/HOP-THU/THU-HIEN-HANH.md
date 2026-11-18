@@ -68,3 +68,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | ĐÓNG BĂNG tới 15:20 (hạn mức 93%): dừng sau bước dở, 1 dòng nhận, đứng im | #152 | thay #149–#151 phần chưa làm | chờ Sonnet |
 | LỖI QUY TRÌNH tốn token: (A) guard coi mỗi dòng [TỔNG QUẢN] mới là KHẨN → gọi Sonnet ~12 lần/giờ; (B) stop_guard ép Sonnet chạy tiếp; (C) hook sau nén nạp nhiều; (D) đếm số thật | #153 | mới | chờ Sonnet |
 | [KHẨN] tiếp tục sau reset: gộp việc sol XONG (K-03a/b/d/e, T-02..T-04), #153, #150, việc hoãn | #154 | thay #152 | chờ Sonnet |
+| Chat mới nhận ca; GÕ CỬA mới; lịch kiểm 30 phút; việc Sonnet không đổi | #155 | bổ sung #154 | chờ Sonnet |

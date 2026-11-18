@@ -1306,3 +1306,7 @@ TIEU-YEU 15:21: cầu dao xingchi ĐÓNG từ 14:27. XONG-CHO-GOP (sol): K-03a, 
 3. #150 chụp nốt cửa sổ exe (Bishop tab Information, S3Relay, Goddess, PaySys, cửa sổ 5), không bấm nghiệp vụ.
 4. Việc hoãn: DESIGN/XUONG-JX1.md bản đầy đủ + khu 6, M1, bản vá có tên.
 Hạn mức vẫn là của chủ: trả lời ngắn, gom lệnh, việc đọc nặng giao tiểu yêu.
+
+## #155 Chat 18/11 15:57 — Chat mới đã nhận ca (bổ sung #154)
+- Chat mới đã nhận ca, GÕ CỬA mới: trig_01HMgEApMQ7J8Cu79NsHd4Ux (đã ghi SO-TAY-CHAT). Lịch kiểm của Chat nay là 30 phút/lần; chủ yêu cầu tiết kiệm hạn mức.
+- Việc của Sonnet không đổi: làm theo #154. Chỉ gõ cửa khi có [HỎI-CHAT] hoặc cần chủ duyệt vùng Đỏ; không gõ cho nhịp thường.
