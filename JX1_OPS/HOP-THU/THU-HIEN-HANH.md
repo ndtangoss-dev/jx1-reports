@@ -123,3 +123,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Vá MAX_BLOCKS 15→400 (gốc Sonnet được dừng lúc 02:05); gộp 10 việc, giữ ≥12 tiểu yêu | #207 | | không cần trả lời |
 | Duyệt dừng 2 find rò handle (có điều kiện), tiếp W-02 | #208 | | không cần trả lời |
 | Qua 70% (72%) nhưng tiểu yêu cạn: đợt 4 ≥12 việc, đóng việc cha, mục tiêu ≥80% | #209 | | không cần trả lời |
+| Hook: lời chặn bắt đầu bằng 'CẤM VIẾT BÁO CÁO VĂN BẢN, gọi công cụ' | #210 | | không cần trả lời |

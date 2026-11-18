@@ -147,7 +147,7 @@ def main():
                 json.dump({'n': n0 + 1}, open(sf0, 'w'))
             except OSError:
                 pass
-            print(json.dumps({'decision': 'block', 'reason': 'HOP-THU (Q-29): còn %d thư chưa xử lý trong HOP-THU/CHO-SONNET.md: %s. Làm các thư này trước, chuyển xuống mục "Đã xử lý" kèm giờ và 1 dòng kết quả, trả lời ngắn vào TU-SONNET.md nếu thư yêu cầu. Không dừng lượt.' % (len(letters), '; '.join(x[:80] for x in letters))}))
+            print(json.dumps({'decision': 'block', 'reason': 'CẤM VIẾT BÁO CÁO VĂN BẢN LÚC NÀY. Việc đầu tiên của lượt kế phải là GỌI MỘT CÔNG CỤ (Bash/Read/Edit), không phải một đoạn chữ. HOP-THU (Q-29): còn %d thư chưa xử lý trong HOP-THU/CHO-SONNET.md: %s. Làm các thư này trước, chuyển xuống mục "Đã xử lý" kèm giờ và 1 dòng kết quả, trả lời ngắn vào TU-SONNET.md nếu thư yêu cầu. Không dừng lượt.' % (len(letters), '; '.join(x[:80] for x in letters))}))
             return
     # 3/5. (#130) chi chan khi con viec cua chinh Sonnet: tieu yeu xong cho gop (.done exit=0, task van running).
     # Viec o Tong quan (ready/running/CHO-XINGCHI) KHONG chan: nguoi gac va Tong quan se goi khi co viec xong.
@@ -180,7 +180,7 @@ def main():
             json.dump({'n': nw + 1}, open(swf, 'w'))
         except OSError:
             pass
-        print(json.dumps({'decision': 'block', 'reason': 'KHÔNG DỪNG PHIÊN (LUAT-COT-LOI L10, Q-52/Q-54): chưa có DUNG-VONG.flag. Không còn việc làm trực tiếp thì lấy việc kế trong STATE/HANG-DOI-VIEC.md; nếu thật sự hết việc làm ngay được thì chạy: python JX1_OPS\\TOOLS\\cho_thu.py (chờ 9 phút, gọi lệnh Bash với timeout 600000, không tốn token). Thoát mã 10 = thư mới (git pull --rebase --autostash, đọc, làm); 11 = tiểu yêu xong chờ gộp (gộp); 12 = hết 9 phút (chạy lại ngay). Không kết thúc lượt chỉ vì "đã báo xong đợt".'}))
+        print(json.dumps({'decision': 'block', 'reason': 'CẤM VIẾT BÁO CÁO VĂN BẢN LÚC NÀY. Việc đầu tiên của lượt kế phải là GỌI MỘT CÔNG CỤ (Bash/Read/Edit), không phải một đoạn chữ. KHÔNG DỪNG PHIÊN (LUAT-COT-LOI L10, Q-52/Q-54): chưa có DUNG-VONG.flag. Không còn việc làm trực tiếp thì lấy việc kế trong STATE/HANG-DOI-VIEC.md; nếu thật sự hết việc làm ngay được thì chạy: python JX1_OPS\\TOOLS\\cho_thu.py (chờ 9 phút, gọi lệnh Bash với timeout 600000, không tốn token). Thoát mã 10 = thư mới (git pull --rebase --autostash, đọc, làm); 11 = tiểu yêu xong chờ gộp (gộp); 12 = hết 9 phút (chạy lại ngay). Không kết thúc lượt chỉ vì "đã báo xong đợt".'}))
         return
     # an toan chong vong lap
     sf = os.path.join(tempfile.gettempdir(), 'jx_stop_guard_%s.json' % re.sub(r'\W', '', data.get('session_id', 'x'))[:40])
@@ -195,7 +195,7 @@ def main():
         pass
     # task dang chay uu tien, roi task dau tien trong BACKLOG theo thu tu
     nxt = next((x for x in todo if x[2] == 'dang chay'), todo[0])
-    msg = ('KHÔNG DỪNG LƯỢT (Q-21, hook Stop): TASKS còn %d việc của Sonnet chưa xong và chưa bị chặn. Làm tiếp ngay: %s – %s [%s]. '
+    msg = ('CẤM VIẾT BÁO CÁO VĂN BẢN LÚC NÀY. Việc đầu tiên của lượt kế phải là GỌI MỘT CÔNG CỤ (Bash/Read/Edit), không phải một đoạn chữ. KHÔNG DỪNG LƯỢT (Q-21, hook Stop): TASKS còn %d việc của Sonnet chưa xong và chưa bị chặn. Làm tiếp ngay: %s – %s [%s]. '
            'Không kết thúc lượt bằng câu hỏi: việc nhỏ hoặc có mặc định thì tự quyết và ghi STATE/QUYET-DINH.md; chỉ hỏi khi không đảo ngược được hoặc cần quyền của chủ. '
            'Chỉ được dừng khi: Codex chạm trần ngày, một task lỗi 3 lần liên tiếp, hoặc đến việc bắt buộc cần chủ dự án (ghi thẻ [DUNG-CAN-CHU yyyy-mm-dd HH:MM] + lý do vào TRANG-THAI.md trước), hoặc chủ gõ /ket-thuc-ca.'
            ) % (len(todo), nxt[0], nxt[1][:140], nxt[2])
