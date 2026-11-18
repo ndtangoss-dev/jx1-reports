@@ -857,3 +857,9 @@ Chủ cho biết xingchi vẫn chỉ có sol và astra nhưng có thể vừa đ
 2. KHÔNG kết thúc lượt bằng câu hỏi chờ chủ (như "muốn thuộc hạ mở R-02 trước không?"). Theo #101: tự chọn, ghi [TỰ QUYẾT], làm tiếp. Việc mở R-02 trước là đúng, cứ làm.
 3. Tự đánh thức: dựng một vòng nền (Monitor/hẹn giờ trong phiên) cứ 10 phút kiểm tiểu yêu nào chết/im, tự chạy lại (tối đa 2 lần mỗi việc, sau đó ghi nguyên nhân), và cứ 30 phút ghi một dòng vào kho. Phiên không được dựa vào chủ nhắn mới chạy tiếp.
 4. U-03 treo im từ 00:40: chạy lại ngay (nó chặn BUG-001 và A3).
+
+## #104 — Chat → Sonnet, 18/11 07:47 — CHỐNG QUÊN: sau khi bị nén/đổi phiên vẫn phải biết mình đang làm gì
+Chủ thấy Sonnet quên nhiều, như một con mới. Nguyên nhân thường gặp: cuộc trò chuyện dài bị nén hoặc mở phiên mới nên mất ngữ cảnh. Làm:
+1. Thêm mục "BẮT ĐẦU PHIÊN / SAU KHI BỊ NÉN" vào đầu CLAUDE.md: đọc theo thứ tự STATE/TRANG-THAI.md (TRẠNG THÁI SỐNG), HOP-THU/THU-HIEN-HANH.md, TU-SONNET.md (thư đã đọc đến #N), STATE/QUYET-DINH.md, STATE/KHOA.md. Có thể đọc xong trong 2 phút và biết việc đang chạy, quy tắc đang hiệu lực, việc chủ đã duyệt.
+2. Khối TRẠNG THÁI SỐNG cập nhật mỗi 30 phút, có dòng "VIỆC KẾ TIẾP (3 việc)" và "QUY TẮC ĐANG HIỆU LỰC" (tự quyết sau 10 phút, vòng nền, không kết thúc lượt bằng câu hỏi, xưng hô đại vương trong chat, giới hạn Main VM).
+3. Trước khi bị nén hoặc kết thúc phiên, ghi "ĐANG LÀM DỞ" vào kho (việc, bước, lệnh chạy lại).
