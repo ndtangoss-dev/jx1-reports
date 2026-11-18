@@ -1375,3 +1375,18 @@ Việc cần client (tạo nhân vật thứ 4 để xác nhận Max char): đ�
 4. Sửa trạng thái TASKS/R-05b,c,d, R-06c, R-07a,b đang ghi `status: running` mà đã chết; đặt lại bộ đếm chạy lại; R-06a (failed) cũng đặt lại.
 5. Cho Tổng quản chạy lại 7 việc TĂNG DẦN: 2 → (chờ 1 vòng, kiểm sống) → 4 → 7, đổi khóa rải K2–K6, sol xen astra theo luật cũ. Nếu việc mẫu vẫn "báo cáo rỗng" ở lần chạy lại đầu thì DỪNG, đừng đốt thêm, ghi nguyên nhân vào XONG ĐỢT.
 6. Ghi "XONG ĐỢT #163" tự đủ (đã làm / kết quả / còn / cần chủ), push, dừng. Tổng quản tự nuôi tiếp, không gọi claude.
+
+## #164 Chat 18/11 18:20 — (A) việc dọn từ #163 + (B) NGHIÊN CỨU: các nút exe liên kết nhau và tác động server/client thế nào
+Chủ bảo tiếp tục tìm hiểu các nút exe. Đợt này CHỈ ĐỌC TĨNH (mã nguồn, ảnh, bảng đã có), KHÔNG bấm gì trong VM, không chạy exe. Để tiết kiệm hạn mức Claude của chủ: GIAO TIỂU YÊU (Codex, sol) đọc mã theo từng nhóm, Sonnet chỉ giao việc và gộp, không tự đọc nặng.
+(A) Dọn (ngắn):
+ 1. Bỏ nhánh CHAY-ASTRA trong tong_quan.py (astra 404): xingchi lỗi/cầu dao mở thì KHÔNG chuyển sang astra; giữ đoạn cũ trong chú thích để bật lại. Trả lời HỎI-CHAT của #163 = CÓ.
+ 2. Bảy việc R-* đang chạy: để Tổng quản tự nuôi; gộp việc nào xong theo thứ tự, ghi kết quả thật 1–2 dòng; báo cáo rỗng/nhỏ không coi là xong; CHET-BO thì ghi, không chạy lại.
+(B) Nghiên cứu, kết quả vào `DESIGN/NUT-EXE-TAC-DONG.md` (viết lời thường, có sơ đồ mermaid; mỗi khẳng định gắn [NGUỒN file:dòng] / [TÀI LIỆU] / [GIẢ THUYẾT]). Mỗi nút/cấu hình trả lời 4 câu: (1) nút/ô → ghi vào đâu (tệp cfg, bộ nhớ, DB, gói tin gửi đi đâu)? (2) exe nào nhận và làm gì? (3) tác động lên SERVER (gs001, dữ liệu nhân vật, đăng nhập)? (4) tác động lên CLIENT (người chơi nhìn thấy gì, thông báo/lỗi nào, gói tin ID nào)? Nhóm việc (mỗi nhóm một tiểu yêu):
+ 1. Bishop Announcer (Notify all / kiểu *): đường đi tới gs001 rồi tới client, gói tin ID, hiển thị ở đâu trên client.
+ 2. Bishop danh sách lọc/VIP/Forbid + ô "limiting", "all IPs are prohibited", "Limit IP multiple opening": chặn ở bước nào của đăng nhập (c2s_login=65), client nhận mã lỗi/thông báo gì.
+ 3. Bishop "Birth role setting", "Reset character rebirth m", "Send to client to detect ve": ý nghĩa thật từng ô; nhân vật mới tạo đi qua Bishop→Goddess ra sao; client thấy gì.
+ 4. Goddess "Max char create", "MAX Player", danh sách nhân vật trả về client ở màn chọn nhân vật.
+ 5. Goddess Add Money / EnterMap / Remove Role / Backup / Pause: dữ liệu nhân vật nằm ở đâu, GS nạp/lưu khi nào, thay đổi offline tới client lúc đăng nhập thế nào; vì sao Restart/tắt Goddess làm Bishop mất DB, gs001 và client chịu gì (đã quan sát ở #161/#162).
+ 6. Liên kết tổng: PaySys↔Bishop↔Goddess↔S3Relay↔gs001↔client (cổng, ai nối ai, thứ tự bật/tắt an toàn), bổ sung `TRUYEN-TAI-VA-EXE-SERVER.md`; liệt kê điều CHƯA KIỂM cần client thật để xác nhận.
+Cuối file: mục "Muốn xác nhận trên client thật thì cần gì" (LDPlayer/APK, tài khoản test, từng ca thử, rủi ro). KHÔNG thực hiện ca thử client trong đợt này; chờ chủ duyệt.
+Ghi "XONG ĐỢT #164" tự đủ (đã làm / kết quả / còn / cần chủ), push, dừng.
