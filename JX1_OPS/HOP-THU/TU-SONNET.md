@@ -662,3 +662,14 @@ Còn: #154.4 (XUONG-JX1 bản đầy đủ, khu 6, M1, bản vá có tên); ch�
 **Không bấm:** mọi nút trong danh sách cấm của #162.
 **Giả định:** "Information tab" và Restart xem như đã báo ở #161; nút Birth role "other" không bấm (không rõ chức năng).
 **Còn lại:** tạo nhân vật thứ 4 (cần client, chờ chủ); Restart có hoàn tất nếu chờ lâu không (chưa biết); Xưởng JX1 tạm dừng; #134; `.gitignore` master (thấp). Cần chủ quyết: không. [CAN-CHU]: không.
+
+## XONG ĐỢT #163 (Sonnet, 18/11 ~18:05)
+**Đã làm:**
+1. Đồng bộ kho: 3 tệp sinh tự động lấy bản origin, không reset/clean. Hiện lệch origin vài commit (sẽ pull-rebase khi đẩy).
+2. Gộp K-03c (sol, JX-K2, 17:07) bằng `git merge --no-ff task/K-03c` (đúng tiền lệ K-03a..e): vào `REPORTS/K-03c.md` + `_CHIMUC/K-03c.tsv` (2771 dòng), TASKS K-03c = done. Kết quả thật: PARTIAL, 993/993 map, 987 tên Việt giải mã, 6 tên GBK; không tìm thấy tên "An Bang".
+3. **Nguyên nhân "báo cáo rỗng" (mẫu R-05b), log cuối 13:24:** astra chạy 4 lệnh đọc (git status, đọc TASK, đọc CHUAN-BAO-CAO, liệt kê skill) rồi KẾT THÚC lượt bằng tin nhắn rỗng " ", exit=0, không ghi tệp nào → "báo cáo rỗng". Không phải timeout, không phải lỗi khóa; cảnh báo rmcp/8080 chỉ là nhiễu. **Phát hiện thêm khi chạy lại bằng astra (17:49):** xingchi trả 404 `Model "gpt-6-astra" is not supported by any configured account` (5 lần thử lại rồi turn.failed, exit=1). Tức astra HIỆN KHÔNG DÙNG ĐƯỢC.
+4. Sửa 7 việc: bỏ `running` giả (R-05b,c,d, R-06c, R-07a,b) và `failed` (R-06a); xóa bộ đếm lan/#astra/#bao của cả 7; bỏ khỏi `astra.txt`, đặt `model.json`=sol (R-02..R-05a giữ nguyên, đã xong).
+5. Chạy lại tăng dần, toàn bộ trên **sol** (vì astra 404; không xen astra): 17:49 hai việc (R-05b, R-06c) → 17:55 bốn (+R-05c, R-05d, khóa K2–K5) → 18:02 bảy (+R-06a, R-07a, R-07b; K6). Mỗi lần chờ một vòng, đều sống. 18:03: cả 7 SONG (K2=2, K3=2, K4=1, K5=1, K6=1); R-06a/R-06c/R-07a đã ghi báo cáo 2–4 KB (không rỗng). R-05b/c/d báo "lỗi mạng" (xingchi "Upstream request failed", đang tự nối lại 1–2/5, không tính vào 3 lần).
+**Còn lại / chưa kiểm:** chưa có việc nào xong hẳn (chờ `.done`); Tổng quản tự nuôi, tự báo XONG-CHO-GOP. Nếu một việc thành CHET-BO thì ghi lại, đừng đốt thêm. Mọi việc trên máy dev, không đụng VM. Không gọi claude.
+**Đề xuất:** coi astra đã chết; sửa `tong_quan.py` để đừng chuyển sang astra khi xingchi lỗi (hiện nhánh `CHAY-ASTRA` còn khi cầu dao mở) — chưa sửa, chờ Chat quyết. Cần chủ quyết: không. [CAN-CHU]: không. [HỎI-CHAT]: có sửa tong_quan.py bỏ nhánh astra không (khuyến nghị: có).
+**Giả định:** "ghi 1–2 dòng kết quả gộp" làm ở mục 2 trên.
