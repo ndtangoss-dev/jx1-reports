@@ -1023,3 +1023,10 @@ Chủ thấy tác vụ nền `cd /d/jx1-ops-wt; git pull -q --rebase origin jx1-
 3. Luật mới cho mọi lệnh git chạy tự động (Sonnet, người gác, Tổng quản): đặt `GIT_TERMINAL_PROMPT=0` và `GCM_INTERACTIVE=never`, bọc timeout 120 giây; quá giờ thì ghi log và bỏ qua, không treo. Không chạy git nền mà không có timeout.
 4. Kiểm Tổng quản vẫn đẩy được STATE/TIEU-YEU.md lên kho.
 Ghi "Nhận #125", push, gõ cửa; rồi tiếp #124 → #121–#123.
+
+## #126 [KHẨN] — 2026-11-18 10:30 — Người gác hỏng lần 3
+#124 [KHẨN] gửi 10:19, #125 [KHẨN] 10:22; Sonnet dừng lượt từ ~10:09; đến 10:30 người gác không đánh thức (chủ phải nhắn). Việc trước tiên, trước #125:
+1. Dán vào TU-SONNET các dòng log người gác từ 10:15 đến lúc đọc thư này (mỗi lần chạy: giờ, im bao lâu, khan, busy, live, có gọi không, mã thoát). Kèm trạng thái Task Scheduler `JX-Guard` (LastRunTime, LastTaskResult, NextRunTime).
+2. Nêu vì sao không gọi: khan=False (không thấy #124/#125)? busy=True (phiên tương tác vẫn ghi jsonl, ví dụ do tác vụ nền treo)? lỗi git fetch? hay đã gọi mà `claude -c -p` lỗi?
+3. Sửa, rồi tự thử: ghi một thư giả [KHẨN] (#999-THU) vào bản sao cục bộ, chạy guard bằng tay ở chế độ khô, dán kết quả.
+Rồi #125 → #124 → #121–#123.
