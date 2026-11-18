@@ -1,6 +1,6 @@
-# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-19 05:15, đừng sửa tay)
+# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-19 05:21, đừng sửa tay)
 
-ĐANG LÀM: HG-14c, HG-16c, XD-P03
+ĐANG LÀM: HG-14c, HG-16c
 KẾ TIẾP: 0-08, B-05, D-02, E-04, E-06, P-01
 BỊ CHẶN: T-04
 
@@ -16,8 +16,6 @@ flowchart LR
   subgraph S3["Chặng 3 tick và đồ họa"]
     HG_14c["HG-14c chạy"]
     HG_16c["HG-16c chạy"]
-    XD_P03["XD-P03 chạy"]
-    XD_B05["XD-B05 chờ gộp"]
     0_08["0-08 chờ"]
     B_05["B-05 chờ"]
     D_02["D-02 chờ"]
@@ -29,4 +27,4 @@ flowchart LR
   end
 ```
 
-Tổng: 234 việc, 3 đang làm (+0 chết, 1 chờ gộp), 8 chờ, 1 bị chặn, 221 xong.
+Tổng: 234 việc, 2 đang làm (+0 chết, 0 chờ gộp), 8 chờ, 1 bị chặn, 223 xong.
