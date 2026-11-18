@@ -3,16 +3,10 @@
 File ngắn. Chỉ ghi điều không có ở chỗ khác. Ai tiếp quản đọc file này sau `README.md`.
 
 ## Bản bàn giao hiện tại
-- Thời điểm: 2026-11-16 22:40
-- Từ: Sonnet PM (phiên Claude Code `C:\Jx1CocoV3`) → PM kế nhiệm hoặc chính phiên sau khi `/tiep-tuc`
-- Điểm lưu: commit mới nhất của nhánh `jx1-ops`
-- Việc đang dở: **0-07** (đã có `docs-analysis/scripts/jx_env_up.ps1` chạy tốt khi môi trường đã lên; CHƯA thử qua tắt bật VM thử vì VM thử không tự đăng nhập `mu1`, mà `JX-ChainUp` cần phiên desktop; nối `jx_mainvm_ensure.ps1` đã làm nhưng Main VM không trả lời ping 192.168.1.50 lúc 22:14, chưa tìm nguyên nhân; đổi tên máy VM thử còn lại). Sau đó **0-08** (thử trọn vòng tạm dừng) rồi giai đoạn A.
-- Đã xong giai đoạn 0: 0-01…0-06, 0-09, 0-10 (xem bảng "Tiến độ task" trong TRANG-THAI).
-- Chưa kiểm chứng: bản Tailscale của Bảng tiến độ (cổng 8092, cần Tailscale bật + script Admin); `/tiep-tuc` trong phiên mới sau khi cài hook Graphify và hook Stop; Windows Terminal (không cài được).
-- Điều cần biết:
-  - Q-18…Q-22 trong `STATE/QUYET-DINH.md`: tự chủ với Main VM, bật/tắt chuỗi server VM thử, câu hỏi chờ không dừng lượt, **không kết thúc lượt bằng câu hỏi (Q-21)**, trần Codex tạm.
-  - Hook Stop `TOOLS/stop_guard.py` chặn dừng lượt khi còn task; muốn dừng hợp lệ ghi thẻ `[DUNG-CAN-CHU yyyy-mm-dd HH:MM]` vào TRANG-THAI.
-  - Bảng tiến độ: Artifact `https://claude.ai/artifact/7bUxS1STLrmZ6btueV3eiy`, PM xuất bản lại sau mỗi mốc lớn.
+- Thời điểm: 2026-11-18 10:37 (hook PreCompact tự ghi đè)
+- Việc đang chạy (TASKS status running): F-01, K-03a, K-03b, K-03c, K-03d, K-03e, R-02, R-03, R-04, R-04b, R-05a, R-05b, R-05c, R-05d, R-06a, R-06c, R-07a, R-07b, T-02, T-03, T-04
+- Thư cuối đã nhận: #124
+- Sắp nén ngữ cảnh: PM mới đọc LUAT-COT-LOI.md, TIEN-DO.md, THU-HIEN-HANH.md, QUYET-DINH.md rồi lịch sử chat; chi tiết việc dở ở dòng trạng thái cuối TRANG-THAI.md.
 
 ## Nhật ký tiếp quản
 | Thời điểm | Ai (model, tài khoản) | Kết quả tự kiểm tra | Sai lệch đã sửa |
