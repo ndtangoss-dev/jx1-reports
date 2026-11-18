@@ -90,3 +90,6 @@
 [TỔNG QUẢN 18/11 20:07] CAU DAO xingchi: DONG
 [TỔNG QUẢN 18/11 20:09] CAU DAO xingchi: DONG; K-02b chet, chay lai lan 1 bang JX-K3
 [TỔNG QUẢN 18/11 20:11] CAU DAO xingchi: DONG
+[TỔNG QUẢN 18/11 20:13] CAU DAO xingchi: DONG
+[TỔNG QUẢN 18/11 20:15] CAU DAO xingchi: DONG
+[TỔNG QUẢN 18/11 20:17] CAU DAO xingchi: DONG; K-02c chet, chay lai lan 1 bang JX-K6
