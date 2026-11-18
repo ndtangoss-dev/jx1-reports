@@ -120,3 +120,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Gộp ngay 10 việc XONG-CHO-GOP, giữ ≥8 tiểu yêu SONG | #204 | | không cần trả lời |
 | Q-57: ngân sách >3000 USD, tiểu yêu không giới hạn (tăng dần theo RAM); nâng trần stop_guard | #205 | | không cần trả lời |
 | Mẫu số 88: đóng việc cha active, kỷ luật thêm việc, dự báo 30 phút, từ 05:00 không thêm việc | #206 | | không cần trả lời |
+| Vá MAX_BLOCKS 15→400 (gốc Sonnet được dừng lúc 02:05); gộp 10 việc, giữ ≥12 tiểu yêu | #207 | | không cần trả lời |
