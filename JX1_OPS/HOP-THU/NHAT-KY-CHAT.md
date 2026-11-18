@@ -241,3 +241,4 @@
 - 21:45 Chủ dùng điện thoại, chỉ đồng ý/không. Gửi #177: Sonnet tự làm TEST-A và dọn VBox (giới hạn); repo và khóa Gemini chờ chủ ngồi máy.
 - 21:30 Chủ nhập khóa Gemini, quyết giữ jx1-source cục bộ. Gửi #178: chạy so sánh một khóa.
 - 21:45 Chủ báo Sonnet nói LDPlayer đang nối Server D. Gửi #179: chỉ nối Test-36, báo lại.
+- 21:50 Chủ giải thích phiên LD nối Server D là chủ ý (thử hiệu ứng vũ khí). Gửi #180 sửa #179.
