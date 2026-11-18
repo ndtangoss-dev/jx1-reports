@@ -1,7 +1,7 @@
 ---
 id: XD-P03
 title: Chuẩn bị P-03: kế hoạch đo đường cong tải theo số Bot
-status: running
+status: done
 level: L3
 agent: codex
 effort: high
