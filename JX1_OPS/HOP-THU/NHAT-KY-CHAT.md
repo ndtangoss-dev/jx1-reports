@@ -263,3 +263,5 @@
 - 00:45 Sonnet im ~10 phút dù nói sẽ làm tiếp. Gõ CHAT-DAY #197 qua Chrome (Sonnet nhận). Gốc thật: stop_guard.py mục 0c cho dừng sau XONG ĐỢT + hết việc → allow. Chat vá stop_guard.py (chạy thử OK), gửi #198.
 - 00:50 Chủ yêu cầu kiểm toàn bộ quy trình. Hổng: cho_thu 55 phút > timeout Bash 10 phút; 2 tài liệu cũ bảo dừng khi hết việc; stop_guard cap 40. Vá + thư #199 hỏi Sonnet 8 câu.
 - 00:38 Sonnet đã trả lời 8 câu #199 (hook đúng, cho_thu foreground 600000, CLAUDE.md:25 trái Q-21, 4 chỗ dễ dừng). Nhưng nó chờ cho_thu khi còn việc + không gõ CHAT khi cần duyệt. Gửi #200 duyệt 5 mục.
+- 00:52 Chủ hỏi 'chờ nhịp sau là bao giờ': Sonnet để dành #193 (cần bật Test-36) dù đã được phép. Gửi #201 bảo làm ngay.
+- 01:00 Chủ đi ngủ, lệnh: 07:00 tiến độ 70% (hiện 31/55), mở thêm tiểu yêu nhớ xem RAM; Chat kiểm 15 phút/lần. Gửi #202; Sonnet im từ 00:40 nên gõ CHAT-DAY #202 qua Chrome.
