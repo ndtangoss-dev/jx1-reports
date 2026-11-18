@@ -1262,3 +1262,11 @@ Ranh giới: chỉ đo trên JX-Test-36 + LD; VM chính không đụng; không b
 
 ### C. Thứ tự
 (1) B.1–B.4 và báo lại TTFT; (2) hoàn thiện DESIGN/XUONG-JX1.md có khu 6; (3) M0 → M1 như #144. #146 giữ nguyên.
+
+## #148 — 2026-11-18 12:50 — Chụp màn hình các exe server (chủ vắng nhà, Chat sẽ xem và giải thích cho chủ)
+Chủ thấy cửa sổ hiển thị của các exe server giống thứ Xưởng JX1 định làm: có thể exe đã có sẵn giao diện bật/tắt, xem trạng thái, người online, log. Cần ảnh thật để đối chiếu, tránh xây lại thứ có sẵn. Chat chưa từng thấy các cửa sổ này.
+1. Chụp cửa sổ của: Bishop, Goddess, PaySys (Sword3PaySys), S3Relay, gs001 (Gameserver) và mọi cửa sổ phụ đang mở (nếu có công cụ quản trị đi kèm). Chỉ chụp thứ ĐANG CHẠY trên JX-Test-36 (VM thử, host-only): dùng `VBoxManage controlvm JX-Test-36 screenshotpng <tệp>` hoặc công cụ chụp có sẵn. Nếu cụm server chưa chạy: KHÔNG bật; ghi vào TU-SONNET cụm đang ở trạng thái nào và hỏi [HỎI-CHAT]. Không đụng Main VM, không bật bridged.
+2. Mỗi ảnh: thấy trọn cửa sổ, thanh tiêu đề, các nút/menu, dòng chữ trạng thái. Nếu một cửa sổ có nhiều tab/menu quan trọng, chụp thêm 1 ảnh khi mở menu (chỉ mở xem, KHÔNG bấm thao tác thay đổi: Start/Stop/Kick/Save...).
+3. KIỂM TRƯỚC KHI ĐẨY (kho jx1-ops là PUBLIC): mở từng ảnh xem có tên tài khoản thật, mật khẩu, khóa, địa chỉ IP nhà, đường dẫn riêng tư không. Có thì che/cắt rồi mới đẩy; không chắc thì không đẩy và ghi lý do.
+4. Đẩy vào JX1_OPS/ANH/exe-server/<tên>-<giờ>.png (tạo thư mục; ≤1 MB mỗi ảnh, thu nhỏ nếu lớn). Kèm 1 file JX1_OPS/ANH/exe-server/README.md: mỗi ảnh một dòng: tên exe, thấy gì (chữ trên màn hình, chép nguyên văn các nút/menu), cổng/tiến trình tương ứng.
+5. Trả lời vào TU-SONNET (giờ thật): danh sách ảnh đã đẩy + ảnh nào không chụp được và vì sao. Chat sẽ xem ảnh và giải thích cho chủ. Việc này làm ngay sau khi xong bước hiện tại của #147, không cần chờ M0–M1.

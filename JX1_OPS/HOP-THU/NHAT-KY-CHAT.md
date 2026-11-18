@@ -205,3 +205,4 @@
 - 12:29 Chủ: tiểu yêu chỉ chết khi báo lỗi; hỏi sao đọc log rồi vẫn nhầm. Chat: Tổng quản không xét log ở nhánh PID. Gửi #146 (log là căn cứ chính).
 - 12:36 Chủ chốt đo tốc độ + vá sống/chết; hỏi sol có bị báo chết oan do chờ token đầu. Bằng chứng: lỗi sol là response.failed seq 0 từ máy chủ (phản hồi thật). Vẫn gửi #147: CHO-TOKEN, đo TTFT, kiểm lỗi mới nhất F-01, khu 6 Đo tốc độ.
 - 12:37 Kiểm: Sonnet xong #144(M0 khung)/#145/#146, đang làm #147. Chưa có việc astra SỐNG (TIEU-YEU chưa chạy lại). Cầu dao xingchi vẫn MỞ. Chủ báo phiên hạn mức 78% (đặt lại 15:20): giãn lịch kiểm 10→20 phút.
+- 12:50 Chủ: các cửa sổ exe giống phần mềm ta định làm; nhờ Sonnet chụp và Chat giải thích. Gửi #148 (chụp trên JX-Test-36, che thông tin nhạy cảm, đẩy ANH/exe-server).
