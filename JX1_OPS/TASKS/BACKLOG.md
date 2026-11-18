@@ -166,3 +166,12 @@ Sonnet lấy việc từ trên xuống, theo phụ thuộc. Khi bắt đầu m�
 | HG-11 | Hiểu game: môn phái và kỹ năng khởi đầu | L3 | Codex | `DESIGN/HIEU-MON-PHAI.md` |
 | HG-12 | Hiểu game: quái hồi sinh và vật phẩm rơi | L3 | Codex | `DESIGN/HIEU-QUAI-HOI-SINH-VAT-PHAM-ROI.md` |
 | HG-13 | Hiểu game: lệnh GM và công cụ quản trị | L3 | Codex | `DESIGN/HIEU-LENH-GM.md` |
+| SO-19 | Sổ tay hiểu game: hệ thống nhiệm vụ (task, Lua) | L3 | Codex | `DESIGN/SO-TAY-NHIEM-VU.md` |
+| SO-20 | Sổ tay hiểu game: cửa hàng NPC và giá | L3 | Codex | `DESIGN/SO-TAY-CUA-HANG.md` |
+| SO-21 | Sổ tay hiểu game: tổ đội và chia kinh nghiệm/đồ | L3 | Codex | `DESIGN/SO-TAY-TO-DOI.md` |
+| SO-22 | Sổ tay hiểu game: kênh chat và tin nhắn | L3 | Codex | `DESIGN/SO-TAY-CHAT.md` |
+| SO-23 | Sổ tay hiểu game: ngựa, phi phong và đồ trang trí | L3 | Codex | `DESIGN/SO-TAY-NGUA-PHI-PHONG.md` |
+| SO-24 | Sổ tay hiểu game: kỹ năng cấp, điểm kỹ năng và khí công | L3 | Codex | `DESIGN/SO-TAY-KY-NANG-CAP.md` |
+| HG-14 | Hiểu game: trang bị, độ bền và sửa đồ | L3 | Codex | `DESIGN/HIEU-DO-BEN-SUA-DO.md` |
+| HG-15 | Hiểu game: bản đồ, cổng dịch chuyển và trap | L3 | Codex | `DESIGN/HIEU-BAN-DO-TRAP.md` |
+| HG-16 | Hiểu game: sự kiện đăng nhập và khởi tạo nhân vật mới | L3 | Codex | `DESIGN/HIEU-TAO-NHAN-VAT-MOI.md` |

@@ -926,3 +926,10 @@ Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm th�
 ### 19/11 02:35 — gộp KC-01 (kiểm chéo 5 báo cáo)
 - `REPORTS/KIEM-CHEO-01.md`: 27 mệnh đề kiểm: 16 khớp, 3 sai (1 ở A-05, 2 ở N-01), 2 thiếu điều kiện, 4 chỉ có tài liệu lịch sử, 2 chưa xác minh [NGUỒN]. Phạm vi PARTIAL (không kiểm hết dòng dẫn) — ghi rõ, không nói quá.
 - Việc kế: sửa 3 mệnh đề sai trong A-05/N-01 (tiểu yêu, nhỏ). TIẾN ĐỘ ≈53/88 = 60%. DỰ BÁO 02:35: 62–65/88 lúc 06:30, chưa chắc.
+
+### 19/11 02:45 (giờ máy) — XONG ĐỢT #207: gộp 10 việc + đóng 8 việc cha + giao đợt 3
+- Gộp HG-03c, HG-11, HG-12, SO-07, SO-08, SO-11..15 (done). HG-03c chỉ phủ 4/5 mắt xích → **HG-03b vẫn mở** (không đóng khống). Kiểm mẫu 3 chỗ file:dòng đúng (KPlayer.cpp:2948, KNpcSet.cpp:533, đếm 87/53 .cpp gameui khớp).
+- Đóng việc cha có báo cáo đạt "tiêu chí xong": A-08a/b/c/d, A-09, A-10, A-12, E-01b (BOT 76 test pass, tự chạy lại). Phần "commit bị chặn" chỉ là quyền git của worker, không phải nội dung.
+- Bảng: 61 xong/88 = 69% (trước đợt giao mới). Giao thêm: 9 hàng BACKLOG mới (SO-19..24, HG-14..16, mẫu số 97), T-01 ready, KC-01b ready (việc phụ). Không thêm sau 05:00.
+- DỰ BÁO 02:45: 70/97 lúc 06:30 = 72% nếu 9 việc mới xong; nếu chỉ 6 → 67/97 = 69% (chưa chắc).
+- Lưu ý: mục giờ trước ("02:20", "02:35") ghi lệch giờ máy (thật là ~02:05–02:15).
