@@ -7,6 +7,35 @@ TÓM TẮT 5 DÒNG
 
 # H-08 — Khảo sát tĩnh hệ tài phú
 
+Loại: khảo sát
+Chủ đề: Công thức tiền, bảng xếp hạng, lưu DB, gói ladder, UI và quan hệ với phi phong.
+Từ khóa: tài phú, MoneyStat, TopTenRich, FortuneRank, G_ITEM_FORTUNE_VALUE, DBBackup, ladder, KuiCometoMap, Pifeng
+Trạng thái: DONE — khảo sát tĩnh; chưa xác minh runtime, PAK hoặc binary tương ứng.
+Độ phủ: đã liệt kê 7/7 phần tử; UI client A đối chiếu trực tiếp 1/7, source C++ server không có trong root gs, 0/12 ca đã chạy.
+Liên quan: H-07-trang-suc-mat-na-phi-phong.md; H-09.md; DESIGN/MUC-LUC-TRI-THUC.md
+Cần tôi quyết định: không
+
+```mermaid
+flowchart LR
+  A[DB role: tiền túi + rương] --> B[DBBackup / GameStatistic]
+  B --> C[Cache và LADDER_DATA]
+  C --> D[Gameserver query]
+  D --> E[KProtocol và KuiCometoMap]
+  E --> F[UI xếp hạng]
+```
+
+## Phạm vi và độ phủ
+
+| Phần tử phạm vi | Độ phủ | Bằng chứng |
+|---|---|---|
+| Định nghĩa và đường tiền | Giữ theo báo cáo cũ; chưa tái đối chiếu mã server tại root task | `H-08-tai-phu.md:54` |
+| Bảng số liệu và quy tắc xếp hạng | Giữ theo báo cáo cũ; chưa tái đối chiếu mã server tại root task | `H-08-tai-phu.md:75` |
+| Lưu DB và chu kỳ cập nhật | Chưa phủ trực tiếp; gói gs không chứa mã C++ server | `H-08-tai-phu.md:111` |
+| Gói tin và UI | Đối chiếu tĩnh một phần phía client A | `D:/JX-build/qh9A/Classes/gameui/KuiCometoMap.cpp:1001`; `:1152` |
+| Gameplay, trang bị, phi phong và Coco | Giữ theo báo cáo cũ; chưa tái đối chiếu toàn bộ tại root task | `H-08-tai-phu.md:142` |
+| Bất nhất có bằng chứng | Giữ theo báo cáo cũ; mã server không có trong gói gs | `H-08-tai-phu.md:170` |
+| Runtime, DB đang chạy và 12 ca H08-T | Chưa phủ / chưa chạy | `H-08-tai-phu.md:179`; `:188` |
+
 - Ngày: 2026-11-17. Trạng thái: DONE — hoàn tất khảo sát tĩnh, các giới hạn xác minh ghi riêng bên dưới.
 - Worktree `D:\JX-wt\H-08`, nhánh `task/H-08`, khớp task; task có trong `JX1_OPS/TASKS/BACKLOG.md:89`.
 - Chỉ ghi báo cáo này và mục `## Kết quả` mà task yêu cầu ở cuối `JX1_OPS/TASKS/H-08.md`; không sửa mã/config.
@@ -189,3 +218,7 @@ Chỉ thực hiện sau khi PM cho phép môi trường thử và dữ liệu gi
 - Kiểm tra tài liệu đã chạy: 62 tham chiếu tường minh được kiểm tra có file và số dòng không vượt độ dài file; đủ 12 mã ca TESTER; quét mẫu gán secret/token/password/API key và IPv4 không có kết quả. Đây là kiểm tra báo cáo, không phải test chức năng hoặc bảo đảm rà soát hết mọi loại bí mật.
 - Commit SHA: chưa có commit mới, vì `git add` bị từ chối quyền tạo `index.lock` như lỗi ở trên. Chưa stage được bằng lệnh này; không thay đổi Git metadata để vượt chặn.
 - **BỊ CHẶN – CHƯA PUSH**: bàn giao Git bị chặn quyền ghi metadata; đồng thời task cấm mạng nên không thử push, không có link/bằng chứng GitHub mới. Trạng thái khảo sát là DONE; phần commit/push chưa hoàn tất.
+
+## Phát hiện khi chuẩn hóa
+
+- Báo cáo đã có tiêu đề; còn thiếu khối thông tin, sơ đồ Mermaid, bảng phạm vi và mục phát hiện chuẩn hóa. Đã bổ sung cấu trúc; kết luận, số liệu và giới hạn xác minh không đổi.

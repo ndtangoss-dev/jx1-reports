@@ -5,6 +5,36 @@ TÓM TẮT 5 DÒNG
 4. [NGUỒN] Phát hiện Mask.txt thiếu tiêu đề so với loader và phần tử kích hoạt thứ ba của Coco mặc định thành ô đầu; cần TESTER xác minh ảnh hưởng.
 5. [CHƯA BIẾT] Chưa xác minh runtime/APK/PAK, xác suất nhận/nâng cấp hoặc NPC đang bật; báo cáo có bằng chứng file:dòng và 12 ca test đề xuất.
 
+# H-07 — Trang sức, mặt nạ và phi phong
+
+Loại: khảo sát
+Chủ đề: Phân loại, dữ liệu, kích hoạt, nhận, nâng cấp và ngoại hình của trang sức, mặt nạ, phi phong.
+Từ khóa: trang sức, equip_ring, equip_amulet, equip_pendant, equip_mask, equip_pifeng, equip_shiping, Mask.txt, Coco
+Trạng thái: DONE — khảo sát tĩnh; các bất nhất giữ nguyên để TESTER phân xử.
+Độ phủ: đã liệt kê 6/6 phần tử; đối chiếu trực tiếp 3/6 tại root task, 0/12 ca TESTER đã chạy.
+Liên quan: H-06-he-thong-an.md; H-08-tai-phu.md; H-09.md; DESIGN/MUC-LUC-TRI-THUC.md
+Cần tôi quyết định: không
+
+```mermaid
+flowchart LR
+  A[Enum DetailType và ITEM_PART] --> B[Bảng item/004]
+  B --> C[Loader record và thuộc tính]
+  C --> D[Đeo và kích hoạt]
+  D --> E[Nguồn nhận / cường hóa]
+  E --> F[Sprite phi phong, mặt nạ và UI Coco]
+```
+
+## Phạm vi và độ phủ
+
+| Phần tử phạm vi | Độ phủ | Bằng chứng |
+|---|---|---|
+| Loại item và ô trang bị | Giữ theo báo cáo cũ; chưa tái kiểm server C++ trong root task | `H-07-trang-suc-mat-na-phi-phong.md:49` |
+| Bảng dữ liệu, record và thuộc tính | Đã đối chiếu trực tiếp bảng gói; số dòng theo từng file | `G/Settings/item/004/ring.txt:2`; `G/Settings/item/004/Mask.txt:1` |
+| Kích hoạt và UI phía client A | Đối chiếu trực tiếp một phần | `D:/JX-build/qh9A/Classes/gamecore/KItemList.cpp:1323`; `:1091` |
+| Nguồn nhận và nâng/cường hóa | Script nâng phi phong rỗng (0 byte); các nguồn khác giữ theo báo cáo cũ | `G/script/global/npcchucnang/nangcapphiphong.lua` |
+| Ngoại hình và so sánh Coco | Giữ kết quả theo báo cáo cũ; chưa tái đối chiếu trực tiếp tại root task | `H-07-trang-suc-mat-na-phi-phong.md:156` |
+| Runtime, PAK, rate và 12 ca test | Chưa phủ / chưa chạy | `H-07-trang-suc-mat-na-phi-phong.md:175`; `:183` |
+
 ## Phạm vi, nguồn và cách đọc bằng chứng
 
 - Task H-07; worktree `D:\JX-wt\H-07`, nhánh `task/H-07` đã xác nhận trước khi ghi.
@@ -191,3 +221,7 @@ Chỉ thực hiện sau khi được giao task test riêng trong môi trường 
 **DONE (khảo sát tĩnh).** Không có blocker ngăn hoàn thành báo cáo. Các bất nhất và phạm vi chưa xác minh được tách rõ ở trên; bước tiếp theo là PM giao TESTER các ca H07-T01…T12, ưu tiên T03/T05 và xác định dữ liệu update10 thực nạp trước khi sửa mã.
 
 Commit SHA: **không có — chưa commit**, do git add bị chặn quyền tạo index.lock nêu trên. **BỊ CHẶN – CHƯA PUSH**; không có link commit GitHub. Không gọi mạng theo yêu cầu user. PM có quyền ghi metadata Git có thể review rồi stage/commit đúng hai file H-07; không cần chạy lại khảo sát.
+
+## Phát hiện khi chuẩn hóa
+
+- Báo cáo thiếu tiêu đề chuẩn, khối thông tin, sơ đồ Mermaid, bảng phạm vi và mục phát hiện chuẩn hóa. Đã thêm tiêu đề/cấu trúc; các bất nhất và kết luận cũ được giữ nguyên.

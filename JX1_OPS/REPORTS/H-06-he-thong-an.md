@@ -5,6 +5,37 @@ TÓM TẮT 5 DÒNG
 4. [NGUỒN] Đã lần luồng cường hóa chung; chưa thấy công thức ghép nâng bậc ấn đáng tin cậy; dữ liệu/script có dấu hiệu khác phiên bản.
 5. DONE trong phạm vi khảo sát tĩnh ngày 2026-11-17; chưa xác minh runtime/build/PAK; không sửa mã, không mạng/VM, không chạy game/server.
 
+# H-06 — Hệ thống ấn
+
+Loại: khảo sát
+Chủ đề: Định nghĩa, dữ liệu, đeo, kích hoạt và cường hóa ấn giữa server và Coco.
+Từ khóa: ấn, YinJian, equip_yinjian, DetailType 13, ngũ hành, DropZhiDingItem, cường hóa, Coco
+Trạng thái: DONE — khảo sát tĩnh; chưa xác minh runtime, PAK hoặc binary đang dùng.
+Độ phủ: đã liệt kê 7/7 phần tử; đối chiếu trực tiếp 4/7 tại root task, 0/12 ca đề xuất đã chạy.
+Liên quan: H-05-ui-cuong-hoa.md; H-07-trang-suc-mat-na-phi-phong.md; H-09.md; DESIGN/MUC-LUC-TRI-THUC.md
+Cần tôi quyết định: không
+
+```mermaid
+flowchart LR
+  A[YinJian.txt] --> B[Loader và ItemGenerator]
+  B --> C[Slot 13 / equip_yinjian]
+  C --> D[Đeo và kích hoạt thuộc tính]
+  D --> E[Cường hóa +N]
+  E --> F[Đồng bộ client/server]
+```
+
+## Phạm vi và độ phủ
+
+| Phần tử phạm vi | Độ phủ | Bằng chứng |
+|---|---|---|
+| Định nghĩa loại, slot và bảng YinJian | Đã phủ trực tiếp bảng; client enum đã kiểm | `G/Settings/item/004/YinJian.txt:1`; `D:/JX-build/qh9A/Classes/gamecore/KItem.h:67` |
+| Nguồn nhận và script cấp ấn | Đã xác minh tĩnh tại gói được giao | `G/script/Utf8Script/npc/newplayer_get.lua:489`; `:506`; `:512` |
+| Đeo/tháo và thuộc tính kích hoạt | Client A đối chiếu được; server C++ chưa có trong gói gs | `D:/JX-build/qh9A/Classes/gamecore/KItemList.cpp:1323`; `:1091` |
+| Cường hóa +N và giới hạn | Script Lua trong gói; server C++ chưa có trong gói gs | `G/script/system/qianghua.lua:159`; `:170` |
+| Ghép/nâng bậc và dữ liệu lệch | Giữ kết luận báo cáo cũ; chưa tái đối chiếu mã server trong root task | `H-06-he-thong-an.md:141` |
+| Đối chiếu server/Coco và UI | Giữ nội dung báo cáo cũ; chưa tái đối chiếu server C++ trong root task | `H-06-he-thong-an.md:145` |
+| Runtime, PAK, binary và ca test | Chưa phủ | `H-06-he-thong-an.md:186` |
+
 ## Phạm vi, cách đọc bằng chứng
 
 - Trạng thái: **DONE — khảo sát tĩnh**, không phải xác nhận tính năng chạy được. Bản nháp đã được lưu trong cùng file trước khi hoàn thiện.
@@ -173,3 +204,7 @@ Chỉ chạy sau khi có quyền môi trường thử riêng; không dùng dữ 
 
 - **Chưa commit, không có commit SHA**: `git add -- JX1_OPS/TASKS/H-06.md JX1_OPS/REPORTS/H-06-he-thong-an.md` thất bại với `fatal: Unable to create 'D:/jx1-reports/.git/worktrees/H-06/index.lock': Permission denied`. Metadata worktree nằm ngoài vùng được ghi; không sửa quyền, không vượt sandbox, không thử lặp. Hai file kết quả còn nguyên trong worktree.
 - **BỊ CHẶN – CHƯA PUSH**: chưa có commit và task cấm mạng; không thử kết nối/đổi credential. Bước lưu tiếp theo cho PM ở phiên có quyền Git: review hai file, stage/commit với tiền tố H-06; chỉ push khi được cấp phạm vi mạng riêng.
+
+## Phát hiện khi chuẩn hóa
+
+- Báo cáo thiếu tiêu đề chuẩn, khối thông tin, sơ đồ Mermaid, bảng phạm vi và mục phát hiện chuẩn hóa. Đã thêm tiêu đề và cấu trúc; tóm tắt, số liệu, phát hiện và kết luận trước đó được giữ nguyên.

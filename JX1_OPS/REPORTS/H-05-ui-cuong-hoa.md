@@ -7,6 +7,35 @@ TÓM TẮT 5 DÒNG
 
 # H-05 — UI cửa sổ cường hóa
 
+Loại: khảo sát
+Chủ đề: Luồng UI cường hóa từ mở cửa sổ đến đặt, xác nhận và đối chiếu client/server.
+Từ khóa: cường hóa, KuiGive_New, c2s_runscript, c2s_lockitem, c2s_playergiveback, sysqianghua, PLAYER_GIVE, UI Coco
+Trạng thái: DONE — khảo sát tĩnh; các giới hạn runtime giữ nguyên ở phần CHƯA XÁC MINH.
+Độ phủ: đã liệt kê 6/6 phần tử; đối chiếu trực tiếp 3/6 tại root task và 0/11 ca đề xuất đã chạy.
+Liên quan: H-06-he-thong-an.md; H-09.md; I-05-npc-chuc-nang.md; DESIGN/HUONG-DAN-TRA-CUU.md
+Cần tôi quyết định: không
+
+```mermaid
+flowchart LR
+  A[Nút cường hóa] --> B[c2s_runscript]
+  B --> C[opensysui / s2c_opengive]
+  C --> D[KUI Give và room_give]
+  D --> E[c2s_lockitem]
+  E --> F[c2s_playergiveback kind 3]
+  F --> G[Lua qianghua và server callback]
+```
+
+## Phạm vi và độ phủ
+
+| Phần tử phạm vi | Độ phủ | Bằng chứng |
+|---|---|---|
+| Điểm vào và mở UI phía client A | Đã phủ tĩnh | `D:/JX-build/qh9A/Classes/gamescene/KgameWorld.cpp:14268`; `:14337` |
+| Script mở UI trong gói server được giao | Đã phủ tĩnh | `C:/Jx1CocoV3/Folder/ServerNew-20260116T043145Z-3-001/ServerNew/_bin_v2_/gs/script/system/opensysui.lua:22`; `:26` |
+| Đặt và xác nhận phía client A | Đã phủ tĩnh | `D:/JX-build/qh9A/Classes/gameui/KuiGive_New.cpp:805`; `:834`; `D:/JX-build/qh9A/Classes/gamecore/KProtocol.cpp:831` |
+| So sánh O/C và hash | Giữ theo báo cáo cũ; chưa tái đối chiếu tại hai root task | `H-05-ui-cuong-hoa.md:106`; `:120` |
+| Lua nghiệp vụ | Đã xác định giới hạn theo báo cáo cũ; chưa tái đối chiếu hết gói script | `H-05-ui-cuong-hoa.md:134` |
+| Asset SPR và runtime | Chưa phủ | `H-05-ui-cuong-hoa.md:134` |
+
 Ngày khảo sát: 2026-11-17. Trạng thái: **DONE (phạm vi khảo sát tĩnh)**.
 
 ## Phạm vi và nguồn bằng chứng
@@ -145,3 +174,8 @@ Chỉ thực hiện sau khi có task cho phép runtime, trên môi trường th�
 - Chỉ tạo báo cáo này và thêm `## Kết quả` vào task theo yêu cầu cụ thể của H-05.
 - Commit SHA: **không có** — lượt này không tạo commit; task có sẵn ở trạng thái untracked lúc bắt đầu, giữ nội dung và chỉ append kết quả.
 - Push: **chưa push** — không được yêu cầu và task cấm mạng thật. Không có xác nhận GitHub; không tuyên bố công bố.
+
+## Phát hiện khi chuẩn hóa
+
+- Báo cáo đã có tiêu đề và kết luận; còn thiếu khối thông tin, sơ đồ Mermaid, bảng phạm vi và mục này. Đã bổ sung cấu trúc, không thay kết luận cũ.
+- Kết luận cũ về việc không tìm thấy `opensysui.lua`/`qianghua.lua` thuộc root nguồn được ghi trong báo cáo. Root server task giao có `script/system/opensysui.lua` và `script/system/qianghua.lua`; đã đọc `opensysui.lua:22-26`, nhưng chưa kiểm chứng Lua nghiệp vụ đầy đủ hoặc runtime. Giữ nguyên kết luận cũ và nêu khác biệt root để người đọc phân xử.
