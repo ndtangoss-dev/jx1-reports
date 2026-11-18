@@ -44,3 +44,6 @@
 [TỔNG QUẢN 18/11 17:49] CAU DAO xingchi: DONG; R-05b giao bang JX-K2; R-06c giao bang JX-K3
 [TỔNG QUẢN 18/11 17:51] CAU DAO xingchi: DONG; R-05b chet, chay lai lan 1 bang JX-K2
 [TỔNG QUẢN 18/11 17:53] CAU DAO xingchi: DONG
+[TỔNG QUẢN 18/11 17:55] CAU DAO xingchi: DONG; R-05c giao bang JX-K4; R-05d giao bang JX-K5
+[TỔNG QUẢN 18/11 17:57] CAU DAO xingchi: DONG
+[TỔNG QUẢN 18/11 17:59] CAU DAO xingchi: DONG
