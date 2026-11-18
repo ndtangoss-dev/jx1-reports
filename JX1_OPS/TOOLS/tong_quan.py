@@ -105,7 +105,13 @@ def pick_key(assign, alive_ids):
 
 def run_launch(i, key):
     env = dict(os.environ, JX_CODEX_KEY=key)
-    r = subprocess.run(['powershell', '-NoProfile', '-File', os.path.join(ROOT, 'TOOLS', 'chay_codex.ps1'), '-Id', i],
+    args = ['powershell', '-NoProfile', '-File', os.path.join(ROOT, 'TOOLS', 'chay_codex.ps1'), '-Id', i]
+    try:   # #113.3: viec ghi trong astra.txt chay bang gpt-6-astra (thu thay sol khi sol loi Chat Completions)
+        if i in open(os.path.join(GD, 'astra.txt')).read().split():
+            args += ['-Model', 'gpt-6-astra']
+    except OSError:
+        pass
+    r = subprocess.run(args,
                        env=env, cwd=ROOT, capture_output=True, text=True, timeout=120)
     return r.returncode == 0
 
