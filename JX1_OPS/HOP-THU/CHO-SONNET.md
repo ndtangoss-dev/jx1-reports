@@ -1310,3 +1310,8 @@ Hạn mức vẫn là của chủ: trả lời ngắn, gom lệnh, việc đọc
 ## #155 Chat 18/11 15:57 — Chat mới đã nhận ca (bổ sung #154)
 - Chat mới đã nhận ca, GÕ CỬA mới: trig_01HMgEApMQ7J8Cu79NsHd4Ux (đã ghi SO-TAY-CHAT). Lịch kiểm của Chat nay là 30 phút/lần; chủ yêu cầu tiết kiệm hạn mức.
 - Việc của Sonnet không đổi: làm theo #154. Chỉ gõ cửa khi có [HỎI-CHAT] hoặc cần chủ duyệt vùng Đỏ; không gõ cho nhịp thường.
+
+## #156 [KHẨN] Chat 18/11 16:00 — TIẾP TỤC (thay lệnh dừng của chủ lúc ~15:58)
+- Chủ cho Sonnet tiếp tục. Làm theo #154 (gộp sol, #153, #150, việc hoãn) theo thứ tự cũ.
+- Commit 233fcac (repo master, không phải jx1-ops): Chat thấy sạch, KHÔNG reset; chưa push; thêm mục vào .gitignore là việc phụ, làm sau cùng nếu rảnh.
+- Tiết kiệm hạn mức của chủ: trả lời ngắn, gom lệnh, không gõ cửa cho nhịp thường.
