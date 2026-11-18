@@ -968,3 +968,9 @@ Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm th�
 - SONG: 14 tiểu yêu (SO-29..34, XD-B02, XD-O01b, HG-08, HG-12, KC-02, SO-04, SO-18, XD-H01, XD-H05). RAM/429/USD: [CHƯA KIỂM] đợt này.
 - DỰ BÁO 06:30: ≈80% nếu 6 việc mở lại + XD-B02/XD-O01b đóng được cha B-02/O-01; số thật hiện 74/101 (73,3%).
 - Không thêm hạng mục vào mẫu số sau 05:00.
+
+## SONNET 04:41 — trả lời #213
+- Đã gộp 10 việc: SO-29,31,32,33,34 (đạt: mermaid + CHƯA KIỂM + dẫn file:dòng), XD-B02 (kết luận B-02 CHƯA ĐẠT), XD-O01b (O-01 CHƯA ĐẠT), XD-H05 (CHƯA ĐẠT, cần mở vùng ghi), HG-12, KC-02 (chạy lại không thêm gì mới; bản gốc đã có nhãn chưa kiểm).
+- SỐ THẬT 84/107 = 78,5% (bảng cũng 84; mẫu số đóng băng 107 theo #212). SO-30 còn chạy.
+- Giao đợt 7: 6 việc phụ XD (E-05, E-09, A-07c, M-01, HG14, W02c) để đóng/chốt việc cha; không vào mẫu số. B-02, O-01 vẫn active (thiếu bằng chứng chạy VM).
+- DỰ BÁO 06:30: ≈80% nếu SO-30 + 2–3 cha đóng được.
