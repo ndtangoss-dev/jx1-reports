@@ -1,6 +1,6 @@
-# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-18 14:44, đừng sửa tay)
+# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-18 14:47, đừng sửa tay)
 
-ĐANG LÀM: K-03a, K-03b, K-03e, T-03, T-04
+ĐANG LÀM: K-03a, K-03b, K-03c, K-03d, K-03e, T-02, T-04
 KẾ TIẾP: K-02, R-06a
 BỊ CHẶN: A-07, R-04b, R-05a
 
@@ -11,9 +11,9 @@ flowchart LR
   subgraph S1["Chặng 1 hiểu game"]
     K_03a["K-03a chạy"]
     K_03b["K-03b chạy"]
+    K_03c["K-03c chạy"]
+    K_03d["K-03d chạy"]
     K_03e["K-03e chạy"]
-    K_03c["K-03c chết"]
-    K_03d["K-03d chết"]
     R_05b["R-05b chờ gộp"]
     R_05c["R-05c chờ gộp"]
     R_05d["R-05d chờ gộp"]
@@ -27,13 +27,13 @@ flowchart LR
     R_06a["R-06a chờ"]
   end
   subgraph S2["Chặng 2 truyền tải + exe"]
-    T_03["T-03 chạy"]
+    T_02["T-02 chạy"]
     T_04["T-04 chạy"]
-    T_02["T-02 chết"]
+    T_03["T-03 chờ gộp"]
   end
   subgraph S3["Chặng 3 tick và đồ họa"]
     F_01["F-01 chờ gộp"]
   end
 ```
 
-Tổng: 85 việc, 5 đang làm (+3 chết, 7 chờ gộp), 2 chờ, 3 bị chặn, 65 xong.
+Tổng: 85 việc, 7 đang làm (+0 chết, 8 chờ gộp), 2 chờ, 3 bị chặn, 65 xong.
