@@ -1427,3 +1427,10 @@ Sonnet báo không điều khiển được Claude desktop. Chủ cho dùng Clau
 3. Khi K-02a..g xong hết: gộp thành `REPORTS/K-02.md` (chỉ mục asset gốc theo loại, lời thường ngắn).
 4. Không bịa việc ngoài TIEN-DO/KE-HOACH. Hết việc làm được mà chủ chưa quyết: ghi "XONG ĐỢT #169 — CHỜ CHỦ" và DỪNG (đừng gõ "xong" vòng lặp rỗng); Chat sẽ báo khi chủ quyết.
 Cuối đợt: XONG ĐỢT #169 tự đủ + `SONNET-XONG #169` vào VONG.md, push; nếu còn việc Chat cần xử thì gõ "xong" qua Chrome và chờ `CHAT-DAY` như cũ.
+
+## #170 Chat 18/11 20:10 — ĐỒNG BỘ BẢNG TIẾN ĐỘ JX1 (bổ sung #169; làm sau việc trong #169, trong cùng đợt)
+Chủ chỉ rõ: bảng tiến độ JX1 (artifact "Bảng tiến độ JX1", dựng từ TASKS/BACKLOG.md + status trong TASKS/*.md bằng TOOLS/bang_tien_do.py) là chỗ chủ xem và là căn cứ Chat giao việc. Hiện nó LỖI THỜI: bản đăng ghi 17/11 05:36 (38%, 14/37); Chat chạy lại bang_tien_do.py hôm nay ra 16% (6/38) vì bảng "Tiến độ task" đã bỏ (#130.3) và nhiều TASKS/*.md ghi `running` giả. Việc của Sonnet:
+1. Đối chiếu từng mã trong BACKLOG.md (0-01…0-10, A-01…A-07, B…E, P, O) với thực tế (REPORTS/, TASKS/, ảnh, kết quả đã gộp) và đặt `status` đúng ở TASKS/<ID>.md (xong / đang chạy / chờ / lỗi-chặn); mục nào xong một phần thì để đang chạy và ghi `status_note` ngắn lời thường. A-07 hiện ghi "Xong" nhưng pha debugger CHƯA chạy → sửa cho đúng.
+2. Thêm vào BACKLOG.md các nhóm việc ĐÃ/ĐANG làm từ 17/11 mà chưa có mã: nghiên cứu exe server (N-01..N-06 + BANG-NUT-EXE + thử nút #161/#162), K-03 (bảng tra), K-02 (kiểm kê asset), R-* (chuẩn hóa báo cáo), Xưởng JX1 (TẠM DỪNG), vòng tự động Chat⇄Sonnet (Q-48/Q-49), thử client (chờ chủ duyệt). Mỗi mục một dòng, giai đoạn hợp lý, phụ thuộc rõ.
+3. Chạy lại bang_tien_do.py ra `D:\JX-dash` như hook vẫn làm; kiểm số liệu hợp lý (không còn 16% oan) rồi push. Không sửa chữ trong `index.html` tay.
+4. Mỗi đợt từ nay: cập nhật status TASKS/*.md trước khi ghi XONG ĐỢT (để bảng luôn đúng), thêm 1 dòng "Bảng tiến độ: X/Y xong" vào XONG ĐỢT. Chat sẽ dựng lại và đăng bảng artifact mỗi vòng từ kho.

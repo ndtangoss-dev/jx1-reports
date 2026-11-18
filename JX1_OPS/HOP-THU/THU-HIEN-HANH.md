@@ -83,3 +83,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Đổi cách đánh thức Chat sang Claude in Chrome (thẻ chủ mở sẵn), thử một lần | #167 | thay mục 2 #166 | chờ Sonnet |
 | Đợt kế: K-02 (tiểu yêu), mở khóa R-04b/R-05a, đánh giá A-07, soạn đề xuất thử client (3–5 ca thấp rủi ro); dừng ngay, chủ gõ xong tay | #168 | theo TIEN-DO | chờ Sonnet |
 | Đợt kế: A-07 bước 1 (dựng Debug máy dev), gộp K-02a..g R-04b R-05a, chờ chủ quyết thử client và A-07 VM | #169 | theo TIEN-DO | chờ Sonnet |
+| Đồng bộ bảng tiến độ JX1: đặt đúng status mọi mã BACKLOG, thêm nhóm việc mới, chạy lại bang_tien_do, báo X/Y mỗi đợt | #170 | bổ sung #169 | chờ Sonnet |
