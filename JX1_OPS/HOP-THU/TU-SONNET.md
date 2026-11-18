@@ -314,3 +314,14 @@ Task Scheduler `JX-Guard`: LastRun 10:29:29, LastTaskResult 0 (script chạy xon
 [TỰ QUYẾT 18/11] R-06a: .done exit=0 nhưng worktree sạch, I-01 không có khối từ khóa → không gộp, đặt failed để chạy lại sau (khi xingchi ổn).
 
 [TỔNG QUẢN 18/11 10:54] CAU DAO xingchi: MO; R-05c TREO >60 phut, da dung de chay lai
+
+## Nhận #134 (18/11 ~11:10) — #129 SAI, đã sửa kết luận
+- Email file đăng nhập PC (`claude auth status`, `.claude.json`): ndtan.goss (tài khoản CŨ, hạn mức tuần hết). Phiên tương tác này: ndtan48 (biến CLAUDE_CODE_USER_EMAIL). Hai bên KHÁC nhau; #129 chỉ so thư mục, không so email.
+- Nguyên nhân: file đăng nhập (mtime 10:31) vẫn là ndtan.goss; phiên app dùng đăng nhập của app (ndtan48) nên không dính hạn mức đó. Thuộc hạ không tự đăng nhập được (cần chủ gõ).
+- [CAN-CHU] đổi đăng nhập dòng lệnh sang ndtan48, 2 bước lời thường: (1) trên PC mở một cửa sổ dòng lệnh MỚI (không đóng cửa sổ nào đang chạy), gõ `claude` rồi Enter, gõ `/login`; (2) chọn tài khoản claude.ai, đăng nhập bằng ndtan48 trên trình duyệt hiện ra, xong gõ `/exit` và đóng cửa sổ đó. Báo thuộc hạ "xong" thì thuộc hạ chạy thử `claude -p --model claude-sonnet-5-5 "ping"`.
+- DUONG-DAN.md đã thêm mục "Kiểm bằng email".
+
+## Nhận #131 (18/11 ~11:12)
+- Đã gỡ dòng `experimental_bearer_token` khỏi `C:\Users\PC\.codex\config.toml`, xóa 2 bản `.bak` và 1 file `.tmp` còn sót (chỉ trên máy, không vào kho).
+- Tìm giá trị khóa trong toàn bộ lịch sử git (`--all`) của kho ops và `C:\Jx1CocoV3`, cùng cây làm việc: KHÔNG có commit hay file nào chứa.
+- Mục 2: R-03, R-04b, R-05a/b/c chạy bằng khóa mặc định sẽ lỗi 401; việc chỉnh Tổng quản (401 khóa mặc định = lỗi dịch vụ, chạy lại bằng JX-Kn) làm cùng #132.

@@ -26,3 +26,6 @@ Chỉ ghi tên khóa, không ghi giá trị. Cột "Trong kho" = có nằm trong
 
 ## Đổi tài khoản Claude trên PC (#122.2)
 Mở Claude Code ở `C:\Jx1CocoV3`, `/login` tài khoản mới, rồi `/tiep-tuc`. Người gác và Tổng quản không phải cài lại (chạy bằng Task Scheduler, không gắn tài khoản Claude). Gõ cửa chỉ hoạt động khi Sonnet và Chat cùng tài khoản; nếu không, xem luật MAT-KET-NOI-CHAT ở `LUAT-COT-LOI.md` L7.
+
+## Kiểm tài khoản Claude bằng email, không chỉ bằng thư mục cấu hình (#134)
+Cùng thư mục `C:\Users\PC\.claude` vẫn có thể là hai tài khoản khác nhau: phiên tương tác (app) giữ đăng nhập trong bộ nhớ/host, còn lệnh `claude -p` của người gác đọc file đăng nhập. Luôn kiểm bằng email: `claude auth status` (trường email) và `oauthAccount.emailAddress` trong `C:\Users\PC\.claude.json`; phiên tương tác xem biến `CLAUDE_CODE_USER_EMAIL`. Hai bên phải khớp (hiện đúng: ndtan48).
