@@ -258,3 +258,4 @@
 [TỔNG QUẢN 19/11 02:55] CAU DAO xingchi: DONG
 [TỔNG QUẢN 19/11 02:57] CAU DAO xingchi: DONG
 [TỔNG QUẢN 19/11 02:59] CAU DAO xingchi: DONG
+[TỔNG QUẢN 19/11 03:08] CAU DAO xingchi: DONG; SO-25 giao bang JX-K4; SO-26 giao bang JX-K4; SO-27 giao bang JX-K4; SO-28 giao bang JX-K4; XD-A07c giao bang JX-K3; XD-C01 giao bang JX-K3; XD-C03 giao bang JX-K3; XD-E01 giao bang JX-K3; XD-E05 giao bang JX-K2; XD-E09 giao bang JX-K2; XD-M01 giao bang JX-K2; XD-O01 giao bang JX-K6; XD-P02 giao bang JX-K6; XD-V01 giao bang JX-K6
