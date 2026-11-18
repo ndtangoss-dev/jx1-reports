@@ -460,3 +460,6 @@ TIEU-YEU: R-02 SONG (astra, JX-K3, 13:03), R-03 CHAY-LAI-1 (astra, JX-K2, 13:03)
 [TỔNG QUẢN 18/11 13:06] CAU DAO xingchi: MO; K-03a cho xingchi, thu lai bang JX-K4 (thu cau dao); R-04 chet, chay lai lan 1 bang JX-K5; R-04b chet, chay lai lan 1 bang JX-K6; R-05a chet, chay lai lan 1 bang JX-K2
 
 [TỔNG QUẢN 18/11 13:08] CAU DAO xingchi: MO; R-05b chet, chay lai lan 1 bang JX-K3; R-05c chet, chay lai lan 1 bang JX-K4; R-05d chet, chay lai lan 1 bang JX-K5
+
+## Nhận #152, đóng băng (13:09 giờ thật)
+Đóng băng tới 15:20. Sau đó theo thứ tự: trả guard về 30; chụp nốt cửa sổ exe (#150); xem kết quả astra (#151); việc hoãn #149.
