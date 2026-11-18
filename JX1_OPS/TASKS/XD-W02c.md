@@ -1,7 +1,7 @@
 ---
 id: XD-W02c
 title: Tra nguyên nhân SetItemEnChance không tới client
-status: running
+status: done
 level: L3
 agent: codex
 effort: high

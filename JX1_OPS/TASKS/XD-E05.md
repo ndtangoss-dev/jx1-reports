@@ -1,7 +1,7 @@
 ---
 id: XD-E05
 title: Đóng E-05: bảng bằng chứng theo tiêu đề BACKLOG
-status: running
+status: done
 level: L3
 agent: codex
 effort: high

@@ -1,7 +1,7 @@
 ---
 id: XD-A07c
 title: Đóng A-07c: kiểm bằng chứng sửa link ms64.lib
-status: running
+status: done
 level: L3
 agent: codex
 effort: high
