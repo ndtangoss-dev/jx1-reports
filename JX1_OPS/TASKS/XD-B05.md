@@ -24,3 +24,9 @@ Việc chuẩn bị cho **B-05**. Đọc B-03/D4 và mã/script Tống Kim (Batt
 - Không chạy exe lạ, không VM, không mạng, không Main VM, không đọc khóa/mật khẩu/dump tài khoản. Chỉ ghi tệp đầu ra ngoài ra không sửa gì.
 - Worktree của bạn có thể KHÔNG có mã nguồn game: đọc trực tiếp (chỉ đọc) client `C:/Jx1CocoV3/Folder/Client2912-20260116T044348Z-3-001/Client2912/Client/Classes` và server `C:/Jx1CocoV3/SwordOnline/SwordOnline/jxOnline/gameserver/Sources`; kho báo cáo ở D:/jx1-ops-wt/JX1_OPS (chỉ đọc).
 - Mỗi lần đọc <= ~400 dòng. Cuối tệp task ghi mục "## Kết quả" (3–5 dòng).
+
+## Kết quả
+- PARTIAL — báo cáo `JX1_OPS/REPORTS/XD-B05.md` đã đối chiếu trực tiếp script/mã: công tắc, lịch, số người, phí, đường thưởng và 8 câu hỏi chủ quyết; nguồn “D4” chưa định danh được.
+- Ghi riêng bất nhất hòa/EXP/top khi hủy trận và khác biệt dòng timer so D-01; không đổi kết luận báo cáo cũ, không suy runtime.
+- Kiểm tài liệu UTF-8 không BOM, 5 dòng tóm tắt, bằng chứng, Mermaid, sổ thông số và mục Chưa kiểm; không sửa code/config, không build/chạy game/VM/exe/mạng.
+- Không commit/push; Tổng quan gộp. Ghi `.nhip` ngoài writable root bị Access denied; giữ nguyên quyền, cần PM cung cấp đường dẫn D4 để bổ sung.
