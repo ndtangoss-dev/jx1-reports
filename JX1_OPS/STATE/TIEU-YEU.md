@@ -1,4 +1,4 @@
-# TIỂU YÊU (Tổng quản tự sinh lúc 2026-11-18 14:29, đừng sửa tay)
+# TIỂU YÊU (Tổng quản tự sinh lúc 2026-11-18 14:31, đừng sửa tay)
 
 **CẦU DAO xingchi: ĐÓNG (bình thường)**
 
@@ -6,11 +6,11 @@ Mức: SONG / IM-NHUNG-SONG (20–60 phút) / TREO (>60, bị dừng chạy lạ
 
 | Mã | Mức | Khóa | Log cuối | Dấu hiệu sống cuối | Lỗi cuối | Lần chạy lại | Mô hình | PID | Chờ token (giây) |
 |---|---|---|---|---|---|---|---|---|---|
-| F-01 | SONG | JX-K3 | 14:28 | 14:28 | - | 1 | sol | - | - |
-| K-03a | SONG | JX-K4 | 14:29 | 14:29 | - | 0 | sol | - | - |
-| K-03b | SONG | JX-K2 | 14:29 | 14:29 | - | 0 | sol | - | - |
-| K-03c | SONG | JX-K5 | 14:29 | 14:29 | - | 0 | sol | - | - |
-| K-03d | SONG | JX-K6 | 14:29 | 14:29 | - | 0 | sol | - | - |
+| F-01 | XONG-CHO-GOP | JX-K3 | 14:30 | 14:30 | - | 1 | sol | - | - |
+| K-03a | SONG | JX-K4 | 14:30 | 14:30 | loi mang | 0 | sol | - | - |
+| K-03b | SONG | JX-K2 | 14:30 | 14:30 | loi mang | 0 | sol | - | - |
+| K-03c | SONG | JX-K5 | 14:30 | 14:30 | - | 0 | sol | - | - |
+| K-03d | SONG | JX-K6 | 14:30 | 14:30 | - | 0 | sol | - | - |
 | K-03e | SONG | JX-K2 | 14:29 | 14:29 | - | 0 | sol | - | - |
 | R-05b | CHET-BO | JX-K2 | 13:24 | 13:24 | bao cao rong (astra) | 2 | astra | - | - |
 | R-05c | CHET-BO | JX-K2 | 13:12 | 13:12 | bao cao rong (astra) | 2 | astra | - | <=127 |
@@ -19,12 +19,12 @@ Mức: SONG / IM-NHUNG-SONG (20–60 phút) / TREO (>60, bị dừng chạy lạ
 | R-06c | CHET-BO | JX-K6 | 13:22 | 13:22 | bao cao rong (astra) | 2 | astra | - | - |
 | R-07a | CHET-BO | JX-K6 | 13:15 | 13:15 | bao cao rong (astra) | 2 | astra | - | - |
 | R-07b | CHET-BO | JX-K4 | 13:20 | 13:20 | bao cao rong (astra) | 2 | astra | - | - |
-| T-02 | SONG | JX-K3 | 14:29 | 14:29 | - | 1 | sol | - | - |
-| T-03 | SONG | JX-K4 | 14:29 | 14:29 | - | 0 | sol | - | - |
+| T-02 | SONG | JX-K3 | 14:30 | 14:30 | loi mang | 1 | sol | - | - |
+| T-03 | SONG | JX-K4 | 14:31 | 14:31 | - | 0 | sol | - | - |
 | T-04 | SONG | JX-K5 | 14:27 | 14:27 | - | 0 | sol | - | <=17 |
 
-Khóa đang dùng: JX-K2=2, JX-K3=2, JX-K4=2, JX-K5=2, JX-K6=1 / khóa có: JX-K2, JX-K3, JX-K4, JX-K5, JX-K6
-Đang chạy theo Task Scheduler: 9.
+Khóa đang dùng: JX-K2=2, JX-K3=1, JX-K4=2, JX-K5=2, JX-K6=1 / khóa có: JX-K2, JX-K3, JX-K4, JX-K5, JX-K6
+Đang chạy theo Task Scheduler: 8.
 
 Việc vòng này:
 - CAU DAO xingchi: DONG
