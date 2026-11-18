@@ -57,3 +57,6 @@ Không còn mục chờ về mạng: máy thật đã có Host-only `192.168.56.
 
 ## Q-51 — 18/11/2026 22:10 — Bỏ nhánh Gemini miễn phí; áp dụng đề xuất giảm token ít rủi ro (Chat, theo #181)
 Gemini miễn phí chỉ 20 lượt/ngày/mô hình: không dùng được (REPORTS/SO-SANH-NHA-CUNG-CAP.md). xingchi vẫn là đường chính; thay nhà cung cấp trả phí chờ chủ quyết sau, chưa gấp. Áp dụng từ REPORTS/TIEU-YEU-429-VA-TOKEN.md: #3 (xoay khỏi K5, tránh phát việc dồn 17h–19h nếu việc không gấp), #5 (K5 tối đa 2 việc), thử #1 (high thay max cho việc đọc-tóm, kiểm 2–3 việc so mẫu), #2 (mẫu prompt nêu sẵn danh sách tệp). Để lại #4, #6, #7.
+
+## Q-52 — 18/11/2026 22:16 — Chủ chốt 4 điều
+(1) Sonnet không bao giờ hết việc: dùng `STATE/HANG-DOI-VIEC.md`. (2) Hiệu ứng vũ khí sửa mãi không được → hiểu game trước, KHÔNG sửa mã hiệu ứng tới khi có tài liệu hiểu được Chat duyệt (W-01). (3) Giữ phiên Sonnet mở cả đêm. (4) Chat cập nhật tiến độ/kế hoạch để giao việc (hàng đợi + bảng tiến độ).

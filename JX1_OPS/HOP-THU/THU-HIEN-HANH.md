@@ -99,3 +99,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Bỏ Gemini miễn phí; áp dụng giảm token; C01 qua forwarder phụ; hiệu ứng vũ khí | #183 | Q-51 | chờ Sonnet |
 | Trong chờ dài Sonnet cũng đọc thư mới của Chat; dừng thì ghi lý do | #184 | bổ sung #182 | chờ Sonnet |
 | Xung đột VONG.md: thêm .gitattributes union; Sonnet giữ cả hai phía, đọc #183-#185 | #185 | | chờ Sonnet |
+| Q-52: hàng đợi việc không bao giờ cạn; dừng sửa hiệu ứng vũ khí (hiểu trước, W-01); giữ phiên mở cả đêm | #186 | thay mục 4 của #183 | chờ Sonnet |

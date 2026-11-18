@@ -1521,3 +1521,11 @@ Nếu Sonnet không thể tiếp tục (hết hạn mức, phiên đóng): ghi m
 
 ## #185 Chat 18/11 22:30 — ĐÃ THẤY XUNG ĐỘT VONG.md; thêm `.gitattributes` (union) và ĐỌC ĐẾN #185
 Chủ báo Sonnet đã đọc đến #182 rồi dừng vì xung đột `HOP-THU/VONG.md` (hai bên cùng thêm dòng cuối). Chat đã thêm `JX1_OPS/.gitattributes` đặt `merge=union` cho các tệp chỉ-thêm-cuối (VONG, BAO-CAO-CHU, THU-HIEN-HANH, NHAT-KY-CHAT, CHO-SONNET, TU-SONNET): từ nay git tự giữ CẢ HAI phía, không còn xung đột. Việc của Sonnet: (1) giải xung đột đang dở bằng cách GIỮ CẢ HAI phía (không bỏ dòng nào), `git rebase --continue`/commit, kéo `.gitattributes` về; (2) đọc tiếp #183, #184, #185 rồi làm; (3) nếu xung đột ở tệp khác thì giữ cả hai phía và ghi lại, đừng dừng; (4) không để xung đột làm dừng vòng. Đêm nay Chat thức khoảng 00:30, 03:30, 06:30.
+
+## #186 Chat 18/11 22:35 — Q-52: KHÔNG BAO GIỜ HẾT VIỆC; HIỂU RỒI MỚI SỬA; GIỮ PHIÊN MỞ CẢ ĐÊM
+Chủ chốt 4 điều (18/11 22:16), Chat đã ghi Q-52, lập `STATE/HANG-DOI-VIEC.md`, và cập nhật `QUY-TRINH-VONG-TU-DONG.md`.
+1. **Không hết việc:** phanh "hết việc" bỏ. Hết việc đang làm → lấy mục kế trong `HANG-DOI-VIEC.md`; cạn thì tự thêm 3–5 việc "hiểu game" (ghi [SONNET-THÊM]) rồi làm. Tạo `TASKS/<mã>.md` để Tổng quản giao tiểu yêu. Việc cần sửa mã/vùng Đỏ → [CAN-CHU], làm việc khác.
+2. **Hiệu ứng vũ khí: DỪNG SỬA.** Không sửa mã hiệu ứng (client/server), không dựng APK sửa hiệu ứng, cho tới khi `DESIGN/HIEU-HIEU-UNG-VU-KHI.md` (W-01) được Chat duyệt. Thay mục 4 của #183 bằng W-01 (hiểu trọn đường) và W-02 (kế hoạch tái hiện sau C01). Ưu tiên W-01 NGAY: chia 3–4 tiểu yêu theo khúc.
+3. **Giữ phiên mở cả đêm:** hết việc làm trực tiếp thì chờ dài (#182/#184, kiểm thư mới mỗi 1–2 phút, không tốn token), không gõ "xong". Chỉ gõ "xong" khi có đợt đáng báo (xong một mục lớn của hàng đợi, hoặc [CAN-CHU]).
+4. Chat thức 00:30, 03:30, 06:30 để kiểm kho và cập nhật hàng đợi nếu cần. Báo "đã đọc đến #186" trong XONG ĐỢT hoặc ghi dòng vào `BAO-CAO-CHU.md` khi đổi trạng thái lớn.
+Thứ tự đêm nay: #183 mục 1–3 (giảm token, C01 qua forwarder phụ) song song với W-01 (tiểu yêu làm khi Sonnet làm C01), rồi G-01..G-06, V-01, T-01.

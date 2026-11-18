@@ -21,3 +21,8 @@ Nếu 9 phút không có CHAT-DAY: gõ "xong" thêm MỘT lần, chờ lần n�
 
 ## Nhận diện người gõ (chủ nói 18/11 19:46)
 Tin ngắn dạng "xong" / "xong (thử vòng)" trong cuộc chat của Chat = SONNET gõ qua Chrome (chủ sẽ không nhắn ngắn như vậy). Chat coi đó là tín hiệu đánh thức, vẫn kiểm kho xem có XONG ĐỢT thật, và KHÔNG coi là chủ duyệt. Chủ nhắn bằng câu đầy đủ.
+
+## Cập nhật Q-52 (18/11/2026 22:30)
+- Phanh "hết việc" BỎ: Sonnet không bao giờ hết việc; lấy việc từ `STATE/HANG-DOI-VIEC.md` (và tự thêm việc "hiểu game" khi hàng đợi cạn). Chỉ dừng khi: hết hạn mức, 3 đợt liền không tiến triển, chủ nói dừng, hoặc có [CAN-CHU] chặn mọi việc còn lại.
+- Giữ phiên Claude Code mở cả đêm: khi chỉ còn chờ tiểu yêu hoặc chờ thư thì chờ dài (#182/#184), không gõ "xong".
+- Hiểu rồi mới sửa hiệu ứng vũ khí (xem hàng đợi mục W-01).
