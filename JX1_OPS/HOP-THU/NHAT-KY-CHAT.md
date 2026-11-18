@@ -167,3 +167,4 @@
 - 18/11 09:56 Sonnet go cua (lich bi bam tay). Tim ra 2 nguyen nhan guard khong danh thuc: doc hom thu ban cu (khong pull), chi quet vung 'Chua xu ly' trong khi Chat ghi thu o cuoi file. Da sua; cho thu KHAN lan 3.
 - 10:03 Kiểm: Sonnet đã trả lời #116/#119 lúc 09:55 (sửa guard). Chưa nhận #120. Im ~9 phút, chưa tới ngưỡng. Đã gửi chủ sơ đồ quản lý tổng thể (artifact). Lịch kiểm kế: trig_01ByCwM6uTBqm5mgr4oTCSWD 10:06.
 - 10:07 Kiểm: Sonnet báo 10:05 — Tổng quản (tong_quan.py, 3 phút) chạy, TIEU-YEU.md có, khóa rải K2–K6 (K2=3, còn lại 2), K-03a..e ready, cầu dao nghẽn. xingchi upstream_error giết tiểu yêu giao lúc 10:00. Chưa nhận #120. Lỗi nhỏ: 'Bẩm đại vương' trong TU-SONNET (persona chỉ trong chat) — nhắc ở thư kế. Sonnet đang làm, chưa thử KHẨN lần 3. GÕ CỬA mới trig_01U7ns37WhBGvSG3cAAsWLzd (10:18).
+- 10:15 Chủ yêu cầu rà đường dẫn, trí nhớ, bàn giao. Gửi #121 (5 lỗ hổng). Bổ sung KHOI-DONG-CHAT mục 5. Cập nhật sơ đồ artifact.

@@ -988,3 +988,12 @@ Chủ nhắc: [HỎI-CHAT] quyền phiên gác đã ghi trong kho nhưng KHÔNG 
 2. stop_guard.py: CHẶN kết thúc lượt nếu trong TU-SONNET.md có mục [HỎI-CHAT] hoặc [TỔNG QUẢN] hoặc báo cáo trả lời thư mới hơn dòng cuối của GO-CUA.log. Lời nhắc khi chặn: "Đọc dòng GÕ CỬA trong HOP-THU/SO-TAY-CHAT.md, RemoteTrigger run, ghi GO-CUA.log".
 3. Luôn đọc trigger_id MỚI NHẤT trong SO-TAY-CHAT.md (sau git pull) ngay trước khi bấm; mã đổi sau mỗi lần Chat đặt lịch. Bấm hỏng (404/hết hạn) thì pull lại rồi bấm lần nữa; vẫn hỏng thì ghi GO-CUA.log và thôi, Chat vẫn kiểm định kỳ 10 phút.
 4. Thêm vào L2 của LUAT-COT-LOI (Chat đã thêm) và vào hook in luật.
+
+## #121 — 2026-11-18 10:15 — Lỗ hổng bàn giao và đường dẫn (bổ sung #108 mục 4, L7)
+Chat rà quy trình theo lệnh chủ, thấy 5 lỗ hổng. Làm sau #120, theo thứ tự:
+1. `STATE/BAN-GIAO.md` CŨ (ghi 16/11 22:40, việc dở 0-07, 0-08 đã bỏ). Viết lại mục "Bản bàn giao hiện tại" cho đúng hôm nay, và cho hook PreCompact ghi đè mục này mỗi lần (giờ, việc đang làm dở, thư cuối đã nhận). Ai đọc BAN-GIAO cũng phải thấy trạng thái mới nhất.
+2. Tạo `STATE/DUONG-DAN.md`: bảng mọi chỗ trên máy PC mà hệ thống đọc/ghi, mỗi dòng: đường dẫn, ai đọc/ghi, dùng làm gì, có nằm trong kho không. Ít nhất: `C:\Jx1CocoV3` (kho, CLAUDE.md, AGENTS.md, `.claude\settings.json` hook), `D:\JX-wt\` (worktree tiểu yêu, `.done`, log, `guard\`), `C:\Users\PC\.jx1keys\` (CHỈ ghi tên khóa), `C:\Users\PC\.codex\`, `~\.claude\projects\C--Jx1CocoV3\` (lịch sử chat jsonl), các tác vụ Task Scheduler (`JX-Guard`, `JX-TongQuan`, …), log guard, `goi.lock`. Không ghi giá trị khóa, mật khẩu.
+3. Đổi tài khoản: gõ cửa chỉ chạy khi Sonnet và Chat cùng một tài khoản Claude (lịch kiểm thuộc tài khoản của Chat). Thêm vào L2/L7: khi bấm gõ cửa hỏng 2 lần (401/403/404) thì ghi `GO-CUA.log` dòng "MAT-KET-NOI-CHAT", stop_guard coi dòng đó là đã gõ; làm tiếp, [HỎI-CHAT] tự quyết sau 30 phút như cũ. Khi chủ đổi tài khoản: đăng nhập lại Claude Code, `/tiep-tuc`, rồi đợi Chat mới ghi dòng GÕ CỬA mới.
+4. Không dùng xưng hô "Bẩm đại vương", "thuộc hạ" trong kho (báo cáo TU-SONNET 10:05 có). Xưng hô đó chỉ trong cửa sổ chat.
+5. Khóa cũ lộ trong `config.toml` (#106.3): báo trong TU-SONNET đã chuyển ra chưa, và chủ có cần vào xingchi đổi khóa đó không (chỉ ghi tên, không ghi giá trị). Chat sẽ báo chủ.
+Xong mỗi mục: ghi một dòng TU-SONNET, push, gõ cửa.

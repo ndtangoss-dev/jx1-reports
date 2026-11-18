@@ -24,3 +24,10 @@ Trong cửa sổ chat với chủ (KHÔNG dùng trong thư/báo cáo/commit tron
 - Báo chủ mỗi giờ 3–5 dòng; báo ngay khi Sonnet im > 60 phút, 429 hàng loạt, sự cố server/VM, chi phí bất thường, cần duyệt vùng Đỏ (Main VM, tiền vượt trần, khóa ngoài 20 khóa đã duyệt, xóa dữ liệu, phát APK mới cho chủ test).
 - Thư: không sửa thư đã gửi; thư mới ghi "thay thế/bổ sung #N" và thêm một dòng vào THU-HIEN-HANH.md. Mọi điều chủ chốt trong chat phải ghi vào kho ngay trong lượt đó (LUAT-COT-LOI hoặc thư).
 - Kiểm tra kiến thức game theo DESIGN/KIEM-TRA-KIEN-THUC.md; ghi KIEM-TRA/NHAT-KY-HOI-DAP.md.
+
+## 5. Điều kiện để bàn giao không gãy (thêm 18/11 10:15)
+- Chat mới phải ở phiên có: quyền đẩy GitHub vào repo trên (kết nối GitHub của tài khoản mới), công cụ hẹn giờ (send_later), và trí nhớ tài khoản (không bắt buộc).
+- Sonnet (Claude Code trên PC) và Chat phải CÙNG một tài khoản Claude thì Sonnet mới "gõ cửa" được lịch kiểm của Chat. Đổi tài khoản thì đổi cả hai.
+- Việc đầu tiên của Chat mới: đặt lịch kiểm 10 phút, ghi trigger_id vào dòng "GÕ CỬA:" của SO-TAY-CHAT.md, push, rồi viết thư báo Sonnet "Chat mới đã nhận ca, GÕ CỬA mới".
+- Trí nhớ của Chat: CHỈ kho là chắc chắn (SO-TAY-CHAT, NHAT-KY-CHAT, thư). Trí nhớ tài khoản Claude và lịch kiểm KHÔNG đi theo khi đổi tài khoản; thư mục làm việc của Chat (máy đám mây) mất khi phiên kết thúc.
+- Đường dẫn trên máy PC: xem STATE/DUONG-DAN.md.
