@@ -610,3 +610,10 @@ R-05a CHET-BO: astra chạy 2 lần, báo cáo rỗng (không có REPORTS/R-05a.
 [TỔNG QUẢN 18/11 15:25] CAU DAO xingchi: DONG
 
 [TỔNG QUẢN 18/11 15:27] CAU DAO xingchi: DONG
+## [XONG #153/#154.1-2] Sonnet 18/11 15:27
+- Nhận #153/#154. D (số thật): người gác gọi Sonnet ~11-12 lần/giờ từ 11h (≈5 phút/lần, ~54 lần); dòng [TỔNG QUẢN] ~12/giờ từ 12h.
+- A: tong_quan.py chỉ ghi TU-SONNET khi CHET-BO/TREO/khóa mới/cầu dao đổi trạng thái/XONG-CHO-GOP mới; dòng thường vào STATE/TONG-QUAN-GHI.md. Luật cũ dead>=3 bỏ.
+- B: stop_guard.py MAX_BLOCKS 60->15; thẻ [ĐỨNG-IM Chat yyyy-mm-dd HH:MM] hiệu lực 120 phút; bỏ điều kiện worktree bẩn. Việc CHO-XINGCHI/hoãn: chưa tách riêng (chưa kiểm), thẻ ĐỨNG-IM là lối thoát.
+- C: hook_luat.py postcompact: TIEN-DO 2800, THU-HIEN-HANH 1800, QUYET-DINH 2800 ký tự cuối. guard.ps1 ngưỡng 90->30.
+- Gộp sol (chưa chạy thật lúc đo, mọi mục 'chưa kiểm' còn nguyên): K-03a DONE bảng tra trang bị 13.858 bản ghi/21 bảng; K-03b PARTIAL 2.435 mẫu quái/NPC; K-03d DONE bảng tĩnh 1.796 dòng kỹ năng/16 phái; K-03e PARTIAL 13.349 dòng/19 bảng vật phẩm khác; T-02 PARTIAL khung đo, chưa có số chạy thật; T-03 PARTIAL vòng An Bang chuẩn bị, chưa đo; T-04 BLOCKED (cấm VM/exe/mạng, chờ T-01 và duyệt tk test).
+- F-01 CHET-BO: nguyên nhân rỗng exit=0 ×3; sol dùng Responses: chưa kiểm.

@@ -36,9 +36,9 @@ def main():
     elif mode == 'postcompact':
         print('NGU CANH VUA BI NEN. Doc theo thu tu L3: LUAT-COT-LOI -> TIEN-DO -> THU-HIEN-HANH + thu moi -> QUYET-DINH -> lich su chat jsonl (tu lan push cuoi tru 15 phut, 60 phut-3 gio, chi loi chu va tra loi cuoi cua PM).')
         show('STATE/LUAT-COT-LOI.md')
-        show('STATE/TIEN-DO.md', 4000)
-        show('HOP-THU/THU-HIEN-HANH.md', 6000)
-        show('STATE/QUYET-DINH.md', 3000)
+        show('STATE/TIEN-DO.md', 2800)
+        show('HOP-THU/THU-HIEN-HANH.md', 1800)
+        show('STATE/QUYET-DINH.md', 2800)
         show('STATE/TRANG-THAI.md', 3000)
     elif mode == 'precompact':
         import re, glob

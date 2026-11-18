@@ -495,8 +495,27 @@ def main():
         kt += ['', 'Số khóa: %d / 20.' % len(keys())]
         open(os.path.join(ROOT, 'STATE', 'KHOA-XINGCHI.md'), 'w', encoding='utf-8', newline='\n').write('\n'.join(kt) + '\n')
         dead = [r for r in rows if r[1].startswith('CHET') or r[1] == 'TREO']
-        if notes and (force_note or len(dead) >= 3 or any('TREO' in n or 'KHOA MOI' in n for n in notes)):
-            TQ_NOTE[0] = '[TỔNG QUẢN %s] ' % time.strftime('%d/%m %H:%M') + '; '.join(notes)
+        # #153.A: chi danh thuc Sonnet khi co su kien that: CHET-BO moi, TREO, can khoa moi, cau dao doi trang thai, XONG-CHO-GOP moi (toi da 1 lan/gio cho canh bao chung)
+        _lanq = load(os.path.join(GD, 'lan.json'), {})
+        _gop = sorted(r[0] for r in rows if r[1] == 'XONG-CHO-GOP')
+        _imp = force_note or any('TREO' in n or 'KHOA MOI' in n for n in notes)
+        if br['s'] != _lanq.get('#brs'):
+            _imp = True
+            _lanq['#brs'] = br['s']
+        if _gop and _gop != _lanq.get('#gop'):
+            _imp = True
+            _lanq['#gop'] = _gop
+        elif not _gop:
+            _lanq['#gop'] = []
+        save(os.path.join(GD, 'lan.json'), _lanq)
+        _txt = '[TỔNG QUẢN %s] ' % time.strftime('%d/%m %H:%M') + '; '.join(notes)
+        if notes and _imp:
+            TQ_NOTE[0] = _txt
+        elif notes:   # dong thuong: ghi vao file khong ai doc, khong danh thuc nguoi gac
+            try:
+                open(os.path.join(ROOT, 'STATE', 'TONG-QUAN-GHI.md'), 'a', encoding='utf-8', newline='\n').write(_txt + '\n')
+            except OSError:
+                pass
     else:
         for r in rows:
             print(r)

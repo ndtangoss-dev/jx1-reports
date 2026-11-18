@@ -18,7 +18,7 @@ import glob, json, os, re, subprocess, sys, time, tempfile
 HOPTHU = 'HOP-THU'
 
 ROOT = os.environ.get('JX1_OPS_ROOT', r'D:\jx1-ops-wt\JX1_OPS')
-DAILY_CAP, WEEK_CAP, MAX_BLOCKS, MARK_HOURS = 200.0, 1000.0, 60, 1
+DAILY_CAP, WEEK_CAP, MAX_BLOCKS, MARK_HOURS = 200.0, 1000.0, 15, 1   # #153.B: 60 -> 15
 
 
 def allow():
@@ -136,6 +136,13 @@ def main():
             if time.time() - t < MARK_HOURS * 3600: allow()
         except ValueError:
             pass
+    # #153.B: the [DUNG-IM Chat|Sonnet yyyy-mm-dd HH:MM] hieu luc 120 phut
+    for m in re.finditer(r'\[(?:ĐỨNG-IM|DUNG-IM)[^\]\d]*(\d{4}-\d\d-\d\d)\s+(\d\d:\d\d)\]', state):
+        try:
+            t = time.mktime(time.strptime(m.group(1) + ' ' + m.group(2), '%Y-%m-%d %H:%M'))
+            if time.time() - t < 120 * 60: allow()
+        except ValueError:
+            pass
     # 2. Codex cham tran
     if '[CODEX-CHAM-TRAN]' in state: allow()
     bud = B.section(state, 'Ngân sách Codex')
@@ -170,7 +177,7 @@ def main():
         except OSError:
             continue
         wt = r'D:\JX-wt\%s' % tid
-        if 'exit=0' in dn and not os.path.exists(os.path.join(wt, 'JX1_OPS', 'REPORTS', tid + '.md')) and not subprocess.run(['git', '-C', wt, 'status', '--porcelain'], capture_output=True, text=True).stdout.strip() and not subprocess.run(['git', '-C', wt, 'log', '--oneline', 'origin/jx1-ops..HEAD'], capture_output=True, text=True).stdout.strip():
+        if 'exit=0' in dn and not os.path.exists(os.path.join(wt, 'JX1_OPS', 'REPORTS', tid + '.md')) and not subprocess.run(['git', '-C', wt, 'log', '--oneline', 'origin/jx1-ops..HEAD'], capture_output=True, text=True).stdout.strip():
             continue   # #133.3: exit=0 ma rong (khong bao cao, khong thay doi) = chet, Tong quan chay lai; khong phai xong cho gop
         if 'exit=0' in dn:
             todo.append((tid, 'XONG-CHO-GOP: gop ket qua (git checkout task/%s -- <file cua task>), set_status.py %s done' % (tid, tid), 'xong cho gop', None))
