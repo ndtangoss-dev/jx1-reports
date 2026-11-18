@@ -156,16 +156,34 @@ def main():
     rows = []
     notes = []
     alive_ids = [i for i, s in sched.items() if s == 'Running']
-    # cau dao nghen dich vu: >=4 viec chet trong 10 phut gan day -> moi vong chi duoc phep 1 lan giao/chay lai
+    # #123: cau dao 3 trang thai. DONG -> MO (>=4 loi dich vu/10 phut: ngung giao, moi 10 phut thu 1 viec) -> NUA-MO (thu song >3 phut thi DONG)
+    brp = os.path.join(GD, 'breaker.json')
+    br = load(brp, {'s': 'dong', 'since': 0, 'probe_at': 0, 'probe_id': '', 'probe_start': 0, 'warn': 0})
     recent = 0
     for f in glob.glob(os.path.join(WT, '*.done')):
         if now() - mt(f) < 600 and done_exit(os.path.basename(f)[:-5]) not in (0, None):
             recent += 1
-    budget = [1 if recent >= 4 else 99]
-    if recent >= 4:
-        notes_pre = 'NGHEN: %d viec chet trong 10 phut, moi vong chi giao 1 viec' % recent
-    else:
-        notes_pre = ''
+    if br['s'] == 'dong' and recent >= 4:
+        br.update(s='mo', since=now(), probe_at=now())
+    elif br['s'] == 'nua-mo':
+        pid = br.get('probe_id', '')
+        if sched.get(pid) == 'Running':
+            if now() - br['probe_start'] > 180:
+                br['s'] = 'dong'
+        elif done_exit(pid) not in (0, None):
+            br.update(s='mo', probe_at=now() + 600)
+        else:
+            br['s'] = 'dong'
+    budget = [99 if br['s'] == 'dong' else 0]
+    notes_pre = 'CAU DAO xingchi: %s' % br['s'].upper()
+    force_note = False
+    probed = [False]
+    if br['s'] != 'dong' and br.get('since') and (now() - br['since']) > 3600 and now() - br.get('warn', 0) > 3600:
+        notes.append('xingchi sap > 60 phut (cau dao mo tu %s)' % time.strftime('%H:%M', time.localtime(br['since'])))
+        br['warn'] = now()
+        force_note = True
+    if br['s'] == 'dong':
+        br['since'] = 0
 
     def st_of(i):
         return tasks.get(i, {}).get('status', '').lower()
@@ -182,10 +200,17 @@ def main():
         ex = done_exit(i)
         err = ''
         tail = read_log(log, 20000)
-        if 'Chat Completions' in tail:
+        svc = True
+        if 'Chat Completions' in tail or 'requires Responses' in tail:
             err = 'xingchi Chat Completions'
+        elif 'upstream_error' in tail:
+            err = 'upstream_error'
         elif re.search(r'\b429\b', tail[-6000:]):
             err = '429'
+        elif re.search(r'(?i)stream disconnected|connection (reset|refused|closed)|timed out|dns error', tail[-6000:]):
+            err = 'loi mang'
+        else:
+            svc = False
         if running:
             level = 'SONG' if silent < IM else ('IM-NHUNG-SONG' if silent < TREO else 'TREO')
             if level == 'TREO' and not DRY:
@@ -204,11 +229,36 @@ def main():
             level = 'SONG'      # vua giao, chua kip thay
         else:
             level = 'CHET'
-        if level == 'CHET':
+        if level == 'CHET' and svc:
+            lan[i] = 0   # #123: loi dich vu khong cong vao 3 lan chay lai
+            level = 'CHO-XINGCHI'
+            fin = mt(os.path.join(WT, i + '.done')) or last
+            probe = br['s'] == 'mo' and now() >= br['probe_at'] and not probed[0]
+            if not DRY and ((br['s'] == 'dong' and (now() - fin) / 60 >= WAITS[0] and budget[0] > 0) or probe):
+                k = pick_key(assign, [x for x in sched if sched[x] == 'Running'])
+                if k:
+                    assign[i] = k
+                    try:
+                        os.remove(os.path.join(WT, i + '.done'))
+                    except OSError:
+                        pass
+                    if run_launch(i, k):
+                        sched[i] = 'Running'
+                        level = 'THU-LAI-XINGCHI'
+                        notes.append('%s cho xingchi, thu lai bang %s%s' % (i, k, ' (thu cau dao)' if probe else ''))
+                        if probe:
+                            probed[0] = True
+                            br.update(s='nua-mo', probe_id=i, probe_start=now())
+                        time.sleep(20)
+        elif level == 'CHET':
             n = lan.get(i, 0)
             fin = mt(os.path.join(WT, i + '.done')) or last
             if n >= len(WAITS):
                 level = 'CHET-BO'
+                if lan.get(i + '#bao') != 1:
+                    lan[i + '#bao'] = 1
+                    notes.append('%s CHET-BO (loi viec, qua %d lan)' % (i, len(WAITS)))
+                    force_note = True
             elif (now() - fin) / 60 >= WAITS[n] and not DRY and budget[0] > 0:
                 alive_ids_now = [x for x in sched if sched[x] == 'Running']
                 k = pick_key(assign, alive_ids_now)
@@ -262,11 +312,13 @@ def main():
     if not DRY:
         save(os.path.join(GD, 'khoa.json'), assign)
         save(os.path.join(GD, 'lan.json'), lan)
+        save(brp, br)
         use = {}
         for i in sched:
             if sched[i] == 'Running' and assign.get(i):
                 use[assign[i]] = use.get(assign[i], 0) + 1
         out = ['# TIỂU YÊU (Tổng quản tự sinh lúc %s, đừng sửa tay)' % time.strftime('%Y-%m-%d %H:%M'), '',
+               '**CẦU DAO xingchi: %s**' % {'dong': 'ĐÓNG (bình thường)', 'mo': 'MỞ (ngừng giao, mỗi 10 phút thử 1 việc)', 'nua-mo': 'NỬA-MỞ (đang thử 1 việc)'}[br['s']], '',
                'Mức: SONG / IM-NHUNG-SONG (20–60 phút) / TREO (>60, bị dừng chạy lại) / CHET / CHET-BO (quá 3 lần) / XONG-CHO-GOP. "Dấu hiệu sống cuối" = max(log, nhịp, file worktree).', '',
                '| Mã | Mức | Khóa | Log cuối | Dấu hiệu sống cuối | Lỗi cuối | Lần chạy lại |', '|---|---|---|---|---|---|---|']
         for r in rows:
@@ -286,7 +338,7 @@ def main():
         kt += ['', 'Số khóa: %d / 20.' % len(keys())]
         open(os.path.join(ROOT, 'STATE', 'KHOA-XINGCHI.md'), 'w', encoding='utf-8', newline='\n').write('\n'.join(kt) + '\n')
         dead = [r for r in rows if r[1].startswith('CHET') or r[1] == 'TREO']
-        if notes and (len(dead) >= 3 or any('TREO' in n or 'KHOA MOI' in n for n in notes)):
+        if notes and (force_note or len(dead) >= 3 or any('TREO' in n or 'KHOA MOI' in n for n in notes)):
             with open(os.path.join(ROOT, 'HOP-THU', 'TU-SONNET.md'), 'a', encoding='utf-8') as f:
                 f.write('\n[TỔNG QUẢN %s] ' % time.strftime('%d/%m %H:%M') + '; '.join(notes) + '\n')
     else:

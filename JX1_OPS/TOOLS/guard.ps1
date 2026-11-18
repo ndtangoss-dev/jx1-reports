@@ -41,6 +41,24 @@ if ($true) {
   }
 }
 
+
+# --- #122: lan goi truoc loi dang nhap / het han muc -> bao [CAN-CHU] vao TU-SONNET (toi da 1 lan/30 phut) ---
+$ge = Join-Path $gdir 'goi.err'; $go = Join-Path $gdir 'goi.out'
+$gtxt = ''
+foreach ($f in @($ge, $go)) { if (Test-Path $f) { $gtxt += (Get-Content $f -Raw -ErrorAction SilentlyContinue) } }
+if ($gtxt -match '(?i)401|login|usage limit|rate limit|weekly limit|hit your') {
+  $stamp = Join-Path $gdir 'canchu.stamp'
+  if (-not (Test-Path $stamp) -or ((Get-Date) - (Get-Item $stamp).LastWriteTime).TotalMinutes -gt 30) {
+    $line = "`n[CAN-CHU] Claude Code chua dang nhap / het han muc luc {0} (nguoi gac: {1})" -f (Get-Date -f 'HH:mm'), (($gtxt -replace '\s+',' ').Trim().Substring(0, [Math]::Min(120, ($gtxt -replace '\s+',' ').Trim().Length)))
+    Add-Content -Path (Join-Path $ops 'HOP-THU\TU-SONNET.md') -Value $line -Encoding UTF8
+    Set-Content $stamp 'x'
+    Log 'ghi [CAN-CHU] het han muc / dang nhap'
+    git -C $repo add -- 'JX1_OPS/HOP-THU/TU-SONNET.md' 2>$null
+    git -C $repo commit -qm 'Nguoi gac: CAN-CHU dang nhap/han muc' -- 'JX1_OPS/HOP-THU/TU-SONNET.md' 2>$null
+    $pp = Start-Process -WindowStyle Hidden -PassThru -FilePath git -ArgumentList ('-C ' + $q + $repo + $q + ' push -q origin HEAD:jx1-ops')
+    if (-not $pp.WaitForExit(120000)) { Stop-Process -Id $pp.Id -Force -EA SilentlyContinue; Log 'git push qua 120 giay (#125)' }
+  }
+}
 # --- khoa theo tien trinh ---
 $lock = Join-Path $gdir 'goi.lock'
 $busy = $false
