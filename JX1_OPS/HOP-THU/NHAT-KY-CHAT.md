@@ -250,3 +250,5 @@
 - 22:35 Chủ chốt 4 điều (Q-52). Lập HANG-DOI-VIEC.md, gửi #186: không hết việc, W-01 hiểu hiệu ứng vũ khí trước khi sửa, giữ phiên mở.
 - 22:30 Sonnet kết lượt hỏi chủ về root LDPlayer rồi đứng. Gửi #187: dùng instance bản sao bật root; nhắc không kết lượt bằng câu hỏi.
 - 22:42 Chủ chốt Q-53: Sonnet gõ 'CHAT' để đánh thức khi cần hỏi. Gửi #188. 'xong' = hết đợt, 'CHAT' = có câu hỏi.
+- 22:50 Sonnet gõ CHAT (HOI-188a: DB nhân vật Test-36). Gửi #189: cho, chỉ lược đồ, không dữ liệu thật; làm lại C01+C03.
+- 22:52 Sonnet đứng ~10 phút sau #189, không rõ sống/chết. Viết TOOLS/cho_thu.py (chờ cố định + nhịp tim) và gửi #190 (Q-54).

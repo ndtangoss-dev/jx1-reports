@@ -102,3 +102,5 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Q-52: hàng đợi việc không bao giờ cạn; dừng sửa hiệu ứng vũ khí (hiểu trước, W-01); giữ phiên mở cả đêm | #186 | thay mục 4 của #183 | chờ Sonnet |
 | Trả lời [HỎI-CHAT] C01: instance LDPlayer bản sao bật root; không kết lượt bằng câu hỏi chủ | #187 | | chờ Sonnet |
 | Q-53: Sonnet gõ 'CHAT' khi cần hỏi Chat (ngoài 'xong') | #188 | | chờ Sonnet |
+| Trả lời HOI-188a: cho tạo/khôi phục CSDL nhân vật Test-36 (chỉ lược đồ, không dữ liệu thật) rồi làm lại C01+C03 | #189 | | chờ Sonnet |
+| Q-54: chờ dài bằng cho_thu.py + nhịp tim NHIP-TIM.md; gộp W-01c | #190 | thay vòng ngủ tự viết | chờ Sonnet |
