@@ -21,3 +21,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Chốt: hòm thư là nguồn sự thật; chủ không giao việc trực tiếp; vòng nền kéo thư 10 phút; đẩy sau mỗi việc | #105 | bổ sung #101-#104 | chờ Sonnet bật |
 | Trả lời tự rà: phạm vi tự quyết, dò xingchi qua Codex (không gọi API thẳng), dời khóa lộ, thứ tự làm | #106 | bổ sung #101-#105 | chờ Sonnet |
 | CHỐT SÁNG 18/11: LUAT-COT-LOI.md, hook trước/sau nén, stop_guard, người gác, TIEN-DO.md, đọc lại lịch sử chat, chuẩn hóa = giải mã + sắp cấu trúc | #107 | THAY THẾ #099 (phần 'hiểu lầm'); bổ sung #101-#106 | chờ Sonnet |
+| [HỎI-CHAT] thay hỏi chủ, kéo thư sau mỗi mục, [KHẨN], gõ cửa Chat, kế thừa tài khoản (SO-TAY-CHAT, KHOI-DONG-CHAT) | #108 | bổ sung #107 | chờ Sonnet |

@@ -11,6 +11,9 @@ File này ngắn có chủ ý. Đọc nó: đầu mỗi phiên, sau mỗi lần 
 - Không bao giờ kết thúc lượt bằng câu hỏi, không dùng hộp chọn (Q-21). Việc làm lại được: tự quyết sau 10 phút, ghi `[TỰ QUYẾT]`. Chỉ chờ chủ với: Main VM, tiền vượt trần, khóa ngoài 20 khóa đã duyệt, xóa dữ liệu, phát APK mới cho chủ test. Đang chờ thì vẫn làm việc khác.
 - Thẻ `[DUNG-CAN-CHU]` hiệu lực tối đa 60 phút; việc xong thì xóa ngay.
 - Nhịp: cứ 30 phút một dòng trạng thái + commit + push, kể cả khi chưa có gì mới. Im > 60 phút là lỗi quy trình.
+- KẸT CẦN QUYẾT: không hỏi chủ, không đứng chờ. Ghi mục `[HỎI-CHAT]` trong `HOP-THU/TU-SONNET.md` (vấn đề, các phương án, phương án khuyến nghị), push, rồi làm việc khác. Chat trả lời trong `CHO-SONNET.md` (thường ≤10 phút khi có việc mở, tối đa 30 phút) và ghi "Chat quyết thay chủ" vào QUYET-DINH. Quá 30 phút chưa có trả lời: làm theo phương án khuyến nghị nếu làm lại được. Chỉ vùng Đỏ mới lên chủ (qua Chat).
+- GÕ CỬA CHAT: sau khi push `[HỎI-CHAT]` hoặc báo việc quan trọng, nếu phiên Sonnet có công cụ fire_trigger (claude-code-remote) thì bấm trigger ghi ở dòng "GÕ CỬA" trong `HOP-THU/SO-TAY-CHAT.md` để đánh thức Chat ngay. Không có công cụ thì thôi, Chat vẫn kiểm định kỳ.
+- KÉO HÒM THƯ SAU MỖI MỤC (không chờ xong cả thư): `git pull` jx1-ops; có thư mới thì đọc; thư mới quan trọng hơn thì làm trước. Thư tiêu đề có `[KHẨN]`: dừng mục đang làm ở điểm an toàn gần nhất và làm ngay; người gác thấy `[KHẨN]` thì đánh thức Sonnet.
 - Có người gác ngoài Sonnet (script lịch, không tốn token): im > 30 phút thì gọi tiếp phiên với lệnh "đọc hòm thư, làm tiếp". Tiểu yêu chết thì người gác/Tổng quản tự chạy lại tối đa 2 lần, chờ tăng dần.
 
 ## L3. Chống quên khi bị nén
@@ -23,6 +26,9 @@ File này ngắn có chủ ý. Đọc nó: đầu mỗi phiên, sau mỗi lần 
 ## L5. Chuẩn hóa = hiểu game
 - "Chuẩn hóa" của chủ là MỘT việc: chuẩn hóa báo cáo của tiểu yêu để hiểu game, gồm (a) khuôn `DESIGN/CHUAN-BAO-CAO.md`, (b) GIẢI MÃ tên ra chữ đúng (Hán: GBK; Việt cũ: TCVN3) và ghi cả tên gốc, (c) SẮP dữ liệu theo cấu trúc game (ví dụ kỹ năng phái: chia nhánh, xếp theo cấp học; bộ trang bị: liệt kê món). Thư #099 nói Sonnet "hiểu lầm" là SAI, đã thay bằng #107.
 - Mỗi đợt chuẩn hóa xong, Chat hỏi thử bằng câu của người chơi (`DESIGN/KIEM-TRA-KIEN-THUC.md`). Đạt = trả lời được từ kho, dẫn đúng file mang tên đó.
+
+## L7. Kế thừa khi đổi tài khoản
+- Chat mới: đọc `HOP-THU/KHOI-DONG-CHAT.md`. Sonnet mới: đăng nhập lại Claude Code rồi `/tiep-tuc`; file này tự hiện qua hook.
 
 ## L6. Ưu tiên (#091)
 Hiểu game (chuẩn hóa) → đường truyền client-server + hiểu exe → tick/độ phản hồi/đồ họa. Chỉ làm bản A (qh9A).
