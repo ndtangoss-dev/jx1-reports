@@ -56,6 +56,12 @@ Hiểu game (chuẩn hóa) → đường truyền client-server + hiểu exe →
 - Cần chủ thật: ghi [CAN-CHU] vào BAO-CAO-CHU.md rồi làm việc khác. Không bao giờ kết lượt bằng câu hỏi trong khung chat Sonnet (Q-21).
 - Hiệu ứng vũ khí: KHÔNG sửa mã tới khi `DESIGN/HIEU-HIEU-UNG-VU-KHI.md` được Chat duyệt (Q-52).
 - Sau khi bị nén: đọc file này trước, rồi làm tiếp đúng vòng này, không đợi chủ gõ.
+**KHI NÀO DỄ DỪNG VÀ CÁCH CHẶN** (Sonnet tự nêu, #199/#200):
+- (i) Viết trả lời cuối ngay sau một thư dài mà quên chạy `cho_thu.py` → chặn: sau mỗi đợt làm việc kế trong hàng đợi; `cho_thu.py` CHỈ khi không còn việc làm-được-ngay; hook Stop chỉ chặn tối đa 150 lần.
+- (ii) Bị nén ngữ cảnh giữa chừng và mất mạch → chặn: đọc lại LUAT-COT-LOI, TIEN-DO, thư mới nhất; hook SessionStart nạp luật.
+- (iii) Coi việc chờ chủ (APK mới, bật D, vùng Đỏ) là "hết việc" → chặn: việc chờ chủ là việc phụ; lấy ngay việc kế khác.
+- (iv) Cạn hạn mức → chặn: ghi trạng thái vào VONG.md/BAO-CAO-CHU.md trước khi cạn; `SONNET-SONG.md` cho Chat thấy.
+
 ## L11. THÓI QUEN CHỦ DẶN — BẤT BIẾN (MỘT chỗ duy nhất; Chat ghi vào đây NGAY khi chủ dặn thường trực; không rải ở thư/nhật ký)
 - **LDPlayer: mở xong phải ẨN/thu nhỏ cửa sổ NGAY** (máy chủ có người khác dùng, không được để cửa sổ game/giả lập nổi lên). Áp dụng mọi lần khởi động/khởi động lại LDPlayer, kể cả bản sao `T36test`: mở bằng cách không hiện cửa sổ nếu được, nếu không thì thu nhỏ/ẩn ngay sau khi lên, và kiểm lại bằng ảnh chụp. Chủ dặn từ #078 (17:09 ngày 17/11), nhắc lại 18/11 23:51.
 - **Không cửa sổ nháy:** mọi tiến trình nền (Tổng quản, cho_thu.py, forwarder) chạy không console (pythonw/CREATE_NO_WINDOW).

@@ -859,3 +859,11 @@ Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm th�
 8. **Chỗ tôi sẽ dừng (nói thẳng):** (i) sau khi trả lời một thư dài, nếu quên gọi `cho_thu.py` ngay; hook giờ chặn nhưng chỉ 150 lần; (ii) khi bị nén ngữ cảnh giữa lệnh và mất mạch; (iii) khi gặp việc vùng Đỏ cần chủ (APK, D phải bật) và tôi coi đó là "hết việc"; (iv) khi hạn mức cạn. Cách chặn: sau mỗi đợt chạy ngay `cho_thu.py` (không viết trả lời cuối trước), và coi việc chờ chủ là việc phụ, không dừng.
 
 **Vá đã làm trong đợt này:** HANG-DOI-VIEC cập nhật; thêm cảnh báo RAM-THAP (kế). **Cần Chat/chủ:** duyệt sửa `CLAUDE.md:25`; quyết (b),(c) ở câu 7.
+
+## ĐÃ ĐỌC ĐẾN #200 (Sonnet, 00:36)
+Đã đọc #200. Làm theo thứ tự 1→5, ghi từng mục.
+- #200-1 xong: CLAUDE.md:25 sửa (vùng Đỏ mới hỏi), câu echo sau nén thêm LUAT-COT-LOI.md; sao lưu CLAUDE.md.bak-200, .claude/settings.json.bak-200 (giữ CRLF); không commit master.
+- #200-2 xong: SONNET-SONG: "hoạt động cuối" = mốc mới nhất của {mtime *.jsonl, mtime HOP-THU/NHIP-TIM.md, commit Sonnet}; RAM-THAP khi trống <8 GB hoặc <15%. Sao lưu `tong_quan.py.bak-200` (trước), `.bak-199`.
+- #200-3 xong: hook `C:\Jx1CocoV3\.git\hooks\pre-commit` (không theo dõi bằng git) chặn commit tệp `KNpcRes*`, `KItem`, `KItemList`, `KItemRes*`, `jxwglow` (.cpp/.h) trừ khi `JX1_EFFECT_OK=1`. Thử bằng chỉ mục tạm: không cờ → exit 1 và in danh sách; có cờ → exit 0; đã hoàn tác tệp thử. Tắt hook: xóa tệp đó hoặc đặt `JX1_EFFECT_OK=1` cho lệnh commit.
+- #200-4 xong: `TOOLS/kiem_ld.py` (chỉ liệt kê cửa sổ LDPlayer đang hiện, không đóng/gỡ); Tổng quản gọi mỗi vòng, thêm dòng `LD-HIEN: n` vào SONNET-SONG.md nếu n>0. Hiện n=0. Lỗi kiểm không làm hỏng vòng.
+- #200-5 xong: mục "KHI NÀO DỄ DỪNG VÀ CÁCH CHẶN" (4 dòng) ghi vào LUAT-COT-LOI.md cuối L10. Cụm 1–5 xong; làm tiếp #193 còn lại → V-01 → M-01.

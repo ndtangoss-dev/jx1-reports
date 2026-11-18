@@ -294,6 +294,11 @@ def sonnet_song():
         cm = int(r.stdout.strip() or 0)
     except Exception:
         pass
+    try:
+        nt = os.path.getmtime(os.path.join(ROOT, 'HOP-THU', 'NHIP-TIM.md'))  # #200: cho_thu.py dang cho = con song
+    except Exception:
+        nt = 0
+    last = max(last, nt, cm)
     mins = (now - last) / 60 if last else 9999
     lv = 'SONG' if mins < 10 else ('IM' if mins <= 30 else 'TREO')
     hm = lambda t, f: time.strftime(f, time.localtime(t)) if t else '?'
@@ -319,7 +324,18 @@ def sonnet_song():
     return ('Sonnet: hoạt động cuối %s (%d phút trước); commit cuối %s; mức %s (<10 SONG / 10-30 IM / >30 TREO). Cập nhật %s\n'
             'RAM%s: trống %.1f/%.1f GB (%.0f%%). Top 5 bộ nhớ: %s') % (
         hm(last, '%H:%M:%S'), mins, hm(cm, '%H:%M'), lv, time.strftime('%H:%M:%S'),
-        ' RAM-THAP (<8 GB, #199)' if gb(m.ap) < 8 else '', gb(m.ap), gb(m.tp), 100.0 * m.ap / m.tp, '; '.join('%s %.2f GB' % (n, v) for v, n in top))
+        ' RAM-THAP (<8 GB hoac <15%, #199/#200)' if (gb(m.ap) < 8 or 100.0 * m.ap / m.tp < 15) else '', gb(m.ap), gb(m.tp), 100.0 * m.ap / m.tp, '; '.join('%s %.2f GB' % (n, v) for v, n in top))
+
+
+def ld_dong():
+    """#200: neu co cua so LDPlayer dang hien thi them dong LD-HIEN (chi doc, xem kiem_ld.py)."""
+    try:
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import kiem_ld
+        r = kiem_ld.ld_hien()
+        return ('\nLD-HIEN: %d (%s)' % (len(r), '; '.join(t or c for t, c in r[:3]))) if r else ''
+    except Exception as e:
+        return '\nLD-HIEN: loi kiem (%s)' % type(e).__name__
 
 
 def main():
@@ -584,7 +600,7 @@ def main():
         open(os.path.join(ROOT, 'STATE', 'KHOA-XINGCHI.md'), 'w', encoding='utf-8', newline='\n').write('\n'.join(kt) + '\n')
         # #197: nhip tim doc lap cua Sonnet + RAM. Hoan tac: khoi phuc tong_quan.py.bak-197
         try:
-            open(os.path.join(ROOT, 'STATE', 'SONNET-SONG.md'), 'w', encoding='utf-8', newline='\n').write(sonnet_song() + '\n')
+            open(os.path.join(ROOT, 'STATE', 'SONNET-SONG.md'), 'w', encoding='utf-8', newline='\n').write(sonnet_song() + ld_dong() + '\n')
         except Exception as e:
             print('SONNET-SONG loi:', e)
         dead = [r for r in rows if r[1].startswith('CHET') or r[1] == 'TREO']
