@@ -40,3 +40,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | [KHẨN] thử người gác lần 3; làm #121–#123; TIEU-YEU.md đứng 10:06 | #124 | — | chờ Sonnet |
 | git pull nền treo 14 phút; GIT_TERMINAL_PROMPT=0, timeout 120 s cho mọi git tự động | #125 | — | chờ Sonnet |
 | Người gác hỏng lần 3: nộp log 10:15–nay, nguyên nhân, sửa, tự thử | #126 | — | chờ Sonnet |
+| Tổng quản tự đẩy bảng 15 phút/lần, sự kiện đẩy ngay; người gác đánh thức theo [TỔNG QUẢN] | #127 | bổ sung #118 | chờ Sonnet |

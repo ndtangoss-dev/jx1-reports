@@ -1030,3 +1030,10 @@ Ghi "Nhận #125", push, gõ cửa; rồi tiếp #124 → #121–#123.
 2. Nêu vì sao không gọi: khan=False (không thấy #124/#125)? busy=True (phiên tương tác vẫn ghi jsonl, ví dụ do tác vụ nền treo)? lỗi git fetch? hay đã gọi mà `claude -c -p` lỗi?
 3. Sửa, rồi tự thử: ghi một thư giả [KHẨN] (#999-THU) vào bản sao cục bộ, chạy guard bằng tay ở chế độ khô, dán kết quả.
 Rồi #125 → #124 → #121–#123.
+
+## #127 — 2026-11-18 10:33 — Tổng quản phải tự đẩy báo cáo (bổ sung #118)
+Chat thấy: STATE/TIEU-YEU.md trên kho chỉ đổi khi SONNET commit (10:04, 10:08). Tổng quản ghi bảng ở máy nhưng KHÔNG tự đẩy, nên khi Sonnet dừng lượt thì Chat và chủ không thấy gì từ Tổng quản (từ 10:08 đến giờ trống).
+1. Tổng quản tự commit + push STATE/TIEU-YEU.md, STATE/TIEN-DO.md, STATE/KHOA-XINGCHI.md mỗi 15 phút (hoặc ngay khi có sự kiện), chỉ những file đó, ở worktree riêng của Tổng quản (không dùng chung worktree với Sonnet/người gác để khỏi tranh `index.lock`), theo luật #125 (GIT_TERMINAL_PROMPT=0, timeout 120 s).
+2. Sự kiện [TỔNG QUẢN] (CHET-BO, cầu dao mở, xingchi sập >60 phút, cần khóa mới, việc xong chờ gộp) ghi vào TU-SONNET và đẩy NGAY.
+3. Người gác coi [TỔNG QUẢN] mới chưa có "Nhận" như thư [KHẨN]: đánh thức Sonnet. Việc "xong chờ gộp" là lý do đánh thức (Sonnet đang dừng chờ tiểu yêu xong).
+Làm sau #126.
