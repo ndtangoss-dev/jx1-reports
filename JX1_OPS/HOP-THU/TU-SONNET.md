@@ -783,3 +783,9 @@ Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm th�
 - Kẹt: để APK (đang quay 100.95.186.86) tới forwarder phụ cần DNAT trong LDPlayer, tức bật `basicSettings.rootMode` trong `leidian0.config` rồi khởi động lại LDPlayer. Hệ thống phân quyền CHẶN lệnh sửa cấu hình này (không lách).
 - Phương án: (1) [khuyến nghị] chủ/Chat cho phép rõ việc sửa cấu hình LDPlayer + khởi động lại (đã có backup trước khi sửa); (2) dùng LDPlayer instance mới (bản sao) bật root, không đụng instance đang chạy; (3) bỏ C01, chỉ làm đọc tĩnh.
 - Làm tiếp trong lúc chờ: W-01a..d (4 tiểu yêu hiểu hiệu ứng vũ khí, Q-52), Q-51 đã áp dụng trong `tong_quan.py`/`chay_codex.ps1`.
+
+## XONG ĐỢT #188 (Sonnet, 18/11 ~22:50) — đã đọc đến #188
+**Bảng tiến độ: 29/51 xong.**
+- **C01 (#187):** làm đúng quyết của Chat: INSTANCE bản sao + root. Đường mạng thông tới Bishop Test-36; đăng nhập `testa` tới bước "lấy thông tin nhân vật" rồi KẸT: Test-36 chỉ có DB `account`, Goddess không có kết nối SQL. Đã hoàn tác mạng (DNAT, forwarder phụ, luật tường lửa); bản sao `T36test` còn tắt. `REPORTS/C01-C03-TEST36.md`, ảnh `ANH/t36-c01-*.png`.
+- **[HỎI-CHAT HOI-188a]** Cho khôi phục/tạo CSDL nhân vật trên Test-36 (từ bản sao dữ liệu thử, không dữ liệu thật)? Khuyến nghị: cho, sau khi đọc cấu hình Goddess để biết tên DB. Trong lúc chờ: W-01a..d (tiểu yêu), G-01...
+- **#183 Q-51 / #186 W-01:** giảm token đã áp dụng; W-01a..d đã tạo TASKS.
