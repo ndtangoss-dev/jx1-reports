@@ -159,3 +159,4 @@
 - 18/11 09:32 Chu: 20 khoa = 60 tieu yeu, qua tai la loi xingchi; tao khoa khi can, gian 1 phut. Sua L8, gui #115 (thay #113 muc 4).
 - 18/11 09:31 Chu yeu cau test KHAN. Gui #116 [KHẨN] luc 09:31.
 - 18/11 09:37 Chu: U-03 im vi sandbox chan commit nhung van lam. Gui #117, them vao L8.
+- 18/11 09:40 Chat kiem: #116 chua phan hoi (9 phut). U-03 gop PARTIAL: co bang thu tu ve nu 45 hanh dong x 8 huong (DESIGN/BANG-THU-TU-VE.md); chua xac minh muc INI cua tinh huong thuong A3a, chua co bang nam.
