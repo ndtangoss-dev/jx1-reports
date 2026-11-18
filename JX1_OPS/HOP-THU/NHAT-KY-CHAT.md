@@ -253,3 +253,4 @@
 - 22:50 Sonnet gõ CHAT (HOI-188a: DB nhân vật Test-36). Gửi #189: cho, chỉ lược đồ, không dữ liệu thật; làm lại C01+C03.
 - 22:52 Sonnet đứng ~10 phút sau #189, không rõ sống/chết. Viết TOOLS/cho_thu.py (chờ cố định + nhịp tim) và gửi #190 (Q-54).
 - 23:35 Đọc #190: C01+C03 đạt (51189; Goddess dùng BDB, không SQL). Gửi #191: W-01 gộp, W-02 quan sát trên Test-36.
+- 23:50 Tìm ra gốc Sonnet cứ dừng: LUAT-COT-LOI.md L2 bảo 'push, dừng'. Sửa L2, thêm L10; gửi #192.
