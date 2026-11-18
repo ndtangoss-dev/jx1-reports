@@ -115,3 +115,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Kiểm toàn bộ quy trình tự động; vá cho_thu 9 phút, stop_guard 150 lần, biển lỗi thời 2 tài liệu; 8 câu hỏi Sonnet | #199 | | chờ Sonnet |
 | Duyệt 5 mục kiểm #199; sửa lỗi chờ khi còn việc; luôn gõ CHAT khi cần Chat | #200 | | chờ Sonnet |
 | LÀM NGAY #193 còn lại: bật Test-36, SHA APK, video H4/H5, tắt lại | #201 | | chờ Sonnet |
+| LỆNH CHỦ: 07:00 tiến độ ≥70% (hiện 56%): rà trạng thái, mở thêm tiểu yêu theo RAM, bảng DUONG-70 | #202 | | chờ Sonnet |
