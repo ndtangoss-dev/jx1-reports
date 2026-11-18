@@ -42,3 +42,6 @@ lý do chưa commit/push, bước tiếp tục. Khảo sát thêm `MUC SO THONG 
 
 ## Kết quả (chỉ cập nhật task nếu thuộc vùng được sửa)
 <Đường dẫn báo cáo; commit/test; phần thiếu; bước tiếp tục hoặc không còn việc.>
+
+## Nhịp sống (#117/#118)
+Chỉ ở mốc lớn (xong khảo sát, xong nửa báo cáo, trước khi chạy lệnh dài > 10 phút): ghi một dòng vào `D:\JX-wt\<MA-TASK>.nhip`. Không ghi dày. Tổng quản tính sống = max(log, nhịp, file mới trong worktree). Worker không commit hộ được (sandbox, index.lock): Tổng quản commit.

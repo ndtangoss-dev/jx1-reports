@@ -17,3 +17,4 @@ description: Viết báo cáo cuối task JX1 đúng đường dẫn với tóm 
 - Git bị chặn: giữ local, ghi BỊ CHẶN – CHƯA PUSH, lỗi thật, chưa có SHA, việc PM cần làm;
   không đổi quyền/credential/config hoặc tự gửi tin ngoài.
 - Bắt buộc (chủ duyệt #093): kèm 1 sơ đồ Mermaid (```mermaid) về luồng/quan hệ chính, và dòng "liên quan: <báo cáo/DESIGN/BUG>". Nếu thêm tri thức mới, ghi hàng cần thêm vào JX1_OPS/DESIGN/MUC-LUC-TRI-THUC.md trong báo cáo (PM gộp).
+- Nhịp sống (#117): ở mốc lớn ghi một dòng vào `D:\JX-wt\<MA-TASK>.nhip` (nếu task có worktree). Cuối báo cáo ghi "Kỹ năng đã dùng: <tên skill hoặc không>" để PM kiểm xem Codex có nạp `.agents/skills` không (#118.8).

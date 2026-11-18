@@ -270,7 +270,15 @@ def main():
         if notes:
             out += ['', 'Việc vòng này:'] + ['- ' + n for n in notes]
         open(os.path.join(ROOT, 'STATE', 'TIEU-YEU.md'), 'w', encoding='utf-8', newline='\n').write('\n'.join(out) + '\n')
-        subprocess.run([sys.executable, '-I', os.path.join(ROOT, 'TOOLS', 'tien_do.py')], capture_output=True)
+        ping = load(os.path.join(GD, 'ping.json'), {})
+        kt = ['# KHÓA XINGCHI (Tổng quản tự sinh lúc %s; KHÔNG chứa giá trị khóa)' % time.strftime('%Y-%m-%d %H:%M'), '',
+              'Trần 20 khóa / ≤%d tiểu yêu mỗi khóa. Quy trình: `DESIGN/QUY-TRINH-TAO-KHOA.md`.' % MAXKEY, '',
+              '| Tên khóa | Nhóm | Ngày tạo (theo file) | Ping /v1/models | Tiểu yêu đang dùng |', '|---|---|---|---|---|']
+        for k in keys():
+            kf = os.path.join(KEYS, k + '.txt')
+            kt.append('| %s | JX-Kn | %s | %s | %d |' % (k, time.strftime('%Y-%m-%d', time.localtime(os.path.getctime(kf))), ping.get(k, 'chưa ping (đã chạy được việc thật)'), use.get(k, 0)))
+        kt += ['', 'Số khóa: %d / 20.' % len(keys())]
+        open(os.path.join(ROOT, 'STATE', 'KHOA-XINGCHI.md'), 'w', encoding='utf-8', newline='\n').write('\n'.join(kt) + '\n')
         dead = [r for r in rows if r[1].startswith('CHET') or r[1] == 'TREO']
         if notes and (len(dead) >= 3 or any('TREO' in n or 'KHOA MOI' in n for n in notes)):
             with open(os.path.join(ROOT, 'HOP-THU', 'TU-SONNET.md'), 'a', encoding='utf-8') as f:
