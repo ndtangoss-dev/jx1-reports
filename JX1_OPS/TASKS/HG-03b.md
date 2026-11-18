@@ -31,3 +31,9 @@ status_note: "lam lai: ban dau PARTIAL do worktree thieu source"
 
 ## Nguồn bổ sung (sửa lỗi lần trước)
 Nguồn thật (đọc được, đường dẫn tuyệt đối): server C:\Jx1CocoV3\SwordOnline\SwordOnline\jxOnline\gameserver\Sources\Core\Src\ScriptFuns.cpp (~10912); client C:\Jx1CocoV3\Folder\Client2912-20260116T044348Z-3-001\Client2912\Client\Classes\gamecore\KProtocolProcess.cpp; server KProtocolProcess.cpp/s2cSyncItem tìm dưới C:\Jx1CocoV3\SwordOnline\SwordOnline\jxOnline\gameserver\Sources. Worktree của bạn KHÔNG có mã nguồn: hãy đọc trực tiếp các đường dẫn tuyệt đối này (chỉ đọc; ghi chỉ ở tệp đầu ra).
+
+## Kết quả
+- Đã xác minh tĩnh setter Lua cộng delta vào EnChance và gọi SynPlayerItem theo điều kiện; client nhận m_EnChance trong s2cSyncItem.
+- Chưa xác minh payload do SynPlayerItem gửi và hàm dựng tooltip “+N”; không sửa mã, không chạy build/exe/VM/mạng.
+- Đã bổ sung tài liệu JX1_OPS/DESIGN/HIEU-CAP-CUONG-HOA-LUA.md và báo cáo JX1_OPS/REPORTS/HG-03b.md.
+- Trạng thái: PARTIAL; không commit. File nhịp ngoài worktree bị sandbox từ chối ghi.
