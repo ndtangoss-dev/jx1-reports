@@ -1,7 +1,7 @@
 ---
 id: XD-O01b
 title: Đóng O-01: bảng bằng chứng theo tiêu chí
-status: ready
+status: done
 level: L3
 agent: codex
 effort: high

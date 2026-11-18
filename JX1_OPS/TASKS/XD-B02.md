@@ -1,7 +1,7 @@
 ---
 id: XD-B02
 title: Đóng B-02: đối chiếu tiêu chí
-status: ready
+status: done
 level: L3
 agent: codex
 effort: high

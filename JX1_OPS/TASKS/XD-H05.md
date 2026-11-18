@@ -1,7 +1,7 @@
 ---
 id: XD-H05
 title: Kiểm tra liên kết nội bộ DESIGN/REPORTS
-status: running
+status: done
 level: L3
 agent: codex
 effort: high
