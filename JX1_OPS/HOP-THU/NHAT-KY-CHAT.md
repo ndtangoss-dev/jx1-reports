@@ -274,3 +274,4 @@
 - 02:50 Kiểm 15p #7: 70/97=72% (đã qua 70%). Nhưng tiểu yêu cạn (1 SONG, ready 0). Gửi #209 đẩy ≥80%.
 - 03:10 Kiểm #8: Sonnet im 19p (02:43→03:03), gõ CHAT-DAY #209. Nguyên nhân mẫu: hook chặn → Sonnet đáp bằng chữ rồi kết lượt. Sửa lời chặn stop_guard (#210).
 - 03:40 Thức đêm lần 2: 78/101=77%. Kiểm mẫu: E-01 đóng bằng test offline trong khi tiêu đề đòi Bot thật → mở lại (#211); lập bảng kiểm nghiêm; báo số thật.
+- 04:10 Kiểm #12: số thật 74/107=69% (thêm 6 việc đợt 6). Gửi #212 đóng băng mẫu số.
