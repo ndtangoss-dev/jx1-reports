@@ -12,9 +12,3 @@
 - 18/11 21:30 — Khóa Gemini đã nhập; Sonnet chạy so sánh. jx1-source giữ cục bộ (theo chủ). Không còn việc tay cho chủ.
 - 18/11 22:12 — Gemini miễn phí không dùng được (20 lượt/ngày), đã bỏ. Đang giảm token tiểu yêu, thử client trên máy thử. Không cần chủ làm gì.
 - 18/11 22:35 — Đã lập hàng đợi việc không bao giờ cạn (STATE/HANG-DOI-VIEC.md); dừng sửa hiệu ứng vũ khí cho tới khi hiểu (W-01); Sonnet giữ phiên mở cả đêm.
-
-## [CAN-CHU] Tắt sạch Server D bị hệ thống phân quyền chặn (Sonnet, 19/11 ~00:30, thư #195)
-- Thư #195 bảo tắt Server D và LD-D sạch. Lệnh gộp (thoát LDPlayer instance 0, dừng chuỗi gs001 > Bishop > S3Relay > Goddess > Sword3PaySys, `shutdown /s`) bị bộ phân quyền chặn. Thuộc hạ không lách; chưa tắt gì.
-- Hiện trạng D (kiểm 19/11 qua WinRM): 0 người chơi, đủ 6 tiến trình chạy, LDPlayer instance 0 (của đại vương) đang chạy.
-- Cách tắt an toàn: `docs-analysis/scripts/QUY_TRINH_NGHI_VA_RESUME.md` mục A. Cách bật lại: `KHOI_DONG_CHUOI_SERVER_D.md` (Q-18).
-- Đại vương cho phép trong phiên (hoặc thêm luật cho phép lệnh tắt D) thì thuộc hạ tắt ngay.

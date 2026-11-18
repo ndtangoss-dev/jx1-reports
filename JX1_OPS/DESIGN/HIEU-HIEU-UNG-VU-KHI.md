@@ -86,3 +86,30 @@ Ghi cùng lúc, mỗi lần tái hiện: nhân vật (nam/nữ), vũ khí, cấp
 - Không đề xuất sửa mã lúc này (luật dừng sửa hiệu ứng vũ khí còn hiệu lực).
 - Mục lục tri thức đề xuất: `W-01 | tổng hợp | Hiệu ứng vũ khí: glow, sét, thứ tự vẽ | glow, bolt, nEnChance, KNpcResVN, jxDrawBolts | PARTIAL | tĩnh, chưa runtime | BUG-002, J-01..J-05, H-04, H-14`.
 - Điểm chưa rõ cần dữ liệu thật: tên SPR và cột item sinh cấp cường hóa; nội dung bảng sort; nội dung `glow.fsh/vsh` ở runtime.
+
+## 7. Lịch sử các lần sửa trước và vì sao chưa dứt (thêm theo #193, 19/11/2026)
+
+Nguồn: thư #046/#047, #062, #073, #090 trong `HOP-THU/CHO-SONNET.md`; `REPORTS/H-04.md`, `H-14-mat-khung-hieu-ung.md`; `BUGS/BUG-002.md`. Nhãn: TÀI LIỆU = đọc từ báo cáo/thư, không tự kiểm lại mã.
+
+| Mốc | Việc | Kết quả ghi lại |
+|---|---|---|
+| 14/11 | Nghiệm thu glow ở qh7 (`jx-wglow7.apk`) | TÀI LIỆU (H-04): glow +6 trắng, +12 vàng + sét, +15 xanh điện; lịch sử vòng chân → glow → sét 2/4 tia → 4/6 tia → sửa che lớp/cắt mặt nạ → thu nhỏ bán kính. `KgameWorld.cpp` bị sửa lại sau qh7 (10:48 ngày 14/11) |
+| #046/#047 (17/11) | H-04: tìm dấu vết bản sửa cũ, không khảo sát lại | đã dựng lịch sử; APK qh7 sao lưu khớp bản serve theo SHA-256, nhưng chưa chứng minh khớp nguồn mang tên `Client-qh7` |
+| #062 (17/11) | H-14: khung mất glow/sét khi di chuyển, vung kiếm | 5 giả thuyết (khung vẽ nhánh khác, cờ cộng, neo sét, hẹn giờ tia, FPS); kết quả chỉ là khảo sát tĩnh |
+| #073 (17/11) | L-01 giai đoạn 2 trên nền qh7 | dựng lại trên bản sao, vẫn qua APK thử |
+| #090 (17/11 21:15) | Chủ test A2 trên máy thật: sai lớp vũ khí, bộ +12/+15 "nhảy khung", yêu cầu xBRZ | A2 giảm lượt vẽ glow 9→5 và bỏ lượt trùng vị trí: nghi mất thứ tự lớp; A1 (chiếu float) nghi làm lệch khóa sắp xếp |
+| BUG-002 | Sét nhảy ra ngoài | không tái hiện trên LD ở +15; "nguyên nhân gốc: chưa biết" |
+| 18/11 | W-01 (tĩnh) | 5 giả thuyết H1–H5, vẫn [CHƯA KIỂM] |
+| 19/11 | W-02 (quan sát LD) | thấy glow/sét đúng ngưỡng, nhưng chỉ khi **ép cấp bằng cờ**; hình sét đổi từng khung, có khung lệch khi đổi hướng |
+
+**Giả thuyết vì sao sửa mãi chưa dứt (CHƯA KIỂM, để tiểu yêu và Sonnet kiểm):**
+1. Mỗi lần sửa chạm một lớp, nhưng nhiều thứ cùng quyết định hình hiện ra (thứ tự lớp, mặt nạ, đồng hồ tường, khung hành động, A1/A2); sửa một thứ làm lộ thứ khác (A2 → lỗi lớp vũ khí).
+2. Kiểm bằng cờ ép cấp trên LD không đi qua đường cấp thật (server → `nEnChance`), nên ca thật trên điện thoại chưa từng được tái hiện đúng (W-02: vũ khí Lua không hiện glow).
+3. Sét đổi theo đồng hồ tường (H5) làm "nhảy" vốn có; khó phân biệt với lỗi do khung lệch (H4) nếu không có video từng khung.
+4. Không có bảng sort `女主角贴图顺序表.ini` và bảng item thật để tính trước ca (H1–H3).
+5. Nhiều lần chỉ có ảnh tĩnh chủ gửi, không có quay có chuẩn (vũ khí, hướng, khung).
+
+## 8. Kết quả #193 (19/11/2026)
+- **Tìm bảng sort / bảng item trong gói client:** đã tìm trong `D:\Android\b\Client` (chỉ đọc). Có `data/jx50ai/itemName.ini`, `itemUseName.ini`; có 182 tệp tên không-ASCII nhưng **không tệp `.ini` nào**, và không tệp tên chứa `贴图`/`顺序`. Nguồn `D:/JX-build/qh9A/Classes` không có chuỗi UTF-8 `贴图顺序表`. Kết luận: **không thấy** trong gói đã tìm; có thể tên GBK hoặc nằm trong PAK. [CHƯA KIỂM] PAK. Việc `HG-04` đang tìm tiếp.
+- **SHA-256 APK (8 ký tự đầu):** build qh9A `projectdebug-release.apk` = `47eb28e3` (sửa 19/11 04:30); `apk-fix36/jx-fix36-perf3.apk` = `9abdf095` (12/11). **Chưa biết** APK nào đang cài trong T36test: cần mở T36test (ẩn) lấy `pm path` rồi băm; chưa làm, nên "T36test dùng đúng qh9A" vẫn [CHƯA KIỂM].
+- **Quay video H4/H5:** chưa làm (cần mục tiêu đánh được hoặc cách bật trạng thái chiến đấu; xem HG-02).
