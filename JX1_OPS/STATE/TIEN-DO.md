@@ -1,6 +1,6 @@
-# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-18 10:35, đừng sửa tay)
+# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-18 10:39, đừng sửa tay)
 
-ĐANG LÀM: F-01, R-05c
+ĐANG LÀM: R-05c
 KẾ TIẾP: K-02
 BỊ CHẶN: A-07
 
@@ -35,8 +35,8 @@ flowchart LR
     T_04["T-04 chết"]
   end
   subgraph S3["Chặng 3 tick và đồ họa"]
-    F_01["F-01 chạy"]
+    F_01["F-01 chết"]
   end
 ```
 
-Tổng: 84 việc, 2 đang làm (+18 chết, 1 chờ gộp), 1 chờ, 1 bị chặn, 61 xong.
+Tổng: 86 việc, 1 đang làm (+19 chết, 1 chờ gộp), 1 chờ, 1 bị chặn, 63 xong.
