@@ -193,3 +193,4 @@
 [TỔNG QUẢN 19/11 00:19] CAU DAO xingchi: DONG; SO-06 giao bang JX-K5; TK-01 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut)
 [TỔNG QUẢN 19/11 00:21] CAU DAO xingchi: DONG; TK-01 giao bang JX-K4
 [TỔNG QUẢN 19/11 00:23] CAU DAO xingchi: DONG
+[TỔNG QUẢN 19/11 00:27] CAU DAO xingchi: DONG
