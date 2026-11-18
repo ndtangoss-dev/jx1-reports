@@ -32,6 +32,7 @@ File này ngắn có chủ ý. Đọc nó: đầu mỗi phiên, sau mỗi lần 
 - Chỉ tạo khóa mới khi: còn việc chờ giao VÀ mọi khóa hiện có đã đủ 3 tiểu yêu. Không tạo sẵn, không tạo hàng loạt.
 - Giãn cách tạo khóa: tối thiểu 1 phút giữa hai khóa. Tạo xong ping /v1/models rồi mới giao.
 - Cách tạo ghi ở `DESIGN/QUY-TRINH-TAO-KHOA.md`. Giá trị khóa chỉ nằm trong `C:\Users\PC\.jx1keys\`, không ghi vào kho/log, không in ra màn hình. Không cần hỏi chủ trong trần 20.
+- Sống/chết tiểu yêu xét bằng tiến trình + log/nhịp (`D:\\JX-wt\\<ID>.nhip`), KHÔNG bằng commit. Im 20–60 phút mà tiến trình còn: chỉ báo, không giết. Im > 60 phút: giết, chạy lại. Tiểu yêu không commit được thì người gác/chay_codex commit hộ.
 - Rải đều do CODE làm (chay_codex.ps1/guard/Tổng quản tự chọn khóa ít việc nhất, ≤3/khóa), không dựa vào trí nhớ. Không chạy tiểu yêu bằng khóa mặc định.
 
 ## L7. Kế thừa khi đổi tài khoản

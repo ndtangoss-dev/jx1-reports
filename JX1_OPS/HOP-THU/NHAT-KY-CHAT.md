@@ -158,3 +158,4 @@
 - 18/11 09:30 Chu: Sonnet quen rai khoa. Them L8 vao LUAT-COT-LOI, gui #114.
 - 18/11 09:32 Chu: 20 khoa = 60 tieu yeu, qua tai la loi xingchi; tao khoa khi can, gian 1 phut. Sua L8, gui #115 (thay #113 muc 4).
 - 18/11 09:31 Chu yeu cau test KHAN. Gui #116 [KHẨN] luc 09:31.
+- 18/11 09:37 Chu: U-03 im vi sandbox chan commit nhung van lam. Gui #117, them vao L8.

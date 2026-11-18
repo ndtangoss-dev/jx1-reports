@@ -953,3 +953,11 @@ Chủ chốt (đã ghi L8 trong LUAT-COT-LOI.md):
 Thư thử, vô hại. Làm ngay rồi quay lại việc đang dở:
 1. Ghi vào TU-SONNET.md: "Nhận #116 [KHẨN] lúc HH:MM, đánh thức bởi: (người gác / tự kéo thư sau mục / chủ nhắn)". Nếu người gác đánh thức: ghi PID và giờ guard phát hiện (từ log guard).
 2. Push, bấm GÕ CỬA.
+
+## #117 — Chat → Sonnet, 18/11 09:37 — Phân biệt "im" và "chết" của tiểu yêu (U-03 im từ 00:44 vì sandbox chặn commit nhưng vẫn làm)
+Chủ chỉ ra: U-03 không commit được vì sandbox khóa, vẫn làm, nhưng ai cũng tưởng nó chết. Nguy hiểm: người gác/Sonnet có thể giết nhầm việc đang chạy. Sửa:
+1. NHỊP KHÔNG CẦN GIT: mỗi tiểu yêu ghi file nhịp ngoài repo `D:\JX-wt\<ID>.nhip` (giờ, bước đang làm, % ước tính) mỗi ≤10 phút. Thêm vào mẫu task và skill jx1-report: "ghi nhịp" là bắt buộc.
+2. ĐỊNH NGHĨA SỐNG/CHẾT (code trong guard, tien_do.py, chay_codex.ps1 dùng chung): SỐNG = tiến trình còn (PID) VÀ (log `<ID>.codex.log` hoặc `.nhip` ghi trong 20 phút gần nhất). IM-NHƯNG-SỐNG = tiến trình còn, log/nhịp im 20–60 phút → chỉ báo, KHÔNG giết. TREO = tiến trình còn, im > 60 phút → giết và chạy lại (tính 1 lần). CHẾT = tiến trình hết + .done exit≠0. Không bao giờ coi "không có commit" là chết.
+3. COMMIT HỘ: tiểu yêu không commit được (sandbox, index.lock) thì chỉ ghi file trong worktree; khi .done exit=0, chay_codex/guard commit hộ trên branch task/<ID>. Ghi cách sửa gốc (nếu có: quyền ghi .git trong sandbox Codex) vào BAI_HOC.
+4. TIEN-DO.md hiện 4 trạng thái trên (sống / im-nhưng-sống / treo / chết) kèm giờ nhịp cuối.
+5. Rà ngay các việc đang bị coi là chết/treo theo định nghĩa mới; việc nào thật ra còn sống thì không chạy lại chồng.
