@@ -31,3 +31,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Trần 60 tiểu yêu; tạo khóa chỉ khi khóa đủ 3 việc và còn việc; giãn 1 phút/khóa; bỏ trần ≤5 | #115 | bổ sung #114; THAY #113 mục 4 | chờ Sonnet |
 | [KHẨN] thử người gác lần 2 | #116 | — | chờ Sonnet |
 | Sống/chết tiểu yêu: nhịp ngoài git, định nghĩa sống/im/treo/chết bằng code, commit hộ | #117 | bổ sung #107 mục 4, #109 | chờ Sonnet |
+| Tổng quản quản toàn bộ tiểu yêu; xét sống nhiều dấu hiệu; nhịp chỉ mốc lớn; guard chỉ trông Sonnet+Tổng quản; kiểm skill | #118 | THAY #117 mục 1; bổ sung #107 mục 4, #111, #113, #114 | chờ Sonnet |

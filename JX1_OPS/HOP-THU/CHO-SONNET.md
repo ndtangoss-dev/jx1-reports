@@ -961,3 +961,14 @@ Chủ chỉ ra: U-03 không commit được vì sandbox khóa, vẫn làm, nhưn
 3. COMMIT HỘ: tiểu yêu không commit được (sandbox, index.lock) thì chỉ ghi file trong worktree; khi .done exit=0, chay_codex/guard commit hộ trên branch task/<ID>. Ghi cách sửa gốc (nếu có: quyền ghi .git trong sandbox Codex) vào BAI_HOC.
 4. TIEN-DO.md hiện 4 trạng thái trên (sống / im-nhưng-sống / treo / chết) kèm giờ nhịp cuối.
 5. Rà ngay các việc đang bị coi là chết/treo theo định nghĩa mới; việc nào thật ra còn sống thì không chạy lại chồng.
+
+## #118 — Chat → Sonnet, 18/11 09:50 — TỔNG QUẢN QUẢN TOÀN BỘ TIỂU YÊU (chủ chốt, luật L9)
+Chủ nhận xét: việc giao qua Tổng quản thì được theo dõi; việc Sonnet giao tay (U-03) thì bị coi nhầm là chết. Lỗ hổng nằm ở khâu kiểm sống/chết của Sonnet. Chủ chốt (đã ghi L9 trong LUAT-COT-LOI.md):
+1. Từ giờ Sonnet KHÔNG giao tay. Mọi việc tiểu yêu đi qua Tổng quản: Sonnet chỉ viết TASKS/<ID>.md status ready. Chuyển các việc đang chạy tay (R-03, R-04b, R-05a/b/c và các việc chờ chạy lại) sang Tổng quản quản lý khi chúng kết thúc lượt hiện tại; không giết việc đang sống để chuyển.
+2. Tổng quản gánh hết, dùng một hàm chung: giao + rải khóa (L8: ≤3/khóa, tạo khóa khi hết chỗ, giãn 1 phút), xét sống/im/treo/chết (#117), chạy lại khi chết hoặc 429 (chờ tăng dần: 2, 5, 15 phút; tối đa 3 lần), commit hộ khi xong, cập nhật status TASKS, sinh TIEN-DO.md và bảng tiểu yêu `STATE/TIEU-YEU.md` (mã, trạng thái 4 mức, khóa, giờ bắt đầu, dấu hiệu sống cuối, lỗi cuối) mỗi vòng.
+3. Xét sống bằng NHIỀU dấu hiệu, một cái còn động là sống: tiến trình còn (PID), tiến trình còn ăn CPU, file trong worktree đang đổi, log codex dài ra, file nhịp `<ID>.nhip`. Trước khi tin log: kiểm log U-03 từ 00:40 đến 09:24 có ghi thêm không (nếu Codex dồn log đến cuối thì log không dùng làm chuẩn). Ghi kết quả vào BAI_HOC.
+4. File nhịp: chỉ ghi ở mốc lớn (bắt đầu, mỗi phần xong, sắp xong), không mỗi 10 phút, để đỡ token. Thay mục 1 của #117.
+5. Tổng quản báo ra ngoài: có việc chuyển sang treo/chết hoặc 429 hàng loạt thì ghi một dòng vào TU-SONNET.md (mục [TỔNG QUẢN]) và push. Thêm thử 429 và ngưỡng im (thay 15 phút cũ bằng 4 mức của #117).
+6. Người gác (guard.ps1) bỏ phần chạy lại tiểu yêu; chỉ trông Sonnet, [KHẨN], và Tổng quản còn chạy (chết thì bật lại).
+7. Khi Chat/chủ hỏi tình hình tiểu yêu: trả lời từ STATE/TIEU-YEU.md của Tổng quản, ghi giờ sinh bảng.
+8. Kiểm Codex có nhận skill trong .agents/skills không: giao một việc nhỏ qua Tổng quản, yêu cầu tiểu yêu ghi tên skill đã dùng; ghi kết quả vào BAI_HOC.

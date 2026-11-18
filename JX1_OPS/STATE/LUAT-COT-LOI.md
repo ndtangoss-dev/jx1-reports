@@ -35,6 +35,12 @@ File này ngắn có chủ ý. Đọc nó: đầu mỗi phiên, sau mỗi lần 
 - Sống/chết tiểu yêu xét bằng tiến trình + log/nhịp (`D:\\JX-wt\\<ID>.nhip`), KHÔNG bằng commit. Im 20–60 phút mà tiến trình còn: chỉ báo, không giết. Im > 60 phút: giết, chạy lại. Tiểu yêu không commit được thì người gác/chay_codex commit hộ.
 - Rải đều do CODE làm (chay_codex.ps1/guard/Tổng quản tự chọn khóa ít việc nhất, ≤3/khóa), không dựa vào trí nhớ. Không chạy tiểu yêu bằng khóa mặc định.
 
+## L9. Tổng quản là người duy nhất quản tiểu yêu (chủ chốt 18/11 09:47)
+- Sonnet KHÔNG giao tay tiểu yêu nữa (không gọi chay_codex.ps1 trực tiếp). Sonnet chỉ viết TASKS/<ID>.md (status ready) để Tổng quản giao.
+- Tổng quản làm hết: giao việc, rải khóa (≤3/khóa, hết chỗ báo CẦN KHÓA MỚI), xét sống/im/treo/chết, chạy lại khi chết/429 (chờ tăng dần), commit hộ khi xong, cập nhật status.
+- Người gác chỉ trông: Sonnet im, thư [KHẨN], và Tổng quản còn chạy (chết thì bật lại). Người gác không đụng tiểu yêu.
+- Khi chủ (qua Chat) hỏi tình hình tiểu yêu: Sonnet lấy báo cáo của Tổng quản (`STATE/TIEN-DO.md` + bảng tiểu yêu do Tổng quản sinh) rồi báo lại, không tự đoán.
+
 ## L7. Kế thừa khi đổi tài khoản
 - Chat mới: đọc `HOP-THU/KHOI-DONG-CHAT.md`. Sonnet mới: đăng nhập lại Claude Code rồi `/tiep-tuc`; file này tự hiện qua hook.
 
