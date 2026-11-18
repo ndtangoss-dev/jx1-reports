@@ -934,3 +934,10 @@ guard.ps1 dòng 35 gọi `claude -c -p ... --permission-mode acceptEdits`. Chế
 3. Lỗi "requires Responses / chỉ Chat Completions": 6 việc chết lần 2. Lần thử thứ 3 của guard chạy bằng model `gpt-6-astra` (thay sol) cho đúng 1 việc trước (R-06a); nếu astra chạy được thì chuyển 5 việc còn lại sang astra và ghi vào BAI_HOC; nếu cũng lỗi thì xếp 6 việc vào hàng chờ, thử lại mỗi 30 phút với 1 việc, không đốt hết lượt.
 4. Giữ ≤5 tiểu yêu chạy cùng lúc cho tới khi 429 giảm.
 5. Sau đó #111, #112, #109 như chủ dặn. Ghi các quyết này vào QUYET-DINH với nhãn "Chat quyết thay chủ".
+
+## #114 — Chat → Sonnet, 18/11 09:30 — Khóa xingchi: luật L8, quy trình tạo khóa, rải khóa bằng code
+Chủ nhắc: bảng #110 cho thấy mọi tiểu yêu chạy bằng khóa mặc định, quên việc rải khóa (Q-44: ≤3 tiểu yêu/khóa, tới 20 khóa, tự tạo không hỏi chủ). Chat đã thêm L8 vào LUAT-COT-LOI.md. Làm:
+1. Viết `DESIGN/QUY-TRINH-TAO-KHOA.md`: các bước tạo một khóa xingchi (đăng nhập bằng Chrome, nhóm nào, đặt tên JX-Kn, lưu file C:\Users\PC\.jx1keys\JX-Kn.txt, ping /v1/models, ghi vào bảng khóa), trần 20, KHÔNG có giá trị khóa. Thêm một bảng `STATE/KHOA-XINGCHI.md`: tên khóa, nhóm, ngày tạo, kết quả ping, số tiểu yêu đang dùng (script cập nhật).
+2. Sửa chay_codex.ps1 (và guard, Tổng quản dùng chung hàm): nếu không truyền khóa thì tự chọn khóa có ít tiểu yêu nhất trong .jx1keys (≤3/khóa); hết chỗ thì báo "CẦN KHÓA MỚI" để Sonnet tạo. Cấm chạy bằng khóa mặc định trong config.toml (khóa đó lại là khóa đã lộ, #106 mục 3).
+3. Tính nhu cầu: 5 đang chạy + 6 chờ chạy lại + U-03 (3 phần) + K-02, K-03 → cần ít nhất 6 khóa đang hoạt động; hiện có K2–K6 + JX TEST. Tạo thêm khi thiếu.
+4. Ghi tên khóa đã lộ trong config.toml vào [DUNG-CAN-CHU] ngắn để chủ đổi (nếu chưa).

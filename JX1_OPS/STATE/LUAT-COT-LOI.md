@@ -27,6 +27,11 @@ File này ngắn có chủ ý. Đọc nó: đầu mỗi phiên, sau mỗi lần 
 - "Chuẩn hóa" của chủ là MỘT việc: chuẩn hóa báo cáo của tiểu yêu để hiểu game, gồm (a) khuôn `DESIGN/CHUAN-BAO-CAO.md`, (b) GIẢI MÃ tên ra chữ đúng (Hán: GBK; Việt cũ: TCVN3) và ghi cả tên gốc, (c) SẮP dữ liệu theo cấu trúc game (ví dụ kỹ năng phái: chia nhánh, xếp theo cấp học; bộ trang bị: liệt kê món). Thư #099 nói Sonnet "hiểu lầm" là SAI, đã thay bằng #107.
 - Mỗi đợt chuẩn hóa xong, Chat hỏi thử bằng câu của người chơi (`DESIGN/KIEM-TRA-KIEN-THUC.md`). Đạt = trả lời được từ kho, dẫn đúng file mang tên đó.
 
+## L8. Khóa xingchi và tiểu yêu (Q-41, Q-44, chủ duyệt 17–18/11)
+- Được tự tạo khóa xingchi, từng cái một khi cần, KHÔNG hỏi chủ; trần 20 khóa (vượt 20 mới báo chủ qua Chat). Cách tạo ghi ở `DESIGN/QUY-TRINH-TAO-KHOA.md`. Giá trị khóa chỉ nằm trong `C:\Users\PC\.jx1keys\`, không ghi vào kho/log, không in ra màn hình.
+- Mỗi khóa tối đa 3 tiểu yêu. Rải đều do CODE làm (chay_codex.ps1/guard/Tổng quản tự chọn khóa ít việc nhất), không dựa vào trí nhớ. Không chạy tiểu yêu bằng khóa mặc định.
+- Thiếu khóa (mọi khóa đã đủ 3 việc) thì tạo khóa mới trước khi giao thêm.
+
 ## L7. Kế thừa khi đổi tài khoản
 - Chat mới: đọc `HOP-THU/KHOI-DONG-CHAT.md`. Sonnet mới: đăng nhập lại Claude Code rồi `/tiep-tuc`; file này tự hiện qua hook.
 
