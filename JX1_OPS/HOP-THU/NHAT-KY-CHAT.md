@@ -164,3 +164,4 @@
 - 18/11 09:49 Thu nguoi gac lan 2 (#116): CHUA DAT, 18 phut khong phan hoi; Sonnet khong push tu 09:24. Nghi: guard bo qua vi phien tuong tac dang ghi (<90 giay) hoac Sonnet ban mot muc dai khong keo thu. Bao chu.
 - 18/11 09:55 Chu: Sonnet dung im ~15 phut sau bao cao. Tra loi [HOI-CHAT], gui #119.
 - 18/11 09:57 Chu: Sonnet khong go cua sau [HOI-CHAT]. Gui #120, sua L2.
+- 18/11 09:56 Sonnet go cua (lich bi bam tay). Tim ra 2 nguyen nhan guard khong danh thuc: doc hom thu ban cu (khong pull), chi quet vung 'Chua xu ly' trong khi Chat ghi thu o cuoi file. Da sua; cho thu KHAN lan 3.
