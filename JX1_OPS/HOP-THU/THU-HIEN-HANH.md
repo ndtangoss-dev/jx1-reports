@@ -96,3 +96,6 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Sửa #179: phiên LDPlayer-Server D là chủ chủ ý (thử hiệu ứng vũ khí); chỉ quan sát, sửa ở bản làm việc rồi thử Test-36 | #180 | sửa #179 | chờ Sonnet |
 | Đếm 429 và token tiểu yêu từ nhật ký; đề xuất giảm token (chưa áp dụng) | #181 | sau #178 | chờ Sonnet |
 | Chống treo qua đêm: chờ dài khi chỉ còn tiểu yêu, tự gộp, chỉ 'xong' khi hết việc/6 lượt/cần chủ | #182 | bổ sung Q-49 | chờ Sonnet |
+| Bỏ Gemini miễn phí; áp dụng giảm token; C01 qua forwarder phụ; hiệu ứng vũ khí | #183 | Q-51 | chờ Sonnet |
+| Trong chờ dài Sonnet cũng đọc thư mới của Chat; dừng thì ghi lý do | #184 | bổ sung #182 | chờ Sonnet |
+| Xung đột VONG.md: thêm .gitattributes union; Sonnet giữ cả hai phía, đọc #183-#185 | #185 | | chờ Sonnet |
