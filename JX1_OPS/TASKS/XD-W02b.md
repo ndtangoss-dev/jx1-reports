@@ -24,3 +24,9 @@ Chỉ đọc mã: tìm cách an toàn bật trạng thái chiến đấu hoặc 
 - Không chạy exe lạ, không VM, không mạng, không Main VM, không đọc khóa/mật khẩu/dump tài khoản. Chỉ ghi tệp đầu ra.
 - Worktree có thể KHÔNG có mã nguồn game: đọc trực tiếp (chỉ đọc) client `C:/Jx1CocoV3/Folder/Client2912-20260116T044348Z-3-001/Client2912/Client/Classes` và server `C:/Jx1CocoV3/SwordOnline/SwordOnline/jxOnline/gameserver/Sources`; kho báo cáo ở D:/jx1-ops-wt/JX1_OPS (chỉ đọc).
 - Mỗi lần đọc <= ~400 dòng. Cuối tệp task ghi mục "## Kết quả" (3–5 dòng).
+
+## Kết quả
+- DONE — đã viết `JX1_OPS/REPORTS/XD-W02b.md`, kết luận ĐẠT phạm vi khảo sát tĩnh; có nguồn file:dòng và kịch bản chưa chạy.
+- Đã kiểm Lua SetFightState, đồng bộ client, menu GM tự bật và 4/4 cổng Ba Lăng; ghi rõ thiếu bằng chứng spawn quái tự nhiên gần map 53 và đường getter/hoàn tác thực tế.
+- Không sửa mã nguồn/kết luận cũ, không build/chạy game/VM/mạng, không commit/push; Tổng quan commit hộ.
+- Chưa ghi được nhịp. `Add-Content` tại `D:/JX-wt/XD-W02b.nhip` trả `UnauthorizedAccessException` vì đường dẫn nằm ngoài vùng được ghi. Các mốc tiến độ được báo trong hội thoại.
