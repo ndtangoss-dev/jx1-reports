@@ -1,6 +1,6 @@
 # TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-19 01:24, đừng sửa tay)
 
-ĐANG LÀM: HG-05b, HG-06, HG-07, HG-08, HG-09, KC-01, KV-03, KV-05, SO-11
+ĐANG LÀM: HG-05b, HG-06, HG-07, HG-08, HG-09, HG-10, HG-11, KC-01, KV-03, KV-05, SO-11
 KẾ TIẾP: 0-08, B-05, D-02, E-04, E-06, HG-03c
 BỊ CHẶN: T-04
 
@@ -19,6 +19,8 @@ flowchart LR
     HG_07["HG-07 chạy"]
     HG_08["HG-08 chạy"]
     HG_09["HG-09 chạy"]
+    HG_10["HG-10 chạy"]
+    HG_11["HG-11 chạy"]
     KC_01["KC-01 chạy"]
     KV_03["KV-03 chạy"]
     KV_05["KV-05 chạy"]
@@ -29,8 +31,6 @@ flowchart LR
     E_04["E-04 chờ"]
     E_06["E-06 chờ"]
     HG_03c["HG-03c chờ"]
-    HG_10["HG-10 chờ"]
-    HG_11["HG-11 chờ"]
     HG_12["HG-12 chờ"]
     HG_13["HG-13 chờ"]
     P_01["P-01 chờ"]
@@ -46,4 +46,4 @@ flowchart LR
   end
 ```
 
-Tổng: 180 việc, 9 đang làm (+0 chết, 0 chờ gộp), 24 chờ, 1 bị chặn, 146 xong.
+Tổng: 180 việc, 11 đang làm (+0 chết, 0 chờ gộp), 22 chờ, 1 bị chặn, 146 xong.
