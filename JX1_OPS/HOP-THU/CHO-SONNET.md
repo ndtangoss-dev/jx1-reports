@@ -1587,3 +1587,9 @@ Chủ hỏi ai cập nhật bảng tiến độ. Phân vai (ghi vào `QUY-TRINH-
 2. `CL-01` → active (C01+C03 ĐẠT; C02/C04/C05 chờ chủ). `A-07` note: bước 1 đạt, dừng trước bước 3 (VBoxSVC), chờ. `X-05` giữ chờ (Xưởng tạm dừng).
 3. Thêm vào `BACKLOG.md` (nhóm "Bổ sung đêm 18–19/11") và tạo/cập nhật TASKS cho: W-01 (done), W-02 (active), G-01..G-06, V-01, T-01, M-01 (ready/backlog), K-02 (done), N-01..N-07 (done) nếu chưa có, để bảng đếm đúng, không có việc "mồ côi".
 4. Chạy lại `bang_tien_do.py`, ghi con số mới vào XONG ĐỢT và báo "đã đọc đến #196".
+
+## #197 Chat 19/11 00:30 — NHỊP TIM CHẠY ĐỘC LẬP: Tổng quản ghi "Sonnet sống lần cuối" (không phụ thuộc Sonnet)
+Chủ hỏi "nhịp tim đâu": `NHIP-TIM.md` chỉ cập nhật khi chạy `cho_thu.py`; Sonnet có việc làm nên không chạy nó (lần cuối 22:53), nên Chat không thấy dấu hiệu sống. Sửa gốc: **Tổng quản** (chạy mỗi ~2 phút, không gọi claude) đo hộ, không cần Sonnet nhớ:
+1. Trong `tong_quan.py` thêm bước "SONNET": lấy mtime lớn nhất của `C:\Users\PC\.claude\projects\C--Jx1CocoV3\*.jsonl` (lịch sử phiên Claude Code) và mtime commit gần nhất của Sonnet trong kho; ghi `STATE/SONNET-SONG.md` (ghi đè, một dòng): `Sonnet: hoạt động cuối hh:mm:ss (X phút trước); commit cuối hh:mm; mức SONG (<10 phút) / IM (10–30) / TREO (>30)`. Cập nhật mỗi vòng, đẩy cùng lần commit TIEU-YEU/KHOA/TIEN-DO (không thêm commit riêng).
+2. Thêm RAM vào cùng tệp: trống/tổng, top 5 tiến trình theo bộ nhớ (chỉ tên và số), để Chat/chủ thấy RAM mà không cần Sonnet.
+3. `--dry` kiểm, sao lưu bản cũ, ghi cách hoàn tác. `cho_thu.py` vẫn dùng khi chờ, nhưng nhịp tim chính là `SONNET-SONG.md`. Báo "đã đọc đến #197".

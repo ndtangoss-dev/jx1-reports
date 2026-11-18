@@ -110,3 +110,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Luật 'ẩn LDPlayer' bị rơi vì chỉ nằm ở thư cũ; gom vào LUAT-COT-LOI.md L11 | #194 | | chờ Sonnet |
 | Q-55: kiểm/tắt Server D + LDPlayer-D khi không test; ≥8 tiểu yêu (2/khóa); kiểm RAM | #195 | | chờ Sonnet |
 | Phân vai bảng tiến độ; Sonnet cập nhật TASKS/BACKLOG (0-05 done, CL-01 active, thêm W/G/V/T/M) | #196 | | chờ Sonnet |
+| Nhịp tim độc lập: Tổng quản ghi STATE/SONNET-SONG.md (mtime phiên + RAM) | #197 | thay vai nhịp tim của cho_thu.py | chờ Sonnet |

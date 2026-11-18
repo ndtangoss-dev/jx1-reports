@@ -1,4 +1,4 @@
-# KHÓA XINGCHI (Tổng quản tự sinh lúc 2026-11-19 00:11; KHÔNG chứa giá trị khóa)
+# KHÓA XINGCHI (Tổng quản tự sinh lúc 2026-11-19 00:23; KHÔNG chứa giá trị khóa)
 
 Trần 20 khóa / ≤2 tiểu yêu mỗi khóa. Quy trình: `DESIGN/QUY-TRINH-TAO-KHOA.md`.
 
@@ -7,7 +7,7 @@ Trần 20 khóa / ≤2 tiểu yêu mỗi khóa. Quy trình: `DESIGN/QUY-TRINH-TA
 | JX-K2 | JX-Kn | 2026-11-17 | chưa ping (đã chạy được việc thật) | 2 |
 | JX-K3 | JX-Kn | 2026-11-17 | chưa ping (đã chạy được việc thật) | 2 |
 | JX-K4 | JX-Kn | 2026-11-17 | chưa ping (đã chạy được việc thật) | 2 |
-| JX-K5 | JX-Kn | 2026-11-17 | chưa ping (đã chạy được việc thật) | 2 |
+| JX-K5 | JX-Kn | 2026-11-17 | chưa ping (đã chạy được việc thật) | 1 |
 | JX-K6 | JX-Kn | 2026-11-18 | chưa ping (đã chạy được việc thật) | 2 |
 
 Số khóa: 5 / 20.
