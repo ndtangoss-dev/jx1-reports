@@ -175,3 +175,7 @@ Sonnet lấy việc từ trên xuống, theo phụ thuộc. Khi bắt đầu m�
 | HG-14 | Hiểu game: trang bị, độ bền và sửa đồ | L3 | Codex | `DESIGN/HIEU-DO-BEN-SUA-DO.md` |
 | HG-15 | Hiểu game: bản đồ, cổng dịch chuyển và trap | L3 | Codex | `DESIGN/HIEU-BAN-DO-TRAP.md` |
 | HG-16 | Hiểu game: sự kiện đăng nhập và khởi tạo nhân vật mới | L3 | Codex | `DESIGN/HIEU-TAO-NHAN-VAT-MOI.md` |
+| SO-25 | Sổ tay hiểu game: rơi đồ và tỉ lệ rơi của quái | L3 | Codex | `DESIGN/SO-TAY-ROI-DO.md` |
+| SO-26 | Sổ tay hiểu game: giao dịch giữa người chơi, kho và thư | L3 | Codex | `DESIGN/SO-TAY-GIAO-DICH-KHO.md` |
+| SO-27 | Sổ tay hiểu game: AI quái, tầm đánh và hồi sinh quái | L3 | Codex | `DESIGN/SO-TAY-AI-QUAI.md` |
+| SO-28 | Sổ tay hiểu game: bạn bè, danh sách đen và trạng thái online | L3 | Codex | `DESIGN/SO-TAY-BAN-BE-ONLINE.md` |

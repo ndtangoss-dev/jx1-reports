@@ -1,7 +1,7 @@
 ---
 id: KC-01b
 title: Sửa 3 mệnh đề sai (A-05, N-01) và kiểm nốt 2 mục chưa xác minh từ KC-01
-status: running
+status: done
 level: L3
 agent: codex
 effort: high
