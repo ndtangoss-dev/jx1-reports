@@ -1,6 +1,6 @@
-# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-19 01:31, đừng sửa tay)
+# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-19 01:38, đừng sửa tay)
 
-ĐANG LÀM: HG-03c, HG-05b, HG-06, HG-07, HG-10, HG-11, HG-12, HG-13, KC-01, KV-05, SO-07, SO-08, SO-09, SO-11
+ĐANG LÀM: HG-03c, HG-05b, HG-07, HG-11, HG-12, HG-13, KC-01, SO-07, SO-08, SO-09, SO-11, SO-12, SO-13, SO-14
 KẾ TIẾP: 0-08, B-05, D-02, E-04, E-06, P-01
 BỊ CHẶN: T-04
 
@@ -16,21 +16,22 @@ flowchart LR
   subgraph S3["Chặng 3 tick và đồ họa"]
     HG_03c["HG-03c chạy"]
     HG_05b["HG-05b chạy"]
-    HG_06["HG-06 chạy"]
     HG_07["HG-07 chạy"]
-    HG_10["HG-10 chạy"]
     HG_11["HG-11 chạy"]
     HG_12["HG-12 chạy"]
     HG_13["HG-13 chạy"]
     KC_01["KC-01 chạy"]
-    KV_05["KV-05 chạy"]
     SO_07["SO-07 chạy"]
     SO_08["SO-08 chạy"]
     SO_09["SO-09 chạy"]
     SO_11["SO-11 chạy"]
-    HG_08["HG-08 chờ gộp"]
-    HG_09["HG-09 chờ gộp"]
-    KV_03["KV-03 chờ gộp"]
+    SO_12["SO-12 chạy"]
+    SO_13["SO-13 chạy"]
+    SO_14["SO-14 chạy"]
+    HG_06["HG-06 chờ gộp"]
+    HG_10["HG-10 chờ gộp"]
+    KV_05["KV-05 chờ gộp"]
+    SO_10["SO-10 chờ gộp"]
     0_08["0-08 chờ"]
     B_05["B-05 chờ"]
     D_02["D-02 chờ"]
@@ -38,12 +39,11 @@ flowchart LR
     E_06["E-06 chờ"]
     P_01["P-01 chờ"]
     P_03["P-03 chờ"]
-    SO_10["SO-10 chờ"]
-    SO_12["SO-12 chờ"]
-    SO_13["SO-13 chờ"]
-    SO_14["SO-14 chờ"]
     SO_15["SO-15 chờ"]
+    SO_16["SO-16 chờ"]
+    SO_17["SO-17 chờ"]
+    SO_18["SO-18 chờ"]
   end
 ```
 
-Tổng: 180 việc, 14 đang làm (+0 chết, 3 chờ gộp), 16 chờ, 1 bị chặn, 146 xong.
+Tổng: 180 việc, 14 đang làm (+0 chết, 4 chờ gộp), 12 chờ, 1 bị chặn, 149 xong.
