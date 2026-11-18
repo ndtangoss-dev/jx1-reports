@@ -729,3 +729,14 @@ Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm th�
 **Còn lại:** gộp K-02b/c/e/f rồi viết `REPORTS/K-02.md` tổng; chờ R-04b/R-05a; #134; `.gitignore` master (thấp).
 **Chủ cần [CAN-CHU] (đã báo Chat ở #169):** thử client C01+C03; A-07 bước 3–6. Không có gì mới.
 **Giả định:** [TỰ QUYẾT] gỡ R-04b/R-05a khỏi astra.txt (astra 404, đã ghi ở #164).
+
+## XONG ĐỢT #173 (Sonnet, 18/11 ~21:05) — đã đọc đến #173
+**Bảng tiến độ: 28/51 xong** (đang làm 13, chờ 10, lỗi 0).
+**Đã làm:**
+1. #170: đồng bộ status TASKS theo thực tế, thêm nhóm bổ sung vào BACKLOG (N-01..07, K-02, K-03, R-01, X-05, V-01, CL-01); bảng tiến độ hết số 16% giả.
+2. #172 (chỉ chuẩn bị, thay phần chọn nhà cung cấp của #171): `DESIGN/THU-NHA-CUNG-CAP.md` + `TOOLS/nha-cung-cap/` (nhap_khoa.bat, litellm_gemini.yaml, chay_litellm.ps1, codex_home_gemini.ps1, so_sanh.ps1). Chưa tạo khóa, chưa chạy, chưa gửi mã ra ngoài. Hạn mức miễn phí Gemini chưa xác nhận (nguồn lệch nhau), gói miễn phí có thể dùng dữ liệu huấn luyện: ghi rõ trong tài liệu. OpenAI/Meta ghi "đã loại, lý do".
+3. K-02 gộp đủ 7/7 (a,b,c,d,e,f,g), báo cáo con đổi đúng tên `K-02-<loại>.md`; viết `REPORTS/K-02.md` (mục lục tài nguyên theo loại).
+4. R-04b gộp, done (7,5 KB).
+**Còn lại:** R-05a đang chạy lại bằng sol (báo cáo mới 2,7 KB, chưa .done; gộp khi xong); #134; `.gitignore` master (thấp, không push).
+**Chủ cần [CAN-CHU]:** thử client C01+C03; A-07 bước 3–6; "duyệt Gemini miễn phí" trước khi tạo khóa/chạy so sánh. Chủ vẫn chưa xác nhận cửa sổ console Tổng quản hết nhấp nháy (#165).
+**Giả định:** [TỰ QUYẾT] X-05, CL-01 hiện "Chờ" (không phải "Lỗi"); 0-04, A-07 để "đang làm"; báo cáo K-02b/c/e do tiểu yêu đặt sai tên đã đổi tên khi gộp.
