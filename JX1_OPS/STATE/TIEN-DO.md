@@ -1,6 +1,6 @@
-# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-18 20:19, đừng sửa tay)
+# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-18 20:31, đừng sửa tay)
 
-ĐANG LÀM: K-02, K-02a, K-02b, K-02c, K-02f, R-04b, R-05a
+ĐANG LÀM: K-02, K-02b, K-02c, K-02f, R-04b, R-05a
 KẾ TIẾP: (không)
 BỊ CHẶN: A-07, T-04
 
@@ -10,15 +10,12 @@ Ba chặng #091: 1 hiểu game (chuẩn hóa) → 2 đường truyền + exe →
 flowchart LR
   subgraph S1["Chặng 1 hiểu game"]
     K_02["K-02 chạy"]
-    K_02a["K-02a chạy"]
     K_02b["K-02b chạy"]
     K_02c["K-02c chạy"]
     K_02f["K-02f chạy"]
     R_04b["R-04b chạy"]
     R_05a["R-05a chạy"]
-    K_02d["K-02d chờ gộp"]
     K_02e["K-02e chờ gộp"]
-    K_02g["K-02g chờ gộp"]
     A_07["A-07 chặn"]
   end
   subgraph S2["Chặng 2 truyền tải + exe"]
@@ -28,4 +25,4 @@ flowchart LR
   end
 ```
 
-Tổng: 98 việc, 7 đang làm (+0 chết, 3 chờ gộp), 0 chờ, 2 bị chặn, 86 xong.
+Tổng: 98 việc, 6 đang làm (+0 chết, 1 chờ gộp), 0 chờ, 2 bị chặn, 89 xong.
