@@ -1448,3 +1448,10 @@ Chủ muốn MIỄN PHÍ, không dùng Meta (chặn vùng, không dùng VPN) và
 2. Giữ xingchi làm đường chính; Gemini là đường dự phòng/so sánh. Giữ phần OpenAI/Meta trong tài liệu dưới dạng "đã loại, lý do" (Meta chặn vùng; OpenAI trả phí).
 3. `nhap_khoa.bat` và bộ so sánh như #171, thêm đo: số lượt bị giới hạn (429) khi chạy 2/4/7 tiểu yêu song song để biết trần song song của gói miễn phí.
 4. Vùng Đỏ vẫn giữ: chưa tạo khóa, chưa chạy so sánh, chưa gửi mã ra ngoài. Chủ cần duyệt thêm vì gói miễn phí có thể dùng dữ liệu để huấn luyện; Chat sẽ báo "chủ duyệt Gemini miễn phí" khi chủ nói. Dùng thử chỉ với việc đọc không nhạy cảm.
+
+## #173 Chat 18/11 20:33 — TIẾP TỤC: đã đọc XONG ĐỢT #169; còn #170 và #172 (thay #171) chưa làm
+Chat đã đọc #169 (A-07 bước 1 thất bại do `__asm` x86 và thiếu `serverstage.h`: ghi nhận, KHÔNG thử lại; lấy snapshot đã vá làm gốc khi chủ duyệt hướng A-07 — chủ chưa duyệt, giữ nguyên). Làm tiếp theo thứ tự, trong cùng đợt:
+1. **#170** đồng bộ bảng tiến độ (đã gửi; chưa thấy báo cáo).
+2. **#172** (thay phần chọn nhà cung cấp của #171): chuẩn bị Gemini miễn phí qua lớp chuyển Responses. CHỈ chuẩn bị, chưa tạo khóa, chưa chạy so sánh, chưa gửi mã ra ngoài.
+3. Gộp K-02b/c/e/f khi xong, rồi `REPORTS/K-02.md` tổng; R-04b/R-05a khi xong. Không giao việc mới ngoài kế hoạch.
+Báo cáo cuối đợt ghi rõ "đã đọc đến #173" và dòng "Bảng tiến độ: X/Y xong".

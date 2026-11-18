@@ -86,3 +86,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Đồng bộ bảng tiến độ JX1: đặt đúng status mọi mã BACKLOG, thêm nhóm việc mới, chạy lại bang_tien_do, báo X/Y mỗi đợt | #170 | bổ sung #169 | chờ Sonnet |
 | Chuẩn bị thay nhà cung cấp tiểu yêu: tài liệu thử, nhap_khoa.bat, bộ so sánh (chưa chạy, chờ chủ duyệt nhà cung cấp + ngân sách) | #171 | bổ sung #170 | chờ Sonnet |
 | Sửa #171: nhà cung cấp thử = Gemini miễn phí qua lớp chuyển Responses (chủ muốn miễn phí, loại Meta/OpenAI) | #172 | thay phần chọn nhà cung cấp của #171 | chờ Sonnet |
+| Tiếp tục: đã đọc #169; làm #170, #172, gộp K-02 | #173 | nhắc | chờ Sonnet |
