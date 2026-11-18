@@ -246,3 +246,4 @@
 - 22:05 Chủ lo treo cả đêm. Gửi #182: Sonnet chờ dài (≤60 phút x6), tự gộp, chỉ 'xong' khi hết việc/cần chủ.
 - 22:12 Đọc #178/#181: Gemini miễn phí chỉ 20 lượt/ngày → bỏ (Q-51). Giao #183: giảm token, forwarder phụ cho C01, hiệu ứng vũ khí.
 - 22:20 Chủ lo Sonnet treo thì Chat gửi thư không ai đọc. Gửi #184: chờ dài cũng kiểm thư mới.
+- 22:30 VONG.md xung đột làm Sonnet dừng. Thêm .gitattributes merge=union, gửi #185. Chủ đồng ý Chat thức 3 lần (00:30, 03:30, 06:30).
