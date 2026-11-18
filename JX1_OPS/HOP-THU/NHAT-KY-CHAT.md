@@ -262,3 +262,4 @@
 - 00:30 Chủ hỏi nhịp tim đâu: NHIP-TIM.md chỉ ghi khi chạy cho_thu.py. Gửi #197: Tổng quản đo hộ (mtime jsonl + RAM) ghi STATE/SONNET-SONG.md.
 - 00:45 Sonnet im ~10 phút dù nói sẽ làm tiếp. Gõ CHAT-DAY #197 qua Chrome (Sonnet nhận). Gốc thật: stop_guard.py mục 0c cho dừng sau XONG ĐỢT + hết việc → allow. Chat vá stop_guard.py (chạy thử OK), gửi #198.
 - 00:50 Chủ yêu cầu kiểm toàn bộ quy trình. Hổng: cho_thu 55 phút > timeout Bash 10 phút; 2 tài liệu cũ bảo dừng khi hết việc; stop_guard cap 40. Vá + thư #199 hỏi Sonnet 8 câu.
+- 00:38 Sonnet đã trả lời 8 câu #199 (hook đúng, cho_thu foreground 600000, CLAUDE.md:25 trái Q-21, 4 chỗ dễ dừng). Nhưng nó chờ cho_thu khi còn việc + không gõ CHAT khi cần duyệt. Gửi #200 duyệt 5 mục.
