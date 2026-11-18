@@ -1,0 +1,13 @@
+nguon_mon	id_ban_ghi	ten_viet	ten_han_nguon	ten_han_gia_thuyet	he_bang	cap_bang	cap_lua_mau	loai	o	id_thuoc_tinh	ten_thuoc_tinh	p1_min	p1_max	p2_min	p2_max	p3_min	p3_max	ma_tham_chieu	nguon_gia_tri	dieu_kien	ghi_chu
+GoldItem.txt:459	457	Phục Hi Toái Tâm			1	10		món											GoldItem.txt:459		Detail=0, Particular=1, Group=48, GroupNum=10, GroupExtend=, SetId=
+GoldItem.txt:459	457	Phục Hi Toái Tâm			1	10		biên sát thương	1	28	Sát thương vũ khí tối thiểu (magic_weapondamagemin_v)	40	40	0	0	0	0		GoldItem.txt:459	theo mẫu	
+GoldItem.txt:459	457	Phục Hi Toái Tâm			1	10		biên sát thương	2	29	Sát thương vũ khí tối đa (magic_weapondamagemax_v)	114	114	0	0	0	0		GoldItem.txt:459	theo mẫu	
+GoldItem.txt:459	457	Phục Hi Toái Tâm			1	10		cơ bản	3	167	Chính xác cộng phần trăm (magic_attackratingenhance_p)	-20	-20	0	0	0	0		GoldItem.txt:459	theo mẫu	
+GoldItem.txt:459	457	Phục Hi Toái Tâm			1	10		độ bền	4	31	Độ bền (magic_durability_v)	99	99	0	0	0	0		GoldItem.txt:459	theo mẫu	
+GoldItem.txt:459	457	Phục Hi Toái Tâm			1	10		yêu cầu	1	36	Yêu cầu cấp nhân vật (magic_requirelevel)	120	120						GoldItem.txt:459	điều kiện trang bị	
+GoldItem.txt:459	457	Phục Hi Toái Tâm			1	10		yêu cầu	2	32	Yêu cầu sức mạnh (magic_requirestr)	120	120						GoldItem.txt:459	điều kiện trang bị	
+GoldItem.txt:459	457	Phục Hi Toái Tâm			1	10		magic	1	85	Sinh lực tối đa (magic_lifemax_v)	180	240	-1	-1	0	0	719	GoldMagic.txt:720	trực tiếp	Nhãn bảng magic: 生命43
+GoldItem.txt:459	457	Phục Hi Toái Tâm			1	10		magic	2	101	Kháng độc (magic_poisonres_p)	25	30	-1	-1	0	0	313	GoldMagic.txt:314	cần lượt kích hoạt ngũ hành, xét theo thứ tự	Nhãn bảng magic: 毒防5
+GoldItem.txt:459	457	Phục Hi Toái Tâm			1	10		magic	3	89	Nội lực tối đa (magic_manamax_v)	180	240	-1	-1	0	0	718	GoldMagic.txt:719	trực tiếp	Nhãn bảng magic: 内力33
+GoldItem.txt:459	457	Phục Hi Toái Tâm			1	10		magic	4	108	Giảm thời gian trúng độc (magic_poisontimereduce_p)	-30	-50	-1	-1	0	0	720	GoldMagic.txt:721	cần lượt kích hoạt ngũ hành, xét theo thứ tự	Nhãn bảng magic: 减少中毒时间16
+GoldItem.txt:459	457	Phục Hi Toái Tâm			1	10		magic	5	172	Sát thương độc nội công (magic_addpoisonmagic_v)	50	60	-1	-1	0	0	725	GoldMagic.txt:726	trực tiếp	Nhãn bảng magic: 内毒伤5

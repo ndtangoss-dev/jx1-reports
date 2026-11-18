@@ -1,0 +1,13 @@
+nguon_mon	id_ban_ghi	ten_viet	ten_han_nguon	ten_han_gia_thuyet	he_bang	cap_bang	cap_lua_mau	loai	o	id_thuoc_tinh	ten_thuoc_tinh	p1_min	p1_max	p2_min	p2_max	p3_min	p3_max	ma_tham_chieu	nguon_gia_tri	dieu_kien	ghi_chu
+GoldItem.txt:479	477	Chúc Dung Phá Nhật			3	10		món											GoldItem.txt:479		Detail=0, Particular=0, Group=50, GroupNum=10, GroupExtend=, SetId=
+GoldItem.txt:479	477	Chúc Dung Phá Nhật			3	10		biên sát thương	1	28	Sát thương vũ khí tối thiểu (magic_weapondamagemin_v)	46	46	0	0	0	0		GoldItem.txt:479	theo mẫu	
+GoldItem.txt:479	477	Chúc Dung Phá Nhật			3	10		biên sát thương	2	29	Sát thương vũ khí tối đa (magic_weapondamagemax_v)	86	86	0	0	0	0		GoldItem.txt:479	theo mẫu	
+GoldItem.txt:479	477	Chúc Dung Phá Nhật			3	10		cơ bản	3	167	Chính xác cộng phần trăm (magic_attackratingenhance_p)	0	0	0	0	0	0		GoldItem.txt:479	theo mẫu	
+GoldItem.txt:479	477	Chúc Dung Phá Nhật			3	10		độ bền	4	31	Độ bền (magic_durability_v)	99	99	0	0	0	0		GoldItem.txt:479	theo mẫu	
+GoldItem.txt:479	477	Chúc Dung Phá Nhật			3	10		yêu cầu	1	36	Yêu cầu cấp nhân vật (magic_requirelevel)	120	120						GoldItem.txt:479	điều kiện trang bị	
+GoldItem.txt:479	477	Chúc Dung Phá Nhật			3	10		yêu cầu	2	32	Yêu cầu sức mạnh (magic_requirestr)	120	120						GoldItem.txt:479	điều kiện trang bị	
+GoldItem.txt:479	477	Chúc Dung Phá Nhật			3	10		magic	1	85	Sinh lực tối đa (magic_lifemax_v)	180	240	-1	-1	0	0	719	GoldMagic.txt:720	trực tiếp	Nhãn bảng magic: 生命43
+GoldItem.txt:479	477	Chúc Dung Phá Nhật			3	10		magic	2	102	Kháng hỏa (magic_fireres_p)	25	30	-1	-1	0	0	311	GoldMagic.txt:312	cần lượt kích hoạt ngũ hành, xét theo thứ tự	Nhãn bảng magic: 火防5
+GoldItem.txt:479	477	Chúc Dung Phá Nhật			3	10		magic	3	89	Nội lực tối đa (magic_manamax_v)	180	240	-1	-1	0	0	718	GoldMagic.txt:719	trực tiếp	Nhãn bảng magic: 内力33
+GoldItem.txt:479	477	Chúc Dung Phá Nhật			3	10		magic	4	106	Giảm thời gian làm chậm (magic_freezetimereduce_p)	30	50	-1	-1	0	0	439	GoldMagic.txt:440	cần lượt kích hoạt ngũ hành, xét theo thứ tự	Nhãn bảng magic: 减少冰冻时间11
+GoldItem.txt:479	477	Chúc Dung Phá Nhật			3	10		magic	5	170	Sát thương hỏa nội công (magic_addfiremagic_v)	200	300	-1	-1	0	0	721	GoldMagic.txt:722	trực tiếp	Nhãn bảng magic: 内火伤8

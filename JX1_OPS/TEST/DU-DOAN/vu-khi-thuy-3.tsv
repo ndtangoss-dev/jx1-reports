@@ -1,0 +1,15 @@
+nguon_mon	id_ban_ghi	ten_viet	ten_han_nguon	ten_han_gia_thuyet	he_bang	cap_bang	cap_lua_mau	loai	o	id_thuoc_tinh	ten_thuoc_tinh	p1_min	p1_max	p2_min	p2_max	p3_min	p3_max	ma_tham_chieu	nguon_gia_tri	dieu_kien	ghi_chu
+GoldItem.txt:123	121	Cập Phong Chân Vũ Kiếm			2	10		món											GoldItem.txt:123		Detail=0, Particular=0, Group=25, GroupNum=5, GroupExtend=21, SetId=1
+GoldItem.txt:123	121	Cập Phong Chân Vũ Kiếm			2	10		biên sát thương	1	28	Sát thương vũ khí tối thiểu (magic_weapondamagemin_v)	46	46	0	0	0	0		GoldItem.txt:123	theo mẫu	
+GoldItem.txt:123	121	Cập Phong Chân Vũ Kiếm			2	10		biên sát thương	2	29	Sát thương vũ khí tối đa (magic_weapondamagemax_v)	86	86	0	0	0	0		GoldItem.txt:123	theo mẫu	
+GoldItem.txt:123	121	Cập Phong Chân Vũ Kiếm			2	10		cơ bản	3	167	Chính xác cộng phần trăm (magic_attackratingenhance_p)	0	0	0	0	0	0		GoldItem.txt:123	theo mẫu	
+GoldItem.txt:123	121	Cập Phong Chân Vũ Kiếm			2	10		độ bền	4	31	Độ bền (magic_durability_v)	99	99	0	0	0	0		GoldItem.txt:123	theo mẫu	
+GoldItem.txt:123	121	Cập Phong Chân Vũ Kiếm			2	10		yêu cầu	1	36	Yêu cầu cấp nhân vật (magic_requirelevel)	99	99						GoldItem.txt:123	điều kiện trang bị	
+GoldItem.txt:123	121	Cập Phong Chân Vũ Kiếm			2	10		yêu cầu	2	32	Yêu cầu sức mạnh (magic_requirestr)	135	135						GoldItem.txt:123	điều kiện trang bị	
+GoldItem.txt:123	121	Cập Phong Chân Vũ Kiếm			2	10		yêu cầu	3	39	Yêu cầu môn phái (magic_requiremenpai)	8	8						GoldItem.txt:123	điều kiện trang bị	
+GoldItem.txt:123	121	Cập Phong Chân Vũ Kiếm			2	10		magic	1	126	Sát thương vật lý ngoại công cộng phần trăm (magic_addphysicsdamage_p)	50	100	-1	-1	6	6	46	GoldMagic.txt:47	trực tiếp	Nhãn bảng magic: 外普%2
+GoldItem.txt:123	121	Cập Phong Chân Vũ Kiếm			2	10		magic	2	121	Sát thương vật lý ngoại công cộng điểm (magic_addphysicsdamage_v)	30	50	-1	-1	0	0	69	GoldMagic.txt:70	cần lượt kích hoạt ngũ hành, xét theo thứ tự	Nhãn bảng magic: 外普点数1
+GoldItem.txt:123	121	Cập Phong Chân Vũ Kiếm			2	10		magic	3	166	Chính xác cộng điểm (magic_attackratingenhance_v)	240	360	-1	-1	0	0	51	GoldMagic.txt:52	trực tiếp	Nhãn bảng magic: 命中3
+GoldItem.txt:123	121	Cập Phong Chân Vũ Kiếm			2	10		magic	4	123	Sát thương băng ngoại công (magic_addcolddamage_v)	80	120	-1	-1	0	0	73	GoldMagic.txt:74	cần lượt kích hoạt ngũ hành, xét theo thứ tự	Nhãn bảng magic: 外冰点数2
+GoldItem.txt:123	121	Cập Phong Chân Vũ Kiếm			2	10		magic	5	115	Tốc độ đánh ngoại công (magic_attackspeed_v)	25	40	-1	-1	0	0	43	GoldMagic.txt:44	trực tiếp	Nhãn bảng magic: 外功攻速3
+GoldItem.txt:123	121	Cập Phong Chân Vũ Kiếm			2	10		magic	6	139	Cấp kỹ năng (magic_allskill_v)	1	3	-1	-1	166	166	167	GoldMagic.txt:168	cần lượt kích hoạt ngũ hành, xét theo thứ tự	Nhãn bảng magic: 太极神功1

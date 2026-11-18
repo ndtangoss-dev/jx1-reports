@@ -1,0 +1,61 @@
+nguon_mon	id_ban_ghi	ten_viet	ten_han_nguon	ten_han_gia_thuyet	he_bang	cap_bang	cap_lua_mau	loai	o	id_thuoc_tinh	ten_thuoc_tinh	p1_min	p1_max	p2_min	p2_max	p3_min	p3_max	ma_tham_chieu	nguon_gia_tri	dieu_kien	ghi_chu
+PiFeng.txt:2	0	Phi phong Lăng Vân			5	1		món											PiFeng.txt:2		Detail=12, Particular=0, Mẫu đồ trắng, không chọn magic ngẫu nhiên
+PiFeng.txt:2	0	Phi phong Lăng Vân			5	1		cơ bản	1	85	Sinh lực tối đa (magic_lifemax_v)	50	100	0	0	0	0		PiFeng.txt:2	theo mẫu	
+PiFeng.txt:2	0	Phi phong Lăng Vân			5	1		cơ bản	2	89	Nội lực tối đa (magic_manamax_v)	50	100	0	0	0	0		PiFeng.txt:2	theo mẫu	
+PiFeng.txt:2	0	Phi phong Lăng Vân			5	1		yêu cầu	1	36	Yêu cầu cấp nhân vật (magic_requirelevel)	10	10						PiFeng.txt:2	điều kiện trang bị	
+PiFeng.txt:3	1	Phi phong Tuyệt Thế			5	2		món											PiFeng.txt:3		Detail=12, Particular=0, Mẫu đồ trắng, không chọn magic ngẫu nhiên
+PiFeng.txt:3	1	Phi phong Tuyệt Thế			5	2		cơ bản	1	85	Sinh lực tối đa (magic_lifemax_v)	100	150	0	0	0	0		PiFeng.txt:3	theo mẫu	
+PiFeng.txt:3	1	Phi phong Tuyệt Thế			5	2		cơ bản	2	89	Nội lực tối đa (magic_manamax_v)	100	150	0	0	0	0		PiFeng.txt:3	theo mẫu	
+PiFeng.txt:3	1	Phi phong Tuyệt Thế			5	2		yêu cầu	1	36	Yêu cầu cấp nhân vật (magic_requirelevel)	10	10						PiFeng.txt:3	điều kiện trang bị	
+PiFeng.txt:4	2	Phi phong Phá Quân			5	3		món											PiFeng.txt:4		Detail=12, Particular=0, Mẫu đồ trắng, không chọn magic ngẫu nhiên
+PiFeng.txt:4	2	Phi phong Phá Quân			5	3		cơ bản	1	85	Sinh lực tối đa (magic_lifemax_v)	150	200	0	0	0	0		PiFeng.txt:4	theo mẫu	
+PiFeng.txt:4	2	Phi phong Phá Quân			5	3		cơ bản	2	89	Nội lực tối đa (magic_manamax_v)	150	200	0	0	0	0		PiFeng.txt:4	theo mẫu	
+PiFeng.txt:4	2	Phi phong Phá Quân			5	3		yêu cầu	1	36	Yêu cầu cấp nhân vật (magic_requirelevel)	10	10						PiFeng.txt:4	điều kiện trang bị	
+PiFeng.txt:5	3	Phi phong Ngạo Tuyết			5	4		món											PiFeng.txt:5		Detail=12, Particular=0, Mẫu đồ trắng, không chọn magic ngẫu nhiên
+PiFeng.txt:5	3	Phi phong Ngạo Tuyết			5	4		cơ bản	1	85	Sinh lực tối đa (magic_lifemax_v)	200	300	0	0	0	0		PiFeng.txt:5	theo mẫu	
+PiFeng.txt:5	3	Phi phong Ngạo Tuyết			5	4		cơ bản	2	89	Nội lực tối đa (magic_manamax_v)	200	300	0	0	0	0		PiFeng.txt:5	theo mẫu	
+PiFeng.txt:5	3	Phi phong Ngạo Tuyết			5	4		yêu cầu	1	36	Yêu cầu cấp nhân vật (magic_requirelevel)	10	10						PiFeng.txt:5	điều kiện trang bị	
+PiFeng.txt:6	4	Phi phong Kình Lôi			5	5		món											PiFeng.txt:6		Detail=12, Particular=0, Mẫu đồ trắng, không chọn magic ngẫu nhiên
+PiFeng.txt:6	4	Phi phong Kình Lôi			5	5		cơ bản	1	85	Sinh lực tối đa (magic_lifemax_v)	300	500	0	0	0	0		PiFeng.txt:6	theo mẫu	
+PiFeng.txt:6	4	Phi phong Kình Lôi			5	5		cơ bản	2	89	Nội lực tối đa (magic_manamax_v)	300	500	0	0	0	0		PiFeng.txt:6	theo mẫu	
+PiFeng.txt:6	4	Phi phong Kình Lôi			5	5		yêu cầu	1	36	Yêu cầu cấp nhân vật (magic_requirelevel)	10	10						PiFeng.txt:6	điều kiện trang bị	
+PiFeng.txt:7	5	Phi phong Ngự Phong			5	6		món											PiFeng.txt:7		Detail=12, Particular=0, Mẫu đồ trắng, không chọn magic ngẫu nhiên
+PiFeng.txt:7	5	Phi phong Ngự Phong			5	6		cơ bản	1	85	Sinh lực tối đa (magic_lifemax_v)	500	700	0	0	0	0		PiFeng.txt:7	theo mẫu	
+PiFeng.txt:7	5	Phi phong Ngự Phong			5	6		cơ bản	2	89	Nội lực tối đa (magic_manamax_v)	500	700	0	0	0	0		PiFeng.txt:7	theo mẫu	
+PiFeng.txt:7	5	Phi phong Ngự Phong			5	6		yêu cầu	1	36	Yêu cầu cấp nhân vật (magic_requirelevel)	10	10						PiFeng.txt:7	điều kiện trang bị	
+PiFeng.txt:8	6	Phi Phong Phệ Quang			5	7		món											PiFeng.txt:8		Detail=12, Particular=0, Mẫu đồ trắng, không chọn magic ngẫu nhiên
+PiFeng.txt:8	6	Phi Phong Phệ Quang			5	7		cơ bản	1	85	Sinh lực tối đa (magic_lifemax_v)	700	900	0	0	0	0		PiFeng.txt:8	theo mẫu	
+PiFeng.txt:8	6	Phi Phong Phệ Quang			5	7		cơ bản	2	89	Nội lực tối đa (magic_manamax_v)	700	900	0	0	0	0		PiFeng.txt:8	theo mẫu	
+PiFeng.txt:8	6	Phi Phong Phệ Quang			5	7		yêu cầu	1	36	Yêu cầu cấp nhân vật (magic_requirelevel)	10	10						PiFeng.txt:8	điều kiện trang bị	
+PiFeng.txt:9	7	Phi Phong Khấp Thần			5	8		món											PiFeng.txt:9		Detail=12, Particular=0, Mẫu đồ trắng, không chọn magic ngẫu nhiên
+PiFeng.txt:9	7	Phi Phong Khấp Thần			5	8		cơ bản	1	85	Sinh lực tối đa (magic_lifemax_v)	900	1100	0	0	0	0		PiFeng.txt:9	theo mẫu	
+PiFeng.txt:9	7	Phi Phong Khấp Thần			5	8		cơ bản	2	89	Nội lực tối đa (magic_manamax_v)	900	1100	0	0	0	0		PiFeng.txt:9	theo mẫu	
+PiFeng.txt:9	7	Phi Phong Khấp Thần			5	8		yêu cầu	1	36	Yêu cầu cấp nhân vật (magic_requirelevel)	10	10						PiFeng.txt:9	điều kiện trang bị	
+PiFeng.txt:10	8	Phi phong Kình Thiên			5	9		món											PiFeng.txt:10		Detail=12, Particular=0, Mẫu đồ trắng, không chọn magic ngẫu nhiên
+PiFeng.txt:10	8	Phi phong Kình Thiên			5	9		cơ bản	1	85	Sinh lực tối đa (magic_lifemax_v)	1100	1300	0	0	0	0		PiFeng.txt:10	theo mẫu	
+PiFeng.txt:10	8	Phi phong Kình Thiên			5	9		cơ bản	2	89	Nội lực tối đa (magic_manamax_v)	1100	1300	0	0	0	0		PiFeng.txt:10	theo mẫu	
+PiFeng.txt:10	8	Phi phong Kình Thiên			5	9		yêu cầu	1	36	Yêu cầu cấp nhân vật (magic_requirelevel)	10	10						PiFeng.txt:10	điều kiện trang bị	
+PiFeng.txt:11	9	Phi phong Vô Cực			5	10		món											PiFeng.txt:11		Detail=12, Particular=0, Mẫu đồ trắng, không chọn magic ngẫu nhiên
+PiFeng.txt:11	9	Phi phong Vô Cực			5	10		cơ bản	1	85	Sinh lực tối đa (magic_lifemax_v)	1300	1500	0	0	0	0		PiFeng.txt:11	theo mẫu	
+PiFeng.txt:11	9	Phi phong Vô Cực			5	10		cơ bản	2	89	Nội lực tối đa (magic_manamax_v)	1300	1500	0	0	0	0		PiFeng.txt:11	theo mẫu	
+PiFeng.txt:11	9	Phi phong Vô Cực			5	10		yêu cầu	1	36	Yêu cầu cấp nhân vật (magic_requirelevel)	10	10						PiFeng.txt:11	điều kiện trang bị	
+PiFeng.txt:12	10	Phi Phong Cao cấp			5	11		món											PiFeng.txt:12		Detail=12, Particular=0, Mẫu đồ trắng, không chọn magic ngẫu nhiên
+PiFeng.txt:12	10	Phi Phong Cao cấp			5	11		cơ bản	1	85	Sinh lực tối đa (magic_lifemax_v)	13000	15000	0	0	0	0		PiFeng.txt:12	theo mẫu	
+PiFeng.txt:12	10	Phi Phong Cao cấp			5	11		cơ bản	2	89	Nội lực tối đa (magic_manamax_v)	13000	15000	0	0	0	0		PiFeng.txt:12	theo mẫu	
+PiFeng.txt:12	10	Phi Phong Cao cấp			5	11		yêu cầu	1	36	Yêu cầu cấp nhân vật (magic_requirelevel)	10	10						PiFeng.txt:12	điều kiện trang bị	
+PiFeng.txt:13	11	Phi Phong tân thủ			5	12		món											PiFeng.txt:13		Detail=12, Particular=0, Mẫu đồ trắng, không chọn magic ngẫu nhiên
+PiFeng.txt:13	11	Phi Phong tân thủ			5	12		cơ bản	1	85	Sinh lực tối đa (magic_lifemax_v)	1000	1500	0	0	0	0		PiFeng.txt:13	theo mẫu	
+PiFeng.txt:13	11	Phi Phong tân thủ			5	12		cơ bản	2	89	Nội lực tối đa (magic_manamax_v)	1000	1500	0	0	0	0		PiFeng.txt:13	theo mẫu	
+PiFeng.txt:13	11	Phi Phong tân thủ			5	12		yêu cầu	1	36	Yêu cầu cấp nhân vật (magic_requirelevel)	10	10						PiFeng.txt:13	điều kiện trang bị	
+PiFeng.txt:14	12	Phi Phong VIP			5	13		món											PiFeng.txt:14		Detail=12, Particular=0, Mẫu đồ trắng, không chọn magic ngẫu nhiên
+PiFeng.txt:14	12	Phi Phong VIP			5	13		cơ bản	1	85	Sinh lực tối đa (magic_lifemax_v)	15000	15000	0	0	0	0		PiFeng.txt:14	theo mẫu	
+PiFeng.txt:14	12	Phi Phong VIP			5	13		cơ bản	2	89	Nội lực tối đa (magic_manamax_v)	15000	15000	0	0	0	0		PiFeng.txt:14	theo mẫu	
+PiFeng.txt:14	12	Phi Phong VIP			5	13		yêu cầu	1	36	Yêu cầu cấp nhân vật (magic_requirelevel)	10	10						PiFeng.txt:14	điều kiện trang bị	
+PiFeng.txt:15	13	Phi Phong JXGM chuyên dụng			5	14		món											PiFeng.txt:15		Detail=12, Particular=0, Mẫu đồ trắng, không chọn magic ngẫu nhiên
+PiFeng.txt:15	13	Phi Phong JXGM chuyên dụng			5	14		cơ bản	1	85	Sinh lực tối đa (magic_lifemax_v)	600000	600000	0	0	0	0		PiFeng.txt:15	theo mẫu	
+PiFeng.txt:15	13	Phi Phong JXGM chuyên dụng			5	14		cơ bản	2	89	Nội lực tối đa (magic_manamax_v)	600000	600000	0	0	0	0		PiFeng.txt:15	theo mẫu	
+PiFeng.txt:15	13	Phi Phong JXGM chuyên dụng			5	14		cơ bản	3	209	Tỷ lệ đỡ đòn (magic_block_rate)	100	100	0	0	0	0		PiFeng.txt:15	theo mẫu	
+PiFeng.txt:15	13	Phi Phong JXGM chuyên dụng			5	14		cơ bản	4	210	Tỷ lệ đánh trúng (magic_enhancehit_rate)	100	100	0	0	0	0		PiFeng.txt:15	theo mẫu	
+PiFeng.txt:15	13	Phi Phong JXGM chuyên dụng			5	14		cơ bản	5	211	Bỏ qua đỡ đòn (magic_anti_block_rate)	100	100	0	0	0	0		PiFeng.txt:15	theo mẫu	
+PiFeng.txt:15	13	Phi Phong JXGM chuyên dụng			5	14		cơ bản	6	212	Bỏ qua tỷ lệ đánh trúng (magic_anti_enhancehit_rate)	100	100	0	0	0	0		PiFeng.txt:15	theo mẫu	
+PiFeng.txt:15	13	Phi Phong JXGM chuyên dụng			5	14		yêu cầu	1	36	Yêu cầu cấp nhân vật (magic_requirelevel)	10	10						PiFeng.txt:15	điều kiện trang bị	

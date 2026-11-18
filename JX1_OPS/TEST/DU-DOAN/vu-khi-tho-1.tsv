@@ -1,0 +1,15 @@
+nguon_mon	id_ban_ghi	ten_viet	ten_han_nguon	ten_han_gia_thuyet	he_bang	cap_bang	cap_lua_mau	loai	o	id_thuoc_tinh	ten_thuoc_tinh	p1_min	p1_max	p2_min	p2_max	p3_min	p3_max	ma_tham_chieu	nguon_gia_tri	dieu_kien	ghi_chu
+GoldItem.txt:118	116	Lăng Nhạc Thái Cực Kiếm			4	10		món											GoldItem.txt:118		Detail=0, Particular=0, Group=24, GroupNum=5, GroupExtend=20, SetId=1
+GoldItem.txt:118	116	Lăng Nhạc Thái Cực Kiếm			4	10		biên sát thương	1	28	Sát thương vũ khí tối thiểu (magic_weapondamagemin_v)	46	46	0	0	0	0		GoldItem.txt:118	theo mẫu	
+GoldItem.txt:118	116	Lăng Nhạc Thái Cực Kiếm			4	10		biên sát thương	2	29	Sát thương vũ khí tối đa (magic_weapondamagemax_v)	86	86	0	0	0	0		GoldItem.txt:118	theo mẫu	
+GoldItem.txt:118	116	Lăng Nhạc Thái Cực Kiếm			4	10		cơ bản	3	167	Chính xác cộng phần trăm (magic_attackratingenhance_p)	0	0	0	0	0	0		GoldItem.txt:118	theo mẫu	
+GoldItem.txt:118	116	Lăng Nhạc Thái Cực Kiếm			4	10		độ bền	4	31	Độ bền (magic_durability_v)	99	99	0	0	0	0		GoldItem.txt:118	theo mẫu	
+GoldItem.txt:118	116	Lăng Nhạc Thái Cực Kiếm			4	10		yêu cầu	1	36	Yêu cầu cấp nhân vật (magic_requirelevel)	90	90						GoldItem.txt:118	điều kiện trang bị	
+GoldItem.txt:118	116	Lăng Nhạc Thái Cực Kiếm			4	10		yêu cầu	2	32	Yêu cầu sức mạnh (magic_requirestr)	80	80						GoldItem.txt:118	điều kiện trang bị	
+GoldItem.txt:118	116	Lăng Nhạc Thái Cực Kiếm			4	10		yêu cầu	3	39	Yêu cầu môn phái (magic_requiremenpai)	8	8						GoldItem.txt:118	điều kiện trang bị	
+GoldItem.txt:118	116	Lăng Nhạc Thái Cực Kiếm			4	10		magic	1	85	Sinh lực tối đa (magic_lifemax_v)	120	200	-1	-1	0	0	2	GoldMagic.txt:3	trực tiếp	Nhãn bảng magic: 生命2
+GoldItem.txt:118	116	Lăng Nhạc Thái Cực Kiếm			4	10		magic	2	171	Sát thương lôi nội công (magic_addlightingmagic_v)	200	300	-1	-1	0	0	152	GoldMagic.txt:153	cần lượt kích hoạt ngũ hành, xét theo thứ tự	Nhãn bảng magic: 内电伤1
+GoldItem.txt:118	116	Lăng Nhạc Thái Cực Kiếm			4	10		magic	3	89	Nội lực tối đa (magic_manamax_v)	120	200	-1	-1	0	0	6	GoldMagic.txt:7	trực tiếp	Nhãn bảng magic: 内力2
+GoldItem.txt:118	116	Lăng Nhạc Thái Cực Kiếm			4	10		magic	4	102	Kháng hỏa (magic_fireres_p)	25	30	-1	-1	0	0	311	GoldMagic.txt:312	cần lượt kích hoạt ngũ hành, xét theo thứ tự	Nhãn bảng magic: 火防5
+GoldItem.txt:118	116	Lăng Nhạc Thái Cực Kiếm			4	10		magic	5	110	Giảm thời gian choáng (magic_stuntimereduce_p)	-30	-50	-1	-1	0	0	423	GoldMagic.txt:424	trực tiếp	Nhãn bảng magic: 减少眩晕时间7
+GoldItem.txt:118	116	Lăng Nhạc Thái Cực Kiếm			4	10		magic	6	139	Cấp kỹ năng (magic_allskill_v)	1	3	-1	-1	166	166	167	GoldMagic.txt:168	cần lượt kích hoạt ngũ hành, xét theo thứ tự	Nhãn bảng magic: 太极神功1
