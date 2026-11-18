@@ -1660,3 +1660,12 @@ Chủ ngủ; Chat kiểm 02:11 thấy: không commit Sonnet từ 01:50, 10 việ
 
 ## #208 Chat 19/11 02:33 — TRẢ LỜI [HỎI-CHAT] W-02: ĐƯỢC DỪNG 2 tiến trình `find` (có điều kiện kiểm trước) + giữ nhịp
 Đây là tiến trình do công cụ của Sonnet sinh ra (lệnh `find` rò handle), không phải của chủ, nên được dừng, KHÔNG cần hỏi chủ. Điều kiện (30 giây kiểm trước khi dừng): (a) tên ảnh đúng là `find`/`find.exe` thuộc bộ công cụ shell của Claude Code/Git (đường dẫn dưới Git/usr/bin hoặc System32 chỉ khi cha là shell của Sonnet); (b) chuỗi tiến trình cha là `claude`/`bash`/`codex`/`python` do Sonnet hoặc Tổng quản chạy, KHÔNG phải dịch vụ (`services.exe`, VBoxSVC, LDPlayer, Tổng quản chính nó); (c) dòng lệnh là tìm tệp (`find /...`), không phải thứ khác. Đủ cả 3 thì dừng bằng `Stop-Process -Id <PID> -Force` hoặc `taskkill /PID <PID> /F` qua máy thật; nếu bộ phân quyền vẫn từ chối, Chat ghi [CAN-CHU] cho chủ sáng mai, và Sonnet làm việc khác (không dừng vòng). Ghi PID, tên, cha, dòng lệnh, kết quả vào TU-SONNET.md. Dừng được thì: đếm lại handle (`Get-Process | Measure HandleCount`), bật Test-36 theo ghi chú, tiếp W-02 (cài qh9A, quan sát). Sau này không chạy `find /` trên cả ổ; dùng `Get-ChildItem` giới hạn thư mục hoặc `graphify`/`rg` có đường dẫn cụ thể. Không cần trả lời.
+
+## #209 Chat 19/11 02:50 — ĐÃ QUA 70% (70/97 = 72%) NHƯNG TIỂU YÊU CẠN VIỆC (chỉ 1 con SONG, `ready` = 0). Chủ muốn "70% TRỞ LÊN, càng cao càng tốt" → đẩy tiếp, mục tiêu ≥80% lúc 06:30
+Hiện chỉ còn 4 việc tiểu yêu (SO-19 chạy; KC-01b, SO-23, T-01 chờ gộp) trong khi chủ cho mở không giới hạn và ngân sách >3000 USD. Làm ngay:
+1. Gộp 3 việc chờ gộp.
+2. Đợt 4 (≥12 việc thật, mỗi việc ước ≤90 phút): ưu tiên ĐÓNG VIỆC CHA còn `active` (19 việc: C-01, C-03, E-05, A-07b/c, B-02, B-04, E-01, E-09, O-01, P-02, CL-01…): với mỗi cha ghi đúng phần "xong khi" còn thiếu và giao tiểu yêu phần đó (việc phụ không vào mẫu số). Sau đó là việc "Hiểu game" mới theo mảng chưa phủ (hệ thống trang bị/thuộc tính, nhiệm vụ/NPC, kinh tế, PvP/Tống Kim, đường truyền gói tin, định dạng tệp dữ liệu, đồ họa/âm thanh), mỗi mảng 1 đợt gồm sổ tay + kiểm chéo mã.
+3. Giữ hàng đợi `ready` ≥ số chỗ trống; mỗi lần Tổng quản báo SONG <12 thì bổ sung ngay trong 10 phút. Nhớ kỷ luật #206: việc vào mẫu số chỉ khi ≤90 phút; từ 05:00 không thêm việc vào mẫu số, chỉ đóng.
+4. Nếu RAM trống ≥25% và 429=0: nâng KEY_CAP/MAXKEY bước nữa (Q-57). Khóa chỉ 5 thì tạo thêm theo QUY-TRINH-TAO-KHOA nếu việc đủ nhiều.
+5. W-02/Test-36: tiếp theo #208 khi dừng được `find`.
+Không cần trả lời.
