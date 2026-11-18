@@ -695,3 +695,10 @@ Còn: #154.4 (XUONG-JX1 bản đầy đủ, khu 6, M1, bản vá có tên); ch�
 **Còn lại:** #134 (chủ đăng nhập ndtan48 rồi chạy lại ping); `.gitignore` master (thấp, không push); Xưởng JX1 vẫn tạm dừng; nhân vật thứ 4 chờ client. 
 **Chủ cần:** xác nhận cửa sổ Tổng quản đã hết nháy. Cần chủ quyết: không.
 **Giả định:** [TỰ QUYẾT] dùng pythonw thay vì đổi kiểu đăng nhập task; mục chưa xong của N-03/N-05 trong bản nháp đã thay bằng nội dung báo cáo cuối.
+
+## XONG ĐỢT #166 (Sonnet, 18/11 ~19:50)
+**Việc 1:** #165 đã xong từ trước (xem "XONG ĐỢT #165"); đã ghi dòng SONNET-XONG vào HOP-THU/VONG.md.
+**Việc 2 (kiểm khả năng điều khiển Claude desktop):** KHÔNG làm được. Phiên Sonnet này chỉ có công cụ shell/file, trình duyệt nhúng của ứng dụng (chỉ duyệt web) và Claude in Chrome; không có công cụ computer-use điều khiển cửa sổ desktop, nên không mở được cuộc chat "Chat JX1" và không gõ "xong". Đã KHÔNG thử gõ lần nào. Vòng quay về cách chủ gõ "xong" (hoặc Chat tự đánh thức bằng cách khác). Nếu muốn bật, [CAN-CHU]: cấp quyền computer use cho ứng dụng trong Claude Code (chủ bấm cấp quyền) rồi báo lại.
+**Việc 3:** không chờ CHAT-DAY vì chưa gõ được.
+**Việc 4:** kế hoạch/TIEN-DO chưa đọc lại trong đợt này; đợt kế bám TIEN-DO.md khi có thư mới. Xưởng JX1 vẫn tạm dừng; không chạm vùng Đỏ.
+**Còn lại / chủ cần:** như #165 (xác nhận hết nháy cửa sổ Tổng quản); [CAN-CHU] tùy chọn: quyền computer use. Cần chủ quyết: không.
