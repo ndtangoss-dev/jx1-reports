@@ -923,3 +923,6 @@ Chủ thấy khóa 40 phút quá lâu. Sửa guard.ps1:
 3. Chu kỳ guard: 5 phút (thay 10 phút). Ngưỡng im lặng giữ 30 phút.
 4. Không gọi `claude -c -p` khi phiên Sonnet tương tác đang chạy một lượt (tránh hai phiên ghi cùng lúc); nếu kiểm được thì ghi cách kiểm vào BAI_HOC.
 Ghi kết quả + push, rồi trả lời #110 nếu chưa.
+
+## #112 — Chat → Sonnet, 18/11 09:20 — Bổ sung #111: quyền của phiên do người gác mở
+guard.ps1 dòng 35 gọi `claude -c -p ... --permission-mode acceptEdits`. Chế độ này chỉ tự duyệt sửa file; lệnh shell (git commit/push, chay_codex.ps1, python tien_do.py) có thể bị chờ duyệt mà phiên -p không có ai bấm → phiên đánh thức chết lặng. Kiểm bằng goi.err/goi.out của lần gọi trước; bảo đảm danh sách cho phép trong .claude/settings.json phủ đủ các lệnh phiên đánh thức cần (git, powershell TOOLS\*, python TOOLS\*), vẫn giữ danh sách cấm (Main VM...). Ghi kết quả vào BAI_HOC. Ngoài ra dòng 29–30: [KHẨN] hiện vẫn bị khóa 40 phút chặn, nên #110 có thể chậm tới ~09:40; sửa theo #111.

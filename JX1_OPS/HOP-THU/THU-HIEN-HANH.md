@@ -25,3 +25,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | TIEN-DO sai trạng thái: cập nhật status trong TASKS khi giao/gộp/chết | #109 | bổ sung #107 mục 5 | chờ Sonnet |
 | [KHẨN] thử người gác + bảng tình hình tiểu yêu | #110 | — | chờ Sonnet |
 | Người gác: khóa theo tiến trình (trần 15 phút), [KHẨN] bỏ qua khóa, chu kỳ 5 phút | #111 | bổ sung #107 mục 4 | chờ Sonnet |
+| Quyền phiên đánh thức (acceptEdits không đủ cho git/powershell) | #112 | bổ sung #111 | chờ Sonnet |
