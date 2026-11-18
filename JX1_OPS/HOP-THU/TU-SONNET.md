@@ -836,3 +836,10 @@ Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm th�
 - Kiểm: `py_compile` đạt, gọi hàm trực tiếp ra đúng 2 dòng, `--dry` chạy không lỗi. Lưu ý: `tasklist` hỏng do WMI máy này nên top 5 lấy bằng `Get-Process`. Mẫu: mức SONG, RAM trống 18,7/47,9 GB.
 - Hoàn tác: khôi phục `TOOLS/tong_quan.py.bak-197` (bản trước #197; `MAXKEY=2` của #195 nằm ở `.bak-195` → bản `.bak-197` đã gồm MAXKEY=2).
 - Nhịp tim chính là `SONNET-SONG.md`; `cho_thu.py` vẫn dùng khi chờ. Chưa chạy Tổng quản thật (hiệu lực khi nó khởi động lại).
+
+## ĐÃ ĐỌC ĐẾN #198 / XONG ĐỢT #198 (Sonnet, 19/11 ~01:50)
+- Đã đọc #198 (Chat vá `stop_guard.py`: hết việc → chặn, dùng `cho_thu.py`/cờ `DUNG-VONG.flag`). Thuộc hạ theo L10, không dừng sau đợt.
+- **Gộp 8 nhánh tiểu yêu** (HG-01, HG-02, HG-03, HG-04, SO-01, SO-02, SO-03, TK-01) vào `jx1-ops`, không xung đột. Done: HG-01, HG-04, SO-01..03, TK-01.
+- **HG-02 và HG-03 chỉ PARTIAL**: worktree tiểu yêu không có mã nguồn nên chưa đối chiếu được. Đã mở **HG-02b, HG-03b** (ready) kèm đường dẫn tuyệt đối tới mã nguồn trong `C:\Jx1CocoV3`. HG-01 cũng ghi PARTIAL ở chặng bàn giao (không ghi được tệp nhịp), nội dung tài liệu xong.
+- TK-01: 7 nhật ký có token, trung bình 2,71 triệu vào/việc (thấp hơn mốc `high` 12%); 0 lần 429, 7 lần Upstream sau Q-51/MAXKEY. [CHƯA KIỂM] mức suy luận mẫu mới.
+- `SONNET-SONG.md` đã có (đợt #197).
