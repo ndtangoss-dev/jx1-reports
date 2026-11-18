@@ -72,22 +72,7 @@ if (($silentMin -gt 30 -or $khan) -and ($khan -or -not $busy) -and -not $live) {
   if ($proc) { Set-Content $lock ("{0} {1}" -f $proc.Id, (Get-Date -f o)) }
 } elseif ($live -and ($silentMin -gt 30 -or $khan)) { Log 'phien tuong tac dang giua luot, khong goi' }
 
-# --- tieu yeu chet: chay lai toi da 2 lan ---
-$waits = @(10, 30)
-Get-ChildItem 'D:\JX-wt' -Filter '*.done' -ErrorAction SilentlyContinue | ForEach-Object {
-  $id = $_.BaseName
-  $t = (Get-Content -Raw $_.FullName) -replace '[^\x20-\x7E]', ''
-  if ($t -match 'exit=0') { return }
-  $cf = Join-Path $gdir "$id.lan"
-  $n = if (Test-Path $cf) { [int](Get-Content $cf) } else { 0 }
-  if ($n -ge 2) { python -I "$ops\TOOLS\set_status.py" $id failed "chet $($n + 1) lan, guard bo" 2>$null | Out-Null; return }
-  if (((Get-Date) - $_.LastWriteTime).TotalMinutes -lt $waits[$n]) { return }
-  Set-Content $cf ($n + 1)
-  Remove-Item $_.FullName -ErrorAction SilentlyContinue
-  Push-Location $ops
-  powershell -NoProfile -File TOOLS\chay_codex.ps1 -Id $id | Out-Null
-  Pop-Location
-  Log "chay lai $id lan $($n + 1)"
-  # #109: danh dau running trong TASKS/<id>.md
-  python -I "$ops\TOOLS\set_status.py" $id running 2>$null
-}
+# --- #118.6: guard khong chay lai tieu yeu nua; chi bat lai Tong quan neu no chet ---
+$tq = Get-ScheduledTaskInfo -TaskName 'JX-TongQuan' -ErrorAction SilentlyContinue
+if (-not $tq) { Log 'JX-TongQuan chua dang ky' }
+elseif (((Get-Date) - $tq.LastRunTime).TotalMinutes -gt 10) { Start-ScheduledTask -TaskName 'JX-TongQuan'; Log 'bat lai JX-TongQuan (qua 10 phut chua chay)' }

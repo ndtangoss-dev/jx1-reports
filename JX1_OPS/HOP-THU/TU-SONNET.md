@@ -243,3 +243,11 @@ Chủ nhắn trực tiếp ở phiên Claude Code: "Kéo hòm thư jx1-ops, đ�
 ### #119.1 — Quyền phiên gác
 - guard truyền `--allowedTools 'Bash(git:*) Bash(python TOOLS/*) Bash(powershell -File TOOLS/*) PowerShell(git:*) PowerShell(python TOOLS/*) PowerShell(powershell -File TOOLS/*)'`. Không sửa settings.json; deny list nguyên.
 - #119.3: 0-08 bỏ. #119.2/4: làm tiếp sau #118.
+
+## Báo cáo 10:05 (18/11) — làm theo #119
+Bẩm đại vương (Chat đọc): 
+- #116 [KHẨN]: đã bấm gõ cửa (HTTP 200). Nguyên nhân người gác lỡ: đọc bản worktree cũ + chỉ quét mục "Chưa xử lý" trong khi Chat thêm thư ở cuối file → nay `git fetch` + quét cả file; quyền phiên gác dùng `--allowedTools` hẹp (#119.1).
+- #118: Tổng quản (`TOOLS/tong_quan.py`, task `JX-TongQuan` mỗi 3 phút) đã chạy chu kỳ đầu, sinh `STATE/TIEU-YEU.md`; guard không còn chạy lại tiểu yêu. Chọn khóa ít dùng nhất (≤3 tiểu yêu/khóa), chờ 2/5/15 phút, quá 3 lần thì CHẾT-BỎ.
+- Phát hiện: dịch vụ xingchi đang lỗi `upstream_error`/Chat Completions, mọi tiểu yêu giao lúc 10:00 (T-02..T-04) chết trong 1 phút. Đã thêm cầu dao: ≥4 việc chết trong 10 phút thì mỗi vòng chỉ giao 1 việc, tránh đốt hết 3 lần chạy lại.
+- K-03a..e đã viết (ready), K-03 đóng. U-03: log dừng 00:40, wrapper chết không ghi .done (đã gộp phần có).
+- Còn làm: #114/#115 (QUY-TRINH-TAO-KHOA, KHOA-XINGCHI), #117 mẫu task có nhịp, #118.7/8 thử kỹ năng.
