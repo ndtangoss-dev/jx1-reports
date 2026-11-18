@@ -281,6 +281,47 @@ def ensure_worktree(i):
     return wt
 
 
+def sonnet_song():
+    """#197: mtime lich su phien Claude Code + commit cuoi cua Sonnet + RAM; khong goi claude."""
+    import ctypes, csv, io
+    now = time.time()
+    fs = glob.glob(os.path.join(os.path.expanduser('~'), '.claude', 'projects', 'C--Jx1CocoV3', '*.jsonl'))
+    last = max([os.path.getmtime(f) for f in fs] or [0])
+    cm = 0
+    try:
+        r = subprocess.run(['git', '-C', ROOT, 'log', '-1', '--grep=Sonnet', '--format=%ct', 'origin/jx1-ops'],
+                           capture_output=True, text=True, timeout=30)
+        cm = int(r.stdout.strip() or 0)
+    except Exception:
+        pass
+    mins = (now - last) / 60 if last else 9999
+    lv = 'SONG' if mins < 10 else ('IM' if mins <= 30 else 'TREO')
+    hm = lambda t, f: time.strftime(f, time.localtime(t)) if t else '?'
+
+    class MS(ctypes.Structure):
+        _fields_ = [('l', ctypes.c_ulong), ('ml', ctypes.c_ulong)] + [(n, ctypes.c_ulonglong) for n in ('tp', 'ap', 'tpf', 'apf', 'tv', 'av', 'ae')]
+    m = MS()
+    m.l = ctypes.sizeof(MS)
+    ctypes.windll.kernel32.GlobalMemoryStatusEx(ctypes.byref(m))
+    gb = lambda x: x / 2**30
+    top = []
+    try:
+        o = subprocess.run(['powershell', '-NoProfile', '-Command',
+                            'Get-Process | Sort-Object WorkingSet64 -Descending | Select-Object -First 5 | ForEach-Object { $_.ProcessName + "," + $_.WorkingSet64 }'],
+                           capture_output=True, text=True, timeout=60).stdout
+        for ln in o.splitlines():
+            n, _, v = ln.strip().partition(',')
+            if v.isdigit():
+                top.append((int(v) / 2**30, n))
+    except Exception:
+        pass
+    top = sorted(top, reverse=True)[:5]
+    return ('Sonnet: hoạt động cuối %s (%d phút trước); commit cuối %s; mức %s (<10 SONG / 10-30 IM / >30 TREO). Cập nhật %s\n'
+            'RAM: trống %.1f/%.1f GB (%.0f%%). Top 5 bộ nhớ: %s') % (
+        hm(last, '%H:%M:%S'), mins, hm(cm, '%H:%M'), lv, time.strftime('%H:%M:%S'),
+        gb(m.ap), gb(m.tp), 100.0 * m.ap / m.tp, '; '.join('%s %.2f GB' % (n, v) for v, n in top))
+
+
 def main():
     tasks = {}
     for p in glob.glob(os.path.join(ROOT, 'TASKS', '*.md')):
@@ -541,6 +582,11 @@ def main():
             kt.append('| %s | JX-Kn | %s | %s | %d |' % (k, time.strftime('%Y-%m-%d', time.localtime(os.path.getctime(kf))), ping.get(k, 'chưa ping (đã chạy được việc thật)'), use.get(k, 0)))
         kt += ['', 'Số khóa: %d / 20.' % len(keys())]
         open(os.path.join(ROOT, 'STATE', 'KHOA-XINGCHI.md'), 'w', encoding='utf-8', newline='\n').write('\n'.join(kt) + '\n')
+        # #197: nhip tim doc lap cua Sonnet + RAM. Hoan tac: khoi phuc tong_quan.py.bak-197
+        try:
+            open(os.path.join(ROOT, 'STATE', 'SONNET-SONG.md'), 'w', encoding='utf-8', newline='\n').write(sonnet_song() + '\n')
+        except Exception as e:
+            print('SONNET-SONG loi:', e)
         dead = [r for r in rows if r[1].startswith('CHET') or r[1] == 'TREO']
         # #153.A: chi danh thuc Sonnet khi co su kien that: CHET-BO moi, TREO, can khoa moi, cau dao doi trang thai, XONG-CHO-GOP moi (toi da 1 lan/gio cho canh bao chung)
         _lanq = load(os.path.join(GD, 'lan.json'), {})
@@ -586,7 +632,7 @@ def push_state(tq_note=None):
         if not os.path.isdir(tq):
             g(repo, 'worktree', 'add', '--detach', tq, 'origin/jx1-ops')
         g(tq, 'reset', '-q', '--hard', 'origin/jx1-ops')
-        files = ['STATE/TIEU-YEU.md', 'STATE/KHOA-XINGCHI.md', 'STATE/TIEN-DO.md'] + (['STATE/TONG-QUAN-GHI.md'] if os.path.exists(os.path.join(ROOT, 'STATE', 'TONG-QUAN-GHI.md')) else [])
+        files = ['STATE/TIEU-YEU.md', 'STATE/KHOA-XINGCHI.md', 'STATE/TIEN-DO.md', 'STATE/SONNET-SONG.md'] + (['STATE/TONG-QUAN-GHI.md'] if os.path.exists(os.path.join(ROOT, 'STATE', 'TONG-QUAN-GHI.md')) else [])
         for f in files:
             shutil.copyfile(os.path.join(ROOT, f), os.path.join(tq, 'JX1_OPS', f))
         if tq_note:

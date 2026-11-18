@@ -830,3 +830,9 @@ Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm th�
 - **#196:** 0-05 done; CL-01, A-07 active (ghi chú đúng); X-05 giữ chờ; thêm W-01 (done), W-02 (active), M-01; BACKLOG có nhóm "Bổ sung đêm 18–19/11" (SO/KC/HG/TK thay G/V/T trùng mã). K-02, N-01..07 đã có.
 - **Bảng tiến độ: 30/55 xong** (16 đang chạy, 9 chờ). Tiểu yêu đã nhận việc (HG, SO, KC chạy bằng K4/K6...).
 - Việc kế: #193 (lịch sử sửa hiệu ứng, SHA APK, quay video).
+
+## ĐÃ ĐỌC ĐẾN #197 / XONG ĐỢT #197 (Sonnet, 19/11 ~01:30)
+- `TOOLS/tong_quan.py`: thêm `sonnet_song()` + bước ghi `STATE/SONNET-SONG.md` mỗi vòng (2 dòng: hoạt động cuối từ mtime lớn nhất của `*.jsonl` phiên Claude Code, commit Sonnet cuối, mức SONG/IM/TREO; RAM trống/tổng, top 5 tiến trình theo bộ nhớ, chỉ tên + số). Tệp được đẩy chung commit với TIEU-YEU/KHOA/TIEN-DO (đã thêm vào danh sách `files`), không commit riêng.
+- Kiểm: `py_compile` đạt, gọi hàm trực tiếp ra đúng 2 dòng, `--dry` chạy không lỗi. Lưu ý: `tasklist` hỏng do WMI máy này nên top 5 lấy bằng `Get-Process`. Mẫu: mức SONG, RAM trống 18,7/47,9 GB.
+- Hoàn tác: khôi phục `TOOLS/tong_quan.py.bak-197` (bản trước #197; `MAXKEY=2` của #195 nằm ở `.bak-195` → bản `.bak-197` đã gồm MAXKEY=2).
+- Nhịp tim chính là `SONNET-SONG.md`; `cho_thu.py` vẫn dùng khi chờ. Chưa chạy Tổng quản thật (hiệu lực khi nó khởi động lại).
