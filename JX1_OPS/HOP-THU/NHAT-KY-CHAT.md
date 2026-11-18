@@ -276,3 +276,4 @@
 - 03:40 Thức đêm lần 2: 78/101=77%. Kiểm mẫu: E-01 đóng bằng test offline trong khi tiêu đề đòi Bot thật → mở lại (#211); lập bảng kiểm nghiêm; báo số thật.
 - 04:10 Kiểm #12: số thật 74/107=69% (thêm 6 việc đợt 6). Gửi #212 đóng băng mẫu số.
 - 04:40 Kiểm #14: Sonnet im 23 phút (04:14→04:37), 10 CHO-GOP, 1 SONG; nó hiểu sai 'chờ tiểu yêu xong' trong khi đã xong chờ gộp. Gõ CHAT-DAY #213 kèm lệnh gộp ngay.
+- 05:52 Kiểm #19: 87/107=81%. Tiểu yêu rảnh, mẫu số đóng băng. Gửi #214: dùng Test-36 đóng thật các việc cha còn thiếu bước server thật.

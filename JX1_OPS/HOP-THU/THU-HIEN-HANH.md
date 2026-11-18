@@ -126,3 +126,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Hook: lời chặn bắt đầu bằng 'CẤM VIẾT BÁO CÁO VĂN BẢN, gọi công cụ' | #210 | | không cần trả lời |
 | Mở lại E-01; bảng kiểm nghiêm việc cha; báo số thật 2 cách; lấp tiểu yêu | #211 | | không cần trả lời |
 | Đóng băng mẫu số 107, mục tiêu ≥86/107 | #212 | | không cần trả lời |
+| Dùng Test-36 đóng việc cha thật (B-04, E-01, C-01, E-09, E-05) | #214 | | không cần trả lời |
