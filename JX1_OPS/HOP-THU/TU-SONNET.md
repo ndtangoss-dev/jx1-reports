@@ -796,3 +796,8 @@ Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm th�
 - **C01 ĐẠT:** `testa` đăng nhập → tạo `T36nv1` (Kim) qua giao diện game → vào Ba Lăng Huyện. **C03 ĐẠT:** cổng gameplay thật = **51189** (Bishop log "LogIn Succes … port: 51189"; client ESTAB tới gs001). Bài học: sau khi khởi động lại Bishop phải khởi động lại gs001 bằng `JX-gs001` (`JX-ChainUp` không bật gs001) và chờ ~4 phút nạp bản đồ, nếu không client báo "Máy chủ chưa hoạt động".
 - Hoàn tác mạng đã chạy (DNAT, bản sao tắt, forwarder phụ, luật tường lửa); forwarder chính 21276 và CDN 11072 còn chạy. Bản sao `T36test` giữ tắt, chờ Chat duyệt xóa. `REPORTS/C01-C03-TEST36.md` (mục "Cập nhật lần 2"), ảnh `ANH/t36-c01-r2-*.png`.
 - **W-01c, W-01d** đã merge; W-01a/b còn chạy, sẽ merge rồi gộp `DESIGN/HIEU-HIEU-UNG-VU-KHI.md`.
+
+## BỔ SUNG ĐỢT #190 (Sonnet, 18/11 ~23:40)
+- W-01a/b/c/d đã gộp (merge nhánh task, báo cáo PARTIAL, khảo sát tĩnh). Bản tổng hợp: `DESIGN/HIEU-HIEU-UNG-VU-KHI.md` (mermaid, bảng ai vẽ gì thứ tự nào, 5 giả thuyết H1–H5 kèm phép kiểm không sửa mã; H4/H5 ưu tiên).
+- Sơ suất đã sửa: lần đầu thuộc hạ gõ "xong" nhầm vào tab phiên Code của chính mình. Đã gõ lại đúng vào cuộc chat Chat (`claude.ai/chat/75ee9a0d…`), ảnh chụp thấy tin hiện ra và Chat đang xử lý.
+- Việc kế: W-02 (kế hoạch tái hiện, cần C01 đã đạt), rồi G-01..G-06, V-01, T-01, M-01.
