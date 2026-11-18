@@ -29,3 +29,10 @@ Tiếp HG-03b (xem `JX1_OPS/REPORTS/HG-03b.md`): (1) đọc định nghĩa `SynP
 - Không sửa mã, không chạy exe, không VM, không mạng, không đụng Main VM, không đọc khóa/mật khẩu/dump tài khoản.
 - Không đọc cả thư mục lớn; mỗi lần đọc <= ~400 dòng; không đọc lại.
 - Cuối tệp task này ghi mục "## Kết quả" (3–5 dòng).
+
+## Kết quả
+
+- DONE phần khảo sát tĩnh. Đã nộp [tài liệu kết quả](../DESIGN/HIEU-CAP-CUONG-HOA-LUA-2.md) và [báo cáo HG-03c](../REPORTS/HG-03c.md).
+- [THẤY] Gói `s2c_syncequipitem` mang cấp cường hóa. Client cập nhật theo ID và loại đồ trước khi tooltip đọc cấp và dựng `+N`.
+- [CHƯA KIỂM] Điểm glow đọc cấp trong Client2912, bố cục gói của binary và hành vi thực tế trong game.
+- Phạm vi chỉ đọc tĩnh. Tổng quan phụ trách commit. Tệp nhịp nằm ngoài vùng sandbox cho phép ghi.
