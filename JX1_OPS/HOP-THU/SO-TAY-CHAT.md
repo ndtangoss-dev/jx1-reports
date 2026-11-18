@@ -25,6 +25,7 @@ GÕ CỬA: trig_01RUHKzYc2ECmP57kngGNvjK (lịch kiểm của Chat; Sonnet bấm
 (chưa có)
 
 ## Chat đã quyết thay chủ
+- 09:55 (#119): phiên gác dùng --allowedTools hẹp (git, python/powershell TOOLS), không PowerShell trần; K-03 chạy ngay qua Tổng quản; bỏ 0-08.
 - 09:25 (#113): chạy lại U-03 chia nhỏ; rải khóa K2-K6+JX TEST; thử astra cho việc chết vì lỗi Responses; ≤5 tiểu yêu (mục ≤5 đã bị #115 thay: chủ cho tới 60 tiểu yêu, quá tải là lỗi xingchi).
 
 ## Lịch của Chat

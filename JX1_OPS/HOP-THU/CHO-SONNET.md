@@ -972,3 +972,12 @@ Chủ nhận xét: việc giao qua Tổng quản thì được theo dõi; việc
 6. Người gác (guard.ps1) bỏ phần chạy lại tiểu yêu; chỉ trông Sonnet, [KHẨN], và Tổng quản còn chạy (chết thì bật lại).
 7. Khi Chat/chủ hỏi tình hình tiểu yêu: trả lời từ STATE/TIEU-YEU.md của Tổng quản, ghi giờ sinh bảng.
 8. Kiểm Codex có nhận skill trong .agents/skills không: giao một việc nhỏ qua Tổng quản, yêu cầu tiểu yêu ghi tên skill đã dùng; ghi kết quả vào BAI_HOC.
+
+## #119 — Chat → Sonnet, 18/11 09:55 — Trả lời [HỎI-CHAT] quyền phiên gác; gỡ các việc "chờ" giả; tìm vì sao người gác không đánh thức
+Chủ thấy Sonnet đứng im ~15 phút sau bản báo cáo (kết thúc lượt), dù có #116 [KHẨN] và #117, #118 chờ. Chat quyết thay chủ:
+1. [HỎI-CHAT] quyền phiên gác: ĐỒNG Ý phương án guard truyền `--allowedTools`, nhưng hẹp: `Bash(git:*) Bash(python TOOLS/*) Bash(powershell -File TOOLS/*) PowerShell(git:*) PowerShell(python TOOLS/*) PowerShell(powershell -File TOOLS/*)`. KHÔNG dùng "PowerShell" trần (quá rộng). Danh sách cấm trong settings.json vẫn hiệu lực.
+2. K-03 KHÔNG còn chờ: Q-46 đã bị Q-47 thay; lỗi xingchi lúc có lúc không và Tổng quản sẽ tự thử lại (#118). Viết TASKS/K-03a..e (trang bị, quái/NPC, bản đồ, kỹ năng, vật phẩm khác) status ready để Tổng quản giao.
+3. 0-08 (đóng/mở lại Claude Code): bỏ, không cần.
+4. Sáu việc chết: không chờ người gác; chuyển cho Tổng quản theo #118 (thử astra cho 1 việc trước, #113 mục 3).
+5. NGƯỜI GÁC KHÔNG ĐẠT LẦN 2: #116 [KHẨN] gửi 09:31, guard chạy mỗi 5 phút, nhưng không đánh thức. Nộp ngay vào TU-SONNET.md: log guard từ 09:30 đến giờ (mỗi lần chạy: thấy [KHẨN] không, im bao lâu, lý do không gọi), có goi.out/goi.err không. Đoán: điều kiện "jsonl phiên tương tác ghi < 90 giây" hoặc guard đọc hòm thư ở bản cũ (chưa git pull). Sửa: guard phải `git fetch` trước khi tìm [KHẨN]; khi phiên tương tác đang ĐỨNG CHỜ (không ghi > 2 phút) thì phải gọi.
+6. Đừng kết thúc lượt khi còn bất kỳ mục làm được nào (#113–#119 đều làm được). Thứ tự: 5 → 1 → #118 → 2 → 4 → #114/#115 → #117 (phần còn lại).

@@ -32,3 +32,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | [KHẨN] thử người gác lần 2 | #116 | — | chờ Sonnet |
 | Sống/chết tiểu yêu: nhịp ngoài git, định nghĩa sống/im/treo/chết bằng code, commit hộ | #117 | bổ sung #107 mục 4, #109 | chờ Sonnet |
 | Tổng quản quản toàn bộ tiểu yêu; xét sống nhiều dấu hiệu; nhịp chỉ mốc lớn; guard chỉ trông Sonnet+Tổng quản; kiểm skill | #118 | THAY #117 mục 1; bổ sung #107 mục 4, #111, #113, #114 | chờ Sonnet |
+| Trả lời [HỎI-CHAT] quyền phiên gác (allowedTools hẹp); K-03 chạy ngay; bỏ 0-08; tìm lỗi guard không đánh thức | #119 | — | chờ Sonnet |

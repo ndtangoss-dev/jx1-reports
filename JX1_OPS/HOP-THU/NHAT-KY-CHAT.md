@@ -162,3 +162,4 @@
 - 18/11 09:40 Chat kiem: #116 chua phan hoi (9 phut). U-03 gop PARTIAL: co bang thu tu ve nu 45 hanh dong x 8 huong (DESIGN/BANG-THU-TU-VE.md); chua xac minh muc INI cua tinh huong thuong A3a, chua co bang nam.
 - 18/11 09:50 Chu chot: Tong quan quan toan bo tieu yeu, Sonnet khong giao tay. Them L9, gui #118.
 - 18/11 09:49 Thu nguoi gac lan 2 (#116): CHUA DAT, 18 phut khong phan hoi; Sonnet khong push tu 09:24. Nghi: guard bo qua vi phien tuong tac dang ghi (<90 giay) hoac Sonnet ban mot muc dai khong keo thu. Bao chu.
+- 18/11 09:55 Chu: Sonnet dung im ~15 phut sau bao cao. Tra loi [HOI-CHAT], gui #119.
