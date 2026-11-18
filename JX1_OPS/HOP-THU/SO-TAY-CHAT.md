@@ -11,7 +11,8 @@ GÕ CỬA: trig_01QZwK7xF54VbNWTGoW9BtM4 (lịch kiểm 10 phút của Chat; Cha
 - Đồ họa: A3a (vc20) đang chờ U-03 để sửa gốc BUG-001; BUG-002 chưa tái hiện; xBRZ (A3, vc21) chờ U-03.
 
 ## Chat đang theo dõi
-- Sonnet im từ 00:42 18/11 (lỗi xingchi làm tiểu yêu chết + dừng chờ chủ chọn). Đã gửi #100–#108. Chờ Sonnet ghi "đã đọc đến #108" và push.
+- 09:00 Sonnet đã đọc đến #108, làm xong #107.1–7 và #108: hook luật cốt lõi (settings.json thật), PreCompact, stop_guard 60 phút, người gác JX-Guard (10 phút, gọi claude -c -p), TIEN-DO.md, Q-47, câu #0, K-02, gộp U-01/U-02. GÕ CỬA hoạt động (Sonnet dùng RemoteTrigger run). Còn: TIEN-DO sai trạng thái (#109), thử người gác bằng [KHẨN] giả, khóa xingchi lộ, U-03, K-03.
+- (cũ) Sonnet im từ 00:42 18/11 (lỗi xingchi làm tiểu yêu chết + dừng chờ chủ chọn). Đã gửi #100–#108. Chờ Sonnet ghi "đã đọc đến #108" và push.
 - Lỗi xingchi: "gpt-6.1-sol requires Responses for tool calls; this account only supports Chat Completions", lúc có lúc không; Codex 0.166 bỏ wire_api chat; gọi API thẳng bị 403. Hướng: ≤5 tiểu yêu, thử lại chờ tăng dần, xen kẽ sol/astra.
 - Khóa xingchi lộ trong C:\Users\PC\.codex\config.toml (Sonnet đã in ra màn hình): chờ Sonnet dời khóa và ghi tên khóa để chủ đổi trên xingchi.
 - Kiểm tra kiến thức: câu 0 (Võ Đang) = Một phần, chờ Sonnet ghi vào KIEM-TRA. Đợt 1 (#095, tiêu chí #097) chạy khi các R/S liên quan xong.

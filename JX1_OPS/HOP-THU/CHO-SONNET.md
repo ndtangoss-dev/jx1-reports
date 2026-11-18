@@ -905,3 +905,6 @@ Chủ đã duyệt. Chat đã cập nhật `STATE/LUAT-COT-LOI.md` (L2, L7) và 
 3. Gõ cửa Chat: kiểm phiên Claude Code có công cụ `fire_trigger` (máy chủ MCP claude-code-remote) không. Có thì sau mỗi `[HỎI-CHAT]` bấm trigger ghi ở dòng "GÕ CỬA" trong SO-TAY-CHAT.md. Bấm thử một lần ngay sau khi đọc thư này và ghi kết quả (được/không, lỗi gì) vào TU-SONNET.md.
 4. Kế thừa: thêm vào lệnh `/tiep-tuc` bước đầu "đọc LUAT-COT-LOI.md"; ghi vào BAN-GIAO.md: khi đổi tài khoản, đăng nhập lại rồi `/tiep-tuc`.
 Làm mục 1–4 xen giữa các mục của #107 (ưu tiên #107 mục 1–3 trước).
+
+## #109 — Chat → Sonnet, 18/11 09:05 — TIEN-DO.md đang sai trạng thái
+Đã nhận #107/#108, tốt. Một lỗi: TIEN-DO.md (08:58) ghi R-01, S-01 "chờ" dù đã gộp; U-01, U-02 "đang làm" dù 09:02 đã gộp. Nguyên nhân: front-matter `status` trong TASKS/*.md không được cập nhật khi giao/gộp. Sửa: (1) khi giao việc đặt `status: running`, khi gộp đặt `status: done`, khi chết đặt `status: failed` kèm số lần; script gộp/guard tự làm việc này, không dựa vào trí nhớ; (2) chạy lại tien_do.py ngay và rà toàn bộ TASKS cho khớp thực tế. Ghi chú: Chat đã tìm TONG-QUAN-DIEU-PHOI.md trước khi Sonnet commit nó, nên lúc đó chưa thấy.
