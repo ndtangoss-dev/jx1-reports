@@ -284,3 +284,9 @@ Task Scheduler `JX-Guard`: LastRun 10:29:29, LastTaskResult 0 (script chạy xon
 **#124:** `STATE/TIEU-YEU.md` kẹt ở 10:06 vì Tổng quản CHỈ ghi file, không ai đẩy (thiết kế sai). Đã thêm `push_state()` vào `tong_quan.py`: ≥5 phút/lần commit riêng 3 file STATE rồi `pull --rebase --autostash` + push, timeout 120s, log `D:\JX-wt\tong_quan\push.log`. Giờ "Nhận #120" đã sửa về giờ thật 10:08.
 
 [TỔNG QUẢN 18/11 10:35] K-03b chet, chay lai lan 1 bang JX-K2; K-03c chet, chay lai lan 1 bang JX-K3; K-03d chet, chay lai lan 1 bang JX-K4; K-03e chet, chay lai lan 1 bang JX-K5; R-02 chet, chay lai lan 3 bang JX-K6; R-03 chet, chay lai lan 1 bang JX-K2; R-04 chet, chay lai lan 3 bang JX-K3; R-04b chet, chay lai lan 1 bang JX-K4; R-05a chet, chay lai lan 1 bang JX-K5; R-05b chet, chay lai lan 1 bang JX-K6; R-05d chet, chay lai lan 3 bang JX-K2; R-06c chet, chay lai lan 3 bang JX-K3; R-07a chet, chay lai lan 3 bang JX-K4; R-07b chet, chay lai lan 3 bang JX-K5; T-02 chet, chay lai lan 2 bang JX-K6; T-03 can chay lai nhung CAN KHOA MOI (moi khoa da du 3 tieu yeu); T-04 can chay lai nhung CAN KHOA MOI (moi khoa da du 3 tieu yeu)
+
+### Nhận #123 (xong 10:36)
+- tong_quan.py: lỗi dịch vụ (429, upstream_error, requires Responses/Chat Completions, lỗi mạng) → mức CHO-XINGCHI, không cộng lần chạy lại, đã xóa đếm cũ của các việc chết vì xingchi.
+- Cầu dao 3 trạng thái (state ở D:\JX-wt\tong_quan\breaker.json, đầu TIEU-YEU.md): MỞ khi ≥4 lỗi/10 phút, mỗi 10 phút thử 1 việc, sống >3 phút thì ĐÓNG. Lỗi việc: 3 lần → CHET-BO + [TỔNG QUẢN]. Mở >60 phút: báo 1 lần/giờ.
+- Đang ở NỬA-MỞ, thử F-01. #122.1 (guard báo [CAN-CHU] khi hết hạn mức/đăng nhập) đã commit cùng.
+- #122.3: `claude -p "ping"` → exit 1, thông báo hết hạn mức tuần, mở lại 01:00.
