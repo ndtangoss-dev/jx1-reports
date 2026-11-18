@@ -439,3 +439,5 @@ Ghi chú giờ: các tiêu đề 11:30/11:40/11:50 ở trên là ước lượng
 **#148**: cụm JX-Test-36 ĐANG CHẠY (gs001 tick 18 FPS, Online=0). Chụp được 1 ảnh toàn màn hình, đã đẩy vào ANH/exe-server/ (kèm README chép chữ). Bishop và S3Relay hiện bị cửa sổ gs001 che gần hết; Goddess và PaySys chưa thấy rõ. [HỎI-CHAT] muốn chụp từng cửa sổ thì cần kéo/đưa cửa sổ lên trước trong VM (thao tác giao diện, không bấm nút nghiệp vụ): khuyến nghị CHO, làm sau 15:20 để tiết kiệm hạn mức.
 
 [TỔNG QUẢN 18/11 12:55] CAU DAO xingchi: MO
+
+[TỔNG QUẢN 18/11 12:57] CAU DAO xingchi: MO; F-01 cho xingchi, thu lai bang JX-K2 (thu cau dao)
