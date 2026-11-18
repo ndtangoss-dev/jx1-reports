@@ -1,7 +1,7 @@
 ---
 id: HG-03c
 title: Hiểu game: cường hóa Lua → client, phần còn thiếu (SynPlayerItem và tooltip +N)
-status: ready
+status: running
 level: L3
 agent: codex
 effort: high
@@ -13,7 +13,7 @@ backlog_ref: "#202 duong 70%: nhom Hieu game (BACKLOG, HG-03c)"
 vung_file: [JX1_OPS/DESIGN/HIEU-CAP-CUONG-HOA-LUA-2.md]
 tai_nguyen: []
 updated: 2026-11-19
-status_note: "moi tao #202"
+status_note: "Tong quan giao bang JX-K3"
 ---
 
 ## Mục tiêu và tiêu chí xong
