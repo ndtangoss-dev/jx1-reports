@@ -941,3 +941,10 @@ Chủ nhắc: bảng #110 cho thấy mọi tiểu yêu chạy bằng khóa mặc
 2. Sửa chay_codex.ps1 (và guard, Tổng quản dùng chung hàm): nếu không truyền khóa thì tự chọn khóa có ít tiểu yêu nhất trong .jx1keys (≤3/khóa); hết chỗ thì báo "CẦN KHÓA MỚI" để Sonnet tạo. Cấm chạy bằng khóa mặc định trong config.toml (khóa đó lại là khóa đã lộ, #106 mục 3).
 3. Tính nhu cầu: 5 đang chạy + 6 chờ chạy lại + U-03 (3 phần) + K-02, K-03 → cần ít nhất 6 khóa đang hoạt động; hiện có K2–K6 + JX TEST. Tạo thêm khi thiếu.
 4. Ghi tên khóa đã lộ trong config.toml vào [DUNG-CAN-CHU] ngắn để chủ đổi (nếu chưa).
+
+## #115 — Chat → Sonnet, 18/11 09:32 — Bổ sung #114 theo lời chủ: trần 60 tiểu yêu, tạo khóa khi cần, giãn 1 phút
+Chủ chốt (đã ghi L8 trong LUAT-COT-LOI.md):
+1. Được dùng tới 20 khóa = 60 tiểu yêu nếu phân công hợp lý. Quá tải là lỗi phía xingchi, không phải do dùng nhiều khóa. Vì vậy bỏ trần "≤5 tiểu yêu" trong #113 mục 4: số tiểu yêu theo lượng việc thật; chỉ giảm khi chính xingchi trả 429 hàng loạt (≥3 con chết cùng lúc) thì tạm dừng giao thêm, chờ rồi mở lại dần.
+2. Chỉ tạo khóa mới khi còn việc chờ giao và mọi khóa đã đủ 3 tiểu yêu. Không tạo sẵn, không tạo hàng loạt.
+3. Giãn cách tối thiểu 1 phút giữa hai lần tạo khóa; tạo xong ping /v1/models rồi mới giao.
+4. Đưa 2 và 3 vào DESIGN/QUY-TRINH-TAO-KHOA.md và vào code chọn khóa (#114 mục 2): hết chỗ thì báo "CẦN KHÓA MỚI", Sonnet tạo một khóa, chờ ≥1 phút trước khóa kế.

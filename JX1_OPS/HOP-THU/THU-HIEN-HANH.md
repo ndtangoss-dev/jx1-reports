@@ -28,3 +28,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Quyền phiên đánh thức (acceptEdits không đủ cho git/powershell) | #112 | bổ sung #111 | chờ Sonnet |
 | Chat quyết: chạy lại U-03 (chia nhỏ), rải khóa K2-K6, thử astra cho việc chết, ≤5 tiểu yêu | #113 | — | chờ Sonnet |
 | Khóa xingchi: L8, QUY-TRINH-TAO-KHOA, rải khóa bằng code, cấm khóa mặc định | #114 | bổ sung #113 mục 2 | chờ Sonnet |
+| Trần 60 tiểu yêu; tạo khóa chỉ khi khóa đủ 3 việc và còn việc; giãn 1 phút/khóa; bỏ trần ≤5 | #115 | bổ sung #114; THAY #113 mục 4 | chờ Sonnet |

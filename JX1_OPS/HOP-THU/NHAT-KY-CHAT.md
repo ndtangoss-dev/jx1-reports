@@ -156,3 +156,4 @@
 - 18/11 09:20 Chu nhan thang Sonnet lam #110 (KHAN) roi #111, #112, #109. Lan thu nguoi gac #110: CHUA DAT (khoa 40 phut); thu lai sau #111/#112.
 - 18/11 09:25 Sonnet tra loi #110 (chu nhan, go cua dat). Gui #113 Chat quyet thay chu. BAO CHU.
 - 18/11 09:30 Chu: Sonnet quen rai khoa. Them L8 vao LUAT-COT-LOI, gui #114.
+- 18/11 09:32 Chu: 20 khoa = 60 tieu yeu, qua tai la loi xingchi; tao khoa khi can, gian 1 phut. Sua L8, gui #115 (thay #113 muc 4).
