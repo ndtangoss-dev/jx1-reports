@@ -1,7 +1,7 @@
 ---
 id: XD-P03
 title: Chuẩn bị P-03: kế hoạch đo đường cong tải theo số Bot
-status: ready
+status: running
 level: L3
 agent: codex
 effort: high
@@ -13,7 +13,7 @@ backlog_ref: "việc phụ (không vào BACKLOG)"
 vung_file: [JX1_OPS/REPORTS/XD-P03.md]
 tai_nguyen: []
 updated: 2026-11-19
-status_note: "moi tao"
+status_note: "Tong quan giao bang JX-K3"
 ---
 
 ## Mục tiêu và tiêu chí xong

@@ -1,7 +1,7 @@
 ---
 id: XD-B05
 title: Chuẩn bị B-05: Tống Kim — mã, công tắc và giới hạn cần chủ đặt
-status: ready
+status: running
 level: L3
 agent: codex
 effort: high
@@ -13,7 +13,7 @@ backlog_ref: "việc phụ (không vào BACKLOG)"
 vung_file: [JX1_OPS/REPORTS/XD-B05.md]
 tai_nguyen: []
 updated: 2026-11-19
-status_note: "moi tao"
+status_note: "Tong quan giao bang JX-K4"
 ---
 
 ## Mục tiêu và tiêu chí xong

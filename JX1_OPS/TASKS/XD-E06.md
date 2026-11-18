@@ -1,7 +1,7 @@
 ---
 id: XD-E06
 title: Chuẩn bị E-06: kế hoạch đo tải và tiêu chí chuyển Bot vào server
-status: ready
+status: running
 level: L3
 agent: codex
 effort: high
@@ -13,7 +13,7 @@ backlog_ref: "việc phụ (không vào BACKLOG)"
 vung_file: [JX1_OPS/REPORTS/XD-E06.md]
 tai_nguyen: []
 updated: 2026-11-19
-status_note: "moi tao"
+status_note: "Tong quan giao bang JX-K3"
 ---
 
 ## Mục tiêu và tiêu chí xong

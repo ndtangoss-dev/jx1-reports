@@ -1,7 +1,7 @@
 ---
 id: XD-D02
 title: Chuẩn bị D-02: danh sách thử hoạt động bằng GM
-status: ready
+status: running
 level: L3
 agent: codex
 effort: high
@@ -13,7 +13,7 @@ backlog_ref: "việc phụ (không vào BACKLOG)"
 vung_file: [JX1_OPS/REPORTS/XD-D02.md]
 tai_nguyen: []
 updated: 2026-11-19
-status_note: "moi tao"
+status_note: "Tong quan giao bang JX-K4"
 ---
 
 ## Mục tiêu và tiêu chí xong
