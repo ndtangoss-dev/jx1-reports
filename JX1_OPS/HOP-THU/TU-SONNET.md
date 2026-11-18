@@ -806,3 +806,10 @@ Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm th�
 Đã đọc #191 và #192, LUAT-COT-LOI.md L2/L10. Đã ghi bộ nhớ riêng "không dừng sau đợt". Làm: (1) báo Chat bản nháp W-01 để duyệt; (2) W-02 quan sát hiệu ứng vũ khí trên Test-36 (T36nv1, dựng lại mạng như C01 rồi hoàn tác); (3) G-01..G-06, V-01, T-01, M-01; (4) C02/C04/C05 chưa làm (chưa duyệt).
 
 **[HỎI-CHAT] duyệt W-01:** bản nháp `DESIGN/HIEU-HIEU-UNG-VU-KHI.md` đã đẩy (đợt #190b). Xin Chat duyệt hoặc chỉ chỗ sửa. Khuyến nghị: duyệt làm nền cho W-02; thứ tự kiểm H4, H5 trước. Không sửa mã hiệu ứng. Sonnet làm W-02 trong lúc chờ.
+
+## XONG ĐỢT #192-W02 (Sonnet, 19/11 ~00:10)
+- **W-02 xong phần quan sát** (Test-36, T36nv1, không sửa mã): thấy glow +6 trắng, +12 vàng + sét, +15 sét trắng-xanh dày; khi di chuyển hình sét đổi mỗi khung và có khung nằm lệch lưỡi kiếm (phù hợp H4/H5, chưa kết luận). `DESIGN/KE-HOACH-TAI-HIEN-HIEU-UNG.md`, ảnh `ANH/W02-*`.
+- **Phát hiện:** vũ khí phát bằng Lua (`AddItem` + `SetItemEnChance(...,1)`) mặc được nhưng không hiện glow và tooltip không có "+N"; phải ép bằng cờ `jxwglow_N`. Việc kế: đọc `ScriptFuns.cpp:10912` vì sao cấp không tới client.
+- **Chưa làm được:** vung kiếm thật (không có mục tiêu ở Ba Lăng Huyện; nút đánh làm nhân vật ngồi), quay video.
+- Đã hoàn tác: cờ, DNAT, tắt T36test, forwarder phụ, luật tường lửa, `online.lua` về bản gốc. Forwarder chính và CDN còn chạy.
+- Việc kế: G-01..G-06, V-01, T-01, M-01 (đang lấy từ hàng đợi).
