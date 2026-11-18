@@ -119,3 +119,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | LUẬT TỐI THƯỢNG: không ai bảo Sonnet dừng; Sonnet toàn quyền giữ việc liên tục | #203 | | không cần trả lời |
 | Gộp ngay 10 việc XONG-CHO-GOP, giữ ≥8 tiểu yêu SONG | #204 | | không cần trả lời |
 | Q-57: ngân sách >3000 USD, tiểu yêu không giới hạn (tăng dần theo RAM); nâng trần stop_guard | #205 | | không cần trả lời |
+| Mẫu số 88: đóng việc cha active, kỷ luật thêm việc, dự báo 30 phút, từ 05:00 không thêm việc | #206 | | không cần trả lời |
