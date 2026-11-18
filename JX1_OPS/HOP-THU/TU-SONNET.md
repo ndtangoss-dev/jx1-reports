@@ -559,3 +559,5 @@ R-05a CHET-BO: astra chạy 2 lần, báo cáo rỗng (không có REPORTS/R-05a.
 [TỔNG QUẢN 18/11 14:35] CAU DAO xingchi: DONG; F-01 chet, chay lai lan 3 bang JX-K3
 
 [TỔNG QUẢN 18/11 14:37] CAU DAO xingchi: DONG
+
+[TỔNG QUẢN 18/11 14:39] CAU DAO xingchi: DONG; F-01 CHET-BO (loi viec, qua 3 lan)
