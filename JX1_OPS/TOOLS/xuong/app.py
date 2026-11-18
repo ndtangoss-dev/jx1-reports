@@ -36,6 +36,7 @@ def trang(tieu_de, noi_dung, dang_o=''):
     menu = ['<a href="/" class="%s">Sức khỏe</a>' % ('on' if dang_o == '' else '')]
     for k, ten, _, _, moc in KHU:
         menu.append('<a href="/khu/%s" class="%s">%s</a>' % (k, 'on' if dang_o == k else '', html.escape(ten)))
+    menu.append('<a href="/khu/goi" class="%s">Gói tin</a>' % ('on' if dang_o == 'goi' else ''))
     menu.append('<a href="/baoloi">Báo lỗi</a>')
     return ('<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
             '<title>Xưởng JX1 — %s</title><style>%s</style><header><b>XƯỞNG JX1 %s</b>%s</header><main>%s</main>'
@@ -102,6 +103,12 @@ class Handler(BaseHTTPRequestHandler):
                 return self._gui(200, trang('Sức khỏe', trang_suc_khoe()))
             if u.path.startswith('/khu/'):
                 k = u.path[5:]
+                if k == 'goi':
+                    import goi
+                    importlib.reload(goi)
+                    qs = parse_qs(u.query)
+                    nhatky.ghi('GOI', 'mở trang')
+                    return self._gui(200, trang('Gói tin', goi.trang(GOC_KHO, qs.get('q', [''])[0], qs.get('n', [''])[0]), 'goi'))
                 if k == 'hieu':
                     import hieu
                     importlib.reload(hieu)
