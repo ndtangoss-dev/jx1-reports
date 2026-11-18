@@ -108,6 +108,9 @@ def pick_key(assign, alive_ids):
 
 
 def model_of(i):
+    m = load(os.path.join(GD, 'model.json'), {}).get(i)
+    if m:
+        return m
     try:
         return 'astra' if i in open(os.path.join(GD, 'astra.txt')).read().split() else 'sol'
     except OSError:
@@ -134,6 +137,36 @@ def pid_txt(i, running):
     return '-' if a is None else ('%d song' % p if a else '%d mat' % p)
 
 
+def astra_ok(d, i):
+    return str(d.get('astra', '')).lower() == 'ok' or i.startswith('R-')   # #143: viec doc/viet bao cao
+
+
+def set_astra(i):
+    """#143: dua viec vao astra.txt + dan nhac ghi bao cao."""
+    ap = os.path.join(GD, 'astra.txt')
+    try:
+        cur = open(ap).read().split()
+    except OSError:
+        cur = []
+    if i not in cur:
+        open(ap, 'a').write(i + chr(10))
+    pf = os.path.join(WT, i + '.prompt.txt')
+    try:
+        t = open(pf, encoding='utf-8').read()
+        if 'KET THUC bang viec ghi bao cao' not in t:
+            open(pf, 'a', encoding='utf-8').write(chr(10) + 'KET THUC bang viec ghi bao cao vao JX1_OPS/REPORTS/%s.md; khong ghi thi coi nhu chua xong. Lam tung buoc nho, moi buoc mot cau hoi ro, ghi bao cao som roi bo sung.' % i + chr(10))
+    except OSError:
+        pass
+
+
+def report_empty(i):
+    r = os.path.join(WT, i, 'JX1_OPS', 'REPORTS', i + '.md')
+    try:
+        return os.path.getsize(r) < 200
+    except OSError:
+        return True
+
+
 def run_launch(i, key):
     env = dict(os.environ, JX_CODEX_KEY=key)
     args = ['powershell', '-NoProfile', '-File', os.path.join(ROOT, 'TOOLS', 'chay_codex.ps1'), '-Id', i]
@@ -144,6 +177,11 @@ def run_launch(i, key):
         pass
     r = subprocess.run(args,
                        env=env, cwd=ROOT, capture_output=True, text=True, timeout=120)
+    if r.returncode == 0:
+        mp = os.path.join(GD, 'model.json')
+        m = load(mp, {})
+        m[i] = 'astra' if '-Model' in args else 'sol'
+        save(mp, m)
     return r.returncode == 0
 
 
@@ -261,6 +299,12 @@ def main():
             level = 'CHET'   # #133.3: exit=0 ma worktree sach, khong bao cao = rong
             err = 'rong (exit=0, khong thay doi)'
             svc = False
+        elif ex == 0 and model_of(i) == 'astra' and report_empty(i):
+            level = 'CHET'   # #143: astra xong ma bao cao rong/thieu
+            err = 'bao cao rong (astra)'
+            svc = False
+            if lan.get(i, 0) >= 2:
+                lan[i + '#astra'] = 1
         elif ex == 0:
             level = 'XONG-CHO-GOP'
             if not DRY:
@@ -276,6 +320,23 @@ def main():
             lan[i] = 0   # #123: loi dich vu khong cong vao 3 lan chay lai
             level = 'CHO-XINGCHI'
             fin = mt(os.path.join(WT, i + '.done')) or last
+            if br['s'] != 'dong' and astra_ok(tasks.get(i, {}), i) and model_of(i) != 'astra' and not DRY:
+                alive_n = len([x for x in sched if sched[x] == 'Running'])
+                k = pick_key(assign, [x for x in sched if sched[x] == 'Running']) if alive_n < MAXALL else None
+                if k:
+                    set_astra(i)
+                    assign[i] = k
+                    try:
+                        os.remove(os.path.join(WT, i + '.done'))
+                    except OSError:
+                        pass
+                    if run_launch(i, k):
+                        sched[i] = 'Running'
+                        level = 'CHAY-ASTRA'
+                        notes.append('%s xingchi loi, chuyen sang astra bang %s' % (i, k))
+                        time.sleep(10)
+                        rows.append((i, level, assign.get(i, '-'), '-', time.strftime('%H:%M'), err or '-', lan.get(i, 0), model_of(i), pid_txt(i, True)))
+                        continue
             probe = br['s'] == 'mo' and now() >= br['probe_at'] and not probed[0]
             if not DRY and ((br['s'] == 'dong' and (now() - fin) / 60 >= WAITS[0] and budget[0] > 0) or probe):
                 k = pick_key(assign, [x for x in sched if sched[x] == 'Running'])
@@ -296,7 +357,7 @@ def main():
         elif level == 'CHET':
             n = lan.get(i, 0)
             fin = mt(os.path.join(WT, i + '.done')) or last
-            if n >= len(WAITS):
+            if n >= len(WAITS) or (model_of(i) == 'astra' and n >= 2):
                 level = 'CHET-BO'
                 if lan.get(i + '#bao') != 1:
                     lan[i + '#bao'] = 1
@@ -330,8 +391,12 @@ def main():
         dep = [x for x in re.findall(r'[A-Z0-9]+-[0-9a-z]+', d.get('depends_on', '')) if x in tasks]
         if any(tasks[x].get('status', '').lower() not in ('done', 'xong', 'merged', 'closed', 'active') for x in dep):
             continue
+        use_astra = False
         if budget[0] <= 0:
-            continue
+            if br['s'] != 'dong' and astra_ok(d, i):
+                use_astra = True
+            else:
+                continue
         k = pick_key(assign, [x for x in sched if sched[x] == 'Running'])
         if not k:
             notes.append('%s ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut)' % i)
@@ -340,8 +405,10 @@ def main():
             rows.append((i, 'SE-GIAO', k, '-', '-', '-', 0, model_of(i), '-'))
             continue
         ensure_worktree(i)
+        if use_astra:
+            set_astra(i)
         assign[i] = k
-        budget[0] -= 1
+        budget[0] -= 0 if use_astra else 1
         if run_launch(i, k):
             sched[i] = 'Running'
             subprocess.run([sys.executable, '-I', os.path.join(ROOT, 'TOOLS', 'set_status.py'), i, 'running', 'Tong quan giao bang ' + k], capture_output=True)

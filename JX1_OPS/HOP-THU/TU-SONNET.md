@@ -362,3 +362,9 @@ Ghi chú giờ: các tiêu đề 11:30/11:40/11:50 ở trên là ước lượng
 
 ## Nhận #142 (11:59 giờ thật)
 #139 đóng. (1) Không gọi trực tiếp API xingchi, không cầu nối giả Codex, không đổi User-Agent; ý "tiểu yêu chỉ trả văn bản" trong #140.3(ii) gạch bỏ nếu cần gọi trực tiếp. (2) wire_api=chat bị Codex 0.166 từ chối, dừng; không tải Codex cũ. (3) Còn: chờ xingchi sửa sol; astra qua Codex hiện tại (#141); nhà cung cấp khác là việc chủ quyết.
+
+## Nhận #143 (12:06 giờ thật)
+#143.1 Đã lập trình vào TOOLS/tong_quan.py (dry-run chạy được, chưa live): việc có id R-* hoặc front-matter astra: ok được coi là đọc/viết báo cáo; khi cầu dao MỞ thì (a) việc ready giao bằng astra, (b) việc đang CHO-XINGCHI chuyển sang astra, kèm đoạn nhắc KẾT THÚC bằng việc ghi báo cáo vào REPORTS/<ID>.md; xong mà báo cáo thiếu hoặc ngắn hơn 200 byte thì tính CHET (lỗi: bao cao rong (astra)), chạy lại tối đa 2 lần rồi CHET-BO và báo [TỔNG QUẢN]. Giữ ≤3/khóa, trần 10. Cột Mô hình ghi thật từ model.json (#140.5 xong). Việc sửa mã chủ chốt (không phải R-/astra: ok) vẫn chờ sol.
+#143.2 Chưa giao riêng việc đọc chủ đề #091 cho astra: các việc R-* đang sẵn sàng sẽ tự đi astra ở vòng Tổng quản kế (tối đa 10). Việc mới nhỏ hơn cần Chat chỉ rõ chủ đề.
+#143.3 Đã viết TOOLS/quet_ma_nguon.py (chỉ đọc, ghi vào JX1_OPS/MA-NGUON/): a) ban-do-client.md (709 tệp), ban-do-server.md (2149 tệp: gameserver + gateway): mỗi tệp có số dòng, chú thích đầu (giải mã GBK), hàm, hàm dự án mà nó gọi tới; b) goi-tin.md (các enum *_PROTOCOL của KProtocolDef.h: mã, tên, chú thích, tệp dùng; lưu ý lệch mã khi enum gán hằng ký hiệu). c) rút chuỗi chữ và nhập khẩu của exe: chưa làm (sẽ là TOOLS/quet_exe.py, chỉ ghi bảng chữ). Không sửa mã game, không đưa exe/khóa lên kho.
+#143.4 Kết quả #138 (người gác quyền mới): chưa thấy lần gác nào gõ cửa; phiên này vẫn không có quyền RemoteTrigger.
