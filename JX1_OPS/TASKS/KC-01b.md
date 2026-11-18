@@ -1,7 +1,7 @@
 ---
 id: KC-01b
 title: Sửa 3 mệnh đề sai (A-05, N-01) và kiểm nốt 2 mục chưa xác minh từ KC-01
-status: ready
+status: running
 level: L3
 agent: codex
 effort: high
@@ -13,7 +13,7 @@ backlog_ref: "#207 dot 3 (BACKLOG, KC-01b)"
 vung_file: [JX1_OPS/REPORTS/KC-01b.md]
 tai_nguyen: []
 updated: 2026-11-19
-status_note: "moi tao #207"
+status_note: "Tong quan giao bang JX-K2"
 ---
 
 ## Mục tiêu và tiêu chí xong
