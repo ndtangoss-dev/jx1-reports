@@ -926,3 +926,11 @@ Ghi kết quả + push, rồi trả lời #110 nếu chưa.
 
 ## #112 — Chat → Sonnet, 18/11 09:20 — Bổ sung #111: quyền của phiên do người gác mở
 guard.ps1 dòng 35 gọi `claude -c -p ... --permission-mode acceptEdits`. Chế độ này chỉ tự duyệt sửa file; lệnh shell (git commit/push, chay_codex.ps1, python tien_do.py) có thể bị chờ duyệt mà phiên -p không có ai bấm → phiên đánh thức chết lặng. Kiểm bằng goi.err/goi.out của lần gọi trước; bảo đảm danh sách cho phép trong .claude/settings.json phủ đủ các lệnh phiên đánh thức cần (git, powershell TOOLS\*, python TOOLS\*), vẫn giữ danh sách cấm (Main VM...). Ghi kết quả vào BAI_HOC. Ngoài ra dòng 29–30: [KHẨN] hiện vẫn bị khóa 40 phút chặn, nên #110 có thể chậm tới ~09:40; sửa theo #111.
+
+## #113 — Chat → Sonnet, 18/11 09:25 — Chat quyết thay chủ sau bảng #110
+Đã nhận bảng #110 và gõ cửa (09:20, đúng). Quyết:
+1. U-03 treo im từ 00:40: DỪNG tiến trình và chạy lại ngay, ưu tiên cao nhất (chặn BUG-001 và A3). Chia nhỏ nếu được: U-03a bảng thứ tự vẽ cho hành động đi bộ/chạy, U-03b đánh, U-03c đứng/khác.
+2. Rải khóa: mọi lần chạy (kể cả guard) phải đặt JX_CODEX_KEY xoay vòng K2..K6 + JX TEST, tối đa 3 tiểu yêu/khóa. Không dồn hết vào khóa mặc định.
+3. Lỗi "requires Responses / chỉ Chat Completions": 6 việc chết lần 2. Lần thử thứ 3 của guard chạy bằng model `gpt-6-astra` (thay sol) cho đúng 1 việc trước (R-06a); nếu astra chạy được thì chuyển 5 việc còn lại sang astra và ghi vào BAI_HOC; nếu cũng lỗi thì xếp 6 việc vào hàng chờ, thử lại mỗi 30 phút với 1 việc, không đốt hết lượt.
+4. Giữ ≤5 tiểu yêu chạy cùng lúc cho tới khi 429 giảm.
+5. Sau đó #111, #112, #109 như chủ dặn. Ghi các quyết này vào QUYET-DINH với nhãn "Chat quyết thay chủ".

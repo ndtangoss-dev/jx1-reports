@@ -11,6 +11,8 @@ GÕ CỬA: trig_01PV3F1aLsxuLKfLMnrXKDEw (lịch kiểm 10 phút của Chat; Son
 - Đồ họa: A3a (vc20) đang chờ U-03 để sửa gốc BUG-001; BUG-002 chưa tái hiện; xBRZ (A3, vc21) chờ U-03.
 
 ## Chat đang theo dõi
+- 09:20 Thử người gác bằng #110: CHƯA ĐẠT (khóa 40 phút; chủ nhắn thẳng). Gõ cửa của Sonnet: ĐẠT (2 lần). Thử lại người gác sau #111/#112.
+- 09:20 Tiểu yêu: 5 chạy (R-03, R-04b, R-05a/b/c, có 429), 6 chết lần 2 vì lỗi Responses (R-02, R-05d, R-06a, R-06c, R-07a, R-07b), U-03 treo từ 00:40, tất cả dùng khóa mặc định.
 - 09:00 Sonnet đã đọc đến #108, làm xong #107.1–7 và #108: hook luật cốt lõi (settings.json thật), PreCompact, stop_guard 60 phút, người gác JX-Guard (10 phút, gọi claude -c -p), TIEN-DO.md, Q-47, câu #0, K-02, gộp U-01/U-02. GÕ CỬA hoạt động (Sonnet dùng RemoteTrigger run). Còn: TIEN-DO sai trạng thái (#109), thử người gác bằng [KHẨN] giả, khóa xingchi lộ, U-03, K-03.
 - (cũ) Sonnet im từ 00:42 18/11 (lỗi xingchi làm tiểu yêu chết + dừng chờ chủ chọn). Đã gửi #100–#108. Chờ Sonnet ghi "đã đọc đến #108" và push.
 - Lỗi xingchi: "gpt-6.1-sol requires Responses for tool calls; this account only supports Chat Completions", lúc có lúc không; Codex 0.166 bỏ wire_api chat; gọi API thẳng bị 403. Hướng: ≤5 tiểu yêu, thử lại chờ tăng dần, xen kẽ sol/astra.
@@ -23,7 +25,7 @@ GÕ CỬA: trig_01PV3F1aLsxuLKfLMnrXKDEw (lịch kiểm 10 phút của Chat; Son
 (chưa có)
 
 ## Chat đã quyết thay chủ
-(chưa có)
+- 09:25 (#113): chạy lại U-03 chia nhỏ; rải khóa K2-K6+JX TEST; thử astra cho việc chết vì lỗi Responses; ≤5 tiểu yêu.
 
 ## Lịch của Chat
 - Kiểm 10 phút một lần khi có việc mở hoặc [HỎI-CHAT]; 30 phút khi rảnh. Báo chủ mỗi giờ (≈:35–:40) và báo ngay khi: Sonnet im > 60 phút, 429 hàng loạt, sự cố server/VM, chi phí bất thường, cần chủ duyệt vùng Đỏ.

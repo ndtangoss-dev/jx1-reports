@@ -26,3 +26,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | [KHẨN] thử người gác + bảng tình hình tiểu yêu | #110 | — | chờ Sonnet |
 | Người gác: khóa theo tiến trình (trần 15 phút), [KHẨN] bỏ qua khóa, chu kỳ 5 phút | #111 | bổ sung #107 mục 4 | chờ Sonnet |
 | Quyền phiên đánh thức (acceptEdits không đủ cho git/powershell) | #112 | bổ sung #111 | chờ Sonnet |
+| Chat quyết: chạy lại U-03 (chia nhỏ), rải khóa K2-K6, thử astra cho việc chết, ≤5 tiểu yêu | #113 | — | chờ Sonnet |
