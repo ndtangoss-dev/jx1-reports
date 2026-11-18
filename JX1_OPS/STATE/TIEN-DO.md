@@ -1,8 +1,8 @@
-# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-18 13:29, đừng sửa tay)
+# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-18 13:33, đừng sửa tay)
 
 ĐANG LÀM: F-01
 KẾ TIẾP: K-02, R-06a
-BỊ CHẶN: A-07, R-04b
+BỊ CHẶN: A-07, R-04b, R-05a
 
 Ba chặng #091: 1 hiểu game (chuẩn hóa) → 2 đường truyền + exe → 3 tick/độ phản hồi/đồ họa.
 
@@ -14,7 +14,6 @@ flowchart LR
     K_03c["K-03c chết"]
     K_03d["K-03d chết"]
     K_03e["K-03e chết"]
-    R_05a["R-05a chờ gộp"]
     R_05b["R-05b chờ gộp"]
     R_05c["R-05c chờ gộp"]
     R_05d["R-05d chờ gộp"]
@@ -23,6 +22,7 @@ flowchart LR
     R_07b["R-07b chờ gộp"]
     A_07["A-07 chặn"]
     R_04b["R-04b chặn"]
+    R_05a["R-05a chặn"]
     K_02["K-02 chờ"]
     R_06a["R-06a chờ"]
   end
@@ -36,4 +36,4 @@ flowchart LR
   end
 ```
 
-Tổng: 85 việc, 1 đang làm (+7 chết, 8 chờ gộp), 2 chờ, 2 bị chặn, 65 xong.
+Tổng: 85 việc, 1 đang làm (+7 chết, 7 chờ gộp), 2 chờ, 3 bị chặn, 65 xong.
