@@ -310,3 +310,5 @@ Task Scheduler `JX-Guard`: LastRun 10:29:29, LastTaskResult 0 (script chạy xon
 - #130.3: bỏ bảng "Tiến độ task" trong TRANG-THAI.md (bản cũ lưu ở D:/JX-wt/guard/TRANG-THAI.truoc-130.md, nằm trong git); nguồn duy nhất TASKS/*.md → TIEN-DO.md.
 - #130.1: chưa đánh "xong" hàng loạt; sẽ làm từng việc một bằng set_status.py khi có đủ 2 bằng chứng.
 - #130.4: giữ nguyên config.toml, chờ Chat báo chủ đã đổi khóa.
+
+[TỰ QUYẾT 18/11] R-06a: .done exit=0 nhưng worktree sạch, I-01 không có khối từ khóa → không gộp, đặt failed để chạy lại sau (khi xingchi ổn).
