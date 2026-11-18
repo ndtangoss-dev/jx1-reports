@@ -888,3 +888,8 @@ Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm th�
 ### #205 bước 1 (19/11 01:55)
 - Trần ngân sách ghi lại ở `STATE/TRANG-THAI.md` (1000/ngày, 3000/7 ngày); `stop_guard.py` Chat đã nâng. `tong_quan.py`: MAXKEY 2→3, MAXALL 10→15 (sao lưu `.bak-205`); K5/K6 vẫn trần 2 theo Q-51 ở bước đầu.
 - RAM trống 21.6/47.9 GB (45%), 429 = 0 ở nhật ký gần nhất; quan sát ≥5 phút rồi mới tăng bước 2. Chi phí ước tính USD: chưa có nguồn đo, [CHƯA KIỂM].
+
+### 19/11 02:05 — gộp KV-06, nhịp RAM
+- KV-06 xong: **A-07 CHƯA ĐẠT** (1/6 yêu cầu con đạt; thiếu dump/debugger gắn T1 với dòng mã) → A-07 giữ nguyên, không tính xong. Tới nay 3/4 kiểm KV về C-01, C-03, E-05, A-07 đều CHƯA ĐẠT; P-02 (KV-03), B-02 (KV-05) còn chạy.
+- Tiểu yêu SONG 13/15 (MAXKEY 3, MAXALL 15); RAM trống 17.6/47.9 GB (37%); 429 = 0 [chưa thấy trong nhật ký]; chi phí USD [CHƯA KIỂM]. Quan sát ≥5 phút trước bước 2 (cần RAM ≥20% — hiện 37%).
+- **T36test**: APK đang cài `com.jxclient.hoiuctruyenky` có SHA-256 `8da22c0c…973f84`, **KHÁC** qh9A `47eb28e3` và fix36 `9abdf095` (đã băm các APK có trong D:\JX-build, D:\Android; đang quét thêm). Tức W-02 trước đó chạy trên APK chưa định danh được.
