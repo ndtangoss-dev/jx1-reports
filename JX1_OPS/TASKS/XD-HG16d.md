@@ -1,7 +1,7 @@
 ---
 id: XD-HG16d
 title: "XD HG-16d: nhanh tao ho so nhan vat phia Bishop/Goddess"
-status: running
+status: done
 level: L3
 agent: codex
 effort: high
