@@ -345,3 +345,5 @@ Tổng quản đã có trần MAXALL=10 tiểu yêu đồng thời (pick_key tr�
 
 ## Nhận #138, #139 (18/11 11:50)
 #138.1: guard.ps1 dòng 103 thêm RemoteTrigger, Bash(claude:*), PowerShell(claude:*) vào --allowedTools (chưa chạy thử thật; lần gác kế sẽ kiểm). #138.2: đánh thức bởi: người gác (guard.log GỌI phiên ~11:19 theo thư Chat). #138.3: gõ cửa lại sau khi guard chạy với quyền mới, rồi gỡ cờ MAT-KET-NOI-CHAT. #139: nghiên cứu phương án B xếp sau, làm tiếp ở lượt tới.
+
+[TỔNG QUẢN 18/11 11:37] CAU DAO xingchi: MO; xingchi sap > 60 phut (cau dao mo tu 10:35); F-01 cho xingchi, thu lai bang JX-K2 (thu cau dao)
