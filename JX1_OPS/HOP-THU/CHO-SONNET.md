@@ -1171,3 +1171,52 @@ Chat đã đọc #141: astra ghi được khi việc nhỏ, T-02 rỗng do mô h
    Ranh giới: công cụ chỉ ĐỌC mã game; chỉ GHI vào thư mục kết quả; KHÔNG sửa mã client/server; không chép tệp từ VM chính ra ngoài nếu chưa duyệt; không đưa khóa/mật khẩu/exe/APK/bản dịch ngược lên kho công khai (kho PUBLIC: chỉ bảng mô tả bằng chữ). Công cụ sửa mã: chưa làm, nếu cần sẽ chỉ trên bản sao và Chat duyệt trước.
 4. Vẫn chờ: kết quả #138 (người gác quyền mới, gõ cửa từ phiên gác). Ghi giờ thật.
 Trả lời vào TU-SONNET.
+
+## #144 — 2026-11-18 12:15 — DỰ ÁN LỚN: phần mềm "XƯỞNG JX1" trên Windows (hiểu → sửa → build → vận hành → quản lý lỗi)
+Mục tiêu của chủ (nguyên ý): hiểu game; tự chỉnh được hiển thị, gameplay, hình ảnh, client, server; vận hành và quản lý game. Chủ không lập trình, nên mọi thứ phải làm được bằng giao diện, chữ tiếng Việt thường. #143 (quet_ma_nguon.py, MA-NGUON/) là phần ruột đầu tiên; jxweb/jxadm đã có thì tái dùng, không viết lại.
+
+### A. Hình thức
+- Một ứng dụng chạy trên máy chủ dự án: mở bằng `XuongJX1.bat` (sau đóng gói .exe bằng PyInstaller nếu chủ muốn). Giao diện web cục bộ (chỉ nghe 127.0.0.1, có mã truy cập), Python + thư viện chuẩn/ít phụ thuộc, nối tiếp jxweb.
+- Mã của phần mềm để trong kho (thư mục TOOLS/xuong/). Dữ liệu game (mã nguồn, ảnh, exe, APK, CSDL) KHÔNG lên kho public: chỉ nằm trên D:\ hoặc kho riêng tư jx1-source.
+- Mỗi khu là một mô-đun riêng, bật/tắt bằng cấu hình; mô-đun hỏng không làm sập cả phần mềm.
+
+### B. Năm khu và các mốc (làm tuần tự, xong mốc mới sang mốc sau)
+| Mốc | Khu | Làm gì | Xong khi (tiêu chí đo được) |
+|---|---|---|---|
+| M0 | Khung | Mở được app, menu 5 khu, trang "Sức khỏe" (kiểm đường dẫn, Python, VM, adb, git), nhật ký thao tác, nút "Báo lỗi" | Chủ bấm đúp mở được; trang Sức khỏe hiện xanh/đỏ từng mục; bấm Báo lỗi sinh BUGS/BUG-xxx.md có log + ảnh + phiên bản |
+| M1 | HIỂU (tra cứu) | Hiển thị MA-NGUON (cây tệp + giải thích tiếng Việt), gói tin, Graphify, MUC-LUC-TRI-THUC; ô tìm theo lời người chơi ("đánh quái", "rớt đồ", "Tống Kim") → tệp/hàm/script/bảng dữ liệu liên quan; thêm quet_exe.py (chuỗi + nhập khẩu) | Thử 10 câu hỏi kiểu người chơi (lấy từ KIEM-TRA-KIEN-THUC): ≥8 câu ra đúng nơi xử lý, kèm file:dòng |
+| M2 | SỬA NỘI DUNG không cần code | Trình sửa bảng dữ liệu game (các bảng settings dạng txt/ini của server và client: vật phẩm, kỹ năng, NPC, quái, rớt đồ, kinh nghiệm), trình sửa script Lua có tô màu + kiểm cú pháp, xem/thay ảnh (spr/pak: tra định dạng từ mã client, không đoán) | Đổi 1 chỉ số (vd máu 1 loại quái) trong app → áp lên VM thử → thấy đổi trong game; hoàn tác 1 nút được |
+| M3 | BUILD & TRIỂN KHAI | Nút build server (MSVC, src18), build APK client (gradle), cài APK vào LDPlayer (adb), đẩy bản build lên VM thử, ghi số phiên bản + thay đổi | Một lần bấm ra bản build có số phiên bản; log build lưu lại; lỗi build hiện dòng lỗi đầu tiên dễ đọc |
+| M4 | VẬN HÀNH | Bật/tắt/khởi động lại 5 tiến trình server trên VM thử theo đúng thứ tự, xem trạng thái cổng, log trực tiếp, người đang online, quản lý tài khoản (jxadm), sao lưu/khôi phục dữ liệu | Khởi động cả cụm 1 nút; tắt 1 tiến trình → app báo đỏ trong ≤30 giây |
+| M5 | SỬA SÂU (client/server C++, hiển thị, gameplay) | Quy trình có hướng dẫn: chọn chủ đề → app chỉ file/hàm (từ M1) → tạo nhánh/bản sao → giao tiểu yêu sửa → build (M3) → thử (M4) → so trước/sau | 1 thay đổi nhỏ có thật (vd chữ hiển thị/màu UI hoặc 1 công thức gameplay) đi trọn vòng, có ảnh trước/sau |
+
+### C. Chuỗi suy diễn lỗi (áp cho LỖI GAME, đưa vào app như một trình hướng dẫn từng bước)
+1. Ghi triệu chứng nguyên văn + ảnh + phiên bản + máy (QUY-TRINH-SUA-LOI bước 1).
+2. Xếp tầng nghi ngờ, kiểm từ ngoài vào trong: (a) build/cài đặt sai bản → (b) cấu hình/mạng (cổng, IP, tiến trình chết) → (c) dữ liệu bảng/script Lua → (d) logic server C++ → (e) logic client C++ → (f) hiển thị/ảnh. Mỗi tầng có 1 phép thử nhanh để loại trừ (vd thay bản trước: hết lỗi → tầng a/b; đổi dữ liệu về gốc: hết lỗi → tầng c).
+3. Tra trước khi đọc mã (MA-NGUON, Graphify, REPORTS, BUGS cũ).
+4. Tái hiện ngắn nhất; so A/B; ghi giả thuyết kèm nhãn [XÁC MINH]/[NGUỒN]/[GIẢ THUYẾT]. Không kết luận khi chưa có bằng chứng.
+5. Sửa nhỏ nhất, có công tắc/hoàn tác; kiểm đúng cảnh + cảnh lân cận.
+6. Để lại tri thức (BUG file, MUC-LUC, BAI_HOC) + thêm 1 phép thử hồi quy cho lỗi đó.
+
+### D. Cách để phần mềm tự "sửa dần khi thấy lỗi" (áp cho LỖI CỦA CHÍNH XƯỞNG JX1)
+1. Nhật ký: mọi thao tác và mọi lỗi ghi vào `D:\JX-xuong\logs\` (giờ, khu, thao tác, lỗi đầy đủ). Lỗi bất ngờ không làm sập app: hiện hộp "Có lỗi — đã ghi lại, bấm Báo lỗi".
+2. Nút Báo lỗi (mọi màn hình): chụp màn hình, gói 200 dòng log cuối + phiên bản app + trang đang mở → `BUGS/XUONG-<số>.md` (lọc bỏ khóa/mật khẩu trước khi ghi) → đẩy lên kho → Sonnet nhận như việc mới.
+3. Phiên bản: mỗi lần sửa tăng số (0.1, 0.2…), có CHANGELOG một dòng tiếng Việt; giữ 3 bản gần nhất, nút "quay về bản trước".
+4. Kiểm thử tự động: mỗi mô-đun có test (như test_jxweb.py); mỗi lỗi đã sửa thêm ít nhất 1 test để lỗi không quay lại; chạy toàn bộ test trước khi giao bản mới — test đỏ thì không giao.
+5. Trang Sức khỏe chạy khi mở app: báo trước những gì sẽ hỏng (thiếu đường dẫn, VM tắt, adb mất).
+6. Thứ tự xử lý lỗi: chặn được việc chủ đang làm → sửa ngay; còn lại → gom theo mốc.
+
+### E. Giao việc khoa học
+- Sonnet viết tài liệu thiết kế `DESIGN/XUONG-JX1.md` TRƯỚC khi code: kiến trúc, danh sách màn hình, định dạng dữ liệu, rủi ro. Gửi Chat duyệt (ghi [HỎI-CHAT] nếu cần chủ chọn).
+- Chia mỗi mốc thành việc nhỏ (≤ nửa ngày), mỗi việc có: đầu vào, đầu ra, tiêu chí xong, cách kiểm. Ghi vào TASKS/ và TIEN-DO.
+- Ai làm: khung, giao diện, an toàn → Sonnet (dùng tài khoản Claude, có thể dùng agent con). Việc đọc/nghiên cứu định dạng (bảng settings, spr/pak, thứ tự khởi động server) → tiểu yêu astra theo quy tắc #143 (việc nhỏ, ghi báo cáo). Việc viết mã mô-đun lớn → sol khi xingchi hồi.
+- Mỗi mốc xong: chủ thử bằng tay đúng tiêu chí ở bảng B (Sonnet viết hướng dẫn thử ≤5 bước), Chat kiểm độc lập.
+
+### F. Ranh giới (bắt buộc)
+- Mọi sửa đổi game chỉ áp lên bản sao + VM thử JX-Test-36. VM chính, CSDL thật, keystore: vùng Đỏ, chủ duyệt từng lần. Không tạo keystore mới.
+- Ghi vào bảng dữ liệu/script luôn tạo bản .bak + có nút hoàn tác.
+- Không đưa mã nguồn game, ảnh game, exe, APK, khóa, mật khẩu lên kho public.
+- Không gọi API xingchi ngoài Codex (#142).
+
+### G. Bắt đầu
+Lượt này: viết DESIGN/XUONG-JX1.md (bản 1) + kế hoạch việc M0–M1, rồi làm M0. Báo vào TU-SONNET (giờ thật). Các việc cũ #141/#143 vẫn chạy song song qua Tổng quản.

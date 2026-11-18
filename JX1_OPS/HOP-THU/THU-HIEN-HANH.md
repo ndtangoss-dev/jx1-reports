@@ -57,3 +57,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Astra qua được công cụ (32 lần đọc) nhưng không ghi: kiểm log T-02, thử nghiệm ghi file nhỏ, quy tắc astra tạm cho việc báo cáo | #141 | bổ sung #140 | chờ Sonnet |
 | Cấm giả danh client/gọi trực tiếp API xingchi (403 client_not_allowed, luật nhóm cấm lách); #139 chốt; astra qua Codex (#141) là đường khả thi | #142 | bổ sung #139/#140 | chờ Sonnet |
 | Duyệt quy tắc astra cho Tổng quản (báo cáo, kiểm rỗng, chạy lại ≤2); giao Sonnet công cụ ĐỌC mã nguồn (bảng tệp/hàm, gói tin, chuỗi exe), ranh giới chỉ đọc | #143 | bổ sung #141 | chờ Sonnet |
+| DỰ ÁN XƯỞNG JX1: phần mềm Windows 5 khu (hiểu, sửa nội dung, build, vận hành, sửa sâu), mốc M0–M5 có tiêu chí; chuỗi suy diễn lỗi game; cơ chế báo lỗi/phiên bản/test cho chính phần mềm | #144 | mở rộng #143 | chờ Sonnet |
