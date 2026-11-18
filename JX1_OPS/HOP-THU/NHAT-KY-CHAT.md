@@ -185,3 +185,4 @@
 - 10:54 Sonnet: R-06a astra exit=0 nhưng rỗng → Chat đọc nhầm, đã báo chủ sai. Gửi #133 sửa #132.
 - 10:53 Kiểm định kỳ: Sonnet chưa nhận #131–#133. GÕ CỬA mới trig_01Sb49tXgbJdMQhW16uXqFjq (11:03).
 - 10:56 Chủ: tk đang dùng ndtan48, ndtan.goss là tk cũ → người gác dùng tk cũ. Gửi #134 [KHẨN].
+- 10:58 Sonnet xác nhận: CLI trên PC đăng nhập ndtan.goss (cũ), app = ndtan48. [CAN-CHU] chủ /login ndtan48 ở cửa sổ dòng lệnh — đã chuyển chủ. #131 xong: gỡ khóa mặc định, kho sạch khóa. Cầu dao MỞ; R-05c treo >60 phút bị dừng chạy lại.
