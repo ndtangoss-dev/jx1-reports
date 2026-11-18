@@ -299,3 +299,7 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 ## ĐANG LÀM DỞ (2026-11-18 09:20, hook PreCompact)
 - Sắp nén ngữ cảnh. PM mới đọc LUAT-COT-LOI.md, TIEN-DO.md, THU-HIEN-HANH.md, QUYET-DINH.md rồi lịch sử chat.
 - Việc đang dở, bước và lệnh chạy lại: xem dòng trạng thái cuối trong TRANG-THAI.md và TASKS/*.md (status running); PM ghi chi tiết ở đây nếu kịp.
+
+## ĐANG LÀM DỞ (2026-11-18 10:02, hook PreCompact)
+- Sắp nén ngữ cảnh. PM mới đọc LUAT-COT-LOI.md, TIEN-DO.md, THU-HIEN-HANH.md, QUYET-DINH.md rồi lịch sử chat.
+- Việc đang dở, bước và lệnh chạy lại: xem dòng trạng thái cuối trong TRANG-THAI.md và TASKS/*.md (status running); PM ghi chi tiết ở đây nếu kịp.
