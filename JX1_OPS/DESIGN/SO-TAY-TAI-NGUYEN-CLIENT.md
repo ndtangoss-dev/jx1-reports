@@ -117,3 +117,60 @@ Không commit/push theo yêu cầu; SHA không có. Bước tiếp theo: PM có 
 liên quan: JX1_OPS/DESIGN/QUY-LUAT-VE-BO-PHAN.md; JX1_OPS/REPORTS/K-02-giao-dien.md; JX1_OPS/REPORTS/K-02-am-thanh.md; JX1_OPS/REPORTS/K-02-nhan-vat.md; JX1_OPS/REPORTS/K-02-quai-npc.md; JX1_OPS/REPORTS/J-01-animation-nhan-vat-tran.md
 
 Kỹ năng đã dùng: jx1-retrofit, jx1-read-server, jx1-read-client, jx1-parameters, jx1-knowledge, jx1-report
+
+## Bổ sung khi tiếp tục SO-17 — 19/11/2026
+
+### Quy ước đọc nguồn
+
+[TÀI LIỆU] Các đường dẫn `engine/...`, `gamecore/...`, `gamescene/...`, `manager/...` trong sổ tay thuộc root client `C:/Jx1CocoV3/Folder/Client2912-20260116T044348Z-3-001/Client2912/Client/Classes`; mục đối chiếu server có root riêng ghi ngay tại đó (`JX1_OPS/TASKS/SO-17.md:23–25`). `[THẤY]` là đọc trực tiếp mã nguồn; `[TÀI LIỆU]` là dẫn tài liệu hoặc diễn giải dựa trên nguồn được nêu; `[CHƯA KIỂM]` là chưa có bằng chứng. Đọc source không xác nhận bản game đang chạy. Phần trước và trạng thái PARTIAL được giữ nguyên.
+
+### Gói tài nguyên và hai danh sách INI
+
+[TÀI LIỆU] Có thể hiểu PAK là kho chứa nhiều tệp; SPR là dữ liệu các khung ảnh; INI là bảng thiết lập theo mục và khóa. Cách diễn giải này dựa trên cấu trúc PAK/SPR và lời gọi đọc `Package`/`Path` trong source, không phải đã giải một gói thực (`engine/KbugInfo.h:238–291`; `engine/KPakList.cpp:140–176`).
+
+[THẤY] Source khai báo đầu PAK có dấu nhận diện `PACK`, số mục, vị trí bảng chỉ mục và vị trí dữ liệu; từng mục chỉ mục có mã tệp, vị trí, kích thước gốc và trường kích thước/kiểu nén (`engine/KbugInfo.h:273–291`). [CHƯA KIỂM] Chưa xác minh header, CRC hoặc nội dung của PAK thực trong SO-17; không coi PAK là ZIP hoặc mặc định một công cụ ZIP đọc được.
+
+[THẤY] Có hai tên INI phục vụ hai chỗ khác nhau. `PAKLIST_FILE` trỏ `data/paklist.ini`; nhánh chuẩn bị tải đọc mục `list`, khóa `count`, `isopen`, `pak_0...`, `pak_0_r...`. Nhánh mở gói sau đó truyền `data/package.ini` (dấu phân cách thay theo nền tảng) cho `KPakList::Open`, nơi đọc mục `Package`, khóa `Path` và các khóa số (`gamescene/KUpdateLayer.cpp:40,762–830`; `engine/KPakList.cpp:136–205`). [CHƯA KIỂM] Chưa đọc hai INI triển khai, chưa biết danh sách gói hiệu lực; không đồng nhất hai tên hoặc mở cấu hình nguyên tệp chứa trường ngoài phạm vi.
+
+[THẤY] Có giới hạn nền tảng ngay khi đọc `Path`: trong nhánh không định nghĩa `WIN32`, đoạn mã ghi lại đường dẫn thành `/data` trước khi giải đường dẫn đầy đủ (`engine/KPakList.cpp:149–155`). [TÀI LIỆU] Vì vậy không suy rằng chỉ đổi khóa `Path` là đổi nơi đọc gói trên mọi nền tảng. [CHƯA KIỂM] Chưa xác nhận macro build và đường dẫn hiệu lực của bản game đang cài.
+
+[THẤY] Vòng mở duyệt khóa số tăng dần; chỉ gói mở thành công mới được đưa vào danh sách. Vòng tìm tài nguyên duyệt từ đầu danh sách và dừng ở gói đầu tiên tìm thấy mã tài nguyên (`engine/KPakList.cpp:66–77,171–198`). [TÀI LIỆU] Vì vậy thứ tự cấu hình có ý nghĩa trong luồng source này; không mặc định gói thêm cuối luôn đè gói trước. [CHƯA KIỂM] Chưa thử tài nguyên trùng, va chạm mã tên hoặc thứ tự gói thực nạp.
+
+[THẤY] Ngoài nơi lưu, mã hóa tên cũng ảnh hưởng các nhánh tìm: có nhánh thử nguyên tên, UTF-8 → GBK hoặc GBK → UTF-8 tùy kiểu chuyển được truyền vào (`engine/KPakList.cpp:234–295`). [TÀI LIỆU] Khi điều tra “có tệp nhưng không tìm thấy”, cần đối chiếu tên/đường dẫn, kiểu chuyển mã, danh sách gói và mode, thay vì chỉ kiểm tệp có trên đĩa (`engine/KPakFile.cpp:256–277`; `engine/KPakList.cpp:234–295`). [CHƯA KIỂM] Chưa xác định một lỗi ảnh cụ thể do mã hóa.
+
+### Khung ảnh và nhân vật ghép bộ phận
+
+[TÀI LIỆU] “Header” là phần mô tả chung; “frame” là một khung ảnh; “offset” là độ lệch để xác định dữ liệu hoặc vị trí khung. Mỗi khung có kích thước và độ lệch riêng, nên chỉ nhìn kích thước chung chưa đủ đối chiếu ảnh từng bộ phận (`engine/KbugInfo.h:238–269`; `engine/Kgetinidata.cpp:142–151`). [CHƯA KIỂM] Chưa đo khung thật, bảng màu, thời lượng hiển thị hoặc chất lượng sau chuyển đổi SPR.
+
+[THẤY] Cùng một bộ phận có tên ảnh và dữ liệu theo hành động/trang bị; mã chọn hành động còn xét trạng thái cưỡi ngựa. Thứ tự lớp được hỏi theo hành động, hướng và khung (`gamecore/KNpcResNode.cpp:547–605,612–630`; `gamecore/KNpcRes.cpp:422`). [TÀI LIỆU] Vì vậy một ảnh đúng tên vẫn có thể bị che khác mong muốn nếu chọn sai tổ hợp trạng thái/bảng sort. Đây là cách khoanh vùng từ luồng mã; DESIGN cũ vẫn thiếu ma trận nam/nữ × hành động × hướng (`JX1_OPS/DESIGN/QUY-LUAT-VE-BO-PHAN.md:18–46`). [CHƯA KIỂM] Chưa gán nguyên nhân cho ca lỗi cụ thể hoặc bổ sung số đo vào ma trận cũ.
+
+### Âm thanh có thể đi từ PAK ra tệp rời
+
+[THẤY] `KNpcRes::PlaySound` gọi `g_StrCopy` trước khi chọn `playEffect` hoặc `SoundManager::MyPlaySound` (`gamecore/KNpcRes.cpp:2512–2551`). Nếu tệp đích đã có, `g_StrCopy` trả về; nếu chưa có và tra được trong PAK, mã đọc dữ liệu gói rồi ghi thành tệp đích (`engine/KStrBase.cpp:829–873`). [TÀI LIỆU] Vì vậy trình phát nhận đường dẫn tệp rời không đủ chứng minh âm đó vốn nằm ngoài PAK. [CHƯA KIỂM] Không gọi hàm này, không tạo tệp âm, không phát thử hoặc xác nhận nhánh hiệu lực trên thiết bị.
+
+### Công cụ PAK còn thiếu nguồn
+
+[TÀI LIỆU] Báo cáo kiểm kê cũng nhắc cần công cụ PAK ở `docs-analysis/tools` (`JX1_OPS/REPORTS/K-02.md:29`). [CHƯA KIỂM] `Test-Path -LiteralPath 'docs-analysis/tools'` trả `False` trong worktree SO-17. Chưa xác định được tên, phiên bản, mã, cách dùng, kiểu nén hỗ trợ hoặc mức an toàn của công cụ; không có dòng văn bản để dẫn cho một thư mục vắng mặt. Không lấy công cụ ở cây khác thay thế, không tải hoặc chạy trình giải gói. PM cần chỉ định nguồn để hoàn tất nhóm này; kết luận PARTIAL cũ không đổi.
+
+### Mục sổ thông số
+
+[THẤY] Bảng chỉ ghi khai báo/mặc định source, không phải giá trị đo trên gói hoặc bản game đang chạy. Mức đổi không cấp quyền chỉnh mã/cấu hình.
+
+| Nhóm | Tên/hằng số | file:dòng | Giá trị | Đơn vị | Ảnh hưởng | Đổi an toàn (CÓ/CẨN THẬN/KHÔNG) | Nguồn đo |
+|---|---|---|---|---|---|---|---|
+| Ưu tiên đọc | m_nPakFileMode | engine/KPakFile.cpp:19–31,262–275 | Mặc định source 1; nhánh 0 thử đĩa trước, nhánh khác thử PAK trước | Mã chế độ | Nơi thử đọc đầu tiên | CẨN THẬN — chưa kiểm mode runtime/tài nguyên trùng | Đọc tĩnh, chưa đo runtime |
+| Danh sách gói | MAX_PAK | engine/KPakList.h:44–46; engine/KPakList.cpp:171–198 | 50; xét khóa 0..49 | Vị trí gói/khóa | Giới hạn trong lớp này, không phải số PAK đang có | CẨN THẬN — chưa kiểm nơi phụ thuộc | Đọc tĩnh |
+| Hoạt ảnh | SPRHEAD.Frames | engine/KbugInfo.h:245; engine/Kgetinidata.cpp:142,153 | Theo asset, chưa đọc giá trị | Khung ảnh | Tổng khung từ header | KHÔNG — thiếu asset/cặp đối chiếu | Đọc schema, chưa đo |
+| Hướng | SPRHEAD.Directions | engine/KbugInfo.h:247 | Theo asset, chưa đọc giá trị | Hướng | Số hướng trong header; chưa gán bằng ma trận tám hướng cũ | KHÔNG — thiếu asset/cặp đối chiếu | Đọc schema, chưa đo |
+
+### Đề xuất tối ưu
+
+[CHƯA KIỂM] Chưa có số đo để đề nghị đổi hiệu năng, nén gói, cache hoặc asset. Bước tiếp theo là chỉ định nguồn công cụ và cặp tài nguyên đúng bản, rồi giao task riêng cho phép kiểm cần thiết. [TÀI LIỆU] Một ca sai ảnh cần đối chiếu cấu hình gói/mode, tên part, hành động, hướng và khung với bảng sort; không thay kết luận bằng ảnh chụp đơn lẻ (`engine/KPakFile.cpp:256–277`; `engine/KPakList.cpp:66–77`; `gamecore/KNpcRes.cpp:422`; `gamecore/KNpcResNode.cpp:547–630`).
+
+### Phát hiện khi chuẩn hóa
+
+[TÀI LIỆU] Các báo cáo K-02 về giao diện/âm thanh đã đọc dùng root `D:/JX-build/qh9A`; SO-17 chỉ đối chiếu lại các điểm cần bổ sung trong root client task chỉ định. Không đưa số lượng/byte asset hoặc dòng source của qh9A thành số đo của root SO-17 (`JX1_OPS/REPORTS/K-02-giao-dien.md:100–106,124`; `JX1_OPS/REPORTS/K-02-am-thanh.md:37–45`; `JX1_OPS/TASKS/SO-17.md:25`).
+
+[THẤY] Source có comment legacy dùng GBK/CP936 hoặc trộn mã; đọc sai encoding có thể làm lệch điểm định vị. Riêng đường sao âm đã chốt bằng dòng LF vật lý và symbol ASCII tại `engine/KStrBase.cpp:829–873`; không sửa encoding/source và không tự giải nghĩa tên asset chưa đọc. Chi tiết kiểm tài liệu và giới hạn nhịp bàn giao ở `JX1_OPS/REPORTS/SO-17.md`.
+
+liên quan: JX1_OPS/REPORTS/SO-17.md; JX1_OPS/DESIGN/QUY-LUAT-VE-BO-PHAN.md; JX1_OPS/REPORTS/K-02-giao-dien.md; JX1_OPS/REPORTS/K-02-am-thanh.md; JX1_OPS/REPORTS/J-01-animation-nhan-vat-tran.md
