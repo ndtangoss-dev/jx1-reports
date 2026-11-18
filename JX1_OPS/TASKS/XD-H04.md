@@ -24,3 +24,9 @@ Quét `TASKS/*.md` phần "Phạm vi và quyền đã duyệt": tìm việc nào
 - Không chạy exe lạ, không VM, không mạng, không Main VM, không đọc khóa/mật khẩu/dump tài khoản. Chỉ ghi tệp đầu ra.
 - Worktree có thể KHÔNG có mã nguồn game: đọc trực tiếp (chỉ đọc) client `C:/Jx1CocoV3/Folder/Client2912-20260116T044348Z-3-001/Client2912/Client/Classes` và server `C:/Jx1CocoV3/SwordOnline/SwordOnline/jxOnline/gameserver/Sources`; kho báo cáo ở D:/jx1-ops-wt/JX1_OPS (chỉ đọc).
 - Mỗi lần đọc <= ~400 dòng. Cuối tệp task ghi mục "## Kết quả" (3–5 dòng).
+
+## Kết quả
+- **DONE — ĐẠT:** Rà 250/250 tệp Markdown; trong 104 mục đúng mẫu và 21 mục biến thể, không thấy quyền chạy VM, dùng mạng thật hoặc chạy exe game/server.
+- [Báo cáo XD-H04](../REPORTS/XD-H04.md) đối chiếu các phê duyệt riêng theo vai trò/đợt với `QUYET-DINH.md`, nêu chênh lệch Q-19/AGENTS và các mục chưa kiểm.
+- Chỉ rà tài liệu; không build, chạy exe, dùng VM hay mạng. Tệp nhịp ngoài worktree bị sandbox từ chối ghi.
+- Chưa stage, commit hoặc push; Tổng quan nhận hai tệp để commit.
