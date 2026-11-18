@@ -979,3 +979,8 @@ Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm th�
 - SỐ THẬT 86/107 = 80,4% (đã gộp SO-30, HG-03b; mẫu số đóng băng 107 theo #212).
 - DỰ BÁO 06:30: 86–88/107 (80–82%). Đang chạy: HG-14, HG-16 (mở lại sau khi XD-HG14 tìm ra Lua/INI sửa đồ và tân thủ trong ServerNew), XD-B05, XD-P03.
 - SONG: 4 (ready=0, mẫu số đóng băng nên không thêm hạng mục; chỉ thêm XD khi có việc cha cần đóng). RAM/429/USD: [CHƯA KIỂM].
+
+## SONNET 05:38 — DỰ BÁO + SỐ THẬT
+- SỐ THẬT 87/107 = 81,3% (board ok 87 / run 12 / wait 8). Mới: HG-14 đóng ở mức nguồn tĩnh (HG-14c; runtime [CHƯA KIỂM]). XD-P03 gộp (kế hoạch đo tải, P-03 cha vẫn mở). B-05: 8 câu hỏi chủ đã vào BAO-CAO-CHU.
+- Còn chờ: HG-16c đang chạy (+1 nếu đạt → 88). DỰ BÁO 06:30: 87–89/107. Mẫu số giữ 107.
+- RAM/429/USD: [CHƯA KIỂM].
