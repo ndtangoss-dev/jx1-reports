@@ -88,7 +88,7 @@ flowchart TD
 | verify_role | Đã kiểm mock bằng/khác; khác gây assertion | [THẤY] C4; `JX1_OPS/TESTER/scenarios.py:160`–`:164`. Chỉ so sánh role list, chưa xác minh toàn bộ nhân vật. |
 | verify_persistence | Đã kiểm và xác nhận BỎ QUA | [THẤY] C4; `JX1_OPS/TESTER/scenarios.py:167`–`:168`. Thiếu snapshot/giải mã vị trí, HP, trang bị, hành trang và xác nhận lưu sau logout. |
 
-## Lệnh offline đã chạy và kết quả thật
+## Đã xác minh — lệnh offline đã chạy và kết quả thật
 
 [THẤY] Chạy từ `D:\JX-wt\XD-E05`, ngày 19/11/2026. `-I` giữ chế độ isolated; thêm `-B` để không ghi `.pyc` vào nguồn. Chỉ test có sẵn, không tạo script phụ, không sửa mã; file báo cáo/BUG do unit test tạo trong `TemporaryDirectory` rồi tự dọn (`JX1_OPS/TESTER/test_tester.py:275`–`:322`). Các bộ mới ngoài E-05 như visibility/real_login không thuộc lượt chạy này. Hook audit chặn mọi sự kiện `socket.*` ở tiến trình chạy lệnh; worker chỉ thực thi các callable không socket đã đọc tại `JX1_OPS/TESTER/test_tester.py:176`–`:213`. Hook không được nhận là bảo vệ kế thừa vào worker spawn.
 
