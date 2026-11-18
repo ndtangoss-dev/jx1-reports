@@ -181,3 +181,4 @@
 - 10:46 Chủ gửi ảnh: Sonnet hỏi chủ trực tiếp về backlog hook Stop (lẽ ra [HỎI-CHAT]). Chat quyết thay: #130.
 - 10:48 Chủ đã nhắn Sonnet (#128–#130) và xóa khóa mặc định ở xingchi. Gửi #131.
 - 10:52 LỆNH CHỦ: Tổng quản giám sát chặt, chạy lại mỗi 2 phút. Phát hiện R-06a chạy astra đã XONG trong khi sol lỗi. Gửi #132. Đội test T-02..T-04 chưa có báo cáo (CHO-XINGCHI).
+- 10:51 Sonnet xong #128–#130: người gác cùng tài khoản (ndtan.goss, cùng C:\Users\PC\.claude), không phải tk cũ; claude -p (cả --model sonnet) hết hạn mức tuần tới 01:00 → người gác chỉ báo [CAN-CHU], không đánh thức được đến 01:00. Tổng quản đẩy từ worktree riêng D:/JX-wt/tq. stop_guard chỉ chặn việc Sonnet. Đến 01:00: Chat + chủ là đường đánh thức.
