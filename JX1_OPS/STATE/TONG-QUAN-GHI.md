@@ -212,3 +212,4 @@
 [TỔNG QUẢN 19/11 01:05] CAU DAO xingchi: DONG
 [TỔNG QUẢN 19/11 01:07] CAU DAO xingchi: DONG; KV-03 chet, chay lai lan 1 bang JX-K4; KV-04 chet, chay lai lan 1 bang JX-K4
 [TỔNG QUẢN 19/11 01:11] CAU DAO xingchi: DONG; HG-03c giao bang JX-K4; HG-05b giao bang JX-K3; HG-06 giao bang JX-K3; HG-07 giao bang JX-K2; HG-08 giao bang JX-K6; HG-09 giao bang JX-K5; SO-07 giao bang JX-K5; SO-08 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-09 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-10 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-11 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-12 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut)
+[TỔNG QUẢN 19/11 01:16] CAU DAO xingchi: DONG; SO-11 giao bang JX-K2; SO-12 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut)

@@ -156,3 +156,13 @@ Sonnet lấy việc từ trên xuống, theo phụ thuộc. Khi bắt đầu m�
 | HG-07 | Hiểu game: chợ, giao dịch, kho đồ | L3 | Codex | `DESIGN/HIEU-GIAO-DICH-KHO-DO.md` |
 | HG-08 | Hiểu game: công thức sát thương | L3 | Codex | `DESIGN/HIEU-CONG-THUC-SAT-THUONG.md` |
 | HG-09 | Hiểu game: nạp và chuyển bản đồ | L3 | Codex | `DESIGN/HIEU-NAP-VA-CHUYEN-BAN-DO.md` |
+| SO-13 | Sổ tay hiểu game: tài khoản và thanh toán (PaySys) | L3 | Codex | `DESIGN/SO-TAY-TAI-KHOAN-PAYSYS.md` |
+| SO-14 | Sổ tay hiểu game: Goddess lưu nhân vật | L3 | Codex | `DESIGN/SO-TAY-GODDESS-LUU-NHAN-VAT.md` |
+| SO-15 | Sổ tay hiểu game: S3Relay | L3 | Codex | `DESIGN/SO-TAY-S3RELAY.md` |
+| SO-16 | Sổ tay hiểu game: tệp cấu hình gs/Settings | L3 | Codex | `DESIGN/SO-TAY-TEP-CAU-HINH-GS.md` |
+| SO-17 | Sổ tay hiểu game: tài nguyên client | L3 | Codex | `DESIGN/SO-TAY-TAI-NGUYEN-CLIENT.md` |
+| SO-18 | Sổ tay hiểu game: vòng lặp server | L3 | Codex | `DESIGN/SO-TAY-VONG-LAP-SERVER.md` |
+| HG-10 | Hiểu game: cấp, kinh nghiệm, điểm tiềm năng | L3 | Codex | `DESIGN/HIEU-CAP-KINH-NGHIEM.md` |
+| HG-11 | Hiểu game: môn phái và kỹ năng khởi đầu | L3 | Codex | `DESIGN/HIEU-MON-PHAI.md` |
+| HG-12 | Hiểu game: quái hồi sinh và vật phẩm rơi | L3 | Codex | `DESIGN/HIEU-QUAI-HOI-SINH-VAT-PHAM-ROI.md` |
+| HG-13 | Hiểu game: lệnh GM và công cụ quản trị | L3 | Codex | `DESIGN/HIEU-LENH-GM.md` |
