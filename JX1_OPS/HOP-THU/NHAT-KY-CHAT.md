@@ -219,3 +219,4 @@
 - 16:50 Chủ quyết bỏ người gác (Q-48). Viết QUY-TRINH-KHONG-NGUOI-GAC.md, #158. Chủ nhắn Sonnet câu cố định để bắt đầu đợt.
 - 16:55 Chủ hỏi ai nuôi tiểu yêu khi không người gác. Chat đọc tong_quan.py: tự chạy lại ≤3 lần, không cần Claude. Gửi #159 (xác nhận chạy nền, tự giao việc, bỏ đánh thức).
 - 17:00 Chủ: bỏ lịch kiểm của Chat, chủ gọi Chat khi Sonnet xong. Xóa lịch kiểm. Cập nhật QUY-TRINH, KHOI-DONG, SO-TAY, gửi #160.
+- 16:52 Chủ gọi Chat đọc: Sonnet XONG ĐỢT #159/#160 (gỡ JX-Guard, Tổng quản chạy lịch Windows không gọi claude, bảng nút exe). Chat nhận lỗi đọc sai Remove Role (xóa hàng loạt), đã sửa HUONG-DAN. Còn: #154.4, tab Information (chờ chủ duyệt).
