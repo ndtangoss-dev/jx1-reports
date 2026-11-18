@@ -29,3 +29,9 @@ Tiếp HG-05 (đã rà 82 báo cáo, xem `JX1_OPS/DESIGN/DANH-SACH-CHUA-KIEM.md`
 - Không sửa mã, không chạy exe, không VM, không mạng, không đụng Main VM, không đọc khóa/mật khẩu/dump tài khoản.
 - Không đọc cả thư mục lớn; mỗi lần đọc <= ~400 dòng; không đọc lại.
 - Cuối tệp task này ghi mục "## Kết quả" (3–5 dòng).
+
+## Kết quả
+- [PARTIAL] Đã tạo JX1_OPS/DESIGN/DANH-SACH-CHUA-KIEM-2.md; đối chiếu 174 tệp, bảng cũ khớp tên 133 tệp, còn 41 tệp chưa nêu.
+- [THẤY] Tóm tắt HG-05 ghi 82 báo cáo; tiêu chí khác phép khớp tên 133 tệp, cần giữ sai lệch để PM xem xét.
+- [CHƯA KIỂM] Không xác minh gameplay/runtime hoặc chạy build/exe/VM/mạng; đã có một lệnh tìm đệ quy vượt Q-51 và đã dừng.
+- [CHƯA KIỂM] Không ghi được tệp nhịp ngoài worktree; xem JX1_OPS/REPORTS/HG-05b.md. Không commit.
