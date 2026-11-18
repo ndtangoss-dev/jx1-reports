@@ -107,3 +107,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | C01+C03 đạt; giao W-01 gộp, W-02 quan sát hiệu ứng trên Test-36, G/V/T | #191 | | chờ Sonnet |
 | Sửa gốc LUAT-COT-LOI.md (bỏ 'push, dừng', thêm L10 vòng liên tục) | #192 | thay luật dừng cũ | chờ Sonnet |
 | Duyệt W-01 làm nền; bổ sung lịch sử sửa, dữ liệu thiếu, SHA binary; W-02 ưu tiên H4/H5 | #193 | trả lời [HỎI-CHAT] W-01 | chờ Sonnet |
+| Luật 'ẩn LDPlayer' bị rơi vì chỉ nằm ở thư cũ; gom vào LUAT-COT-LOI.md L11 | #194 | | chờ Sonnet |

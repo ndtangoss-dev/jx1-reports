@@ -56,3 +56,10 @@ Hiểu game (chuẩn hóa) → đường truyền client-server + hiểu exe →
 - Cần chủ thật: ghi [CAN-CHU] vào BAO-CAO-CHU.md rồi làm việc khác. Không bao giờ kết lượt bằng câu hỏi trong khung chat Sonnet (Q-21).
 - Hiệu ứng vũ khí: KHÔNG sửa mã tới khi `DESIGN/HIEU-HIEU-UNG-VU-KHI.md` được Chat duyệt (Q-52).
 - Sau khi bị nén: đọc file này trước, rồi làm tiếp đúng vòng này, không đợi chủ gõ.
+## L11. THÓI QUEN CHỦ DẶN — BẤT BIẾN (MỘT chỗ duy nhất; Chat ghi vào đây NGAY khi chủ dặn thường trực; không rải ở thư/nhật ký)
+- **LDPlayer: mở xong phải ẨN/thu nhỏ cửa sổ NGAY** (máy chủ có người khác dùng, không được để cửa sổ game/giả lập nổi lên). Áp dụng mọi lần khởi động/khởi động lại LDPlayer, kể cả bản sao `T36test`: mở bằng cách không hiện cửa sổ nếu được, nếu không thì thu nhỏ/ẩn ngay sau khi lên, và kiểm lại bằng ảnh chụp. Chủ dặn từ #078 (17:09 ngày 17/11), nhắc lại 18/11 23:51.
+- **Không cửa sổ nháy:** mọi tiến trình nền (Tổng quản, cho_thu.py, forwarder) chạy không console (pythonw/CREATE_NO_WINDOW).
+- **Không bridged:** VM không bao giờ ở chế độ bridged (Q-17). Main VM `JX-Server-D`: chỉ theo Q-18.
+- **Khóa/mật khẩu:** không bao giờ vào kho, nhật ký, báo cáo, chat; chỉ ở `C:\Users\PC\.jx1keys\` hoặc `D:\JX-keys\`.
+- **Hiểu rồi mới sửa** (hiệu ứng vũ khí): không sửa mã tới khi tài liệu W-01 được Chat duyệt + có bằng chứng tái hiện (Q-52).
+- **Cách thêm luật mới:** chủ nói thường trực → Chat thêm MỘT dòng vào mục này (kèm ngày) và đẩy; các tài liệu khác chỉ dẫn link tới đây, không chép lại.
