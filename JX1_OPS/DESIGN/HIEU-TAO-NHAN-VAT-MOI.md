@@ -73,6 +73,25 @@ Nhãn dùng trong tài liệu: **[THẤY]** = đã xác minh trong mã được 
 5. **Đọc chỉ số, hành trang và chạy móc đăng nhập.** [THẤY] GS nạp từng phần của hồ sơ. `KNewPlayerAttribute::Init` có bộ thông số theo 5 hệ, `NewPlayerGetBaseAttribute` lấy số từ bộ đó; đường đăng nhập đã đọc lấy số đã ghi trong hồ sơ. `SetLevel` cũng tra `NewPlayerIni%02d.ini` theo công thức `hệ × 2 + giới tính`, nhưng riêng hàm này chưa chứng minh nguồn tạo hồ sơ. Khi gói thông tin cơ bản được đưa vào bộ gửi thành công, GS gọi `OnLine` và truyền trạng thái thế giới, tên bản đồ, `m_IsFirstLogin`. Ở đường gateway đã đọc, lệnh gọi `AddCharacter` bỏ đối số cuối, nhận mặc định 1 từ khai báo giao diện, rồi chép vào biến. Chưa thể dùng riêng giá trị đó để kết luận script chỉ chạy một lần hoặc chỉ cho nhân vật mới. `S/Core/Src/CoreServerShell.h:201`; `S/Core/Src/CoreServerShell.cpp:451-479,496-509`; `S/Core/Src/KPlayerDBFuns.cpp:182-185,321-324,613-617`; `S/Core/Src/KPlayerSet.cpp:1568-1585`; `S/Core/Src/KPlayer.cpp:1036-1042,2487-2514,3377-3394`; `S/MultiServer/GameServer/KSOServer.cpp:3981`.
 6. **GS báo cho kho hồ sơ.** [THẤY] Sau khi client trả lời đồng bộ, GS đưa nhân vật vào thế giới và gửi `tagRoleEnterGame` qua kết nối cơ sở dữ liệu. Khi lưu, GS có đường gửi gói `c2s_rolekfjhu_saveroleinfo` mang hồ sơ. [TÀI LIỆU] A-02 mô tả Goddess là phía xử lý kho hồ sơ; chưa xác minh trong HG-16 phía nhận hai gói này hay thứ tự ghi hồ sơ mới. `S/MultiServer/GameServer/KSOServer.cpp:3768-3771,3804-3812,4570,4604-4608,4630-4633`; `JX1_OPS/REPORTS/A-02-luong-dang-nhap.md:130-142`.
 
+## Đối chiếu bổ sung lần 2
+
+- [THẤY] `KNewPlayerAttribute::Init` nạp tệp `BASE_ATTRIBUTE_FILE_NAME`, rồi đọc các nhóm `metal`, `wood`, `water`, `fire`, `earth` với khóa `Strength`, `Dexterity`, `Vitality`, `Engergy`, `Lucky`. Các giá trị mặc định trong lời gọi đọc là 0 hoặc `PLAYER_FIRST_LUCKY`; đây là giá trị dự phòng trong mã, không phải số liệu đã xác nhận của nhân vật mới. `S/Core/Src/KPlayerSet.cpp:1568-1585`.
+- [THẤY] `NewPlayerGetBaseAttribute` chép các mảng chỉ số theo hệ vào nhân vật; chú thích ngay trên hàm ghi `没有调用` (không gọi). Tìm trong các tệp `.cpp` và `.h` của `Sources/Core/Src` chỉ thấy khai báo/định nghĩa và bản sao cũ, không thấy điểm gọi trong vùng này. Vì vậy không dùng hàm này làm bằng chứng rằng luồng tạo hiện gọi nó. `S/Core/Src/KPlayer.cpp:2485-2500`; `S/Core/Src/KPlayer.h:490`.
+- [THẤY] `SetLevel` tạo tên tệp `NewPlayerIni%02d.ini` theo công thức `hệ × 2 + giới tính`, rồi đọc các khóa chỉ số trong nhóm `ROLE`. Nội dung tệp cấu hình không nằm trong phần Sources đã giao; đoạn này cũng chưa chứng minh `SetLevel` được gọi khi tạo hồ sơ mới. `S/Core/Src/KPlayer.cpp:3377-3394`.
+- [CHƯA KIỂM] Đã tìm tên `online.lua`, `newplayer`, `NewPlayerIni*.ini` và `RevivePos.ini` trong phần Sources được giao nhưng không tìm thấy tệp tương ứng. Source chỉ cho biết GS gọi đường dẫn script `\\script\\system\\online.lua`; chưa có nội dung script hay dữ liệu cấu hình để chốt phát quà, điểm số, bản đồ đầu tiên hoặc cơ chế chỉ chạy một lần. `S/Core/Src/KPlayer.cpp:1036-1042`; `JX1_OPS/TASKS/HG-16b.md:23-35`.
+
+## MỤC SỔ THÔNG SỐ
+
+| Nhóm | Tên/hằng số | file:dòng | Giá trị | Đơn vị | Ảnh hưởng | Đổi an toàn | Nguồn đo |
+|---|---|---|---|---|---|---|---|
+| Chỉ số khởi tạo | Các nhóm thuộc tính theo hệ | `S/Core/Src/KPlayerSet.cpp:1570-1582` | Tên nhóm/khóa thấy trong mã; giá trị cấu hình chưa đọc. Giá trị dự phòng: 0; may mắn: `PLAYER_FIRST_LUCKY`. | Điểm thuộc tính | Dữ liệu chỉ số cơ sở được đọc khi nạp cấu hình. | CẨN THẬN — chưa có tệp cấu hình và kiểm chứng ảnh hưởng. | Đọc tĩnh mã nguồn; chưa đo runtime. |
+| Điểm vào dự phòng | `PlayerInfo.mSubWorld`, `PlayerInfo.mReviveId`, `ServerConfig.PlayerRevPosId` | `S/Core/Src/KGameglobalSet.cpp:26-27,124` | Mặc định 53 và 19; cấu hình có thể ghi đè cả hai. | ID bản đồ, ID điểm hồi sinh | Điểm dự phòng khi GS cần dùng cấu hình này. Không xác nhận đây là làng tân thủ. | CẨN THẬN — chưa đối chiếu cấu hình triển khai và dữ liệu bản đồ. | Đọc tĩnh mã nguồn; chưa đo runtime. |
+| Tệp chỉ số theo hệ/giới tính | Công thức chỉ số tệp `NewPlayerIni%02d.ini` | `S/Core/Src/KPlayer.cpp:3383-3394` | `hệ × 2 + giới tính`; nội dung các tệp chưa có trong Sources được giao. | Chỉ số tệp | Chọn tệp mà `SetLevel` đọc để lấy chỉ số trong nhóm `ROLE`. | CẨN THẬN — chưa xác nhận luồng tạo nhân vật gọi hàm này. | Đọc tĩnh mã nguồn; chưa đo runtime. |
+
+## ĐỀ XUẤT TỐI ƯU
+
+Không đề xuất thay đổi hoặc tối ưu mã trong khảo sát chỉ đọc này. Chưa có số đo runtime; các điểm chưa rõ cần đối chiếu bằng mã gateway, script và dữ liệu cấu hình đúng phiên bản trước khi cân nhắc thay đổi.
+
 ## Chưa kiểm
 
 - [CHƯA KIỂM] Chưa đọc trực tiếp nhánh Bishop/Goddess tạo và lưu lần đầu; chưa xác định nơi tạo hồ sơ gốc và việc lưu xảy ra trước hay sau phản hồi tạo. Hai tệp gateway A-02 dẫn tới ở ngoài root task (`JX1_OPS/REPORTS/A-02-luong-dang-nhap.md:70-71`; `JX1_OPS/TASKS/HG-16.md:23-24`).
@@ -83,3 +102,7 @@ Nhãn dùng trong tài liệu: **[THẤY]** = đã xác minh trong mã được 
 ## Bàn giao
 
 Báo cáo [HG-16](../REPORTS/HG-16.md) ghi kết quả đối chiếu và hàng đề xuất cho mục lục. Tổng quan thực hiện commit.
+
+liên quan: `JX1_OPS/DESIGN/MUC-LUC-TRI-THUC.md`, `JX1_OPS/REPORTS/A-02-luong-dang-nhap.md`, `JX1_OPS/REPORTS/HG-16.md`.
+
+Kỹ năng đã dùng: jx1-retrofit, jx1-read-server, jx1-read-client, jx1-parameters, jx1-knowledge, jx1-report.
