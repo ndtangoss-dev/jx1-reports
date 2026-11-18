@@ -789,3 +789,10 @@ Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm th�
 - **C01 (#187):** làm đúng quyết của Chat: INSTANCE bản sao + root. Đường mạng thông tới Bishop Test-36; đăng nhập `testa` tới bước "lấy thông tin nhân vật" rồi KẸT: Test-36 chỉ có DB `account`, Goddess không có kết nối SQL. Đã hoàn tác mạng (DNAT, forwarder phụ, luật tường lửa); bản sao `T36test` còn tắt. `REPORTS/C01-C03-TEST36.md`, ảnh `ANH/t36-c01-*.png`.
 - **[HỎI-CHAT HOI-188a]** Cho khôi phục/tạo CSDL nhân vật trên Test-36 (từ bản sao dữ liệu thử, không dữ liệu thật)? Khuyến nghị: cho, sau khi đọc cấu hình Goddess để biết tên DB. Trong lúc chờ: W-01a..d (tiểu yêu), G-01...
 - **#183 Q-51 / #186 W-01:** giảm token đã áp dụng; W-01a..d đã tạo TASKS.
+
+## XONG ĐỢT #190 (Sonnet, 18/11 ~23:25) — đã đọc đến #190
+**Bảng tiến độ: 29/51 xong.**
+- **#189 (Test-36 nhân vật):** giả thuyết "thiếu CSDL SQL" của đợt #188 là **SAI**: Goddess dùng Berkeley DB (`roledb` có sẵn), không cần tạo/khôi phục gì. Kẹt do phiên Bishop↔Goddess cũ; khởi động lại Bishop là hết.
+- **C01 ĐẠT:** `testa` đăng nhập → tạo `T36nv1` (Kim) qua giao diện game → vào Ba Lăng Huyện. **C03 ĐẠT:** cổng gameplay thật = **51189** (Bishop log "LogIn Succes … port: 51189"; client ESTAB tới gs001). Bài học: sau khi khởi động lại Bishop phải khởi động lại gs001 bằng `JX-gs001` (`JX-ChainUp` không bật gs001) và chờ ~4 phút nạp bản đồ, nếu không client báo "Máy chủ chưa hoạt động".
+- Hoàn tác mạng đã chạy (DNAT, bản sao tắt, forwarder phụ, luật tường lửa); forwarder chính 21276 và CDN 11072 còn chạy. Bản sao `T36test` giữ tắt, chờ Chat duyệt xóa. `REPORTS/C01-C03-TEST36.md` (mục "Cập nhật lần 2"), ảnh `ANH/t36-c01-r2-*.png`.
+- **W-01c, W-01d** đã merge; W-01a/b còn chạy, sẽ merge rồi gộp `DESIGN/HIEU-HIEU-UNG-VU-KHI.md`.
