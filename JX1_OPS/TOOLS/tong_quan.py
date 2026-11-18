@@ -295,7 +295,36 @@ def main():
         print(notes)
 
 
+def push_state():
+    """#124/#125: day STATE/TIEU-YEU.md, KHOA-XINGCHI.md, TIEN-DO.md len kho moi >=5 phut; git khong hoi mat khau, timeout 120 giay."""
+    stamp = os.path.join(GD, 'push.stamp')
+    if time.time() - mt(stamp) < 300:
+        return
+    env = dict(os.environ, GIT_TERMINAL_PROMPT='0', GCM_INTERACTIVE='never')
+    repo = os.path.dirname(ROOT)
+
+    def g(*a):
+        return subprocess.run(['git', '-C', repo] + list(a), env=env, capture_output=True, text=True, timeout=120)
+    try:
+        files = ['JX1_OPS/STATE/TIEU-YEU.md', 'JX1_OPS/STATE/KHOA-XINGCHI.md', 'JX1_OPS/STATE/TIEN-DO.md']
+        g('add', '--', *files)
+        if g('diff', '--cached', '--quiet', '--', *files).returncode == 0:
+            open(stamp, 'w').write('x')
+            return
+        g('commit', '-qm', 'Tong quan: cap nhat TIEU-YEU/KHOA/TIEN-DO', '--', *files)
+        g('pull', '-q', '--rebase', '--autostash', 'origin', 'jx1-ops')
+        r = g('push', '-q', 'origin', 'HEAD:jx1-ops')
+        open(stamp, 'w').write('x')
+        with open(os.path.join(GD, 'push.log'), 'a') as f:
+            f.write('%s push rc=%s %s\n' % (time.strftime('%H:%M'), r.returncode, r.stderr.strip()[:200]))
+    except Exception as e:
+        with open(os.path.join(GD, 'push.log'), 'a') as f:
+            f.write('%s push loi %s\n' % (time.strftime('%H:%M'), e))
+
+
 try:
     main()
+    if not DRY:
+        push_state()
 except Exception as e:
     print('[tong_quan loi: %s]' % e)

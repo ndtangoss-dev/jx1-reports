@@ -254,7 +254,7 @@ Bẩm đại vương (Chat đọc):
 
 [TỔNG QUẢN 18/11 10:06] NGHEN: 11 viec chet trong 10 phut, moi vong chi giao 1 viec; F-01 chet, chay lai lan 2 bang JX-K2
 
-## Nhận #120 (10:25) — GÕ CỬA ép bằng code
+## Nhận #120 (giờ thật 10:08; sửa theo #124) — GÕ CỬA ép bằng code
 - Đã bấm gõ cửa trigger mới `trig_01ByCwM6uTBqm5mgr4oTCSWD` (HTTP 200), ghi dòng vào `STATE/GO-CUA.log`.
 - `stop_guard.py` nay CHẶN kết thúc lượt khi TU-SONNET có [HỎI-CHAT]/[TỔNG QUẢN] mà mới hơn dòng cuối GO-CUA.log (tối đa 5 lần/phiên).
 - Đã làm: #114/#115 (`DESIGN/QUY-TRINH-TAO-KHOA.md`, `STATE/KHOA-XINGCHI.md` do Tổng quản tự sinh), #117 (nhịp trong mẫu task + skill jx1-report), BAI_HOC cập nhật.
@@ -268,3 +268,17 @@ Bẩm đại vương (Chat đọc):
 [TỔNG QUẢN 18/11 10:24] NGHEN: 10 viec chet trong 10 phut, moi vong chi giao 1 viec; F-01 chet, chay lai lan 3 bang JX-K2
 
 [TỔNG QUẢN 18/11 10:27] NGHEN: 6 viec chet trong 10 phut, moi vong chi giao 1 viec; K-03a chet, chay lai lan 2 bang JX-K2
+
+## Nhận #124, #125, #126 [KHẨN] lúc 10:30 — đánh thức bởi: chủ nhắn
+**#126.1 Log người gác 10:15→10:30** (`D:\JX-wt\guard\guard.log`):
+```
+10:14:09 im 5, khan=False, busy=False, live=False   (không gọi: chưa im đủ 30 phút, thư chưa tới)
+10:19:09 im 10, khan=True, busy=False, live=False   -> GỌI phiên (claude -c -p)
+10:24:09 im 15, khan=True, busy=False, live=True    (phiên tương tác ghi jsonl <120s: không gọi)
+10:29:08 im 20, khan=True, busy=False, live=False   -> GỌI phiên
+```
+Task Scheduler `JX-Guard`: LastRun 10:29:29, LastTaskResult 0 (script chạy xong; không biết lệnh con lỗi), Next 10:34. Tổng quản: LastRun 10:30, result 267009 (đang chạy).
+**#126.2 Nguyên nhân:** guard ĐÃ gọi nhưng `claude` chết ngay: `goi.err` = `error: unknown option '-File'`. `Start-Process -ArgumentList @(...)` trong PS 5.1 KHÔNG tự đặt dấu nháy quanh tham số có dấu cách → chuỗi `--allowedTools 'Bash(git:*) ... powershell -File TOOLS/*'` bị tách, `-File` thành cờ lạ. Lần 2 (#116) chỉ qua khâu nhận thư; lệnh gọi chưa từng chạy được.
+**#126.3 Sửa + thử:** ghép thành MỘT chuỗi `-c -p "<prompt>" --permission-mode acceptEdits --allowedTools "<danh sách>"` với dấu nháy kép rõ ràng. Thử khô (`GUARD_DRY=1 GUARD_FAKE_KHAN=1`, bỏ qua live) → log `DRY: claude -c -p "..." --allowedTools "..."` đúng. Thử `claude -p` thật cùng cách ghép nháy: tham số được nhận (không còn lỗi option), nhưng trả **"You've hit your weekly limit · resets 1am (Asia/Bangkok)"** → ngay cả khi cú pháp đúng, phiên gác `claude -p` sẽ bị chặn bởi giới hạn tuần của tài khoản Claude cho tới 01:00; phiên tương tác này vẫn chạy. Cần Chat cân nhắc: người gác không thay được khi hết hạn mức; Chat gõ cửa/thư vẫn là đường chính.
+**#125:** lệnh nền "treo 14 phút" thực ra là `find / -name stop_guard.py` (quét cả ổ đĩa) nằm cùng dòng với `git pull`, KHÔNG phải git/GCM. Kiểm: không có `index.lock`, không rebase dở, không tiến trình git. Luật mới đã đặt: guard + Tổng quản chạy git với `GIT_TERMINAL_PROMPT=0`, `GCM_INTERACTIVE=never`, timeout 120 giây (fetch của guard dùng WaitForExit 120s).
+**#124:** `STATE/TIEU-YEU.md` kẹt ở 10:06 vì Tổng quản CHỈ ghi file, không ai đẩy (thiết kế sai). Đã thêm `push_state()` vào `tong_quan.py`: ≥5 phút/lần commit riêng 3 file STATE rồi `pull --rebase --autostash` + push, timeout 120s, log `D:\JX-wt\tong_quan\push.log`. Giờ "Nhận #120" đã sửa về giờ thật 10:08.

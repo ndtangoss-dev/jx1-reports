@@ -7,6 +7,8 @@
 # KHONG goi khi phien tuong tac dang giua luot (file jsonl phien o C:\Users\PC\.claude\projects\C--Jx1CocoV3 vua ghi <90 giay).
 # TAT NGUOI GAC:  schtasks /Change /TN JX-Guard /DISABLE      BAT LAI: /ENABLE      GO HAN: schtasks /Delete /TN JX-Guard /F
 $ErrorActionPreference = 'Continue'
+$q = [char]34
+$env:GIT_TERMINAL_PROMPT = '0'; $env:GCM_INTERACTIVE = 'never'   # #125
 [Console]::OutputEncoding = [Text.Encoding]::UTF8   # git show tra UTF-8
 $ops   = 'D:\jx1-ops-wt\JX1_OPS'
 $repo  = 'D:\jx1-ops-wt'
@@ -23,7 +25,7 @@ $tt = (Get-Item "$ops\STATE\TRANG-THAI.md").LastWriteTime
 $last = @($lastCommit, $tt) | Sort-Object -Descending | Select-Object -First 1
 $silentMin = ((Get-Date) - $last).TotalMinutes
 
-git -C $repo fetch -q origin jx1-ops 2>$null   # #119: doc hom thu tu ban moi nhat tren remote, khong tu worktree cu
+$fp = Start-Process -WindowStyle Hidden -PassThru -FilePath git -ArgumentList ('-C ' + $q + $repo + $q + ' fetch -q origin jx1-ops'); if (-not $fp.WaitForExit(120000)) { Stop-Process -Id $fp.Id -Force -EA SilentlyContinue; Log 'git fetch qua 120 giay, bo qua (#125)' }   # #119: doc hom thu tu ban moi nhat tren remote, khong tu worktree cu
 # --- [KHAN] chua xac nhan: co trong "Chua xu ly" cua CHO-SONNET va TU-SONNET chua co "Nhan #N" ---
 $khan = $false
 $cho = Join-Path $ops 'HOP-THU\CHO-SONNET.md'
@@ -62,12 +64,16 @@ $live = $false
 $jl = Get-ChildItem 'C:\Users\PC\.claude\projects\C--Jx1CocoV3' -Filter '*.jsonl' -ErrorAction SilentlyContinue | Sort-Object LastWriteTime -Descending | Select-Object -First 1
 if ($jl -and ((Get-Date) - $jl.LastWriteTime).TotalSeconds -lt 120) { $live = $true }
 
+if ($env:GUARD_FAKE_KHAN -eq '1') { $khan = $true; $live = $false }
 Log ("chay: im {0:N0} phut, khan={1}, busy={2}, live={3}" -f $silentMin, $khan, $busy, $live)
 if (($silentMin -gt 30 -or $khan) -and ($khan -or -not $busy) -and -not $live) {
   Log ("goi phien: im lang {0:N0} phut, khan={1}" -f $silentMin, $khan)
   $prompt = 'Người gác: đọc JX1_OPS/STATE/LUAT-COT-LOI.md và hòm thư HOP-THU/CHO-SONNET.md rồi làm tiếp. Ghi một dòng trạng thái vào STATE/TRANG-THAI.md, commit và push jx1-ops.'
   Push-Location 'C:\Jx1CocoV3'
-  $proc = Start-Process -WindowStyle Hidden -PassThru -FilePath 'claude' -ArgumentList @('-c', '-p', $prompt, '--permission-mode', 'acceptEdits', '--allowedTools', 'Bash(git:*) Bash(python TOOLS/*) Bash(powershell -File TOOLS/*) PowerShell(git:*) PowerShell(python TOOLS/*) PowerShell(powershell -File TOOLS/*)') -RedirectStandardOutput (Join-Path $gdir 'goi.out') -RedirectStandardError (Join-Path $gdir 'goi.err')
+  $tools = 'Bash(git:*) Bash(python TOOLS/*) Bash(powershell -File TOOLS/*) PowerShell(git:*) PowerShell(python TOOLS/*) PowerShell(powershell -File TOOLS/*)'
+  $argStr = '-c -p ' + $q + $prompt + $q + ' --permission-mode acceptEdits --allowedTools ' + $q + $tools + $q   # #126: PS 5.1 khong tu bao dau nhay quanh arg co dau cach
+  if ($env:GUARD_DRY -eq '1') { Log ('DRY: claude ' + $argStr); $proc = $null }
+  else { $proc = Start-Process -WindowStyle Hidden -PassThru -FilePath 'claude' -ArgumentList $argStr -RedirectStandardOutput (Join-Path $gdir 'goi.out') -RedirectStandardError (Join-Path $gdir 'goi.err') }
   Pop-Location
   if ($proc) { Set-Content $lock ("{0} {1}" -f $proc.Id, (Get-Date -f o)) }
 } elseif ($live -and ($silentMin -gt 30 -or $khan)) { Log 'phien tuong tac dang giua luot, khong goi' }
