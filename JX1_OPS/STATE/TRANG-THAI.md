@@ -311,3 +311,5 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 - 18/11 12:26 Sonnet: #144 xong DESIGN/XUONG-JX1.md + M0 (TOOLS/xuong, 7 test đạt); M1 tiếp.
 
 - 18/11 12:29 Sonnet: #146 bỏ nhánh giết theo PID trong Tổng quản; chết chỉ khi có lỗi/rỗng/TREO>60 phút.
+
+- 18/11 12:36 Sonnet: #147 CHO-TOKEN+TTFT trong Tổng quản, khu 6 DESIGN, bằng chứng F-01.

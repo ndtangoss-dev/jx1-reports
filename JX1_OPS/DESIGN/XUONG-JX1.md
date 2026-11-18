@@ -42,3 +42,18 @@ Nhật ký, nút Báo lỗi (có sẵn từ 0.1), số phiên bản + CHANGELOG,
 - M1.b: bảng gói tin `goi-tin.md` thành trang lọc. Xong khi: tìm tên gói ra mã + tệp.
 - M1.c: ô tìm theo lời người chơi, nối `MUC-LUC-TRI-THUC.md`, `KIEM-TRA-KIEN-THUC.md`, Graphify. Xong khi: 10 câu thử, ≥8 đúng, có file:dòng.
 - M1.d: `TOOLS/quet_exe.py` (chuỗi chữ + nhập khẩu, chỉ ghi bảng chữ). Xong khi: có `MA-NGUON/exe-chuoi.md` cho 5 exe server.
+
+## 10. Khu 6 — ĐO TỐC ĐỘ (thêm theo #147 A; xây sau M0–M1)
+Phạm vi: chỉ đo JX-Test-36 + LDPlayer. Bắt gói chỉ trên card Host-only. Không đưa pcap vào kho. Kết quả ghi `D:\JX-xuong\do\`.
+
+| # | Phép đo | Cách đo | Đầu ra |
+|---|---|---|---|
+| 1 | Mạng thô | ping + thời gian TCP connect từ LD tới JX-Test-36 | ms min/avg/max, mất gói |
+| 2 | Vòng gói | `c2s_ping` → `s2c_replyclientping` | ms mỗi vòng, phân vị |
+| 3 | Các chặng đăng nhập | Bishop → PaySys → Goddess → GS, mốc giờ từ log | giây mỗi chặng |
+| 4 | Nhịp máy chủ | công cụ B-04a/H-13 | tick/giây, tick trễ |
+| 5 | Một nhát đánh | từ gói tấn công tới gói kết quả | ms |
+| 6 | FPS client | đọc FPS từ LD | fps trung bình/thấp nhất |
+| 7 | N bot | tăng dần số bot, lặp 1–6 | đường cong tải |
+
+Màn hình: bảng theo lần đo, so sánh hai lần, đánh dấu chậm bất thường. Dữ liệu JSON chỉ số liệu, không chứa tài khoản.

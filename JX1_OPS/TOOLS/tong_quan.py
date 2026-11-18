@@ -139,6 +139,20 @@ def pid_txt(i, running):
     return '-' if a is None else ('%d song' % p if a else '%d mat' % p)
 
 
+def cho_token(tail):
+    """#147: da gui yeu cau (turn.started), chua co su kien item/loi nao sau do."""
+    k = tail.rfind('"type":"turn.started"')
+    if k < 0:
+        return False
+    rest = tail[k:]
+    return '"type":"item.' not in rest and 'turn.failed' not in rest and '"type":"error"' not in rest
+
+
+def ttft_txt(i):
+    v = load(os.path.join(GD, 'ttft.json'), {}).get(i)
+    return '-' if v is None else '<=%d' % v
+
+
 def astra_ok(d, i):
     return str(d.get('astra', '')).lower() == 'ok' or i.startswith('R-')   # #143: viec doc/viet bao cao
 
@@ -253,7 +267,7 @@ def main():
     elif br['s'] == 'nua-mo':
         pid = br.get('probe_id', '')
         if sched.get(pid) == 'Running':
-            if now() - br['probe_start'] > 180:
+            if now() - br['probe_start'] > 180 and not (cho_token(read_log(os.path.join(WT, pid + '.codex.log'), 20000)) and now() - br['probe_start'] < 900):
                 br['s'] = 'dong'
         elif done_exit(pid) not in (0, None):
             br.update(s='mo', probe_at=now() + 120)
@@ -301,6 +315,18 @@ def main():
             svc = False
         if running:
             level = 'SONG' if silent < IM else ('IM-NHUNG-SONG' if silent < TREO else 'TREO')
+            ct = cho_token(tail)
+            if ct:   # #147: cho token dau: <15 phut SONG, 15-30 canh bao, >=30 TREO
+                level = 'CHO-TOKEN' if silent < 15 else ('CHO-TOKEN-LAU' if silent < 30 else 'TREO')
+                if level == 'CHO-TOKEN-LAU' and lan.get(i + '#ct') != 1:
+                    lan[i + '#ct'] = 1
+                    notes.append('%s cho token dau > 15 phut (chua loi, chua dung)' % i)
+            elif not DRY:
+                tf = load(os.path.join(GD, 'ttft.json'), {})
+                st0 = mt(os.path.join(WT, i + '.pid'))
+                if i not in tf and st0 and 'turn.started' in tail:
+                    tf[i] = max(0, int(min(now(), mt(log)) - st0))   # can tren (do theo nhip 2 phut)
+                    save(os.path.join(GD, 'ttft.json'), tf)
             if level == 'TREO' and not DRY:
                 ps("Stop-ScheduledTask -TaskName 'JX-codex-%s'" % i)
                 _ls = [x.strip() for x in tail.replace(chr(0), '').splitlines() if x.strip()]
@@ -447,9 +473,9 @@ def main():
         out = ['# TIỂU YÊU (Tổng quản tự sinh lúc %s, đừng sửa tay)' % time.strftime('%Y-%m-%d %H:%M'), '',
                '**CẦU DAO xingchi: %s**' % {'dong': 'ĐÓNG (bình thường)', 'mo': 'MỞ (ngừng giao, mỗi 2 phút thử 1 việc)', 'nua-mo': 'NỬA-MỞ (đang thử 1 việc)'}[br['s']], '',
                'Mức: SONG / IM-NHUNG-SONG (20–60 phút) / TREO (>60, bị dừng chạy lại) / CHET / CHET-BO (quá 3 lần) / XONG-CHO-GOP. "Dấu hiệu sống cuối" = max(log, nhịp, file worktree).', '',
-               '| Mã | Mức | Khóa | Log cuối | Dấu hiệu sống cuối | Lỗi cuối | Lần chạy lại | Mô hình | PID |', '|---|---|---|---|---|---|---|---|---|']
+               '| Mã | Mức | Khóa | Log cuối | Dấu hiệu sống cuối | Lỗi cuối | Lần chạy lại | Mô hình | PID | Chờ token (giây) |', '|---|---|---|---|---|---|---|---|---|---|']
         for r in rows:
-            out.append('| ' + ' | '.join(str(x) for x in r) + ' |')
+            out.append('| ' + ' | '.join(str(x) for x in r) + ' | ' + ttft_txt(r[0]) + ' |')
         out += ['', 'Khóa đang dùng: ' + (', '.join('%s=%d' % kv for kv in sorted(use.items())) or '(không)') + ' / khóa có: ' + ', '.join(keys()),
                 'Đang chạy theo Task Scheduler: %d.' % len([1 for s in sched.values() if s == 'Running'])]
         if notes:
