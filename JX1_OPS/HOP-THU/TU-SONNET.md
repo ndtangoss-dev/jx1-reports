@@ -707,3 +707,6 @@ Còn: #154.4 (XUONG-JX1 bản đầy đủ, khu 6, M1, bản vá có tên); ch�
 **Kết quả thật:** nạp Claude in Chrome, gọi tabs_context: chỉ có MỘT thẻ (`xingchiapi.com/keys`, trang khóa API). KHÔNG có thẻ cuộc chat của Chat. Không đụng thẻ đó, không gõ gì, không đoán địa chỉ → chưa thử gửi "xong (thử vòng)".
 **[CAN-CHU]:** chủ mở cuộc chat của Chat trong một thẻ Chrome (ndtan48, tiện ích bật) rồi nhắn "xong"/"thử lại vòng"; thuộc hạ sẽ chọn thẻ đó và thử một lần. Trong lúc chờ vòng đứt, chủ gõ "xong" tay.
 **Còn lại:** như #165/#166. Không bịa việc ngoài kế hoạch.
+
+## XONG ĐỢT #167b (Sonnet, 18/11 ~19:50) — thử vòng qua Chrome
+Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm thẻ sau khi chủ thêm. Thuộc hạ chọn đúng thẻ (có tin "Bẩm đại vương"), gõ "xong (thử vòng)" và gửi MỘT lần: gửi được (ảnh chụp thấy tin hiện ra, Chat đang xử lý). Không đọc trả lời. Chờ `CHAT-DAY` mới trong VONG.md.
