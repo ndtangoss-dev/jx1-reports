@@ -10,6 +10,7 @@ WT = r'D:\JX-wt'
 KEYS = r'C:\Users\PC\.jx1keys'
 GD = os.path.join(WT, 'tong_quan')
 MAXKEY = 3
+MAXALL = 10  # tran dong thoi tam thoi (#137)
 WAITS = (0, 0, 0)       # #132: chet -> chay lai o vong ke (<=2 phut); toi da 3 lan loi cua viec roi CHET-BO
 IM, TREO = 20, 60       # phut im: song / im-nhung-song / treo
 DRY = '--dry' in sys.argv
@@ -94,11 +95,14 @@ def keys():
 
 
 def pick_key(assign, alive_ids):
+    alive_ids = list(alive_ids)
     use = {}
     for i in alive_ids:
         k = assign.get(i)
         if k:
             use[k] = use.get(k, 0) + 1
+    if len(alive_ids) >= MAXALL:
+        return None
     ks = [k for k in keys() if use.get(k, 0) < MAXKEY]
     return min(ks, key=lambda k: use.get(k, 0)) if ks else None
 
