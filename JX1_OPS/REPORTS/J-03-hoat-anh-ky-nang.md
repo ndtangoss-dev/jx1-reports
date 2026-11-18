@@ -1,11 +1,40 @@
-# J-03 — Hoạt ảnh và hiệu ứng kỹ năng
+TÓM TẮT 1..5
+1. [XÁC MINH SOURCE] Vòng logic client nhắm 18 tick/giây; `KSprControl::GetNextFrame` chỉ tiến một khung khi tick đổi, không gate theo interval và không bù tick bỏ qua. [NGUỒN]
+2. [XÁC MINH SOURCE/DATA] Đạn bay dùng tuổi thọ tick để chọn frame; mẫu missile 68/6/412 có 4/3/5 frame mỗi hướng, chu kỳ loop tính toán 4/3/10 tick. [NGUỒN]
+3. [XÁC MINH SOURCE] Niệm, trúng và hiệu ứng treo có đường release trước vẽ; effect thuộc danh sách missile còn phụ thuộc vòng đời owner. [NGUỒN]
+4. [XÁC MINH SOURCE] Caller state truyền trùng biến đầu ra hướng/interval với tọa độ; chưa thể coi metadata aura là thông số phát thực tế. Chưa thấy nhánh chọn frame theo ngũ hành/phái trong renderer đã rà. [NGUỒN]
+5. PARTIAL — đã khảo sát bảy nhóm và mẫu cấu hình; thiếu đối chiếu header SPR/Settings client thực nạp, số khung niệm/chém riêng và thời lượng hiển thị thực tế. [CHƯA KIỂM]
 
-TÓM TẮT 5 DÒNG
-1. [XÁC MINH SOURCE] Vòng logic client nhắm 18 tick/giây; `KSprControl::GetNextFrame` chỉ tiến một khung khi tick đổi, không gate theo interval và không bù tick bỏ qua.
-2. [XÁC MINH SOURCE/DATA] Đạn bay dùng tuổi thọ tick để chọn frame; mẫu missile 68/6/412 có 4/3/5 frame mỗi hướng, chu kỳ loop tính toán 4/3/10 tick.
-3. [XÁC MINH SOURCE] Niệm, trúng và hiệu ứng treo có đường release trước vẽ; effect thuộc danh sách missile còn phụ thuộc vòng đời owner.
-4. [XÁC MINH SOURCE] Caller state truyền trùng biến đầu ra hướng/interval với tọa độ; chưa thể coi metadata aura là thông số phát thực tế. Chưa thấy nhánh chọn frame theo ngũ hành/phái trong renderer đã rà.
-5. PARTIAL — đã khảo sát bảy nhóm và mẫu cấu hình; thiếu đối chiếu header SPR/Settings client thực nạp, số khung niệm/chém riêng và thời lượng hiển thị thực tế.
+# J-03 — Hoạt ảnh và hiệu ứng kỹ năng
+Loại: khảo sát
+Chủ đề: Đối chiếu vòng đời, chọn frame và thời lượng của hiệu ứng kỹ năng.
+Từ khóa: kỹ năng, missile, đạn, aura, buff, SPR, GetNextFrame, LifeTime, PreCastSpr
+Trạng thái: PARTIAL — source/config đã khảo sát tĩnh; header SPR và runtime chưa xác minh.
+Độ phủ: đã khảo sát 7/7 nhóm hiệu ứng và 4/4 mẫu cấu hình; header asset và thời lượng runtime chưa phủ.
+Liên quan: JX1_OPS/REPORTS/A-15a-ky-nang-phai-1-4.md, JX1_OPS/REPORTS/A-15b-ky-nang-phai-5-8.md, JX1_OPS/REPORTS/A-15c-ky-nang-phai-9-cuoi.md, JX1_OPS/REPORTS/H-01-ngu-hanh.md, JX1_OPS/REPORTS/H-14-mat-khung-hieu-ung.md, JX1_OPS/REPORTS/J-02-animation-quai-npc.md, JX1_OPS/REPORTS/J-05-cat-khung-animation.md
+Cần tôi quyết định: không
+
+## Quan hệ
+```mermaid
+flowchart LR
+  A[Skills.txt] --> B[Missles.txt]
+  B --> C[Tuổi thọ và trạng thái missile]
+  C --> D[Chọn frame theo tick, interval hoặc lifetime]
+  C --> E[Hiệu ứng con và vòng đời owner]
+  D --> F[Renderer client]
+```
+
+## Phạm vi và độ phủ
+`T` là `C:/Jx1CocoV3/Folder/ServerNew-20260116T043145Z-3-001/ServerNew/_bin_v2_/gs/Settings`; `qh9A` là `D:/JX-build/qh9A/Classes`, root client được task chỉ định.
+
+| Phần tử phạm vi | Đã phủ | Chưa phủ |
+|---|---|---|
+| Đồng hồ tick và chọn frame | `KSprControl::GetNextFrame` và renderer VN có tại `qh9A/gamecore/KSprControl.cpp:342-373`, `qh9A/vn/gamecore/KNpcResVN.cpp:21-60` | Chưa đo nhịp runtime/FPS |
+| Bảy nhóm hiệu ứng | Niệm; bay/đạn; trúng/va chạm/biến mất; vùng đất; aura/buff; đường chém/vệt vũ khí; hiệu ứng treo. Symbol đại diện tại `qh9A/gamecore/KSkills.cpp:2974`, `qh9A/gamecore/KMissleRes.cpp:128-200`, `qh9A/gamecore/KNpcRes.cpp:2095-2165` | Header SPR và số frame thực chưa có |
+| Bốn mẫu cấu hình skill | Skill IDs 80, 110, 1347, 94 tại `T/Skills.txt:81,111,1347,95` | Không phải catalog toàn bộ kỹ năng |
+| Bốn mẫu cấu hình missile | Missile IDs 5, 6, 68, 412 tại `T/Missles.txt:6,7,69,413` | Chưa kiểm asset SPR tương ứng |
+| Vòng đời, release và state | Các đường xử lý có trong `qh9A/gamecore/KSkills.cpp:2974`, `qh9A/gamecore/KMissleRes.cpp:128-200`, `qh9A/vn/gamecore/KNpcResVN.cpp:21-60` | Chưa tái hiện release sớm hoặc xác minh thời lượng trên màn hình |
+| Asset/header và thời lượng hiển thị | Giới hạn được ghi trong phần `CHƯA XÁC MINH` bên dưới | Chưa đọc header SPR/Settings client thực nạp; chưa đo thời lượng runtime |
 
 ## Phạm vi và nguồn bằng chứng
 
@@ -173,3 +202,7 @@ Sổ tóm tắt, mỗi tên tham số một dòng; các giá trị cùng tham s�
 | State | BackStart | ST:32,7,38–40,46 | state31=4; còn lại=0 | frame đầu | sau thân | CẨN THẬN | cấu hình + V/KNpcResVN.cpp:282 |
 | State | BackEnd | ST:32,7,38–40,46 | state31=12; còn lại=0 | frame cuối loại trừ | trước thân | CẨN THẬN | cấu hình + V/KNpcResVN.cpp:509 |
 | State | PlayType | C/KNpcResNode.cpp:861–866; ST mẫu | Loop→0; khác→1; mẫu đều Loop | enum | draw gọi mặc định loop | CẨN THẬN | loader + V/KNpcResVN.cpp:167 |
+
+## Phát hiện khi chuẩn hóa
+- Báo cáo cũ dùng root client `C:/Jx1CocoV3/.../Client2912/Client`; task quy định qh9A. Các symbol đại diện hiện có ở qh9A, nhưng không tái xác minh toàn bộ nội dung cũ; kết luận và số liệu được giữ nguyên.
+- Các dòng mẫu ở `T/Skills.txt` và `T/Missles.txt` thuộc server Settings root của task. Tên hiển thị tiếng Việt/legacy trong console bị lỗi mã hóa; bảng phạm vi chỉ dựa ID, dòng và cột số.

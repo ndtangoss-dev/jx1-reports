@@ -1,9 +1,42 @@
-TÓM TẮT 5 DÒNG
-1. PARTIAL: đã đọc tĩnh client gốc; không sửa source, chạy game/exe, kết nối VM/mạng hay đọc dữ liệu runtime.
-2. KNpcRes có sức chứa 2 lớp và 24 section/6 nhóm; đường ChangeFeature hiện tại cập nhật 5 nhóm BASE, không chứng minh cánh/EFFECT đang hiện.
-3. Thứ tự section tra bảng theo action, hướng và khung; source không đảm bảo một thứ tự cố định cho mọi tư thế.
-4. Phi phong được gọi đích danh `Pifeng`; `ChiBang` là nhóm riêng. Cụm “phương ấy” chưa đủ căn cứ để chọn Phi Phong hay phái.
-5. Trang sức shiping thay lớp vũ khí, yinjian thay lớp áo; chưa xác minh asset/SORT từng hướng hoặc runtime, J-05 chưa có file local.
+TÓM TẮT 1..5
+1. PARTIAL: đã đọc tĩnh client gốc; không sửa source, chạy game/exe, kết nối VM/mạng hay đọc dữ liệu runtime. [NGUỒN]
+2. KNpcRes có sức chứa 2 lớp và 24 section/6 nhóm; đường ChangeFeature hiện tại cập nhật 5 nhóm BASE, không chứng minh cánh/EFFECT đang hiện. [NGUỒN]
+3. Thứ tự section tra bảng theo action, hướng và khung; source không đảm bảo một thứ tự cố định cho mọi tư thế. [NGUỒN]
+4. Phi phong được gọi đích danh `Pifeng`; `ChiBang` là nhóm riêng. Cụm “phương ấy” chưa đủ căn cứ để chọn Phi Phong hay phái. [CHƯA KIỂM]
+5. Trang sức shiping thay lớp vũ khí, yinjian thay lớp áo; chưa xác minh asset/SORT từng hướng hoặc runtime, J-05 chưa có file local. [CHƯA KIỂM]
+
+# J-04 — Lớp chồng nhân vật
+Loại: khảo sát
+Chủ đề: Đối chiếu sức chứa part, thứ tự vẽ và các đường appearance override của nhân vật.
+Từ khóa: lớp chồng, section, body part, BASE, EFFECT, GetnSort, Phi Phong, ChiBang, shiping
+Trạng thái: PARTIAL — phân tích source tĩnh; tài nguyên sort và runtime chưa xác minh.
+Độ phủ: đã mô tả 7/8 phần tử phạm vi tĩnh; tài nguyên thực và hiển thị runtime chưa phủ.
+Liên quan: JX1_OPS/REPORTS/H-04-hieu-ung-vu-khi.md, JX1_OPS/REPORTS/H-14-mat-khung-hieu-ung.md, JX1_OPS/REPORTS/J-03-hoat-anh-ky-nang.md, JX1_OPS/REPORTS/J-05-cat-khung-animation.md
+Cần tôi quyết định: có — cụm “phương ấy” trong tài liệu nguồn chưa đủ ngữ cảnh để phân giải.
+
+## Quan hệ
+```mermaid
+flowchart LR
+  A[Action, hướng, frame] --> B[Bảng SORT]
+  B --> C[Thứ tự 24 section]
+  C --> D[BASE rồi EFFECT theo section]
+  E[Appearance override] --> C
+  D --> F[Draw nhân vật]
+```
+
+## Phạm vi và độ phủ
+`qh9A` là `D:/JX-build/qh9A/Classes` theo task. Báo cáo gốc dùng root client `O` và source glow `M` được khai báo trong phần phương pháp bên dưới; chúng không phải qh9A.
+
+| Phần tử phạm vi | Đã phủ | Chưa phủ |
+|---|---|---|
+| Mô hình cơ thể và sức chứa | 6 nhóm × 4 section, `MAX_PART=24`; đối chiếu với `qh9A/gamecore/KNpcResNode.h:23-27` | Chưa xác minh mọi slot có asset |
+| Đường cập nhật part hiện hành | Báo cáo phân biệt `ChangeFeature` với các setter legacy; hàm có tại `qh9A/gamecore/KNpcRes.cpp:1762` | Chưa tái kiểm toàn bộ caller/nhánh active trong root task |
+| Hướng, frame và action | Mô tả mapping hướng/frame và ảnh hưởng cưỡi ngựa; renderer VN có tại `qh9A/vn/gamecore/KNpcResVN.cpp:21-60` | Chưa có metadata SPR thực để so index từng part |
+| Bảng SORT | Mô tả tra theo action/hướng/frame; `GetnSort` tại `qh9A/gamecore/KNpcResNode.cpp:612` | Chưa đọc bảng SORT đã nạp cho nhân vật cụ thể |
+| Lớp BASE/EFFECT và thứ tự draw | Phân tích loop hai lớp trong báo cáo; loop part/layer có tại `qh9A/gamecore/KNpcRes.cpp:363-381` | Chưa xác minh ảnh EFFECT thực tế |
+| Mask, shiping, yinjian và trang sức | Các đường override được mô tả trong phần xác minh của báo cáo (`O/Classes/gamecore/KItemList.cpp:1280-1327`) | Chưa xác minh appearance asset cho từng item |
+| Glow/sét và nhãn UI Phi Phong | Đã mô tả riêng theo hai root `O` và `M` trong báo cáo | Chưa đối chiếu các nhánh này trên qh9A |
+| Dữ liệu sort, asset và runtime | Giới hạn được ghi ở mục `CHƯA XÁC MINH` | Chưa phủ bảng sort thực, PAK/SPR và trạng thái hiển thị |
 
 ## Phạm vi và phương pháp
 
@@ -139,3 +172,7 @@ Các số dưới đây là thông số cấu trúc hoặc mặc định thấy 
 | Glow sửa đổi | Số lượt glow | `M:576` | 9 | lượt/section | Chi phí và hình quầng sáng | CẨN THẬN | Source M |
 | Glow sửa đổi | Alpha trung tâm | `M:583` | 0.8 | hệ số alpha | Mức glow lượt giữa | CẨN THẬN | Source M |
 | Glow sửa đổi | Alpha biên | `M:583` | 0.45 | hệ số alpha | Mức glow các lượt lệch | CẨN THẬN | Source M |
+
+## Phát hiện khi chuẩn hóa
+- Báo cáo cũ dùng client root `O=C:/Jx1CocoV3/.../Client2912/Client` và source glow `M=D:/JX-source/client/Classes`; task chỉ định qh9A. Các cấu trúc/symbol đại diện đã được xác nhận trên qh9A, nhưng toàn bộ phân tích cũ chưa được tái kiểm; giữ nguyên kết luận.
+- Báo cáo ghi chưa có file J-05 trong task/report, trong khi `JX1_OPS/REPORTS/J-05-cat-khung-animation.md` tồn tại. Giữ nguyên ghi nhận cũ và bổ sung quan hệ J-05 ở khối thông tin.

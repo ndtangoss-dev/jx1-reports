@@ -1,9 +1,42 @@
-TÓM TẮT 5 DÒNG
-1. ĐÃ XÁC MINH source client gốc: khung SPR được ánh xạ từ tick nguyên; khi tốc độ tick vượt số khung thì phép chia nguyên có thể bỏ qua khung nguồn, khi chậm hơn có thể lặp khung.
-2. ĐÃ XÁC MINH: tốc độ đánh/niệm và interval tài nguyên đổi thời lượng phát; client đặt nhịp render 60 FPS, nhưng không thấy bộ bỏ tick bù theo dt trong hàm update được kiểm tra.
-3. ĐÃ XÁC MINH: có cờ ẩn NPC/người/đạn, giới hạn cấu trúc dữ liệu và ẩn một số node; chưa thấy LOD tự động theo mật độ hay giới hạn tổng hiệu ứng trong phạm vi đã khảo sát.
-4. CHƯA XÁC MINH: không có đo runtime hoặc dữ liệu tài nguyên để tính tỷ lệ khung bị rơi ở cảnh đứng/đi/đông; không suy ra phần trăm thực tế từ source.
-5. Chỉ đọc client gốc và server source; không chạy game/exe, VM, mạng, build hay test; liên hệ H-14/H-15 được ghi riêng ở dưới.
+TÓM TẮT 1..5
+1. ĐÃ XÁC MINH source client gốc: khung SPR được ánh xạ từ tick nguyên; khi tốc độ tick vượt số khung thì phép chia nguyên có thể bỏ qua khung nguồn, khi chậm hơn có thể lặp khung. [NGUỒN]
+2. ĐÃ XÁC MINH: tốc độ đánh/niệm và interval tài nguyên đổi thời lượng phát; client đặt nhịp render 60 FPS, nhưng không thấy bộ bỏ tick bù theo dt trong hàm update được kiểm tra. [NGUỒN]
+3. ĐÃ XÁC MINH: có cờ ẩn NPC/người/đạn, giới hạn cấu trúc dữ liệu và ẩn một số node; chưa thấy LOD tự động theo mật độ hay giới hạn tổng hiệu ứng trong phạm vi đã khảo sát. [NGUỒN]
+4. CHƯA XÁC MINH: không có đo runtime hoặc dữ liệu tài nguyên để tính tỷ lệ khung bị rơi ở cảnh đứng/đi/đông; không suy ra phần trăm thực tế từ source. [CHƯA KIỂM]
+5. Chỉ đọc client gốc và server source; không chạy game/exe, VM, mạng, build hay test; liên hệ H-14/H-15 được ghi riêng ở dưới. [NGUỒN]
+
+# J-05 — Cắt khung animation
+Loại: khảo sát
+Chủ đề: Phân tích ánh xạ frame, timer, điều kiện ẩn và giới hạn hiển thị animation.
+Từ khóa: cắt khung, animation, SPR, tick, delta, FPS, GetNextFrame, WaitForFrame, LOD
+Trạng thái: PARTIAL — source tĩnh được mô tả; dữ liệu asset và tỷ lệ runtime chưa xác minh.
+Độ phủ: đã mô tả 4/4 miền source tĩnh; 0/3 cảnh có tỷ lệ frame thực đo.
+Liên quan: JX1_OPS/REPORTS/H-14-mat-khung-hieu-ung.md, JX1_OPS/REPORTS/H-15-dan-xuyen-quai-fps.md, JX1_OPS/REPORTS/J-02-animation-quai-npc.md, JX1_OPS/REPORTS/J-03-hoat-anh-ky-nang.md, JX1_OPS/REPORTS/J-04-lop-chong-nhan-vat.md
+Cần tôi quyết định: không
+
+## Quan hệ
+```mermaid
+flowchart LR
+  A[Tick, delta và action] --> B[Frame logic]
+  B --> C[Ánh xạ sang frame SPR]
+  C --> D[Draw hoặc ẩn theo cờ]
+  E[Capture/FPS và dữ liệu asset] --> F[Đo tỷ lệ frame thực]
+  D --> F
+```
+
+## Phạm vi và độ phủ
+`qh9A` là `D:/JX-build/qh9A/Classes` theo task. Báo cáo gốc dùng client `O` và server source `S` khác root task; chi tiết root cũ được giữ trong phần phương pháp bên dưới.
+
+| Phần tử phạm vi | Đã phủ | Chưa phủ |
+|---|---|---|
+| Tick, delta và ánh xạ frame | Được phân tích trong báo cáo; symbol hiện có tại `qh9A/gamecore/KSprControl.cpp:342-373`, `qh9A/gamecore/KNpc.cpp:3837` | Chưa đo nhịp update/FPS runtime |
+| Tốc độ đánh/niệm và thời lượng | Được phân tích; `DoOrdinSkill` hiện có tại `qh9A/gamecore/KNpc.cpp:2377-2399` | Chưa đo thời lượng hiển thị thực |
+| Cờ ẩn, culling và pool | Được mô tả theo source root cũ tại `G/gamecore/KNpc.cpp:5889-5905`, `G/gamecore/KMissle.h:6` | Chưa tái kiểm toàn bộ nhánh trên qh9A; chưa đo LOD/culling runtime |
+| Chuyển đổi SPR và cache | Được mô tả trong báo cáo theo `S/Engine/Src/KBmp2Spr.cpp:33-56,200-240` và `S/Engine/Src/KSpriteCache.cpp:31-56` | Server source `S` không phải root dữ liệu server của task; chưa tái kiểm trên root task |
+| Cảnh đứng | Quy tắc tĩnh được nêu trong bảng cảnh | Tỷ lệ frame thực chưa đo |
+| Cảnh đi/chạy | Quy tắc tĩnh được nêu trong bảng cảnh | Chưa có capture/FPS/delta đồng bộ |
+| Giao tranh đông | Cờ/pool được phân tích tĩnh | Chưa đo số sprite, tải, frame vẽ hoặc frame bỏ |
+| Tỷ lệ frame runtime | Được đánh dấu chưa xác minh | Chưa có asset thống kê, capture hay số đo để tính phần trăm |
 
 ## Phạm vi và phương pháp
 
@@ -81,3 +114,8 @@ Không gán 0% cho trường hợp chưa đo. Phần trăm bỏ frame thực ngh
 - Kiểm tra lại các vị trí đại diện trên client gốc trong lượt này: `KSprControl.cpp:297-330,342-373`, call site `KNpcRes.cpp:357-409`, `KNpc.cpp:2377-2399,3732-3744` và `AppDelegate.cpp:119`; kết quả phù hợp với mô tả tĩnh ở trên. Dùng `Select-String`; không chạy Python ở lượt này.
 - Chưa có capture/FPS/dt, kiểm kê asset, bảng số đo cảnh hoặc số liệu RAM/texture. Tỷ lệ frame rơi và nguyên nhân H-14/H-15 vẫn CHƯA XÁC MINH.
 - Báo cáo là kết quả khảo sát tĩnh trong vùng file được giao. Chưa commit/push.
+
+## Phát hiện khi chuẩn hóa
+- Client root trong báo cáo cũ là `O=C:/Jx1CocoV3/.../Client2912/Client/Classes`; task chỉ định qh9A. Đã xác nhận một số symbol đại diện tồn tại trên qh9A, không tái xác minh mọi vị trí cũ; số liệu và kết luận cũ được giữ nguyên.
+- Server root trong báo cáo cũ là `S=D:/JX-source/server/jxOnline/gameserver/Sources`; nguồn server task cung cấp là Settings ở `C:/Jx1CocoV3/.../_bin_v2_/gs`. Bảng phạm vi giữ nguyên giới hạn này, không suy rằng hai root tương đương.
+- J-02/J-04 cũ nói không có báo cáo J-05 local, nhưng chính báo cáo `JX1_OPS/REPORTS/J-05-cat-khung-animation.md` đang tồn tại.

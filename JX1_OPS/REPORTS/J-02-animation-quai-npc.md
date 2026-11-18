@@ -1,9 +1,37 @@
-# TÓM TẮT 5 DÒNG
-1. [BẢN NHÁP, XÁC MINH TĨNH] 1.412 template `Kind=0`, 379 appearance type; ghép được metadata cho 1.398 template.
-2. `FightStand`: tổng frame min/trung vị/max = 1/80/192; 1.303 template có 8 hướng, 95 có 1 hướng, 14 thiếu metadata.
-3. Các trạng thái khác cũng chủ yếu 8 hướng; `Die` max 352, min 1. Một frame ghi trong bảng chưa chứng minh asset/animation runtime chỉ có một hình.
-4. Năm `boss160..164` (STT 2429, 2430, 2432..2434) không có hàng metadata trong hai bảng NPC resource đã đối chiếu.
-5. Chưa xác minh client PAK/SPR, runtime, build/test; không mạng/VM/exe, không sửa source, Python dùng `python -I`.
+TÓM TẮT 1..5
+1. [BẢN NHÁP, XÁC MINH TĨNH] 1.412 template `Kind=0`, 379 appearance type; ghép được metadata cho 1.398 template. [NGUỒN]
+2. `FightStand`: tổng frame min/trung vị/max = 1/80/192; 1.303 template có 8 hướng, 95 có 1 hướng, 14 thiếu metadata. [NGUỒN]
+3. Các trạng thái khác cũng chủ yếu 8 hướng; `Die` max 352, min 1. Một frame ghi trong bảng chưa chứng minh asset/animation runtime chỉ có một hình. [NGUỒN]
+4. Năm `boss160..164` (STT 2429, 2430, 2432..2434) không có hàng metadata trong hai bảng NPC resource đã đối chiếu. [NGUỒN]
+5. Chưa xác minh client PAK/SPR, runtime, build/test; không mạng/VM/exe, không sửa source, Python dùng `python -I`. [CHƯA KIỂM]
+
+# J-02 — Hoạt ảnh quái và NPC
+Loại: khảo sát
+Chủ đề: Thống kê metadata frame, hướng và action của tài nguyên NPC.
+Từ khóa: quái, NPC, animation, NpcResType, FightStand, action, frame, boss160..164
+Trạng thái: PARTIAL — metadata tĩnh đã khảo sát; asset SPR và runtime chưa xác minh.
+Độ phủ: đã phủ 4/5 nhóm phạm vi tĩnh; asset/runtime chưa phủ.
+Liên quan: JX1_OPS/REPORTS/J-01-animation-nhan-vat-tran.md, JX1_OPS/REPORTS/J-03-hoat-anh-ky-nang.md, JX1_OPS/REPORTS/J-05-cat-khung-animation.md, JX1_OPS/REPORTS/H-14-mat-khung-hieu-ung.md
+Cần tôi quyết định: không
+
+## Quan hệ
+```mermaid
+flowchart LR
+  A[Npcs.txt: Kind=0, NpcResType] --> B[Bảng resource NPC]
+  B --> C[Bảng metadata theo action]
+  C --> D[Client nạp SPR và chọn hướng/frame]
+```
+
+## Phạm vi và độ phủ
+Đường dẫn `GS` trong bảng là `C:/Jx1CocoV3/Folder/ServerNew-20260116T043145Z-3-001/ServerNew/_bin_v2_/gs/Settings` theo task. Tên một số file `NpcRes` hiển thị theo mã legacy trong filesystem.
+
+| Phần tử phạm vi | Đã phủ | Chưa phủ |
+|---|---|---|
+| Template NPC và `NpcResType` | `GS/Npcs.txt:1-2436`; báo cáo thống kê 2.435 hàng và phân nhóm `Kind=0` | Chưa đối chiếu asset theo template |
+| Danh mục action NPC | 14 action tại `GS/NpcRes/npc¶¯×÷±í.txt:2-15` | Chưa xác minh từng action có SPR hợp lệ |
+| Bảng tên resource và metadata | Hai bảng, mỗi bảng 982 hàng dữ liệu tại `GS/NpcRes/ÆÕÍ¨npc×ÊÔ´.txt:2-983` và `GS/NpcRes/ÆÕÍ¨npc×ÊÔ´ÐÅÏ¢.txt:2-983` | Chưa giải mã/xác minh asset SPR được tham chiếu |
+| Nhóm boss và golden | Đối chiếu type thiếu metadata và 16 hàng golden tại `GS/npc/NpcGoldTemplate.txt:2-17` | Chưa xác minh boss spawn hoặc asset runtime |
+| PAK/SPR và hiển thị thực tế | Đã nêu giới hạn trong mục `CHƯA XÁC MINH` của báo cáo | Chưa phủ asset, hình hiển thị, loop/hold và hiệu năng runtime |
 
 ## ĐÃ XÁC MINH
 
@@ -73,3 +101,8 @@ Kiểm tính nhất quán: 14 ô metadata có tổng frame không chia hết cho
 | Metadata | fallback `NormalNpcSprInfo` | `Classes/gamecore/KNpcResNode.cpp:458` | `16,8,0` | tổng frame, hướng, interval | giá trị dùng khi thiếu ô metadata; có thể làm thiếu asset trông như animation 16×8 | CẨN THẬN | SOURCE, chưa đo SPR |
 | Cấu trúc | `MAX_ACTION` | `Classes/gamecore/KNpcResNode.h:27` | 128 | action tối đa | cap bảng action; tăng/giảm có thể ảnh hưởng index/tải dữ liệu | KHÔNG | SOURCE |
 | Cấu trúc | `MAX_PART` | `Classes/gamecore/KNpcResNode.h:23-25` | 24 | part slot | kích thước bảng resource/sort | KHÔNG | SOURCE |
+
+## Phát hiện khi chuẩn hóa
+- Trong task server root, tên action/resource hiển thị là `npc¶¯×÷±í.txt`, `ÆÕÍ¨npc×ÊÔ´.txt` và `ÆÕÍ¨npc×ÊÔ´ÐÅÏ¢.txt`; báo cáo cũ dùng tên tiếng Hoa tương ứng. Giữ nguyên dẫn chứng cũ, bảng phạm vi ghi tên filesystem đang thấy.
+- Báo cáo cũ ghi không tìm thấy báo cáo J-05, nhưng hiện có `JX1_OPS/REPORTS/J-05-cat-khung-animation.md`. Không sửa nhận định cũ theo yêu cầu giữ nguyên kết luận.
+- Báo cáo dẫn client root `C:/Jx1CocoV3/.../Client2912/Client`, trong khi task yêu cầu client qh9A. Phần server Settings khớp root task; kết luận client cũ chưa được tái xác minh trên qh9A.

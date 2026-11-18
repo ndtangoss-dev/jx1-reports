@@ -1,0 +1,5 @@
+file	loại	chủ đề	từ khóa	trạng thái	độ phủ	liên quan
+JX1_OPS/REPORTS/J-02-animation-quai-npc.md	khảo sát	Metadata hoạt ảnh quái và NPC	quái, NPC, animation, NpcResType, FightStand, frame, boss160..164	PARTIAL	4/5 nhóm phạm vi tĩnh; asset/runtime chưa phủ	J-01, J-03, J-05, H-14
+JX1_OPS/REPORTS/J-03-hoat-anh-ky-nang.md	khảo sát	Hoạt ảnh và vòng đời hiệu ứng kỹ năng	kỹ năng, missile, aura, buff, SPR, GetNextFrame, LifeTime	PARTIAL	7/7 nhóm và 4/4 mẫu cấu hình; asset/runtime chưa phủ	A-15a, A-15b, A-15c, H-01, H-14, J-02, J-05
+JX1_OPS/REPORTS/J-04-lop-chong-nhan-vat.md	khảo sát	Lớp chồng, section và appearance override	lớp chồng, section, BASE, EFFECT, GetnSort, Phi Phong, ChiBang, shiping	PARTIAL	7/8 phần tử tĩnh; asset sort/runtime chưa phủ	H-04, H-14, J-03, J-05
+JX1_OPS/REPORTS/J-05-cat-khung-animation.md	khảo sát	Ánh xạ frame, tick và giới hạn hiển thị	cắt khung, animation, SPR, tick, delta, FPS, WaitForFrame, LOD	PARTIAL	4/4 miền source tĩnh; 0/3 cảnh có tỷ lệ frame đo	H-14, H-15, J-02, J-03, J-04
