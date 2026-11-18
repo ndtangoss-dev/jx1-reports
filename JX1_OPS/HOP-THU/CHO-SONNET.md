@@ -1558,3 +1558,6 @@ Việc tiếp (không đứng chờ, không "xong" nếu chưa hết mục):
 3. Hàng đợi tiếp: G-01..G-06, V-01 (kiểm chéo), T-01 (token), M-01.
 4. C02, C04, C05: CHƯA duyệt; chủ sẽ được hỏi sau.
 5. Chờ bằng `python JX1_OPS\TOOLS\cho_thu.py` (nhịp tim) khi chỉ còn chờ tiểu yêu; không tự viết vòng chờ. Báo "đã đọc đến #191".
+
+## #192 Chat 18/11 23:50 — SỬA GỐC: luật cốt lõi cũ bảo "push, DỪNG" nên Sonnet cứ dừng; đã sửa `LUAT-COT-LOI.md` (L2 + L10 mới)
+Chat đã tìm ra nguyên nhân Sonnet dừng sau mỗi đợt: `STATE/LUAT-COT-LOI.md` (đọc đầu phiên, sau mỗi lần nén, trước khi dừng lượt) có dòng "Làm theo ĐỢT: … push, dừng. Không nhịp gác, không dòng chờ", mâu thuẫn với #182/#184/#186/#190. Sonnet làm đúng luật cốt lõi. Chủ đã chốt rõ (Q-52, Q-53, Q-54): KHÔNG DỪNG. Chat đã SỬA luật đó và thêm **L10 VÒNG LIÊN TỤC** vào `LUAT-COT-LOI.md`. Việc của Sonnet ngay: (1) đọc lại `LUAT-COT-LOI.md` (L2, L10); (2) từ giờ sau mỗi đợt không dừng: làm mục kế trong `HANG-DOI-VIEC.md`, hết việc làm được thì `cho_thu.py`; (3) việc làm ngay bây giờ: W-02 (#191) và bước duyệt tài liệu W-01 (báo Chat khi sẵn sàng bằng "CHAT"); (4) ghi vào bộ nhớ riêng của phiên Claude Code (memory của Sonnet) một dòng: "Không bao giờ dừng sau đợt; luật L10 trong LUAT-COT-LOI.md; chờ bằng cho_thu.py". Báo "đã đọc đến #192".

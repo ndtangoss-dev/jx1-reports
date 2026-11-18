@@ -10,7 +10,7 @@ File này ngắn có chủ ý. Đọc nó: đầu mỗi phiên, sau mỗi lần 
 ## L2. Không treo
 - Không bao giờ kết thúc lượt bằng câu hỏi, không dùng hộp chọn (Q-21). Việc làm lại được: tự quyết sau 10 phút, ghi `[TỰ QUYẾT]`. Chỉ chờ chủ với: Main VM, tiền vượt trần, khóa ngoài 20 khóa đã duyệt, xóa dữ liệu, phát APK mới cho chủ test. Đang chờ thì vẫn làm việc khác.
 - Thẻ `[DUNG-CAN-CHU]` hiệu lực tối đa 60 phút; việc xong thì xóa ngay.
-- Làm theo ĐỢT (Q-48, `STATE/QUY-TRINH-KHONG-NGUOI-GAC.md`): đọc hòm thư một lần, làm hết, ghi MỘT báo cáo "XONG ĐỢT #N" vào TU-SONNET.md, push, dừng. Không nhịp gác, không dòng chờ.
+- Làm theo ĐỢT (Q-48): mỗi đợt ghi MỘT báo cáo "XONG ĐỢT #N" vào TU-SONNET.md và push. **SAU ĐỢT KHÔNG DỪNG PHIÊN** (chủ chốt Q-52/Q-54, 18/11 đêm, thay luật "push, dừng" cũ): lấy việc kế trong `STATE/HANG-DOI-VIEC.md`; hết việc làm được thì chạy `python JX1_OPS\TOOLS\cho_thu.py` (chờ có nhịp tim) rồi làm tiếp khi nó thoát. Xem mục L10. Chỉ dừng khi hết hạn mức, 3 đợt không tiến triển hoặc chủ nói dừng.
 - KẸT CẦN QUYẾT: không hỏi chủ, không đứng chờ. Ghi mục `[HỎI-CHAT]` trong `HOP-THU/TU-SONNET.md` (vấn đề, các phương án, phương án khuyến nghị), push, rồi làm việc khác. Chat trả lời trong `CHO-SONNET.md` (thường ≤10 phút khi có việc mở, tối đa 30 phút) và ghi "Chat quyết thay chủ" vào QUYET-DINH. Quá 30 phút chưa có trả lời: làm theo phương án khuyến nghị nếu làm lại được. Chỉ vùng Đỏ mới lên chủ (qua Chat).
 - KHÔNG gõ cửa, không người gác (Q-48). [HỎI-CHAT] ghi trong báo cáo đợt, không chặn đợt: nêu giả định, làm tiếp phần độc lập.
 - KÉO HÒM THƯ SAU MỖI MỤC (không chờ xong cả thư): `git pull` jx1-ops; có thư mới thì đọc; thư mới quan trọng hơn thì làm trước. Thư tiêu đề có `[KHẨN]`: dừng mục đang làm ở điểm an toàn gần nhất và làm ngay; người gác thấy `[KHẨN]` thì đánh thức Sonnet.
@@ -47,3 +47,12 @@ File này ngắn có chủ ý. Đọc nó: đầu mỗi phiên, sau mỗi lần 
 
 ## L6. Ưu tiên (#091)
 Hiểu game (chuẩn hóa) → đường truyền client-server + hiểu exe → tick/độ phản hồi/đồ họa. Chỉ làm bản A (qh9A).
+
+
+## L10. VÒNG LIÊN TỤC — KHÔNG BAO GIỜ TỰ DỪNG (chủ chốt 18/11 22:16–23:40: Q-52, Q-53, Q-54; ưu tiên hơn mọi chỗ khác nói "dừng")
+- Sonnet giữ phiên mở và làm việc liên tục cả đêm. Mỗi đợt xong: ghi XONG ĐỢT, dòng `SONNET-XONG #N` vào VONG.md, đẩy, rồi LÀM TIẾP ngay (không chờ ai gõ, không dừng lượt). "Hết việc" không tồn tại: lấy từ `STATE/HANG-DOI-VIEC.md`, cạn thì tự thêm việc "hiểu game".
+- Việc chờ tiểu yêu hoặc chờ thư: chạy `python JX1_OPS\TOOLS\cho_thu.py` (≤55 phút, ghi nhịp tim `HOP-THU/NHIP-TIM.md` mỗi 5 phút). Thoát mã 10 = có thư mới (pull, đọc, làm); 11 = có việc chờ gộp; 12 = hết hạn → chạy lại. Cấm tự viết vòng chờ khác. Kết thúc lượt mà không đang chạy cho_thu.py hoặc làm việc = LỖI.
+- Tín hiệu qua Chrome: "xong" chỉ khi có đợt đáng báo (xong một mục lớn); "CHAT" khi cần hỏi (đã ghi [HỎI-CHAT] vào TU-SONNET.md + `SONNET-HOI` vào VONG.md). Gõ xong KHÔNG dừng: làm việc kế/`cho_thu.py`.
+- Cần chủ thật: ghi [CAN-CHU] vào BAO-CAO-CHU.md rồi làm việc khác. Không bao giờ kết lượt bằng câu hỏi trong khung chat Sonnet (Q-21).
+- Hiệu ứng vũ khí: KHÔNG sửa mã tới khi `DESIGN/HIEU-HIEU-UNG-VU-KHI.md` được Chat duyệt (Q-52).
+- Sau khi bị nén: đọc file này trước, rồi làm tiếp đúng vòng này, không đợi chủ gõ.
