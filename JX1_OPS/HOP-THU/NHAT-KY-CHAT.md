@@ -265,3 +265,4 @@
 - 00:38 Sonnet đã trả lời 8 câu #199 (hook đúng, cho_thu foreground 600000, CLAUDE.md:25 trái Q-21, 4 chỗ dễ dừng). Nhưng nó chờ cho_thu khi còn việc + không gõ CHAT khi cần duyệt. Gửi #200 duyệt 5 mục.
 - 00:52 Chủ hỏi 'chờ nhịp sau là bao giờ': Sonnet để dành #193 (cần bật Test-36) dù đã được phép. Gửi #201 bảo làm ngay.
 - 01:00 Chủ đi ngủ, lệnh: 07:00 tiến độ 70% (hiện 31/55), mở thêm tiểu yêu nhớ xem RAM; Chat kiểm 15 phút/lần. Gửi #202; Sonnet im từ 00:40 nên gõ CHAT-DAY #202 qua Chrome.
+- 00:58 Chủ chốt LUẬT TỐI THƯỢNG (Q-56): Chat không bao giờ ra lệnh Sonnet dừng. Ghi LUAT-COT-LOI, SO-TAY-CHAT, KHOI-DONG-CHAT, QUYET-DINH, memory.

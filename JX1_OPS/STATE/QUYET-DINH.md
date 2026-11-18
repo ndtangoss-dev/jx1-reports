@@ -68,3 +68,4 @@ Vòng ngủ do Sonnet tự viết không đáng tin (đêm 18/11 đứng im sau 
 
 ## Q-55 — 18/11/2026 23:58 — Chủ dặn: tắt Server D + LDPlayer-D khi không test điện thoại; luôn ≥8 tiểu yêu (2/khóa); kiểm RAM và báo bất thường
 Chủ nói rõ (tháo hạn chế "không tắt" của Q-18 CHỈ cho việc tắt sạch khi không test): tắt `JX-Server-D` và LDPlayer nối D; bật lại khi chủ báo ra test. Tiểu yêu ≥8 việc đồng thời, mỗi khóa tối đa 2. Kiểm RAM máy thật mỗi đợt, báo ngay phần bất thường để chủ quyết tắt. Chi tiết: LUAT-COT-LOI.md L11.
+| Q-56 | 2026-11-19 | CHỦ CHỐT: Chat không bao giờ ra lệnh cho Sonnet dừng; Sonnet làm liên tục, toàn quyền chủ động để không dừng (trừ vùng Đỏ). Chỉ "dừng vòng" của chủ mới tạo DUNG-VONG.flag. Ghi ở LUAT-COT-LOI.md (luật tối thượng), SO-TAY-CHAT, KHOI-DONG-CHAT. | Chủ |
