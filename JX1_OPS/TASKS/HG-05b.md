@@ -1,7 +1,7 @@
 ---
 id: HG-05b
 title: Hiểu game: điều CHƯA KIỂM — phần báo cáo còn lại
-status: ready
+status: running
 level: L3
 agent: codex
 effort: high
@@ -13,7 +13,7 @@ backlog_ref: "#202 duong 70%: nhom Hieu game (BACKLOG, HG-05b)"
 vung_file: [JX1_OPS/DESIGN/DANH-SACH-CHUA-KIEM-2.md]
 tai_nguyen: []
 updated: 2026-11-19
-status_note: "moi tao #202"
+status_note: "Tong quan giao bang JX-K4"
 ---
 
 ## Mục tiêu và tiêu chí xong

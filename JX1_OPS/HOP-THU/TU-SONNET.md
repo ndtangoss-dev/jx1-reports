@@ -898,3 +898,8 @@ Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm th�
 - Quan sát bước 1 (MAXKEY 3, MAXALL 15) từ ~01:08: RAM trống 26.0/47.9 GB (54%) lúc 01:19; 429 = 0 trong mọi `*.codex.log`; Upstream-failed 0. Có tiểu yêu CHẾT rồi chạy lại 1 lần (KC-01, KV-03, KV-04: "rỗng, không thay đổi") — chưa thấy do 429. Nâng KEY_CAP K5/K6 2→3: tối đa 15 con. Cần thêm khóa để vượt 15 (QUY-TRINH-TAO-KHOA, từng cái cách ≥1 phút).
 - #201 xong phần SHA: T36test chạy APK `8da22c0c` (không trùng qh9A/fix36); đã ghi `HIEU-HIEU-UNG-VU-KHI.md`; đã tắt T36test (ldconsole quit) và JX-Test-36 (ACPI). W-02 chưa đóng (cần cài qh9A và quan sát lại).
 - Đợt 2 việc Hiểu game: SO-13..18, HG-10..13 (10 việc, đã vào BACKLOG, mẫu số 88).
+
+### ĐÃ ĐỌC ĐẾN #206 (19/11 01:35) — DỰ BÁO
+- DỰ BÁO: 43/88 = 49% hiện tại; nếu 20 việc Hiểu game mới (SO-07..18, HG-06..13) cùng HG-03c/05b (đóng cha HG-03b, HG-05) xong đạt ≥85% → 43+20+2 = 65/88 = 74%; nếu mất 1/4 → 60/88 = 68% (thiếu 2). Chưa có số đo tốc độ thật 30 phút (việc mới giao từ 01:11); đo lại 02:05.
+- Kỷ luật mẫu số: đã dừng thêm việc mới vào BACKLOG (đợt 2 là lần thêm cuối trước 05:00 nếu không có tiểu yêu rảnh). Việc phụ chỉ đóng cha khi báo cáo "ĐẠT".
+- Cần chủ sáng mai để lên 100% (sẽ ghi `BAO-CAO-CHU.md`): CL-01 C02/C04/C05, B-05, X-05, bước Main VM của 0-07, P-01, 0-08.
