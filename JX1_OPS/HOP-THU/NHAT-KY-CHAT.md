@@ -270,3 +270,4 @@
 - 01:15 Chủ: xingchi GPT 1x, +1000 USD (>3000), cho tiểu yêu không giới hạn. Nâng trần stop_guard 1000/3000, ghi Q-57, gửi #205.
 - 01:27 Kiểm 15p #2: Sonnet SONG, 13/15 tiểu yêu, RAM 54%. Nhưng mẫu số 68→88: 43/88=49% giảm. Gửi #206 kỷ luật mẫu số, đóng việc cha, dự báo.
 - 02:15 Kiểm 15p #5: Sonnet kết thúc lượt lúc 02:05 (10 CHO-GOP, 3 SONG). Gốc: stop_guard MAX_BLOCKS=15 rồi allow. Nâng 400, gõ CHAT-DAY #207, thư #207.
+- 02:33 Kiểm 15p #6: 63/97=65%, 13 SONG. [HỎI-CHAT] W-02: dừng 2 tiến trình find rò handle (14 triệu handle chặn VBox). Duyệt có điều kiện (#208).
