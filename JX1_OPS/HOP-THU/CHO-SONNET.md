@@ -1067,3 +1067,14 @@ Chủ báo 10:46: đã xóa khóa API mặc định trên xingchi. Làm ngay (�
 2. Kiểm không tiểu yêu nào đang chạy bằng khóa mặc định (STATE/TIEU-YEU.md cột Khóa "(tay/mac dinh)": R-03, R-04b, R-05a/b/c lúc 10:06). Những con đó sẽ lỗi 401: Tổng quản chạy lại bằng JX-Kn, coi 401 khóa mặc định là lỗi dịch vụ, không tính lần.
 3. Tìm trong kho (lịch sử git nhánh jx1-ops và các nhánh khác) xem giá trị khóa đó có từng bị commit không; chỉ ghi CÓ/KHÔNG và file nào, không ghi giá trị.
 Ghi một dòng TU-SONNET, push, gõ cửa.
+
+## #132 — 2026-11-18 10:52 — LỆNH CHỦ: Tổng quản giám sát chặt, chạy lại mỗi 2 phút (thay #118 mục chờ 2/5/15 và #123 mục 3 "thử mỗi 10 phút")
+Chủ ra lệnh 10:49: Tổng quản phải xác định ĐÚNG tiểu yêu sống hay chết, chết thì khởi động lại cứ 2 phút một lần.
+1. Chu kỳ Tổng quản: 2 phút (`JX-TongQuan` PT2M).
+2. Xét sống/chết bằng PID, không đoán: khi giao, ghi PID tiến trình codex vào `D:\JX-wt\<ID>.pid`. SỐNG = PID còn và là codex. CHẾT = PID mất (đọc `.done`/đuôi log để biết lỗi gì). TREO = PID còn nhưng không có dấu hiệu sống (log, nhịp, file worktree, CPU) > 60 phút → dừng rồi chạy lại. Im 20–60 phút mà PID còn: SỐNG, không đụng.
+3. Chết → chạy lại ở vòng kế (≤2 phút), bỏ chờ 5/15 phút. Chat thêm: lỗi CỦA VIỆC (không phải lỗi dịch vụ) vẫn giới hạn 3 lần rồi CHET-BO + [TỔNG QUẢN], để một việc hỏng không chạy lại vô tận.
+4. Lỗi dịch vụ: R-06a chạy bằng `gpt-6-astra` đã XONG trong khi `gpt-6.1-sol` báo lỗi Chat Completions. Vậy khi việc chết vì lỗi Chat Completions/upstream của sol: lần chạy lại dùng ngay astra. Ghi mô hình dùng vào cột mới của TIEU-YEU.md. Cầu dao: thử mỗi 2 phút (không phải 10), đóng khi một việc sống >3 phút.
+5. Giãn cách giao việc trong một vòng: 10 giây (luật 1 phút là cho TẠO KHÓA, không phải giao việc). Mỗi khóa ≤3 tiểu yêu như cũ.
+6. Bỏ hẳn cột "(tay/mac dinh)": khóa mặc định đã bị chủ xóa, mọi việc chạy lại bằng JX-Kn.
+7. Gộp R-06a (XONG-CHO-GOP) và ghi vào BAI_HOC: astra chạy được khi sol lỗi.
+Làm NGAY sau #131, trước #129/#130 nếu chưa xong. Ghi TU-SONNET, push, gõ cửa.

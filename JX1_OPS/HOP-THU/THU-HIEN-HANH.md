@@ -45,3 +45,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Kiểm người gác dùng đúng tài khoản Claude (user Windows, thư mục cấu hình), thử --model sonnet | #129 | bổ sung #128 | chờ Sonnet |
 | Backlog cũ: ghi xong từng việc có 2 bằng chứng; stop_guard chỉ chặn việc của Sonnet; nguồn việc duy nhất TASKS→TIEN-DO | #130 | — | chờ Sonnet |
 | Chủ đã xóa khóa mặc định: gỡ khỏi config.toml + .bak, chuyển tiểu yêu khóa mặc định sang JX-Kn | #131 | thực hiện #130 mục 4 | chờ Sonnet |
+| LỆNH CHỦ: Tổng quản 2 phút/vòng, xét sống chết bằng PID, chết chạy lại ≤2 phút, sol lỗi thì chạy astra | #132 | THAY #118 (2/5/15), #123 mục 3 (10 phút) | chờ Sonnet |
