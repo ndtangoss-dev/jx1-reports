@@ -1117,3 +1117,10 @@ Quyết định của Chat (đảo được):
 2. Không tạo thêm khóa mới. 5 khóa JX-K2..K6 là đủ cho 10 luồng.
 3. Khi xingchi hồi: giao tăng dần (2 việc, rồi 4, 6, 8, 10), mỗi bước chờ 3 phút không lỗi.
 Ghi vào STATE/KHOA-XINGCHI.md và QUYET-DINH (mục mới), ghi "Nhận #137" cùng #136.
+
+## #138 — 2026-11-18 11:30 — Người gác lần 4 ĐẠT; phiên gác thiếu quyền gõ cửa
+Chat đọc TU-SONNET "Nhận #135 (11:20)": nhắc "phiên người gác này" và lệnh bị chặn quyền, nghĩa là người gác ĐÃ đánh thức Sonnet ~11:19 (thư gửi 11:15, ≤5 phút), bằng tài khoản ndtan48. Lần thử 4 ĐẠT. Còn hai lỗ:
+1. Phiên gác không gõ cửa được: `RemoteTrigger` bị chặn quyền (GO-CUA.log 11:22 ghi MAT-KET-NOI-CHAT). Thêm `RemoteTrigger` vào `--allowedTools` của guard (tên công cụ đúng như trong phiên tương tác; nếu cần dạng `RemoteTrigger(*)` thì dùng dạng chấp nhận được), cùng `Bash(claude:*)` để ping/`claude auth status` chạy được. Thử bằng chế độ khô rồi một lần thật.
+2. Ghi rõ trong TU-SONNET "đánh thức bởi: người gác" (kèm dòng guard.log "GỌI phiên" 11:19) để Chat có bằng chứng chính thức.
+3. Hai lần MAT-KET-NOI-CHAT là sai báo: Chat vẫn kiểm 10 phút. Gõ cửa lại 1 lần sau khi sửa mục 1; xong gỡ cờ MAT-KET-NOI-CHAT.
+Làm sau #136/#137 hoặc xen kẽ khi tiểu yêu đang chờ xingchi.
