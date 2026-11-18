@@ -26,3 +26,10 @@ Tin ngắn dạng "xong" / "xong (thử vòng)" trong cuộc chat của Chat = S
 - Phanh "hết việc" BỎ: Sonnet không bao giờ hết việc; lấy việc từ `STATE/HANG-DOI-VIEC.md` (và tự thêm việc "hiểu game" khi hàng đợi cạn). Chỉ dừng khi: hết hạn mức, 3 đợt liền không tiến triển, chủ nói dừng, hoặc có [CAN-CHU] chặn mọi việc còn lại.
 - Giữ phiên Claude Code mở cả đêm: khi chỉ còn chờ tiểu yêu hoặc chờ thư thì chờ dài (#182/#184), không gõ "xong".
 - Hiểu rồi mới sửa hiệu ứng vũ khí (xem hàng đợi mục W-01).
+
+## Cập nhật Q-53 (18/11/2026 22:40) — Tín hiệu "CHAT" khi Sonnet cần hỏi Chat
+- Hai tín hiệu ngắn Sonnet gõ qua Claude in Chrome vào cuộc chat của Chat: **"xong"** = hết đợt, báo kết quả; **"CHAT"** = Sonnet CẦN HỎI/CẦN QUYẾT, đã ghi nội dung vào `TU-SONNET.md` mục [HỎI-CHAT] (kèm giờ) và dòng `SONNET-HOI #N hh:mm` trong `VONG.md`. Cả hai chỉ là tín hiệu đánh thức, KHÔNG phải duyệt.
+- Khi Sonnet gõ "CHAT": Chat kéo kho, đọc [HỎI-CHAT], trả lời bằng thư mới trong `CHO-SONNET.md` + `CHAT-DAY`, rồi đẩy. Chuyện vùng Đỏ hoặc cần chủ thì Chat ghi [CAN-CHU] và nói rõ cho Sonnet làm việc khác.
+- Sonnet gõ "CHAT" rồi KHÔNG đứng chờ: làm việc kế trong `STATE/HANG-DOI-VIEC.md`, và trong vòng chờ dài kiểm `CHAT-DAY` mới (1–2 phút/lần).
+- Cấm kết lượt bằng câu hỏi cho chủ trong khung chat của Sonnet (Q-21): hỏi Chat bằng tín hiệu "CHAT", cần chủ thì ghi [CAN-CHU].
+- Chủ viết câu đầy đủ; tin nhắn đúng một chữ "CHAT" hoặc "xong" trong cuộc chat này là của Sonnet.

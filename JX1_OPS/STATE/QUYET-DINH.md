@@ -60,3 +60,5 @@ Gemini miễn phí chỉ 20 lượt/ngày/mô hình: không dùng được (REPO
 
 ## Q-52 — 18/11/2026 22:16 — Chủ chốt 4 điều
 (1) Sonnet không bao giờ hết việc: dùng `STATE/HANG-DOI-VIEC.md`. (2) Hiệu ứng vũ khí sửa mãi không được → hiểu game trước, KHÔNG sửa mã hiệu ứng tới khi có tài liệu hiểu được Chat duyệt (W-01). (3) Giữ phiên Sonnet mở cả đêm. (4) Chat cập nhật tiến độ/kế hoạch để giao việc (hàng đợi + bảng tiến độ).
+
+## Q-53 — 18/11/2026 22:25 — Sonnet gõ "CHAT" để đánh thức Chat khi cần hỏi (chủ chốt). "xong" = hết đợt; "CHAT" = có câu hỏi. Chi tiết: QUY-TRINH-VONG-TU-DONG.md.
