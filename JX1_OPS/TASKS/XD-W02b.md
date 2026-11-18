@@ -7,7 +7,7 @@ agent: codex
 effort: high
 priority: 1
 branch: task/XD-W02b
-worktree: D:JX-wtXD-W02b
+worktree: D:\JX-wt\XD-W02b
 depends_on: []
 backlog_ref: "việc phụ đóng việc cha (không vào BACKLOG)"
 vung_file: [JX1_OPS/REPORTS/XD-W02b.md]
