@@ -96,7 +96,7 @@ if ($jl -and ((Get-Date) - $jl.LastWriteTime).TotalSeconds -lt 120) { $live = $t
 
 if ($env:GUARD_FAKE_KHAN -eq '1') { $khan = $true; $live = $false }
 Log ("chay: im {0:N0} phut, khan={1}, busy={2}, live={3}" -f $silentMin, $khan, $busy, $live)
-if (($silentMin -gt 30 -or $khan) -and ($khan -or -not $busy) -and -not $live) {
+if (($silentMin -gt 90 -or $khan) -and ($khan -or -not $busy) -and -not $live) {
   Log ("goi phien: im lang {0:N0} phut, khan={1}" -f $silentMin, $khan)
   $prompt = 'Người gác: đọc JX1_OPS/STATE/LUAT-COT-LOI.md và hòm thư HOP-THU/CHO-SONNET.md rồi làm tiếp. Ghi một dòng trạng thái vào STATE/TRANG-THAI.md, commit và push jx1-ops.'
   Push-Location 'C:\Jx1CocoV3'
@@ -106,7 +106,7 @@ if (($silentMin -gt 30 -or $khan) -and ($khan -or -not $busy) -and -not $live) {
   else { $proc = Start-Process -WindowStyle Hidden -PassThru -FilePath 'claude' -ArgumentList $argStr -RedirectStandardOutput (Join-Path $gdir 'goi.out') -RedirectStandardError (Join-Path $gdir 'goi.err') }
   Pop-Location
   if ($proc) { Set-Content $lock ("{0} {1}" -f $proc.Id, (Get-Date -f o)) }
-} elseif ($live -and ($silentMin -gt 30 -or $khan)) { Log 'phien tuong tac dang giua luot, khong goi' }
+} elseif ($live -and ($silentMin -gt 90 -or $khan)) { Log 'phien tuong tac dang giua luot, khong goi' }
 
 # --- #118.6: guard khong chay lai tieu yeu nua; chi bat lai Tong quan neu no chet ---
 $tq = Get-ScheduledTaskInfo -TaskName 'JX-TongQuan' -ErrorAction SilentlyContinue

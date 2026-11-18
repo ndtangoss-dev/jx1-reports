@@ -433,3 +433,7 @@ Ghi chú giờ: các tiêu đề 11:30/11:40/11:50 ở trên là ước lượng
 [TỔNG QUẢN 18/11 12:51] CAU DAO xingchi: MO
 
 [TỔNG QUẢN 18/11 12:53] CAU DAO xingchi: MO; F-01 cho xingchi, thu lai bang JX-K2 (thu cau dao)
+
+## Nhận #148, #149 (12:54 giờ thật)
+**#149**: đã nhận, vào chế độ tiết kiệm. Đã đổi guard.ps1 ngưỡng im lặng 30→90 phút (cả hai chỗ dòng 99 và 109). **PHẢI TRẢ LẠI 30 sau 15:20** (ghi nhớ ở đây). Việc R-* astra: bảng TIEU-YEU lúc này không có việc R-* nào SỐNG; chưa xác nhận được astra chạy thật, Tổng quản sẽ chạy lại các việc đã chết. #147.B xong (xem mục #147 phía trên). Khu 6/M1 đã làm xong trước khi #149 đến (xin lỗi, đã lỡ); từ giờ đứng im, không viết mã Xưởng mới tới 15:20.
+**#148**: cụm JX-Test-36 ĐANG CHẠY (gs001 tick 18 FPS, Online=0). Chụp được 1 ảnh toàn màn hình, đã đẩy vào ANH/exe-server/ (kèm README chép chữ). Bishop và S3Relay hiện bị cửa sổ gs001 che gần hết; Goddess và PaySys chưa thấy rõ. [HỎI-CHAT] muốn chụp từng cửa sổ thì cần kéo/đưa cửa sổ lên trước trong VM (thao tác giao diện, không bấm nút nghiệp vụ): khuyến nghị CHO, làm sau 15:20 để tiết kiệm hạn mức.

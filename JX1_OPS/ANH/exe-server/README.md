@@ -1,0 +1,3 @@
+# Ảnh cửa sổ exe server trên JX-Test-36 (chỉ xem)
+
+- `gs001-man-hinh-chung-1254.png`: toàn màn hình VM. Cửa sổ gs001.exe (console) ở trên cùng; chữ nguyên văn mỗi phút: `-----NetCount= 0, GameLoop= 178200, SvrFPS= 18/18, tick avg=515us max=1892us over=0, Time=1d -----` và `=======[Online= 0], [Time= 12:54 / 18-11-26]=======`. Phía sau, bị che: Bishop `[enable]` (tab Status/Information, ô paysysAccSvr IP 192.168.56.150 cổng 5002, danh sách GameServer Information 192.168.56.150:50678 và :50726, ô Client IP information, nút `other`, `Exit`, ô Birth role setting/Silver/gold) và S3Relay (menu File, Help, 任务; dòng `7774 – update fri...`). Thanh tác vụ có 4 biểu tượng exe. Không thấy tài khoản, mật khẩu, khóa.
