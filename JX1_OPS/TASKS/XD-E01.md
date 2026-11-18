@@ -24,3 +24,9 @@ Việc phụ đóng việc cha **E-01** (không vào mẫu số). Đọc `JX1_OP
 - Không chạy exe lạ, không VM, không mạng, không Main VM, không đọc khóa/mật khẩu/dump tài khoản. Chỉ ghi tệp đầu ra ngoài ra không sửa gì.
 - Worktree của bạn có thể KHÔNG có mã nguồn game: đọc trực tiếp (chỉ đọc) client `C:/Jx1CocoV3/Folder/Client2912-20260116T044348Z-3-001/Client2912/Client/Classes` và server `C:/Jx1CocoV3/SwordOnline/SwordOnline/jxOnline/gameserver/Sources`; kho báo cáo ở D:/jx1-ops-wt/JX1_OPS (chỉ đọc).
 - Mỗi lần đọc <= ~400 dòng. Cuối tệp task ghi mục "## Kết quả" (3–5 dòng).
+
+## Kết quả
+- DONE (19/11/2026) — đã tạo `JX1_OPS/REPORTS/XD-E01.md`, đối chiếu đủ 5/5 vế tiêu chí E-01 và nguồn Bishop/KSelPlayer; kết luận **E-01 ĐẠT** trong phạm vi mốc offline, runtime vẫn chưa kiểm.
+- Kiểm offline `python -I -B -` qua unittest discover có audit hook: 76 test, 0.185s, OK, exit 0; không có sự kiện socket/tiến trình con, không ghi bytecode. Rà tĩnh 14 tệp Python không phát hiện bí mật thật trong phạm vi kiểm.
+- Đã thấy commit gộp E-01 `20c1054` và E-01b `62a8d15`; giữ nguyên kết luận lịch sử, không sửa nguồn, không build/chạy VM/exe game/server/mạng; không stage/commit/push mới, Tổng quan commit hộ.
+- Nhịp `D:\JX-wt\XD-E01.nhip` bị từ chối ghi (Access denied, ngoài writable root); không đổi quyền hoặc vượt sandbox. Lỗi, giới hạn ABI/81 ID và bước tiếp đã ghi trong báo cáo.
