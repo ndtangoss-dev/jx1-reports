@@ -1,6 +1,6 @@
 # TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-19 01:51, đừng sửa tay)
 
-ĐANG LÀM: SO-09, SO-11, SO-12, SO-13, SO-14, SO-15, SO-16, SO-17, SO-18
+ĐANG LÀM: SO-08, SO-09, SO-11, SO-12, SO-13, SO-14, SO-15, SO-16, SO-17, SO-18
 KẾ TIẾP: 0-08, B-05, D-02, E-04, E-06, P-01
 BỊ CHẶN: T-04
 
@@ -14,6 +14,7 @@ flowchart LR
     T_04["T-04 chặn"]
   end
   subgraph S3["Chặng 3 tick và đồ họa"]
+    SO_08["SO-08 chạy"]
     SO_09["SO-09 chạy"]
     SO_11["SO-11 chạy"]
     SO_12["SO-12 chạy"]
@@ -34,9 +35,8 @@ flowchart LR
     E_06["E-06 chờ"]
     P_01["P-01 chờ"]
     P_03["P-03 chờ"]
-    SO_08["SO-08 chờ"]
     X_05["X-05 chờ"]
   end
 ```
 
-Tổng: 180 việc, 9 đang làm (+0 chết, 4 chờ gộp), 9 chờ, 1 bị chặn, 157 xong.
+Tổng: 180 việc, 10 đang làm (+0 chết, 4 chờ gộp), 8 chờ, 1 bị chặn, 157 xong.
