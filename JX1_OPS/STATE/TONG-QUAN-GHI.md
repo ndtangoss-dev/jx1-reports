@@ -204,3 +204,6 @@
 [TỔNG QUẢN 19/11 00:45] CAU DAO xingchi: DONG
 [TỔNG QUẢN 19/11 00:47] CAU DAO xingchi: DONG
 [TỔNG QUẢN 19/11 00:53] CAU DAO xingchi: DONG
+[TỔNG QUẢN 19/11 00:56] CAU DAO xingchi: DONG; KV-01 giao bang JX-K4; KV-02 giao bang JX-K3; KV-03 giao bang JX-K3; KV-04 giao bang JX-K2; KV-05 giao bang JX-K6; KV-06 giao bang JX-K6
+[TỔNG QUẢN 19/11 00:57] CAU DAO xingchi: DONG
+[TỔNG QUẢN 19/11 00:59] CAU DAO xingchi: DONG
