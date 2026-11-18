@@ -238,3 +238,4 @@
 [TỔNG QUẢN 19/11 02:05] CAU DAO xingchi: DONG
 [TỔNG QUẢN 19/11 02:07] CAU DAO xingchi: DONG
 [TỔNG QUẢN 19/11 02:09] CAU DAO xingchi: DONG; SO-09 chet, chay lai lan 1 bang JX-K4
+[TỔNG QUẢN 19/11 02:14] CAU DAO xingchi: DONG; SO-16 giao bang JX-K4; SO-17 giao bang JX-K4; SO-18 giao bang JX-K3
