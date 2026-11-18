@@ -19,7 +19,7 @@ HOPTHU = 'HOP-THU'
 
 ROOT = os.environ.get('JX1_OPS_ROOT', r'D:\jx1-ops-wt\JX1_OPS')
 DAILY_CAP, WEEK_CAP, MAX_BLOCKS, MARK_HOURS = 200.0, 1000.0, 15, 1   # #153.B: 60 -> 15
-MAX_WAIT_BLOCKS = 40   # Q-54: moi lan chan = 1 luot cho_thu.py (<=55 phut) -> toi da ~36 gio
+MAX_WAIT_BLOCKS = 150   # Q-54: moi lan chan = 1 luot cho_thu.py (9 phut) -> toi da ~22 gio
 
 
 def allow():
@@ -180,7 +180,7 @@ def main():
             json.dump({'n': nw + 1}, open(swf, 'w'))
         except OSError:
             pass
-        print(json.dumps({'decision': 'block', 'reason': 'KHÔNG DỪNG PHIÊN (LUAT-COT-LOI L10, Q-52/Q-54): chưa có DUNG-VONG.flag. Không còn việc làm trực tiếp thì lấy việc kế trong STATE/HANG-DOI-VIEC.md; nếu thật sự hết việc làm ngay được thì chạy: python JX1_OPS\\TOOLS\\cho_thu.py (chờ ≤55 phút, không tốn token). Thoát mã 10 = thư mới (git pull --rebase --autostash, đọc, làm); 11 = tiểu yêu xong chờ gộp (gộp); 12 = hết hạn (chạy lại). Không kết thúc lượt chỉ vì "đã báo xong đợt".'}))
+        print(json.dumps({'decision': 'block', 'reason': 'KHÔNG DỪNG PHIÊN (LUAT-COT-LOI L10, Q-52/Q-54): chưa có DUNG-VONG.flag. Không còn việc làm trực tiếp thì lấy việc kế trong STATE/HANG-DOI-VIEC.md; nếu thật sự hết việc làm ngay được thì chạy: python JX1_OPS\\TOOLS\\cho_thu.py (chờ 9 phút, gọi lệnh Bash với timeout 600000, không tốn token). Thoát mã 10 = thư mới (git pull --rebase --autostash, đọc, làm); 11 = tiểu yêu xong chờ gộp (gộp); 12 = hết 9 phút (chạy lại ngay). Không kết thúc lượt chỉ vì "đã báo xong đợt".'}))
         return
     # an toan chong vong lap
     sf = os.path.join(tempfile.gettempdir(), 'jx_stop_guard_%s.json' % re.sub(r'\W', '', data.get('session_id', 'x'))[:40])
