@@ -684,3 +684,14 @@ Còn: #154.4 (XUONG-JX1 bản đầy đủ, khu 6, M1, bản vá có tên); ch�
 **Cần chủ quyết:** không. [CAN-CHU]: không.
 **Giả định:** [TỰ QUYẾT] đợt này kết thúc khi đã giao việc, không đứng chờ tiểu yêu; đọc tĩnh, không đụng VM/exe.
 **Còn treo cũ:** #134 (chủ đăng nhập ndtan48), tạo nhân vật thứ 4 (cần client), Xưởng JX1 tạm dừng, `.gitignore` master (thấp, không push).
+
+## XONG ĐỢT #165 (Sonnet, 18/11 ~19:30)
+**Đã làm:**
+1. **Ẩn cửa sổ Tổng quản:** task `JX-TongQuan` nay chạy `pythonw.exe -I ...\tong_quan.py` (WorkingDirectory `D:\jx1-ops-wt\JX1_OPS`), không còn console. `tong_quan.py` ghi stdout/stderr ra `D:\JX-wt\tong_quan\stdout.log` khi không có console, và mọi lệnh con có `CREATE_NO_WINDOW`. Đã chờ 2 vòng (18:39, 18:43), kết quả 0, TIEU-YEU vẫn cập nhật. **Hoàn tác (1 dòng):** đổi Execute của task về `...\Python312\python.exe` (giữ nguyên đối số). Không dùng "chạy dù chưa đăng nhập" (cần mật khẩu) → nếu vẫn còn nháy thì [CAN-CHU]. **Chờ chủ xác nhận hết nháy.**
+2. **Gộp N-01..N-06** (đều đã merge, status done) vào `DESIGN/NUT-EXE-TAC-DONG.md`: 0 tổng quan, 1 Announcer, 2 lọc/VIP/IP, 3 Birth role + Reset rebirth + Send to client (bảng 4 câu từng ô, sơ đồ tạo nhân vật), 4 Max char/MAX Player, 5 Add Money/EnterMap/Remove Role/Backup/Pause/Restart, 6 liên kết tổng, danh sách điều chưa kiểm, và mục cuối "Muốn xác nhận trên client thật thì cần gì" (ca thử C01–C13 ở N-06 §7). Bổ sung đoạn "Bổ sung #165" vào `TRUYEN-TAI-VA-EXE-SERVER.md`.
+3. **Kết quả thật R-05b/c/d, R-07b (đã gộp):** R-05b PARTIAL, chuẩn hóa 5 báo cáo H-05..H-09; R-05c chuẩn hóa H-10..H-14 (H-13/H-14 thiếu báo cáo gốc nên chỉ ghi nhận); R-05d chuẩn hóa H-15 (7/13 tệp client có điểm neo kiểm, 6 tệp chỉ xác nhận có mặt); R-07b chuẩn hóa 5/5 (M-02, X-01..X-04) + chỉ mục; nguồn lịch sử chưa tái xác minh. Cả bốn đều không chạy build/exe/VM. CHẾT-BỎ: chỉ ghi nhận, không chạy lại.
+**Phát hiện đáng chú ý (từ mã, chưa thử):** EnterMap luôn ghi điểm hồi sinh 53/19 bất kể số map nhập; Remove Role xóa hàng loạt theo ngưỡng cấp; Birth role sửa mẫu dùng chung nên có thể thừa kế sang lần tạo sau; Announcer kiểu * gọi ExitAllPlayer (đá người chơi); Bishop và client cùng kẹp danh sách nhân vật ở 3.
+**Chưa có / chưa kiểm:** mọi tác động nhìn thấy ở client thật (Notify all hiện đâu, mã lỗi khi bị lọc, tạo nhân vật thứ 4, Birth áp thật), mã nguồn có khớp exe đang chạy hay không, SQL mode Goddess, cổng root 7777. Không chạy ca thử client nào, không bấm VM/exe.
+**Còn lại:** #134 (chủ đăng nhập ndtan48 rồi chạy lại ping); `.gitignore` master (thấp, không push); Xưởng JX1 vẫn tạm dừng; nhân vật thứ 4 chờ client. 
+**Chủ cần:** xác nhận cửa sổ Tổng quản đã hết nháy. Cần chủ quyết: không.
+**Giả định:** [TỰ QUYẾT] dùng pythonw thay vì đổi kiểu đăng nhập task; mục chưa xong của N-03/N-05 trong bản nháp đã thay bằng nội dung báo cáo cuối.
