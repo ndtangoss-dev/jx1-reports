@@ -300,3 +300,13 @@ Task Scheduler `JX-Guard`: LastRun 10:29:29, LastTaskResult 0 (script chạy xon
 - #122.3: `claude -p "ping"` do người gác gọi: exit 1, thông báo hết hạn mức tuần (mở lại 01:00).
 
 [CAN-CHU] nguoi gac khong goi duoc Claude (het han muc tuan / dang nhap) luc 10:46; phien: You've hit your weekly limit Â· resets 1am (Asia/Bangkok)
+
+## Nhận #128, #129, #130 (18/11 ~11:00)
+- #128.1: `claude -p --model claude-sonnet-5-5 "ping"` trả "weekly limit, resets 1am (Asia/Bangkok)", exit 1; guard đã thêm `--model claude-sonnet-5-5`.
+- #128.2: guard ghi [CAN-CHU] "hết hạn mức tuần" tối đa 1 lần/giờ (canchu.stamp).
+- #128.3: Tổng quản đẩy từ worktree riêng `D:/JX-wt/tq` (detached, reset về origin/jx1-ops mỗi lần); STATE ≥5 phút/lần, sự kiện [TỔNG QUẢN] đẩy ngay; guard thức dậy khi có dòng [TỔNG QUẢN] mới (tq.stamp). Chạy thử: đẩy được (commit 1cb431c).
+- #129: guard và phiên tương tác cùng user PC, cùng config `C:\Users\PC\.claude`, cùng tài khoản ndtan.goss (đã đăng nhập); credentials sửa lúc 10:31. Không lệch tài khoản, chỉ là hạn mức tuần của `-p`, hết 01:00. Không cần chủ /login.
+- #130.2: stop_guard chỉ chặn việc của Sonnet (thư chưa Nhận, [HỎI-CHAT]/[TỔNG QUẢN]/báo cáo chưa gõ cửa, XONG-CHO-GOP); đổi chữ bỏ "BACKLOG".
+- #130.3: bỏ bảng "Tiến độ task" trong TRANG-THAI.md (bản cũ lưu ở D:/JX-wt/guard/TRANG-THAI.truoc-130.md, nằm trong git); nguồn duy nhất TASKS/*.md → TIEN-DO.md.
+- #130.1: chưa đánh "xong" hàng loạt; sẽ làm từng việc một bằng set_status.py khi có đủ 2 bằng chứng.
+- #130.4: giữ nguyên config.toml, chờ Chat báo chủ đã đổi khóa.

@@ -44,26 +44,7 @@ Cập nhật: 2026-11-16 – Sonnet PM (bắt đầu giai đoạn 0). Sonnet c�
 | Worktree task | `D:\JX-wt\<ID>` (đề xuất) |
 
 ## Tiến độ task
-(Bảng này do PM cập nhật; `TOOLS/bang_tien_do.py` đọc để dựng Bảng tiến độ. Trạng thái: xong | đang chạy | chờ | lỗi.)
-
-| ID | Trạng thái | Ghi chú |
-|---|---|---|
-| 0-01 | xong | |
-| 0-02 | xong | kiểm kê môi trường |
-| 0-03 | xong | Codex, gộp 13fe679 |
-| 0-04 | xong | Graphify server + client |
-| 0-05 | xong | jx1-source đã đẩy, tag baseline-20261116 |
-| 0-06 | xong | Q-19 ghi vào CLAUDE.md và AGENTS.md |
-| 0-07 | đang chạy | `jx_env_up.ps1` chạy tốt khi môi trường đã lên (exit 0, 22:14); thử qua tắt bật VM cần chủ: VM thử không tự đăng nhập mu1 (đề nghị bật AutoAdminLogon trong VM thử); Main VM không trả ping lúc 22:14 |
-| 0-09 | xong | sandbox Codex chặn ghi ngoài worktree nhưng ghi được C:/Users/Public; `KHOA.md` đang dùng; hook SessionStart `compact` đã cấu hình (echo nhắc + graphify), in thật sau nén CHƯA kiểm |
-| 0-10 | xong | chưa có đơn giá USD; có số token và trần tạm Q-22 |
-| 0-08 | xong | đã cập nhật BAN-GIAO; thử phiên mới bị chặn do giới hạn tuần của tài khoản Claude — bỏ theo #119.3 |
-| A-01 | xong | `REPORTS/A-01-ban-do-tien-trinh.md` (tổng hợp từ BAI_HOC; chưa kiểm lại trên VM thử vì VM treo) |
-| A-03 | xong (PARTIAL: tĩnh, runtime chưa kiểm) | báo cáo REPORTS/A-03-kiem-ke-cau-hinh.md, đã gộp 23:50 |
-| A-06 | xong (PARTIAL, nguồn) | REPORTS/A-06-bang-goi-tin.md, gộp 00:30 |
-| A-02 | xong (PARTIAL: tĩnh, runtime chưa kiểm) | báo cáo REPORTS/A-02-luong-dang-nhap.md, đã gộp 23:50 |
-| A-07 | xong pha tĩnh (PARTIAL) | báo cáo REPORTS/A-07-goc-re-crash-gs001.md; pha debugger trong VM CHƯA chạy: host và VM đều chưa có cdb.exe, chưa có bản Debug có PDB (A-07b) |
-| A-05 | xong (tĩnh) | REPORTS/A-05-diem-tuong-tac-gs001.md, gộp 00:40; báo Chat viết B-01 |
+(Đã bỏ bảng này theo #130.3: nguồn duy nhất là `TASKS/*.md` (status) → `STATE/TIEN-DO.md`. Bảng cũ còn trong lịch sử git.)
 
 ## Ngân sách Codex
 - Tổng: khoảng 2.000 USD (chủ dự án cho biết)

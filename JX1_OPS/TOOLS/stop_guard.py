@@ -13,7 +13,7 @@ Cho phep dung (thoat 0, khong in gi) khi:
   5. Het task, hoac da chan >= 60 lan trong mot phien (an toan chong vong lap vo han), hoac loi bat ky cua hook (an toan: khong chan).
 Chan: in JSON {"decision":"block","reason":...} ra stdout.
 """
-import json, os, re, sys, time, tempfile
+import glob, json, os, re, sys, time, tempfile
 
 HOPTHU = 'HOP-THU'
 
@@ -156,27 +156,22 @@ def main():
                 pass
             print(json.dumps({'decision': 'block', 'reason': 'HOP-THU (Q-29): còn %d thư chưa xử lý trong HOP-THU/CHO-SONNET.md: %s. Làm các thư này trước, chuyển xuống mục "Đã xử lý" kèm giờ và 1 dòng kết quả, trả lời ngắn vào TU-SONNET.md nếu thư yêu cầu. Không dừng lượt.' % (len(letters), '; '.join(x[:80] for x in letters))}))
             return
-    # 3/5. task con lai
-    phases = B.parse_backlog(B.read(os.path.join(ROOT, 'TASKS', 'BACKLOG.md')))
-    table = B.status_table(state)
-    raw = {}
-    for ln in B.section(state, 'Tiến độ task').splitlines():
-        if ln.startswith('|'):
-            c = B.cells(ln)
-            if c: raw[c[0]] = ln.lower()
+    # 3/5. (#130) chi chan khi con viec cua chinh Sonnet: tieu yeu xong cho gop (.done exit=0, task van running).
+    # Viec o Tong quan (ready/running/CHO-XINGCHI) KHONG chan: nguoi gac va Tong quan se goi khi co viec xong.
     todo, blocked = [], []
-    for ph in phases:
-        for t in ph['tasks']:
-            tid = t['id']
-            st = table[tid][0] if tid in table else (B.front(ROOT, tid) or 'cho')
-            if st == 'xong': continue
-            note = raw.get(tid, '')
-            tf = B.read(os.path.join(ROOT, 'TASKS', tid + '.md')).lower()
-            fails = [int(x) for x in re.findall(r'lỗi liên tiếp:\s*(\d+)', tf)] + [int(x) for x in re.findall(r'lỗi (\d+) lần', note)]
-            why = None
-            if fails and max(fails) >= 3: why = 'lỗi 3 lần liên tiếp'
-            elif 'chờ chủ' in note or 'cần chủ' in note: why = 'cần chủ dự án'
-            (blocked if why else todo).append((tid, t['title'], st, why))
+    for f in sorted(glob.glob(os.path.join(ROOT, 'TASKS', '*.md'))):
+        tid = os.path.basename(f)[:-3]
+        tf = B.read(f)
+        m = re.search(r'(?m)^status:\s*(\S+)', tf.replace(chr(0xFEFF), ''))
+        if not m or m.group(1).lower() not in ('running', 'in_progress', 'doing'):
+            continue
+        try:
+            dn = open(r'D:\JX-wt\%s.done' % tid, encoding='utf-8', errors='ignore').read()
+        except OSError:
+            continue
+        if 'exit=0' in dn:
+            todo.append((tid, 'XONG-CHO-GOP: gop ket qua (git checkout task/%s -- <file cua task>), set_status.py %s done' % (tid, tid), 'xong cho gop', None))
+
     if not todo: allow()
     # an toan chong vong lap
     sf = os.path.join(tempfile.gettempdir(), 'jx_stop_guard_%s.json' % re.sub(r'\W', '', data.get('session_id', 'x'))[:40])
@@ -191,7 +186,7 @@ def main():
         pass
     # task dang chay uu tien, roi task dau tien trong BACKLOG theo thu tu
     nxt = next((x for x in todo if x[2] == 'dang chay'), todo[0])
-    msg = ('KHÔNG DỪNG LƯỢT (Q-21, hook Stop): BACKLOG còn %d task chưa xong và chưa bị chặn. Làm tiếp ngay: %s – %s [%s]. '
+    msg = ('KHÔNG DỪNG LƯỢT (Q-21, hook Stop): TASKS còn %d việc của Sonnet chưa xong và chưa bị chặn. Làm tiếp ngay: %s – %s [%s]. '
            'Không kết thúc lượt bằng câu hỏi: việc nhỏ hoặc có mặc định thì tự quyết và ghi STATE/QUYET-DINH.md; chỉ hỏi khi không đảo ngược được hoặc cần quyền của chủ. '
            'Chỉ được dừng khi: Codex chạm trần ngày, một task lỗi 3 lần liên tiếp, hoặc đến việc bắt buộc cần chủ dự án (ghi thẻ [DUNG-CAN-CHU yyyy-mm-dd HH:MM] + lý do vào TRANG-THAI.md trước), hoặc chủ gõ /ket-thuc-ca.'
            ) % (len(todo), nxt[0], nxt[1][:140], nxt[2])

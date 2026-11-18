@@ -39,6 +39,18 @@ if ($true) {
       if ([int]$m.Groups[1].Value -ge 110 -and $tus -notmatch ('Nhận #' + $m.Groups[1].Value + '\b')) { $khan = $true }
     }
   }
+  # --- #128.3: thu [TONG QUAN] moi (dac biet "xong cho gop") -> danh thuc nhu [KHAN]; moc nho trong tq.stamp ---
+  $tqm = [regex]::Matches($tus, '(?m)^\[TỔNG QUẢN (\d\d/\d\d \d\d:\d\d)\][^\r\n]*')
+  if ($tqm.Count -gt 0) {
+    $tqs = Join-Path $gdir 'tq.stamp'
+    $lastTq = $tqm[$tqm.Count - 1].Groups[1].Value
+    $seen = if (Test-Path $tqs) { (Get-Content $tqs -Raw).Trim() } else { '' }
+    if ($seen -ne $lastTq) {
+      $khan = $true
+      Set-Content $tqs $lastTq
+      Log ("thu [TONG QUAN] moi {0} -> danh thuc" -f $lastTq)
+    }
+  }
 }
 
 
@@ -48,8 +60,8 @@ $gtxt = ''
 foreach ($f in @($ge, $go)) { if (Test-Path $f) { $gtxt += (Get-Content $f -Raw -ErrorAction SilentlyContinue) } }
 if ($gtxt -match '(?i)401|login|usage limit|rate limit|weekly limit|hit your') {
   $stamp = Join-Path $gdir 'canchu.stamp'
-  if (-not (Test-Path $stamp) -or ((Get-Date) - (Get-Item $stamp).LastWriteTime).TotalMinutes -gt 30) {
-    $line = "`n[CAN-CHU] Claude Code chua dang nhap / het han muc luc {0} (nguoi gac: {1})" -f (Get-Date -f 'HH:mm'), (($gtxt -replace '\s+',' ').Trim().Substring(0, [Math]::Min(120, ($gtxt -replace '\s+',' ').Trim().Length)))
+  if (-not (Test-Path $stamp) -or ((Get-Date) - (Get-Item $stamp).LastWriteTime).TotalMinutes -gt 60) {
+    $line = "`n[CAN-CHU] nguoi gac khong goi duoc Claude (het han muc tuan / dang nhap) luc {0}; phien: {1}" -f (Get-Date -f 'HH:mm'), (($gtxt -replace '\s+',' ').Trim().Substring(0, [Math]::Min(120, ($gtxt -replace '\s+',' ').Trim().Length)))
     Add-Content -Path (Join-Path $ops 'HOP-THU\TU-SONNET.md') -Value $line -Encoding UTF8
     Set-Content $stamp 'x'
     Log 'ghi [CAN-CHU] het han muc / dang nhap'
@@ -89,7 +101,7 @@ if (($silentMin -gt 30 -or $khan) -and ($khan -or -not $busy) -and -not $live) {
   $prompt = 'Người gác: đọc JX1_OPS/STATE/LUAT-COT-LOI.md và hòm thư HOP-THU/CHO-SONNET.md rồi làm tiếp. Ghi một dòng trạng thái vào STATE/TRANG-THAI.md, commit và push jx1-ops.'
   Push-Location 'C:\Jx1CocoV3'
   $tools = 'Bash(git:*) Bash(python TOOLS/*) Bash(powershell -File TOOLS/*) PowerShell(git:*) PowerShell(python TOOLS/*) PowerShell(powershell -File TOOLS/*)'
-  $argStr = '-c -p ' + $q + $prompt + $q + ' --permission-mode acceptEdits --allowedTools ' + $q + $tools + $q   # #126: PS 5.1 khong tu bao dau nhay quanh arg co dau cach
+  $argStr = '-c -p ' + $q + $prompt + $q + ' --model claude-sonnet-5-5 --permission-mode acceptEdits --allowedTools ' + $q + $tools + $q   # #126: PS 5.1 khong tu bao dau nhay quanh arg co dau cach
   if ($env:GUARD_DRY -eq '1') { Log ('DRY: claude ' + $argStr); $proc = $null }
   else { $proc = Start-Process -WindowStyle Hidden -PassThru -FilePath 'claude' -ArgumentList $argStr -RedirectStandardOutput (Join-Path $gdir 'goi.out') -RedirectStandardError (Join-Path $gdir 'goi.err') }
   Pop-Location

@@ -3,7 +3,7 @@
 Moi vong: xet song/im/treo/chet (#117), commit ho khi xong, chay lai khi chet (cho 2/5/15 phut, toi da 3 lan),
 giao viec status=ready, rai khoa (<=3 tieu yeu/khoa, het cho thi ghi CAN KHOA MOI), sinh STATE/TIEU-YEU.md va TIEN-DO.md.
 Khong push (PM/guard commit file STATE). Khong doc gia tri khoa, chi ten khoa. Chay: python -I TOOLS/tong_quan.py [--dry]"""
-import glob, json, os, re, subprocess, sys, time
+import shutil, glob, json, os, re, subprocess, sys, time
 
 ROOT = os.environ.get('JX1_OPS_ROOT', r'D:\jx1-ops-wt\JX1_OPS')
 WT = r'D:\JX-wt'
@@ -339,44 +339,58 @@ def main():
         open(os.path.join(ROOT, 'STATE', 'KHOA-XINGCHI.md'), 'w', encoding='utf-8', newline='\n').write('\n'.join(kt) + '\n')
         dead = [r for r in rows if r[1].startswith('CHET') or r[1] == 'TREO']
         if notes and (force_note or len(dead) >= 3 or any('TREO' in n or 'KHOA MOI' in n for n in notes)):
-            with open(os.path.join(ROOT, 'HOP-THU', 'TU-SONNET.md'), 'a', encoding='utf-8') as f:
-                f.write('\n[TỔNG QUẢN %s] ' % time.strftime('%d/%m %H:%M') + '; '.join(notes) + '\n')
+            TQ_NOTE[0] = '[TỔNG QUẢN %s] ' % time.strftime('%d/%m %H:%M') + '; '.join(notes)
     else:
         for r in rows:
             print(r)
         print(notes)
 
 
-def push_state():
-    """#124/#125: day STATE/TIEU-YEU.md, KHOA-XINGCHI.md, TIEN-DO.md len kho moi >=5 phut; git khong hoi mat khau, timeout 120 giay."""
+TQ_NOTE = [None]
+
+
+def push_state(tq_note=None):
+    """#128.3: Tong quan day bang worktree RIENG (D:/JX-wt/tq) (detached, khong dung chung voi PM). STATE >=5 phut/lan; tq_note (su kien [TONG QUAN]) day NGAY."""
     stamp = os.path.join(GD, 'push.stamp')
-    if time.time() - mt(stamp) < 300:
+    if not tq_note and time.time() - mt(stamp) < 300:
         return
     env = dict(os.environ, GIT_TERMINAL_PROMPT='0', GCM_INTERACTIVE='never')
     repo = os.path.dirname(ROOT)
+    tq = 'D:/JX-wt/tq'
 
-    def g(*a):
-        return subprocess.run(['git', '-C', repo] + list(a), env=env, capture_output=True, text=True, timeout=120)
+    def g(cwd, *a):
+        return subprocess.run(['git', '-C', cwd] + list(a), env=env, capture_output=True, text=True, timeout=120)
     try:
-        files = ['JX1_OPS/STATE/TIEU-YEU.md', 'JX1_OPS/STATE/KHOA-XINGCHI.md', 'JX1_OPS/STATE/TIEN-DO.md']
-        g('add', '--', *files)
-        if g('diff', '--cached', '--quiet', '--', *files).returncode == 0:
+        g(repo, 'fetch', '-q', 'origin', 'jx1-ops')
+        if not os.path.isdir(tq):
+            g(repo, 'worktree', 'add', '--detach', tq, 'origin/jx1-ops')
+        g(tq, 'reset', '-q', '--hard', 'origin/jx1-ops')
+        files = ['STATE/TIEU-YEU.md', 'STATE/KHOA-XINGCHI.md', 'STATE/TIEN-DO.md']
+        for f in files:
+            shutil.copyfile(os.path.join(ROOT, f), os.path.join(tq, 'JX1_OPS', f))
+        if tq_note:
+            with open(os.path.join(tq, 'JX1_OPS', 'HOP-THU', 'TU-SONNET.md'), 'a', encoding='utf-8', newline=chr(10)) as fh:
+                fh.write(chr(10) + tq_note + chr(10))
+        g(tq, 'add', '-A', 'JX1_OPS')
+        if g(tq, 'diff', '--cached', '--quiet').returncode == 0:
             open(stamp, 'w').write('x')
             return
-        g('commit', '-qm', 'Tong quan: cap nhat TIEU-YEU/KHOA/TIEN-DO', '--', *files)
-        g('pull', '-q', '--rebase', '--autostash', 'origin', 'jx1-ops')
-        r = g('push', '-q', 'origin', 'HEAD:jx1-ops')
+        g(tq, 'commit', '-qm', 'Tong quan: ' + ('su kien TONG QUAN' if tq_note else 'cap nhat TIEU-YEU/KHOA/TIEN-DO'))
+        r = g(tq, 'push', '-q', 'origin', 'HEAD:jx1-ops')
+        if r.returncode != 0:
+            g(tq, 'pull', '-q', '--rebase', 'origin', 'jx1-ops')
+            r = g(tq, 'push', '-q', 'origin', 'HEAD:jx1-ops')
         open(stamp, 'w').write('x')
         with open(os.path.join(GD, 'push.log'), 'a') as f:
-            f.write('%s push rc=%s %s\n' % (time.strftime('%H:%M'), r.returncode, r.stderr.strip()[:200]))
+            f.write('%s push rc=%s %s' % (time.strftime('%H:%M'), r.returncode, r.stderr.strip()[:200]) + chr(10))
     except Exception as e:
         with open(os.path.join(GD, 'push.log'), 'a') as f:
-            f.write('%s push loi %s\n' % (time.strftime('%H:%M'), e))
+            f.write('%s push loi %s' % (time.strftime('%H:%M'), e) + chr(10))
 
 
 try:
     main()
     if not DRY:
-        push_state()
+        push_state(TQ_NOTE[0])
 except Exception as e:
     print('[tong_quan loi: %s]' % e)
