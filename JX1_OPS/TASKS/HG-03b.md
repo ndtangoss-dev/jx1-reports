@@ -1,7 +1,7 @@
 ---
 id: HG-03b
 title: (lần 2) Hiểu game: vì sao cấp cường hóa từ Lua không tới client
-status: ready
+status: running
 level: L3
 agent: codex
 effort: high
@@ -13,7 +13,7 @@ backlog_ref: "#195 hang doi viec, muc [SONNET-THÊM] hiểu game"
 vung_file: [JX1_OPS/DESIGN/HIEU-CAP-CUONG-HOA-LUA.md]
 tai_nguyen: []
 updated: 2026-11-19
-status_note: "lam lai: ban dau PARTIAL do worktree thieu source"
+status_note: "Tong quan giao bang JX-K4"
 ---
 
 ## Mục tiêu và tiêu chí xong

@@ -1,7 +1,7 @@
 ---
 id: HG-02b
 title: (lần 2) Hiểu game: trạng thái chiến đấu và nút đánh
-status: ready
+status: running
 level: L3
 agent: codex
 effort: high
@@ -13,7 +13,7 @@ backlog_ref: "#195 hang doi viec, muc [SONNET-THÊM] hiểu game"
 vung_file: [JX1_OPS/DESIGN/HIEU-TRANG-THAI-CHIEN-DAU.md]
 tai_nguyen: []
 updated: 2026-11-19
-status_note: "lam lai: ban dau PARTIAL do worktree thieu source"
+status_note: "Tong quan giao bang JX-K4"
 ---
 
 ## Mục tiêu và tiêu chí xong
