@@ -43,3 +43,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Tổng quản tự đẩy bảng 15 phút/lần, sự kiện đẩy ngay; người gác đánh thức theo [TỔNG QUẢN] | #127 | bổ sung #118 | chờ Sonnet |
 | Phiên gác dùng --model claude-sonnet-5-5; hết hạn mức thì [CAN-CHU] | #128 | trả lời #126.3 | chờ Sonnet |
 | Kiểm người gác dùng đúng tài khoản Claude (user Windows, thư mục cấu hình), thử --model sonnet | #129 | bổ sung #128 | chờ Sonnet |
+| Backlog cũ: ghi xong từng việc có 2 bằng chứng; stop_guard chỉ chặn việc của Sonnet; nguồn việc duy nhất TASKS→TIEN-DO | #130 | — | chờ Sonnet |
