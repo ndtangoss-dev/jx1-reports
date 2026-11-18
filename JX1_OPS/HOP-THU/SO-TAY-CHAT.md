@@ -31,4 +31,4 @@ GÕ CỬA: trig_01XUBLs7ayyp9GHrJ5xmSPyj (lịch kiểm của Chat; Sonnet bấm
 ## Lịch của Chat
 - Kiểm 10 phút một lần khi có việc mở hoặc [HỎI-CHAT]; 30 phút khi rảnh. Báo chủ mỗi giờ (≈:35–:40) và báo ngay khi: Sonnet im > 60 phút, 429 hàng loạt, sự cố server/VM, chi phí bất thường, cần chủ duyệt vùng Đỏ.
 
-- [VIỆC CHỜ CHỦ 18/11 10:59] Khi chủ về nhà: /login ndtan48 cho lệnh claude trên PC (#134). Nhắc chủ.
+- [XONG 11:14] Chủ đã /login ndtan48 cho lệnh claude trên PC (#134).

@@ -1093,3 +1093,10 @@ Chủ báo: tài khoản đang dùng là **ndtan48**; **ndtan.goss** là tài kh
 3. Sau khi sửa: người gác chạy thử `claude -p --model claude-sonnet-5-5 "ping"`, mong trả lời bình thường. Ghi kết quả.
 4. Thêm vào DUONG-DAN.md mục đổi tài khoản: "Kiểm bằng email, không chỉ bằng thư mục cấu hình".
 Làm TRƯỚC #131–#133. Ghi "Nhận #134", push, gõ cửa.
+
+## #135 [KHẨN] — 2026-11-18 11:15 — Chủ đã /login ndtan48 cho dòng lệnh (thực hiện #134)
+Chủ báo 11:14: đăng nhập dòng lệnh thành công bằng ndtan48.
+1. Kiểm `claude auth status` (chỉ ghi email, không ghi token): mong ndtan48.
+2. Chạy như người gác: `claude -p --model claude-sonnet-5-5 "ping"`; ghi dòng trả lời/lỗi.
+3. Xóa canchu.stamp / dòng [CAN-CHU] hạn mức để người gác báo lại nếu lỗi mới.
+4. Thử người gác thật lần 4: SAU khi ghi "Nhận #135" và push, dừng lượt (không làm việc khác). Chat sẽ gửi #136 [KHẨN] lúc ~11:22; người gác phải tự đánh thức trong ≤10 phút. Ghi kết quả khi thức.
