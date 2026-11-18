@@ -52,3 +52,8 @@ Mỗi phút một dòng [THẤY]: `NetCount`, `GameLoop`, `SvrFPS= 18/18` (khỏ
 4. Đổi một ô thấp rủi ro (vd Max char create 3→4 trên bản sao, tắt/bật Goddess), thử tạo nhân vật, ghi trước/sau, hoàn tác.
 5. Chỉ sau đó mới tính tới Add Money (nhân vật test) rồi các nút mạnh.
 Mỗi nút đã thử được ghi vào bảng `DESIGN/BANG-NUT-EXE-SERVER.md` (nút | tác dụng thật | rủi ro | cách hoàn tác | ngày thử).
+
+## 7. Đã thử thật (đợt #161, 18/11, JX-Test-36)
+- Manual backup, Save nhat ky, Notify all player, Add Money (chỉ cộng, không có nút trừ), đổi Max char create 3→4→3: chạy được. "Information" của Bishop chỉ là nhãn, không phải tab.
+- QUAN TRỌNG: tắt/khởi lại Goddess làm Bishop mất nối DB. Phải bấm **Reconnect DB** trên Bishop (KHÔNG bấm Reconnect Pay: đổi cổng PaySys). Sau đó gs001 tự báo "Database server reconnect OK".
+- Remove Role + "Nhan vat level" XÓA HÀNG LOẠT: cấm. Chi tiết từng nút: `BANG-NUT-EXE-SERVER.md`.

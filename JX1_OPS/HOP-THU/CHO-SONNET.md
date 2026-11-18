@@ -1354,3 +1354,15 @@ Làm một đợt, theo thứ tự 1→7, trên JX-Test-36 duy nhất:
 6. Max char create 3→4: tắt Goddess, đổi, bật lại, thử tạo nhân vật thứ 4 (tài khoản test), rồi TRẢ VỀ 3 và bật lại.
 7. Add Money cho MỘT nhân vật TEST có sẵn (số nhỏ), ghi số trước/sau. Nếu chưa có nhân vật test thì bỏ bước 7 và ghi lý do.
 Luật: KHÔNG bấm Remove Role, 清除数据, 合区, 找回BAK, 恢复全部数据, Copy DB/MySQL, Exit, Close, Announcer kiểu *. Mỗi bước ghi vào BANG-NUT-EXE-SERVER.md cột THỬ (kết quả thật, giờ, trước/sau). Gặp hộp thoại lạ, lỗi, hoặc exe chết: DỪNG đợt, trả về trạng thái ban đầu từ bản sao bước 2, báo [CAN-CHU] trong XONG ĐỢT. Cuối đợt: đưa mọi cấu hình về như ban đầu, kiểm gs001 SvrFPS vẫn 18/18, ghi "XONG ĐỢT #161" tự đủ (đã làm / kết quả từng nút / còn / cần chủ), push, dừng.
+
+## #162 [CHỦ DUYỆT] Chat 18/11 17:30 — THỬ ĐỢT 2 các nút còn lại mức thấp/vừa (bổ sung #161)
+Chủ bảo thử thêm các nút khác. Chat chọn tập thấp/vừa dưới đây; Xưởng JX1 vẫn tạm dừng. Cùng luật #161: chỉ JX-Test-36, sao lưu cfg trước (dùng bản sao #161 hoặc sao mới), ghi cột THỬ (kết quả thật, giờ, trước/sau), gặp lỗi/hộp lạ/exe chết thì DỪNG, trả cấu hình từ bản sao, [CAN-CHU]. Cuối đợt mọi cấu hình về như ban đầu, kiểm Bishop/S3Relay/gs001 nối đủ và SvrFPS 18/18, rồi "XONG ĐỢT #162" tự đủ, push, dừng.
+1. Goddess "Backup" + hộp Body/Me chong/Kho/Box1–3/All với Account/Nhan vat test (jxt36a): xem tệp sinh ra ở đâu, chứa gì.
+2. Goddess "Pause" (sao lưu tự động): bấm 1 lần, quan sát nhãn nút và nhật ký, bấm lại để tiếp tục; xác nhận về trạng thái cũ.
+3. Bishop "save setting" KHÔNG đổi giá trị: so sánh byte Bishop.cfg trước/sau (kỳ vọng giống hoặc chỉ khác định dạng).
+4. Bishop danh sách lọc/VIP/Forbid: thêm MỘT mục giả (vd zz_test_acc / IP giả không thuộc LAN thật), lưu, kiểm tệp *.cfg đổi thế nào, rồi xóa mục giả và kiểm tệp về như cũ. Không thêm tài khoản/IP thật.
+5. Bishop "Birth role setting" (Cap/Silver/gold): đặt giá trị nhỏ, ghi cfg, kiểm tệp, rồi trả về giá trị cũ. Chỉ ghi lại tác dụng đọc được; chưa tạo nhân vật.
+6. Goddess "EnterMap/IDMap + Bat dau" CHỈ nếu đọc được mã bản đồ hiện tại của jxt36a trong `.txt` Manual backup: đặt đúng mã hiện tại (không đổi vị trí) để xem hộp phản hồi; nếu không đọc được mã hiện tại thì bỏ bước này và ghi lý do.
+7. Goddess "Restart" một lần (cuối đợt): sau đó bấm Reconnect DB của Bishop (KHÔNG Reconnect Pay), kiểm gs001 nối lại.
+KHÔNG BẤM (giữ nguyên): Remove Role, 删除角色, 清除数据, 合区, 找回BAK, 恢复全部数据, Copy DB/MySQL, Data type/Set up database, 角色转区, 开始删除, 开始改名, 临时修复技能, Start/Close, Exit, Announcer kiểu *.
+Việc cần client (tạo nhân vật thứ 4 để xác nhận Max char): để riêng, chờ chủ quyết.
