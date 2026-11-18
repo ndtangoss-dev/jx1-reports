@@ -35,3 +35,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Trả lời [HỎI-CHAT] quyền phiên gác (allowedTools hẹp); K-03 chạy ngay; bỏ 0-08; tìm lỗi guard không đánh thức | #119 | — | chờ Sonnet |
 | Gõ cửa ép bằng code: GO-CUA.log, stop_guard chặn dừng nếu chưa gõ | #120 | bổ sung #108 mục 3 | chờ Sonnet |
 | Lỗ hổng bàn giao: BAN-GIAO cũ, DUONG-DAN.md, gõ cửa khi đổi tài khoản, persona ngoài kho, khóa lộ | #121 | bổ sung #108 mục 4, L7 | chờ Sonnet |
+| Người gác báo [CAN-CHU] khi Claude Code mất đăng nhập/hết hạn mức | #122 | bổ sung #121 mục 3 | chờ Sonnet |

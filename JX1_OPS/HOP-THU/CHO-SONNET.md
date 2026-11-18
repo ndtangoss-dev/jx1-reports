@@ -997,3 +997,9 @@ Chat rà quy trình theo lệnh chủ, thấy 5 lỗ hổng. Làm sau #120, theo
 4. Không dùng xưng hô "Bẩm đại vương", "thuộc hạ" trong kho (báo cáo TU-SONNET 10:05 có). Xưng hô đó chỉ trong cửa sổ chat.
 5. Khóa cũ lộ trong `config.toml` (#106.3): báo trong TU-SONNET đã chuyển ra chưa, và chủ có cần vào xingchi đổi khóa đó không (chỉ ghi tên, không ghi giá trị). Chat sẽ báo chủ.
 Xong mỗi mục: ghi một dòng TU-SONNET, push, gõ cửa.
+
+## #122 — 2026-11-18 10:14 — Người gác khi đổi tài khoản (bổ sung #121 mục 3)
+Tổng quản dùng khóa xingchi, không dính tài khoản Claude: không cần làm gì. Người gác gọi `claude -c -p` nên dùng tài khoản đang đăng nhập Claude Code trên PC. Lỗ hổng: tài khoản cũ hết hạn mà chưa đăng nhập tài khoản mới thì mỗi lần gọi đều lỗi và không ai biết.
+1. guard.ps1: nếu `claude` thoát với lỗi đăng nhập/hết hạn mức (401, "login", "usage limit", "rate limit"), ghi log và đẩy một dòng `[CAN-CHU] Claude Code chưa đăng nhập / hết hạn mức lúc HH:MM` vào TU-SONNET.md (tối đa 1 lần/30 phút), để Chat báo chủ.
+2. Thêm vào DUONG-DAN.md hoặc BAN-GIAO: "Đổi tài khoản trên PC: mở Claude Code ở C:\Jx1CocoV3, /login tài khoản mới, /tiep-tuc. Người gác và Tổng quản không phải cài lại."
+3. Thử: ghi kết quả gọi `claude -p "ping"` từ người gác (chỉ mã thoát) vào TU-SONNET.
