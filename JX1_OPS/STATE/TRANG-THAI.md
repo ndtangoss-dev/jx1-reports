@@ -321,3 +321,7 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 - 18/11 12:49 Sonnet: nhịp gác; không thư mới; M1.b xong bản đầu: trang Gói tin lọc 736 gói (TOOLS/xuong/goi.py). Tiếp M1.c (tra theo lời người chơi).
 
 - 18/11 12:54 Sonnet: #149 nhận, guard ngưỡng 90 phút (trả 30 sau 15:20); #148 chụp 1 ảnh gs001; hoãn mã Xưởng tới 15:20.
+
+- 18/11 13:00 Sonnet: #150 chụp Bishop; dừng gõ phím vì rủi ro Enter vào Exit; xin cách đưa cửa sổ lên trước (WinRM). Tiếp #151.
+
+- 18/11 13:00 Sonnet: #151 sửa gốc Tổng quản: việc CHET astra không chạy lại khi cầu dao mở (budget=0); chờ vòng kế để xác nhận.

@@ -405,17 +405,21 @@ def main():
                     lan[i + '#bao'] = 1
                     notes.append('%s CHET-BO (loi viec, qua %d lan)' % (i, len(WAITS)))
                     force_note = True
-            elif (now() - fin) / 60 >= WAITS[n] and not DRY and budget[0] > 0:
+            elif (now() - fin) / 60 >= WAITS[n] and not DRY and (budget[0] > 0 or (br['s'] != 'dong' and astra_ok(tasks.get(i, {}), i) and ramp_ok(sched))):
+                _viaastra = budget[0] <= 0   # #151: cau dao mo -> budget 0; viec astra van duoc chay lai, tang dan 1->3
                 alive_ids_now = [x for x in sched if sched[x] == 'Running']
                 k = pick_key(assign, alive_ids_now)
                 if k:
                     lan[i] = n + 1
                     assign[i] = k
+                    if _viaastra:
+                        RAMP[0] += 1
+                        set_astra(i)
                     try:
                         os.remove(os.path.join(WT, i + '.done'))
                     except OSError:
                         pass
-                    budget[0] -= 1
+                    budget[0] -= 0 if _viaastra else 1
                     if run_launch(i, k):
                         sched[i] = 'Running'
                         notes.append('%s chet, chay lai lan %d bang %s' % (i, n + 1, k))
