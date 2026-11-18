@@ -258,3 +258,4 @@
 - 23:58 Chủ chỉ ra Sonnet quên 'ẩn LDPlayer': luật rải ở thư/nhật ký. Thêm LUAT-COT-LOI.md L11 (một chỗ duy nhất), gửi #194. Từ giờ luật thường trực của chủ ghi vào L11 ngay.
 - 00:05 Chủ dặn Q-55: tắt D/LD-D khi không test điện thoại; ≥8 tiểu yêu 2/khóa; kiểm RAM báo bất thường. Ghi L11 + gửi #195.
 - 00:10 Chủ hỏi ai quên cập nhật bảng tiến độ. Bản sinh vẫn 28/51 vì dữ liệu TASKS cũ. Gửi #196: Sonnet cập nhật TASKS/BACKLOG; Chat đăng artifact khi số đổi.
+- 00:12 Gõ vào phiên Sonnet qua Chrome: chủ cho phép thường trực tắt D + LD-D khi 0 người chơi. Ghi L11.
