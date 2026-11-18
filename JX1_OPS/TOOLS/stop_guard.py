@@ -13,7 +13,7 @@ Cho phep dung (thoat 0, khong in gi) khi:
   5. Het task, hoac da chan >= 60 lan trong mot phien (an toan chong vong lap vo han), hoac loi bat ky cua hook (an toan: khong chan).
 Chan: in JSON {"decision":"block","reason":...} ra stdout.
 """
-import glob, json, os, re, sys, time, tempfile
+import glob, json, os, re, subprocess, sys, time, tempfile
 
 HOPTHU = 'HOP-THU'
 
@@ -169,6 +169,9 @@ def main():
             dn = open(r'D:\JX-wt\%s.done' % tid, encoding='utf-8', errors='ignore').read()
         except OSError:
             continue
+        wt = r'D:\JX-wt\%s' % tid
+        if 'exit=0' in dn and not os.path.exists(os.path.join(wt, 'JX1_OPS', 'REPORTS', tid + '.md')) and not subprocess.run(['git', '-C', wt, 'status', '--porcelain'], capture_output=True, text=True).stdout.strip() and not subprocess.run(['git', '-C', wt, 'log', '--oneline', 'origin/jx1-ops..HEAD'], capture_output=True, text=True).stdout.strip():
+            continue   # #133.3: exit=0 ma rong (khong bao cao, khong thay doi) = chet, Tong quan chay lai; khong phai xong cho gop
         if 'exit=0' in dn:
             todo.append((tid, 'XONG-CHO-GOP: gop ket qua (git checkout task/%s -- <file cua task>), set_status.py %s done' % (tid, tid), 'xong cho gop', None))
 
