@@ -70,3 +70,8 @@ Quy tắc: ĐẠT = đúng như TIÊU ĐỀ NGUYÊN VĂN trong BACKLOG. "Offline
 - SỐ THẬT (nghiêm): 74/101 = 73,3% (đã trừ E-01 và 5 việc thiếu mục Chưa kiểm, mở lại). Số bảng cũ trước #211: 79/101 = 78%.
 - Mục tiêu: các việc mở lại là việc nhỏ, dự kiến xong trong ~30 phút; E-01 cần Test-36.
 
+
+## Cập nhật 04:55 (#213)
+- Số thật **86/107 = 80,4%** (mẫu số đóng băng 107 theo #212). Từ 74 → 86: SO-18, SO-04, HG-08, HG-12, KC-02, SO-29..34 và **HG-03b** đóng.
+- HG-03b: ĐẠT ở mức nguồn (REPORTS/XD-W02c.md). Giả thuyết đáng thử ở Test-36 cho W-02: món thử màu trắng nên client bỏ cập nhật cấp (đổi sang món xanh/tím/vàng). [CHƯA KIỂM runtime]
+- CHƯA đóng (đã kiểm bằng XD-*): B-02, O-01 (thiếu chạy VM), E-05, E-09 (cần Bot thật Test-36), M-01 (thiếu tiêu chí đóng; bảng Markdown tính XD-M01 vào mẫu số), A-07c (chưa kiểm binary), HG-14/HG-16 (PARTIAL, thiếu script NPC), C-01, A-07, A-07b, B-04, CL-01, E-01, W-02.

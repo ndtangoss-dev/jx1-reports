@@ -1,7 +1,7 @@
 ---
 id: HG-03b
 title: (lần 2) Hiểu game: vì sao cấp cường hóa từ Lua không tới client
-status: active
+status: done
 level: L3
 agent: codex
 effort: high
@@ -13,7 +13,7 @@ backlog_ref: "#195 hang doi viec, muc [SONNET-THÊM] hiểu game"
 vung_file: [JX1_OPS/DESIGN/HIEU-CAP-CUONG-HOA-LUA.md]
 tai_nguyen: []
 updated: 2026-11-19
-status_note: "PARTIAL: tiep bang HG-03c/HG-05b (19/11 #202)"
+status_note: "04:55 dong: XD-W02c tra nguon: server gui m_EnChance dung; client bo cap nhat neu mon khong xanh/tim/vang (KProtocolProcess.cpp:1560-1562,1640-1651), tooltip chi them +N khi genre=0 (KuiItemdesc.cpp:1850-1855); nguyen nhan runtime CHUA KIEM"
 ---
 
 ## Mục tiêu và tiêu chí xong
