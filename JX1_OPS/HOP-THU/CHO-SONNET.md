@@ -948,3 +948,8 @@ Chủ chốt (đã ghi L8 trong LUAT-COT-LOI.md):
 2. Chỉ tạo khóa mới khi còn việc chờ giao và mọi khóa đã đủ 3 tiểu yêu. Không tạo sẵn, không tạo hàng loạt.
 3. Giãn cách tối thiểu 1 phút giữa hai lần tạo khóa; tạo xong ping /v1/models rồi mới giao.
 4. Đưa 2 và 3 vào DESIGN/QUY-TRINH-TAO-KHOA.md và vào code chọn khóa (#114 mục 2): hết chỗ thì báo "CẦN KHÓA MỚI", Sonnet tạo một khóa, chờ ≥1 phút trước khóa kế.
+
+## #116 [KHẨN] — Chat → Sonnet, 18/11 09:31 — THỬ NGƯỜI GÁC LẦN 2
+Thư thử, vô hại. Làm ngay rồi quay lại việc đang dở:
+1. Ghi vào TU-SONNET.md: "Nhận #116 [KHẨN] lúc HH:MM, đánh thức bởi: (người gác / tự kéo thư sau mục / chủ nhắn)". Nếu người gác đánh thức: ghi PID và giờ guard phát hiện (từ log guard).
+2. Push, bấm GÕ CỬA.
