@@ -1,6 +1,6 @@
-# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-18 13:06, đừng sửa tay)
+# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-18 13:07, đừng sửa tay)
 
-ĐANG LÀM: R-02, R-03, R-04, R-04b, R-05a
+ĐANG LÀM: R-03, R-04b, R-05b, R-05c, R-05d
 KẾ TIẾP: K-02, R-06a
 BỊ CHẶN: A-07
 
@@ -9,22 +9,22 @@ Ba chặng #091: 1 hiểu game (chuẩn hóa) → 2 đường truyền + exe →
 ```mermaid
 flowchart LR
   subgraph S1["Chặng 1 hiểu game"]
-    R_02["R-02 chạy"]
     R_03["R-03 chạy"]
-    R_04["R-04 chạy"]
     R_04b["R-04b chạy"]
-    R_05a["R-05a chạy"]
+    R_05b["R-05b chạy"]
+    R_05c["R-05c chạy"]
+    R_05d["R-05d chạy"]
     K_03a["K-03a chết"]
     K_03b["K-03b chết"]
     K_03c["K-03c chết"]
     K_03d["K-03d chết"]
     K_03e["K-03e chết"]
-    R_05b["R-05b chết"]
-    R_05c["R-05c chết"]
-    R_05d["R-05d chết"]
     R_06c["R-06c chết"]
     R_07a["R-07a chết"]
     R_07b["R-07b chết"]
+    R_02["R-02 chờ gộp"]
+    R_04["R-04 chờ gộp"]
+    R_05a["R-05a chờ gộp"]
     A_07["A-07 chặn"]
     K_02["K-02 chờ"]
     R_06a["R-06a chờ"]
@@ -39,4 +39,4 @@ flowchart LR
   end
 ```
 
-Tổng: 85 việc, 5 đang làm (+14 chết, 1 chờ gộp), 2 chờ, 1 bị chặn, 62 xong.
+Tổng: 85 việc, 5 đang làm (+11 chết, 4 chờ gộp), 2 chờ, 1 bị chặn, 62 xong.
