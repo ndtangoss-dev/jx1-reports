@@ -1,4 +1,4 @@
-# TIỂU YÊU (Tổng quản tự sinh lúc 2026-11-18 15:25, đừng sửa tay)
+# TIỂU YÊU (Tổng quản tự sinh lúc 2026-11-18 15:27, đừng sửa tay)
 
 **CẦU DAO xingchi: ĐÓNG (bình thường)**
 
@@ -7,7 +7,7 @@ Mức: SONG / IM-NHUNG-SONG (20–60 phút) / TREO (>60, bị dừng chạy lạ
 | Mã | Mức | Khóa | Log cuối | Dấu hiệu sống cuối | Lỗi cuối | Lần chạy lại | Mô hình | PID | Chờ token (giây) |
 |---|---|---|---|---|---|---|---|---|---|
 | F-01 | CHET-BO | JX-K3 | 14:37 | 14:37 | rong (exit=0, khong thay doi) | 3 | sol | - | - |
-| K-03c | SONG | JX-K6 | 15:24 | 15:24 | - | 0 | sol | - | - |
+| K-03c | SONG | JX-K6 | 15:26 | 15:26 | - | 0 | sol | - | - |
 | R-05b | CHET-BO | JX-K2 | 13:24 | 13:24 | bao cao rong (astra) | 2 | astra | - | - |
 | R-05c | CHET-BO | JX-K2 | 13:12 | 13:12 | bao cao rong (astra) | 2 | astra | - | <=127 |
 | R-05d | CHET-BO | JX-K5 | 13:22 | 13:22 | bao cao rong (astra) | 2 | astra | - | - |
