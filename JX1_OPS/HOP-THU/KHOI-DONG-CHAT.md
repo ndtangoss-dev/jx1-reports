@@ -31,3 +31,6 @@ Trong cửa sổ chat với chủ (KHÔNG dùng trong thư/báo cáo/commit tron
 - Việc đầu tiên của Chat mới: đặt lịch kiểm 10 phút, ghi trigger_id vào dòng "GÕ CỬA:" của SO-TAY-CHAT.md, push, rồi viết thư báo Sonnet "Chat mới đã nhận ca, GÕ CỬA mới".
 - Trí nhớ của Chat: CHỈ kho là chắc chắn (SO-TAY-CHAT, NHAT-KY-CHAT, thư). Trí nhớ tài khoản Claude và lịch kiểm KHÔNG đi theo khi đổi tài khoản; thư mục làm việc của Chat (máy đám mây) mất khi phiên kết thúc.
 - Đường dẫn trên máy PC: xem STATE/DUONG-DAN.md.
+
+## 6. SỬA 18/11 16:50 (Q-48) — thay mục 4 và 5 ở phần người gác/gõ cửa
+Không còn người gác, không còn "GÕ CỬA". Chat ⇄ Sonnet qua hòm thư theo ĐỢT; chủ chỉ làm việc với Chat và nhắn Sonnet một câu cố định "Đọc hòm thư CHO-SONNET rồi làm." khi Chat báo có thư. Lịch kiểm của Chat 30 phút chỉ khi có đợt chạy. Xem `STATE/QUY-TRINH-KHONG-NGUOI-GAC.md`.

@@ -34,3 +34,5 @@ GÕ CỬA: trig_015acR4g8j8MdfBpw2pwP3Cb (lịch kiểm 30 phút của Chat, đ�
 - [XONG 11:14] Chủ đã /login ndtan48 cho lệnh claude trên PC (#134).
 
 - 15:57 18/11 Chat MỚI nhận ca (phiên mới, đã có quyền đẩy repo + send_later). Chủ yêu cầu tiết kiệm hạn mức: lịch kiểm 30 phút (không phải 10), chỉ báo chủ khi có chuyện, trả lời ngắn. Chat quyết: giữ #153/#154 nguyên, không gửi thêm việc mới khi chưa cần.
+
+- 16:50 Q-48: chủ BỎ người gác; Chat và Sonnet làm theo đợt qua hòm thư (STATE/QUY-TRINH-KHONG-NGUOI-GAC.md, #158). Chủ chỉ làm việc với Chat. Không còn GÕ CỬA; lịch kiểm của Chat chỉ khi có đợt chạy.

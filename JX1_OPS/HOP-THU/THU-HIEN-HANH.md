@@ -71,3 +71,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Chat mới nhận ca; GÕ CỬA mới; lịch kiểm 30 phút; việc Sonnet không đổi | #155 | bổ sung #154 | chờ Sonnet |
 | [KHẨN] chủ cho tiếp tục sau lệnh dừng; làm theo #154; 233fcac sạch | #156 | thay lệnh dừng | chờ Sonnet |
 | Hướng dẫn dùng 5 exe server (Chat viết), Sonnet đọc tĩnh GBK/ini, lập bảng nút, soạn kế hoạch thử; chưa bấm gì | #157 | bổ sung #148/#150 | chờ Sonnet |
+| QUY TRÌNH MỚI bỏ người gác, làm theo đợt; gỡ JX-Guard, Tổng quản không gọi claude, stop_guard cho dừng sau XONG ĐỢT | #158 | thay quy định gõ cửa/người gác | chờ Sonnet |

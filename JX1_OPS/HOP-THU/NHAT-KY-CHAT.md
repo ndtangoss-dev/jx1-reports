@@ -216,3 +216,4 @@
 - 16:00 Chủ bảo Sonnet tiếp tục (đã dừng ~15:58 để tiết kiệm). Gửi #156.
 - 16:45 Chủ muốn học dùng exe server để chỉnh server. Chat xem ảnh, viết DESIGN/HUONG-DAN-EXE-SERVER.md (chưa nút nào thử), gửi #157.
 - 16:27 Kiểm định kỳ: không có [HỎI-CHAT]; Sonnet vẫn làm (nhịp gác 16:24), chưa nhận #157. Không có chuyện cần báo chủ. GÕ CỬA mới trig_015acR4g8j8MdfBpw2pwP3Cb (16:58).
+- 16:50 Chủ quyết bỏ người gác (Q-48). Viết QUY-TRINH-KHONG-NGUOI-GAC.md, #158. Chủ nhắn Sonnet câu cố định để bắt đầu đợt.

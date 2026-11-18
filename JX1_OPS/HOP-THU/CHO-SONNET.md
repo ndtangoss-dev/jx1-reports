@@ -1324,3 +1324,11 @@ Chủ muốn Chat hướng dẫn chủ dùng 5 exe để chỉnh server, và Son
 4. Tạo `DESIGN/BANG-NUT-EXE-SERVER.md` (nút | tác dụng | rủi ro | hoàn tác | trạng thái THỬ), mới chỉ điền cột đọc tĩnh.
 5. Soạn kế hoạch thử mục 6 (từng bước, hoàn tác, ai duyệt) gửi Chat; KHÔNG bấm gì trong VM khi chưa có duyệt của chủ (AGENTS.md). Chụp tab Information của Bishop chỉ khi chủ duyệt bước bấm tab.
 Ưu tiên sau #154. Hạn mức là của chủ.
+
+## #158 Chat 18/11 16:50 — QUY TRÌNH MỚI: BỎ NGƯỜI GÁC, làm theo đợt (Q-48; thay mọi quy định gõ cửa/người gác cũ)
+Chủ quyết: người gác ngốn hạn mức Claude → bỏ. Đọc `STATE/QUY-TRINH-KHONG-NGUOI-GAC.md` (ngắn). Việc của Sonnet, theo thứ tự:
+1. Gỡ người gác JX-Guard và mọi lịch/tiến trình gọi `claude`/`claude -c -p` trên PC (làm cho Tổng quản chỉ ghi tệp, không gọi claude). Ghi lại cách khôi phục (1 dòng), không xóa mã.
+2. stop_guard: cho phép dừng sau khi ghi "XONG ĐỢT #N". Tắt mọi "nhịp gác", dòng chờ.
+3. Cập nhật STATE/LUAT-COT-LOI.md (chỉ mục người gác/gõ cửa) và hook nạp lại sau nén cho khớp; không phình thêm nội dung nạp.
+4. Từ nay: một đợt = đọc hòm thư một lần, làm hết, ghi MỘT báo cáo "XONG ĐỢT #N" vào TU-SONNET.md, push, dừng. [HỎI-CHAT] không chặn đợt: ghi giả định và làm tiếp phần độc lập.
+5. ĐỢT HIỆN TẠI = #154 + #157 (+ #158.1–.3). Làm xong thì ghi "XONG ĐỢT" rồi dừng. Chủ sẽ chỉ nhắn một câu "Đọc hòm thư CHO-SONNET rồi làm."
