@@ -214,3 +214,4 @@
 - 15:30 Sol sống lại: cầu dao ĐÓNG từ 14:27. XONG-CHO-GOP: K-03a/b/d/e, T-02, T-03, T-04; K-03c SONG; F-01 CHET-BO; astra 7 R-* CHET-BO (báo cáo rỗng). Sonnet đóng băng từ 13:09 (hết hạn mức) nên chưa gộp. Gửi #154 [KHẨN] tiếp tục. Tổng quản vẫn ghi [TỔNG QUẢN] mỗi 2 phút (lỗi A của #153 còn nguyên).
 - 15:57 Chat mới nhận ca. Đọc KHOI-DONG, SO-TAY, TU-SONNET, TRANG-THAI: Sonnet hoạt động lại sau reset 15:20 (#153 A–D xong, gộp sol xong, cầu dao xingchi ĐÓNG). Không có [HỎI-CHAT] mở. Đặt lịch kiểm 30 phút trig_01HMgEApMQ7J8Cu79NsHd4Ux (16:27). Gửi #155.
 - 16:00 Chủ bảo Sonnet tiếp tục (đã dừng ~15:58 để tiết kiệm). Gửi #156.
+- 16:45 Chủ muốn học dùng exe server để chỉnh server. Chat xem ảnh, viết DESIGN/HUONG-DAN-EXE-SERVER.md (chưa nút nào thử), gửi #157.

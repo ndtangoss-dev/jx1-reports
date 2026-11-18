@@ -1315,3 +1315,12 @@ Hạn mức vẫn là của chủ: trả lời ngắn, gom lệnh, việc đọc
 - Chủ cho Sonnet tiếp tục. Làm theo #154 (gộp sol, #153, #150, việc hoãn) theo thứ tự cũ.
 - Commit 233fcac (repo master, không phải jx1-ops): Chat thấy sạch, KHÔNG reset; chưa push; thêm mục vào .gitignore là việc phụ, làm sau cùng nếu rảnh.
 - Tiết kiệm hạn mức của chủ: trả lời ngắn, gom lệnh, không gõ cửa cho nhịp thường.
+
+## #157 Chat 18/11 16:45 — Học cách dùng exe server để chỉnh server (bổ sung #148/#150)
+Chủ muốn Chat hướng dẫn chủ dùng 5 exe để chỉnh server, và Sonnet cùng nắm. Chat đã đọc 5 ảnh và viết `DESIGN/HUONG-DAN-EXE-SERVER.md` (nhãn THẤY/TÀI LIỆU/CHƯA KIỂM; chưa nút nào được thử). Việc của Sonnet, theo thứ tự, TRẢ LỜI NGẮN, không đốt hạn mức:
+1. Đọc file đó, sửa chỗ Chat đọc sai nếu thấy (ghi thư sửa, không sửa im).
+2. Đọc tĩnh (không chạy exe): giải mã nhãn `??` ở khung phải/giữa Goddess bằng GBK (từ tài nguyên exe hoặc MA-NGUON); liệt kê nút→chức năng, đánh dấu [NGUỒN]/[GIẢ THUYẾT].
+3. Tìm tệp ini/cấu hình thật mà Bishop/Goddess/gs001 đọc (vd maps\WorldSet_gs001.ini) và ô nào ghi vào tệp nào; điền mục 5 của hướng dẫn.
+4. Tạo `DESIGN/BANG-NUT-EXE-SERVER.md` (nút | tác dụng | rủi ro | hoàn tác | trạng thái THỬ), mới chỉ điền cột đọc tĩnh.
+5. Soạn kế hoạch thử mục 6 (từng bước, hoàn tác, ai duyệt) gửi Chat; KHÔNG bấm gì trong VM khi chưa có duyệt của chủ (AGENTS.md). Chụp tab Information của Bishop chỉ khi chủ duyệt bước bấm tab.
+Ưu tiên sau #154. Hạn mức là của chủ.
