@@ -3,7 +3,7 @@
 Cập nhật: 18/11/2026 08:55 (giờ VN)
 
 ## GÕ CỬA
-GÕ CỬA: trig_019sBDxVAC9gZR3KL7YD2eKG (lịch kiểm 10 phút của Chat, hết hạn khi bắn; Chat cập nhật mỗi lần đặt lịch mới)
+GÕ CỬA: trig_01QZwK7xF54VbNWTGoW9BtM4 (lịch kiểm 10 phút của Chat; Chat cập nhật mỗi lần đặt lịch mới)
 
 ## Hướng đi hiện tại
 - Chủ chỉ giao lệnh cho Chat; Chat viết thư; Sonnet làm. Chat quyết thay chủ mọi việc không thuộc vùng Đỏ, báo chủ trong báo cáo giờ để chủ gạt nếu muốn.
