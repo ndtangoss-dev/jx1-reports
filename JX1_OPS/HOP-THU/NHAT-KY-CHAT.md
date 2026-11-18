@@ -215,3 +215,4 @@
 - 15:57 Chat mới nhận ca. Đọc KHOI-DONG, SO-TAY, TU-SONNET, TRANG-THAI: Sonnet hoạt động lại sau reset 15:20 (#153 A–D xong, gộp sol xong, cầu dao xingchi ĐÓNG). Không có [HỎI-CHAT] mở. Đặt lịch kiểm 30 phút trig_01HMgEApMQ7J8Cu79NsHd4Ux (16:27). Gửi #155.
 - 16:00 Chủ bảo Sonnet tiếp tục (đã dừng ~15:58 để tiết kiệm). Gửi #156.
 - 16:45 Chủ muốn học dùng exe server để chỉnh server. Chat xem ảnh, viết DESIGN/HUONG-DAN-EXE-SERVER.md (chưa nút nào thử), gửi #157.
+- 16:27 Kiểm định kỳ: không có [HỎI-CHAT]; Sonnet vẫn làm (nhịp gác 16:24), chưa nhận #157. Không có chuyện cần báo chủ. GÕ CỬA mới trig_015acR4g8j8MdfBpw2pwP3Cb (16:58).

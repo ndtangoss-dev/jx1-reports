@@ -3,7 +3,7 @@
 Cập nhật: 18/11/2026 08:55 (giờ VN)
 
 ## GÕ CỬA
-GÕ CỬA: trig_01HMgEApMQ7J8Cu79NsHd4Ux (lịch kiểm 30 phút của Chat mới, đặt 15:57 18/11, kiểm kế 16:27; Sonnet bấm bằng RemoteTrigger run; Chat cập nhật mỗi lần đặt lịch mới)
+GÕ CỬA: trig_015acR4g8j8MdfBpw2pwP3Cb (lịch kiểm 30 phút của Chat, đặt 16:27 18/11, kiểm kế 16:58; Sonnet bấm bằng RemoteTrigger run; Chat cập nhật mỗi lần đặt lịch mới)
 
 ## Hướng đi hiện tại
 - Chủ chỉ giao lệnh cho Chat; Chat viết thư; Sonnet làm. Chat quyết thay chủ mọi việc không thuộc vùng Đỏ, báo chủ trong báo cáo giờ để chủ gạt nếu muốn.
