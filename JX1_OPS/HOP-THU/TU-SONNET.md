@@ -885,11 +885,16 @@ Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm th�
 - Thêm 10 việc thật vào BACKLOG (SO-07..12, HG-06..09; mẫu số 78) và HG-03c, HG-05b.
 - TIẾN ĐỘ 43/78 = 55%, còn thiếu 12 để ≥55/78... (cần ≥55); việc chốt kế: gộp KC-01, KV-03/05/06, 10 việc mới; W-02.
 
-### #205 bước 1 (19/11 01:55)
+### #205 bước 1 (19/11 ~01:10, giờ máy)
 - Trần ngân sách ghi lại ở `STATE/TRANG-THAI.md` (1000/ngày, 3000/7 ngày); `stop_guard.py` Chat đã nâng. `tong_quan.py`: MAXKEY 2→3, MAXALL 10→15 (sao lưu `.bak-205`); K5/K6 vẫn trần 2 theo Q-51 ở bước đầu.
 - RAM trống 21.6/47.9 GB (45%), 429 = 0 ở nhật ký gần nhất; quan sát ≥5 phút rồi mới tăng bước 2. Chi phí ước tính USD: chưa có nguồn đo, [CHƯA KIỂM].
 
-### 19/11 02:05 — gộp KV-06, nhịp RAM
+### 19/11 ~01:15 (giờ máy) — gộp KV-06, nhịp RAM
 - KV-06 xong: **A-07 CHƯA ĐẠT** (1/6 yêu cầu con đạt; thiếu dump/debugger gắn T1 với dòng mã) → A-07 giữ nguyên, không tính xong. Tới nay 3/4 kiểm KV về C-01, C-03, E-05, A-07 đều CHƯA ĐẠT; P-02 (KV-03), B-02 (KV-05) còn chạy.
 - Tiểu yêu SONG 13/15 (MAXKEY 3, MAXALL 15); RAM trống 17.6/47.9 GB (37%); 429 = 0 [chưa thấy trong nhật ký]; chi phí USD [CHƯA KIỂM]. Quan sát ≥5 phút trước bước 2 (cần RAM ≥20% — hiện 37%).
 - **T36test**: APK đang cài `com.jxclient.hoiuctruyenky` có SHA-256 `8da22c0c…973f84`, **KHÁC** qh9A `47eb28e3` và fix36 `9abdf095` (đã băm các APK có trong D:\JX-build, D:\Android; đang quét thêm). Tức W-02 trước đó chạy trên APK chưa định danh được.
+
+### #205 bước 2 (19/11 01:22)
+- Quan sát bước 1 (MAXKEY 3, MAXALL 15) từ ~01:08: RAM trống 26.0/47.9 GB (54%) lúc 01:19; 429 = 0 trong mọi `*.codex.log`; Upstream-failed 0. Có tiểu yêu CHẾT rồi chạy lại 1 lần (KC-01, KV-03, KV-04: "rỗng, không thay đổi") — chưa thấy do 429. Nâng KEY_CAP K5/K6 2→3: tối đa 15 con. Cần thêm khóa để vượt 15 (QUY-TRINH-TAO-KHOA, từng cái cách ≥1 phút).
+- #201 xong phần SHA: T36test chạy APK `8da22c0c` (không trùng qh9A/fix36); đã ghi `HIEU-HIEU-UNG-VU-KHI.md`; đã tắt T36test (ldconsole quit) và JX-Test-36 (ACPI). W-02 chưa đóng (cần cài qh9A và quan sát lại).
+- Đợt 2 việc Hiểu game: SO-13..18, HG-10..13 (10 việc, đã vào BACKLOG, mẫu số 88).
