@@ -1,0 +1,22 @@
+[TỔNG QUẢN 18/11 16:05] CAU DAO xingchi: DONG; K-03c chet, chay lai lan 1 bang JX-K2
+[TỔNG QUẢN 18/11 16:07] CAU DAO xingchi: DONG; K-03c cho xingchi, thu lai bang JX-K2
+[TỔNG QUẢN 18/11 16:09] CAU DAO xingchi: DONG
+[TỔNG QUẢN 18/11 16:11] CAU DAO xingchi: DONG
+[TỔNG QUẢN 18/11 16:13] CAU DAO xingchi: DONG
+[TỔNG QUẢN 18/11 16:15] CAU DAO xingchi: DONG
+[TỔNG QUẢN 18/11 16:17] CAU DAO xingchi: DONG
+[TỔNG QUẢN 18/11 16:19] CAU DAO xingchi: DONG
+[TỔNG QUẢN 18/11 16:21] CAU DAO xingchi: DONG
+[TỔNG QUẢN 18/11 16:23] CAU DAO xingchi: DONG
+[TỔNG QUẢN 18/11 16:25] CAU DAO xingchi: DONG
+[TỔNG QUẢN 18/11 16:27] CAU DAO xingchi: DONG
+[TỔNG QUẢN 18/11 16:29] CAU DAO xingchi: DONG
+[TỔNG QUẢN 18/11 16:31] CAU DAO xingchi: DONG
+[TỔNG QUẢN 18/11 16:33] CAU DAO xingchi: DONG
+[TỔNG QUẢN 18/11 16:35] CAU DAO xingchi: DONG
+[TỔNG QUẢN 18/11 16:37] CAU DAO xingchi: DONG
+[TỔNG QUẢN 18/11 16:39] CAU DAO xingchi: DONG
+[TỔNG QUẢN 18/11 16:41] CAU DAO xingchi: DONG
+[TỔNG QUẢN 18/11 16:43] CAU DAO xingchi: DONG
+[TỔNG QUẢN 18/11 16:45] CAU DAO xingchi: DONG
+[TỔNG QUẢN 18/11 16:47] CAU DAO xingchi: DONG
