@@ -1220,3 +1220,11 @@ Mục tiêu của chủ (nguyên ý): hiểu game; tự chỉnh được hiển 
 
 ### G. Bắt đầu
 Lượt này: viết DESIGN/XUONG-JX1.md (bản 1) + kế hoạch việc M0–M1, rồi làm M0. Báo vào TU-SONNET (giờ thật). Các việc cũ #141/#143 vẫn chạy song song qua Tổng quản.
+
+## #145 — 2026-11-18 12:14 — KHẨN NHẸ: 11 việc astra chết ngay sau khi giao (12:07–12:11), không có lỗi ghi lại
+TIEU-YEU 12:11: R-02, R-03, R-04, R-04b, R-05a..d, R-06c giao cùng phút 12:07, R-07a 12:09, R-07b 12:11 → tất cả CHET, "Lỗi cuối" = "-", "Lần chạy lại" = 0, PID "mat". Nghĩa là Tổng quản không biết vì sao chết, và 9 việc khởi động gần như cùng lúc (trái quy tắc giãn 10 giây?).
+Làm ngay, trước #144:
+1. Mở log Codex của 2–3 việc trên (stderr/stdout + exit code); chép nguyên văn lỗi vào TU-SONNET. Phân loại: lỗi dịch vụ xingchi (429/đồng thời/IP), lỗi lệnh khởi chạy (đường dẫn, tham số, đoạn nhắc astra), hay lỗi khác.
+2. Sửa Tổng quản: không bao giờ để "Lỗi cuối" trống — không đọc được lỗi thì ghi "khong ro: exit=<mã>, <dòng cuối stderr>". Kiểm lại giãn cách 10 giây giữa các lần khởi chạy.
+3. Tăng dần khi chạy lại astra: 1 việc → sống >3 phút → 3 việc → rồi tới 10. Nhóm xingchi nói giới hạn ~10 đồng thời và có kiểm IP: không khởi động dồn.
+4. Nếu lỗi là do lệnh của ta: sửa rồi thử 1 việc; xong mới làm tiếp #144.
