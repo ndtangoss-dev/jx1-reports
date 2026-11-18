@@ -1,20 +1,19 @@
-# TIỂU YÊU (Tổng quản tự sinh lúc 2026-11-18 13:23, đừng sửa tay)
+# TIỂU YÊU (Tổng quản tự sinh lúc 2026-11-18 13:25, đừng sửa tay)
 
-**CẦU DAO xingchi: MỞ (ngừng giao, mỗi 2 phút thử 1 việc)**
+**CẦU DAO xingchi: NỬA-MỞ (đang thử 1 việc)**
 
 Mức: SONG / IM-NHUNG-SONG (20–60 phút) / TREO (>60, bị dừng chạy lại) / CHET / CHET-BO (quá 3 lần) / XONG-CHO-GOP. "Dấu hiệu sống cuối" = max(log, nhịp, file worktree).
 
 | Mã | Mức | Khóa | Log cuối | Dấu hiệu sống cuối | Lỗi cuối | Lần chạy lại | Mô hình | PID | Chờ token (giây) |
 |---|---|---|---|---|---|---|---|---|---|
-| F-01 | CHO-XINGCHI | JX-K4 | 13:13 | 13:13 | xingchi Chat Completions | 0 | sol | - | - |
+| F-01 | THU-LAI-XINGCHI | JX-K2 | 13:25 | 13:13 | xingchi Chat Completions | 0 | sol | - | - |
 | K-03a | CHO-XINGCHI | JX-K4 | 13:21 | 13:21 | xingchi Chat Completions | 0 | sol | - | - |
 | K-03b | CHO-XINGCHI | JX-K2 | 10:30 | 10:30 | xingchi Chat Completions | 0 | sol | - | - |
 | K-03c | CHO-XINGCHI | JX-K3 | 10:30 | 10:30 | xingchi Chat Completions | 0 | sol | - | - |
 | K-03d | CHO-XINGCHI | JX-K2 | 11:09 | 11:09 | xingchi Chat Completions | 0 | sol | - | - |
 | K-03e | CHO-XINGCHI | JX-K5 | 10:31 | 10:31 | xingchi Chat Completions | 0 | sol | - | - |
-| R-03 | XONG-CHO-GOP | JX-K2 | 13:21 | 13:21 | - | 1 | astra | - | - |
 | R-05a | CHET-BO | JX-K3 | 13:11 | 13:11 | bao cao rong (astra) | 2 | astra | - | - |
-| R-05b | CHAY-LAI-2 | JX-K2 | 13:23 | 13:21 | bao cao rong (astra) | 2 | astra | - | - |
+| R-05b | CHET-BO | JX-K2 | 13:24 | 13:24 | bao cao rong (astra) | 2 | astra | - | - |
 | R-05c | CHET-BO | JX-K2 | 13:12 | 13:12 | bao cao rong (astra) | 2 | astra | - | <=127 |
 | R-05d | CHET-BO | JX-K5 | 13:22 | 13:22 | bao cao rong (astra) | 2 | astra | - | - |
 | R-06a | CHET-BO | JX-K4 | 13:13 | 13:13 | rong (exit=0, khong thay doi) | 3 | astra | - | - |
@@ -30,6 +29,5 @@ Khóa đang dùng: JX-K2=1 / khóa có: JX-K2, JX-K3, JX-K4, JX-K5, JX-K6
 
 Việc vòng này:
 - CAU DAO xingchi: MO
-- R-05b chet, chay lai lan 2 bang JX-K2
-- R-05d CHET-BO (loi viec, qua 3 lan)
-- R-06c CHET-BO (loi viec, qua 3 lan)
+- F-01 cho xingchi, thu lai bang JX-K2 (thu cau dao)
+- R-05b CHET-BO (loi viec, qua 3 lan)
