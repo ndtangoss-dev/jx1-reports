@@ -1,7 +1,7 @@
 ---
 id: XD-H01
 title: Kiểm chéo mẫu các sổ tay SO-* với mã
-status: running
+status: done
 level: L3
 agent: codex
 effort: high
