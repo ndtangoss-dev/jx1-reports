@@ -415,3 +415,5 @@ Ghi chú giờ: các tiêu đề 11:30/11:40/11:50 ở trên là ước lượng
 **B.1 bằng chứng F-01**: chạy 12:33:29, lỗi nhận 12:33:38 (~9 giây, phản hồi thật, không phải hết giờ chờ). Nguyên văn: `gpt-6.1-sol requires Responses for tool calls; this account only supports Chat Completions` (response.failed, sequence_number 0, code upstream_error). Kết luận: sol bị phía xingchi từ chối thật; chưa có thông báo gốc của xingchi.
 **B.2–B.4 đã code** trong tong_quan.py (chạy thử khô OK): trạng thái CHO-TOKEN (đã gửi, chưa có sự kiện: <15 phút = SỐNG, 15–30 cảnh báo, ≥30 TREO); TTFT ghi `ttft.json` (cận trên, đo theo nhịp 2 phút); cột "Chờ token (giây)" ở TIEU-YEU; probe nửa-mở đang CHO-TOKEN thì không đóng cầu dao sớm, không mở probe chồng. Thí nghiệm 1 việc sol chờ 15 phút: chưa chạy được vì sol bị từ chối ở giây ~9, nên TTFT thật chưa đo; sẽ đo cho astra khi có việc chạy.
 **A**: đã thêm khu 6 ĐO TỐC ĐỘ vào DESIGN/XUONG-JX1.md mục 10. Tiếp theo M0→M1.
+
+[TỔNG QUẢN 18/11 12:37] CAU DAO xingchi: MO; xingchi sap > 60 phut (cau dao mo tu 10:35); F-01 cho xingchi, thu lai bang JX-K2 (thu cau dao)
