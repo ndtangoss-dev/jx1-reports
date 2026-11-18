@@ -290,3 +290,4 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 - Việc đang dở, bước và lệnh chạy lại: xem dòng trạng thái cuối trong TRANG-THAI.md và TASKS/*.md (status running); PM ghi chi tiết ở đây nếu kịp.
 - 18/11 11:10 Sonnet: #131-#133 xong phần mã (Tổng quản PT2M, PID, rỗng = CHẾT); astra thử 2 lần đều rỗng nên giữ sol; #134 chờ chủ đăng nhập ndtan48.
 - 18/11 11:20 Sonnet: Nhận #135; email tệp đăng nhập ndtan48@gmail.com; xóa canchu.stamp; chờ #136 thử người gác lần 4.
+- 18/11 11:30 Sonnet: Nhận #136; lỗi sol = Responses/Chat Completions ngay yêu cầu đầu, mọi khóa; thử tay xác nhận; xem TU-SONNET.
