@@ -1,4 +1,4 @@
-# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-18 14:29, đừng sửa tay)
+# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-18 14:33, đừng sửa tay)
 
 ĐANG LÀM: F-01, K-03a, K-03b, K-03c, K-03d, K-03e, T-02, T-03, T-04
 KẾ TIẾP: K-02, R-06a
