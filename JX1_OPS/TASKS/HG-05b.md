@@ -1,7 +1,7 @@
 ---
 id: HG-05b
 title: Hiểu game: điều CHƯA KIỂM — phần báo cáo còn lại
-status: running
+status: done
 level: L3
 agent: codex
 effort: high

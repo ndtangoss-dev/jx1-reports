@@ -917,3 +917,8 @@ Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm th�
 ### 19/11 02:05 — gộp HG-07
 - HG-07 (`HIEU-GIAO-DICH-KHO-DO.md`, 129 dòng, 24 chỗ file:dòng) → done [NGUỒN]; kiểm mẫu `KPlayer.cpp:6563` đúng là `TradeApplyOpen` [ĐÃ KIỂM 1 mẫu].
 - TIẾN ĐỘ 48/88 = 55%, còn thiếu 14 (62/88 = 70%). Dự báo (tốc độ thật 01:11→02:05: 5 việc mới xong/54 phút + 11 đang chạy): ~62–66/88 lúc 06:30 nếu giữ tốc độ; chưa đủ chắc, cần thêm việc cha đóng được.
+
+### 19/11 02:20 — gộp HG-13, SO-10, HG-05b (→ HG-05 done)
+- HG-13 (`HIEU-LENH-GM.md`, 204 dòng, 81 chỗ file:dòng; kiểm mẫu `KPlayer.cpp:6054` đúng là `CheckGmName` [ĐÃ KIỂM 1 mẫu]), SO-10 (`SO-TAY-THOI-GIAN-SU-KIEN.md`, 142 dòng, 1 sơ đồ), HG-05b (`DANH-SACH-CHUA-KIEM-2.md`: 174/174 báo cáo đã xét, 41 chưa có tên trong bảng cũ đã rà bổ sung) → done [NGUỒN].
+- **HG-05 tính done** nhờ HG-05b (độ phủ 174/174). Ghi rõ hạn chế: HG-05b tự ghi PARTIAL về quy trình (không ghi được nhịp ngoài worktree), không phải về nội dung; [CHƯA KIỂM] chỉ khi Chat muốn đòi kiểm sâu hơn.
+- TIẾN ĐỘ 52/88 = 59%, còn thiếu 10 (62/88). Đang chạy: HG-03c, HG-11, HG-12, SO-07, SO-08, SO-09, SO-11, SO-12(?), SO-13..18 chờ chỗ. Tốc độ: 4 việc/15 phút gần nhất.
