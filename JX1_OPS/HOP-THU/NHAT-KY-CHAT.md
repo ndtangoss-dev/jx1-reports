@@ -194,3 +194,4 @@
 - 11:20 Chủ: xingchi báo 'dùng sol, astra chập chờn'. Bảng chỉ có nhãn lỗi; gửi #136 lấy nguyên văn lỗi sol + thử tay + rà wire_api.
 - 11:27 Chủ chụp nhóm xingchi: người khác cũng báo lỗi sol từ 18/11; nhắc '10 luồng', 'kiểm tra IP'. Chat quyết thay: trần tạm 10 đồng thời (đảo được), #137. Chủ bị admin nhóm hạn chế gửi tin.
 - 11:30 THỬ NGƯỜI GÁC LẦN 4 ĐẠT: #135 gửi 11:15, Sonnet nhận 11:19-11:20 trong 'phiên người gác' (tk ndtan48). Lỗi còn: phiên gác bị chặn RemoteTrigger → GO-CUA MAT-KET-NOI-CHAT. Gửi #138. GÕ CỬA mới trig_01P3cRfQEJBjA64ia8dRtjD3 (11:37).
+- 11:35 Chủ chụp trang tạo khóa: chỉ 1 nhóm GPT公益 0.25x, không có nhóm khác ⇒ không đổi nhóm được. Lỗi là của xingchi. Gửi #139 (nghiên cứu phương án B Chat Completions, quyết sau 13:00).

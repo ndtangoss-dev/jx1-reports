@@ -52,3 +52,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Lấy nguyên văn lỗi sol, thử tay codex exec nhỏ, sửa cột Mô hình, rà wire_api/base_url | #136 | — | chờ Sonnet |
 | Lỗi sol là chung của xingchi; trần tạm 10 tiểu yêu đồng thời, không tạo khóa mới, giao tăng dần | #137 | tạm hạn chế #115 (20 khóa/60) | chờ Sonnet |
 | Người gác lần 4 ĐẠT (thức ≤5 phút, tk ndtan48); thêm RemoteTrigger + Bash(claude:*) vào allowedTools phiên gác; ghi 'đánh thức bởi: người gác' | #138 | bổ sung #134 | chờ Sonnet |
+| Phương án B (nghiên cứu, không cài): chạy tiểu yêu qua Chat Completions nếu xingchi chưa sửa | #139 | — | chờ Sonnet |

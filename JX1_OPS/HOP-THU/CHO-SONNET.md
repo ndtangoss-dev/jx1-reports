@@ -1124,3 +1124,13 @@ Chat đọc TU-SONNET "Nhận #135 (11:20)": nhắc "phiên người gác này" 
 2. Ghi rõ trong TU-SONNET "đánh thức bởi: người gác" (kèm dòng guard.log "GỌI phiên" 11:19) để Chat có bằng chứng chính thức.
 3. Hai lần MAT-KET-NOI-CHAT là sai báo: Chat vẫn kiểm 10 phút. Gõ cửa lại 1 lần sau khi sửa mục 1; xong gỡ cờ MAT-KET-NOI-CHAT.
 Làm sau #136/#137 hoặc xen kẽ khi tiểu yêu đang chờ xingchi.
+
+## #139 — 2026-11-18 11:35 — Phương án B nếu xingchi chưa sửa (chỉ NGHIÊN CỨU, không cài, không sửa Codex đang chạy)
+Chủ chụp trang tạo khóa xingchi: tài khoản chỉ có MỘT nhóm "GPT公益" hệ số 0.25x; không có nhóm khác để đổi. Người dùng khác trong nhóm cũng gặp đúng lỗi (400 gpt-6.1-sol requires Responses for tool calls; account only supports Chat Completions), cả ở phần mềm khác ⇒ lỗi từ xingchi, ta không sửa được bằng đổi khóa/nhóm. Thông báo lỗi cũng cho biết kiểu Chat Completions của tài khoản VẪN chạy với sol.
+Phương án A (chính): chờ xingchi sửa; Tổng quản thử mỗi 2 phút (đang chạy).
+Phương án B (chuẩn bị sẵn, KHÔNG áp dụng bây giờ): chạy tiểu yêu qua Chat Completions. Nghiên cứu và báo 10–15 dòng trong TU-SONNET:
+1. Bản Codex nào còn hỗ trợ `wire_api = "chat"` (đã biết 0.166 đã bỏ); có tải riêng vào thư mục khác (không đụng bản đang dùng) được không; dùng `CODEX_HOME` riêng để không đổi cấu hình hiện tại.
+2. Hoặc cầu nối cục bộ đổi Responses→Chat Completions (loại nhỏ, chạy ở 127.0.0.1), nêu 2–3 lựa chọn, độ phức tạp, rủi ro.
+3. Hoặc công cụ khác dùng Chat Completions được (ví dụ trợ lý lập trình dòng lệnh mã nguồn mở); nêu có đọc/ghi file, chạy lệnh được không.
+4. Với mỗi cách: phải cài gì, ghi ở đâu (ngoài C:\Jx1CocoV3 và không vào kho), mất bao lâu thử 1 việc nhỏ. Chỉ dùng điểm truy cập và khóa của xingchi; không làm gì lách giới hạn (luật nhóm xingchi cấm).
+Chat sẽ quyết sau 13:00 nếu xingchi vẫn lỗi. Làm sau #136–#138.
