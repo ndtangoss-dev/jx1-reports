@@ -1,7 +1,7 @@
 ---
 id: HG-02b
 title: (lần 2) Hiểu game: trạng thái chiến đấu và nút đánh
-status: running
+status: done
 level: L3
 agent: codex
 effort: high

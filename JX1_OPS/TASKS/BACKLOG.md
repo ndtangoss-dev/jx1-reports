@@ -146,3 +146,13 @@ Sonnet lấy việc từ trên xuống, theo phụ thuộc. Khi bắt đầu m�
 | HG-05 | Hiểu game: gộp điều CHƯA KIỂM từ mọi báo cáo | L3 | Codex | như trên |
 | KC-01 | Kiểm chéo chất lượng 5 báo cáo đã gộp | L3 | Codex | `REPORTS/KIEM-CHEO-01.md` có đúng/sai/thiếu |
 | KC-02 | Kiểm chéo chất lượng thêm 5 báo cáo khác | L3 | Codex | `REPORTS/KIEM-CHEO-02.md` |
+| SO-07 | Sổ tay hiểu game: Tống Kim, bang hội và hoạt động | L3 | Codex | `DESIGN/SO-TAY-TONG-KIM-BANG-HOI.md` có nhãn nguồn, đã gộp |
+| SO-08 | Sổ tay hiểu game: PK, chết, hồi sinh, hồi máu | L3 | Codex | `DESIGN/SO-TAY-PK-CHET-HOI-SINH.md` |
+| SO-09 | Sổ tay hiểu game: đồng bạn và thú cưỡi | L3 | Codex | `DESIGN/SO-TAY-DONG-BAN.md` |
+| SO-10 | Sổ tay hiểu game: thời gian, lịch, sự kiện Lua | L3 | Codex | `DESIGN/SO-TAY-THOI-GIAN-SU-KIEN.md` |
+| SO-11 | Sổ tay hiểu game: giao diện client | L3 | Codex | `DESIGN/SO-TAY-GIAO-DIEN.md` |
+| SO-12 | Sổ tay hiểu game: gói tin client–server | L3 | Codex | `DESIGN/SO-TAY-GOI-TIN.md` |
+| HG-06 | Hiểu game: trạng thái, buff, thời gian hiệu lực | L3 | Codex | `DESIGN/HIEU-BUFF-TRANG-THAI.md` |
+| HG-07 | Hiểu game: chợ, giao dịch, kho đồ | L3 | Codex | `DESIGN/HIEU-GIAO-DICH-KHO-DO.md` |
+| HG-08 | Hiểu game: công thức sát thương | L3 | Codex | `DESIGN/HIEU-CONG-THUC-SAT-THUONG.md` |
+| HG-09 | Hiểu game: nạp và chuyển bản đồ | L3 | Codex | `DESIGN/HIEU-NAP-VA-CHUYEN-BAN-DO.md` |

@@ -878,3 +878,9 @@ Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm th�
 - Mở 6 việc kiểm KV-01..06 (C-01, C-03, P-02, E-05, B-02, A-07): chỉ đổi parent sang done khi báo cáo kiểm KẾT LUẬN ĐẠT.
 - TIẾN ĐỘ 37/68 = 54%, còn thiếu 11 để ≥48/68; việc chốt kế: 0-07 (thử tắt bật Test-36), gộp 8 việc tiểu yêu.
 - RAM/429: sẽ ghi ở đợt tới (8 tiểu yêu chạy, trần 10).
+
+### #202 (19/11 01:40)
+- **0-07 xong** (bằng chứng: tắt ACPI Test-36 00:57 → `jx_env_up.ps1 -BoQuaMain` tự đưa về SẴN SÀNG 01:06, 6 tiến trình + 8 cổng, exit 0; bước Main VM chưa chạy lần này).
+- Gộp 10 nhánh: HG-02b, KC-02, SO-04/05/06 → done; **HG-03b, HG-05 chỉ PARTIAL → KHÔNG tính xong**, mở HG-03c, HG-05b nối tiếp. KV-01/02/04 (C-01, C-03, E-05) kết luận **CHƯA ĐẠT** → giữ nguyên các mục đó (không đổi), chỉ rõ chỗ thiếu trong `REPORTS/KIEM-C-01.md`, `KIEM-C-03.md`, `KIEM-E-05.md`.
+- Thêm 10 việc thật vào BACKLOG (SO-07..12, HG-06..09; mẫu số 78) và HG-03c, HG-05b.
+- TIẾN ĐỘ 43/78 = 55%, còn thiếu 12 để ≥55/78... (cần ≥55); việc chốt kế: gộp KC-01, KV-03/05/06, 10 việc mới; W-02.
