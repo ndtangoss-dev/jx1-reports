@@ -417,3 +417,5 @@ Ghi chú giờ: các tiêu đề 11:30/11:40/11:50 ở trên là ước lượng
 **A**: đã thêm khu 6 ĐO TỐC ĐỘ vào DESIGN/XUONG-JX1.md mục 10. Tiếp theo M0→M1.
 
 [TỔNG QUẢN 18/11 12:37] CAU DAO xingchi: MO; xingchi sap > 60 phut (cau dao mo tu 10:35); F-01 cho xingchi, thu lai bang JX-K2 (thu cau dao)
+
+[TỔNG QUẢN 18/11 12:39] CAU DAO xingchi: MO
