@@ -24,3 +24,9 @@ Việc phụ đóng việc cha **A-07c** (không vào mẫu số). Đọc `JX1_O
 - Không chạy exe lạ, không VM, không mạng, không Main VM, không đọc khóa/mật khẩu/dump tài khoản. Chỉ ghi tệp đầu ra ngoài ra không sửa gì.
 - Worktree của bạn có thể KHÔNG có mã nguồn game: đọc trực tiếp (chỉ đọc) client `C:/Jx1CocoV3/Folder/Client2912-20260116T044348Z-3-001/Client2912/Client/Classes` và server `C:/Jx1CocoV3/SwordOnline/SwordOnline/jxOnline/gameserver/Sources`; kho báo cáo ở D:/jx1-ops-wt/JX1_OPS (chỉ đọc).
 - Mỗi lần đọc <= ~400 dòng. Cuối tệp task ghi mục "## Kết quả" (3–5 dòng).
+
+## Kết quả
+- PARTIAL — báo cáo: `JX1_OPS/REPORTS/XD-A07c.md`; đã kiểm tra tĩnh artifact ngày 19/11/2026.
+- THẤY: gs001.exe tồn tại, 1.346.560 byte, PE x64; SHA-256 khớp đủ báo cáo A-07c. TÀI LIỆU: log năm project mã 0, build_errors rỗng.
+- CHƯA KIỂM: chưa đủ bằng chứng không đè bản đang chạy; không build/chạy exe, VM hoặc mạng, không sửa kết luận cũ.
+- Không commit/push; Tổng quan commit hộ. Tệp nhịp `D:\JX-wt\XD-A07c.nhip` ngoài vùng sandbox cho phép ghi nên không được tạo.
