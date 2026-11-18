@@ -990,3 +990,7 @@ Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm th�
 - [KHÔNG ĐÓNG ĐƯỢC TRƯỚC 06:30, giữ mở trung thực]: B-04 cần 3 lượt × 3 pha × 660 s, 100 bot + 20 người, và gs001 chưa xuất thời gian từng tick; E-01/E-09/E-05 cần Bot thật: thiếu khóa client của đúng binary (E-01 báo cáo dòng 98) và tài khoản/vai thử, tôi không tự đoán; C-01 mới chỉ là dry-run, chưa có bộ chạy SQL thật; P-02 cần bộ đo nhiều bot; W-02 cần mục tiêu đánh được. Không hạ tiêu chí.
 - Đề xuất bước kế (cần đại vương/Chat): cấp khóa client + tài khoản/vai thử cho Bot, rồi chạy E-01 một Bot 60 s.
 - SỐ THẬT 87/107 = 81,3%. HG-16c PARTIAL (thiếu nhánh gateway); giao XD-HG16e (đường dẫn đã sửa). Test-36 sẽ tắt sau ghi chép này.
+
+## SONNET 06:30 — DỰ BÁO + SỐ THẬT
+- SỐ THẬT 88/107 = 82,2%: HG-16 đóng ở mức nguồn tĩnh (HG-16c + XD-HG16e, nhánh gateway Bishop/Goddess có dẫn file:dòng). Còn [CHƯA KIỂM]: đường Bishop→hàm lưu, chỉ số/đồ khởi đầu thật, mọi thứ chạy thật.
+- Giữ mở: B-04, E-01, E-05, E-09, C-01, P-02, W-02 (cần Test-36 + khóa client/tài khoản thử). Mẫu số 107.
