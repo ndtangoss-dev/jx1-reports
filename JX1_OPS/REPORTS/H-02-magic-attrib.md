@@ -6,6 +6,62 @@ TÓM TẮT 5/5 — Có bảng số liệu, file:dòng và ma trận TESTER bên 
 
 # H-02 — Dòng chỉ số trang bị (magic attrib)
 
+Loại: khảo sát
+Chủ đề: Cấu trúc, nguồn bảng, roll, kích hoạt và tooltip của các dòng thuộc tính trang bị.
+Từ khóa: thuộc tính trang bị, magic attrib, MAGIC_ATTRIB, KMagicAttrib, GoldMagic, GoldItem, MagicDesc_mobile, H-02
+Trạng thái: PARTIAL — khảo sát tĩnh có nội dung; trạng thái commit cũ bị chặn và runtime chưa kiểm.
+Độ phủ: 5/5 bảng dữ liệu đã thống kê; 5/5 nhóm trường cấu trúc, 7 ID đại diện và 10 ca test đề xuất; runtime/PAK chưa phủ.
+Liên quan: H-01, H-03, H-05, H-06, H-07, JX1_OPS/DESIGN/MUC-LUC-TRI-THUC.md.
+Cần tôi quyết định: không
+
+```mermaid
+flowchart LR
+  A[Item và loại vật phẩm] --> B[Pool magicattrib]
+  A --> C[GoldMagic / GoldItem / Platina]
+  B --> D[Roll thường và bộ lọc]
+  C --> E[Thuộc tính vàng, bạch kim, rong]
+  D --> F[Slot thuộc tính trên item]
+  E --> F
+  F --> G[Kích hoạt và đồng bộ]
+  F --> H[Tooltip MagicDesc]
+```
+
+## Phạm vi và độ phủ
+
+G = C:/Jx1CocoV3/Folder/ServerNew-20260116T043145Z-3-001/ServerNew/_bin_v2_/gs; các file mã nguồn S/P dưới đây là tham chiếu từ báo cáo gốc và chưa đối chiếu lại trong gốc R-05a.
+
+| Phần tử phạm vi | Độ phủ | Nguồn và vị trí |
+|---|---|---|
+| Cấu trúc thuộc tính và các nhóm slot item | Đã phủ 5/5 nhóm slot đã nêu | `H-02-magic-attrib.md:82-114` |
+| ID đại diện 30, 59, 85, 115, 126, 139, 166 | Đã phủ 7/7 ID đại diện; không đại diện toàn enum | `S/KMagicAttrib.h:43,73,100,130,141,154,181` theo báo cáo gốc |
+| Bảng pool — magicattrib.txt | Đã phủ; 370 dòng, 29 cột | G/Settings/item/004/magicattrib.txt:1-370 |
+| Bảng chỉ số vàng — GoldMagic.txt | Đã phủ; 4.361 dòng, 12 cột | G/Settings/item/004/GoldMagic.txt:1-4361 |
+| Bảng item vàng — GoldItem.txt | Đã phủ; 5.946 dòng, 65 cột | G/Settings/item/004/GoldItem.txt:1-5946 |
+| Bảng bạch kim — platinaequip.txt | Đã phủ; 5.671 dòng, 72 cột | G/Settings/item/004/platinaequip.txt:1-5671 |
+| Bảng chỉ mục mức — magicattriblevel_index.txt | Đã phủ; 49 dòng, 6 cột | G/Settings/item/004/magicattriblevel_index.txt:1-49 |
+| Roll thường, roll chỉ định, mức và lọc pool | Đã phủ các nhánh được trích; mọi handler chưa phủ | `S/KItemGenerator.CPP:779,925,1035` theo báo cáo gốc |
+| Các dòng hiện/ẩn, set và mở rộng | Đã phủ slot/nhánh nêu trong báo cáo; không khẳng định mọi đường nạp | `S/KItem.h:207,217-220`, `S/KItem.cpp:145-222` theo báo cáo gốc |
+| Tooltip và dữ liệu Việt/Trung | Đã phủ chuỗi và đường mã hóa nêu trong báo cáo; PAK client chưa phủ | `G/MagicDesc.ini:1,92`, `G/MagicDesc_mobile.ini:1,103`; `P/Resources/paklist.ini:1` |
+| Đề xuất TESTER | Đã liệt kê 10 ca; chưa chạy | `H-02-magic-attrib.md:227-243` |
+
+## Giải mã tên
+
+Các bảng được đối chiếu là dữ liệu bảng chỉ số, không có tên riêng cụ thể của kỹ năng, trang bị, quái, NPC hoặc bản đồ trong phạm vi báo cáo. Key/enum tiếng Anh được giữ nguyên để tra cứu; chuỗi bảng có byte Việt/Trung hỗn hợp và báo cáo gốc không kết luận một lỗi mã hóa chỉ từ cách giải mã.
+
+| Tên gốc | Mã hóa | Chữ đúng UTF-8 | Nguồn file:dòng |
+|---|---|---|---|
+| Không có tên riêng game cụ thể được nêu | Không áp dụng | Không áp dụng | `H-02-magic-attrib.md:1-256` |
+
+## Sắp theo cấu trúc game
+
+| Thứ tự game | Phần đã kiểm kê |
+|---|---|
+| Item và cấu trúc trường | Base → requirement → magic → yin → rong |
+| Nguồn bảng theo loại trang bị | magicattrib → GoldMagic/GoldItem → platinaequip → magicattriblevel_index |
+| Đường xử lý | Loader/bảng → roll thường hoặc chỉ định → slot hiện/ẩn/set → đồng bộ và tooltip |
+| Giới hạn | PAK client, cấu hình nạp và runtime giữ ở trạng thái chưa kiểm như báo cáo gốc |
+
+
 Ngày khảo sát: 2026-11-17. Nhánh `task/H-02`, worktree `D:\JX-wt\H-02`; HEAD đầu task `a9ffca7e2aec574e8e32c672372a5a0f4a33382f` (không phải commit kết quả H-02).
 
 ## Phạm vi và cách đọc bằng chứng
@@ -150,6 +206,24 @@ Luồng đã đọc được:
 
 Đối chiếu byte toàn file: `C\gamecore\KItem.h` và `KMagicDesc.cpp` giống bản dưới `P\Classes\gamecore`; `KItem.cpp` khác (4.156 so với 4.116 dòng). Đã đọc trực tiếp các đoạn tooltip của bản P và dùng đúng số dòng P ở trên; không giả định toàn client source giống nhau.
 
+## MỤC SỔ THÔNG SỐ
+
+Các số dưới đây là số dòng/cột trên file local, không phải số record được nạp hay số vật phẩm hợp lệ.
+
+| Nhóm | Tên/hằng số | file:dòng | Giá trị | Đơn vị | Ảnh hưởng | Đổi an toàn | Nguồn đo |
+|---|---|---|---:|---|---|---|---|
+| Pool thường | magicattrib.txt | C:/Jx1CocoV3/Folder/ServerNew-20260116T043145Z-3-001/ServerNew/_bin_v2_/gs/Settings/item/004/magicattrib.txt:1-370 | 370 dòng, 29 cột | dòng/cột | Pool và các trường lọc/roll | CẨN THẬN | Đọc file tĩnh |
+| Bảng vàng | GoldMagic.txt | G/Settings/item/004/GoldMagic.txt:1-4361 | 4.361 dòng, 12 cột | dòng/cột | Dữ liệu tra magic vàng | CẨN THẬN | Đọc file tĩnh |
+| Bảng vàng | GoldItem.txt | G/Settings/item/004/GoldItem.txt:1-5946 | 5.946 dòng, 65 cột | dòng/cột | Base, requirement, magic và mở rộng | CẨN THẬN | Đọc file tĩnh |
+| Bạch kim | platinaequip.txt | G/Settings/item/004/platinaequip.txt:1-5671 | 5.671 dòng, 72 cột | dòng/cột | Mẫu item bạch kim | CẨN THẬN | Đọc file tĩnh |
+| Chỉ mục mức | magicattriblevel_index.txt | G/Settings/item/004/magicattriblevel_index.txt:1-49 | 49 dòng, 6 cột | dòng/cột | Map MAGIC_ID sang dải mức | CẨN THẬN | Đọc file tĩnh |
+
+## ĐỀ XUẤT TỐI ƯU
+
+| Đề xuất cho lần xác minh sau | Lợi ích | Cách xác minh / giới hạn |
+|---|---|---|
+| Gắn từng bảng với manifest/hash và locale/encoding của PAK thử | Biết bảng nào thực sự được nạp và tránh nhầm byte Việt/Trung | Chưa giải PAK hoặc xác minh thứ tự ưu tiên trong R-05a; không chỉnh encoding |
+| Kiểm test riêng từng nhánh roll, item loại và tooltip | Đối chiếu dữ liệu với kết quả thực trên client/server | 10 ca TESTER trong báo cáo chưa chạy; cần task test riêng |
 ## 6. Ma trận test đề xuất cho TESTER
 
 **Chưa chạy bất kỳ test runtime/build nào.** Chỉ thực hiện trong môi trường thử đã được PM cho phép, dữ liệu tổng hợp; không dùng tài khoản thật, không thực hiện trên Main VM trong task này.
@@ -177,4 +251,6 @@ Luồng đã đọc được:
 - [CHƯA KIỂM] Binary đang chạy, DB, mạng/VM, PAK client, độ tương ứng source↔gói thực thi, handler/trần từng ID, toàn bộ nhánh sinh đồ và giao thức đồng bộ. Không có kết quả build/test runtime để tuyên bố đạt.
 - Trạng thái khảo sát: **PARTIAL** về điểm lưu Git; nội dung khảo sát tĩnh đã hoàn tất, các mục [CHƯA KIỂM] là việc xác nhận tiếp của TESTER/PM.
 - Commit kết quả: **BỊ CHẶN – CHƯA PUSH**. Lệnh `git add`/`git commit` không tạo được `D:/jx1-reports/.git/worktrees/H-02/index.lock`: `Permission denied`; đã không thử vượt quyền. Kết quả vẫn lưu local. Chưa push và không thử push vì người dùng cấm mạng thật trong task. PM nhận hai file để review và đưa vào điểm lưu được phép.
+## Phát hiện khi chuẩn hóa
 
+- Năm bảng dữ liệu và số dòng đã được kiểm trực tiếp trong gốc gs được giao. Một số tham chiếu code trong báo cáo cũ lại trỏ tới `D:\JX-source\server` và client Client2912; chúng không phải gốc R-05a. Không thay kết luận cũ và không coi lượt này là kiểm lại tính tương ứng source/binary/PAK.

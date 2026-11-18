@@ -1,9 +1,99 @@
-# TÓM TẮT 5 DÒNG
+## TÓM TẮT 5 DÒNG
 1. [NGUỒN] Kim=0, Mộc=1, Thủy=2, Hỏa=3, Thổ=4; bảng sinh/khắc server và client thống nhất.
 2. [NGUỒN] Server trừ `seriesdamage_p` vào kháng khi đúng cặp khắc, rồi tính `D0*(100-R_eff)/100`.
 3. [NGUỒN] Trang bị kích hoạt tối đa ba dòng ẩn; bảng nguồn kích hoạt client thiếu phần tử thứ ba so với server.
 4. [NGUỒN] Client cộng `m_CurrentSerisesEnhance` trong nhánh vật lý; UI có lỗi kháng băng vượt trần; chưa sửa mã.
 5. DONE phạm vi khảo sát tĩnh: có công thức, bảng số liệu và test; [CHƯA KIỂM] dữ liệu đang nạp, binary/runtime; không sửa mã.
+
+# H-01 — Ngũ hành, trang bị và sát thương
+
+Loại: khảo sát
+Chủ đề: Đối chiếu ngũ hành, kích hoạt thuộc tính trang bị, tương khắc sát thương và hiển thị client.
+Từ khóa: ngũ hành, 五行, series_metal, series_wood, seriesdamage_p, magic_seriesdamage_p, GetEquipEnhance, CalcDamage
+Trạng thái: DONE — đã chuẩn hóa cấu trúc; giữ nguyên kết luận khảo sát tĩnh.
+Độ phủ: 5/5 hệ; 15/15 ô trang bị; 6/6 kênh damage được liệt kê; dữ liệu runtime và từng bảng đang nạp chưa phủ.
+Liên quan: H-02, H-03, H-04, JX1_OPS/DESIGN/MUC-LUC-TRI-THUC.md, JX1_OPS/DESIGN/HUONG-DAN-TRA-CUU.md.
+Cần tôi quyết định: không
+
+```mermaid
+flowchart LR
+  A[Hệ nhân vật, item và NPC] --> B[Bảng sinh khắc]
+  B --> C{Attacker khắc target?}
+  C -->|Có| D[Điều chỉnh kháng bởi seriesdamage_p]
+  C -->|Không| E[Giữ kháng trước tương khắc]
+  D --> F[Clamp kháng và tính damage]
+  E --> F
+  G[Thuộc tính trang bị] --> H[Kích hoạt tối đa ba dòng ẩn]
+  H --> B
+```
+
+## Phạm vi và độ phủ
+
+| Phần tử phạm vi | Độ phủ | Bằng chứng |
+|---|---|---|
+| Hệ 0 — Kim | Đã phủ | `H-01-ngu-hanh.md:108-121`; `D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:332` |
+| Hệ 1 — Mộc | Đã phủ | `H-01-ngu-hanh.md:108-121`; `D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:333` |
+| Hệ 2 — Thủy | Đã phủ | `H-01-ngu-hanh.md:108-121`; `D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:334` |
+| Hệ 3 — Hỏa | Đã phủ | `H-01-ngu-hanh.md:108-121`; `D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:335` |
+| Hệ 4 — Thổ | Đã phủ | `H-01-ngu-hanh.md:108-121`; `D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:336` |
+| Ô trang bị 0 — head | Đã phủ trong ma trận | `D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:213`; `H-01-ngu-hanh.md:142-164` |
+| Ô trang bị 1 — body | Đã phủ trong ma trận | `D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:214`; `H-01-ngu-hanh.md:142-164` |
+| Ô trang bị 2 — belt | Đã phủ trong ma trận | `D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:215`; `H-01-ngu-hanh.md:142-164` |
+| Ô trang bị 3 — weapon | Đã phủ trong ma trận | `D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:216`; `H-01-ngu-hanh.md:142-164` |
+| Ô trang bị 4 — foot | Đã phủ trong ma trận | `D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:217`; `H-01-ngu-hanh.md:142-164` |
+| Ô trang bị 5 — cuff | Đã phủ trong ma trận | `D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:218`; `H-01-ngu-hanh.md:142-164` |
+| Ô trang bị 6 — amulet | Đã phủ trong ma trận | `D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:219`; `H-01-ngu-hanh.md:142-164` |
+| Ô trang bị 7 — ring1 | Đã phủ trong ma trận | `D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:220`; `H-01-ngu-hanh.md:142-164` |
+| Ô trang bị 8 — ring2 | Đã phủ trong ma trận | `D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:221`; `H-01-ngu-hanh.md:142-164` |
+| Ô trang bị 9 — pendant | Đã phủ trong ma trận | `D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:222`; `H-01-ngu-hanh.md:142-164` |
+| Ô trang bị 10 — horse | Đã phủ trong ma trận | `D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:223`; `H-01-ngu-hanh.md:142-164` |
+| Ô trang bị 11 — mask | Đã phủ trong ma trận | `D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:224`; `H-01-ngu-hanh.md:142-164` |
+| Ô trang bị 12 — pifeng | Đã phủ trong ma trận | `D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:225`; `H-01-ngu-hanh.md:142-164` |
+| Ô trang bị 13 — yinjian | Đã phủ trong ma trận | `D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:226`; `H-01-ngu-hanh.md:142-164` |
+| Ô trang bị 14 — shiping | Đã phủ trong ma trận | `D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:227`; `H-01-ngu-hanh.md:142-164` |
+| Kênh damage_physics | Đã phủ | `H-01-ngu-hanh.md:183-188` |
+| Kênh damage_cold | Đã phủ | `H-01-ngu-hanh.md:183-188` |
+| Kênh damage_fire | Đã phủ | `H-01-ngu-hanh.md:183-188` |
+| Kênh damage_light | Đã phủ | `H-01-ngu-hanh.md:183-188` |
+| Kênh damage_poison | Đã phủ | `H-01-ngu-hanh.md:183-188` |
+| Kênh damage_magic/default | Đã phủ | `H-01-ngu-hanh.md:183-188` |
+| Đối tượng item, skill, NPC | Đã phủ 3/3 nhóm; cấu hình/runtime cụ thể chưa phủ | `H-01-ngu-hanh.md:122-131` |
+| Dữ liệu đang nạp, kháng từng quái, binary/runtime | Chưa phủ; giữ nguyên giới hạn gốc | `H-01-ngu-hanh.md:245-261` |
+
+## Giải mã tên
+
+Tên gốc Hoa trong comment client được lưu mã GBK; bảng dưới giải mã theo comment của enum. Không xác nhận tên hiển thị trong runtime.
+
+| Tên gốc | Mã hóa | Chữ đúng UTF-8 | Nguồn file:dòng |
+|---|---|---|---|
+| 金系 | GBK | Kim hệ | `D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:332` |
+| 木系 | GBK | Mộc hệ | `D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:333` |
+| 水系 | GBK | Thủy hệ | `D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:334` |
+| 火系 | GBK | Hỏa hệ | `D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:335` |
+| 土系 | GBK | Thổ hệ | `D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:336` |
+| 头 | GBK | Đầu (itempart_head) | `D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:213` |
+| 身体 | GBK | Thân/áo (itempart_body) | `D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:214, 1505` |
+| 腰带 | GBK | Đai lưng (itempart_belt) | `D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:215, 1506` |
+| 武器 | GBK | Vũ khí (itempart_weapon) | `D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:216, 1507` |
+| 靴子 | GBK | Giày (itempart_foot) | `D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:217, 1508` |
+| 手镯或护腕 | GBK | Vòng tay hoặc hộ thủ (itempart_cuff) | `D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:218, 1509` |
+| 项链 | GBK | Dây chuyền (itempart_amulet) | `D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:219, 1510` |
+| 戒子 | GBK | Nhẫn (itempart_ring1/ring2) | `D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:220-221, 1511-1512` |
+| 香囊或玉佩 | GBK | Túi thơm hoặc ngọc bội (itempart_pendant) | `D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:222, 1513` |
+| 马 | GBK | Ngựa (itempart_horse) | `D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:223, 1514` |
+| 面具 | GBK | Mặt nạ (itempart_mask) | `D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:224, 1515` |
+| 披风 | GBK | Phi Phong/áo choàng (itempart_pifeng) | `D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:1516` |
+| 印鉴 | GBK | Ấn giám (itempart_yinjian) | `D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:1517` |
+| 饰品 | GBK | Trang sức (itempart_shiping) | `D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:1518` |
+
+## Sắp theo cấu trúc game
+
+| Cấu trúc | Nội dung đã kiểm kê |
+|---|---|
+| Ngũ hành | Kim → Mộc → Thủy → Hỏa → Thổ; quan hệ sinh/khắc nằm ở bảng ngay dưới đây trong nội dung gốc |
+| Trang bị | 15 vị trí item; mỗi vị trí có ba ô nguồn kích hoạt server/client theo ma trận hiện có |
+| Chiến đấu | Attacker/target → tương khắc → sáu kênh damage/kháng → xử lý tiếp theo |
+| Đồng bộ/hiển thị | Item, skill và NPC được trình bày riêng; trạng thái đang nạp chưa xác minh |
 
 ## Phạm vi
 
@@ -138,6 +228,20 @@ Tooltip skill duyệt `m_DamageAttribs` (`C/KSkills.cpp:3866`, `:3870`) rồi l�
 
 Switch kháng server không chia phần dư theo q: R=105/M=75/S=0 dùng R_eff=75, không phải 77. Đây là khác biệt công thức source và chuỗi UI; [CHƯA KIỂM] hành vi binary. Không dùng tooltip thay bằng chứng damage.
 
+## MỤC SỔ THÔNG SỐ
+
+| Nhóm | Tên/hằng số | file:dòng | Giá trị | Đơn vị | Ảnh hưởng | Đổi an toàn | Nguồn đo |
+|---|---|---|---:|---|---|---|---|
+| Ngũ hành | series_num | D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:332-337 | 5 | hệ | Số hệ enum client | CẨN THẬN | Đọc source tĩnh |
+| Kích hoạt item | MAX_ITEM_ACTIVE | D:/JX-build/qh9A/Classes/gamecore/KItemList.h:6; KItemList.cpp:2062 | 3 | ô nguồn | Số phần tử nguồn lặp cho mỗi vị trí | CẨN THẬN | Đọc source tĩnh |
+| Kháng | MAX_RESIST | H-01-ngu-hanh.md:179, tham chiếu H/GameDataDef.h:116 | 150 | điểm kháng | Trần được báo cáo trong khảo sát cũ; chưa đối chiếu ở gốc R-05a | CẨN THẬN | Nguồn gián tiếp; chưa kiểm lại |
+
+## ĐỀ XUẤT TỐI ƯU
+
+| Đề xuất cho lần xác minh sau | Lợi ích | Cách xác minh / giới hạn |
+|---|---|---|
+| Giữ ma trận 5×5 hệ attacker/target, từng kênh damage, cùng R/M/S và ghi riêng giá trị trước/sau kháng | Tách rõ tác động tương khắc khỏi PK, lá chắn và hiển thị UI | Chỉ chạy trong task test được duyệt; hiện tại là đề xuất, không có kết quả runtime |
+| Đối chiếu riêng bảng kích hoạt client/server theo đủ 15 vị trí | Phát hiện sai khác ô nguồn thứ ba | Báo cáo hiện đối chiếu source gián tiếp cho server và tĩnh qh9A cho client; chưa kết luận biểu hiện binary |
 ## Đề xuất test cho TESTER — chưa chạy
 
 Thực hiện sau khi môi trường test được duyệt riêng. Giữ min=max, kháng/trần/bonus cố định; ghi build, đầu vào, giá trị trước/sau kháng, HP trước/sau và ảnh tooltip. Nếu đo HP cuối cần loại trừ hoặc ghi đủ PK, giảm damage, crit/fatally, phản đòn và lá chắn.
@@ -163,3 +267,6 @@ Thực hiện sau khi môi trường test được duyệt riêng. Giữ min=max
 - [CHƯA KIỂM] dữ liệu item/skill/quái, Lua, ini/ngôn ngữ và sprite thực tế đang nạp; chưa lập danh sách số liệu từng item/skill/quái. Đã xác nhận trường và đường đọc, không suy diễn dữ liệu vận hành.
 - [CHƯA KIỂM] build/binary/runtime. Không build/test game, VM, mạng, exe game/server, Python hoặc ghi secret. H01-T01…T10 là đề xuất, chưa PASS/FAIL runtime.
 - Trạng thái: **DONE — khảo sát tĩnh**; giới hạn chưa xác minh đã đánh dấu. Commit SHA: chưa tạo commit; chưa push vì task không yêu cầu. Giữ kết quả local để bàn giao.
+## Phát hiện khi chuẩn hóa
+
+- Các tiền tố nguồn server/client trong bản khảo sát cũ trỏ tới `D:\JX-source\server` và client Client2912, khác gốc được phép của R-05a. Đã kiểm enum/ô trang bị trên client qh9A tại các dòng được dẫn; gốc server được giao là gói dữ liệu gs, không có C++ server source ở đó để đối chiếu lại CalcDamage. Giữ nguyên mọi kết luận server cũ; trạng thái đối chiếu version server chưa xác minh.
