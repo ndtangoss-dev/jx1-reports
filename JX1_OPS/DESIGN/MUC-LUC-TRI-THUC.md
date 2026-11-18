@@ -4,6 +4,7 @@ Cập nhật: 17/11/2026. Quy tắc: mỗi báo cáo mới phải có dòng "li�
 
 | Chủ đề | Báo cáo / tài liệu | File, hàm chính | Độ chắc |
 |---|---|---|---|
+| Kiến thức QA do chủ nạp từ 12/11 (Fix36): minimap, NPC, bản đồ Ba Lăng Huyện/Phong Lăng Độ, di chuyển, menu Lệnh bài GM, vật phẩm test, điểm tiềm năng, **bảng kỹ năng cấp 200** | `knowledge/README.md`, `knowledge/skills/bang-ky-nang-cap-200.md`, `knowledge/npcs/*`, `knowledge/maps/*`, `knowledge/stats/diem-tiem-nang.md` | từ ảnh và ghi chép QA (Haiku/Opus), chưa đối chiếu với dữ liệu server; TRA ĐÂY TRƯỚC khi trả lời câu hỏi về game |
 | Vẽ bộ phận nhân vật, thứ tự lớp | `DESIGN/QUY-LUAT-VE-BO-PHAN.md`, `BUGS/BUG-001.md`, J-04, H-04, L-01..L-03 | `KNpcResNode.cpp` (`GetkTable`, `GetSort`), `KNpcResVN.cpp::Draw`, ini `女主角贴图顺序表.ini` | bảng đứng yên **chắc**; bảng đi bộ/chạy **giả thuyết** |
 | Animation nhân vật, quái, kỹ năng, cắt khung | J-01, J-02, J-03, J-05 | `KNpcRes*.cpp` | khảo sát tĩnh |
 | Hiệu ứng vũ khí, glow, tia sét, mất khung | H-04, H-14, BUG-002 | `KNpcResVN.cpp` khối glow, `KgameWorld.cpp::jxDrawBolts` | glow **chắc**; lỗi khung nhảy **chưa tái hiện** |

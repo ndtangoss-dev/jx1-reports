@@ -199,3 +199,10 @@ Da doc den #57 luc 13:28. #056: astra tuy chon, ping 30 phut (chuyen sang ping.l
 - #108.3: phiên này KHÔNG có tool `fire_trigger`, nhưng có `RemoteTrigger`; đã chạy `run` trig_019sBDxVAC9gZR3KL7YD2eKG → HTTP 200, session cse_01JdCqUAKFrpJpQKXQon8VSU, next_run 02:02Z. Gõ cửa HOẠT ĐỘNG. (Lưu ý: trigger hết hạn khi bắn, Chat đặt mới.)
 - #108.4 xong: /tiep-tuc thêm bước 0 đọc LUAT-COT-LOI; BAN-GIAO ghi quy trình đổi tài khoản.
 - Làm kế: #107.4 (guard), .5 (TIEN-DO), .6 (lịch sử chat), .7 (khuôn), rồi #106.4.
+
+## [Sonnet 5.5] Tiến độ #107.4–7 (18/11 ~09:20)
+- #107.4 xong: Task Scheduler `JX-Guard` (10 phút), `TOOLS/guard.ps1` (im lặng >30 phút hoặc [KHẨN] thì gọi `claude -c -p`, khóa 40 phút; tiểu yêu chết chạy lại tối đa 2 lần chờ 10/30 phút). Lần chạy đầu đã mở lại R-05d, R-06a, R-06c, R-07a, R-07b và vài việc chết khác lần 1 (đếm ở `D:\JX-wt\guard\*.lan`). Cách tắt ghi ở BAI_HOC. Lưu ý: lỗi xingchi "requires Responses for tool calls" vẫn có thể giết lại.
+- #107.5 xong: `TOOLS/tien_do.py` sinh `STATE/TIEN-DO.md`, guard gọi mỗi 10 phút.
+- #107.6 xong: đọc lại lịch sử chat khung 22:00–01:00; ghi Q-47 (QUYET-DINH), câu #0 Võ Đang (NHAT-KY-HOI-DAP, "Một phần"), `TASKS/K-02`, `REPORTS/ASSET-LAM-CHU.md`, thêm `knowledge/` vào MUC-LUC-TRI-THUC. `DESIGN/TONG-QUAN-DIEU-PHOI.md` CÓ trong repo, đã commit ở `JX1_OPS/DESIGN/` (Chat tìm sai chỗ?); ý kiến thuộc hạ: ý tưởng đúng, bản đang chạy mới một phần (TOOLS/dispatcher, guard.ps1), cần xingchi ổn trước.
+- #107.7 xong: CHUAN-BAO-CAO.md thêm mục 5b/5c; skill jx1-retrofit thêm bước 8/9.
+- Q-46 đã bị Q-47 thay. Kế: #106.4 (U-03, tiểu yêu chết, K-03).

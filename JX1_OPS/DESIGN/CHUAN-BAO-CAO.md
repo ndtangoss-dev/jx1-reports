@@ -16,6 +16,8 @@ Mục đích: mọi báo cáo cùng một khuôn để tìm nhanh, đọc nhanh,
    - `Cần tôi quyết định:` có | không
 4. **Sơ đồ Mermaid** một cái (luồng hoặc quan hệ chính).
 5. **Phạm vi và độ phủ**: bảng liệt kê đủ mọi phần tử của phạm vi, mỗi phần tử ghi đã phủ / chưa phủ. Lỗi sót như báo cáo bỏ Võ Đang phải lộ ra ở đây.
+5b. **Giải mã tên** (BẮT BUỘC, #107.7): bảng mọi tên riêng xuất hiện trong báo cáo (kỹ năng, trang bị, quái, NPC, bản đồ): `tên gốc` | `mã hóa` (GBK cho tên Hán, TCVN3 cho tên Việt cũ) | `chữ đúng` (UTF-8 đọc được; kèm Hán nếu có) | `nguồn file:dòng`. Giữ nguyên tên gốc, không thay. Tên chưa giải mã được thì ghi `chưa giải mã` và lý do.
+5c. **Sắp theo cấu trúc game** (BẮT BUỘC, #107.7): dữ liệu xếp theo cấu trúc game chứ không theo thứ tự file: kỹ năng theo phái → nhánh → cấp học; trang bị theo bộ, liệt kê từng món; quái/NPC theo bản đồ; v.v. Không sắp được thì ghi vì sao.
 6. Thân báo cáo. Bằng chứng luôn dạng `file:dòng`; mã hóa ghi rõ (GBK, TCVN3, UTF-8).
 7. **Đã xác minh / Chưa xác minh**.
 8. **Bàn giao**: commit, bước tiếp theo.
@@ -26,3 +28,6 @@ Mục đích: mọi báo cáo cùng một khuôn để tìm nhanh, đọc nhanh,
 - Bảng phạm vi lập bằng cách đối chiếu dữ liệu gốc (chỉ đọc), không suy từ trí nhớ.
 - File phải đọc được bằng UTF-8 không BOM; nếu chữ lỗi thì ghi vào `Phát hiện khi chuẩn hóa`.
 - Mỗi nhiệm vụ nộp thêm một bảng chỉ mục `REPORTS/_CHIMUC/<ID>.tsv`, cột: file, loại, chủ đề, từ khóa, trạng thái, độ phủ, liên quan. PM gộp vào `MUC-LUC-TRI-THUC.md`.
+
+## Bổ sung #107.7 (18/11/2026)
+Hai mục 5b "Giải mã tên" và 5c "Sắp theo cấu trúc game" là bắt buộc. Việc R chưa xong dùng khuôn mới ngay; việc R đã xong được thêm đợt bổ sung hai mục này (K-03 làm phần giải mã tên).

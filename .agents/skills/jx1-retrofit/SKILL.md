@@ -10,3 +10,5 @@ description: Chuẩn hóa báo cáo JX1 cũ theo JX1_OPS/DESIGN/CHUAN-BAO-CAO.md
 5. Từ khóa gồm tên Việt, tên gốc, ID. Liên quan trỏ tới báo cáo/DESIGN/BUG có thật (kiểm file tồn tại).
 6. Ghi `REPORTS/_CHIMUC/<ID>.tsv` (file, loại, chủ đề, từ khóa, trạng thái, độ phủ, liên quan), UTF-8, tab.
 7. Làm từng file, commit sau mỗi 5 file. Không sửa mã, không chạy exe/VM/mạng, không push.
+8. (#107.7) Thêm mục "Giải mã tên": bảng tên gốc | mã hóa (GBK cho Hán, TCVN3 cho Việt cũ) | chữ đúng UTF-8 | file:dòng. Giữ nguyên tên gốc.
+9. (#107.7) Thêm mục "Sắp theo cấu trúc game": kỹ năng theo phái → nhánh → cấp học, trang bị theo bộ liệt kê từng món, quái/NPC theo bản đồ. Báo cáo R đã xong chỉ cần thêm hai mục này (đợt bổ sung), không làm lại.
