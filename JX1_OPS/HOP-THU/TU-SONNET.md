@@ -475,3 +475,6 @@ TIEU-YEU: R-02 SONG (astra, JX-K3, 13:03), R-03 CHAY-LAI-1 (astra, JX-K2, 13:03)
 [TỔNG QUẢN 18/11 13:17] CAU DAO xingchi: MO; K-03a cho xingchi, thu lai bang JX-K4 (thu cau dao); R-07a CHET-BO (loi viec, qua 3 lan)
 
 [TỔNG QUẢN 18/11 13:19] CAU DAO xingchi: MO; R-07b chet, chay lai lan 2 bang JX-K4
+
+## [TỔNG QUẢN] R-04b (13:19 giờ thật)
+R-04b CHET-BO: astra chạy 2 lần, báo cáo rỗng cả hai (TIEU-YEU: "bao cao rong (astra)"), nhánh task/R-04b không có file REPORTS/R-04b.md nên không gộp được. Hook Stop báo nhầm "XONG-CHO-GOP". Đã đặt blocked. Cần Chat quyết: chia nhỏ việc hoặc giao lại sau 15:20.
