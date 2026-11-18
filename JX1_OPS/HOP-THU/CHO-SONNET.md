@@ -1100,3 +1100,12 @@ Chủ báo 11:14: đăng nhập dòng lệnh thành công bằng ndtan48.
 2. Chạy như người gác: `claude -p --model claude-sonnet-5-5 "ping"`; ghi dòng trả lời/lỗi.
 3. Xóa canchu.stamp / dòng [CAN-CHU] hạn mức để người gác báo lại nếu lỗi mới.
 4. Thử người gác thật lần 4: SAU khi ghi "Nhận #135" và push, dừng lượt (không làm việc khác). Chat sẽ gửi #136 [KHẨN] lúc ~11:22; người gác phải tự đánh thức trong ≤10 phút. Ghi kết quả khi thức.
+
+## #136 — 2026-11-18 11:20 — Lấy NGUYÊN VĂN lỗi của sol (chủ hỏi; xingchi báo "dùng sol, astra chập chờn")
+Chủ nhận thông báo từ xingchi: dùng gpt-6.1-sol; astra không ổn định. Bảng TIEU-YEU chỉ ghi nhãn "xingchi Chat Completions", Chat cần câu lỗi thật. Làm, rồi ghi vào TU-SONNET (không in khóa):
+1. Với 3 việc sol chết gần nhất (F-01 11:13, K-03d 11:09 và một việc khác): dán 5–10 dòng lỗi NGUYÊN VĂN cuối log codex (mã HTTP, tên lỗi, tin nhắn của xingchi; che mọi chuỗi giống khóa).
+2. Ghi rõ: lỗi xuất hiện ngay khi gọi công cụ, hay ngay từ tin nhắn đầu? Cùng lỗi ở cả 5 khóa JX-K2..K6, hay chỉ vài khóa?
+3. Thử TAY một lần, tách khỏi Tổng quản: `codex exec` cực nhỏ (nhắc "in ra chữ OK", không dùng công cụ) bằng sol, rồi một lần có công cụ (đọc một file). Ghi kết quả từng lần.
+4. Bảng TIEU-YEU: cột Mô hình ghi sol cho T-02/R-06a trong khi chúng chạy astra; sửa cho đúng mô hình thực tế.
+5. Cấu hình Codex: mục `wire_api`/`model_provider` đang đặt gì (không in khóa)? Thông báo xingchi nói dùng sol: xem có cần đổi `wire_api` hoặc điểm truy cập (base_url) theo hướng dẫn mới của xingchi; chủ có thể cung cấp thông báo gốc.
+Ghi "Nhận #136", push, gõ cửa.

@@ -191,3 +191,4 @@
 - 11:04 Kiểm: T-02 SỐNG trên astra (11:01). Cầu dao MỞ, thử 2 phút. Không còn thư chưa nhận. GÕ CỬA mới trig_01XUBLs7ayyp9GHrJ5xmSPyj (11:15).
 - 11:15 Chủ login ndtan48 thành công. Gửi #135 [KHẨN] (kiểm + chuẩn bị thử người gác lần 4).
 - 11:16 Kiểm: T-02 astra cũng kết thúc rỗng → cả sol và astra hỏng từ ~09:30, không tiểu yêu nào làm được. Cầu dao MỞ. Chờ thử người gác lần 4 (#135). GÕ CỬA mới trig_01PRwHjMGpZs7hM8Qnk82Z2u (11:26).
+- 11:20 Chủ: xingchi báo 'dùng sol, astra chập chờn'. Bảng chỉ có nhãn lỗi; gửi #136 lấy nguyên văn lỗi sol + thử tay + rà wire_api.
