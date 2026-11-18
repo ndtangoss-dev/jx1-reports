@@ -6,6 +6,59 @@
 4. Client thoát bằng dọn/đóng socket; ACK lưu `56` là Goddess → GS, có sentinel `791030`, không phải client ACK và chưa bảo đảm DB thành công.
 5. Không sửa source, không test/build/chạy exe/kết nối mạng; vector là dữ liệu tổng hợp từ source; ABI/binary/encoding thực tế [CHƯA KIỂM].
 
+# E-07 — Gói tạo nhân vật và logout
+Loại: khảo sát
+Chủ đề: Request tạo role, role list, thoát client và đường lưu/ACK được mô tả trong báo cáo gốc.
+Từ khóa: tạo nhân vật, c2s_newplayer, role list, logout, Bishop, Goddess, TProcessData, E-07
+Trạng thái: PARTIAL — phần client được đối chiếu tĩnh với bản A; phần server/DB giữ nguyên mức chưa kiểm của báo cáo gốc.
+Độ phủ: 9/9 chủ đề được liệt kê; các giới hạn xác minh server được nêu riêng.
+Liên quan: `JX1_OPS/REPORTS/E-01b-thieu-giao-thuc.md`, `JX1_OPS/REPORTS/E-05b-kich-ban-full-cycle.md`, `JX1_OPS/REPORTS/E-10-bot-tao-role-logout-offline.md`, `JX1_OPS/DESIGN/CHUAN-BAO-CAO.md`
+Cần tôi quyết định: không
+
+## Sơ đồ luồng
+```mermaid
+flowchart TD
+    UI[Client tạo role] --> Q[c2s_newplayer]
+    Q --> B[Bishop xử lý]
+    B -->|kết quả create| G[Goddess/DB]
+    G -->|ACK nội bộ| B
+    B -->|response| UI
+    UI -->|thoát| X[Đóng kết nối]
+    X --> S[GS lưu khi disconnect]
+    S -->|kết quả lưu| G
+```
+
+## Phạm vi và độ phủ
+| Phần tử | Độ phủ theo báo cáo gốc | Đối chiếu trong nguồn task |
+|---|---|---|
+| Header chung `TProcessData` và transport | Đã mô tả field, length và lớp framing/XOR trong báo cáo gốc | Server root không có code; transport của client A chưa tái kiểm chứng ở đây |
+| Request `c2s_newplayer` | Đã mô tả layout và vector | Client A: `KuiNewPlayer.cpp:641` |
+| Response `s2c_rolenewdelresponse` | Đã mô tả layout/result | Client A: `KProtocol.h:1511`; server response chưa kiểm |
+| Role list và parser client | Đã mô tả record, count và luồng | Client A: `Klogin.cpp:1033` |
+| Thành công create đi thẳng vào game | Đã mô tả theo source báo cáo gốc | Chưa đối chiếu server trong root được cấp |
+| Client thoát và đóng socket | Đã mô tả đường thoát không có payload logout riêng | Client A: `KgameWorld.cpp:2379`, `SocketClient.cpp:184` |
+| GS lưu khi disconnect và ACK Goddess | Đã mô tả luồng nội bộ/giới hạn ACK | Chưa đối chiếu server/DB trong root được cấp |
+| Các message tên logout tương tự | Đã phân biệt các luồng khác nhau | Chưa đối chiếu server trong root được cấp |
+| Vector tổng hợp | Đã ghi theo layout của báo cáo gốc | Client A xác nhận cấu trúc client liên quan; không phải capture/runtime |
+
+## Giải mã tên
+| Tên gốc | Mã hóa | Chữ đúng | Nguồn file:dòng |
+|---|---|---|---|
+| `BotAbc` | ASCII | `BotAbc` (tên fixture, không phải nhân vật game được xác nhận) | `JX1_OPS/REPORTS/E-07-goi-tao-nhan-vat-logout.md:336` |
+
+## Sắp theo cấu trúc game
+Không áp dụng: phạm vi là gói tạo nhân vật, role list và logout; không có danh sách kỹ năng, trang bị, quái/NPC hay bản đồ để xếp theo cấu trúc game.
+
+## MỤC SỔ THÔNG SỐ
+| Nhóm | Tên/hằng số | file:dòng | Giá trị | Đơn vị | Ảnh hưởng | Đổi an toàn (CÓ/CẨN THẬN/KHÔNG) | Nguồn đo |
+|---|---|---|---|---|---|---|---|
+| Giao thức tạo role | `c2s_newplayer` | `D:\JX-build\qh9A\Classes\gamecore\KProtocolDef.h:248,253` | 69 | ID gói | Chọn request tạo nhân vật | KHÔNG | Đếm enum từ base 64; đọc tĩnh, chưa đo runtime |
+| Trường tên | `NAME_LENGHT` | `D:\JX-build\qh9A\Classes\gamecore\GameDataDef.h:152` | 64 | byte | Kích thước trường tên trên wire | KHÔNG | Đọc tĩnh client bản A; ABI chưa đo |
+| Độ dài request | `nDataLen` | `D:\JX-build\qh9A\Classes\gameui\KuiNewPlayer.cpp:641` | `5 + L` | byte; L là số byte tên | Độ dài phần create role được gửi | KHÔNG | Tính từ công thức source; không gửi gói |
+
+## Đề xuất tối ưu
+Không đề xuất thay đổi giao thức trong retrofit; mọi sửa đổi layout/ID cần task riêng và kiểm tương thích hai đầu.
+
 ## Phạm vi, đường dẫn và quy ước
 
 Ngày 17/11/2026, workspace `D:\JX-wt\E-07`, branch `task/E-07-gap`.
@@ -341,3 +394,14 @@ là file mới/untracked từ góc nhìn Git nên diff --no-index trả 1 khi c�
 không phải kiểm thử thất bại. Không stage/commit/push: người dùng chỉ cho ghi
 báo cáo và mục Kết quả, đồng thời cấm mạng. Không có commit SHA/link GitHub mới;
 kết quả local, **CHƯA PUSH** theo phạm vi, không phải đã thử rồi bị Git chặn.
+
+## Đã xác minh / Chưa xác minh
+Đã xác minh trên client bản A: `c2s_newplayer` được gán trong `CreateRole` (`D:\JX-build\qh9A\Classes\gameui\KuiNewPlayer.cpp:641`); response struct có bool kết quả (`D:\JX-build\qh9A\Classes\gamecore\KProtocol.h:1511`); role list được đọc trong `ProcessRoleListResponse` (`D:\JX-build\qh9A\Classes\gameui\Klogin.cpp:1033`); `s2c_syncrolelist` còn TODO (`D:\JX-build\qh9A\Classes\gamecore\KProtocolProcess.cpp:1907`).
+Chưa xác minh: handler server/DB, kết quả lưu bền vững, runtime, ABI/sizeof và encoding tên có dấu. Server root được giao chỉ có data/runtime folders, không có `Sources`, `Headers` hoặc `Core` để đối chiếu code server.
+
+## Bàn giao
+Giữ nguyên phân tích và vector của báo cáo gốc; không chạy code, test, exe, VM hoặc mạng. Commit retrofit bị chặn bởi quyền ghi Git metadata; chi tiết ở báo cáo R-04b, không push.
+Kỹ năng đã dùng: jx1-retrofit, jx1-report, jx1-knowledge, jx1-read-client, jx1-read-server, jx1-parameters.
+
+## Phát hiện khi chuẩn hóa
+Báo cáo gốc dẫn một cây client/server khác với hai root được chỉ định cho task này. Các điểm client được đối chiếu lại trên qh9A; kết luận server/DB cũ được giữ nguyên nhưng không coi là tái xác minh trên root được giao. `BotAbc` chỉ là tên fixture ASCII.
