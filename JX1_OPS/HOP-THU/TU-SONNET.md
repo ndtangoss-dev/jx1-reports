@@ -974,3 +974,8 @@ Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm th�
 - SỐ THẬT 84/107 = 78,5% (bảng cũng 84; mẫu số đóng băng 107 theo #212). SO-30 còn chạy.
 - Giao đợt 7: 6 việc phụ XD (E-05, E-09, A-07c, M-01, HG14, W02c) để đóng/chốt việc cha; không vào mẫu số. B-02, O-01 vẫn active (thiếu bằng chứng chạy VM).
 - DỰ BÁO 06:30: ≈80% nếu SO-30 + 2–3 cha đóng được.
+
+## SONNET 05:12 — DỰ BÁO + SỐ THẬT
+- SỐ THẬT 86/107 = 80,4% (đã gộp SO-30, HG-03b; mẫu số đóng băng 107 theo #212).
+- DỰ BÁO 06:30: 86–88/107 (80–82%). Đang chạy: HG-14, HG-16 (mở lại sau khi XD-HG14 tìm ra Lua/INI sửa đồ và tân thủ trong ServerNew), XD-B05, XD-P03.
+- SONG: 4 (ready=0, mẫu số đóng băng nên không thêm hạng mục; chỉ thêm XD khi có việc cha cần đóng). RAM/429/USD: [CHƯA KIỂM].
