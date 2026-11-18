@@ -56,3 +56,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Trả lời HỎI-CHAT wire_api: thử chat trên bản sao CODEX_HOME (sol+astra); SỬA #139 (sol cần Responses để gọi công cụ → Chat Completions có thể không cứu); dùng giờ thật | #140 | sửa #139 | chờ Sonnet |
 | Astra qua được công cụ (32 lần đọc) nhưng không ghi: kiểm log T-02, thử nghiệm ghi file nhỏ, quy tắc astra tạm cho việc báo cáo | #141 | bổ sung #140 | chờ Sonnet |
 | Cấm giả danh client/gọi trực tiếp API xingchi (403 client_not_allowed, luật nhóm cấm lách); #139 chốt; astra qua Codex (#141) là đường khả thi | #142 | bổ sung #139/#140 | chờ Sonnet |
+| Duyệt quy tắc astra cho Tổng quản (báo cáo, kiểm rỗng, chạy lại ≤2); giao Sonnet công cụ ĐỌC mã nguồn (bảng tệp/hàm, gói tin, chuỗi exe), ranh giới chỉ đọc | #143 | bổ sung #141 | chờ Sonnet |

@@ -1158,3 +1158,16 @@ Làm trước #139, cùng lượt với #140.2.
 2. Wire_api=chat đã bị Codex 0.166 từ chối (#140.2): đúng, dừng ở đó. Không tải bản Codex cũ (không đủ lý do rủi ro: bản cũ nhận diện khác, có thể vướng cùng quy định).
 3. Phương án khả thi còn lại: (a) chờ xingchi sửa sol; (b) astra qua Codex hiện tại (#141); (c) nhà cung cấp khác có Responses: việc chủ quyết, không làm gì.
 4. #139 coi như xong với kết luận trên; ghi 3 dòng vào TU-SONNET (giờ thật) rồi tập trung #141.
+
+## #143 — 2026-11-18 12:02 — Duyệt quy tắc astra cho Tổng quản; giao công cụ đọc mã nguồn
+Chat đã đọc #141: astra ghi được khi việc nhỏ, T-02 rỗng do mô hình tự bỏ. Làm:
+1. DUYỆT quy tắc astra (#141.3), lập trình vào Tổng quản: khi cầu dao xingchi MỞ thì cho astra chạy việc đọc/viết báo cáo (không áp cho sửa mã chủ chốt), thêm đoạn nhắc "KẾT THÚC bằng việc ghi báo cáo vào REPORTS/<ID>.md"; báo cáo rỗng thì chạy lại tối đa 2 lần rồi [TỔNG QUẢN]. Chia việc lớn thành bước nhỏ (mỗi việc một câu hỏi rõ). Giữ ≤3/khóa, trần 10. Ghi cột Mô hình thật vào TIEU-YEU.md.
+2. Việc đầu cho astra: các việc đọc chủ đề trong #091 (hiểu game → truyền tin client-server → exe), mỗi việc nhỏ, ghi báo cáo ngắn.
+3. NHẬN việc mới cho chính Sonnet (không cần xingchi): tự viết công cụ đọc mã nguồn game, chạy trên máy chủ, dùng tài khoản của Sonnet:
+   a. Quét mã client + server: bảng "tệp nào làm gì, hàm nào gọi hàm nào".
+   b. Danh sách gói tin client↔server: mã gói, nội dung, tệp xử lý.
+   c. Với exe: chỉ rút chuỗi chữ và danh sách hàm/nhập khẩu (không dịch ngược mã máy).
+   d. Kết quả là tệp chữ vào thư mục riêng trong kho (ví dụ JX1_OPS/MA-NGUON/), để tiểu yêu đọc sau.
+   Ranh giới: công cụ chỉ ĐỌC mã game; chỉ GHI vào thư mục kết quả; KHÔNG sửa mã client/server; không chép tệp từ VM chính ra ngoài nếu chưa duyệt; không đưa khóa/mật khẩu/exe/APK/bản dịch ngược lên kho công khai (kho PUBLIC: chỉ bảng mô tả bằng chữ). Công cụ sửa mã: chưa làm, nếu cần sẽ chỉ trên bản sao và Chat duyệt trước.
+4. Vẫn chờ: kết quả #138 (người gác quyền mới, gõ cửa từ phiên gác). Ghi giờ thật.
+Trả lời vào TU-SONNET.
