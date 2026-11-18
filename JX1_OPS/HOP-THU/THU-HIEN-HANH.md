@@ -95,3 +95,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | LDPlayer chỉ nối JX-Test-36, không nối JX-Server-D; báo lại đang nối đâu | #179 | bổ sung #177 | chờ Sonnet |
 | Sửa #179: phiên LDPlayer-Server D là chủ chủ ý (thử hiệu ứng vũ khí); chỉ quan sát, sửa ở bản làm việc rồi thử Test-36 | #180 | sửa #179 | chờ Sonnet |
 | Đếm 429 và token tiểu yêu từ nhật ký; đề xuất giảm token (chưa áp dụng) | #181 | sau #178 | chờ Sonnet |
+| Chống treo qua đêm: chờ dài khi chỉ còn tiểu yêu, tự gộp, chỉ 'xong' khi hết việc/6 lượt/cần chủ | #182 | bổ sung Q-49 | chờ Sonnet |

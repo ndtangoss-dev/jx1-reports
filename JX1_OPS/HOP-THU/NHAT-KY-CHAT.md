@@ -243,3 +243,4 @@
 - 21:45 Chủ báo Sonnet nói LDPlayer đang nối Server D. Gửi #179: chỉ nối Test-36, báo lại.
 - 21:50 Chủ giải thích phiên LD nối Server D là chủ ý (thử hiệu ứng vũ khí). Gửi #180 sửa #179.
 - 21:58 Chủ muốn tiểu yêu đỡ tốn token/đỡ 429. Gửi #181: đếm nhật ký + đề xuất, chưa đổi cấu hình.
+- 22:05 Chủ lo treo cả đêm. Gửi #182: Sonnet chờ dài (≤60 phút x6), tự gộp, chỉ 'xong' khi hết việc/cần chủ.
