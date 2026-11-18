@@ -76,3 +76,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Chat không còn lịch kiểm; chủ gọi Chat khi Sonnet xong đợt; báo cáo XONG ĐỢT phải tự đủ | #160 | bổ sung #158 | chờ Sonnet |
 | CHỦ DUYỆT thử bước 1–7 exe server trên JX-Test-36; tạm dừng Xưởng JX1 | #161 | bổ sung #157 | chờ Sonnet |
 | CHỦ DUYỆT thử đợt 2 các nút thấp/vừa (Backup từng phần, Pause, save setting, danh sách lọc, Birth role, EnterMap, Restart); Xưởng vẫn tạm dừng | #162 | bổ sung #161 | chờ Sonnet |
+| Nuôi lại 7 tiểu yêu chết (R-05b/c/d, R-06a/c, R-07a/b), gộp K-03c, sửa trạng thái, tìm nguyên nhân báo cáo rỗng; Xưởng vẫn dừng | #163 | bổ sung #162 | chờ Sonnet |

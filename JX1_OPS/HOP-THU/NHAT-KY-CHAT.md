@@ -222,3 +222,4 @@
 - 16:52 Chủ gọi Chat đọc: Sonnet XONG ĐỢT #159/#160 (gỡ JX-Guard, Tổng quản chạy lịch Windows không gọi claude, bảng nút exe). Chat nhận lỗi đọc sai Remove Role (xóa hàng loạt), đã sửa HUONG-DAN. Còn: #154.4, tab Information (chờ chủ duyệt).
 - 17:00 Chủ duyệt bước 1–7 thử exe server, tạm dừng Xưởng JX1. Gửi #161.
 - 17:30 Chủ bảo thử thêm nút. Gửi #162 (7 bước thấp/vừa; cấm nút xóa/gộp/khôi phục). Bổ sung HUONG-DAN mục 7.
+- 17:50 Chủ báo tình hình tiểu yêu (0 chạy, 7 CHET-BO, K-03c chờ gộp). Đọc XONG ĐỢT #162. Gửi #163 (nuôi lại tăng dần, tìm nguyên nhân rỗng).

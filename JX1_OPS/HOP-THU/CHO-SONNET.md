@@ -1366,3 +1366,12 @@ Chủ bảo thử thêm các nút khác. Chat chọn tập thấp/vừa dưới 
 7. Goddess "Restart" một lần (cuối đợt): sau đó bấm Reconnect DB của Bishop (KHÔNG Reconnect Pay), kiểm gs001 nối lại.
 KHÔNG BẤM (giữ nguyên): Remove Role, 删除角色, 清除数据, 合区, 找回BAK, 恢复全部数据, Copy DB/MySQL, Data type/Set up database, 角色转区, 开始删除, 开始改名, 临时修复技能, Start/Close, Exit, Announcer kiểu *.
 Việc cần client (tạo nhân vật thứ 4 để xác nhận Max char): để riêng, chờ chủ quyết.
+
+## #163 Chat 18/11 17:50 — Nuôi lại tiểu yêu (không thuộc Xưởng JX1; Xưởng vẫn tạm dừng)
+Đã đọc XONG ĐỢT #162 và báo cáo tiểu yêu 17:37. Tiểu yêu chạy bằng Codex/xingchi, không tốn hạn mức Claude; 7 việc R-* chết lúc sol còn hỏng (13:12–13:24), nay sol sống lại từ 14:27 và K-03 đã chạy được. Một đợt, theo thứ tự:
+1. Đồng bộ kho: kho lệch origin/jx1-ops một commit; lấy bản mới của ba tệp tự sinh, KHÔNG reset/clean phá hủy.
+2. Gộp K-03c (xong 17:07, JX-K2) theo quy trình gộp, ghi kết quả thật 1–2 dòng.
+3. Tìm nguyên nhân "báo cáo rỗng" của MỘT việc mẫu (vd R-05b): đọc log cuối, 2–3 dòng kết luận (xingchi lỗi, hết thời gian, hay đầu vào sai).
+4. Sửa trạng thái TASKS/R-05b,c,d, R-06c, R-07a,b đang ghi `status: running` mà đã chết; đặt lại bộ đếm chạy lại; R-06a (failed) cũng đặt lại.
+5. Cho Tổng quản chạy lại 7 việc TĂNG DẦN: 2 → (chờ 1 vòng, kiểm sống) → 4 → 7, đổi khóa rải K2–K6, sol xen astra theo luật cũ. Nếu việc mẫu vẫn "báo cáo rỗng" ở lần chạy lại đầu thì DỪNG, đừng đốt thêm, ghi nguyên nhân vào XONG ĐỢT.
+6. Ghi "XONG ĐỢT #163" tự đủ (đã làm / kết quả / còn / cần chủ), push, dừng. Tổng quản tự nuôi tiếp, không gọi claude.
