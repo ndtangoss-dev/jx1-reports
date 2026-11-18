@@ -31,3 +31,9 @@ status_note: "lam lai: ban dau PARTIAL thieu source"
 
 ## Nguồn bổ sung (sửa lỗi lần trước)
 Worktree KHÔNG có mã nguồn: đọc trực tiếp (chỉ đọc) client C:\Jx1CocoV3\Folder\Client2912-20260116T044348Z-3-001\Client2912\Client\Classes và server C:\Jx1CocoV3\SwordOnline\SwordOnline\jxOnline\gameserver\Sources\Core\Src (và thư mục Sources cha). Ghi chỉ tệp đầu ra.
+
+## Kết quả
+- PARTIAL (19/11/2026): giữ nguyên phần HG-14 đã có; bổ sung đường Lua và cấu hình tại `JX1_OPS/DESIGN/HIEU-DO-BEN-SUA-DO.md`.
+- Đã kiểm 3 cầu nối đặt độ bền/đồng bộ và mẫu gamesetting; chưa có Lua/INI rời trong hai root được giao, chưa xác minh NPC/phí đặc biệt/cấu hình thực nạp.
+- Báo cáo: `JX1_OPS/REPORTS/HG-14b.md`; không sửa source, không build/test game, exe, VM, mạng; không commit/push, Tổng quan commit.
+- Nhịp `D:\JX-wt\HG-14b.nhip` ngoài workspace ghi nên không tạo; không tạo TSV ngoài vùng, đã đặt hàng đề xuất trong báo cáo cho PM.
