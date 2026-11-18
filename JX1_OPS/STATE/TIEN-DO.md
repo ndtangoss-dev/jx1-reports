@@ -1,7 +1,7 @@
-# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-18 09:24, đừng sửa tay)
+# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-18 09:49, đừng sửa tay)
 
 ĐANG LÀM: R-03, R-04b, R-05a, R-05b, R-05c
-KẾ TIẾP: K-02, K-03, T-02, T-03, T-04
+KẾ TIẾP: F-01, K-02, K-03, R-02, R-04, R-05d
 BỊ CHẶN: A-07
 
 Ba chặng #091: 1 hiểu game (chuẩn hóa) → 2 đường truyền + exe → 3 tick/độ phản hồi/đồ họa.
@@ -14,15 +14,16 @@ flowchart LR
     R_05a["R-05a chạy"]
     R_05b["R-05b chạy"]
     R_05c["R-05c chạy"]
-    R_02["R-02 chết"]
-    R_05d["R-05d chết"]
-    R_06a["R-06a chết"]
-    R_06c["R-06c chết"]
-    R_07a["R-07a chết"]
-    R_07b["R-07b chết"]
     A_07["A-07 chặn"]
     K_02["K-02 chờ"]
     K_03["K-03 chờ"]
+    R_02["R-02 chờ"]
+    R_04["R-04 chờ"]
+    R_05d["R-05d chờ"]
+    R_06a["R-06a chờ"]
+    R_06c["R-06c chờ"]
+    R_07a["R-07a chờ"]
+    R_07b["R-07b chờ"]
   end
   subgraph S2["Chặng 2 truyền tải + exe"]
     T_02["T-02 chờ"]
@@ -30,8 +31,9 @@ flowchart LR
     T_04["T-04 chờ"]
   end
   subgraph S3["Chặng 3 tick và đồ họa"]
+    F_01["F-01 chờ"]
   end
   K_03 --> K_02
 ```
 
-Tổng: 79 việc, 5 đang làm (+6 chết, 0 chờ gộp), 5 chờ, 1 bị chặn, 62 xong.
+Tổng: 79 việc, 5 đang làm (+0 chết, 0 chờ gộp), 13 chờ, 1 bị chặn, 60 xong.
