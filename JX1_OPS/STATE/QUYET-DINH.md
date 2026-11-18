@@ -54,3 +54,6 @@ Không còn mục chờ về mạng: máy thật đã có Host-only `192.168.56.
 ## Q-50 — 18/11/2026 21:04 — Chủ duyệt 5 mục (câu "Duyệt 1-5")
 (1) thử Gemini miễn phí, chỉ việc đọc không nhạy cảm; (2) thử client C01+C03 (C02/C04/C05 chưa); (3) A-07 bước 2–6 trong VM kể cả snapshot, dựng lại từ snapshot đã vá; (4) cửa sổ Tổng quản đã hết nháy; (5) tạo kho riêng PRIVATE `jx1-source` (0-05). Vòng tự động (Q-49) chạy lại.
 - 0-05 giữ cục bộ theo chủ (#178, 18/11): D:\jx1-source + tag baseline-20261116, không đẩy GitHub.
+
+## Q-51 — 18/11/2026 22:10 — Bỏ nhánh Gemini miễn phí; áp dụng đề xuất giảm token ít rủi ro (Chat, theo #181)
+Gemini miễn phí chỉ 20 lượt/ngày/mô hình: không dùng được (REPORTS/SO-SANH-NHA-CUNG-CAP.md). xingchi vẫn là đường chính; thay nhà cung cấp trả phí chờ chủ quyết sau, chưa gấp. Áp dụng từ REPORTS/TIEU-YEU-429-VA-TOKEN.md: #3 (xoay khỏi K5, tránh phát việc dồn 17h–19h nếu việc không gấp), #5 (K5 tối đa 2 việc), thử #1 (high thay max cho việc đọc-tóm, kiểm 2–3 việc so mẫu), #2 (mẫu prompt nêu sẵn danh sách tệp). Để lại #4, #6, #7.

@@ -244,3 +244,4 @@
 - 21:50 Chủ giải thích phiên LD nối Server D là chủ ý (thử hiệu ứng vũ khí). Gửi #180 sửa #179.
 - 21:58 Chủ muốn tiểu yêu đỡ tốn token/đỡ 429. Gửi #181: đếm nhật ký + đề xuất, chưa đổi cấu hình.
 - 22:05 Chủ lo treo cả đêm. Gửi #182: Sonnet chờ dài (≤60 phút x6), tự gộp, chỉ 'xong' khi hết việc/cần chủ.
+- 22:12 Đọc #178/#181: Gemini miễn phí chỉ 20 lượt/ngày → bỏ (Q-51). Giao #183: giảm token, forwarder phụ cho C01, hiệu ứng vũ khí.
