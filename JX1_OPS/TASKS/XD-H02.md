@@ -24,3 +24,9 @@ Lập mục lục mọi `DESIGN/SO-TAY-*.md` và `HIEU-*.md` (một dòng mỗi 
 - Không chạy exe lạ, không VM, không mạng, không Main VM, không đọc khóa/mật khẩu/dump tài khoản. Chỉ ghi tệp đầu ra.
 - Worktree có thể KHÔNG có mã nguồn game: đọc trực tiếp (chỉ đọc) client `C:/Jx1CocoV3/Folder/Client2912-20260116T044348Z-3-001/Client2912/Client/Classes` và server `C:/Jx1CocoV3/SwordOnline/SwordOnline/jxOnline/gameserver/Sources`; kho báo cáo ở D:/jx1-ops-wt/JX1_OPS (chỉ đọc).
 - Mỗi lần đọc <= ~400 dòng. Cuối tệp task ghi mục "## Kết quả" (3–5 dòng).
+
+## Kết quả
+- [THẤY] Báo cáo `JX1_OPS/REPORTS/XD-H02.md` có mục lục 46/46 tệp (28 sổ tay, 18 bài “Hiểu”) tại mốc chốt 03:49:56 ngày 19/11/2026 (UTC+7) và 30/30 thuật ngữ Việt–Anh–tên hàm; lượt tiếp tục bổ sung `SO-TAY-BAN-BE-ONLINE.md`, `SO-TAY-AI-QUAI.md` từ kho chỉ đọc.
+- [CHƯA KIỂM] Chỉ đọc tĩnh và kiểm tài liệu. Chưa build, chạy game/exe, VM hay mạng.
+- [THẤY] Trạng thái bàn giao PARTIAL do bị từ chối ghi `D:\JX-wt\XD-H02.nhip` ở ba mốc. Tổng quan thực hiện commit.
+- ĐẠT — đã hoàn tất tiêu chí nội dung trong mục Mục tiêu và tiêu chí xong.
