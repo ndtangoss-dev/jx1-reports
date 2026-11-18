@@ -179,3 +179,10 @@ Sonnet lấy việc từ trên xuống, theo phụ thuộc. Khi bắt đầu m�
 | SO-26 | Sổ tay hiểu game: giao dịch giữa người chơi, kho và thư | L3 | Codex | `DESIGN/SO-TAY-GIAO-DICH-KHO.md` |
 | SO-27 | Sổ tay hiểu game: AI quái, tầm đánh và hồi sinh quái | L3 | Codex | `DESIGN/SO-TAY-AI-QUAI.md` |
 | SO-28 | Sổ tay hiểu game: bạn bè, danh sách đen và trạng thái online | L3 | Codex | `DESIGN/SO-TAY-BAN-BE-ONLINE.md` |
+
+| SO-29 | Sổ tay hiểu game: thuộc tính ma pháp của trang bị | L3 | Codex | `DESIGN/SO-TAY-THUOC-TINH-MA-PHAP.md` |
+| SO-30 | Sổ tay hiểu game: ghép, tách và nâng đồ | L3 | Codex | `DESIGN/SO-TAY-GHEP-TACH-DO.md` |
+| SO-31 | Sổ tay hiểu game: hộp thoại NPC (Say, Talk, Sel) | L3 | Codex | `DESIGN/SO-TAY-HOP-THOAI-NPC.md` |
+| SO-32 | Sổ tay hiểu game: thông báo hệ thống và loa | L3 | Codex | `DESIGN/SO-TAY-THONG-BAO-HE-THONG.md` |
+| SO-33 | Sổ tay hiểu game: kiểm tra gói tin và chống gian lận ở server | L3 | Codex | `DESIGN/SO-TAY-CHONG-GIAN-LAN.md` |
+| SO-34 | Sổ tay hiểu game: quái vàng (GoldType) và biến thể boss | L3 | Codex | `DESIGN/SO-TAY-QUAI-VANG.md` |
