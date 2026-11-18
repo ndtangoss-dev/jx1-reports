@@ -77,3 +77,15 @@ Không dùng: Gemini miễn phí (hạn mức 20 lượt/ngày, xem `SO-SANH-NHA
 - Token bỏ phí khi việc chết rồi chạy lại: không có số.
 - Nguyên nhân "Upstream failed" 17h–19h (phía xingchi hay mạng): chưa rõ.
 - Bốn việc `exit=1` không phải do 429 (lỗi Responses/Chat); chưa xem hết 5 việc không có `.done`.
+
+## 9. Đã áp dụng theo Q-51 (#183, 18/11 ~22:50) và kết quả thử
+| Việc | Thay đổi | Hoàn tác |
+|---|---|---|
+| (a) | `tong_quan.py`: `KEY_CAP` (K5, K6 tối đa 2 việc), `KEY_ORDER` (việc mới xoay K4, K3, K2, K6, K5). Thử hàm: sau khi K4/K3/K2 đủ 3 việc thì sang K6 rồi K5, đúng thứ tự | khôi phục `tong_quan.py.bak-181` |
+| (b) | `hold_now`: việc `ready` mới có `priority` ≥ 2 không giao trong 17h–19h (ghi chú vào TONG-QUAN-GHI); việc chạy lại khi chết và việc `priority` 0/1 không bị chặn | đặt `HOLD_H = (0, 0)` |
+| (c) | Mẫu prompt mặc định thêm đoạn "TIẾT KIỆM TOKEN": chỉ đọc tệp liệt kê ở mục Nguồn, không quét thư mục lớn, mỗi lần đọc ≤ ~400 dòng, không đọc lại. Chỉ áp cho prompt MỚI sinh (prompt đã có giữ nguyên) | xóa đoạn đó trong `ensure_worktree` |
+| (d) | `chay_codex.ps1` đọc `JX_CODEX_EFFORT`; `tong_quan.py` lấy từ trường `effort:` của tệp task. Không có trường = `max` như cũ | bỏ trường `effort:` |
+
+Kiểm: cú pháp Python đạt, `tong_quan.py --dry` chạy không lỗi, hàm `pick_key`/`task_field` thử trực tiếp. Chưa dừng Tổng quản đang chạy; thay đổi có hiệu lực ở lần Tổng quản khởi động lại.
+
+**Kết quả thử (d): CHƯA CÓ.** Hiện không có việc đọc-tóm `ready` nào để đặt `effort: high` (không tạo việc giả tốn token). Khi có 2–3 việc đọc-tóm mới, đặt `effort: high`, so độ đủ và token với báo cáo `max` trước đó rồi ghi vào đây.

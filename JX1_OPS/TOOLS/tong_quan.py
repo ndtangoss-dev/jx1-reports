@@ -27,6 +27,10 @@ WT = r'D:\JX-wt'
 KEYS = r'C:\Users\PC\.jx1keys'
 GD = os.path.join(WT, 'tong_quan')
 MAXKEY = 3
+# #183 (Q-51): K5, K6 toi da 2 viec; viec moi xoay sang K4, K3 truoc. Hoan tac: bo 2 dong KEY_CAP/KEY_ORDER va 2 cho dung chung trong pick_key
+KEY_CAP = {'JX-K5': 2, 'JX-K6': 2}
+KEY_ORDER = ['JX-K4', 'JX-K3', 'JX-K2', 'JX-K6', 'JX-K5']
+HOLD_H = (17, 19)   # #183: viec moi khong gap (priority >= 2) khong giao trong khung 17h-19h; viec chay lai khi chet khong bi chan
 MAXALL = 10  # tran dong thoi tam thoi (#137)
 WAITS = (0, 0, 0)       # #132: chet -> chay lai o vong ke (<=2 phut); toi da 3 lan loi cua viec roi CHET-BO
 IM, TREO = 20, 60       # phut im: song / im-nhung-song / treo
@@ -120,8 +124,8 @@ def pick_key(assign, alive_ids):
             use[k] = use.get(k, 0) + 1
     if len(alive_ids) >= MAXALL:
         return None
-    ks = [k for k in keys() if use.get(k, 0) < MAXKEY]
-    return min(ks, key=lambda k: use.get(k, 0)) if ks else None
+    ks = [k for k in keys() if use.get(k, 0) < KEY_CAP.get(k, MAXKEY)]
+    return min(ks, key=lambda k: (KEY_ORDER.index(k) if k in KEY_ORDER else 9, use.get(k, 0))) if ks else None
 
 
 def model_of(i):
@@ -216,8 +220,28 @@ def ramp_ok(sched):
     return RAMP[0] < (3 if old else 1)
 
 
+def task_field(i, name, default=''):
+    try:
+        t = open(os.path.join(ROOT, 'TASKS', i + '.md'), encoding='utf-8-sig').read().split('---')[1]
+        m = re.search(r'(?m)^%s:\s*(.+?)\s*$' % name, t)
+        return m.group(1).strip(chr(34) + chr(39)) if m else default
+    except (OSError, IndexError):
+        return default
+
+
+def hold_now(i):
+    """#183: True = viec moi khong gap, dang trong khung 17h-19h -> de lai vong sau."""
+    h = time.localtime().tm_hour
+    if not (HOLD_H[0] <= h < HOLD_H[1]):
+        return False
+    return task_field(i, 'priority', '3') not in ('0', '1')
+
+
 def run_launch(i, key):
     env = dict(os.environ, JX_CODEX_KEY=key)
+    eff = task_field(i, 'effort', '')   # #183: effort: high trong file task = thu high thay max cho viec doc-tom
+    if eff in ('low', 'medium', 'high', 'max'):
+        env['JX_CODEX_EFFORT'] = eff
     args = ['powershell', '-NoProfile', '-File', os.path.join(ROOT, 'TOOLS', 'chay_codex.ps1'), '-Id', i]
     try:   # #113.3: viec ghi trong astra.txt chay bang gpt-6-astra (thu thay sol khi sol loi Chat Completions)
         if i in open(os.path.join(GD, 'astra.txt')).read().split():
@@ -252,7 +276,8 @@ def ensure_worktree(i):
             'Dung skill trong .agents/skills (jx1-retrofit, jx1-read-server, jx1-read-client, jx1-parameters, jx1-knowledge, jx1-report). Chi sua dung vung_file. Khong sua ma nguon, khong chay VM/exe/mang, khong doi ket luan cu. '
             'Viet bao cao JX1_OPS/REPORTS/%(i)s.md, ghi muc Ket qua cuoi file task. Khong ghi mat khau/khoa. Tai lieu tieng Viet co dau.\n\n'
             'NHIP: ghi file D:\\JX-wt\\%(i)s.nhip (gio, buoc dang lam, %% uoc tinh) o moi moc lon: bat dau, moi phan xong, sap xong. Khong can commit: Tong quan commit ho.\n'
-            'TIEP TUC: truoc khi lam, xem git status trong worktree; file da co thi KHONG lam lai, chi lam tiep phan con thieu.\n' % {'i': i})
+            'TIEP TUC: truoc khi lam, xem git status trong worktree; file da co thi KHONG lam lai, chi lam tiep phan con thieu.\n'
+            'TIET KIEM TOKEN (Q-51): lap danh sach tep can doc tu muc Nguon cua task roi chi doc cac tep do; KHONG quet ca thu muc lon (khong liet ke de quy Folder/, SwordOnline/, D:\\JX-wt\\ khi chua loc ten); moi lan doc toi da ~400 dong (offset/limit hoac tim chuoi), tep lon doc tung doan; khong doc lai tep da doc; cat gon ket qua lenh.\n' % {'i': i})
     return wt
 
 
@@ -455,6 +480,9 @@ def main():
             continue
         dep = [x for x in re.findall(r'[A-Z0-9]+-[0-9a-z]+', d.get('depends_on', '')) if x in tasks]
         if any(tasks[x].get('status', '').lower() not in ('done', 'xong', 'merged', 'closed', 'active') for x in dep):
+            continue
+        if hold_now(i):
+            notes.append('%s ready, cho ngoai khung %dh-%dh (Q-51)' % (i, HOLD_H[0], HOLD_H[1]))
             continue
         use_astra = False
         if budget[0] <= 0:

@@ -5,6 +5,7 @@
 # Model CO DINH gpt-6.1-sol (Sol Max, Q-12) + reasoning max, goi giong Dispatcher cu / 0-03 (xem ENVIRONMENT.md). Khong dung model mac dinh gpt-6-luna cua config.toml (xingchi tra 404).
 param([Parameter(Mandatory)][string]$Id, [string]$PromptFile, [string]$Codex = 'C:\Users\PC\AppData\Local\OpenAI\Codex\bin\b6c7fc9497179c98\codex.exe', [string]$Model = 'gpt-6.1-sol', [string]$Effort = 'max')
 $ErrorActionPreference = 'Stop'
+if ($env:JX_CODEX_EFFORT -and $env:JX_CODEX_EFFORT -match '^(low|medium|high|max)$') { $Effort = $env:JX_CODEX_EFFORT }   # #183: tong_quan dat tu truong effort cua task; khong dat = max nhu cu
 $wt = "D:\JX-wt\$Id"
 if (-not (Test-Path $wt)) { throw "Khong co worktree $wt" }
 if (-not $PromptFile) { $PromptFile = "$wt.prompt.txt" }
