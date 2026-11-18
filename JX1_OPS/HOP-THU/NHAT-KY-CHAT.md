@@ -242,3 +242,4 @@
 - 21:30 Chủ nhập khóa Gemini, quyết giữ jx1-source cục bộ. Gửi #178: chạy so sánh một khóa.
 - 21:45 Chủ báo Sonnet nói LDPlayer đang nối Server D. Gửi #179: chỉ nối Test-36, báo lại.
 - 21:50 Chủ giải thích phiên LD nối Server D là chủ ý (thử hiệu ứng vũ khí). Gửi #180 sửa #179.
+- 21:58 Chủ muốn tiểu yêu đỡ tốn token/đỡ 429. Gửi #181: đếm nhật ký + đề xuất, chưa đổi cấu hình.
