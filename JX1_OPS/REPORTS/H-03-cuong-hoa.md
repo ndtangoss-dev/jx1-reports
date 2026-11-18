@@ -6,6 +6,77 @@
 4. Coco chỉ sửa EnChance thành +5%/cấp trên giá trị gốc; đồ vàng/luyện hóa còn qua EnChanceRong theo công thức cũ, EnChanceBao hiện không tính gì.
 5. Có bảng +0..+30, luật thất bại, đường dẫn file:dòng và đề xuất TESTER; mọi kết luận runtime, xác suất thực nghiệm và trạng thái triển khai đều [CHƯA KIỂM].
 
+# H-03 — Cường hóa trang bị
+
+Loại: khảo sát
+Chủ đề: Luồng cường hóa, giới hạn cấp, thất bại, tiêu hao và thay đổi chỉ số theo loại trang bị.
+Từ khóa: cường hóa, EnChance, EnChanceRong, QiangHuaRank, QiangHuaSet, ForBitEn, đá cường hóa, H-03
+Trạng thái: DONE — nội dung khảo sát tĩnh được giữ nguyên; cấu hình đang nạp/runtime chưa kiểm.
+Độ phủ: 8/8 file cấu hình có QiangHuaRank/QiangHuaSet được liệt kê; 3/3 nhóm đá Lua, 4/4 nhánh công thức và 12/12 ca test đề xuất.
+Liên quan: H-02, H-04, H-05, H-09, JX1_OPS/DESIGN/MUC-LUC-TRI-THUC.md.
+Cần tôi quyết định: không
+
+```mermaid
+flowchart LR
+  A[UI và Lua qianghua.lua] --> B[Kiểm tra item, đá và tiền]
+  B --> C[ItemQiangHua]
+  C --> D[KItemList::QiangHua]
+  D --> E{Loại item}
+  E -->|Xanh thường hoặc tím| F[EnChance]
+  E -->|Rong hoặc vàng| G[EnChanceRong / EnChanceBao]
+  F --> H[Cập nhật chỉ số và đồng bộ]
+  G --> H
+  D --> I{Thử thất bại?}
+  I -->|Có| J[Rớt một cấp hoặc giữ cấp theo T]
+  I -->|Không| H
+```
+
+## Phạm vi và độ phủ
+
+G = C:/Jx1CocoV3/Folder/ServerNew-20260116T043145Z-3-001/ServerNew/_bin_v2_/gs.
+
+| Phần tử phạm vi | Độ phủ | Nguồn file:dòng |
+|---|---|---|
+| Cấu hình gói chung, QiangHuaRank/Set | Đã đọc tĩnh | G/Settings/gamesetting.ini:460,462 |
+| gs001, QiangHuaRank/Set | Đã đọc tĩnh | G/Settings/gamesetting_gs001.ini:478,480 |
+| gs002, QiangHuaRank/Set | Đã đọc tĩnh | G/Settings/gamesetting_gs002.ini:478,480 |
+| gs003, QiangHuaRank/Set | Đã đọc tĩnh | G/Settings/gamesetting_gs003.ini:474,476 |
+| gs004, QiangHuaRank/Set | Đã đọc tĩnh | G/Settings/gamesetting_gs004.ini:474,476 |
+| gs005, QiangHuaRank/Set | Đã đọc tĩnh | G/Settings/gamesetting_gs005.ini:474,476 |
+| gs006, QiangHuaRank/Set | Đã đọc tĩnh | G/Settings/gamesetting_gs006.ini:474,476 |
+| Backup bin_v2, QiangHuaRank/Set | Đã đọc tĩnh; không coi là file hiệu lực | G/Settings/gamesetting_bin_v2_bak.ini:473,475 |
+| Đá detail 403 — 蓝石 | Đã phủ nhánh Lua | G/script/System/qianghua.lua:88-91 |
+| Đá detail 404 — 纲石 | Đã phủ nhánh Lua; giữ nguyên chữ nguồn | G/script/System/qianghua.lua:92-94 |
+| Đá detail 405 — 辨石 | Đã phủ nhánh Lua | G/script/System/qianghua.lua:95-97 |
+| Điều kiện tiền, số ô, nhóm item và gọi API Lua | Đã phủ các nhánh được báo cáo; runtime chưa kiểm | G/script/System/qianghua.lua:26,44,99-115,159-170 |
+| Nhánh C++ giới hạn cấp/random/thất bại | Chỉ theo trích dẫn trong báo cáo cũ; source server C++ không có trong gốc R-05a | S/KItemList.cpp:5427,5441-5505 theo báo cáo gốc |
+| Công thức theo loại item và bonus kỹ năng | Đã phủ 4 nhánh theo báo cáo; không xác nhận binary | H-03-cuong-hoa.md:207-217 |
+| Mức cường hóa 0–30 | Đủ 31 mức số học trong bảng; không phải phép đo runtime | H-03-cuong-hoa.md:218-254 |
+| So sánh báo cáo lịch sử 61–67 | Đã nêu các mốc liên quan; không xác nhận APK đang dùng | H-03-cuong-hoa.md:264-278 |
+| Ca TESTER T01–T12 | Đã liệt kê đủ 12 ca; chưa chạy | H-03-cuong-hoa.md:300-318 |
+## Giải mã tên
+
+Nguồn Lua dùng chuỗi legacy GBK. Tên đá dưới đây được dịch theo đúng chữ trong comment; riêng chữ 纲 của đá detail 404 được giữ nguyên, không tự sửa thành 钢 dù tên biến dùng QgangShi.
+
+| Tên gốc | Mã hóa | Chữ đúng UTF-8 / ghi chú | Nguồn file:dòng |
+|---|---|---|---|
+| 强蓝石 | GBK | Đá cường hóa Lam (detail 403) | C:/Jx1CocoV3/Folder/ServerNew-20260116T043145Z-3-001/ServerNew/_bin_v2_/gs/script/System/qianghua.lua:89 |
+| 强纲石 | GBK | Đá cường hóa Cương (giữ nguyên chữ nguồn 纲; biến QgangShi; chưa hiệu đính tên) | G/script/System/qianghua.lua:92 |
+| 强辨石 | GBK | Đá cường hóa Biện/nhận dạng (detail 405) | G/script/System/qianghua.lua:95 |
+| 辨识装 | GBK | Trang bị nhận dạng | G/script/System/qianghua.lua:101,112 |
+| 纹钢装 | GBK | Trang bị Văn Cương | G/script/System/qianghua.lua:103,114 |
+| 普通蓝装 | GBK | Trang bị xanh thường | G/script/System/qianghua.lua:165 |
+| 黄金装 | GBK | Trang bị vàng | G/script/System/qianghua.lua:110 |
+
+## Sắp theo cấu trúc game
+
+| Thứ tự | Nhánh hệ thống |
+|---|---|
+| Nguyên liệu và giao diện | Trang bị → đá theo nhóm 403/404/405 → tiền và kiểm tra đầu vào |
+| Tiến trình nâng cấp | Cấp hiện tại → trần Nmax → roll từ điều kiện n≥2 → thành công, rớt một cấp hoặc giữ cấp theo T |
+| Chỉ số theo loại item | Xanh thường/tím → EnChance; Rong/xanh Rong → EnChanceRong; vàng → EnChanceRong rồi EnChanceBao |
+| Kết quả liên quan | Bonus kỹ năng và glow/sét được tách khỏi công thức chỉ số |
+
 ## 1. Phạm vi và quy ước bằng chứng
 
 Thực hiện trên nhánh `task/H-03`, workspace `D:\JX-wt\H-03`. Kiểm tra Git ban đầu chỉ thấy `JX1_OPS/TASKS/H-03.md` untracked; giữ nguyên nội dung được giao và chỉ nối mục kết quả theo yêu cầu trong chính task. Không kết nối mạng/VM, không chạy game/server/exe, không build, không đọc dữ liệu tài khoản hay ghi bí mật. Python chỉ gọi bằng `python -I`; các đoạn Python dùng để đọc/lọc trực tiếp và tính bảng số học, không tạo script phụ.
@@ -205,6 +276,27 @@ Server `ApplyMagicAttribToNPC` thêm `magic_allskill_v` khi item là vũ khí c�
 
 Nguồn lịch sử: `R/61-hao-quang-cuong-hoa.md:7`; `R/62-kiem-sang-theo-cuong-hoa.md:17`; `R/63-yeu-cau-cuong-hoa-chi-so-ky-nang-set.md:3`; `R/64-hieu-ung-set-vu-khi.md:6`; `R/65-chot-set-vu-khi-va-trang-ky-nang.md:4`; `R/66-sua-set-vuot-ngoai-kiem.md:6`. Report 67, mục 2–4 và 7, phân biệt client baseline với bản ngoài repo và ghi thiếu artifact qh3/qh5/qh6 khi kiểm kê ngày 14/11. Đó là ghi nhận lịch sử; phiên này không kiểm kê APK hay xác minh lại việc thiếu file.
 
+## MỤC SỔ THÔNG SỐ
+
+Giá trị cấu hình dưới đây được đọc trực tiếp trên file; chưa xác minh file nào đang nạp.
+
+| Nhóm | Tên/hằng số | file:dòng | Giá trị | Đơn vị | Ảnh hưởng | Đổi an toàn | Nguồn đo |
+|---|---|---|---|---|---|---|---|
+| Cấu hình gói | QiangHuaRank / QiangHuaSet | G/Settings/gamesetting.ini:460,462 | 20000,40000,5 / 10 | giá trị cấu hình | Trần gói cũ +5 theo báo cáo | CẨN THẬN | Đọc file tĩnh |
+| Server gs001 | QiangHuaRank / QiangHuaSet | G/Settings/gamesetting_gs001.ini:478,480 | 1000,2000,5 / 10 | giá trị cấu hình | Trần +5 trong file | CẨN THẬN | Đọc file tĩnh |
+| Server gs002 | QiangHuaRank / QiangHuaSet | G/Settings/gamesetting_gs002.ini:478,480 | 1000,2000,5 / 10 | giá trị cấu hình | Trần +5 trong file | CẨN THẬN | Đọc file tĩnh |
+| Server gs003–gs006 | QiangHuaRank / QiangHuaSet | G/Settings/gamesetting_gs003.ini:474,476; gs004–gs006 cùng dòng tương ứng | 1000,2000,5 / 10 | giá trị cấu hình | Trần +5 trong các file được đọc | CẨN THẬN | Đọc file tĩnh |
+| Backup | QiangHuaRank / QiangHuaSet | G/Settings/gamesetting_bin_v2_bak.ini:473,475 | 1000,2000,5 / 10 | giá trị cấu hình | Bản backup; không khẳng định hiệu lực | CẨN THẬN | Đọc file tĩnh |
+| Lua | Pay | G/script/System/qianghua.lua:170 | 200000 | tiền trong game | Trừ tiền sau xử lý API theo source Lua được đọc | KHÔNG đổi khi chưa có quyết định | Đọc file tĩnh |
+| Client qh9A | JxQhScale / EnChance | D:/JX-build/qh9A/Classes/gamecore/KItem.cpp:3511-3529 | +5% trên gốc/cấp; nN kẹp 0–30 | phần trăm/cấp | Client source tính lại các dòng allowlist; không xác nhận server/binary | CẨN THẬN | Đọc source tĩnh |
+| Server source (báo cáo cũ) | Ngưỡng bắt đầu roll | H-03-cuong-hoa.md:157-170; tham chiếu S/KItemList.cpp:5441 | n≥2 | cấp hiện tại | Kết luận gián tiếp; không đối chiếu C++ server trong gốc R-05a | CẨN THẬN | Nguồn gián tiếp; chưa kiểm lại |
+
+## ĐỀ XUẤT TỐI ƯU
+
+| Đề xuất cho lần xác minh sau | Lợi ích | Cách xác minh / giới hạn |
+|---|---|---|
+| Chốt file cấu hình thực nạp theo nParmName và manifest trước ca test | Ngăn nhầm cấu hình gói, theo server và backup | Không suy file hiệu lực từ tên; cần task runtime riêng để ghi tham số nạp |
+| Kiểm từng nhánh item, thất bại, tiêu hao và chỉ số trên fixture tổng hợp | Tách khác biệt giữa loại đồ và công thức | Các ca H-03 chưa chạy; cần quyền/test environment riêng, không đổi source trong lượt này |
 ## 7. Đề xuất test TESTER — chưa chạy
 
 Chỉ thực hiện trong phiên kiểm thử được giao riêng, trên bản copy và môi trường được duyệt. H-03 không thực hiện các test dưới đây.
@@ -234,3 +326,7 @@ Chỉ thực hiện trong phiên kiểm thử được giao riêng, trên bản 
 - Không có blocker cho khảo sát tĩnh. [CHƯA KIỂM] Cấu hình/binary/APK triển khai, runtime, xác suất PRNG thật, toàn bộ bảng item nguồn/asset và test TESTER. Không chạy build, unit test, integration test, kết nối VM hay mạng vì ngoài phạm vi.
 - Commit SHA: không có commit mới; không stage/commit vì task không yêu cầu. Chưa push vì không được yêu cầu và phiên này cấm mạng; không phát sinh lỗi push, không tuyên bố đã công bố lên GitHub.
 - Trạng thái cuối **DONE cho phạm vi khảo sát tĩnh**. Bàn giao báo cáo này và mục `## Kết quả` trong task; các phần [CHƯA KIỂM] là giới hạn bằng chứng được ghi rõ, không phải kết quả runtime đạt.
+
+## Phát hiện khi chuẩn hóa
+
+- Các cặp server C++ được trích trong báo cáo gốc nằm dưới `C:\Jx1CocoV3\SwordOnline\...`, ngoài gốc đọc của R-05a. Lượt này kiểm trực tiếp bảng cấu hình và Lua tại gói gs được giao, nhưng không có source C++ server ở đó; client qh9A chỉ được dùng để xác nhận các file client liên quan có thật. Giữ nguyên kết luận cũ, còn đối chiếu version code/binary là chưa xác minh.

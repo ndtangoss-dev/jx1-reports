@@ -1,0 +1,7 @@
+file	type	chủ đề	từ khóa	trạng thái	độ phủ	liên quan
+H-01-ngu-hanh.md	khảo sát	Ngũ hành, kích hoạt trang bị và sát thương	ngũ hành; series; CalcDamage; GetEquipEnhance; H-01	DONE — khảo sát tĩnh; runtime chưa kiểm	5/5 hệ; 15/15 ô; 6/6 kênh damage	H-02; H-03; H-04; DESIGN/MUC-LUC-TRI-THUC.md
+H-02-magic-attrib.md	khảo sát	Dòng chỉ số trang bị và tooltip	magic attrib; MAGIC_ATTRIB; GoldMagic; GoldItem; MagicDesc; H-02	PARTIAL — PAK/runtime chưa kiểm	5/5 bảng; 5/5 nhóm slot; 7 ID đại diện; 10 ca test	H-01; H-03; H-05; H-06; H-07
+H-03-cuong-hoa.md	khảo sát	Luồng cường hóa và công thức chỉ số	EnChance; EnChanceRong; QiangHuaRank; QiangHuaSet; ForBitEn; H-03	DONE — khảo sát tĩnh; cấu hình hiệu lực/runtime chưa kiểm	8/8 file cấu hình; 3/3 nhóm đá; 4 nhánh công thức; 12 ca test	H-02; H-04; H-05; H-09
+H-04-hieu-ung-vu-khi.md	tổng hợp	Tóm lược hiệu ứng glow/sét theo cấp	glow; lightning; cường hóa vũ khí; qh7; qh8; H-04	PARTIAL — artifact/thiết bị/runtime chưa kiểm	7/7 báo cáo lịch sử; 3/3 mốc	H-03; H-04.md; H-09; H-14-mat-khung-hieu-ung.md
+H-04.md	tổng hợp	Lịch sử source/artifact glow và sét	glow; sét; qh7; qh8; KNpcResVN; jxDrawBolts; H-04	DONE — đối chiếu tĩnh; provenance native/runtime chưa kiểm	4/4 giai đoạn; 7/7 báo cáo 61–67; 8/8 nhãn qh	H-03; H-04-hieu-ung-vu-khi.md; H-14-mat-khung-hieu-ung.md
+R-05a.md	tổng hợp	Bàn giao chuẩn hóa R-05a	retrofit; chỉ mục; báo cáo JX1; R-05a	PARTIAL — commit bị chặn bởi index.lock	5/5 báo cáo; 1 TSV; runtime chưa kiểm	CHUAN-BAO-CAO.md; MUC-LUC-TRI-THUC.md; HUONG-DAN-TRA-CUU.md

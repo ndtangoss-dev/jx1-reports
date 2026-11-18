@@ -6,6 +6,52 @@ TÓM TẮT 5: [CHƯA KIỂM] chưa mở APK, chưa đối chiếu mã với qh7 
 
 # H-04 - Hiệu ứng phát sáng / sét vũ khí theo cấp cường hóa
 
+Loại: tổng hợp
+Chủ đề: Tóm lược báo cáo cũ về hiệu ứng phát sáng và sét theo cấp cường hóa.
+Từ khóa: phát sáng, glow, sét, lightning, cường hóa vũ khí, qh7, qh8, H-04
+Trạng thái: PARTIAL — bản tổng hợp lịch sử được giữ nguyên; chi tiết APK/source và test runtime còn chưa xác minh.
+Độ phủ: 7/7 báo cáo lịch sử được dẫn, 3/3 mốc +6/+12/+15; chưa kiểm lại toàn bộ APK và thiết bị.
+Liên quan: H-03, H-04, H-09, H-14-mat-khung-hieu-ung.md, JX1_OPS/DESIGN/MUC-LUC-TRI-THUC.md.
+Cần tôi quyết định: không
+
+```mermaid
+flowchart LR
+  A[+6] --> B[Glow trắng]
+  B --> C[+12: glow vàng và sét]
+  C --> D[+15: glow xanh và sét mạnh hơn]
+  D --> E[Kiểm chứng thiết bị, hiệu năng và artifact]
+```
+
+## Phạm vi và độ phủ
+
+| Phần tử phạm vi | Độ phủ | Bằng chứng |
+|---|---|---|
+| Báo cáo lịch sử 61–67 | Đã dẫn 7/7 trong bản tổng hợp; không mở lại nhật ký cũ | `JX1_OPS/REPORTS/H-04-hieu-ung-vu-khi.md:54-67` |
+| Các mốc hiệu ứng | Đã nêu 3/3 mốc +6, +12, +15 | `D:/JX-build/qh9A/Classes/vn/gamecore/KNpcResVN.cpp:514-556` |
+| Điểm gọi sét | Đã xác nhận có hàm trong source qh9A; không chứng minh APK lịch sử | `D:/JX-build/qh9A/Classes/gamescene/KgameWorld.cpp:15025`, `KNpcResVN.cpp:618` |
+| Danh sách source backup và APK qh1–qh8 | Đã ghi theo báo cáo lịch sử; chưa đối chiếu lại artifact | `JX1_OPS/REPORTS/H-04-hieu-ung-vu-khi.md:57-60` |
+| Test trên điện thoại/FPS | Chưa phủ trong lượt này; tài liệu gốc đánh dấu chưa xác minh | `JX1_OPS/REPORTS/H-04-hieu-ung-vu-khi.md:62-67` |
+
+## Giải mã tên
+
+Báo cáo không nêu tên riêng cụ thể của kỹ năng, quái, NPC hoặc bản đồ; có nhắc loại trang bị Phi Phong. Tên file/mã artifact được giữ nguyên.
+
+| Tên gốc | Mã hóa | Chữ đúng UTF-8 | Nguồn file:dòng |
+|---|---|---|---|
+| 披风 | GBK | Phi Phong / áo choàng, loại trang bị | D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h:1516 |
+| Không có thêm tên riêng kỹ năng/quái/NPC/bản đồ | Không áp dụng | Không áp dụng | `JX1_OPS/REPORTS/H-04-hieu-ung-vu-khi.md:54-67` |
+
+## Sắp theo cấu trúc game
+
+| Thứ tự | Phần |
+|---|---|
+| Cấp 0–5 | Chưa đạt mốc glow |
+| Cấp 6–11 | Glow trắng |
+| Cấp 12–14 | Glow vàng, bắt đầu sét |
+| Cấp 15 trở lên | Glow xanh, sét mạnh hơn theo báo cáo lịch sử |
+| Nghiệm thu | Nguồn qh9A được kiểm tĩnh; APK và trải nghiệm thiết bị chưa xác minh |
+
+
 ## ĐÃ XÁC MINH (có file trên đĩa)
 - Báo cáo: 61 (vòng sáng dưới chân), 62 (kiếm sáng, shader `glow.fsh/vsh`, cờ `g_jxAdditive` trong `KgameWorld.cpp`, vẽ qua `KNpcResVN::Draw`), 63 (yêu cầu mốc, chủ dự án xác nhận ba mức glow trên điện thoại), 64 (sét +12/+15: `jxDrawBolts` trong `KgameWorld.cpp`, `KNpcResVN.cpp`), 65, 66 (sửa sét vượt ngoài kiếm, qh6), 67 (kiểm kê, nói client mới ở `D:\Android\b\Client`).
 - Cấp cường hóa đọc từ `KItem::nEnChance` (0-31); logic đá/mô tả ở `KItem.cpp` (`EnChanceBao`, `BaoShiGetDesc`, có bản `KItem.cpp.bak-qh`).
@@ -20,3 +66,6 @@ TÓM TẮT 5: [CHƯA KIỂM] chưa mở APK, chưa đối chiếu mã với qh7 
 
 ## Ca test cho H-09
 Đổi cấp cường hóa 5 -> 6 -> 12 -> 15, xác nhận phát sáng đúng mốc 6, sét xuất hiện từ 12, mạnh nhất ở 15 (ép cấp bằng file `/sdcard/jxwglow_<cấp>` + `/sdcard/jxtrace` theo báo cáo 62).
+## Phát hiện khi chuẩn hóa
+
+- Báo cáo cũ dẫn source ngoài gốc được giao (D:\Android\b\Client) và mô tả kiểm kê artifact theo thời điểm trước. R-05a chỉ đối chiếu tĩnh các ngưỡng hiện có trong client qh9A; không kiểm lại APK, điện thoại hoặc quan hệ source↔artifact, nên các kết luận cũ được giữ nguyên.
