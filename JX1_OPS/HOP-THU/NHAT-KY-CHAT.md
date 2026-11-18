@@ -174,3 +174,4 @@
 - 10:22 Chủ gửi ảnh: git pull nền treo 14'27" (từ ~10:06). Gửi #125 [KHẨN]. Nghi trùng giờ TIEU-YEU.md đứng 10:06.
 - 10:30 THỬ KHẨN LẦN 3 HỎNG: #124 (10:19)/#125 (10:22) không ai đánh thức; Sonnet dừng từ ~10:09. Chủ nhắn trực tiếp. Gửi #126 xin log người gác.
 - 10:33 Chủ hỏi Tổng quản có báo gì không. Thấy: Tổng quản không tự đẩy, chỉ lên kho khi Sonnet commit. Gửi #127.
+- 10:36 Sonnet nộp log: người gác ĐÃ gọi 10:19, 10:29 nhưng claude chết vì lỗi dấu nháy (-File); sửa xong thì claude -p báo hết hạn mức tuần (reset 1am). Lệnh treo #125 là find / chứ không phải git. Tổng quản đã tự đẩy. Gửi #128 (thử --model sonnet).
