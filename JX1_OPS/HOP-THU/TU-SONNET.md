@@ -744,3 +744,17 @@ Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm th�
 ## XONG ĐỢT #174 (Sonnet, 18/11 ~21:30) — đã đọc đến #174
 **Bảng tiến độ: 28/51 xong.**
 Đã đọc #174. R-05a chưa .done (báo cáo 2,7 KB), để Tổng quản tự nuôi, đợt sau gộp. Không chờ CHAT-DAY, không gõ "xong": vòng tạm dừng tới khi chủ quyết các mục [CAN-CHU] (thử client C01+C03, A-07 bước 3–6, Gemini miễn phí). Không có việc mới. [CAN-CHU]: như trên.
+
+## XONG ĐỢT #175 (Sonnet, 18/11 ~21:30) — đã đọc đến #175
+**Bảng tiến độ: 28/51 xong** (0-05, A-07, CL-01, Gemini chưa xong: chờ chủ ở mục [CAN-CHU]).
+**Đã làm:**
+1. **0-05 (kho jx1-source):** dựng bản cục bộ `D:\jx1-source`: 3.180 tệp mã nguồn (client Classes + server gameserver/gateway/header), `.gitignore` chặn PAK/APK/exe/dll/pdb/obj/log/sql/DB/accinfo.ini; quét bí mật: 19 tệp khớp mẫu (đa số gương tính giả như lexer Lua, mã giao thức) đã LOẠI, chỉ ghi tên (EXCLUDED.txt); không còn khóa riêng/token. Đã commit + tag `baseline-20261116` (cục bộ). Không có `gh` trên máy nên chưa tạo repo từxa.
+2. **Gemini (chuẩn bị):** bộ thử đã sẵn từ #173. Không có khóa nên chưa chạy; chưa cài LiteLLM (bước pip bị hệ thống chặn, sẽ cài sau khi có khóa).
+3. **Client C01+C03:** chưa làm được, thiếu điều kiện (xem [CAN-CHU]).
+4. **A-07:** bước 1 đạt (dùng bản Debug từ snapshot đã vá, `D:\JX-build\a07b`, SHA-256 đã lưu); bước 2 kiểm xong; DỪNG trước bước 3 vì VBoxSVC bất thường. Báo cáo `REPORTS/A-07-buoc1b-snapshot-da-va.md`. Defender máy thật báo "disabled", chưa quét được.
+**[CAN-CHU] (ngắn):**
+- (a) 0-05: chủ tạo repo RỖNG PRIVATE `jx1-source` trên GitHub (hoặc đăng nhập `gh`) rồi báo tên repo; thuộc hạ chỉ cần `git remote add` + đẩy.
+- (b) Gemini: vào AI Studio lấy khóa miễn phí, bấm đúp `JX1_OPS\TOOLS\nha-cung-cap\nhap_khoa.bat` dán khóa.
+- (c) Client C01: cần tài khoản TEST-A trên `JX-Test-36` (chưa có) kèm mật khẩu chủ đặt; tài khoản `jxld02` chỉ có trên Main VM (vùng Đỏ). Thuộc hạ không tự tạo.
+- (d) A-07 bước 3: xác nhận 2 VBoxSVC + 6 VBoxHeadless đang chạy là bình thường, hoặc cho dọn.
+**Giả định:** [TỰ QUYẾT] dùng lại bản Debug A-07e thay vì dựng lại; thư mục a07b thay vì a07.
