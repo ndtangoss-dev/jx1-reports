@@ -209,3 +209,49 @@ Giá = L * Ls + (B * (Ms + N)) / Ms
 [TÀI LIỆU] Báo cáo thực hiện: `JX1_OPS/REPORTS/HG-14.md`. Không stage, commit hoặc push theo yêu cầu lượt này; Tổng quan thực hiện commit. Không tự tạo chỉ mục ngoài vùng được giao; hàng đề xuất cho mục lục và TSV nằm trong báo cáo để PM gộp. Căn cứ vùng đầu ra: JX1_OPS/TASKS/HG-14.md:21,27–30 và yêu cầu bổ sung trong lượt này.
 
 Kỹ năng đã dùng: jx1-retrofit (áp dụng khuôn, không sửa kết luận cũ), jx1-read-server, jx1-read-client, jx1-parameters, jx1-knowledge, jx1-report.
+
+## Bổ sung HG-14b — tiếp tục phần còn thiếu ngày 19/11/2026
+
+[TÀI LIỆU] Phần HG-14 phía trên được giữ nguyên, gồm 5 dòng tóm tắt, kết luận PARTIAL, số liệu và bằng chứng cũ. Đợt này chỉ đọc tiếp đường sửa qua Lua và cấu hình trong hai root đã duyệt; không làm lại khảo sát hao mòn đã có. Phạm vi: JX1_OPS/TASKS/HG-14b.md:19–33; báo cáo thực hiện: `JX1_OPS/REPORTS/HG-14b.md`.
+
+### Phạm vi và độ phủ bổ sung
+
+| Phần còn thiếu cần kiểm | Kết quả đợt HG-14b | Bằng chứng hoặc giới hạn |
+|---|---|---|
+| Cầu nối Lua đọc/đặt độ bền | Đã phủ bằng đọc tĩnh; bổ sung hai đường đặt khác ngoài đường cũ | S/ScriptFuns.cpp:16158–16208,16211–16249,16253–16299,26041–26048 |
+| Cách chọn cấu hình cấm sửa | Đã phủ mẫu tên tệp; chưa phủ nội dung thực nạp | S/KCore.cpp:261–265; S/KPlayer.cpp:10944–10964 |
+| Script NPC sửa thường/đặc biệt, menu, vị trí và giá | Chưa phủ | Tìm tệp có bộ lọc `*.lua` trong từng root S-cha/C cho 0 kết quả; lời nhắc client không phải script: C/gamecore/CoreShell.cpp:4399,4404 |
+| Hệ số sửa/hao mòn và danh sách cấm thực tế | Chưa phủ | Tìm tệp có bộ lọc `*.ini` trong từng root S-cha/C cho 0 kết quả; mã chỉ cho điểm nạp và mặc định: S/KItemSet.cpp:74–78; S/KCore.cpp:262–265 |
+
+[THẤY] `S-cha` là `C:/Jx1CocoV3/SwordOnline/SwordOnline/jxOnline/gameserver/Sources`; `S` và `C` giữ nghĩa trong bảng root ở trên. Kết quả tìm tên tệp chỉ áp dụng hai root này, không chứng minh dữ liệu không tồn tại ở nơi khác hoặc trong gói tài nguyên. Server còn có lời gọi mở `\package.ini` trong nhánh `_SERVER`, nhưng chưa kiểm nội dung gói hoặc việc nạp thực tế (S/KCore.cpp:255–256).
+
+### Sắp theo cấu trúc game: chọn sửa → script xử lý → đồng bộ
+
+1. [THẤY] Với sửa thường, client chặn món có độ bền ≤1 trước khi gửi yêu cầu và hiện tên **Thợ Rèn Thần Bí**. Vì vậy không thể dùng việc có nút sửa để bảo đảm món đã hỏng sẽ sửa được qua đường này (C/gamecore/CoreShell.cpp:4402–4414). Tên riêng duy nhất trong phần bổ sung này giữ nguyên chuỗi gốc, mã hóa UTF-8, đã giải thích trong bảng **Giải mã tên** phía trên (C/gamecore/CoreShell.cpp:4399,4404).
+2. [THẤY] Server có hàm để script đặt trực tiếp độ bền (`SetCurDurability`): lấy chỉ số vật phẩm và độ bền muốn đặt, nhận giá trị lớn hơn `-2`, chặn trên ở độ bền tối đa, rồi gọi đồng bộ vật phẩm. Trong thân hàm này không có bước tính hay thu tiền sửa; nếu script dùng nó thì phải đọc chính script mới biết điều kiện và phí (S/ScriptFuns.cpp:16160–16174).
+3. [THẤY] Hai hàm đọc cho script có kiểm chỉ số vật phẩm: `GetCurDurability` trả `-2` khi chỉ số ngoài khoảng được xét; `GetMaxDurability` trả `0` trong trường hợp đó. Đây là giá trị báo về của hàm, không phải số đo độ bền của một món trong game (S/ScriptFuns.cpp:16181–16208).
+4. [THẤY] Còn hai đường đặt độ bền và đồng bộ: `SetAndSycItem` dùng tham số thứ 7; `SetSpecItemParam` dùng khóa `6`. Cả hai nhận giá trị lớn hơn `-2`, giới hạn theo tối đa rồi gọi `SynPlayerItem`. Chúng được đăng ký cho Lua cùng ba hàm cũ (S/ScriptFuns.cpp:16222,16236–16247,16281–16297,26041–26048). Đây là khả năng của cầu nối, chưa phải bằng chứng NPC nào đang gọi.
+5. [THẤY] Đường sửa thường phía server vẫn tính lại phí, kiểm danh sách cấm rồi mới thu tiền/hồi độ bền. Danh sách cấm dùng `strstr`, tức tìm chuỗi con trong tên món, không phải phép so tên bằng nhau hoàn toàn. Chưa có nội dung cấu hình nên chưa biết các chuỗi con thực tế (S/KPlayer.cpp:10933–10953,10961–10985).
+
+### Mục sổ thông số bổ sung
+
+| Nhóm | Tên/hằng số | file:dòng | Giá trị | Đơn vị | Ảnh hưởng | Đổi an toàn (CÓ/CẨN THẬN/KHÔNG) | Nguồn đo |
+|---|---|---|---|---|---|---|---|
+| Script | `SetCurDurability`, `nability > -2` | S/ScriptFuns.cpp:16163–16174 | Nhận từ -1; chặn trên bằng tối đa | Điểm độ bền / sentinel | Đặt độ bền và gửi lại thông tin món | CẨN THẬN — thiếu script gọi; không cấp quyền sửa | Đọc tĩnh, chưa đo runtime |
+| Script | `SetAndSycItem`, tham số 7 | S/ScriptFuns.cpp:16222,16236–16247 | Độ bền do bên gọi truyền | Điểm độ bền / sentinel | Có đường đặt độ bền trong hàm nhiều tham số | CẨN THẬN — thiếu script gọi | Đọc tĩnh |
+| Script | `SetSpecItemParam`, khóa 6 | S/ScriptFuns.cpp:16281–16297 | 6 | Mã thuộc tính | Chọn thao tác đặt độ bền rồi đồng bộ | CẨN THẬN — đây không phải phí sửa | Đọc tĩnh |
+| Cấu hình | `gamesetting_%s.ini` | S/KCore.cpp:261–265 | `\Settings\gamesetting_<nParmName>.ini` | Mẫu đường dẫn | Chọn đối tượng `g_GameSetTing` để đọc danh sách cấm | CẨN THẬN — chưa biết tham số thực | Đọc tĩnh; chưa thấy tệp dữ liệu |
+
+### Đã xác minh / Chưa kiểm của HG-14b
+
+- [THẤY] Đã kiểm trực tiếp các thân hàm Lua, bảng đăng ký, mẫu tên tệp cấu hình, nhánh cấm sửa và lời nhắc client nêu trên; không lấy sự tồn tại của API làm bằng chứng script NPC đã triển khai (S/ScriptFuns.cpp:26041–26048; S/KCore.cpp:262–265; C/gamecore/CoreShell.cpp:4402–4405).
+- [CHƯA KIỂM] Chưa có script NPC, liên kết NPC–menu–bản đồ/tọa độ, nguyên liệu/phí sửa đặc biệt và cấu hình thực nạp. Vẫn giữ kết luận PARTIAL cùng độ phủ 8/10 nhóm của phần trước; việc thấy thêm cầu nối không khép kín hai nhóm dữ liệu còn thiếu (S/ScriptFuns.cpp:16158; S/KItemSet.cpp:74; JX1_OPS/TASKS/HG-14b.md:20,24,33).
+- [CHƯA KIỂM] Chưa chạy build/test game, exe, VM hoặc mạng; không chạy Graphify vì giới hạn không exe của task. Không suy hành vi đang vận hành từ source trên đĩa (JX1_OPS/TASKS/HG-14b.md:27–30).
+
+### Phát hiện khi chuẩn hóa và bàn giao bổ sung
+
+[TÀI LIỆU] Phần cũ ghi đây là tài liệu mới và dẫn HG-14; giữ nguyên như dấu vết của lượt trước. Phần tiếp nối này thuộc HG-14b, không thay kết luận cũ. PM cần giao rõ root dữ liệu chỉ đọc chứa Lua NPC, dữ liệu gắn NPC và cấu hình theo tham số khởi tạo trước khi xác nhận nơi sửa/phí thực tế (JX1_OPS/TASKS/HG-14b.md:20,24,33; S/KCore.cpp:262–265).
+
+[TÀI LIỆU] Không stage/commit/push; Tổng quan commit theo yêu cầu. Không tạo TSV hoặc sửa mục lục ngoài vùng được giao; hàng đề xuất nằm trong `JX1_OPS/REPORTS/HG-14b.md`. Không ghi được nhịp tại `D:\JX-wt\HG-14b.nhip` vì đường dẫn ngoài workspace được phép ghi; không thử vượt sandbox. Liên quan: JX1_OPS/TASKS/HG-14b.md:13,21,27–30; `JX1_OPS/REPORTS/HG-14b.md`.
+
+Kỹ năng đã dùng trong HG-14b: jx1-retrofit, jx1-read-server, jx1-read-client, jx1-parameters, jx1-knowledge, jx1-report.
