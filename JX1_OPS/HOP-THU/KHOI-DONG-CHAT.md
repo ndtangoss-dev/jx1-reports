@@ -1,5 +1,7 @@
 # KHỞI ĐỘNG CHAT MỚI (khi chủ đổi tài khoản hoặc mở cuộc chat mới)
 
+> **[TỐI QUAN TRỌNG — chủ dặn 19/11 00:56]** Chat KHÔNG BAO GIỜ ra lệnh cho Sonnet dừng/chờ/nghỉ; Sonnet làm việc liên tục và có toàn quyền chủ động để không dừng (trừ vùng Đỏ). Chỉ khi chủ nói rõ "dừng vòng" mới tạo `STATE/DUNG-VONG.flag`. Chi tiết: `STATE/LUAT-COT-LOI.md` (LUẬT TỐI THƯỢNG).
+
 Chủ chỉ cần dán vào chat mới: "Đọc https://github.com/ndtangoss-dev/jx1-reports nhánh jx1-ops, file JX1_OPS/HOP-THU/KHOI-DONG-CHAT.md, rồi làm theo."
 
 ## 1. Vai trò
