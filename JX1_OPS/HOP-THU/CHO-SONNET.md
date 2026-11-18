@@ -1339,3 +1339,6 @@ Chủ hỏi: không người gác, ai giữ tiểu yêu chạy liên tục và c
 2. Tổng quản có tự giao các việc đã xếp hàng trong hàng đợi khi Sonnet dừng không? Nếu chưa: trước khi dừng đợt, Sonnet xếp đủ việc vào hàng đợi cho Tổng quản.
 3. Việc cần người quyết (CHET-BO sau 3 lần, TREO, cần khóa mới, XONG-CHO-GOP) chỉ ghi vào STATE/TONG-QUAN-GHI.md để Sonnet xử ở đợt sau; Tổng quản tuyệt đối không gọi claude.
 4. Dòng 498 tong_quan.py ("chỉ đánh thức Sonnet khi có sự kiện") phải bỏ phần đánh thức theo #158.
+
+## #160 Chat 18/11 17:00 — Cách phối hợp cuối cùng (bổ sung #158)
+Chat không có lịch kiểm, không tự quét. Chủ gọi Chat khi thấy Sonnet xong đợt; hai bên bàn rồi Chat đẩy thư mới; chủ nhắn Sonnet "Đọc hòm thư CHO-SONNET rồi làm." Vì vậy: (1) Sonnet đừng chờ Chat trả lời giữa đợt; (2) báo cáo "XONG ĐỢT #N" phải đọc được một mình (đã xong / còn / cần chủ quyết / giả định đã dùng) vì Chat chỉ đọc lúc chủ gọi; (3) bỏ mọi dòng "gõ cửa/RemoteTrigger" khỏi quy trình. Không có việc mới ngoài #154/#157/#158/#159.

@@ -218,3 +218,4 @@
 - 16:27 Kiểm định kỳ: không có [HỎI-CHAT]; Sonnet vẫn làm (nhịp gác 16:24), chưa nhận #157. Không có chuyện cần báo chủ. GÕ CỬA mới trig_015acR4g8j8MdfBpw2pwP3Cb (16:58).
 - 16:50 Chủ quyết bỏ người gác (Q-48). Viết QUY-TRINH-KHONG-NGUOI-GAC.md, #158. Chủ nhắn Sonnet câu cố định để bắt đầu đợt.
 - 16:55 Chủ hỏi ai nuôi tiểu yêu khi không người gác. Chat đọc tong_quan.py: tự chạy lại ≤3 lần, không cần Claude. Gửi #159 (xác nhận chạy nền, tự giao việc, bỏ đánh thức).
+- 17:00 Chủ: bỏ lịch kiểm của Chat, chủ gọi Chat khi Sonnet xong. Xóa lịch kiểm. Cập nhật QUY-TRINH, KHOI-DONG, SO-TAY, gửi #160.

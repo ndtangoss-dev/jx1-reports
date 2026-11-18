@@ -20,5 +20,7 @@ Lý do: người gác gọi `claude -c -p` ~12 lần/giờ, ngốn hạn mức C
 - Tổng quản chỉ giám sát tiểu yêu và ghi tệp; KHÔNG được gọi `claude`/`claude -c -p`. Sự kiện của Tổng quản ghi vào STATE/TONG-QUAN-GHI.md; Sonnet đọc khi bắt đầu đợt.
 - Gỡ JX-Guard (người gác) và mọi lịch gọi claude; gỡ ghi chú "GÕ CỬA" khỏi quy trình. stop_guard: cho Sonnet dừng khi đã ghi "XONG ĐỢT".
 
-## Chat
-- Chat kiểm kho 30 phút/lần CHỈ khi có đợt đang chạy; hết đợt thì tạm ngừng lịch kiểm, chủ nhắn Chat thì mới dậy. Chat báo chủ khi: đợt xong, Sonnet cần chủ, sự cố, hạn mức.
+## Chat (sửa 18/11 16:50: chủ gọi Chat, Chat không tự quét)
+- Chat KHÔNG có lịch kiểm, KHÔNG tự quét kho. Chat chỉ dậy khi chủ gọi.
+- Vòng làm việc: Sonnet xong đợt → chủ thấy → chủ gọi Chat "đọc" → Chat đọc TU-SONNET/kho, hai bên bàn cách làm → khi chốt, Chat đẩy thư lên CHO-SONNET.md và báo "đã đẩy" → chủ nhắn Sonnet "Đọc hòm thư CHO-SONNET rồi làm." → Sonnet làm đợt mới.
+- Chat báo chủ ngay trong lượt trả lời; không có báo giờ định kỳ.

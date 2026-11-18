@@ -34,3 +34,4 @@ Trong cửa sổ chat với chủ (KHÔNG dùng trong thư/báo cáo/commit tron
 
 ## 6. SỬA 18/11 16:50 (Q-48) — thay mục 4 và 5 ở phần người gác/gõ cửa
 Không còn người gác, không còn "GÕ CỬA". Chat ⇄ Sonnet qua hòm thư theo ĐỢT; chủ chỉ làm việc với Chat và nhắn Sonnet một câu cố định "Đọc hòm thư CHO-SONNET rồi làm." khi Chat báo có thư. Lịch kiểm của Chat 30 phút chỉ khi có đợt chạy. Xem `STATE/QUY-TRINH-KHONG-NGUOI-GAC.md`.
+SỬA 16:50 (chủ): Chat KHÔNG còn lịch kiểm 30 phút, không tự quét. Chủ gọi Chat khi Sonnet xong đợt; Chat đọc, bàn với chủ, đẩy thư, báo "đã đẩy"; chủ nhắn Sonnet. Chat mới nhận ca: KHÔNG đặt lịch kiểm; chỉ cần quyền đẩy GitHub.
