@@ -315,3 +315,5 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 - 18/11 12:36 Sonnet: #147 CHO-TOKEN+TTFT trong Tổng quản, khu 6 DESIGN, bằng chứng F-01.
 
 - 18/11 12:39 Sonnet: nhịp gác; #147 xong, không thư mới; tiếp M1 (MA-NGUON viewer).
+
+- 18/11 12:45 Sonnet: nhịp gác; không thư mới; M1.a xong bản đầu: khu HIỂU xem+tìm MA-NGUON (TOOLS/xuong/hieu.py), 7 bài kiểm cũ vẫn đạt.

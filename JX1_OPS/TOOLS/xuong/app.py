@@ -102,6 +102,12 @@ class Handler(BaseHTTPRequestHandler):
                 return self._gui(200, trang('Sức khỏe', trang_suc_khoe()))
             if u.path.startswith('/khu/'):
                 k = u.path[5:]
+                if k == 'hieu':
+                    import hieu
+                    importlib.reload(hieu)
+                    qs = parse_qs(u.query)
+                    nhatky.ghi('HIEU', 'mở khu')
+                    return self._gui(200, trang('HIỂU', hieu.trang(GOC_KHO, qs.get('f', [''])[0], qs.get('q', [''])[0]), 'hieu'))
                 for kid, ten, _, mt, moc in KHU:
                     if kid == k:
                         nhatky.ghi(kid.upper(), 'mở khu')
