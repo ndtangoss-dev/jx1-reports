@@ -1,7 +1,7 @@
 ---
 id: XD-P02
 title: Đóng P-02: bộ đo chuẩn
-status: running
+status: done
 level: L3
 agent: codex
 effort: high
