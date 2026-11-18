@@ -24,3 +24,9 @@ Việc phụ đóng việc cha **B-02**. Đọc `TASKS/B-02.md`, dòng BACKLOG v
 - Không chạy exe lạ, không VM, không mạng, không Main VM, không đọc khóa/mật khẩu/dump tài khoản. Chỉ ghi tệp đầu ra ngoài ra không sửa gì.
 - Worktree của bạn có thể KHÔNG có mã nguồn game: đọc trực tiếp (chỉ đọc) client `C:/Jx1CocoV3/Folder/Client2912-20260116T044348Z-3-001/Client2912/Client/Classes` và server `C:/Jx1CocoV3/SwordOnline/SwordOnline/jxOnline/gameserver/Sources`; kho báo cáo ở D:/jx1-ops-wt/JX1_OPS (chỉ đọc).
 - Mỗi lần đọc <= ~400 dòng. Cuối tệp task ghi mục "## Kết quả" (3–5 dòng).
+
+## Kết quả
+XD-B02 DONE. Báo cáo [XD-B02](../REPORTS/XD-B02.md) đã đối chiếu đủ 14 vế của task cha và BACKLOG.
+B-02 chưa đạt theo BACKLOG vì thiếu bằng chứng chạy VM thử cho bản P1 trên `feature/visibility`. Lần thử B-02c dùng nhánh riêng.
+Đã đọc mã, metadata Git và ba log build gốc ghi 0 lỗi. Lượt này không build, chạy exe, dùng VM hay mạng.
+Ghi `D:\JX-wt\XD-B02.nhip` bị từ chối quyền ngoài workspace (`Access to the path 'D:\JX-wt\XD-B02.nhip' is denied`); mốc bắt đầu đã báo trong cuộc trò chuyện.
