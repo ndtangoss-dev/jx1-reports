@@ -34,6 +34,7 @@ $a = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument "-NoProfile -Ex
 $s = New-ScheduledTaskSettingsSet -ExecutionTimeLimit ([TimeSpan]::Zero) -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries
 Register-ScheduledTask -TaskName $n -Action $a -Settings $s -Force | Out-Null
 Start-ScheduledTask $n
+python -I "$PSScriptRoot\set_status.py" $Id running 2>$null | Out-Null   # #109: dat status=running khi giao
 "Da giao ${Id}: task $n; model $Model; log $log; xong khi co $wt.done. Don task sau khi xong: Unregister-ScheduledTask $n -Confirm:`$false"
 
 

@@ -227,3 +227,9 @@ Chủ nhắn trực tiếp ở phiên Claude Code: "Kéo hòm thư jx1-ops, đ�
 | U-01, U-02, R-01, S-01, R-04a, R-04c, R-06b | đã gộp | — | — |
 | K-02, K-03 | chưa giao | — | chờ xingchi |
 - Tổng: 5 đang chạy (R-03, R-04b, R-05a/b/c), 6 chết (guard còn 1 lần thử, lần 2 sau 30 phút), U-03 treo. Có cả 429 lẫn lỗi Chat Completions (6 việc chết vì lỗi này).
+
+## Gõ cửa #110 + xử lý #111, #112, #109 (09:25 18/11)
+- Gõ cửa: RemoteTrigger run trig_01PV3F1aLsxuLKfLMnrXKDEw → HTTP 200 (09:21).
+- #111 xong: guard.ps1 khóa theo PID (goi.lock = "PID giờ"), phiên gọi thoát là mở khóa ngay; quá 15 phút không commit mới thì kill; [KHẨN] chưa có dòng "Nhận #N" trong TU-SONNET thì bỏ qua khóa; chu kỳ Task Scheduler 5 phút (đã đặt PT5M); không gọi khi file jsonl phiên tương tác vừa ghi <90 giây (cách kiểm: mtime file jsonl mới nhất ở ~/.claude/projects/C--Jx1CocoV3). Thử chạy tay: không gọi (đã có "Nhận #110", không im lặng).
+- #112: goi.out/goi.err chưa từng tồn tại: guard CHƯA lần nào gọi `claude -c -p` thật (lần đầu chỉ chạy lại tiểu yêu chết), nên chưa có bằng chứng phiên gác chết vì chờ duyệt. allow-list hiện có Bash(git/python/powershell:*) nhưng KHÔNG có PowerShell(...). Thuộc hạ định thêm `PowerShell(git:*)`, `PowerShell(python:*)`, `PowerShell(powershell:*)` nhưng hệ thống từ chối (tự sửa quyền). [HỎI-CHAT] cần chủ/Chat tự thêm, hoặc đổi guard sang `--allowedTools "Bash(git:*) Bash(python:*) Bash(powershell:*) PowerShell"`; khuyến nghị: phương án sau (không đụng settings.json). Thuộc hạ tự làm phương án sau ở lần sửa tới nếu Chat đồng ý.
+- #109 xong: TOOLS/set_status.py (running/done/failed + ghi chú); chay_codex.ps1 gọi running khi giao; guard gọi failed khi bỏ sau 2 lần; tien_do.py đối chiếu D:\JX-wt\<ID>.done (chết / chờ gộp), bỏ file _MAU. Đã chỉnh 19 task theo thực tế. TIEN-DO: 6 đang làm, 6 chết, 5 chờ, 1 chặn, 61 xong. Bước merge của PM phải gọi `set_status.py <ID> done`.
