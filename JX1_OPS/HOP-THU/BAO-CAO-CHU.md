@@ -6,3 +6,4 @@
 - 18/11 20:25 — CẦN CHỦ QUYẾT: thay nhà cung cấp cho tiểu yêu (xingchi nhóm 0.25x hay chết/chậm). Chọn nhà cung cấp thử (vd OpenAI trực tiếp hoặc Meta Muse Spark API, cả hai có Responses API) và trần ngân sách/ngày. Sonnet đang chuẩn bị bộ thử (#171), chưa gửi dữ liệu ra ngoài.
 - 18/11 20:20 — CẦN CHỦ QUYẾT: duyệt thử Gemini miễn phí (gói miễn phí có thể dùng dữ liệu để huấn luyện; chỉ thử với việc đọc không nhạy cảm). Sonnet đang chuẩn bị (#172), chưa gửi gì ra ngoài.
 - 18/11 21:12 — VÒNG TẠM DỪNG (hết việc không-Đỏ). Bảng tiến độ 28/51. Chờ đại vương quyết (trả lời bằng câu đầy đủ): (1) duyệt thử Gemini miễn phí; (2) thử client C01+C03; (3) A-07 bước 3–6 trong VM; (4) cửa sổ Tổng quản đã hết nháy chưa; (5) 0-05 tạo kho riêng jx1-source.
+- 18/11 21:20 — Chủ đã duyệt 1–5; vòng chạy lại. Sonnet sẽ hỏi [CAN-CHU] khi cần chủ làm tay (lấy khóa Gemini, đăng nhập client, quyền gh).

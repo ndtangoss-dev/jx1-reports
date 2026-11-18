@@ -50,3 +50,6 @@ Không còn mục chờ về mạng: máy thật đã có Host-only `192.168.56.
 - Q-48 (chủ, 18/11 16:36): BỎ người gác (tốn hạn mức Claude). Chủ chỉ làm việc với Chat, không giao việc trực tiếp cho Sonnet. Chat và Sonnet làm việc qua hòm thư theo đợt; chủ chỉ nhắn Sonnet một câu cố định "Đọc hòm thư CHO-SONNET rồi làm." khi Chat báo có thư. Chi tiết: STATE/QUY-TRINH-KHONG-NGUOI-GAC.md.
 
 - Q-49 (chủ, 18/11 19:23): XOAY VÒNG TỰ ĐỘNG: Chat và Sonnet bám bảng tiến độ + kế hoạch tổng thể làm không nghỉ; chủ chỉ quyết việc quan trọng (vùng Đỏ). Sonnet đánh thức Chat bằng cách gõ "xong" vào cuộc chat qua Claude desktop; Chat đẩy thư rồi ghi dấu mốc để Sonnet nhận. Chi tiết và phanh: STATE/QUY-TRINH-VONG-TU-DONG.md. Thay phần "chủ gọi/chủ nhắn" của Q-48.
+
+## Q-50 — 18/11/2026 21:04 — Chủ duyệt 5 mục (câu "Duyệt 1-5")
+(1) thử Gemini miễn phí, chỉ việc đọc không nhạy cảm; (2) thử client C01+C03 (C02/C04/C05 chưa); (3) A-07 bước 2–6 trong VM kể cả snapshot, dựng lại từ snapshot đã vá; (4) cửa sổ Tổng quản đã hết nháy; (5) tạo kho riêng PRIVATE `jx1-source` (0-05). Vòng tự động (Q-49) chạy lại.
