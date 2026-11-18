@@ -73,7 +73,39 @@ Mã lỗi thật là phép OR giữa kết quả PaySys và mã lọc, không ph
 
 ## 3. Bishop: Birth role setting, Reset character rebirth m, Send to client to detect ve
 
-**Chưa có kết quả.** Báo cáo N-03 mới viết dở lúc gộp (chưa xong, chưa đối chiếu mã). Chỉ có ghi nhận sẵn: [TÀI LIỆU #162] bật "turn on", Cap=2, Silver=100, gold=1 rồi bấm save setting thì `Bishop.cfg` **không đổi**, tức giá trị chỉ nằm trong bộ nhớ Bishop; tác dụng khi tạo nhân vật mới chưa thử. Sẽ bổ sung khi N-03 xong.
+Mỗi ô trả lời 4 câu (ghi vào đâu / exe nào nhận / tác động server / tác động client). Chi tiết và số dòng nguồn ở `REPORTS/N-03.md`.
+
+| Ô | Ghi vào đâu | Server | Client |
+|---|---|---|---|
+| **turn on** (checkbox Birth) | Chỉ bộ nhớ Bishop; Save settings không ghi nó vào `Bishop.cfg` (khớp #162). Khi có yêu cầu tạo nhân vật, Bishop đọc checkbox rồi mới xét ba ô số. | Chỉ áp cho nhân vật **mới tạo**, không sửa nhân vật cũ. Tắt chỉ bỏ nhánh gán. | Không có thông báo riêng; client chỉ thấy tạo thành công/thất bại (gói 157). |
+| **Cap** | Ô số → hồ sơ mẫu trong RAM Bishop: nếu > 0 thì cấp = L, điểm tiềm năng chưa cộng = (L−1)×5, điểm kỹ năng chưa cộng = L−1. | Là gán cấp/điểm **khởi đầu**, không tính lại kinh nghiệm hay máu/nội lực theo cấp. 0/rỗng không có nghĩa về cấp 1. | GS đồng bộ gói 68 (cấp, điểm), client nạp thẳng; không có thông báo "tăng cấp". |
+| **Silver** | Gán thẳng bạc cầm theo của hồ sơ (nếu > 0). | Hồ sơ được Goddess lưu nên bạc có đường vào kho dữ liệu; "không ghi cfg" không có nghĩa là bạc chỉ tạm thời. Không nhân hệ số (không phải "vạn"). | Gói 68 mang bạc cầm theo; túi hiện số nguyên. |
+| **gold** | Gán thẳng trường vàng/xu của hồ sơ (nếu > 0). | Giá trị khởi đầu trong hồ sơ, khác với Add Money của Goddess. | Gói 68 mang số xu; túi hiện số nguyên. |
+
+**Giá trị mẫu dùng chung (giả thuyết từ mã, chưa thử):** Bishop giữ 10 mẫu nhân vật đọc từ `settings/player/newplayerini%02d.ini` và nhánh Birth sửa **chính mẫu đó**. Vì vậy sau một lần gán Cap/Silver/gold dương, nhân vật tạo tiếp cùng loại có thể thừa kế dù đã bỏ tích hoặc xóa ô, kể cả khi lần tạo trước bị Goddess từ chối. Hoàn tác ở #162 chỉ là hoàn tác giao diện. Chưa thử nạp lại mẫu hay khởi động lại Bishop.
+
+**Reset character rebirth m (`TwoRevivePos`):** ghi vào `Bishop.cfg [Network] TwoRevivePos` khi Save settings; lúc xác thực tài khoản Bishop chụp giá trị vào phiên. Chỉ dùng để chọn gs001 dự phòng khi không tìm được gs cho bản đồ ưu tiên. Mã không gán nó vào điểm hồi sinh trong hồ sơ, nên không đủ căn cứ hứa nó đưa người chơi tới đúng bản đồ. Không có gói riêng cho client; nếu không định tuyến được thì permit báo không cho phép (mã 2 là dấu lỗi, không phải cổng).
+
+**Send to client to detect ve (`BishopVer`):** ghi vào `Bishop.cfg [Network] BishopVer`; Bishop gửi nó cho client trong `s2c_login` (gói 65). Client đọc `Settings/Ver/Xfsverjx.ini` (`[CilentVer] ver`) rồi so. Thiếu file hoặc lệch phiên bản thì client báo lỗi phiên bản và thoát/không nối gs001. Không đổi cấp, tiền hay hồ sơ. Giả thuyết: khi tạo nhân vật mới có thể đã lưu rồi mới bị chặn ở bước permit.
+
+```mermaid
+sequenceDiagram
+  participant C as Client
+  participant B as Bishop
+  participant G as Goddess
+  participant S as gs001
+  C->>B: tạo nhân vật (tên, giới, ngũ hành, nơi sinh)
+  B->>B: chọn mẫu, gán Birth nếu bật
+  B->>G: lưu hồ sơ (gói 11)
+  G-->>B: kết quả lưu
+  B-->>C: tạo thành công/thất bại (gói 157)
+  B->>S: gửi hồ sơ, xin nhận nhân vật
+  S-->>B: permit
+  B-->>C: permit (gói 52), client kiểm phiên bản rồi nối gs001
+  S-->>C: đồng bộ cấp/điểm/tiền (gói 68)
+```
+
+Giới hạn: chưa thử tạo nhân vật có Birth bật, chưa đo số dư thật sau script đăng nhập (`script/system/online.lua` chưa đọc), nguồn có thể không khớp exe đang chạy. [NGUỒN N-03]
 
 ## 4. Goddess: Max char create, MAX Player, danh sách nhân vật (báo cáo `REPORTS/N-04.md`)
 
@@ -95,7 +127,28 @@ flowchart LR
 
 ## 5. Goddess: Add Money, EnterMap, Remove Role, Backup, Pause, Restart (báo cáo `REPORTS/N-05.md`)
 
-**Chưa hoàn tất.** N-05 còn đang chạy lúc gộp; bản nháp ghi: nhân vật nằm trong kho DB/SQL của Goddess; GS gửi gói lưu nhân vật về Goddess; Add Money và EnterMap sửa nhân vật **offline** trực tiếp trong DB và **không** gửi gói quản trị nào tới client; tác động lên người đang chơi chưa đo. [NGUỒN nháp N-05; KPlayerDBFuns.cpp:59-94; IDBRoleServer.cpp:985-1021, 1376-1408]. Bổ sung đầy đủ khi N-05 xong. Kết quả thật đã có: [TÀI LIỆU #161/#162] Add Money +1000 bạc cho nhân vật offline có đọc được ở tệp backup `.txt`; Restart Goddess **không** hồi phục sau 90 giây và Bishop mất nối DB nên phải bấm Reconnect DB.
+Nhân vật lưu ở backend của Goddess (nhánh DB `roledb` hoặc nhánh SQL bảng role_Blob; chưa biết exe đang dùng nhánh nào). Bishop lấy danh sách và hồ sơ từ Goddess; GS gửi gói lưu về Goddess khi cần. Chi tiết ở `REPORTS/N-05.md`.
+
+| Nút | Làm gì thật | Server | Client | Thử thật |
+|---|---|---|---|---|
+| **Add Money** | Chỉ nhân vật **offline**: tìm theo tên, cộng vàng (kind 0) hoặc bạc (kind 1) rồi ghi lại bản ghi DB. Nhánh online để trống nên thất bại; SQL mode không có nhánh tương đương. | Sửa DB, không đụng GS đang chạy. | Không có gói; số mới có thể thấy ở lần đăng nhập sau (chưa xác minh). | #161: +1000 bạc đọc được ở `.txt` backup. |
+| **EnterMap / IDMap** | Nhân vật offline: đặt cUseRevive=1 và ghi điểm hồi sinh **cố định 53/19**; số map nhập chỉ bị kiểm > 0, không được ghi. SQL mode trả 1 mà không cập nhật. | Chỉ đổi dữ liệu hồi sinh trong DB, không đổi map nhân vật đang online. | Không có gói; vị trí khi vào lại chưa xác minh. | #162: không thử. |
+| **Remove Role** | Xóa **hàng loạt** mọi nhân vật có cấp thấp hơn ngưỡng nhập; không có xác nhận. | Mất dữ liệu ngay trong backend đang mở. | Nhân vật biến khỏi danh sách; người đang online chưa biết. | KHÔNG bấm. |
+| **Manual backup** | Tạo thư mục `database\<giờ>` với `.bak` và `.txt` (DB mode); SQL mode copy sang bảng backup. | Chỉ đọc/copy. | Không có. | #161 đã tạo tệp. |
+| **Backup phần đồ** | Cần chọn một mục cụ thể; mã chỉ làm việc nếu có bảng SQL rồi vẫn trả true. | Chỉ đọc. | Không có. | #162: "All" báo lỗi chọn mục; chọn Body không thấy tệp mới. |
+| **Pause** | Tạm dừng/tiếp tục **chỉ timer backup tự động**, không phải pause gs001. | Không ghi nhân vật. | Không có. | #162: đổi nhãn Pause↔Resume, không lỗi. |
+| **Restart / tắt Goddess** | Restart đóng rồi mở lại giao diện DB bên trong Goddess (không phải thoát hẳn). Tắt process thì phiên Bishop→Goddess đóng và Bishop không tự nối lại; cần **Reconnect DB**. | GS có nhánh thử nối lại DB; khi mất DB thì lưu nhân vật thất bại. | Không gói từ Goddess; người đăng nhập lúc role list chưa sẵn sàng sẽ timeout rồi về màn đăng nhập (giả thuyết từ mã). | #161: tắt/mở lại làm Bishop mất DB, Reconnect DB xong gs001 báo "reconnect OK". #162: Restart không hồi phục sau 90 giây (hai kết quả khác nhau, không gộp). |
+
+```mermaid
+flowchart LR
+  GS[gs001] -- gói lưu nhân vật --> GD[Goddess]
+  B[Bishop] -- lấy danh sách / hồ sơ --> GD
+  GD --> DB[(roledb hoặc role_Blob)]
+  AM[Add Money / EnterMap / Remove Role] -- sửa trực tiếp --> DB
+  BK[Manual backup] -- đọc --> DB
+```
+
+Chưa kiểm: tác động lên người đang chơi, GS ghi đè lại nhân vật sau khi bị Remove/Add offline, SQL mode, và việc source có khớp binary. [NGUỒN N-05; TÀI LIỆU #161/#162]
 
 ## 6. Liên kết tổng và thứ tự bật/tắt (báo cáo `REPORTS/N-06.md`)
 
@@ -112,8 +165,8 @@ Sơ đồ ở mục 0; bảng 14 luồng (L01–L14) cùng cổng nằm ở N-06
 2. Tin Notify all player có hiện ra ở client và hiện ở đâu.
 3. Mã lỗi/thông báo thật người chơi thấy khi bị lọc tài khoản/VIP/IP, nhất là mã 9.
 4. Tạo nhân vật thứ 4 khi MaxRoleCount=4 (Bishop và client cùng kẹp ở 3).
-5. Birth role setting có áp lên nhân vật mới tạo không (N-03 chưa xong).
-6. Tác động của Add Money/EnterMap lên người đang chơi; dữ liệu được nạp thế nào lúc đăng nhập lại (N-05 chưa xong).
+5. Birth role setting áp lên nhân vật mới tạo thế nào ở runtime, và việc mẫu RAM bị thừa kế cho lần tạo sau (mới là giả thuyết từ mã).
+6. Tác động của Add Money/EnterMap lên người đang chơi; dữ liệu được nạp thế nào lúc đăng nhập lại (chỉ có kết quả từ mã và #161/#162).
 7. Chuỗi tắt an toàn GS và cổng root 7777.
 
 ## Muốn xác nhận trên client thật thì cần gì
