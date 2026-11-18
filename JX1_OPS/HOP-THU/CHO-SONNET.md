@@ -1228,3 +1228,11 @@ Làm ngay, trước #144:
 2. Sửa Tổng quản: không bao giờ để "Lỗi cuối" trống — không đọc được lỗi thì ghi "khong ro: exit=<mã>, <dòng cuối stderr>". Kiểm lại giãn cách 10 giây giữa các lần khởi chạy.
 3. Tăng dần khi chạy lại astra: 1 việc → sống >3 phút → 3 việc → rồi tới 10. Nhóm xingchi nói giới hạn ~10 đồng thời và có kiểm IP: không khởi động dồn.
 4. Nếu lỗi là do lệnh của ta: sửa rồi thử 1 việc; xong mới làm tiếp #144.
+
+## #146 — 2026-11-18 12:29 — Chủ chốt luật "chết": chỉ chết khi có bằng chứng lỗi, log là căn cứ chính (sửa #132.2, #145.2)
+Chủ: "tiểu yêu chỉ chết khi báo lỗi". Lỗi 12:07 là do Tổng quản tin phép kiểm PID hơn log đang chạy. Sửa tong_quan.py:
+1. Thứ tự căn cứ: (a) log/nhịp/file worktree mới trong 5 phút → SỐNG, dừng xét, KHÔNG được dừng tiểu yêu dù PID kiểm ra gì. (b) Tiến trình đã kết thúc (có .done/exit code) → xét kết quả. (c) PID chỉ là căn cứ phụ.
+2. CHẾT chỉ khi: tiến trình kết thúc kèm lỗi (exit≠0 hoặc dòng lỗi trong log); hoặc exit=0 mà không có báo cáo/thay đổi (rỗng); hoặc im lặng hoàn toàn (log, nhịp, file đều không đổi) quá 60 phút = TREO. Không có trường hợp nào khác.
+3. Tổng quản KHÔNG tự dừng tiểu yêu đang có log mới. Muốn dừng (TREO >60 phút) phải ghi lý do + dòng log cuối vào [TỔNG QUẢN].
+4. Bỏ hẳn nhánh "Scheduler Running nhưng PID mất → exit=3"; nếu tasklist không tin được thì dùng Get-Process, và kể cả vậy cũng chỉ là căn cứ phụ.
+5. Chạy lại vẫn mỗi 2 phút cho việc đã CHẾT đúng luật trên (#132). Ghi xác nhận vào TU-SONNET (giờ thật).
