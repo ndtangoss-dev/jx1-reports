@@ -62,3 +62,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Luật chết: log mới = sống, không dừng; chết chỉ khi exit lỗi / rỗng / im >60 phút; bỏ nhánh PID mất | #146 | sửa #132.2, #145.2 | chờ Sonnet |
 | Chủ chốt: khu 6 Đo tốc độ (7 phép đo, mốc trước/sau); kiểm sol báo chết oan do chờ token đầu: trạng thái CHO-TOKEN, đo TTFT | #147 | bổ sung #144, #146 | chờ Sonnet |
 | Chụp màn hình các exe server trên JX-Test-36 (chỉ xem, không bấm thao tác), kiểm thông tin nhạy cảm, đẩy ANH/exe-server/ + README | #148 | bổ sung #144 | chờ Sonnet |
+| [KHẨN] chế độ tiết kiệm hạn mức tới 15:20: chỉ #147.B, #148, kiểm astra; hoãn mọi việc Xưởng JX1; ngưỡng người gác 30→90 phút; xong thì dừng | #149 | ưu tiên trên #144/#147.A | chờ Sonnet |

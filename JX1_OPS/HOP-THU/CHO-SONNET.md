@@ -1270,3 +1270,13 @@ Chủ thấy cửa sổ hiển thị của các exe server giống thứ Xưởn
 3. KIỂM TRƯỚC KHI ĐẨY (kho jx1-ops là PUBLIC): mở từng ảnh xem có tên tài khoản thật, mật khẩu, khóa, địa chỉ IP nhà, đường dẫn riêng tư không. Có thì che/cắt rồi mới đẩy; không chắc thì không đẩy và ghi lý do.
 4. Đẩy vào JX1_OPS/ANH/exe-server/<tên>-<giờ>.png (tạo thư mục; ≤1 MB mỗi ảnh, thu nhỏ nếu lớn). Kèm 1 file JX1_OPS/ANH/exe-server/README.md: mỗi ảnh một dòng: tên exe, thấy gì (chữ trên màn hình, chép nguyên văn các nút/menu), cổng/tiến trình tương ứng.
 5. Trả lời vào TU-SONNET (giờ thật): danh sách ảnh đã đẩy + ảnh nào không chụp được và vì sao. Chat sẽ xem ảnh và giải thích cho chủ. Việc này làm ngay sau khi xong bước hiện tại của #147, không cần chờ M0–M1.
+
+## #149 — 2026-11-18 12:55 — [KHẨN] CHẾ ĐỘ TIẾT KIỆM HẠN MỨC tới 15:20 (hạn mức 5 giờ của chủ đã 86%, đặt lại 15:20)
+Hạn mức phiên Claude của chủ dùng chung cho Sonnet, người gác và Chat. Còn ~14% tới 15:20. Sắp xếp lại việc, đọc kỹ rồi ghi "Nhận #149":
+1. NGUYÊN TẮC: tiêu ít nhất có thể. Trả lời ngắn; không đọc/in tệp lớn; gom lệnh; không mở agent con; không thử đi thử lại; không suy diễn dài. Việc nào cần đọc nhiều → giao đám tiểu yêu (xingchi, không trừ hạn mức Claude).
+2. LÀM (rẻ, giá trị cao), theo thứ tự: (a) #147.B (CHO-TOKEN, kiểm lỗi sol mới nhất, ghi TTFT) cho xong gọn; (b) #148 chụp màn hình exe (chỉ xem); (c) xác nhận Tổng quản đang chạy astra thật: có việc R-* SỐNG >3 phút, và nếu có báo cáo xong thì ghi [TỔNG QUẢN] như thường lệ.
+3. HOÃN SAU 15:20: DESIGN/XUONG-JX1.md đầy đủ, khu 6 đo tốc độ, M1 (quet_exe, tìm kiếm), mọi viết mã Xưởng JX1 mới, việc thăm dò. Ghi một dòng "hoãn tới 15:20" vào TIEN-DO, không làm.
+4. NGƯỠNG NGƯỜI GÁC: đổi tạm trong guard.ps1 ngưỡng im lặng 30 → 90 phút (dòng 99: `$silentMin -gt 30`) để người gác khỏi đánh thức Sonnet vô ích; [KHẨN] chưa xác nhận và [TONG QUAN] vẫn đánh thức như cũ. SAU 15:20 trả về 30. Ghi việc này vào TU-SONNET để không quên.
+5. XONG các mục 2 → ghi 1 dòng vào TU-SONNET rồi DỪNG, không tự tìm việc, không thăm dò. Đứng im là đúng. Chat sẽ kiểm thưa (30–40 phút một lần).
+6. Nếu thấy mình sắp chạm hạn mức: ghi BAN-GIAO + 1 dòng [CAN-CHU] và dừng.
+7. Chat giữ phần lập kế hoạch, sẽ gửi việc mới sau 15:20.
