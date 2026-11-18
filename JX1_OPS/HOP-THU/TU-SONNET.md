@@ -453,3 +453,6 @@ Chụp được Bishop (tab Status) bằng Alt+Tab qua VBoxManage; đã đẩy +
 [TỔNG QUẢN 18/11 13:01] CAU DAO xingchi: MO; K-03a cho xingchi, thu lai bang JX-K2 (thu cau dao); R-02 chet, chay lai lan 1 bang JX-K3
 
 [TỔNG QUẢN 18/11 13:03] CAU DAO xingchi: MO; R-03 chet, chay lai lan 1 bang JX-K2
+
+## Xác nhận #151 (13:04 giờ thật)
+TIEU-YEU: R-02 SONG (astra, JX-K3, 13:03), R-03 CHAY-LAI-1 (astra, JX-K2, 13:03); các R-* còn lại sẽ lên dần mỗi vòng theo RAMP. Bản vá budget hoạt động.
