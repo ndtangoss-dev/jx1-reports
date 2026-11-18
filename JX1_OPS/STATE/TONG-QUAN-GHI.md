@@ -54,6 +54,4 @@
 [TỔNG QUẢN 18/11 18:13] CAU DAO xingchi: DONG; R-05c cho xingchi, thu lai bang JX-K4
 [TỔNG QUẢN 18/11 18:15] CAU DAO xingchi: DONG
 [TỔNG QUẢN 18/11 18:17] CAU DAO xingchi: DONG
-[TỔNG QUẢN 18/11 18:19] CAU DAO xingchi: DONG
-[TỔNG QUẢN 18/11 18:22] CAU DAO xingchi: DONG; N-01 giao bang JX-K6; N-02 giao bang JX-K4; N-03 giao bang JX-K5; N-04 giao bang JX-K6; N-05 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); N-06 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut)
-[TỔNG QUẢN 18/11 18:23] CAU DAO xingchi: DONG; N-05 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); N-06 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut)
+[TỔNG QUẢN 18/11 18:29] CAU DAO xingchi: DONG
