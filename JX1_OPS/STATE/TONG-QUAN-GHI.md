@@ -38,3 +38,9 @@
 [TỔNG QUẢN 18/11 17:23] CAU DAO xingchi: DONG
 [TỔNG QUẢN 18/11 17:27] CAU DAO xingchi: DONG
 [TỔNG QUẢN 18/11 17:29] CAU DAO xingchi: DONG
+<<<<<<< Updated upstream
+=======
+[TỔNG QUẢN 18/11 17:31] CAU DAO xingchi: DONG
+[TỔNG QUẢN 18/11 17:33] CAU DAO xingchi: DONG
+>>>>>>> Stashed changes
+[TỔNG QUẢN 18/11 17:35] CAU DAO xingchi: DONG
