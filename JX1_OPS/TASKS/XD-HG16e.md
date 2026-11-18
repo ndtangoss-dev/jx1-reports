@@ -24,3 +24,9 @@ Phần còn thiếu của HG-16: nhánh TẠO hồ sơ nhân vật mới phía g
 - Chỉ đọc tĩnh, chỉ viết tệp đầu ra. Không sửa mã, không exe, VM, mạng, không đụng Main VM, không đọc khóa/dump tài khoản. Mỗi lần đọc <= 400 dòng.
 - Cuối tệp task ghi "## Kết quả" 3–5 dòng.
 
+
+## Kết quả
+- PARTIAL: đã rà tĩnh năm file gateway; Bishop nhận `c2s_newplayer`, nhưng chặng chuyển tiếp yêu cầu tới Goddess chưa thấy trong phạm vi.
+- Đã xác định nhánh lưu Goddess, kiểm tra trùng tên/số hồ sơ theo tài khoản và bảng `roledb`/`role_Blob`; chưa xác định nơi khởi tạo chỉ số, hệ hoặc vật phẩm.
+- Báo cáo: `JX1_OPS/REPORTS/XD-HG16e.md`; không build/chạy exe, VM hoặc mạng; không commit theo yêu cầu.
+- Không ghi được `D:\JX-wt\XD-HG16e.nhip` do sandbox chặn ghi ở thư mục cha; không thay đổi quyền.
