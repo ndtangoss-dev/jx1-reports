@@ -1,6 +1,6 @@
-# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-18 10:32, đừng sửa tay)
+# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-18 10:35, đừng sửa tay)
 
-ĐANG LÀM: R-03, R-05c
+ĐANG LÀM: F-01, R-05c
 KẾ TIẾP: K-02
 BỊ CHẶN: A-07
 
@@ -9,7 +9,6 @@ Ba chặng #091: 1 hiểu game (chuẩn hóa) → 2 đường truyền + exe →
 ```mermaid
 flowchart LR
   subgraph S1["Chặng 1 hiểu game"]
-    R_03["R-03 chạy"]
     R_05c["R-05c chạy"]
     K_03a["K-03a chết"]
     K_03b["K-03b chết"]
@@ -17,6 +16,7 @@ flowchart LR
     K_03d["K-03d chết"]
     K_03e["K-03e chết"]
     R_02["R-02 chết"]
+    R_03["R-03 chết"]
     R_04["R-04 chết"]
     R_04b["R-04b chết"]
     R_05a["R-05a chết"]
@@ -35,7 +35,7 @@ flowchart LR
     T_04["T-04 chết"]
   end
   subgraph S3["Chặng 3 tick và đồ họa"]
-    F_01["F-01 chết"]
+    F_01["F-01 chạy"]
   end
 ```
 

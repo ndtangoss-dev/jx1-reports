@@ -1,34 +1,36 @@
-# TIỂU YÊU (Tổng quản tự sinh lúc 2026-11-18 10:27, đừng sửa tay)
+# TIỂU YÊU (Tổng quản tự sinh lúc 2026-11-18 10:35, đừng sửa tay)
+
+**CẦU DAO xingchi: NỬA-MỞ (đang thử 1 việc)**
 
 Mức: SONG / IM-NHUNG-SONG (20–60 phút) / TREO (>60, bị dừng chạy lại) / CHET / CHET-BO (quá 3 lần) / XONG-CHO-GOP. "Dấu hiệu sống cuối" = max(log, nhịp, file worktree).
 
 | Mã | Mức | Khóa | Log cuối | Dấu hiệu sống cuối | Lỗi cuối | Lần chạy lại |
 |---|---|---|---|---|---|---|
-| F-01 | CHET-BO | JX-K2 | 10:24 | 10:24 | xingchi Chat Completions | 3 |
-| K-03a | CHAY-LAI-2 | JX-K2 | 10:27 | 10:21 | xingchi Chat Completions | 2 |
-| K-03b | CHET | JX-K2 | 10:16 | 10:16 | xingchi Chat Completions | 0 |
-| K-03c | CHET | JX-K3 | 10:17 | 10:17 | xingchi Chat Completions | 0 |
-| K-03d | CHET | JX-K4 | 10:19 | 10:19 | xingchi Chat Completions | 0 |
-| K-03e | CHET | JX-K5 | 10:20 | 10:20 | xingchi Chat Completions | 0 |
-| R-02 | CHET | JX-K2 | 10:09 | 10:09 | xingchi Chat Completions | 2 |
-| R-03 | CHET | (tay/mac dinh) | 09:12 | 09:12 | - | 0 |
-| R-04 | CHET | JX-K2 | 10:12 | 10:12 | xingchi Chat Completions | 2 |
-| R-04b | CHET | (tay/mac dinh) | 09:12 | 09:12 | - | 0 |
-| R-05a | CHET | (tay/mac dinh) | 09:10 | 09:10 | - | 0 |
-| R-05b | CHET | (tay/mac dinh) | 09:11 | 09:11 | - | 0 |
-| R-05c | IM-NHUNG-SONG | (tay/mac dinh) | 09:52 | 09:52 | - | 0 |
-| R-05d | CHET | JX-K3 | 10:13 | 10:13 | xingchi Chat Completions | 2 |
+| F-01 | THU-LAI-XINGCHI | JX-K2 | 10:35 | 10:24 | xingchi Chat Completions | 0 |
+| K-03a | CHO-XINGCHI | JX-K2 | 10:27 | 10:27 | xingchi Chat Completions | 0 |
+| K-03b | CHO-XINGCHI | JX-K2 | 10:30 | 10:30 | xingchi Chat Completions | 0 |
+| K-03c | CHO-XINGCHI | JX-K3 | 10:30 | 10:30 | xingchi Chat Completions | 0 |
+| K-03d | CHO-XINGCHI | JX-K4 | 10:31 | 10:31 | xingchi Chat Completions | 0 |
+| K-03e | CHO-XINGCHI | JX-K5 | 10:31 | 10:31 | xingchi Chat Completions | 0 |
+| R-02 | CHO-XINGCHI | JX-K2 | 10:32 | 10:32 | xingchi Chat Completions | 0 |
+| R-03 | CHO-XINGCHI | (tay/mac dinh) | 10:32 | 10:32 | xingchi Chat Completions | 0 |
+| R-04 | CHO-XINGCHI | JX-K2 | 10:32 | 10:32 | xingchi Chat Completions | 0 |
+| R-04b | CHO-XINGCHI | (tay/mac dinh) | 10:33 | 10:33 | xingchi Chat Completions | 0 |
+| R-05a | CHO-XINGCHI | (tay/mac dinh) | 10:33 | 10:33 | xingchi Chat Completions | 0 |
+| R-05b | CHO-XINGCHI | (tay/mac dinh) | 10:33 | 10:33 | xingchi Chat Completions | 0 |
+| R-05c | IM-NHUNG-SONG | (tay/mac dinh) | 09:52 | 09:52 | loi mang | 0 |
+| R-05d | CHO-XINGCHI | JX-K3 | 10:34 | 10:34 | xingchi Chat Completions | 0 |
 | R-06a | XONG-CHO-GOP | JX-K4 | 10:26 | 10:26 | - | 2 |
-| R-06c | CHET | JX-K5 | 10:13 | 10:13 | xingchi Chat Completions | 2 |
-| R-07a | CHET | JX-K6 | 10:14 | 10:14 | xingchi Chat Completions | 2 |
-| R-07b | CHET | JX-K2 | 10:14 | 10:14 | xingchi Chat Completions | 2 |
-| T-02 | CHET | JX-K3 | 10:14 | 10:14 | xingchi Chat Completions | 1 |
-| T-03 | CHET | JX-K4 | 10:15 | 10:15 | xingchi Chat Completions | 1 |
-| T-04 | CHET | JX-K5 | 10:15 | 10:15 | xingchi Chat Completions | 1 |
+| R-06c | CHO-XINGCHI | JX-K5 | 10:34 | 10:34 | xingchi Chat Completions | 0 |
+| R-07a | CHO-XINGCHI | JX-K6 | 10:34 | 10:34 | xingchi Chat Completions | 0 |
+| R-07b | CHO-XINGCHI | JX-K2 | 10:35 | 10:35 | xingchi Chat Completions | 0 |
+| T-02 | CHO-XINGCHI | JX-K3 | 10:35 | 10:35 | xingchi Chat Completions | 0 |
+| T-03 | CHO-XINGCHI | JX-K4 | 10:15 | 10:15 | xingchi Chat Completions | 0 |
+| T-04 | CHO-XINGCHI | JX-K5 | 10:15 | 10:15 | xingchi Chat Completions | 0 |
 
 Khóa đang dùng: JX-K2=1 / khóa có: JX-K2, JX-K3, JX-K4, JX-K5, JX-K6
 Đang chạy theo Task Scheduler: 2.
 
 Việc vòng này:
-- NGHEN: 6 viec chet trong 10 phut, moi vong chi giao 1 viec
-- K-03a chet, chay lai lan 2 bang JX-K2
+- CAU DAO xingchi: MO
+- F-01 cho xingchi, thu lai bang JX-K2 (thu cau dao)
