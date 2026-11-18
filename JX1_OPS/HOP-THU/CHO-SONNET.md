@@ -1332,3 +1332,10 @@ Chủ quyết: người gác ngốn hạn mức Claude → bỏ. Đọc `STATE/Q
 3. Cập nhật STATE/LUAT-COT-LOI.md (chỉ mục người gác/gõ cửa) và hook nạp lại sau nén cho khớp; không phình thêm nội dung nạp.
 4. Từ nay: một đợt = đọc hòm thư một lần, làm hết, ghi MỘT báo cáo "XONG ĐỢT #N" vào TU-SONNET.md, push, dừng. [HỎI-CHAT] không chặn đợt: ghi giả định và làm tiếp phần độc lập.
 5. ĐỢT HIỆN TẠI = #154 + #157 (+ #158.1–.3). Làm xong thì ghi "XONG ĐỢT" rồi dừng. Chủ sẽ chỉ nhắn một câu "Đọc hòm thư CHO-SONNET rồi làm."
+
+## #159 Chat 18/11 16:55 — Tổng quản phải tự nuôi tiểu yêu khi Sonnet dừng (bổ sung #158)
+Chủ hỏi: không người gác, ai giữ tiểu yêu chạy liên tục và chạy lại khi chết? Chat đọc tong_quan.py: nó tự chạy lại việc chết (tối đa 3 lần, đổi khóa, cầu dao, astra tăng dần) mà không cần Claude. Cần Sonnet xác nhận và vá, trong đợt hiện tại, báo ngắn:
+1. Tổng quản có chạy nền độc lập với Claude không, và ai/cái gì khởi động lại nó nếu nó chết hoặc máy khởi động lại (lịch Windows, không gọi claude)? Nếu chưa có thì thêm.
+2. Tổng quản có tự giao các việc đã xếp hàng trong hàng đợi khi Sonnet dừng không? Nếu chưa: trước khi dừng đợt, Sonnet xếp đủ việc vào hàng đợi cho Tổng quản.
+3. Việc cần người quyết (CHET-BO sau 3 lần, TREO, cần khóa mới, XONG-CHO-GOP) chỉ ghi vào STATE/TONG-QUAN-GHI.md để Sonnet xử ở đợt sau; Tổng quản tuyệt đối không gọi claude.
+4. Dòng 498 tong_quan.py ("chỉ đánh thức Sonnet khi có sự kiện") phải bỏ phần đánh thức theo #158.
