@@ -116,3 +116,15 @@ Sonnet lấy việc từ trên xuống, theo phụ thuộc. Khi bắt đầu m�
 | X-05 | Xưởng JX1 vận hành | L2 | Codex/Sonnet | — |
 | V-01 | Vòng tự động Chat⇄Sonnet (Q-48/Q-49) | L2 | Codex/Sonnet | — |
 | CL-01 | Thử client C01..C05 | L2 | Codex/Sonnet | — |
+
+## Bổ sung đêm 18–19/11 (#196)
+
+| ID | Việc | Cấp | Ai | Phụ thuộc |
+|---|---|---|---|---|
+| W-01 | Hiểu đường hiệu ứng vũ khí (xong) | L2 | Codex/Sonnet | — |
+| W-02 | Quan sát tái hiện hiệu ứng trên Test-36 | L2 | Sonnet | W-01 |
+| SO-01..SO-06 | Sổ tay hiểu game theo mảng (thay G-01..G-06; G-01 cũ đã dùng) | L3 | Codex | — |
+| KC-01, KC-02 | Kiểm chéo chất lượng báo cáo (thay V-01; V-01 cũ đã dùng) | L3 | Codex | — |
+| HG-01..HG-05 | Hiểu game: đăng nhập, chiến đấu, cấp cường hóa Lua, bảng sort/item, điều chưa kiểm | L3 | Codex | — |
+| TK-01 | Theo dõi token/429 (thay T-01; T-01 cũ đã dùng) | L3 | Codex | — |
+| M-01 | Bảo trì mục lục/bảng/TASKS | L2 | Sonnet | — |

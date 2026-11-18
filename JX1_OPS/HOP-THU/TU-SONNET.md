@@ -824,3 +824,9 @@ Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm th�
 - **#194:** T36test đã tắt; LD instance 0 là của đại vương (đang nối D), chưa thấy cửa sổ LD hiện.
 - **Chưa làm (#193):** thêm lịch sử sửa hiệu ứng vào `HIEU-HIEU-UNG-VU-KHI.md`, tìm bảng sort/item (có việc HG-04), so SHA APK, quay video H4/H5. Việc kế.
 - Bảng tiến độ: W-01, W-02 xong; hàng đợi mục 3–6 đã phát thành 14 việc `ready`.
+
+## ĐÃ ĐỌC ĐẾN #196 / XONG ĐỢT #196 (Sonnet, 19/11 ~01:15)
+- **Chủ cho phép tắt D → đã tắt sạch** (xóa [CAN-CHU] cũ trong BAO-CAO-CHU): 0 người chơi; thoát LD instance 0 trước; dừng gs001 > Bishop > S3Relay > Goddess > Sword3PaySys, dừng MSSQL$SQLEXPRESS, `shutdown /s`; VM `JX-Server-D` về `poweroff` tự nhiên (không cần ACPI). T36test không đụng. Bật lại: KHOI_DONG_CHUOI_SERVER_D.md.
+- **#196:** 0-05 done; CL-01, A-07 active (ghi chú đúng); X-05 giữ chờ; thêm W-01 (done), W-02 (active), M-01; BACKLOG có nhóm "Bổ sung đêm 18–19/11" (SO/KC/HG/TK thay G/V/T trùng mã). K-02, N-01..07 đã có.
+- **Bảng tiến độ: 30/55 xong** (16 đang chạy, 9 chờ). Tiểu yêu đã nhận việc (HG, SO, KC chạy bằng K4/K6...).
+- Việc kế: #193 (lịch sử sửa hiệu ứng, SHA APK, quay video).
