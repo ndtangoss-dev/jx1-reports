@@ -18,7 +18,7 @@ import glob, json, os, re, subprocess, sys, time, tempfile
 HOPTHU = 'HOP-THU'
 
 ROOT = os.environ.get('JX1_OPS_ROOT', r'D:\jx1-ops-wt\JX1_OPS')
-DAILY_CAP, WEEK_CAP, MAX_BLOCKS, MARK_HOURS = 200.0, 1000.0, 15, 1   # #153.B: 60 -> 15
+DAILY_CAP, WEEK_CAP, MAX_BLOCKS, MARK_HOURS = 1000.0, 3000.0, 15, 1   # #153.B: 60 -> 15
 MAX_WAIT_BLOCKS = 150   # Q-54: moi lan chan = 1 luot cho_thu.py (9 phut) -> toi da ~22 gio
 
 

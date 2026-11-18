@@ -1636,3 +1636,12 @@ Chủ chốt: Sonnet làm việc liên tục liên tục, có mọi quyền ch�
 
 ## #204 Chat 19/11 01:10 — GỘP NGAY 10 VIỆC TIỂU YÊU "XONG-CHO-GOP" (nút cổ chai của mốc 70%)
 `TIEU-YEU.md` lúc 01:06: 10 việc XONG-CHO-GOP (HG-03b, HG-05, KC-02, SO-04..06 và các việc mới) nằm chờ gộp, chỉ 4 con SONG. Mỗi việc gộp xong = +1 tử số VÀ giải phóng chỗ cho tiểu yêu mới (chủ cần ≥8 con làm việc). Gộp TRƯỚC khi làm 0-07: dùng `git checkout task/<ID> -- <tệp của task>`, kiểm nhanh mẫu 1/3 bằng [NGUỒN], đánh dấu done, push; rồi nhìn `TIEU-YEU.md`, nếu <8 SONG thì thêm việc `ready` thuộc mẫu số (KV-xx, SO/HG tiếp theo, kiểm chéo H-04/N-0x/R-07a). Cứ 15 phút gộp lại một lần (đừng để quá 10 phút có việc XONG-CHO-GOP). Không cần trả lời.
+
+## #205 Chat 19/11 01:15 — CHỦ MỞ NGÂN SÁCH + MỞ TIỂU YÊU KHÔNG GIỚI HẠN (Q-57) — dùng ngay để về 70%+
+Chủ báo: xingchi đã lên GPT 1x rate, cộng thêm 1000 USD (tổng >3000 USD), mạng xingchi đêm nay tốt; chủ cho mở tiểu yêu KHÔNG GIỚI HẠN khi cần, muốn 70% TRỞ LÊN càng tốt. Chat đã: nâng trần ngày/tuần của `stop_guard.py` lên 1000/3000 USD (thử cú pháp OK); ghi L11 + Q-57. Sonnet làm:
+1. Nâng trần ngân sách ở mọi nơi còn dựa số cũ: `STATE/TRANG-THAI.md` mục Ngân sách Codex (trần ngày 200/tuần 1000 → 1000/3000), mọi chỗ trong `tong_quan.py`/guard/chay_codex có ngưỡng USD hoặc `CODEX-CHAM-TRAN`. Ghi sao lưu.
+2. Nâng `MAXKEY`/`MAXALL` THEO BƯỚC: 2→3 (15 con) → 4 (20) → ... mỗi bước quan sát ≥5 phút: RAM trống ≥20%, 429 không tăng, Upstream-failed không vọt. Hết chỗ vì chỉ có 5 khóa: tạo thêm khóa theo `QUY-TRINH-TAO-KHOA.md` (cách nhau ≥1 phút, ping `/v1/models` rồi mới giao) để có 10–20 con. Mỗi con có việc THẬT thuộc mẫu số, không độn; hàng đợi `ready` luôn ≥ số chỗ trống. Việc kiểm chéo, kiểm KV, đọc-tóm theo mảng, đối chiếu mã/tài liệu đều dùng được; Chat sẽ kiểm mẫu.
+3. Dùng mô hình mạnh hơn nếu xingchi cho (GPT 1x): thử 1 việc nhỏ so chất lượng/độ ổn định với `sol` trước; tốt hơn thì đổi cho việc kiểm chéo/kiểm KV (đòi hỏi chính xác).
+4. Gộp liên tục (xem #204); mỗi 60 phút ghi "TIẾN ĐỘ x/y", số tiểu yêu SONG, RAM trống, 429, chi phí ước tính USD.
+5. Giữ RAM: RAM trống <15% hoặc 1 tiến trình >4 GB bất thường → hạ MAXKEY ngay, [CAN-CHU] + "CHAT". Không giết tiến trình của chủ.
+Không cần trả lời; làm và ghi kết quả vào TU-SONNET.md.
