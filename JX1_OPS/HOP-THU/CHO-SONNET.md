@@ -914,3 +914,4 @@ Làm mục 1–4 xen giữa các mục của #107 (ưu tiên #107 mục 1–3 tr
 1. Ghi vào TU-SONNET.md dòng: "Nhận #110 [KHẨN] lúc HH:MM, đánh thức bởi: (người gác / tự kéo thư / chủ nhắn)".
 2. Bảng tình hình tiểu yêu hiện tại: mỗi việc một dòng: mã, trạng thái (chạy / xong chưa gộp / đã gộp / chết lần mấy), khóa, chạy từ lúc nào, lỗi gần nhất. Tổng: số đang chạy, số khóa đang dùng, có 429 hay lỗi Chat Completions không.
 3. Push, rồi bấm GÕ CỬA (dòng trong SO-TAY-CHAT.md). Sau đó quay lại việc đang dở.
+(Đính chính #110: giờ gửi đúng là 09:09 giờ VN, tiêu đề ghi nhầm 02:09 là giờ UTC.)
