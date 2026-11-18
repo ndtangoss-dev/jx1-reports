@@ -90,3 +90,5 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Hết việc không-Đỏ: gộp R-05a rồi dừng vòng, chờ chủ quyết | #174 | phanh hết việc | chờ Sonnet |
 | Chủ duyệt 1–5 (Q-50): Gemini thử, client C01+C03, A-07 bước 2–6, 0-05; vòng chạy lại | #175 | sau #174 | chờ Sonnet |
 | Đã đọc #175; chờ chủ làm tay (a)-(d); vòng tạm dừng | #176 | | chờ chủ |
+| Chủ giao Sonnet tự làm TEST-A (VM thử) và dọn VirtualBox rác; repo/khóa Gemini chờ chủ ngồi máy | #177 | thay phần (c)(d) của #176 | chờ Sonnet |
+| Khóa Gemini đã nhập: chạy so sánh một khóa; bỏ đẩy repo jx1-source | #178 | sau #177 | chờ Sonnet |

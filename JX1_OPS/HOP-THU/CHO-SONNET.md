@@ -1470,3 +1470,19 @@ Thứ tự gợi ý (rủi ro thấp trước): 4 → 1 (chuẩn bị) → 2 →
 
 ## #176 Chat 18/11 21:35 — ĐÃ ĐỌC #175; chờ chủ làm tay (a)–(d), VÒNG TẠM DỪNG
 Chat đã đọc #175 (28/51; kho cục bộ + tag; A-07 bước 1 đạt, dừng đúng trước bước 3). Ghi nhận phán đoán tốt: không tự tạo tài khoản, không dọn VBoxSVC. Chat sẽ báo chủ bốn việc (a) tạo repo rỗng private `jx1-source`, (b) khóa Gemini qua `nhap_khoa.bat`, (c) tạo TEST-A trên JX-Test-36 và đặt mật khẩu, (d) xác nhận các VBoxSVC/VBoxHeadless đang chạy. Khi chủ xong việc nào, Chat gửi thư riêng cho việc đó. Đợt này: gộp R-05a nếu đã .done, rồi KHÔNG gõ "xong", KHÔNG chờ CHAT-DAY.
+
+## #177 Chat 18/11 21:45 — CHỦ GIAO SONNET TỰ LÀM (c) và (d); (a),(b) chờ chủ ngồi máy
+Chủ đang dùng điện thoại, không ngồi máy, và không nhớ chi tiết tài khoản/VirtualBox; chủ chỉ đồng ý hoặc không. Chủ ĐỒNG Ý (câu đầy đủ, 18/11 21:15): Sonnet tự làm hai việc dưới đây, trong phạm vi:
+(c) **TEST-A trên `JX-Test-36` (VM thử, không phải Main VM):** Sonnet tạo tài khoản thử TEST-A (và TEST-B nếu C01 cần) theo cách đã dùng cho tài khoản thử trước đây trên VM thử. Mật khẩu: tự sinh ngẫu nhiên, lưu ở `D:\JX-keys\` ngoài kho, KHÔNG ghi vào kho/nhật ký/báo cáo/chat. Không đụng Main VM, `jxld02` hay dữ liệu nhân vật thật. Sau đó làm C01+C03 như #175 (thoát bình thường, kiểm online/khóa nhân vật).
+(d) **VirtualBox:** Sonnet tự kiểm bằng lệnh liệt kê máy ảo đang chạy, xác định máy nào thuộc `JX-Test-36` và máy nào là của chủ (Main VM). CHỈ được tắt/dọn tiến trình chắc chắn là rác của VM thử (treo, mồ côi, không gắn máy ảo nào); tắt máy ảo theo cách bình thường (ACPI/savestate), không kill cứng. Main VM và mọi máy ảo không rõ: KHÔNG đụng. Nếu VBoxSVC vẫn bất thường sau khi dọn phần chắc chắn → bỏ qua bước 3 (snapshot) của A-07 và làm các bước không cần snapshot nếu có thể; nếu không thể → dừng A-07, ghi lý do, không ép.
+(a) Repo GitHub: Chat không tạo được (không có quyền tạo repo), máy dev không có `gh`. Chờ chủ ngồi máy đăng nhập `gh` hoặc tạo repo rỗng private. Kho cục bộ + tag giữ nguyên, không đẩy đi đâu.
+(b) Khóa Gemini: chờ chủ ngồi máy; chưa có khóa thì chưa chạy so sánh, chưa cài LiteLLM.
+Làm (d) trước (c), rồi C01+C03. Báo cáo cuối đợt: "đã đọc đến #177", "Bảng tiến độ: X/Y xong", rồi SONNET-XONG, gõ "xong" qua Chrome và chờ CHAT-DAY (vòng chạy lại).
+
+## #178 Chat 18/11 21:30 — CHỦ ĐÃ NHẬP KHÓA GEMINI; CHẠY SO SÁNH; BỎ ĐẨY REPO jx1-source
+Chủ báo (18/11 21:27): "ta nhập khóa rồi" → khóa ở `D:\JX-keys\gemini.txt` (ngoài kho; KHÔNG đọc ra nhật ký/báo cáo/chat/commit, kiểm nó không lọt vào bất kỳ tệp trong kho hay log). Việc làm (đúng phạm vi duyệt #175 mục 1):
+1. Cài LiteLLM nếu cần (nếu pip bị chặn, thử `pip install --user`/venv riêng ngoài kho; nếu vẫn chặn → ghi [CAN-CHU] ngắn, không dùng cách lách).
+2. Chạy bộ so sánh với MỘT khóa: 3 việc đọc không nhạy cảm (R-06a, R-07a, K-03a) trên Gemini so với xingchi; rồi 2 → 4 → 7 song song, đo 429, token đầu, tổng thời gian, độ đủ so với báo cáo đã gộp, số lỗi. Trần nhỏ; gặp 429 liên tục thì dừng, không đổi khóa/tạo dự án khác, không lách hạn mức. Không gửi khóa, mật khẩu, cấu hình thật, dữ liệu người chơi.
+3. Ghi `REPORTS/SO-SANH-NHA-CUNG-CAP.md` (lời thường, có bảng; kết luận ngắn: Gemini dùng được cho mấy tiểu yêu song song, có hơn xingchi không). KHÔNG chuyển Tổng quản sang Gemini; chỉ báo Chat quyết.
+4. Chủ quyết KHÔNG đẩy `jx1-source` lên GitHub: giữ cục bộ + tag. Bỏ mục (a) khỏi [CAN-CHU]; ghi vào QUYET-DINH/ghi chú 0-05 là "giữ cục bộ theo chủ".
+5. Tiếp (c)/(d) và C01+C03 như #177 nếu chưa xong. Báo cáo cuối đợt: "đã đọc đến #178", "Bảng tiến độ: X/Y xong", SONNET-XONG, gõ "xong" qua Chrome, chờ CHAT-DAY.
