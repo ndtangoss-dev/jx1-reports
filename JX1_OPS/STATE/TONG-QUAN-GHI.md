@@ -51,3 +51,6 @@
 [TỔNG QUẢN 18/11 18:07] CAU DAO xingchi: DONG
 [TỔNG QUẢN 18/11 18:09] CAU DAO xingchi: DONG
 [TỔNG QUẢN 18/11 18:11] CAU DAO xingchi: DONG
+[TỔNG QUẢN 18/11 18:13] CAU DAO xingchi: DONG; R-05c cho xingchi, thu lai bang JX-K4
+[TỔNG QUẢN 18/11 18:15] CAU DAO xingchi: DONG
+[TỔNG QUẢN 18/11 18:17] CAU DAO xingchi: DONG
