@@ -90,3 +90,77 @@ flowchart LR
 
 Kỹ năng đã dùng: jx1-retrofit, jx1-read-server, jx1-read-client, jx1-parameters, jx1-knowledge, jx1-report.
 Đề xuất bổ sung mục lục: thêm HG-02 vào nhóm “Phím tắt, nút, tự động chiến đấu” sau khi source được đối chiếu.
+
+## HG-02b — Kết quả đối chiếu bổ sung
+Trạng thái bổ sung: DONE — đã đối chiếu tĩnh bốn tệp nguồn; phép thử Test-36 chỉ được đề xuất và chưa chạy.
+
+### Luồng đã đối chiếu
+```mermaid
+flowchart TD
+  S[Server: m_FightMode] -->|đóng gói bit 0x02| P[PLAYER_NORMAL_SYNC]
+  P -->|client đọc bit| C[Client: Npc.m_FightMode]
+  B[Nút đánh: mainSkillattack] --> Q{m_FightMode == 0?}
+  C --> Q
+  Q -->|Có| D[Gửi do_sit và SendClientCmdSit(TRUE), rồi return]
+  Q -->|Không| A[Tìm mục tiêu và chọn kỹ năng]
+  L[Lua SetFightState(1)] --> F[KNpc::SetFightMode]
+  F --> S
+```
+
+### Phạm vi và độ phủ HG-02b
+| Phần tử | Trạng thái | Bằng chứng / giới hạn |
+|---|---|---|
+| Client `KNpcAI.cpp`: nút đánh | Đã phủ | `mainSkillattack` kiểm `m_FightMode`; khi bằng 0 dọn mục tiêu, gửi `do_sit`, gọi `SendClientCmdSit(TRUE)` rồi `return` (C:\Jx1CocoV3\Folder\Client2912-20260116T044348Z-3-001\Client2912\Client\Classes\gamecore\KNpcAI.cpp:1326-1423). |
+| Client `KProtocolProcess.cpp`: nhận trạng thái | Đã phủ | `SyncPlayerMin` đọc bit `0x02` và gán `Npc[nIdx].m_FightMode` (C:\Jx1CocoV3\Folder\Client2912-20260116T044348Z-3-001\Client2912\Client\Classes\gamecore\KProtocolProcess.cpp:3147-3150). |
+| Server `KNpc.cpp`: phát bit và setter | Đã phủ | Đóng gói `m_FightMode` thành `0x02`; setter ghi trường và gọi `CloseAll()` cho player phía server (C:\Jx1CocoV3\SwordOnline\SwordOnline\jxOnline\gameserver\Sources\Core\Src\KNpc.cpp:7806-7814, 15328-15335). |
+| Server `ScriptFuns.cpp`: API Lua | Đã phủ | `LuaSetFightState` gọi setter; `LuaGetFightState` trả trạng thái (C:\Jx1CocoV3\SwordOnline\SwordOnline\jxOnline\gameserver\Sources\Core\Src\ScriptFuns.cpp:21133-21151). |
+| Đề xuất Test-36 | Đã ghi đề xuất, chưa chạy | Chưa xác minh có điểm gọi script được phê duyệt; luật bản đồ cũng có thể ép trạng thái. |
+
+### Giải thích cho người chơi
+[THẤY] Khi nhân vật chưa ở chế độ chiến đấu, `mainSkillattack` đi vào nhánh `m_FightMode == 0`. Nhánh này xóa mục tiêu đang chọn, gửi lệnh ngồi đến máy chủ và phía client, rồi thoát hàm. Vì thoát sớm, lần bấm đó chưa đến đoạn tìm mục tiêu hay chọn kỹ năng. Đây là lý do trực tiếp trong mã cho việc nhân vật ngồi khi bấm nút đánh ngoài trạng thái chiến đấu (C:\Jx1CocoV3\Folder\Client2912-20260116T044348Z-3-001\Client2912\Client\Classes\gamecore\KNpcAI.cpp:1406-1423).
+
+[THẤY] Server dùng bit `0x02` trong `m_btSomeFlag` để truyền `m_FightMode`; `SyncPlayerMin` ở client đọc bit đó thành trạng thái cục bộ. Đây là bit của trạng thái chiến đấu, không phải bit hoạt ảnh ngồi (C:\Jx1CocoV3\SwordOnline\SwordOnline\jxOnline\gameserver\Sources\Core\Src\KNpc.cpp:7806-7814; C:\Jx1CocoV3\Folder\Client2912-20260116T044348Z-3-001\Client2912\Client\Classes\gamecore\KProtocolProcess.cpp:3147-3150).
+
+[THẤY] Hàm Lua `SetFightState` đổi số đầu vào khác 0 thành true rồi gọi `KNpc::SetFightMode`. Setter ghi `m_FightMode`; phía server, với player, nó gọi `m_cPK.CloseAll()` (C:\Jx1CocoV3\SwordOnline\SwordOnline\jxOnline\gameserver\Sources\Core\Src\ScriptFuns.cpp:21133-21141, 26147; C:\Jx1CocoV3\SwordOnline\SwordOnline\jxOnline\gameserver\Sources\Core\Src\KNpc.cpp:15328-15335).
+
+[THẤY] Đường tạo gói đồng bộ có thể bật hoặc tắt trạng thái theo `m_nWFight` và điều kiện bảo hộ bản đồ; bản ghi bit và các điều kiện này xuất hiện trong cùng đoạn mã, nhưng trạng thái cuối/hoạt ảnh trên Test-36 chưa được quan sát (C:\Jx1CocoV3\SwordOnline\SwordOnline\jxOnline\gameserver\Sources\Core\Src\KNpc.cpp:8210-8221).
+
+### Đề xuất kiểm tra trên Test-36
+[TÀI LIỆU] Nếu Test-36 có điểm chạy script Lua kiểm thử đã được phê duyệt, có thể gọi `SetFightState(1)` cho nhân vật thử, đọc `GetFightState()`, bấm nút đánh và quan sát hoạt ảnh. Chỉ thử trong môi trường riêng phù hợp vì setter gọi `CloseAll()` cho player, và chính sách bản đồ có thể đặt lại trạng thái. Có thể cân nhắc khôi phục `SetFightState(0)` sau phép thử nếu trạng thái trước đó và thủ tục đã được xác nhận.
+
+[CHƯA KIỂM] Chưa xác nhận Test-36 có điểm chạy Lua phù hợp, chưa thực hiện thao tác, và chưa quan sát vung kiếm/ngồi runtime. Không chạy build, exe, VM hoặc mạng.
+
+### Giải mã tên — bổ sung HG-02b
+| Tên gốc | Mã hóa | Chữ đúng / diễn giải | Nguồn file:dòng |
+|---|---|---|---|
+| `mainSkillattack` | ASCII | Hàm xử lý nút đánh | C:\Jx1CocoV3\Folder\Client2912-20260116T044348Z-3-001\Client2912\Client\Classes\gamecore\KNpcAI.cpp:1326 |
+| `m_FightMode` | ASCII | Trường trạng thái chiến đấu | C:\Jx1CocoV3\SwordOnline\SwordOnline\jxOnline\gameserver\Sources\Core\Src\KNpc.cpp:7809-7810 |
+| `0x02` | ASCII, hexadecimal | Bit chiến đấu trong `m_btSomeFlag` | C:\Jx1CocoV3\SwordOnline\SwordOnline\jxOnline\gameserver\Sources\Core\Src\KNpc.cpp:7809-7811 |
+| `SetFightMode` | ASCII | Hàm ghi chế độ chiến đấu | C:\Jx1CocoV3\SwordOnline\SwordOnline\jxOnline\gameserver\Sources\Core\Src\KNpc.cpp:15328-15335 |
+| `SetFightState` / `GetFightState` | ASCII | Hàm Lua đặt / đọc chế độ chiến đấu | C:\Jx1CocoV3\SwordOnline\SwordOnline\jxOnline\gameserver\Sources\Core\Src\ScriptFuns.cpp:21133-21151, 26147-26148 |
+| `Test-36` | ASCII theo tên task | Môi trường kiểm thử được nêu; chưa chạy | JX1_OPS/TASKS/HG-02b.md:20 |
+
+### Sắp theo cấu trúc game — bổ sung HG-02b
+| Tầng | Thành phần | Vai trò đã thấy |
+|---|---|---|
+| Nút giao chiến client | `mainSkillattack` | Điểm xử lý nút đánh. |
+| Trạng thái nhân vật | `m_FightMode` | Nhánh nút đánh đọc trạng thái này. |
+| Đồng bộ client/server | `m_btSomeFlag & 0x02` | Server phát, client đọc lại chế độ chiến đấu. |
+| Điều khiển script | `SetFightState` → `SetFightMode` | API Lua gọi setter ở server. |
+| Nhánh tắt chiến đấu | `do_sit` và `SendClientCmdSit(TRUE)` | Gửi lệnh ngồi rồi thoát khỏi hàm nút đánh. |
+| Kiểm thử | Test-36 | Chỉ đề xuất, chưa chạy. |
+
+### MỤC SỔ THÔNG SỐ — HG-02b
+| Nhóm | Tên/hằng số | file:dòng | Giá trị | Đơn vị | Ảnh hưởng | Đổi an toàn | Nguồn đo |
+|---|---|---|---|---|---|---|---|
+| Trạng thái chiến đấu | `m_FightMode` | KNpc.cpp:7809-7810, 15328-15335 | 0 = tắt; tham số Lua khác 0 thành bật | boolean | Nhánh nút đánh và đồng bộ trạng thái | CẨN THẬN | Đọc tĩnh; chưa đo runtime |
+| Bit đồng bộ | `m_btSomeFlag & 0x02` | KNpc.cpp:7806-7811; KProtocolProcess.cpp:3147-3150 | Bit đặt khi chế độ bật | bit mask | Chuyển trạng thái server sang client | CẨN THẬN | Đọc tĩnh; chưa đo runtime |
+| Tham số Lua | `SetFightState` tham số 1 | ScriptFuns.cpp:21133-21141 | số khác 0 = true; 0 = false | số đầu vào | Gọi setter trạng thái cho người chơi hiện tại | CẨN THẬN | Đọc tĩnh; chưa đo runtime |
+
+### Xác minh và bàn giao HG-02b
+- [THẤY] Đã đối chiếu đủ bốn tệp nguồn được task chỉ định; file:dòng được liệt kê trong bảng phạm vi.
+- [CHƯA KIỂM] Runtime, Test-36, build, exe, VM và mạng chưa chạy theo phạm vi task.
+- Trạng thái phần phân tích tĩnh HG-02b: DONE; thử nghiệm Test-36 vẫn chưa xác minh.
+- Bước tiếp theo: người kiểm thử xác nhận điểm gọi Lua và điều kiện bản đồ trước khi thử.
+- Đề xuất mục lục: nhóm “Phím tắt, nút, tự động chiến đấu” | tài liệu trạng thái chiến đấu và nút đánh | `mainSkillattack`, `m_FightMode`, `0x02`, `SetFightState` | khảo sát tĩnh, chưa thử Test-36.
+- Kỹ năng đã dùng: jx1-retrofit, jx1-read-server, jx1-read-client, jx1-parameters, jx1-knowledge, jx1-report.

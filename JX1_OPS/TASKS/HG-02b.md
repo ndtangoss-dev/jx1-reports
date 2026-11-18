@@ -31,3 +31,9 @@ Giải thích vì sao nút đánh ngoài trạng thái chiến đấu làm nhân
 
 ## Nguồn bổ sung (sửa lỗi lần trước)
 Nguồn thật (đọc được, đường dẫn tuyệt đối): client C:\Jx1CocoV3\Folder\Client2912-20260116T044348Z-3-001\Client2912\Client\Classes\gamecore\KNpcAI.cpp và C:\Jx1CocoV3\Folder\Client2912-20260116T044348Z-3-001\Client2912\Client\Classes\gamecore\KProtocolProcess.cpp; server C:\Jx1CocoV3\SwordOnline\SwordOnline\jxOnline\gameserver\Sources\Core\Src\KNpc.cpp và C:\Jx1CocoV3\SwordOnline\SwordOnline\jxOnline\gameserver\Sources\Core\Src\ScriptFuns.cpp. Worktree của bạn KHÔNG có mã nguồn: hãy đọc trực tiếp các đường dẫn tuyệt đối này (chỉ đọc; ghi chỉ ở tệp đầu ra).
+
+## Kết quả
+- DONE: đã đối chiếu 4/4 tệp nguồn. Khi chế độ chiến đấu tắt, nhánh nút đánh ra lệnh ngồi rồi thoát; bit 0x02 đồng bộ trạng thái mà SetFightState thay đổi qua SetFightMode.
+- Giữ nguyên tài liệu đầu ra đã có; chi tiết bằng chứng và bàn giao tại [báo cáo HG-02b](../REPORTS/HG-02b.md).
+- Test-36 chỉ là đề xuất; chưa chạy build, game, exe, VM hoặc mạng.
+- Không commit theo yêu cầu. Sandbox từ chối ghi tệp nhịp ngoài worktree.
