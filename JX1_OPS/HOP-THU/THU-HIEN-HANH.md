@@ -81,3 +81,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Đợt kế: ẩn cửa sổ console Tổng quản (pythonw + CREATE_NO_WINDOW), gộp N-01..06 thành NUT-EXE-TAC-DONG.md, gộp R-05b/c/d R-07b | #165 | bổ sung #164 | chờ Sonnet |
 | VÒNG TỰ ĐỘNG Q-49: Sonnet gõ 'xong' vào chat qua Claude desktop, chờ dấu CHAT-DAY trong VONG.md; thử khả năng điều khiển Claude desktop một lần | #166 | bổ sung #165 | chờ Sonnet |
 | Đổi cách đánh thức Chat sang Claude in Chrome (thẻ chủ mở sẵn), thử một lần | #167 | thay mục 2 #166 | chờ Sonnet |
+| Đợt kế: K-02 (tiểu yêu), mở khóa R-04b/R-05a, đánh giá A-07, soạn đề xuất thử client (3–5 ca thấp rủi ro); dừng ngay, chủ gõ xong tay | #168 | theo TIEN-DO | chờ Sonnet |
