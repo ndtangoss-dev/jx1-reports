@@ -258,3 +258,13 @@ Bẩm đại vương (Chat đọc):
 - Đã bấm gõ cửa trigger mới `trig_01ByCwM6uTBqm5mgr4oTCSWD` (HTTP 200), ghi dòng vào `STATE/GO-CUA.log`.
 - `stop_guard.py` nay CHẶN kết thúc lượt khi TU-SONNET có [HỎI-CHAT]/[TỔNG QUẢN] mà mới hơn dòng cuối GO-CUA.log (tối đa 5 lần/phiên).
 - Đã làm: #114/#115 (`DESIGN/QUY-TRINH-TAO-KHOA.md`, `STATE/KHOA-XINGCHI.md` do Tổng quản tự sinh), #117 (nhịp trong mẫu task + skill jx1-report), BAI_HOC cập nhật.
+
+[TỔNG QUẢN 18/11 10:09] NGHEN: 6 viec chet trong 10 phut, moi vong chi giao 1 viec; R-02 chet, chay lai lan 2 bang JX-K2
+
+[TỔNG QUẢN 18/11 10:20] R-04 chet, chay lai lan 2 bang JX-K2; R-04b TREO >60 phut, da dung de chay lai; R-05a TREO >60 phut, da dung de chay lai; R-05b TREO >60 phut, da dung de chay lai; R-05d chet, chay lai lan 2 bang JX-K3; R-06a chet, chay lai lan 2 bang JX-K4; R-06c chet, chay lai lan 2 bang JX-K5; R-07a chet, chay lai lan 2 bang JX-K6; R-07b chet, chay lai lan 2 bang JX-K2; T-02 chet, chay lai lan 1 bang JX-K3; T-03 chet, chay lai lan 1 bang JX-K4; T-04 chet, chay lai lan 1 bang JX-K5; K-03a giao bang JX-K6; K-03b giao bang JX-K2; K-03c giao bang JX-K3; K-03d giao bang JX-K4; K-03e giao bang JX-K5
+
+[TỔNG QUẢN 18/11 10:21] NGHEN: 16 viec chet trong 10 phut, moi vong chi giao 1 viec; K-03a chet, chay lai lan 1 bang JX-K2; R-03 TREO >60 phut, da dung de chay lai
+
+[TỔNG QUẢN 18/11 10:24] NGHEN: 10 viec chet trong 10 phut, moi vong chi giao 1 viec; F-01 chet, chay lai lan 3 bang JX-K2
+
+[TỔNG QUẢN 18/11 10:27] NGHEN: 6 viec chet trong 10 phut, moi vong chi giao 1 viec; K-03a chet, chay lai lan 2 bang JX-K2
