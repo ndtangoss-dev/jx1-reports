@@ -24,6 +24,7 @@ if ($env:JX_CODEX_KEY) {
 }
 @"
 `$env:CODEX_HOME = 'C:\Users\PC\.codex'; `$env:PYTHONUTF8 = '1'
+Set-Content -Encoding ASCII '$wt.pid' `$PID   # #132.2: PID bao song/chet
 $keyLine
 Get-Content -Raw -Encoding UTF8 '$PromptFile' | & '$Codex' exec --json --sandbox workspace-write --model '$Model' --config 'model_provider="xingchi"' --config 'model_reasoning_effort="$Effort"' --config 'approval_policy="never"'$keyCfg -C '$wt'$addDir - *> '$log'
 Set-Content -Encoding UTF8 '$wt.done' ('exit=' + `$LASTEXITCODE + ' ' + (Get-Date -Format s))

@@ -325,3 +325,6 @@ Task Scheduler `JX-Guard`: LastRun 10:29:29, LastTaskResult 0 (script chạy xon
 - Đã gỡ dòng `experimental_bearer_token` khỏi `C:\Users\PC\.codex\config.toml`, xóa 2 bản `.bak` và 1 file `.tmp` còn sót (chỉ trên máy, không vào kho).
 - Tìm giá trị khóa trong toàn bộ lịch sử git (`--all`) của kho ops và `C:\Jx1CocoV3`, cùng cây làm việc: KHÔNG có commit hay file nào chứa.
 - Mục 2: R-03, R-04b, R-05a/b/c chạy bằng khóa mặc định sẽ lỗi 401; việc chỉnh Tổng quản (401 khóa mặc định = lỗi dịch vụ, chạy lại bằng JX-Kn) làm cùng #132.
+
+Nhận #132, #133 (18/11 11:05). Đã làm: Tổng quản chu kỳ PT2M; chết → chạy lại ở vòng kế (bỏ chờ 2/5/15, vẫn tối đa 3 lần lỗi của việc); nhịp thử cầu dao 2 phút; giao cách 10 giây; bỏ cột "(tay/mac dinh)", thêm cột Mô hình + PID; chay_codex.ps1 ghi `<ID>.pid`, PID mất mà Scheduler còn báo Running = CHẾT; exit=0 + worktree sạch + không có báo cáo = CHẾT "rỗng" (không phải XONG-CHO-GOP); 401 trên khóa mặc định (đã gỡ) = lỗi dịch vụ, không tính.
+[ASTRA #133.1] Log R-06a (astra): 32 lần gọi công cụ, toàn đọc; không có lần ghi/sửa nào; tin nhắn cuối rỗng; exit=0; worktree sạch → astra "kết thúc rỗng", không phải thành công. Chưa dùng astra thay sol (#132.4 treo). T-02 đang chạy astra trên JX-K3 (giao 10:56); xong sẽ ghi kết quả: có báo cáo → áp #132.4, không → giữ sol + cầu dao thử 2 phút. BAI_HOC không ghi "astra chạy được".

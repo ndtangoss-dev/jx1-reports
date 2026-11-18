@@ -10,7 +10,7 @@ WT = r'D:\JX-wt'
 KEYS = r'C:\Users\PC\.jx1keys'
 GD = os.path.join(WT, 'tong_quan')
 MAXKEY = 3
-WAITS = (2, 5, 15)      # phut cho truoc lan chay lai 1, 2, 3
+WAITS = (0, 0, 0)       # #132: chet -> chay lai o vong ke (<=2 phut); toi da 3 lan loi cua viec roi CHET-BO
 IM, TREO = 20, 60       # phut im: song / im-nhung-song / treo
 DRY = '--dry' in sys.argv
 os.makedirs(GD, exist_ok=True)
@@ -103,6 +103,33 @@ def pick_key(assign, alive_ids):
     return min(ks, key=lambda k: use.get(k, 0)) if ks else None
 
 
+def model_of(i):
+    try:
+        return 'astra' if i in open(os.path.join(GD, 'astra.txt')).read().split() else 'sol'
+    except OSError:
+        return 'sol'
+
+
+def pid_of(i):
+    try:
+        return int(re.sub(r'\D', '', open(os.path.join(WT, i + '.pid'), 'rb').read().replace(bytes([0]), b'').decode('utf-8', 'ignore')) or 0)
+    except (OSError, ValueError):
+        return 0
+
+
+def pid_alive(pid):
+    if pid <= 0:
+        return None
+    out = subprocess.run(['tasklist', '/FI', 'PID eq %d' % pid, '/NH'], capture_output=True, text=True).stdout
+    return str(pid) in out
+
+
+def pid_txt(i, running):
+    p = pid_of(i)
+    a = pid_alive(p)
+    return '-' if a is None else ('%d song' % p if a else '%d mat' % p)
+
+
 def run_launch(i, key):
     env = dict(os.environ, JX_CODEX_KEY=key)
     args = ['powershell', '-NoProfile', '-File', os.path.join(ROOT, 'TOOLS', 'chay_codex.ps1'), '-Id', i]
@@ -171,7 +198,7 @@ def main():
             if now() - br['probe_start'] > 180:
                 br['s'] = 'dong'
         elif done_exit(pid) not in (0, None):
-            br.update(s='mo', probe_at=now() + 600)
+            br.update(s='mo', probe_at=now() + 120)
         else:
             br['s'] = 'dong'
     budget = [99 if br['s'] == 'dong' else 0]
@@ -194,6 +221,12 @@ def main():
         if not os.path.isdir(wt) or st_of(i) not in ('running', 'dang chay', 'in_progress', 'doing', 'failed'):
             continue
         running = sched.get(i) == 'Running'
+        pa = pid_alive(pid_of(i))   # #132.2: SONG = PID con; Scheduler bao Running ma PID mat = chet
+        if running and pa is False:
+            running = False
+            ps("Stop-ScheduledTask -TaskName 'JX-codex-%s'" % i)
+            if done_exit(i) is None and not DRY:
+                open(os.path.join(WT, i + '.done'), 'w').write('exit=3 pid mat')
         log = os.path.join(WT, i + '.codex.log')
         last = max(mt(log), mt(os.path.join(WT, i + '.nhip')), newest(wt))
         silent = (now() - last) / 60 if last else 9999
@@ -203,6 +236,8 @@ def main():
         svc = True
         if 'Chat Completions' in tail or 'requires Responses' in tail:
             err = 'xingchi Chat Completions'
+        elif '401' in tail[-3000:] and i not in assign:
+            err = '401 khoa mac dinh'   # #131: khoa mac dinh da go, 401 la loi dich vu
         elif 'upstream_error' in tail:
             err = 'upstream_error'
         elif re.search(r'\b429\b', tail[-6000:]):
@@ -218,6 +253,10 @@ def main():
                 notes.append('%s TREO >%d phut, da dung de chay lai' % (i, TREO))
                 open(os.path.join(WT, i + '.done'), 'w').write('exit=2 treo')
                 level = 'CHET'
+        elif ex == 0 and not os.path.exists(os.path.join(wt, 'JX1_OPS', 'REPORTS', i + '.md')) and not subprocess.run(['git', '-C', wt, 'status', '--porcelain'], capture_output=True, text=True).stdout.strip():
+            level = 'CHET'   # #133.3: exit=0 ma worktree sach, khong bao cao = rong
+            err = 'rong (exit=0, khong thay doi)'
+            svc = False
         elif ex == 0:
             level = 'XONG-CHO-GOP'
             if not DRY:
@@ -249,7 +288,7 @@ def main():
                         if probe:
                             probed[0] = True
                             br.update(s='nua-mo', probe_id=i, probe_start=now())
-                        time.sleep(20)
+                        time.sleep(10)
         elif level == 'CHET':
             n = lan.get(i, 0)
             fin = mt(os.path.join(WT, i + '.done')) or last
@@ -274,11 +313,11 @@ def main():
                         sched[i] = 'Running'
                         notes.append('%s chet, chay lai lan %d bang %s' % (i, n + 1, k))
                         level = 'CHAY-LAI-%d' % (n + 1)
-                        time.sleep(20)
+                        time.sleep(10)
                 else:
                     notes.append('%s can chay lai nhung CAN KHOA MOI (moi khoa da du %d tieu yeu)' % (i, MAXKEY))
-        rows.append((i, level, assign.get(i, '(tay/mac dinh)'), time.strftime('%H:%M', time.localtime(mt(log))) if mt(log) else '-',
-                     time.strftime('%H:%M', time.localtime(last)) if last else '-', err or '-', lan.get(i, 0)))
+        rows.append((i, level, assign.get(i, '-'), time.strftime('%H:%M', time.localtime(mt(log))) if mt(log) else '-',
+                     time.strftime('%H:%M', time.localtime(last)) if last else '-', err or '-', lan.get(i, 0), model_of(i), pid_txt(i, running)))
 
     # 2) giao viec ready
     for i, d in sorted(tasks.items()):
@@ -294,7 +333,7 @@ def main():
             notes.append('%s ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut)' % i)
             continue
         if DRY:
-            rows.append((i, 'SE-GIAO', k, '-', '-', '-', 0))
+            rows.append((i, 'SE-GIAO', k, '-', '-', '-', 0, model_of(i), '-'))
             continue
         ensure_worktree(i)
         assign[i] = k
@@ -303,8 +342,8 @@ def main():
             sched[i] = 'Running'
             subprocess.run([sys.executable, '-I', os.path.join(ROOT, 'TOOLS', 'set_status.py'), i, 'running', 'Tong quan giao bang ' + k], capture_output=True)
             notes.append('%s giao bang %s' % (i, k))
-            rows.append((i, 'SONG', k, '-', time.strftime('%H:%M'), '-', 0))
-            time.sleep(60)  # gian 1 phut giua hai lan giao
+            rows.append((i, 'SONG', k, '-', time.strftime('%H:%M'), '-', 0, model_of(i), '-'))
+            time.sleep(10)  # #132.5: gian 10 giay giua hai lan giao
 
     if notes_pre:
         notes.insert(0, notes_pre)
@@ -318,9 +357,9 @@ def main():
             if sched[i] == 'Running' and assign.get(i):
                 use[assign[i]] = use.get(assign[i], 0) + 1
         out = ['# TIỂU YÊU (Tổng quản tự sinh lúc %s, đừng sửa tay)' % time.strftime('%Y-%m-%d %H:%M'), '',
-               '**CẦU DAO xingchi: %s**' % {'dong': 'ĐÓNG (bình thường)', 'mo': 'MỞ (ngừng giao, mỗi 10 phút thử 1 việc)', 'nua-mo': 'NỬA-MỞ (đang thử 1 việc)'}[br['s']], '',
+               '**CẦU DAO xingchi: %s**' % {'dong': 'ĐÓNG (bình thường)', 'mo': 'MỞ (ngừng giao, mỗi 2 phút thử 1 việc)', 'nua-mo': 'NỬA-MỞ (đang thử 1 việc)'}[br['s']], '',
                'Mức: SONG / IM-NHUNG-SONG (20–60 phút) / TREO (>60, bị dừng chạy lại) / CHET / CHET-BO (quá 3 lần) / XONG-CHO-GOP. "Dấu hiệu sống cuối" = max(log, nhịp, file worktree).', '',
-               '| Mã | Mức | Khóa | Log cuối | Dấu hiệu sống cuối | Lỗi cuối | Lần chạy lại |', '|---|---|---|---|---|---|---|']
+               '| Mã | Mức | Khóa | Log cuối | Dấu hiệu sống cuối | Lỗi cuối | Lần chạy lại | Mô hình | PID |', '|---|---|---|---|---|---|---|---|---|']
         for r in rows:
             out.append('| ' + ' | '.join(str(x) for x in r) + ' |')
         out += ['', 'Khóa đang dùng: ' + (', '.join('%s=%d' % kv for kv in sorted(use.items())) or '(không)') + ' / khóa có: ' + ', '.join(keys()),
