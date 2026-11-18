@@ -1,6 +1,6 @@
-# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-18 14:49, đừng sửa tay)
+# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-18 14:54, đừng sửa tay)
 
-ĐANG LÀM: K-03a, K-03b, K-03c, K-03d, K-03e, T-02, T-04
+ĐANG LÀM: K-03b, K-03c, K-03d, T-02, T-04
 KẾ TIẾP: K-02, R-06a
 BỊ CHẶN: A-07, R-04b, R-05a
 
@@ -9,11 +9,11 @@ Ba chặng #091: 1 hiểu game (chuẩn hóa) → 2 đường truyền + exe →
 ```mermaid
 flowchart LR
   subgraph S1["Chặng 1 hiểu game"]
-    K_03a["K-03a chạy"]
     K_03b["K-03b chạy"]
     K_03c["K-03c chạy"]
     K_03d["K-03d chạy"]
-    K_03e["K-03e chạy"]
+    K_03a["K-03a chờ gộp"]
+    K_03e["K-03e chờ gộp"]
     R_05b["R-05b chờ gộp"]
     R_05c["R-05c chờ gộp"]
     R_05d["R-05d chờ gộp"]
@@ -36,4 +36,4 @@ flowchart LR
   end
 ```
 
-Tổng: 85 việc, 7 đang làm (+0 chết, 8 chờ gộp), 2 chờ, 3 bị chặn, 65 xong.
+Tổng: 85 việc, 5 đang làm (+0 chết, 10 chờ gộp), 2 chờ, 3 bị chặn, 65 xong.
