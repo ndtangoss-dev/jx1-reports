@@ -903,3 +903,8 @@ Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm th�
 - DỰ BÁO: 43/88 = 49% hiện tại; nếu 20 việc Hiểu game mới (SO-07..18, HG-06..13) cùng HG-03c/05b (đóng cha HG-03b, HG-05) xong đạt ≥85% → 43+20+2 = 65/88 = 74%; nếu mất 1/4 → 60/88 = 68% (thiếu 2). Chưa có số đo tốc độ thật 30 phút (việc mới giao từ 01:11); đo lại 02:05.
 - Kỷ luật mẫu số: đã dừng thêm việc mới vào BACKLOG (đợt 2 là lần thêm cuối trước 05:00 nếu không có tiểu yêu rảnh). Việc phụ chỉ đóng cha khi báo cáo "ĐẠT".
 - Cần chủ sáng mai để lên 100% (sẽ ghi `BAO-CAO-CHU.md`): CL-01 C02/C04/C05, B-05, X-05, bước Main VM của 0-07, P-01, 0-08.
+
+### 19/11 01:45 — gộp HG-08, HG-09, KV-03
+- HG-08 (`HIEU-CONG-THUC-SAT-THUONG.md`, 132 dòng, 1 sơ đồ, 40 chỗ file:dòng) và HG-09 (`HIEU-NAP-VA-CHUYEN-BAN-DO.md`, 206 dòng, 1 sơ đồ, 45 chỗ file:dòng) → done [NGUỒN]; kiểm mẫu `KNpc.cpp:4494–4503` thật là bước kiểm trúng (CheckHitTarget) khớp mô tả — [ĐÃ KIỂM 1 mẫu].
+- KV-03: **P-02 CHƯA ĐẠT** (thiếu đo runtime thật) → P-02 giữ nguyên. Tổng kiểm KV: C-01, C-03, E-05, A-07, P-02 đều CHƯA ĐẠT.
+- TIẾN ĐỘ 45/88 = 51% (HG-08, HG-09 vào số xong).
