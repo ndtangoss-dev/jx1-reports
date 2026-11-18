@@ -1,7 +1,7 @@
 ---
 id: XD-H02
 title: Mục lục các sổ tay và bảng thuật ngữ
-status: ready
+status: running
 level: L3
 agent: codex
 effort: high
@@ -13,7 +13,7 @@ backlog_ref: "việc phụ đóng việc cha (không vào BACKLOG)"
 vung_file: [JX1_OPS/REPORTS/XD-H02.md]
 tai_nguyen: []
 updated: 2026-11-19
-status_note: "moi tao 03:35"
+status_note: "Tong quan giao bang JX-K4"
 ---
 
 ## Mục tiêu và tiêu chí xong

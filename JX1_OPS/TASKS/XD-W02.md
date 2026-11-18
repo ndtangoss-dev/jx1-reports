@@ -1,7 +1,7 @@
 ---
 id: XD-W02
 title: W-02: vì sao cấp cường hóa Lua không tới client
-status: ready
+status: running
 level: L3
 agent: codex
 effort: high
@@ -13,7 +13,7 @@ backlog_ref: "việc phụ đóng việc cha (không vào BACKLOG)"
 vung_file: [JX1_OPS/REPORTS/XD-W02.md]
 tai_nguyen: []
 updated: 2026-11-19
-status_note: "moi tao 03:35"
+status_note: "Tong quan giao bang JX-K3"
 ---
 
 ## Mục tiêu và tiêu chí xong
