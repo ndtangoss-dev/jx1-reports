@@ -1,6 +1,6 @@
 TÓM TẮT 1 [NGUỒN] PARTIAL: đã đối chiếu các khẳng định trọng điểm của H-04, A-05, K-02-nhan-vat, N-01 và R-07a với nguồn tĩnh được giao.
-TÓM TẮT 2 [NGUỒN] Trong 27 đơn vị kiểm chéo: 15 khớp, 4 sai (2 A-05, 2 N-01), 2 thiếu điều kiện/dẫn dòng, 4 chỉ có tài liệu lịch sử và 2 chưa xác minh.
-TÓM TẮT 3 [NGUỒN] Hai sai lệch A-05 là nhánh chat toàn kênh bị dừng trước khi gửi và điều kiện trạng thái ngủ chỉ nằm trong đoạn mã đã comment.
+TÓM TẮT 2 [NGUỒN] Trong 27 đơn vị kiểm chéo: 16 khớp, 3 sai (1 A-05, 2 N-01), 2 thiếu điều kiện/dẫn dòng, 4 chỉ có tài liệu lịch sử và 2 chưa xác minh.
+TÓM TẮT 3 [NGUỒN] Một sai lệch A-05 là nhánh chat toàn kênh bị dừng trước khi gửi; điều kiện trạng thái ngủ của nhánh đang chạy vẫn có trong mã.
 TÓM TẮT 4 [CHƯA KIỂM] Không build, chạy exe, VM, mạng hay kiểm thử runtime; một số nguồn lịch sử ngoài hai gốc được giao chưa đối chiếu.
 TÓM TẮT 5 [NGUỒN] Đã ghi báo cáo và mục Kết quả cuối tệp task theo yêu cầu; không commit/push. Ghi nhịp ngoài worktree bị từ chối quyền; PM quyết định có giao vòng kiểm dẫn chứng còn lại.
 
@@ -20,8 +20,8 @@ flowchart LR
     B --> C[Đối chiếu source qh9A]
     B --> D[Đối chiếu source server SwordOnline]
     B --> E[Kiểm lại số đếm tài liệu]
-    C --> F[15 khớp]
-    D --> G[4 sai hoặc dẫn dòng sai]
+    C --> F[16 khớp]
+    D --> G[3 sai hoặc dẫn dòng sai]
     E --> H[4 tài liệu lịch sử; 2 chưa xác minh]
     B --> I[2 thiếu điều kiện hoặc mốc dẫn]
 ```
@@ -33,7 +33,7 @@ Nguồn phạm vi lấy từ `JX1_OPS/TASKS/KC-01.md:20-31`. Đơn vị đếm t
 | Phần tử phạm vi | Kết quả | Sổ kiểm |
 |---|---|---|
 | H-04 — hiệu ứng vũ khí | 5 mệnh đề; 3 khớp, 1 chỉ là ghi nhận tài liệu, 1 chưa xác minh | Bảng A |
-| A-05 — tương tác player/server | 8 mệnh đề; 4 khớp, 2 sai, 2 thiếu điều kiện/dẫn dòng | Bảng B |
+| A-05 — tương tác player/server | 8 mệnh đề; 5 khớp, 1 sai, 2 thiếu điều kiện/dẫn dòng | Bảng B |
 | K-02-nhan-vat — asset và luồng sprite | 3 mệnh đề code khớp, 1 số đếm asset chỉ là tài liệu trong phạm vi nguồn được giao | Bảng C |
 | N-01 — Bishop Announcer | 2 mệnh đề khớp, 2 dẫn dòng sai | Bảng D |
 | R-07a — chuẩn hóa năm báo cáo | 6 mệnh đề; 3 khớp, 2 lịch sử chỉ có tài liệu, 1 chưa đối chiếu | Bảng E |
@@ -55,7 +55,7 @@ Nguồn phạm vi lấy từ `JX1_OPS/TASKS/KC-01.md:20-31`. Đơn vị đếm t
 | ID | Khẳng định được kiểm | Kết quả và đối chiếu |
 |---|---|---|
 | A1 | `KRegion::BroadCast` kiểm player/NPC hợp lệ, connection, và khoảng cách đang bị comment | **THẤY — khớp.** Mã hoạt động kiểm chỉ số player/NPC và `m_nNetConnectIdx >= 0`; phép tính khoảng cách nằm trong comment tại `C:/Jx1CocoV3/SwordOnline/SwordOnline/jxOnline/gameserver/Sources/Core/Src/KRegion.cpp:2251-2279`. |
-| A2 | Đường broadcast đang hoạt động còn loại player ngủ | **THẤY — sai.** Điều kiện `m_bSleepMode == FALSE` chỉ thuộc vòng lặp đã comment tại `C:/Jx1CocoV3/SwordOnline/SwordOnline/jxOnline/gameserver/Sources/Core/Src/KRegion.cpp:2233-2249`; vòng hoạt động `:2251-2279` không có điều kiện này. A-05 mô tả điều kiện comment thành filter hiện hành tại `JX1_OPS/REPORTS/A-05-diem-tuong-tac-gs001.md:52`, :71. |
+| A2 | Đường broadcast đang hoạt động còn loại player ngủ | **THẤY — khớp.** Nhánh đang chạy kiểm `m_nNetConnectIdx >= 0` và `m_bSleepMode == FALSE`; chỉ điều kiện khoảng cách nằm trong comment. `A-05` mô tả đúng điểm này tại `JX1_OPS/REPORTS/A-05-diem-tuong-tac-gs001.md:52`, :71. |
 | A3 | Gửi sync một client đi đường trực tiếp, tách với broadcast vùng | **THẤY — khớp.** `SendSyncData` gọi direct `PackDataToClient` khi `bBroadCast` false tại `C:/Jx1CocoV3/SwordOnline/SwordOnline/jxOnline/gameserver/Sources/Core/Src/KNpc.cpp:7712-7718`; `SendDataToNearRegion` đi qua broadcast tại :14123-14135. |
 | A4 | Tìm mục tiêu/quan hệ không tự xác nhận kết nối mạng; `CanCastSkill` còn kiểm giới hạn trang bị | **THẤY — thiếu một dẫn dòng.** `FindNpc` dùng ô và quan hệ tại `C:/Jx1CocoV3/SwordOnline/SwordOnline/jxOnline/gameserver/Sources/Core/Src/KRegion.h:408-440`; `FindAroundPlayer` tra vùng lân cận tại `C:/Jx1CocoV3/SwordOnline/SwordOnline/jxOnline/gameserver/Sources/Core/Src/KPlayer.cpp:2361-2381`; `GetRelation` tính quan hệ gameplay tại `C:/Jx1CocoV3/SwordOnline/SwordOnline/jxOnline/gameserver/Sources/Core/Src/KNpcSet.cpp:1813-2042`. Các đoạn này không kiểm `m_nNetConnectIdx`. Hàng `CanCastSkill` của A-05 nói thêm về giới hạn trang bị nhưng chỉ dẫn `C:/Jx1CocoV3/SwordOnline/SwordOnline/jxOnline/gameserver/Sources/Core/Src/KSkills.cpp:221-265`; kiểm điều kiện trang bị nằm ở `C:/Jx1CocoV3/SwordOnline/SwordOnline/jxOnline/gameserver/Sources/Core/Src/KSkills.cpp:267-291`, nên mốc tại `JX1_OPS/REPORTS/A-05-diem-tuong-tac-gs001.md:97` thiếu phần đó. |
 | A5 | AoE tìm mục tiêu rồi xử lý sát thương mà không dùng filter kết nối làm filter viewer | **THẤY — khớp.** `ProcessCollision` gọi `FindNpc` rồi `ProcessDamage` tại `C:/Jx1CocoV3/SwordOnline/SwordOnline/jxOnline/gameserver/Sources/Core/Src/KMissle.cpp:1830-1852`; `ReceiveDamage` kiểm chỉ số/trạng thái combat, không kiểm connection tại `C:/Jx1CocoV3/SwordOnline/SwordOnline/jxOnline/gameserver/Sources/Core/Src/KNpc.cpp:4466-4477`. |
@@ -94,12 +94,26 @@ Nguồn phạm vi lấy từ `JX1_OPS/TASKS/KC-01.md:20-31`. Đơn vị đếm t
 
 ## Tổng hợp lỗi và phần thiếu
 
-Trong 27 mệnh đề đã chọn để kiểm, 15 mệnh đề khớp bằng source hiện có; 4 sai gồm hai điểm A-05 và hai cụm dẫn dòng N-01; 2 thiếu điều kiện hoặc mốc dẫn; 4 điểm chỉ có bằng chứng tài liệu lịch sử và 2 điểm chưa có phép đối chiếu độc lập. Con số 27 là tập kiểm có liệt kê ở các bảng A–E, không phải số mọi câu chứa `file:dòng` trong năm báo cáo.
+Trong 27 mệnh đề đã chọn để kiểm, 16 mệnh đề khớp bằng source hiện có; 3 sai gồm một điểm A-05 và hai cụm dẫn dòng N-01; 2 thiếu điều kiện hoặc mốc dẫn; 4 điểm chỉ có bằng chứng tài liệu lịch sử và 2 điểm chưa có phép đối chiếu độc lập. Con số 27 là tập kiểm có liệt kê ở các bảng A–E, không phải số mọi câu chứa `file:dòng` trong năm báo cáo.
 
-Hai sai lệch A-05 cần PM chuyển thành việc sửa báo cáo hoặc khảo sát tiếp, không được sửa trong KC-01: nhánh chat toàn kênh có `break` trước vòng gửi; filter ngủ bị trích từ phần comment. N-01 cần sửa hai nhóm dẫn dòng: nhãn Bishop trỏ nhầm vùng Bishop.rc, và các dòng client không đúng `s2cExtendChat`, `ChannelMessageArrival` hay hàm UI.
+Sai lệch A-05 cần PM chuyển thành việc sửa báo cáo hoặc khảo sát tiếp, không được sửa trong KC-01: nhánh chat toàn kênh có `break` trước vòng gửi. N-01 cần sửa hai nhóm dẫn dòng: nhãn Bishop trỏ nhầm vùng Bishop.rc, và các dòng client không đúng `s2cExtendChat`, `ChannelMessageArrival` hay hàm UI.
 
 Các hạng mục chưa đóng là lịch sử APK/hash và kiểm thử qh7 của H-04, provenance/baseline cũ ở R-07a, nội dung member bên trong gói sprite của K-02, trạng thái localization/runtime N-01 và các claim chi tiết ngoài 27 đơn vị đã lập. Không suy diễn từ source sang binary.
 
+## Đối chiếu bổ sung khi tiếp tục
+
+Lượt tiếp tục mở đúng các vùng source được dẫn trong sổ 27 mệnh đề; các mục dưới đây là kiểm lại bằng chứng cho mệnh đề đã có, không tạo thêm mệnh đề hay thay đổi số đếm.
+
+| Nhóm đã kiểm | Kết quả đọc source hiện tại | Bằng chứng file:dòng |
+|---|---|---|
+| A-05 — broadcast vùng và đồng bộ thực thể | **THẤY — củng cố A1/A2.** `KRegion::BroadCast` có kiểm `m_nNetConnectIdx >= 0` và `m_bSleepMode == FALSE`; điều kiện khoảng cách `MAX_SYNC_RANGE` bị comment ở nhánh hoạt động. Các đường `NormalMapSync`, `NormalSync`, `BroadCastState` và `SendDataToNearRegion` đều gọi `BroadCast` theo vùng nối. | `C:/Jx1CocoV3/SwordOnline/SwordOnline/jxOnline/gameserver/Sources/Core/Src/KRegion.cpp:2223-2229,2240-2244,2266-2272`; `KNpc.cpp:7842-7881,8043-8052,8235-8244,14103-14135` |
+| A-05 — đường direct và object | **THẤY — củng cố giới hạn vá BroadCast.** `SyncNpc` chuyển yêu cầu tới `SendSyncData` và các hàm object tự gọi `BroadCast`; `KSubWorld::BroadCasts` có kiểm kết nối và cùng subworld nhưng không thay thế chính sách viewer. | `KProtocolProcess.cpp:5421-5424`; `KNpcSet.cpp:1272-1289`; `KSubWorld.cpp:2366-2377`; `KObj.cpp:1468-1507,1511-1545,1548-1581,1585-1621` |
+| A-05 — chọn mục tiêu và skill | **THẤY — củng cố A4/A5.** `CastInitiativeSkill` dùng quan hệ để vào nhánh gây damage/state; `NpcSkillCommand` tìm NPC quanh rồi gửi lệnh; các đoạn này không có kiểm `m_nNetConnectIdx` tại điểm đã đọc. | `KSkills.cpp:3348-3404`; `KProtocolProcess.cpp:5581-5606`; `KPlayer.cpp:2407-2479` |
+| A-05 — relay chat/group | **THẤY — củng cố A6.** `CheckPlayerID` kiểm game status, player index và character ID. Nhưng nhánh `hasIdentify == false` chỉ kiểm blacklist trước `PackDataToClient`; `BroadcastLocalServer` và vòng faction/tong cũng gửi theo PlayerSet mà không có điều kiện kết nối tại dòng gửi. | `C:/Jx1CocoV3/SwordOnline/SwordOnline/jxOnline/gameserver/Sources/MultiServer/GameServer/KSOServer.cpp:2814-2833,6787-6805`; `C:/Jx1CocoV3/SwordOnline/SwordOnline/jxOnline/gameserver/Sources/Core/Src/KNewProtocolProcess.cpp:167-177`; `CoreServerShell.cpp:2833-2841,2861-2869` |
+| A-05 — Lua/API quanh player | **THẤY — củng cố phần chưa đủ điều kiện.** `LuaFindAroundPlayer` chỉ kiểm slot có NPC và cùng map/bán kính; `LuaGetAroundNpcList` dùng relation/ẩn, không có kiểm kết nối trong vùng đọc. Đây là lý do giữ đề xuất API online riêng, không đổi nghĩa hàm hiện tại. | `ScriptFuns.cpp:6784-6821,6857-6865,19852-19900` |
+| A-05 — AI/hiển thị | **THẤY — giữ giới hạn phân biệt target với viewer.** `GetNearestCharacter`/`GetNearestNpc` tìm theo vision/cell và relation; `InEyeshot` chỉ so khoảng cách. Không dùng các hàm AI này làm bằng chứng cho bộ lọc viewer. | `KNpcAI.cpp:2248-2265,2621-2678,3009-3014` |
+
+Số đếm vẫn là 27 mệnh đề trong các bảng A–E. Các dòng source bổ sung chỉ củng cố kết quả đã phân loại; không nâng các mục TÀI LIỆU hoặc CHƯA KIỂM thành xác minh runtime/binary.
 ## Giải mã tên
 
 Không có tên riêng kỹ năng, trang bị, NPC/quái hoặc bản đồ tiếng Hán/TCVN3 mới phát sinh trong phần kiểm chéo. Các tên gốc/ID bên dưới là mã báo cáo, tên chương trình hoặc symbol ASCII; giữ nguyên để tra cứu.
@@ -122,9 +136,13 @@ Không có tên riêng kỹ năng, trang bị, NPC/quái hoặc bản đồ ti�
 | 3. Quản trị thông báo | Bishop chọn lệnh → packet gateway → GS xử lý → client nhận chat/UI | N-01; N1–N4 |
 | 4. So sánh báo cáo cũ | Chia dữ kiện code hiện tại, số đếm và ghi nhận lịch sử | H-04, K-02, R-07a; trạng thái riêng tại A–E |
 
+## Phát hiện khi chuẩn hóa
+
+- Khi mở lại `KRegion::BroadCast`, phân loại A2 cũ được sửa: nhánh đang chạy vẫn loại `m_bSleepMode == FALSE`; phần bị comment là điều kiện khoảng cách. Bộ đếm tổng được cập nhật từ 15/4 thành 16/3, tổng 27 không đổi.
+
 ## Đã xác minh / Chưa xác minh
 
-**ĐÃ XÁC MINH:** đọc trực tiếp các dòng source nêu ở A–E và đối chiếu bốn lỗi A-05/N-01 với nhánh code hiện hành. Không tái kiểm số đếm asset trong K-02 vì các bảng asset không phải mã nguồn trong hai gốc được giao. Cây server dùng để đối chiếu là `C:/Jx1CocoV3/SwordOnline/SwordOnline/jxOnline/gameserver/Sources`; client là `D:/JX-build/qh9A`.
+**ĐÃ XÁC MINH:** đọc trực tiếp các dòng source nêu ở A–E và đối chiếu ba lỗi A-05/N-01 với nhánh code hiện hành. Không tái kiểm số đếm asset trong K-02 vì các bảng asset không phải mã nguồn trong hai gốc được giao. Cây server dùng để đối chiếu là `C:/Jx1CocoV3/SwordOnline/SwordOnline/jxOnline/gameserver/Sources`; client là `D:/JX-build/qh9A`.
 
 **CHƯA XÁC MINH:** chưa kiểm mọi dẫn chứng trong thân của cả năm báo cáo; các baseline/hashes APK cũ, kết quả runtime, nội dung bên trong PAK và giá trị localization đang nạp không được tái lập. Không build, chạy exe, VM, test, hoặc mạng theo phạm vi.
 
@@ -142,8 +160,8 @@ Không có tên riêng kỹ năng, trang bị, NPC/quái hoặc bản đồ ti�
 
 ## Kết quả
 
-- **PARTIAL:** đã đối chiếu 27 mệnh đề trọng điểm trong năm báo cáo: 15 khớp, 4 sai, 2 thiếu điều kiện/mốc dẫn, 4 chỉ có bằng chứng tài liệu lịch sử, 2 chưa kiểm độc lập.
-- Hai lỗi A-05 và cụm dẫn dòng N-01 được ghi rõ theo file:dòng; không sửa kết luận/báo cáo gốc.
+- **PARTIAL:** đã đối chiếu 27 mệnh đề trọng điểm trong năm báo cáo: 16 khớp, 3 sai, 2 thiếu điều kiện/mốc dẫn, 4 chỉ có bằng chứng tài liệu lịch sử, 2 chưa kiểm độc lập.
+- Một lỗi A-05 và cụm dẫn dòng N-01 được ghi rõ theo file:dòng; không sửa kết luận/báo cáo gốc.
 - Còn vòng kiểm toàn bộ dẫn chứng, các nguồn lịch sử APK/hash và các điểm runtime. Không build, exe, VM, mạng; không commit/push.
 
 Kỹ năng đã dùng: jx1-retrofit, jx1-read-server, jx1-read-client, jx1-parameters, jx1-knowledge, jx1-report.
