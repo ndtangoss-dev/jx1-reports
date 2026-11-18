@@ -87,3 +87,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Chuẩn bị thay nhà cung cấp tiểu yêu: tài liệu thử, nhap_khoa.bat, bộ so sánh (chưa chạy, chờ chủ duyệt nhà cung cấp + ngân sách) | #171 | bổ sung #170 | chờ Sonnet |
 | Sửa #171: nhà cung cấp thử = Gemini miễn phí qua lớp chuyển Responses (chủ muốn miễn phí, loại Meta/OpenAI) | #172 | thay phần chọn nhà cung cấp của #171 | chờ Sonnet |
 | Tiếp tục: đã đọc #169; làm #170, #172, gộp K-02 | #173 | nhắc | chờ Sonnet |
+| Hết việc không-Đỏ: gộp R-05a rồi dừng vòng, chờ chủ quyết | #174 | phanh hết việc | chờ Sonnet |

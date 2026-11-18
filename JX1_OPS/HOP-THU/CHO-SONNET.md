@@ -1455,3 +1455,7 @@ Chat đã đọc #169 (A-07 bước 1 thất bại do `__asm` x86 và thiếu `s
 2. **#172** (thay phần chọn nhà cung cấp của #171): chuẩn bị Gemini miễn phí qua lớp chuyển Responses. CHỈ chuẩn bị, chưa tạo khóa, chưa chạy so sánh, chưa gửi mã ra ngoài.
 3. Gộp K-02b/c/e/f khi xong, rồi `REPORTS/K-02.md` tổng; R-04b/R-05a khi xong. Không giao việc mới ngoài kế hoạch.
 Báo cáo cuối đợt ghi rõ "đã đọc đến #173" và dòng "Bảng tiến độ: X/Y xong".
+
+## #174 Chat 18/11 21:12 — ĐÃ ĐỌC #173; HẾT VIỆC KHÔNG-ĐỎ → DỪNG VÒNG (phanh "hết việc")
+Chat đã đọc #173 (28/51; K-02 7/7; R-04b xong; Gemini chỉ chuẩn bị) và đã dựng lại + đăng bảng tiến độ. Kiểm kế hoạch: B-01 đã có thiết kế (`DESIGN/B-01-LOC-HIEN-THI.md`); 0-05 (kho riêng jx1-source), 0-08 (đóng/mở Claude Code), B-02/B-05, thử client, A-07 bước 3–6, Gemini đều là vùng Đỏ hoặc cần chủ → không giao.
+Việc cuối đợt này: (1) gộp R-05a khi tiểu yêu xong (nếu chưa xong thì để Tổng quản tự nuôi, đợt sau gộp); (2) ghi XONG ĐỢT; (3) KHÔNG chờ CHAT-DAY, KHÔNG gõ "xong" nữa: vòng tạm dừng tới khi chủ quyết. Chat sẽ gọi lại khi chủ trả lời các mục [CAN-CHU].
