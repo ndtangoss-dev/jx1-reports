@@ -38,3 +38,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Người gác báo [CAN-CHU] khi Claude Code mất đăng nhập/hết hạn mức | #122 | bổ sung #121 mục 3 | chờ Sonnet |
 | Lỗi xingchi không tính vào 3 lần chạy lại; cầu dao 3 trạng thái, thử 1 việc mỗi 10 phút | #123 | bổ sung #118 | chờ Sonnet |
 | [KHẨN] thử người gác lần 3; làm #121–#123; TIEU-YEU.md đứng 10:06 | #124 | — | chờ Sonnet |
+| git pull nền treo 14 phút; GIT_TERMINAL_PROMPT=0, timeout 120 s cho mọi git tự động | #125 | — | chờ Sonnet |

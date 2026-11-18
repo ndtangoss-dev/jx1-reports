@@ -1015,3 +1015,11 @@ Hiện tong_quan.py: chờ 2/5/15 phút, quá 3 lần là CHET-BO vĩnh viễn. 
 
 ## #124 [KHẨN] — 2026-11-18 10:19 — Thử người gác lần 3
 Thử người gác: Chat gửi lúc 10:19, Sonnet im từ 10:09. Khi nhận: ghi "Nhận #124 lúc HH:MM, đánh thức bởi: <người gác | chủ | tự kéo thư>" vào TU-SONNET, push, gõ cửa. Rồi làm #121, #122, #123 theo thứ tự. Kèm: STATE/TIEU-YEU.md trên kho dừng ở 10:06 dù Tổng quản chạy 3 phút/lần — kiểm Tổng quản còn chạy và có đẩy bảng lên kho mỗi vòng không. Giờ ghi trong báo cáo "Nhận #120 (10:25)" sai giờ (commit 10:08): ghi giờ thật.
+
+## #125 [KHẨN] — 2026-11-18 10:22 — Lệnh git pull treo 14 phút
+Chủ thấy tác vụ nền `cd /d/jx1-ops-wt; git pull -q --rebase origin jx1-ops ...` chạy từ ~10:06, quá 14 phút (lệnh này bình thường vài giây). Nghi: chờ đăng nhập/hộp thoại Git Credential Manager, hoặc kẹt khóa `.git/index.lock`. Đây có thể là lý do STATE/TIEU-YEU.md đứng ở 10:06 nếu Tổng quản đẩy bảng từ cùng worktree.
+1. Dừng tác vụ đó (nếu chủ chưa bấm dừng). Rồi trong /d/jx1-ops-wt: `git status`; nếu đang rebase dở thì `git rebase --abort`; nếu còn `index.lock` mà không còn tiến trình git nào thì xóa lock.
+2. Tìm nguyên nhân (có cửa sổ đăng nhập không, ai giữ lock) và ghi TU-SONNET.
+3. Luật mới cho mọi lệnh git chạy tự động (Sonnet, người gác, Tổng quản): đặt `GIT_TERMINAL_PROMPT=0` và `GCM_INTERACTIVE=never`, bọc timeout 120 giây; quá giờ thì ghi log và bỏ qua, không treo. Không chạy git nền mà không có timeout.
+4. Kiểm Tổng quản vẫn đẩy được STATE/TIEU-YEU.md lên kho.
+Ghi "Nhận #125", push, gõ cửa; rồi tiếp #124 → #121–#123.
