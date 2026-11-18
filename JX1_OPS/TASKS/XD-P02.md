@@ -1,7 +1,7 @@
 ---
 id: XD-P02
 title: Đóng P-02: bộ đo chuẩn
-status: ready
+status: running
 level: L3
 agent: codex
 effort: high
@@ -13,7 +13,7 @@ backlog_ref: "đóng việc cha P-02 (không vào BACKLOG)"
 vung_file: [JX1_OPS/REPORTS/XD-P02.md]
 tai_nguyen: []
 updated: 2026-11-19
-status_note: "moi tao #209 dot 4"
+status_note: "Tong quan giao bang JX-K3"
 ---
 
 ## Mục tiêu và tiêu chí xong

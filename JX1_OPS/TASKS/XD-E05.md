@@ -1,7 +1,7 @@
 ---
 id: XD-E05
 title: Đóng E-05: đối chiếu BACKLOG #170
-status: ready
+status: done
 level: L3
 agent: codex
 effort: high
@@ -13,7 +13,7 @@ backlog_ref: "đóng việc cha E-05 (không vào BACKLOG)"
 vung_file: [JX1_OPS/REPORTS/XD-E05.md]
 tai_nguyen: []
 updated: 2026-11-19
-status_note: "moi tao #209 dot 4"
+status_note: "Tong quan giao bang JX-K4"
 ---
 
 ## Mục tiêu và tiêu chí xong

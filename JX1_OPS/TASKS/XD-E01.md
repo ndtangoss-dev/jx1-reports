@@ -1,7 +1,7 @@
 ---
 id: XD-E01
 title: Đóng E-01: client Python
-status: running
+status: done
 level: L3
 agent: codex
 effort: high

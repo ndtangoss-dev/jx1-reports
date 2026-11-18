@@ -1,7 +1,7 @@
 ---
 id: XD-C03
 title: Đóng C-03: kiểm tiêu chí jxweb
-status: running
+status: done
 level: L3
 agent: codex
 effort: high
