@@ -1,4 +1,4 @@
-# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-18 10:39, đừng sửa tay)
+# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-18 10:46, đừng sửa tay)
 
 ĐANG LÀM: R-05c
 KẾ TIẾP: K-02
@@ -39,4 +39,4 @@ flowchart LR
   end
 ```
 
-Tổng: 86 việc, 1 đang làm (+19 chết, 1 chờ gộp), 1 chờ, 1 bị chặn, 63 xong.
+Tổng: 85 việc, 1 đang làm (+19 chết, 1 chờ gộp), 1 chờ, 1 bị chặn, 62 xong.
