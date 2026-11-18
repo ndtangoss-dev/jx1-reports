@@ -226,3 +226,5 @@
 - 18:20 Chủ bảo tiếp tục tìm hiểu nút exe liên kết và tác động server/client. Gửi #164 (gộp việc bỏ astra; nghiên cứu tĩnh qua tiểu yêu).
 - 18:45 Đọc XONG ĐỢT #164 (bỏ astra, gộp R-06a/c R-07a, giao N-01..06). Chủ báo cửa sổ đen nháy của Tổng quản. Gửi #165.
 - 19:35 Chủ quyết xoay vòng tự động (Q-49). Viết QUY-TRINH-VONG-TU-DONG.md, VONG.md, BAO-CAO-CHU.md, gửi #166.
+- 19:38 Sonnet báo không điều khiển được Claude desktop; chủ cho dùng Claude in Chrome. Sửa quy trình, gửi #167.
+- 19:35 Chủ xác nhận cửa sổ Tổng quản đã hết nháy (pythonw).

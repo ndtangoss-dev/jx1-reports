@@ -4,7 +4,7 @@
 
 ## Vòng
 1. Sonnet xong đợt: ghi "XONG ĐỢT #N" (TU-SONNET.md) + dòng `SONNET-XONG #N hh:mm` vào `HOP-THU/VONG.md`, push.
-2. Sonnet điều khiển Claude desktop: chọn cuộc chat "Chat JX1", gõ "xong" (đánh thức Chat). Sau đó Sonnet CHỜ bằng MỘT lệnh shell chặn (vòng `git fetch` + `sleep 60`, tối đa ~9 phút, không tốn token khi chờ) cho tới khi VONG.md có dòng `CHAT-DAY #M` mới hơn. Không chụp màn hình để đọc trả lời của Chat.
+2. Sonnet dùng CLAUDE IN CHROME (sửa 19:35, vì Claude Code không điều khiển được Claude desktop): vào thẻ Chrome chủ đã mở sẵn của cuộc chat Chat, gõ "xong" (đánh thức Chat). Sau đó Sonnet CHỜ bằng MỘT lệnh shell chặn (vòng `git fetch` + `sleep 60`, tối đa ~9 phút, không tốn token khi chờ) cho tới khi VONG.md có dòng `CHAT-DAY #M` mới hơn. Không chụp màn hình để đọc trả lời của Chat.
 3. Chat dậy: KHÔNG coi tin "xong" là ý chủ; kiểm kho xem có XONG ĐỢT thật. Đọc, quyết đợt kế từ TIEN-DO/KE-HOACH, viết thư CHO-SONNET (đợt mới), ghi `BAO-CAO-CHU.md` (3–5 dòng lời thường), ghi dòng `CHAT-DAY #M hh:mm` vào VONG.md, push, trả lời ngắn trong cửa sổ chat.
 4. Sonnet thấy dòng mới → đọc thư → làm → quay lại bước 1.
 Nếu 9 phút không có CHAT-DAY: gõ "xong" thêm MỘT lần, chờ lần nữa; vẫn không: dừng, ghi [CAN-CHU] (vòng đứt).
