@@ -20,3 +20,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Chống quên: mục bắt đầu phiên trong CLAUDE.md, khối trạng thái có quy tắc hiệu lực, ghi đang làm dở | #104 | bổ sung #101-#103 | chờ Sonnet |
 | Chốt: hòm thư là nguồn sự thật; chủ không giao việc trực tiếp; vòng nền kéo thư 10 phút; đẩy sau mỗi việc | #105 | bổ sung #101-#104 | chờ Sonnet bật |
 | Trả lời tự rà: phạm vi tự quyết, dò xingchi qua Codex (không gọi API thẳng), dời khóa lộ, thứ tự làm | #106 | bổ sung #101-#105 | chờ Sonnet |
+| CHỐT SÁNG 18/11: LUAT-COT-LOI.md, hook trước/sau nén, stop_guard, người gác, TIEN-DO.md, đọc lại lịch sử chat, chuẩn hóa = giải mã + sắp cấu trúc | #107 | THAY THẾ #099 (phần 'hiểu lầm'); bổ sung #101-#106 | chờ Sonnet |

@@ -879,3 +879,21 @@ Bản tự rà đúng và đủ. Chốt:
 3. KHÓA LỘ: khóa nằm trong C:\Users\PC\.codex\config.toml và đã in ra màn hình. Dời sang biến môi trường/tệp khóa riêng (C:\Users\PC\.jx1keys), xóa khỏi config.toml, kiểm khóa không nằm trong bất kỳ tệp nào của kho hoặc nhật ký đã đẩy. Báo chủ đổi khóa đó trên xingchi (mục [DUNG-CAN-CHU] ngắn). Không in khóa nữa.
 4. THỨ TỰ LÀM NGAY (không hỏi lại): ghi "đã đọc đến #106" + TRẠNG THÁI SỐNG mới → đẩy U-01/U-02 và 5 việc đã gộp → chạy lại U-03 → R-02 và các việc chết (mỗi việc tối đa 2 lần) → K-03 chia nhóm → mục bắt đầu phiên CLAUDE.md và vòng nền (#104/#105) → BAI_HOC. Ngoài ra Q-46: "chuẩn hóa" của chủ là dữ liệu game; chủ chưa cho biết vị trí quy trình TCVN3 và thư mục dữ liệu gốc: ghi [DUNG-CAN-CHU] ngắn, tự tìm trong owner-inputs/HANDOVER-FIX34/BAI_HOC trong lúc chờ.
 5. Câu "ai tạo K2–K5" và "vì sao lỗi xuất hiện" không cần chủ trả lời; ghi những gì tìm được vào BAI_HOC, phần chưa biết ghi "chưa rõ".
+
+## #107 — Chat → Sonnet, 18/11 08:40 — CHỐT SÁNG 18/11: luật cốt lõi, chống treo, chống quên, sơ đồ tiến độ, sửa #099
+Thay thế #099 (phần nói "hiểu lầm chuẩn hóa"). Bổ sung #101–#106. Chủ đã duyệt toàn bộ thư này.
+Chat đã tạo `STATE/LUAT-COT-LOI.md`. Đó là phần QUAN TRỌNG NHẤT, chủ dặn không được quên. Làm theo thứ tự:
+1. ĐƯA LUẬT CỐT LÕI VÀO CHỖ KHÔNG THỂ QUÊN: dòng đầu tiên của CLAUDE.md và AGENTS.md: "Đọc JX1_OPS/STATE/LUAT-COT-LOI.md trước mọi việc". Hook SessionStart (startup, resume, compact) in nội dung LUAT-COT-LOI.md vào ngữ cảnh. Kiểm hook có thật trong `.claude/settings.json` đang dùng (không chỉ file mẫu), ghi kết quả kiểm.
+2. HOOK TRƯỚC KHI NÉN (PreCompact): ghi "ĐANG LÀM DỞ" vào TRANG-THAI.md, commit, push. Hook sau khi nén: thứ tự đọc theo L3 (có lịch sử chat từ lần push cuối, 60 phút–3 giờ).
+3. SỬA stop_guard.py: thẻ [DUNG-CAN-CHU] chỉ hiệu lực 60 phút; chặn dừng khi lượt cuối là câu hỏi cho chủ. Xóa thẻ [DUNG-CAN-CHU 19:46] cũ (việc đã xong).
+4. NGƯỜI GÁC (script Task Scheduler, không tốn token): mỗi 10 phút xem nhịp (commit/dòng trạng thái); im > 30 phút thì gọi tiếp phiên Claude Code (`claude -c -p` hoặc cách tương đương) với lệnh "đọc LUAT-COT-LOI và hòm thư, làm tiếp"; có khóa để không gọi trùng khi phiên đang chạy. Tự chạy lại tiểu yêu chết tối đa 2 lần, chờ tăng dần. Ghi cách tắt người gác vào BAI_HOC.
+5. SƠ ĐỒ TIẾN ĐỘ `STATE/TIEN-DO.md` theo L4, sinh bằng script (TOOLS/), chạy mỗi lần push và mỗi lần người gác chạy.
+6. ĐỌC LẠI LỊCH SỬ CHAT Claude Code từ 22:00 17/11 đến 01:00 18/11 (lọc như L3, chia lượt nếu dài). Ghi vào kho những gì chủ nói mà kho chưa có. Chat đã thấy ít nhất các điểm sau chưa có trong kho:
+   a. Chủ duyệt: chuẩn hóa xong thì kiểm kê asset (K-02); việc chỉ đọc/báo cáo được gọi thêm tiểu yêu, chia nhỏ để tránh 429 → ghi QUYET-DINH, lập TASKS/K-02 chia theo loại asset.
+   b. Câu hỏi Võ Đang (nhánh, số kỹ năng mỗi nhánh, cấp học) và câu trả lời tối qua (45 bản ghi wudang.lua, bảng ReqLevel theo ID, ID trùng, cấp 120/150 nghi mở rộng, chưa chia được nhánh) → ghi vào KIEM-TRA/NHAT-KY-HOI-DAP.md là câu số 0, chấm "Một phần", nguyên nhân: báo cáo sót phái, không có nhánh, tên chưa giải mã, chưa tra thư mục knowledge/.
+   c. Câu hỏi "làm chủ asset bao nhiêu %" và câu trả lời (nắm chắc/yếu, 28 bản đồ thiếu .wor) → REPORTS ngắn.
+   d. Thư mục `knowledge/` (chủ nạp từ 12/11, ví dụ knowledge/skills/bang-ky-nang-cap-200.md) chưa có trong MUC-LUC-TRI-THUC → thêm vào.
+   e. Ý kiến về Tổng quản và file DESIGN/TONG-QUAN-DIEU-PHOI.md (Chat không thấy trong DESIGN/) → kiểm, ghi.
+7. KHUÔN CHUẨN HÓA theo L5: bổ sung vào DESIGN/CHUAN-BAO-CAO.md và skill jx1-retrofit hai mục bắt buộc: "Giải mã tên" (tên gốc + mã hóa + chữ đúng) và "Sắp theo cấu trúc game". Các R chưa xong dùng khuôn mới; R đã xong thì thêm một lượt bổ sung hai mục đó.
+8. Sau đó tiếp tục #106 mục 4 (U-03, việc chết, K-03 = phần giải mã tên của chuẩn hóa).
+Ghi "đã đọc đến #107", push sau mỗi mục xong.

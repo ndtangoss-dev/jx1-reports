@@ -144,3 +144,4 @@
 - 18/11 07:58 Chu dong y: tu gio khong giao viec truc tiep cho Sonnet, moi viec qua hom thu. Gui #105 chot cach lam.
 - 18/11 08:05 Chu dan ban tu ra cua Sonnet (da doc #100-#104). Gui #106: pham vi tu quyet, xingchi, khoa lo, thu tu lam.
 - 18/11 08:20 Chat kiem: Sonnet van chua push gi tu 00:42; #101-#106 chua co tra loi trong kho. Dang cho chu duyet de xuat #107 (ghi lai cac quyet dinh bi mat trong chat 22:30-00:30).
+- 18/11 08:40 Chu duyet. Tao STATE/LUAT-COT-LOI.md + gui #107 (thay #099).
