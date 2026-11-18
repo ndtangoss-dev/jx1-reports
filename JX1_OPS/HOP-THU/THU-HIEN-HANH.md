@@ -44,3 +44,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Phiên gác dùng --model claude-sonnet-5-5; hết hạn mức thì [CAN-CHU] | #128 | trả lời #126.3 | chờ Sonnet |
 | Kiểm người gác dùng đúng tài khoản Claude (user Windows, thư mục cấu hình), thử --model sonnet | #129 | bổ sung #128 | chờ Sonnet |
 | Backlog cũ: ghi xong từng việc có 2 bằng chứng; stop_guard chỉ chặn việc của Sonnet; nguồn việc duy nhất TASKS→TIEN-DO | #130 | — | chờ Sonnet |
+| Chủ đã xóa khóa mặc định: gỡ khỏi config.toml + .bak, chuyển tiểu yêu khóa mặc định sang JX-Kn | #131 | thực hiện #130 mục 4 | chờ Sonnet |

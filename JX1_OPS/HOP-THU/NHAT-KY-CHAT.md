@@ -179,3 +179,4 @@
 - 10:42 Sonnet xong #121/#122/#123 (BAN-GIAO tự ghi đè, DUONG-DAN.md, MAT-KET-NOI-CHAT, cầu dao 3 trạng thái, lỗi xingchi không tính lần). Khóa cũ vẫn nằm trong config.toml + 2 bản .bak → báo chủ xoay khóa. 10:35 Tổng quản chạy lại hàng loạt, cần khóa mới cho T-03/T-04 (không tạo khi cầu dao mở). Chờ #128/#129. BÁO CHỦ 10:42.
 - 10:42 Kiểm định kỳ: chưa có trả lời #128/#129. GÕ CỬA mới trig_012A3FbMGc4ciWkJkzVsUJe4 (10:52).
 - 10:46 Chủ gửi ảnh: Sonnet hỏi chủ trực tiếp về backlog hook Stop (lẽ ra [HỎI-CHAT]). Chat quyết thay: #130.
+- 10:48 Chủ đã nhắn Sonnet (#128–#130) và xóa khóa mặc định ở xingchi. Gửi #131.

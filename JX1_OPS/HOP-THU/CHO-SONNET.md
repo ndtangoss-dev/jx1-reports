@@ -1060,3 +1060,10 @@ Câu "cần đại vương quyết" về A-04, B-01, B-02, C-01…C-03, D-01, E-
 3. Nguồn danh sách việc duy nhất: TASKS/*.md (status) → TIEN-DO.md. Bảng tiến độ trong TRANG-THAI bỏ, chỉ còn khối TRẠNG THÁI SỐNG và "ĐANG LÀM DỞ".
 4. Khóa cũ lộ: chủ được báo xoay khóa ở xingchi. Khi chủ xoay xong, Chat sẽ báo; lúc đó gỡ dòng `experimental_bearer_token` khỏi config.toml và xóa 2 bản .bak (chỉ ở máy, không đưa vào kho).
 Làm sau #128/#129.
+
+## #131 — 2026-11-18 10:48 — Chủ đã xóa khóa mặc định ở xingchi (thực hiện #130 mục 4)
+Chủ báo 10:46: đã xóa khóa API mặc định trên xingchi. Làm ngay (ở máy, không đưa gì vào kho):
+1. Gỡ dòng `experimental_bearer_token` khỏi `C:\Users\PC\.codex\config.toml`; xóa 2 bản `config.toml.bak.*` (hoặc gỡ cùng dòng đó trong chúng).
+2. Kiểm không tiểu yêu nào đang chạy bằng khóa mặc định (STATE/TIEU-YEU.md cột Khóa "(tay/mac dinh)": R-03, R-04b, R-05a/b/c lúc 10:06). Những con đó sẽ lỗi 401: Tổng quản chạy lại bằng JX-Kn, coi 401 khóa mặc định là lỗi dịch vụ, không tính lần.
+3. Tìm trong kho (lịch sử git nhánh jx1-ops và các nhánh khác) xem giá trị khóa đó có từng bị commit không; chỉ ghi CÓ/KHÔNG và file nào, không ghi giá trị.
+Ghi một dòng TU-SONNET, push, gõ cửa.
