@@ -14,3 +14,7 @@ Các mục dưới đây không tính được "xong" nếu thiếu đại vươ
 | Nhân vật thứ 4 | Chủ thử | Chủ |
 
 [CHƯA KIỂM] Nội dung chi tiết từng mục lấy từ BACKLOG/TASKS, thuộc hạ chưa đọc lại từng tệp ở đợt này.
+
+## 03:52 19/11 — số thật sau #211
+- Số THẬT 74/101 = 73,3%; số bảng cũ 78%. Chi tiết: `STATE/BANG-DONG-VIEC-CHA.md`.
+- Việc cần sáng mai để lên 100%: E-01/E-09 (Bot thật đăng nhập–đi–đánh trên Test-36, cần bật VM và nối giao thức thật; ước nhiều giờ), A-07/A-07b (thiếu dump/PDB), B-04 (đo 9 pha cần VM), CL-01 C02/C04/C05 (chủ), B-05, X-05 (tạm dừng).
