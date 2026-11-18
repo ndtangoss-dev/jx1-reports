@@ -24,3 +24,9 @@ Việc chuẩn bị cho **E-06**. Đọc thiết kế Bot trong `DESIGN/BOT/` v�
 - Không chạy exe lạ, không VM, không mạng, không Main VM, không đọc khóa/mật khẩu/dump tài khoản. Chỉ ghi tệp đầu ra ngoài ra không sửa gì.
 - Worktree của bạn có thể KHÔNG có mã nguồn game: đọc trực tiếp (chỉ đọc) client `C:/Jx1CocoV3/Folder/Client2912-20260116T044348Z-3-001/Client2912/Client/Classes` và server `C:/Jx1CocoV3/SwordOnline/SwordOnline/jxOnline/gameserver/Sources`; kho báo cáo ở D:/jx1-ops-wt/JX1_OPS (chỉ đọc).
 - Mỗi lần đọc <= ~400 dòng. Cuối tệp task ghi mục "## Kết quả" (3–5 dòng).
+
+## Kết quả
+- PARTIAL — đã lập kế hoạch so Bot ngoài và Bot trong server trong `JX1_OPS/REPORTS/XD-E06.md`; các ngưỡng là đề xuất, chưa phải số đo.
+- Đã đối chiếu báo cáo E-* và đoạn source client/server được phép; thư mục `D:/jx1-ops-wt/JX1_OPS/DESIGN/BOT` không tồn tại nên thiết kế Bot trong server chưa xác minh.
+- Không chạy test, build, exe, VM hoặc mạng; không commit/push theo yêu cầu.
+- Cần PM định vị tài liệu DESIGN/BOT và chốt N_peak, ngân sách tài nguyên/SLO trước task đo runtime. Ghi `.nhip` ngoài worktree bị Access denied.
