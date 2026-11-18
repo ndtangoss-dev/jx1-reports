@@ -124,3 +124,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Duyệt dừng 2 find rò handle (có điều kiện), tiếp W-02 | #208 | | không cần trả lời |
 | Qua 70% (72%) nhưng tiểu yêu cạn: đợt 4 ≥12 việc, đóng việc cha, mục tiêu ≥80% | #209 | | không cần trả lời |
 | Hook: lời chặn bắt đầu bằng 'CẤM VIẾT BÁO CÁO VĂN BẢN, gọi công cụ' | #210 | | không cần trả lời |
+| Mở lại E-01; bảng kiểm nghiêm việc cha; báo số thật 2 cách; lấp tiểu yêu | #211 | | không cần trả lời |
