@@ -6,6 +6,41 @@ TÓM TẮT 5/5: Bảng vị trí NPC nằm trong dữ liệu vùng/map nhị ph�
 
 # I-05 — NPC chức năng
 
+Loại: khảo sát\
+Chủ đề: Mẫu NPC đối thoại, đường tương tác chức năng và lửa trại tạo động.\
+Từ khóa: I-05, NPC chức năng, ActionScript, dialoger, kho, truyền tống, hảo hữu, lửa trại, 2078, 篝火\
+Trạng thái: PARTIAL, có mẫu dữ liệu và nhánh xử lý, còn thiếu vị trí và script của NPC thường trú.\
+Độ phủ: Đã kiểm kê 958 trên tổng 958 mẫu Kind=3 và định vị ví dụ xử lý cho 6 trên tổng 8 nhóm chức năng.\
+Liên quan: [I-01 — Các loại điểm](I-01-cac-loai-diem.md), [I-02 — Vật phẩm bán](I-02-vat-pham-ban.md), [I-04 — Bản đồ](I-04-khao-sat-map.md), [I-08 — Nhiệm vụ](I-08-he-thong-nhiem-vu.md).\
+Cần tôi quyết định: không.
+
+```mermaid
+flowchart LR
+    A["Mẫu đối thoại (Kind=3)"] --> B[Bản ghi NPC theo vùng]
+    B --> C[Map, vị trí và script]
+    C --> D[Menu hoặc tương tác]
+    E[Lua tạo lửa trại] --> F["Mẫu 2078 (篝火)"]
+    F --> G[Vị trí tạo động và thời hạn]
+```
+
+## Phạm vi và độ phủ
+
+Tám nhóm dưới đây theo `JX1_OPS/TASKS/I-05.md:11`, với cường hóa và ghép tính cùng nhóm. Sáu nhóm có ví dụ đường xử lý trong Lua. Tên lửa trại được đọc theo GBK. Cột thống kê dùng khóa ASCII của bảng legacy. `A/` chỉ client bản A `D:/JX-build/qh9A/Classes`.
+
+| Phần tử | Độ phủ | Đối chiếu |
+|---|---|---|
+| ID mẫu và loại thực thể | Đã phủ kiểm kê 2.435 mẫu | Cột tại `GS/Settings/Npcs.txt:1`, hàng dữ liệu `:2–2436`. Có 958 mẫu Kind=3 và cả 958 trống ActionScript. |
+| ID, map, tọa độ và script của NPC thường trú | Chưa phủ, chưa đếm được tổng NPC thường trú | `GS/Settings/Npcs.txt:1` định nghĩa trường của mẫu. Phần gốc dẫn `CORE/KRegion.cpp:654` và `:725` để định vị bản ghi vùng và script. |
+| Shop | Đã phủ ví dụ tĩnh | `GS/script/global/npcchucnang/thoren.lua:81` mở cửa hàng. Bảng hàng `GS/Settings/buysell.txt:2–161` và `GS/Settings/goods.txt:2–1465` chưa nối được tới NPC thường trú cụ thể. |
+| Nhiệm vụ | Chưa phủ ánh xạ NPC | Nguồn mẫu `GS/Settings/Npcs.txt:1` có cột ActionScript. Phần gốc chưa ghép ID và vị trí NPC nhiệm vụ với script tương ứng. |
+| Truyền tống | Đã phủ ví dụ tĩnh | Nhánh chọn hướng đi tại `GS/script/System/sysshop.lua:38`, `:63`, `:72` và `GS/Settings/Station.txt:2–17` có 16 dòng điểm/trạm. |
+| Cường hóa và ghép | Đã phủ ví dụ tĩnh | Luồng mở cường hóa `GS/script/System/opensysui.lua:24–26`. Lua xử lý tại `GS/script/System/qianghua.lua:10` và `GS/script/System/fusioncomp.lua:33`. |
+| Kho | Đã phủ lời gọi mở kho | `GS/script/tnlteam/npc/ruongchuado.lua:10` gọi OpenBox. Chưa phủ template và điểm đặt NPC kho. |
+| Hoạt động | Đã phủ ví dụ tĩnh | Hai điểm vào `GS/script/System/activity.lua:28` và `:34`. Chưa phủ NPC nào mở menu hoạt động. |
+| Hảo hữu | Chưa phủ ánh xạ NPC hoặc tương tác với lửa trại | `GS/Settings/Npcs.txt:2080` và `GS/script/task/gouhuo.lua:27` chỉ định vị mẫu và nhánh lửa trại. |
+| Lửa trại | Đã phủ mẫu 2078 và nhánh tạo động | `GS/Settings/Npcs.txt:2080` ghi STT 2079, Kind=3. `GS/script/task/gouhuo.lua:27`, `GS/script/task/dahuo.lua:22` và `GS/script/item/huozhong.lua:76` có các lời gọi tạo NPC. |
+| Đối chiếu client bản A | Đã phủ vị trí nhận đồng bộ NPC, chưa phủ dữ liệu map đóng gói | `A/gamecore/KProtocolProcess.cpp:2159` là điểm vào `SyncNpc`. Chưa đối chiếu bản ghi NPC và tọa độ trong gói client. |
+
 ## Phạm vi và nguồn
 
 - Task: `JX1_OPS/TASKS/I-05.md`; workspace `D:\JX-wt\I-05`, branch `task/I-05` đã khớp khi kiểm tra ban đầu. File task đã có local/untracked trước khi khảo sát; không ghi đè nội dung đó.
@@ -83,3 +118,8 @@ Mỗi ca ghi lại: tên hiển thị, map ID/tên map, tọa độ ô, template
 ## Trạng thái bàn giao
 
 PARTIAL. Báo cáo chỉ chứa kết quả khảo sát tĩnh và giới hạn bằng chứng. Chưa commit/push; task yêu cầu không mạng. Chưa chạy test/build/runtime, không kết nối VM và không chạy exe. Bước tiếp theo: tester đối chiếu NPC thường trú trong client/server thử nghiệm được duyệt, ghi template/map/tọa độ/script để hoàn thiện các nhóm còn thiếu.
+
+## Phát hiện khi chuẩn hóa
+
+- [NGUỒN] Đếm lại `GS/Settings/buysell.txt:2–161` có 160 hàng vật lý, 105 hàng có ô khác rỗng và khác `-1`. Theo cách đếm bao gồm ô chữ của I-05, có 2.649 ô và 479 giá trị khác nhau. Theo cách đếm ID số dương của [I-02](I-02-vat-pham-ban.md#số-liệu-và-cách-đếm), có 2.644 ô và 474 ID. Chênh lệch do năm ô chữ ở các dòng 150, 151, 155, 156 và 157.
+- [NGUỒN] Tên ở `GS/Settings/Npcs.txt:2080` giải mã GBK thành `篝火`. Đủ 958 trên 958 mẫu Kind=3 để trống ActionScript trong dữ liệu rời. Vị trí và script của NPC thường trú vẫn cần dữ liệu vùng tương ứng.

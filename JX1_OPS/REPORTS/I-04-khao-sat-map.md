@@ -6,6 +6,44 @@ TÓM TẮT 5/5: Không sửa mã/dữ liệu gốc, không dùng mạng/VM, khô
 
 # I-04 — Khảo sát tĩnh map
 
+Loại: khảo sát\
+Chủ đề: Danh mục, cấu hình tải, điểm nối, quy tắc và hoạt động theo bản đồ.\
+Từ khóa: I-04, bản đồ, MapList, WorldSet_gs001, MapType, MapTraffic, Tống Kim, PK, truyền tống\
+Trạng thái: PARTIAL, đã khảo sát tĩnh, còn thiếu spawn trong PAK và đường áp dụng cấm cưỡi.\
+Độ phủ: Đã kiểm kê 993 trên tổng 993 ID catalog gốc. MapTraffic có liên kết đến 156 trên tổng 993 ID.\
+Liên quan: [I-03 — Quái vật](I-03-khao-sat-quai-vat.md), [I-05 — NPC chức năng](I-05-npc-chuc-nang.md), [Thế giới JX1](../DESIGN/THE-GIOI-TONG-QUAN.md).\
+Cần tôi quyết định: không.
+
+```mermaid
+flowchart LR
+    A["Danh mục (MapList)"] --> B["Danh sách tải (WorldSet)"]
+    B --> C["Vùng map (.wor, Region_S)"]
+    C --> D[NPC, quái và trap]
+    A --> E["Điểm nối hiển thị (MapTraffic)"]
+    F[Script map và hoạt động] --> G[Truyền tống và quy tắc vào map]
+```
+
+## Phạm vi và độ phủ
+
+`Settings/MapList.ini` trộn đường dẫn GBK và tên Việt legacy. Các phép đếm dùng khóa ASCII. Bản `Settings/vn/MapList.ini` được đọc riêng theo UTF-8 ở I-04. `A/` chỉ client bản A `D:/JX-build/qh9A/Classes`.
+
+| Phần tử | Độ phủ | Đối chiếu |
+|---|---|---|
+| ID và tên trong catalog gốc | Đã phủ 993/993 ID và 993 tên | `GS/Settings/MapList.ini:2–6690` ghi Count=1000, dải ID thực có từ 1 đến 995 và thiếu 989, 990. |
+| ID và tên trong catalog `vn` | Đã phủ 1.020/1.020 ID và 1.020 tên | `GS/Settings/vn/MapList.ini:1–7106`. Chưa xác minh bản được nạp. |
+| Thành, đô thành, thôn/huyện và dã ngoại | Đã phủ kiểm kê | Đối chiếu các nhóm City, Capital, Country, Field ở `GS/Settings/MapList.ini:8`, `:431`, `:657`, `:24`. |
+| Hang/động, chiến trường, bang hội, nhóm khác và ID thiếu loại | Đã phủ kiểm kê loại khai báo | Các nhóm Cave, Battlefield, Tong, Others và phần thiếu khóa nằm trong bảng MapType của I-04. Vị trí khóa khác cách viết được ghi ở cuối file. |
+| Phó bản và cấp phù hợp của nhân vật | Chưa phủ toàn bộ | Khóa Cave tại `GS/Settings/MapList.ini:66` là nhãn hang/động. Có mốc báo danh tại `GS/script/battles/battlejoin.lua:19`, `:39`, `:43` và `:45`. Chưa lập được danh mục phó bản và cấp nhân vật cho mọi ID. |
+| Cấp NPC theo map | Đã phủ 131 ID có cặp Min/Max | `GS/Settings/MapList.ini:608–610` minh họa cờ và cặp cấp. 862 ID còn lại thiếu cặp đủ điều kiện theo phép đếm tĩnh. |
+| WorldSet gs001 và MapsetInfo | Đã phủ kiểm kê | `GS/maps/WorldSet_gs001.ini:2` ghi Count=800 với 872 mục vật lý. Mục cuối trong Count ở `:803`, mục kế ở `:804`. Còn 72 mục ngoài Count và 121 ID catalog vắng trong WorldSet. `GS/Settings/MapsetInfo.txt:1–259` có 258 hàng dữ liệu. |
+| File quái và trap theo vùng | Đã phủ đường định vị, chưa phủ nội dung PAK trong I-04 | `GS/Settings/MapList.ini:1636` là đường dẫn gốc của ví dụ map 140. Phần gốc ghi cách ghép .wor và Region_S. [I-03](I-03-khao-sat-quai-vat.md#kiểm-kê-spawn-tĩnh-trong-hai-pak-server) có kiểm kê hai PAK riêng. |
+| Điểm nối trên bản đồ | Đã phủ cấu hình, 156/993 ID có mặt trong các cặp nối | `GS/Settings/MapTraffic.ini:2–13661` có 493 điểm Type=0 theo khóa duy nhất, tạo 342 cặp có hướng. Ví dụ 1 → 7 ở `:3–6`. Client bản A nạp tại `A/gamecore/KCore.cpp:412`. |
+| Truyền tống qua trap và Lua | Chưa phủ toàn bộ đường nối | `GS/script/trap/thon/balang/cong10h.lua:7–13` là một ví dụ. Chưa ghép trap trong PAK vào đồ thị server. |
+| PK, chiến đấu, cấm giao dịch | Đã phủ ví dụ tĩnh, chưa phủ ma trận từng map | Các cột cấu hình ở `GS/Settings/ForbititMap.txt:1–37`. Có ví dụ đổi trạng thái ở cổng Ba Lăng và cấm giao dịch ở `GS/script/missions/yandibaozang/readymap/include.lua:114`. |
+| Cấm cưỡi, mất tiền/đồ, chi phí và sát thương | Chưa phủ toàn bộ | Mục quy tắc map của I-04 ghi các API đã định vị. Chưa nối được đường áp dụng cấm cưỡi. |
+| Tống Kim, vượt ải, Viêm Đế, liên đấu | Đã phủ ví dụ tĩnh | Xem `GS/script/battles/battlehead.lua:273`, `:277`, `GS/script/tnlteam/mission/challangeoftime/head.lua:22`, `GS/script/missions/yandibaozang/readymap/include.lua:114` và `GS/script/tnlteam/mission/liendau/dondau/head.lua:468`. |
+| Map gợi ý luyện công và map Bot | Đã phủ gợi ý, chưa phủ danh sách Bot đã duyệt | `GS/script/System/recommendmap.ini:9` và `:15` cho ví dụ gợi ý, `GS/script/System/autoplayer.lua:32` có nhánh auto cũ. |
+
 Ngày: 2026-11-17. Trạng thái: **PARTIAL**. Không xuất nguyên catalog, spawn hoặc graph dài lên kho báo cáo.
 
 ## Phạm vi và nhãn bằng chứng
@@ -193,3 +231,9 @@ SHA-256 chỉ của dữ liệu map đã đọc, không xác nhận binary.
 | Settings/vn/MapList.ini | 9efb3457dfab749c6c2053d3973882a75947fd1b9d6ed3f2272fd5459fd0d031 |
 | maps/WorldSet_gs001.ini | 535319b393ebf9524d6c8e2570cb793d5d95b74d4da7a11372940f40cee1ba52 |
 | Settings/MapTraffic.ini | 9a4178f89ba04dd8bc474181ca79567d8a3534489cd606ea81af6ec896c9106f |
+
+## Phát hiện khi chuẩn hóa
+
+- [NGUỒN] ID 42 dùng khóa `42_Maptype=Cave` ở `GS/Settings/MapList.ini:522` và `GS/Settings/vn/MapList.ini:560`. Đếm đúng chính tả `MapType` tái lập số cũ của I-04 là 48 Cave và 789 ID thiếu khóa. Gộp hoa thường cho 49 và 788. ID 42 nằm trong 800 mục đầu tại `GS/maps/WorldSet_gs001.ini:45`, nên cùng cách gộp cho 45 Cave và 618 ID thiếu khóa ở tập này. Bản `vn` lần lượt cho 104/760 và 105/759 khi lấy giá trị sau cùng của ID 341 tại `GS/Settings/vn/MapList.ini:3513`.
+- [CHƯA KIỂM] Cần xem loader xử lý hoa thường và khóa trùng thế nào trước khi dùng các nhóm trên để gán loại map khi chạy.
+- [NGUỒN] I-04 dừng trước bước giải mã PAK. I-03 đã ghi kết quả kiểm kê riêng cho 955/993 ID. Phần trap nối đến script cụ thể vẫn chưa phủ trong I-04.

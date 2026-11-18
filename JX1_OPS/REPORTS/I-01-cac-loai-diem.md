@@ -5,6 +5,42 @@
 4. Có lời gọi hệ hoạt động HuoYueDu nhưng thiếu script đích trong cây gốc; hạn ngày/tuần và bảng thưởng chưa xác minh.
 5. Hoàn tất khảo sát tĩnh; HuoYueDu thiếu dữ liệu, lửa trại thiếu SkillId 1705/1706; không mạng/VM, không chạy binary game.
 
+# I-01 — Các loại điểm
+
+Loại: khảo sát\
+Chủ đề: Các nhóm điểm của nhân vật, từ nguồn nhận đến xử lý và đồng bộ.\
+Từ khóa: I-01, kinh nghiệm, EXP, AddSelfExp, tiềm năng, kỹ năng, danh vọng, HuoYueDu\
+Trạng thái: PARTIAL, khảo sát tĩnh đã xong, phần bàn giao Git của I-01 bị chặn.\
+Độ phủ: Đã phủ 4 trên tổng 5 nhóm điểm chính ở mức đọc tĩnh.\
+Liên quan: [I-02 — Vật phẩm bán](I-02-vat-pham-ban.md), [I-03 — Quái vật](I-03-khao-sat-quai-vat.md), [I-07 — Tiền tệ](I-07-cac-loai-tien-te.md).\
+Cần tôi quyết định: không.
+
+```mermaid
+flowchart LR
+    A["Kinh nghiệm (EXP)"] --> B[Lên cấp]
+    B --> C[Tiềm năng]
+    B --> D[Điểm kỹ năng]
+    E[Túi và nhiệm vụ] --> F[Danh vọng]
+    C --> G[Lưu và đồng bộ nhân vật]
+    D --> G
+    F --> G
+    H[Quốc chiến] -.-> I["HuoYueDu: thiếu file rời"]
+```
+
+## Phạm vi và độ phủ
+
+Bốn nhóm có nguồn xử lý tĩnh trong báo cáo. Nhóm điểm hoạt động mới có đầu mối lời gọi. Các dòng về lưu, đồng bộ, lửa trại và hảo hữu là đối chiếu theo nhóm, ngoài mẫu số năm nhóm điểm. Bảng TXT và Lua của GS dùng mã hóa legacy, khóa ASCII được đọc trực tiếp. `A/` chỉ client bản A `D:/JX-build/qh9A/Classes`.
+
+| Phần tử | Độ phủ | Đối chiếu |
+|---|---|---|
+| Kinh nghiệm nhân vật (EXP) | Đã phủ | `GS/Settings/npc/player/level_exp.txt:2–201` có 200 cấp dữ liệu. `GS/Settings/npc/player/level_lead_exp.txt:2–101` có 100 mức thống soái. Phần chia đội, chênh cấp, giới hạn và lên cấp nằm trong mục Kinh nghiệm. |
+| Điểm kỹ năng | Đã phủ | Hook `main_Skillset` ở `GS/script/global/global_setting.lua:5` và tỷ lệ luyện kỹ năng ở `GS/Settings/GameOption.ini:16`. Báo cáo tách điểm dư khỏi EXP luyện kỹ năng. |
+| Điểm tiềm năng | Đã phủ | `GS/Settings/npc/player/level_add.txt:2–6` có đủ năm hệ Kim, Mộc, Thủy, Hỏa, Thổ. Hook `main_attributeSet` ở `GS/script/global/global_setting.lua:10`. |
+| Điểm danh vọng | Đã phủ | 11 mốc cấp ở `GS/script/header/repute_head.lua:15`. Bản A đọc giá trị danh vọng trong `A/vn/gameui/KuiRoleStateVN.cpp:904`. |
+| Điểm hoạt động (HuoYueDu) | Chưa phủ | Điều kiện Quốc chiến ở `GS/script/battles/guozhan/head.lua:408`, lời gọi ở dòng 409. Thiếu file rời `GS/script/huoyuedu/huoyuedu.lua`, nên chưa xác định số dư, hạn, cách tiêu và phần thưởng. |
+| Lưu và đồng bộ nhân vật | Đã phủ đường xử lý tĩnh | Phần gốc khảo sát role buffer và các gói đồng bộ. Bản A có lời gọi `s2cSetExp` ở `A/gamecore/KProtocolProcess.cpp:512`. Chưa kiểm dữ liệu lúc chạy. |
+| Lửa trại và hảo hữu | Chưa phủ toàn bộ | `GS/script/item/huozhong.lua:82` gán skill 1705. Đếm cột `SkillId` tại `GS/Settings/Skills.txt:1` cho 0 hàng có ID 1705 hoặc 1706. Chưa xác minh hảo hữu ngoài các nhánh gốc đã đọc. |
+
 ## Phạm vi và nguồn
 
 - Ngày khảo sát: 2026-11-17. Nhánh `task/I-01`, worktree `D:\JX-wt\I-01`; kiểm tra Git ban đầu chỉ có task chưa được track, không có thay đổi tracked.
@@ -167,3 +203,8 @@ Chỉ thực hiện ở môi trường thử được chủ dự án/PM cho phé
 - Một báo cáo tổng hợp này và mục Kết quả trong task; không xuất bảng gốc dài, không ghi file ngoài vùng được giao.
 - Bước tiếp theo: PM/tester bổ sung bộ HuoYueDu và nguồn dữ liệu skill lửa trại thực sự được nạp, sau đó chạy các ca phù hợp; chưa có đủ dữ liệu để triển khai hệ điểm hoạt động.
 - Commit SHA: **không có – stage bị chặn quyền ghi metadata Git** như lỗi trên. **BỊ CHẶN – CHƯA PUSH**; ngoài lỗi stage, người dùng cũng cấm mạng trong task. Không có bằng chứng GitHub, không tuyên bố đã công bố.
+
+## Phát hiện khi chuẩn hóa
+
+- [NGUỒN] Vị trí xử lý EXP ở bản A là `A/gamecore/KProtocolProcess.cpp:512`. Dẫn chứng `:508` trong phần gốc thuộc cây Coco được I-01 khảo sát.
+- [CHƯA KIỂM] Chênh lệch giữa 200 hàng EXP và hằng `MAX_LEVEL=500` hiện diện cả khi đối chiếu `A/gamecore/KPlayerSet.h:6`. Vẫn thiếu bằng chứng về bảng được tải và cách xử lý cấp 201–500 khi chạy.

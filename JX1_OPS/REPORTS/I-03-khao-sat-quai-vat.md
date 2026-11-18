@@ -5,6 +5,43 @@
 4. Đã tổng hợp ngũ hành, AI, bảng rơi, mẫu đo sát thương và ca TESTER liên hệ H-09/E-05; không xuất nguyên bảng.
 5. DONE khảo sát tĩnh bảng/source/spawn PAK với độ phủ đã nêu; chưa kiểm runtime/build, spawn Lua động và 38 map không khớp .wor; không VM/mạng/exe game/server, không sửa source.
 
+# I-03 — Khảo sát quái vật
+
+Loại: khảo sát\
+Chủ đề: Mẫu quái, chỉ số theo cấp, AI, quái golden, vật phẩm rơi và vị trí sinh quái.\
+Từ khóa: I-03, quái vật, sinh quái, Npcs.txt, Kind, Series, AIMode, golden, Region_S\
+Trạng thái: DONE, đã khảo sát tĩnh bảng, luồng xử lý và hai PAK trong phạm vi I-03.\
+Độ phủ: Đã kiểm kê 2.435 trên tổng 2.435 mẫu NPC. I-03 đối chiếu được 955 trên tổng 993 ID map với .wor trong hai PAK.\
+Liên quan: [I-04 — Bản đồ](I-04-khao-sat-map.md), [I-05 — NPC chức năng](I-05-npc-chuc-nang.md), [I-02 — Vật phẩm bán](I-02-vat-pham-ban.md), [E-05b — Kịch bản TESTER](E-05b-kich-ban-full-cycle.md).\
+Cần tôi quyết định: không.
+
+```mermaid
+flowchart LR
+    A["Mẫu NPC (Npcs.txt)"] --> D[Mẫu và cấp của quái]
+    B["Bản ghi vùng (Region_S)"] --> D
+    C["Cấu hình cấp theo map"] --> D
+    D --> E[Chỉ số, kỹ năng và AI]
+    D --> F[Golden, vật phẩm rơi và EXP]
+```
+
+## Phạm vi và độ phủ
+
+Kiểm lại cột ASCII của bảng legacy và khóa INI trên GS. Số liệu giải mã vùng kế thừa từ mục Kiểm kê spawn tĩnh trong hai PAK server bên dưới. `A/` chỉ client bản A `D:/JX-build/qh9A/Classes`.
+
+| Phần tử | Độ phủ | Đối chiếu |
+|---|---|---|
+| Kind=0, mẫu quái và động vật | Đã phủ 1.412 mẫu | `GS/Settings/Npcs.txt:1–2436`. Đây là số hàng ghi rõ Kind=0. |
+| Kind=3 đối thoại, Kind=4 chim, Kind=5 chuột | Đã phủ số lượng | 958, 23 và 23 hàng theo `GS/Settings/Npcs.txt:1–2436`. Các hàng thuộc nhóm NPC khác được tách khỏi 1.412 mẫu quái. |
+| Trống Kind và Kind=1/2 | Đã phủ kiểm kê | 19 hàng trống, 0 hàng ghi rõ Kind=1/2. Ví dụ ô trống tại `GS/Settings/Npcs.txt:1716`. Chưa phủ hành vi của 19 mẫu khi được nạp. |
+| Ngũ hành và AI | Đã phủ kiểm kê nhóm | Kim, Mộc, Thủy, Hỏa, Thổ và nil lần lượt có 803, 99, 185, 155, 163, 7 mẫu Kind=0. Tên trường `Series` và `AIMode` tại `GS/Settings/Npcs.txt:1`. |
+| HP, EXP, chỉ số, kháng và kỹ năng | Đã phủ đường xử lý và mẫu số học | Mục Cấp, HP và EXP đã khảo sát `GS/script/npclevelscript/animal.lua:392` và `GS/script/npclevelscript/standard.lua:359`. Còn 75 hàng Kind=0 trống `LevelScript` và các trường hợp thiếu file rời. |
+| Cấu hình cấp theo map | Đã phủ kiểm kê 993 ID | Có 131 ID có đủ cờ và cấp tối thiểu bằng cấp tối đa dương. 862 ID còn lại thiếu tổ hợp ấy. Khóa tổng và ví dụ `GS/Settings/MapList.ini:2`, `:608–610`. |
+| Golden và bảng rơi | Đã phủ kiểm kê | 16 hàng golden trong `GS/Settings/npc/NpcGoldTemplate.txt:2–17`. Đã đếm 201 và 496 file từ `Settings/droprate` và `Settings/mapdroprate`, xem ví dụ `GS/Settings/droprate/npcdroprate20.ini:2`. Chưa phủ từng section hay xác suất thực tế. |
+| Vị trí sinh quái trong hai PAK | Đã phủ 955 ID theo I-03 | `GS/Settings/MapList.ini:1–6690` cấp danh mục 993 ID đối chiếu. Báo cáo cũ ghi 94.098 bản ghi shKind=0 trên 195 map. R-06a kiểm sự hiện diện và kích thước hai PAK. |
+| ID chưa khớp .wor, file vùng rời và Lua | Chưa phủ | 38 ID chưa khớp .wor trong hai PAK theo I-03. Chưa phủ fallbacks, Lua động và mật độ lúc chạy. |
+| Quái mẫu cho TESTER | Đã phủ mẫu và thiết kế ca đo | Ví dụ vật lý ở `GS/Settings/Npcs.txt:7` và `:153`. Mục Ca test cho TESTER của I-03 ghi mẫu đo sát thương và liên hệ H-09/E-05. Chưa chạy các ca. |
+| Hiển thị máu phía client | Đã phủ mẫu đường nguồn | `A/gamecore/KNpcTemplate.cpp:87` lấy HP từ script, `A/gamecore/KProtocolProcess.cpp:2527` đọc HP tối đa. Chưa kiểm đồng bộ khi chạy. |
+
 ## Phạm vi và nguồn
 
 - Ngày: 2026-11-17. Workspace `D:\JX-wt\I-03`, nhánh `task/I-03` đúng task. Trạng thái ban đầu: chỉ `?? JX1_OPS/TASKS/I-03.md`; giữ nguyên nội dung task, chỉ bổ sung mục Kết quả khi hoàn tất.
@@ -221,3 +258,9 @@ Phân bố shKind=0 sau mô phỏng override min=max và fallback cấp<=0 về1
 Map không khớp .wor không gán0 quái. Region không có entry có thể trống hoặc nằm ở nguồn khác, chưa phân biệt. Chưa đếm NPC_S.dat rời fallback, .mps, Lua spawn động, điều kiện script lọc spawn và danh sách world thực nạp. Đây là kiểm kê bản ghi tĩnh có độ phủ hữu hạn, không phải tổng quái runtime.
 
 Một vài mẫu định vị (template ID, số bản ghi): map3 (5,159)/(6,122); map50 (151,51)/(154,48); map4 (168,146)/(167,81); map75 (155,113)/(156,75). Ví dụ map3 còn cấp thô20..30 và90 trong PAK, nhưng cấu hình map ghi đè25; không lấy cấp thô làm kết quả cuối.
+
+## Phát hiện khi chuẩn hóa
+
+- [NGUỒN] Số hàng theo Kind và Series, 16 mẫu golden và số file/khóa Count ở hai thư mục rơi khớp khi đếm lại. `GS/pak/maps.pak` và `GS/pak/maps01.pak` có kích thước khớp ghi chép I-03.
+- [NGUỒN] Phép gộp hoa thường tính cả `42_Maptype=Cave` tại `GS/Settings/MapList.ini:522`, giải thích số 49 Cave và 788 ID thiếu loại trong I-03. Đối chiếu với [ghi chú đếm khóa của I-04](I-04-khao-sat-map.md#phát-hiện-khi-chuẩn-hóa).
+- [CHƯA KIỂM] R-06a chưa giải mã lại bản ghi PAK. Kết quả 955 ID khớp .wor và 38 ID còn thiếu được dẫn từ phép đọc của I-03, vẫn cần nguồn khác cho các ID còn thiếu.

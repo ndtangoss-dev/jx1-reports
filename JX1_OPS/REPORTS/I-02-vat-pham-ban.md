@@ -5,6 +5,43 @@ TÓM TẮT 5 DÒNG
 4. Có 312 goods được tham chiếu có Price trống và 5 ô chữ trong bảng ID shop; giá trống không đồng nghĩa mua miễn phí.
 5. DONE trong phạm vi khảo sát tĩnh; đã đối chiếu bảng boss và soạn ca test, chưa kiểm chứng runtime; không commit/push.
 
+# I-02 — Vật phẩm bán và cửa hàng Bảo vật
+
+Loại: khảo sát\
+Chủ đề: Danh mục hàng bán, giá, loại tiền và đường mở cửa hàng.\
+Từ khóa: I-02, vật phẩm bán, Bảo vật, Kỳ Trân, Xu, goods, buysell, Marketshop, PriceShopType\
+Trạng thái: DONE, đã khảo sát tĩnh các bảng và luồng giao dịch trong phạm vi I-02.\
+Độ phủ: Đã kiểm kê 1.464 trên tổng 1.464 dòng goods và 160 trên tổng 160 dòng shop.\
+Liên quan: [I-05 — NPC chức năng](I-05-npc-chuc-nang.md), [I-07 — Tiền tệ](I-07-cac-loai-tien-te.md), [I-03 — Quái vật](I-03-khao-sat-quai-vat.md).\
+Cần tôi quyết định: không.
+
+```mermaid
+flowchart LR
+    A[NPC gọi Sale] --> C["Chọn dòng cửa hàng (buysell.txt)"]
+    B["Bảo vật: loại và shopid"] --> C
+    C --> D["Tham chiếu ID hàng (goods.txt)"]
+    D --> E[Giá và loại tiền]
+    D --> F[Nhóm và mẫu vật phẩm]
+```
+
+## Phạm vi và độ phủ
+
+Đếm theo hàng và trường số của dữ liệu legacy dưới `G/` (gốc GS ở mục dưới). Cột độ phủ nêu kiểm kê tĩnh. Tên hiển thị dùng cách đọc của I-02. `A/` chỉ client bản A `D:/JX-build/qh9A/Classes`.
+
+| Phần tử | Độ phủ | Đối chiếu |
+|---|---|---|
+| Toàn bộ goods và cửa hàng | Đã phủ | `G/Settings/goods.txt:2–1465`, `G/Settings/buysell.txt:2–161`. Có 105 dòng shop có nội dung, 55 dòng trống, 2.644 ô ID dương và 474 ID khác nhau. |
+| Trang bị (genre 0) và thuốc (genre 1) | Đã phủ kiểm kê | 1.161 trang bị, 326 có tham chiếu. 50 thuốc, 20 có tham chiếu. Nguồn cột genre ở `G/Settings/goods.txt:1`, nối với các ID trong `G/Settings/buysell.txt:2–161`. |
+| Mine (genre 2), Quest (genre 4) và truyền tống (genre 5) | Đã phủ kiểm kê | Mine 195/121, Quest 57/6, truyền tống 1/1 theo số hàng/số ID được tham chiếu. Nguồn `G/Settings/goods.txt:1–1465`. |
+| Đá cường hóa, nguyên liệu và vật phẩm hoạt động | Đã phủ ví dụ, chưa phủ phân nhóm theo công dụng | Ví dụ nhóm thủy tinh ở `G/Settings/item/004/questkey.txt:240–242` và vé Phong Lăng Độ ở `G/Settings/goods.txt:1330`. Chưa tách riêng nhóm chế tạo khỏi 121 mục mine có tham chiếu. |
+| Bảo vật: Kỳ Trân, Hoạt Động, Thư Tịch, Chiến Mã | Đã phủ 4/4 danh mục | Bốn `shopid` 99, 100, 101, 102 ở `G/Settings/Marketshop/type.txt:2–5`. Số ID tương ứng 22, 10, 29, 1 ở `G/Settings/buysell.txt:101–104`. |
+| Giá và loại tiền trong 474 ID | Đã phủ kiểm kê | Cột 6 và 8 ở `G/Settings/goods.txt:1`. Có 312 ID để trống giá. Loại tiền 0, 2, 6 lần lượt có 334, 115, 25 ID. |
+| Đường cửa hàng NPC và Bảo vật | Đã phủ đường đọc tĩnh | `G/script/global/npcchucnang/shop_datau.lua:174` gọi `Sale`. `A/gameui/KuiDynamicShop.cpp:198`, `:212` và `:580` lần lượt đọc `type.txt`, lấy `shopid` và tra ID. |
+| Điều kiện mua và ô chỉ số bất thường | Đã phủ đường đọc tĩnh | Phần gốc ghi điều kiện tiền, chỗ trống và lượng mua. Đếm được năm ô chữ tại `G/Settings/buysell.txt:150–157` và 0 ID số dương thiếu dòng goods. |
+| Bảng thay thế và đường SuperShop cũ | Chưa phủ việc nạp thực tế | `G/Settings/Marketshop/Newtype.txt:2–8` có 7 dòng. Đường `NewSale` theo I-02 ở `G/script/System/player/script_protocol.lua:74`. |
+| Đối chiếu vật phẩm rơi từ boss | Đã phủ tập chọn theo tên | Có 59 file INI khớp tên/đường dẫn `boss` trong `G/Settings/droprate`. Phần gốc dẫn ví dụ tại `goods.txt:27` và ghi bộ lọc dùng cho tập này. |
+| Mẫu trang bị, giá hiệu lực, hạn mua và gán NPC/map | Chưa phủ toàn bộ | Cột ở `G/Settings/goods.txt:1` và lời gọi ở `G/script/global/npcchucnang/shop_datau.lua:179` cho phép định vị dữ liệu. Các giới hạn đối chiếu và ca TESTER vẫn ở phần gốc. |
+
 ## Phạm vi và quy ước
 
 - Chỉ ghi báo cáo này theo `vung_file: [none, JX1_OPS/REPORTS/I-02-*.md]`. Yêu cầu thêm `## Kết quả` vào task mâu thuẫn vùng ghi, nên kết quả đặt cuối báo cáo; giữ nguyên task local có sẵn.
@@ -159,3 +196,8 @@ SHA-256 đọc tại chỗ, không gửi dịch vụ ngoài:
 **DONE — khảo sát tĩnh theo phạm vi I-02.** Đã lưu bản nháp trong chính báo cáo này rồi hoàn thiện; chỉ tạo/cập nhật `JX1_OPS/REPORTS/I-02-vat-pham-ban.md`, không sửa mã, dữ liệu gốc hoặc task có sẵn. Đã chạy đọc/đếm bảng và kiểm tra chỉ số tĩnh; không chạy build, runtime, VM, exe dự án hoặc ca test trong bảng trên.
 
 Commit SHA: không có, chưa commit. Chưa push vì người dùng yêu cầu khảo sát local và không mạng; không có bằng chứng GitHub và không tuyên bố đã công bố. Không sửa credential/config. Các giới hạn xác minh được ghi ở mục CHƯA XÁC MINH; không có blocker ngăn hoàn thành báo cáo tĩnh.
+
+## Phát hiện khi chuẩn hóa
+
+- [NGUỒN] Bản A cũng dùng `type.txt` và lấy trực tiếp `shopid` tại `A/gameui/KuiDynamicShop.cpp:198` và `:212`. Số dòng, ID tham chiếu và loại tiền từ bảng rời khớp số kiểm kê của I-02.
+- [CHƯA KIỂM] Năm ô chữ vẫn có trong `G/Settings/buysell.txt:150–157`. Chưa kiểm hành vi lúc nạp hoặc hiển thị các ô này.
