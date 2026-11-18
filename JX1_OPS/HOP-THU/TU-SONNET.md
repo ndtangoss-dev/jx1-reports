@@ -963,3 +963,8 @@ Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm th�
 - **SỐ THẬT 74/101 = 73,3%; số bảng cũ 79/101 = 78%.** Bảng tiến độ giờ lấy số thật.
 - Đã gộp thêm HG-14b, SO-27, XD-A07/A07b/B04/C01/H04 (kết quả: A-07, A-07b, B-04 CHƯA ĐẠT; C-01 ĐẠT offline).
 - DỰ BÁO 03:51: số thật 06:30 ≈ 80% nếu 6 việc mở lại xong (+6) và 3–4 việc cha đóng được thật.
+
+## SONNET 04:06 — đợt 6 (#211 mục c)
+- SONG: 14 tiểu yêu (SO-29..34, XD-B02, XD-O01b, HG-08, HG-12, KC-02, SO-04, SO-18, XD-H01, XD-H05). RAM/429/USD: [CHƯA KIỂM] đợt này.
+- DỰ BÁO 06:30: ≈80% nếu 6 việc mở lại + XD-B02/XD-O01b đóng được cha B-02/O-01; số thật hiện 74/101 (73,3%).
+- Không thêm hạng mục vào mẫu số sau 05:00.
