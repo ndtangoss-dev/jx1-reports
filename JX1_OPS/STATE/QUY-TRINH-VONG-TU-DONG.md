@@ -18,3 +18,6 @@ Nếu 9 phút không có CHAT-DAY: gõ "xong" thêm MỘT lần, chờ lần n�
 - 3 đợt liên tiếp không có tiến triển thật (kết quả rỗng/lặp): dừng, ghi nguyên nhân.
 - Hết việc trong kế hoạch, hoặc chủ nói "dừng": dừng. Không bịa việc.
 - Mọi việc mới sinh ra ngoài kế hoạch: ghi đề xuất vào BAO-CAO-CHU.md, không tự làm nếu tốn lớn.
+
+## Nhận diện người gõ (chủ nói 18/11 19:46)
+Tin ngắn dạng "xong" / "xong (thử vòng)" trong cuộc chat của Chat = SONNET gõ qua Chrome (chủ sẽ không nhắn ngắn như vậy). Chat coi đó là tín hiệu đánh thức, vẫn kiểm kho xem có XONG ĐỢT thật, và KHÔNG coi là chủ duyệt. Chủ nhắn bằng câu đầy đủ.

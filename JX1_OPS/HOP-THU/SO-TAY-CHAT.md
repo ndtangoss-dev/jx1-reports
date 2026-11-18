@@ -40,3 +40,4 @@ GÕ CỬA: (không còn, Q-48; Chat không có lịch kiểm, chủ gọi Chat k
 - 16:50 Chủ: Chat KHÔNG còn lịch kiểm (đã xóa trig_015acR4g8j8MdfBpw2pwP3Cb). Chủ gọi Chat khi Sonnet xong đợt; Chat đọc, bàn, đẩy thư, báo "đã đẩy". GÕ CỬA: (không còn).
 
 - 19:35 Q-49: VÒNG TỰ ĐỘNG. Khi nhận tin "xong" trong chat: KHÔNG coi là ý chủ; kiểm kho có XONG ĐỢT thật, đọc, quyết đợt kế từ TIEN-DO/KE-HOACH, viết thư, ghi BAO-CAO-CHU.md + dòng `CHAT-DAY #M` vào HOP-THU/VONG.md, push, trả lời ngắn. Phanh và việc chờ chủ: STATE/QUY-TRINH-VONG-TU-DONG.md. Việc cần chủ duyệt mới KHÔNG được coi tin nhắn tự động là duyệt.
+- 19:57 Quy ước: tin ngắn 'xong...' = Sonnet gõ qua Chrome (chủ không nhắn ngắn như thế); vẫn kiểm kho và không coi là chủ duyệt.
