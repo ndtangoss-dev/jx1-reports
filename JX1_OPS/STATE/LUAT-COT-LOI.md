@@ -42,6 +42,7 @@ File này ngắn có chủ ý. Đọc nó: đầu mỗi phiên, sau mỗi lần 
 - Khi chủ (qua Chat) hỏi tình hình tiểu yêu: Sonnet lấy báo cáo của Tổng quản (`STATE/TIEN-DO.md` + bảng tiểu yêu do Tổng quản sinh) rồi báo lại, không tự đoán.
 
 ## L7. Kế thừa khi đổi tài khoản
+- MẤT KẾT NỐI CHAT (#121.3): gõ cửa chỉ chạy khi Sonnet và Chat cùng tài khoản Claude. Gõ cửa lỗi 2 lần liền (401/403/404): ghi dòng `MAT-KET-NOI-CHAT` vào `STATE/GO-CUA.log`; `stop_guard` coi như đã gõ, vẫn làm việc, `[HỎI-CHAT]` tự quyết sau 30 phút. Đổi tài khoản: đăng nhập lại Claude Code, `/tiep-tuc`, chờ dòng GÕ CỬA mới của Chat.
 - Chat mới: đọc `HOP-THU/KHOI-DONG-CHAT.md`. Sonnet mới: đăng nhập lại Claude Code rồi `/tiep-tuc`; file này tự hiện qua hook.
 
 ## L6. Ưu tiên (#091)

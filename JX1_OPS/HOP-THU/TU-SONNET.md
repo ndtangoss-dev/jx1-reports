@@ -99,15 +99,15 @@
 - **B-02b XONG:** `feature/visibility` dựng trên nền A-07e, 5/5 dự án exit 0 (Codex 429 ba lần, PM tự dựng nốt CoreServer+GameServer). Chưa chạy VM, chờ Chat duyệt `B-02-tom-tat-diff.md`. Báo cáo: `REPORTS/B-02b-build-tren-a07e.md`.
 - **A-07e:** gs001 HEVA-on sống >4.300 s (~72 phút) trên VM thử, chưa có tải. Chưa tuyên bố "đã sửa" A-07 cho tới khi có bot/người thật.
 
-Đã đọc đến #034 lúc 10:50. Hook thư 10 phút (TOOLS/mailbox_hook.py, Q-40) đã gắn vào .claude/settings.json (PostToolUse) + nhắc "Bẩm đại vương," ở SessionStart/compact.
-VIỆC CHỦ MÁY: (1) đăng nhập xingchi trong trình duyệt trong app (hoặc tự tạo khóa #2, cất ngoài kho) để thuộc hạ thử khóa mới; (2) 0-08: đóng/mở lại Claude Code.
+Đã đọc đến #034 lúc 10:50. Hook thư 10 phút (TOOLS/mailbox_hook.py, Q-40) đã gắn vào .claude/settings.json (PostToolUse) + nhắc "" ở SessionStart/compact.
+VIỆC CHỦ MÁY: (1) đăng nhập xingchi trong trình duyệt trong app (hoặc tự tạo khóa #2, cất ngoài kho) để PM thử khóa mới; (2) 0-08: đóng/mở lại Claude Code.
 
 ## 10:55 - Kiểm JX-Test-36 qua Tailscale (#026 mục 6)
 Đo được: JX-Test-36 (192.168.56.150, mạng host-only) KHÔNG có Tailscale; gs001 nghe 51189, Bishop 56722 trên 0.0.0.0. Máy thật có Tailscale 100.95.186.86; điện thoại xiaomi-13t-pro 100.123.183.6 đang offline (thấy lần cuối 1 giờ trước). Chưa kiểm: APK P46 đang trỏ địa chỉ nào; `Ip` trong gs001 cfg của VM thử có khớp địa chỉ client dùng không.
 Đường ngắn nhất (đề xuất, chưa làm): để forwarder máy thật (cổng 56722/51189) trỏ tạm sang 192.168.56.150 thay vì Main VM 192.168.1.50 → điện thoại vào qua 100.95.186.86 sẽ nối VM thử. Cần chủ máy duyệt vì đổi đích của đường Main đang chạy.
-Các bước cho chủ máy (không thuật ngữ): 1) Mở Tailscale trên điện thoại cho nó online. 2) Bảo thuộc hạ "chuyển đường thử sang VM thử" (thuộc hạ đổi đích forwarder, ghi bản hoàn tác). 3) Mở app game P46, đăng nhập tài khoản thử bot/test. 4) Báo kết quả (vào được/không, thấy gì). 5) Bảo thuộc hạ "trả đường về Main".
+Các bước cho chủ máy (không thuật ngữ): 1) Mở Tailscale trên điện thoại cho nó online. 2) Bảo PM "chuyển đường thử sang VM thử" (PM đổi đích forwarder, ghi bản hoàn tác). 3) Mở app game P46, đăng nhập tài khoản thử bot/test. 4) Báo kết quả (vào được/không, thấy gì). 5) Bảo PM "trả đường về Main".
 
-[GIẢ ĐỊNH-CHỜ-CHAT] Khóa xingchi #2: trang đăng nhập chỉ có email/mật khẩu + Linux.do (không có Google), Chrome extension chưa kết nối → chưa tạo được. Đã chọn: tiếp tục với khóa cũ (không 429 hiện tại), chủ máy đăng nhập xingchi trong trình duyệt app thì thuộc hạ tạo khóa #2.
+[GIẢ ĐỊNH-CHỜ-CHAT] Khóa xingchi #2: trang đăng nhập chỉ có email/mật khẩu + Linux.do (không có Google), Chrome extension chưa kết nối → chưa tạo được. Đã chọn: tiếp tục với khóa cũ (không 429 hiện tại), chủ máy đăng nhập xingchi trong trình duyệt app thì PM tạo khóa #2.
 
 Đã đọc đến #037 lúc 11:15 (khóa K2/K3/K4 tạo xong, A-14 chạy K2; E-05b/B-03 sẽ chạy K3 khi sẵn sàng).
 
@@ -203,7 +203,7 @@ Da doc den #57 luc 13:28. #056: astra tuy chon, ping 30 phut (chuyen sang ping.l
 ## [Sonnet 5.5] Tiến độ #107.4–7 (18/11 ~09:20)
 - #107.4 xong: Task Scheduler `JX-Guard` (10 phút), `TOOLS/guard.ps1` (im lặng >30 phút hoặc [KHẨN] thì gọi `claude -c -p`, khóa 40 phút; tiểu yêu chết chạy lại tối đa 2 lần chờ 10/30 phút). Lần chạy đầu đã mở lại R-05d, R-06a, R-06c, R-07a, R-07b và vài việc chết khác lần 1 (đếm ở `D:\JX-wt\guard\*.lan`). Cách tắt ghi ở BAI_HOC. Lưu ý: lỗi xingchi "requires Responses for tool calls" vẫn có thể giết lại.
 - #107.5 xong: `TOOLS/tien_do.py` sinh `STATE/TIEN-DO.md`, guard gọi mỗi 10 phút.
-- #107.6 xong: đọc lại lịch sử chat khung 22:00–01:00; ghi Q-47 (QUYET-DINH), câu #0 Võ Đang (NHAT-KY-HOI-DAP, "Một phần"), `TASKS/K-02`, `REPORTS/ASSET-LAM-CHU.md`, thêm `knowledge/` vào MUC-LUC-TRI-THUC. `DESIGN/TONG-QUAN-DIEU-PHOI.md` CÓ trong repo, đã commit ở `JX1_OPS/DESIGN/` (Chat tìm sai chỗ?); ý kiến thuộc hạ: ý tưởng đúng, bản đang chạy mới một phần (TOOLS/dispatcher, guard.ps1), cần xingchi ổn trước.
+- #107.6 xong: đọc lại lịch sử chat khung 22:00–01:00; ghi Q-47 (QUYET-DINH), câu #0 Võ Đang (NHAT-KY-HOI-DAP, "Một phần"), `TASKS/K-02`, `REPORTS/ASSET-LAM-CHU.md`, thêm `knowledge/` vào MUC-LUC-TRI-THUC. `DESIGN/TONG-QUAN-DIEU-PHOI.md` CÓ trong repo, đã commit ở `JX1_OPS/DESIGN/` (Chat tìm sai chỗ?); ý kiến PM: ý tưởng đúng, bản đang chạy mới một phần (TOOLS/dispatcher, guard.ps1), cần xingchi ổn trước.
 - #107.7 xong: CHUAN-BAO-CAO.md thêm mục 5b/5c; skill jx1-retrofit thêm bước 8/9.
 - Q-46 đã bị Q-47 thay. Kế: #106.4 (U-03, tiểu yêu chết, K-03).
 
@@ -212,7 +212,7 @@ Chủ nhắn trực tiếp ở phiên Claude Code: "Kéo hòm thư jx1-ops, đ�
 
 ## [Sonnet 5.5] Trả lời #110 [KHẨN] (09:20 18/11)
 - Nhận #110 [KHẨN] lúc 09:20, đánh thức bởi: chủ nhắn (không phải người gác; guard lần gần nhất im lặng vì commit < 30 phút).
-- Bảng tiểu yêu (khóa: chay_codex lấy mặc định, guard không đặt JX_CODEX_KEY nên coi là khóa mặc định, thuộc hạ chưa kiểm từng khóa):
+- Bảng tiểu yêu (khóa: chay_codex lấy mặc định, guard không đặt JX_CODEX_KEY nên coi là khóa mặc định, PM chưa kiểm từng khóa):
 | Mã | Trạng thái | Chạy từ | Lỗi gần nhất |
 |---|---|---|---|
 | R-03 | đang chạy | 09:12 (log) | 3 dòng 429 |
@@ -245,7 +245,7 @@ Chủ nhắn trực tiếp ở phiên Claude Code: "Kéo hòm thư jx1-ops, đ�
 - #119.3: 0-08 bỏ. #119.2/4: làm tiếp sau #118.
 
 ## Báo cáo 10:05 (18/11) — làm theo #119
-Bẩm đại vương (Chat đọc): 
+(Chat đọc): 
 - #116 [KHẨN]: đã bấm gõ cửa (HTTP 200). Nguyên nhân người gác lỡ: đọc bản worktree cũ + chỉ quét mục "Chưa xử lý" trong khi Chat thêm thư ở cuối file → nay `git fetch` + quét cả file; quyền phiên gác dùng `--allowedTools` hẹp (#119.1).
 - #118: Tổng quản (`TOOLS/tong_quan.py`, task `JX-TongQuan` mỗi 3 phút) đã chạy chu kỳ đầu, sinh `STATE/TIEU-YEU.md`; guard không còn chạy lại tiểu yêu. Chọn khóa ít dùng nhất (≤3 tiểu yêu/khóa), chờ 2/5/15 phút, quá 3 lần thì CHẾT-BỎ.
 - Phát hiện: dịch vụ xingchi đang lỗi `upstream_error`/Chat Completions, mọi tiểu yêu giao lúc 10:00 (T-02..T-04) chết trong 1 phút. Đã thêm cầu dao: ≥4 việc chết trong 10 phút thì mỗi vòng chỉ giao 1 việc, tránh đốt hết 3 lần chạy lại.
@@ -290,3 +290,11 @@ Task Scheduler `JX-Guard`: LastRun 10:29:29, LastTaskResult 0 (script chạy xon
 - Cầu dao 3 trạng thái (state ở D:\JX-wt\tong_quan\breaker.json, đầu TIEU-YEU.md): MỞ khi ≥4 lỗi/10 phút, mỗi 10 phút thử 1 việc, sống >3 phút thì ĐÓNG. Lỗi việc: 3 lần → CHET-BO + [TỔNG QUẢN]. Mở >60 phút: báo 1 lần/giờ.
 - Đang ở NỬA-MỞ, thử F-01. #122.1 (guard báo [CAN-CHU] khi hết hạn mức/đăng nhập) đã commit cùng.
 - #122.3: `claude -p "ping"` → exit 1, thông báo hết hạn mức tuần, mở lại 01:00.
+
+### Nhận #121, #122 (xong 10:42)
+- #121.1: BAN-GIAO "Bản bàn giao hiện tại" viết lại; hook PreCompact (`hook_luat.py`) ghi đè mục này mỗi lần (giờ, việc đang chạy, thư cuối).
+- #121.2: tạo `STATE/DUONG-DAN.md` (bảng đường dẫn, không giá trị khóa). #122.2: mục "Đổi tài khoản Claude trên PC" nằm trong đó.
+- #121.3: luật MAT-KET-NOI-CHAT thêm vào L7; `stop_guard.py` coi dòng này trong 3 dòng cuối GO-CUA.log là đã gõ cửa.
+- #121.4: đã bỏ các cách xưng hô khỏi TU-SONNET.
+- #121.5: khóa cũ ở `C:\Users\PC\.codex\config.toml` (dòng 96, trường experimental_bearer_token) CHƯA gỡ ra; còn cả trong 2 bản `config.toml.bak.*`. Chủ cần xoay khóa tại xingchi (tên: khóa mặc định của config.toml; chưa đặt vào `.jx1keys`).
+- #122.3: `claude -p "ping"` do người gác gọi: exit 1, thông báo hết hạn mức tuần (mở lại 01:00).

@@ -116,7 +116,8 @@ def main():
         tus = os.path.join(ROOT, HOPTHU, 'TU-SONNET.md')
         gcl = os.path.join(ROOT, 'STATE', 'GO-CUA.log')
         txt = open(tus, encoding='utf-8').read()
-        if re.search(r'\[HỎI-CHAT\]|\[TỔNG QUẢN\]', txt) and os.path.getmtime(tus) > (os.path.getmtime(gcl) if os.path.exists(gcl) else 0) + 1:
+        mk = os.path.exists(gcl) and 'MAT-KET-NOI-CHAT' in ''.join(open(gcl, encoding='utf-8').read().splitlines()[-3:])   # #121.3: gõ cửa hỏng 2 lần, coi như đã gõ
+        if not mk and re.search(r'\[HỎI-CHAT\]|\[TỔNG QUẢN\]', txt) and os.path.getmtime(tus) > (os.path.getmtime(gcl) if os.path.exists(gcl) else 0) + 1:
             sfg = os.path.join(tempfile.gettempdir(), 'jx_stop_guard_g_%s.json' % re.sub(r'\W', '', data.get('session_id', 'x'))[:40])
             try:
                 ng = json.load(open(sfg))['n']

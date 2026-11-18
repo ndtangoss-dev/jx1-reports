@@ -8,6 +8,7 @@ import os, subprocess, sys, time
 
 ROOT = os.environ.get('JX1_OPS_ROOT', r'D:\jx1-ops-wt\JX1_OPS')
 REPO = os.path.dirname(ROOT)
+NL = chr(10)
 
 
 def show(rel, tail=None):
@@ -40,15 +41,36 @@ def main():
         show('STATE/QUYET-DINH.md', 3000)
         show('STATE/TRANG-THAI.md', 3000)
     elif mode == 'precompact':
-        p = os.path.join(ROOT, 'STATE', 'TRANG-THAI.md')
+        import re, glob
         stamp = time.strftime('%Y-%m-%d %H:%M')
-        blk = ('\n## ĐANG LÀM DỞ (%s, hook PreCompact)\n'
-               '- Sắp nén ngữ cảnh. PM mới đọc LUAT-COT-LOI.md, TIEN-DO.md, THU-HIEN-HANH.md, QUYET-DINH.md rồi lịch sử chat.\n'
-               '- Việc đang dở, bước và lệnh chạy lại: xem dòng trạng thái cuối trong TRANG-THAI.md và TASKS/*.md (status running); PM ghi chi tiết ở đây nếu kịp.\n' % stamp)
-        with open(p, 'a', encoding='utf-8') as f:
-            f.write(blk)
-        git('add', 'JX1_OPS/STATE/TRANG-THAI.md')
-        git('commit', '-m', 'PreCompact: ghi DANG LAM DO\n\nCo-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>')
+        run = []
+        for f in sorted(glob.glob(os.path.join(ROOT, 'TASKS', '*.md'))):
+            try:
+                t = open(f, encoding='utf-8').read(1500)
+            except OSError:
+                continue
+            if re.search(r'(?m)^status:\s*(running|in_progress|doing)', t):
+                run.append(os.path.basename(f)[:-3])
+        lastn = '(không rõ)'
+        try:
+            tus = open(os.path.join(ROOT, 'HOP-THU', 'TU-SONNET.md'), encoding='utf-8').read()
+            m = re.findall(r'Nhận #(\d+)', tus)
+            if m:
+                lastn = '#' + max(m, key=int)
+        except OSError:
+            pass
+        p = os.path.join(ROOT, 'STATE', 'BAN-GIAO.md')
+        s = open(p, encoding='utf-8').read()
+        a2 = s.index('## Bản bàn giao hiện tại')
+        b2 = s.index(NL + '## ', a2 + 5)
+        blk = NL.join(['## Bản bàn giao hiện tại',
+                       '- Thời điểm: %s (hook PreCompact tự ghi đè)' % stamp,
+                       '- Việc đang chạy (TASKS status running): %s' % (', '.join(run) or '(không)'),
+                       '- Thư cuối đã nhận: %s' % lastn,
+                       '- Sắp nén ngữ cảnh: PM mới đọc LUAT-COT-LOI.md, TIEN-DO.md, THU-HIEN-HANH.md, QUYET-DINH.md rồi lịch sử chat; chi tiết việc dở ở dòng trạng thái cuối TRANG-THAI.md.']) + NL
+        open(p, 'w', encoding='utf-8', newline=NL).write(s[:a2] + blk + s[b2:])
+        git('add', 'JX1_OPS/STATE/BAN-GIAO.md')
+        git('commit', '-m', 'PreCompact: ghi de BAN-GIAO\n\nCo-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>')
         git('push', 'origin', 'HEAD')
 
 
