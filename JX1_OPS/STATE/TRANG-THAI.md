@@ -1,7 +1,7 @@
 ﻿# TRẠNG THÁI DỰ ÁN
 
 Cập nhật: 2026-11-16 – Sonnet PM (bắt đầu giai đoạn 0). Sonnet cập nhật file này ở mỗi điểm lưu.
-Nhịp 2026-11-18 ~17:00 – Sonnet: không thư mới sau #156; Tổng quản/Guard chạy nền; không việc dở.
+Nhịp 2026-11-18 ~17:00 – Sonnet (người gác đánh thức): có thư #157 (hướng dẫn exe server), xếp sau #154, chỉ đọc tĩnh, không bấm exe. K-03c đang chạy; K-02, R-06a kế tiếp; T-04, A-07, R-04b, R-05a bị chặn.
 
 ## Dự án đang ở đâu
 - Giai đoạn: **0 – Dựng đội, đang làm.** Kế hoạch đã duyệt; D1–D6 đã chốt (Q-10…Q-16).
