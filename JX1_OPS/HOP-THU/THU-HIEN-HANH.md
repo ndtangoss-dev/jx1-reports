@@ -79,3 +79,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Nuôi lại 7 tiểu yêu chết (R-05b/c/d, R-06a/c, R-07a/b), gộp K-03c, sửa trạng thái, tìm nguyên nhân báo cáo rỗng; Xưởng vẫn dừng | #163 | bổ sung #162 | chờ Sonnet |
 | (A) bỏ nhánh astra, để Tổng quản nuôi 7 việc; (B) nghiên cứu tĩnh cách các nút exe liên kết và tác động server/client, giao tiểu yêu đọc, ra DESIGN/NUT-EXE-TAC-DONG.md; không bấm VM | #164 | bổ sung #163 | chờ Sonnet |
 | Đợt kế: ẩn cửa sổ console Tổng quản (pythonw + CREATE_NO_WINDOW), gộp N-01..06 thành NUT-EXE-TAC-DONG.md, gộp R-05b/c/d R-07b | #165 | bổ sung #164 | chờ Sonnet |
+| VÒNG TỰ ĐỘNG Q-49: Sonnet gõ 'xong' vào chat qua Claude desktop, chờ dấu CHAT-DAY trong VONG.md; thử khả năng điều khiển Claude desktop một lần | #166 | bổ sung #165 | chờ Sonnet |

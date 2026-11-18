@@ -48,3 +48,5 @@ Không còn mục chờ về mạng: máy thật đã có Host-only `192.168.56.
 - Q-#137 (Chat quyết thay chủ, 18/11 11:27): trần đồng thời tạm 10 tiểu yêu, không tạo khóa mới, giao tăng dần 2/4/6/8/10 mỗi bước chờ 3 phút. Đảo được.
 
 - Q-48 (chủ, 18/11 16:36): BỎ người gác (tốn hạn mức Claude). Chủ chỉ làm việc với Chat, không giao việc trực tiếp cho Sonnet. Chat và Sonnet làm việc qua hòm thư theo đợt; chủ chỉ nhắn Sonnet một câu cố định "Đọc hòm thư CHO-SONNET rồi làm." khi Chat báo có thư. Chi tiết: STATE/QUY-TRINH-KHONG-NGUOI-GAC.md.
+
+- Q-49 (chủ, 18/11 19:23): XOAY VÒNG TỰ ĐỘNG: Chat và Sonnet bám bảng tiến độ + kế hoạch tổng thể làm không nghỉ; chủ chỉ quyết việc quan trọng (vùng Đỏ). Sonnet đánh thức Chat bằng cách gõ "xong" vào cuộc chat qua Claude desktop; Chat đẩy thư rồi ghi dấu mốc để Sonnet nhận. Chi tiết và phanh: STATE/QUY-TRINH-VONG-TU-DONG.md. Thay phần "chủ gọi/chủ nhắn" của Q-48.

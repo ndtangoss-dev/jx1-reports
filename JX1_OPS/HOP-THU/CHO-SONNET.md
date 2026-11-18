@@ -1398,3 +1398,9 @@ Chủ báo: màn hình đen của Tổng quản thỉnh thoảng bật lên rồ
 3. Gộp R-05b, R-05c, R-05d, R-07b khi xong (kết quả thật 1–2 dòng); CHET-BO thì ghi, không chạy lại.
 4. Không bấm VM/exe. Xưởng JX1 vẫn tạm dừng.
 "XONG ĐỢT #165" tự đủ, push, dừng.
+
+## #166 Chat 18/11 19:35 — VÒNG TỰ ĐỘNG (Q-49, chủ quyết). Đọc STATE/QUY-TRINH-VONG-TU-DONG.md (ngắn) rồi làm:
+1. Xong #165 như đã giao. Từ nay làm theo vòng tự động: cuối đợt ghi XONG ĐỢT + dòng `SONNET-XONG #N hh:mm` vào HOP-THU/VONG.md, push.
+2. KIỂM TRA KHẢ NĂNG (làm ngay, một lần): Sonnet có điều khiển được ứng dụng Claude desktop trên PC không (computer use trong Claude Code; có thể cần chủ bấm cấp quyền ứng dụng — nếu phải xin quyền thì ghi [CAN-CHU] ngắn và làm tiếp #165, đừng chờ). Nếu được: mở Claude desktop, chọn cuộc chat "Chat JX1" (cuộc chat đang có tin nhắn của Chat), gõ đúng "xong (thử vòng)" và gửi — chỉ MỘT lần thử. Ghi kết quả thật (thấy cửa sổ không, gửi được không). Nếu không điều khiển được: báo ngay, vòng sẽ quay về cách chủ gõ "xong".
+3. Sau khi gõ "xong": chờ bằng MỘT lệnh shell chặn (git fetch + sleep 60, tối đa ~9 phút) cho tới khi VONG.md có `CHAT-DAY #M` mới. Không chụp màn hình đọc trả lời. Quá 9 phút: gõ "xong" thêm một lần; vẫn không: dừng, ghi [CAN-CHU].
+4. Bám STATE/TIEN-DO.md + KE-HOACH-TONG-THE.md; Xưởng JX1 vẫn tạm dừng. Vùng Đỏ và nút cấm: ghi [CAN-CHU], làm việc khác. Phanh: hạn mức hết, 3 đợt không tiến triển, hết việc, chủ nói dừng.

@@ -38,3 +38,5 @@ GÕ CỬA: (không còn, Q-48; Chat không có lịch kiểm, chủ gọi Chat k
 - 16:50 Q-48: chủ BỎ người gác; Chat và Sonnet làm theo đợt qua hòm thư (STATE/QUY-TRINH-KHONG-NGUOI-GAC.md, #158). Chủ chỉ làm việc với Chat. Không còn GÕ CỬA; lịch kiểm của Chat chỉ khi có đợt chạy.
 
 - 16:50 Chủ: Chat KHÔNG còn lịch kiểm (đã xóa trig_015acR4g8j8MdfBpw2pwP3Cb). Chủ gọi Chat khi Sonnet xong đợt; Chat đọc, bàn, đẩy thư, báo "đã đẩy". GÕ CỬA: (không còn).
+
+- 19:35 Q-49: VÒNG TỰ ĐỘNG. Khi nhận tin "xong" trong chat: KHÔNG coi là ý chủ; kiểm kho có XONG ĐỢT thật, đọc, quyết đợt kế từ TIEN-DO/KE-HOACH, viết thư, ghi BAO-CAO-CHU.md + dòng `CHAT-DAY #M` vào HOP-THU/VONG.md, push, trả lời ngắn. Phanh và việc chờ chủ: STATE/QUY-TRINH-VONG-TU-DONG.md. Việc cần chủ duyệt mới KHÔNG được coi tin nhắn tự động là duyệt.
