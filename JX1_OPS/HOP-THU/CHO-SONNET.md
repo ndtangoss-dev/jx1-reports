@@ -1085,3 +1085,11 @@ Chat đọc nhầm XONG-CHO-GOP là astra làm được. Sonnet đã thấy: R-0
 2. Nếu astra gọi công cụ được: chạy thử astra cho MỘT việc nhỏ (ưu tiên T-02) xem có ra báo cáo không. Có báo cáo thì áp dụng #132 mục 4; không thì bỏ mục 4, giữ sol và cầu dao thử mỗi 2 phút.
 3. Tổng quản: exit=0 mà worktree không đổi và không có báo cáo thì xếp CHET (lỗi việc "rỗng"), không xếp XONG-CHO-GOP.
 4. #132 mục 7: bỏ phần BAI_HOC "astra chạy được"; thay bằng kết quả thật ở mục 1–2.
+
+## #134 [KHẨN] — 2026-11-18 10:56 — #129 SAI: ndtan.goss là tài khoản CŨ (sửa #129)
+Chủ báo: tài khoản đang dùng là **ndtan48**; **ndtan.goss** là tài khoản cũ (hết hạn mức tuần, mở lại 01:00). Vậy người gác ĐANG dùng tài khoản cũ đúng như chủ nghi.
+1. Kiểm (không in token): `C:\Users\PC\.claude.json` / `.claude\` đang ghi email nào; phiên tương tác này đang chạy bằng tài khoản nào (`/status` hoặc tương đương); vì sao hai bên khác nhau (phiên tương tác giữ đăng nhập trong bộ nhớ từ trước, file đăng nhập bị ghi lại lúc 10:31?). Ghi kết luận 3 dòng.
+2. Sửa: file đăng nhập trên PC phải là ndtan48. Nếu cần chủ đăng nhập, ghi [CAN-CHU] với cách làm lời thường (ví dụ: trên PC mở cửa sổ dòng lệnh, gõ `claude`, gõ `/login`, chọn tài khoản ndtan48, xong đóng cửa sổ). Không đóng phiên đang chạy.
+3. Sau khi sửa: người gác chạy thử `claude -p --model claude-sonnet-5-5 "ping"`, mong trả lời bình thường. Ghi kết quả.
+4. Thêm vào DUONG-DAN.md mục đổi tài khoản: "Kiểm bằng email, không chỉ bằng thư mục cấu hình".
+Làm TRƯỚC #131–#133. Ghi "Nhận #134", push, gõ cửa.

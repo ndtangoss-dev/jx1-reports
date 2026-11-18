@@ -47,3 +47,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Chủ đã xóa khóa mặc định: gỡ khỏi config.toml + .bak, chuyển tiểu yêu khóa mặc định sang JX-Kn | #131 | thực hiện #130 mục 4 | chờ Sonnet |
 | LỆNH CHỦ: Tổng quản 2 phút/vòng, xét sống chết bằng PID, chết chạy lại ≤2 phút, sol lỗi thì chạy astra | #132 | THAY #118 (2/5/15), #123 mục 3 (10 phút) | chờ Sonnet |
 | Sửa #132: R-06a astra exit 0 nhưng rỗng; thử astra 1 việc trước khi chuyển; exit 0 rỗng = CHET | #133 | sửa #132 mục 4, 7 | chờ Sonnet |
+| [KHẨN] #129 sai: người gác dùng tk cũ ndtan.goss, tk đang dùng ndtan48; chuyển đăng nhập PC | #134 | sửa #129 | chờ Sonnet |
