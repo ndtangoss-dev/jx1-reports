@@ -1,7 +1,7 @@
 ---
 id: XD-H03
 title: Gộp mọi điều CHƯA KIỂM từ báo cáo
-status: running
+status: done
 level: L3
 agent: codex
 effort: high
