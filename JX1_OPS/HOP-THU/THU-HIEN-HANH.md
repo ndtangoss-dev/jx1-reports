@@ -67,3 +67,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Vì sao không có việc astra nào chạy 12:07–12:57: đọc log Tổng quản, sửa gốc, không chạy tay | #151 | bổ sung #145/#146 | chờ Sonnet |
 | ĐÓNG BĂNG tới 15:20 (hạn mức 93%): dừng sau bước dở, 1 dòng nhận, đứng im | #152 | thay #149–#151 phần chưa làm | chờ Sonnet |
 | LỖI QUY TRÌNH tốn token: (A) guard coi mỗi dòng [TỔNG QUẢN] mới là KHẨN → gọi Sonnet ~12 lần/giờ; (B) stop_guard ép Sonnet chạy tiếp; (C) hook sau nén nạp nhiều; (D) đếm số thật | #153 | mới | chờ Sonnet |
+| [KHẨN] tiếp tục sau reset: gộp việc sol XONG (K-03a/b/d/e, T-02..T-04), #153, #150, việc hoãn | #154 | thay #152 | chờ Sonnet |

@@ -1298,3 +1298,11 @@ C. hook_luat.py postcompact: sau MỖI lần nén in LUAT-COT-LOI + TIEN-DO + TH
 D. Xác nhận bằng số (làm TRƯỚC khi sửa A, 1 lệnh, báo vào TU-SONNET): trong D:\JX-wt\guard\guard.log hôm nay đếm theo giờ số dòng "goi phien" (và "thu [TONG QUAN] moi") + số dòng "khong goi" ; và nếu có log stop_guard thì số lần chặn. Mục đích: biết mức thật để so trước/sau.
 E. Kho: TU-SONNET 74 KB (107 dòng [TỔNG QUẢN]), TRANG-THAI 43 KB, CHO-SONNET 230 KB. Chỉ đọc phần mới (như mailbox_hook đã làm); tuyệt đối không đọc cả file; sau A thì TU-SONNET tự gọn lại.
 Chat cũng đã sửa phần mình: giãn lịch kiểm 10→20–40 phút, và không đọc cả file. Sau khi sửa A–C, trả guard.ps1 ngưỡng 90→30 phút (#149) như đã hẹn. Không dùng [KHẨN].
+
+## #154 — 2026-11-18 15:30 — [KHẨN] HẠN MỨC ĐÃ ĐẶT LẠI (15:20): TIẾP TỤC. SOL ĐÃ SỐNG LẠI TỪ 14:27, CÓ VIỆC XONG-CHO-GỘP CHỜ SONNET
+TIEU-YEU 15:21: cầu dao xingchi ĐÓNG từ 14:27. XONG-CHO-GOP (sol): K-03a, K-03b, K-03d, K-03e, T-02, T-03, T-04 (đội test game đã có kết quả đầu tiên); K-03c đang SONG; F-01 CHET-BO (rỗng exit=0 ×3). Astra: 7 việc R-* CHET-BO (báo cáo rỗng); R-02/R-03/R-04 có báo cáo. Làm theo thứ tự:
+1. Gộp/duyệt kết quả sol đã xong (K-03a/b/d/e, T-02..T-04) theo quy trình gộp; ghi từng việc 1–2 dòng vào TIEN-DO/TU-SONNET (kết quả thật, không đoán). Rồi giao tiếp việc theo TASKS (sol, tăng dần theo trần 10, ≤3/khóa). F-01: ghi nguyên nhân rỗng.
+2. #153 (lỗi quy trình tốn token), bắt đầu bằng D (đếm số thật) rồi A, B, C. Sau đó trả guard.ps1 ngưỡng 90→30 phút.
+3. #150 chụp nốt cửa sổ exe (Bishop tab Information, S3Relay, Goddess, PaySys, cửa sổ 5), không bấm nghiệp vụ.
+4. Việc hoãn: DESIGN/XUONG-JX1.md bản đầy đủ + khu 6, M1, bản vá có tên.
+Hạn mức vẫn là của chủ: trả lời ngắn, gom lệnh, việc đọc nặng giao tiểu yêu.
