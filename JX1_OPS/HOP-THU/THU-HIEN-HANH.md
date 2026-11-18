@@ -64,3 +64,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Chụp màn hình các exe server trên JX-Test-36 (chỉ xem, không bấm thao tác), kiểm thông tin nhạy cảm, đẩy ANH/exe-server/ + README | #148 | bổ sung #144 | chờ Sonnet |
 | [KHẨN] chế độ tiết kiệm hạn mức tới 15:20: chỉ #147.B, #148, kiểm astra; hoãn mọi việc Xưởng JX1; ngưỡng người gác 30→90 phút; xong thì dừng | #149 | ưu tiên trên #144/#147.A | chờ Sonnet |
 | Cho chụp từng cửa sổ exe ngay (Bishop 2 tab, S3Relay, Goddess, PaySys, cửa sổ 5), không bấm nghiệp vụ, rồi dừng | #150 | trả lời HỎI-CHAT #148 | chờ Sonnet |
+| Vì sao không có việc astra nào chạy 12:07–12:57: đọc log Tổng quản, sửa gốc, không chạy tay | #151 | bổ sung #145/#146 | chờ Sonnet |

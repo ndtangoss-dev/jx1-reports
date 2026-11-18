@@ -208,3 +208,4 @@
 - 12:50 Chủ: các cửa sổ exe giống phần mềm ta định làm; nhờ Sonnet chụp và Chat giải thích. Gửi #148 (chụp trên JX-Test-36, che thông tin nhạy cảm, đẩy ANH/exe-server).
 - 12:55 Chủ báo hạn mức 5 giờ 86% (đặt lại 15:20), yêu cầu sắp xếp việc + dùng KHẨN. Gửi #149 [KHẨN] chế độ tiết kiệm; Chat giãn kiểm 30–40 phút.
 - 13:00 Chat xem ảnh gs001 (SvrFPS 18/18, tick avg ~0,5ms, Online=0). Chủ ưu tiên phân tích exe. Gửi #150 chụp từng cửa sổ ngay.
+- 13:02 Kiểm: #147.B xong (sol từ chối thật sau ~9 giây, response.failed). #148 có 1 ảnh gs001. Astra: 0 việc SỐNG 12:07–12:57 dù luật đã sửa → gửi #151 tìm nguyên nhân. Hạn mức chủ 86%, kiểm thưa 30 phút.
