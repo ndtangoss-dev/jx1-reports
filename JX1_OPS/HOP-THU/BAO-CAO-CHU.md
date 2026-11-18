@@ -9,3 +9,4 @@
 - 18/11 21:20 — Chủ đã duyệt 1–5; vòng chạy lại. Sonnet sẽ hỏi [CAN-CHU] khi cần chủ làm tay (lấy khóa Gemini, đăng nhập client, quyền gh).
 - 18/11 21:35 — CHỦ LÀM TAY: (a) tạo repo RỖNG PRIVATE jx1-source trên GitHub, báo tên; (b) bấm đúp nhap_khoa.bat dán khóa Gemini; (c) tạo tài khoản TEST-A trên JX-Test-36 + mật khẩu; (d) xác nhận 2 VBoxSVC + 6 VBoxHeadless đang chạy là bình thường.
 - 18/11 21:45 — Sonnet tự làm TEST-A + VirtualBox + C01/C03. Chủ chỉ cần làm khi ngồi máy: tạo repo private jx1-source (hoặc đăng nhập gh) và dán khóa Gemini.
+- 18/11 21:30 — Khóa Gemini đã nhập; Sonnet chạy so sánh. jx1-source giữ cục bộ (theo chủ). Không còn việc tay cho chủ.

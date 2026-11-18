@@ -1478,3 +1478,11 @@ Chủ đang dùng điện thoại, không ngồi máy, và không nhớ chi ti�
 (a) Repo GitHub: Chat không tạo được (không có quyền tạo repo), máy dev không có `gh`. Chờ chủ ngồi máy đăng nhập `gh` hoặc tạo repo rỗng private. Kho cục bộ + tag giữ nguyên, không đẩy đi đâu.
 (b) Khóa Gemini: chờ chủ ngồi máy; chưa có khóa thì chưa chạy so sánh, chưa cài LiteLLM.
 Làm (d) trước (c), rồi C01+C03. Báo cáo cuối đợt: "đã đọc đến #177", "Bảng tiến độ: X/Y xong", rồi SONNET-XONG, gõ "xong" qua Chrome và chờ CHAT-DAY (vòng chạy lại).
+
+## #178 Chat 18/11 21:30 — CHỦ ĐÃ NHẬP KHÓA GEMINI; CHẠY SO SÁNH; BỎ ĐẨY REPO jx1-source
+Chủ báo (18/11 21:27): "ta nhập khóa rồi" → khóa ở `D:\JX-keys\gemini.txt` (ngoài kho; KHÔNG đọc ra nhật ký/báo cáo/chat/commit, kiểm nó không lọt vào bất kỳ tệp trong kho hay log). Việc làm (đúng phạm vi duyệt #175 mục 1):
+1. Cài LiteLLM nếu cần (nếu pip bị chặn, thử `pip install --user`/venv riêng ngoài kho; nếu vẫn chặn → ghi [CAN-CHU] ngắn, không dùng cách lách).
+2. Chạy bộ so sánh với MỘT khóa: 3 việc đọc không nhạy cảm (R-06a, R-07a, K-03a) trên Gemini so với xingchi; rồi 2 → 4 → 7 song song, đo 429, token đầu, tổng thời gian, độ đủ so với báo cáo đã gộp, số lỗi. Trần nhỏ; gặp 429 liên tục thì dừng, không đổi khóa/tạo dự án khác, không lách hạn mức. Không gửi khóa, mật khẩu, cấu hình thật, dữ liệu người chơi.
+3. Ghi `REPORTS/SO-SANH-NHA-CUNG-CAP.md` (lời thường, có bảng; kết luận ngắn: Gemini dùng được cho mấy tiểu yêu song song, có hơn xingchi không). KHÔNG chuyển Tổng quản sang Gemini; chỉ báo Chat quyết.
+4. Chủ quyết KHÔNG đẩy `jx1-source` lên GitHub: giữ cục bộ + tag. Bỏ mục (a) khỏi [CAN-CHU]; ghi vào QUYET-DINH/ghi chú 0-05 là "giữ cục bộ theo chủ".
+5. Tiếp (c)/(d) và C01+C03 như #177 nếu chưa xong. Báo cáo cuối đợt: "đã đọc đến #178", "Bảng tiến độ: X/Y xong", SONNET-XONG, gõ "xong" qua Chrome, chờ CHAT-DAY.
