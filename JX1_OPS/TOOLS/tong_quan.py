@@ -128,7 +128,9 @@ def pid_alive(pid):
     if pid <= 0:
         return None
     out = subprocess.run(['tasklist', '/FI', 'PID eq %d' % pid, '/NH'], capture_output=True, text=True).stdout
-    return str(pid) in out
+    if str(pid) in out:
+        return True
+    return False if 'No tasks' in out else None   # #145: ket qua rong/la -> khong ket luan
 
 
 def pid_txt(i, running):
@@ -165,6 +167,20 @@ def report_empty(i):
         return os.path.getsize(r) < 200
     except OSError:
         return True
+
+
+RAMP = [0]
+
+
+def ramp_ok(sched):
+    """#145.3: 1 viec -> song >3 phut -> 3 viec -> toi tran. Moi vong toi da 1 viec neu chua co viec astra nao song >3 phut, nguoc lai 3."""
+    old = 0
+    for x, st in sched.items():
+        if st == 'Running' and model_of(x) == 'astra':
+            pf = os.path.join(WT, x + '.pid')
+            if mt(pf) and now() - mt(pf) > 180:
+                old += 1
+    return RAMP[0] < (3 if old else 1)
 
 
 def run_launch(i, key):
@@ -264,7 +280,8 @@ def main():
             continue
         running = sched.get(i) == 'Running'
         pa = pid_alive(pid_of(i))   # #132.2: SONG = PID con; Scheduler bao Running ma PID mat = chet
-        if running and pa is False:
+        _act = max(mt(os.path.join(WT, i + '.codex.log')), mt(os.path.join(WT, i + '.nhip')))
+        if running and pa is False and (now() - _act) > 300:
             running = False
             ps("Stop-ScheduledTask -TaskName 'JX-codex-%s'" % i)
             if done_exit(i) is None and not DRY:
@@ -316,11 +333,14 @@ def main():
             level = 'SONG'      # vua giao, chua kip thay
         else:
             level = 'CHET'
+        if level == 'CHET' and not err and not svc:
+            ls = [x.strip() for x in tail.replace(chr(0), '').splitlines() if x.strip()]
+            err = 'khong ro: exit=%s, %s' % (ex, (ls[-1][:120] if ls else 'log trong'))
         if level == 'CHET' and svc:
             lan[i] = 0   # #123: loi dich vu khong cong vao 3 lan chay lai
             level = 'CHO-XINGCHI'
             fin = mt(os.path.join(WT, i + '.done')) or last
-            if br['s'] != 'dong' and astra_ok(tasks.get(i, {}), i) and model_of(i) != 'astra' and not DRY:
+            if br['s'] != 'dong' and astra_ok(tasks.get(i, {}), i) and model_of(i) != 'astra' and not DRY and ramp_ok(sched):
                 alive_n = len([x for x in sched if sched[x] == 'Running'])
                 k = pick_key(assign, [x for x in sched if sched[x] == 'Running']) if alive_n < MAXALL else None
                 if k:
@@ -332,6 +352,7 @@ def main():
                         pass
                     if run_launch(i, k):
                         sched[i] = 'Running'
+                        RAMP[0] += 1
                         level = 'CHAY-ASTRA'
                         notes.append('%s xingchi loi, chuyen sang astra bang %s' % (i, k))
                         time.sleep(10)
@@ -393,7 +414,7 @@ def main():
             continue
         use_astra = False
         if budget[0] <= 0:
-            if br['s'] != 'dong' and astra_ok(d, i):
+            if br['s'] != 'dong' and astra_ok(d, i) and ramp_ok(sched):
                 use_astra = True
             else:
                 continue
@@ -406,6 +427,7 @@ def main():
             continue
         ensure_worktree(i)
         if use_astra:
+            RAMP[0] += 1
             set_astra(i)
         assign[i] = k
         budget[0] -= 0 if use_astra else 1

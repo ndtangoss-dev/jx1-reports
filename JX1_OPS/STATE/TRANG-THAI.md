@@ -305,3 +305,5 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 - 18/11 11:59 Sonnet: nhận #142, #139 đóng; không làm gì lách xingchi; chờ sol hồi hoặc Chat duyệt quy tắc astra.
 
 - 18/11 12:06 Sonnet: #143 lập trình quy tắc astra trong Tổng quản (dry-run OK) + công cụ quet_ma_nguon (MA-NGUON/); exe-chuỗi chưa làm.
+
+- 18/11 12:20 Sonnet: #145 sửa Tổng quản (PID mất sai → giết nhầm 11 việc astra): chỉ kết luận khi tasklist đúng + im >5 phút, lỗi cuối luôn có chữ, astra tăng dần 1→3; sau đó làm #144.
