@@ -65,3 +65,6 @@ Gemini miễn phí chỉ 20 lượt/ngày/mô hình: không dùng được (REPO
 
 ## Q-54 — 18/11/2026 22:50 — Chờ dài bằng LỆNH CỐ ĐỊNH `TOOLS/cho_thu.py` + nhịp tim (chủ: không thể phải thức gõ tay cả đêm)
 Vòng ngủ do Sonnet tự viết không đáng tin (đêm 18/11 đứng im sau #186/#189 mà không ai biết nó sống hay chết). Từ giờ: chờ = chạy `python TOOLS/cho_thu.py` (tối đa 55 phút/lượt; thoát mã 10 = thư mới, 11 = có việc chờ gộp, 12 = hết hạn). Lệnh tự ghi `HOP-THU/NHIP-TIM.md` và đẩy lên kho mỗi 5 phút: Chat/chủ nhìn tệp này (hoặc `git log`) để biết Sonnet còn sống. Chat sẽ đọc nhịp tim mỗi lần thức; nhịp tim cũ hơn 15 phút = Sonnet treo → ghi BAO-CAO-CHU.
+
+## Q-55 — 18/11/2026 23:58 — Chủ dặn: tắt Server D + LDPlayer-D khi không test điện thoại; luôn ≥8 tiểu yêu (2/khóa); kiểm RAM và báo bất thường
+Chủ nói rõ (tháo hạn chế "không tắt" của Q-18 CHỈ cho việc tắt sạch khi không test): tắt `JX-Server-D` và LDPlayer nối D; bật lại khi chủ báo ra test. Tiểu yêu ≥8 việc đồng thời, mỗi khóa tối đa 2. Kiểm RAM máy thật mỗi đợt, báo ngay phần bất thường để chủ quyết tắt. Chi tiết: LUAT-COT-LOI.md L11.

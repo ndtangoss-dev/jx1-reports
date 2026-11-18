@@ -254,3 +254,6 @@
 - 22:52 Sonnet đứng ~10 phút sau #189, không rõ sống/chết. Viết TOOLS/cho_thu.py (chờ cố định + nhịp tim) và gửi #190 (Q-54).
 - 23:35 Đọc #190: C01+C03 đạt (51189; Goddess dùng BDB, không SQL). Gửi #191: W-01 gộp, W-02 quan sát trên Test-36.
 - 23:50 Tìm ra gốc Sonnet cứ dừng: LUAT-COT-LOI.md L2 bảo 'push, dừng'. Sửa L2, thêm L10; gửi #192.
+- 23:55 Sonnet gõ CHAT (duyệt W-01). Đọc DESIGN/HIEU-HIEU-UNG-VU-KHI.md: duyệt làm nền, +4 bổ sung (lịch sử sửa, dữ liệu thiếu, SHA APK, W-02 H4/H5). Gửi #193.
+- 23:58 Chủ chỉ ra Sonnet quên 'ẩn LDPlayer': luật rải ở thư/nhật ký. Thêm LUAT-COT-LOI.md L11 (một chỗ duy nhất), gửi #194. Từ giờ luật thường trực của chủ ghi vào L11 ngay.
+- 00:05 Chủ dặn Q-55: tắt D/LD-D khi không test điện thoại; ≥8 tiểu yêu 2/khóa; kiểm RAM báo bất thường. Ghi L11 + gửi #195.
