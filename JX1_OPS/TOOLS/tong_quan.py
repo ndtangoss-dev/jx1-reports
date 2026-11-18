@@ -333,7 +333,7 @@ def main():
                 notes.append('%s TREO >%d phut (log, nhip, file deu khong doi tu %s), da dung de chay lai; dong log cuoi: %s' % (i, TREO, time.strftime('%H:%M', time.localtime(last)) if last else '?', (_ls[-1][:160] if _ls else '(log trong)')))
                 open(os.path.join(WT, i + '.done'), 'w').write('exit=2 treo')
                 level = 'CHET'
-        elif ex == 0 and not os.path.exists(os.path.join(wt, 'JX1_OPS', 'REPORTS', i + '.md')) and not subprocess.run(['git', '-C', wt, 'status', '--porcelain'], capture_output=True, text=True).stdout.strip():
+        elif ex == 0 and not glob.glob(os.path.join(wt, 'JX1_OPS', 'REPORTS', i + '[-.]*')) and not subprocess.run(['git', '-C', wt, 'status', '--porcelain'], capture_output=True, text=True).stdout.strip():
             level = 'CHET'   # #133.3: exit=0 ma worktree sach, khong bao cao = rong
             err = 'rong (exit=0, khong thay doi)'
             svc = False

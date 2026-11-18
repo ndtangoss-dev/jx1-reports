@@ -111,3 +111,11 @@ Tất cả dưới đây **[CHƯA KIỂM]**, là tiêu chí cho task triển kha
 - Kiểm đầu ra: báo cáo có đúng 5 dòng tóm tắt đầu, đủ UI/packet/renderer/điểm chèn/cỡ việc và các dấu [CHƯA KIỂM]; xem diff hai file một lần và kiểm whitespace. Đây là kiểm tài liệu, không phải test/build game.
 - Trạng thái cuối **DONE** cho phạm vi khảo sát. Không còn blocker giao báo cáo; các mục runtime/resource/ABI và server/DB nêu trên vẫn chưa xác minh theo phạm vi cho phép.
 - Commit SHA/link: **không có**. Không stage/commit/push vì người dùng chỉ yêu cầu khảo sát và ghi file theo task, chưa yêu cầu công bố Git; giữ kết quả local để duyệt.
+
+## Đối chiếu checkpoint ngày 18/11/2026
+
+- Trạng thái đầu lượt: task đã `done`, báo cáo đã có đủ năm dòng tóm tắt; `git status --short --branch` trả `## task/F-01`, không có thay đổi local. Tiếp tục từ kết quả ngày 17/11, giữ nguyên bằng chứng khảo sát đã ghi.
+- Đã đọc task, báo cáo F-01 và hai báo cáo nền A-12/A-14. Đối chiếu đủ các mục được giao: UI đội/chọn con, ô trang bị và mặc/tháo, đường ngoại hình NPC khác, điểm chèn `file:dòng`, packet đề nghị và cỡ việc client. Không phát hiện thiếu mục cần khảo sát bổ sung. Phân biệt nguồn C của A-12/F-01 với nguồn D của A-14 đã được báo cáo nêu rõ.
+- Lỗi trong lượt đối chiếu và cách xử lý: đọc task mặc định hiển thị lỗi dấu, đọc lại bằng `-Encoding UTF8` thành công; hai đường literal `REPORTS/A-12-hao-huu-mac-do.md` và `REPORTS/A-14-hao-huu-trang-bi-thiet-ke.md` báo `PathNotFound`, chuyển đúng hai file dưới `JX1_OPS/REPORTS/` đã được checkpoint chỉ dẫn. Đầu ra gộp A-12/A-14 bị rút gọn, đọc riêng các đoạn còn thiếu để hoàn tất đối chiếu. Các lỗi đọc đã xử lý, không còn blocker bàn giao tài liệu.
+- Phạm vi xác nhận lần này là độ phủ và tính nhất quán của tài liệu. Độ mới của source so với checkpoint, build/runtime/resource/ABI và server/DB vẫn **[CHƯA KIỂM]**; bước tiếp theo là task triển khai/kiểm chứng riêng được cấp quyền tương ứng.
+- Trạng thái cuối **DONE** cho F-01. Chỉ bổ sung ghi nhận vào báo cáo này và mục Kết quả của task; không sửa source, không chạy exe, VM, build/test hoặc mạng. Không stage/commit/push trong lượt này; không có SHA/link Git mới.
