@@ -1,6 +1,6 @@
-# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-18 12:06, đừng sửa tay)
+# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-18 12:07, đừng sửa tay)
 
-ĐANG LÀM: R-02, R-03, R-04, R-04b, R-05a, R-05b
+ĐANG LÀM: R-02, R-03, R-04, R-04b, R-05a, R-05b, R-05c, R-05d, R-06c
 KẾ TIẾP: K-02, R-06a
 BỊ CHẶN: A-07
 
@@ -15,14 +15,14 @@ flowchart LR
     R_04b["R-04b chạy"]
     R_05a["R-05a chạy"]
     R_05b["R-05b chạy"]
+    R_05c["R-05c chạy"]
+    R_05d["R-05d chạy"]
+    R_06c["R-06c chạy"]
     K_03a["K-03a chết"]
     K_03b["K-03b chết"]
     K_03c["K-03c chết"]
     K_03d["K-03d chết"]
     K_03e["K-03e chết"]
-    R_05c["R-05c chết"]
-    R_05d["R-05d chết"]
-    R_06c["R-06c chết"]
     R_07a["R-07a chết"]
     R_07b["R-07b chết"]
     A_07["A-07 chặn"]
@@ -39,4 +39,4 @@ flowchart LR
   end
 ```
 
-Tổng: 85 việc, 6 đang làm (+13 chết, 1 chờ gộp), 2 chờ, 1 bị chặn, 62 xong.
+Tổng: 85 việc, 9 đang làm (+10 chết, 1 chờ gộp), 2 chờ, 1 bị chặn, 62 xong.
