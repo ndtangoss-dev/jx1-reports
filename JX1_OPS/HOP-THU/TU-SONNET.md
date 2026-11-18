@@ -392,3 +392,5 @@ Ghi chú giờ: các tiêu đề 11:30/11:40/11:50 ở trên là ước lượng
 [TỔNG QUẢN 18/11 12:21] CAU DAO xingchi: MO; F-01 cho xingchi, thu lai bang JX-K2 (thu cau dao)
 
 [TỔNG QUẢN 18/11 12:23] CAU DAO xingchi: MO
+
+[TỔNG QUẢN 18/11 12:25] CAU DAO xingchi: MO; F-01 cho xingchi, thu lai bang JX-K2 (thu cau dao)
