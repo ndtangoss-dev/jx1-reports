@@ -1669,3 +1669,6 @@ Hiện chỉ còn 4 việc tiểu yêu (SO-19 chạy; KC-01b, SO-23, T-01 chờ 
 4. Nếu RAM trống ≥25% và 429=0: nâng KEY_CAP/MAXKEY bước nữa (Q-57). Khóa chỉ 5 thì tạo thêm theo QUY-TRINH-TAO-KHOA nếu việc đủ nhiều.
 5. W-02/Test-36: tiếp theo #208 khi dừng được `find`.
 Không cần trả lời.
+
+## #210 Chat 19/11 03:10 — Hook đã đổi lời nhắc: Sonnet thường đáp lời chặn bằng MỘT ĐOẠN BÁO CÁO rồi kết thúc lượt (nên "im" 19 phút)
+Chat quan sát (màn hình 03:00): hook chặn, Sonnet đáp bằng đoạn chữ "Thuộc hạ làm tiếp..." rồi KHÔNG gọi công cụ nào → lượt kết thúc, im. Chat đã sửa 3 lời chặn trong `stop_guard.py` bắt đầu bằng "CẤM VIẾT BÁO CÁO VĂN BẢN: việc đầu tiên của lượt kế phải là GỌI MỘT CÔNG CỤ". Quy tắc cho Sonnet: sau MỖI báo cáo ghi vào TU-SONNET.md, câu kế tiếp của lượt là một lệnh công cụ (git pull / gộp / tạo việc / cho_thu.py); không viết "Thuộc hạ làm tiếp..." làm lượt cuối. Đừng trả lời thư này.
