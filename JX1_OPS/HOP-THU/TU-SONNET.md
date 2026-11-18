@@ -633,3 +633,18 @@ Còn: #154.4 (XUONG-JX1 bản đầy đủ, khu 6, M1, bản vá có tên); ch�
 
 ## XONG ĐỢT #160 (Sonnet, 18/11 ~17:35)
 Đã xong: #160 không có việc mới. Đã bỏ mọi dòng gõ cửa/RemoteTrigger khỏi LUAT-COT-LOI (từ đợt #159) và đánh dấu GO-CUA.log "đã bỏ" trong DUONG-DAN; SO-TAY-CHAT đã ghi "không còn". Không còn việc dở nào ngoài: #154.4 (XUONG-JX1 đầy đủ, khu 6, M1, bản vá), chụp tab Information của Bishop (cần chủ duyệt), #134 (chủ đăng nhập). Giả định: không chờ Chat giữa đợt. Cần chủ quyết: không.
+
+## XONG ĐỢT #161 (Sonnet, 18/11 ~17:20)
+**Đã xong (chỉ trên JX-Test-36):**
+1. Bishop "Information": không phải tab, là nhãn tĩnh; ảnh `ANH/exe-server/4b-Bishop-sau-bam-Information.png`.
+2. Sao lưu `Goddess.cfg`, `Bishop.cfg`, `acclist_vip.cfg`, `accforbitlist.cfg` vào `C:\JX\bak-161\` (trong VM thử). `ipforbitlist.cfg` không tồn tại.
+3. Goddess Manual backup: sinh `gw\database\<ngày_giờ>\*.bak + *.txt`, không lỗi.
+4. Bishop Announcer "Notify all player", câu thử "Thu nghiem he thong 161", Send: không lỗi.
+5. Goddess "Save nhat ky": không lỗi.
+6. Max char create 3→4→3: ghi cfg theo byte, dừng/khởi lại Goddess, đặt lại 3 và khởi lại, tệp kiểm lại = 3. KHÔNG thử tạo nhân vật thứ 4 (cần client; testlocal đã đủ 3).
+7. Add Money: jxt36a (offline, Bac) +1000: 2409400 → 2410400 (đọc từ `.txt` Manual backup 17:17), hộp báo thành công.
+**Sự cố đã xử lý:** sau mỗi lần khởi lại Goddess, Bishop mất nối DB (hộp lỗi "提示"). Bấm **Reconnect DB** của Bishop thì nối lại; gs001 tự báo "Database server reconnect OK". Kiểm cuối: Bishop→5001 và →5002 Established, S3Relay→5001 Established, gs001 SvrFPS 18/18 (17:16). Bấm nhầm Reconnect Pay một lần ở lần đầu (đổi cổng PaySys, đã sửa lại).
+**Điền bảng:** cột THỬ của `DESIGN/BANG-NUT-EXE-SERVER.md` (Max char, Manual backup, Save nhat ky, Add Money, Announcer) + mục "Phát hiện thêm".
+**Không bấm:** Remove Role, 清除数据, 合区, 找回BAK, 恢复全部数据, Copy DB/MySQL, Exit, Close, Announcer kiểu *.
+**Giả định:** nút Restart không dùng (dùng JX-ChainUp để khởi lại Goddess như quy trình VM thử); chưa chụp ảnh từng bước ngoài ảnh Information.
+**Còn lại:** #154.4 XƯỞNG JX1 (tạm dừng); #134 (chủ đăng nhập ndtan48 rồi chạy lại ping); `.gitignore` master (thấp, không push). Cần chủ quyết: không. [CAN-CHU]: không.
