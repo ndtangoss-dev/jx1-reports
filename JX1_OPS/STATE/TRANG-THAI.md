@@ -299,3 +299,5 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 - 18/11 11:39 Sonnet: #140 thử wire_api=chat 4 lần đều bị Codex từ chối; chờ xingchi sửa.
 
 - 18/11 11:44 Sonnet: không có thư mới sau #140; chờ xingchi sửa, Tổng quản thử mỗi 2 phút.
+
+- 18/11 11:52 Sonnet: #141 astra ghi file được 4/4 việc nhỏ; T-02 rỗng do mô hình, không do quyền; chưa lập trình quy tắc astra.
