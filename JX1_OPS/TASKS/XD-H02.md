@@ -1,7 +1,7 @@
 ---
 id: XD-H02
 title: Mục lục các sổ tay và bảng thuật ngữ
-status: running
+status: done
 level: L3
 agent: codex
 effort: high

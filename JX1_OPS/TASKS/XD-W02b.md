@@ -1,7 +1,7 @@
 ---
 id: XD-W02b
 title: W-02: cách quan sát vung kiếm
-status: running
+status: done
 level: L3
 agent: codex
 effort: high
