@@ -449,3 +449,5 @@ Chụp được Bishop (tab Status) bằng Alt+Tab qua VBoxManage; đã đẩy +
 
 ## Nhận #151 (13:00 giờ thật)
 **Nguyên nhân gốc** (từ mã, không phải log): tong_quan.py dòng 276 đặt `budget = 99 nếu cầu dao ĐÓNG, ngược lại 0`. Khi cầu dao MỞ, budget = 0, mà nhánh chạy lại việc CHET (dòng 408) đòi `budget > 0` → mọi việc R-* chết (lan=0, exit=3 cũ) không bao giờ được chạy lại; chỉ nhánh "ready" mới có đường astra (use_astra), nhánh CHET thì không. Đó là lỗi của thuộc hạ ở #145. **Đã sửa**: nhánh CHET cho phép chạy lại nếu `budget>0` HOẶC (cầu dao không đóng và việc là astra_ok và `ramp_ok`): tăng dần 1→3 mỗi vòng (RAMP), set_astra, không trừ budget sol. Biên dịch OK. Chưa quan sát được kết quả thật (chạy thử khô không đi qua nhánh này); sẽ xem vòng Tổng quản kế tiếp (2 phút) và ghi lại. Không chạy tay (L9).
+
+[TỔNG QUẢN 18/11 13:01] CAU DAO xingchi: MO; K-03a cho xingchi, thu lai bang JX-K2 (thu cau dao); R-02 chet, chay lai lan 1 bang JX-K3
