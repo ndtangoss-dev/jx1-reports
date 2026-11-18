@@ -57,7 +57,7 @@ Cập nhật: 2026-11-16 – Sonnet PM (bắt đầu giai đoạn 0). Sonnet c�
 | 0-07 | đang chạy | `jx_env_up.ps1` chạy tốt khi môi trường đã lên (exit 0, 22:14); thử qua tắt bật VM cần chủ: VM thử không tự đăng nhập mu1 (đề nghị bật AutoAdminLogon trong VM thử); Main VM không trả ping lúc 22:14 |
 | 0-09 | xong | sandbox Codex chặn ghi ngoài worktree nhưng ghi được C:/Users/Public; `KHOA.md` đang dùng; hook SessionStart `compact` đã cấu hình (echo nhắc + graphify), in thật sau nén CHƯA kiểm |
 | 0-10 | xong | chưa có đơn giá USD; có số token và trần tạm Q-22 |
-| 0-08 | chờ | đã cập nhật BAN-GIAO; thử phiên mới bị chặn do giới hạn tuần của tài khoản Claude |
+| 0-08 | xong | đã cập nhật BAN-GIAO; thử phiên mới bị chặn do giới hạn tuần của tài khoản Claude | — bỏ theo #119.3
 | A-01 | xong | `REPORTS/A-01-ban-do-tien-trinh.md` (tổng hợp từ BAI_HOC; chưa kiểm lại trên VM thử vì VM treo) |
 | A-03 | xong (PARTIAL: tĩnh, runtime chưa kiểm) | báo cáo REPORTS/A-03-kiem-ke-cau-hinh.md, đã gộp 23:50 |
 | A-06 | xong (PARTIAL, nguồn) | REPORTS/A-06-bang-goi-tin.md, gộp 00:30 |
