@@ -142,3 +142,4 @@
 - 18/11 07:47 Chu: Sonnet quen nhieu nhu con moi. Gui #104 chong quen.
 - 18/11 07:49 Chat kiem: Sonnet chua push gi len jx1-ops (R-01,S-01,R-04a,R-04c,R-06b noi da gop nhung chua thay tren kho remote). Da gui #101-#104; cho Sonnet doc.
 - 18/11 07:58 Chu dong y: tu gio khong giao viec truc tiep cho Sonnet, moi viec qua hom thu. Gui #105 chot cach lam.
+- 18/11 08:05 Chu dan ban tu ra cua Sonnet (da doc #100-#104). Gui #106: pham vi tu quyet, xingchi, khoa lo, thu tu lam.
