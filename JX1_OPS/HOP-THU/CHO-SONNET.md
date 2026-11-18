@@ -1236,3 +1236,29 @@ Chủ: "tiểu yêu chỉ chết khi báo lỗi". Lỗi 12:07 là do Tổng qu�
 3. Tổng quản KHÔNG tự dừng tiểu yêu đang có log mới. Muốn dừng (TREO >60 phút) phải ghi lý do + dòng log cuối vào [TỔNG QUẢN].
 4. Bỏ hẳn nhánh "Scheduler Running nhưng PID mất → exit=3"; nếu tasklist không tin được thì dùng Get-Process, và kể cả vậy cũng chỉ là căn cứ phụ.
 5. Chạy lại vẫn mỗi 2 phút cho việc đã CHẾT đúng luật trên (#132). Ghi xác nhận vào TU-SONNET (giờ thật).
+
+## #147 — 2026-11-18 12:36 — Chủ CHỐT: (A) khu thứ 6 "ĐO TỐC ĐỘ" trong Xưởng JX1; (B) kiểm sol có bị báo chết oan vì chờ token đầu lâu không
+Chủ nhắc: sol có độ trễ rất lâu từ lúc gửi đến token đầu tiên. Cần chắc rằng Tổng quản không coi "chờ token đầu" là chết.
+
+### B. Việc làm ngay (trước A)
+1. Bằng chứng hiện có (#136/#137): lỗi sol là sự kiện response.failed (sequence_number 0) mang câu nguyên văn của máy chủ "requires Responses for tool calls...". Đây là PHẢN HỒI thật, không phải hết giờ chờ. Nhưng chủ cần chắc, nên kiểm lại lần mới nhất: mở log thử cầu dao gần nhất của F-01 (12:29) và chép nguyên văn lỗi + giờ gửi, giờ nhận lỗi. Nếu lỗi vẫn là câu đó → xác nhận sol hỏng THẬT ở phía xingchi (chủ nói nhóm vẫn bảo dùng sol; chưa có thông báo gốc).
+2. Thêm trạng thái CHO-TOKEN vào Tổng quản: việc đã gửi yêu cầu, chưa có dòng log nào, chưa có lỗi, chưa quá 15 phút → SỐNG (không dừng, không chạy lại, không tính lỗi). Chỉ quá 15 phút không token đầu mới ghi cảnh báo, quá 30 phút mới coi TREO. Thử nghiệm có kiên nhẫn: 1 việc sol nhỏ, chờ tới 15 phút, ghi TTFT (giây từ lúc gửi tới sự kiện đầu) và nguyên văn kết quả vào TU-SONNET.
+3. Ghi TTFT mỗi lần chạy (sol và astra) vào model.json; hiện trong TIEU-YEU cột "chờ token (giây)". Mục đích: Tổng quản biết bình thường mỗi mô hình chờ bao lâu, không đoán.
+4. Chu kỳ thử cầu dao 2 phút: nếu việc thử cầu dao đang CHO-TOKEN thì không bật việc thử thứ hai chồng lên.
+
+### A. Khu 6 "Đo tốc độ" (làm sau mốc M0–M1, nhưng ghi vào DESIGN/XUONG-JX1.md ngay)
+Mục tiêu: biết đường nhanh hay chậm, tối ưu thật hay chưa. Nguyên tắc: đo bản gốc làm mốc → sửa → đo lại đúng kịch bản → so bằng bảng trước/sau; chỉ tin khi tốt hơn mốc VÀ ổn định qua ≥5 lần chạy.
+Bảy phép đo (từ trong ra ngoài), mỗi phép ghi: tên, cách đo, mục tiêu, kết quả [XÁC MINH]:
+1. Mạng thô: ping + thời gian nối TCP từ LDPlayer tới JX-Test-36 (host-only 192.168.56.x).
+2. Vòng gói tin: c2s_ping → s2c_replyclientping (đã có trong KProtocolDef), ghi giờ 2 đầu; thống kê trung bình, p95, mất gói.
+3. Đăng nhập: bấm giờ từng chặng Bishop → PaySys → Goddess → GS.
+4. Nhịp server: thời gian mỗi vòng xử lý của GS (18 Hz = 55 ms, 36 Hz = 27,7 ms); dùng bộ đo tick B-04a/H-13 có sẵn, không viết lại.
+5. Một đòn đánh: bấm → nhận lệnh → phát chiêu → trúng → máu hiện, đo từng đoạn (theo chuỗi H-13).
+6. Client: FPS và ms mỗi khung trên LD và điện thoại thật (60/120 FPS, TOI-UU-120FPS).
+7. Nhiều người: Bot giả lập N người cùng lúc, xem nhịp server có tụt không.
+Công cụ: Wireshark/tshark (chỉ bắt trên card Host-only của VM thử, KHÔNG bắt trên card LAN nhà), dòng ghi giờ trong bản thử của client/server (đặt sau công tắc, tắt được), bộ đo B-04a. Kịch bản cố định: đăng nhập, đi một đoạn, đánh 20 đòn, chuyển bản đồ.
+Phần mềm: một nút "Đo", một bảng kết quả, nút "So với mốc" in bảng trước/sau, lưu lịch sử vào D:\JX-xuong\do\ (không lên kho public: chỉ số tổng hợp bằng chữ thì được). Mô-đun riêng, bật/tắt bằng cấu hình.
+Ranh giới: chỉ đo trên JX-Test-36 + LD; VM chính không đụng; không bật bridged; không đưa gói bắt (pcap) lên kho vì có thể chứa tên tài khoản.
+
+### C. Thứ tự
+(1) B.1–B.4 và báo lại TTFT; (2) hoàn thiện DESIGN/XUONG-JX1.md có khu 6; (3) M0 → M1 như #144. #146 giữ nguyên.

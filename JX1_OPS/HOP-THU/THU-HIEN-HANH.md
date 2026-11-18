@@ -60,3 +60,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | DỰ ÁN XƯỞNG JX1: phần mềm Windows 5 khu (hiểu, sửa nội dung, build, vận hành, sửa sâu), mốc M0–M5 có tiêu chí; chuỗi suy diễn lỗi game; cơ chế báo lỗi/phiên bản/test cho chính phần mềm | #144 | mở rộng #143 | chờ Sonnet |
 | 11 việc astra chết ngay (12:07–12:11), lỗi trống, khởi động dồn: đọc log, sửa ghi lỗi, giãn cách, tăng dần 1→3→10 | #145 | bổ sung #143 | chờ Sonnet |
 | Luật chết: log mới = sống, không dừng; chết chỉ khi exit lỗi / rỗng / im >60 phút; bỏ nhánh PID mất | #146 | sửa #132.2, #145.2 | chờ Sonnet |
+| Chủ chốt: khu 6 Đo tốc độ (7 phép đo, mốc trước/sau); kiểm sol báo chết oan do chờ token đầu: trạng thái CHO-TOKEN, đo TTFT | #147 | bổ sung #144, #146 | chờ Sonnet |
