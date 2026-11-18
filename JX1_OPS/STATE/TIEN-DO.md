@@ -1,6 +1,6 @@
-# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-19 02:09, đừng sửa tay)
+# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-19 02:13, đừng sửa tay)
 
-ĐANG LÀM: SO-09, SO-16, SO-17, SO-18
+ĐANG LÀM: SO-09, SO-16
 KẾ TIẾP: 0-08, B-05, D-02, E-04, E-06, P-01
 BỊ CHẶN: T-04
 
@@ -16,18 +16,6 @@ flowchart LR
   subgraph S3["Chặng 3 tick và đồ họa"]
     SO_09["SO-09 chạy"]
     SO_16["SO-16 chạy"]
-    SO_17["SO-17 chạy"]
-    SO_18["SO-18 chạy"]
-    HG_03c["HG-03c chờ gộp"]
-    HG_11["HG-11 chờ gộp"]
-    HG_12["HG-12 chờ gộp"]
-    SO_07["SO-07 chờ gộp"]
-    SO_08["SO-08 chờ gộp"]
-    SO_11["SO-11 chờ gộp"]
-    SO_12["SO-12 chờ gộp"]
-    SO_13["SO-13 chờ gộp"]
-    SO_14["SO-14 chờ gộp"]
-    SO_15["SO-15 chờ gộp"]
     0_08["0-08 chờ"]
     B_05["B-05 chờ"]
     D_02["D-02 chờ"]
@@ -35,8 +23,10 @@ flowchart LR
     E_06["E-06 chờ"]
     P_01["P-01 chờ"]
     P_03["P-03 chờ"]
+    SO_17["SO-17 chờ"]
+    SO_18["SO-18 chờ"]
     X_05["X-05 chờ"]
   end
 ```
 
-Tổng: 180 việc, 4 đang làm (+0 chết, 10 chờ gộp), 8 chờ, 1 bị chặn, 157 xong.
+Tổng: 180 việc, 2 đang làm (+0 chết, 0 chờ gộp), 10 chờ, 1 bị chặn, 167 xong.

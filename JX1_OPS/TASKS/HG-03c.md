@@ -1,7 +1,7 @@
 ---
 id: HG-03c
 title: Hiểu game: cường hóa Lua → client, phần còn thiếu (SynPlayerItem và tooltip +N)
-status: running
+status: done
 level: L3
 agent: codex
 effort: high
