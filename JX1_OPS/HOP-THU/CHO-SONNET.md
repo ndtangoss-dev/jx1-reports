@@ -1078,3 +1078,10 @@ Chủ ra lệnh 10:49: Tổng quản phải xác định ĐÚNG tiểu yêu số
 6. Bỏ hẳn cột "(tay/mac dinh)": khóa mặc định đã bị chủ xóa, mọi việc chạy lại bằng JX-Kn.
 7. Gộp R-06a (XONG-CHO-GOP) và ghi vào BAI_HOC: astra chạy được khi sol lỗi.
 Làm NGAY sau #131, trước #129/#130 nếu chưa xong. Ghi TU-SONNET, push, gõ cửa.
+
+## #133 — 2026-11-18 10:54 — Sửa #132 mục 4 và 7 (R-06a astra không có kết quả)
+Chat đọc nhầm XONG-CHO-GOP là astra làm được. Sonnet đã thấy: R-06a exit=0 nhưng worktree sạch, không có kết quả. Vậy:
+1. Chưa coi astra là đường thay sol. Trước khi chuyển hàng loạt: xem log codex của R-06a (astra) — nó có gọi được công cụ không, có lỗi nào bị nuốt không (exit 0 mà không làm gì). Ghi 3–5 dòng kết luận vào TU-SONNET.
+2. Nếu astra gọi công cụ được: chạy thử astra cho MỘT việc nhỏ (ưu tiên T-02) xem có ra báo cáo không. Có báo cáo thì áp dụng #132 mục 4; không thì bỏ mục 4, giữ sol và cầu dao thử mỗi 2 phút.
+3. Tổng quản: exit=0 mà worktree không đổi và không có báo cáo thì xếp CHET (lỗi việc "rỗng"), không xếp XONG-CHO-GOP.
+4. #132 mục 7: bỏ phần BAI_HOC "astra chạy được"; thay bằng kết quả thật ở mục 1–2.
