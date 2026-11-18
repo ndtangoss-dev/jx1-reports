@@ -5,6 +5,23 @@ giao viec status=ready, rai khoa (<=3 tieu yeu/khoa, het cho thi ghi CAN KHOA MO
 Khong push (PM/guard commit file STATE). Khong doc gia tri khoa, chi ten khoa. Chay: python -I TOOLS/tong_quan.py [--dry]"""
 import shutil, glob, json, os, re, subprocess, sys, time
 
+# #165: chay bang pythonw (khong console): stdout/stderr = None -> chuyen vao tep; moi lenh con them CREATE_NO_WINDOW
+if sys.stdout is None or sys.stderr is None:
+    try:
+        _lg = open(r'D:\JX-wt	ong_quan\stdout.log', 'a', encoding='utf-8', errors='replace')
+    except OSError:
+        _lg = open(os.devnull, 'w')
+    sys.stdout = sys.stdout or _lg
+    sys.stderr = sys.stderr or _lg
+if os.name == 'nt':
+    _Popen = subprocess.Popen
+
+    class _NoWinPopen(_Popen):
+        def __init__(self, *a, **k):
+            k['creationflags'] = k.get('creationflags', 0) | 0x08000000   # CREATE_NO_WINDOW
+            super().__init__(*a, **k)
+    subprocess.Popen = _NoWinPopen
+
 ROOT = os.environ.get('JX1_OPS_ROOT', r'D:\jx1-ops-wt\JX1_OPS')
 WT = r'D:\JX-wt'
 KEYS = r'C:\Users\PC\.jx1keys'
