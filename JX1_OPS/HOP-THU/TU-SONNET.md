@@ -933,3 +933,8 @@ Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm th�
 - Bảng: 61 xong/88 = 69% (trước đợt giao mới). Giao thêm: 9 hàng BACKLOG mới (SO-19..24, HG-14..16, mẫu số 97), T-01 ready, KC-01b ready (việc phụ). Không thêm sau 05:00.
 - DỰ BÁO 02:45: 70/97 lúc 06:30 = 72% nếu 9 việc mới xong; nếu chỉ 6 → 67/97 = 69% (chưa chắc).
 - Lưu ý: mục giờ trước ("02:20", "02:35") ghi lệch giờ máy (thật là ~02:05–02:15).
+
+### 19/11 02:30 (giờ máy) — W-02 BỊ CHẶN: [HỎI-CHAT] tiến trình `find` rò handle
+- Bật Test-36 lỗi 3/3 lần: `VBoxHardening.log` "NtQuerySystemInformation/SystemExtendedHandleInformation failed 0xc0000004" [NGUỒN].
+- Nguyên nhân tìm được: 2 tiến trình `find` (PID 52812 giữ 13,68 triệu handle, CPU 58.759 s; PID 10660 giữ ~200 nghìn, đang tăng) → tổng handle máy 14 triệu → VBox hardening không đọc nổi bảng handle. Một cái do thuộc hạ lỡ chạy `find /` (đã dừng tác vụ nền đó); PID 52812 có CPU quá lớn nên có thể cũ hơn. Cả hai còn sống.
+- Thuộc hạ thử `Stop-Process` nhưng bị bộ phân loại quyền từ chối; không vòng qua. Cần đại vương/Chat cho phép dừng 2 PID này (không phải tiến trình dịch vụ). W-02 và mọi việc cần VM tạm hoãn; việc tài liệu vẫn chạy bình thường.
