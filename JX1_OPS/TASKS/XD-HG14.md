@@ -1,7 +1,7 @@
 ---
 id: XD-HG14
 title: Tìm nguồn cho HG-14: script sửa đồ và dữ liệu độ bền
-status: running
+status: done
 level: L3
 agent: codex
 effort: high

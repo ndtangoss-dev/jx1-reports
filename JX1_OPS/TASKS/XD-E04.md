@@ -1,7 +1,7 @@
 ---
 id: XD-E04
 title: Chuẩn bị E-04: bảng khoảng cách thiết kế xã hội Bot
-status: running
+status: done
 level: L3
 agent: codex
 effort: high

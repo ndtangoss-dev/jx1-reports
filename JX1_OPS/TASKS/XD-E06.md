@@ -1,7 +1,7 @@
 ---
 id: XD-E06
 title: Chuẩn bị E-06: kế hoạch đo tải và tiêu chí chuyển Bot vào server
-status: running
+status: done
 level: L3
 agent: codex
 effort: high

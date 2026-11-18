@@ -1,7 +1,7 @@
 ---
 id: XD-D02
 title: Chuẩn bị D-02: danh sách thử hoạt động bằng GM
-status: running
+status: done
 level: L3
 agent: codex
 effort: high
