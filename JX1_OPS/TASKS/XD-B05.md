@@ -1,7 +1,7 @@
 ---
 id: XD-B05
 title: Chuẩn bị B-05: Tống Kim — mã, công tắc và giới hạn cần chủ đặt
-status: running
+status: done
 level: L3
 agent: codex
 effort: high
