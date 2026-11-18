@@ -1,6 +1,6 @@
-# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-19 04:15, đừng sửa tay)
+# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-19 04:44, đừng sửa tay)
 
-ĐANG LÀM: HG-12, KC-02, SO-29, SO-30, SO-31, SO-32, SO-33, SO-34, XD-B02, XD-H05, XD-O01b
+ĐANG LÀM: SO-30, XD-HG14
 KẾ TIẾP: 0-08, B-05, D-02, E-04, E-06, P-01
 BỊ CHẶN: T-04
 
@@ -14,17 +14,8 @@ flowchart LR
     T_04["T-04 chặn"]
   end
   subgraph S3["Chặng 3 tick và đồ họa"]
-    HG_12["HG-12 chạy"]
-    KC_02["KC-02 chạy"]
-    SO_29["SO-29 chạy"]
     SO_30["SO-30 chạy"]
-    SO_31["SO-31 chạy"]
-    SO_32["SO-32 chạy"]
-    SO_33["SO-33 chạy"]
-    SO_34["SO-34 chạy"]
-    XD_B02["XD-B02 chạy"]
-    XD_H05["XD-H05 chạy"]
-    XD_O01b["XD-O01b chạy"]
+    XD_HG14["XD-HG14 chạy"]
     0_08["0-08 chờ"]
     B_05["B-05 chờ"]
     D_02["D-02 chờ"]
@@ -33,7 +24,12 @@ flowchart LR
     P_01["P-01 chờ"]
     P_03["P-03 chờ"]
     X_05["X-05 chờ"]
+    XD_A07c["XD-A07c chờ"]
+    XD_E05["XD-E05 chờ"]
+    XD_E09["XD-E09 chờ"]
+    XD_M01["XD-M01 chờ"]
+    XD_W02c["XD-W02c chờ"]
   end
 ```
 
-Tổng: 225 việc, 11 đang làm (+0 chết, 0 chờ gộp), 8 chờ, 1 bị chặn, 205 xong.
+Tổng: 227 việc, 2 đang làm (+0 chết, 0 chờ gộp), 13 chờ, 1 bị chặn, 211 xong.
