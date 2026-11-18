@@ -111,3 +111,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Q-55: kiểm/tắt Server D + LDPlayer-D khi không test; ≥8 tiểu yêu (2/khóa); kiểm RAM | #195 | | chờ Sonnet |
 | Phân vai bảng tiến độ; Sonnet cập nhật TASKS/BACKLOG (0-05 done, CL-01 active, thêm W/G/V/T/M) | #196 | | chờ Sonnet |
 | Nhịp tim độc lập: Tổng quản ghi STATE/SONNET-SONG.md (mtime phiên + RAM) | #197 | thay vai nhịp tim của cho_thu.py | chờ Sonnet |
+| Vá stop_guard.py (bỏ 'XONG ĐỢT thì dừng', hết việc → chặn + cho_thu.py; cờ DUNG-VONG.flag) | #198 | | chờ Sonnet |

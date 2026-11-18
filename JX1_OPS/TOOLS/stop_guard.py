@@ -19,6 +19,7 @@ HOPTHU = 'HOP-THU'
 
 ROOT = os.environ.get('JX1_OPS_ROOT', r'D:\jx1-ops-wt\JX1_OPS')
 DAILY_CAP, WEEK_CAP, MAX_BLOCKS, MARK_HOURS = 200.0, 1000.0, 15, 1   # #153.B: 60 -> 15
+MAX_WAIT_BLOCKS = 40   # Q-54: moi lan chan = 1 luot cho_thu.py (<=55 phut) -> toi da ~36 gio
 
 
 def allow():
@@ -111,15 +112,9 @@ def main():
                 pass
             print(json.dumps({'decision': 'block', 'reason': 'LUAT-COT-LOI L2: khong ket thuc luot bang cau hoi. Viec dao nguoc duoc thi tu quyet, ghi [TU QUYET] vao STATE/QUYET-DINH.md va lam tiep; chi cho chu khi: Main VM, tien qua tran, khoa vuot 20, xoa du lieu, dua APK moi cho chu thu. Khi do ghi [DUNG-CAN-CHU yyyy-mm-dd HH:MM] (toi da 60 phut) vao TRANG-THAI.md. Neu bi ket, viet [HOI-CHAT] vao TU-SONNET.md va lam viec khac.'}))
             return
-    # 0c. (#158, Q-48) bo go cua. Cho dung khi TU-SONNET da ghi 'XONG ĐỢT #N' voi N >= so thu moi nhat
-    try:
-        tx = open(os.path.join(ROOT, HOPTHU, 'TU-SONNET.md'), encoding='utf-8').read()
-        xs = [int(x) for x in re.findall(r'XONG ĐỢT #(\d+)', tx)]
-        nums = [int(x) for x in re.findall(r'(?m)^## #(\d+)', open(os.path.join(ROOT, HOPTHU, 'CHO-SONNET.md'), encoding='utf-8').read())]
-        if xs and nums and max(xs) >= max(nums):
-            allow()
-    except OSError:
-        pass
+    # 0c. (Q-52/Q-54, Chat 19/11) BO luat 'XONG DOT thi dung'. Chi dung khi co co STATE/DUNG-VONG.flag (chu bao dung).
+    if os.path.exists(os.path.join(ROOT, 'STATE', 'DUNG-VONG.flag')):
+        allow()
     # 4. dung can chu du an (hieu luc co han)
     for m in re.finditer(r'\[DUNG-CAN-CHU\s+(\d{4}-\d\d-\d\d)\s+(\d\d:\d\d)\]', state):
         try:
@@ -173,7 +168,20 @@ def main():
         if 'exit=0' in dn:
             todo.append((tid, 'XONG-CHO-GOP: gop ket qua (git checkout task/%s -- <file cua task>), set_status.py %s done' % (tid, tid), 'xong cho gop', None))
 
-    if not todo: allow()
+    if not todo:
+        swf = os.path.join(tempfile.gettempdir(), 'jx_stop_guard_wait_%s.json' % re.sub(r'\W', '', data.get('session_id', 'x'))[:40])
+        try:
+            nw = json.load(open(swf))['n']
+        except Exception:
+            nw = 0
+        if nw >= MAX_WAIT_BLOCKS:
+            allow()
+        try:
+            json.dump({'n': nw + 1}, open(swf, 'w'))
+        except OSError:
+            pass
+        print(json.dumps({'decision': 'block', 'reason': 'KHÔNG DỪNG PHIÊN (LUAT-COT-LOI L10, Q-52/Q-54): chưa có DUNG-VONG.flag. Không còn việc làm trực tiếp thì lấy việc kế trong STATE/HANG-DOI-VIEC.md; nếu thật sự hết việc làm ngay được thì chạy: python JX1_OPS\\TOOLS\\cho_thu.py (chờ ≤55 phút, không tốn token). Thoát mã 10 = thư mới (git pull --rebase --autostash, đọc, làm); 11 = tiểu yêu xong chờ gộp (gộp); 12 = hết hạn (chạy lại). Không kết thúc lượt chỉ vì "đã báo xong đợt".'}))
+        return
     # an toan chong vong lap
     sf = os.path.join(tempfile.gettempdir(), 'jx_stop_guard_%s.json' % re.sub(r'\W', '', data.get('session_id', 'x'))[:40])
     try:
