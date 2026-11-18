@@ -183,3 +183,4 @@
 - 10:52 LỆNH CHỦ: Tổng quản giám sát chặt, chạy lại mỗi 2 phút. Phát hiện R-06a chạy astra đã XONG trong khi sol lỗi. Gửi #132. Đội test T-02..T-04 chưa có báo cáo (CHO-XINGCHI).
 - 10:51 Sonnet xong #128–#130: người gác cùng tài khoản (ndtan.goss, cùng C:\Users\PC\.claude), không phải tk cũ; claude -p (cả --model sonnet) hết hạn mức tuần tới 01:00 → người gác chỉ báo [CAN-CHU], không đánh thức được đến 01:00. Tổng quản đẩy từ worktree riêng D:/JX-wt/tq. stop_guard chỉ chặn việc Sonnet. Đến 01:00: Chat + chủ là đường đánh thức.
 - 10:54 Sonnet: R-06a astra exit=0 nhưng rỗng → Chat đọc nhầm, đã báo chủ sai. Gửi #133 sửa #132.
+- 10:53 Kiểm định kỳ: Sonnet chưa nhận #131–#133. GÕ CỬA mới trig_01Sb49tXgbJdMQhW16uXqFjq (11:03).
