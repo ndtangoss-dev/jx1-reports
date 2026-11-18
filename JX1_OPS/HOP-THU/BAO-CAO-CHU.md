@@ -13,3 +13,10 @@
 - 18/11 22:12 — Gemini miễn phí không dùng được (20 lượt/ngày), đã bỏ. Đang giảm token tiểu yêu, thử client trên máy thử. Không cần chủ làm gì.
 - 18/11 22:35 — Đã lập hàng đợi việc không bao giờ cạn (STATE/HANG-DOI-VIEC.md); dừng sửa hiệu ứng vũ khí cho tới khi hiểu (W-01); Sonnet giữ phiên mở cả đêm.
 - 19/11 01:00 — Chủ đi ngủ. LỆNH: 07:00 sáng tiến độ ≥70% (đang 56%). Chat+Sonnet làm (#202), kiểm 15 phút/lần, mở thêm tiểu yêu theo RAM.
+
+## TỔNG KẾT ĐÊM — 19/11 06:30 (Chat)
+- SỐ THẬT 88/107 = 82% (bảng cũng 82%; đêm qua 56%). Vượt mục tiêu 70% của chủ. Số đếm nghiêm: việc cha chỉ tính xong khi đúng từng chữ tên việc; mẫu số đóng băng 107.
+- Đã làm: vá lỗ hổng móc chặn dừng (stop_guard) và cho_thu 9 phút; tổng quản mở tới 4 khóa/20 tiểu yêu, RAM luôn trống ≥54%, lỗi 429 = 0; kiểm toán nghiêm làm E-01, HG-14, HG-16 từng bị mở lại rồi đóng đúng mức. Hiệu ứng vũ khí: chưa sửa mã (đúng luật).
+- Kẹt: B-04, E-01, E-05, E-09, C-01, P-02, W-02 chỉ còn thiếu chạy thật trên máy thử Test-36: thiếu khóa client đúng bản APK và tài khoản/vai thử cho Bot, B-04 cần 3 lượt x 3 pha x 660 s.
+- CẦN CHỦ QUYẾT sáng nay: (1) cho cấp khóa client + tài khoản thử cho Bot để chạy E-01; (2) duyệt thử client C02/C04/C05; (3) có muốn "bật D để test" bằng điện thoại không.
+- Sonnet tự dừng ~20 phút/lần: gốc là phiên Claude Code kết thúc lượt khi trả lời bằng chữ. Đề xuất chữa tận gốc: Tổng quản (tác vụ Windows, không tốn Claude) tự đánh thức phiên bằng cách chạy lệnh nhập chữ vào cửa sổ khi SONNET-SONG báo IM >10 phút, thay cho Chat gõ qua Chrome.

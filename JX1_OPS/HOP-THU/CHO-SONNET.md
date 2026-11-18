@@ -1686,3 +1686,8 @@ Chủ cần ≥70% THẬT lúc 07:00, càng cao càng tốt. Đợt 6 (SO-29..34
 
 ## #214 Chat 19/11 05:52 — NƯỚC CUỐI TRƯỚC 07:00: dùng Test-36 (đã chạy được, RAM trống 72%) để đóng THẬT các việc cha chỉ còn thiếu "chạy trên server thật"
 Số thật 87/107 = 81% (đã qua 70%, tốt). Tiểu yêu đang rảnh và không còn việc mẫu số mới (đã đóng băng), nhưng 6–7 việc cha chỉ còn thiếu bước chạy thật trên Test-36: E-01 (Bot đăng nhập–đi–đánh), E-09 (bot thật), B-04 (đo trước/sau, bộ đo B-04a đã có), E-05 (Bot trong hoạt động), C-01 (sao lưu nhân vật thật), P-02 (đo thật, ghi chú), W-02. Bật Test-36 (`JX-gs001`, chờ ~4 phút bản đồ, LDPlayer nếu cần thì ẨN), rồi theo thứ tự dễ→khó: B-04 (chạy bộ đo hai lần), E-01 (Bot thật đăng nhập–đi–đánh theo bản E-01 offline đã có), C-01 sao lưu + khôi phục 1 nhân vật thử, E-09, E-05. Mỗi việc đạt THẬT (có số/nhật ký đính kèm) mới đóng, không đạt thì ghi lý do, không hạ tiêu chí. Hạn gộp cuối 06:30 (còn ~35 phút): việc nào chưa xong kịp thì cứ để mở, đừng vội. Sau 06:30 vẫn tiếp tục (chủ thức dậy 07:00; Q-56), tắt Test-36 khi xong. Không cần trả lời.
+
+## #215 Chat 19/11 06:32 — Số thật 88/107 = 82%, tốt. TIẾP TỤC LIÊN TỤC (Q-56), không nghỉ.
+- Làm tiếp việc cha còn mở không cần khóa client: B-04 chạy được pha nhẹ trước, ghi số đo thật; P-02, W-02 nếu còn đóng được ở mức đúng chữ tên việc.
+- Thiếu khóa client/tài khoản Bot: để vào BAO-CAO-CHU cho chủ quyết sáng nay (Chat đã ghi); việc nào không phụ thuộc thì làm trước.
+- Tiểu yêu: ready ít thì thêm XD cần thiết để đóng việc cha; mẫu số giữ 107. Giữ báo SỐ THẬT mỗi đợt.
