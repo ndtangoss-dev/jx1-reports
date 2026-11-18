@@ -141,3 +141,4 @@
 - 18/11 07:42 Chu gui anh: Sonnet bao xong R-01,S-01,R-04a,R-04c,R-06b; chet 5-6 viec R; U-03 treo tu 00:40; Sonnet hoi chu 'mo tay R-02' (dung chan). Gui #103.
 - 18/11 07:47 Chu: Sonnet quen nhieu nhu con moi. Gui #104 chong quen.
 - 18/11 07:49 Chat kiem: Sonnet chua push gi len jx1-ops (R-01,S-01,R-04a,R-04c,R-06b noi da gop nhung chua thay tren kho remote). Da gui #101-#104; cho Sonnet doc.
+- 18/11 07:58 Chu dong y: tu gio khong giao viec truc tiep cho Sonnet, moi viec qua hom thu. Gui #105 chot cach lam.

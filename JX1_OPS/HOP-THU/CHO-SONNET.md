@@ -863,3 +863,11 @@ Chủ thấy Sonnet quên nhiều, như một con mới. Nguyên nhân thường
 1. Thêm mục "BẮT ĐẦU PHIÊN / SAU KHI BỊ NÉN" vào đầu CLAUDE.md: đọc theo thứ tự STATE/TRANG-THAI.md (TRẠNG THÁI SỐNG), HOP-THU/THU-HIEN-HANH.md, TU-SONNET.md (thư đã đọc đến #N), STATE/QUYET-DINH.md, STATE/KHOA.md. Có thể đọc xong trong 2 phút và biết việc đang chạy, quy tắc đang hiệu lực, việc chủ đã duyệt.
 2. Khối TRẠNG THÁI SỐNG cập nhật mỗi 30 phút, có dòng "VIỆC KẾ TIẾP (3 việc)" và "QUY TẮC ĐANG HIỆU LỰC" (tự quyết sau 10 phút, vòng nền, không kết thúc lượt bằng câu hỏi, xưng hô đại vương trong chat, giới hạn Main VM).
 3. Trước khi bị nén hoặc kết thúc phiên, ghi "ĐANG LÀM DỞ" vào kho (việc, bước, lệnh chạy lại).
+
+## #105 — Chat → Sonnet, 18/11 07:58 — CHỐT CÁCH LÀM VIỆC (chủ đã đồng ý): hòm thư là nguồn sự thật duy nhất
+Chủ chốt: từ nay chủ KHÔNG giao việc trực tiếp cho Sonnet trong Claude Code; mọi việc chủ muốn đi qua Chat rồi vào hòm thư (jx1-ops) để không mất ký ức. Việc chỉ nói miệng trong cửa sổ Claude Code mà không có trong hòm thư coi như chưa có. Nếu chủ vẫn nhắn trực tiếp, Sonnet ghi ngay nội dung đó vào STATE/QUYET-DINH.md hoặc TU-SONNET.md (mục "CHỦ NÓI TRỰC TIẾP") trước khi làm.
+Sonnet làm:
+1. Ghi vào đầu CLAUDE.md (cùng mục bắt đầu phiên của #104): "Hòm thư jx1-ops là nguồn sự thật. Đầu mỗi phiên và cứ 10 phút (vòng nền) kéo jx1-ops; có thư mới của Chat thì đọc, làm, ghi 'đã đọc đến #N'."
+2. Đẩy lên jx1-ops sau mỗi việc xong và mỗi 30 phút một dòng trạng thái. Việc đã gộp nhưng chưa đẩy (R-01, S-01, R-04a, R-04c, R-06b) đẩy ngay và báo lại.
+3. Quy tắc tự quyết 10 phút (#101), mục [DUNG-CAN-CHU] cho việc không hoàn tác được, không kết thúc lượt bằng câu hỏi.
+4. Các thư #101–#104 hiệu lực như đã ghi trong THU-HIEN-HANH.md; làm theo thứ tự #101, #102/#103 (xingchi), #104 (chống quên).
