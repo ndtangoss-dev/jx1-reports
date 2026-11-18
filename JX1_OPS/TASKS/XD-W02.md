@@ -24,3 +24,9 @@ status_note: "Tong quan giao bang JX-K3"
 - Không chạy exe lạ, không VM, không mạng, không Main VM, không đọc khóa/mật khẩu/dump tài khoản. Chỉ ghi tệp đầu ra.
 - Worktree có thể KHÔNG có mã nguồn game: đọc trực tiếp (chỉ đọc) client `C:/Jx1CocoV3/Folder/Client2912-20260116T044348Z-3-001/Client2912/Client/Classes` và server `C:/Jx1CocoV3/SwordOnline/SwordOnline/jxOnline/gameserver/Sources`; kho báo cáo ở D:/jx1-ops-wt/JX1_OPS (chỉ đọc).
 - Mỗi lần đọc <= ~400 dòng. Cuối tệp task ghi mục "## Kết quả" (3–5 dòng).
+
+## Kết quả
+- Trạng thái: DONE; đã tạo `JX1_OPS/REPORTS/XD-W02.md`, không sửa mã và không commit.
+- Đã xác minh: Lua gọi đồng bộ qua gói `s2c_syncequipitem`, field `ITEM_SYNC.m_EnChance`.
+- Chưa kiểm: nguyên nhân cuối của tooltip “+N” và hành vi runtime; giới hạn ghi trong báo cáo.
+- Nhịp: ghi `D:\JX-wt\XD-W02.nhip` bị `Access denied`; đã nêu trở ngại trong báo cáo.
