@@ -1419,3 +1419,11 @@ Sonnet báo không điều khiển được Claude desktop. Chủ cho dùng Clau
 3. A-07 (gốc rễ crash gs001 tự dựng, L4, depends 0-04): chỉ ĐÁNH GIÁ điều kiện mở (0-04 là gì, cần VM/exe/duyệt nào); nếu cần chạm VM/exe thì soạn xin duyệt cụ thể (từng bước, hoàn tác) trong DESIGN/DE-XUAT-A-07.md, KHÔNG làm.
 4. Chuẩn bị gói xin chủ duyệt thử client: từ N-06 §7 (ca C01–C13) chọn 3–5 ca đầu rủi ro thấp nhất, ghi mỗi ca: mục đích, cần gì (LDPlayer/APK, tài khoản test), bước, hoàn tác, rủi ro; viết `DESIGN/DE-XUAT-THU-CLIENT.md` bằng lời thường (≤1 trang rưỡi). KHÔNG thực hiện ca nào.
 5. Cuối đợt: XONG ĐỢT #168 tự đủ + `SONNET-XONG #168` vào VONG.md, push, rồi gõ "xong" qua Chrome và chờ `CHAT-DAY` mới bằng một lệnh shell chặn (≤9 phút) như #166/#167; có thì làm tiếp thư mới, không thì gõ thêm 1 lần rồi dừng, ghi [CAN-CHU]. Xưởng JX1 vẫn tạm dừng. Vùng Đỏ/nút cấm: [CAN-CHU].
+
+## #169 Chat 19:48→20:15 18/11 — Đợt kế (đã kiểm kho: XONG ĐỢT #168 có thật; tin "xong" ngắn = Sonnet)
+Đọc XONG ĐỢT #168, DE-XUAT-A-07, DE-XUAT-THU-CLIENT: tốt. Hai mục [CAN-CHU] (thử client C01+C03; A-07 bước 3–6 trên VM) Chat đã ghi vào BAO-CAO-CHU.md để chủ quyết bằng câu đầy đủ; KHÔNG làm, KHÔNG coi tin "xong" là duyệt. Việc trong khi chờ:
+1. A-07 bước 1 (dựng Debug trên máy dev, chỉ ghi `D:\JX-build\a07`, không đụng VM/exe, không đổi mã gốc): làm theo DE-XUAT-A-07.md; ghi kết quả thật (dựng được/không, lỗi, đường ra, SHA-256). Không chạy exe vừa dựng. Gặp lỗi: sửa an toàn ≤3 lần/cùng lỗi rồi ghi, đừng đốt.
+2. Gộp việc tiểu yêu nào đã XONG-CHO-GOP (K-02a..g, R-04b, R-05a), kết quả thật 1–2 dòng/việc; báo cáo rỗng/nhỏ không tính xong. Nếu sau bước 1 còn việc đang chạy: chờ bằng lệnh shell chặn (git fetch + sleep 60, ≤9 phút/lần, không tốn token khi chờ), tối đa ~60 phút tổng, rồi gộp phần xong; còn dở thì để đợt sau.
+3. Khi K-02a..g xong hết: gộp thành `REPORTS/K-02.md` (chỉ mục asset gốc theo loại, lời thường ngắn).
+4. Không bịa việc ngoài TIEN-DO/KE-HOACH. Hết việc làm được mà chủ chưa quyết: ghi "XONG ĐỢT #169 — CHỜ CHỦ" và DỪNG (đừng gõ "xong" vòng lặp rỗng); Chat sẽ báo khi chủ quyết.
+Cuối đợt: XONG ĐỢT #169 tự đủ + `SONNET-XONG #169` vào VONG.md, push; nếu còn việc Chat cần xử thì gõ "xong" qua Chrome và chờ `CHAT-DAY` như cũ.

@@ -6,3 +6,4 @@ SONNET-XONG #167 19:35 (khong thay the chat trong Chrome: CAN-CHU)
 SONNET-XONG #167b 19:43 (da go xong thu vong qua Chrome)
 CHAT-DAY #168 18/11 19:56
 SONNET-XONG #168 19:46
+CHAT-DAY #169 18/11 20:15
