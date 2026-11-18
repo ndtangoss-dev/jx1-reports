@@ -1003,3 +1003,12 @@ Tổng quản dùng khóa xingchi, không dính tài khoản Claude: không cầ
 1. guard.ps1: nếu `claude` thoát với lỗi đăng nhập/hết hạn mức (401, "login", "usage limit", "rate limit"), ghi log và đẩy một dòng `[CAN-CHU] Claude Code chưa đăng nhập / hết hạn mức lúc HH:MM` vào TU-SONNET.md (tối đa 1 lần/30 phút), để Chat báo chủ.
 2. Thêm vào DUONG-DAN.md hoặc BAN-GIAO: "Đổi tài khoản trên PC: mở Claude Code ở C:\Jx1CocoV3, /login tài khoản mới, /tiep-tuc. Người gác và Tổng quản không phải cài lại."
 3. Thử: ghi kết quả gọi `claude -p "ping"` từ người gác (chỉ mã thoát) vào TU-SONNET.
+
+## #123 — 2026-11-18 10:20 — Lỗi do xingchi không tính vào 3 lần chạy lại (bổ sung #118)
+Hiện tong_quan.py: chờ 2/5/15 phút, quá 3 lần là CHET-BO vĩnh viễn. Nếu xingchi sập lâu hơn ~25–30 phút thì mọi việc thành CHET-BO dù tiểu yêu không có lỗi gì. Sửa:
+1. Phân loại lỗi chết: LỖI DỊCH VỤ (429, upstream_error, "requires Responses"/Chat Completions, lỗi mạng) và LỖI VIỆC (còn lại).
+2. LỖI DỊCH VỤ không cộng vào `lan.json`. Việc đó chuyển mức `CHO-XINGCHI`, chạy lại khi cầu dao mở.
+3. Cầu dao 3 trạng thái: ĐÓNG (bình thường) → MỞ khi ≥4 lỗi dịch vụ trong 10 phút: ngừng giao hẳn, mỗi 10 phút chạy 1 việc thử (lấy việc CHO-XINGCHI cũ nhất) → thử sống quá 3 phút không lỗi thì ĐÓNG lại và giao dần (giãn 1 phút/việc như cũ). Ghi trạng thái cầu dao lên đầu STATE/TIEU-YEU.md.
+4. LỖI VIỆC giữ nguyên 2/5/15, quá 3 lần CHET-BO và ghi [TỔNG QUẢN] vào TU-SONNET.
+5. Cầu dao MỞ quá 60 phút: ghi [TỔNG QUẢN] "xingchi sập > 60 phút" vào TU-SONNET (1 lần/giờ) để Chat báo chủ.
+6. Các việc đang CHET-BO vì lỗi xingchi hôm nay: chuyển về CHO-XINGCHI, xóa đếm.

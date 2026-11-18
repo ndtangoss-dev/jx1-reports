@@ -169,3 +169,4 @@
 - 10:07 Kiểm: Sonnet báo 10:05 — Tổng quản (tong_quan.py, 3 phút) chạy, TIEU-YEU.md có, khóa rải K2–K6 (K2=3, còn lại 2), K-03a..e ready, cầu dao nghẽn. xingchi upstream_error giết tiểu yêu giao lúc 10:00. Chưa nhận #120. Lỗi nhỏ: 'Bẩm đại vương' trong TU-SONNET (persona chỉ trong chat) — nhắc ở thư kế. Sonnet đang làm, chưa thử KHẨN lần 3. GÕ CỬA mới trig_01U7ns37WhBGvSG3cAAsWLzd (10:18).
 - 10:15 Chủ yêu cầu rà đường dẫn, trí nhớ, bàn giao. Gửi #121 (5 lỗ hổng). Bổ sung KHOI-DONG-CHAT mục 5. Cập nhật sơ đồ artifact.
 - 10:14 Chủ hỏi Tổng quản/người gác khi đổi tài khoản. Gửi #122.
+- 10:20 Chủ hỏi chu kỳ chạy lại. Thấy lỗ hổng: xingchi sập >25 phút thì mọi việc CHET-BO. Gửi #123 (Chat quyết thay chủ).
