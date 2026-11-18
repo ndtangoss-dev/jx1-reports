@@ -5,6 +5,44 @@
 4. 76/76 test đạt, gồm 11 test E-10, chạy Python -I với socket thật bị chặn; không mạng/VM/DB/exe game/server.
 5. ABI/binary, codec, giá trị tạo role runtime và DB persistence [CHƯA KIỂM]; không commit/push vì không được yêu cầu và cấm mạng.
 
+# E-10 — BOT tạo role và logout offline
+Loại: kiểm thử
+Chủ đề: Parser payload tạo role/role list và cleanup logout offline trong BOT.
+Từ khóa: tạo nhân vật, new_player, role_list, logout, socket giả, offline, BOT, E-10
+Trạng thái: DONE — 76/76 test được ghi trong báo cáo gốc; không chạy lại trong retrofit.
+Độ phủ: 7/7 thành phần implementation/documentation/test được liệt kê; runtime/server vẫn chưa xác minh.
+Liên quan: `JX1_OPS/REPORTS/E-07-goi-tao-nhan-vat-logout.md`, `JX1_OPS/REPORTS/E-05b-kich-ban-full-cycle.md`, `JX1_OPS/REPORTS/E-09a-real-login-allowlist.md`, `JX1_OPS/DESIGN/CHUAN-BAO-CAO.md`
+Cần tôi quyết định: không
+
+## Sơ đồ quan hệ
+```mermaid
+flowchart TD
+    C[Parser create] --> R[Đọc response 157]
+    R --> L[Đọc role list 55]
+    S[Session.close] --> G[Đóng game channel]
+    G --> B[Đóng gateway channel]
+    B --> Z[Không gửi application payload]
+```
+
+## Phạm vi và độ phủ
+| Phần tử | Độ phủ theo báo cáo gốc | Đối chiếu trong nguồn task |
+|---|---|---|
+| Tạo role: request `c2s_newplayer` | Đã kiểm parser/vector 25 byte trong test offline | Client A gán protocol tại `KuiNewPlayer.cpp:641` |
+| Response create/delete role | Đã kiểm parser 66 byte và bool | Client A struct tại `KProtocol.h:1511` |
+| Role list | Đã kiểm parser count, record và length | Client A đọc list tại `Klogin.cpp:1033` |
+| Cleanup `Channel.close` | Đã kiểm trạng thái đóng và chặn I/O sau đóng | Thành phần BOT theo báo cáo gốc; không có source server tương ứng |
+| `Session.close`/`logout` | Đã kiểm thứ tự đóng game/gateway và không gửi payload | Offline behavior theo test history; không phải logout game server thật |
+| README/hướng dẫn API | Đã ghi cách dùng offline và giới hạn chưa kiểm | Báo cáo gốc dẫn `README.md:47` |
+| Regression test | Báo cáo gốc ghi 76/76 tổng suite, gồm 11 test E-10 | Không chạy lại trong retrofit |
+
+## Giải mã tên
+| Tên gốc | Mã hóa | Chữ đúng | Nguồn file:dòng |
+|---|---|---|---|
+| `BotAbc` | ASCII | `BotAbc` (tên role fixture, không phải nhân vật game đã xác nhận) | `JX1_OPS/REPORTS/E-10-bot-tao-role-logout-offline.md:105` |
+
+## Sắp theo cấu trúc game
+Không áp dụng: các tên role và packet là fixture/API; báo cáo không nêu danh mục kỹ năng, trang bị, quái/NPC hoặc bản đồ để xếp theo cấu trúc game.
+
 ## Phạm vi và checkpoint
 
 Ngày 17/11/2026; workspace `D:\JX-wt\E-10`, branch `task/E-10`.
@@ -96,3 +134,14 @@ Trạng thái **DONE** cho phạm vi E-10 offline. Runtime/DB cần task đượ
 riêng, không phải bằng chứng của 76 test này. Chưa stage/commit/push;
 commit SHA và link GitHub mới: không có. Lý do: người dùng không yêu cầu
 commit/push và cấm mạng; **CHƯA PUSH**, không có lần push bị từ chối.
+
+## Đã xác minh / Chưa xác minh
+Đã xác minh trên client bản A: create role dùng `c2s_newplayer` tại `KuiNewPlayer.cpp:641`; response có `bSucceeded` tại `KProtocol.h:1511`; role-list parser tại `Klogin.cpp:1033`. Báo cáo gốc ghi test suite `Ran 76 tests` và 11 test E-10 (`JX1_OPS/REPORTS/E-10-bot-tao-role-logout-offline.md:99`, `:103`); không chạy lại.
+Chưa xác minh: server thực, ABI/binary, codec thực, runtime tạo role và DB persistence.
+
+## Bàn giao
+Giữ nguyên kết luận DONE trong phạm vi offline của báo cáo gốc; không chạy code/test/exe/VM/mạng trong retrofit. Commit bị chặn bởi quyền ghi Git metadata; không push.
+Kỹ năng đã dùng: jx1-retrofit, jx1-report, jx1-knowledge, jx1-read-client, jx1-read-server.
+
+## Phát hiện khi chuẩn hóa
+`BotAbc` là tên role fixture ASCII, không phải nhân vật game được xác nhận. Không có danh sách game entity để sắp theo cấu trúc game.

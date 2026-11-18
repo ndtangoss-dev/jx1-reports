@@ -5,6 +5,45 @@
 4. Lượt toàn TESTER: 28/29 đạt, một assertion Markdown sai; đã sửa và kiểm lại E-09a 7/7 đạt, các 22 test cũ đạt ở lượt toàn suite.
 5. [CHƯA KIỂM] VM/gs001 thật/ABI/gameplay/lưu dữ liệu; không mạng thật, VM, exe; không commit/push vì task không yêu cầu.
 
+# E-09a — Real login và allowlist
+Loại: kiểm thử
+Chủ đề: Giới hạn kết nối thử nghiệm và kiểm chứng offline của luồng real_login.
+Từ khóa: đăng nhập thử, real_login, allowlist, loopback, TESTER, BOT, giữ phiên, E-09a
+Trạng thái: DONE — test offline theo báo cáo gốc đạt sau khi sửa assertion; không xác minh VM thật.
+Độ phủ: 6/6 mảng chính được liệt kê; số test và giới hạn giữ theo báo cáo gốc.
+Liên quan: `JX1_OPS/REPORTS/E-05a-khung-tester.md`, `JX1_OPS/REPORTS/E-05b-kich-ban-full-cycle.md`, `JX1_OPS/REPORTS/E-10-bot-tao-role-logout-offline.md`, `JX1_OPS/DESIGN/CHUAN-BAO-CAO.md`
+Cần tôi quyết định: không
+
+## Sơ đồ luồng
+```mermaid
+flowchart TD
+    CLI[CLI real_login] --> CFG{Allowlist hợp lệ?}
+    CFG -- Không --> STOP[Từ chối trước socket]
+    CFG -- Có --> CREDS[Đọc credential từ môi trường]
+    CREDS --> AUTH[Login và role]
+    AUTH --> GAME[Vào game và giữ phiên]
+    GAME --> CLOSE[Đóng TCP]
+    CLOSE --> REPORT[Báo cáo offline]
+```
+
+## Phạm vi và độ phủ
+| Phần tử | Độ phủ theo báo cáo gốc |
+|---|---|
+| Mặc định loopback và allowlist thử giới hạn | Đã phủ bằng test offline; không kết nối thật |
+| Chặn endpoint/redirect sai trước socket | Đã phủ bằng mock socket/DNS theo báo cáo gốc |
+| Credential từ môi trường và redaction | Đã phủ case thiếu/sai cấu hình; không ghi giá trị bí mật |
+| Chuỗi real_login năm bước | Đã phủ login, role, enter, hold, close trong fixture |
+| CLI, reporting và tài liệu | Đã cập nhật/kiểm theo báo cáo gốc |
+| Regression test | 7 test E-09a đạt sau sửa; 22 test cũ đạt ở lượt suite trước |
+
+## Giải mã tên
+| Tên gốc | Mã hóa | Chữ đúng | Nguồn file:dòng |
+|---|---|---|---|
+| Không có tên riêng nhân vật, kỹ năng, trang bị, quái hoặc bản đồ trong phạm vi | — | Không áp dụng; endpoint và tên scenario là nhãn kỹ thuật | — |
+
+## Sắp theo cấu trúc game
+Không áp dụng: đây là chính sách endpoint và luồng đăng nhập BOT; báo cáo không liệt kê dữ liệu game để nhóm theo phái, bộ trang bị hoặc bản đồ.
+
 ## Phạm vi và cài đặt
 
 Ngày 17/11/2026, worktree `D:\JX-wt\E-09a`, nhánh `task/E-09a`.
@@ -113,3 +152,14 @@ HEAD nền được ghi bởi test report: `89fafae90b8d1fc01512d1c5f27b97c39459
 Đã rà diff một lượt cho file sửa và file mới; `git diff --check` exit 0,
 không báo whitespace. Diff file mới bằng `--no-index` exit 1 do có nội dung mới,
 không phải lỗi kiểm thử.
+
+## Đã xác minh / Chưa xác minh
+Đã xác minh: báo cáo gốc ghi test E-09a chạy 7/7 (`JX1_OPS/REPORTS/E-09a-real-login-allowlist.md:102`) và regression suite trước sửa có 22 test cũ đạt (`:131`). Không chạy lại test trong task retrofit.
+Chưa xác minh: VM/game server thật, ABI, gameplay, lưu dữ liệu và các kết nối mạng; không dùng nguồn ngoài hai root được task chỉ định.
+
+## Bàn giao
+Giữ nguyên test result và giới hạn của báo cáo gốc. Commit retrofit bị chặn bởi quyền ghi Git metadata; chi tiết ở báo cáo R-04b, không push.
+Kỹ năng đã dùng: jx1-retrofit, jx1-report, jx1-knowledge.
+
+## Phát hiện khi chuẩn hóa
+Không phát hiện tên riêng game hoặc thiếu mảng trong phạm vi allowlist, credential handling, luồng 5 bước, CLI/reporting và regression test đã được báo cáo. Test history không được tái chạy.

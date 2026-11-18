@@ -6,6 +6,61 @@
 4. S2C 92 xác nhận NPC đích chết; không có killerID nên việc BOT được tính kill vẫn [CHƯA KIỂM].
 5. Không sửa source/BOT, không build/test/chạy exe/kết nối mạng; ABI binary và runtime [CHƯA KIỂM]; không commit/push vì không được yêu cầu.
 
+# E-08 — Gói đánh quái và xác nhận kill
+Loại: khảo sát
+Chủ đề: Các message skill/NPC và giới hạn xác nhận NPC chết so với kill credit.
+Từ khóa: đánh quái, NPC, kỹ năng, c2s_npcskill, s2c_npcdeath, s2c_skillcast, kill credit, E-08
+Trạng thái: DONE — khảo sát tĩnh theo báo cáo gốc; enum/dispatch client bản A được đối chiếu, server chưa đối chiếu.
+Độ phủ: 10/10 phần tử phạm vi được liệt kê; không suy ra gameplay hoặc kill credit từ fixture.
+Liên quan: `JX1_OPS/REPORTS/E-05b-kich-ban-full-cycle.md`, `JX1_OPS/REPORTS/E-07-goi-tao-nhan-vat-logout.md`, `JX1_OPS/DESIGN/CHUAN-BAO-CAO.md`
+Cần tôi quyết định: không
+
+## Sơ đồ quan hệ gói
+```mermaid
+flowchart LR
+    C[Client gửi c2s_npcskill] --> S[Server xử lý mục tiêu]
+    S --> A[s2c_skillcast]
+    S --> H[s2c_npchurt]
+    S --> D[s2c_npcdeath]
+    D --> T[Xác nhận target chết]
+    T -. không đủ killerID .-> K[Kill credit chưa xác minh]
+    C -. yêu cầu dữ liệu, không chọn đích đánh .-> Q[c2s_requestnpc]
+```
+
+## Phạm vi và độ phủ
+| Phần tử | Độ phủ theo báo cáo gốc | Đối chiếu client bản A |
+|---|---|---|
+| S2C danh sách kỹ năng (69) | Đã mô tả cấu trúc/giới hạn | Symbol trong `KProtocolDef.h:57` |
+| S2C nhận diện NPC (76) | Đã mô tả record | `s2c_syncnpc` và dispatch `SyncNpc`, `KProtocolDef.h:64`, `KProtocolProcess.cpp:57` |
+| S2C đồng bộ NPC (77) | Đã mô tả profile và vector | `s2c_syncnpcmin`/`SyncNpcMin`, `KProtocolDef.h:65`, `KProtocolProcess.cpp:58` |
+| S2C hurt (91) | Đã mô tả event, không có damage amount | Enum/handler client, `KProtocolDef.h:79`, `KProtocolProcess.cpp:72` |
+| S2C death (92) | Đã mô tả event và giới hạn killer | Enum/handler client, `KProtocolDef.h:80`, `KProtocolProcess.cpp:73` |
+| C2S đánh bằng skill (77) | Đã mô tả target và vector | `c2s_npcskill`, `KProtocolDef.h:261` |
+| S2C skill cast (96) | Đã mô tả để nối event | Enum/handler client, `KProtocolDef.h:84`, `KProtocolProcess.cpp:77` |
+| C2S yêu cầu dữ liệu NPC (73) | Đã phân biệt với chọn mục tiêu | `c2s_requestnpc`, `KProtocolDef.h:257` |
+| Nối death với kill credit | Đã nêu rõ chưa đủ bằng chứng | Chưa xác minh; báo cáo gốc không có killerID trong event |
+| Vector hex | Đã ghi vector tổng hợp, không gửi | Không phải capture hoặc runtime; giữ nguyên giới hạn báo cáo gốc |
+
+## Giải mã tên
+| Tên gốc | Mã hóa | Chữ đúng | Nguồn file:dòng |
+|---|---|---|---|
+| `Mob` | ASCII | `Mob` (nhãn fixture, không định danh quái trong dữ liệu game) | `JX1_OPS/REPORTS/E-08-goi-danh-quai-xac-nhan-kill.md:327` |
+
+## Sắp theo cấu trúc game
+Không áp dụng: không có danh mục skill cụ thể theo phái/nhánh/cấp học, trang bị theo bộ hoặc quái/NPC theo bản đồ. `skillID=7` và `Mob` trong vector là dữ liệu fixture, không phải dữ liệu game đã xác nhận.
+
+## MỤC SỔ THÔNG SỐ
+| Nhóm | Tên/hằng số | file:dòng | Giá trị | Đơn vị | Ảnh hưởng | Đổi an toàn (CÓ/CẨN THẬN/KHÔNG) | Nguồn đo |
+|---|---|---|---|---|---|---|---|
+| Client S2C | `s2c_syncnpc` | `D:\JX-build\qh9A\Classes\gamecore\KProtocolDef.h:52,64` | 76 | ID gói | Đồng bộ dữ liệu NPC | KHÔNG | Đếm enum từ base 64; đọc tĩnh, chưa đo runtime |
+| Client S2C | `s2c_syncnpcmin` | `D:\JX-build\qh9A\Classes\gamecore\KProtocolDef.h:52,65` | 77 | ID gói | Đồng bộ NPC | KHÔNG | Đếm enum từ base 64; đọc tĩnh, chưa đo runtime |
+| Client S2C | `s2c_npchurt` / `s2c_npcdeath` | `D:\JX-build\qh9A\Classes\gamecore\KProtocolDef.h:79,80` | 91 / 92 | ID gói | Phản ứng hurt / event death | KHÔNG | Đếm enum từ base 64; đọc tĩnh, chưa đo runtime |
+| Client S2C | `s2c_skillcast` | `D:\JX-build\qh9A\Classes\gamecore\KProtocolDef.h:84` | 96 | ID gói | Thông báo cast để đối chiếu event | KHÔNG | Đếm enum từ base 64; đọc tĩnh, chưa đo runtime |
+| Client C2S | `c2s_requestnpc` / `c2s_npcskill` | `D:\JX-build\qh9A\Classes\gamecore\KProtocolDef.h:248,257,261` | 73 / 77 | ID gói | Yêu cầu dữ liệu NPC / gửi lệnh skill | KHÔNG | Đếm enum từ base 64; đọc tĩnh, chưa đo runtime |
+
+## Đề xuất tối ưu
+Không đề xuất thay đổi giao thức trong retrofit; cần kiểm tương thích client/server riêng trước mọi thay đổi.
+
 ## Phạm vi, nguồn và quy ước
 
 Ngày 17/11/2026, workspace `D:\JX-wt\E-08`, nhánh `task/E-08-gap`.
@@ -368,3 +423,14 @@ khác; E-08 không tự sửa code hay thử runtime.
 Không có commit SHA/link GitHub mới: người dùng chỉ cho ghi báo cáo và mục
 Kết quả, không yêu cầu stage/commit/push; kết quả giữ local. Không truy cập
 GitHub, không thay credential/config/quyền để công bố.
+
+## Đã xác minh / Chưa xác minh
+Đã xác minh trên client bản A: enum `s2c_syncnpc`/`s2c_syncnpcmin` và dispatch `SyncNpc`/`SyncNpcMin` (`D:\JX-build\qh9A\Classes\gamecore\KProtocolDef.h:64,65`, `KProtocolProcess.cpp:57,58`); dispatch hurt/death/skill-cast (`D:\JX-build\qh9A\Classes\gamecore\KProtocolProcess.cpp:72,73,77`); request enum `c2s_requestnpc`/`c2s_npcskill` (`D:\JX-build\qh9A\Classes\gamecore\KProtocolDef.h:257,261`).
+Chưa xác minh: layout và handler server trên root task, ABI/binary, runtime và kill credit. Các test/vectors trong báo cáo gốc không được chạy lại trong retrofit.
+
+## Bàn giao
+Giữ nguyên mọi kết luận/vector gốc; không sửa BOT hoặc game source. Commit retrofit bị chặn bởi quyền ghi Git metadata; chi tiết ở báo cáo R-04b, không push.
+Kỹ năng đã dùng: jx1-retrofit, jx1-report, jx1-knowledge, jx1-read-client, jx1-read-server, jx1-parameters.
+
+## Phát hiện khi chuẩn hóa
+Server root được giao không có `Sources`, `Headers` hoặc `Core`; vì vậy chỉ có thể đối chiếu enum/dispatch phía client, không thể tái kiểm chứng layout/semantics server. `Mob` và `skillID=7` là nhãn/giá trị fixture, không phải dữ liệu game đã xác nhận.

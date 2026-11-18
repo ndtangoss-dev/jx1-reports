@@ -6,6 +6,58 @@
 4. TESTER 18/18 đạt; BOT 41/41 đạt; test CLI hai bot chạy 30 s thật và kiểm hai phiên game/bot.
 5. Gs001 thật: [CHƯA KIỂM]; không chạy exe/kết nối VM/mạng ngoài; không commit/push vì task không yêu cầu.
 
+# E-05b — Kịch bản full-cycle
+Loại: kiểm thử
+Chủ đề: Độ phủ từng bước của kịch bản full-cycle trong fixture BOT/TESTER.
+Từ khóa: chu kỳ đầy đủ, full_cycle, BOT, TESTER, đăng nhập, nhân vật, SKILL, verify_kill, E-05b
+Trạng thái: DONE — theo kết quả fixture trong báo cáo gốc; gameplay thật chưa xác minh.
+Độ phủ: 10/10 bước journey được liệt kê; mô hình fixture, bảo vệ và test history cũng được lập bảng.
+Liên quan: `JX1_OPS/REPORTS/E-05a-khung-tester.md`, `JX1_OPS/REPORTS/E-07-goi-tao-nhan-vat-logout.md`, `JX1_OPS/REPORTS/E-08-goi-danh-quai-xac-nhan-kill.md`, `JX1_OPS/REPORTS/E-09a-real-login-allowlist.md`, `JX1_OPS/REPORTS/E-10-bot-tao-role-logout-offline.md`, `JX1_OPS/DESIGN/CHUAN-BAO-CAO.md`
+Cần tôi quyết định: không
+
+## Sơ đồ luồng
+```mermaid
+flowchart TD
+    L[Login fixture] --> R{Có role?}
+    R -- Không --> C[Tạo nhân vật: BỎ QUA]
+    R -- Có --> E[Vào game]
+    C --> E
+    E --> W[RUN và giữ phiên 30 giây]
+    W --> A[Gửi một SKILL]
+    A --> K[Xác nhận kill: BỎ QUA]
+    K --> O[Đóng phiên]
+    O --> I[Login lại]
+    I --> V[So sánh role list]
+    V --> P[Xác nhận persistence: BỎ QUA]
+```
+
+## Phạm vi và độ phủ
+| Phần tử | Độ phủ theo báo cáo gốc |
+|---|---|
+| Login và role list fixture | Đã phủ; PASS trong fixture, không phải login thật |
+| Tạo nhân vật | Đã xét; BỎ QUA theo điều kiện role, chưa có request tạo |
+| Vào game và permit/sync | Đã phủ trong fixture |
+| RUN và giữ 30 giây | Đã phủ thao tác gửi/giữ; chưa xác minh di chuyển liên tục |
+| Một SKILL | Đã phủ thao tác gửi; chưa xác minh trúng mục tiêu |
+| Xác nhận kill | Đã xét; BỎ QUA, thiếu bằng chứng kill |
+| Logout ứng dụng | Đã xét; đóng phiên TCP không thay ACK logout |
+| Vào lại | Đã phủ login/role/permit lần hai trong fixture |
+| So sánh role | Đã phủ tên/giới tính/hệ/level |
+| Xác nhận persistence | Đã xét; BỎ QUA, chưa có giải mã và xác nhận lưu |
+| Fixture loopback và bảo vệ dữ liệu | Đã trình bày máy chủ giả, giới hạn loopback và redaction; không phải kết nối server thật |
+| Test history và kết quả fixture | Đã ghi 18/18 TESTER, 41/41 BOT và CLI fixture; không chạy lại trong retrofit |
+
+## Giải mã tên
+| Tên gốc | Mã hóa | Chữ đúng | Nguồn file:dòng |
+|---|---|---|---|
+| Không có tên riêng nhân vật, kỹ năng, trang bị, quái hoặc bản đồ trong phạm vi | — | Không áp dụng; tên bước/gói là nhãn kỹ thuật | — |
+
+## Sắp theo cấu trúc game
+Không áp dụng: báo cáo kiểm thử chuỗi bước, không liệt kê dữ liệu kỹ năng theo phái/nhánh/cấp học, trang bị theo bộ hoặc quái/NPC theo bản đồ. Một thao tác SKILL trong fixture không định danh kỹ năng game.
+
+## Đề xuất tối ưu
+Không có đề xuất cân chỉnh gameplay; báo cáo chỉ bao phủ fixture, không có phép đo runtime.
+
 ## Phạm vi và kết quả
 
 Ngày 17/11/2026, worktree `D:\JX-wt\E-05b`, nhánh `task/E-05b-kichban`.
@@ -93,3 +145,14 @@ GitHub. Không sửa `docs-analysis/BAI_HOC.md`, BOT hoặc nguồn canonical.
 mới dùng `--no-index` trả exit 1 do có khác biệt, không phải test thất bại.
 Sau test chỉ dọn import không dùng, sửa mô tả module và hoàn thiện tài liệu;
 không đổi hành vi code đã kiểm, không chạy lại test không cần thiết.
+
+## Đã xác minh / Chưa xác minh
+Đã xác minh: kết quả lịch sử trong báo cáo gốc ghi TESTER 18/18 và BOT 41/41, cùng test CLI full-cycle; xem `JX1_OPS/REPORTS/E-05b-kich-ban-full-cycle.md:109` và `:113`. Không chạy lại các test trong task retrofit.
+Chưa xác minh: gs001 thật, gameplay, ACK logout ứng dụng, kill credit và dữ liệu persistence; xem giới hạn đã nêu tại `JX1_OPS/REPORTS/E-05b-kich-ban-full-cycle.md:85` và `:130`.
+
+## Bàn giao
+Chuẩn hóa bổ sung, không sửa code/test hoặc kết luận cũ. Đưa dòng chỉ mục vào `_CHIMUC/R-04b.tsv`; commit bị chặn bởi quyền ghi Git metadata, chi tiết ở báo cáo R-04b; không push.
+Kỹ năng đã dùng: jx1-retrofit, jx1-report, jx1-knowledge.
+
+## Phát hiện khi chuẩn hóa
+Không phát hiện thiếu bước ngoài các bước BỎ QUA đã được báo cáo gốc liệt kê. Không có tên riêng game để giải mã hoặc dữ liệu game để sắp theo cấu trúc.
