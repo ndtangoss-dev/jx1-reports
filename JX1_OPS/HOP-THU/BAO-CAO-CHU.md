@@ -11,3 +11,4 @@
 - 18/11 21:45 — Sonnet tự làm TEST-A + VirtualBox + C01/C03. Chủ chỉ cần làm khi ngồi máy: tạo repo private jx1-source (hoặc đăng nhập gh) và dán khóa Gemini.
 - 18/11 21:30 — Khóa Gemini đã nhập; Sonnet chạy so sánh. jx1-source giữ cục bộ (theo chủ). Không còn việc tay cho chủ.
 - 18/11 22:12 — Gemini miễn phí không dùng được (20 lượt/ngày), đã bỏ. Đang giảm token tiểu yêu, thử client trên máy thử. Không cần chủ làm gì.
+- 18/11 22:35 — Đã lập hàng đợi việc không bao giờ cạn (STATE/HANG-DOI-VIEC.md); dừng sửa hiệu ứng vũ khí cho tới khi hiểu (W-01); Sonnet giữ phiên mở cả đêm.
