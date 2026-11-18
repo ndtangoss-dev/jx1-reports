@@ -42,3 +42,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Người gác hỏng lần 3: nộp log 10:15–nay, nguyên nhân, sửa, tự thử | #126 | — | chờ Sonnet |
 | Tổng quản tự đẩy bảng 15 phút/lần, sự kiện đẩy ngay; người gác đánh thức theo [TỔNG QUẢN] | #127 | bổ sung #118 | chờ Sonnet |
 | Phiên gác dùng --model claude-sonnet-5-5; hết hạn mức thì [CAN-CHU] | #128 | trả lời #126.3 | chờ Sonnet |
+| Kiểm người gác dùng đúng tài khoản Claude (user Windows, thư mục cấu hình), thử --model sonnet | #129 | bổ sung #128 | chờ Sonnet |

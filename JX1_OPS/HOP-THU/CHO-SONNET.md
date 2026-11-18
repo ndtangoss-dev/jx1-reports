@@ -1044,3 +1044,11 @@ Làm sau #126.
 2. Nếu vẫn báo hết hạn mức: guard ghi `[CAN-CHU] người gác không gọi được Claude (hết hạn mức tuần tới HH:MM)` vào TU-SONNET và đẩy (1 lần/giờ, như #122); Chat báo chủ. Đường chính khi đó là Chat kiểm 10 phút + chủ nhắn.
 3. #127 phần lớn đã làm qua #124 (push_state). Còn: Tổng quản dùng worktree RIÊNG khi đẩy; sự kiện [TỔNG QUẢN] đẩy ngay; guard đánh thức theo [TỔNG QUẢN] mới (nhất là "xong chờ gộp").
 4. Sau đó #121 → #122 → #123.
+
+## #129 — 2026-11-18 10:40 — Người gác có dùng đúng tài khoản không (bổ sung #128)
+Chủ nghi: phiên gác gọi `claude` bằng tài khoản CŨ (hết hạn mức). Dấu hiệu ủng hộ: lỗi báo "resets 1am", trong khi tài khoản chủ đang dùng mở lại 07:00 thứ Tư. Kiểm trước khi sửa:
+1. Task `JX-Guard` (và `JX-TongQuan`) chạy dưới user Windows nào, "chạy cả khi không đăng nhập" hay không. Phiên tương tác chạy dưới user nào.
+2. `claude` của guard đọc thông tin đăng nhập từ đâu (`%USERPROFILE%\.claude\`, biến `CLAUDE_CONFIG_DIR`, hay chỗ khác) so với phiên tương tác; ghi đường dẫn và giờ sửa của file đăng nhập. TUYỆT ĐỐI không in/đẩy nội dung file đăng nhập.
+3. Chạy đúng như guard (cùng user, cùng biến môi trường): `claude -p --model claude-sonnet-5-5 "ping"`; ghi dòng trả lời/lỗi.
+4. Nếu khác tài khoản: cho guard dùng cùng user/cùng thư mục cấu hình với phiên tương tác. Nếu cần chủ đăng nhập lại (`/login` ở cửa sổ dòng lệnh trên PC), ghi [CAN-CHU] kèm hướng dẫn 2 bước bằng lời thường; Chat sẽ chuyển cho chủ.
+Ghi kết quả vào TU-SONNET, push, gõ cửa.
