@@ -1,7 +1,7 @@
 ---
 id: HG-16c
 title: (lần 3) Hiểu game: sự kiện đăng nhập và khởi tạo nhân vật mới
-status: running
+status: done
 level: L3
 agent: codex
 effort: high
@@ -13,7 +13,7 @@ backlog_ref: "#207 dot 3 (BACKLOG, HG-16)"
 vung_file: [JX1_OPS/DESIGN/HIEU-TAO-NHAN-VAT-MOI.md]
 tai_nguyen: []
 updated: 2026-11-19
-status_note: "Tong quan giao bang JX-K4"
+status_note: "PARTIAL lan 3; phan gateway giao XD-HG16d"
 ---
 
 ## Mục tiêu và tiêu chí xong
