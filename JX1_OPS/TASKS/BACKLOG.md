@@ -98,3 +98,21 @@ Sonnet lấy việc từ trên xuống, theo phụ thuộc. Khi bắt đầu m�
 - Tổng hợp hiểu game → tối ưu đường truyền → hiểu exe → (chỉ khi truyền ổn) tick/H-15/đồ hoạ nâng cao (#091).
 
 - U-01 (hiểu game), U-02 (truyền tải + exe), U-03 (bảng thứ tự vẽ bộ phận) đang chạy song song (Codex, chỉ đọc). Sau đó mục 8 chỉ khi U-02 kết luận truyền ổn; mục 9 xen kẽ.
+
+## Nhóm bổ sung (17–18/11, #170)
+
+| ID | Việc | Cấp | Ai | Phụ thuộc |
+|---|---|---|---|---|
+| N-01 | Nghiên cứu nút Bishop Announcer | L2 | Codex/Sonnet | — |
+| N-02 | Nghiên cứu Bishop danh sách lọc/VIP/IP | L2 | Codex/Sonnet | — |
+| N-03 | Nghiên cứu Bishop Birth role setting | L2 | Codex/Sonnet | — |
+| N-04 | Nghiên cứu Goddess Max char, danh sách nhân vật | L2 | Codex/Sonnet | — |
+| N-05 | Nghiên cứu Goddess Add Money/EnterMap/Remove/Backup/Restart | L2 | Codex/Sonnet | — |
+| N-06 | Nghiên cứu liên kết PaySys-Bishop-Goddess-S3Relay-gs001-client | L2 | Codex/Sonnet | — |
+| N-07 | BANG-NUT-EXE-SERVER và thử nút trong VM thử (#161/#162) | L2 | Codex/Sonnet | — |
+| K-02 | Kiểm kê asset gốc (chia K-02a..g) | L2 | Codex/Sonnet | — |
+| K-03 | Bảng tra cứu (K-03a..e) | L2 | Codex/Sonnet | — |
+| R-01 | Chuẩn hóa báo cáo (R-01..R-07) | L2 | Codex/Sonnet | — |
+| X-05 | Xưởng JX1 vận hành | L2 | Codex/Sonnet | — |
+| V-01 | Vòng tự động Chat⇄Sonnet (Q-48/Q-49) | L2 | Codex/Sonnet | — |
+| CL-01 | Thử client C01..C05 | L2 | Codex/Sonnet | — |
