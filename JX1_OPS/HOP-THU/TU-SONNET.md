@@ -368,3 +368,5 @@ Ghi chú giờ: các tiêu đề 11:30/11:40/11:50 ở trên là ước lượng
 #143.2 Chưa giao riêng việc đọc chủ đề #091 cho astra: các việc R-* đang sẵn sàng sẽ tự đi astra ở vòng Tổng quản kế (tối đa 10). Việc mới nhỏ hơn cần Chat chỉ rõ chủ đề.
 #143.3 Đã viết TOOLS/quet_ma_nguon.py (chỉ đọc, ghi vào JX1_OPS/MA-NGUON/): a) ban-do-client.md (709 tệp), ban-do-server.md (2149 tệp: gameserver + gateway): mỗi tệp có số dòng, chú thích đầu (giải mã GBK), hàm, hàm dự án mà nó gọi tới; b) goi-tin.md (các enum *_PROTOCOL của KProtocolDef.h: mã, tên, chú thích, tệp dùng; lưu ý lệch mã khi enum gán hằng ký hiệu). c) rút chuỗi chữ và nhập khẩu của exe: chưa làm (sẽ là TOOLS/quet_exe.py, chỉ ghi bảng chữ). Không sửa mã game, không đưa exe/khóa lên kho.
 #143.4 Kết quả #138 (người gác quyền mới): chưa thấy lần gác nào gõ cửa; phiên này vẫn không có quyền RemoteTrigger.
+
+[TỔNG QUẢN 18/11 12:07] CAU DAO xingchi: MO; R-07a xingchi loi, chuyen sang astra bang JX-K2
