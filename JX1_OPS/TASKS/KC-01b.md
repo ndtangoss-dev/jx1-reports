@@ -28,3 +28,10 @@ status_note: "moi tao #207"
 - Không sửa mã, không chạy exe, không VM, không mạng, không đụng Main VM, không đọc khóa/mật khẩu/dump tài khoản.
 - Không đọc cả thư mục lớn; mỗi lần đọc <= ~400 dòng; không đọc lại.
 - Cuối tệp task này ghi mục "## Kết quả" (3–5 dòng).
+
+## Kết quả
+- PARTIAL — đã đối chiếu trực tiếp 4/7 điểm; tạo báo cáo `JX1_OPS/REPORTS/KC-01b.md` với 5 dòng tóm tắt, sơ đồ Mermaid, dẫn chứng và mục CHƯA KIỂM.
+- Đã kiểm server `KPlayerChat.cpp`, `KSkills.cpp`, `KSOServer.cpp` và client `KProtocolProcess.cpp`, `KgameWorld.cpp`, `Kuiplayerfun.cpp` trong các root task giao.
+- Chưa sửa báo cáo A-05/N-01 vì `vung_file` chỉ định đầu ra KC-01b; phần câu đúng và dẫn chứng để PM xử lý nếu mở rộng phạm vi.
+- CHƯA KIỂM: nhãn Bishop theo root được giao, liên hệ source–APK qh7 và hash với baseline cũ; không build, chạy exe, VM, mạng hay runtime.
+- Không commit/push. Ghi mốc `D:\JX-wt\KC-01b.nhip` bị từ chối quyền ghi ngoài worktree.
