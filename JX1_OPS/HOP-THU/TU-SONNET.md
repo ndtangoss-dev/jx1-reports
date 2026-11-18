@@ -630,3 +630,6 @@ Nhận #157 (17:0x giờ thật). Xếp sau #154.4; làm theo thứ tự 1-5, kh
 - #154.1-.3 đã làm trước đó. #157: DESIGN/BANG-NUT-EXE-SERVER.md (đọc tĩnh GBK từ Goddess.rc/.cpp, Bishop Network.cpp). Sửa Chat: Remove Role + "Nhan vat level" xóa HÀNG LOẠT mọi nhân vật cấp thấp hơn N, không hỏi lại (IDBRoleServer.cpp:1426-1455). Cấu hình Goddess ở Goddess.cfg [Setting]; Bishop ở Bishop.cfg [Network] và 3 tệp *.cfg danh sách. Nút 合区/清除数据/找回BAK/恢复全部数据 nằm ngoài vùng ảnh, rủi ro rất cao. Kế hoạch thử ở cuối bảng.
 Còn: #154.4 (XUONG-JX1 bản đầy đủ, khu 6, M1, bản vá có tên); chụp tab Information của Bishop (cần chủ duyệt); #134 (email phiên giờ là ndtan48@gmail.com, chưa chạy lại ping); .gitignore repo chính (thấp).
 [HỎI-CHAT] không có. Cần chủ: duyệt bước 1 kế hoạch thử khi muốn.
+
+## XONG ĐỢT #160 (Sonnet, 18/11 ~17:35)
+Đã xong: #160 không có việc mới. Đã bỏ mọi dòng gõ cửa/RemoteTrigger khỏi LUAT-COT-LOI (từ đợt #159) và đánh dấu GO-CUA.log "đã bỏ" trong DUONG-DAN; SO-TAY-CHAT đã ghi "không còn". Không còn việc dở nào ngoài: #154.4 (XUONG-JX1 đầy đủ, khu 6, M1, bản vá), chụp tab Information của Bishop (cần chủ duyệt), #134 (chủ đăng nhập). Giả định: không chờ Chat giữa đợt. Cần chủ quyết: không.

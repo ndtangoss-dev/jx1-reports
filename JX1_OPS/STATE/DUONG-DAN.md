@@ -19,7 +19,7 @@ Chỉ ghi tên khóa, không ghi giá trị. Cột "Trong kho" = có nằm trong
 | Task Scheduler `JX-TongQuan` (3 phút) | Windows | Chạy `TOOLS/tong_quan.py` | script có, tác vụ không |
 | Task Scheduler `JX-codex-<ID>` | `chay_codex.ps1` | Một tác vụ cho mỗi tiểu yêu | không |
 | Task Scheduler `JX-CDN-8080` và các tác vụ cổng | Windows | Máy chủ CDN/APK/bảng tiến độ | script ở `docs-analysis/scripts` (repo chính) |
-| `JX1_OPS/STATE/GO-CUA.log` | Sonnet | Nhật ký gõ cửa Chat | có |
+| `JX1_OPS/STATE/GO-CUA.log` | Sonnet | Nhật ký gõ cửa Chat (đã bỏ, Q-48) | có |
 | `JX1_OPS/HOP-THU/{CHO-SONNET,TU-SONNET,SO-TAY-CHAT}.md` | Chat ↔ Sonnet | Hòm thư; dòng `GÕ CỬA:` ở SO-TAY-CHAT | có |
 | `D:\JX-build\qh9A` | Sonnet, tiểu yêu | Bản A của client/server để thử (bản duy nhất làm việc) | không |
 | `D:\VMs\JX-Server-D` | VirtualBox | VM thử | không |
