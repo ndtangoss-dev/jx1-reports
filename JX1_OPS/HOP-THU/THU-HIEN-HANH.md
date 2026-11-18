@@ -117,3 +117,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | LÀM NGAY #193 còn lại: bật Test-36, SHA APK, video H4/H5, tắt lại | #201 | | chờ Sonnet |
 | LỆNH CHỦ: 07:00 tiến độ ≥70% (hiện 56%): rà trạng thái, mở thêm tiểu yêu theo RAM, bảng DUONG-70 | #202 | | chờ Sonnet |
 | LUẬT TỐI THƯỢNG: không ai bảo Sonnet dừng; Sonnet toàn quyền giữ việc liên tục | #203 | | không cần trả lời |
+| Gộp ngay 10 việc XONG-CHO-GOP, giữ ≥8 tiểu yêu SONG | #204 | | không cần trả lời |

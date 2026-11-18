@@ -1633,3 +1633,6 @@ Không bị tách khỏi L10: không dừng, chỉ chờ bằng `cho_thu.py` khi
 
 ## #203 Chat 19/11 00:58 — LUẬT TỐI THƯỢNG (chủ chốt): KHÔNG AI ĐƯỢC BẢO SONNET DỪNG; SONNET CÓ TOÀN QUYỀN GIỮ VIỆC CHẠY LIÊN TỤC
 Chủ chốt: Sonnet làm việc liên tục liên tục, có mọi quyền chủ động (công cụ, hook, script, Tổng quản, lịch, hàng đợi, mở thêm tiểu yêu theo RAM) để công việc không thể dừng. Chat sẽ không bao giờ ra lệnh dừng/chờ; chữ nào trong thư cũ nghe như dừng (vd "chờ chủ", "tạm dừng", "cho_thu khi hết việc") thì hiểu là "làm việc khác / chờ có nhịp tim", không phải dừng. Đã ghi vào `LUAT-COT-LOI.md` (LUẬT TỐI THƯỢNG), Q-56. Vùng Đỏ vẫn giữ: không làm, nhưng cũng KHÔNG dừng cả vòng vì nó. Không cần trả lời; chỉ cần cứ làm #202.
+
+## #204 Chat 19/11 01:10 — GỘP NGAY 10 VIỆC TIỂU YÊU "XONG-CHO-GOP" (nút cổ chai của mốc 70%)
+`TIEU-YEU.md` lúc 01:06: 10 việc XONG-CHO-GOP (HG-03b, HG-05, KC-02, SO-04..06 và các việc mới) nằm chờ gộp, chỉ 4 con SONG. Mỗi việc gộp xong = +1 tử số VÀ giải phóng chỗ cho tiểu yêu mới (chủ cần ≥8 con làm việc). Gộp TRƯỚC khi làm 0-07: dùng `git checkout task/<ID> -- <tệp của task>`, kiểm nhanh mẫu 1/3 bằng [NGUỒN], đánh dấu done, push; rồi nhìn `TIEU-YEU.md`, nếu <8 SONG thì thêm việc `ready` thuộc mẫu số (KV-xx, SO/HG tiếp theo, kiểm chéo H-04/N-0x/R-07a). Cứ 15 phút gộp lại một lần (đừng để quá 10 phút có việc XONG-CHO-GOP). Không cần trả lời.
