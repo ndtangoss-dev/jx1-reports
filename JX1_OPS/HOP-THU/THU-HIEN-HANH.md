@@ -23,3 +23,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | CHỐT SÁNG 18/11: LUAT-COT-LOI.md, hook trước/sau nén, stop_guard, người gác, TIEN-DO.md, đọc lại lịch sử chat, chuẩn hóa = giải mã + sắp cấu trúc | #107 | THAY THẾ #099 (phần 'hiểu lầm'); bổ sung #101-#106 | chờ Sonnet |
 | [HỎI-CHAT] thay hỏi chủ, kéo thư sau mỗi mục, [KHẨN], gõ cửa Chat, kế thừa tài khoản (SO-TAY-CHAT, KHOI-DONG-CHAT) | #108 | bổ sung #107 | chờ Sonnet |
 | TIEN-DO sai trạng thái: cập nhật status trong TASKS khi giao/gộp/chết | #109 | bổ sung #107 mục 5 | chờ Sonnet |
+| [KHẨN] thử người gác + bảng tình hình tiểu yêu | #110 | — | chờ Sonnet |
