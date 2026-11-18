@@ -273,3 +273,5 @@
 [TỔNG QUẢN 19/11 03:50] CAU DAO xingchi: DONG; HG-16b giao bang JX-K4; XD-CL01 giao bang JX-K4; XD-H01 giao bang JX-K4; XD-H02 giao bang JX-K4; XD-H03 giao bang JX-K3; XD-H05 giao bang JX-K3; XD-W02 giao bang JX-K3; XD-W02b giao bang JX-K3
 [TỔNG QUẢN 19/11 03:52] CAU DAO xingchi: DONG; HG-08 giao bang JX-K2; HG-12 giao bang JX-K2; KC-02 giao bang JX-K2; SO-04 giao bang JX-K2; SO-18 giao bang JX-K6
 [TỔNG QUẢN 19/11 03:53] CAU DAO xingchi: DONG
+[TỔNG QUẢN 19/11 03:58] CAU DAO xingchi: DONG; HG-08 giao bang JX-K4; HG-12 giao bang JX-K4; KC-02 giao bang JX-K4; SO-04 giao bang JX-K3; SO-18 giao bang JX-K3
+[TỔNG QUẢN 19/11 04:00] CAU DAO xingchi: DONG; HG-08 giao bang JX-K4; HG-12 giao bang JX-K3; KC-02 giao bang JX-K4; SO-04 giao bang JX-K4; SO-18 giao bang JX-K3
