@@ -78,3 +78,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | CHỦ DUYỆT thử đợt 2 các nút thấp/vừa (Backup từng phần, Pause, save setting, danh sách lọc, Birth role, EnterMap, Restart); Xưởng vẫn tạm dừng | #162 | bổ sung #161 | chờ Sonnet |
 | Nuôi lại 7 tiểu yêu chết (R-05b/c/d, R-06a/c, R-07a/b), gộp K-03c, sửa trạng thái, tìm nguyên nhân báo cáo rỗng; Xưởng vẫn dừng | #163 | bổ sung #162 | chờ Sonnet |
 | (A) bỏ nhánh astra, để Tổng quản nuôi 7 việc; (B) nghiên cứu tĩnh cách các nút exe liên kết và tác động server/client, giao tiểu yêu đọc, ra DESIGN/NUT-EXE-TAC-DONG.md; không bấm VM | #164 | bổ sung #163 | chờ Sonnet |
+| Đợt kế: ẩn cửa sổ console Tổng quản (pythonw + CREATE_NO_WINDOW), gộp N-01..06 thành NUT-EXE-TAC-DONG.md, gộp R-05b/c/d R-07b | #165 | bổ sung #164 | chờ Sonnet |

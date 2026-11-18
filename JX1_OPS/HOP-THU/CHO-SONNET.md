@@ -1390,3 +1390,11 @@ Chủ bảo tiếp tục tìm hiểu các nút exe. Đợt này CHỈ ĐỌC TĨ
  6. Liên kết tổng: PaySys↔Bishop↔Goddess↔S3Relay↔gs001↔client (cổng, ai nối ai, thứ tự bật/tắt an toàn), bổ sung `TRUYEN-TAI-VA-EXE-SERVER.md`; liệt kê điều CHƯA KIỂM cần client thật để xác nhận.
 Cuối file: mục "Muốn xác nhận trên client thật thì cần gì" (LDPlayer/APK, tài khoản test, từng ca thử, rủi ro). KHÔNG thực hiện ca thử client trong đợt này; chờ chủ duyệt.
 Ghi "XONG ĐỢT #164" tự đủ (đã làm / kết quả / còn / cần chủ), push, dừng.
+
+## #165 Chat 18/11 18:45 — Đợt kế: gộp N-01..N-06 + ẨN cửa sổ Tổng quản (bổ sung #164)
+Chủ báo: màn hình đen của Tổng quản thỉnh thoảng bật lên rồi tắt trên máy chủ (đúng nhịp lịch JX-TongQuan, ~2 phút/lần). Chat nhận định: đó là cửa sổ console của python.exe do Task Scheduler mở mỗi vòng (và có thể cả cửa sổ con của codex/git/powershell mà Tổng quản khởi chạy). Việc của Sonnet, theo thứ tự:
+1. ẨN cửa sổ, không làm hỏng Tổng quản. Cách ưu tiên: đổi hành động tác vụ JX-TongQuan sang `pythonw.exe` (không console) — nhớ `tong_quan.py` không được in ra stdout/stderr khi chạy pythonw (stdout=None gây lỗi): chuyển mọi `print` sang ghi tệp log hoặc chuyển hướng `sys.stdout/sys.stderr` vào STATE/TONG-QUAN-GHI.md/tệp log khi không có console; kiểm `--dry`. Mọi `subprocess` (codex, git, powershell, tasklist, schtasks) thêm cờ `creationflags=CREATE_NO_WINDOW` (hoặc `-WindowStyle Hidden`). Nếu vẫn nháy: đặt tác vụ "chạy dù có đăng nhập hay không" (cần mật khẩu — KHÔNG làm, báo [CAN-CHU] thay vì tự đổi). Ghi cách hoàn tác (1 dòng). Kiểm bằng cách đợi 2–3 vòng và xem Tổng quản vẫn ghi TIEU-YEU mới; đợi chủ xác nhận hết nháy.
+2. Gộp N-01..N-06 (xong thì gộp theo thứ tự) thành `DESIGN/NUT-EXE-TAC-DONG.md` theo #164 (lời thường, mermaid, nhãn nguồn, cuối file "Muốn xác nhận trên client thật thì cần gì"); bổ sung `TRUYEN-TAI-VA-EXE-SERVER.md`. Việc nào chưa xong/rỗng: ghi rõ chưa có, không bịa.
+3. Gộp R-05b, R-05c, R-05d, R-07b khi xong (kết quả thật 1–2 dòng); CHET-BO thì ghi, không chạy lại.
+4. Không bấm VM/exe. Xưởng JX1 vẫn tạm dừng.
+"XONG ĐỢT #165" tự đủ, push, dừng.
