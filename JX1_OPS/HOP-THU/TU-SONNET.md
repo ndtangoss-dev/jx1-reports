@@ -390,3 +390,5 @@ Ghi chú giờ: các tiêu đề 11:30/11:40/11:50 ở trên là ước lượng
 #145.4 Lỗi do ta, đã sửa; Tổng quản sẽ tự chạy lại các việc R-* đã chết (lan.json = 0) từng bước theo mục 3 ở vòng kế. Chưa tự tay thử 1 việc vì L9 cấm giao tay. Còn nghi vấn chưa kiểm: vì sao tasklist trả rỗng; nếu sau sửa việc vẫn chết thì thuộc hạ sẽ đổi sang đọc trạng thái bằng PowerShell Get-Process. #144 (Xưởng JX1) làm tiếp sau.
 
 [TỔNG QUẢN 18/11 12:21] CAU DAO xingchi: MO; F-01 cho xingchi, thu lai bang JX-K2 (thu cau dao)
+
+[TỔNG QUẢN 18/11 12:23] CAU DAO xingchi: MO
