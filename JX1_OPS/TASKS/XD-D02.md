@@ -24,3 +24,10 @@ Việc chuẩn bị cho **D-02**. Đọc D-01 và báo cáo hoạt động; lậ
 - Không chạy exe lạ, không VM, không mạng, không Main VM, không đọc khóa/mật khẩu/dump tài khoản. Chỉ ghi tệp đầu ra ngoài ra không sửa gì.
 - Worktree của bạn có thể KHÔNG có mã nguồn game: đọc trực tiếp (chỉ đọc) client `C:/Jx1CocoV3/Folder/Client2912-20260116T044348Z-3-001/Client2912/Client/Classes` và server `C:/Jx1CocoV3/SwordOnline/SwordOnline/jxOnline/gameserver/Sources`; kho báo cáo ở D:/jx1-ops-wt/JX1_OPS (chỉ đọc).
 - Mỗi lần đọc <= ~400 dòng. Cuối tệp task ghi mục "## Kết quả" (3–5 dòng).
+
+## Kết quả
+
+- **DONE** — `JX1_OPS/REPORTS/XD-D02.md` lập kế hoạch cho đủ 27 nhánh D-01, có điều kiện bản đồ, kết quả mong đợi và bằng chứng cần thu.
+- Đối chiếu tĩnh sáu mục mở hoạt động trong `gmroleitem.lua`. Các mục GM hoặc điều kiện còn thiếu bằng chứng được ghi **CHƯA KIỂM**.
+- Chỉ kiểm tài liệu và đọc nguồn. Chưa build, chạy lệnh GM, exe, VM hay mạng. Tổng quan phụ trách commit.
+- Tệp `.nhip` nằm ngoài vùng ghi của phiên. Tiến độ được báo trong hội thoại.
