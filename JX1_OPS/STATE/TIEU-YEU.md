@@ -1,4 +1,4 @@
-# TIỂU YÊU (Tổng quản tự sinh lúc 2026-11-18 10:48, đừng sửa tay)
+# TIỂU YÊU (Tổng quản tự sinh lúc 2026-11-18 10:54, đừng sửa tay)
 
 **CẦU DAO xingchi: MỞ (ngừng giao, mỗi 10 phút thử 1 việc)**
 
@@ -6,7 +6,7 @@ Mức: SONG / IM-NHUNG-SONG (20–60 phút) / TREO (>60, bị dừng chạy lạ
 
 | Mã | Mức | Khóa | Log cuối | Dấu hiệu sống cuối | Lỗi cuối | Lần chạy lại |
 |---|---|---|---|---|---|---|
-| F-01 | CHO-XINGCHI | JX-K2 | 10:35 | 10:35 | xingchi Chat Completions | 0 |
+| F-01 | CHO-XINGCHI | JX-K2 | 10:51 | 10:51 | xingchi Chat Completions | 0 |
 | K-03a | CHO-XINGCHI | JX-K2 | 10:27 | 10:27 | xingchi Chat Completions | 0 |
 | K-03b | CHO-XINGCHI | JX-K2 | 10:30 | 10:30 | xingchi Chat Completions | 0 |
 | K-03c | CHO-XINGCHI | JX-K3 | 10:30 | 10:30 | xingchi Chat Completions | 0 |
@@ -18,7 +18,7 @@ Mức: SONG / IM-NHUNG-SONG (20–60 phút) / TREO (>60, bị dừng chạy lạ
 | R-04b | CHO-XINGCHI | (tay/mac dinh) | 10:33 | 10:33 | xingchi Chat Completions | 0 |
 | R-05a | CHO-XINGCHI | (tay/mac dinh) | 10:33 | 10:33 | xingchi Chat Completions | 0 |
 | R-05b | CHO-XINGCHI | (tay/mac dinh) | 10:33 | 10:33 | xingchi Chat Completions | 0 |
-| R-05c | IM-NHUNG-SONG | (tay/mac dinh) | 09:52 | 09:52 | loi mang | 0 |
+| R-05c | CHO-XINGCHI | (tay/mac dinh) | 09:52 | 09:52 | loi mang | 0 |
 | R-05d | CHO-XINGCHI | JX-K3 | 10:34 | 10:34 | xingchi Chat Completions | 0 |
 | R-06a | XONG-CHO-GOP | JX-K4 | 10:26 | 10:26 | - | 2 |
 | R-06c | CHO-XINGCHI | JX-K5 | 10:34 | 10:34 | xingchi Chat Completions | 0 |
@@ -33,3 +33,4 @@ Khóa đang dùng: (không) / khóa có: JX-K2, JX-K3, JX-K4, JX-K5, JX-K6
 
 Việc vòng này:
 - CAU DAO xingchi: MO
+- R-05c TREO >60 phut, da dung de chay lai

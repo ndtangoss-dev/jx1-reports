@@ -312,3 +312,5 @@ Task Scheduler `JX-Guard`: LastRun 10:29:29, LastTaskResult 0 (script chạy xon
 - #130.4: giữ nguyên config.toml, chờ Chat báo chủ đã đổi khóa.
 
 [TỰ QUYẾT 18/11] R-06a: .done exit=0 nhưng worktree sạch, I-01 không có khối từ khóa → không gộp, đặt failed để chạy lại sau (khi xingchi ổn).
+
+[TỔNG QUẢN 18/11 10:54] CAU DAO xingchi: MO; R-05c TREO >60 phut, da dung de chay lai
