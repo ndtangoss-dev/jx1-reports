@@ -3,7 +3,7 @@
 Cập nhật: 18/11/2026 08:55 (giờ VN)
 
 ## GÕ CỬA
-GÕ CỬA: (Chat ghi trigger_id hiện hành ở đây mỗi lần đặt lịch kiểm; Sonnet bấm bằng fire_trigger nếu có công cụ)
+GÕ CỬA: trig_019sBDxVAC9gZR3KL7YD2eKG (lịch kiểm 10 phút của Chat, hết hạn khi bắn; Chat cập nhật mỗi lần đặt lịch mới)
 
 ## Hướng đi hiện tại
 - Chủ chỉ giao lệnh cho Chat; Chat viết thư; Sonnet làm. Chat quyết thay chủ mọi việc không thuộc vùng Đỏ, báo chủ trong báo cáo giờ để chủ gạt nếu muốn.
