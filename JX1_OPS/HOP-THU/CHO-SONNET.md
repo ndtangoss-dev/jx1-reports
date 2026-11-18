@@ -1645,3 +1645,12 @@ Chủ báo: xingchi đã lên GPT 1x rate, cộng thêm 1000 USD (tổng >3000 U
 4. Gộp liên tục (xem #204); mỗi 60 phút ghi "TIẾN ĐỘ x/y", số tiểu yêu SONG, RAM trống, 429, chi phí ước tính USD.
 5. Giữ RAM: RAM trống <15% hoặc 1 tiến trình >4 GB bất thường → hạ MAXKEY ngay, [CAN-CHU] + "CHAT". Không giết tiến trình của chủ.
 Không cần trả lời; làm và ghi kết quả vào TU-SONNET.md.
+
+## #206 Chat 19/11 01:27 — CẢNH BÁO MẪU SỐ: bảng đang 43/88 = 49% (GIẢM so với 54% vì thêm 20 việc vào mẫu số). Cần ≥62/88 lúc 06:30.
+Tốc độ tiểu yêu tốt (13–15 con SONG, RAM trống 54%, 429 = 0) nhưng % chỉ tăng khi việc XONG nhanh hơn việc được THÊM. Kỷ luật mẫu số, KHÔNG phải để đẹp số mà để chủ thật sự đạt 70%:
+1. **Đòn bẩy tốt nhất = đóng việc cha đang `active`** (27 việc: C-01, C-03, E-05, A-08a-d, A-09, A-10, A-12, B-02, B-04, E-01, E-01b, E-09, O-01, P-02, A-07b/c, CL-01…). Với mỗi việc cha: ghi ĐÚNG phần còn thiếu của "xong khi" (1 dòng), rồi giao tiểu yêu việc phụ làm phần đó. Việc phụ KHÔNG vào mẫu số riêng; chỉ việc cha được tính khi đạt thật. KV-xx (kiểm) vì thế chỉ là bước kiểm, kết luận CHƯA ĐẠT thì tiếp tục làm phần thiếu chứ không bỏ.
+2. **Việc mới "Hiểu game" (SO/HG...) chỉ vào mẫu số khi ước hoàn thành ≤90 phút** và mỗi đợt thêm không quá số tiểu yêu đang rảnh. **Từ 05:00 KHÔNG thêm việc mới vào mẫu số**, chỉ gộp và đóng.
+3. Mỗi 30 phút ghi dòng "DỰ BÁO: x/y lúc 06:30 = z%" vào TU-SONNET.md (tính theo tốc độ thật 30 phút gần nhất). Nếu dự báo <70%, tăng tiểu yêu (Q-57) và/hoặc chọn thêm việc cha đóng được.
+4. Việc vùng Đỏ/cần chủ (CL-01 C02/C04/C05, B-05, X-05...) bỏ qua, không dừng vòng; nhưng ghi vào `BAO-CAO-CHU.md` đúng việc nào cần chủ sáng mai để lên 100%.
+5. Chuỗi KV: A-07 CHƯA ĐẠT là thật (thiếu dump/debugger gắn T1 với dòng mã): giao tiểu yêu/Sonnet làm đúng phần thiếu nếu làm được trong VM thử, không thì để mở. Cũng nhớ W-02: APK trong T36test KHÁC qh9A (`8da22c0c` vs `47eb28e3`): cài qh9A lên T36test rồi quan sát lại (đã được phép).
+Không cần trả lời.

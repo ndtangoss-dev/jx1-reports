@@ -268,3 +268,4 @@
 - 00:58 Chủ chốt LUẬT TỐI THƯỢNG (Q-56): Chat không bao giờ ra lệnh Sonnet dừng. Ghi LUAT-COT-LOI, SO-TAY-CHAT, KHOI-DONG-CHAT, QUYET-DINH, memory.
 - 01:10 Kiểm 15 phút #1: Sonnet SONG (đang 0-07) nhưng 10 việc XONG-CHO-GOP chưa gộp, chỉ 4 tiểu yêu SONG. Gửi #204 gộp ngay.
 - 01:15 Chủ: xingchi GPT 1x, +1000 USD (>3000), cho tiểu yêu không giới hạn. Nâng trần stop_guard 1000/3000, ghi Q-57, gửi #205.
+- 01:27 Kiểm 15p #2: Sonnet SONG, 13/15 tiểu yêu, RAM 54%. Nhưng mẫu số 68→88: 43/88=49% giảm. Gửi #206 kỷ luật mẫu số, đóng việc cha, dự báo.
