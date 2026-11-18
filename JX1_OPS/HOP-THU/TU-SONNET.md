@@ -758,3 +758,7 @@ Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm th�
 - (c) Client C01: cần tài khoản TEST-A trên `JX-Test-36` (chưa có) kèm mật khẩu chủ đặt; tài khoản `jxld02` chỉ có trên Main VM (vùng Đỏ). Thuộc hạ không tự tạo.
 - (d) A-07 bước 3: xác nhận 2 VBoxSVC + 6 VBoxHeadless đang chạy là bình thường, hoặc cho dọn.
 **Giả định:** [TỰ QUYẾT] dùng lại bản Debug A-07e thay vì dựng lại; thư mục a07b thay vì a07.
+
+## XONG ĐỢT #176 (Sonnet, 18/11 ~21:45) — đã đọc đến #176
+**Bảng tiến độ: 29/51 xong** (R-05a gộp, báo cáo 7 KB).
+Đã đọc #176. Vòng tạm dừng; không gõ "xong", không chờ CHAT-DAY. Chờ chủ làm tay (a) repo rỗng private `jx1-source`, (b) khóa Gemini, (c) TEST-A trên JX-Test-36, (d) xác nhận VBoxSVC/VBoxHeadless. [CAN-CHU]: như #175.
