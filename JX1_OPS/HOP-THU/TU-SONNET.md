@@ -673,3 +673,14 @@ Còn: #154.4 (XUONG-JX1 bản đầy đủ, khu 6, M1, bản vá có tên); ch�
 **Còn lại / chưa kiểm:** chưa có việc nào xong hẳn (chờ `.done`); Tổng quản tự nuôi, tự báo XONG-CHO-GOP. Nếu một việc thành CHET-BO thì ghi lại, đừng đốt thêm. Mọi việc trên máy dev, không đụng VM. Không gọi claude.
 **Đề xuất:** coi astra đã chết; sửa `tong_quan.py` để đừng chuyển sang astra khi xingchi lỗi (hiện nhánh `CHAY-ASTRA` còn khi cầu dao mở) — chưa sửa, chờ Chat quyết. Cần chủ quyết: không. [CAN-CHU]: không. [HỎI-CHAT]: có sửa tong_quan.py bỏ nhánh astra không (khuyến nghị: có).
 **Giả định:** "ghi 1–2 dòng kết quả gộp" làm ở mục 2 trên.
+
+## XONG ĐỢT #164 (Sonnet, 18/11 ~18:35)
+**Đã làm:**
+1. (A.1) `TOOLS/tong_quan.py`: `astra_ok()` luôn False, tắt cả ba nhánh CHAY-ASTRA; dòng cũ giữ làm chú thích để bật lại. Khi xingchi lỗi hoặc cầu dao mở thì không chuyển sang astra. Kiểm cú pháp và `--dry` đều ổn.
+2. (A.2) Đã gộp theo thứ tự R-06a, R-06c, R-07a (báo cáo 8,7 KB / 7,1 KB / 9,0 KB, đều có TÓM TẮT). Thật: R-06a PARTIAL (5/5 báo cáo chuẩn hóa, có chỉ mục); R-06c chỉ xác minh phạm vi, phần asset/runtime CHƯA KIỂM; R-07a 5/5 chuẩn hóa, khớp bản gốc. Cả ba ghi "PARTIAL/chưa push" do tiểu yêu không ghi được `index.lock` ngoài worktree; Tổng quản đã commit hộ nên nội dung đã vào nhánh. Xung đột chỉ ở tệp TASKS, giữ bản của PM.
+3. (B) Tạo 6 việc N-01..N-06 (một tiểu yêu mỗi nhóm: Announcer; lọc/VIP/Forbid/IP; Birth role và ô liên quan; Max char/MAX Player/danh sách nhân vật; Add Money/EnterMap/Remove Role/Backup/Pause/Restart; liên kết tổng và ca thử client), đọc tĩnh, 4 câu hỏi mỗi nút, gắn nguồn, có mermaid. Tổng quản đã giao cả 6 (đang chạy trên sol).
+**Đang chạy / còn lại:** R-05b, R-05c, R-05d, R-07b và N-01..N-06. Tổng quản tự nuôi; việc nào xong phiên sau gộp, ghi kết quả thật 1–2 dòng, báo cáo rỗng/nhỏ không tính xong, CHẾT-BỎ thì chỉ ghi, không chạy lại.
+**Chưa làm (đợi N-01..N-06 xong):** gộp thành `DESIGN/NUT-EXE-TAC-DONG.md` (lời thường, mermaid, nhãn nguồn, cuối tệp mục "Muốn xác nhận trên client thật thì cần gì") và bổ sung `TRUYEN-TAI-VA-EXE-SERVER.md`. Không làm ca thử client, chờ chủ duyệt.
+**Cần chủ quyết:** không. [CAN-CHU]: không.
+**Giả định:** [TỰ QUYẾT] đợt này kết thúc khi đã giao việc, không đứng chờ tiểu yêu; đọc tĩnh, không đụng VM/exe.
+**Còn treo cũ:** #134 (chủ đăng nhập ndtan48), tạo nhân vật thứ 4 (cần client), Xưởng JX1 tạm dừng, `.gitignore` master (thấp, không push).
