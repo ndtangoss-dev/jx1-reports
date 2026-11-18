@@ -908,3 +908,8 @@ Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm th�
 - HG-08 (`HIEU-CONG-THUC-SAT-THUONG.md`, 132 dòng, 1 sơ đồ, 40 chỗ file:dòng) và HG-09 (`HIEU-NAP-VA-CHUYEN-BAN-DO.md`, 206 dòng, 1 sơ đồ, 45 chỗ file:dòng) → done [NGUỒN]; kiểm mẫu `KNpc.cpp:4494–4503` thật là bước kiểm trúng (CheckHitTarget) khớp mô tả — [ĐÃ KIỂM 1 mẫu].
 - KV-03: **P-02 CHƯA ĐẠT** (thiếu đo runtime thật) → P-02 giữ nguyên. Tổng kiểm KV: C-01, C-03, E-05, A-07, P-02 đều CHƯA ĐẠT.
 - TIẾN ĐỘ 45/88 = 51% (HG-08, HG-09 vào số xong).
+
+### 19/11 01:58 — gộp HG-06, HG-10, KV-05
+- HG-06 (`HIEU-BUFF-TRANG-THAI.md`, 175 dòng, 58 chỗ file:dòng) và HG-10 (`HIEU-CAP-KINH-NGHIEM.md`, 152 dòng, 44 chỗ file:dòng, 21 mục CHƯA KIỂM) → done [NGUỒN]; kiểm mẫu `KPlayer.cpp:2935` đúng là `AddExp` [ĐÃ KIỂM 1 mẫu].
+- KV-05: **B-02 CHƯA ĐẠT** (thiếu review Opus, thiếu đối chiếu source/binary của lần thử VM) → B-02 giữ nguyên. Còn 1 kiểm: KC-01.
+- TIẾN ĐỘ 47/88 = 53%, còn thiếu 15 để chạm 62/88 (70%); việc chốt kế: gộp HG-07, SO-07..11, HG-11..13, HG-03c, HG-05b (12 việc đang chạy). RAM trống >50%, 429 = 0.
