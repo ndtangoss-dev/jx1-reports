@@ -1,6 +1,6 @@
-# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-19 02:17, đừng sửa tay)
+# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-19 02:29, đừng sửa tay)
 
-ĐANG LÀM: HG-14, HG-15, HG-16, KC-01b, SO-16, SO-17, SO-18, SO-19, SO-20, SO-21, SO-22, SO-23, SO-24, T-01
+ĐANG LÀM: HG-14, HG-16, KC-01b, SO-17, SO-19, SO-23, T-01
 KẾ TIẾP: 0-08, B-05, D-02, E-04, E-06, P-01
 BỊ CHẶN: T-04
 
@@ -16,19 +16,17 @@ flowchart LR
   end
   subgraph S3["Chặng 3 tick và đồ họa"]
     HG_14["HG-14 chạy"]
-    HG_15["HG-15 chạy"]
     HG_16["HG-16 chạy"]
     KC_01b["KC-01b chạy"]
-    SO_16["SO-16 chạy"]
     SO_17["SO-17 chạy"]
-    SO_18["SO-18 chạy"]
     SO_19["SO-19 chạy"]
-    SO_20["SO-20 chạy"]
-    SO_21["SO-21 chạy"]
-    SO_22["SO-22 chạy"]
     SO_23["SO-23 chạy"]
-    SO_24["SO-24 chạy"]
-    SO_09["SO-09 chờ gộp"]
+    HG_15["HG-15 chờ gộp"]
+    SO_16["SO-16 chờ gộp"]
+    SO_20["SO-20 chờ gộp"]
+    SO_21["SO-21 chờ gộp"]
+    SO_22["SO-22 chờ gộp"]
+    SO_24["SO-24 chờ gộp"]
     0_08["0-08 chờ"]
     B_05["B-05 chờ"]
     D_02["D-02 chờ"]
@@ -40,4 +38,4 @@ flowchart LR
   end
 ```
 
-Tổng: 190 việc, 14 đang làm (+0 chết, 1 chờ gộp), 8 chờ, 1 bị chặn, 166 xong.
+Tổng: 190 việc, 7 đang làm (+0 chết, 6 chờ gộp), 8 chờ, 1 bị chặn, 168 xong.
