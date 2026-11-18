@@ -23,3 +23,9 @@ Phần còn thiếu của HG-16: nhánh TẠO hồ sơ nhân vật mới phía g
 ## Phạm vi và quyền đã duyệt
 - Chỉ đọc tĩnh, chỉ viết tệp đầu ra. Không sửa mã, không exe, VM, mạng, không đụng Main VM, không đọc khóa/dump tài khoản. Mỗi lần đọc <= 400 dòng.
 - Cuối tệp task ghi "## Kết quả" 3–5 dòng.
+
+## Kết quả
+- BLOCKED: đã lập `JX1_OPS/REPORTS/XD-HG16d.md`, nhưng chưa thể xác minh nhánh tạo hồ sơ mới.
+- Cả năm tệp gateway trong root C: được giao không tồn tại/không mở được trong phiên; không suy diễn bảng DB, kiểm tra hay thời điểm khởi tạo.
+- Đã thử `Test-Path` và fallback `Select-String`; `rg` không sẵn có. Không build/chạy VM, exe hoặc mạng.
+- Tiếp tục khi năm tệp nguồn đúng root có thể đọc; chưa commit/push.
