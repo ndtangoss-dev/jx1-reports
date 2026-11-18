@@ -3,8 +3,8 @@
 File ngắn. Chỉ ghi điều không có ở chỗ khác. Ai tiếp quản đọc file này sau `README.md`.
 
 ## Bản bàn giao hiện tại
-- Thời điểm: 2026-11-18 19:11 (hook PreCompact tự ghi đè)
-- Việc đang chạy (TASKS status running): (không)
+- Thời điểm: 2026-11-18 19:46 (hook PreCompact tự ghi đè)
+- Việc đang chạy (TASKS status running): K-02, K-02a, K-02b, K-02c, K-02d, K-02e
 - Thư cuối đã nhận: #157
 - Sắp nén ngữ cảnh: PM mới đọc LUAT-COT-LOI.md, TIEN-DO.md, THU-HIEN-HANH.md, QUYET-DINH.md rồi lịch sử chat; chi tiết việc dở ở dòng trạng thái cuối TRANG-THAI.md.
 
