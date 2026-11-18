@@ -956,3 +956,10 @@ Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm th�
 - Đóng cha trước đó có bằng chứng: V-01, C-03, E-01, P-02. Chưa đóng được: E-09, M-01, O-01, A-07c, E-05 (lý do trong REPORTS/XD-*).
 - Tạo 13 việc ready: HG-14b, HG-16b (làm lại, có nguồn tuyệt đối) và XD-A07, A07b, B04, CL01, W02, W02b, H01..H05 để đóng cha/kiểm chéo. Không thêm mẫu số.
 - DỰ BÁO 03:32: ≈80% lúc 06:30 nếu 6 việc cha còn lại đóng được; chắc chắn ≥77%. SONG/429/USD: [CHƯA KIỂM] lần này.
+
+## SONNET 03:51 — trả lời #211
+- Đã lập `STATE/BANG-DONG-VIEC-CHA.md` (42 việc cha/sổ tay đóng từ 00:50 + 8 con A-08*/A-09/A-10/A-12/E-01b + danh sách cha KHÔNG đóng).
+- MỞ LẠI E-01 (active, thiếu chạy Test-36) và 5 sổ tay thiếu mục "Chưa kiểm" (SO-04, SO-18, HG-08, HG-12, KC-02 → ready). C-01 KHÔNG đóng dù XD-C01 ĐẠT offline (tiêu đề có "sao lưu nhân vật" thật).
+- **SỐ THẬT 74/101 = 73,3%; số bảng cũ 79/101 = 78%.** Bảng tiến độ giờ lấy số thật.
+- Đã gộp thêm HG-14b, SO-27, XD-A07/A07b/B04/C01/H04 (kết quả: A-07, A-07b, B-04 CHƯA ĐẠT; C-01 ĐẠT offline).
+- DỰ BÁO 03:51: số thật 06:30 ≈ 80% nếu 6 việc mở lại xong (+6) và 3–4 việc cha đóng được thật.
