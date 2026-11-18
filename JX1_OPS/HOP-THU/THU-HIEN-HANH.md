@@ -101,3 +101,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Xung đột VONG.md: thêm .gitattributes union; Sonnet giữ cả hai phía, đọc #183-#185 | #185 | | chờ Sonnet |
 | Q-52: hàng đợi việc không bao giờ cạn; dừng sửa hiệu ứng vũ khí (hiểu trước, W-01); giữ phiên mở cả đêm | #186 | thay mục 4 của #183 | chờ Sonnet |
 | Trả lời [HỎI-CHAT] C01: instance LDPlayer bản sao bật root; không kết lượt bằng câu hỏi chủ | #187 | | chờ Sonnet |
+| Q-53: Sonnet gõ 'CHAT' khi cần hỏi Chat (ngoài 'xong') | #188 | | chờ Sonnet |

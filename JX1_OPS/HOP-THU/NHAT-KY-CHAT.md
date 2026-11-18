@@ -249,3 +249,4 @@
 - 22:30 VONG.md xung đột làm Sonnet dừng. Thêm .gitattributes merge=union, gửi #185. Chủ đồng ý Chat thức 3 lần (00:30, 03:30, 06:30).
 - 22:35 Chủ chốt 4 điều (Q-52). Lập HANG-DOI-VIEC.md, gửi #186: không hết việc, W-01 hiểu hiệu ứng vũ khí trước khi sửa, giữ phiên mở.
 - 22:30 Sonnet kết lượt hỏi chủ về root LDPlayer rồi đứng. Gửi #187: dùng instance bản sao bật root; nhắc không kết lượt bằng câu hỏi.
+- 22:42 Chủ chốt Q-53: Sonnet gõ 'CHAT' để đánh thức khi cần hỏi. Gửi #188. 'xong' = hết đợt, 'CHAT' = có câu hỏi.
