@@ -950,3 +950,9 @@ Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm th�
 - Đợt 4: 10 việc phụ ĐÓNG VIỆC CHA (XD-C01, C03, E05, E09, P02, E01, M01, V01, O01, A07c; KHÔNG vào mẫu số) + 4 việc Hiểu game mới SO-25..28 (vào mẫu số, ước ≤90 phút, trước 05:00). Cha chỉ đóng khi báo cáo XD-* có bằng chứng từng vế.
 - Q-57 bước: MAXKEY 3→4, MAXALL 15→20 (RAM trống 74%, 429 chưa đo lại [CHƯA KIỂM]). Hoàn tác: tong_quan.py.bak-209.
 - DỰ BÁO 03:05: nếu 14 việc đợt 4 xong + 3 cha đóng → khoảng 88/101 = 87%; thực tế thấp hơn nếu PARTIAL; mức chắc ≥75%.
+
+## SONNET 03:32 — đợt 5
+- Đã gộp SO-26, XD-P02 (done). Bảng: 78/101 xong (≈77%), 13 chạy, 10 chờ, 0 hỏng.
+- Đóng cha trước đó có bằng chứng: V-01, C-03, E-01, P-02. Chưa đóng được: E-09, M-01, O-01, A-07c, E-05 (lý do trong REPORTS/XD-*).
+- Tạo 13 việc ready: HG-14b, HG-16b (làm lại, có nguồn tuyệt đối) và XD-A07, A07b, B04, CL01, W02, W02b, H01..H05 để đóng cha/kiểm chéo. Không thêm mẫu số.
+- DỰ BÁO 03:32: ≈80% lúc 06:30 nếu 6 việc cha còn lại đóng được; chắc chắn ≥77%. SONG/429/USD: [CHƯA KIỂM] lần này.
