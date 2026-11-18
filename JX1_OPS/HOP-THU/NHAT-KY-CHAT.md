@@ -170,3 +170,4 @@
 - 10:15 Chủ yêu cầu rà đường dẫn, trí nhớ, bàn giao. Gửi #121 (5 lỗ hổng). Bổ sung KHOI-DONG-CHAT mục 5. Cập nhật sơ đồ artifact.
 - 10:14 Chủ hỏi Tổng quản/người gác khi đổi tài khoản. Gửi #122.
 - 10:20 Chủ hỏi chu kỳ chạy lại. Thấy lỗ hổng: xingchi sập >25 phút thì mọi việc CHET-BO. Gửi #123 (Chat quyết thay chủ).
+- 10:19 Kiểm: Sonnet nhận #120 (GO-CUA.log, stop_guard chặn), gõ cửa chạy (lịch 10:06 bị bắn thêm lúc 10:08 = Sonnet gõ). #114/#115/#117 xong. Tổng quản: NGHẼN 11 việc chết/10 phút, thử astra R-06a; TIEU-YEU.md đứng 10:06. Sonnet im từ 10:09. Gửi #124 [KHẨN] thử người gác lần 3 lúc 10:19.

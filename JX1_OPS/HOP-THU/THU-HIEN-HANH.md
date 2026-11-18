@@ -37,3 +37,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Lỗ hổng bàn giao: BAN-GIAO cũ, DUONG-DAN.md, gõ cửa khi đổi tài khoản, persona ngoài kho, khóa lộ | #121 | bổ sung #108 mục 4, L7 | chờ Sonnet |
 | Người gác báo [CAN-CHU] khi Claude Code mất đăng nhập/hết hạn mức | #122 | bổ sung #121 mục 3 | chờ Sonnet |
 | Lỗi xingchi không tính vào 3 lần chạy lại; cầu dao 3 trạng thái, thử 1 việc mỗi 10 phút | #123 | bổ sung #118 | chờ Sonnet |
+| [KHẨN] thử người gác lần 3; làm #121–#123; TIEU-YEU.md đứng 10:06 | #124 | — | chờ Sonnet |
