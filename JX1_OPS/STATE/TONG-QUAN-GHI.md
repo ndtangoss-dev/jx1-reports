@@ -277,3 +277,16 @@
 [TỔNG QUẢN 19/11 04:00] CAU DAO xingchi: DONG; HG-08 giao bang JX-K4; HG-12 giao bang JX-K3; KC-02 giao bang JX-K4; SO-04 giao bang JX-K4; SO-18 giao bang JX-K3
 [TỔNG QUẢN 19/11 04:07] CAU DAO xingchi: DONG; HG-08 giao bang JX-K4; HG-12 giao bang JX-K4; KC-02 giao bang JX-K3; SO-04 giao bang JX-K6; SO-33 giao bang JX-K6; SO-34 giao bang JX-K2; XD-B02 giao bang JX-K2; XD-O01b giao bang JX-K2
 [TỔNG QUẢN 19/11 04:13] CAU DAO xingchi: DONG; HG-12 giao bang JX-K4; KC-02 giao bang JX-K4; SO-29 giao bang JX-K4; SO-30 giao bang JX-K4; SO-31 giao bang JX-K3; SO-33 giao bang JX-K2; SO-34 giao bang JX-K3; XD-B02 giao bang JX-K2; XD-O01b giao bang JX-K6
+[TỔNG QUẢN 19/11 04:15] CAU DAO xingchi: DONG; HG-12 giao bang JX-K4; KC-02 giao bang JX-K3; SO-29 giao bang JX-K4; SO-30 giao bang JX-K4; SO-31 giao bang JX-K4; SO-33 giao bang JX-K3; SO-34 giao bang JX-K2; XD-B02 giao bang JX-K3; XD-O01b giao bang JX-K2
+[TỔNG QUẢN 19/11 04:15] CAU DAO xingchi: DONG
+[TỔNG QUẢN 19/11 04:17] CAU DAO xingchi: DONG
+[TỔNG QUẢN 19/11 04:19] CAU DAO xingchi: DONG
+[TỔNG QUẢN 19/11 04:21] CAU DAO xingchi: DONG
+[TỔNG QUẢN 19/11 04:23] CAU DAO xingchi: DONG
+[TỔNG QUẢN 19/11 04:25] CAU DAO xingchi: DONG
+[TỔNG QUẢN 19/11 04:27] CAU DAO xingchi: DONG
+[TỔNG QUẢN 19/11 04:29] CAU DAO xingchi: DONG
+[TỔNG QUẢN 19/11 04:31] CAU DAO xingchi: DONG
+[TỔNG QUẢN 19/11 04:33] CAU DAO xingchi: DONG
+[TỔNG QUẢN 19/11 04:35] CAU DAO xingchi: DONG
+[TỔNG QUẢN 19/11 04:37] CAU DAO xingchi: DONG
