@@ -1,11 +1,48 @@
+TÓM TẮT 5 DÒNG
+1. PARTIAL: hoàn tất khảo sát tĩnh các file tìm được; chưa xác định APK qh đầu tiên phát sinh lỗi hoặc khung động tác thực tế bị mất. [NGUỒN]
+2. Nghi vấn mạnh nhất: bộ lọc góc trong thay đổi `[clip2]` trả về trước mọi lệnh vẽ sét, có thể bỏ 10 lượt liên tiếp khi kiếm quay thật. [CHƯA KIỂM]
+3. Glow và sét có đường vẽ riêng: occlusion có thể che cả hai; bộ lọc góc chỉ trực tiếp bỏ sét, không đủ giải thích glow cũng mất. [NGUỒN]
+4. Shader APK qh7 khớp backup, nhưng native library APK không khớp các artifact build còn lưu; chưa chứng minh source hiện có chính là source APK. [NGUỒN]
+5. Chỉ tạo báo cáo này; không sửa client/canonical/APK/task, không build, chạy game/exe, kết nối mạng/VM, commit hoặc push. [CHƯA KIỂM]
+
 # H-14 — Mất khung hiệu ứng sáng/sét khi vung kiếm
 
-TÓM TẮT 5 DÒNG
-1. PARTIAL: hoàn tất khảo sát tĩnh các file tìm được; chưa xác định APK qh đầu tiên phát sinh lỗi hoặc khung động tác thực tế bị mất.
-2. Nghi vấn mạnh nhất: bộ lọc góc trong thay đổi `[clip2]` trả về trước mọi lệnh vẽ sét, có thể bỏ 10 lượt liên tiếp khi kiếm quay thật.
-3. Glow và sét có đường vẽ riêng: occlusion có thể che cả hai; bộ lọc góc chỉ trực tiếp bỏ sét, không đủ giải thích glow cũng mất.
-4. Shader APK qh7 khớp backup, nhưng native library APK không khớp các artifact build còn lưu; chưa chứng minh source hiện có chính là source APK.
-5. Chỉ tạo báo cáo này; không sửa client/canonical/APK/task, không build, chạy game/exe, kết nối mạng/VM, commit hoặc push.
+Loại: khảo sát
+Chủ đề: Tách đường vẽ hào quang và tia sét để tìm điều kiện có thể làm mất khung khi vung kiếm.
+Từ khóa: mất khung, hào quang vũ khí, tia sét, che lớp, glow, jxDrawBolts, KNpcResVN, H-14
+Trạng thái: PARTIAL — có khảo sát tĩnh và đối chiếu mẫu lịch sử; chưa xác định bản phát sinh hoặc khung mất khi chạy.
+Độ phủ: 8/11 nhóm của H-14; còn ba nhóm về bản phát sinh, tài nguyên khung và tái hiện thực tế.
+Liên quan: [H-04](H-04-hieu-ung-vu-khi.md), [J-04](J-04-lop-chong-nhan-vat.md), [J-05](J-05-cat-khung-animation.md), [BUG-002](../BUGS/BUG-002.md).
+Cần tôi quyết định: không
+
+```mermaid
+flowchart LR
+    A[Chọn khung và thứ tự lớp] --> B[Vẽ lớp nhân vật và vũ khí]
+    B --> C[Vẽ hào quang từng phần vũ khí]
+    B --> D[Chọn mặt nạ phần kiếm chính]
+    D --> E[Kiểm điều kiện vẽ sét]
+    E --> F[Vẽ các điểm sét hợp lệ]
+    C --> G[Vẽ lại lớp đứng sau để che]
+    F --> G
+```
+
+## Phạm vi và độ phủ
+
+`A` là client `D:/JX-build/qh9A`; ký hiệu `K/N/B/S/O` bên dưới là nguồn lịch sử của H-14. Mốc bản A chỉ xác nhận đoạn mã trên đĩa. Markdown dùng UTF-8; các mốc C++ được xác định từ định danh và câu lệnh.
+
+| Nhóm | Độ phủ | Nguồn và giới hạn |
+|---|---|---|
+| Khung vẽ, hướng và thứ tự lớp | Đã phủ | `A/Classes/vn/gamecore/KNpcResVN.cpp:21`, `:205`; `A/Classes/gamecore/KNpcResNode.cpp:612–627`. |
+| Hào quang và chọn phần kiếm chính | Đã phủ | `A/Classes/vn/gamecore/KNpcResVN.cpp:496–517`, `:540–568`, `:600–618`; điều kiện glow và sét khác nhau. |
+| P1 — Bộ lọc góc của bản lịch sử | Đã phủ ở H-14 | `K:15092–15099` là mốc H-14. Mã bản A tại `A/Classes/gamescene/KgameWorld.cpp:15135–15144` khác; xem phát hiện cuối file. |
+| P2 — Che phủ sau khi vẽ | Đã phủ | `A/Classes/vn/gamecore/KNpcResVN.cpp:619–626` vẽ lại các lớp đứng sau phần vũ khí; chưa đo phần thật sự bị che. |
+| P3 — Mặt nạ, lưới cắt và trục kiếm | Đã phủ | `A/Classes/gamescene/KgameWorld.cpp:15087–15114`, `:15116–15132`. |
+| P4 — Trạng thái cộng sáng và shader | Đã phủ | `A/Classes/vn/gamecore/KNpcResVN.cpp:604–616`, `A/Classes/gamescene/KgameWorld.cpp:15152`, `:15286–15287`; `A/Resources/Shaders/glow.fsh:5–6`. |
+| P5 — Nhịp pha hiệu ứng | Đã phủ | `A/Classes/gamescene/KgameWorld.cpp:15091`, `A/Classes/gamecore/JxPerf.h:12`; chưa đo FPS hay nhịp gọi thực tế. |
+| Đối chiếu mẫu lịch sử | Đã phủ ở H-14 | Giữ bảng snapshot, hash và mốc thay đổi trong thân. R-05c không mở backup/APK qh7. |
+| Xác định APK đầu tiên và source tương ứng | Chưa phủ | Thiếu bản dựng có thể đối chiếu và chứng cứ khớp thư viện native. |
+| Xác định item, hướng, động tác và khung SPR lỗi | Chưa phủ | Chưa có dữ liệu đúng khung triệu chứng. |
+| Tái hiện trên thiết bị, FPS, driver và tỷ lệ mất khung | Chưa phủ | Chưa chạy game hoặc thu dữ liệu một khung thực tế trong R-05c. |
 
 ## Phạm vi, đầu vào và định danh bằng chứng
 
@@ -332,3 +369,8 @@ Nguồn đo `TĨNH` = literal/công thức trong source nêu ở cột file:dòn
 | Lịch sử | runner size trước bolt8 | B/Classes/gamescene/KgameWorld.cpp.bak-bolt7:15179 | Lịch sử 4,2/2; hiện 3,78/1,8 | pixel | Độ dày halo/core | CẨN THẬN | DIFF |
 | Lịch sử | runner core gain trước bolt8 | B/Classes/gamescene/KgameWorld.cpp.bak-bolt7:15181 | Lịch sử 1,6; hiện 1,12 | hệ số | Độ sáng lõi | CẨN THẬN | DIFF |
 | Lịch sử | runner head size trước bolt8 | B/Classes/gamescene/KgameWorld.cpp.bak-bolt7:15191,15193 | Lịch sử 10/4,4; hiện 9/3,96 | pixel | Kích thước halo/core đầu tia | CẨN THẬN | DIFF |
+
+## Phát hiện khi chuẩn hóa
+
+- **Đã xác minh trên mã bản A:** `A/Classes/gamescene/KgameWorld.cpp:15135–15144` vẫn tính chênh góc và cập nhật trạng thái, nhưng không còn nhánh `return` do góc đổi nhanh như `K:15092–15099` của H-14. Các đường bỏ vẽ liên quan kích thước, mặt nạ và lưới vẫn có tại `:15087`, `:15093`, `:15102`, `:15132`. Nhận định P1 và mô phỏng 10 lượt giữ nguyên cho bản nguồn được H-14 khảo sát.
+- **Đã xác minh trên mã bản A:** `A/Classes/vn/gamecore/KNpcResVN.cpp:587–605` dùng 9 vị trí glow khi `g_jxA2` tắt; khi bật thì giữ tối đa 5 trước khi gộp vị trí trùng. Số lượt vẽ trên bản chạy và việc lỗi khung còn tái hiện ở A đều **chưa xác minh**.

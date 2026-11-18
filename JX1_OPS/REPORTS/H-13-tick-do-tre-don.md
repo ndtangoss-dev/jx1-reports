@@ -1,9 +1,49 @@
 TÓM TẮT 5 DÒNG
-1. DONE khảo sát tĩnh H-13 ngày 17/11/2026; toàn bộ runtime CHƯA ĐO, không chạy exe, không mạng/VM, không sửa mã hay cấu hình.
-2. Source gs001 mặc định 18 Hz; chế độ 36 chỉ thêm nửa bước di chuyển, logic chiến đấu và đồng hồ game vẫn giữ lượt đầy đủ 18 Hz theo thiết kế source.
-3. Đòn qua nhận lệnh → ACT/MOVE → phát chiêu ở 60% động tác → chờ/sinh đạn → va chạm → tính trúng/sát thương → đồng bộ HP → số nổi.
-4. Có gộp buffer và nhịp đồng bộ; SendBloodNo không phát gói; sentinel unsigned trong Heaven cần kiểm chứng trước khi quy độ trễ cho batching.
-5. Ưu tiên đo từng đoạn, kiểm tra flush/đồng bộ HP và phản hồi hình ảnh; không tăng tick; đã kèm ca TESTER, giới hạn bằng chứng và sổ thông số.
+1. DONE khảo sát tĩnh H-13 ngày 17/11/2026; toàn bộ runtime CHƯA ĐO, không chạy exe, không mạng/VM, không sửa mã hay cấu hình. [NGUỒN]
+2. Source gs001 mặc định 18 Hz; chế độ 36 chỉ thêm nửa bước di chuyển, logic chiến đấu và đồng hồ game vẫn giữ lượt đầy đủ 18 Hz theo thiết kế source. [NGUỒN]
+3. Đòn qua nhận lệnh → ACT/MOVE → phát chiêu ở 60% động tác → chờ/sinh đạn → va chạm → tính trúng/sát thương → đồng bộ HP → số nổi. [NGUỒN]
+4. Có gộp buffer và nhịp đồng bộ; SendBloodNo không phát gói; sentinel unsigned trong Heaven cần kiểm chứng trước khi quy độ trễ cho batching. [NGUỒN]
+5. Ưu tiên đo từng đoạn, kiểm tra flush/đồng bộ HP và phản hồi hình ảnh; không tăng tick; đã kèm ca TESTER, giới hạn bằng chứng và sổ thông số. (Chưa build, chạy exe hay VM.) [CHƯA KIỂM]
+
+# H-13 — Tick và độ trễ đòn
+
+Loại: khảo sát
+Chủ đề: Đường đi một đòn từ thao tác client đến số sát thương và các chặng phụ thuộc nhịp server.
+Từ khóa: nhịp xử lý, độ trễ đòn, số sát thương, LogicFps, JxHalfLoop, SyncNpcMin, gs001, H-13
+Trạng thái: DONE — hoàn thành phạm vi khảo sát tĩnh của H-13; chưa đo tick hay độ trễ thực tế.
+Độ phủ: 10/13 nhóm của H-13; ba nhóm xác minh trên bản chạy hoặc mở rộng đường xử lý chưa phủ.
+Liên quan: [B-04a](B-04a-bo-do-tick-bang-thong.md), [H-10](H-10-phim-tat-thanh-nut.md), [H-14](H-14-mat-khung-hieu-ung.md).
+Cần tôi quyết định: không
+
+```mermaid
+flowchart LR
+    A[Thao tác đòn trên client] --> B[Phản hồi động tác cục bộ]
+    A --> C[Lệnh đòn tới server]
+    C --> D[Chọn lệnh và tới khung phát chiêu]
+    D --> E[Đạn hoặc va chạm và tính sát thương]
+    E --> F[Đồng bộ HP]
+    F --> G[Số sát thương trên client]
+```
+
+## Phạm vi và độ phủ
+
+`A` là `D:/JX-build/qh9A`; `D` là gốc dữ liệu `gs` đã ghi dưới đây. Các trích dẫn `S/C/O` là nguồn của H-13; “đã phủ ở H-13” ghi rõ phần dẫn lại. Markdown dùng UTF-8; các mẫu bảng server được đối chiếu bằng tên cột ASCII và giá trị số.
+
+| Nhóm | Độ phủ | Nguồn và giới hạn |
+|---|---|---|
+| Nhịp gs001 và lượt nửa ở chế độ 36 | Đã phủ ở H-13 | `S/MultiServer/GameServer/KSOServer.cpp:91`, `:1445`; `S/Core/Src/CoreServerShell.cpp:2237–2238`, `:2263`. |
+| Đồng hồ, lịch xử lý và tải | Đã phủ ở H-13 | `S/Engine/Src/KTimer.cpp:131–135`, `S/Core/Src/KRegion.cpp:1127–1212`. Mô hình tải là ước lượng tĩnh. |
+| Client phản hồi động tác và gửi lệnh đòn | Đã phủ | `A/Classes/gamecore/KPlayer.cpp:513–514`; `A/Classes/gamecore/KProtocol.cpp:324–343`, `A/Classes/network/SocketClient.cpp:231`. |
+| Nhận lệnh, làn ACT/MOVE và khung phát chiêu | Đã phủ ở H-13 | `S/Core/Src/KProtocolProcess.cpp:5581`, `S/Core/Src/KNpc.cpp:6764`, `:3984–4016`. |
+| Chờ, sinh đạn, va chạm, tính trúng và sát thương | Đã phủ ở H-13 | `S/Core/Src/KSkills.cpp:1776`, `S/Core/Src/KMissle.cpp:408–414`, `:1851`, `S/Core/Src/KNpc.cpp:4494`, `:5719`. |
+| Đồng bộ HP và số nổi | Đã phủ | `S/Core/Src/KNpc.cpp:8193`, `:8212` dẫn lại từ H-13; `A/Classes/gamecore/KProtocolProcess.cpp:2529–2552` kiểm lại chênh HP cho NPC thuộc hai loại đã nêu. |
+| Gộp và đẩy buffer, SendBloodNo | Đã phủ ở H-13 | `S/MultiServer/Heaven/ServerStage.cpp:375`, `:429`, `:497`; `S/Core/Src/KNpc.cpp:14549–14554`. Ảnh hưởng của giá trị đánh dấu `-1` chưa đo. |
+| Đối chiếu client Coco và bản trong Folder | Đã phủ ở H-13 | Giữ bảng đối chiếu lịch sử về gói skill, phản hồi, bảo vệ lệnh di chuyển và số nổi. Bản A có `SKILL_MOVE_GUARD_TICKS` tại `A/Classes/gamecore/KProtocol.cpp:197`. |
+| Dữ liệu phụ thuộc frame | Đã phủ | Kiểm lại các mẫu tại `D/Settings/Skills.txt:2–4`, `D/Settings/Missles.txt:2–4`, `D/Settings/Npcs.txt:2`, `D/Settings/gamesetting.ini:58`, `D/Settings/gamesetting_gs001.ini:56`. |
+| Kế hoạch phân biệt các điểm chờ | Đã phủ ở H-13 | Mục ca TESTER và sổ thông số giữ nguyên; các ca chỉ là kế hoạch. |
+| Khớp source với binary và cấu hình hiệu lực | Chưa phủ | Chưa xác nhận `gs001.exe`, `heaven.dll`, client và giá trị `LogicFps` đang dùng. |
+| Tick, độ trễ, băng thông, tải và số lần đẩy gói thực tế | Chưa phủ | Chưa chạy phép đo trên bản game. |
+| Mọi loại đòn, nhánh HP và đường vẽ/nén ngoài đoạn khảo sát | Chưa phủ | Kết luận tĩnh không mở rộng tới toàn bộ PvP, diện rộng, sát thương theo thời gian hay mọi đường vẽ. |
 
 ## Phạm vi và nguồn
 
@@ -242,3 +282,8 @@ Mọi dòng là **đọc tĩnh, CHƯA ĐO**; không áp dụng thông số. Các
 | Client gốc số nổi | defSHOW_BLOOD_MOVE_SPEED | O/gamecore/KNpc.cpp:64, :10404 | 0.1 | độ cao/lượt theo biểu thức | tốc độ nổi | CẨN THẬN | source hoạt động |
 | Client gốc số nổi | BLOOD_LAYER_SPACING | O/gamecore/KNpc.cpp:65, :10404 | 12 | độ cao renderer | cách tầng | CẨN THẬN | source hoạt động |
 | Legacy comment | font PaintBlood cũ | O/gamecore/KNpc.cpp:10267; block :10228 đến :10287 | 14, không hoạt động | đơn vị font | không tác động đường vẽ đã đọc | KHÔNG | source comment |
+
+## Phát hiện khi chuẩn hóa
+
+- Mẫu `D/gs001_cfg.ini:21` có mục `[GameServer]`; không thấy dòng gán `LogicFps` trong tệp. Mốc 18/36 Hz ở thân báo cáo lấy từ C++ lịch sử H-13, không phải số đo hoặc giá trị đã đọc ở mẫu này. `KSOServer.cpp` không có tại các đường dẫn C++ đã kiểm dưới gốc dữ liệu `D`.
+- Các mẫu `WaitTime`, `LifeTime`, `AttackSpeed`, `CastSpeed` và `NpcAttackSpeed` đã đọc lại từ `D` khớp H-13. Giữ đơn vị gốc trong sổ; các quy đổi frame sang thời gian vẫn phụ thuộc giả định về nhịp logic.

@@ -1,10 +1,55 @@
-TÓM TẮT 1: DONE phạm vi khảo sát tĩnh H-11: đã lập danh sách nút, 12 khóa cài đặt, đường lưu local và đối chiếu gốc/Coco.
-TÓM TẮT 2: KuiOptions có 3 slider thấy được, 8 checkbox và 4 nút hành động trong game; zoom/Test GM bị ẩn, brightness chỉ là comment.
-TÓM TẮT 3: IsHidePlayer chỉ chặn đường vẽ phía client; B-02 lọc gói phía server, không có liên kết cài đặt trong đường UI đã đọc.
-TÓM TẮT 4: KuiOptions.cpp/.h giống SHA-256 ở hai cây; lỗi gán nhầm cờ ẩn kỹ năng và các bất nhất FPS/reset đã có ở bản gốc.
-TÓM TẮT 5: Không sửa mã, không build/test runtime, không mạng/VM/exe gói; đã lưu báo cáo local, chưa commit do index.lock bị từ chối, chưa push.
+TÓM TẮT 5 DÒNG
+TÓM TẮT 1: DONE phạm vi khảo sát tĩnh H-11: đã lập danh sách nút, 12 khóa cài đặt, đường lưu local và đối chiếu gốc/Coco. [NGUỒN]
+TÓM TẮT 2: KuiOptions có 3 slider thấy được, 8 checkbox và 4 nút hành động trong game; zoom/Test GM bị ẩn, brightness chỉ là comment. [NGUỒN]
+TÓM TẮT 3: IsHidePlayer chỉ chặn đường vẽ phía client; B-02 lọc gói phía server, không có liên kết cài đặt trong đường UI đã đọc. [NGUỒN]
+TÓM TẮT 4: KuiOptions.cpp/.h giống SHA-256 ở hai cây; lỗi gán nhầm cờ ẩn kỹ năng và các bất nhất FPS/reset đã có ở bản gốc. [NGUỒN]
+TÓM TẮT 5: Không sửa mã, không build/test runtime, không mạng/VM/exe gói; đã lưu báo cáo local, chưa commit do index.lock bị từ chối, chưa push. [CHƯA KIỂM]
 
 # H-11 — Nút hệ thống và cài đặt
+
+Loại: khảo sát
+Chủ đề: Các đường mở cài đặt, tùy chọn và nút hệ thống, cách lưu và quan hệ với bộ vẽ client.
+Từ khóa: nút hệ thống, cài đặt, ẩn người chơi, KuiOptions, KuiEscInfo, Setting.ini, IsHidePlayer, H-11
+Trạng thái: DONE — hoàn thành phạm vi khảo sát tĩnh của H-11; hiệu lực trên bản chạy chưa kiểm.
+Độ phủ: 12/12 khóa cài đặt; các nhóm nút, lưu và đối chiếu được kê riêng.
+Liên quan: [H-10](H-10-phim-tat-thanh-nut.md), [H-12](H-12-tu-dong-chien-dau.md), [B-02](B-02-loc-hien-thi.md).
+Cần tôi quyết định: không
+
+```mermaid
+flowchart LR
+    A[Nút cài đặt trong game hoặc lúc đăng nhập] --> B[KuiOptions]
+    B --> C[Thiết đặt client]
+    C --> D[Setting.ini]
+    C --> E[Bộ âm thanh và bộ vẽ client]
+    B --> F[Nút rời mạng ủy thác]
+    F --> G[Yêu cầu gửi server]
+```
+
+## Phạm vi và độ phủ
+
+Các dòng 1–12 là toàn bộ khóa đọc trong phần cài đặt hoạt động của `A/Classes/gameui/KuiOptions.cpp` (`A` = `D:/JX-build/qh9A`), không tính `Brightness` trong comment. Markdown và `KuiOptions.cpp` tại A đọc được bằng UTF-8. Tham chiếu O/C/S/V trong thân báo cáo là của H-11.
+
+| Phần tử | Độ phủ | Bằng chứng |
+|---|---|---|
+| 1. Nhạc nền (`MusicSound`) | Đã phủ | `A/Classes/gameui/KuiOptions.cpp:125` |
+| 2. Âm thanh (`SoundEffect`) | Đã phủ | `A/Classes/gameui/KuiOptions.cpp:145` |
+| 3. Thu phóng (`ScaleZoom`) | Đã phủ | `A/Classes/gameui/KuiOptions.cpp:166`, `:180` (ẩn) |
+| 4. Giới hạn FPS (`LimitFPS`) | Đã phủ | `A/Classes/gameui/KuiOptions.cpp:188`, `:462` |
+| 5. Ẩn NPC (`IsHideNPC`) | Đã phủ | `A/Classes/gameui/KuiOptions.cpp:228` |
+| 6. Ẩn người chơi (`IsHidePlayer`) | Đã phủ | `A/Classes/gameui/KuiOptions.cpp:241`; điều kiện vẽ ở `A/Classes/gamecore/KNpc.cpp:6067` |
+| 7. Ẩn tên (`IsHideName`) | Đã phủ | `A/Classes/gameui/KuiOptions.cpp:254` |
+| 8. Ẩn kỹ năng (`IsHideMis`) | Đã phủ | `A/Classes/gameui/KuiOptions.cpp:267`, `:488–489`; `A/Classes/gamecore/CoreDrawGameObj.cpp:181` |
+| 9. Người chơi giống nhau (`IsShowSamePlayer`) | Đã phủ | `A/Classes/gameui/KuiOptions.cpp:296` |
+| 10. Kỹ năng giống nhau (`IsShowSameSkill`) | Đã phủ | `A/Classes/gameui/KuiOptions.cpp:309`; hiệu lực hiển thị chưa được chứng minh. |
+| 11. Ẩn nhà và cây (`IsHideHouseAndTree`) | Đã phủ | `A/Classes/gameui/KuiOptions.cpp:280` |
+| 12. Tự khởi động auto (`IsOpenAutoPlay`) | Đã phủ | `A/Classes/gameui/KuiOptions.cpp:322`; phạm vi đánh tự động xem H-12. |
+| Điểm vào từ bánh răng, thanh người chơi và đăng nhập | Đã phủ | `A/Classes/vn/gamescence/KgameWorldVN.cpp:781`, `:1886`, `:7210`, `:7300`; `A/Classes/vn/gameui/Klogin_f_VN.cpp:460`. |
+| Bốn nút tác vụ | Đã phủ | Xóa thiết đặt, rời mạng ủy thác, đăng xuất, đóng lại: `A/Classes/gameui/KuiOptions.cpp:567`; ngoài game chỉ thêm nút đóng tại `:576`. |
+| Năm nút menu cũ | Đã phủ | Thoát, trợ giúp, tùy chọn, ủy thác và đóng: `A/Classes/gameui/KuiEscInfo.cpp:130`, `:147`, `:165`, `:183`, `:202`. Hành vi cụ thể nằm ở thân H-11. |
+| Mục ẩn hoặc comment | Đã phủ | Zoom ẩn, Test GM ẩn, Brightness trong comment tại `A/Classes/gameui/KuiOptions.cpp:180`, `:342`, `:204–213`. |
+| Lưu, reset và ủy thác | Đã phủ | `A/Classes/gameui/KuiOptions.cpp:399`, `:585`, `:655`; `A/Classes/engine/KIniFile.cpp:211`; `gs/script/system/player/offline.lua:6` xác nhận script có hàm `offline`. |
+| B-02 và đối chiếu gốc/Coco | Đã phủ ở H-11 | Giữ đối chiếu B-02 và bảng 16 tệp ở thân; hai file KuiOptions của A có SHA-256 trùng giá trị lịch sử H-11. |
+| UI, đường lưu thực tế, ủy thác và hiệu năng | Chưa phủ | Chưa thao tác game, đo FPS hoặc xác minh APK, file cài đặt của thiết bị và kết quả offline. |
 
 Ngày khảo sát: 2026-11-17. Trạng thái nội dung: **DONE (khảo sát tĩnh)**. Bằng chứng dưới đây là [NGUỒN]/[XÁC MINH TĨNH], không phải bằng chứng APK/server đang chạy. Build, mạng, VM và chạy exe không thuộc phạm vi được phép. Không dùng Python, không tạo script phụ, không ghi thông tin đăng nhập.
 
@@ -181,3 +226,8 @@ Chỉ chạy khi được PM cấp môi trường thử phù hợp; bảng này 
 - Git stage đã thử đúng hai đường dẫn task/báo cáo, thất bại: `fatal: Unable to create 'D:/jx1-reports/.git/worktrees/H-11/index.lock': Permission denied`. Không đổi quyền, không ghi Git metadata ngoài workspace, không thử vượt sandbox. **Chưa commit; không có commit SHA mới.**
 - **CHƯA PUSH**: người dùng cấm mạng thật và không yêu cầu push; không có lệnh mạng nào được chạy. Không có bằng chứng GitHub mới.
 - PM tiếp tục: review báo cáo, stage/commit đúng hai file từ môi trường có quyền; đề nghị tiêu đề `H-11: khảo sát tĩnh nút hệ thống và cài đặt`; chuyển F01–F07 sang task mã riêng và T01–T16 cho TESTER. Không cần khảo sát lại phần đã có bằng chứng; chỉ bổ sung runtime được phép.
+
+## Phát hiện khi chuẩn hóa
+
+- `A/Classes/gameui/KuiOptions.cpp` và `.h` có SHA-256 trùng các giá trị tại mục đối chiếu H-11. Các mốc bánh răng và callback ở `A/Classes/vn/gamescence/KgameWorldVN.cpp:781`, `:1886`, `:7210`, `:7300` được kiểm riêng; không thay cho mốc O/C ở lịch sử H-11.
+- Không dùng cây `D:/Android/b/Client` để kiểm lại đối chiếu lịch sử O/C. Việc xác nhận hàm `offline` trong script gốc không xác nhận trạng thái ủy thác đã lưu hoặc script được gọi trên bản đang chạy.

@@ -1,11 +1,44 @@
 TÓM TẮT 5 DÒNG
-1. PARTIAL — hoàn tất khảo sát tĩnh các đường gán/lưu/đồng bộ đã tìm thấy; phím nóng PC và hành vi runtime chưa xác minh.
-2. Thanh vật phẩm tham chiếu có 3 ô ở client VN và server; server lưu vị trí gán trong TDBItemData.iparamb5.
-3. Coco có 1 nút skill chính và tối đa 8 nút phụ; cấu hình giao diện được ghi/đọc ở client qua accinfo.ini.
-4. Skill trái hiện hành có c2s_skillsync; dữ liệu này không đồng nghĩa với lưu toàn bộ thanh skill trên server.
-5. Không sửa mã, không chạy game/exe, build, VM hay mạng; báo cáo kèm bảng bằng chứng và ca test chưa chạy.
+1. PARTIAL — hoàn tất khảo sát tĩnh các đường gán/lưu/đồng bộ đã tìm thấy; phím nóng PC và hành vi runtime chưa xác minh. [NGUỒN]
+2. Thanh vật phẩm tham chiếu có 3 ô ở client VN và server; server lưu vị trí gán trong TDBItemData.iparamb5. [NGUỒN]
+3. Coco có 1 nút skill chính và tối đa 8 nút phụ; cấu hình giao diện được ghi/đọc ở client qua accinfo.ini. [NGUỒN]
+4. Skill trái hiện hành có c2s_skillsync; dữ liệu này không đồng nghĩa với lưu toàn bộ thanh skill trên server. [NGUỒN]
+5. Không sửa mã, không chạy game/exe, build, VM hay mạng; báo cáo kèm bảng bằng chứng và ca test chưa chạy. [CHƯA KIỂM]
 
 # H-10 — Phím tắt và thanh nút
+
+Loại: khảo sát
+Chủ đề: Phạm vi phím tắt, ô vật phẩm và thanh kỹ năng của client VN, kèm đường lưu và đồng bộ.
+Từ khóa: phím tắt, thanh nút, vật phẩm nhanh, kỹ năng, accinfo.ini, c2s_skillsync, H-10
+Trạng thái: PARTIAL — đã khảo sát tĩnh; mapping phím PC, lưu bố cục trên server và hành vi khi chạy chưa được chứng minh.
+Độ phủ: 7/10 nhóm của H-10; ba nhóm chưa phủ được ghi riêng bên dưới.
+Liên quan: [H-11](H-11-nut-he-thong-cai-dat.md), [H-12](H-12-tu-dong-chien-dau.md), [Mục lục tri thức](../DESIGN/MUC-LUC-TRI-THUC.md).
+Cần tôi quyết định: không
+
+```mermaid
+flowchart LR
+    A[Thanh vật phẩm VN] --> B[Đồng bộ tham chiếu]
+    B --> C[Đường lưu role đã ghi ở H-10]
+    D[Thanh kỹ năng chính và phụ] --> E[accinfo.ini]
+    D --> F[Đồng bộ kỹ năng trái hiện hành]
+```
+
+## Phạm vi và độ phủ
+
+Bảng đếm theo nhóm khảo sát. `A` là `D:/JX-build/qh9A`; `C` và `S` bên dưới là gốc lịch sử của H-10. Mốc tại `A` được đọc tĩnh trong R-05c. Markdown dùng UTF-8; các mốc đọc lại dựa vào định danh ASCII, không dựa vào cách giải mã chú thích nguồn cũ.
+
+| Nhóm | Độ phủ | Nguồn và giới hạn |
+|---|---|---|
+| Room và thanh vật phẩm VN | Đã phủ | `A/Classes/gamecore/GameDataDef.h:94–96` là 3 × 1; `A/Classes/vn/gameui/KuiItemImmediaBoxVN.h:11` có 3 ô, `.cpp:314` duyệt các ô để làm mới UI. |
+| UI vật phẩm thường và mảng chọn kỹ năng trái/phải | Đã phủ | `A/Classes/gameui/KuiItemImmediaBox.h:92`, `A/Classes/gameui/KuiSortSkill_l.h:14`, `A/Classes/gameui/KuiSortSkill_r.h:16` đều có khai báo 9. Đây là số phần tử, chưa phải mapping bàn phím. |
+| Gán, xóa và dùng vật phẩm nhanh | Đã phủ | `A/Classes/gamecore/KPlayer.cpp:5773`, `:5790`; `A/Classes/vn/gameui/KuiItemImmediaBoxVN.cpp:263–269`. |
+| Đồng bộ, lưu và nạp tham chiếu vật phẩm phía server | Đã phủ ở H-10 | `S/gameserver/Sources/Core/Src/KItemList.cpp:10792`, `S/gameserver/Sources/Core/Src/KPlayerDBFuns.cpp:1124`, `:1681`. Chưa đối chiếu lại nguồn C++ server trong R-05c. |
+| Kỹ năng chính: nút, gán và lưu trên client | Đã phủ | Một nút tại `A/Classes/vn/gamescence/KgameWorldVN.cpp:594`; gán và lưu tại `:2459`, `:2627–2642`. |
+| Kỹ năng phụ: danh sách, gán và lưu trên client | Đã phủ | `A/Classes/gamescene/KgameWorld.h:32`, `:510` khai báo tối đa 8; `A/Classes/gamescene/KgameWorld.cpp:12770` gán hoặc gỡ, `A/Classes/vn/gamescence/KgameWorldVN.cpp:5236` đọc lại vào thanh nút. |
+| Đồng bộ kỹ năng trái đang chọn | Đã phủ | `A/Classes/gamecore/KPlayer.cpp:3047`, `:3079`; handler server theo H-10 tại `S/gameserver/Sources/Core/Src/KProtocolProcess.cpp:6147`. |
+| Mapping phím gốc PC | Chưa phủ | Thiếu nguồn UI PC có mapping; không đếm từ số ô. |
+| Lưu toàn bộ bố cục thanh kỹ năng trên server | Chưa phủ | H-10 chưa tìm thấy bằng chứng lưu bố cục; đồng bộ kỹ năng trái là phạm vi riêng. |
+| Đối chiếu bản chạy, dữ liệu role và gói tin thực | Chưa phủ | Các ca TESTER, kích thước gói và đối chiếu source với bản chạy chưa được thực hiện. |
 
 Ngày khảo sát: 17/11/2026. Nhánh đã kiểm tra: `task/H-10`. Trước khi ghi, `git status --short --branch` chỉ có `?? JX1_OPS/TASKS/H-10.md`; giữ nguyên nội dung task có sẵn và chỉ nối mục kết quả.
 
@@ -119,3 +152,8 @@ Chỉ chạy trong phiên kiểm thử được phê duyệt riêng, dùng nhân
 - Đã chạy: đọc source và kiểm tra nội dung báo cáo/diff. Chưa chạy: build, unit/integration test, game, packet capture, DB query, VM, mạng. Không tạo parser/script phụ, không dùng Python.
 - **Trạng thái: PARTIAL.** Phần còn thiếu là mapping PC và xác minh runtime; bước tiếp tục là cung cấp source UI PC đúng phiên bản hoặc giao TESTER chạy các ca trên trong môi trường được phép. Không bị chặn quyền đối với phần khảo sát tĩnh đã hoàn thành.
 - **Commit SHA: chưa có; chưa commit. Chưa push** vì task không yêu cầu commit/push. Chỉ ghi báo cáo này và nối `## Kết quả` vào file task; không sửa source hoặc file ngoài vùng H-10.
+
+## Phát hiện khi chuẩn hóa
+
+- Một số dòng đổi giữa gốc C của H-10 và bản A; ví dụ giới hạn nút phụ ở `A/Classes/gamescene/KgameWorld.h:32`, `:510`. Giữ nguyên mốc của H-10. Phạm vi chưa phủ rõ nhất là mapping phím PC; bản A được phép đọc là client Cocos.
+- Gốc `gs` được giao cho R-05c là dữ liệu server, không có `gameserver/Sources/Core/Src/KPlayerDBFuns.cpp` tại đường dẫn lịch sử. Đường lưu/nạp `iparamb5` tiếp tục được dẫn từ H-10.

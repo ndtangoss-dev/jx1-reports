@@ -1,9 +1,65 @@
 # TÓM TẮT 5 DÒNG
-1. DONE khảo sát tĩnh: Client2912/Coco có mã chọn mục tiêu, dùng skill, nhặt, uống thuốc, phù về và xử lý trong thành; chưa xác minh runtime.
-2. Đếm được 11 dòng phái auto (10 có skill), 25 dòng thuốc, 66 tuyến; bảng Skills có 1.720 dòng, 1.719 ID khác nhau.
-3. Auto người chơi nằm phía client; `Kautoai.cpp` có `#ifndef _SERVER`, còn nhánh player server chỉ xử lý trap trong đoạn đã kiểm.
-4. BOT E-02 có vòng săn offline, thiếu hồi máu/nhặt/phù về; AI NPC nên dùng lõi server, không chép nguyên UI auto người chơi.
-5. Chỉ ghi báo cáo và mục Kết quả task; không sửa mã, mạng/VM/exe/build/test; chưa commit/push vì không được yêu cầu và task cấm mạng thật.
+1. DONE khảo sát tĩnh: Client2912/Coco có mã chọn mục tiêu, dùng skill, nhặt, uống thuốc, phù về và xử lý trong thành; chưa xác minh runtime. [NGUỒN]
+2. Đếm được 11 dòng phái auto (10 có skill), 25 dòng thuốc, 66 tuyến; bảng Skills có 1.720 dòng, 1.719 ID khác nhau. [NGUỒN]
+3. Auto người chơi nằm phía client; `Kautoai.cpp` có `#ifndef _SERVER`, còn nhánh player server chỉ xử lý trap trong đoạn đã kiểm. [NGUỒN]
+4. BOT E-02 có vòng săn offline, thiếu hồi máu/nhặt/phù về; AI NPC nên dùng lõi server, không chép nguyên UI auto người chơi. [NGUỒN]
+5. Chỉ ghi báo cáo và mục Kết quả task; không sửa mã, mạng/VM/exe/build/test; chưa commit/push vì không được yêu cầu và task cấm mạng thật. [CHƯA KIỂM]
+
+# H-12 — Tự động chiến đấu
+
+Loại: khảo sát
+Chủ đề: Hành vi auto người chơi, dữ liệu đi kèm và đối chiếu với BOT và AI NPC.
+Từ khóa: tự động chiến đấu, nhặt đồ, uống thuốc, KuiAutoPlay, autobasic.ini, AutoplayId, E-02, H-12
+Trạng thái: DONE — hoàn thành phạm vi khảo sát tĩnh của H-12; chưa chạy auto trong game.
+Độ phủ: 12/13 nhóm chức năng và đối chiếu của H-12; 11/11 bảng và danh sách được đếm lại từ dữ liệu gốc.
+Liên quan: [H-10](H-10-phim-tat-thanh-nut.md), [H-11](H-11-nut-he-thong-cai-dat.md), [E-02](E-02-hanh-vi-bot.md), [A-09](A-09-dong-ban-nhieu-slot.md).
+Cần tôi quyết định: không
+
+```mermaid
+flowchart LR
+    A[Bật hoặc tắt ở giao diện] --> B[Kiểm điều kiện và dữ liệu]
+    B --> C[Cờ auto đồng bộ với server]
+    C --> D[Vòng cập nhật trên client]
+    D --> E[Chọn mục tiêu và dùng kỹ năng]
+    D --> F[Nhặt đồ và dùng thuốc]
+    D --> G[Phù về và xử lý trong thành]
+```
+
+## Phạm vi và độ phủ
+
+`A` là client `D:/JX-build/qh9A`; `G` là thư mục dữ liệu `gs` theo bảng gốc bên dưới. Mốc `A` và `G` trong mục này được đọc ở R-05c. C/S/F trong thân báo cáo giữ nguyên nghĩa lịch sử. “Đã phủ” chỉ tính phần khảo sát tĩnh hoặc độ phủ tài liệu đã chỉ rõ; không xác nhận chức năng chạy thành công.
+
+| Nhóm | Độ phủ | Bằng chứng |
+|---|---|---|
+| Chọn mục tiêu | Đã phủ | `A/Classes/gameui/KuiAutoPlay.cpp:5010`, `:5125`. |
+| Đi tới, đánh lặp và dùng kỹ năng hỗ trợ | Đã phủ | `A/Classes/gameui/KuiAutoPlay.cpp:4727`, `:6608`. |
+| Nhặt và lọc đồ | Đã phủ | `A/Classes/gameui/KuiAutoPlay.cpp:4353`; lọc thuộc phạm vi `:4119`. |
+| Dùng thuốc HP/MP | Đã phủ | `A/Classes/gameui/KuiAutoPlay.cpp:3580`; mẫu ngưỡng ở `A/Resources/jx50ai/autobasic.ini:2–7`. |
+| Phù về thành | Đã phủ | `A/Classes/gameui/KuiAutoPlay.cpp:3540`. |
+| Tiếp tế và quay lại bãi | Đã phủ | `A/Classes/gameui/KuiAutoPlay.cpp:6223`, `:5367`; mới có đường mã có điều kiện, chưa kiểm trọn vòng. |
+| Bật/tắt, đồng bộ cờ và dữ liệu cần nạp | Đã phủ | `A/Classes/gameui/KuiAutoPlay.cpp:6890`, `:6915`; `A/Classes/gamecore/KProtocol.cpp:478`, `:516`, `:522`, `:538`; `G/script/system/autoplayer.lua:7`, `:19`. |
+| Hồ sơ và mặc định | Đã phủ | `A/Classes/vn/gameui/UiglobaldataVN.cpp:9`; mẫu `A/Resources/jx50ai/autobasic.ini:25`, `:49`, `:71–73`. |
+| So sánh client gốc/Coco | Đã phủ ở H-12 | Bảng so sánh lịch sử bên dưới, chưa đối chiếu lại hai cây C/F. |
+| Giới hạn phía server | Đã phủ | `G/Settings/gamesetting.ini:479`, `G/Settings/gamesetting_gs001.ini:497`; điều kiện xử lý C++ dẫn lại từ H-12. |
+| So với BOT E-02 | Đã phủ ở H-12 | Đối chiếu `JX1_OPS/BOT/behavior.py:166`, `:200` ở mục 5 lịch sử; chưa chạy lại test E-02. |
+| Hảo hữu và AI NPC | Đã phủ ở H-12 | Tham chiếu companion tại `S/KNpcAI.cpp:3282` ở mục 6; đề xuất tái sử dụng ở mức giả thuyết. |
+| Hành vi trên bản chạy và hiệu lực tài nguyên | Chưa phủ | Chưa xác minh APK/PAK, profile thực, chạy nền, vòng tiếp tế, điều kiện server ngoài các đoạn đã khảo sát. |
+
+Đếm dòng có dữ liệu từ dấu tab và cột số: năm bảng `G` bỏ dòng tiêu đề, sáu danh sách `A` không có tiêu đề. Markdown dùng UTF-8. Phần chữ trong năm bảng `G` không giải được bằng UTF-8 nghiêm ngặt; chưa chốt bảng mã, không dùng phần chữ để đếm.
+
+| Bảng hoặc danh sách | Độ phủ | Số dòng và nguồn |
+|---|---|---|
+| Skill theo phái | Đã phủ | 11 dòng, 10 có skill; 40 ô khác 0 trong 7 cột skill: `G/Settings/Ai/skill.txt:1–12`. |
+| Thuốc | Đã phủ | 25 dòng: `G/Settings/item/potion.txt:1–26`. |
+| Tuyến | Đã phủ | 66 dòng: `G/Settings/autopathfindroutes.txt:1–67`. |
+| Kỹ năng | Đã phủ | 1.720 dòng, 1.719 ID khác nhau: `G/Settings/Skills.txt:1–1721`. |
+| Mẫu NPC | Đã phủ | 2.435 dòng: `G/Settings/Npcs.txt:1–2436`. |
+| Tên vật phẩm cần nhặt | Đã phủ | 2 dòng: `A/Resources/jx50ai/itemName.txt:1–2`. |
+| Tên vật phẩm không cần | Đã phủ | 11 dòng: `A/Resources/jx50ai/itemDontNeedName.txt:1–11`. |
+| Thuộc tính vật phẩm | Đã phủ | 40 dòng: `A/Resources/jx50ai/itemNameAttr.txt:1–40`. |
+| Tên vật phẩm để bán | Đã phủ | 13 dòng: `A/Resources/jx50ai/itemSellName.txt:1–13`. |
+| Tên vật phẩm để dùng | Đã phủ | 8 dòng: `A/Resources/jx50ai/itemUseName.txt:1–8`. |
+| Danh sách tránh tổ đội | Đã phủ | 0 dòng, tệp rỗng: `A/Resources/jx50ai/teamAvoidName.txt` (không có dòng 1). |
 
 ## Phạm vi, nguồn và cách đếm
 
@@ -260,3 +316,8 @@ nếu triển khai hảo hữu thì mở task riêng cho policy actor server và
 
 Commit SHA: chưa có; không stage/commit vì người dùng chưa yêu cầu. Push/GitHub link: chưa có;
 không push vì chưa được yêu cầu và task cấm mạng thật. Hai file đầu ra giữ local tại worktree.
+
+## Phát hiện khi chuẩn hóa
+
+- Kiểm lại `G/Settings/Ai/skill.txt:1–12`: dòng cuối có đủ cột nhưng cả bảy ô skill bằng 0. Bảng phạm vi tách số dòng khỏi số dòng có skill. Các số đếm trên G và sáu danh sách trên A khớp số đã ghi ở H-12; không suy ra tài nguyên được nạp khi chạy.
+- Đọc UTF-8 trực tiếp làm sai dấu hoặc hiện ký tự thay thế ở phần chữ của các bảng `G`. Chỉ đối chiếu dấu tab, tên cột ASCII và ID số; không chuyển mã tệp nguồn hoặc tên phái lịch sử.
