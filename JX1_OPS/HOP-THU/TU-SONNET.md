@@ -648,3 +648,17 @@ Còn: #154.4 (XUONG-JX1 bản đầy đủ, khu 6, M1, bản vá có tên); ch�
 **Không bấm:** Remove Role, 清除数据, 合区, 找回BAK, 恢复全部数据, Copy DB/MySQL, Exit, Close, Announcer kiểu *.
 **Giả định:** nút Restart không dùng (dùng JX-ChainUp để khởi lại Goddess như quy trình VM thử); chưa chụp ảnh từng bước ngoài ảnh Information.
 **Còn lại:** #154.4 XƯỞNG JX1 (tạm dừng); #134 (chủ đăng nhập ndtan48 rồi chạy lại ping); `.gitignore` master (thấp, không push). Cần chủ quyết: không. [CAN-CHU]: không.
+
+## XONG ĐỢT #162 (Sonnet, 18/11 ~17:37)
+**Đã làm (chỉ JX-Test-36; sao cfg trước vào `C:\JX\bak-162\`):**
+1. Goddess Backup + hộp: "All" một mình → hộp lỗi "请选择一项操作"; tích Body → không hộp, không thấy tệp mới trong `C:\JX` (nhân vật offline). Chưa thấy nó ghi ở đâu.
+2. Pause: bấm 1 lần nhãn đổi "Resume", bấm lại về "Pause"; không lỗi. Đã về trạng thái cũ.
+3. Bishop save setting (không đổi gì): `Bishop.cfg` ghi lại nhưng byte giống hệt (SHA-256 trùng).
+4. Filter account: thêm `zz_test_acc` bằng "+" chỉ vào màn hình; bấm "live" (=Save) mới ghi `accforbitlist.cfg` 112→143 byte (thêm `[accname_0]`/`name=zz_test_acc`); xóa mục rồi "live" → 112 byte, SHA-256 trùng bản sao.
+5. Birth role setting (Cap 2/Silver 100/gold 1, turn on): `Bishop.cfg` không đổi, tức chỉ nằm trong bộ nhớ Bishop; đã bỏ tích và xóa ô.
+6. EnterMap/IDMap: BỎ vì `.txt` Manual backup không có mã bản đồ của jxt36a.
+7. Goddess Restart: KHÔNG thấy tắt/mở lại; nối của Bishop/S3Relay/gs001 giữ nguyên nhưng Manual backup bị xám, nhãn Pause "停止中", 90 giây vẫn vậy. Không chờ lâu hơn; khôi phục bằng JX-ChainUp (Goddess mới) rồi Reconnect DB của Bishop (nối lại Bishop→5001, kèm một hộp "提示" lỗi cũ đã bấm OK).
+**Kiểm cuối 17:35:** 4 tệp cfg trùng SHA-256 bản sao; Bishop→5001/5002, S3Relay→5001, gs001→Bishop (56732) và S3Relay đều nối; gs001 SvrFPS 18/18 (17:33). Bảng THỬ + "Phát hiện thêm" đã cập nhật trong `DESIGN/BANG-NUT-EXE-SERVER.md`.
+**Không bấm:** mọi nút trong danh sách cấm của #162.
+**Giả định:** "Information tab" và Restart xem như đã báo ở #161; nút Birth role "other" không bấm (không rõ chức năng).
+**Còn lại:** tạo nhân vật thứ 4 (cần client, chờ chủ); Restart có hoàn tất nếu chờ lâu không (chưa biết); Xưởng JX1 tạm dừng; #134; `.gitignore` master (thấp). Cần chủ quyết: không. [CAN-CHU]: không.
