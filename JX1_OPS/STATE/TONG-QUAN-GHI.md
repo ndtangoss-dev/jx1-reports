@@ -293,3 +293,10 @@
 [TỔNG QUẢN 19/11 04:44] CAU DAO xingchi: DONG; XD-A07c giao bang JX-K3; XD-E05 giao bang JX-K4; XD-E09 giao bang JX-K4; XD-HG14 giao bang JX-K4
 [TỔNG QUẢN 19/11 04:46] CAU DAO xingchi: DONG; XD-A07c giao bang JX-K3; XD-E05 giao bang JX-K3; XD-E09 giao bang JX-K4; XD-M01 giao bang JX-K4; XD-W02c giao bang JX-K3
 [TỔNG QUẢN 19/11 04:56] CAU DAO xingchi: DONG; XD-B05 giao bang JX-K4; XD-D02 giao bang JX-K4; XD-E04 giao bang JX-K4; XD-E06 giao bang JX-K3; XD-P03 giao bang JX-K3
+<<<<<<< Updated upstream
+=======
+[TỔNG QUẢN 19/11 04:57] CAU DAO xingchi: DONG
+[TỔNG QUẢN 19/11 04:59] CAU DAO xingchi: DONG
+>>>>>>> Stashed changes
+[TỔNG QUẢN 19/11 05:01] CAU DAO xingchi: DONG
+[TỔNG QUẢN 19/11 05:03] CAU DAO xingchi: DONG
