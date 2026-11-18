@@ -867,3 +867,7 @@ Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm th�
 - #200-3 xong: hook `C:\Jx1CocoV3\.git\hooks\pre-commit` (không theo dõi bằng git) chặn commit tệp `KNpcRes*`, `KItem`, `KItemList`, `KItemRes*`, `jxwglow` (.cpp/.h) trừ khi `JX1_EFFECT_OK=1`. Thử bằng chỉ mục tạm: không cờ → exit 1 và in danh sách; có cờ → exit 0; đã hoàn tác tệp thử. Tắt hook: xóa tệp đó hoặc đặt `JX1_EFFECT_OK=1` cho lệnh commit.
 - #200-4 xong: `TOOLS/kiem_ld.py` (chỉ liệt kê cửa sổ LDPlayer đang hiện, không đóng/gỡ); Tổng quản gọi mỗi vòng, thêm dòng `LD-HIEN: n` vào SONNET-SONG.md nếu n>0. Hiện n=0. Lỗi kiểm không làm hỏng vòng.
 - #200-5 xong: mục "KHI NÀO DỄ DỪNG VÀ CÁCH CHẶN" (4 dòng) ghi vào LUAT-COT-LOI.md cuối L10. Cụm 1–5 xong; làm tiếp #193 còn lại → V-01 → M-01.
+
+### #200 tiếp (19/11) — V-01 kiểm chéo (một phần)
+- [NGUỒN] K-02-nhan-vat: `MAX_PART=24` (6 nhóm × 4 section) khớp `KNpcResNode.h:25`. A-05: `BroadCast` có thật, 185 lần/14 tệp trong `Core/Src` (KNpc.cpp 64). H-04, N-0x, R-07a chưa kiểm chéo.
+- #193 còn lại (SHA APK trong T36test, video H4/H5) cần bật T36test: chưa làm, chờ nhịp sau. Không sửa mã hiệu ứng vũ khí.
