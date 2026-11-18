@@ -1,6 +1,6 @@
-# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-18 13:11, đừng sửa tay)
+# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-18 13:13, đừng sửa tay)
 
-ĐANG LÀM: R-03, R-04b, R-05b, R-05c, R-05d, R-06c, R-07a
+ĐANG LÀM: R-03, R-05b, R-05d, R-06c, R-07a, R-07b
 KẾ TIẾP: K-02, R-06a
 BỊ CHẶN: A-07
 
@@ -10,20 +10,20 @@ Ba chặng #091: 1 hiểu game (chuẩn hóa) → 2 đường truyền + exe →
 flowchart LR
   subgraph S1["Chặng 1 hiểu game"]
     R_03["R-03 chạy"]
-    R_04b["R-04b chạy"]
     R_05b["R-05b chạy"]
-    R_05c["R-05c chạy"]
     R_05d["R-05d chạy"]
     R_06c["R-06c chạy"]
     R_07a["R-07a chạy"]
+    R_07b["R-07b chạy"]
     K_03a["K-03a chết"]
     K_03b["K-03b chết"]
     K_03c["K-03c chết"]
     K_03d["K-03d chết"]
     K_03e["K-03e chết"]
-    R_07b["R-07b chết"]
     R_04["R-04 chờ gộp"]
+    R_04b["R-04b chờ gộp"]
     R_05a["R-05a chờ gộp"]
+    R_05c["R-05c chờ gộp"]
     A_07["A-07 chặn"]
     K_02["K-02 chờ"]
     R_06a["R-06a chờ"]
@@ -38,4 +38,4 @@ flowchart LR
   end
 ```
 
-Tổng: 85 việc, 7 đang làm (+9 chết, 3 chờ gộp), 2 chờ, 1 bị chặn, 63 xong.
+Tổng: 85 việc, 6 đang làm (+8 chết, 5 chờ gộp), 2 chờ, 1 bị chặn, 63 xong.
