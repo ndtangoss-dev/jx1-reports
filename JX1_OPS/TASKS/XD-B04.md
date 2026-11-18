@@ -1,7 +1,7 @@
 ---
 id: XD-B04
 title: Đóng B-04: đối chiếu đo tick
-status: ready
+status: done
 level: L3
 agent: codex
 effort: high

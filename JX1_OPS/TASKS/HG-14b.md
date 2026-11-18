@@ -1,7 +1,7 @@
 ---
 id: HG-14b
 title: (lần 2) Hiểu game: trang bị, độ bền và sửa đồ
-status: ready
+status: done
 level: L3
 agent: codex
 effort: high

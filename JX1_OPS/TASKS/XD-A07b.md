@@ -1,7 +1,7 @@
 ---
 id: XD-A07b
 title: Đóng A-07b: rà cắt con trỏ 64→32
-status: ready
+status: done
 level: L3
 agent: codex
 effort: high

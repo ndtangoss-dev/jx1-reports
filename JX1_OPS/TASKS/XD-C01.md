@@ -1,7 +1,7 @@
 ---
 id: XD-C01
 title: Đóng C-01: kiểm tiêu chí jxadm
-status: running
+status: done
 level: L3
 agent: codex
 effort: high

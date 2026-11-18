@@ -1,7 +1,7 @@
 ---
 id: XD-H04
 title: Rà quyền đã duyệt trong TASKS
-status: ready
+status: done
 level: L3
 agent: codex
 effort: high

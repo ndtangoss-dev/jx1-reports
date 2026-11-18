@@ -1,7 +1,7 @@
 ---
 id: XD-A07
 title: Đóng A-07: đối chiếu tiêu chí
-status: ready
+status: done
 level: L3
 agent: codex
 effort: high
