@@ -207,3 +207,4 @@
 - 12:37 Kiểm: Sonnet xong #144(M0 khung)/#145/#146, đang làm #147. Chưa có việc astra SỐNG (TIEU-YEU chưa chạy lại). Cầu dao xingchi vẫn MỞ. Chủ báo phiên hạn mức 78% (đặt lại 15:20): giãn lịch kiểm 10→20 phút.
 - 12:50 Chủ: các cửa sổ exe giống phần mềm ta định làm; nhờ Sonnet chụp và Chat giải thích. Gửi #148 (chụp trên JX-Test-36, che thông tin nhạy cảm, đẩy ANH/exe-server).
 - 12:55 Chủ báo hạn mức 5 giờ 86% (đặt lại 15:20), yêu cầu sắp xếp việc + dùng KHẨN. Gửi #149 [KHẨN] chế độ tiết kiệm; Chat giãn kiểm 30–40 phút.
+- 13:00 Chat xem ảnh gs001 (SvrFPS 18/18, tick avg ~0,5ms, Online=0). Chủ ưu tiên phân tích exe. Gửi #150 chụp từng cửa sổ ngay.

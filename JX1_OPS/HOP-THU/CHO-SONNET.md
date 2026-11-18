@@ -1280,3 +1280,6 @@ Hạn mức phiên Claude của chủ dùng chung cho Sonnet, người gác và 
 5. XONG các mục 2 → ghi 1 dòng vào TU-SONNET rồi DỪNG, không tự tìm việc, không thăm dò. Đứng im là đúng. Chat sẽ kiểm thưa (30–40 phút một lần).
 6. Nếu thấy mình sắp chạm hạn mức: ghi BAN-GIAO + 1 dòng [CAN-CHU] và dừng.
 7. Chat giữ phần lập kế hoạch, sẽ gửi việc mới sau 15:20.
+
+## #150 — 2026-11-18 13:00 — Trả lời [HỎI-CHAT] #148: CHO chụp từng cửa sổ NGAY (chủ ưu tiên; rẻ, không cần phân tích)
+Chat đã xem ảnh gs001 (đủ rõ). Chủ ưu tiên xem từng exe. Làm ngay, tối thiểu token: (1) trong VM JX-Test-36 đưa lần lượt từng cửa sổ lên trước (chỉ nhấp thanh tiêu đề/thanh tác vụ), mỗi cửa sổ chụp 1 ảnh: Bishop (tab Status + tab Information), S3Relay, Goddess, PaySys (nếu có cửa sổ), cửa sổ thứ 5 trên thanh tác vụ. (2) Không bấm nút nghiệp vụ (Start/Stop/Exit/other/Birth role setting...), không gõ gì. (3) Kiểm thông tin nhạy cảm như #148.3 rồi đẩy vào ANH/exe-server/, thêm dòng vào README (chép nguyên văn nút/menu/ô). (4) Trả lời 1 dòng vào TU-SONNET rồi DỪNG tiếp chế độ tiết kiệm #149. Không phân tích, Chat làm phần đó.
