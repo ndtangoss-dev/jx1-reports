@@ -1,7 +1,7 @@
-# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-19 03:51, đừng sửa tay)
+# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-19 03:52, đừng sửa tay)
 
-ĐANG LÀM: HG-08, HG-16b, XD-CL01, XD-H01, XD-H03, XD-H05, XD-W02, XD-W02b
-KẾ TIẾP: 0-08, B-05, D-02, E-04, E-06, HG-12
+ĐANG LÀM: HG-08, HG-12, HG-16b, KC-02, SO-04, SO-18, XD-CL01, XD-H01, XD-H03, XD-H05, XD-W02, XD-W02b
+KẾ TIẾP: 0-08, B-05, D-02, E-04, E-06, P-01
 BỊ CHẶN: T-04
 
 Ba chặng #091: 1 hiểu game (chuẩn hóa) → 2 đường truyền + exe → 3 tick/độ phản hồi/đồ họa.
@@ -15,7 +15,11 @@ flowchart LR
   end
   subgraph S3["Chặng 3 tick và đồ họa"]
     HG_08["HG-08 chạy"]
+    HG_12["HG-12 chạy"]
     HG_16b["HG-16b chạy"]
+    KC_02["KC-02 chạy"]
+    SO_04["SO-04 chạy"]
+    SO_18["SO-18 chạy"]
     XD_CL01["XD-CL01 chạy"]
     XD_H01["XD-H01 chạy"]
     XD_H03["XD-H03 chạy"]
@@ -28,14 +32,10 @@ flowchart LR
     D_02["D-02 chờ"]
     E_04["E-04 chờ"]
     E_06["E-06 chờ"]
-    HG_12["HG-12 chờ"]
-    KC_02["KC-02 chờ"]
     P_01["P-01 chờ"]
     P_03["P-03 chờ"]
-    SO_04["SO-04 chờ"]
-    SO_18["SO-18 chờ"]
     X_05["X-05 chờ"]
   end
 ```
 
-Tổng: 217 việc, 8 đang làm (+0 chết, 1 chờ gộp), 12 chờ, 1 bị chặn, 195 xong.
+Tổng: 217 việc, 12 đang làm (+0 chết, 1 chờ gộp), 8 chờ, 1 bị chặn, 195 xong.
