@@ -24,3 +24,9 @@ Việc phụ cho **W-02**/HG-03b: đọc `ScriptFuns.cpp` quanh dòng ~10912 (Se
 - Không chạy exe lạ, không VM, không mạng, không Main VM, không đọc khóa/mật khẩu/dump tài khoản. Chỉ ghi tệp đầu ra ngoài ra không sửa gì.
 - Worktree của bạn có thể KHÔNG có mã nguồn game: đọc trực tiếp (chỉ đọc) client `C:/Jx1CocoV3/Folder/Client2912-20260116T044348Z-3-001/Client2912/Client/Classes` và server `C:/Jx1CocoV3/SwordOnline/SwordOnline/jxOnline/gameserver/Sources`; kho báo cáo ở D:/jx1-ops-wt/JX1_OPS (chỉ đọc).
 - Mỗi lần đọc <= ~400 dòng. Cuối tệp task ghi mục "## Kết quả" (3–5 dòng).
+
+## Kết quả
+- DONE khảo sát: đã viết `JX1_OPS/REPORTS/XD-W02c.md`, truy vết setter → dựng/gửi `s2c_syncequipitem` → bộ nhận → tooltip.
+- [THẤY] Server có gán `m_EnChance`; client có thể bỏ gán cấp khi không tìm ID hoặc vật phẩm không xanh/tím/vàng. Nguyên nhân runtime W-02 vẫn [CHƯA KIỂM].
+- Đề xuất đúng một phép thử Test-36: đồng bộ lại một vật phẩm sẵn có bằng delta=0, đối chiếu ID/cấp và nhánh client; chưa chạy thử, build, exe, VM hoặc mạng.
+- Không commit/push; Tổng quan commit hộ. Tệp nhịp `D:\JX-wt\XD-W02c.nhip` ngoài writable root nên chưa ghi; không vượt sandbox.
