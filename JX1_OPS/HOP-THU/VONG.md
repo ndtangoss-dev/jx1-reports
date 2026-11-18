@@ -2,3 +2,4 @@
 CHAT-DAY #166 18/11 19:35
 SONNET-XONG #166 19:28
 CHAT-DAY #167 18/11 19:38
+SONNET-XONG #167 19:35 (khong thay the chat trong Chrome: CAN-CHU)
