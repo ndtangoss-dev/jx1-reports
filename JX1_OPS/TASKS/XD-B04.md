@@ -24,3 +24,9 @@ Việc phụ đóng việc cha **B-04**. Đọc `TASKS/B-04.md`, báo cáo B-04a
 - Không chạy exe lạ, không VM, không mạng, không Main VM, không đọc khóa/mật khẩu/dump tài khoản. Chỉ ghi tệp đầu ra.
 - Worktree có thể KHÔNG có mã nguồn game: đọc trực tiếp (chỉ đọc) client `C:/Jx1CocoV3/Folder/Client2912-20260116T044348Z-3-001/Client2912/Client/Classes` và server `C:/Jx1CocoV3/SwordOnline/SwordOnline/jxOnline/gameserver/Sources`; kho báo cáo ở D:/jx1-ops-wt/JX1_OPS (chỉ đọc).
 - Mỗi lần đọc <= ~400 dòng. Cuối tệp task ghi mục "## Kết quả" (3–5 dòng).
+
+## Kết quả
+- DONE phần đối chiếu offline XD-B04: báo cáo `JX1_OPS/REPORTS/XD-B04.md`; 2 AST thành công, 47 ca CLI python -I (13 exit 0, 34 exit 2 dự kiến).
+- THẤY lỗi biên C15: tăng đúng 5% tick/byte bị FAIL do float; chỉ ghi nhận, không sửa mã hoặc đổi kết luận cũ.
+- CHƯA ĐẠT để đóng B-04: thiếu 9 pha đo thật đủ 100 bot + 20 người, ngưỡng duyệt và kiểm hồi quy F-01; không chạy VM/exe game/mạng/build.
+- Không commit/push theo yêu cầu; nhịp `D:\JX-wt\XD-B04.nhip` bị sandbox từ chối ghi; bàn giao local cho Tổng quan/PM.
