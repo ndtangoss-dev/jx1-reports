@@ -300,3 +300,5 @@
 >>>>>>> Stashed changes
 [TỔNG QUẢN 19/11 05:01] CAU DAO xingchi: DONG
 [TỔNG QUẢN 19/11 05:03] CAU DAO xingchi: DONG
+[TỔNG QUẢN 19/11 05:07] CAU DAO xingchi: DONG; HG-14 giao bang JX-K4; HG-16 giao bang JX-K4
+[TỔNG QUẢN 19/11 05:09] CAU DAO xingchi: DONG
