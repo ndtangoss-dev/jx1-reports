@@ -1,7 +1,7 @@
 ---
 id: XD-CL01
 title: Đóng CL-01: đối chiếu C01..C05
-status: running
+status: done
 level: L3
 agent: codex
 effort: high

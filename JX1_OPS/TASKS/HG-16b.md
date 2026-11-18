@@ -1,7 +1,7 @@
 ---
 id: HG-16b
 title: (lần 2) Hiểu game: sự kiện đăng nhập và khởi tạo nhân vật mới
-status: running
+status: done
 level: L3
 agent: codex
 effort: high

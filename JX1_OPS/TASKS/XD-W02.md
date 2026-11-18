@@ -1,7 +1,7 @@
 ---
 id: XD-W02
 title: W-02: vì sao cấp cường hóa Lua không tới client
-status: running
+status: done
 level: L3
 agent: codex
 effort: high
