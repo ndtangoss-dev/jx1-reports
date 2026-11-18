@@ -913,3 +913,7 @@ Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm th�
 - HG-06 (`HIEU-BUFF-TRANG-THAI.md`, 175 dòng, 58 chỗ file:dòng) và HG-10 (`HIEU-CAP-KINH-NGHIEM.md`, 152 dòng, 44 chỗ file:dòng, 21 mục CHƯA KIỂM) → done [NGUỒN]; kiểm mẫu `KPlayer.cpp:2935` đúng là `AddExp` [ĐÃ KIỂM 1 mẫu].
 - KV-05: **B-02 CHƯA ĐẠT** (thiếu review Opus, thiếu đối chiếu source/binary của lần thử VM) → B-02 giữ nguyên. Còn 1 kiểm: KC-01.
 - TIẾN ĐỘ 47/88 = 53%, còn thiếu 15 để chạm 62/88 (70%); việc chốt kế: gộp HG-07, SO-07..11, HG-11..13, HG-03c, HG-05b (12 việc đang chạy). RAM trống >50%, 429 = 0.
+
+### 19/11 02:05 — gộp HG-07
+- HG-07 (`HIEU-GIAO-DICH-KHO-DO.md`, 129 dòng, 24 chỗ file:dòng) → done [NGUỒN]; kiểm mẫu `KPlayer.cpp:6563` đúng là `TradeApplyOpen` [ĐÃ KIỂM 1 mẫu].
+- TIẾN ĐỘ 48/88 = 55%, còn thiếu 14 (62/88 = 70%). Dự báo (tốc độ thật 01:11→02:05: 5 việc mới xong/54 phút + 11 đang chạy): ~62–66/88 lúc 06:30 nếu giữ tốc độ; chưa đủ chắc, cần thêm việc cha đóng được.
