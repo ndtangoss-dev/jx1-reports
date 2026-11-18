@@ -154,7 +154,9 @@ def ttft_txt(i):
 
 
 def astra_ok(d, i):
-    return str(d.get('astra', '')).lower() == 'ok' or i.startswith('R-')   # #143: viec doc/viet bao cao
+    # #164: astra bi xingchi tra 404 (18/11) -> khong chuyen sang astra nua; bat lai bang cach doi dong tren
+    # return str(d.get('astra', '')).lower() == 'ok' or i.startswith('R-')   # #143: viec doc/viet bao cao
+    return False
 
 
 def set_astra(i):
