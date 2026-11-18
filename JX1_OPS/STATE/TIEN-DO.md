@@ -1,6 +1,6 @@
-# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-18 13:03, đừng sửa tay)
+# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-18 13:06, đừng sửa tay)
 
-ĐANG LÀM: R-02, R-03
+ĐANG LÀM: R-02, R-03, R-04, R-04b, R-05a
 KẾ TIẾP: K-02, R-06a
 BỊ CHẶN: A-07
 
@@ -11,14 +11,14 @@ flowchart LR
   subgraph S1["Chặng 1 hiểu game"]
     R_02["R-02 chạy"]
     R_03["R-03 chạy"]
+    R_04["R-04 chạy"]
+    R_04b["R-04b chạy"]
+    R_05a["R-05a chạy"]
     K_03a["K-03a chết"]
     K_03b["K-03b chết"]
     K_03c["K-03c chết"]
     K_03d["K-03d chết"]
     K_03e["K-03e chết"]
-    R_04["R-04 chết"]
-    R_04b["R-04b chết"]
-    R_05a["R-05a chết"]
     R_05b["R-05b chết"]
     R_05c["R-05c chết"]
     R_05d["R-05d chết"]
@@ -39,4 +39,4 @@ flowchart LR
   end
 ```
 
-Tổng: 85 việc, 2 đang làm (+17 chết, 1 chờ gộp), 2 chờ, 1 bị chặn, 62 xong.
+Tổng: 85 việc, 5 đang làm (+14 chết, 1 chờ gộp), 2 chờ, 1 bị chặn, 62 xong.
