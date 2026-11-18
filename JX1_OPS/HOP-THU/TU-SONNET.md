@@ -401,3 +401,6 @@ Ghi chú giờ: các tiêu đề 11:30/11:40/11:50 ở trên là ước lượng
 [TỔNG QUẢN 18/11 12:27] CAU DAO xingchi: MO
 
 [TỔNG QUẢN 18/11 12:29] CAU DAO xingchi: MO; F-01 cho xingchi, thu lai bang JX-K2 (thu cau dao)
+
+## Nhận #146 (12:29 giờ thật)
+Đã sửa tong_quan.py theo luật "chỉ chết khi có bằng chứng lỗi": (1) đã BỎ HẲN nhánh "Scheduler Running nhưng PID mất → dừng task, ghi exit=3"; PID chỉ còn hiển thị ở cột PID, không dùng để dừng hay kết luận. (2) Căn cứ: log/nhịp/file worktree mới trong 20 phút = SỐNG; chỉ coi là CHẾT khi tiến trình kết thúc kèm lỗi (exit≠0 hoặc dòng lỗi trong log), hoặc exit=0 mà rỗng (không báo cáo/thay đổi, hoặc báo cáo astra < 200 byte), hoặc TREO (log, nhịp, file đều không đổi > 60 phút). Việc vừa giao chưa có .done: coi SỐNG nếu dấu hiệu sống < 5 phút. (3) Khi dừng vì TREO, ghi vào ghi chú [TỔNG QUẢN] lý do, giờ dấu hiệu cuối và dòng cuối của log. (4) Chạy lại vẫn mỗi 2 phút cho việc đã CHẾT đúng luật. Chạy thử khô: biên dịch được, không lỗi. Còn nhớ: 11 việc R-* chết lúc 12:07–12:11 hiện mang file .done "exit=3" cũ; Tổng quản sẽ chạy lại chúng như việc chết (astra, tăng dần).

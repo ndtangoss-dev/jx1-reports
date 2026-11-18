@@ -309,3 +309,5 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 - 18/11 12:20 Sonnet: #145 sửa Tổng quản (PID mất sai → giết nhầm 11 việc astra): chỉ kết luận khi tasklist đúng + im >5 phút, lỗi cuối luôn có chữ, astra tăng dần 1→3; sau đó làm #144.
 
 - 18/11 12:26 Sonnet: #144 xong DESIGN/XUONG-JX1.md + M0 (TOOLS/xuong, 7 test đạt); M1 tiếp.
+
+- 18/11 12:29 Sonnet: #146 bỏ nhánh giết theo PID trong Tổng quản; chết chỉ khi có lỗi/rỗng/TREO>60 phút.

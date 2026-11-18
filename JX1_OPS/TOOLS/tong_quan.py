@@ -279,13 +279,7 @@ def main():
         if not os.path.isdir(wt) or st_of(i) not in ('running', 'dang chay', 'in_progress', 'doing', 'failed'):
             continue
         running = sched.get(i) == 'Running'
-        pa = pid_alive(pid_of(i))   # #132.2: SONG = PID con; Scheduler bao Running ma PID mat = chet
-        _act = max(mt(os.path.join(WT, i + '.codex.log')), mt(os.path.join(WT, i + '.nhip')))
-        if running and pa is False and (now() - _act) > 300:
-            running = False
-            ps("Stop-ScheduledTask -TaskName 'JX-codex-%s'" % i)
-            if done_exit(i) is None and not DRY:
-                open(os.path.join(WT, i + '.done'), 'w').write('exit=3 pid mat')
+        # #146: PID chi la can cu phu (hien o cot PID). KHONG dung PID de dung/giet tieu yeu.
         log = os.path.join(WT, i + '.codex.log')
         last = max(mt(log), mt(os.path.join(WT, i + '.nhip')), newest(wt))
         silent = (now() - last) / 60 if last else 9999
@@ -309,7 +303,8 @@ def main():
             level = 'SONG' if silent < IM else ('IM-NHUNG-SONG' if silent < TREO else 'TREO')
             if level == 'TREO' and not DRY:
                 ps("Stop-ScheduledTask -TaskName 'JX-codex-%s'" % i)
-                notes.append('%s TREO >%d phut, da dung de chay lai' % (i, TREO))
+                _ls = [x.strip() for x in tail.replace(chr(0), '').splitlines() if x.strip()]
+                notes.append('%s TREO >%d phut (log, nhip, file deu khong doi tu %s), da dung de chay lai; dong log cuoi: %s' % (i, TREO, time.strftime('%H:%M', time.localtime(last)) if last else '?', (_ls[-1][:160] if _ls else '(log trong)')))
                 open(os.path.join(WT, i + '.done'), 'w').write('exit=2 treo')
                 level = 'CHET'
         elif ex == 0 and not os.path.exists(os.path.join(wt, 'JX1_OPS', 'REPORTS', i + '.md')) and not subprocess.run(['git', '-C', wt, 'status', '--porcelain'], capture_output=True, text=True).stdout.strip():
@@ -329,7 +324,7 @@ def main():
                 r = subprocess.run(['git', '-C', wt, 'commit', '-qm', 'Tong quan commit ho %s' % i], capture_output=True)
         elif ex is None and not running and os.path.exists(os.path.join(wt, 'JX1_OPS', 'REPORTS', i + '.md')) and now() - last > 600:
             level = 'XONG-CHO-GOP'   # khong co .done (wrapper chet) nhung da co bao cao; PM xac nhan khi gop
-        elif ex is None and now() - last < 120:
+        elif ex is None and now() - last < 300:
             level = 'SONG'      # vua giao, chua kip thay
         else:
             level = 'CHET'
