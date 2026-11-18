@@ -1580,3 +1580,10 @@ Chủ dặn (23:58), đã vào `LUAT-COT-LOI.md` L11 và `QUYET-DINH.md` Q-55. L
 3. **Tiểu yêu ≥8, mỗi khóa tối đa 2:** sửa `tong_quan.py`/`chay_codex.ps1` (lưu bản cũ, ghi hoàn tác, `--dry`): trần 2 việc/khóa, mục tiêu ≥8 việc đồng thời trên ≥4 khóa (K2..K6, K5 giữ 2). Tạo đủ việc `ready` (≥12) đọc-tóm không-Đỏ: G-01..G-06, V-01, T-01 và việc "hiểu game" mới từ `HANG-DOI-VIEC.md`, để Tổng quản luôn đủ 8. Thay đổi này đè lên Q-51 mục (a) "K5/K6 tối đa 2" (giữ) và nâng song song lên 8. Theo dõi 429 sau khi tăng; 429 tăng bất thường thì báo Chat, đừng tự hạ.
 4. **RAM:** kiểm RAM máy thật ngay (và mỗi đợt): tổng/đã dùng/còn trống, top 8 tiến trình theo bộ nhớ. Bất thường (tiến trình >4 GB không giải thích được, RAM trống <15%) → [CAN-CHU] kèm tên tiến trình + số, gõ "CHAT". Không tự giết tiến trình lạ.
 5. LDPlayer `T36test` luôn ẩn (L11). Báo "đã đọc đến #195".
+
+## #196 Chat 19/11 00:10 — BẢNG TIẾN ĐỘ ĐANG CŨ: cập nhật trạng thái TASKS + thêm nhóm việc đêm nay (làm đầu mỗi đợt, rất ngắn)
+Chủ hỏi ai cập nhật bảng tiến độ. Phân vai (ghi vào `QUY-TRINH-VONG-TU-DONG.md` nếu chưa): **Sonnet** giữ dữ liệu: `TASKS/*.md` (status/status_note) và `TASKS/BACKLOG.md` luôn đúng thực tế, chạy `TOOLS/bang_tien_do.py` để sinh `index.html` (ghi `D:\JX-board\index.html` hoặc kho), ghi dòng "Bảng tiến độ: X/Y xong" trong mỗi XONG ĐỢT; **Chat** dựng lại/đăng artifact `7bUxS1STLrmZ6btueV3eiy` khi số đổi (và lúc 06:30). Hiện bản sinh vẫn 28/13/10/0 (như 21:00) vì dữ liệu nguồn cũ. Làm ngay:
+1. `0-05`: status → done (kho cục bộ `D:\jx1-source` + tag `baseline-20261116`, giữ cục bộ theo chủ), note cập nhật.
+2. `CL-01` → active (C01+C03 ĐẠT; C02/C04/C05 chờ chủ). `A-07` note: bước 1 đạt, dừng trước bước 3 (VBoxSVC), chờ. `X-05` giữ chờ (Xưởng tạm dừng).
+3. Thêm vào `BACKLOG.md` (nhóm "Bổ sung đêm 18–19/11") và tạo/cập nhật TASKS cho: W-01 (done), W-02 (active), G-01..G-06, V-01, T-01, M-01 (ready/backlog), K-02 (done), N-01..N-07 (done) nếu chưa có, để bảng đếm đúng, không có việc "mồ côi".
+4. Chạy lại `bang_tien_do.py`, ghi con số mới vào XONG ĐỢT và báo "đã đọc đến #196".
