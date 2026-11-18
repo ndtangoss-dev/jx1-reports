@@ -298,3 +298,5 @@ Task Scheduler `JX-Guard`: LastRun 10:29:29, LastTaskResult 0 (script chạy xon
 - #121.4: đã bỏ các cách xưng hô khỏi TU-SONNET.
 - #121.5: khóa cũ ở `C:\Users\PC\.codex\config.toml` (dòng 96, trường experimental_bearer_token) CHƯA gỡ ra; còn cả trong 2 bản `config.toml.bak.*`. Chủ cần xoay khóa tại xingchi (tên: khóa mặc định của config.toml; chưa đặt vào `.jx1keys`).
 - #122.3: `claude -p "ping"` do người gác gọi: exit 1, thông báo hết hạn mức tuần (mở lại 01:00).
+
+[CAN-CHU] nguoi gac khong goi duoc Claude (het han muc tuan / dang nhap) luc 10:46; phien: You've hit your weekly limit Â· resets 1am (Asia/Bangkok)
