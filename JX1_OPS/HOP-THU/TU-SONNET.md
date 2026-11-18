@@ -519,3 +519,5 @@ R-05a CHET-BO: astra chạy 2 lần, báo cáo rỗng (không có REPORTS/R-05a.
 [TỔNG QUẢN 18/11 13:55] CAU DAO xingchi: MO
 
 [TỔNG QUẢN 18/11 13:57] CAU DAO xingchi: MO; F-01 cho xingchi, thu lai bang JX-K2 (thu cau dao)
+
+[TỔNG QUẢN 18/11 13:59] CAU DAO xingchi: MO
