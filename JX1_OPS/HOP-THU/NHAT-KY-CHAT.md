@@ -229,3 +229,4 @@
 - 19:38 Sonnet báo không điều khiển được Claude desktop; chủ cho dùng Claude in Chrome. Sửa quy trình, gửi #167.
 - 19:35 Chủ xác nhận cửa sổ Tổng quản đã hết nháy (pythonw).
 - 19:56 Chủ gõ 'xong (thử vòng)' tay; Sonnet #167: không có thẻ chat trong Chrome. Đọc kho xác nhận. Gửi #168 (K-02, R-04b/R-05a, A-07, đề xuất thử client). Vòng tạm thủ công.
+- 19:56 SỬA: tin 'xong (thử vòng)' là do SONNET gõ qua Chrome (#167b thành công), không phải chủ. Vòng tự động thông. #168 sửa lại cho Sonnet chờ CHAT-DAY rồi làm tiếp.

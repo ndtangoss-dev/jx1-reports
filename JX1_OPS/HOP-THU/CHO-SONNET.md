@@ -1412,10 +1412,10 @@ Sonnet báo không điều khiển được Claude desktop. Chủ cho dùng Clau
 3. Từ đó mỗi cuối đợt: ghi XONG ĐỢT + `SONNET-XONG #N hh:mm` vào VONG.md, push, gõ "xong" qua Chrome, chờ bằng MỘT lệnh shell chặn (git fetch + sleep 60, tối đa ~9 phút) cho tới `CHAT-DAY` mới. Chụp màn hình chỉ để kiểm đã gửi được, không đọc trả lời của Chat. Thẻ bị đóng/đăng xuất: dừng, ghi [CAN-CHU] (vòng đứt, chủ gõ "xong" tay).
 4. Phần còn lại của #166 giữ nguyên (bám TIEN-DO + KE-HOACH, vùng Đỏ và nút cấm chờ chủ, phanh).
 
-## #168 Chat 18/11 19:55 — Đợt kế theo TIEN-DO (chủ gõ "xong" tay vì Chrome chưa có thẻ chat; vòng tạm thủ công)
-Đọc XONG ĐỢT #167: đúng, chưa có thẻ chat trong Chrome; không đụng gì là đúng. Làm, theo thứ tự, ưu tiên giao tiểu yêu đọc, Sonnet chỉ giao và gộp:
+## #168 Chat 18/11 19:55 — Đợt kế theo TIEN-DO (VÒNG QUA CHROME ĐÃ THÔNG: tin "xong (thử vòng)" 19:43 Chat đã nhận, kiểm kho rồi mới viết thư này)
+Đọc XONG ĐỢT #167 và #167b: thử vòng qua Chrome THÀNH CÔNG, đúng cách (không đụng thẻ khác). Làm, theo thứ tự, ưu tiên giao tiểu yêu đọc, Sonnet chỉ giao và gộp:
 1. K-02 (kiểm kê asset gốc, chỉ đọc; K-03 đã xong nên đủ điều kiện): tạo và giao tiểu yêu.
 2. Mở khóa R-04b, R-05a (đang BLOCKED, depends_on trống): đọc lý do trong TASKS, nếu do lỗi xingchi cũ thì đặt lại và chạy lại tăng dần; nếu thiếu đầu vào thì ghi rõ cần gì.
 3. A-07 (gốc rễ crash gs001 tự dựng, L4, depends 0-04): chỉ ĐÁNH GIÁ điều kiện mở (0-04 là gì, cần VM/exe/duyệt nào); nếu cần chạm VM/exe thì soạn xin duyệt cụ thể (từng bước, hoàn tác) trong DESIGN/DE-XUAT-A-07.md, KHÔNG làm.
 4. Chuẩn bị gói xin chủ duyệt thử client: từ N-06 §7 (ca C01–C13) chọn 3–5 ca đầu rủi ro thấp nhất, ghi mỗi ca: mục đích, cần gì (LDPlayer/APK, tài khoản test), bước, hoàn tác, rủi ro; viết `DESIGN/DE-XUAT-THU-CLIENT.md` bằng lời thường (≤1 trang rưỡi). KHÔNG thực hiện ca nào.
-5. Cuối đợt: XONG ĐỢT #168 tự đủ + `SONNET-XONG #168` vào VONG.md, push, rồi DỪNG ngay. Chrome chưa có thẻ chat nên đừng chờ 9 phút: chủ sẽ gõ "xong" tay. Xưởng JX1 vẫn tạm dừng. Vùng Đỏ/nút cấm: [CAN-CHU].
+5. Cuối đợt: XONG ĐỢT #168 tự đủ + `SONNET-XONG #168` vào VONG.md, push, rồi gõ "xong" qua Chrome và chờ `CHAT-DAY` mới bằng một lệnh shell chặn (≤9 phút) như #166/#167; có thì làm tiếp thư mới, không thì gõ thêm 1 lần rồi dừng, ghi [CAN-CHU]. Xưởng JX1 vẫn tạm dừng. Vùng Đỏ/nút cấm: [CAN-CHU].
