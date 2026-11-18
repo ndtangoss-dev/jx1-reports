@@ -10,11 +10,11 @@ File này ngắn có chủ ý. Đọc nó: đầu mỗi phiên, sau mỗi lần 
 ## L2. Không treo
 - Không bao giờ kết thúc lượt bằng câu hỏi, không dùng hộp chọn (Q-21). Việc làm lại được: tự quyết sau 10 phút, ghi `[TỰ QUYẾT]`. Chỉ chờ chủ với: Main VM, tiền vượt trần, khóa ngoài 20 khóa đã duyệt, xóa dữ liệu, phát APK mới cho chủ test. Đang chờ thì vẫn làm việc khác.
 - Thẻ `[DUNG-CAN-CHU]` hiệu lực tối đa 60 phút; việc xong thì xóa ngay.
-- Nhịp: cứ 30 phút một dòng trạng thái + commit + push, kể cả khi chưa có gì mới. Im > 60 phút là lỗi quy trình.
+- Làm theo ĐỢT (Q-48, `STATE/QUY-TRINH-KHONG-NGUOI-GAC.md`): đọc hòm thư một lần, làm hết, ghi MỘT báo cáo "XONG ĐỢT #N" vào TU-SONNET.md, push, dừng. Không nhịp gác, không dòng chờ.
 - KẸT CẦN QUYẾT: không hỏi chủ, không đứng chờ. Ghi mục `[HỎI-CHAT]` trong `HOP-THU/TU-SONNET.md` (vấn đề, các phương án, phương án khuyến nghị), push, rồi làm việc khác. Chat trả lời trong `CHO-SONNET.md` (thường ≤10 phút khi có việc mở, tối đa 30 phút) và ghi "Chat quyết thay chủ" vào QUYET-DINH. Quá 30 phút chưa có trả lời: làm theo phương án khuyến nghị nếu làm lại được. Chỉ vùng Đỏ mới lên chủ (qua Chat).
-- GÕ CỬA CHAT: sau khi push `[HỎI-CHAT]` hoặc báo việc quan trọng, nếu phiên Sonnet có công cụ fire_trigger (claude-code-remote) thì bấm trigger ghi ở dòng "GÕ CỬA" trong `HOP-THU/SO-TAY-CHAT.md` để đánh thức Chat ngay. Không có công cụ thì thôi, Chat vẫn kiểm định kỳ. BẮT BUỘC gõ cửa sau mỗi [HỎI-CHAT], [TỔNG QUẢN], báo cáo trả lời thư; ghi `STATE/GO-CUA.log`; stop_guard chặn dừng nếu chưa gõ (#120).
+- KHÔNG gõ cửa, không người gác (Q-48). [HỎI-CHAT] ghi trong báo cáo đợt, không chặn đợt: nêu giả định, làm tiếp phần độc lập.
 - KÉO HÒM THƯ SAU MỖI MỤC (không chờ xong cả thư): `git pull` jx1-ops; có thư mới thì đọc; thư mới quan trọng hơn thì làm trước. Thư tiêu đề có `[KHẨN]`: dừng mục đang làm ở điểm an toàn gần nhất và làm ngay; người gác thấy `[KHẨN]` thì đánh thức Sonnet.
-- Có người gác ngoài Sonnet (script lịch 5 phút, không tốn token; khóa theo tiến trình, trần 15 phút; [KHẨN] bỏ qua khóa): im > 30 phút thì gọi tiếp phiên với lệnh "đọc hòm thư, làm tiếp". Tiểu yêu chết thì người gác/Tổng quản tự chạy lại tối đa 2 lần, chờ tăng dần.
+- Không có người gác (JX-Guard đã tắt; khôi phục: `schtasks /Change /TN JX-Guard /ENABLE`). Tổng quản chạy lịch Windows, chỉ ghi tệp, không gọi claude; tiểu yêu chết thì Tổng quản tự chạy lại.
 
 ## L3. Chống quên khi bị nén
 - TRƯỚC khi nén: ghi "ĐANG LÀM DỞ" (việc, bước, lệnh chạy lại) vào `STATE/TRANG-THAI.md`, push.
@@ -38,11 +38,11 @@ File này ngắn có chủ ý. Đọc nó: đầu mỗi phiên, sau mỗi lần 
 ## L9. Tổng quản là người duy nhất quản tiểu yêu (chủ chốt 18/11 09:47)
 - Sonnet KHÔNG giao tay tiểu yêu nữa (không gọi chay_codex.ps1 trực tiếp). Sonnet chỉ viết TASKS/<ID>.md (status ready) để Tổng quản giao.
 - Tổng quản làm hết: giao việc, rải khóa (≤3/khóa, hết chỗ báo CẦN KHÓA MỚI), xét sống/im/treo/chết, chạy lại khi chết/429 (chờ tăng dần), commit hộ khi xong, cập nhật status.
-- Người gác chỉ trông: Sonnet im, thư [KHẨN], và Tổng quản còn chạy (chết thì bật lại). Người gác không đụng tiểu yêu.
+- Tổng quản ghi sự kiện vào `STATE/TONG-QUAN-GHI.md`; Sonnet đọc khi bắt đầu đợt.
 - Khi chủ (qua Chat) hỏi tình hình tiểu yêu: Sonnet lấy báo cáo của Tổng quản (`STATE/TIEN-DO.md` + bảng tiểu yêu do Tổng quản sinh) rồi báo lại, không tự đoán.
 
 ## L7. Kế thừa khi đổi tài khoản
-- MẤT KẾT NỐI CHAT (#121.3): gõ cửa chỉ chạy khi Sonnet và Chat cùng tài khoản Claude. Gõ cửa lỗi 2 lần liền (401/403/404): ghi dòng `MAT-KET-NOI-CHAT` vào `STATE/GO-CUA.log`; `stop_guard` coi như đã gõ, vẫn làm việc, `[HỎI-CHAT]` tự quyết sau 30 phút. Đổi tài khoản: đăng nhập lại Claude Code, `/tiep-tuc`, chờ dòng GÕ CỬA mới của Chat.
+- Gõ cửa đã bỏ (Q-48); không cần ghi GO-CUA.log.
 - Chat mới: đọc `HOP-THU/KHOI-DONG-CHAT.md`. Sonnet mới: đăng nhập lại Claude Code rồi `/tiep-tuc`; file này tự hiện qua hook.
 
 ## L6. Ưu tiên (#091)

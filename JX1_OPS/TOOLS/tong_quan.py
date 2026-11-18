@@ -509,9 +509,7 @@ def main():
             _lanq['#gop'] = []
         save(os.path.join(GD, 'lan.json'), _lanq)
         _txt = '[TỔNG QUẢN %s] ' % time.strftime('%d/%m %H:%M') + '; '.join(notes)
-        if notes and _imp:
-            TQ_NOTE[0] = _txt
-        elif notes:   # dong thuong: ghi vao file khong ai doc, khong danh thuc nguoi gac
+        if notes:   # #158/#159: moi ghi chu (ke ca su kien) chi vao TONG-QUAN-GHI.md, Sonnet doc khi bat dau dot; KHONG ghi TU-SONNET, khong danh thuc ai
             try:
                 open(os.path.join(ROOT, 'STATE', 'TONG-QUAN-GHI.md'), 'a', encoding='utf-8', newline='\n').write(_txt + '\n')
             except OSError:
@@ -541,7 +539,7 @@ def push_state(tq_note=None):
         if not os.path.isdir(tq):
             g(repo, 'worktree', 'add', '--detach', tq, 'origin/jx1-ops')
         g(tq, 'reset', '-q', '--hard', 'origin/jx1-ops')
-        files = ['STATE/TIEU-YEU.md', 'STATE/KHOA-XINGCHI.md', 'STATE/TIEN-DO.md']
+        files = ['STATE/TIEU-YEU.md', 'STATE/KHOA-XINGCHI.md', 'STATE/TIEN-DO.md'] + (['STATE/TONG-QUAN-GHI.md'] if os.path.exists(os.path.join(ROOT, 'STATE', 'TONG-QUAN-GHI.md')) else [])
         for f in files:
             shutil.copyfile(os.path.join(ROOT, f), os.path.join(tq, 'JX1_OPS', f))
         if tq_note:

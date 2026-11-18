@@ -111,23 +111,14 @@ def main():
                 pass
             print(json.dumps({'decision': 'block', 'reason': 'LUAT-COT-LOI L2: khong ket thuc luot bang cau hoi. Viec dao nguoc duoc thi tu quyet, ghi [TU QUYET] vao STATE/QUYET-DINH.md va lam tiep; chi cho chu khi: Main VM, tien qua tran, khoa vuot 20, xoa du lieu, dua APK moi cho chu thu. Khi do ghi [DUNG-CAN-CHU yyyy-mm-dd HH:MM] (toi da 60 phut) vao TRANG-THAI.md. Neu bi ket, viet [HOI-CHAT] vao TU-SONNET.md va lam viec khac.'}))
             return
-    # 0c. (#120) TU-SONNET co [HOI-CHAT] / [TONG QUAN] / bao cao moi hon dong cuoi GO-CUA.log: chua go cua thi chan
+    # 0c. (#158, Q-48) bo go cua. Cho dung khi TU-SONNET da ghi 'XONG ĐỢT #N' voi N >= so thu moi nhat
     try:
-        tus = os.path.join(ROOT, HOPTHU, 'TU-SONNET.md')
-        gcl = os.path.join(ROOT, 'STATE', 'GO-CUA.log')
-        txt = open(tus, encoding='utf-8').read()
-        mk = os.path.exists(gcl) and 'MAT-KET-NOI-CHAT' in ''.join(open(gcl, encoding='utf-8').read().splitlines()[-3:])   # #121.3: gõ cửa hỏng 2 lần, coi như đã gõ
-        if not mk and re.search(r'\[HỎI-CHAT\]|\[TỔNG QUẢN\]', txt) and os.path.getmtime(tus) > (os.path.getmtime(gcl) if os.path.exists(gcl) else 0) + 1:
-            sfg = os.path.join(tempfile.gettempdir(), 'jx_stop_guard_g_%s.json' % re.sub(r'\W', '', data.get('session_id', 'x'))[:40])
-            try:
-                ng = json.load(open(sfg))['n']
-            except Exception:
-                ng = 0
-            if ng < 5:
-                json.dump({'n': ng + 1}, open(sfg, 'w'))
-                print(json.dumps({'decision': 'block', 'reason': 'Doc dong GÕ CỬA trong HOP-THU/SO-TAY-CHAT.md (git pull truoc, lay trigger_id MOI NHAT), RemoteTrigger run, ghi 1 dong vao STATE/GO-CUA.log (gio | trigger_id | ly do | HTTP). TU-SONNET co muc [HỎI-CHAT]/[TỔNG QUẢN] hoac bao cao moi hon lan go cua cuoi.'}))
-                return
-    except Exception:
+        tx = open(os.path.join(ROOT, HOPTHU, 'TU-SONNET.md'), encoding='utf-8').read()
+        xs = [int(x) for x in re.findall(r'XONG ĐỢT #(\d+)', tx)]
+        nums = [int(x) for x in re.findall(r'(?m)^## #(\d+)', open(os.path.join(ROOT, HOPTHU, 'CHO-SONNET.md'), encoding='utf-8').read())]
+        if xs and nums and max(xs) >= max(nums):
+            allow()
+    except OSError:
         pass
     # 4. dung can chu du an (hieu luc co han)
     for m in re.finditer(r'\[DUNG-CAN-CHU\s+(\d{4}-\d\d-\d\d)\s+(\d\d:\d\d)\]', state):
