@@ -1,3 +1,3 @@
 # NHIP TIM Sonnet (cho_thu.py)
-Lan cuoi: 19/11 04:54:51
-Trang thai: dang cho thu moi, da cho 0 phut (CHAT-DAY cuoi #213)
+Lan cuoi: 19/11 05:00:05
+Trang thai: dang cho thu moi, da cho 5 phut (CHAT-DAY cuoi #213)
