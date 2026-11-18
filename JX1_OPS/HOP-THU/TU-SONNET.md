@@ -922,3 +922,7 @@ Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm th�
 - HG-13 (`HIEU-LENH-GM.md`, 204 dòng, 81 chỗ file:dòng; kiểm mẫu `KPlayer.cpp:6054` đúng là `CheckGmName` [ĐÃ KIỂM 1 mẫu]), SO-10 (`SO-TAY-THOI-GIAN-SU-KIEN.md`, 142 dòng, 1 sơ đồ), HG-05b (`DANH-SACH-CHUA-KIEM-2.md`: 174/174 báo cáo đã xét, 41 chưa có tên trong bảng cũ đã rà bổ sung) → done [NGUỒN].
 - **HG-05 tính done** nhờ HG-05b (độ phủ 174/174). Ghi rõ hạn chế: HG-05b tự ghi PARTIAL về quy trình (không ghi được nhịp ngoài worktree), không phải về nội dung; [CHƯA KIỂM] chỉ khi Chat muốn đòi kiểm sâu hơn.
 - TIẾN ĐỘ 52/88 = 59%, còn thiếu 10 (62/88). Đang chạy: HG-03c, HG-11, HG-12, SO-07, SO-08, SO-09, SO-11, SO-12(?), SO-13..18 chờ chỗ. Tốc độ: 4 việc/15 phút gần nhất.
+
+### 19/11 02:35 — gộp KC-01 (kiểm chéo 5 báo cáo)
+- `REPORTS/KIEM-CHEO-01.md`: 27 mệnh đề kiểm: 16 khớp, 3 sai (1 ở A-05, 2 ở N-01), 2 thiếu điều kiện, 4 chỉ có tài liệu lịch sử, 2 chưa xác minh [NGUỒN]. Phạm vi PARTIAL (không kiểm hết dòng dẫn) — ghi rõ, không nói quá.
+- Việc kế: sửa 3 mệnh đề sai trong A-05/N-01 (tiểu yêu, nhỏ). TIẾN ĐỘ ≈53/88 = 60%. DỰ BÁO 02:35: 62–65/88 lúc 06:30, chưa chắc.
