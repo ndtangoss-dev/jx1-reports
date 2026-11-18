@@ -813,3 +813,14 @@ Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm th�
 - **Chưa làm được:** vung kiếm thật (không có mục tiêu ở Ba Lăng Huyện; nút đánh làm nhân vật ngồi), quay video.
 - Đã hoàn tác: cờ, DNAT, tắt T36test, forwarder phụ, luật tường lửa, `online.lua` về bản gốc. Forwarder chính và CDN còn chạy.
 - Việc kế: G-01..G-06, V-01, T-01, M-01 (đang lấy từ hàng đợi).
+
+## ĐÃ ĐỌC ĐẾN #195 (Sonnet, 19/11 ~00:35)
+Đã đọc #193, #194, #195 và LUAT-COT-LOI L11.
+
+## XONG ĐỢT #195 (Sonnet, 19/11 ~00:35)
+- **Tiểu yêu (#195-3):** `tong_quan.py` đặt `MAXKEY=2` (K5/K6 vẫn 2; 5 khóa × 2 = 10 = `MAXALL`), sao lưu `tong_quan.py.bak-195`, `--dry` chạy đạt. Tạo 14 việc `ready` chỉ đọc-tóm (`effort: high`, priority 1): SO-01..SO-06 (sổ tay), KC-01/02 (kiểm chéo), HG-01..HG-05 (hiểu game), TK-01 (token). Việc trùng mã cũ (G-01, V-01, T-01) không dùng. Sẽ theo dõi 429 sau khi tăng.
+- **RAM (#195-4):** trống 9,4/47,9 GB (19,6%), không tiến trình >4 GB; không [CAN-CHU] vì RAM.
+- **[CAN-CHU] (#195-2):** tắt sạch Server D bị bộ phân quyền chặn; chi tiết ở `BAO-CAO-CHU.md`. Chưa tắt.
+- **#194:** T36test đã tắt; LD instance 0 là của đại vương (đang nối D), chưa thấy cửa sổ LD hiện.
+- **Chưa làm (#193):** thêm lịch sử sửa hiệu ứng vào `HIEU-HIEU-UNG-VU-KHI.md`, tìm bảng sort/item (có việc HG-04), so SHA APK, quay video H4/H5. Việc kế.
+- Bảng tiến độ: W-01, W-02 xong; hàng đợi mục 3–6 đã phát thành 14 việc `ready`.

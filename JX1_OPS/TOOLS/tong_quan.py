@@ -26,7 +26,7 @@ ROOT = os.environ.get('JX1_OPS_ROOT', r'D:\jx1-ops-wt\JX1_OPS')
 WT = r'D:\JX-wt'
 KEYS = r'C:\Users\PC\.jx1keys'
 GD = os.path.join(WT, 'tong_quan')
-MAXKEY = 3
+MAXKEY = 2  # #195: toi da 2 viec/khoa, dung >=4 khoa. Hoan tac: khoi phuc tong_quan.py.bak-195 (MAXKEY = 3)
 # #183 (Q-51): K5, K6 toi da 2 viec; viec moi xoay sang K4, K3 truoc. Hoan tac: bo 2 dong KEY_CAP/KEY_ORDER va 2 cho dung chung trong pick_key
 KEY_CAP = {'JX-K5': 2, 'JX-K6': 2}
 KEY_ORDER = ['JX-K4', 'JX-K3', 'JX-K2', 'JX-K6', 'JX-K5']
