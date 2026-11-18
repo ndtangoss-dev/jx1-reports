@@ -1,0 +1,13 @@
+# Lop chuyen Responses -> Gemini (LiteLLM proxy). KHOA doc tu bien moi truong GEMINI_API_KEY, khong ghi o day.
+model_list:
+  - model_name: gemini-flash
+    litellm_params:
+      model: gemini/gemini-2.5-flash
+      api_key: os.environ/GEMINI_API_KEY
+  - model_name: gemini-flash-lite
+    litellm_params:
+      model: gemini/gemini-2.5-flash-lite
+      api_key: os.environ/GEMINI_API_KEY
+litellm_settings:
+  drop_params: true        # bo tham so Gemini khong nhan (Codex gui nhieu tham so rieng cua OpenAI)
+general_settings: {}
