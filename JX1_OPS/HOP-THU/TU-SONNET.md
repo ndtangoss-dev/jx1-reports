@@ -871,3 +871,10 @@ Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm th�
 ### #200 tiếp (19/11) — V-01 kiểm chéo (một phần)
 - [NGUỒN] K-02-nhan-vat: `MAX_PART=24` (6 nhóm × 4 section) khớp `KNpcResNode.h:25`. A-05: `BroadCast` có thật, 185 lần/14 tệp trong `Core/Src` (KNpc.cpp 64). H-04, N-0x, R-07a chưa kiểm chéo.
 - #193 còn lại (SHA APK trong T36test, video H4/H5) cần bật T36test: chưa làm, chờ nhịp sau. Không sửa mã hiệu ứng vũ khí.
+
+### #202 (19/11 01:15) — mục 1–3
+- Rà trạng thái thật: chỉ **0-04** đạt "xong khi" (bằng chứng: `graphify query` chạy trên src18 51.690 nút; hook-guard trong settings; CONG-CU.md có kết quả) → done. Các việc `active` khác đều còn thiếu thật (status_note), KHÔNG đổi.
+- **Khai báo mẫu số:** 13 việc nhóm #196 (SO/HG/KC) đang chạy thật nhưng chưa nằm BACKLOG nên bảng không đếm → thêm vào BACKLOG (mẫu số 55→68, tử 31→37). Bảng: `STATE/DUONG-70.md`.
+- Mở 6 việc kiểm KV-01..06 (C-01, C-03, P-02, E-05, B-02, A-07): chỉ đổi parent sang done khi báo cáo kiểm KẾT LUẬN ĐẠT.
+- TIẾN ĐỘ 37/68 = 54%, còn thiếu 11 để ≥48/68; việc chốt kế: 0-07 (thử tắt bật Test-36), gộp 8 việc tiểu yêu.
+- RAM/429: sẽ ghi ở đợt tới (8 tiểu yêu chạy, trần 10).

@@ -128,3 +128,21 @@ Sonnet lấy việc từ trên xuống, theo phụ thuộc. Khi bắt đầu m�
 | HG-01..HG-05 | Hiểu game: đăng nhập, chiến đấu, cấp cường hóa Lua, bảng sort/item, điều chưa kiểm | L3 | Codex | — |
 | TK-01 | Theo dõi token/429 (thay T-01; T-01 cũ đã dùng) | L3 | Codex | — |
 | M-01 | Bảo trì mục lục/bảng/TASKS | L2 | Sonnet | — |
+
+## Hiểu game (#196, thêm vào bảng 19/11 theo #202)
+
+| ID | Việc | Cấp | Ai | Xong khi |
+|---|---|---|---|---|
+| SO-01 | Sổ tay hiểu game: nhân vật | L3 | Codex | Có `DESIGN/SO-TAY-*.md`, nhãn nguồn, đã gộp |
+| SO-02 | Sổ tay hiểu game: kỹ năng | L3 | Codex | như trên |
+| SO-03 | Sổ tay hiểu game: trang bị và bảng item | L3 | Codex | như trên |
+| SO-04 | Sổ tay hiểu game: quái, NPC và bản đồ | L3 | Codex | như trên |
+| SO-05 | Sổ tay hiểu game: nhiệm vụ và Lua | L3 | Codex | như trên |
+| SO-06 | Sổ tay hiểu game: kinh tế (tiền, cửa hàng, rơi đồ) | L3 | Codex | như trên |
+| HG-01 | Hiểu game: đăng nhập và vào game | L3 | Codex | Có `DESIGN/HIEU-*.md`, nhãn nguồn, đã gộp |
+| HG-02b | Hiểu game: trạng thái chiến đấu và nút đánh (lần 2, có nguồn tuyệt đối) | L3 | Codex | như trên |
+| HG-03b | Hiểu game: vì sao cấp cường hóa từ Lua không tới client (lần 2) | L3 | Codex | như trên |
+| HG-04 | Hiểu game: bảng item/cường hóa Lua | L3 | Codex | như trên |
+| HG-05 | Hiểu game: gộp điều CHƯA KIỂM từ mọi báo cáo | L3 | Codex | như trên |
+| KC-01 | Kiểm chéo chất lượng 5 báo cáo đã gộp | L3 | Codex | `REPORTS/KIEM-CHEO-01.md` có đúng/sai/thiếu |
+| KC-02 | Kiểm chéo chất lượng thêm 5 báo cáo khác | L3 | Codex | `REPORTS/KIEM-CHEO-02.md` |
