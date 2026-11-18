@@ -186,3 +186,4 @@
 - 10:53 Kiểm định kỳ: Sonnet chưa nhận #131–#133. GÕ CỬA mới trig_01Sb49tXgbJdMQhW16uXqFjq (11:03).
 - 10:56 Chủ: tk đang dùng ndtan48, ndtan.goss là tk cũ → người gác dùng tk cũ. Gửi #134 [KHẨN].
 - 10:58 Sonnet xác nhận: CLI trên PC đăng nhập ndtan.goss (cũ), app = ndtan48. [CAN-CHU] chủ /login ndtan48 ở cửa sổ dòng lệnh — đã chuyển chủ. #131 xong: gỡ khóa mặc định, kho sạch khóa. Cầu dao MỞ; R-05c treo >60 phút bị dừng chạy lại.
+- 10:59 Chủ không ở nhà: /login ndtan48 hoãn tới khi chủ về. Tạm: Chat kiểm 10 phút, báo chủ câu đánh thức (chủ nhắn qua Remote Control); 01:00 tk cũ mở hạn mức thì người gác tự chạy lại. Việc treo cho chủ: /login ndtan48 ở cửa sổ dòng lệnh PC.
