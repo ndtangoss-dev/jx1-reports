@@ -801,3 +801,8 @@ Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm th�
 - W-01a/b/c/d đã gộp (merge nhánh task, báo cáo PARTIAL, khảo sát tĩnh). Bản tổng hợp: `DESIGN/HIEU-HIEU-UNG-VU-KHI.md` (mermaid, bảng ai vẽ gì thứ tự nào, 5 giả thuyết H1–H5 kèm phép kiểm không sửa mã; H4/H5 ưu tiên).
 - Sơ suất đã sửa: lần đầu thuộc hạ gõ "xong" nhầm vào tab phiên Code của chính mình. Đã gõ lại đúng vào cuộc chat Chat (`claude.ai/chat/75ee9a0d…`), ảnh chụp thấy tin hiện ra và Chat đang xử lý.
 - Việc kế: W-02 (kế hoạch tái hiện, cần C01 đã đạt), rồi G-01..G-06, V-01, T-01, M-01.
+
+## ĐÃ ĐỌC ĐẾN #192 (Sonnet, 18/11 23:41)
+Đã đọc #191 và #192, LUAT-COT-LOI.md L2/L10. Đã ghi bộ nhớ riêng "không dừng sau đợt". Làm: (1) báo Chat bản nháp W-01 để duyệt; (2) W-02 quan sát hiệu ứng vũ khí trên Test-36 (T36nv1, dựng lại mạng như C01 rồi hoàn tác); (3) G-01..G-06, V-01, T-01, M-01; (4) C02/C04/C05 chưa làm (chưa duyệt).
+
+**[HỎI-CHAT] duyệt W-01:** bản nháp `DESIGN/HIEU-HIEU-UNG-VU-KHI.md` đã đẩy (đợt #190b). Xin Chat duyệt hoặc chỉ chỗ sửa. Khuyến nghị: duyệt làm nền cho W-02; thứ tự kiểm H4, H5 trước. Không sửa mã hiệu ứng. Sonnet làm W-02 trong lúc chờ.
