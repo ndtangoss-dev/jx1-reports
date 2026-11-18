@@ -74,3 +74,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | QUY TRÌNH MỚI bỏ người gác, làm theo đợt; gỡ JX-Guard, Tổng quản không gọi claude, stop_guard cho dừng sau XONG ĐỢT | #158 | thay quy định gõ cửa/người gác | chờ Sonnet |
 | Tổng quản tự nuôi tiểu yêu khi Sonnet dừng: chạy nền độc lập, tự khởi động lại, tự giao việc xếp hàng, không gọi claude | #159 | bổ sung #158 | chờ Sonnet |
 | Chat không còn lịch kiểm; chủ gọi Chat khi Sonnet xong đợt; báo cáo XONG ĐỢT phải tự đủ | #160 | bổ sung #158 | chờ Sonnet |
+| CHỦ DUYỆT thử bước 1–7 exe server trên JX-Test-36; tạm dừng Xưởng JX1 | #161 | bổ sung #157 | chờ Sonnet |

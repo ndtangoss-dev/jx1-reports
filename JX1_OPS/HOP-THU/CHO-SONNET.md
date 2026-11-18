@@ -1342,3 +1342,15 @@ Chủ hỏi: không người gác, ai giữ tiểu yêu chạy liên tục và c
 
 ## #160 Chat 18/11 17:00 — Cách phối hợp cuối cùng (bổ sung #158)
 Chat không có lịch kiểm, không tự quét. Chủ gọi Chat khi thấy Sonnet xong đợt; hai bên bàn rồi Chat đẩy thư mới; chủ nhắn Sonnet "Đọc hòm thư CHO-SONNET rồi làm." Vì vậy: (1) Sonnet đừng chờ Chat trả lời giữa đợt; (2) báo cáo "XONG ĐỢT #N" phải đọc được một mình (đã xong / còn / cần chủ quyết / giả định đã dùng) vì Chat chỉ đọc lúc chủ gọi; (3) bỏ mọi dòng "gõ cửa/RemoteTrigger" khỏi quy trình. Không có việc mới ngoài #154/#157/#158/#159.
+
+## #161 [CHỦ DUYỆT] Chat 18/11 17:00 — THỬ BƯỚC 1–7 trên JX-Test-36 + TẠM DỪNG XƯỞNG JX1
+Chủ ĐÃ DUYỆT toàn bộ bước 1–7 của "Kế hoạch thử" trong DESIGN/BANG-NUT-EXE-SERVER.md (không cần hỏi lại từng bước). Chủ cũng quyết: TẠM DỪNG Xưởng JX1 (#144/#154.4, khu 6, M1+): không làm gì thêm cho Xưởng đến khi Chat báo.
+Làm một đợt, theo thứ tự 1→7, trên JX-Test-36 duy nhất:
+1. Bishop tab Information: đưa cửa sổ Bishop lên trước, bấm ĐÚNG chữ tab "Information" (không bấm gì khác; nút Exit nằm gần đáy, cẩn thận, không gõ Enter). Chụp ngay, đẩy ANH/exe-server/ (che thông tin nhạy cảm như đợt trước), ghi 1 dòng chữ nguyên văn.
+2. Sao lưu Goddess.cfg, Bishop.cfg, 3 tệp *.cfg danh sách (copy trong VM thử), ghi đường dẫn bản sao.
+3. Goddess "Manual backup", kiểm có tệp sinh ra (tên, kích thước).
+4. Bishop Announcer "Notify all player" 1 câu thử (không dùng kiểu *).
+5. Goddess "Save nhat ky".
+6. Max char create 3→4: tắt Goddess, đổi, bật lại, thử tạo nhân vật thứ 4 (tài khoản test), rồi TRẢ VỀ 3 và bật lại.
+7. Add Money cho MỘT nhân vật TEST có sẵn (số nhỏ), ghi số trước/sau. Nếu chưa có nhân vật test thì bỏ bước 7 và ghi lý do.
+Luật: KHÔNG bấm Remove Role, 清除数据, 合区, 找回BAK, 恢复全部数据, Copy DB/MySQL, Exit, Close, Announcer kiểu *. Mỗi bước ghi vào BANG-NUT-EXE-SERVER.md cột THỬ (kết quả thật, giờ, trước/sau). Gặp hộp thoại lạ, lỗi, hoặc exe chết: DỪNG đợt, trả về trạng thái ban đầu từ bản sao bước 2, báo [CAN-CHU] trong XONG ĐỢT. Cuối đợt: đưa mọi cấu hình về như ban đầu, kiểm gs001 SvrFPS vẫn 18/18, ghi "XONG ĐỢT #161" tự đủ (đã làm / kết quả từng nút / còn / cần chủ), push, dừng.
