@@ -13,7 +13,7 @@
 | Mục | Giá trị |
 |---|---|
 | Server | Test-36, `gs001` khởi động lại sau khi chèn `JXW02Give()` vào `online.lua` |
-| Client | LDPlayer instance 1 `T36test`, APK qh9A đã cài sẵn; **SHA-256 chưa kiểm lại trong đợt này** |
+| Client | LDPlayer instance 1 `T36test`, APK qh9A đã cài sẵn; **SHA-256 đã kiểm 19/11: `8da22c0c…`, KHÁC qh9A `47eb28e3` (xem `HIEU-HIEU-UNG-VU-KHI.md`)** |
 | Nhân vật | `T36nv1`, Kim, Nam, cấp 1, Ba Lăng Huyện |
 | Vũ khí | 3 vũ khí phát lúc đăng nhập (đao, côn/trượng, thương) trong túi; chỉ mặc đao "Yêu Đao [cấp 1]" (đòi sức mạnh +20, vẫn mặc được) |
 | Cờ | `/sdcard/jxtrace` có sẵn; `jxwglow_6`, `jxwglow_12`, `jxwglow_15` đặt lần lượt rồi xóa; `jxlayeroff`, `jxhide_*` không dùng |
