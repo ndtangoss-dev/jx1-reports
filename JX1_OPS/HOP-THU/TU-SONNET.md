@@ -762,3 +762,11 @@ Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm th�
 ## XONG ĐỢT #176 (Sonnet, 18/11 ~21:45) — đã đọc đến #176
 **Bảng tiến độ: 29/51 xong** (R-05a gộp, báo cáo 7 KB).
 Đã đọc #176. Vòng tạm dừng; không gõ "xong", không chờ CHAT-DAY. Chờ chủ làm tay (a) repo rỗng private `jx1-source`, (b) khóa Gemini, (c) TEST-A trên JX-Test-36, (d) xác nhận VBoxSVC/VBoxHeadless. [CAN-CHU]: như #175.
+
+## XONG ĐỢT #178 (Sonnet, 18/11 ~22:05) — đã đọc đến #178
+**Bảng tiến độ: 29/51 xong.** Đã làm theo #177 (d)→(c)→C01, rồi #178.
+- **(d) VirtualBox:** `list runningvms` = đúng 2 máy ảo chạy: `JX-Server-D` (Main) và `JX-Test-36`. 6 VBoxHeadless = 2 nhóm × 3 (nhóm 21:02 của Server-D, nhóm 23:41 của Test-36; mỗi nhóm một tiến trình 59 MB). Không có tiến trình mồ côi, **không tắt/dọn gì**. VBoxSVC có 2 (PID 20600 từ 14/11, PID mới 160388 lúc 21:31); VBoxManage trả trạng thái bình thường. A-07 bước 3 (snapshot sống): **bỏ qua** vì VBoxSVC chung với Main VM và CLAUDE.md ghi snapshot sống từng làm VBoxSVC sập; làm tiếp các bước không cần snapshot khi có việc.
+- **(c) TEST-A:** đã tạo tài khoản `testa` trong DB `account` của `JX-Test-36` (1 dòng Account_Info + 1 dòng Account_Habitus, iFlag 0, hạn +1 năm). Mật khẩu ngẫu nhiên ở `D:\JX-keys\testa.txt` (ngoài kho, chỉ tài khoản Windows của chủ). Chưa đụng Main VM, `jxld02`, nhân vật thật. Hoàn tác: `DELETE` 2 dòng `cAccName='testa'`.
+- **C01+C03 [HỎI-CHAT]:** client LDPlayer đang nối qua forwarder/CDN tới **`JX-Server-D` (Main VM)**, không tới `JX-Test-36` (host-only 192.168.56.150). Để thử trên VM thử phải đổi đích forwarder hoặc APK (đổi cấu hình, trái "không đổi cấu hình server"); thử trên Server-D là Main VM (vùng Đỏ). Phương án: (1) khuyến nghị: đổi đích forwarder tạm sang 192.168.56.150 bằng `-Allow` riêng và hoàn tác ngay sau thử; (2) chờ chủ. Chưa chạy gì. Chuỗi server trên VM thử đang lên (Bishop, Goddess, gs001, S3Relay, PaySys).
+- **Gemini (#178):** xem `REPORTS/SO-SANH-NHA-CUNG-CAP.md`. Chạy được nhưng gói miễn phí chỉ 20 lượt/ngày/mô hình: 3 việc đều hỏng (429), không chạy mức 2/4/7 vì chắc chắn hụt và không được lách. Kết luận: Gemini miễn phí không dùng được cho tiểu yêu; **không chuyển Tổng quản**; chờ Chat quyết.
+- **0-05:** `jx1-source` giữ cục bộ + tag `baseline-20261116` theo chủ (#178). [CAN-CHU] (a) đã bỏ; (b) xong; (c) xong; (d) xong.

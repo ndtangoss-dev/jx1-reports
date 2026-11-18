@@ -53,3 +53,4 @@ Không còn mục chờ về mạng: máy thật đã có Host-only `192.168.56.
 
 ## Q-50 — 18/11/2026 21:04 — Chủ duyệt 5 mục (câu "Duyệt 1-5")
 (1) thử Gemini miễn phí, chỉ việc đọc không nhạy cảm; (2) thử client C01+C03 (C02/C04/C05 chưa); (3) A-07 bước 2–6 trong VM kể cả snapshot, dựng lại từ snapshot đã vá; (4) cửa sổ Tổng quản đã hết nháy; (5) tạo kho riêng PRIVATE `jx1-source` (0-05). Vòng tự động (Q-49) chạy lại.
+- 0-05 giữ cục bộ theo chủ (#178, 18/11): D:\jx1-source + tag baseline-20261116, không đẩy GitHub.

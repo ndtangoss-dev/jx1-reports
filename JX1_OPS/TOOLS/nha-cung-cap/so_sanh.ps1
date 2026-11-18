@@ -12,7 +12,7 @@ foreach($i in 1..$Parallel){ foreach($t in $Tasks){
   $jobs += Start-Job -ArgumentList $Provider,$t,$i,$wt,$prompt,$out,$codex -ScriptBlock {
     param($p,$t,$i,$wt,$prompt,$out,$codex)
     $sw=[Diagnostics.Stopwatch]::StartNew(); $log="$out\$t-$i.log"
-    if($p -eq 'gemini'){ $env:CODEX_HOME='D:\JX-keys\codex-home-gemini'; $env:LITELLM_LOCAL_KEY='local'
+    if($p -eq 'gemini'){ $env:CODEX_HOME='D:\JX-keys\codex-home-gemini'; $env:LITELLM_LOCAL_KEY=(Get-Content 'D:\JX-keys\litellm_master.txt').Trim()
       Get-Content -Raw -Encoding UTF8 $prompt | & $codex exec --json --sandbox workspace-write --config 'approval_policy="never"' -C $wt - *> $log }
     else { $env:CODEX_HOME='C:\Users\PC\.codex'; $k=(Get-Content -Raw 'C:\Users\PC\.jx1keys\JX-K4.txt').Trim()
       Get-Content -Raw -Encoding UTF8 $prompt | & $codex exec --json --sandbox workspace-write --model 'gpt-6.1-sol' --config 'model_provider="xingchi"' --config 'approval_policy="never"' --config "model_providers.xingchi.experimental_bearer_token=`"$k`"" -C $wt - *> $log }
