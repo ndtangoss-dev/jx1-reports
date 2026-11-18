@@ -14,7 +14,7 @@ File này ngắn có chủ ý. Đọc nó: đầu mỗi phiên, sau mỗi lần 
 - KẸT CẦN QUYẾT: không hỏi chủ, không đứng chờ. Ghi mục `[HỎI-CHAT]` trong `HOP-THU/TU-SONNET.md` (vấn đề, các phương án, phương án khuyến nghị), push, rồi làm việc khác. Chat trả lời trong `CHO-SONNET.md` (thường ≤10 phút khi có việc mở, tối đa 30 phút) và ghi "Chat quyết thay chủ" vào QUYET-DINH. Quá 30 phút chưa có trả lời: làm theo phương án khuyến nghị nếu làm lại được. Chỉ vùng Đỏ mới lên chủ (qua Chat).
 - GÕ CỬA CHAT: sau khi push `[HỎI-CHAT]` hoặc báo việc quan trọng, nếu phiên Sonnet có công cụ fire_trigger (claude-code-remote) thì bấm trigger ghi ở dòng "GÕ CỬA" trong `HOP-THU/SO-TAY-CHAT.md` để đánh thức Chat ngay. Không có công cụ thì thôi, Chat vẫn kiểm định kỳ.
 - KÉO HÒM THƯ SAU MỖI MỤC (không chờ xong cả thư): `git pull` jx1-ops; có thư mới thì đọc; thư mới quan trọng hơn thì làm trước. Thư tiêu đề có `[KHẨN]`: dừng mục đang làm ở điểm an toàn gần nhất và làm ngay; người gác thấy `[KHẨN]` thì đánh thức Sonnet.
-- Có người gác ngoài Sonnet (script lịch, không tốn token): im > 30 phút thì gọi tiếp phiên với lệnh "đọc hòm thư, làm tiếp". Tiểu yêu chết thì người gác/Tổng quản tự chạy lại tối đa 2 lần, chờ tăng dần.
+- Có người gác ngoài Sonnet (script lịch 5 phút, không tốn token; khóa theo tiến trình, trần 15 phút; [KHẨN] bỏ qua khóa): im > 30 phút thì gọi tiếp phiên với lệnh "đọc hòm thư, làm tiếp". Tiểu yêu chết thì người gác/Tổng quản tự chạy lại tối đa 2 lần, chờ tăng dần.
 
 ## L3. Chống quên khi bị nén
 - TRƯỚC khi nén: ghi "ĐANG LÀM DỞ" (việc, bước, lệnh chạy lại) vào `STATE/TRANG-THAI.md`, push.

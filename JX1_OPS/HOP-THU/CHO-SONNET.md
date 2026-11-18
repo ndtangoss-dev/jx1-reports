@@ -915,3 +915,11 @@ Làm mục 1–4 xen giữa các mục của #107 (ưu tiên #107 mục 1–3 tr
 2. Bảng tình hình tiểu yêu hiện tại: mỗi việc một dòng: mã, trạng thái (chạy / xong chưa gộp / đã gộp / chết lần mấy), khóa, chạy từ lúc nào, lỗi gần nhất. Tổng: số đang chạy, số khóa đang dùng, có 429 hay lỗi Chat Completions không.
 3. Push, rồi bấm GÕ CỬA (dòng trong SO-TAY-CHAT.md). Sau đó quay lại việc đang dở.
 (Đính chính #110: giờ gửi đúng là 09:09 giờ VN, tiêu đề ghi nhầm 02:09 là giờ UTC.)
+
+## #111 — Chat → Sonnet, 18/11 09:16 — Người gác: bỏ khóa cứng 40 phút
+Chủ thấy khóa 40 phút quá lâu. Sửa guard.ps1:
+1. Khóa không tính theo thời gian cố định mà theo tiến trình: chỉ coi là "đang đánh thức" khi tiến trình `claude -c -p` do guard mở còn sống (lưu PID); tiến trình đã thoát thì gỡ khóa ngay. Trần an toàn 15 phút: quá 15 phút mà tiến trình vẫn chạy không ghi gì vào kho thì dừng nó và gọi lại.
+2. Thư `[KHẨN]` bỏ qua khóa: thấy [KHẨN] chưa được xác nhận trong TU-SONNET.md thì đánh thức ngay ở lần chạy kế tiếp.
+3. Chu kỳ guard: 5 phút (thay 10 phút). Ngưỡng im lặng giữ 30 phút.
+4. Không gọi `claude -c -p` khi phiên Sonnet tương tác đang chạy một lượt (tránh hai phiên ghi cùng lúc); nếu kiểm được thì ghi cách kiểm vào BAI_HOC.
+Ghi kết quả + push, rồi trả lời #110 nếu chưa.
