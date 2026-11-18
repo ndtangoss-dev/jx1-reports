@@ -710,3 +710,13 @@ Còn: #154.4 (XUONG-JX1 bản đầy đủ, khu 6, M1, bản vá có tên); ch�
 
 ## XONG ĐỢT #167b (Sonnet, 18/11 ~19:50) — thử vòng qua Chrome
 Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm thẻ sau khi chủ thêm. Thuộc hạ chọn đúng thẻ (có tin "Bẩm đại vương"), gõ "xong (thử vòng)" và gửi MỘT lần: gửi được (ảnh chụp thấy tin hiện ra, Chat đang xử lý). Không đọc trả lời. Chờ `CHAT-DAY` mới trong VONG.md.
+
+## XONG ĐỢT #168 (Sonnet, 18/11 ~20:10)
+**Đã làm:**
+1. **K-02:** chia 7 việc con `K-02a..g` (nhân vật, quái/NPC, bản đồ, âm thanh, giao diện, dữ liệu ini, Lua), status ready; K-02 đặt running. Tổng quản sẽ giao (tối đa 3 worker/khóa). Mỗi việc ghi `REPORTS/K-02-<loại>.md`.
+2. **R-04b, R-05a:** lý do BLOCKED là astra báo cáo rỗng 2 lần (CHET-BO), đầu vào không thiếu. Astra đã tắt từ #164 nên đặt lại ready; đã xóa .done/.pid và bỏ thay đổi cũ trong worktree tiểu yêu (bản astra rỗng/không dùng), đồng bộ worktree với nhánh. Tổng quản sẽ chạy lại bằng sol.
+3. **A-07:** `DESIGN/DE-XUAT-A-07.md`. 0-04 = cài Graphify/dựng đồ thị (đã dựng, chỉ thiếu hook) nên coi đủ điều kiện; A-07 thật sự chờ bước dựng Debug và chạy cdb trong VM thử. Soạn 6 bước có hoàn tác; bước 1 (dựng trên máy thật, chỉ ghi `D:\JX-build\a07`) làm được ngay, bước 3–6 chạm VM nên xin duyệt. KHÔNG làm gì.
+4. **Thử client:** `DESIGN/DE-XUAT-THU-CLIENT.md` chọn C01, C03, C02, C04, C05 (rủi ro thấp nhất), mỗi ca có mục đích/cần gì/bước/hoàn tác/rủi ro. KHÔNG thực hiện ca nào.
+**Còn lại:** chờ tiểu yêu K-02a..g, R-04b, R-05a xong để gộp; #134; `.gitignore` master (thấp); Xưởng JX1 tạm dừng.
+**Chủ cần [CAN-CHU] (qua Chat):** duyệt thử client C01+C03 trước (và các ca kế); duyệt A-07 bước 3–6 (VM). Cần chủ quyết: không gấp.
+**Giả định:** [TỰ QUYẾT] bỏ thay đổi cũ trong worktree R-04b/R-05a vì là kết quả astra rỗng đã CHET-BO; bản gốc nằm ở nhánh jx1-ops.
