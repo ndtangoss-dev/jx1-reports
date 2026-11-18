@@ -1,13 +1,13 @@
-# TIỂU YÊU (Tổng quản tự sinh lúc 2026-11-18 13:43, đừng sửa tay)
+# TIỂU YÊU (Tổng quản tự sinh lúc 2026-11-18 13:45, đừng sửa tay)
 
-**CẦU DAO xingchi: MỞ (ngừng giao, mỗi 2 phút thử 1 việc)**
+**CẦU DAO xingchi: NỬA-MỞ (đang thử 1 việc)**
 
 Mức: SONG / IM-NHUNG-SONG (20–60 phút) / TREO (>60, bị dừng chạy lại) / CHET / CHET-BO (quá 3 lần) / XONG-CHO-GOP. "Dấu hiệu sống cuối" = max(log, nhịp, file worktree).
 
 | Mã | Mức | Khóa | Log cuối | Dấu hiệu sống cuối | Lỗi cuối | Lần chạy lại | Mô hình | PID | Chờ token (giây) |
 |---|---|---|---|---|---|---|---|---|---|
 | F-01 | CHO-XINGCHI | JX-K2 | 13:41 | 13:41 | xingchi Chat Completions | 0 | sol | - | - |
-| K-03a | CHO-XINGCHI | JX-K4 | 13:21 | 13:21 | xingchi Chat Completions | 0 | sol | - | - |
+| K-03a | THU-LAI-XINGCHI | JX-K2 | 13:45 | 13:21 | xingchi Chat Completions | 0 | sol | - | - |
 | K-03b | CHO-XINGCHI | JX-K2 | 10:30 | 10:30 | xingchi Chat Completions | 0 | sol | - | - |
 | K-03c | CHO-XINGCHI | JX-K3 | 10:30 | 10:30 | xingchi Chat Completions | 0 | sol | - | - |
 | K-03d | CHO-XINGCHI | JX-K2 | 11:09 | 11:09 | xingchi Chat Completions | 0 | sol | - | - |
@@ -23,8 +23,9 @@ Mức: SONG / IM-NHUNG-SONG (20–60 phút) / TREO (>60, bị dừng chạy lạ
 | T-03 | CHO-XINGCHI | JX-K4 | 10:15 | 10:15 | xingchi Chat Completions | 0 | sol | - | - |
 | T-04 | CHO-XINGCHI | JX-K5 | 10:15 | 10:15 | xingchi Chat Completions | 0 | sol | - | - |
 
-Khóa đang dùng: (không) / khóa có: JX-K2, JX-K3, JX-K4, JX-K5, JX-K6
-Đang chạy theo Task Scheduler: 0.
+Khóa đang dùng: JX-K2=1 / khóa có: JX-K2, JX-K3, JX-K4, JX-K5, JX-K6
+Đang chạy theo Task Scheduler: 1.
 
 Việc vòng này:
 - CAU DAO xingchi: MO
+- K-03a cho xingchi, thu lai bang JX-K2 (thu cau dao)
