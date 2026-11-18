@@ -1,4 +1,4 @@
-# TIỂU YÊU (Tổng quản tự sinh lúc 2026-11-18 10:59, đừng sửa tay)
+# TIỂU YÊU (Tổng quản tự sinh lúc 2026-11-18 11:01, đừng sửa tay)
 
 **CẦU DAO xingchi: MỞ (ngừng giao, mỗi 2 phút thử 1 việc)**
 
@@ -24,7 +24,7 @@ Mức: SONG / IM-NHUNG-SONG (20–60 phút) / TREO (>60, bị dừng chạy lạ
 | R-06c | CHO-XINGCHI | JX-K5 | 10:34 | 10:34 | xingchi Chat Completions | 0 | sol | - |
 | R-07a | CHO-XINGCHI | JX-K6 | 10:34 | 10:34 | xingchi Chat Completions | 0 | sol | - |
 | R-07b | CHO-XINGCHI | JX-K2 | 10:35 | 10:35 | xingchi Chat Completions | 0 | sol | - |
-| T-02 | SONG | JX-K3 | 10:59 | 10:59 | - | 0 | astra | - |
+| T-02 | SONG | JX-K3 | 11:01 | 11:01 | - | 0 | astra | - |
 | T-03 | CHO-XINGCHI | JX-K4 | 10:15 | 10:15 | xingchi Chat Completions | 0 | sol | - |
 | T-04 | CHO-XINGCHI | JX-K5 | 10:15 | 10:15 | xingchi Chat Completions | 0 | sol | - |
 
