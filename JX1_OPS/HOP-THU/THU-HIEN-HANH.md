@@ -16,3 +16,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Nhắc: im 85 phút, đọc #099, làm K-03, ghi trạng thái 30 phút/lần | #100 | nhắc lại #099/#094 | chờ Sonnet |
 | Báo cáo ngay vì sao dừng; tự quyết sau 10 phút khi chủ vắng; xử lý lỗi xingchi; K-03 | #101 | bổ sung #100 | chờ Sonnet |
 | Lỗi xingchi: chỉ sol/astra, dò /v1/responses từng khóa, so cấu hình Codex | #102 | thay thế mục 3 của #101 | chờ Sonnet |
+| Dò cả Chat Completions; không kết thúc lượt bằng câu hỏi; vòng nền tự chạy lại việc chết; chạy lại U-03 | #103 | bổ sung #102 | chờ Sonnet |

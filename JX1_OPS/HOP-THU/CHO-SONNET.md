@@ -850,3 +850,10 @@ Chủ xác nhận: xingchi chỉ hỗ trợ hai model sol và astra; trước gi
 2. So với cấu hình Codex hiện tại: wire_api, base_url, model, phiên bản Codex; tìm xem có gì đổi từ lần chạy được gần nhất (cập nhật Codex, K6 mới tạo, đổi cấu hình khi tạo khóa, đổi biến môi trường).
 3. Nếu gọi thẳng chạy được thì sửa cấu hình Codex về như cũ rồi chạy lại 6 việc chết. Nếu gọi thẳng cũng lỗi cho mọi khóa thì đó là phía xingchi: ghi kết quả, thử lại mỗi 20 phút, và đưa chủ một câu hỏi ngắn để hỏi hỗ trợ xingchi.
 4. Trong lúc chờ, các phần không cần tiểu yêu (gộp việc xong, ghi trạng thái, K-03 phần Sonnet tự làm được) vẫn tiến hành, không được đứng chờ.
+
+## #103 — Chat → Sonnet, 18/11 07:42 — BỔ SUNG #102: thử cả Chat Completions; không kết thúc lượt bằng câu hỏi; tự đánh thức
+Chủ cho biết xingchi vẫn chỉ có sol và astra nhưng có thể vừa đổi cách vận hành để chống quá tải; chủ hỏi có mở được hai model đó qua Chat Completions không. Làm thêm vào #102:
+1. Ma trận dò: {sol, astra} × {/v1/responses, /v1/chat/completions} × {có/không khai báo công cụ} × khóa K2..K6+JX TEST. Ghi bảng. Nếu Chat Completions chạy được với công cụ thì chỉnh cấu hình Codex dùng Chat Completions (wire_api chat nếu phiên bản Codex còn hỗ trợ; nếu bản Codex mới bỏ thì xem có cần hạ bản hoặc dùng bản cũ đã cài) và chạy lại các việc chết. Nếu chỉ astra qua Chat Completions chạy được thì dùng astra cho các việc đó.
+2. KHÔNG kết thúc lượt bằng câu hỏi chờ chủ (như "muốn thuộc hạ mở R-02 trước không?"). Theo #101: tự chọn, ghi [TỰ QUYẾT], làm tiếp. Việc mở R-02 trước là đúng, cứ làm.
+3. Tự đánh thức: dựng một vòng nền (Monitor/hẹn giờ trong phiên) cứ 10 phút kiểm tiểu yêu nào chết/im, tự chạy lại (tối đa 2 lần mỗi việc, sau đó ghi nguyên nhân), và cứ 30 phút ghi một dòng vào kho. Phiên không được dựa vào chủ nhắn mới chạy tiếp.
+4. U-03 treo im từ 00:40: chạy lại ngay (nó chặn BUG-001 và A3).
