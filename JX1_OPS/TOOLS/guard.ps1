@@ -100,7 +100,7 @@ if (($silentMin -gt 30 -or $khan) -and ($khan -or -not $busy) -and -not $live) {
   Log ("goi phien: im lang {0:N0} phut, khan={1}" -f $silentMin, $khan)
   $prompt = 'Người gác: đọc JX1_OPS/STATE/LUAT-COT-LOI.md và hòm thư HOP-THU/CHO-SONNET.md rồi làm tiếp. Ghi một dòng trạng thái vào STATE/TRANG-THAI.md, commit và push jx1-ops.'
   Push-Location 'C:\Jx1CocoV3'
-  $tools = 'Bash(git:*) Bash(python TOOLS/*) Bash(powershell -File TOOLS/*) PowerShell(git:*) PowerShell(python TOOLS/*) PowerShell(powershell -File TOOLS/*)'
+  $tools = 'Bash(git:*) Bash(python TOOLS/*) Bash(powershell -File TOOLS/*) PowerShell(git:*) PowerShell(python TOOLS/*) PowerShell(powershell -File TOOLS/*) RemoteTrigger Bash(claude:*) PowerShell(claude:*)'
   $argStr = '-c -p ' + $q + $prompt + $q + ' --model claude-sonnet-5-5 --permission-mode acceptEdits --allowedTools ' + $q + $tools + $q   # #126: PS 5.1 khong tu bao dau nhay quanh arg co dau cach
   if ($env:GUARD_DRY -eq '1') { Log ('DRY: claude ' + $argStr); $proc = $null }
   else { $proc = Start-Process -WindowStyle Hidden -PassThru -FilePath 'claude' -ArgumentList $argStr -RedirectStandardOutput (Join-Path $gdir 'goi.out') -RedirectStandardError (Join-Path $gdir 'goi.err') }

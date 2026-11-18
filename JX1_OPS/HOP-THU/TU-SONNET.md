@@ -342,3 +342,6 @@ Nhận #136 (18/11 11:30). Trả lời:
 
 ## Nhận #137 (18/11 11:40)
 Tổng quản đã có trần MAXALL=10 tiểu yêu đồng thời (pick_key trả None khi đủ 10), vẫn ≤3/khóa. Không tạo khóa mới. Sẽ giao tăng dần khi xingchi hồi. Chưa chạm cấu hình Codex.
+
+## Nhận #138, #139 (18/11 11:50)
+#138.1: guard.ps1 dòng 103 thêm RemoteTrigger, Bash(claude:*), PowerShell(claude:*) vào --allowedTools (chưa chạy thử thật; lần gác kế sẽ kiểm). #138.2: đánh thức bởi: người gác (guard.log GỌI phiên ~11:19 theo thư Chat). #138.3: gõ cửa lại sau khi guard chạy với quyền mới, rồi gỡ cờ MAT-KET-NOI-CHAT. #139: nghiên cứu phương án B xếp sau, làm tiếp ở lượt tới.

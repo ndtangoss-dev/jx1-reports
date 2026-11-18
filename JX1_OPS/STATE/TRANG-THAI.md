@@ -293,3 +293,5 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 - 18/11 11:30 Sonnet: Nhận #136; lỗi sol = Responses/Chat Completions ngay yêu cầu đầu, mọi khóa; thử tay xác nhận; xem TU-SONNET.
 
 - 18/11 11:40 Sonnet: nhận #137, Tổng quản trần 10 đồng thời; #136 đã trả lời; gõ cửa/claude -p bị chặn quyền.
+
+- 18/11 11:50 Sonnet: #138.1 guard thêm quyền RemoteTrigger/claude; nhận #139 (nghiên cứu B xếp sau).
