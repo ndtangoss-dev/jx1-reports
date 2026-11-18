@@ -260,3 +260,4 @@
 - 00:10 Chủ hỏi ai quên cập nhật bảng tiến độ. Bản sinh vẫn 28/51 vì dữ liệu TASKS cũ. Gửi #196: Sonnet cập nhật TASKS/BACKLOG; Chat đăng artifact khi số đổi.
 - 00:12 Gõ vào phiên Sonnet qua Chrome: chủ cho phép thường trực tắt D + LD-D khi 0 người chơi. Ghi L11.
 - 00:30 Chủ hỏi nhịp tim đâu: NHIP-TIM.md chỉ ghi khi chạy cho_thu.py. Gửi #197: Tổng quản đo hộ (mtime jsonl + RAM) ghi STATE/SONNET-SONG.md.
+- 00:45 Sonnet im ~10 phút dù nói sẽ làm tiếp. Gõ CHAT-DAY #197 qua Chrome (Sonnet nhận). Gốc thật: stop_guard.py mục 0c cho dừng sau XONG ĐỢT + hết việc → allow. Chat vá stop_guard.py (chạy thử OK), gửi #198.
