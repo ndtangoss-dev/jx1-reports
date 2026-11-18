@@ -84,3 +84,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Đợt kế: K-02 (tiểu yêu), mở khóa R-04b/R-05a, đánh giá A-07, soạn đề xuất thử client (3–5 ca thấp rủi ro); dừng ngay, chủ gõ xong tay | #168 | theo TIEN-DO | chờ Sonnet |
 | Đợt kế: A-07 bước 1 (dựng Debug máy dev), gộp K-02a..g R-04b R-05a, chờ chủ quyết thử client và A-07 VM | #169 | theo TIEN-DO | chờ Sonnet |
 | Đồng bộ bảng tiến độ JX1: đặt đúng status mọi mã BACKLOG, thêm nhóm việc mới, chạy lại bang_tien_do, báo X/Y mỗi đợt | #170 | bổ sung #169 | chờ Sonnet |
+| Chuẩn bị thay nhà cung cấp tiểu yêu: tài liệu thử, nhap_khoa.bat, bộ so sánh (chưa chạy, chờ chủ duyệt nhà cung cấp + ngân sách) | #171 | bổ sung #170 | chờ Sonnet |
