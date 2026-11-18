@@ -1,0 +1,61 @@
+nguon_mon	id_ban_ghi	ten_viet	ten_han_nguon	ten_han_gia_thuyet	he_bang	cap_bang	cap_lua_mau	loai	o	id_thuoc_tinh	ten_thuoc_tinh	p1_min	p1_max	p2_min	p2_max	p3_min	p3_max	ma_tham_chieu	nguon_gia_tri	dieu_kien	ghi_chu
+horse.txt:2	0	Liệt Hoàng Mã			0	1		món											horse.txt:2		Detail=10, Particular=0, Mẫu đồ trắng, không chọn magic ngẫu nhiên
+horse.txt:2	0	Liệt Hoàng Mã			0	1		cơ bản	1	111	Tốc độ đi/chạy (magic_fastwalkrun_p)	10	10	0	0	0	0		horse.txt:2	theo mẫu	Ô nguồn 10%..10%, đọc số nguyên bằng atoi
+horse.txt:2	0	Liệt Hoàng Mã			0	1		cơ bản	2	93	Thể lực tối đa (magic_staminamax_v)	50	50	0	0	0	0		horse.txt:2	theo mẫu	
+horse.txt:2	0	Liệt Hoàng Mã			0	1		cơ bản	3	85	Sinh lực tối đa (magic_lifemax_v)	10	10	0	0	0	0		horse.txt:2	theo mẫu	
+horse.txt:2	0	Liệt Hoàng Mã			0	1		cơ bản	4	150	Né tránh (magic_adddefense_v)	-10	-10	0	0	0	0		horse.txt:2	theo mẫu	
+horse.txt:2	0	Liệt Hoàng Mã			0	1		yêu cầu	1	36	Yêu cầu cấp nhân vật (magic_requirelevel)	20	20						horse.txt:2	điều kiện trang bị	
+horse.txt:3	1	Liệt Hoàng Mã			0	2		món											horse.txt:3		Detail=10, Particular=0, Mẫu đồ trắng, không chọn magic ngẫu nhiên
+horse.txt:3	1	Liệt Hoàng Mã			0	2		cơ bản	1	111	Tốc độ đi/chạy (magic_fastwalkrun_p)	10	10	0	0	0	0		horse.txt:3	theo mẫu	Ô nguồn 10%..10%, đọc số nguyên bằng atoi
+horse.txt:3	1	Liệt Hoàng Mã			0	2		cơ bản	2	93	Thể lực tối đa (magic_staminamax_v)	50	50	0	0	0	0		horse.txt:3	theo mẫu	
+horse.txt:3	1	Liệt Hoàng Mã			0	2		cơ bản	3	85	Sinh lực tối đa (magic_lifemax_v)	10	10	0	0	0	0		horse.txt:3	theo mẫu	
+horse.txt:3	1	Liệt Hoàng Mã			0	2		cơ bản	4	150	Né tránh (magic_adddefense_v)	-10	-10	0	0	0	0		horse.txt:3	theo mẫu	
+horse.txt:3	1	Liệt Hoàng Mã			0	2		yêu cầu	1	36	Yêu cầu cấp nhân vật (magic_requirelevel)	25	25						horse.txt:3	điều kiện trang bị	
+horse.txt:4	2	Hoàng Mã			0	3		món											horse.txt:4		Detail=10, Particular=0, Mẫu đồ trắng, không chọn magic ngẫu nhiên
+horse.txt:4	2	Hoàng Mã			0	3		cơ bản	1	111	Tốc độ đi/chạy (magic_fastwalkrun_p)	20	20	0	0	0	0		horse.txt:4	theo mẫu	Ô nguồn 20%..20%, đọc số nguyên bằng atoi
+horse.txt:4	2	Hoàng Mã			0	3		cơ bản	2	93	Thể lực tối đa (magic_staminamax_v)	100	100	0	0	0	0		horse.txt:4	theo mẫu	
+horse.txt:4	2	Hoàng Mã			0	3		cơ bản	3	85	Sinh lực tối đa (magic_lifemax_v)	20	20	0	0	0	0		horse.txt:4	theo mẫu	
+horse.txt:4	2	Hoàng Mã			0	3		cơ bản	4	150	Né tránh (magic_adddefense_v)	-20	-20	0	0	0	0		horse.txt:4	theo mẫu	
+horse.txt:4	2	Hoàng Mã			0	3		yêu cầu	1	36	Yêu cầu cấp nhân vật (magic_requirelevel)	30	30						horse.txt:4	điều kiện trang bị	
+horse.txt:5	3	Hoàng Mã			0	4		món											horse.txt:5		Detail=10, Particular=0, Mẫu đồ trắng, không chọn magic ngẫu nhiên
+horse.txt:5	3	Hoàng Mã			0	4		cơ bản	1	111	Tốc độ đi/chạy (magic_fastwalkrun_p)	20	20	0	0	0	0		horse.txt:5	theo mẫu	Ô nguồn 20%..20%, đọc số nguyên bằng atoi
+horse.txt:5	3	Hoàng Mã			0	4		cơ bản	2	93	Thể lực tối đa (magic_staminamax_v)	100	100	0	0	0	0		horse.txt:5	theo mẫu	
+horse.txt:5	3	Hoàng Mã			0	4		cơ bản	3	85	Sinh lực tối đa (magic_lifemax_v)	20	20	0	0	0	0		horse.txt:5	theo mẫu	
+horse.txt:5	3	Hoàng Mã			0	4		cơ bản	4	150	Né tránh (magic_adddefense_v)	-20	-20	0	0	0	0		horse.txt:5	theo mẫu	
+horse.txt:5	3	Hoàng Mã			0	4		yêu cầu	1	36	Yêu cầu cấp nhân vật (magic_requirelevel)	35	35						horse.txt:5	điều kiện trang bị	
+horse.txt:6	4	Hoàng Phiêu			0	5		món											horse.txt:6		Detail=10, Particular=0, Mẫu đồ trắng, không chọn magic ngẫu nhiên
+horse.txt:6	4	Hoàng Phiêu			0	5		cơ bản	1	111	Tốc độ đi/chạy (magic_fastwalkrun_p)	30	30	0	0	0	0		horse.txt:6	theo mẫu	Ô nguồn 30%..30%, đọc số nguyên bằng atoi
+horse.txt:6	4	Hoàng Phiêu			0	5		cơ bản	2	93	Thể lực tối đa (magic_staminamax_v)	200	200	0	0	0	0		horse.txt:6	theo mẫu	
+horse.txt:6	4	Hoàng Phiêu			0	5		cơ bản	3	85	Sinh lực tối đa (magic_lifemax_v)	50	50	0	0	0	0		horse.txt:6	theo mẫu	
+horse.txt:6	4	Hoàng Phiêu			0	5		cơ bản	4	150	Né tránh (magic_adddefense_v)	-50	-50	0	0	0	0		horse.txt:6	theo mẫu	
+horse.txt:6	4	Hoàng Phiêu			0	5		yêu cầu	1	36	Yêu cầu cấp nhân vật (magic_requirelevel)	40	40						horse.txt:6	điều kiện trang bị	
+horse.txt:7	5	Hoàng Phiêu			0	6		món											horse.txt:7		Detail=10, Particular=0, Mẫu đồ trắng, không chọn magic ngẫu nhiên
+horse.txt:7	5	Hoàng Phiêu			0	6		cơ bản	1	111	Tốc độ đi/chạy (magic_fastwalkrun_p)	30	30	0	0	0	0		horse.txt:7	theo mẫu	Ô nguồn 30%..30%, đọc số nguyên bằng atoi
+horse.txt:7	5	Hoàng Phiêu			0	6		cơ bản	2	93	Thể lực tối đa (magic_staminamax_v)	200	200	0	0	0	0		horse.txt:7	theo mẫu	
+horse.txt:7	5	Hoàng Phiêu			0	6		cơ bản	3	85	Sinh lực tối đa (magic_lifemax_v)	50	50	0	0	0	0		horse.txt:7	theo mẫu	
+horse.txt:7	5	Hoàng Phiêu			0	6		cơ bản	4	150	Né tránh (magic_adddefense_v)	-50	-50	0	0	0	0		horse.txt:7	theo mẫu	
+horse.txt:7	5	Hoàng Phiêu			0	6		yêu cầu	1	36	Yêu cầu cấp nhân vật (magic_requirelevel)	45	45						horse.txt:7	điều kiện trang bị	
+horse.txt:8	6	Đại Uyển Hoàng Mã			0	7		món											horse.txt:8		Detail=10, Particular=0, Mẫu đồ trắng, không chọn magic ngẫu nhiên
+horse.txt:8	6	Đại Uyển Hoàng Mã			0	7		cơ bản	1	111	Tốc độ đi/chạy (magic_fastwalkrun_p)	40	40	0	0	0	0		horse.txt:8	theo mẫu	Ô nguồn 40%..40%, đọc số nguyên bằng atoi
+horse.txt:8	6	Đại Uyển Hoàng Mã			0	7		cơ bản	2	93	Thể lực tối đa (magic_staminamax_v)	500	500	0	0	0	0		horse.txt:8	theo mẫu	
+horse.txt:8	6	Đại Uyển Hoàng Mã			0	7		cơ bản	3	85	Sinh lực tối đa (magic_lifemax_v)	100	100	0	0	0	0		horse.txt:8	theo mẫu	
+horse.txt:8	6	Đại Uyển Hoàng Mã			0	7		cơ bản	4	150	Né tránh (magic_adddefense_v)	-100	-100	0	0	0	0		horse.txt:8	theo mẫu	
+horse.txt:8	6	Đại Uyển Hoàng Mã			0	7		yêu cầu	1	36	Yêu cầu cấp nhân vật (magic_requirelevel)	50	50						horse.txt:8	điều kiện trang bị	
+horse.txt:9	7	Đại Uyển Hoàng Mã			0	8		món											horse.txt:9		Detail=10, Particular=0, Mẫu đồ trắng, không chọn magic ngẫu nhiên
+horse.txt:9	7	Đại Uyển Hoàng Mã			0	8		cơ bản	1	111	Tốc độ đi/chạy (magic_fastwalkrun_p)	40	40	0	0	0	0		horse.txt:9	theo mẫu	Ô nguồn 40%..40%, đọc số nguyên bằng atoi
+horse.txt:9	7	Đại Uyển Hoàng Mã			0	8		cơ bản	2	93	Thể lực tối đa (magic_staminamax_v)	500	500	0	0	0	0		horse.txt:9	theo mẫu	
+horse.txt:9	7	Đại Uyển Hoàng Mã			0	8		cơ bản	3	85	Sinh lực tối đa (magic_lifemax_v)	100	100	0	0	0	0		horse.txt:9	theo mẫu	
+horse.txt:9	7	Đại Uyển Hoàng Mã			0	8		cơ bản	4	150	Né tránh (magic_adddefense_v)	-100	-100	0	0	0	0		horse.txt:9	theo mẫu	
+horse.txt:9	7	Đại Uyển Hoàng Mã			0	8		yêu cầu	1	36	Yêu cầu cấp nhân vật (magic_requirelevel)	55	55						horse.txt:9	điều kiện trang bị	
+horse.txt:10	8	Phi Hoàng			0	9		món											horse.txt:10		Detail=10, Particular=0, Mẫu đồ trắng, không chọn magic ngẫu nhiên
+horse.txt:10	8	Phi Hoàng			0	9		cơ bản	1	111	Tốc độ đi/chạy (magic_fastwalkrun_p)	50	50	0	0	0	0		horse.txt:10	theo mẫu	Ô nguồn 50%..50%, đọc số nguyên bằng atoi
+horse.txt:10	8	Phi Hoàng			0	9		cơ bản	2	93	Thể lực tối đa (magic_staminamax_v)	1000	1000	0	0	0	0		horse.txt:10	theo mẫu	
+horse.txt:10	8	Phi Hoàng			0	9		cơ bản	3	85	Sinh lực tối đa (magic_lifemax_v)	200	200	0	0	0	0		horse.txt:10	theo mẫu	
+horse.txt:10	8	Phi Hoàng			0	9		cơ bản	4	150	Né tránh (magic_adddefense_v)	-200	-200	0	0	0	0		horse.txt:10	theo mẫu	
+horse.txt:10	8	Phi Hoàng			0	9		yêu cầu	1	36	Yêu cầu cấp nhân vật (magic_requirelevel)	60	60						horse.txt:10	điều kiện trang bị	
+horse.txt:11	9	Phi Hoàng			0	10		món											horse.txt:11		Detail=10, Particular=0, Mẫu đồ trắng, không chọn magic ngẫu nhiên
+horse.txt:11	9	Phi Hoàng			0	10		cơ bản	1	111	Tốc độ đi/chạy (magic_fastwalkrun_p)	50	50	0	0	0	0		horse.txt:11	theo mẫu	Ô nguồn 50%..50%, đọc số nguyên bằng atoi
+horse.txt:11	9	Phi Hoàng			0	10		cơ bản	2	93	Thể lực tối đa (magic_staminamax_v)	1000	1000	0	0	0	0		horse.txt:11	theo mẫu	
+horse.txt:11	9	Phi Hoàng			0	10		cơ bản	3	85	Sinh lực tối đa (magic_lifemax_v)	200	200	0	0	0	0		horse.txt:11	theo mẫu	
+horse.txt:11	9	Phi Hoàng			0	10		cơ bản	4	150	Né tránh (magic_adddefense_v)	-200	-200	0	0	0	0		horse.txt:11	theo mẫu	
+horse.txt:11	9	Phi Hoàng			0	10		yêu cầu	1	36	Yêu cầu cấp nhân vật (magic_requirelevel)	70	70						horse.txt:11	điều kiện trang bị	

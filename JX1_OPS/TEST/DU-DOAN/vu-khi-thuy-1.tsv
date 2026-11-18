@@ -1,0 +1,15 @@
+nguon_mon	id_ban_ghi	ten_viet	ten_han_nguon	ten_han_gia_thuyet	he_bang	cap_bang	cap_lua_mau	loai	o	id_thuoc_tinh	ten_thuoc_tinh	p1_min	p1_max	p2_min	p2_max	p3_min	p3_max	ma_tham_chieu	nguon_gia_tri	dieu_kien	ghi_chu
+GoldItem.txt:18	16	Hám Thiên Kim Hoàn Đại Nhãn Thần Chùy			2	10		món											GoldItem.txt:18		Detail=0, Particular=4, Group=4, GroupNum=5, GroupExtend=4, SetId=1
+GoldItem.txt:18	16	Hám Thiên Kim Hoàn Đại Nhãn Thần Chùy			2	10		biên sát thương	1	28	Sát thương vũ khí tối thiểu (magic_weapondamagemin_v)	55	55	0	0	0	0		GoldItem.txt:18	theo mẫu	
+GoldItem.txt:18	16	Hám Thiên Kim Hoàn Đại Nhãn Thần Chùy			2	10		biên sát thương	2	29	Sát thương vũ khí tối đa (magic_weapondamagemax_v)	165	165	0	0	0	0		GoldItem.txt:18	theo mẫu	
+GoldItem.txt:18	16	Hám Thiên Kim Hoàn Đại Nhãn Thần Chùy			2	10		cơ bản	3	167	Chính xác cộng phần trăm (magic_attackratingenhance_p)	-30	-30	0	0	0	0		GoldItem.txt:18	theo mẫu	
+GoldItem.txt:18	16	Hám Thiên Kim Hoàn Đại Nhãn Thần Chùy			2	10		độ bền	4	31	Độ bền (magic_durability_v)	99	99	0	0	0	0		GoldItem.txt:18	theo mẫu	
+GoldItem.txt:18	16	Hám Thiên Kim Hoàn Đại Nhãn Thần Chùy			2	10		yêu cầu	1	36	Yêu cầu cấp nhân vật (magic_requirelevel)	99	99						GoldItem.txt:18	điều kiện trang bị	
+GoldItem.txt:18	16	Hám Thiên Kim Hoàn Đại Nhãn Thần Chùy			2	10		yêu cầu	2	32	Yêu cầu sức mạnh (magic_requirestr)	235	235						GoldItem.txt:18	điều kiện trang bị	
+GoldItem.txt:18	16	Hám Thiên Kim Hoàn Đại Nhãn Thần Chùy			2	10		yêu cầu	3	39	Yêu cầu môn phái (magic_requiremenpai)	1	1						GoldItem.txt:18	điều kiện trang bị	
+GoldItem.txt:18	16	Hám Thiên Kim Hoàn Đại Nhãn Thần Chùy			2	10		magic	1	58	Bỏ qua né tránh (magic_ignoredefense_p)	1	2	-1	-1	0	0	135	GoldMagic.txt:136	trực tiếp	Nhãn bảng magic: 忽略闪避1
+GoldItem.txt:18	16	Hám Thiên Kim Hoàn Đại Nhãn Thần Chùy			2	10		magic	2	166	Chính xác cộng điểm (magic_attackratingenhance_v)	180	300	-1	-1	0	0	50	GoldMagic.txt:51	cần lượt kích hoạt ngũ hành, xét theo thứ tự	Nhãn bảng magic: 命中2
+GoldItem.txt:18	16	Hám Thiên Kim Hoàn Đại Nhãn Thần Chùy			2	10		magic	3	126	Sát thương vật lý ngoại công cộng phần trăm (magic_addphysicsdamage_p)	50	100	-1	-1	6	6	46	GoldMagic.txt:47	trực tiếp	Nhãn bảng magic: 外普%2
+GoldItem.txt:18	16	Hám Thiên Kim Hoàn Đại Nhãn Thần Chùy			2	10		magic	4	121	Sát thương vật lý ngoại công cộng điểm (magic_addphysicsdamage_v)	30	50	-1	-1	0	0	69	GoldMagic.txt:70	cần lượt kích hoạt ngũ hành, xét theo thứ tự	Nhãn bảng magic: 外普点数1
+GoldItem.txt:18	16	Hám Thiên Kim Hoàn Đại Nhãn Thần Chùy			2	10		magic	5	136	Hút sinh lực (magic_steallifeenhance_p)	4	8	-1	-1	0	0	110	GoldMagic.txt:111	trực tiếp	Nhãn bảng magic: 吸血2
+GoldItem.txt:18	16	Hám Thiên Kim Hoàn Đại Nhãn Thần Chùy			2	10		magic	6	123	Sát thương băng ngoại công (magic_addcolddamage_v)	80	120	-1	-1	0	0	73	GoldMagic.txt:74	cần lượt kích hoạt ngũ hành, xét theo thứ tự	Nhãn bảng magic: 外冰点数2
