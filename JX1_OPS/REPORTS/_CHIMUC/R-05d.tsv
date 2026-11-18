@@ -1,0 +1,2 @@
+file	loại	chủ đề	từ khóa	trạng thái	độ phủ	liên quan
+H-15-dan-xuyen-quai-fps.md	khảo sát	FPS hiển thị, nhịp logic missile và va chạm quái	đạn xuyên quái, missile, FPS, collision, LimitFPS, H-15	PARTIAL	7/13 tệp client kiểm điểm neo; 6/13 chỉ xác nhận có mặt; 0/9 tệp server đối chiếu nội dung tại root task; chưa định vị bản ghi skill; 0/3 báo cáo đối chiếu; chưa chạy runtime	DESIGN/TOI-UU-120FPS.md; DESIGN/MUC-LUC-TRI-THUC.md; TASKS/H-13.md; TASKS/H-14.md; TASKS/J-05.md

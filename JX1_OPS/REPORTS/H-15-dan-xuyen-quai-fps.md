@@ -6,6 +6,57 @@ TÓM TẮT 5: Không tái hiện/đo/build/chạy exe/VM/mạng; kế hoạch te
 
 # H-15 — Đạn xuyên quái khi FPS cao
 
+Loại: khảo sát
+Chủ đề: Khảo sát tĩnh mối liên hệ giữa FPS hiển thị, nhịp missile và va chạm quái.
+Từ khóa: đạn xuyên quái, missile, FPS, collision, va chạm, H-15, LimitFPS, tick logic
+Trạng thái: PARTIAL — giữ nguyên kết luận cũ; một số nguồn server và báo cáo đối chiếu không có trong checkout/root được task chỉ định.
+Độ phủ: 7/13 tệp client có điểm neo đã kiểm tại qh9A, 6/13 chỉ xác nhận tồn tại; 0/9 tệp server có nội dung đối chiếu tại root task; chưa định vị bản ghi skill cụ thể; 0/3 báo cáo liên quan; runtime chưa chạy.
+Liên quan: `JX1_OPS/DESIGN/TOI-UU-120FPS.md`, `JX1_OPS/DESIGN/MUC-LUC-TRI-THUC.md`, `JX1_OPS/TASKS/H-13.md`, `JX1_OPS/TASKS/H-14.md`, `JX1_OPS/TASKS/J-05.md`.
+Cần tôi quyết định: không.
+
+```mermaid
+flowchart TD
+    FPS["LimitFPS / UI"] --> Render["Khoảng thời gian render"]
+    Tick["Client timer 18 Hz theo H-15"] --> Activate["Missile Activate"]
+    Activate --> Collision["Kiểm tra collision theo báo cáo"]
+    Collision --> Event["Sự kiện skill / damage"]
+    ServerRoot["Root server được task chỉ định"] -. "chưa có mã nguồn C++ để đối chiếu" .-> ServerPath["Đường xử lý missile server nêu trong H-15"]
+```
+
+Sơ đồ tóm lược luồng được H-15 mô tả; nhánh server chưa được đối chiếu lại trên root do task chỉ định.
+
+## Phạm vi và độ phủ
+
+| Phần tử phạm vi | Tình trạng | Bằng chứng / giới hạn |
+|---|---|---|
+| Client `CoreShell.cpp` | Chưa đối chiếu nội dung; file có mặt | H-15:76,83; `D:/JX-build/qh9A/Classes/gamecore/CoreShell.cpp` tồn tại. |
+| Client `GameDataDef.h` | Chưa đối chiếu nội dung; file có mặt | H-15:157; `D:/JX-build/qh9A/Classes/gamecore/GameDataDef.h` tồn tại. |
+| Client `KgameWorldVN.cpp` | Đã kiểm điểm neo chính | `D:/JX-build/qh9A/Classes/vn/gamescence/KgameWorldVN.cpp:1574-1577,1614-1619`; số dòng khác phần timer trong H-15:75-76. |
+| Client `KHRocker.cpp` | Đã kiểm điểm neo chính | `D:/JX-build/qh9A/Classes/gamescene/KHRocker.cpp:598,614-639`; đối chiếu phần joystick nêu ở H-15:83. |
+| Client `KMissle.cpp` | Đã kiểm điểm neo chính | `D:/JX-build/qh9A/Classes/gamecore/KMissle.cpp:555,658,701-702,721`; đối chiếu phần missile nêu ở H-15:77-80. |
+| Client `KNpc.cpp` | Đã kiểm điểm neo chính | `D:/JX-build/qh9A/Classes/gamecore/KNpc.cpp:60,1924`; đối chiếu phần cast nêu ở H-15:81. |
+| Client `KPlayer.cpp` | Đã kiểm điểm neo chính | `D:/JX-build/qh9A/Classes/gamecore/KPlayer.cpp:578,672`; đối chiếu phần gói skill/di chuyển nêu ở H-15:82-83. |
+| Client `KProtocol.cpp` | Đã kiểm điểm neo chính | `D:/JX-build/qh9A/Classes/gamecore/KProtocol.cpp:338-343`; đối chiếu phần gói skill nêu ở H-15:82. |
+| Client `KProtocolProcess.cpp` | Chưa đối chiếu nội dung; file có mặt | H-15:84; `D:/JX-build/qh9A/Classes/gamecore/KProtocolProcess.cpp` tồn tại. |
+| Client `KSkills.cpp` | Chưa đối chiếu nội dung; file có mặt | H-15:80; `D:/JX-build/qh9A/Classes/gamecore/KSkills.cpp` tồn tại. |
+| Client `KSubWorld.cpp` | Chưa đối chiếu nội dung; file có mặt | H-15:76; `D:/JX-build/qh9A/Classes/gamecore/KSubWorld.cpp` tồn tại. |
+| Client `KSubWorldSet.cpp` | Chưa đối chiếu nội dung; file có mặt | H-15:76; `D:/JX-build/qh9A/Classes/gamecore/KSubWorldSet.cpp` tồn tại. |
+| Client `KuiOptions.cpp` | Đã kiểm điểm neo chính | `D:/JX-build/qh9A/Classes/gameui/KuiOptions.cpp:185-188,453-457`; đối chiếu FPS UI nêu ở H-15:73-74. |
+| Server `CoreServerShell.cpp` | Chưa phủ; file không có trong root server task | H-15:88 trích từ `S/Core/Src`; root task ở `JX1_OPS/TASKS/R-05d.md:24`. |
+| Server `KMissle.cpp` | Chưa phủ; file không có trong root server task | H-15:89-90,94 trích từ `S/Core/Src`; chưa đối chiếu mã tại root `gs`. |
+| Server `KMissleSkill.cpp` | Chưa phủ; file không có trong root server task | H-15:67 trích từ `S/Core/Src`; chưa đối chiếu mã tại root `gs`. |
+| Server `KNpc.cpp` | Chưa phủ; file không có trong root server task | H-15:98 trích từ `S/Core/Src`; chưa đối chiếu mã tại root `gs`. |
+| Server `KProtocolProcess.cpp` | Chưa phủ; file không có trong root server task | H-15:96 trích từ `S/Core/Src`; chưa đối chiếu mã tại root `gs`. |
+| Server `KRegion.cpp` | Chưa phủ; file không có trong root server task | H-15:88-89 trích từ `S/Core/Src`; chưa đối chiếu mã tại root `gs`. |
+| Server `KSkills.cpp` | Chưa phủ; file không có trong root server task | H-15:94,97 trích từ `S/Core/Src`; chưa đối chiếu mã tại root `gs`. |
+| Server `KSubWorldSet.cpp` | Chưa phủ; file không có trong root server task | H-15:88 trích từ `S/Core/Src`; chưa đối chiếu mã tại root `gs`. |
+| Server `KSOServer.cpp` | Chưa phủ; file không có trong root server task | H-15:88 trích từ `S/MultiServer/GameServer`; chưa đối chiếu mã tại root `gs`. |
+| Dữ liệu skill/missile (`LifeTime`, `Speed`, `CollidRange`, `DmgRange`, `FlyEventTime`, `ClientSend`) | Chưa phủ bản ghi cụ thể; H-15 không nêu skill ID để định vị | H-15:92-93,170-173; chưa đọc các bảng dữ liệu trong root `gs` và không đoán giá trị. |
+| Báo cáo đối chiếu `H-13.md` | Chưa phủ; báo cáo không có, task có | H-15:65; `JX1_OPS/TASKS/H-13.md` tồn tại; `JX1_OPS/REPORTS/H-13.md` không có. |
+| Báo cáo đối chiếu `H-14.md` | Chưa phủ; báo cáo không có, task có | H-15:65; `JX1_OPS/TASKS/H-14.md` tồn tại; `JX1_OPS/REPORTS/H-14.md` không có. |
+| Báo cáo đối chiếu `J-05.md` | Chưa phủ; báo cáo không có, task có | H-15:65; `JX1_OPS/TASKS/J-05.md` tồn tại; `JX1_OPS/REPORTS/J-05.md` không có. |
+| Tái hiện/đo runtime | Chưa chạy theo giới hạn task | `JX1_OPS/TASKS/R-05d.md:27`; không chạy build/exe/VM/mạng. |
+
 Ngày khảo sát: 2026-11-17. Trạng thái: **PARTIAL** — hoàn tất phần khảo sát source hiện có; thiếu H-13/H-14/J-05 để đối chiếu. Không sửa mã. Các kết luận dưới đây dựa trên source, không khẳng định hành vi runtime. Không cần chạy runtime để hoàn tất phạm vi khảo sát tĩnh; kế hoạch đo dành cho task được duyệt sau.
 
 ## Phạm vi và nguồn
@@ -123,3 +174,12 @@ Mọi giá trị ở đây là **đọc source hoặc tham số kế hoạch**, 
 | Data | `m_ulDamageInterval` | `S/Core/Src/KMissle.cpp:1789-1794` | Chưa biết skill | tick giờ game | Khoảng damage hợp lệ | CẨN THẬN | Source nhánh tiêu thụ, chưa đo |
 | Kế hoạch | FPS ma trận | `JX1_OPS/TASKS/H-15.md:11` | 20/30/45/60/90/120 | FPS thực đo | So sánh theo FPS, cần harness ngoài slider | CÓ | Task, chưa thực hiện |
 | Kế hoạch | số phát mỗi mức | `JX1_OPS/TASKS/H-15.md:11` | ≥30 | lần/mức | Cỡ mẫu tối thiểu | CÓ | Task, chưa thực hiện |
+
+## Phát hiện khi chuẩn hóa
+
+- H-15:63-64 nêu root client/server khác root được chỉ định cho lần lập bảng phạm vi này (`JX1_OPS/TASKS/R-05d.md:24`). Không chuyển kết luận từ root cũ sang root được chỉ định; bảng trên ghi riêng phần đã kiểm và giới hạn.
+- H-15:65 ghi không tìm thấy task H-13/H-14/J-05. Đối chiếu đường dẫn trong checkout cho thấy ba task đó tồn tại, còn ba báo cáo tương ứng không có tại `JX1_OPS/REPORTS/`. Giữ nguyên đoạn kết luận cũ theo yêu cầu, ghi nhận sai khác tại đây.
+- H-15:67 trỏ tới `S/Core/Src/KMissleSkill.cpp` ở root server ngoài root được giao; nội dung đó không được kiểm lại. Trong root `gs` của task, các tệp C++ server mà H-15 trích không tồn tại tại các đường dẫn đã kiểm; chưa thể xác nhận nội dung mã server từ root được giao.
+- Một số số dòng client qh9A khác các số dòng trong H-15, dù file/symbol chính được tìm thấy. Bảng độ phủ dùng file:dòng hiện tại của qh9A; không thay số liệu, phát biểu hay kết luận cũ.
+
+liên quan: `JX1_OPS/DESIGN/TOI-UU-120FPS.md`; `JX1_OPS/DESIGN/MUC-LUC-TRI-THUC.md`; `JX1_OPS/TASKS/H-13.md`; `JX1_OPS/TASKS/H-14.md`; `JX1_OPS/TASKS/J-05.md`.
