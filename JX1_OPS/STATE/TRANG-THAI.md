@@ -49,7 +49,7 @@ Nhịp 2026-11-18 ~17:00 – Sonnet (người gác đánh thức): có thư #157
 
 ## Ngân sách Codex
 - Tổng: khoảng 2.000 USD (chủ dự án cho biết)
-- **Trần cứng của khóa xingchi** (chủ dự án báo 16/11 21:25): 50 USD / 5 giờ, 200 USD / ngày, 1.000 USD / 7 ngày [BÁO CÁO]
+- **Trần cứng của khóa xingchi** (chủ báo 19/11 01:15, Q-57; trước đó 50 USD / 5 giờ, 200 / ngày, 1.000 / 7 ngày): 1.000 USD / ngày, 3.000 USD / 7 ngày (tổng nạp >3.000 USD, GPT 1x) [BÁO CÁO]
 - Đã dùng: 20 USD / 7 ngày tính đến 21:25 ngày 16/11 [BÁO CÁO]
 - **Khóa hết hạn 14/02/2027. Nhắc chủ dự án trước 7 ngày (từ 07/02/2027)**
 - Quy tắc khi Codex bị từ chối vì chạm trần: coi là hết hạn mức, không phải lỗi code. Không thử lại liên tục; chuyển việc cho agent con Sonnet hoặc chờ tới khung giờ sau
