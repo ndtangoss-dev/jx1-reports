@@ -92,3 +92,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | Đã đọc #175; chờ chủ làm tay (a)-(d); vòng tạm dừng | #176 | | chờ chủ |
 | Chủ giao Sonnet tự làm TEST-A (VM thử) và dọn VirtualBox rác; repo/khóa Gemini chờ chủ ngồi máy | #177 | thay phần (c)(d) của #176 | chờ Sonnet |
 | Khóa Gemini đã nhập: chạy so sánh một khóa; bỏ đẩy repo jx1-source | #178 | sau #177 | chờ Sonnet |
+| LDPlayer chỉ nối JX-Test-36, không nối JX-Server-D; báo lại đang nối đâu | #179 | bổ sung #177 | chờ Sonnet |
