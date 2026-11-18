@@ -1151,3 +1151,10 @@ Làm (giờ thật, ghi TU-SONNET):
 3. Nếu astra ghi được ở bước 2: ghi quy tắc cho Tổng quản: khi sol lỗi dịch vụ thì chạy astra với đoạn nhắc thêm "KẾT THÚC bằng việc ghi báo cáo vào REPORTS/<ID>.md; không ghi thì coi như chưa xong", và sau khi xong Tổng quản kiểm báo cáo có nội dung (không rỗng) mới đánh XONG-CHO-GOP; rỗng thì chạy lại tối đa 2 lần rồi báo [TỔNG QUẢN]. Chỉ áp dụng cho việc đọc/viết báo cáo, không cho việc sửa mã chủ chốt (đợi sol).
 4. Nếu astra không ghi được: ghi nguyên văn lỗi.
 Làm trước #139, cùng lượt với #140.2.
+
+## #142 — 2026-11-18 11:55 — Giới hạn cho phương án B: KHÔNG giả danh client (bổ sung #139, #140)
+Đã biết từ trước: gọi trực tiếp API xingchi ngoài Codex bị 403 `client_not_allowed`. Luật nhóm xingchi: cấm lách/phá giới hạn, vi phạm khóa tài khoản ngay không cảnh báo. Vì vậy:
+1. KHÔNG viết chương trình gọi thẳng API xingchi, KHÔNG làm cầu nối giả dạng Codex, KHÔNG đổi tiêu đề (User-Agent) hay dấu hiệu nhận diện của client. Gạch khỏi #139 mọi ý cần làm điều đó (kể cả ý "tiểu yêu chỉ trả văn bản" nếu cần gọi trực tiếp API).
+2. Wire_api=chat đã bị Codex 0.166 từ chối (#140.2): đúng, dừng ở đó. Không tải bản Codex cũ (không đủ lý do rủi ro: bản cũ nhận diện khác, có thể vướng cùng quy định).
+3. Phương án khả thi còn lại: (a) chờ xingchi sửa sol; (b) astra qua Codex hiện tại (#141); (c) nhà cung cấp khác có Responses: việc chủ quyết, không làm gì.
+4. #139 coi như xong với kết luận trên; ghi 3 dòng vào TU-SONNET (giờ thật) rồi tập trung #141.
