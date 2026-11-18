@@ -31,3 +31,9 @@ Tạo nhân vật mới: chọn hệ/giới tính, chỉ số khởi đầu, v�
 
 ## Nguồn bổ sung (sửa lỗi lần trước)
 Worktree KHÔNG có mã nguồn: đọc trực tiếp (chỉ đọc) client C:\Jx1CocoV3\Folder\Client2912-20260116T044348Z-3-001\Client2912\Client\Classes và server C:\Jx1CocoV3\SwordOnline\SwordOnline\jxOnline\gameserver\Sources\Core\Src (và thư mục Sources cha). Ghi chỉ tệp đầu ra.
+
+## Kết quả
+- Đã cập nhật `JX1_OPS/DESIGN/HIEU-TAO-NHAN-VAT-MOI.md`, bổ sung đối chiếu chỉ số, công thức tệp NewPlayerIni và sổ thông số.
+- Đã giữ nhãn [THẤY]/[CHƯA KIỂM], không đổi kết luận cũ; chưa có source trực tiếp cho online.lua, newplayer và dữ liệu phát tân thủ.
+- Đã kiểm tra diff và UTF-8 không BOM; không build/chạy VM/exe/mạng.
+- Trạng thái: DONE trong phạm vi tài liệu; nội dung khảo sát vẫn PARTIAL do nguồn thiếu.
