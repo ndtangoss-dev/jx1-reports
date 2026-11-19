@@ -28,3 +28,5 @@ Mật khẩu/khóa: KHÔNG ghi vào lệnh hay repo; hỏi Sonnet nếu form c�
 
 ## Kiểm cầu trước khi làm thật
 Gửi `screenshot`, rồi `tap` 1 nút vô hại; có ảnh + `ok:true` mới được nhận việc thật.
+
+- **Không được mở/đưa cửa sổ LDPlayer lên (#236).** Bộ canh nền `TOOLS/ld_canh_cua_so.py` (pythonw, 3 giây/lần) tự thu nhỏ mọi cửa sổ dnplayer; tiểu yêu không chạy ldconsole/launch và không gọi lệnh nào làm cửa sổ nổi.

@@ -1048,3 +1048,8 @@ Chùy +15 hướng 0 có sét cả hai cây; Yêu Đao một tay không đổi; 
 ## SONNET 19/11 12:20 — #234 D: CHẤM TS-03 (tester01, mục dang-nhap)
 [THẤY] Tiểu yêu chạy THẬT qua cầu: 15 lệnh (chụp, chạm Hành trang, Cài đặt→Đăng xuất→chọn máy chủ), ảnh + ket-qua.jsonl; 1/4 bước thật. Lượt 1 bị chặn vì hòm ngoài vùng ghi → đã chuyển hòm vào worktree tiểu yêu (lỗi (b) sandbox, không phải khóa). Khóa JX-K4 chạy bình thường (có nhịp tim 11:53–12:11), không cần đổi khóa.
 Phát hiện: app lưu `testa`, không có `tester01`; tiểu yêu dừng đúng, không nhập mật khẩu. [TỰ QUYẾT] lượt 2 dùng `testa` đã lưu trên LD này. Chấm: TỐT (lần 1/2). Bảng PHAN-CONG/DANH-GIA đã cập nhật. Chưa có mục kiến thức mới về môn phái; lỗi mới: LOI-dang-nhap-001 (tài khoản lưu không khớp, lệch bàn giao, không phải lỗi game).
+
+## SONNET #236 19/11 13:05 — ẨN CỬA SỔ LDPLAYER
+- [ĐÃ KIỂM] 4 cửa sổ dnplayer (T36-tester01, T36test, 2 không tên) đều đang thu nhỏ (IsIconic=1). Bộ canh `TOOLS/ld_canh_cua_so.py` chạy nền pythonw PID 141016, quét 3 giây/lần, thu nhỏ không giành focus.
+- [NGUYÊN NHÂN] Chưa xác định chắc; nghi: adb `monkey start` và khởi động lại LD đưa cửa sổ lên. Bộ canh bù cho mọi đường.
+- [CHƯA KIỂM] Thử khôi phục một cửa sổ để xem bộ canh thu lại: gọi restore từ script không có tác dụng, nên chưa chứng minh được vòng thu lại. Chưa gắn tự khởi động cùng Windows.
