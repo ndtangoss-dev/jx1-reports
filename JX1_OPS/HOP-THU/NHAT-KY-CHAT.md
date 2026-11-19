@@ -308,3 +308,4 @@
 - 19/11 13:45: chủ dặn L14 (việc đã duyệt thì Chat tự gõ lệnh lên cửa sổ Sonnet, không hỏi lại).
 - 19/11 14:33: chủ báo đã đăng nhập Command Code (tạo khóa xong, tự nhập) → #242 làm tiếp Q-72/Q-74; không mua gói.
 - 19/11 14:34 Q-75: chủ chốt thêm Sonnet B (tester/Command Code/LD/Bot); #243 cho A chuẩn bị; B-001 đã viết.
+- 19/11 14:49 Q-76: chủ đăng ký gói Go + tạo khóa, nhập thử một khóa; #245 báo Sonnet.

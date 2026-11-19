@@ -157,3 +157,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | #242 | 19/11 14:36 | Chat→Sonnet | chủ đã đăng nhập Command Code: làm tiếp Q-72/Q-74 |
 | #243 | 19/11 14:52 | Chat→Sonnet | chủ chốt Q-75: thêm Sonnet B; A chuẩn bị worktree, công cụ, bàn giao, hướng dẫn chủ |
 | #244 | 19/11 14:56 | Chat→Sonnet | chữa xung đột git ở file STATE: dong_bo.py, không đè file Tổng quản sinh, không xóa stash |
+| #245 | 19/11 15:00 | Chat→Sonnet | thông tin chủ đã đăng ký gói Go (Q-76): ghi tín dụng, mô hình rẻ/đọc ảnh |

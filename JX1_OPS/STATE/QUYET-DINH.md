@@ -126,3 +126,6 @@ Chủ chốt sau khi Chat trình bày cách hiểu: sau khi Node + đăng nhập
 
 ## Q-75 (chủ 19/11 14:34) — CHỐT: THÊM SONNET B CHẠY SONG SONG PHIÊN KHÁC
 Chủ thấy Sonnet (A) quá tải, chốt thêm một Sonnet thứ hai (B), ngang quyền, chạy ở phiên Claude Code riêng, cùng kho jx1-ops. Chia việc theo chủ đề, mỗi bên một hộp thư và một thư mục làm việc riêng (git worktree). Phạm vi và ranh giới: `STATE/SONNET-B.md`. A giữ: sửa lỗi game/APK/VK-04, Server D, ca thử C02/C04/C05, bảng tiến độ, hàng đợi W/SO/HG/KC/V/M, tổng hợp. B nhận: chương trình tiểu yêu tester (kể cả Command Code Q-72/Q-74, cầu LD, bộ canh cửa sổ LD) và hệ thống Bot. Luật tối thượng (Q-56), vùng đỏ, L1–L14 áp dụng cho cả hai. Chủ chỉ cần mở phiên mới theo hướng dẫn Chat đưa.
+
+## Q-76 (chủ 19/11 14:49) — CHỦ ĐÃ ĐĂNG KÝ GÓI COMMAND CODE GO (1 đô/tháng) VÀ TẠO KHÓA
+Chủ tự đăng ký gói Go (≈1 đô/tháng + phí xử lý, kèm ≈10 đô tín dụng) và tạo được nhiều khóa API; đã tự nhập thử MỘT khóa vào máy. Khóa không nằm trong chat/kho. Chi tiêu thêm (gói cao hơn, nạp tín dụng) vẫn là vùng đỏ, phải hỏi chủ. Gợi ý Chat (chưa chủ chốt): dùng một khóa trước; tín dụng có thể dùng chung cả tài khoản nên nhiều khóa chưa chắc nhân thêm tiền; mô hình rẻ cho việc sửa nhỏ, mô hình đọc được ảnh cho tester; ghi tín dụng trước/sau mỗi lượt.

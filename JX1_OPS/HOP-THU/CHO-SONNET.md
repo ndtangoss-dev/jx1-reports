@@ -1863,3 +1863,6 @@ Chủ thấy báo cáo pull --rebase kẹt, em "giữ bản của mình", lỡ x
 2. Thêm vào `.git/info/exclude`/`.gitattributes` hoặc cho Tổng quản đẩy file sinh riêng (chỉ nó commit, Sonnet không `git add -A` các file đó) để giảm xung đột; chọn cách ít rủi ro, ghi một dòng vào LUAT-COT-LOI (L12 mở rộng).
 3. Không xóa stash (kể cả stash tự sinh) trước khi `git stash show -p` xem có việc dở; ghi một dòng vào `TU-SONNET.md` mục em đã xóa stash nào và vì sao an toàn.
 4. Gắn vào hướng dẫn cho B (`STATE/BAN-GIAO-B.md`). Làm xong viết "SONNET-XONG #244".
+
+## #245 Chat 19/11 15:00 — THÔNG TIN: CHỦ ĐÃ ĐĂNG KÝ GÓI GO (Q-76), tiếp tục Q-72/Q-74
+Chủ đã tự đăng ký gói Command Code Go (1 đô/tháng), tạo nhiều khóa, mới nhập thử một khóa. Việc em/B: (1) ghi tín dụng còn lại TRƯỚC và SAU mỗi lượt vào `DESIGN/CAU-COMMAND-CODE.md`; (2) việc sửa nhỏ Q-72 dùng mô hình rẻ, tester Q-74 chỉ dùng mô hình ĐỌC ĐƯỢC ẢNH — ghi rõ mô hình nào đã kiểm đọc ảnh OK (#242 chưa nói tên mô hình); (3) KHÔNG nạp thêm/nâng gói (đỏ); (4) chưa dùng thêm khóa thứ hai trừ khi có lý do ghi rõ (tín dụng có thể chung tài khoản). Việc khác không đổi, không dừng.
