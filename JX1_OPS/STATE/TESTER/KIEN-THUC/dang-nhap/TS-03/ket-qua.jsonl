@@ -1,0 +1,14 @@
+{"id": "TS03-20261119-115316-screen", "ok": true, "cmd": "screenshot", "out": "png 3713560 byte", "luc": "11:53:19"}
+{"id": "TS03-20261119-1154-tap-bag", "ok": true, "cmd": "tap", "out": "ok", "luc": "11:54:13"}
+{"id": "TS03-20261119-1154-bag-screen", "ok": true, "cmd": "screenshot", "out": "png 3493336 byte", "luc": "11:54:46"}
+{"id": "TS03-20261119-1155-close-bag", "ok": true, "cmd": "tap", "out": "ok", "luc": "11:55:32"}
+{"id": "TS03-20261119-1155-open-settings", "ok": true, "cmd": "tap", "out": "ok", "luc": "11:55:34"}
+{"id": "TS03-20261119-1155-settings-screen", "ok": true, "cmd": "screenshot", "out": "png 2860435 byte", "luc": "11:55:39"}
+{"id": "TS03-20261119-1156-logout", "ok": true, "cmd": "tap", "out": "ok", "luc": "11:56:40"}
+{"id": "TS03-20261119-1156-logout-screen", "ok": true, "cmd": "screenshot", "out": "png 2207300 byte", "luc": "11:56:44"}
+{"id": "TS03-20261119-1157-start-button", "ok": true, "cmd": "tap", "out": "ok", "luc": "11:57:25"}
+{"id": "TS03-20261119-1157-start-screen", "ok": true, "cmd": "screenshot", "out": "png 2034159 byte", "luc": "11:57:29"}
+{"id": "TS03-20261119-1158-server", "ok": true, "cmd": "tap", "out": "ok", "luc": "11:58:30"}
+{"id": "TS03-20261119-1158-login-screen", "ok": true, "cmd": "screenshot", "out": "png 2154359 byte", "luc": "11:58:34"}
+{"id": "TS03-20261119-1159-account-list", "ok": true, "cmd": "tap", "out": "ok", "luc": "11:59:14"}
+{"id": "TS03-20261119-1159-accounts-screen", "ok": true, "cmd": "screenshot", "out": "png 2151154 byte", "luc": "11:59:18"}

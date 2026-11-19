@@ -2,4 +2,6 @@
 
 - 19/11/2026 — TS-01: Đã đối chiếu lời giao việc, trạng thái, các mục tester và bảng môn phái. Bàn giao từ bước đăng nhập. Chưa thực hiện bước chơi nào trong lượt này.
 - 19/11/2026 — TS-02: Đã đối chiếu tài liệu bàn giao và bảng môn phái/ngũ hành. Chưa chạy adb hay thao tác game theo giới hạn môi trường của lượt này; không có bước chơi nào được xác minh (0/7), không phát sinh lỗi adb. Phiên/nhân vật nêu trong task chưa được đối chiếu với trạng thái tài khoản. Chi tiết: JX1_OPS/REPORTS/TS-02.md.
-- 19/11 11:45 TS-03 lượt 1 BLOCKED vì hòm ngoài vùng ghi; Sonnet chuyển hòm vào worktree, cầu chạy, chạy lại TS-03.
+- 19/11/2026 — TS-03: BLOCKED, 0/4 bước kiểm trực tiếp. Hai thư mục hòm Cầu Nối hiện diện, nhưng hòm lệnh ngoài vùng ghi nên chưa gửi lệnh hoặc có ảnh/log. Đã bàn giao hai mục, tiếp tục từ `screenshot` khi môi trường cho phép. Chi tiết: JX1_OPS/REPORTS/TS-03.md.
+
+- 19/11/2026, 11:53–11:59 (UTC+7) — TS-03 tiếp tục: PARTIAL, 2/4 bước trực tiếp (chụp ảnh + chạm vô hại) đạt qua hòm `.ldbridge` trong worktree; 14/14 lệnh cầu `ok:true`, lưu 7 ảnh JPEG ≤1 MB/ảnh và log. Đã về form đăng nhập từ phiên có sẵn; form lưu `testa`, chưa phải `tester01`, chạm mũi tên một lần chưa thấy danh sách. Dừng trước bấm Đăng nhập, không nhập/đổi mật khẩu, chưa tạo nhân vật. LOI-dang-nhap-001 là lệch điều kiện bàn giao, chưa kết luận lỗi game. Phiên cuối ở form đăng nhập; cần Tổng quản lưu sẵn đúng tài khoản. Mục lượt trước giữ nguyên; báo cáo JX1_OPS/REPORTS/TS-03.md có phần kết quả tiếp tục. File nhịp yêu cầu ở ngoài vùng ghi nên không cập nhật; không commit/push.
