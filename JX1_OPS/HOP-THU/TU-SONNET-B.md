@@ -158,3 +158,8 @@ Da viet ma C++ (GetEquipIdx, CountBagItemExact, ConsumeBagItemExact; +14/+15 ky 
 - CẦN CHAT QUYẾT: thủy tinh chồng tối đa 200 (MAX_STACKNUM) nhưng +15 cần 16384 mỗi loại (~246 ô túi). Đề xuất: (a) kẹp số thủy tinh mỗi loại ≤ 1000 từ cấp +11 (5 chồng/loại), hoặc (b) tăng MAX_STACKNUM (đụng cả client, rủi ro). B mặc định giữ đúng công thức chủ tới khi Chat chốt.
 - Còn: phi phong (khóa mặc theo tài phú + bảng K cấp) chờ QH-02; chưa có kết quả tiểu yêu QH-01/02/05 (đã dùng mặc định N=10, K=11, thủy tinh genre 4 detail 238/239/240).
 Đã đọc đến #B-035c.
+
+## B 20/11 — mốc 2 (#B-035d + QH-01)
+- Áp chốt thủy tinh min(2^(n−1),1000) vào qhcuonghoa.lua (SHA 15B451D2…); báo A trong A-B.md; không cần dựng lại gs001, chỉ chép 1 file Lua. Commit 9d9f1e5.
+- Gộp QH-01 (PARTIAL, nội dung đủ): 15 ô mặc trong enum, server không lọc loại theo detail. Tôi giữ N=10 (đầu, áo, đai, vũ khí, giày, tay, bùa, 2 nhẫn, ngọc bội) cho điểm tài phú vì ngựa/mặt nạ/phi phong/ấn/thức phẩm không phải món cường hóa; đổi được bằng bảng QH_PARTS. CHƯA chạy thử (chờ A phát nguyên liệu).
+- QH-02 (số cấp phi phong) chưa có kết quả; dùng mặc định K=11.
