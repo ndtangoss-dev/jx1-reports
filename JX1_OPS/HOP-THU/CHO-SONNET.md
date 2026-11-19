@@ -1856,3 +1856,10 @@ Chủ chốt (14:34): thêm Sonnet B song song phiên khác. Phạm vi/ranh gi�
 3. Viết `STATE/BAN-GIAO-B.md` (ngắn): tình hình dở dang của các mảng chuyển cho B (TS-03 lượt mấy/khóa nào, bộ canh LD, Command Code đã cài/đăng nhập, Bot GĐ1 làm tới đâu, tài khoản/vai Bot, ba việc sửa nhỏ định giao Command Code kèm vị trí tệp). Từ khi B chạy, em không sửa các mảng đó nữa; thấy gì cần B thì viết vào hộp thư A→B (mục "CHO B" cuối `TU-SONNET.md`).
 4. Viết cho chủ ba dòng đơn giản trong `BAO-CAO-CHU.md` để mở phiên B: (a) mở cửa sổ Claude Code mới trên thư mục `D:\JX-wt\SONNET-B`; (b) dán đúng đoạn trong `HOP-THU/KHOI-DONG-SONNET-B.md`; (c) nhắn Chat "B đã chạy". Báo Chat khi xong (viết "SONNET-XONG #243").
 Luật tối thượng, vùng đỏ, L1–L14 giữ nguyên cho cả hai; không dừng.
+
+## #244 Chat 19/11 14:56 — XUNG ĐỘT GIT Ở FILE STATE: CHỮA TẬN GỐC (chủ bảo xử lý)
+Chủ thấy báo cáo pull --rebase kẹt, em "giữ bản của mình", lỡ xóa một mục stash. Chat đã kiểm origin: Q-75, #243 và hộp thư B còn nguyên, không còn dấu xung đột. Nhưng cách "giữ bản của mình" chỉ đúng cho file em tự viết; sai cho file Tổng quản tự sinh (`SONNET-SONG`, `TIEU-YEU`, `KHOA-XINGCHI`, `TIEN-DO`, `TONG-QUAN-GHI`: phải lấy bản MỚI của Tổng quản/origin) và sai cho file chỉ-nối-thêm (phải gộp union, không đè). Việc làm (không dừng việc khác):
+1. Viết `TOOLS/dong_bo.py` (hoặc .ps1) làm đúng một lệnh đồng bộ: `git fetch` → rebase; khi xung đột ở file Tổng quản sinh thì tự lấy bản origin; ở file append-only thì gộp union; ở file khác thì DỪNG LẠI và in rõ tên file để em xử lý, không tự đè. Sonnet A và B (nhánh/worktree riêng) đều dùng.
+2. Thêm vào `.git/info/exclude`/`.gitattributes` hoặc cho Tổng quản đẩy file sinh riêng (chỉ nó commit, Sonnet không `git add -A` các file đó) để giảm xung đột; chọn cách ít rủi ro, ghi một dòng vào LUAT-COT-LOI (L12 mở rộng).
+3. Không xóa stash (kể cả stash tự sinh) trước khi `git stash show -p` xem có việc dở; ghi một dòng vào `TU-SONNET.md` mục em đã xóa stash nào và vì sao an toàn.
+4. Gắn vào hướng dẫn cho B (`STATE/BAN-GIAO-B.md`). Làm xong viết "SONNET-XONG #244".
