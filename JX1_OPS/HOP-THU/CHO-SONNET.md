@@ -2023,3 +2023,5 @@ Chủ (21:36) sắp chuyển sang tài khoản cũ của chủ. Theo STATE/QUY-T
 
 ## #273 Chat 21:47 — A: CHỦ ĐÃ VÀO GAME (21:45) trên Test-36
 Chủ đang trong game. Làm ngay (nền, không dừng vc23): (1) xác nhận jx269_given.txt đã tạo, chùy cấp 1 +15 đã vào túi (chủ sẽ so với chùy cấp 10); (2) đọc dòng `SvrFPS x/18` ở console gs001 lúc chủ chạy/đánh, ghi vào TU-SONNET.md; (3) khi chủ báo hiệu ứng hai tay chùy cấp 1 vs cấp 10 thì kiểm bảng item↔effect (obj-adha01 vs obj-adha04), chưa sửa mã (Q-52).
+
+**Đã xử lý #273/#273b (19/11 21:53):** chùy cấp 1 đã phát; SvrFPS đã báo; phát hiện thiếu vk04 trong qh9A, chờ Chat duyệt.

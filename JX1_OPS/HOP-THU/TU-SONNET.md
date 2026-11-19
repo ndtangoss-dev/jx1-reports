@@ -1132,3 +1132,7 @@ do_muot_khung.py: ffmpeg 9.0 không nhận `-vsync` → đổi `-fps_mode passth
 Đã đọc đến #271. #268: vc23 đang build (đo mạng jx_net.log); #269/#270: JXGive269 đã cài, chờ chủ vào; #271: gs001 đang nạp bản đồ, không lỗi.
 
 Đã đọc đến #272. Bàn giao đã đẩy (69e8ce1); vc23 đang build lại.
+
+Đã đọc đến #273 (21:5x). (1) `Logs\jx269_given.txt` = "given 1": chùy cấp 1 +15 đã phát cho chuvuongtestaa. (2) Console gs001 SvrFPS: 18/18 gần như mọi phút (tick avg ~0,7-0,9 ms); riêng 2 phút lúc chủ đăng nhập: SvrFPS 17/18 và 18/18 nhưng tick avg 40 ms, max 0,97 s, over=189/258 (gánh nặng lúc nạp nhân vật, không phải lúc chạy/đánh). Lúc đọc (21:48) Online=0, chưa có mẫu khi chủ chạy/đánh; sẽ đọc lại khi chủ báo đang đánh quái. Chờ chủ so hiệu ứng 2 tay.
+
+Đã đọc đến #273b. SvrFPS phút chủ vào 21:49 = 16/18, tick avg 116 ms, max 864 ms, over=572 (nạp nhân vật); phút khác 18/18. Chùy cấp 1: given 1. PHÁT HIỆN: cây qh9A (APK vc22/vc23) không có bản sửa hai tay [vk04] (chỉ ở qh9A-vk04); đã báo Chat, chờ duyệt gộp (Q-52).
