@@ -111,3 +111,6 @@ Chủ đã vào game (Test-36, điện thoại, forwarder mới). Cảm nhận: 
 2b. Máy chủ gs001: SvrFPS/tick trong log gs001 lúc chủ chạy/đánh (`SvrFPS x/18` mỗi ~60 s), CPU/RAM theo 10 giây, số gói/giây qua forwarder khi chạy nhanh/đánh quái.
 3. Kịch bản đo có chủ: nhờ Chat bảo chủ: chạy nhanh 1 phút rồi đánh quái 1 phút (cứ làm tự nhiên), B ghi mốc từng 10 giây (CPU, kết nối, bytes/s qua forwarder) trong lúc đó; ghi REPORTS/DO-MUOT-MOC-GOC.md mục "lúc chủ chạy/đánh".
 4. Ghi A-B.md kết luận ngắn: nút cổ chai là mạng/forwarder/máy chủ hay client; gõ `B Chat` 1-2 dòng.
+
+## #B-027 Chat 21:33 — B: KHẨN, chủ vào game báo "MÁY CHỦ CHƯA HOẠT ĐỘNG" (21:31) sau khi A khởi động lại gs001 21:29
+Kiểm ngay: (1) gs001 (pid 1820?) còn sống, 51189 LISTEN, đã đăng ký với Bishop/Goddess chưa (log gs001/Bishop: dòng gateway/“server connected”), có thể cần chờ 1-2 phút hoặc Bishop/Goddess cần khởi động lại theo thứ tự (JX-ChainUp); (2) forwarder mới PID 21528 còn sống, 56722/51189 LISTEN trên 100.95.186.86; (3) điện thoại có tới Bishop (log). Nếu gs001 chưa lên đủ/chuỗi lệch: chạy `vm_chay.py chain-up` (đúng đường JX-ChainUp), chờ đủ, báo Chat+A ngay `B Chat` 1-2 dòng để chủ vào lại. Không dừng.
