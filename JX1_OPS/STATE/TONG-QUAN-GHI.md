@@ -735,3 +735,6 @@
 [TỔNG QUẢN 19/11 23:39] CAU DAO xingchi: DONG; HG2-03 cho xingchi, thu lai bang JX-K4
 [TỔNG QUẢN 19/11 23:41] CAU DAO xingchi: DONG
 [TỔNG QUẢN 19/11 23:43] CAU DAO xingchi: DONG
+[TỔNG QUẢN 19/11 23:45] CAU DAO xingchi: DONG
+[TỔNG QUẢN 19/11 23:47] CAU DAO xingchi: DONG
+[TỔNG QUẢN 19/11 23:49] CAU DAO xingchi: DONG
