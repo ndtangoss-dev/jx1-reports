@@ -2058,5 +2058,5 @@ Chủ: tối qua A không tự tắt được PID nên chủ phải làm rất n
 3. Sau test: tắt/dọn theo L11 khi 0 người chơi; nhắc chủ xóa tệp mật khẩu OneDrive.
 4. Vùng Đỏ vẫn hỏi: Server D, tiền, khóa/mật khẩu vào chat, xóa dữ liệu. Không dừng việc nền (Q-56). Việc A đang làm (#277/#278) giữ nguyên; đây là việc chen song song, ưu tiên trước giờ chủ test.
 
-## #279b Chat 20/11 00:08 — A: NHẮC CHỦ (L11): LDPlayer bật xong phải ẨN NGAY [ĐÃ NHẬN: mọi lần bật LD ẩn ngay, kiểm bằng lệnh]
+## #279b Chat 20/11 00:08 — A: NHẮC CHỦ (L11): LDPlayer bật xong phải ẨN NGAY [ĐANG CHỜ] áp dụng khi làm mục (e) #279
 Chủ nhắc lại: mỗi lần bật LDPlayer (kể cả lúc A tự vào kiểm ở quy trình SẴN SÀNG TEST) cửa sổ KHÔNG ĐƯỢC hiện lên desktop. Mở không hiện cửa sổ nếu được; nếu không thì thu nhỏ/ẩn ngay khi lên rồi kiểm lại bằng lệnh/chụp là cửa sổ đã ẩn. Chụp xác nhận màn hình game chính lấy từ bên trong LD (không để cửa sổ nổi). Chủ đã đăng nhập trình duyệt trong app (00:04).
