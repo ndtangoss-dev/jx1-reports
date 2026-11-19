@@ -156,3 +156,4 @@ CHAT-DAY #259 19/11 19:20
 - 20:36 CHAT→B #B-025 kiểm ai nghe 56722/51189 sau taskkill
 - 21:27 CHAT→A #268, B #B-026: độ phản hồi chạy nhanh/đánh quái (Q-82)
 - 21:30 CHAT→A #269 cấp chùy cấp 1 +15 cho chủ để kiểm lỗi hiệu ứng vũ khí 2 tay
+- 21:30 CHAT→A #270 chủ đã thoát game, khởi động lại gs001 được
