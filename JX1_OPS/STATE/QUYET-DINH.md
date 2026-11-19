@@ -153,3 +153,6 @@ Chủ đã vào game trên điện thoại (Test-36, APK vc22): hoạt ảnh/ho�
 
 ## Q-84 (chủ 19/11 21:59) DUYỆT GỘP vk04 vào vc23, test một thể, rồi chuyển tài khoản
 Chủ: "Gộp luôn, test luôn 1 thể; sau khi gộp xong ta sẽ chuyển tài khoản và báo lỗi ở tài khoản mới. Bảo A B làm gọn đi, không để trống thông tin. Trước khi chuyển ta sẽ báo Chat." → A gộp vk04 (chỉ vẽ thêm tia khi section phụ ≥20 điểm và ≥40%, công tắc tắt được) vào vc23, dựng MỘT lần (vc23 = giảm lag + vk04), giao APK theo Q-81 (Artifact + cài đè); B/A làm gọn sổ bàn giao, không bỏ trống thông tin; việc nghẽn gs001 (#275) ghi đủ trong bàn giao để tiếp ở tài khoản mới. Q-52 vẫn: chỉ gộp bản vk04 đã kiểm trên LD.
+
+## Q-85 (chủ 20/11 00:00) A tự chủ dọn đường + kiểm vào game trước khi chủ test
+Chủ: tối 19/11 A không tự tắt được PID, chủ phải làm rất nhiều việc bằng tay khi không ở nhà. Giao A quyền chủ động (L17); trước test A phải kiểm server nào, tài khoản nào, rồi dùng LDPlayer tự vào tới màn hình game chính, báo chủ OK. Không để chủ vào mới thấy đủ lỗi, treo ở chọn server mãi.

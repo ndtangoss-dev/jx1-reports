@@ -136,3 +136,6 @@ Chủ đã chốt. Phạm vi Q-82: CHỈ Test-36, KHÔNG đụng Server D, khôn
 
 ## #B-033 Chat 19/11 23:40 — B: kết quả chủ test vc23 (bổ sung #B-032)
 Chủ test vc23: VK04 ĐẠT; gói tin mượt. Còn: (1) chạy ngựa cứ ~4–5 s khựng một nhịp; (2) quái hiện ra đột ngột khi tới gần, chủ cho rằng phải hiện sớm hơn; (3) đánh thường chưa ra đòn (A lo). B: (a) tìm chu kỳ 4–5 s phía server/mạng: tick gs001 theo thời gian, khoảng trống gói (gap) có lặp ~4–5 s không (autosave, đồng bộ, ping); (b) kéo B-02 visibility.ini lên: tầm hiển thị NPC/quái phía server (phạm vi gửi quái) và tìm xem chỉnh được ở tệp cấu hình trên Test-36 không (bản .bak + hoàn tác, không đụng Server D, dựng lại gs001 chỉ khi không có người chơi, nhớ nạp bản đồ 10–12 phút). Gõ 'B Chat' khi có kết quả.
+
+## #B-034 Chat 20/11 00:05 — B: hỗ trợ A quy trình "SẴN SÀNG TEST" (chủ chốt 00:00, Q-85, L17)
+Chủ không muốn làm tay khi test từ xa. A lo quy trình tổng (thư #279). B lo phần MẠNG: (a) kiểm Tailscale điện thoại↔PC trực tiếp hay DERP (nếu qua relay, ghi cách chỉnh cho chủ bằng lời thường), RTT; (b) giữ forwarder ghi giờ khoảng trống (#B-032) và tự chạy lại khi A đổi; (c) viết script kiểm nhanh "đường vào": forwarder đích đúng, cổng nghe, gs001 đang nạp hay xong, trả kết quả một dòng để A dùng ở bước (a)(c). B không nhập/đọc mật khẩu. Phối hợp qua A-B.md; việc B-032/B-033 giữ nguyên. Gõ 'B Chat' khi xong.

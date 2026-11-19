@@ -96,3 +96,6 @@ Chủ bực vì A đứng chờ thư Chat ~30 phút mà Chat vẫn báo "đang c
 
 ## L16 (chủ 19/11 16:39) — VIỆC CHỦ ĐÃ YÊU CẦU LÀ MẶC ĐỊNH ĐƯỢC PHÉP
 Việc nằm trong lệnh chủ đã giao (kể cả các bước cần để thực hiện, như B gõ B Xong/B Chat qua Chrome) thì Chat và Sonnet làm luôn, không hỏi lại chủ. Chỉ hỏi chủ ở vùng Đỏ hoặc việc chủ chưa hề giao.
+
+## L17 (chủ 20/11 00:00) — A TỰ CHỦ DỌN ĐƯỜNG VÀ KIỂM TRƯỚC KHI CHỦ TEST
+Chủ test từ xa (không ở nhà), không được mất thời gian làm tay. Từ nay: (1) A có QUYỀN CHỦ ĐỘNG dừng/khởi động lại forwarder, tiến trình Test-36, gs001 (không trong 15 phút trước giờ test), LDPlayer T36test, dùng Stop-Process (không dùng taskkill, WMI hỏng); tiến trình Admin không dừng được vì UAC thì KHÔNG vượt UAC: A soạn một .ps1 tạo tác vụ Windows chạy quyền cao có hoàn tác, chủ chạy MỘT lần, từ đó A chạy bằng schtasks không cần UAC. (2) TRƯỚC mỗi lần chủ test, A chạy quy trình SẴN SÀNG TEST (thư #279): chọn đúng server (Test-36) + tài khoản, tự vào bằng LDPlayer tới màn hình game chính, chụp xác nhận, thu nhỏ LD ngay (L11), rồi MỚI báo chủ "SẴN SÀNG". Chủ không được phát hiện lỗi "treo ở chọn server/chờ máy chủ" lúc vào. Vùng Đỏ giữ nguyên (Server D, tiền, khóa/mật khẩu không vào chat, xóa dữ liệu).
