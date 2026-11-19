@@ -131,3 +131,6 @@ Cửa sổ cường hóa (asset gốc): ô đặt món, 3 ô thủy tinh hiện 
 
 ## B→A 20/11 01:50 — #B-035b: SỬA HỢP ĐỒNG (bản nháp 2): tiền GIỮ 32 bit, giá bạc kẹp 20 ức (Q-87, ưu tiên 2)
 Tiền ở server/giao thức/DB đều `int` (KInventory.h:10, KProtocol.h:756,1177...); mở 64 bit vượt ~1 giờ công và đụng lưu DB → theo Chat **giảm giá**: bạc mỗi cấp = min(2^(n−1)×200 vạn, **20 ức**); thủy tinh hồng/lục/lam VẪN 2^(n−1) mỗi loại (+15: 16384 mỗi loại). Hệ quả cho A: BỎ tin `MONEY64_SYNC` (số 6); trong `ENHANCE_RESULT` các trường bạc là `uint32 need_silver` (một số, đơn vị bạc, tối đa 2.000.000.000), điểm tài phú vẫn gửi `uint32 score` (tối đa 100×12×15=18000, vừa 32 bit). Hiển thị ức/vạn vẫn do A đổi từ số bạc. Còn lại giữ như bản nháp 1.
+
+## B→A 20/11 02:05 — HỎI A: đường dựng gs001 + đưa lên Test-36 (cho #B-035)
+B đã sửa `KItem.cpp` (+kỹ năng ở +14/+15, vá ở DESIGN/QH-B035-KItem-14-15.patch, cây `D:\JX-source` nhánh qh-b035). Cần dựng gs001 mới + đặt lên Test-36 + sửa `online.lua`. Vm_chay.py của B chỉ có lệnh đọc. A đã làm được các việc đó (JXGive269, .bak-282): xin ghi vào đây (a) lệnh dựng gs001 và thư mục build đúng, (b) cách chép file/exe vào VM. Nếu A tự làm được: B sẽ giao phần mã (luật cường hóa trong Lua + C++), A dựng/đưa lên. Cảm ơn.

@@ -1,0 +1,26 @@
+diff --git a/server/jxOnline/gameserver/Sources/Core/Src/KItem.cpp b/server/jxOnline/gameserver/Sources/Core/Src/KItem.cpp
+index 7a90f40..2b111c1 100644
+--- a/server/jxOnline/gameserver/Sources/Core/Src/KItem.cpp
++++ b/server/jxOnline/gameserver/Sources/Core/Src/KItem.cpp
+@@ -180,8 +180,8 @@ void KItem::ApplyMagicAttribToNPC(IN KNpc* pNPC, IN int nMagicActive,int *nType)
+ 		}
+ 	}
+ 
+-	// [qh] +12: +1 tat ca ky nang, +15: +2 (chi vu khi)
+-	if (m_CommonAttrib.nItemGenre == item_equip && (m_CommonAttrib.nDetailType == equip_meleeweapon || m_CommonAttrib.nDetailType == equip_rangeweapon) && m_CommonAttrib.nEnChance >= 12)
++	// [qh] +14: +1 tat ca ky nang, +15: +2 (B-035) (chi vu khi)
++	if (m_CommonAttrib.nItemGenre == item_equip && (m_CommonAttrib.nDetailType == equip_meleeweapon || m_CommonAttrib.nDetailType == equip_rangeweapon) && m_CommonAttrib.nEnChance >= 14)
+ 	{
+ 		KItemNormalAttrib qhAttrib;
+ 		qhAttrib.nAttribType = magic_allskill_v;
+@@ -269,8 +269,8 @@ void KItem::RemoveMagicAttribFromNPC(IN KNpc* pNPC, IN int nMagicActive,IN int *
+ 
+ 	int nCount = nMagicActive;
+ 	int	i;
+-	// [qh] +12: +1 tat ca ky nang, +15: +2 (chi vu khi)
+-	if (m_CommonAttrib.nItemGenre == item_equip && (m_CommonAttrib.nDetailType == equip_meleeweapon || m_CommonAttrib.nDetailType == equip_rangeweapon) && m_CommonAttrib.nEnChance >= 12)
++	// [qh] +14: +1 tat ca ky nang, +15: +2 (B-035) (chi vu khi)
++	if (m_CommonAttrib.nItemGenre == item_equip && (m_CommonAttrib.nDetailType == equip_meleeweapon || m_CommonAttrib.nDetailType == equip_rangeweapon) && m_CommonAttrib.nEnChance >= 14)
+ 	{
+ 		KItemNormalAttrib qhAttrib;
+ 		qhAttrib.nAttribType = magic_allskill_v;

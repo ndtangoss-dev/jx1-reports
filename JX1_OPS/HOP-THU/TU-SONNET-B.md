@@ -141,3 +141,11 @@ Xong phần mạng: script `TOOLS/kiem_duong_vao.py` in một dòng SẴN SÀNG/
 
 ## B 20/11 01:35 — #B-035 ĐÃ NHẬN. Hợp đồng nháp 1 đã ghi ở A-B.md (commit local). Khung [qh] cường hóa 5% đã có sẵn trong KItem.cpp; còn lại: luật nguyên liệu/tỉ lệ, +14/+15, tiền 64 bit, tài phú, phi phong. Chưa build/chạy gì.
 Đã đọc đến #B-035
+
+## B 20/11 02:05 — #B-035/#B-035b tiến độ
+- Giá: tiền 32 bit ở server/giao thức/DB (KInventory.h:10, KProtocol.h) → áp ưu tiên 2: bạc kẹp 20 ức, thủy tinh vẫn gấp đôi. Hợp đồng bản 2 ở A-B.md.
+- Giao tiểu yêu 4 việc khảo sát TASKS/QH-01..04 (ô trang bị, phi phong, thuộc tính +kỹ năng, chuỗi tiền), owner B, chờ Tổng quản.
+- Sửa mã (CHƯA dựng, CHƯA lên Test-36): D:\JX-source nhánh qh-b035, KItem.cpp ngưỡng +kỹ năng 12→14 (hai chỗ cộng/trừ), vá lưu ở DESIGN/QH-B035-KItem-14-15.patch. Chỉ áp vũ khí (cộng cho mọi ô sẽ chồng +24).
+- Phát +15 thử (JXGiveWeapons/JXGive269) A đã vô hiệu từ #282 (online.lua.bak-282); vũ khí đã phát không xóa.
+- Còn: luật nguyên liệu/bạc/tỉ lệ + tin giao thức + tài phú + phi phong; cần dựng gs001 (đường dựng/đưa lên VM do A giữ) — sẽ hỏi A qua A-B.md.
+Đã đọc đến #B-035b
