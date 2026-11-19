@@ -56,3 +56,7 @@ Test-36, nhân vật `T36nv1`, mỗi loại +15 (cấp 1), trang bị rồi đ�
 2. **Sét là sửa phía client hay server [ĐÃ KIỂM mã]:** hiệu ứng chùy/thích nằm ở `Classes/vn/gamecore/KNpcResVN.cpp` (client). Chỉ cần APK mới, **server D không phải đổi**.
 3. **Tài khoản/nhân vật chủ trong DB Server D [CHƯA KIỂM]:** `JX-Server-D` đang tắt (luật L11: tắt khi 0 người chơi). Chỉ đọc DB cần bật D; theo lệnh #216 bật D sau khi xong VK-04 và BOT. Sẽ kiểm chỉ sự tồn tại và tên nhân vật, không đọc mật khẩu, rồi bổ sung vào đây.
 4. **Cách giao APK không qua git (kho công khai):** (A) tải qua mạng Tailscale: máy thật phát `http://100.95.186.86:8091/<tên>.apk`, chỉ điện thoại chủ truy cập được; chủ mở link, bấm tải. (B) Chép qua cáp USB/Zalo cá nhân: PM đặt file vào thư mục riêng ngoài kho, chủ tự chép. Hướng dẫn cài đè: ① tải xong, mở file trong "Tải xuống"; ② bấm "Cập nhật/Cài đặt" (đừng gỡ bản cũ, gỡ sẽ mất dữ liệu cục bộ); ③ nếu Android chặn thì bật "cho phép cài từ nguồn này" cho trình duyệt; ④ mở game, đăng nhập như thường. Link gửi dạng hộp copy có SHA256 (khi chủ đồng ý nhận).
+
+## VK-04 chùy/thích hai tay — kết quả bản sửa vc22 (19/11, [TỰ QUYẾT])
+- Trước: `REPORTS/img/vk04-truoc-chuy-h0.png` (cây phải chỉ vệt trắng). Sau: `REPORTS/img/vk04-sau-chuy-h0.png` (cả hai cây có sét). Đao một tay không đổi: `REPORTS/img/vk04-sau-dao-h0.png`.
+- FPS LD ~32–38, không xấu hơn (mẫu ít). Mới kiểm hướng 0 bằng ảnh; 8 hướng/thích/kiếm chưa chụp. Chưa đưa vào repo chính, chưa giao APK (vùng Đỏ, chờ chủ yêu cầu).

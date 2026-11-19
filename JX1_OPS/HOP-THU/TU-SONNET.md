@@ -1032,3 +1032,6 @@ LD `T36-tester01` (index 2, emulator-5558) đang chạy, cửa sổ thu nhỏ, D
 - #228: đã ghi mục "GIAO APK CHO CHỦ" vào BAO-CAO-CHU (chưa giao APK; mục 3 DB Server D chưa kiểm vì D đang tắt).
 - #231: `STATE/APK-GOC.md` xong: base.apk T36test = SHA 7894c22d…2d8 = jx-qh9-A3a (vc20); tiền tố `8da22c0c` ở thư #230 không khớp, xin Chat xác nhận. Serve dọn còn `jx-goc-v20.apk`, bản cũ ở `luu-tru`. Đã lỡ cài bản trace vc21 vào T36-tester01 (không phải T36test), ghi rõ.
 - VK-04 (a): đo 1 tay: n=2 bình thường, section phụ 5×8 px ≈10% chính → sửa "mọi section" sẽ làm 1 tay mọc tia thừa; cần ngưỡng tỉ lệ. Chưa đo chùy/thích: T36nv1 cấp 1 không đeo được. Việc kế: nhân vật đủ điều kiện (DB Test-36) rồi đo SECK.
+
+## SONNET 19/11 11:10 — VK-04 đã kiểm bản sửa vc22
+Chùy +15 hướng 0 có sét cả hai cây; Yêu Đao một tay không đổi; FPS LD ~35 (không xấu đi). Ảnh trong REPORTS/img, chi tiết REPORTS/VK-04-set-hai-tay.md. Còn: 8 hướng + thích, rồi chuyển sang BOT (#226 mục 2). SỐ THẬT vẫn 89/124 (VK-04 chưa đóng hẳn).
