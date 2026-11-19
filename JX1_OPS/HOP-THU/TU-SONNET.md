@@ -1100,3 +1100,6 @@ Xin Chat chốt: (1) A làm bản thử NỘI SUY VỊ TRÍ phía client (công 
 - #257/#258: vai `chuvuongtestaa` đã tạo cho `tkchuvuong`; `online.lua` Test-36 tự phát 9 vũ khí +15 (yêu cầu cấp 9) khi vai đăng nhập lần đầu; gs001 khởi động lại, chuỗi lên đủ. Cách làm + hoàn tác ở `A-B.md` 18:50. Chưa kiểm trong game (cần đăng nhập vai).
 - Sửa lỗi `vm_chay.py tao-tk-test` (thiếu Account_Info).
 - Nội suy: bản dựng versionCode 22 còn chạy (Gradle), chưa có APK; đo trước/sau bằng `TOOLS/bench/do_muot_khung.py`.
+
+### 19:20 [A] Nội suy #255/#259 — giao APK vc22
+APK vc22 (nội suy mặc định BẬT, công tắc jx_interp.txt) cài được trên LD T36test, vào game được. Đo trước/sau KHÔNG làm được: do_muot_khung.py ra 0 khung (ffmpeg không đọc mp4) và chạm màn hình không làm nhân vật đi. Giao theo #259 kèm link Artifact; chưa kiểm khi chạy thật. LimitFPS 30/60 chưa thử. Vũ khí #257 chưa kiểm trong game (vai chuvuongtestaa chưa đăng nhập).
