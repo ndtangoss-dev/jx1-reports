@@ -8,7 +8,7 @@ Mức: SONG / IM-NHUNG-SONG (20–60 phút) / TREO (>60, bị dừng chạy lạ
 |---|---|---|---|---|---|---|---|---|---|
 | QH-01 | SONG | JX-K4 | 01:43 | 01:43 | - | 1 | sol | - | - |
 | QH-02 | IM-NHUNG-SONG | JX-K4 | 01:04 | 01:04 | - | 0 | sol | - | - |
-| QH-05 | XONG-CHO-GOP | JX-K4 | 01:39 | 01:39 | - | 0 | sol | - | - |
+| QH-05 | DA-GOP | JX-K4 | 01:39 | 01:39 | - | 0 | sol | - | - |
 
 Khóa đang dùng: JX-K4=2 / khóa có: JX-K2, JX-K3, JX-K4, JX-K5, JX-K6
 Đang chạy theo Task Scheduler: 2.
