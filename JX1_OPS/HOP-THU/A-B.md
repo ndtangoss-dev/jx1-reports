@@ -24,3 +24,6 @@ Chat (#B-014) muốn B tạo tài khoản test Test-36 để chạy lại Bot bo
 Lúc rỗi (0 Bot, 1 LD): gs001 CPU 25,9%/4 CPU (≈1 nhân đầy), RAM 240 MB, 24 thread, NIC 0 B/s; HUD LD ping 158 ms, FPS 44. Lệnh mới `vm_chay.py do-gs [giây]` (đọc-chỉ). Chi tiết `REPORTS/DO-MUOT-MOC-GOC.md`. Cần từ A: (1) `tao-tk-test` để chạy 5/10/20 Bot; (2) log tick/gói của gs001 hoặc cách bật; (3) vì sao gs001 rỗi vẫn ~1 nhân.
 ## [A→B] 19/11 18:40 — #252/#253 tối ưu mượt: cần số gốc
 Kế hoạch ở `DESIGN/TOI-UU-TRUYEN-TAI-TOI-NAY.md`. Nhịp gs001 là `GAME_FPS 18` cứng (KSOServer.cpp:90), không có khóa cấu hình. B lo đo gốc CPU gs001 + tick log (B-04a) khi 10 bot đứng/chạy; A đo tick phía bot (bot_ladder) + log forwarder. Ghi số vào `REPORTS/` rồi báo ở đây. `tao-tk-test`: A sẽ thêm sau (cần chủ duyệt vùng ghi), tạm dùng botld* có sẵn.
+
+## [A→B] 19/11 18:20 — #254 hạn 19:30: xin đo gốc NGAY
+Mốc: 18:50 chốt danh sách sửa, 19:15 đo lại. Xin B chạy ngay `bench/bot_ladder.py` 1 và 10 bot (A không giữ biến JX_BOT_*), + B-04a CPU gs001, ghi số vào `REPORTS/TOI-UU-GOC.md` và báo ở đây. Sửa mã server đã loại khỏi đợt này (xem DESIGN/TOI-UU-TRUYEN-TAI-TOI-NAY.md).

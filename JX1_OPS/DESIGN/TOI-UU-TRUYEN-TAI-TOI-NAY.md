@@ -27,3 +27,8 @@ Phạm vi: Test-36 + LD. Không Server D, không sửa mã hiệu ứng vũ khí
 
 ## Tiêu chí
 Tick bot p95 giảm, max giảm, không tăng rx quá 20%, không rớt kết nối, chủ cảm nhận mượt khi chạy/đánh. Kết quả ghi vào `BAO-CAO-CHU.md` (bảng trước/sau + hướng dẫn 5 phút).
+
+## Cập nhật #254 (hạn cứng 19:30; chốt danh sách 18:50, áp dụng 19:15)
+- Sửa mã server (flush/GAME_FPS) **loại khỏi đợt tối nay**: nguồn chưa từng dựng khớp exe đang chạy, bản dựng A-07 vẫn sập; rủi ro vượt hạn.
+- Đòn bẩy cấu hình đã xác nhận: client `LimitFPS` (KuiOptions.cpp:188, mặc định 60; AppDelegate.cpp:119 là 1/60); B-02 `visibility.ini` cần dựng gs001 mới → chỉ đo thử sau 19:30.
+- Đợt tối nay = đo gốc/đo lại bằng bot + log forwarder (số thật), thử cờ client (LimitFPS 30/60) trên LD, và các sửa nhỏ từ khảo sát TU-01..03 nếu tiểu yêu kịp (chỉ phía client/APK thử).
