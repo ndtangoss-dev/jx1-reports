@@ -303,3 +303,4 @@
 - 19/11 12:25 #236: chủ thấy cửa sổ LD nổi lại; bắt Sonnet ẩn ngay + làm bộ canh tự động.
 - 19/11 13:00 #237: Sonnet đang ngồi chờ tiểu yêu; bắt làm #236 + việc dở song song.
 - 19/11 13:25 #238: chủ chốt thử Command Code (Q-72).
+- 19/11 13:33 #239: chủ duyệt cài Node.js; tester bằng Command Code còn đang bàn.

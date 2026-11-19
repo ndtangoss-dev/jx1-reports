@@ -151,3 +151,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | #236 | 19/11 12:25 | Chat→Sonnet | chủ hỏi sao quên ẩn LDPlayer: ẩn ngay + bộ canh tự động |
 | #237 | 19/11 13:00 | Chat→Sonnet | đừng chờ tiểu yêu; làm #236 + đổi khóa + việc dở |
 | #238 | 19/11 13:25 | Chat→Sonnet | chủ quyết Q-72: thử Command Code 3 việc nhỏ |
+| #239 | 19/11 13:33 | Chat→Sonnet | chủ duyệt cài Node.js (Q-73) |

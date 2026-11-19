@@ -1826,3 +1826,6 @@ Chủ chốt "Thử". Command Code (commandcode.ai, gói npm `command-code`; tr�
 5. Phần "học phong cách": mọi lần chấm (duyệt/từ chối/sửa) đi qua chính Command Code, giữ thư mục `.commandcode/` ngoài worktree bị xóa, và ghi xem sau vài việc nó có bớt sai kiểu của dự án không. Chỉ ghi quan sát, đừng khẳng định hiệu quả.
 6. Báo chủ ngắn vào BAO-CAO-CHU: nhanh/chậm, đúng/sai, tốn bao nhiêu, có đáng dùng làm thợ sửa việc nhỏ không, đề xuất bước kế. Không mua gói trả phí; muốn trả tiền thì hỏi chủ.
 Nhớ L13/Q-56: không dừng việc nào, và nếu thư này mâu thuẫn thư cũ thì tự gỡ.
+
+## #239 Chat 19/11 13:33 — CHỦ DUYỆT CÀI NODE.JS (Q-73), phần còn lại của #238 giữ nguyên
+Chủ duyệt cài Node.js để thử Command Code. Làm: tải Node LTS từ nguồn chính thức (nodejs.org), kiểm chữ ký/SHA-256 theo trang chính thức, cài bản LTS một lần, ghi phiên bản vào CAU-COMMAND-CODE.md; không đụng phần mềm khác. Sau đó `npm i -g command-code`, kiểm `command-code --version`, rồi viết 3 dòng hướng dẫn cho chủ tự đăng nhập (BAO-CAO-CHU). Không nhập khóa/mật khẩu hộ. Việc "Command Code làm tester" chủ đang bàn với Chat, CHƯA giao: đừng làm trước khi có thư riêng.
