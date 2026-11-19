@@ -1,8 +1,8 @@
-# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-19 18:29, đừng sửa tay)
+# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-19 18:42, đừng sửa tay)
 
-ĐANG LÀM: TS-04
+ĐANG LÀM: (không)
 KẾ TIẾP: 0-08, A-07g, A-07h, B-05, D-02, E-04
-BỊ CHẶN: T-04
+BỊ CHẶN: T-04, TS-04
 
 Ba chặng #091: 1 hiểu game (chuẩn hóa) → 2 đường truyền + exe → 3 tick/độ phản hồi/đồ họa.
 
@@ -16,7 +16,7 @@ flowchart LR
     T_04["T-04 chặn"]
   end
   subgraph S3["Chặng 3 tick và đồ họa"]
-    TS_04["TS-04 chạy"]
+    TS_04["TS-04 chặn"]
     0_08["0-08 chờ"]
     B_05["B-05 chờ"]
     D_02["D-02 chờ"]
@@ -31,4 +31,4 @@ flowchart LR
   end
 ```
 
-Tổng: 248 việc, 1 đang làm (+0 chết, 0 chờ gộp), 13 chờ, 1 bị chặn, 233 xong.
+Tổng: 248 việc, 0 đang làm (+0 chết, 0 chờ gộp), 13 chờ, 2 bị chặn, 233 xong.
