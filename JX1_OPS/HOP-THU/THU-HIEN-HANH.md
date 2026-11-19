@@ -167,3 +167,5 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | #246 | 19/11 16:35 | Chat→Sonnet | A đừng chờ thư: kiểm bản dựng VK-04, CreateRole thông báo, VK-04 còn thiếu, hàng đợi |
 | #247 | 19/11 16:50 | Chat→Sonnet | A khởi động lại Bishop Test-36 giúp B, đọc log, tra tên trùng |
 | #B-008 | 19/11 16:50 | Chat→B | giao A khởi động Bishop; B làm CC-01/Bot/tester trong lúc đợi |
+| #248 | 19/11 16:55 | Chat→Sonnet | L15: A Xong/A Chat, sửa tong_quan sonnet_song (CHO) |
+| #B-009 | 19/11 16:55 | Chat→B | L15: B Xong/B Chat, không chờ thư |

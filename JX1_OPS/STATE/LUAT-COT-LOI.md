@@ -86,3 +86,10 @@ Khi chủ bàn BẤT KỲ việc gì, Chat phải trình bày trước "thuộc 
 
 ## L14. VIỆC CHỦ ĐÃ DUYỆT THÌ CHAT TỰ GÕ LỆNH LÊN CỬA SỔ CHAT CỦA SONNET (chủ chốt 19/11 13:43)
 Khi chủ đã bảo/duyệt cài hay làm một việc (ví dụ Q-73 cài Node/command-code) mà Sonnet bị bộ kiểm soát quyền chặn hoặc cần một lệnh: Chat TỰ gõ lệnh vào khung chat Claude Code của Sonnet (qua Chrome), ghi rõ "chủ đã duyệt, Q-xx, giờ", KHÔNG hỏi lại chủ. Chỉ áp dụng cho việc chủ ĐÃ duyệt; việc chưa duyệt, vùng Đỏ (Main VM, tiền quá hạn mức, khóa ngoài phạm vi, xóa dữ liệu, APK cho chủ, đổi thông tin đăng nhập) vẫn phải hỏi chủ. Không bao giờ dùng để ra lệnh dừng (Q-56).
+
+## L15. KHÔNG NGỒI CHỜ THƯ CHAT; GỌI CHAT BẰNG "A Xong" / "A Chat" / "B Xong" / "B Chat"; "SỐNG" PHẢI LÀ HOẠT ĐỘNG THẬT (chủ chốt 19/11 16:23)
+Chủ bực vì A đứng chờ thư Chat ~30 phút mà Chat vẫn báo "đang chạy bình thường": gốc là nhịp tim của `cho_thu.py` bị tính là "sống". Vá ngay:
+1. **Sonnet không bao giờ ngồi chờ thư Chat** (Q-56, L10). `cho_thu.py` chỉ dùng ngắn khi có việc chạy nền (dựng, tiểu yêu) cần đợi; không có thì làm việc kế trong `HANG-DOI-VIEC.md`. Hết việc đang giao = tự lấy việc, không chờ.
+2. **Tín hiệu gọi Chat** (qua Chrome, gõ vào khung chat Chat, đúng nguyên văn): Sonnet A gõ `A Xong` (xong một việc, cần việc tiếp) hoặc `A Chat` (cần quyết định/hỏi); Sonnet B gõ `B Xong` / `B Chat`. Chat coi các chuỗi này là tín hiệu của Sonnet, không phải lời chủ. Dùng khi xong việc lớn hoặc cần Chat; không gõ liên tục.
+3. **Chat kiểm theo hoạt động thật, không theo nhịp `cho_thu`:** mỗi vòng kiểm, nếu A hoặc B không có commit/ghi tệp việc >12 phút (chỉ có nhịp cho_thu) thì coi là CHỜ, Chat gửi ngay việc cụ thể trong hàng đợi và báo chủ đúng sự thật.
+4. **Tổng quản** ghi trạng thái `CHO` (đứng chờ) khi chỉ có nhịp `cho_thu` mà không có commit/phiên làm việc >10 phút, tách riêng A và B (xem #248).
