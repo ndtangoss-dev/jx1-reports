@@ -30,3 +30,10 @@ Nguồn: commandcode.ai/docs, /docs/headless (đọc qua WebFetch; chưa chạy 
 ## Số dư tín dụng (B, 19/11 17:20)
 - `command-code status`: đã đăng nhập, nhà cung cấp Command Code. Không hiện số dư.
 - `command-code -p "/usage"` (không tương tác) chỉ trả lời "/usage chỉ hiện trong phiên tương tác", dẫn tới trang web commandcode.ai/usage. B không mở được phiên tương tác từ Bash. Số trước/sau: CHƯA ĐO; cách đo: chủ gõ `/usage` trong phiên tương tác của mình hoặc mở trang web, hoặc cấp quyền B dùng trình duyệt trong phiên chủ đã đăng nhập. Mô hình `flint-v1.0:free` là bản miễn phí nên chi phí dự kiến 0.
+
+## Đo thử CC-01 (B, 19/11 ~19:00) — việc nhỏ viết mã + test
+- Việc: viết `hop_le(ten)` (6..16 chữ cái ASCII) + 9 ca unittest, tự chạy test. Chạy `command-code --yolo -m flint-v1.0:free -p` trong `D:\JX-wt\CC-01`.
+- [ĐÃ KIỂM] Lần 1 (`--max-turns 12`, cho phép xem repo): 66 s, hết 12 vòng, KHÔNG tạo file (mô hình đi xem repo). Lần 2 (`--max-turns 30`, dặn "không xem repo, tạo ngay"): 53 s, tạo đủ 2 file, 9 test OK (tôi chạy lại độc lập: OK).
+- Bài học: dặn rõ "không khám phá, làm ngay" và đặt `--max-turns` ≥ 30. Mô hình free đủ cho việc nhỏ một hàm; chưa thử việc nhiều tệp/đọc ảnh luồng đăng nhập.
+- So Codex: [CHƯA ĐO CÙNG ĐỀ] — chưa có bản Codex làm đúng việc này để so; BOT-01 Codex tiểu yêu BLOCKED vì hiểu "không sửa mã" thành cấm viết Python (lỗi đề, không phải lỗi mô hình).
+- `/usage`: [CHƯA ĐỌC] vẫn cần phiên tương tác; model free không tính tín dụng.
