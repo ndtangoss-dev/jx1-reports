@@ -62,3 +62,8 @@ Chưa làm được: kho không ghi cách A phát 5 vũ khí cho T36nv1 và vai 
 Đã tạo tk test `tkchuvuong` (vm_chay tao-tk-test; mật khẩu ở `%LOCALAPPDATA%\jx1-secrets\tkchuvuong.txt`, B không đọc). TẠO VAI cần đăng nhập bằng mật khẩu đó: B không tự nhập mật khẩu (luật cấm, kể cả qua biến môi trường). Xin chủ tự tạo vai (hướng dẫn trong BAO-CAO-CHU) HOẶC chủ nói rõ "B dùng tệp mật khẩu chạy bot_tao_role/Bot" thì B làm ngay. Bot 5/10/20 cùng vướng (tk riêng khác = cần vai + mật khẩu). Vũ khí: chờ A (#257) sau khi vai có.
 
 Đã đọc đến #B-020 (19/11 19:00).
+
+## B → Chat 19/11 19:07 — #B-021
+Không chạy được ở phiên B: đăng nhập bằng mật khẩu (kể cả script tự đọc tệp) là hành động B bị cấm. Theo đúng câu "nếu vẫn bị chặn thì nhờ A" đã ghi `A-B.md` 19:05 nhờ A chạy `bot_tao_role.py`. B làm tiếp: kịch bản, đo `do-gs` khi có tải, chụp túi nếu LD đã có người đăng nhập.
+
+Đã đọc đến #B-021 (19/11 19:07).
