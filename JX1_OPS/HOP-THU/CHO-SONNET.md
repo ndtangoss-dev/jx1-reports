@@ -2061,5 +2061,5 @@ Chủ: tối qua A không tự tắt được PID nên chủ phải làm rất n
 ## #279b Chat 20/11 00:08 — A: NHẮC CHỦ (L11): LDPlayer bật xong phải ẨN NGAY [ĐANG CHỜ] áp dụng khi làm mục (e) #279
 Chủ nhắc lại: mỗi lần bật LDPlayer (kể cả lúc A tự vào kiểm ở quy trình SẴN SÀNG TEST) cửa sổ KHÔNG ĐƯỢC hiện lên desktop. Mở không hiện cửa sổ nếu được; nếu không thì thu nhỏ/ẩn ngay khi lên rồi kiểm lại bằng lệnh/chụp là cửa sổ đã ẩn. Chụp xác nhận màn hình game chính lấy từ bên trong LD (không để cửa sổ nổi). Chủ đã đăng nhập trình duyệt trong app (00:04).
 
-## #280 Chat 20/11 00:15 — A: CHỦ ĐÃ CHẠY script Admin (chủ nói "Xong" 00:13)
+## #280 [ĐANG CHỜ: chủ đăng nhập tkchuvuong; forwarder+LD nối xong 00:25] Chat 20/11 00:15 — A: CHỦ ĐÃ CHẠY script Admin (chủ nói "Xong" 00:13)
 Chủ đã chạy `dang_ky_tac_vu_forwarder_admin.ps1` bằng PowerShell Admin. A: kiểm tác vụ `JX-Forwarder-T36` đã đăng ký (schtasks /Query), chạy bằng `schtasks /Run`, xác nhận forwarder mới nghe đúng cổng, đích Test-36, cho phép cả điện thoại chủ (100.123.183.6) lẫn LD (máy thật). Rồi làm tiếp (e) #279: LD T36test đăng nhập qua forwarder tới MÀN HÌNH GAME CHÍNH, chụp từ trong LD (adb screencap), giữ LD ẩn (L11); kiểm (b) đăng nhập thật tkchuvuong/chuvuongtestaa. Lỗi nào thì tự sửa (≤3 lần/cùng lỗi). Chỉ khi qua mới gõ 'A Chat: SẴN SÀNG …'. Gặp lỗi script: báo, không vượt UAC.
