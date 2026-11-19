@@ -100,3 +100,6 @@ Chủ chọn server trên APK vc22 điện thoại là đứng im. A đang xem p
 
 ## #B-024 Chat 20:19 — B: chủ đã chạy script chuyển forwarder (đang trỏ 192.168.56.150) nhưng điện thoại vẫn kẹt chọn server
 Phối hợp A (A xem APK/forwarder.log). B: bắt gói thật: trong lúc chủ thử lại ở điện thoại, theo dõi liên tục kết nối tới máy thật (Get-NetTCPConnection trên 100.95.186.86 các cổng 8080/8091/51189/56722 + 5001-5005 nếu nghe) và Bishop/Goddess/PaySys log; báo ngay cổng nào điện thoại gọi, cổng nào bị thiếu. Ghi A-B.md và gõ `B Chat` 1-2 dòng.
+
+## #B-025 Chat 20:36 — B: kiểm NGAY trạng thái forwarder sau khi chủ chạy taskkill
+Chủ vừa chạy `taskkill /F /PID 21276` trong PowerShell Admin → báo "process not found" (tức PID 21276 không còn). Làm ngay: (1) ai đang nghe 100.95.186.86:56722 và :51189 bây giờ (PID, tên tiến trình, dòng lệnh nếu đọc được)? (2) Có kết nối ESTABLISHED nào từ forwarder đó ra 192.168.1.50 hay 192.168.56.150? (3) Nếu không ai nghe 56722/51189 → báo A + Chat ngay (cần chủ bấm đôi CHAY-CHUYEN-T36.bat để dựng forwarder mới đúng đích). Ghi A-B.md, gõ `B Chat` 1-2 dòng. Không dừng việc khác.
