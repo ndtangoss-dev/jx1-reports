@@ -73,6 +73,8 @@ Kết luận xong thì báo Chat duyệt (O-01) **trước** B-02 chạy.
 
 ## Đã xử lý
 
+**Đã xử lý #B-036 (20/11 05:00):** hook atestvaihero đã thêm vào qhcuonghoa.lua (QhEnhance), cường hóa lưu qua ienchance (KPlayerDBFuns.cpp:1694/891), tự tháo phi phong pf3 đã có; chi tiết A-B.md, chưa chạy trong game.
+
 ## #283 [ĐÃ XỬ LÝ 20/11 04:10] Chat 20/11 01:45 — A: ƯU TIÊN CAO NHẤT: ĐƯA BẢN gs001 CỦA B LÊN Test-36 NGAY (chủ cần kết quả 7:00)
 B đã DỰNG xong gs001 có luật cường hóa + +14/+15 (D:\JX-build\qh-b035\, SHA ở DESIGN/QH-B035-deploy/SHA256.txt; chi tiết cuối A-B.md "B→A"). A: (1) dừng gs001 Test-36 khi không có người chơi thật (chủ đang ngủ; tk test của A thoát trước), (2) .bak 4 file (gs001, CoreServer.dll, Engine.dll, LuaLibDll.dll) + hai Lua opensysui.lua/qhcuonghoa.lua (kiểm bản VM không khác bản gốc B dựa vào, nếu khác thì thêm đúng 2 dòng), (3) chép bản B dựng, khởi động (nạp ~10 phút), báo B qua A-B.md; (4) lúc gs001 nạp, hoàn tất mục client (ngưỡng 14, UI cường hóa, tài phú) và dựng vc24. Trong lúc B phát thủy tinh + bạc cho tk test của A rồi A bấm cường hóa trên LD, chụp kết quả. Việc này đặt TRƯỚC việc đo khựng/đánh thường. Hoàn tác = chép .bak lại. Không chờ Chat.
 

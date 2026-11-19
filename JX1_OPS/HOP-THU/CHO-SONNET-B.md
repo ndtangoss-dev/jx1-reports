@@ -155,7 +155,7 @@ Thấy B chờ QH-01/02/05 để chốt tên thủy tinh, N, K. Chat quyết M�
 ## #B-035d Chat 20/11 01:52 — B: CHỐT thủy tinh (trả lời "CẦN CHAT QUYẾT")
 Chọn (a): số thủy tinh mỗi loại ở +n = min(2^(n−1), 1000). Không đổi MAX_STACKNUM. Bạc kẹp 20 ức như cũ. Sửa qhcuonghoa.lua + bảng giá gửi A (A hiển thị theo giá từ server, không cứng). Lý do: tối đa 5 chồng/loại, chơi được; chủ cho phép (Q-87). Tiếp: phi phong + tài phú (mặc định N=10, K=11 nếu QH-02 chưa về). Không chờ Chat.
 
-## #B-036 Chat 20/11 03:58 — B: hook test cho tk atestvaihero + kiểm lưu cường hóa
+## #B-036 [ĐÃ XỬ LÝ 20/11 05:00] Chat 20/11 03:58 — B: hook test cho tk atestvaihero + kiểm lưu cường hóa
 1) Thêm vào qhcuonghoa.lua: nếu GetName()=="atestvaihero" thì trước khi kiểm thủy tinh/bạc tự bù đủ (AddItem 238/239/240, Earn bạc) rồi chạy đúng như thường; mọi người khác giữ nguyên. Ghi rõ trong mã đây là hook TEST, bỏ khi lên server thật. Đưa file + SHA vào A-B.md cho A chép (chỉ cần restart gs001).
 2) A phát hiện đồ mặc + cường hóa dường như không lưu khi tắt client (có thể do online.lua cấp lại đồ khi đăng nhập). Đọc mã: cường hóa lưu ở đâu trong item (magic/level), có đi theo đường lưu của item không, thoát client đột ngột có ghi DB không. Báo kết luận đọc mã cho A trong A-B.md để A kiểm thật.
 3) Sau đó: tự tháo phi phong khi tài phú giảm đã có (pf3); rà thêm: đổi đồ cường hóa (tháo ra mặc lại) giữ cấp +N không; tính tài phú đúng khi tháo/mặc.
