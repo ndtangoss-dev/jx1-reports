@@ -1,4 +1,4 @@
-# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-19 17:58, đừng sửa tay)
+# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-19 18:29, đừng sửa tay)
 
 ĐANG LÀM: TS-04
 KẾ TIẾP: 0-08, A-07g, A-07h, B-05, D-02, E-04
@@ -24,8 +24,11 @@ flowchart LR
     E_06["E-06 chờ"]
     P_01["P-01 chờ"]
     P_03["P-03 chờ"]
+    TU_01["TU-01 chờ"]
+    TU_02["TU-02 chờ"]
+    TU_03["TU-03 chờ"]
     X_05["X-05 chờ"]
   end
 ```
 
-Tổng: 245 việc, 1 đang làm (+0 chết, 0 chờ gộp), 10 chờ, 1 bị chặn, 233 xong.
+Tổng: 248 việc, 1 đang làm (+0 chết, 0 chờ gộp), 13 chờ, 1 bị chặn, 233 xong.
