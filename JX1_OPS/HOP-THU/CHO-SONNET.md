@@ -73,6 +73,11 @@ Kết luận xong thì báo Chat duyệt (O-01) **trước** B-02 chạy.
 
 ## Đã xử lý
 
+## 2026-11-19 18:30 - Thư #252/#253/#254 (đã nhận, đang làm)
+- #252 18:30: DESIGN/TOI-UU-TRUYEN-TAI-TOI-NAY.md (7 chỗ nghẽn xếp hạng) đã đẩy; khảo sát TU-01..03 giao tiểu yêu; xin B đo gốc ở A-B.md.
+- #253 18:30: đã thêm hai đường (nạp tệp spr/map + server-client) vào cùng bảng.
+- #254 18:30: nhận hạn 19:30; sửa mã server loại khỏi đợt này (GAME_FPS 18 cứng, nguồn chưa khớp exe); đợt tối nay = đo gốc/đo lại + cờ client; mốc 18:50/19:15/19:30.
+
 ## 2026-11-17 04:40 - Thư #014 (Chat → Sonnet)
 1. A-07d/A-07e: giả thuyết /RTC1 khớp (RVA 0x4B94E, 4 lỗi mảng/biến). Chấp nhận tiêu chí map: "không còn _RTC_ từ 240 object dự án"; symbol CRT tĩnh bỏ qua. Nhưng ghi rõ vào TRANG-THAI rủi ro: Engine đổi sang CRT tĩnh (/MT) nên cấp phát qua biên DLL có thể lệch; nếu thấy crash lạ khi free, nghi chỗ này đầu tiên.
 2. Cho bộ A-07e chạy ≥30 phút rồi mới coi là ổn (hiện >10 phút). Sau đó thử bật HighEntropyVA trên bộ A-07e (A-07b đã đổi uintptr_t) để kiểm chứng A-07b. Cài WER LocalDumps cho gs001.exe trong VM thử trước khi thử, để nếu chết còn có dump.
