@@ -94,7 +94,7 @@ Thuộc hạ ghi mốc: ping, FPS, CPU máy chủ ở từng mức. (Mốc rỗi
 
 
 ## 19/11 19:02 — Vai thử vũ khí cho đại vương (Test-36)
-1. Vào game bằng tài khoản **tkchuvuong**, chọn vai **chuvuongtestaa** (mật khẩu ở tệp `%LOCALAPPDATA%\jx1-secrets	kchuvuong.txt` trên máy thật, thuộc hạ không ghi ra đây).
+1. Vào game bằng tài khoản **tkchuvuong**, chọn vai **chuvuongtestaa** (mật khẩu ở tệp `%LOCALAPPDATA%\jx1-secrets\tkchuvuong.txt` trên máy thật, thuộc hạ không ghi ra đây).
 2. Lần vào đầu tiên, túi tự có 9 món vũ khí cấp 10, cường hóa +15 (6 loại cận chiến, 3 loại tầm xa); nhân vật lên cấp 90 kèm 300 điểm tiềm năng.
 3. Muốn cầm vũ khí: cộng điểm vào Sức (≥100) và Nhanh nhẹn (≥155 cho tầm xa) trong bảng nhân vật, rồi mặc.
 
