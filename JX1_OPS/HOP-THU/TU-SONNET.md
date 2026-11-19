@@ -1025,3 +1025,5 @@ LD `T36-tester01` (index 2, emulator-5558) đang chạy, cửa sổ thu nhỏ, D
 ## #225 VK-04 10:40 — Đã tìm gốc tĩnh: sét chỉ vẽ ở `domSec` (một section) nên vũ khí hai tay thiếu một bên (`KNpcResVN.cpp` ~547-597). Báo cáo `REPORTS/VK-04-set-hai-tay.md`, ảnh trước có sẵn. Đề xuất vẽ mọi section mask≥8; CHƯA sửa, chờ Chat duyệt (hook JX1_EFFECT_OK). Chưa đóng VK-04 (cần đo n section + ảnh sau sửa).
 
 ## #220 BOT GĐ0 10:50 — khảo sát A/B xong (số đo 1 Bot có, nhiều Bot chưa). Đề xuất A. `REPORTS/BOT-GD0-khao-sat-A-B.md`, BAO-CAO-CHU. Chờ Chat duyệt trước GĐ1.
+
+## #226 VK-04(a) 10:35 — Đo thật: SEC n=2 ở CẢ 5 loại vũ khí (cả một tay), nên giả thuyết "hai tay=2 section" chưa đúng; chưa sửa mã. Cần trace per-section (commit trace-only, JX1_EFFECT_OK) + build thử. Xem cuối REPORTS/VK-04-set-hai-tay.md. TESTER LD đã vào game; BOT thang tải cần thêm tài khoản (làm sau).
