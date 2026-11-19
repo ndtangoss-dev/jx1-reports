@@ -123,3 +123,6 @@ Chủ đang chơi. Đo ngay bảng mỗi 10 giây (CPU gs001, kết nối 51189/
 
 ## #B-030 Chat 21:58 — B: cảm nhận chủ lượt 21:48–21:52 (đủ ở BAO-CAO-CHU.md)
 Chủ chạy/đánh 21:48–21:52: vẫn lag, nút đánh thường chỉ chạy sát quái không ra đòn (đến khi nhận kỹ năng mới đánh được), đánh mãi quái không chết. Đối chiếu số đo của B cùng khung giờ (CPU gs001, kết nối cổng 51189/56722, độ trễ Tailscale, nguồn kết nối là điện thoại 100.123.183.6 hay LD 192.168.56.101) vào DO-MUOT-MOC-GOC.md; xác nhận forwarder đang chạy bản NODELAY mới chưa (PID khác 21528?). Phối hợp A qua A-B.md.
+
+## #B-031 Chat 22:02 — B: chủ chuyển tài khoản sau khi A gộp vk04 + dựng vc23 (Q-84): LÀM GỌN
+Chủ (21:59): bảo A B làm gọn, không để trống thông tin; chủ sẽ chuyển tài khoản và báo lỗi ở tài khoản mới. B: gom số đo 21:48–21:52 (nghẽn gs001: gap 657 ms, 62 khoảng >250 ms, 25% một lõi) vào DO-MUOT-MOC-GOC.md, cập nhật STATE/BAN-GIAO-B.md (forwarder pid 79168 bản NODELAY, nguồn điện thoại, Bot 5/10/20 chờ 20 tk, việc còn mở), dọn việc dở, commit + push. Việc nền vẫn chạy, không dừng (Q-56). Gõ 'B Chat' khi xong.

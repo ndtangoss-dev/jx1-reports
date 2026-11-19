@@ -150,3 +150,6 @@ Chủ đồng ý để A đưa APK thử (nội suy client, Q-80) đến điện
 ## Q-82 (19/11 21:24) Tối ưu độ phản hồi khi chạy nhanh/đánh quái (chủ)
 Chủ đã vào game trên điện thoại (Test-36, APK vc22): hoạt ảnh/hoạt cảnh đạt, truyền gói tài nguyên ổn; còn LAG khi chạy nhanh và đánh quái, phản hồi chưa tốt. Giao: A client (dự đoán di chuyển, phản hồi đánh tức thì, gộp gói, APK thử vc23 có công tắc, đo ms); B mạng/forwarder/máy chủ (Tailscale direct hay DERP, RTT, NODELAY, SvrFPS lúc chạy/đánh). Phạm vi: Test-36 + APK thử, không Server D, không sửa mã server chính.
 - Q-83 (19/11 21:36) Chủ: gom việc, ghi đầy đủ, hướng dẫn bàn giao sang tài khoản cũ của chủ → BAN-GIAO-CHAT-19-11-2140.md
+
+## Q-84 (chủ 19/11 21:59) DUYỆT GỘP vk04 vào vc23, test một thể, rồi chuyển tài khoản
+Chủ: "Gộp luôn, test luôn 1 thể; sau khi gộp xong ta sẽ chuyển tài khoản và báo lỗi ở tài khoản mới. Bảo A B làm gọn đi, không để trống thông tin. Trước khi chuyển ta sẽ báo Chat." → A gộp vk04 (chỉ vẽ thêm tia khi section phụ ≥20 điểm và ≥40%, công tắc tắt được) vào vc23, dựng MỘT lần (vc23 = giảm lag + vk04), giao APK theo Q-81 (Artifact + cài đè); B/A làm gọn sổ bàn giao, không bỏ trống thông tin; việc nghẽn gs001 (#275) ghi đủ trong bàn giao để tiếp ở tài khoản mới. Q-52 vẫn: chỉ gộp bản vk04 đã kiểm trên LD.
