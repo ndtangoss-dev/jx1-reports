@@ -149,3 +149,6 @@ Xong phần mạng: script `TOOLS/kiem_duong_vao.py` in một dòng SẴN SÀNG/
 - Phát +15 thử (JXGiveWeapons/JXGive269) A đã vô hiệu từ #282 (online.lua.bak-282); vũ khí đã phát không xóa.
 - Còn: luật nguyên liệu/bạc/tỉ lệ + tin giao thức + tài phú + phi phong; cần dựng gs001 (đường dựng/đưa lên VM do A giữ) — sẽ hỏi A qua A-B.md.
 Đã đọc đến #B-035b
+
+## 20/11 Sonnet B - #B-035 tien do
+Da viet ma C++ (GetEquipIdx, CountBagItemExact, ConsumeBagItemExact; +14/+15 ky nang) va ban nhap Lua cuong hoa: DESIGN/QH-B035-server.patch, QH-B035-qianghua.lua. CHUA build, CHUA dung Test-36. Cho QH-01/02/05 (tieu yeu) de chot ten thuy tinh, N, K. Da doc den #B-035b.
