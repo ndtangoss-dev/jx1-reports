@@ -21,3 +21,8 @@ Nguồn: commandcode.ai/docs, /docs/headless (đọc qua WebFetch; chưa chạy 
 - `command-code status`: Authenticated (tài khoản đã đăng nhập); lệnh KHÔNG in số tín dụng. Mô hình free nên chưa tốn tín dụng; số dư [CHƯA KIỂM] (xem ở trang web của Command Code nếu chủ muốn).
 - Đọc ảnh: [ĐÃ KIỂM] `-m flint-v1.0:free -p` đọc được `shot.jpg` (ảnh chụp LD), nhận ra màn đăng nhập và nút "Đăng nhập"/"Thoát". Thư mục thử `D:\JX-cmdc-test` (ngoài kho).
 - Chưa giao tester đăng nhập→tạo nhân vật (cần worktree riêng + hòm cầu riêng, LD không đang bị tiểu yêu khác dùng).
+
+## Tín dụng và mô hình (#245, 19/11 15:15)
+- Chủ đã đăng ký gói Go (1 đô/tháng, Q-76). KHÔNG nạp/nâng thêm. Chỉ dùng một khóa (khóa đã đăng nhập).
+- Số tín dụng: `/usage` chỉ chạy trong phiên tương tác (`-p "/usage"` bị hiểu thành đường dẫn). `command-code status` không in số. Trước/sau mỗi lượt: [CHƯA ĐỌC ĐƯỢC từ dòng lệnh]; cần ai mở phiên tương tác `command-code` gõ `/usage` (B hoặc chủ) rồi ghi số vào đây.
+- Mô hình ĐÃ KIỂM đọc ảnh: `flint-v1.0:free` (#242, ảnh chụp LD, nhận ra nút Đăng nhập/Thoát). Các mô hình khác chưa kiểm.
