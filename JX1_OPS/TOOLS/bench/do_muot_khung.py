@@ -55,7 +55,7 @@ def main():
     adb(ar.serial, "shell", "screenrecord", "--size", "1920x1080", "--bit-rate", "20000000", "--time-limit", str(ar.giay), "/sdcard/muot.mp4", timeout=ar.giay + 30)
     mp4 = OUT / (ar.nhan + ".mp4")
     mp4.write_bytes(adb(ar.serial, "exec-out", "cat", "/sdcard/muot.mp4"))
-    p = subprocess.run([FFMPEG, "-v", "error", "-i", str(mp4), "-vsync", "0", "-vf", "scale=%d:%d,format=gray" % (W, H), "-f", "rawvideo", "-"],
+    p = subprocess.run([FFMPEG, "-v", "error", "-i", str(mp4), "-fps_mode", "passthrough", "-vf", "scale=%d:%d,format=gray" % (W, H), "-f", "rawvideo", "-"],
                        capture_output=True, timeout=120)
     raw = p.stdout
     n = len(raw) // (W * H)

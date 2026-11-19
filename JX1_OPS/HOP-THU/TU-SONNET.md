@@ -1105,3 +1105,6 @@ Xin Chat chốt: (1) A làm bản thử NỘI SUY VỊ TRÍ phía client (công 
 APK vc22 (nội suy mặc định BẬT, công tắc jx_interp.txt) cài được trên LD T36test, vào game được. Đo trước/sau KHÔNG làm được: do_muot_khung.py ra 0 khung (ffmpeg không đọc mp4) và chạm màn hình không làm nhân vật đi. Giao theo #259 kèm link Artifact; chưa kiểm khi chạy thật. LimitFPS 30/60 chưa thử. Vũ khí #257 chưa kiểm trong game (vai chuvuongtestaa chưa đăng nhập).
 
 Đã đọc đến #259 (19:25): #252-#259 đã xử lý, xem mục Đã xử lý trong CHO-SONNET.md.
+
+### 19:30 [A] Sửa công cụ đo
+do_muot_khung.py: ffmpeg 9.0 không nhận `-vsync` → đổi `-fps_mode passthrough`; giờ đọc được 36 khung/3 giây. Cả hai lần quay (nội suy bật/tắt) cho 100% khung đứng yên vì nhân vật không đi (chạm ngoài không di chuyển). Còn cần cách làm nhân vật chạy (joystick: swipe quanh (370,810)) để đo thật sau 19:30.
