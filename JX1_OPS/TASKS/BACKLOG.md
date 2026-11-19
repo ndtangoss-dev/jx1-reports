@@ -186,3 +186,24 @@ Sonnet lấy việc từ trên xuống, theo phụ thuộc. Khi bắt đầu m�
 | SO-32 | Sổ tay hiểu game: thông báo hệ thống và loa | L3 | Codex | `DESIGN/SO-TAY-THONG-BAO-HE-THONG.md` |
 | SO-33 | Sổ tay hiểu game: kiểm tra gói tin và chống gian lận ở server | L3 | Codex | `DESIGN/SO-TAY-CHONG-GIAN-LAN.md` |
 | SO-34 | Sổ tay hiểu game: quái vàng (GoldType) và biến thể boss | L3 | Codex | `DESIGN/SO-TAY-QUAI-VANG.md` |
+
+## Nhóm mới chủ giao 19/11 sáng (Q-58..Q-62; chủ lệnh 09:00 thêm vào bảng, mở mẫu số)
+
+| ID | Việc | Cấp | Ai |
+|---|---|---|---|
+| VK-01 | Test-36: có đủ 6 loại vũ khí cận chiến (kiếm, đao, thương, chùy, song đao, bổng) cấp +15, trang bị được, mỗi loại có ảnh | L2 | Sonnet (LDPlayer) |
+| VK-02 | Kiểm 8 hướng khi chạy bộ cho TỪNG loại ở VK-01: bảng loại × 8 hướng (ổn/sai/che cảnh/CHƯA KIỂM) kèm ảnh, báo chủ | L2 | Sonnet (LDPlayer) |
+| VK-03 | Sau VK-01/02: bật Server D + LDPlayer-D cho chủ thử điện thoại, báo chủ, tắt sạch khi xong | L2 | Sonnet |
+| TS-01 | Tester01 chạy thật: LDPlayer T36-tester01 + tài khoản test + 1 tiểu yêu chơi như người thật, ghi kiến thức và lỗi | L3 | Sonnet + Codex |
+| TS-02 | Kho tài liệu tester chia nhánh đủ 8 mục có nội dung thật; thử giả lập tiểu yêu chết, con mới làm tiếp đúng bước | L3 | Sonnet |
+| TS-03 | Bảng môn phái ↔ ngũ hành từ dữ liệu game/server thật (có file:dòng) để tạo đúng nhân vật test | L3 | Codex |
+| TS-04 | Đánh giá tester01 tốt ≥2 lần liên tiếp rồi sinh tester02, 03… | L3 | Sonnet |
+| BT-01 | BOT GĐ0: khảo sát hướng A/B (Bot ngoài server hay trong server), có số đo, đề xuất hướng nhẹ nhất | L4 | Opus/Sonnet |
+| BT-02 | File giá STATE/BOT/gia-vat-pham.csv bản đầu đúng cấu trúc chủ duyệt, chủ duyệt vài món mẫu | L3 | Codex |
+| BT-03 | BOT GĐ1: Bot bán hàng 3a chạy thật (kho làm mới mỗi ngày, chat thế giới, giá theo file) | L3 | Codex |
+| BT-04 | BOT GĐ2: Bot dân số quanh người chơi chạy thật | L3 | Codex |
+| BT-05 | BOT GĐ3: Bot hảo hữu (gõ "hảo hữu", vào party, tự theo và đánh, lên cấp) chạy thật | L4 | Opus + Codex |
+| BT-06 | BOT GĐ4: Bot giao dịch đi dạo (chat, mặc cả có sàn giá, nhận biết tiền trong ô giao dịch) chạy thật | L4 | Opus + Codex |
+| HT-01 | Vá gốc xung đột pull STATE/TONG-QUAN-GHI.md (#221), không còn dấu xung đột trên nhánh | L2 | Sonnet |
+| HT-02 | Cơ chế Tổng quản tự đánh thức Sonnet khi im >10 phút (không tốn Claude), chữa gốc việc tự dừng | L3 | Sonnet |
+| HT-03 | Tìm gốc lỗi dấu tiếng Việt vỡ thành "?" ở client (C05), đề xuất cách chữa | L3 | Codex |

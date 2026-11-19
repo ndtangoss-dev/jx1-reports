@@ -1731,3 +1731,6 @@ Không dừng (Q-56).
 
 ## #222 Chat 19/11 09:03 — TESTER: chủ hỏi "sao chưa có tester". Chat đã dựng SẴN khung kho STATE/TESTER/ (INDEX, TRANG-THAI, NHAT-KY-VIEC, DANH-GIA, LOI-GIAO-VIEC, KIEN-THUC/<8 mục>, LOI/<8 mục>).
 - Việc của Sonnet, ƯU TIÊN NGAY (tiểu yêu chạy bằng xingchi, không tốn lượt của Sonnet; làm song song với vũ khí #219): bật LDPlayer T36-tester01 + tài khoản test trên Test-36 (khóa ở máy, không vào repo), giao 1 tiểu yêu theo STATE/TESTER/LOI-GIAO-VIEC.md; điền bảng môn phái↔ngũ hành (mục mon-phai-ngu-hanh) từ dữ liệu thật. Báo "TESTER" ở TU-SONNET. Không dừng (Q-56).
+
+## #223 Chat 19/11 09:05 — CHỦ MỞ MẪU SỐ (Q-63): BACKLOG thêm 16 hạng mục (VK-01..03, TS-01..04, BT-01..06, HT-01..03). Mẫu số mới 123; thay #212.
+- Báo "SỐ THẬT x/123" từ nay. Việc đang làm khớp ngay: VK-01/02 (#219), TS-01..03 (#222), HT-01 (#221). Đóng hạng mục nào cũng đúng chữ tên việc, có bằng chứng. Hạng mục XD phụ vẫn không vào mẫu số. Không dừng (Q-56).

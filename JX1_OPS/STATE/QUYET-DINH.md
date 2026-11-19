@@ -87,3 +87,6 @@ Trên Test-36, tạo MỘT LẦN đủ các loại vũ khí cận chiến: kiế
 
 ## Q-62 (chủ 19/11 08:41) — DUYỆT thiết kế BOT v1
 Chủ DUYỆT DESIGN/BOT/THIET-KE-BOT-v1-DUYET.md (3 loại BOT, 5 giai đoạn, file giá gia-vat-pham, cổng duyệt). Thực hiện theo thứ tự: xong #216 (khóa Bot, thử client, vũ khí +15 8 hướng #219, bật D) và tester01 (#217/#218), rồi GĐ0 khảo sát A/B → GĐ1 … → GĐ4. Sonnet khảo sát và chọn hướng nhẹ nhất cho game.
+
+## Q-63 (chủ 19/11 09:00) — MỞ MẪU SỐ BẢNG TIẾN ĐỘ
+Chủ lệnh cập nhật phần mới vào bảng tiến độ để mẫu số tăng. Thay #212 (đóng băng 107): từ 09:00 mẫu số = 107 + 16 hạng mục mới (VK-01..03, TS-01..04, BT-01..06, HT-01..03) = 123. Đếm vẫn NGHIÊM (xong đúng chữ tên việc). Chủ biết % sẽ giảm lúc đầu.

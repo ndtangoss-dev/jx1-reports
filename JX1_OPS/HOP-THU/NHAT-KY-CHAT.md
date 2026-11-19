@@ -286,3 +286,4 @@
 - 19/11 08:45 #220: chủ duyệt thiết kế BOT v1 (Q-62), giao Sonnet.
 - 19/11 08:57 #221: xung đột pull TONG-QUAN-GHI.md, vá gốc.
 - 19/11 09:03 #222: dựng khung STATE/TESTER, giục tester01.
+- 19/11 09:05 #223: chủ mở mẫu số, BACKLOG +16 (Q-63).

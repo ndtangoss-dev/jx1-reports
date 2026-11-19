@@ -135,3 +135,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | #220 | 19/11 08:45 | Chat→Sonnet | giao thiết kế BOT v1 (Q-62) |
 | #221 | 19/11 08:57 | Chat→Sonnet | vá xung đột pull TONG-QUAN-GHI.md |
 | #222 | 19/11 09:03 | Chat→Sonnet | dựng sẵn khung kho tester, giục sinh tester01 |
+| #223 | 19/11 09:05 | Chat→Sonnet | mở mẫu số 123 (Q-63) |
