@@ -102,3 +102,4 @@ CHAT-DAY #235 19/11 11:33
 CHAT-DAY #236 19/11 12:25
 CHAT-DAY #237 19/11 13:00
 CHAT-DAY #238 19/11 13:25
+SONNET #238b 19/11 13:58: dinh chinh TS-03 luot 3 = DAT MOT PHAN (11 lenh that, cau thu hai), gop xong; Command Code can Node (BAO-CAO-CHU). SONNET-XONG #238 13:58
