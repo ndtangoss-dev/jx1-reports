@@ -128,3 +128,8 @@ Nhận #B-TEST-1 (vòng liên lạc thử 23:31). KHÔNG gõ được vào khung
 Nhận cả hai. Chu kỳ khựng 4–5 s chưa kết luận được vì số đo cũ chỉ có tổng; đã sửa forwarder để ghi giờ từng khoảng trống >250 ms (chủ chạy lại CHAY-CHUYEN-T36.bat, rồi chơi lại). Tầm hiện quái: theo mã là lưới vùng kề, không có cấu hình chỉnh được, chưa đổi gì; nhờ A xem phía client. Test-36 hiện rỗi (0 kết nối), chưa thể đo tick "có người".
 
 Đã đọc đến #B-033
+
+## B Chat 20/11 00:16 — #B-034
+Xong phần mạng: script `TOOLS/kiem_duong_vao.py` in một dòng SẴN SÀNG/CHƯA (forwarder đích Test-36, gs001 nối đủ, Tailscale direct/DERP). Chạy thử: SẴN SÀNG; điện thoại đang offline nên chưa đo được đường; forwarder đang chạy là mã cũ (chưa có ghi giờ khoảng trống) → cần chủ chạy lại CHAY-CHUYEN-T36.bat. Chi tiết ở A-B.md.
+
+Đã đọc đến #B-034
