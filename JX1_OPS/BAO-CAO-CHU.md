@@ -27,3 +27,19 @@ Các mục dưới đây không tính được "xong" nếu thiếu đại vươ
 - Ảnh ghép 8 hướng (vuốt cần điều khiển trên LD, nhân vật `T36nv1` Kim, cầm kiếm): `ANH/t36-thu-tu-ve-8-huong.png`. Các khung N, NE, E, SE, S, NW: tay/vũ khí/thân vẽ liền, không thấy vũ khí lệch lớp rõ ràng [ĐÃ XEM BẰNG MẮT, chưa đo từng điểm ảnh]. SW và W: nhân vật bị tán cây che (che theo cảnh, không phải lỗi thứ tự vẽ).
 - **CHƯA KIỂM giáo**: nhân vật thử không có giáo, nên chưa trả lời được câu hỏi "giáo, 8 hướng". Cần cấp một giáo cho nhân vật thử (sửa DB/lệnh GM trên Test-36), thuộc hạ sẽ làm khi có việc kế. Vuốt cần theo màn hình nên 8 hướng chưa chắc khớp 8 hướng trong game.
 - Vì vậy bước mở Server D + LDPlayer-D để chủ thử bằng điện thoại vẫn đang chờ kiểm này (thuộc hạ chưa mở D).
+
+## 09:25 19/11 — #219 (Q-61): kiểm vũ khí cận chiến +15, đi 8 hướng (CHỈ KIỂM, không sửa)
+Test-36, nhân vật `T36nv1`, mỗi loại +15 (cấp 1), trang bị rồi đứng im chạy 8 hướng, chụp ghép 4×2 (khung 420×420 quanh nhân vật). Ảnh trong `ANH/t36-vu-khi-<loại>-8-huong.png`.
+
+| Loại (vật phẩm) | N | NE | E | SE | S | SW | W | NW | Hiệu ứng +15 |
+|---|---|---|---|---|---|---|---|---|---|
+| Kiếm (Thiết Trủy Thủ) | ổn | che cảnh (cổng) | ổn | ổn | ổn | che cảnh (cây) | ổn | ổn | có (tia sét trắng) |
+| Đao (Yêu Đao) | ổn | che cảnh (cây) | ổn | ổn | ổn | che cảnh (cây) | ổn | ổn | có |
+| Thương (Thiết Thương) | ổn | che cảnh (cổng) | ổn | ổn | ổn (mái nhà che phần dưới) | che cảnh (cây) | ổn | ổn | có |
+| Chùy (Toán Đầu Chùy) | ổn | che cảnh (cổng) | ổn | ổn | ổn | che cảnh (cây) | ổn | ổn | có |
+| Song đao (Nga Mi Thích) | ổn | che cảnh (cổng) | ổn | ổn | ổn | che cảnh (cây) | ổn | ổn | có |
+| Bổng (Thiêu Hỏa Côn) | ổn | che cảnh (cổng) | ổn | ổn | ổn (mái nhà che) | che cảnh (cây) | ổn | ổn | có |
+
+- Kết quả: bằng mắt trên ảnh, KHÔNG thấy hướng nào vũ khí vẽ sai thứ tự so với thân (N/NW vũ khí nằm sau/bên thân, các hướng còn lại ở trước/bên đúng hướng cầm). Giới hạn: chụp một khung/hướng khi đang đi, chưa xét đứng im tĩnh từng góc, chưa xét đòn đánh/cưỡi ngựa. "Che cảnh" = vật cảnh (cổng, cây, mái) che nhân vật, không phải lỗi vẽ vũ khí; các ô đó CHƯA KIỂM được vũ khí.
+- Dùng được cả 6 loại (đủ sức mạnh/thân pháp cho Thương: đã thấy "Đã trang bị"). Cần ghi chú: +15 chỉ hiện sau khi vào lại game (client nạp lại từ DB).
+- Server D chưa khởi động (làm tiếp theo #216 mục 3).

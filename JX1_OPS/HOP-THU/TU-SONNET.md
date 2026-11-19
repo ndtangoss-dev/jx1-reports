@@ -1004,3 +1004,6 @@ C02: sai MK + TK lạ bị từ chối, đúng vào được; 2 ca cần chủ c
 
 ## #216 — E-09 đo Solo (19/11 08:30)
 Enabled=1 Solo: 116 bản ghi người chơi/40 s so với 385/25 s khi tắt; giảm ~81%, chưa về 0, E-09 chưa đóng. Xem REPORTS/E-09-solo-do-that.md. SỐ THẬT 89/107.
+
+## #219 — kiểm vũ khí +15 8 hướng (19/11 09:25)
+6 loại +15 trên T36nv1, ảnh `ANH/t36-vu-khi-*-8-huong.png`, bảng ở BAO-CAO-CHU. Không thấy sai thứ tự vẽ; NE/SW bị cảnh che (CHƯA KIỂM). +15 có hiệu ứng cả 6 loại kể cả thương. Chỉ kiểm, không sửa mã. SỐ THẬT 89/107.
