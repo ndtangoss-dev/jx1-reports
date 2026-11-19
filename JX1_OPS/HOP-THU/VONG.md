@@ -115,3 +115,4 @@ SONNET-XONG #243 14:55 — worktree D:\JX-wt\SONNET-B (nhánh sonnet-b) + .claud
 CHAT-DAY #245 19/11 15:00
 SONNET-XONG #244 15:10 — TOOLS/dong_bo.py + L12 mở rộng + BAN-GIAO-B mục 6 + ghi chú stash.
 SONNET-XONG #245 15:15 — ghi tín dụng/mô hình; /usage chỉ trong phiên tương tác.
+CHAT-DAY #246 19/11 16:35

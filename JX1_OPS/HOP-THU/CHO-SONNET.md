@@ -1866,3 +1866,11 @@ Chủ thấy báo cáo pull --rebase kẹt, em "giữ bản của mình", lỡ x
 
 ## #245 Chat 19/11 15:00 — THÔNG TIN: CHỦ ĐÃ ĐĂNG KÝ GÓI GO (Q-76), tiếp tục Q-72/Q-74
 Chủ đã tự đăng ký gói Command Code Go (1 đô/tháng), tạo nhiều khóa, mới nhập thử một khóa. Việc em/B: (1) ghi tín dụng còn lại TRƯỚC và SAU mỗi lượt vào `DESIGN/CAU-COMMAND-CODE.md`; (2) việc sửa nhỏ Q-72 dùng mô hình rẻ, tester Q-74 chỉ dùng mô hình ĐỌC ĐƯỢC ẢNH — ghi rõ mô hình nào đã kiểm đọc ảnh OK (#242 chưa nói tên mô hình); (3) KHÔNG nạp thêm/nâng gói (đỏ); (4) chưa dùng thêm khóa thứ hai trừ khi có lý do ghi rõ (tín dụng có thể chung tài khoản). Việc khác không đổi, không dừng.
+
+## #246 Chat 19/11 16:35 — A: ĐỪNG ĐỨNG CHỜ THƯ CHAT. VIỆC CỤ THỂ CHO A (Q-56, L10)
+Chat không có thư mới cho A sau #245 vì các thư mấy chục phút qua đi sang B (#B-004→#B-007), không phải vì A hết việc. Không chờ Chat: hàng đợi `STATE/HANG-DOI-VIEC.md` không bao giờ cạn. Làm ngay theo thứ tự, xen kẽ, bản dựng chạy nền thì làm việc khác:
+1. **Bản dựng VK-04 chạy nền quá lâu?** APK vẫn bản 10:55 (vc22) mà bản dựng vẫn chạy: kiểm log/CPU/giờ bắt đầu; nếu quá ~60 phút không tiến triển thì coi là treo, dừng đúng tiến trình dựng đó (của em), dựng lại có hạn giờ; ghi lý do vào TU-SONNET.
+2. **Đọc mục "CHO A" cuối `TU-SONNET-B.md`:** `CreateRole()` (`KuiNewPlayer.cpp:616-660`) thoát im lặng và client không có hạn chờ khi server treo → thêm hộp thông báo cho các nhánh đó + timeout sau khi gửi `c2s_newplayer`. KuiNewPlayer không thuộc nhóm bị hook chặn. Dựng bản thử CHỈ để chạy trên LD (không giao APK cho chủ; APK gốc vẫn A3a vc20), kiểm trên LD `T36test` (LD của A; LD `T36-tester01` là của B/tiểu yêu, Q-69).
+3. **VK-04 còn thiếu:** chụp lại thích + kiếm/thương/bổng. Cần nhân vật đủ điều kiện: Q-45 cho tạo tài khoản/nhân vật test trong DB `JX-Test-36` (có ghi chú hoàn tác); tạo nhân vật có sức mạnh đủ, dùng LD `T36test`. Sau đó commit vào repo chính với `JX1_EFFECT_OK=1` chỉ cho commit đó, rồi đóng VK-04 (báo "SONNET-XONG VK-04"). Không giao APK cho chủ (đỏ).
+4. Nếu vẫn rảnh: V-01 kiểm chéo 5 báo cáo, M-01 bảng tiến độ/mục lục, SO/HG/KC còn mở trong hàng đợi.
+Không dừng. Báo cáo ngắn vào TU-SONNET.md.
