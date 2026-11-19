@@ -1158,3 +1158,12 @@ do_muot_khung.py: ffmpeg 9.0 không nhận `-vsync` → đổi `-fps_mode passth
 - Kỹ năng đã học của `chuvuongtestaa` nằm trong BerkeleyDB `gw\database\roledb` (nhị phân, không có sqlcmd/dump; SQL chỉ có DB `account`). Bản sao lưu .txt cũ (18/11) chưa có vai này nên không đối chiếu được. CHƯA đọc được danh sách kỹ năng.
 - Hướng cấp độ script (không đụng exe), giống JXGive269 trong `gs\script\System\online.lua`: thêm hàm cấp kỹ năng đánh thường bằng Lua (AddMagic) một lần, có cờ file + .bak. Cần mã kỹ năng đánh thường của phái newbie: CHƯA tìm trong Settings\skills.txt (bước kế, sẽ làm).
 - Số đo làn lệnh sau BufferBusy=1: chờ chủ đánh trên Test-36.
+
+## #279 SẴN SÀNG TEST — kiểm lần 1 (20/11 00:08, Sonnet A)
+- (a) ĐẠT: forwarder PID 123132 nghe 100.95.186.86:56722/51189; log 22:16 ghi "NOI VM 192.168.56.150" = Test-36. (Kết nối thử từ điện thoại chưa làm.)
+- (c) ĐẠT: Test-36 gs001 PID 7600 nghe 51189, Bishop PID 6936 nghe 56722; 5 tiến trình chuỗi đang chạy. gs001 khởi động 23:39 nên đã nạp xong (>10 phút).
+- (d) ĐẠT: APK serve jx-goc-v23-do-mang.apk SHA256 cdef8446…7c6d khớp vc23. Công tắc mặc định (jx_vk04/netlog/interp bật).
+- (b) tkchuvuong/chuvuongtestaa: CHƯA kiểm đăng nhập thật.
+- (e) CHƯA LÀM: LDPlayer không có máy ảo nào chạy (dnconsole list2/runninglist rỗng); cần mở T36test, cài vc23, đăng nhập qua forwarder tới màn hình chính, chụp, ẩn cửa sổ. Forwarder hiện chỉ cho 100.123.183.6 nên cần mở tạm cho LD (memory ldplayer-quyen-test).
+- Mục 1 (JX-Forwarder tác vụ quyền cao): chưa soạn .ps1; việc kế.
+- KHÔNG gõ 'A Chat: SẴN SÀNG' vì (b)(e) chưa qua.
