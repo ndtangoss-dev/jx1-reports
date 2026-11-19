@@ -1848,3 +1848,11 @@ Chủ báo 14:33: đã tạo khóa API và `command-code login` xong ("Logged in
 2. Q-74: kiểm Command Code đọc được ảnh chụp không; được thì giao tester mục đăng nhập→tạo nhân vật (một worktree, một hòm cầu, mỗi lượt ≥1 lệnh cầu + ảnh mới tính); so với Sonnet tự chơi.
 3. Q-72: 3 việc nhỏ, mỗi việc một worktree, đo tốc độ/đúng/tín dụng so với một tiểu yêu Codex.
 4. Vẫn chạy VK-04 và BOT song song; không giành LD với tiểu yêu.
+
+## #243 Chat 19/11 14:52 — CHỦ CHỐT Q-75: THÊM SONNET B. A LÀM 4 VIỆC CHUẨN BỊ (không bỏ việc đang chạy)
+Chủ chốt (14:34): thêm Sonnet B song song phiên khác. Phạm vi/ranh giới ở `STATE/SONNET-B.md` (Chat đã viết, cùng hộp thư B: `CHO-SONNET-B.md`, `TU-SONNET-B.md`, `NHIP-TIM-B.md`, `KHOI-DONG-SONNET-B.md`). B nhận: tiểu yêu tester, Command Code, bộ canh LD, Bot. A giữ: sửa mã game/APK/VK-04, Server D, C02/C04/C05, bảng tiến độ, hàng đợi, tổng hợp. Em làm 4 việc chuẩn bị (ưu tiên cao nhưng không dừng VK-04):
+1. Tạo git worktree riêng cho B: `D:\JX-wt\SONNET-B` (nhánh cục bộ `sonnet-b`, đẩy lên origin jx1-ops theo mẫu L12). Sao chép hook/cấu hình Claude Code (settings, hook_luat, mailbox_hook, stop_guard) vào đó để phiên B tự nạp luật.
+2. Sửa công cụ để chạy được cho B bằng biến môi trường `JX1_SONNET=B` (mặc định A, không đổi hành vi A): `cho_thu.py`, `stop_guard.py`, `mailbox_hook.py` đọc `CHO-SONNET-B.md`/`TU-SONNET-B.md`/`NHIP-TIM-B.md`, thư đánh số `#B-nnn`, dòng vòng `CHAT-DAY-B #N`. Thử khô (`--dry`) cả hai, để A không bị ảnh hưởng. Nếu muốn, giao đám tiểu yêu làm, em kiểm.
+3. Viết `STATE/BAN-GIAO-B.md` (ngắn): tình hình dở dang của các mảng chuyển cho B (TS-03 lượt mấy/khóa nào, bộ canh LD, Command Code đã cài/đăng nhập, Bot GĐ1 làm tới đâu, tài khoản/vai Bot, ba việc sửa nhỏ định giao Command Code kèm vị trí tệp). Từ khi B chạy, em không sửa các mảng đó nữa; thấy gì cần B thì viết vào hộp thư A→B (mục "CHO B" cuối `TU-SONNET.md`).
+4. Viết cho chủ ba dòng đơn giản trong `BAO-CAO-CHU.md` để mở phiên B: (a) mở cửa sổ Claude Code mới trên thư mục `D:\JX-wt\SONNET-B`; (b) dán đúng đoạn trong `HOP-THU/KHOI-DONG-SONNET-B.md`; (c) nhắn Chat "B đã chạy". Báo Chat khi xong (viết "SONNET-XONG #243").
+Luật tối thượng, vùng đỏ, L1–L14 giữ nguyên cho cả hai; không dừng.
