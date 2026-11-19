@@ -29,3 +29,10 @@ Toạ độ là pixel ảnh chụp từ cầu (cùng hệ với lệnh `tap`). N
 ## Luật tên vai (B, 19/11 18:20, đã đối chiếu mã)
 - Client `KuiNewPlayer.cpp:558-560`: 6..24 byte; máy chủ Bishop `GamePlayer.cpp:1942-1944`: 6..16 byte → tên hợp lệ cả hai phía: 6..16 byte, chữ cái ASCII thuần (không số, không khoảng trắng, không ký hiệu). Ghi chú A "12–24" chưa khớp mã; tên 13 chữ `tsvkbonenamea` đã tạo được trên Test-36 (16:51).
 - Tên không hề tồn tại trong kho vai (vm_chay.py ten-co): Tsbaone, Tsalphaone, T36nv2, Cctesterone → các lần tạo trước đều chưa tới máy chủ (client im lặng).
+
+## TẠO VAI THÀNH CÔNG (B, 19/11 16:58 giờ máy) — luồng đúng, có bước THÔN
+1. Menu đầu: "Bắt đầu trò chơi" (960,588) → chọn máy chủ "JX1 Mobile TEST" (498,298) → form có tài khoản đã lưu `testa` + mật khẩu đã lưu: bấm "Đăng nhập" (840,772) KHÔNG cần gõ mật khẩu (~12 giây tới danh sách vai).
+2. Danh sách vai: "Tạo nhân vật mới" (857,1016).
+3. **Hộp "Chọn Tân thủ thôn"** hiện ra: chạm "Ba Lăng huyện" (1322,246) rồi "Xác nhận" (1265,736). BỎ BƯỚC NÀY thì CreateRole thoát im lặng (region ≤ 0, KuiNewPlayer.cpp:616-660) — đây là nguyên nhân "bấm Xác định không phản ứng" của các lần trước.
+4. Chọn hệ (Mộc 960,565), chạm ô tên (870,1020) hai lần, gõ tên, "Xác định" (1070,1018) → vào game (loading).
+5. LỖI GÕ: lệnh `text` giao chữ chậm/lộn xộn (gõ "Tsmocnamebravo" ra "TsmocnamebravTsm"); ô tên chỉ hiện vài chữ cũ. Chia nhỏ, chờ lâu, và đối chiếu bằng `vm_chay.py ten-co`.

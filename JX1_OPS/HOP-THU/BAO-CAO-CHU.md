@@ -70,3 +70,9 @@ Lưu ý: 17 tên là ký tự hỏng (GBK) nên để nguyên; độ hiếm và 
 - Bishop đang chạy tốt: các tài khoản Bot (botld007/013/018 và botld069–100) đều vào được và nhận danh sách vai. Vậy lỗi "hết giờ" của Bot nằm ở phía client/bot, không phải máy chủ hỏng.
 - Máy chủ có vai T36nv1 (tạo 11:56) và một vai tên tsvkbonenamea (13 chữ, tạo 16:51) → tạo vai bằng tên dài 13 chữ THÀNH CÔNG. Các tên Tsbaone, Tsalphaone, T36nv2, Cctesterone không hề có trong kho vai.
 - Mã nguồn Bishop (GamePlayer.cpp:1942-1946) cho tên 6..16 byte, chỉ cấm ký hiệu; "Cctesterone" (11) hợp lệ về phía máy chủ → độ dài KHÔNG phải nguyên nhân. Nghi nhất vẫn là kết nối client chết sau khi Bishop khởi động lại. Cần đăng nhập lại để thử (cần tài khoản thử + mật khẩu từ đại vương).
+
+## (B) 19/11 18:35 — Bẩm đại vương, ĐÃ TẠO ĐƯỢC VAI MỚI TRÊN TEST-36
+- Tạo vai thành công, nhật ký Goddess/Bishop ghi vai "TsmocnamebravTsm" (hệ Mộc) rồi vào game. Đăng nhập dùng tài khoản đã lưu sẵn trong máy giả lập, thuộc hạ KHÔNG gõ mật khẩu.
+- Nguyên nhân các lần im lặng trước: thiếu bước chọn "Tân thủ thôn" (Ba Lăng huyện → Xác nhận) sau khi bấm "Tạo nhân vật mới"; bỏ bước này client thoát lặng (không phải máy chủ hỏng, không phải tên). Bishop khởi động lại cũng đã giúp.
+- Luật tên đúng: 6–16 chữ cái ASCII (client 6–24, máy chủ 6–16).
+- Còn: lệnh gõ chữ của cầu LD giao lộn thứ tự, thuộc hạ sẽ sửa; sau đó chạy lại Bot botld007.
