@@ -1076,3 +1076,7 @@ SONNET-XONG #237b 13:25
 ## SONNET-XONG #246 (build CreateRole, 19/11 16:50)
 - APK test (chỉ cho LD, KHÔNG gửi chủ): projectdebug-debug.apk 95063537 byte, SHA256 522de287d630997dbafb7f14fada609c3173d841ae531560d2590bf56853ba69. Cài T36test (emulator-5556) thành công. Thêm hộp báo CreateRole + hết giờ 20 giây khi tạo vai. Chưa thử tạo vai thật; APK nền A3a vc20 giữ nguyên.
 - #250: mục 1-3 xong; mục 4 (Tổng quản ngắt 16:05-16:27: tác vụ JX-TongQuan có "Stop On Battery/No Start On Batteries", kết quả 0x800710E0, nghi máy ngủ/bị từ chối chạy — chưa xác nhận, chưa vá); mục 5 đang làm.
+
+## SONNET-XONG #250 (19/11 17:05)
+- 1-3 xong (owner A|B trong mẫu+TASKS, cho_thu lọc owner, mailbox_hook/stop_guard bắt `## #N` và `#B-N`). 5: tạo TASKS/A-07f, A-07g, A-07h (ready, owner A, đọc tĩnh, không VM).
+- 4: JX-TongQuan có DisallowStartIfOnBatteries=True/StopIfGoingOnBatteries=True, kết quả 0x800710E0 (bị từ chối chạy). Nguyên nhân gián đoạn 16:05-16:27 chưa xác nhận chắc; đã vá cho phép chạy khi chạy pin, giới hạn 10 phút. Theo dõi xem còn ngắt không.

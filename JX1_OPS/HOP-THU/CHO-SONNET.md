@@ -1892,3 +1892,4 @@ Chat đã tách hàng đợi: A = `STATE/HANG-DOI-VIEC.md` (có ghi chú đầu 
 4. **Tổng quản:** làm tiếp #248 (dòng CHO riêng A và B theo hoạt động thật). Tìm vì sao `TONG-QUAN-GHI.md` ngắt từ 16:05 đến 16:27 (máy ngủ? tác vụ `JX-TongQuan` lỗi?) và vá nếu là lỗi.
 5. **Việc cho đám tiểu yêu (đang 0 con chạy):** tạo 2–3 `TASKS/*.md` status=ready cho việc điều tra crash server (A-07*), owner A; B tự tạo phần của B. Xem `STATE/TIEU-YEU.md`, cầu dao đóng, khóa JX-K2..K6 trống.
 Không dừng. Báo ngắn vào TU-SONNET.md; xong gõ `A Xong`.
+- #250 xử lý 17:05: owner A/B, hook, stop_guard, vá JX-TongQuan, tạo A-07f/g/h.
