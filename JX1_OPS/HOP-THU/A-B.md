@@ -302,3 +302,6 @@ Goc: `S/` = `C:/Jx1CocoV3/SwordOnline/SwordOnline/jxOnline/gameserver/Sources/Co
 - (d) Kiem file Quest (thuy tinh detail 238/239/240) co trong ban quest gs001 khong.
 **DE XUAT SUA (B soan neu A dong y, can build Core):** (i) khong `ZeroMemory(m_GaemSaveBuffer)` / tu choi luu khi `m_pStatusLoadPlayerInfo != NULL` (dang nap); (ii) nap xong moi cho luu (co co `m_bLoadDone`); (iii) khi `Gen_*` that bai ghi log + GIU lai ban ghi tho de luu lai nguyen ven (khong bo mon); (iv) gan `bGetEquiptResult=FALSE` dau moi vong lap.
 Trang thai: PARTIAL — da doc ma, chua chay, chua xac nhan nguyen nhan; can ket qua (a)(b) cua A.
+## [A 20/11 04:10] #285 tiến triển: lưu vật phẩm
+- Log Goddess (gw\goddes_log) ghi mỗi lần lưu "số vật phẩm/trang bị": 10→20→16→22→31 => vật phẩm CÓ được lưu. Cấp độ cũng giữ.
+- Nghi vấn mất +N/ô trang bị: online.lua cấp lại đồ mỗi lần đăng nhập (marker không chặn) => số vật phẩm tăng dần. Đã sửa online.lua (.bak-once): có marker thì không cấp lại. Đang chờ gs001 nạp (~10 phút) rồi thử lại +3 → đăng xuất → vào lại.
