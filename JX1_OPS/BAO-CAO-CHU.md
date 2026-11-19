@@ -60,3 +60,6 @@ Test-36, nhân vật `T36nv1`, mỗi loại +15 (cấp 1), trang bị rồi đ�
 ## VK-04 chùy/thích hai tay — kết quả bản sửa vc22 (19/11, [TỰ QUYẾT])
 - Trước: `REPORTS/img/vk04-truoc-chuy-h0.png` (cây phải chỉ vệt trắng). Sau: `REPORTS/img/vk04-sau-chuy-h0.png` (cả hai cây có sét). Đao một tay không đổi: `REPORTS/img/vk04-sau-dao-h0.png`.
 - FPS LD ~32–38, không xấu hơn (mẫu ít). Mới kiểm hướng 0 bằng ảnh; 8 hướng/thích/kiếm chưa chụp. Chưa đưa vào repo chính, chưa giao APK (vùng Đỏ, chờ chủ yêu cầu).
+
+## 19/11 13:45 — Command Code (Q-72): đang chờ anh 2 việc nhỏ
+Máy thật chưa có Node.js nên chưa cài được Command Code. Anh chọn: (1) cho em cài Node LTS bản chính thức (khuyến nghị), hoặc (2) bỏ thử. Sau khi cài, anh tự chạy `cmdc login` trong cửa sổ terminal rồi dán xong là em lo phần còn lại. Chi tiết: DESIGN/CAU-COMMAND-CODE.md. Cần anh quyết: có.
