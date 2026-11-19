@@ -4,3 +4,9 @@
 - Đang ở bước: chưa bắt đầu
 - Việc dở: không
 - Việc kế: Sonnet xong vũ khí #219 (đã xong 09:25) → giao tiểu yêu theo LOI-GIAO-VIEC.md; bảng môn phái đã điền (19/11 09:40)
+
+## Điểm tiếp tục TS-01
+
+- PARTIAL (19/11/2026): đã đối chiếu tài liệu bàn giao. Chưa chạy Test-36 trong lượt này, chưa xác minh bước chơi nào (0/7).
+- Khi có lượt chơi thử, tiếp tục từ đăng nhập. Tra bảng môn phái và ngũ hành trước khi tạo nhân vật.
+- Báo cáo: [TS-01](../../REPORTS/TS-01.md).
