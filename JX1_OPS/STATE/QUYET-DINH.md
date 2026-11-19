@@ -81,3 +81,6 @@ Chủ DUYỆT: (1) cấp khóa client đúng bản APK + tài khoản/vai thử 
 
 ## Q-60 (chủ 19/11 07:23) — CẤU TRÚC KHO TÀI LIỆU TESTER (bổ sung Q-59)
 Kho kiến thức và bảng lỗi PHẢI chia nhánh theo từng mục (thư mục STATE/TESTER/KIEN-THUC/<mục>/ và STATE/TESTER/LOI/<mục>/), ví dụ: dang-nhap (cần làm gì, lỗi phát hiện, báo cáo ra sao), tao-nhan-vat (tạo thế nào, chọn ngũ hành thế nào), mon-phai (môn phái nào cần ngũ hành nào: vd Võ Đang, Côn Lôn cần ngũ hành Thổ → Sonnet hiểu và ra lệnh tiểu yêu lập đúng môn phái/ngũ hành cho từng ca test), di-chuyen, chien-dau, tui-do, shop, nhiem-vu... Có mục lục INDEX. Kho phải đủ để tiểu yêu chết thì con sau vào thay đọc là hiểu ngay, KHÔNG dò lại từ đầu, và làm tiếp việc dang dở (cần file TRANG-THAI/NHAT-KY-VIEC-DANG-DO cập nhật liên tục: đang ở bước nào, tài khoản/nhân vật nào, việc kế).
+
+## Q-61 (chủ 19/11 08:38) — Test hiệu ứng vũ khí cận chiến
+Trên Test-36, tạo MỘT LẦN đủ các loại vũ khí cận chiến: kiếm, đao, thương, chùy, song đao, bổng; mỗi loại chỉ cần test CẤP 15. Sau đó test 8 hướng (thứ tự vẽ vũ khí/nhân vật khi chạy bộ). Chỉ kiểm/quan sát, chưa sửa mã hiệu ứng. Bước bật Server D vẫn sau khi kiểm xong.

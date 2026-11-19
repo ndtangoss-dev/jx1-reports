@@ -131,3 +131,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | #216 | 19/11 07:05 | Chat→Sonnet | chủ duyệt 1,2 rồi 3; kiểm vẽ vũ khí 8 hướng |
 | #217 | 19/11 07:20 | Chat→Sonnet | tiểu yêu tester (Q-59) |
 | #218 | 19/11 07:25 | Chat→Sonnet | cấu trúc kho tester (Q-60) |
+| #219 | 19/11 08:40 | Chat→Sonnet | test 6 loại vũ khí +15, 8 hướng (Q-61) |

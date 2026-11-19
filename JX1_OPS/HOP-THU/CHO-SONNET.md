@@ -1712,3 +1712,9 @@ Không dừng (Q-56).
 3. Kho phải để tiểu yêu chết thì con sau đọc là hiểu ngay, không dò lại: file STATE/TESTER/TRANG-THAI.md (cập nhật mỗi vài phút: tài khoản/nhân vật đang dùng, đang ở bước nào, việc dang dở, việc kế) + NHAT-KY-VIEC.md. Lời giao việc cho tester mới luôn bắt đầu bằng "đọc INDEX.md rồi TRANG-THAI.md, làm tiếp, không làm lại".
 4. Thử nghiệm đạt: giả lập tiểu yêu chết, giao con mới chỉ bằng kho; nó phải làm tiếp đúng bước. Ghi kết quả vào DANH-GIA.md; chưa đạt thì chưa sinh tester02.
 Báo cáo tester vẫn theo #217. Không dừng (Q-56).
+
+## #219 Chat 19/11 08:40 — CHỦ GIAO (Q-61): test vũ khí cận chiến đủ loại ở cấp 15, rồi 8 hướng
+1. Trên Test-36 (qua lệnh GM/DB thử, KHÔNG đụng Main VM), tạo MỘT LẦN đủ vũ khí cận chiến: kiếm, đao, thương, chùy, song đao, bổng. Mỗi loại 1 món, cường hóa cấp 15 (+15). Nhân vật thử phải dùng được từng loại (đúng môn phái/ngũ hành nếu cần: tra bảng; chưa chắc thì ghi CHƯA KIỂM và tạo thêm nhân vật đúng phái).
+2. Với từng loại: trang bị, đứng yên + chạy bộ 8 hướng (ảnh ghép như ảnh kiếm trước), ghi riêng: thứ tự vẽ vũ khí/nhân vật có sai không, hướng nào sai, hiệu ứng cấp +15 có hiện không. Gồm cả thương (câu chủ hỏi trước đó).
+3. Chỉ kiểm, KHÔNG sửa mã hiệu ứng. Báo kết quả vào BAO-CAO-CHU (bảng loại × 8 hướng: ổn/sai/che cảnh/CHƯA KIỂM) kèm ảnh. Xong mới tới bước bật Server D (#216 mục 3).
+Không dừng (Q-56).
