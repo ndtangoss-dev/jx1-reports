@@ -100,7 +100,7 @@ Chủ quan sát ảnh #219: vũ khí hiện ở hai tay (chùy → song chùy, t
 ## Q-66 (chủ 19/11 10:22) — Chủ xác nhận: SỬA sét hai tay và LÀM THEO #226
 Chủ đồng ý cho sửa VK-04 và làm hướng Bot theo #226/Q-65 (hướng A, thang đo tải trên Test-36). Quy trình 2 bước và an toàn của #226 giữ nguyên.
 
-## Q-67 (chủ 19/11 10:37) — THỐNG NHẤT MỘT BẢN APK GỐC
+## Q-67 (chủ 19/11 10:37) — THỐNG NHẤT MỘT BẢN APK GỐC [PHẦN "QH9A LÀ GỐC" ĐÃ BỊ Q-68 THAY THẾ; phần "một bản gốc, bỏ bản khác, cài lại được" vẫn hiệu lực]
 Chủ: cứ dựa theo bản test hiện tại (dòng qh9A) và bám theo nó để làm tiếp; mọi bản khác cho phép BỎ để khỏi rối. Chủ chấp nhận cài lại điện thoại (gỡ rồi cài mới nếu cần). Hiệu lực từ lần này trở đi.
 
 ## Q-68 (chủ 19/11 10:39) — SỬA Q-67: BẢN GỐC = BẢN T36test ĐANG CHẠY

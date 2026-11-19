@@ -1776,3 +1776,6 @@ Chủ đã quyết: dựa theo bản test hiện tại (dòng qh9A), mọi việ
 2. Dựng nền mã đúng với bản này: tìm commit/thư mục dựng gần nhất khớp (thử qh9A rồi fix36); nếu không có mã khớp tuyệt đối, ghi rõ chênh lệch. Bản VK-04 dựng từ nền đó, versionCode cao hơn bản gốc, cùng khóa ký.
 3. Giao điện thoại chủ: dùng chính bản gốc này (hoặc bản VK-04 sau khi xong), phát một đường dẫn duy nhất; APK ngoài git. Các bản khác dời lưu trữ như #229.
 4. #228 vẫn giữ: chỉ giao khi chủ hỏi.
+
+## #231 Chat 19/11 10:42 — GỠ MÂU THUẪN #229/#230
+#230 (Q-68) THAY THẾ #229 ở điểm chọn bản gốc: gốc = APK đang chạy trong T36test (8da22c0c…), KHÔNG phải qh9A; không cài qh9A vào T36test, không quan sát lại. Giữ nguyên từ #229: một bản gốc duy nhất, STATE/APK-GOC.md, dựng bản mới chỉ từ nền này, dọn serve còn một đường dẫn, bản cũ dời lưu trữ, chủ chấp nhận cài lại. Nếu đã làm bước cài qh9A theo #229 thì dừng riêng bước đó (các việc khác tiếp tục) và ghi lại.
