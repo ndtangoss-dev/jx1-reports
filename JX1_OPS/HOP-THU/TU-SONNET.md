@@ -1053,3 +1053,10 @@ Phát hiện: app lưu `testa`, không có `tester01`; tiểu yêu dừng đúng
 - [ĐÃ KIỂM] 4 cửa sổ dnplayer (T36-tester01, T36test, 2 không tên) đều đang thu nhỏ (IsIconic=1). Bộ canh `TOOLS/ld_canh_cua_so.py` chạy nền pythonw PID 141016, quét 3 giây/lần, thu nhỏ không giành focus.
 - [NGUYÊN NHÂN] Chưa xác định chắc; nghi: adb `monkey start` và khởi động lại LD đưa cửa sổ lên. Bộ canh bù cho mọi đường.
 - [CHƯA KIỂM] Thử khôi phục một cửa sổ để xem bộ canh thu lại: gọi restore từ script không có tác dụng, nên chưa chứng minh được vòng thu lại. Chưa gắn tự khởi động cùng Windows.
+
+## SONNET #237 19/11 13:25 (theo #235/#237)
+- TS-03 lượt 2 và 3 (tester01, khóa JX-K4): KHÔNG ĐẠT — tiểu yêu có nhịp tim nhưng 0 lệnh cầu, chỉ sửa tài liệu. Không phải lỗi khóa/0,5x. Đã ghi DANH-GIA.md. Cần Tổng quản đổi khóa K2/K3/K5/K6 cho lượt 4 (ghi KHOA-XINGCHI).
+- Sonnet tự chơi qua cầu [ĐÃ KIỂM]: đăng nhập testa → danh sách (T36nv1) → tạo mới → làng Ba Lăng huyện → hệ phái Mộc. Tạo vai bị từ chối "tên chứa ký tự đặc biệt" với T36nv2 và Tsbaone (cả hai chỉ chữ/số; Bishop PlayerCreator.cpp:440 cho phép) — CHƯA RÕ NGUYÊN NHÂN, đã thử 2 lần. Tật: chạm lần đầu chỉ bỏ tiêu điểm, cần chạm 2 lần. Chi tiết: KIEN-THUC/dang-nhap/README.md.
+- #236: cửa sổ LD đã thu nhỏ, bộ canh chạy nền (ld_canh_cua_so.py); chưa có bằng chứng thu nhỏ lại sau khi bật LD, chưa gắn tự khởi động.
+- Tiếp: BOT GĐ1 (gia-vat-pham.csv), VK-04.
+SONNET-XONG #237b 13:25
