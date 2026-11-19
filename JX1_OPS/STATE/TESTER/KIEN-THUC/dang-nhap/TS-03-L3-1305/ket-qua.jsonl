@@ -1,0 +1,11 @@
+{"id": "ts03-r3-20261119-130520731-01", "ok": true, "cmd": "screenshot", "out": "png 2153785 byte", "luc": "13:05:23"}
+{"id": "ts03-r3-20261119-130520731-02", "ok": true, "cmd": "tap", "out": "ok", "luc": "13:05:54"}
+{"id": "ts03-r3-20261119-130520731-03", "ok": true, "cmd": "screenshot", "out": "png 2158805 byte", "luc": "13:05:59"}
+{"id": "ts03-r3-20261119-130520731-04", "ok": true, "cmd": "tap", "out": "ok", "luc": "13:06:30"}
+{"id": "ts03-r3-20261119-130520731-05", "ok": true, "cmd": "screenshot", "out": "png 2154045 byte", "luc": "13:06:35"}
+{"id": "ts03-r3-20261119-130520731-06", "ok": true, "cmd": "screenshot", "out": "png 2034179 byte", "luc": "13:07:28"}
+{"id": "ts03-r3-20261119-130520731-07", "ok": true, "cmd": "tap", "out": "ok", "luc": "13:08:33"}
+{"id": "ts03-r3-20261119-130520731-08", "ok": true, "cmd": "screenshot", "out": "png 2631669 byte", "luc": "13:08:38"}
+{"id": "ts03-r3-20261119-130520731-09", "ok": true, "cmd": "tap", "out": "ok", "luc": "13:09:29"}
+{"id": "ts03-r3-20261119-130520731-10", "ok": true, "cmd": "screenshot", "out": "png 2602957 byte", "luc": "13:09:34"}
+{"id": "ts03-r3-20261119-130520731-11", "ok": true, "cmd": "screenshot", "out": "png 2582805 byte", "luc": "13:12:14"}

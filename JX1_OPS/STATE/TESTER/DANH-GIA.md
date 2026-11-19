@@ -8,3 +8,6 @@
 
 ## 19/11 13:10 — TS-03 lượt 2 và 3 (tester01, khóa JX-K4): KHÔNG ĐẠT
 - Cầu im từ 11:59; cả hai lượt tiểu yêu chạy (có nhịp tim) nhưng chỉ sửa tài liệu, 0 lệnh thật. Không phải lỗi khóa/tốc độ 0.5x (nó chạy được) mà là không thao tác. Không chấm TỐT. Chuỗi tốt liên tiếp quay về 0.
+
+### SỬA 19/11 13:55 — đính chính lượt 3 TS-03 (Sonnet)
+Mục "KHÔNG ĐẠT, 0 lệnh" ở trên SAI về lượt 3: tiểu yêu đã gửi 11 lệnh thật (4 tap + 7 screenshot, 11/11 ok) lúc 13:05–13:12 qua cầu `D:\JX-wt\TS-03\.ldbridge` (cầu thứ hai, cùng emulator-5558); Sonnet chỉ nhìn cầu `D:\JX-ldbridge\t01` nên thấy 0. Lượt 2 vẫn 0 lệnh. Đánh giá lượt 3: ĐẠT MỘT PHẦN (có thao tác thật, bằng chứng bang-chung.tsv). Lưu ý: Sonnet đã điều khiển cùng LD cùng lúc (13:08–13:20) nên hai bên lệnh đan nhau; tiểu yêu dừng và hỏi đúng chỗ. Từ nay một LD = một đầu điều khiển.
