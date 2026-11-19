@@ -322,3 +322,4 @@
 - 19/11 23:40 ghi cảm nhận chủ sau test vc23 vào BAO-CAO-CHU; gửi #278/#B-033
 - 20/11 00:05 ghi L17 + Q-85; gửi #279/#B-034
 - 20/11 00:08 chủ nhắc L11 (LD ẩn ngay): ghi #279b/#B-034b
+- 20/11 00:15 chủ báo đã chạy script Admin forwarder; gửi #280 cho A
