@@ -305,3 +305,7 @@ Trang thai: PARTIAL — da doc ma, chua chay, chua xac nhan nguyen nhan; can ket
 ## [A 20/11 04:10] #285 tiến triển: lưu vật phẩm
 - Log Goddess (gw\goddes_log) ghi mỗi lần lưu "số vật phẩm/trang bị": 10→20→16→22→31 => vật phẩm CÓ được lưu. Cấp độ cũng giữ.
 - Nghi vấn mất +N/ô trang bị: online.lua cấp lại đồ mỗi lần đăng nhập (marker không chặn) => số vật phẩm tăng dần. Đã sửa online.lua (.bak-once): có marker thì không cấp lại. Đang chờ gs001 nạp (~10 phút) rồi thử lại +3 → đăng xuất → vào lại.
+
+## [A 20/11 04:40] #285 — nguyên nhân lỗi online.lua (đã gộp 1 lần restart)
+- openfile("...","r") trên file CHƯA TỒN TẠI làm Lua báo "Script error online.lua" (cả hàm dừng). Bản gs đang chạy trước đó chỉ chạy được vì marker luôn có sẵn. Bài học: không đọc marker bằng openfile; dùng biến toàn cục.
+- Đã gộp vào MỘT restart: bỏ đọc marker (cờ JX282_DONE, cấp đồ 1 lần/lần khởi động), thêm ngựa Bạch Mã, giữ phi phòng cấp 1 và 11, hook B + thủy tinh kẹp 1000. Log Goddess cho thấy vật phẩm CÓ được lưu (số vật phẩm 10→31). Vòng AddOwnExp x40 cũng nghi gây lỗi: không dùng.
