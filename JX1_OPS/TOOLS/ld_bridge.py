@@ -51,7 +51,11 @@ def run(serial, cmd, a, out, cid):
         s = str(a[0]) if a else ""
         if not re.fullmatch(r"[A-Za-z0-9 ._@-]{1,64}", s):
             raise ValueError("chi ASCII A-Za-z0-9 ._@- toi da 64")
-        return adb(serial, "shell", "input", "text", s.replace(" ", "%s")) or "ok"
+        # game (Cocos EditBox) rot/lon chu khi giao ca chuoi: go tung ky tu, cach 0.3 giay
+        for ch in s:
+            adb(serial, "shell", "input", "text", "%s" if ch == " " else ch)
+            time.sleep(0.3)
+        return "ok"
     if cmd == "key":
         if a[0] not in KEYS:
             raise ValueError("phim cho phep: " + ",".join(KEYS))
