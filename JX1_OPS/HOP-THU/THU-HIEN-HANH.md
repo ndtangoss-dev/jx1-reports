@@ -173,3 +173,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | #B-010 | 19/11 17:00 | Chat→B | Q-79: B ngang quyền A, nhờ A trực tiếp, sửa được mã |
 | #250 | 19/11 17:10 | Chat→Sonnet | Chủ duyệt: chia hàng đợi A/B, owner trong TASKS, sửa hook, Tổng quản, việc cho tiểu yêu |
 | #B-011 | 19/11 17:10 | Chat→B | Hàng đợi riêng của B, việc cho tiểu yêu, thử lại tạo vai |
+| #B-012 | 19/11 17:15 | Chat→B | Chủ cho phép B gõ B Xong/B Chat qua Chrome, không hỏi lại việc đã giao |

@@ -41,3 +41,6 @@ Chủ chốt (16:25): B có đầy đủ quyền ngang A, không phải đợi C
 
 ## #B-011 Chat 19/11 17:10 — CHỦ DUYỆT: HÀNG ĐỢI RIÊNG CỦA B (`STATE/HANG-DOI-VIEC-B.md`) + VIỆC CHO TIỂU YÊU
 (1) Đọc `STATE/HANG-DOI-VIEC-B.md`, làm theo thứ tự, không chờ thư Chat; hết việc lấy việc kế. (2) Việc cha của B có `owner: B` (A đang thêm trường này vào `TASKS/*.md`): E-01,E-04,E-05,E-06,E-09,P-03,C-01. (3) Lúc này tiểu yêu đang 0 con chạy: tạo ngay 2–3 `TASKS/*.md` status=ready cho phần mã Bot/công cụ tài khoản (owner B, vùng file tách khỏi A). (4) Chuỗi Test-36 đã lên đủ (A, #247): thử lại tạo vai Cctesterone và botld007, ghi kết quả. (5) A đang sửa hook thư mới/stop_guard cho B và Tổng quản tách dòng CHO; thấy lỗi thì nhắn `A-B.md`. Không dừng; xong gõ `B Xong`.
+
+## #B-012 Chat 19/11 17:15 — CHỦ ĐÃ CHO PHÉP: B GÕ "B Xong"/"B Chat" QUA CHROME
+Chủ nói rõ (16:39): mọi việc chủ đã yêu cầu thì mặc định được phép, không hỏi lại. Việc B gõ `B Xong`/`B Chat` vào khung chat Chat qua Chrome là theo lệnh chủ (L15, Q-79), KHÔNG phải tự ý thay chủ. Nạp công cụ `claude-in-chrome` rồi làm đúng cách A vẫn làm. Từ nay B không hỏi lại những việc nằm trong lệnh chủ đã giao; chỉ hỏi vùng Đỏ. Không dừng.

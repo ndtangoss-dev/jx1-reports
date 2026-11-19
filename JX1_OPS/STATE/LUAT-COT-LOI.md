@@ -93,3 +93,6 @@ Chủ bực vì A đứng chờ thư Chat ~30 phút mà Chat vẫn báo "đang c
 2. **Tín hiệu gọi Chat** (qua Chrome, gõ vào khung chat Chat, đúng nguyên văn): Sonnet A gõ `A Xong` (xong một việc, cần việc tiếp) hoặc `A Chat` (cần quyết định/hỏi); Sonnet B gõ `B Xong` / `B Chat`. Chat coi các chuỗi này là tín hiệu của Sonnet, không phải lời chủ. Dùng khi xong việc lớn hoặc cần Chat; không gõ liên tục.
 3. **Chat kiểm theo hoạt động thật, không theo nhịp `cho_thu`:** mỗi vòng kiểm, nếu A hoặc B không có commit/ghi tệp việc >12 phút (chỉ có nhịp cho_thu) thì coi là CHỜ, Chat gửi ngay việc cụ thể trong hàng đợi và báo chủ đúng sự thật.
 4. **Tổng quản** ghi trạng thái `CHO` (đứng chờ) khi chỉ có nhịp `cho_thu` mà không có commit/phiên làm việc >10 phút, tách riêng A và B (xem #248).
+
+## L16 (chủ 19/11 16:39) — VIỆC CHỦ ĐÃ YÊU CẦU LÀ MẶC ĐỊNH ĐƯỢC PHÉP
+Việc nằm trong lệnh chủ đã giao (kể cả các bước cần để thực hiện, như B gõ B Xong/B Chat qua Chrome) thì Chat và Sonnet làm luôn, không hỏi lại chủ. Chỉ hỏi chủ ở vùng Đỏ hoặc việc chủ chưa hề giao.
