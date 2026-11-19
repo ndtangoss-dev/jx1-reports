@@ -41,3 +41,20 @@ Rỗi thật: CPU ~0,2%, ổn định. RAM "working set" chỉ 30 MB vì Windows
 3. Bậc 5 → 10 → 20 Bot, mỗi bậc 3 phút: Bot vào map cùng điểm chủ đứng, đi lại; trong lúc đó `vm_chay.py do-gs 30` ×6, ghi CPU/RAM/NIC/TCP và hỏi chủ ba câu: khựng khi vào map? khi đánh? khi đông người?
 4. So mỗi bậc với mốc rỗi ở trên; dừng Bot, đợi CPU về ~0,2% rồi qua bậc kế.
 5. Hoàn tác: `xoa-tk-test` các tk tkbotmau*.
+
+## Mốc lúc chủ chơi trên điện thoại, 20/11 (UTC+7 21:06–21:10; 1 kết nối 51189 từ 100.123.183.6) (B)
+```
+== 21:06:31
+gs001 CPU%=25.31 (tren 4 CPU, 32.8 s) RAM_MB=251 thread=24 handle=203 NIC gui_B/s=0 nhan_B/s=0 TCP ESTABLISHED 56722=0 51189=1 
+== 21:07:17
+gs001 CPU%=23.18 (tren 4 CPU, 32.4 s) RAM_MB=251.5 thread=24 handle=203 NIC gui_B/s=0 nhan_B/s=0 TCP ESTABLISHED 56722=0 51189=1 
+== 21:08:03
+gs001 CPU%=2.6 (tren 4 CPU, 32.3 s) RAM_MB=250.6 thread=24 handle=203 NIC gui_B/s=0 nhan_B/s=0 TCP ESTABLISHED 56722=0 51189=1 
+== 21:08:49
+gs001 CPU%=2 (tren 4 CPU, 32.3 s) RAM_MB=183.8 thread=24 handle=203 NIC gui_B/s=0 nhan_B/s=0 TCP ESTABLISHED 56722=0 51189=1 
+== 21:09:35
+gs001 CPU%=2.66 (tren 4 CPU, 32.3 s) RAM_MB=126.2 thread=24 handle=203 NIC gui_B/s=0 nhan_B/s=0 TCP ESTABLISHED 56722=0 51189=1 
+== 21:10:20
+gs001 CPU%=2.08 (tren 4 CPU, 32.2 s) RAM_MB=100.6 thread=24 handle=203 NIC gui_B/s=0 nhan_B/s=0 TCP ESTABLISHED 56722=0 51189=1 
+```
+Nhận xét: CPU gs001 vọt 25% khi vừa vào (nạp map/vai), về ~2% khi đứng yên; RAM working set 251→100 MB; NIC máy VM đo 0 (không phản ánh, cần đo phía forwarder). Chưa có số tick/SvrFPS.
