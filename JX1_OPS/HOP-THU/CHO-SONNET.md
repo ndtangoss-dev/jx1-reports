@@ -1739,3 +1739,9 @@ Không dừng (Q-56).
 - Gỡ chỗ nghẽn "dùng chung LD index 1 với Sonnet": nhân bản LDPlayer T36test thành T36-tester01 (riêng, ẩn cửa sổ ngay; RAM trống 46% đủ), tài khoản test riêng cho tester (không dùng chung `testa` với Sonnet nếu đăng nhập trùng sẽ đá nhau).
 - Giao việc: tạo TASKS/TS-01.md trạng thái sẵn sàng (nội dung = STATE/TESTER/LOI-GIAO-VIEC.md + tên LD, tên tài khoản; không ghi khóa) để Tổng quản sinh tiểu yêu Codex (xingchi). Nếu tiểu yêu chưa điều khiển được LD qua adb/ảnh thì ghi rõ chỗ thiếu vào TRANG-THAI.md và tự bổ sung công cụ cho nó (ví dụ script chụp màn hình, bấm, đọc log), không chờ chủ.
 - Báo ngay vào TU-SONNET mục TESTER khi tiểu yêu đã chạy: LD, tài khoản, mục đang tìm hiểu. Không dừng (Q-56).
+
+## #225 Chat 19/11 10:12 — CHỦ GIAO (Q-64): SÉT +15 CỦA VŨ KHÍ HAI TAY (chùy, thích) — thêm VK-04 vào bảng (mẫu số 124). Làm xen kẽ, không bỏ tester (#224) và các việc đang chạy.
+- Chủ xem ảnh #219: chùy hiện SONG CHÙY, thích hiện SONG THÍCH (hai tay) nhưng sét chỉ chạy ở MỘT bên. Cần cả hai bên đều có sét chạy.
+1. Kiểm: chụp rõ (đứng im + nhiều khung chạy) chùy và thích +15, đánh dấu bên tay nào có sét, bên nào không; so với kiếm/đao/thương/bổng (một tay) làm đối chứng. Đã có bao nhiêu tay vẽ vũ khí và bao nhiêu tay có sét.
+2. Tìm gốc (tĩnh trước, có file:dòng): mã client/data nào gắn hiệu ứng sét theo bộ phận/tay (xem DESIGN/HIEU-HIEU-UNG-VU-KHI.md, BANG-THU-TU-VE.md, KE-HOACH-TAI-HIEN-HIEU-UNG.md, bộ phận tay phải/tay trái, vũ khí hai tay vẽ bằng một hay hai bộ phận).
+3. Đề xuất sửa (file, dòng, mức rủi ro). KHÔNG sửa mã hiệu ứng cho tới khi Chat duyệt (pre-commit hook chặn KNpcRes*/KItem* khi chưa JX1_EFFECT_OK=1). Báo chủ bằng BAO-CAO-CHU: ảnh trước, nguyên nhân, đề xuất. Không dừng (Q-56).

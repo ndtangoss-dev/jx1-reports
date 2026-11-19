@@ -90,3 +90,6 @@ Chủ DUYỆT DESIGN/BOT/THIET-KE-BOT-v1-DUYET.md (3 loại BOT, 5 giai đoạn,
 
 ## Q-63 (chủ 19/11 09:00) — MỞ MẪU SỐ BẢNG TIẾN ĐỘ
 Chủ lệnh cập nhật phần mới vào bảng tiến độ để mẫu số tăng. Thay #212 (đóng băng 107): từ 09:00 mẫu số = 107 + 16 hạng mục mới (VK-01..03, TS-01..04, BT-01..06, HT-01..03) = 123. Đếm vẫn NGHIÊM (xong đúng chữ tên việc). Chủ biết % sẽ giảm lúc đầu.
+
+## Q-64 (chủ 19/11 10:07) — Sét vũ khí hai tay
+Chủ quan sát ảnh #219: vũ khí hiện ở hai tay (chùy → song chùy, thích → song thích) mà hiệu ứng sét +15 chỉ chạy ở MỘT bên. Yêu cầu: cả hai bên vũ khí đều có sét chạy. Bước 1 kiểm/chứng minh + tìm gốc; sửa mã hiệu ứng chỉ khi có bằng chứng + Chat duyệt (luật cũ). Thêm hạng mục VK-04 vào bảng.

@@ -194,6 +194,7 @@ Sonnet lấy việc từ trên xuống, theo phụ thuộc. Khi bắt đầu m�
 | VK-01 | Test-36: có đủ 6 loại vũ khí cận chiến (kiếm, đao, thương, chùy, song đao, bổng) cấp +15, trang bị được, mỗi loại có ảnh | L2 | Sonnet (LDPlayer) |
 | VK-02 | Kiểm 8 hướng khi chạy bộ cho TỪNG loại ở VK-01: bảng loại × 8 hướng (ổn/sai/che cảnh/CHƯA KIỂM) kèm ảnh, báo chủ | L2 | Sonnet (LDPlayer) |
 | VK-03 | Sau VK-01/02: bật Server D + LDPlayer-D cho chủ thử điện thoại, báo chủ, tắt sạch khi xong | L2 | Sonnet |
+| VK-04 | Vũ khí hai tay (chùy → song chùy, thích → song thích): kiểm hiệu ứng sét +15 hiện ở CẢ HAI tay; tìm gốc nếu chỉ một tay (ảnh + file:dòng), đề xuất sửa; sửa chỉ khi Chat duyệt | L3 | Sonnet + Codex |
 | TS-01 | Tester01 chạy thật: LDPlayer T36-tester01 + tài khoản test + 1 tiểu yêu chơi như người thật, ghi kiến thức và lỗi | L3 | Sonnet + Codex |
 | TS-02 | Kho tài liệu tester chia nhánh đủ 8 mục có nội dung thật; thử giả lập tiểu yêu chết, con mới làm tiếp đúng bước | L3 | Sonnet |
 | TS-03 | Bảng môn phái ↔ ngũ hành từ dữ liệu game/server thật (có file:dòng) để tạo đúng nhân vật test | L3 | Codex |
