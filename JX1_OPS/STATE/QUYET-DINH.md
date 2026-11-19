@@ -159,3 +159,6 @@ Chủ: tối 19/11 A không tự tắt được PID, chủ phải làm rất nhi
 
 ## Q-86 (chủ 20/11 00:48) CHỐT cường hóa + phi phong + tài phú; A, B làm ngay
 Chủ chốt: cường hóa cho TẤT CẢ vũ khí/trang bị trên người, tối đa +15, 5% cộng thẳng; +14 thêm "+1 tất cả điểm kỹ năng vốn có", +15 thêm "+2"; điểm tài phú = X × tổng cấp cường hóa đang mặc, ngưỡng phi phong chia đều (+6 → cấp thấp nhất, +15 → cấp cao nhất); bỏ vũ khí +15 phát thử; đơn vị tiền bạc/vạn/ức, sửa server nếu cần; A có tài khoản test riêng tự tạo (L18). Thiết kế: DESIGN/THIET-KE-CUONG-HOA-PHI-PHONG.md. Chủ: làm bằng mọi giá, không chờ.
+
+## Q-87 (chủ 20/11 00:59) Chat được giảm giá cường hóa nếu tiền không cho phép; không máy móc
+Chủ: cần kết quả cuối là chức năng cường hóa xây thành công; tiền tệ không cho phép thì Chat quyết giảm giá cho hợp game, không dừng tiến độ. Phương án sẵn: DESIGN/THIET-KE-CUONG-HOA-PHI-PHONG.md mục 4 (64 bit nếu gọn, không thì kẹp 20 ức/cấp, nguyên liệu vẫn gấp đôi).

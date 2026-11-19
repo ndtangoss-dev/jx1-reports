@@ -326,3 +326,4 @@
 - 20/11 00:40 chủ gửi yêu cầu cường hóa vũ khí + phi phong + điểm tài phú (DESIGN/YEU-CAU-CUONG-HOA-PHI-PHONG.md, chờ chốt); #281 cho A test LD
 - 20/11 01:05 chủ chốt Q-86/L18; viết THIET-KE-CUONG-HOA-PHI-PHONG.md; gửi #282/#B-035
 - 20/11 00:54 chủ đi ngủ, cần kết quả 7:00. Chat giám sát chặt: lịch kiểm 10 phút (chuỗi send_later, hiện trig_01DkmdwU5odMYDVdFoWm2RZx 01:00) + báo cáo sáng trig_01UAWkNkQ9Wb23medo6pZMcT (06:40). Sonnet im >10 phút → gõ thẻ nhắc (không ra lệnh dừng).
+- 20/11 01:08 Q-87 chủ cho Chat giảm giá cường hóa nếu tiền không cho phép; gửi #282b/#B-035b

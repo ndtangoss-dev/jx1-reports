@@ -22,3 +22,9 @@ Chủ ĐÃ CHỐT, giao A và B làm ngay, "bằng mọi giá", sửa cả serve
 - A (client + test): cửa sổ cường hóa (asset gốc), hiển thị tooltip +N/dòng chỉ số/ức, điểm tài phú, thông báo phi phong; dựng APK thử mới; test trên LDPlayer bằng TÀI KHOẢN TEST RIÊNG của A; tiếp lỗi cũ (đánh thường, khựng 4–5 s, quái hiện muộn).
 - Tiểu yêu: việc khảo sát tĩnh (số cấp phi phong và chỉ số, danh sách ô trang bị, id thuộc tính kỹ năng +N, chuỗi kiểu dữ liệu tiền) giao qua Tổng quản bằng TASKS/<mã>.md.
 - Xong mục được giao thì làm tiếp hàng đợi; không chờ chủ, không chờ Chat duyệt (chủ: "bằng mọi giá").
+
+## 4. QUYỀN QUYẾT ĐỊNH VỀ GIÁ (chủ 20/11 00:59, Q-87) — KHÔNG MÁY MÓC, KHÔNG DỪNG TIẾN ĐỘ
+Chủ: nếu tiền tệ không cho phép thì Chat được GIẢM GIÁ cường hóa cho hợp lý với game, không để tiến độ dừng; thứ chủ cần là chức năng cường hóa XÂY XONG và chạy. Chat quyết sẵn phương án để A/B không phải chờ:
+- Ưu tiên 1: mở rộng tiền lên 64 bit CHỈ NẾU làm gọn (không quá ~1 giờ công, không phá giao thức/lưu DB). Không thì sang ưu tiên 2 NGAY.
+- Ưu tiên 2 (mặc định nếu tiền là 32 bit): giá bạc mỗi cấp = min(2^(n−1) × 200 vạn, 20 ức); nguyên liệu hồng/lục/lam VẪN gấp đôi mỗi cấp. Tức +1..+11 đúng công thức chủ (+11 = 20,48 ức → kẹp 20 ức), +12..+15 giữ 20 ức bạc (nguyên liệu vẫn 2048/4096/8192/16384). 20 ức = 2.000.000.000 < 2.147.483.647.
+- B/A tự áp dụng và ghi vào báo cáo "đã giảm giá vì ..."; sau khi xong mới báo Chat/chủ. Mọi quyết định tương tự (đổi tham số cho vừa game: giới hạn kiểu dữ liệu, kích thước ô, ngưỡng) được tự quyết theo hướng "chức năng chạy được, đúng tinh thần chủ", ghi rõ lý do; chỉ Vùng Đỏ mới hỏi.
