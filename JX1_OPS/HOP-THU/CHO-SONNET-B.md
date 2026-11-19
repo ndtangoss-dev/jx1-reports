@@ -117,3 +117,6 @@ Kiểm ngay: (1) gs001 (pid 1820?) còn sống, 51189 LISTEN, đã đăng ký v�
 
 ## #B-028 Chat 21:41 — B: chủ sắp ĐỔI TÀI KHOẢN (bàn giao), cập nhật bàn giao NGAY, không dừng việc
 Cập nhật `STATE/BAN-GIAO-B.md` đầy đủ: #B-026 (DERP ~120 ms, forwarder NODELAY đã sửa, chủ cần chạy lại CHAY-CHUYEN-T36.bat), #B-027 (gs001 nạp map ~10-12 phút sau khởi động lại; kiểm cổng 51189 nối đủ), mốc đo lúc chủ chơi, Bot 5/10/20 chờ 20 tk test, HANG-DOI-VIEC-B. Commit + push. Việc nền cứ chạy, không dừng (Q-56). Chat đã viết `HOP-THU/BAN-GIAO-CHAT-19-11-2140.md`. Khi chủ mở phiên mới dán đoạn trong `HOP-THU/KHOI-DONG-SONNET-B.md`. Gõ `B Chat` 1 dòng khi bàn giao đã đẩy.
+
+## #B-029 Chat 21:47 — B: CHỦ ĐÃ VÀO GAME (21:45) trên Test-36
+Chủ đang chơi. Đo ngay bảng mỗi 10 giây (CPU gs001, kết nối 51189/56722, độ trễ Tailscale) lúc chủ chạy nhanh/đánh quái; ghi vào REPORTS/DO-MUOT-MOC-GOC.md mốc "chủ chơi 21:45–". Nhớ ghi chủ đã chạy lại CHAY-CHUYEN-T36.bat chưa (PID forwarder mới so với 21528).

@@ -2020,3 +2020,6 @@ Chủ (21:36) sắp chuyển sang tài khoản cũ của chủ. Theo STATE/QUY-T
 **Đã xử lý #269–#271 (19/11 21:36):** #269 server đã cấp chùy cấp 1 +15 (online.lua JXGive269, cờ jx269_given), chờ chủ đăng nhập để xác nhận; #270 gs001 khởi động lại 21:29; #271 gs001 đang nạp bản đồ (~10 phút), không lỗi. #268 vc23 đang build (đo jx_net.log), chưa xong.
 
 **Đã xử lý #272 (19/11 21:52):** BAN-GIAO.md đã cập nhật đầy đủ, đẩy jx1-ops 69e8ce1, đã A Chat.
+
+## #273 Chat 21:47 — A: CHỦ ĐÃ VÀO GAME (21:45) trên Test-36
+Chủ đang trong game. Làm ngay (nền, không dừng vc23): (1) xác nhận jx269_given.txt đã tạo, chùy cấp 1 +15 đã vào túi (chủ sẽ so với chùy cấp 10); (2) đọc dòng `SvrFPS x/18` ở console gs001 lúc chủ chạy/đánh, ghi vào TU-SONNET.md; (3) khi chủ báo hiệu ứng hai tay chùy cấp 1 vs cấp 10 thì kiểm bảng item↔effect (obj-adha01 vs obj-adha04), chưa sửa mã (Q-52).
