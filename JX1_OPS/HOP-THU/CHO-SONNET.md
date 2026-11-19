@@ -1841,3 +1841,10 @@ Chủ chốt: cho Command Code làm tester, đọc mã các nút trước rồi 
 
 ## #241 Chat 19/11 13:57 — CHỦ CHO PHÉP CÀI command-code (đã gõ lên khung chat 13:45; thư này để cho_thu thoát)
 Chủ đã duyệt (Q-73 13:29, L14 13:43): cài Node portable + `npm i -g command-code` (prefix D:\JX-node\npm-global, không Admin). Đã gõ lệnh cho phép lên khung chat của Sonnet lúc 13:45. Sonnet đang ngồi trong cho_thu 9 phút nên chưa thấy: thoát cho_thu, cài command-code, `command-code --version`, ghi CAU-COMMAND-CODE.md, viết 3 dòng cho chủ tự đăng nhập (BAO-CAO-CHU). Từ nay lệnh chờ chỉ dùng ngắn khi có build chạy nền.
+
+## #242 Chat 19/11 14:36 — CHỦ ĐÃ ĐĂNG NHẬP COMMAND CODE (làm tiếp Q-72 + Q-74)
+Chủ báo 14:33: đã tạo khóa API và `command-code login` xong ("Logged in", khóa lưu ở ~/.commandcode/auth.json trên máy chủ). Chủ tự làm, không có khóa trong chat/repo. Làm tiếp theo #238 và #240, không chờ:
+1. `command-code status` / xem tín dụng còn lại, ghi lại TRƯỚC khi chạy. KHÔNG mua gói/nạp tiền (đỏ). Nếu hết tín dụng hoặc đòi trả tiền: ghi BAO-CAO-CHU, đừng mua.
+2. Q-74: kiểm Command Code đọc được ảnh chụp không; được thì giao tester mục đăng nhập→tạo nhân vật (một worktree, một hòm cầu, mỗi lượt ≥1 lệnh cầu + ảnh mới tính); so với Sonnet tự chơi.
+3. Q-72: 3 việc nhỏ, mỗi việc một worktree, đo tốc độ/đúng/tín dụng so với một tiểu yêu Codex.
+4. Vẫn chạy VK-04 và BOT song song; không giành LD với tiểu yêu.
