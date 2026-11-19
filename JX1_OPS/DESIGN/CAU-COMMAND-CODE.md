@@ -16,3 +16,8 @@ Nguồn: commandcode.ai/docs, /docs/headless (đọc qua WebFetch; chưa chạy 
 - [ĐÃ KIỂM] Node v26.13.1 + npm 11.20.0 giải nén ở `D:\JX-node\node-v26.13.1-win-x64`; `npm i -g command-code` thêm 301 gói vào `D:\JX-node\npm-global` (prefix riêng, không Admin); `command-code --version` = 1.91.1.
 - PATH chỉ trong phiên: `$env:Path="D:\JX-node\npm-global;D:\JX-node\node-v26.13.1-win-x64;$env:Path"`.
 - Đăng nhập: CHỦ tự làm (xem BAO-CAO-CHU). Chưa đăng nhập, chưa kiểm ảnh/mô hình/tín dụng.
+
+## Kiểm sau khi chủ đăng nhập (#242, 19/11 14:40)
+- `command-code status`: Authenticated (tài khoản đã đăng nhập); lệnh KHÔNG in số tín dụng. Mô hình free nên chưa tốn tín dụng; số dư [CHƯA KIỂM] (xem ở trang web của Command Code nếu chủ muốn).
+- Đọc ảnh: [ĐÃ KIỂM] `-m flint-v1.0:free -p` đọc được `shot.jpg` (ảnh chụp LD), nhận ra màn đăng nhập và nút "Đăng nhập"/"Thoát". Thư mục thử `D:\JX-cmdc-test` (ngoài kho).
+- Chưa giao tester đăng nhập→tạo nhân vật (cần worktree riêng + hòm cầu riêng, LD không đang bị tiểu yêu khác dùng).
