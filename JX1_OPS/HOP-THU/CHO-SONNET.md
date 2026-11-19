@@ -2040,7 +2040,7 @@ Chủ (21:59): "Gộp luôn, test luôn 1 thể; sau khi gộp xong ta chuyển 
 
 **Đã xử lý #274–#276 (19/11 22:20):** #274 console gs001 21:49–21:51 nhận 525 lệnh kỹ năng, chạy 80 (291 bị ghi đè, 154 bỏ vì bận), kỹ năng đánh thường của vai chưa kiểm xong; #275 tick 40–116 ms chỉ khi có người online (rỗi 0,7 ms), online.lua nhẹ, chưa tách được phần tốn; #276 vk04 đã gộp vào cây vc23 (công tắc jx_vk04.txt), đang dựng; BAN-GIAO đã cập nhật.
 
-## #277 Chat 19/11 23:35 — A: chữa "đánh thường không ra đòn / quái đánh mãi không chết" (chủ chốt 23:33)
+## #277 Chat 19/11 23:35 — A: chữa "đánh thường không ra đòn / quái đánh mãi không chết" (chủ chốt 23:33) [ĐANG CHỜ] số đo sau BufferBusy=1
 Chủ đã chốt (Chat nói trước cách hiểu, L13). Phạm vi Q-82: CHỈ Test-36 + APK thử, KHÔNG đụng Server D, không dừng việc nền (Q-56).
 1. HIỂU trước, sửa sau (Q-52): vì sao làn lệnh kỹ năng gs001 chỉ chạy 80/525 lệnh (291 bị ghi đè, 154 bỏ vì bận, #274): ai giữ "một ô", khi nào ghi đè, vì sao bỏ khi bận. Ghi bằng lời thường, THẤY/TÀI LIỆU/CHƯA KIỂM, file:dòng, vào REPORTS (tên gợi ý LAN-LENH-KY-NANG.md).
 2. Gán/kiểm kỹ năng đánh thường cho vai thử `chuvuongtestaa` (chủ báo bấm nút đánh chỉ chạy sát quái, nhận kỹ năng mới mới đánh được).
@@ -2048,7 +2048,7 @@ Chủ đã chốt (Chat nói trước cách hiểu, L13). Phạm vi Q-82: CHỈ 
 4. Đo lại bằng jx_net.log sau khi chủ chơi vc23; báo số trước/sau. Gõ 'A Chat' khi có kết quả hoặc khi bị chặn.
 (Kênh gõ cửa Chat mới: https://claude.ai/chat/88bede8d-38cd-4bc7-b0b4-8088b4c2f6cb)
 
-## #278 Chat 19/11 23:40 — A: kết quả chủ test vc23 (bổ sung #277)
+## #278 Chat 19/11 23:40 — A: kết quả chủ test vc23 (bổ sung #277) [ĐANG CHỜ] jx_net.log từ máy chủ
 Chủ test vc23: VK04 ĐẠT; gói tin mượt. Còn: (1) chạy ngựa cứ ~4–5 s khựng một nhịp; (2) quái hiện ra đột ngột khi tới gần; (3) đánh thường chưa ra đòn (đã giao ở #277, giữ ưu tiên). A: nhịp khựng 4–5 s nằm phía client? Đối chiếu jx_net.log (khoảng cách gói, FPS, nội suy) với chu kỳ 4–5 s; thử tắt từng công tắc (jx_interp, jx_vk04, jx_netlog) để cô lập. Chỉ đo/giả thuyết rồi mới sửa (Q-52). Gõ 'A Chat' khi có kết quả.
 
 ## #279 Chat 20/11 00:05 — A: QUYỀN CHỦ ĐỘNG + QUY TRÌNH "SẴN SÀNG TEST" (chủ chốt 00:00, Q-85, L17)
