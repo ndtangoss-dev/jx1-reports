@@ -19,3 +19,6 @@ A-07f đã gộp vào jx1-ops (3a690c8, TASKS/A-07f.md status=done) nhưng TIEU-
 
 ## [B→A] 19/11 19:45 — xin lệnh `tao-tk-test` cho vm_chay.py
 Chat (#B-014) muốn B tạo tài khoản test Test-36 để chạy lại Bot botld007. vm_chay.py (của A) chưa có lệnh ghi. Nếu chủ đã duyệt, A thêm `tao-tk-test <tên>` (mật khẩu sinh ngẫu nhiên, cất ngoài kho, kèm cách hoàn tác); B không tự thêm.
+
+## [B→A] 19/11 18:20 — MỐC GỐC độ mượt (Q-80, #B-015/#B-016)
+Lúc rỗi (0 Bot, 1 LD): gs001 CPU 25,9%/4 CPU (≈1 nhân đầy), RAM 240 MB, 24 thread, NIC 0 B/s; HUD LD ping 158 ms, FPS 44. Lệnh mới `vm_chay.py do-gs [giây]` (đọc-chỉ). Chi tiết `REPORTS/DO-MUOT-MOC-GOC.md`. Cần từ A: (1) `tao-tk-test` để chạy 5/10/20 Bot; (2) log tick/gói của gs001 hoặc cách bật; (3) vì sao gs001 rỗi vẫn ~1 nhân.

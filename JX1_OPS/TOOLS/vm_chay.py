@@ -4,6 +4,7 @@ Lenh:
   chain-up                  chay task JX-ChainUp (script idempotent: chuoi da song thi chi kiem tra), in chain_up.log cuoi
   ports                     cong nghe 5001-5005, 5002, 56722, 56732, 51189 + tien trinh chuoi
   log <bishop|goddess|relay|gs> [n]   n dong cuoi (mac dinh 50, toi da 200) cua log moi nhat
+  do-gs [giay]              DO (chi doc): CPU%% gs001 trung binh [giay, mac dinh 10, toi da 60], RAM, so luong, so ket noi TCP tai 56722/51189, byte NIC gui/nhan
   ten-co <Ten>              ten nhan vat co trong roledb khong (chi doc, tim byte ASCII; khong xuat du lieu khac)
 Chay: python -I -X utf8 vm_chay.py <lenh> [doi so]. Khong mat khau/khoa trong tep."""
 import re
@@ -22,6 +23,13 @@ BLOCKS = {
 Get-Process Sword3PaySys,Goddess,S3RelayServer,Bishop,gs001,sqlservr -ErrorAction SilentlyContinue | % { $_.Name + ' ' + $_.Id }""",
     "log": r"""$f = Get-ChildItem '%(dir)s' -File -Recurse | Sort-Object LastWriteTime -Descending | Select-Object -First 1
 if ($f) { '== ' + $f.Name; Get-Content $f.FullName -Tail %(n)d } else { 'khong co log' }""",
+    "do-gs": r"""$n = %(n)d; $pr = Get-Process gs001 -ErrorAction Stop
+$c0 = $pr.CPU; $t0 = Get-Date; $a0 = Get-NetAdapterStatistics; $s0 = ($a0 | Measure-Object SentBytes -Sum).Sum; $r0 = ($a0 | Measure-Object ReceivedBytes -Sum).Sum; Start-Sleep $n
+$pr = Get-Process gs001; $dt = ((Get-Date) - $t0).TotalSeconds; $a1 = Get-NetAdapterStatistics; $s1 = ($a1 | Measure-Object SentBytes -Sum).Sum; $r1 = ($a1 | Measure-Object ReceivedBytes -Sum).Sum
+$cpus = (Get-CimInstance Win32_ComputerSystem).NumberOfLogicalProcessors
+'gs001 CPU%%=' + [math]::Round(($pr.CPU - $c0) / $dt / $cpus * 100, 2) + ' (tren ' + $cpus + ' CPU, ' + [math]::Round($dt,1) + ' s) RAM_MB=' + [math]::Round($pr.WorkingSet64/1MB,1) + ' thread=' + $pr.Threads.Count + ' handle=' + $pr.HandleCount
+'NIC gui_B/s=' + [math]::Round(($s1 - $s0) / $dt) + ' nhan_B/s=' + [math]::Round(($r1 - $r0) / $dt)
+'TCP ESTABLISHED 56722=' + @(Get-NetTCPConnection -State Established -LocalPort 56722 -ErrorAction SilentlyContinue).Count + ' 51189=' + @(Get-NetTCPConnection -State Established -LocalPort 51189 -ErrorAction SilentlyContinue).Count""",
     "ten-co": r"""$fs = [IO.File]::Open('""" + ROOT + r"""\gw\database\roledb', 'Open', 'Read', 'ReadWrite'); $b = New-Object byte[] $fs.Length; [void]$fs.Read($b, 0, $b.Length); $fs.Close()
 $t = [Text.Encoding]::ASCII.GetBytes('%(name)s'); $hit = $false
 for ($i = 0; $i -le $b.Length - $t.Length -and -not $hit; $i++) { if ($b[$i] -eq $t[0]) { $k = 1; while ($k -lt $t.Length -and $b[$i+$k] -eq $t[$k]) { $k++ }; if ($k -eq $t.Length) { $hit = $true } } }
@@ -46,6 +54,9 @@ def main(a):
             sys.exit("log <%s> [n]" % "|".join(LOGS))
         n = int(a[2]) if len(a) > 2 and a[2].isdigit() else 50
         print(goi(BLOCKS["log"] % {"dir": LOGS[a[1]], "n": max(1, min(n, 200))}))
+    elif cmd == "do-gs":
+        n = int(a[1]) if len(a) > 1 and a[1].isdigit() else 10
+        print(goi(BLOCKS["do-gs"] % {"n": max(1, min(n, 60))}))
     elif cmd == "ten-co":
         if len(a) < 2 or not re.fullmatch(r"[A-Za-z0-9]{3,24}", a[1]):
             sys.exit("ten-co <Ten ASCII 3-24>")

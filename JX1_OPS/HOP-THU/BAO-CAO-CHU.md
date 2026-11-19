@@ -79,3 +79,10 @@ Lưu ý: 17 tên là ký tự hỏng (GBK) nên để nguyên; độ hiếm và 
 
 ## (B) 19/11 19:45 — nhắc đại vương 1 dòng
 Bảng giá mẫu Bot GĐ1 (8 dòng trong `STATE/BOT/gia-vat-pham.csv`) vẫn chờ đại vương duyệt; BOT-01 (mô-đun tính giá) đã xong và test pass nên duyệt xong là dùng được ngay.
+
+## (B) 19/11 18:20 — Kịch bản test mượt cho đại vương (5–10 phút, DỰ THẢO)
+1. Vào game bằng vai đã có, đứng yên 1 phút: nói "ổn" hay "giật" (nhìn số ping/FPS góc dưới trái, đọc to cho thuộc hạ ghi).
+2. Chạy qua lại 1 phút; rồi đổi sang map khác: nói có khựng khi nạp map không, khựng mấy giây.
+3. Đánh quái 1 phút: nói số sát thương nổi lên có trễ so với đòn không.
+4. Khi thuộc hạ thả 5, 10, 20 Bot gần chỗ đại vương: lặp bước 1–3, nói "ổn/giật nhẹ/giật nặng" ở mỗi mức.
+Thuộc hạ ghi mốc: ping, FPS, CPU máy chủ ở từng mức. (Mốc rỗi đã có; mức có Bot chờ tài khoản test.)
