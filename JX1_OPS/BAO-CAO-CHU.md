@@ -76,3 +76,8 @@ Em tải Node v26.13.1 (hash khớp trang chính thức) vào D:\JX-node nhưng 
 - Đã dựng worktree `D:\JX-wt\CC-01` + hòm cầu `.ldbridge` (cầu chạy trên emulator-5558) + `NHIEM-VU.md`.
 - Command Code chạy không `--yolo` thì không ghi được file lệnh (nó tự dừng và xin quyền). Chạy với `--yolo` bị bộ phân loại tự động của Claude Code chặn (agent ngoài tự chạy lệnh không giám sát). Thuộc hạ KHÔNG lách.
 - Cách mở: chủ cho phép rõ `command-code --yolo` chạy trong `D:\JX-wt\CC-01\.ldbridge` (chỉ ghi vào thư mục đó), hoặc thêm luật Bash cho lệnh đó vào settings. Khuyến nghị: cho phép.
+
+## Mở phiên Sonnet B (Q-75, #243) — 3 dòng cho chủ
+1. Mở cửa sổ Claude Code MỚI trên thư mục `D:\JX-wt\SONNET-B`.
+2. Dán đúng đoạn trong `JX1_OPS/HOP-THU/KHOI-DONG-SONNET-B.md` (đã dựng sẵn hook/biến môi trường B trong `.claude/settings.json` của thư mục đó).
+3. Nhắn Chat "B đã chạy".
