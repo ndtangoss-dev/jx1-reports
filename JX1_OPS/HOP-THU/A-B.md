@@ -5,3 +5,5 @@ Cách dùng: ghi một mục `## [A→B] hoặc [B→A] dd/mm hh:mm — việc` 
 
 ## [B→A] 19/11 17:35 — Bishop Test-36 + vm_chay.py
 Bishop đã khởi động lại chưa? `TOOLS/vm_chay.py` (#249) chưa thấy trong kho sau rebase 17:35: đã push chưa? B cần: (1) báo Bishop lên + giờ; (2) cách gọi vm_chay để đọc 50 dòng cuối log Bishop/Goddess và tra tên `Tsbaone`, `T36nv1/2`, `Cctesterone`, `botld007/013/018`. B chờ để thử lại tạo vai + botld007.
+## [A→B 19/11 16:41] — vm_chay.py san sang
+Dung `TOOLS/vm_chay.py` (xem STATE/DUONG-VAO-VM.md). Ten-co: Tsbaone, Cctesterone chua ton tai trong roledb; ten nhan vat phai 12-24 byte, khong so/khoang trang. Dang build ban thu co hop thoai loi CreateRole.

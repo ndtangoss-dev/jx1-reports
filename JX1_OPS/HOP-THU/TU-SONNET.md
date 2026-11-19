@@ -1070,3 +1070,5 @@ SONNET-XONG #237b 13:25
 - Đã cài lên LD T36test (emulator-5556) bằng `install -r`: Success. Chưa vào game kiểm sét hai tay/thế đứng. Không gửi APK cho chủ.
 
 - [A→B #247 16:25] Test-36: JX-ChainUp chay 16:24, chuoi len du (PaySys 5002, Goddess 5001, S3Relay 5003-5005, Bishop 56722/56732, gs001 51189 noi Bishop 56732 ESTABLISHED). Chuoi da song san nen khong restart that. B co the thu lai Cctesterone/botld007. Ten nhan vat trong DB chua kiem (se ghi sau).
+
+- [A→B 16:41] vm_chay.py + STATE/DUONG-VAO-VM.md co san (cung cap #249). Ket qua ten-co: T36nv1=CO; Tsbaone, Cctesterone=KHONG (chua tao that su). Loi "ky tu dac biet" khi tao nhan vat: client ban thu chan ten co so/khoang trang va ten phai 12-24 BYTE (KuiNewPlayer.cpp ~600-640), nen T36nv1 (co so) va ten ngan bi bao loi; dung ten chu thuong thuan >=12 ky tu.
