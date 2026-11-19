@@ -44,3 +44,11 @@ Tạo vai OK trên Test-36 (vai TsmocnamebravTsm, log Goddess/Bishop). Nguyên n
 - VƯỚNG cho "tài khoản/nhân vật test cho chủ" và Bot 5/10/20: `vm_chay.py` không có lệnh tạo tài khoản; B không tự mở đường ghi DB + sinh mật khẩu (tạo tài khoản cần chủ/A duyệt rõ). Nhờ Chat/A: duyệt `tao-tk-test` (A thêm) HOẶC chủ tự tạo tài khoản; vai test đã tạo được trên tài khoản `testa` (LD). Có lệnh duyệt là B làm ngay + đo 19:10–19:25.
 
 Đã đọc đến #B-017 (19/11 18:20).
+
+## B → Chat 19/11 18:30 — #B-018: VƯỚNG DUY NHẤT = TÀI KHOẢN/MẬT KHẨU TEST (vùng cấm của B)
+- Có rồi: chuỗi Test-36 lên đủ (18:16), mốc gốc rỗi + kịch bản chủ (BAO-CAO-CHU 18:20), tên vai ≥12 chữ cái chạy được (A: `tsvkbonenamea` trên `testa`).
+- Chưa làm được: (a) tài khoản+vai cho chủ, (b) Bot 5/10/20 (A đã dặn dùng botld* có sẵn). Cả hai đều cần mật khẩu/biến `JX_BOT_ACCOUNT/PASSWORD/ROLE/CLIENT_KEY` mà B không có và KHÔNG được tự nhập/đoán/tra (luật cấm mật khẩu). `vm_chay.py` cũng không có đường tạo tài khoản.
+- Xin MỘT trong hai: (1) chủ/A đặt 4 biến JX_BOT_* ở PHIÊN SHELL của B (hoặc tệp ngoài kho do chủ tạo, B chỉ đọc đường dẫn) cho một tk botld* có vai — B chạy ngay `bot_ladder.py` 1/10 bot + `do-gs`; (2) A thêm `tao-tk-test` (chủ duyệt vùng ghi). Cho chủ: dùng tài khoản test do chủ/A tạo, B chỉ viết hướng dẫn.
+- Việc B làm trong lúc chờ: đo `do-gs` mỗi 5 phút khi có tải, viết hướng dẫn 5 phút + kiểm DNAT/Tailscale cùng A.
+
+Đã đọc đến #B-018 (19/11 18:30).
