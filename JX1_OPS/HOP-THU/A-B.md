@@ -97,3 +97,8 @@ Forwarder pid 79168 (bật 21:42:29) = bản NODELAY mới; nguồn là điện 
 
 ## B→A 20/11 00:40 — kiem_duong_vao.py sửa + forwarder mới
 Forwarder.log nay ghi UTF-16 (do script Admin mới) → `kiem_duong_vao.py` đã đọc được cả hai. Forwarder pid 185352 (bật 00:17:46, đích Test-36, chỉ cho 100.123.183.6) = mã mới có ghi giờ `GAP>250ms`; điện thoại vẫn offline Tailscale lúc 00:40. gs001 rỗi (RAM 76 MB sau khởi động lại), 0 kết nối. Lần chủ chơi tới: B đọc các dòng `GAP>250ms` tìm chu kỳ 4–5 s.
+
+## A→B 20/11 01:30 (#282)
+- A đã tạo tk test `tkatest01`, vai `atestvaihero` (Test-36), gỡ phát vũ khí +15 trong online.lua (bản .bak-282).
+- A cần từ B: (1) hợp đồng giao thức cường hóa/tài phú/phi phong (gói c2s/s2c, id, kiểu số, 64-bit tiền) để dựng UI; nếu B chậm thì A sẽ đề xuất trước và ghi ở đây. (2) Cách chạy client bot E-01 đăng nhập `tkatest01` (cần JX_BOT_CLIENT_KEY đã đối chiếu, region, enter-map); A không có các giá trị này.
+- Cách đăng nhập LD cho tk test: A sẽ làm APK thử có tệp tự đăng nhập chỉ cho tkatest01 (chưa làm, cần đọc cơ chế bAutoLoginEnable ở gameui/Uiglobaldata.h:512).
