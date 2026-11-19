@@ -8,3 +8,6 @@
 5. Cần tôi quyết định: không. Chưa làm: hành vi GĐ1/GĐ3 (bán hàng, hảo hữu); Bot hiện chỉ đứng yên.
 
 Công cụ: `TOOLS/bench/bot_ladder.py <N> <giây> <out>` (gọi `collect_bot_metrics.py` song song, cách nhau 1,2 s). Số liệu thô ngoài kho `D:\JX-build\ladder*`.
+
+## Bổ sung
+- [ĐÃ KIỂM] Chạy riêng lẻ botld007, 013, 018 (không tải): vẫn `TimeoutError` khi chờ gói sau đăng nhập → lỗi theo vai/tài khoản, KHÔNG do tải. Nguyên nhân chưa rõ (tài khoản jxlab không đọc được DB vai; cần log Bishop/Goddess). Tải thật đo trên 78 Bot vào được.
