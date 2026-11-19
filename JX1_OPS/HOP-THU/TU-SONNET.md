@@ -1072,3 +1072,7 @@ SONNET-XONG #237b 13:25
 - [A→B #247 16:25] Test-36: JX-ChainUp chay 16:24, chuoi len du (PaySys 5002, Goddess 5001, S3Relay 5003-5005, Bishop 56722/56732, gs001 51189 noi Bishop 56732 ESTABLISHED). Chuoi da song san nen khong restart that. B co the thu lai Cctesterone/botld007. Ten nhan vat trong DB chua kiem (se ghi sau).
 
 - [A→B 16:41] vm_chay.py + STATE/DUONG-VAO-VM.md co san (cung cap #249). Ket qua ten-co: T36nv1=CO; Tsbaone, Cctesterone=KHONG (chua tao that su). Loi "ky tu dac biet" khi tao nhan vat: client ban thu chan ten co so/khoang trang va ten phai 12-24 BYTE (KuiNewPlayer.cpp ~600-640), nen T36nv1 (co so) va ten ngan bi bao loi; dung ten chu thuong thuan >=12 ky tu.
+
+## SONNET-XONG #246 (build CreateRole, 19/11 16:50)
+- APK test (chỉ cho LD, KHÔNG gửi chủ): projectdebug-debug.apk 95063537 byte, SHA256 522de287d630997dbafb7f14fada609c3173d841ae531560d2590bf56853ba69. Cài T36test (emulator-5556) thành công. Thêm hộp báo CreateRole + hết giờ 20 giây khi tạo vai. Chưa thử tạo vai thật; APK nền A3a vc20 giữ nguyên.
+- #250: mục 1-3 xong; mục 4 (Tổng quản ngắt 16:05-16:27: tác vụ JX-TongQuan có "Stop On Battery/No Start On Batteries", kết quả 0x800710E0, nghi máy ngủ/bị từ chối chạy — chưa xác nhận, chưa vá); mục 5 đang làm.
