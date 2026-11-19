@@ -145,3 +145,4 @@ CHAT-DAY-B #20 19/11 18:55
 CHAT-DAY #258 19/11 19:05
 CHAT-DAY-B #21 19/11 19:05
 CHAT-DAY #259 19/11 19:20
+- 19/11 19:22 CHAT→A #260 kiểm lần cuối APK/link/chuỗi/đường dẫn/số trước-sau

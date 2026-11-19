@@ -192,3 +192,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | #258 | 19/11 19:05 | Chat→Sonnet | Dự phòng tạo vai cho chủ, báo tiến độ nội suy |
 | #B-021 | 19/11 19:05 | Chat→B | Tạo vai cho chủ bằng script đọc tệp mật khẩu (B không đọc) |
 | #259 | 19/11 19:20 | Chat→Sonnet | Dựng APK treo >30p, dừng dựng lại có hạn giờ/giao vc22; vũ khí đúng cấp 10; hướng dẫn chủ |
+- #260 (19:22) A: kiểm link APK, chuỗi Test-36, sửa tab đường dẫn, số trước/sau

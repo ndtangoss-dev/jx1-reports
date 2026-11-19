@@ -1949,3 +1949,10 @@ B đã tạo tk test `tkchuvuong` (mật khẩu ở `%LOCALAPPDATA%\jx1-secrets\
 2. **Vũ khí:** chủ nói **cấp 10**; A ghi "yêu cầu cấp 9". Kiểm dữ liệu vật phẩm: nếu có bản yêu cầu cấp 10 cho từng loại thì đổi sang đúng cấp 10 (`SetLevel` đủ cầm), nếu mỗi loại chỉ có cấp 9/11 thì ghi rõ trong `BAO-CAO-CHU.md` để chủ biết. Đủ loại: cận chiến 6 + tầm xa; đối chiếu danh sách loại với dữ liệu, báo thiếu loại nào.
 3. Nhắc B/chủ: B không đăng nhập vai; chủ đăng nhập `chuvuongtestaa` lần đầu trên điện thoại/LD là tự nhận 9 món. Viết 3 dòng hướng dẫn cực đơn giản cho chủ vào `BAO-CAO-CHU.md` (mật khẩu ở tệp `jx1-secrets\tkchuvuong.txt` trên máy).
 Không dừng; xong gõ `A Xong`.
+
+## #260 Chat 19/11 19:22 — A: kiểm lần cuối trước 19:30 (chủ đang bận, A tự chủ động)
+1. Mở link Artifact APK như chủ sẽ mở (đúng 3 dòng hướng dẫn): tải được, đúng 78,9 MB, SHA256 khớp? Nếu link hỏng, sửa ngay và ghi link đúng vào BAO-CAO-CHU.md.
+2. Chắc gs001 + chuỗi Test-36 còn sống (đừng khởi động tay lệnh ngoài JX-ChainUp, B báo 19:02 gs001 từng tắt) và đường Tailscale từ điện thoại vào được cổng 56722/51189/8080 tới T36; ghi 1 dòng cách kiểm.
+3. Sửa lỗi nhỏ BAO-CAO-CHU.md mục 19:02: đường dẫn mật khẩu bị ký tự tab (`jx1-secrets<TAB>kchuvuong.txt`) → viết lại `%LOCALAPPDATA%\jx1-secrets\tkchuvuong.txt` trong khối mã.
+4. Đo trước/sau: nếu quay khung vẫn 0, dùng số thay thế dễ lấy (HUD FPS/ping trên LD khi bật/tắt jx_interp.txt, hoặc SvrFPS) — một dòng "trước/sau" có thật còn hơn bảng trống; ghi rõ nếu chưa đo được. Ghi cách tắt nội suy cho chủ nếu thấy lạ.
+5. Sau 19:30 vẫn tiếp tục (VK-04, đo mượt, LimitFPS 30/60). Không dừng; xong mục 1-4 gõ `A Xong`.
