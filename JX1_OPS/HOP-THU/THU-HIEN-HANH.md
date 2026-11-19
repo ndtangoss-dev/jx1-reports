@@ -177,3 +177,5 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | #251 | 19/11 17:25 | Chat→Sonnet | Thử tạo vai bằng APK #246, VK-04, tiểu yêu A-07f/g/h, hàng đợi |
 | #B-013 | 19/11 17:35 | Chat→B | B chờ thư 15 phút: việc cụ thể từ hàng đợi B (tạo vai, tester, tiểu yêu, CC-01) |
 | #B-014 | 19/11 17:42 | Chat→B | Sau B Xong: Bot tạo tk test (Q-45), cầu LD, tester01, CC-01 lặp đo |
+| #252 | 19/11 18:15 | Chat→Sonnet | ƯU TIÊN: tối ưu đường truyền, tối nay chủ test độ mượt |
+| #B-015 | 19/11 18:15 | Chat→B | ƯU TIÊN: đo độ mượt thật, kịch bản test cho chủ |

@@ -61,3 +61,10 @@ Hết một việc lớn thì gõ `B Xong` ngay (đừng ngồi `cho_thu`). Khô
 4. **Tab Chat Chrome:** nếu cần, tự mở `https://claude.ai/code/session_01JdCqU6uGdd1fL7JMogYB2A` hoặc thẻ chat của Chat trong nhóm thẻ của B; không được thì cứ commit rõ ràng, Chat theo dõi qua kho.
 5. Bảng giá mẫu Bot GĐ1: nhắc chủ 1 dòng trong `BAO-CAO-CHU.md` nếu chủ chưa trả lời.
 Xong việc lớn gõ `B Xong`; không dừng.
+
+## #B-015 Chat 19/11 18:15 — ƯU TIÊN LÊN ĐẦU (chủ chốt 18:09): ĐO ĐỘ MƯỢT THẬT CHO CHỦ TEST TỐI NAY
+Chủ muốn tối ưu đường truyền thông tin và test độ mượt tối nay. A lo sửa/tối ưu (thư #252); B lo ĐO và KỊCH BẢN TEST, chạy trên Test-36 + LD, không đụng Server D (đỏ). Làm ngay, việc cũ để sau (không bỏ):
+1. **Mốc đo gốc ngay bây giờ:** dùng bộ `B-04a` (REPORTS/B-04a-bo-do-tick-bang-thong.md) + tester01 + vài Bot (tài khoản test Q-45): đo tick, băng thông, độ trễ đòn→số nổi, FPS/giật phía LD. Ghi CSV/báo cáo để A so trước/sau.
+2. **Kịch bản test cho chủ (5–10 phút):** việc cần chủ làm trên điện thoại (đi, đánh, vào đông Bot), viết tiếng đơn giản vào `BAO-CAO-CHU.md`, kèm cách chủ nói cảm giác (giật/trễ/ổn) để mình ghi số.
+3. **Tải thật:** tăng dần số Bot (5→10→20) trên Test-36, xem điểm bắt đầu giật; phối hợp A qua `A-B.md`, đo lại sau mỗi bản A đưa.
+4. Mục tiêu: trước ~20:30 có mốc gốc + bản đo sau tối ưu + kịch bản cho chủ. Tiểu yêu: giao việc đọc/đo song song (owner B). Xong việc lớn gõ `B Xong`; không dừng.

@@ -1900,3 +1900,11 @@ Không dừng. Báo ngắn vào TU-SONNET.md; xong gõ `A Xong`.
 3. Tổng quản: theo dõi nhật ký có còn ngắt sau bản vá pin không; chạy tiếp A-07f/g/h với tiểu yêu, gộp khi XONG-CHO-GOP.
 4. Rảnh: hàng đợi `STATE/HANG-DOI-VIEC.md` (V-01, M-01, SO/HG/KC).
 Không dừng; xong việc lớn gõ `A Xong`.
+
+## #252 Chat 19/11 18:15 — ƯU TIÊN LÊN ĐẦU (chủ chốt 18:09): TỐI ƯU ĐƯỜNG TRUYỀN THÔNG TIN ĐỂ TỐI NAY CHỦ TEST ĐỘ MƯỢT
+Chủ: "tối ưu các đường truyền tải thông tin giữa các file, để tối nay test độ mượt; ưu tiên việc này lên đầu." Cách hiểu đã chốt: giảm giật/trễ trên đường dữ liệu server→client (và các tầng liên quan); chạy trên Test-36 + LD. KHÔNG đụng Server D (đỏ); APK giao chủ vẫn theo #228 (chỉ khi chủ bảo). Việc cũ để sau, không bỏ.
+Làm (không chờ thư, hết 1 bước gõ `A Xong` rồi vào bước kế):
+1. Đọc nhanh nền sẵn có: `DESIGN/TRUYEN-TAI-VA-EXE-SERVER.md`, `REPORTS/K-01-ban-do-truyen-tin-hieu.md`, `A-06-bang-goi-tin.md`, `H-13-tick-do-tre-don.md`, `B-04a-bo-do-tick-bang-thong.md`, `DESIGN/TOI-UU-120FPS.md`, `B-02-loc-hien-thi.md`.
+2. Lập danh sách chỗ nghẽn theo đường: nhịp tick gs001 (36 Hz hiện có), gộp buffer/flush, lượng gói mỗi nhịp, đồng bộ HP/số nổi, bộ lọc hiển thị B-02 (P1, chỉ build/đo, branch riêng), nạp spr/map phía client. Xếp theo tác dụng/rủi ro; ghi `DESIGN/TOI-UU-TRUYEN-TAI-TOI-NAY.md`.
+3. Làm những sửa AN TOÀN và ĐO ĐƯỢC trước (cấu hình/cờ ưu tiên trước mã), áp trên Test-36/APK thử chỉ chạy LD; mỗi thay đổi đo trước/sau bằng bộ B-04a (B đang chuẩn bị mốc đo gốc, phối hợp qua `A-B.md`). Không sửa mã hiệu ứng vũ khí (Q-52).
+4. Mục tiêu: trước ~20:30 có bản thử + bảng so sánh trước/sau bằng tiếng đơn giản và hướng dẫn chủ test 5 phút; ghi vào `BAO-CAO-CHU.md`. Tiểu yêu: tạo việc đọc/khảo sát song song (owner A).

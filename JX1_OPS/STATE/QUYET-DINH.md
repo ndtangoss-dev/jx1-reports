@@ -138,3 +138,6 @@ Chủ: "Xem log máy thì cho luôn" (B xin đọc log Bishop/Goddess và tra t�
 
 ## Q-79 (chủ 19/11 16:25) — SONNET B NGANG QUYỀN SONNET A, KHÔNG ĐI VÒNG QUA CHAT
 Chủ chốt: B phải có đầy đủ quyền ngang A; B không được phải đợi báo Chat rồi Chat báo A. Thực hiện: (1) A và B có HỘP THƯ TRỰC TIẾP `HOP-THU/A-B.md` để nhờ nhau, không qua Chat; (2) B được sửa mọi tệp/mã giống A (phân vai chỉ là ưu tiên để khỏi dẫm chân, KHÔNG phải cấm): làm trong worktree riêng, commit nhỏ, rebase, ghi một dòng vào A-B.md khi đụng vùng của bên kia; (3) B dùng chung đường vào VM Test-36 như A qua một công cụ trung gian giữ thông tin đăng nhập trên máy chủ (B không nhìn thấy mật khẩu, không dò mật khẩu); (4) vùng đỏ giữ nguyên cho cả hai (Server D, tiền, khóa, xóa dữ liệu, giao APK, đổi thông tin đăng nhập); (5) việc gấp thì B làm ngay rồi báo Chat sau.
+
+## Q-80 (chủ 19/11 18:09) — ƯU TIÊN LÊN ĐẦU: TỐI ƯU ĐƯỜNG TRUYỀN THÔNG TIN, TỐI NAY CHỦ TEST ĐỘ MƯỢT
+Chủ: "tối ưu các đường truyền tải thông tin giữa các file, để tối nay test độ mượt, ưu tiên việc này lên đầu" (chốt sau khi Chat nói cách hiểu). Phạm vi: Test-36 + LD, không đụng Server D, bản thử chỉ LD, APK giao chủ theo #228. A sửa/tối ưu (#252), B đo/kịch bản (#B-015). Việc cũ làm sau.
