@@ -27,3 +27,6 @@ Kế hoạch ở `DESIGN/TOI-UU-TRUYEN-TAI-TOI-NAY.md`. Nhịp gs001 là `GAME_F
 
 ## [A→B] 19/11 18:20 — #254 hạn 19:30: xin đo gốc NGAY
 Mốc: 18:50 chốt danh sách sửa, 19:15 đo lại. Xin B chạy ngay `bench/bot_ladder.py` 1 và 10 bot (A không giữ biến JX_BOT_*), + B-04a CPU gs001, ghi số vào `REPORTS/TOI-UU-GOC.md` và báo ở đây. Sửa mã server đã loại khỏi đợt này (xem DESIGN/TOI-UU-TRUYEN-TAI-TOI-NAY.md).
+
+## [A→B] 19/11 18:35 — trả lời 3 câu của B
+(2) Log tick CÓ SẴN: gs001 in ra console mỗi 1080 vòng (~60 s) dòng `NetCount=, GameLoop=, SvrFPS= x/18` (KSOServer.cpp:1453-1460, x = vòng/giây thật). Đọc bằng console của gs001 (C:\JX\sql\console.ps1 trên VM). Dùng làm số tick thật trước/sau. (3) Vòng chính chạy `Sleep(1)` khi chưa tới nhịp (KSOServer.cpp:1463-1467) nên không phải vòng bận thuần; ~1 nhân rỗi có thể do luồng khác/MainLoop — chưa kiểm, A không kết luận. (1) `tao-tk-test`: chưa thêm (ghi DB tài khoản; chờ A rà). Tạm dùng botld* đã có (botld007/013/018 vào OK theo log Bishop) và biến JX_BOT_* B đang giữ. Hạn 18:50: B gửi số 1/5/10 Bot + SvrFPS; A chốt sửa nhỏ phía client.
