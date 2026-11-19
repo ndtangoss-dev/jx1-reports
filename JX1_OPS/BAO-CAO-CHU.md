@@ -66,3 +66,8 @@ Máy thật chưa có Node.js nên chưa cài được Command Code. Anh chọn:
 
 ## 19/11 14:10 — Command Code: Node đã tải, cài gói bị chặn
 Em tải Node v26.13.1 (hash khớp trang chính thức) vào D:\JX-node nhưng hệ thống an toàn chặn việc cài gói npm `command-code` vì lệnh duyệt đến qua thư Chat, không phải anh gõ trực tiếp. Anh chọn: (1) nhắn thẳng trong khung này "cho cài command-code" (khuyến nghị), hoặc (2) tự dán lệnh ở CAU-COMMAND-CODE.md. Cần anh quyết định: có.
+
+## 19/11 14:00 — Command Code đã cài, anh đăng nhập giúp em 3 dòng
+1. Mở PowerShell mới, dán: `$env:Path="D:\JX-node\npm-global;D:\JX-node\node-v26.13.1-win-x64;$env:Path"`
+2. Gõ `command-code login` (hoặc `cmdc login`), trình duyệt mở ra, đăng nhập tài khoản của anh rồi bấm cho phép.
+3. Gõ `command-code status` thấy đã đăng nhập thì nhắn "đã đăng nhập". Không dán khóa vào chat. Cần anh quyết định: có (làm 3 bước này).

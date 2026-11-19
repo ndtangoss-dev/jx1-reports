@@ -11,3 +11,8 @@ Nguồn: commandcode.ai/docs, /docs/headless (đọc qua WebFetch; chưa chạy 
 - [ĐÃ KIỂM] Node LTS v26.13.1 (nodejs.org, bản zip portable win-x64, 41.166.246 byte) tải về `D:\JX-node\node.zip`; SHA-256 khớp SHASUMS256.txt chính thức: e2edda75bfb089654705cf65a13b58933bfd5f57148e8ebda916f58a2474f1f7. Chữ ký GPG chưa kiểm.
 - Giải nén + `npm i -g command-code` bị bộ phân loại quyền của Claude Code CHẶN ("Undermining Oversight": cài gói npm ngoài). Không lách. CẦN CHỦ cho phép trực tiếp trong khung chat Code (hoặc chủ tự chạy 3 lệnh dưới), rồi mới tiếp.
 - Lệnh chủ tự chạy (PowerShell, không cần Admin): `Expand-Archive D:\JX-node\node.zip D:\JX-node -Force; $env:Path="D:\JX-node\node-v26.13.1-win-x64;$env:Path"; npm config set prefix D:\JX-node\npm-global; $env:Path="D:\JX-node\npm-global;$env:Path"; npm i -g command-code; command-code --version`
+
+## Đã cài (#241, chủ cho phép; 19/11)
+- [ĐÃ KIỂM] Node v26.13.1 + npm 11.20.0 giải nén ở `D:\JX-node\node-v26.13.1-win-x64`; `npm i -g command-code` thêm 301 gói vào `D:\JX-node\npm-global` (prefix riêng, không Admin); `command-code --version` = 1.91.1.
+- PATH chỉ trong phiên: `$env:Path="D:\JX-node\npm-global;D:\JX-node\node-v26.13.1-win-x64;$env:Path"`.
+- Đăng nhập: CHỦ tự làm (xem BAO-CAO-CHU). Chưa đăng nhập, chưa kiểm ảnh/mô hình/tín dụng.
