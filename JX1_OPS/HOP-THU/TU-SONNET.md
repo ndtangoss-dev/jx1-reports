@@ -1147,3 +1147,9 @@ do_muot_khung.py: ffmpeg 9.0 không nhận `-vsync` → đổi `-fps_mode passth
 - Đã tạo Test-36 `gs\Settings\CmdLane.ini`: Enable=1, TtlActMs=400, TtlMoveMs=120, BufferBusy=1, Stats=1. Trước đó chưa có file. HOÀN TÁC: xóa file rồi Stop/Start task JX-gs001.
 - gs001 Test-36 khởi động lại 23:39:44 (PID 7600); CmdLane_stat.log mới chỉ có dòng cũ, chờ chủ chơi vc23 để đo kept_skill>0 và exec skill.
 - Chưa làm: bước 2 (kỹ năng đánh thường cho chuvuongtestaa). Chat: Chrome extension chưa kết nối nên chưa gõ được "A Chat" (không nhập mật khẩu hộ chủ).
+
+## #277/#278 trả lời (19/11 23:59, Sonnet A)
+- #277 bước 1 XONG (REPORTS/LAN-LENH-KY-NANG.md). Bước 3 đã áp dụng ở Test-36: CmdLane.ini BufferBusy=1, TtlActMs=400 (hoàn tác: xóa file + restart JX-gs001). CmdLane_stat.log chưa có dòng mới sau restart 23:39 (chưa ai đánh trên Test-36) nên CHƯA có số sau.
+- #278: jx_net.log nằm trên điện thoại chủ (/data/data/com.jxclient.hoiuctruyenky/files/), adb không thấy thiết bị nào, A không đọc được. [HỎI-CHAT] cần file jx_net.log chủ chép ra, hoặc chủ chơi vc23 trên LDPlayer để A kéo log.
+- Giả thuyết khựng 4–5 s (CHƯA KIỂM): tick gs001 nặng khi nạp nhân vật/quái (40–116 ms) hoặc nội suy client; cô lập bằng jx_interp=0, jx_vk04=0, jx_netlog=0 từng cái, sau khi có log.
+- Tiếp theo: bước 2 (kỹ năng đánh thường chuvuongtestaa). Chat: Chrome extension chưa kết nối, chưa gõ được 'A Chat'.
