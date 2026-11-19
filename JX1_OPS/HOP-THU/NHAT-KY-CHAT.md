@@ -314,3 +314,4 @@
 - 19/11 16:23 L15: chủ bực vì A chờ thư 30 phút mà Chat báo 'chạy bình thường' (nhịp cho_thu bị tính là sống). Vá: A/B Xong/Chat, tong_quan tách CHO, Chat kiểm theo commit.
 - 19/11 17:10: chủ duyệt báo cáo vòng lặp (16:37); gửi #250/#B-011, tạo HANG-DOI-VIEC-B.md
 - 19/11 16:52: chủ báo B chờ thư 15p; gửi #B-013 và gõ lên thẻ B
+- 19/11 21:40 Chat viết HOP-THU/BAN-GIAO-CHAT-19-11-2140.md + KHOI-DONG-CHAT mục 8 theo lệnh chủ (chuyển sang tài khoản cũ của chủ). Lịch kiểm hiện hành của Chat cũ: trig_013X2rjYUeJTKhB6mSjq8S1h (21:41) và các lịch send_later kế tiếp — hủy khi chủ báo chuyển khung (list_triggers/delete_trigger).

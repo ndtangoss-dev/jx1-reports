@@ -49,3 +49,6 @@ SỬA 16:50 (chủ): Chat KHÔNG còn lịch kiểm 30 phút, không tự quét.
 
 LUẬT MỚI 19/11 10:42 (STATE/LUAT-COT-LOI.md L13): bàn việc gì với chủ cũng phải nói trước mình hiểu thế nào, chủ chốt rồi mới giao Sonnet; lỡ gửi mâu thuẫn thì tự gỡ ngay.
 - Đổi tài khoản: xem `STATE/QUY-TRINH-DOI-TAI-KHOAN.md` (A, B, Chat, các bước chủ làm).
+
+
+## 8. CẬP NHẬT 19/11 21:40 — ĐỌC FILE `HOP-THU/BAN-GIAO-CHAT-19-11-2140.md` TRƯỚC (đủ luật, hạ tầng, tình hình test độ mượt Q-80/81/82, sự cố đã gặp, việc sau tối nay). Việc đầu tiên: kiểm hai Sonnet bằng commit thật, tạo lại lịch kiểm send_later, báo chủ ngắn (chủ đang chờ test chùy cấp 1/10, chạy nhanh/đánh quái; APK vc23 do A dựng).

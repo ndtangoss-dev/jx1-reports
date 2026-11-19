@@ -149,3 +149,4 @@ Chủ đồng ý để A đưa APK thử (nội suy client, Q-80) đến điện
 
 ## Q-82 (19/11 21:24) Tối ưu độ phản hồi khi chạy nhanh/đánh quái (chủ)
 Chủ đã vào game trên điện thoại (Test-36, APK vc22): hoạt ảnh/hoạt cảnh đạt, truyền gói tài nguyên ổn; còn LAG khi chạy nhanh và đánh quái, phản hồi chưa tốt. Giao: A client (dự đoán di chuyển, phản hồi đánh tức thì, gộp gói, APK thử vc23 có công tắc, đo ms); B mạng/forwarder/máy chủ (Tailscale direct hay DERP, RTT, NODELAY, SvrFPS lúc chạy/đánh). Phạm vi: Test-36 + APK thử, không Server D, không sửa mã server chính.
+- Q-83 (19/11 21:36) Chủ: gom việc, ghi đầy đủ, hướng dẫn bàn giao sang tài khoản cũ của chủ → BAN-GIAO-CHAT-19-11-2140.md
