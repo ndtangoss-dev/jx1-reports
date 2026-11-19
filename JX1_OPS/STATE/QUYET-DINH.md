@@ -123,3 +123,6 @@ Chủ duyệt cài Node.js (bản LTS chính thức) trên máy chạy Tổng qu
 
 ## Q-74 (chủ 19/11 13:31) — CHỐT: THỬ COMMAND CODE LÀM TESTER (đọc mã nút trước, rồi chơi qua cầu)
 Chủ chốt sau khi Chat trình bày cách hiểu: sau khi Node + đăng nhập xong (Q-72/Q-73), thử Command Code làm tester trên đúng mục đăng nhập → tạo nhân vật (mục tester01), đọc tệp giao diện/nút trước rồi chơi qua cầu adb; so với Sonnet tự chơi. Điều kiện: (1) kiểm nó nhìn được ảnh chụp màn hình không; (2) theo dõi tín dụng; (3) chỉ cho đọc tệp bố cục giao diện/tên nút, không toàn bộ mã game riêng tư; (4) Tổng quản chấm: không có lệnh cầu hoặc không có ảnh = KHÔNG ĐẠT.
+
+## Q-75 (chủ 19/11 14:34) — CHỐT: THÊM SONNET B CHẠY SONG SONG PHIÊN KHÁC
+Chủ thấy Sonnet (A) quá tải, chốt thêm một Sonnet thứ hai (B), ngang quyền, chạy ở phiên Claude Code riêng, cùng kho jx1-ops. Chia việc theo chủ đề, mỗi bên một hộp thư và một thư mục làm việc riêng (git worktree). Phạm vi và ranh giới: `STATE/SONNET-B.md`. A giữ: sửa lỗi game/APK/VK-04, Server D, ca thử C02/C04/C05, bảng tiến độ, hàng đợi W/SO/HG/KC/V/M, tổng hợp. B nhận: chương trình tiểu yêu tester (kể cả Command Code Q-72/Q-74, cầu LD, bộ canh cửa sổ LD) và hệ thống Bot. Luật tối thượng (Q-56), vùng đỏ, L1–L14 áp dụng cho cả hai. Chủ chỉ cần mở phiên mới theo hướng dẫn Chat đưa.
