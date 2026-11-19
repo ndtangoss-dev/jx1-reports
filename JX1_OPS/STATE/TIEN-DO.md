@@ -1,6 +1,6 @@
-# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-20 00:05, đừng sửa tay)
+# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-20 00:11, đừng sửa tay)
 
-ĐANG LÀM: HG2-01, HG2-12
+ĐANG LÀM: HG2-01
 KẾ TIẾP: 0-08, B-05, D-02, E-04, E-06, P-01
 BỊ CHẶN: T-04, TS-04
 
@@ -15,8 +15,6 @@ flowchart LR
   end
   subgraph S3["Chặng 3 tick và đồ họa"]
     HG2_01["HG2-01 chạy"]
-    HG2_12["HG2-12 chạy"]
-    HG2_11["HG2-11 chờ gộp"]
     TS_04["TS-04 chặn"]
     0_08["0-08 chờ"]
     B_05["B-05 chờ"]
@@ -29,4 +27,4 @@ flowchart LR
   end
 ```
 
-Tổng: 260 việc, 2 đang làm (+0 chết, 1 chờ gộp), 8 chờ, 2 bị chặn, 247 xong.
+Tổng: 260 việc, 1 đang làm (+0 chết, 0 chờ gộp), 8 chờ, 2 bị chặn, 249 xong.
