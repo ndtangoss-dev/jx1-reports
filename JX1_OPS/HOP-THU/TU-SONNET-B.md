@@ -163,3 +163,8 @@ Da viet ma C++ (GetEquipIdx, CountBagItemExact, ConsumeBagItemExact; +14/+15 ky 
 - Áp chốt thủy tinh min(2^(n−1),1000) vào qhcuonghoa.lua (SHA 15B451D2…); báo A trong A-B.md; không cần dựng lại gs001, chỉ chép 1 file Lua. Commit 9d9f1e5.
 - Gộp QH-01 (PARTIAL, nội dung đủ): 15 ô mặc trong enum, server không lọc loại theo detail. Tôi giữ N=10 (đầu, áo, đai, vũ khí, giày, tay, bùa, 2 nhẫn, ngọc bội) cho điểm tài phú vì ngựa/mặt nạ/phi phong/ấn/thức phẩm không phải món cường hóa; đổi được bằng bảng QH_PARTS. CHƯA chạy thử (chờ A phát nguyên liệu).
 - QH-02 (số cấp phi phong) chưa có kết quả; dùng mặc định K=11.
+
+## B 20/11 — mốc 3 (phi phong)
+- Cổng phi phong vàng đã cài ở CanEquip (bản gs001 2, build OK, D:\JX-build\qh-b035-pf\), hợp đồng chốt v4 trong A-B.md. Cấp k = nLevel cột 12 của GoldItem.txt (1..11), xác nhận từ bản chép Settings. K=11, N=10, X=100. Thiết kế: DESIGN/QH-B035-PHI-PHONG.md.
+- Gộp QH-02 (PARTIAL, thiếu Settings trong nguồn, tôi bổ sung từ bản chép máy thật). CHƯA chạy thử ở runtime: chờ A đưa bản 2 lên Test-36.
+- Chưa làm: bảng chỉ số phi phong tăng đều theo cấp (đổi dữ liệu GoldItem, cần Test-36); tự tháo phi phong khi giảm tài phú.
