@@ -63,3 +63,6 @@ Test-36, nhân vật `T36nv1`, mỗi loại +15 (cấp 1), trang bị rồi đ�
 
 ## 19/11 13:45 — Command Code (Q-72): đang chờ anh 2 việc nhỏ
 Máy thật chưa có Node.js nên chưa cài được Command Code. Anh chọn: (1) cho em cài Node LTS bản chính thức (khuyến nghị), hoặc (2) bỏ thử. Sau khi cài, anh tự chạy `cmdc login` trong cửa sổ terminal rồi dán xong là em lo phần còn lại. Chi tiết: DESIGN/CAU-COMMAND-CODE.md. Cần anh quyết: có.
+
+## 19/11 14:10 — Command Code: Node đã tải, cài gói bị chặn
+Em tải Node v26.13.1 (hash khớp trang chính thức) vào D:\JX-node nhưng hệ thống an toàn chặn việc cài gói npm `command-code` vì lệnh duyệt đến qua thư Chat, không phải anh gõ trực tiếp. Anh chọn: (1) nhắn thẳng trong khung này "cho cài command-code" (khuyến nghị), hoặc (2) tự dán lệnh ở CAU-COMMAND-CODE.md. Cần anh quyết định: có.
