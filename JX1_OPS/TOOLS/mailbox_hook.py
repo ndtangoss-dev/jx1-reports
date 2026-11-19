@@ -3,8 +3,9 @@
 (tep trang thai cuc bo ngoai kho), co thu moi thi nhac doc DUNG phan moi bang 1 dong. Luon nhac mo dau 'Bam dai vuong,'. Loi bat ky: im lang."""
 import json, os, re, subprocess, sys, time
 
-WT = r'D:\jx1-ops-wt'
-STATE = r'D:\JX-tools\mailbox_state.json'
+_B = os.environ.get('JX1_SONNET', 'A').upper() == 'B'
+WT = r'D:\JX-wt\SONNET-B' if _B else r'D:\jx1-ops-wt'
+STATE = r'D:\JX-tools\mailbox_state_B.json' if _B else r'D:\JX-tools\mailbox_state.json'
 PERIOD = 600
 
 
