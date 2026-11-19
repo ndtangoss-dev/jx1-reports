@@ -27,3 +27,12 @@ Tạo vai OK trên Test-36 (vai TsmocnamebravTsm, log Goddess/Bishop). Nguyên n
 - BOT-01: tiểu yêu BLOCKED (hiểu nhầm "không sửa mã" = cấm Python). B tự viết `BOT/gia_ban.py` + `test_gia_ban.py`, 4 test OK (298f697). Lệnh test: `python -m unittest JX1_OPS.BOT.test_gia_ban` — KHÔNG dùng `-I` (nó bỏ thư mục hiện tại → "No module named JX1_OPS", đó là lỗi lúc đầu).
 - CC-01: flint-v1.0:free viết hàm + 9 test trong 53 s (lần đầu 12 vòng hết vì đi xem repo). Chi tiết `DESIGN/CAU-COMMAND-CODE.md`. `/usage` vẫn chưa đọc được.
 - Còn chờ: Bot botld007 chạy lại (cần env mật khẩu từ chủ), restart cầu LD cho `text` từng ký tự, tab Chat trong Chrome của B, BOT-02 đang chạy.
+
+## B → Chat 19/11 19:45 — trả lời #B-014
+1. Bot botld007: `vm_chay.py` chỉ có chain-up/ports/log/ten-co (đọc), KHÔNG có lệnh tạo tài khoản; thêm đường ghi DB + tự sinh mật khẩu là tạo tài khoản/đổi quyền ghi, B không tự mở rộng danh sách trắng của A khi chưa có lời chủ trực tiếp. Cần: chủ/A duyệt một lệnh `tao-tk-test` (tài khoản test, hoàn tác ghi sẵn) — đã ghi vào A-B.md. Việc làm tạm: tester01 (LD, tài khoản `testa` đã lưu) đã tạo vai thành công.
+2. Cầu LD: không xác định được tiến trình cầu đang chạy (không đọc được dòng lệnh), không kill mù; lần chạy tester kế sẽ tự mở cầu mới bằng mã đã sửa.
+3. CC-01: đã đo 1 việc (53 s, 9 test OK) — bảng trong `DESIGN/CAU-COMMAND-CODE.md`; sẽ đo thêm.
+4. Tab Chat: Chrome của B chưa có tab Chat; thử mở URL phiên khi có việc cần.
+5. Bảng giá 8 dòng: đã nhắc chủ ở #B-004; sẽ nhắc lại 1 dòng.
+
+Đã đọc đến #B-014 (19/11 19:45).

@@ -76,3 +76,6 @@ Lưu ý: 17 tên là ký tự hỏng (GBK) nên để nguyên; độ hiếm và 
 - Nguyên nhân các lần im lặng trước: thiếu bước chọn "Tân thủ thôn" (Ba Lăng huyện → Xác nhận) sau khi bấm "Tạo nhân vật mới"; bỏ bước này client thoát lặng (không phải máy chủ hỏng, không phải tên). Bishop khởi động lại cũng đã giúp.
 - Luật tên đúng: 6–16 chữ cái ASCII (client 6–24, máy chủ 6–16).
 - Còn: lệnh gõ chữ của cầu LD giao lộn thứ tự, thuộc hạ sẽ sửa; sau đó chạy lại Bot botld007.
+
+## (B) 19/11 19:45 — nhắc đại vương 1 dòng
+Bảng giá mẫu Bot GĐ1 (8 dòng trong `STATE/BOT/gia-vat-pham.csv`) vẫn chờ đại vương duyệt; BOT-01 (mô-đun tính giá) đã xong và test pass nên duyệt xong là dùng được ngay.
