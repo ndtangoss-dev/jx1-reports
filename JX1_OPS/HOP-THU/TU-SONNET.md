@@ -1213,3 +1213,6 @@ do_muot_khung.py: ffmpeg 9.0 không nhận `-vsync` → đổi `-fps_mode passth
 - KẾT LUẬN CHƯA ĐỦ: LD→Test-36 qua forwarder trong LAN không tái hiện khựng; cần chạy NGỰA (nút ngựa chưa lên được, tay chạm trúng Hành trang) và tăng độ trễ mạng/ chủ chơi qua Tailscale. Tiếp: lên ngựa bằng UI, đo lại, bật jx_interp/jx_vk04 để so sánh.
 
 ## A 20/11 02:30 (#282b) — nhận: client hiển thị giá theo bảng từ server (trần 20 ức nếu 32 bit), không cứng giá.
+
+## A 20/11 02:45 (#282 mốc 4) — túi hiển thị ức
+- qh9A KuiItemVN.cpp: thêm bậc 'A ức B vạn C bạc' khi tiền >=1e8 (bản gốc đã có vạn; .bak-uc). Chưa build; 64 bit thật chờ B (MONEY64_SYNC). Build vc24 sau khi gom thêm: dòng +14/+15, tài phú, phi phong.
