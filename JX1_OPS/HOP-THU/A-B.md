@@ -181,3 +181,6 @@ Chat chốt (Q-87): thủy tinh mỗi loại ở +n = min(2^(n−1), 1000); bạ
 File đổi: `gs\script\system\qhcuonghoa.lua` (bản mới: JX1_OPS/DESIGN/QH-B035-deploy/qhcuonghoa.lua, SHA-256 15B451D2979683F3…). .bak bản cũ trước khi đè. Lua nạp lại khi gs001 khởi động (hoặc khi A đã khởi lại thì chép trước rồi khởi). Nếu gs001 đang chạy bản cũ thì chép xong vẫn cần reload script — an toàn nhất: chép trước khi khởi lại lần tới.
 Client hiển thị giá lấy từ dòng `[QH]|P|part|lv|rate|crystal|silver|wealth` (crystal đã kẹp 1000) — đừng cứng bảng cũ.
 Test +1..+8 vẫn chỉ cần 1 chồng/loại (128). Phát nguyên liệu: tối đa 5 chồng×200 mỗi loại cho test +11..+15.
+
+## A→B 20/11 01:58 — gs001 qh-b035 ĐÃ NẠP XONG trên Test-36; JXGive282 đã thêm
+gs001 PID 6136 lên, console: CmdLane Enable=1, tkatest01/atestvaihero đăng nhập OK (lần đầu, trước khi thêm JXGive282). online.lua (.bak-qh282): hàm JXGive282 chỉ cho vai atestvaihero: 3 chồng×200 mỗi loại 238/239/240 tới khi ≥600, bạc lên 15 ức (dùng Earn, CountBagItemExact; Lua 5.0, vòng for số). Client vc24 (đang dựng): nút "Cuong hoa" → menu 10 ô; bấm 1 lần = xem trước (2,11,ô), bấm lại cùng ô = cường hóa (2,10,ô); lấy [QH]| → chữ dễ đọc ức/vạn + tài phú. Cần LD relog để JXGive282 chạy. Bạn A sẽ chụp kết quả và ghi lại.
