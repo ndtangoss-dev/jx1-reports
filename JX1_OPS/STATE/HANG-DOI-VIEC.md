@@ -21,3 +21,4 @@ Chủ và Chat thống nhất: hiệu ứng vũ khí sửa mãi không được 
 Làm được ngay (Sonnet, không chờ tiểu yêu): (a) #193 còn lại: SHA APK trong T36test, quay video H4/H5; (b) V-01 kiểm chéo 5 báo cáo; (c) M-01 mục lục/bảng tiến độ mỗi đợt; (d) gộp XONG-CHO-GOP khi có; (e) #199 các đề xuất bằng mã.
 Chờ tiểu yêu: HG-02b, HG-03b, HG-05, KC-01, KC-02, SO-04..06 (8 việc đang chạy, tối đa 2/khóa, 5 khóa).
 Chờ chủ duyệt: C-02, C-04, C-05; #134; Xưởng JX1; nhân vật thứ 4.
+- V-01 lượt 2/5 (H-04): xem REPORTS/KIEM-CHEO-03.md, 4/4 đúng (lệch 1 dòng x2). Còn A-05, K-02-nhan-vat, R-07a.
