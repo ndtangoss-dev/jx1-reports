@@ -148,3 +148,9 @@ Kiểm chuỗi Test-36: `python -I JX1_OPS/TOOLS/vm_chay.py ports` thấy 56722,
 - Có gì: (1) sét chùy hai tay (vk04), tắt bằng tệp `jx_vk04.txt` = 0; (2) ghi đo mạng `jx_net.log` mỗi giây, tắt bằng `jx_netlog.txt` = 0; (3) nội suy như bản 22 (`jx_interp.txt` = 0 tắt). Tệp để trong thư mục `files` của game.
 - Chưa kiểm bản gộp này trên LD/điện thoại; chủ cài rồi chơi, sau đó thuộc hạ đọc `jx_net.log`.
 - Lỗi "quái đánh mãi không chết": máy chủ chỉ chạy 80/525 lệnh kỹ năng chủ gửi (làn lệnh giữ một ô); tick gs001 nặng 40–116 ms chỉ khi có người online. Chưa sửa.
+
+## 19/11 23:37 — Cảm nhận chủ sau test vc23 (Test-36, điện thoại)
+- ĐẠT: hiệu ứng vũ khí hai tay VK04 đã sửa được; truyền gói tin "rất mượt".
+- CÒN LỖI 1: chạy ngựa cứ khoảng 4–5 giây lại khựng/giật lại một nhịp.
+- CÒN LỖI 2: đi tới nơi, quái đột ngột hiện ra; chủ cho rằng đúng ra phải hiện từ lúc còn xa/gần tới nơi (nghi tầm hiển thị/visibility, liên quan B-02 visibility.ini).
+- CÒN LỖI 3: nút đánh thường vẫn chưa sửa.

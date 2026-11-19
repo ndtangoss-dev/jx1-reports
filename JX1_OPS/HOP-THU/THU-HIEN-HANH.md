@@ -205,3 +205,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #269 (21:30) A: chùy cấp 1 +15 cho chuvuongtestaa, so với cấp 10; kiểm hiệu ứng 2 tay
 - #272/#B-028 (21:41) A/B cập nhật BAN-GIAO(-B).md, push, việc nền tiếp tục
 - #277/#B-032 (23:35) chủ chốt: A chữa làn lệnh kỹ năng + đánh thường; B tìm phần tốn tick gs001 (Test-36, Q-82)
+- #278/#B-033 (23:40) kết quả chủ test vc23: khựng 4–5 s, quái hiện muộn, đánh thường

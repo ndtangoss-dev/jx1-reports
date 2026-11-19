@@ -2044,3 +2044,6 @@ Chủ đã chốt (Chat nói trước cách hiểu, L13). Phạm vi Q-82: CHỈ 
 3. Sửa chỉ khi sửa được ở tầng script/cấu hình trên Test-36, có bản .bak và cách hoàn tác. Cần sửa exe/mã nguồn server thì KHÔNG làm, ghi [CAN-CHU] và báo Chat.
 4. Đo lại bằng jx_net.log sau khi chủ chơi vc23; báo số trước/sau. Gõ 'A Chat' khi có kết quả hoặc khi bị chặn.
 (Kênh gõ cửa Chat mới: https://claude.ai/chat/88bede8d-38cd-4bc7-b0b4-8088b4c2f6cb)
+
+## #278 Chat 19/11 23:40 — A: kết quả chủ test vc23 (bổ sung #277)
+Chủ test vc23: VK04 ĐẠT; gói tin mượt. Còn: (1) chạy ngựa cứ ~4–5 s khựng một nhịp; (2) quái hiện ra đột ngột khi tới gần; (3) đánh thường chưa ra đòn (đã giao ở #277, giữ ưu tiên). A: nhịp khựng 4–5 s nằm phía client? Đối chiếu jx_net.log (khoảng cách gói, FPS, nội suy) với chu kỳ 4–5 s; thử tắt từng công tắc (jx_interp, jx_vk04, jx_netlog) để cô lập. Chỉ đo/giả thuyết rồi mới sửa (Q-52). Gõ 'A Chat' khi có kết quả.

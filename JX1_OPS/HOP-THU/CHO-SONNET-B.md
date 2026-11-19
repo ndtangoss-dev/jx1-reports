@@ -133,3 +133,6 @@ Chủ đã chốt. Phạm vi Q-82: CHỈ Test-36, KHÔNG đụng Server D, khôn
 2. Phối hợp A qua A-B.md (A lo làn lệnh kỹ năng 80/525; đừng làm trùng, ghi "ĐÃ NHẬN").
 3. Khi chủ chơi vc23: thu jx_net.log + do-gs, bảng trước/sau vào REPORTS/DO-MUOT-MOC-GOC.md.
 4. Bot 5/10/20 vẫn chờ 20 tk test, chưa thả. Gõ 'B Chat' khi có kết quả hoặc bị chặn.
+
+## #B-033 Chat 19/11 23:40 — B: kết quả chủ test vc23 (bổ sung #B-032)
+Chủ test vc23: VK04 ĐẠT; gói tin mượt. Còn: (1) chạy ngựa cứ ~4–5 s khựng một nhịp; (2) quái hiện ra đột ngột khi tới gần, chủ cho rằng phải hiện sớm hơn; (3) đánh thường chưa ra đòn (A lo). B: (a) tìm chu kỳ 4–5 s phía server/mạng: tick gs001 theo thời gian, khoảng trống gói (gap) có lặp ~4–5 s không (autosave, đồng bộ, ping); (b) kéo B-02 visibility.ini lên: tầm hiển thị NPC/quái phía server (phạm vi gửi quái) và tìm xem chỉnh được ở tệp cấu hình trên Test-36 không (bản .bak + hoàn tác, không đụng Server D, dựng lại gs001 chỉ khi không có người chơi, nhớ nạp bản đồ 10–12 phút). Gõ 'B Chat' khi có kết quả.
