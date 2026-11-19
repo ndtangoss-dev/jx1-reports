@@ -207,3 +207,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #277/#B-032 (23:35) chủ chốt: A chữa làn lệnh kỹ năng + đánh thường; B tìm phần tốn tick gs001 (Test-36, Q-82)
 - #278/#B-033 (23:40) kết quả chủ test vc23: khựng 4–5 s, quái hiện muộn, đánh thường
 - #279/#B-034 (00:05) A quyền chủ động + quy trình SẴN SÀNG TEST; B phần mạng (Q-85, L17)
+- #282/#B-035 (01:05) chủ chốt cường hóa + phi phong + tài phú; A tk test riêng

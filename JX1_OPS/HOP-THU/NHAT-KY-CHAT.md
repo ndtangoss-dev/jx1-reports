@@ -324,3 +324,4 @@
 - 20/11 00:08 chủ nhắc L11 (LD ẩn ngay): ghi #279b/#B-034b
 - 20/11 00:15 chủ báo đã chạy script Admin forwarder; gửi #280 cho A
 - 20/11 00:40 chủ gửi yêu cầu cường hóa vũ khí + phi phong + điểm tài phú (DESIGN/YEU-CAU-CUONG-HOA-PHI-PHONG.md, chờ chốt); #281 cho A test LD
+- 20/11 01:05 chủ chốt Q-86/L18; viết THIET-KE-CUONG-HOA-PHI-PHONG.md; gửi #282/#B-035

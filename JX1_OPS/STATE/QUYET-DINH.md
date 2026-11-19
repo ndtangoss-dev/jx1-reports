@@ -156,3 +156,6 @@ Chủ: "Gộp luôn, test luôn 1 thể; sau khi gộp xong ta sẽ chuyển tà
 
 ## Q-85 (chủ 20/11 00:00) A tự chủ dọn đường + kiểm vào game trước khi chủ test
 Chủ: tối 19/11 A không tự tắt được PID, chủ phải làm rất nhiều việc bằng tay khi không ở nhà. Giao A quyền chủ động (L17); trước test A phải kiểm server nào, tài khoản nào, rồi dùng LDPlayer tự vào tới màn hình game chính, báo chủ OK. Không để chủ vào mới thấy đủ lỗi, treo ở chọn server mãi.
+
+## Q-86 (chủ 20/11 00:48) CHỐT cường hóa + phi phong + tài phú; A, B làm ngay
+Chủ chốt: cường hóa cho TẤT CẢ vũ khí/trang bị trên người, tối đa +15, 5% cộng thẳng; +14 thêm "+1 tất cả điểm kỹ năng vốn có", +15 thêm "+2"; điểm tài phú = X × tổng cấp cường hóa đang mặc, ngưỡng phi phong chia đều (+6 → cấp thấp nhất, +15 → cấp cao nhất); bỏ vũ khí +15 phát thử; đơn vị tiền bạc/vạn/ức, sửa server nếu cần; A có tài khoản test riêng tự tạo (L18). Thiết kế: DESIGN/THIET-KE-CUONG-HOA-PHI-PHONG.md. Chủ: làm bằng mọi giá, không chờ.
