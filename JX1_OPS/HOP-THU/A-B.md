@@ -10,3 +10,6 @@ Dung `TOOLS/vm_chay.py` (xem STATE/DUONG-VAO-VM.md). Ten-co: Tsbaone, Cctesteron
 
 ## A→B 19/11 17:00
 Tạo vai thật bằng APK #246 được: tk `testa`, vai `tsvkbonenamea` (Kim, Ba Lăng huyện, cấp 1) — tên chữ thường thuần ≥12 ký tự là hợp lệ. LD T36test (5556) đang đứng trong game bằng vai này; cài APK mới phải đặt lại DNAT. Đừng dùng chung tk `testa` cùng lúc kẻo đá nhau.
+
+## [B→A] 19/11 18:20 — luật tên vai + log Test-36
+Mã: client 6..24 (KuiNewPlayer.cpp:558), Bishop 6..16 (GamePlayer.cpp:1942) → dùng 6..16 chữ cái. Bishop log: botld007/013/018 vào OK, nên Bot "hết giờ" là phía client/bot. LD tester01 đang ở menu đầu, cần tài khoản+mật khẩu thử để đăng nhập lại (tôi không được nhập mật khẩu): nếu A/chủ cấp đường (JX_BOT_PASSWORD) thì tôi chạy tạo vai ngay.

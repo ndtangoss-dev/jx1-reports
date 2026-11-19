@@ -25,3 +25,7 @@ Toạ độ là pixel ảnh chụp từ cầu (cùng hệ với lệnh `tap`). N
 - Vì vậy `T36nv2` bị chặn do có chữ số "36", "2". KHÔNG phải lỗi game; server (`PlayerCreator.cpp:440-457`) lại cho cả số và chữ.
 - Tên thử an toàn: chỉ chữ cái a-z A-Z, 6–24 ký tự, không số, không cách. Ví dụ: `Tsalphaone`, `Tsbetatwo`.
 - `Tsbaone` (7 chữ, đúng luật) vẫn bị báo (TS-03 ảnh 11): CHƯA RÕ nguyên nhân. Giả thuyết: ô nhập còn sót chữ/số cũ (ảnh 10 hiện `T36nv2` sẵn) nên chuỗi thật là `T36nv2Tsbaone`, hoặc bàn phím ảo chèn ký tự. Cách kiểm: xóa sạch ô trước khi gõ (giữ nút xóa/chọn tất cả), chụp ảnh ô tên TRƯỚC khi bấm tạo.
+
+## Luật tên vai (B, 19/11 18:20, đã đối chiếu mã)
+- Client `KuiNewPlayer.cpp:558-560`: 6..24 byte; máy chủ Bishop `GamePlayer.cpp:1942-1944`: 6..16 byte → tên hợp lệ cả hai phía: 6..16 byte, chữ cái ASCII thuần (không số, không khoảng trắng, không ký hiệu). Ghi chú A "12–24" chưa khớp mã; tên 13 chữ `tsvkbonenamea` đã tạo được trên Test-36 (16:51).
+- Tên không hề tồn tại trong kho vai (vm_chay.py ten-co): Tsbaone, Tsalphaone, T36nv2, Cctesterone → các lần tạo trước đều chưa tới máy chủ (client im lặng).
