@@ -199,3 +199,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #263 (20:16) A: .bat tự nâng quyền cho chủ; kiểm cổng 5001-5003
 - #264/#B-024 (20:19) điện thoại vẫn kẹt sau khi chuyển forwarder: A xem APK/log cổng, B bắt kết nối thật
 - #265 (20:24) A: kiểm đích thật forwarder 21276, IP điện thoại, kill bản cũ
+- #266 (20:25) ảnh Tailscale: IP điện thoại khớp --allow
