@@ -183,3 +183,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | #B-016 | 19/11 18:20 | Chat→B | Bổ sung #B-015: đo cả hai đường |
 | #254 | 19/11 18:25 | Chat→Sonnet | Test trên Test-36, hạn 19:30 |
 | #B-017 | 19/11 18:25 | Chat→B | Test trên Test-36, hạn 19:30, mốc đo + kịch bản + tài khoản test |
+| #255 | 19/11 18:35 | Chat→Sonnet | Chọn nội suy client, tao-tk-test, VK-04 để sau, APK thử cho chủ |

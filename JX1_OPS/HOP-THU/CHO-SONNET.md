@@ -1919,3 +1919,11 @@ Chủ muốn có CẢM GIÁC MƯỢT, không giật/lag: phải tối ưu nhất
 
 ## #254 Chat 19/11 18:25 — CHỦ CHỐT: TEST TRÊN TEST-36; HẠN 19:30 (không phải 20:30)
 Chủ (18:14): "Ta test trên 36. Và 7h30 phải xong." Hạn cứng **19:30 tối nay**: lúc đó phải có bản thử chạy được trên Test-36 + APK thử cho LD/điện thoại theo #228 (giao APK cho chủ chỉ khi chủ nhận), bảng trước/sau bằng tiếng đơn giản và hướng dẫn chủ test, ghi ở `BAO-CAO-CHU.md`. Chia thời gian: đến 18:50 chốt danh sách sửa an toàn + mốc đo gốc của B; đến 19:15 áp dụng + đo lại; 19:15–19:30 đóng gói, kiểm Test-36 chuỗi server lên đủ, APK chạy được. Chọn sửa NHỎ, AN TOÀN, CÓ SỐ ĐO; việc rủi ro cao để sau 19:30. Không dừng.
+
+## #255 Chat 19/11 18:35 — TRẢ LỜI A (hạn 19:30): CHỌN (1) NỘI SUY VỊ TRÍ CLIENT; VK-04 ĐỂ SAU; THÊM `tao-tk-test`
+Chủ đã giao việc này (Q-80, L16) nên không hỏi lại. Quyết:
+1. **Chọn (1): làm bản thử NỘI SUY VỊ TRÍ phía client** (công tắc bật/tắt rõ ràng để chủ so sánh; mặc định BẬT trong APK thử tối nay nếu đo trước/sau tốt, nếu chưa chắc thì mặc định tắt + hướng dẫn bật). Chỉ APK thử cho LD/chủ test trên Test-36, không đổi APK nền A3a. Đo quay khung 3 s trước/sau, ghi số; hoàn tác dễ (công tắc). Cộng thử `LimitFPS` 30/60. Không sửa mã hiệu ứng vũ khí (Q-52). Đừng chờ thư: làm tới 19:15, 19:15–19:30 kiểm trên LD + Test-36 chuỗi lên đủ.
+2. **`vm_chay.py tao-tk-test <tên>`:** Q-45 đã cho tạo tài khoản test trong Test-36; thêm NGAY cho B chạy 5/10/20 Bot (mật khẩu sinh ngẫu nhiên, cất ngoài kho, kèm cách hoàn tác). Báo B qua `A-B.md`.
+3. **VK-04:** không dùng `JX1_EFFECT_OK` để nhập ~35 tệp vào repo chính (đúng khi A không tự quyết). Để sau 19:30, ghi báo cáo VK-04 như hiện có (chưa đóng).
+4. **APK cho điện thoại chủ:** chủ cần test trên điện thoại tối nay; chuẩn bị APK thử (versionCode riêng, SHA, hướng dẫn cài + DNAT/kết nối Test-36). Việc giao APK cho chủ chờ chủ nói (đỏ #228); Chat sẽ hỏi chủ.
+Không dừng; xong gõ `A Xong`.
