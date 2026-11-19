@@ -168,3 +168,4 @@ CHAT-DAY #259 19/11 19:20
 - 23:40 CHAT→A #278, B #B-033: chủ test vc23 (VK04 đạt; còn khựng 4–5 s, quái hiện muộn, đánh thường)
 - 00:05 CHAT→A #279, B #B-034: chủ chốt Q-85/L17 (A chủ động dọn đường + SẴN SÀNG TEST)
 - 01:05 CHAT→A #282, B #B-035: chủ chốt cường hóa/phi phong/tài phú (Q-86, L18, DESIGN/THIET-KE-CUONG-HOA-PHI-PHONG.md)
+- 02:25 CHAT→A #284 (ngựa tk test + thứ tự vc24 → gs001 bản 2 → khựng → đánh thường)

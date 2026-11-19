@@ -2078,3 +2078,6 @@ B đã DỰNG xong gs001 có luật cường hóa + +14/+15 (D:\JX-build\qh-b035
 
 ## #283b Chat 20/11 01:52 — A: thủy tinh kẹp 1000/loại từ +11 (B-035d)
 Chat chốt: số thủy tinh mỗi loại ở +n = min(2^(n−1), 1000); bạc kẹp 20 ức. UI hiển thị theo số server trả, không cứng. Test cường hóa trên LD: +1..+10 đúng công thức, +11..+15 dùng 1000 mỗi loại. Vẫn ưu tiên: kiểm [QH]|... chạy thật trên LD (xem trước/cường hóa), chụp kết quả.
+
+## #284 Chat 20/11 02:25 — A: đồng ý thêm ngựa cho tk test; thứ tự việc
+Chat chốt đề xuất của A: thêm ngựa vào online.lua Test-36 cho tk test (có .bak), để đo khựng 4–5 s đúng kịch bản. Thứ tự: (1) vc24 xong → LD thử xem trước/cường hóa, chụp; (2) đưa gs001 bản 2 (phi phong, `D:\JX-build\qh-b035-pf\` + qhcuonghoa.lua) lên Test-36, cho phi phong vàng cấp 1 và 11, thử chặn mặc; (3) ngựa + đo khựng; (4) tìm bãi quái để đo đánh thường (CmdLane) và tầm hiện quái. Không chờ Chat, 7h chủ cần kết quả. Mẫu giờ trong TU-SONNET lệch (ghi 03:00 khi đồng hồ máy chủ 02:23): ghi giờ thật của máy A.
