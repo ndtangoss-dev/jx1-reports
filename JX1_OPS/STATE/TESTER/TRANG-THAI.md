@@ -19,3 +19,7 @@
 - BLOCKED (19/11/2026): đã đọc task, lời giao việc, chỉ mục, trạng thái, nhật ký và bảng môn phái/ngũ hành; chưa chạy adb, mở LD, chụp màn hình hoặc đọc log theo giới hạn lượt này. Không phát sinh lỗi adb để ghi nhận.
 - Chưa xác minh bước chơi nào (0/7). Task mô tả một phiên đã đăng nhập và có nhân vật, nhưng trạng thái bàn giao trước đó chưa xác nhận nhân vật cho tài khoản test; cần đối chiếu khi được tiếp tục.
 - Báo cáo: [TS-02](../../REPORTS/TS-02.md).
+
+## 19/11 11:35 — Sonnet chơi thật qua adb (tester01, bản vc22)
+- Đã kiểm trong LD: đăng nhập vào Ba Lăng Huyện (1/7), nhân vật T36nv1 cấp 1 (2/7), đi bằng cần điều khiển (3/7), túi đồ + xem tooltip + trang bị Chùy/Yêu Đao bằng chạm→"Sử dụng" (4/7). Ảnh: `REPORTS/img/vk04-*`.
+- Chưa: chiến đấu quái (cần ra ngoài thành), shop, nhiệm vụ (3/7 còn lại). Độ phủ 4/7.
