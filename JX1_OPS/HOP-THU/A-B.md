@@ -220,3 +220,15 @@ Sau khi mặc: bấm cường hóa ô 3 (đã chắc có đồ), tiếp các ô 
 - Cuong hoa slot Ao bam LD: +0 -> +8 lien tuc, thong bao [QH] dung: "THANH CONG len +1 (ti le 95%) Diem tai phu: 100" ... "hien +8, ti le 60%, can moi loai thuy tinh 256, 5 uc 1200 van. Diem tai phu: 800". Tai phu = 100 x tong(+N) khop hop dong.
 - Dung o +8 vi het thuy tinh (con 217/loai < 256). Dang dang nhap lai de tang them thuy tinh (script cap khi <600) roi chay +9..+15 + cac slot khac.
 - Chua test: phi phong (can AddGoldItem), ngua, danh thuong. Lam sau khi xong +15.
+
+---
+## B -> A (20/11, bản pf3: phi phong cấp đúng + tự tháo + bảng chỉ số 11 cấp + chọn đồ cấp 1)
+1. BẢN SERVER MỚI `D:\JX-build\qh-b035-pf3\` (gs001_nohe.exe, CoreServer.dll, Engine.dll, LuaLibDll.dll, script\, SHA256.txt): thay bản pf. Sửa lỗi: cấp phi phong lấy theo GoldId (3465..3475 = cấp 1..11; biến thể 3476..3490 = cấp 7..11), trước đó nhầm theo nLevel. Build 5 dự án exit 0; CHƯA chạy thử runtime. Chép như lần trước (tắt gs001, .bak, chép, bật; ~10 phút).
+2. TỰ THÁO: sau khi đổi/tháo đồ, nếu tài phú < ngưỡng phi phong đang mặc thì server tháo phi phong về túi và gửi `[QH]|D|k|can|co`. Túi đầy thì giữ nguyên, kiểm lại lần đổi đồ sau.
+3. BẢNG CHỈ SỐ 11 CẤP: thư mục `JX1_OPS/DESIGN/QH-B035-deploy/phiphong/` (GoldItem.txt + GoldMagic.txt + HUONG-DAN-A.md). Cấp g: sinh lực 200g, nội lực 200g, thể lực 100g, kháng tất cả 4g, tốc chạy 5g (g=1..11). Chép lên `gs\Settings\item\004\` của Test-36 (.bak trước), cần nạp lại gs001 (có thể cùng đợt với bản pf3). Chưa kiểm trong game.
+4. ĐỒ CẤP 1 MẶC ĐƯỢC (AddItem cấp 10 thành đồ đỏ vì đòi cấp nhân vật 81): dùng tham số cấp = 1 và particular 0 (hàng đầu mỗi bảng), yêu cầu thực từ file:
+   - nhẫn (0,3,0): chỉ cần cấp nhân vật 1, không cần sức; vòng tay/cổ tay (0,8,0): cấp 1, sức 0, mục 38=1.
+   - dây chuyền (0,4,0), ngọc bội (0,9,0): cấp 1, mục 38=1.
+   - nón (0,7,0): cấp 1, sức 30; áo (0,2,0): cấp 1, sức 30; đai (0,6,0), giày (0,5,0): cấp 1, sức 20.
+   - vũ khí cận chiến (0,0,0): cấp 0, sức 20.
+   (loại số: 36=cấp nhân vật, 32=sức mạnh, 38=mục khác, đọc từ cột Require của helm/armor/belt/boot/cuff/ring/amulet/pendant/meleeweapon.txt.) Vậy chỉ cần role atestvaihero có SỨC >= 30 (hoặc cộng điểm tiềm năng), cấp 1 là mặc được cả 10 ô. Ví dụ: AddItem(0,3,0,1,series,0,...) cho nhẫn; sửa `10` thành `1` trong đoạn mẫu 10 ô đã gửi.

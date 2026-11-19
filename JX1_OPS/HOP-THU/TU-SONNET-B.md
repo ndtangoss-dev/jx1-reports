@@ -168,3 +168,6 @@ Da viet ma C++ (GetEquipIdx, CountBagItemExact, ConsumeBagItemExact; +14/+15 ky 
 - Cổng phi phong vàng đã cài ở CanEquip (bản gs001 2, build OK, D:\JX-build\qh-b035-pf\), hợp đồng chốt v4 trong A-B.md. Cấp k = nLevel cột 12 của GoldItem.txt (1..11), xác nhận từ bản chép Settings. K=11, N=10, X=100. Thiết kế: DESIGN/QH-B035-PHI-PHONG.md.
 - Gộp QH-02 (PARTIAL, thiếu Settings trong nguồn, tôi bổ sung từ bản chép máy thật). CHƯA chạy thử ở runtime: chờ A đưa bản 2 lên Test-36.
 - Chưa làm: bảng chỉ số phi phong tăng đều theo cấp (đổi dữ liệu GoldItem, cần Test-36); tự tháo phi phong khi giảm tài phú.
+
+### B, mốc 4 (20/11): phi phong cấp đúng GoldId, tự tháo, bảng 11 cấp, hướng dẫn đồ cấp 1
+Đã build pf3 (5 dự án đạt), đặt ở D:\JX-build\qh-b035-pf3; bảng chỉ số phi phong ở DESIGN/QH-B035-deploy/phiphong; chi tiết trong A-B.md. CHƯA xác minh runtime (chờ A chép lên Test-36).
