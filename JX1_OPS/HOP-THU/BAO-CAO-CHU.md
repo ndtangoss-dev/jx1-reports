@@ -27,3 +27,11 @@
 - Nó đọc được ảnh: tả đúng màn "Lựa chọn hệ phái", ô tên đang là "Tsbaone", nút Xác định/Hủy bỏ. Tự viết `KET-QUA.md`.
 - Chưa xong cả việc đăng nhập → tạo nhân vật; lỗi tên (gõ qua adb không được ô nhập nhận) vẫn là điểm kẹt chung. Chưa đo tốc độ/đúng so với tiểu yêu Codex; chưa ghi số dư `/usage` (cần phiên tương tác). Không mua/nạp gì.
 - Việc khác: bảng giá Bot `gia-vat-pham.csv` đã có cột tên Unicode (80a44d9). Bot vào thất bại: chạy riêng lẻ vẫn lỗi → lỗi theo vai/tài khoản, cần log Bishop/Goddess trên VM (chờ duyệt).
+
+## (B) 19/11 15:55 — #B-004 Kiểm tên nhân vật: dấu cách cuối / trùng tên
+- **Dấu cách cuối: KHÔNG thấy.** Mã client `KuiNewPlayer.cpp:554-604` không cắt (trim) chuỗi; nếu có dấu cách cuối thì chính mã này đã báo "ký tự đặc biệt" (cấm dấu cách, số, ký hiệu). Thử tên khác hẳn `Cctesterone` (11 chữ cái), xóa ô bằng 58 lần phím xóa trước: không còn báo lỗi tên. Tổng cộng khoảng 4 lần thử.
+- **Lỗi cũ `Tsbaone`: chưa chứng minh nguyên nhân.** Khả năng cao là chữ cũ còn trong ô (ví dụ `T36nv2` có số) bị nối vào chuỗi thật. Ảnh chụp hiển thị chữ có thể khác giá trị thật.
+- **Tên trùng: không thể gây thông báo "ký tự đặc biệt".** Trùng tên do server từ chối, thông báo riêng (`KuiNewPlayer.cpp:1054-1067`, CREATE_FAIL). CHƯA KIỂM dữ liệu Test-36 (cần quyền đọc VM, chưa có duyệt); nên chưa biết tên `Tsbaone`/`T36nv1/2` có sẵn không.
+- **Phát hiện mới:** với tên sạch, bấm Xác định (kể cả đã chọn hệ) KHÔNG có hộp thông báo nào, không thành công cũng không thất bại. Theo `KuiNewPlayer.cpp:616-660`, `CreateRole()` im lặng thoát khi chưa kết nối, chưa chọn vùng, trạng thái không phải "danh sách vai sẵn sàng" hoặc đủ số vai. Thành công/thất bại đều hiện hộp (dòng 1049, 1065). Vậy lệnh tạo vai chưa tới server.
+- **Liên hệ Bot:** chưa có bằng chứng Bot trùng tên. Nhưng nếu Bot cũng gặp `CreateRole()` im lặng thì giải thích "vào thất bại theo tài khoản/vai" một phần; cần nhật ký Bishop/Goddess mới kết luận.
+- **Bước tiếp:** (1) kiểm trạng thái kết nối/vùng của LD T36-tester01 (DNAT 56722/51189/8080 sau lần khởi động lại); (2) xin duyệt đọc-chỉ Test-36 để tra tên trùng; (3) chuyển A xem đoạn `CreateRole` có cần thông báo khi thoát im lặng không.
