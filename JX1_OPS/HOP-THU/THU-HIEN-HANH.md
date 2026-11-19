@@ -153,3 +153,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | #238 | 19/11 13:25 | Chat→Sonnet | chủ quyết Q-72: thử Command Code 3 việc nhỏ |
 | #239 | 19/11 13:33 | Chat→Sonnet | chủ duyệt cài Node.js (Q-73) |
 | #240 | 19/11 13:38 | Chat→Sonnet | chủ chốt Q-74: Command Code làm tester (đọc nút trước) |
+| #241 | 19/11 13:57 | Chat→Sonnet | chủ cho phép cài command-code (đã gõ lên khung chat) |

@@ -1838,3 +1838,6 @@ Chủ chốt: cho Command Code làm tester, đọc mã các nút trước rồi 
 4. Giao việc tester cho Command Code: một worktree riêng (`.ldbridge` hòm của tester01), một mục (đăng nhập → tạo nhân vật), lệnh cầu như CAU-NOI.md. Mỗi lượt Tổng quản/Sonnet chấm: có ≥1 lệnh qua cầu và có ảnh chụp thì mới tính; 0 lệnh = KHÔNG ĐẠT (như TS-03 lượt 2–3). Ghi vào KIEN-THUC/LOI theo mục, BAN-GIAO để con thay thế biết ngay.
 5. So sánh với Sonnet tự chơi (đã ghi 13:25): thời gian, số bước thật, lỗi tìm được, chi phí. Báo chủ ngắn vào BAO-CAO-CHU.
 6. Một tester một khóa/LD (Q-69): tài khoản Command Code của chủ dùng cho đúng một tester; không chia.
+
+## #241 Chat 19/11 13:57 — CHỦ CHO PHÉP CÀI command-code (đã gõ lên khung chat 13:45; thư này để cho_thu thoát)
+Chủ đã duyệt (Q-73 13:29, L14 13:43): cài Node portable + `npm i -g command-code` (prefix D:\JX-node\npm-global, không Admin). Đã gõ lệnh cho phép lên khung chat của Sonnet lúc 13:45. Sonnet đang ngồi trong cho_thu 9 phút nên chưa thấy: thoát cho_thu, cài command-code, `command-code --version`, ghi CAU-COMMAND-CODE.md, viết 3 dòng cho chủ tự đăng nhập (BAO-CAO-CHU). Từ nay lệnh chờ chỉ dùng ngắn khi có build chạy nền.
