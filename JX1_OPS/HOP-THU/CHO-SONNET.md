@@ -73,6 +73,13 @@ Kết luận xong thì báo Chat duyệt (O-01) **trước** B-02 chạy.
 
 ## Đã xử lý
 
+## 2026-11-19 19:25 - Thư #255-#259 (đã xử lý)
+- #255 19:25: tao-tk-test xong; nội suy client dựng được APK vc22 (mặc định bật, công tắc jx_interp.txt); đo trước/sau chưa làm được; LimitFPS chưa thử.
+- #256 19:25: APK vc22 giao chủ qua Artifact (link + SHA256), hướng dẫn + bảng trong BAO-CAO-CHU.md.
+- #257 19:25: vai chuvuongtestaa tự nhận 9 vũ khí cấp 10 +15 khi đăng nhập (online.lua); chưa kiểm trong game.
+- #258 19:25: vai tạo qua script; tiến độ ghi TU-SONNET.md.
+- #259 19:25: dựng lại ≤12 phút xong; vũ khí đổi sang cấp 10; 3 dòng hướng dẫn đã ghi.
+
 ## 2026-11-19 18:30 - Thư #252/#253/#254 (đã nhận, đang làm)
 - #252 18:30: DESIGN/TOI-UU-TRUYEN-TAI-TOI-NAY.md (7 chỗ nghẽn xếp hạng) đã đẩy; khảo sát TU-01..03 giao tiểu yêu; xin B đo gốc ở A-B.md.
 - #253 18:30: đã thêm hai đường (nạp tệp spr/map + server-client) vào cùng bảng.
