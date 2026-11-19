@@ -1080,3 +1080,8 @@ SONNET-XONG #237b 13:25
 ## SONNET-XONG #250 (19/11 17:05)
 - 1-3 xong (owner A|B trong mẫu+TASKS, cho_thu lọc owner, mailbox_hook/stop_guard bắt `## #N` và `#B-N`). 5: tạo TASKS/A-07f, A-07g, A-07h (ready, owner A, đọc tĩnh, không VM).
 - 4: JX-TongQuan có DisallowStartIfOnBatteries=True/StopIfGoingOnBatteries=True, kết quả 0x800710E0 (bị từ chối chạy). Nguyên nhân gián đoạn 16:05-16:27 chưa xác nhận chắc; đã vá cho phép chạy khi chạy pin, giới hạn 10 phút. Theo dõi xem còn ngắt không.
+
+## SONNET-XONG #251 mục 1 (19/11 17:00) — TẠO VAI THẬT BẰNG APK #246
+- Trên T36test (emulator-5556) với APK #246: đăng nhập `testa` (đã nhớ tài khoản), Tạo nhân vật mới → Ba Lăng huyện → Kim → tên `tsvkbonenamea` (13 chữ thường) → Xác định: **TẠO ĐƯỢC, vào thẳng game** (Ba Lăng Huyện, cấp 1, HP 204). Hộp báo lỗi không hiện vì không có lỗi (đường lỗi chưa kích). 
+- Lưu ý đầu phiên: cài lại APK xóa DNAT trong LD → "Mất kết nối hoặc không đúng phiên bản"; đặt lại DNAT 56722/51189/8080 là vào được. Mỗi lần cài lại phải đặt lại DNAT.
+- Tên hợp lệ cho B: `tsvkbonenamea` (tk `testa`; còn `T36nv1`). Hoàn tác: xóa vai khỏi roledb/dọn theo Q-45 khi xong.
