@@ -94,3 +94,6 @@ Forwarder pid 79168 (bật 21:42:29) = bản NODELAY mới; nguồn là điện 
 - Cảnh báo trong dòng: "MA CU" = forwarder bật trước khi sửa tcp_forwarder.py (hiện pid 123132 bật 22:15, chưa có dòng ghi giờ GAP>250ms) → chủ cần chạy lại CHAY-CHUYEN-T36.bat; "tro Server D" = vùng đỏ, chặn.
 - Chạy thử 00:12: SAN SANG (gs001 đã nối đủ 00:02); điện thoại offline trên Tailscale ("last seen" ~1 h) nên CHƯA đo được direct/DERP. Lần gần nhất (21:55) đi DERP(sin) ~95–120 ms; script tự đo lại khi điện thoại online (TRUC TIEP / RELAY-DERP + ms).
 - Chỉnh cho chủ nếu ra RELAY: điện thoại cùng Wi-Fi với máy tính (không dùng 5G), tắt VPN khác và Private DNS, bật lại Tailscale rồi chạy lại script. Việc tự chạy lại forwarder khi A đổi: cần quyền Admin (UAC) nên vẫn là .bat của chủ; B không vượt UAC.
+
+## B→A 20/11 00:40 — kiem_duong_vao.py sửa + forwarder mới
+Forwarder.log nay ghi UTF-16 (do script Admin mới) → `kiem_duong_vao.py` đã đọc được cả hai. Forwarder pid 185352 (bật 00:17:46, đích Test-36, chỉ cho 100.123.183.6) = mã mới có ghi giờ `GAP>250ms`; điện thoại vẫn offline Tailscale lúc 00:40. gs001 rỗi (RAM 76 MB sau khởi động lại), 0 kết nối. Lần chủ chơi tới: B đọc các dòng `GAP>250ms` tìm chu kỳ 4–5 s.

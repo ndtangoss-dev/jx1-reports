@@ -36,7 +36,9 @@ def forwarder(ip_pc):
               "(Get-Process -Id %s).StartTime.ToString('s')" % pid]).strip()
     dich = None
     if os.path.exists(FWD_LOG):
-        for line in open(FWD_LOG, encoding="utf-8", errors="replace"):
+        raw = open(FWD_LOG, "rb").read()
+        txt = raw.decode("utf-16" if (raw[:2] in (bytes([255,254]), bytes([254,255])) or bytes(1) in raw[:64]) else "utf-8", errors="replace")
+        for line in txt.splitlines():
             m = re.search(r"NGHE \S+:56722 -> (\S+):56722", line)
             if m:
                 dich = m.group(1)
