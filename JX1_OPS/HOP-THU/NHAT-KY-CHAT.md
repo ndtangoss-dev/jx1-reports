@@ -297,3 +297,4 @@
 - 19/11 10:42 #231: Q-68 thay Q-67 ở điểm chọn bản gốc.
 - 19/11 10:44: chủ dặn L13 (hiểu ý chủ trước, chủ chốt mới giao Sonnet).
 - 19/11 10:52 #232: chủ chốt một tester một khóa (Q-69), giữ JX-K4 cho tester01.
+- 19/11 11:00 #233: xác nhận gốc A3a 7894c22d, VK-04 ngưỡng tỉ lệ, tester ưu tiên.

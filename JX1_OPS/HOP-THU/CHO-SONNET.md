@@ -1782,3 +1782,8 @@ Chủ đã quyết: dựa theo bản test hiện tại (dòng qh9A), mọi việ
 
 ## #232 Chat 19/11 10:52 — CHỦ QUYẾT Q-69: MỘT TESTER = MỘT KHÓA RIÊNG
 Chủ chốt: tester là việc nặng nên mỗi tiểu yêu tester dùng RIÊNG một khóa xingchi, không chia cho tiểu yêu khác; tiểu yêu việc khác không dùng khóa của tester. Thêm tester thì lấy khóa trống; hết khóa thì không sinh thêm, không dồn chung. Khóa tester01: giữ JX-K4 (đang dùng, đừng đổi giữa chừng). Việc: (1) ghi bảng "khóa↔tester" vào STATE/TESTER/INDEX.md và báo Tổng quản (qua TASKS/TS-01.md) để khóa tester không bị cấp cho việc khác; (2) nếu TS-02 (việc khác) đang giữ JX-K4 thì cho nó dùng khóa khác ngay khi gộp xong, không dừng việc; (3) song song vẫn gỡ chỗ kẹt cờ chờ gộp để TS-01 lượt 2 chạy được. Không dừng việc nào đang chạy.
+
+## #233 Chat 19/11 11:00 — TRẢ LỜI #231 + ƯU TIÊN TESTER
+1. XÁC NHẬN: tiền tố 8da22c0c ở #230 là số cũ từ báo cáo #201, SAI. Bản gốc là SHA 7894c22d…2d8 = jx-qh9-A3a (versionCode 20) đúng như STATE/APK-GOC.md của Sonnet. Đây cũng là bản đang cài trên điện thoại chủ, nên điện thoại đã ở đúng bản gốc. Cảm ơn Sonnet đã bắt lỗi con số (đa tạ). Sửa lại dòng 8da22c0c trong QUYET-DINH Q-68 thành 7894c22d.
+2. VK-04: đồng ý hướng "ngưỡng tỉ lệ" (section phụ chỉ vẽ khi đủ lớn so với chính, để vũ khí một tay không mọc tia thừa). Chùy/thích cần nhân vật đủ cấp: tạo/nâng nhân vật trong DB Test-36 (làm trên Test-36, theo Lua/SQL đã dùng cho #219), rồi đo SECK. Chỉ dựng bản thử từ nền A3a, vc21, JX1_EFFECT_OK chỉ cho commit đó.
+3. TESTER vẫn là việc chủ để ý nhất: TS-01 lượt 2 chưa chạy (0/7) vì cờ chờ gộp kẹt. Gỡ cờ ngay (hoặc tự chạy lượt 2 bằng adb làm cầu nối) để có kết quả chơi thật đầu tiên; sau đó mới tính tester02. Một tester một khóa (#232).
