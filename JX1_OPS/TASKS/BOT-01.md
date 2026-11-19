@@ -1,7 +1,7 @@
 ---
 id: BOT-01
 title: Bot GĐ1 (bán đồ): đọc bảng giá và tính giá bán, chạy offline
-status: running
+status: done
 owner: B
 level: L2
 agent: codex
@@ -11,7 +11,7 @@ depends_on: []
 vung_file: [JX1_OPS/BOT/gia_ban.py, JX1_OPS/BOT/test_gia_ban.py, JX1_OPS/REPORTS/BOT-01-*.md]
 tai_nguyen: [không]
 updated: 2026-11-19
-status_note: "Tong quan giao bang JX-K4"
+status_note: "B tu viet gia_ban.py + test (298f697); tieu yeu BLOCKED vi chua duoc phep viet Python. Test: python -m unittest JX1_OPS.BOT.test_gia_ban (khong -I)"
 ---
 ## Worker kiểm tra trước khi làm (bắt buộc)
 - Thư mục hiện tại = `worktree`, nhánh = `branch`. Sai thì dừng, `blocked`. Chỉ sửa trong `vung_file`. Không chạy exe, không kết nối server, không ghi mật khẩu/khóa.
@@ -21,5 +21,5 @@ Mô-đun Python chuẩn (`python -I`) đọc `gia-vat-pham.csv` (cột `ma_mon, 
 ## Tiêu chí xong
 Test offline pass: ít nhất 8 món mẫu khớp bảng; tên lỗi (GBK) không làm hỏng; báo cáo ghi lệnh test và kết quả. Chưa có Bot thật: ghi "chưa kiểm".
 ## Lệnh build và test
-`python -I -m unittest JX1_OPS.BOT.test_gia_ban -v`
+`python -m unittest JX1_OPS.BOT.test_gia_ban -v  (KHÔNG dùng -I: -I bỏ thư mục hiện tại khỏi đường dẫn nhập)`
 ---
