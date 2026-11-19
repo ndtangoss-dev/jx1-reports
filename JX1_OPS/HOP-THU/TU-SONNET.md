@@ -1019,3 +1019,5 @@ Dựng khung `STATE/BOT/gia-vat-pham.csv` (chỉ dòng tiêu đề, đúng cột
 
 ## TESTER (#224) 19/11 10:10 — HẠ TẦNG SẴN SÀNG
 LD `T36-tester01` (index 2, emulator-5558) đang chạy, cửa sổ thu nhỏ, DNAT đặt xong; tài khoản `tester01` tạo trong DB Test-36. `TASKS/TS-01.md` status ready, đề nghị Tổng quản sinh tiểu yêu xingchi. Tiểu yêu CHƯA chạy (chờ Tổng quản). Chưa kiểm được: tiểu yêu điều khiển LD bằng adb có đủ không (đã ghi lệnh trong TS-01).
+
+## TESTER 10:20 — lượt 1 của tiểu yêu TS-01 chỉ đọc tài liệu (0/7 bước, không chạm LD). Đã gộp, giao lại lượt 2 kèm cho phép adb tới emulator-5558. Nếu sandbox chặn adb, Sonnet làm cầu nối.
