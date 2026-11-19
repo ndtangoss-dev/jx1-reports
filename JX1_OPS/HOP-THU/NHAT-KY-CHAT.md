@@ -316,3 +316,4 @@
 - 19/11 16:52: chủ báo B chờ thư 15p; gửi #B-013 và gõ lên thẻ B
 - 19/11 21:40 Chat viết HOP-THU/BAN-GIAO-CHAT-19-11-2140.md + KHOI-DONG-CHAT mục 8 theo lệnh chủ (chuyển sang tài khoản cũ của chủ). Lịch kiểm hiện hành của Chat cũ: trig_013X2rjYUeJTKhB6mSjq8S1h (21:41) và các lịch send_later kế tiếp — hủy khi chủ báo chuyển khung (list_triggers/delete_trigger).
 - 22:20 Chủ nói 'chuyển'; Chat gửi hướng dẫn bàn giao cuối; đợi chủ 'ok' mới hủy lịch kiểm (trig_01HGCLamRSTf5tXvW9QbBPyV và lịch sau)
+- 22:25 KHOI-DONG-CHAT mục 0 VÒNG LẶP HIỆN HÀNH (chủ đồng ý 22:21)

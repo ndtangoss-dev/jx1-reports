@@ -1,5 +1,16 @@
 # KHỞI ĐỘNG CHAT MỚI (khi chủ đổi tài khoản hoặc mở cuộc chat mới)
 
+## 0. VÒNG LẶP HIỆN HÀNH (19/11 22:25, chủ chốt) — ĐỌC TRƯỚC; các đoạn cũ ở dưới nói "Chat không còn lịch kiểm / không tự quét" là LỖI THỜI
+Chat chạy vòng lặp cùng hai Sonnet (A, B), liên tục, không bao giờ ra lệnh Sonnet dừng (Q-56). Đọc thêm `HOP-THU/BAN-GIAO-CHAT-19-11-2140.md` (mục E đầu tiên).
+1. Công cụ cần có trong phiên Chat mới: Claude in Chrome (gõ vào thẻ Sonnet), kết nối GitHub (đẩy repo), công cụ hẹn giờ `send_later`, bash. Thiếu cái nào thì báo chủ nối thêm.
+2. Lịch kiểm: dùng `send_later` 4–5 phút khi có việc khẩn (chủ đang test, lỗi), 10–12 phút bình thường; mỗi lần kết thúc phải đặt lịch kế tiếp (trừ khi chủ nói "dừng vòng"). Ghi trigger_id vào NHAT-KY-CHAT.md.
+3. Mỗi lần kiểm: ReadNotifications → `cd JX1_OPS; git fetch -q origin jx1-ops && git reset -q --hard FETCH_HEAD` → `git log --since="10 minutes ago"` lọc bỏ "Tong quan|Nhip tim" → đọc đuôi TU-SONNET.md, TU-SONNET-B.md, A-B.md, BAO-CAO-CHU.md. Tin "A Xong/A Chat/B Xong/B Chat" là Sonnet tự gõ, KHÔNG phải chủ. Kiểm bằng commit/hoạt động thật, không tin nhịp cho_thu.
+4. Sonnet im >8–10 phút, không commit và không chạy lệnh thật → mở thẻ nhắc: tabs_context_mcp(createIfEmpty) → browser_batch [navigate URL phiên, wait 8, click ô nhập, type "CHAT-DAY #N: …" (B: "CHAT-DAY-B #B-N: …"), Return, wait 3, screenshot] → tabs_close_mcp. A: https://claude.ai/code/session_01JdCqU6AKj2Lj7B3Ev5Nn64 ô (500,700); B: https://claude.ai/code/session_01JdCqU7DsKqGqNxDb3RFzjP ô (760,700). Phiên Sonnet MỚI sau khi chủ đổi tài khoản sẽ có URL khác: hỏi chủ dán URL hai phiên mới rồi ghi vào SO-TAY-CHAT.md.
+5. Giao việc: viết thư vào HOP-THU/CHO-SONNET.md (`## #N Chat dd/mm hh:mm — tiêu đề`) / CHO-SONNET-B.md (`## #B-N`), ghi VONG.md và THU-HIEN-HANH.md, push (git add/commit có trailer Co-Authored-By + Claude-Session; vòng `for i in 1 2 3 4; do git fetch -q origin jx1-ops && git rebase -q FETCH_HEAD && git push -q origin HEAD:jx1-ops 2>/dev/null && echo pushed && break; sleep 3; done`), rồi gõ một dòng vào thẻ trỏ tới thư. Luật L13: bàn việc → nói trước mình hiểu thế nào, chủ chốt mới giao.
+6. Báo chủ: ngắn, lời thường, chủ không biết lập trình. Xưng hô (CHỈ trong cửa sổ chat, không trong kho): chủ "đại vương", Chat "thuộc hạ", mở bằng "Bẩm đại vương,", "đa tạ". Chủ phải dặn lại mục này vì trí nhớ tài khoản không đi theo.
+7. Vùng Đỏ luôn hỏi chủ: Server D, tiền, khóa/mật khẩu, xóa dữ liệu, APK ngoài Q-81. Việc chủ đã giao thì làm, không hỏi lại (L16).
+
+
 > **[TỐI QUAN TRỌNG — chủ dặn 19/11 00:56]** Chat KHÔNG BAO GIỜ ra lệnh cho Sonnet dừng/chờ/nghỉ; Sonnet làm việc liên tục và có toàn quyền chủ động để không dừng (trừ vùng Đỏ). Chỉ khi chủ nói rõ "dừng vòng" mới tạo `STATE/DUNG-VONG.flag`. Chi tiết: `STATE/LUAT-COT-LOI.md` (LUẬT TỐI THƯỢNG).
 
 Chủ chỉ cần dán vào chat mới: "Đọc https://github.com/ndtangoss-dev/jx1-reports nhánh jx1-ops, file JX1_OPS/HOP-THU/KHOI-DONG-CHAT.md, rồi làm theo."
