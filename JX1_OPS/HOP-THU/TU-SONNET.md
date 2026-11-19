@@ -1128,3 +1128,5 @@ do_muot_khung.py: ffmpeg 9.0 không nhận `-vsync` → đổi `-fps_mode passth
 Đã đọc đến #266. Trả lời #264–#266 bằng A Chat; script chuyển forwarder đã sửa.
 
 Đã đọc đến #267; script dùng Stop-Process thay taskkill.
+
+Đã đọc đến #271. #268: vc23 đang build (đo mạng jx_net.log); #269/#270: JXGive269 đã cài, chờ chủ vào; #271: gs001 đang nạp bản đồ, không lỗi.
