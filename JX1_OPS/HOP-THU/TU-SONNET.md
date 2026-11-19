@@ -1088,3 +1088,6 @@ SONNET-XONG #237b 13:25
 
 ## SONNET-XONG #251 mục 2 — VK-04 (19/11 17:10)
 Kiểm thật trên T36test (vc22): `T36nv1` nâng cấp 80 bằng GM chat (`#gm?SetLevel,80`, Q-45, hoàn tác = bỏ vai trên Test-36), đủ 5 vũ khí +15 trong túi từ W-02. Chụp 8 hướng cho thích(trủy thủ)/kiếm-chùy/thương/song đao/côn, ảnh ở `REPORTS/img/vk04-t36nv1-*`: sét hiện đủ, chùy/thích không thiếu một bên. Repo chính CHƯA commit (Classes chính thiếu cả bộ glow, phải nhập ~35 tệp) — [TỰ QUYẾT] không dùng JX1_EFFECT_OK, xin Chat quyết. Không gửi APK chủ. SỐ THẬT 90/124 (VK-04 đóng phần kiểm, còn chờ quyết định commit).
+
+## XONG-CHO-GOP A-07f (19/11 17:40)
+Gộp REPORTS/A-07f.md (14/14 tệp, 37 điểm cast 32-bit). Thuộc hạ kiểm mẫu: KSOServer.cpp:960 đúng là OperationRequest(SSOI_LAUNCH, (unsigned int)pCloneServer). Chưa kiểm: ABI binary, nguyên nhân crash.
