@@ -1220,3 +1220,7 @@ do_muot_khung.py: ffmpeg 9.0 không nhận `-vsync` → đổi `-fps_mode passth
 ## A 20/11 03:00 (#278 đo 2)
 - Chạy 20 s lần 2 (vẫn đi bộ: vai mới không có ngựa trong túi, nút ngựa không lên được): tx 9/s đều, rx ~870/s, không khoảng trống; ping 66 ms, FPS 64. Một lần ping hiện 782 ms lúc đứng yên (jx_net.log không có khoảng trống rx quanh đó → nhiều khả năng đồng hồ ping, không phải mất gói).
 - Chưa tái hiện khựng 4–5 s trong LAN. Cần: cho vai test có ngựa (item) để đo đúng kịch bản, hoặc đo khi chủ chơi qua Tailscale. [Đề xuất tự quyết: thêm ngựa vào online.lua Test-36 cho tk test]
+
+## A 20/11 03:10 (#277 đo 1)
+- Test-36: `CmdLane.ini` (BufferBusy=1, TtlActMs=400) ĐÃ NẠP: CmdLane_stat.log (ghi 01:25) đếm recv move=300, exec move=268 từ lúc A chạy; skill=0 vì chưa có lệnh kỹ năng.
+- Bấm nút đánh (1660,935) ở Ba Lăng Huyện ×6: nhân vật NGỒI xuống (m_FightMode==0 như CLAUDE.md `mainSkillattack`), không có lệnh kỹ năng nào tới gs001 → cần ra bãi quái/được bật trạng thái chiến đấu mới đo được kỹ năng. Tiếp: tìm cổng ra bãi quái, hoặc thử Ngồi/đứng + bật PK/Thủ công→Auto.
