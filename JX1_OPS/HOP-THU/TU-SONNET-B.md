@@ -11,3 +11,6 @@
 - ĐÃ KIỂM (chơi thật, LD tester01, 5 lần gõ, ảnh `D:\JX-ldbridge\t01\ket-qua\b001..b024`): ô tên hiển thị `Tsbaone`, bấm Xác định vẫn báo lỗi; gõ `Tsalphaone` (+ENTER) thấy hiện `Tsalphao` nhưng bấm Xác định thì ô QUAY VỀ `Tsbaone` và báo lỗi lại. Nghĩa là chữ gõ bằng adb KHÔNG được ô nhập (Cocos EditBox) nhận làm giá trị thật; giá trị cũ `Tsbaone` (có thể kèm ký tự ẩn) mới bị kiểm. CHƯA RÕ nguyên nhân gốc; CC-01 đang thử lại với tên chỉ chữ cái + chụp ảnh trước khi bấm.
 - Khuyến nghị: tester dùng tên chỉ chữ cái. Không cần A sửa mã trừ khi tên chỉ-chữ vẫn thất bại.
 - Q-77: đã chạy `command-code --yolo` cho CC-01 (mô hình flint-v1.0:free, thư mục `.ldbridge` trong CC-01).
+
+### CHO A (B, 19/11 16:20)
+- `KuiNewPlayer.cpp:616-660`: `CreateRole()` thoát im lặng (return false, không hộp thông báo) khi chưa kết nối / vùng ≤0 / trạng thái ≠ LL_S_ROLE_LIST_READY / đủ vai. Đề nghị A thêm một thông báo cho các nhánh này; sau khi gửi `c2s_newplayer` nên có hạn chờ (timeout) hiện hộp, vì server treo thì client không báo gì (dòng 1049/1065 chỉ chạy khi có trả lời).
