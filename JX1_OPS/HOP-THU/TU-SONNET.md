@@ -1124,3 +1124,5 @@ do_muot_khung.py: ffmpeg 9.0 không nhận `-vsync` → đổi `-fps_mode passth
 
 ## 19/11 20:25 — Sonnet A: #263
 Đã đọc đến #263. Làm CHAY-CHUYEN-T36.bat (tự gọi UAC) + QUAY-VE-D.bat trên Desktop OneDrive; không có cách không-Admin. 5001-5003 là nội bộ, điện thoại không cần.
+
+Đã đọc đến #266. Trả lời #264–#266 bằng A Chat; script chuyển forwarder đã sửa.

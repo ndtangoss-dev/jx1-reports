@@ -128,3 +128,8 @@ Kiểm chuỗi Test-36: `python -I JX1_OPS/TOOLS/vm_chay.py ports` thấy 56722,
 - Muốn quay về Server D: bấm đôi `QUAY-VE-D.bat`.
 - Cách không cần Admin: KHÔNG có. Forwarder cũ (PID 21276) cầm cổng 56722/51189 bằng quyền cao, không có tệp cấu hình đổi đích, thuộc hạ không tắt được. Cổng khác không dùng được vì APK ghi cứng 56722/51189.
 - Cổng 5001-5003 (PaySys/Goddess/Relay): điện thoại không đi qua, đó là đường nội bộ giữa các exe trong server. Điện thoại chỉ đi cổng 56722 (Bishop, chọn server) và 51189 (gs001, vào game), cùng 8080/8091 tải dữ liệu/APK (đang nghe bình thường). Cổng nội bộ trên Test-36 đã kiểm 19:19 đều nghe.
+
+## 20:25 Điện thoại vẫn kẹt chọn server (#264–#266)
+- Kiểm: forwarder PID 21276 (bản 14/11, nâng quyền) vẫn là bản nghe 100.95.186.86:56722/51189; log 20:14, 20:19, 20:20 đều "LỖI nối tới VM 192.168.1.50 TimeoutError" → script cũ KHÔNG đổi được đích (nó in "đang trỏ" từ tham số, không kiểm PID).
+- Điện thoại 100.123.183.6 CÓ tới forwarder (3 kết nối) → Tailscale và bộ lọc đúng.
+- Đã viết lại `chuyen_forwarder_sang_t36.ps1`: tắt bằng taskkill, kiểm lại PID, báo LỖI nếu bản cũ còn. Chủ bấm đôi CHAY-CHUYEN-T36.bat trên Desktop rồi chụp màn hình. Nếu vẫn lỗi: Task Manager → Details → kết thúc pid 21276.
