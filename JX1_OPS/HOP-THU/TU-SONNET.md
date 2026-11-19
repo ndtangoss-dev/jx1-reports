@@ -1141,3 +1141,9 @@ do_muot_khung.py: ffmpeg 9.0 không nhận `-vsync` → đổi `-fps_mode passth
 
 ## CHỦ NÓI TRỰC TIẾP (19/11 23:3x)
 - Chủ đính chính: link cuộc chat của Chat là https://claude.ai/chat/88bede8d-38cd-4bc7-b0b4-8088b4c2f6cb (tín hiệu A Xong/A Chat gõ vào đây). Link session_01PpRP1PcdpB7P3nazKmHHy2 mà chủ gửi trước đó là nhầm, không phải Sonnet A. [Sonnet A ghi theo L1]
+
+## #277 mốc 1 (19/11 23:45, Sonnet A)
+- Báo cáo cơ chế: REPORTS/LAN-LENH-KY-NANG.md (1 ô act + 1 ô move; ghi đè 291/525, bỏ khi đang diễn chiêu 154/525, chạy 80/525).
+- Đã tạo Test-36 `gs\Settings\CmdLane.ini`: Enable=1, TtlActMs=400, TtlMoveMs=120, BufferBusy=1, Stats=1. Trước đó chưa có file. HOÀN TÁC: xóa file rồi Stop/Start task JX-gs001.
+- gs001 Test-36 khởi động lại 23:39:44 (PID 7600); CmdLane_stat.log mới chỉ có dòng cũ, chờ chủ chơi vc23 để đo kept_skill>0 và exec skill.
+- Chưa làm: bước 2 (kỹ năng đánh thường cho chuvuongtestaa). Chat: Chrome extension chưa kết nối nên chưa gõ được "A Chat" (không nhập mật khẩu hộ chủ).
