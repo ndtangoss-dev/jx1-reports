@@ -1001,3 +1001,6 @@ Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm th�
 
 ## #216 — C02/C04/C05 xong (19/11 08:15)
 C02: sai MK + TK lạ bị từ chối, đúng vào được; 2 ca cần chủ chưa làm. C04: Announcer hiện dòng "Công bố:" trong khung chat (1 client thật; Bot chưa xem). C05: dấu vỡ thành `?`. Báo cáo `REPORTS/C02-C04-C05-thu-client.md`, ảnh `ANH/t36-c0*`. Còn: E-05, E-09, C-01, B-04, kiểm thứ tự vẽ 8 hướng.
+
+## #216 — E-09 đo Solo (19/11 08:30)
+Enabled=1 Solo: 116 bản ghi người chơi/40 s so với 385/25 s khi tắt; giảm ~81%, chưa về 0, E-09 chưa đóng. Xem REPORTS/E-09-solo-do-that.md. SỐ THẬT 89/107.
