@@ -1085,3 +1085,6 @@ SONNET-XONG #237b 13:25
 - Trên T36test (emulator-5556) với APK #246: đăng nhập `testa` (đã nhớ tài khoản), Tạo nhân vật mới → Ba Lăng huyện → Kim → tên `tsvkbonenamea` (13 chữ thường) → Xác định: **TẠO ĐƯỢC, vào thẳng game** (Ba Lăng Huyện, cấp 1, HP 204). Hộp báo lỗi không hiện vì không có lỗi (đường lỗi chưa kích). 
 - Lưu ý đầu phiên: cài lại APK xóa DNAT trong LD → "Mất kết nối hoặc không đúng phiên bản"; đặt lại DNAT 56722/51189/8080 là vào được. Mỗi lần cài lại phải đặt lại DNAT.
 - Tên hợp lệ cho B: `tsvkbonenamea` (tk `testa`; còn `T36nv1`). Hoàn tác: xóa vai khỏi roledb/dọn theo Q-45 khi xong.
+
+## SONNET-XONG #251 mục 2 — VK-04 (19/11 17:10)
+Kiểm thật trên T36test (vc22): `T36nv1` nâng cấp 80 bằng GM chat (`#gm?SetLevel,80`, Q-45, hoàn tác = bỏ vai trên Test-36), đủ 5 vũ khí +15 trong túi từ W-02. Chụp 8 hướng cho thích(trủy thủ)/kiếm-chùy/thương/song đao/côn, ảnh ở `REPORTS/img/vk04-t36nv1-*`: sét hiện đủ, chùy/thích không thiếu một bên. Repo chính CHƯA commit (Classes chính thiếu cả bộ glow, phải nhập ~35 tệp) — [TỰ QUYẾT] không dùng JX1_EFFECT_OK, xin Chat quyết. Không gửi APK chủ. SỐ THẬT 90/124 (VK-04 đóng phần kiểm, còn chờ quyết định commit).

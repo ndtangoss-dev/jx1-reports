@@ -37,3 +37,10 @@ Bật `/sdcard/jxtrace`, `logcat -s JXTRC`, mặc lần lượt 5 vũ khí +15 t
 ## Kiểm 8 hướng (vc22, 19/11 11:35, T36-tester01)
 [THẤY] Nhân vật cầm chùy đi theo 8 hướng bằng cách chạm quanh nó; ảnh ghép `img/vk04-sau-chuy-8huong.png`. Sét hiện ở các khung nhìn rõ nhân vật (hướng 1–3, 4, 7, 8); khung 5–6 nhân vật bị cột cổng che nên không kết luận. Không thấy khung nào mất sét dù đang đi.
 [CHƯA KIỂM] đứng yên đúng từng hướng (ảnh chụp lúc đang đi), thích, kiếm/thương/bổng, thêm mẫu FPS (hiện ~37 ở khung chụp).
+
+## Kết quả cuối (19/11 17:05, #251 mục 2) — [ĐÃ KIỂM trên LD T36test, APK vc22]
+- Nhân vật: `T36nv1` (Kim) đã có sẵn 5 vũ khí +15 trong túi từ W-02; nâng cấp 80 bằng GM chat `#gm?SetLevel,80` (Q-45; hoàn tác: xóa/bỏ vai trên Test-36). Cấp +15 hiển thị đúng ở tooltip ("Thiết Trủy thủ [cấp 1] +15", "Yêu Đao ... +15"); cờ `/sdcard/jxwglow_15` ép glow. Mặc bằng ô túi → "Sử dụng".
+- Chụp 8 hướng (vuốt cần điều khiển, thả, chụp) cho: trủy thủ (thích), kiếm/chùy (ô 3), thương, song đao, côn: `REPORTS/img/vk04-t36nv1-{kiem,thuong,chuy,songdao,bong}-8huong.jpg`. Cả 5 loại: sét +15 hiện ở mọi hướng nhìn thấy được (hướng bị trụ cổng che là do cảnh, không phải thiếu bộ phận); chùy và trủy thủ có sét ở thân vũ khí, không còn thiếu một bên như trước sửa. FPS LD 27–41 khi chụp liên tục (cơ sở trước sửa ~35), không thấy xấu đi.
+- Giới hạn: ảnh lấy khi nhân vật vừa đi nên khung không đồng vị trí; không đo tia thừa cho vũ khí một tay bằng số (chỉ nhìn: không thấy tia mọc thừa); chưa so ảnh cùng hướng trước/sau từng loại.
+- Mã: đoạn sửa [vk04] ở `D:\JX-build\qh9A-vk04\Classes\vn\gamecore\KNpcResVN.cpp`, trích `REPORTS/VK-04-vc22-doan-sua.txt`. **Repo chính CHƯA commit:** thư mục Classes của repo chính vẫn ở mốc gốc, không có cả bộ glow/bolt (JxPerf.h, jxDrawBolts, [glow]…), nên không commit riêng được một hunk mà không nhập luôn ~35 tệp hiệu ứng. [TỰ QUYẾT] không dùng `JX1_EFFECT_OK` lần này; chờ Chat quyết có nhập cả bộ hiệu ứng vào repo chính hay không.
+- Không gửi APK cho chủ.

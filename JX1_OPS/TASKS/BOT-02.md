@@ -1,7 +1,7 @@
 ---
 id: BOT-02
 title: Bot: kiểm tên vai hợp lệ và không trùng trước khi tạo (offline)
-status: ready
+status: running
 owner: B
 level: L2
 agent: codex
@@ -11,6 +11,7 @@ depends_on: []
 vung_file: [JX1_OPS/BOT/ten_vai.py, JX1_OPS/BOT/test_ten_vai.py, JX1_OPS/REPORTS/BOT-02-*.md]
 tai_nguyen: [không]
 updated: 2026-11-19
+status_note: "Tong quan giao bang JX-K4"
 ---
 ## Worker kiểm tra trước khi làm (bắt buộc)
 - Thư mục hiện tại = `worktree`, nhánh = `branch`. Chỉ sửa trong `vung_file`. Không kết nối server, không ghi bí mật.

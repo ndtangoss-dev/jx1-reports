@@ -577,3 +577,4 @@
 [TỔNG QUẢN 19/11 16:39] CAU DAO xingchi: DONG
 [TỔNG QUẢN 19/11 16:52] CAU DAO xingchi: DONG; BOT-01 giao bang JX-K4; BOT-02 giao bang JX-K4
 [TỔNG QUẢN 19/11 17:00] CAU DAO xingchi: DONG; A-07f giao bang JX-K4; A-07g ready, cho ngoai khung 17h-19h (Q-51); A-07h ready, cho ngoai khung 17h-19h (Q-51)
+[TỔNG QUẢN 19/11 17:01] CAU DAO xingchi: DONG; A-07g ready, cho ngoai khung 17h-19h (Q-51); A-07h ready, cho ngoai khung 17h-19h (Q-51)

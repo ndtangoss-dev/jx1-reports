@@ -1,0 +1,20 @@
+					g_jxGlowRGBA[3] = jxA0;
+					if (k == domSec && g_jxHaveRect)
+						g_GameWorld->jxDrawBolts(g_jxWRect[0], g_jxWRect[1], g_jxWRect[2], g_jxWRect[3], s_wLevel, jxNow); // [bolt]
+					else if (k != domSec && domSec >= 0 && secH[k] && secCnt[k] >= 20 && secCnt[k] * 5 >= domCnt * 2 && s_wLevel >= 12)
+					{
+						// [vk04] vu khi hai tay (chuy/thich): lop thu hai la mot vu khi that (>=40% lop chinh); 1 tay chi co manh phu ~10% nen khong bi anh huong
+						static float sX[600], sY[600]; static unsigned char sE[600];
+						int sN = g_jxMaskN; bool sH = g_jxHaveRect; float sR[4]; for (int c = 0; c < 4; ++c) sR[c] = g_jxWRect[c];
+						memcpy(sX, g_jxMaskX, sizeof(float) * sN); memcpy(sY, g_jxMaskY, sizeof(float) * sN); memcpy(sE, g_jxMaskE, sN);
+						g_jxMaskN = 0; g_jxHaveRect = false; g_jxCapRect = true; g_jxAdditive = true; g_jxGlowRGBA[3] = 0.f;
+						nG = jxAdd(secPj[k], 0);
+						g_GameWorld->getIniDataForGame(nG, m_cDrawFile, RU_T_IMAGE, bInMenu, 0, 0, TYPE_CONVER_ALL, 0);
+						g_jxCapRect = false; g_jxAdditive = false; g_jxGlowRGBA[3] = jxA0;
+						if (g_jxHaveRect && g_jxMaskN >= 8)
+							g_GameWorld->jxDrawBolts(g_jxWRect[0], g_jxWRect[1], g_jxWRect[2], g_jxWRect[3], s_wLevel, jxNow);
+						g_jxMaskN = sN; g_jxHaveRect = sH; for (int c = 0; c < 4; ++c) g_jxWRect[c] = sR[c];
+						memcpy(g_jxMaskX, sX, sizeof(float) * sN); memcpy(g_jxMaskY, sY, sizeof(float) * sN); memcpy(g_jxMaskE, sE, sN);
+					}
+					// ve lai moi bo phan nam sau lop nay (ke ca lop vu khi ke tiep, ve thuong) de che glow/set
+					int nO = 0;
