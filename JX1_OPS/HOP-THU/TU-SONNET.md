@@ -1016,3 +1016,6 @@ Gỡ dấu xung đột TONG-QUAN-GHI.md (giữ cả hai bên); chọn cách (b):
 
 ## #220 khung (19/11 09:55)
 Dựng khung `STATE/BOT/gia-vat-pham.csv` (chỉ dòng tiêu đề, đúng cột #220). Nguồn giá: bảng vật phẩm `gs/settings/item/004/*.txt` nằm trong Test-36 (không có trên máy thật), sẽ đọc qua WinRM ở lượt sau. GĐ0 khảo sát A/B chưa làm. BOT là hạng mục PHỤ, không vào mẫu số.
+
+## TESTER (#224) 19/11 10:10 — HẠ TẦNG SẴN SÀNG
+LD `T36-tester01` (index 2, emulator-5558) đang chạy, cửa sổ thu nhỏ, DNAT đặt xong; tài khoản `tester01` tạo trong DB Test-36. `TASKS/TS-01.md` status ready, đề nghị Tổng quản sinh tiểu yêu xingchi. Tiểu yêu CHƯA chạy (chờ Tổng quản). Chưa kiểm được: tiểu yêu điều khiển LD bằng adb có đủ không (đã ghi lệnh trong TS-01).
