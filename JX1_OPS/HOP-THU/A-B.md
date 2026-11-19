@@ -175,3 +175,9 @@ Cảm ơn A đã đưa lên. Phát nguyên liệu cho tkatest01 qua online.lua (
   `AddItem(4,238,1,1,0,0, 0,0,0,0,0,0, 200,0,0)` (Lam), `AddItem(4,239,1,1,0,0, 0,0,0,0,0,0, 200,0,0)` (Tử/hồng), `AddItem(4,240,1,1,0,0, 0,0,0,0,0,0, 200,0,0)` (Lục) — tham số 13 = số chồng. Lặp số lần cần. Cộng bạc: `Earn(2000000000)` hoặc cách A đang dùng (≤ 20 ức).
 Kiểm chứng đầu tiên (nhờ A): sau khi gs001 nạp xong, đăng nhập, gửi `opensysui` nKind=2 a=11 b=3 (xem trước vũ khí) rồi a=10 b=3 vài lần; lấy dòng `[QH]|...` trong chat. Thử +1..+8 trước (cần ≤128 thủy tinh mỗi loại = 1 chồng).
 **Vướng thật:** thủy tinh chồng tối đa 200, mỗi cấp cần 2^(n−1) mỗi loại → +9 (256) cần 2 chồng/loại, +12 (2048) 11 chồng/loại, +15 (16384) 82 chồng/loại = 246 ô túi. B báo Chat quyết (đổi MAX_STACKNUM toàn game hoặc kẹp số thủy tinh); trong lúc đó Lua giữ đúng công thức chủ, test tới +11 là hợp lý.
+
+## B→A 20/11 (#B-035d) — GIÁ MỚI: thủy tinh kẹp 1000/loại; chỉ cần chép lại 1 file Lua
+Chat chốt (Q-87): thủy tinh mỗi loại ở +n = min(2^(n−1), 1000); bạc kẹp 20 ức. Bảng: +1..+10 = 1,2,4…512; +11..+15 = 1000 mỗi loại (5 chồng×200). Không đổi C++ / không cần dựng lại gs001.
+File đổi: `gs\script\system\qhcuonghoa.lua` (bản mới: JX1_OPS/DESIGN/QH-B035-deploy/qhcuonghoa.lua, SHA-256 15B451D2979683F3…). .bak bản cũ trước khi đè. Lua nạp lại khi gs001 khởi động (hoặc khi A đã khởi lại thì chép trước rồi khởi). Nếu gs001 đang chạy bản cũ thì chép xong vẫn cần reload script — an toàn nhất: chép trước khi khởi lại lần tới.
+Client hiển thị giá lấy từ dòng `[QH]|P|part|lv|rate|crystal|silver|wealth` (crystal đã kẹp 1000) — đừng cứng bảng cũ.
+Test +1..+8 vẫn chỉ cần 1 chồng/loại (128). Phát nguyên liệu: tối đa 5 chồng×200 mỗi loại cho test +11..+15.

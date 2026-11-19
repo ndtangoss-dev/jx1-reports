@@ -5,12 +5,14 @@ QH_CRYSTAL = { 239, 240, 238 }
 QH_MAX = 15
 QH_X = 100                          -- diem tai phu moi +1
 QH_PARTS = {0,1,2,3,4,5,6,7,8,9}   -- head,body,belt,weapon,foot,cuff,amulet,ring1,ring2,pendant (N=10)
+QH_CRYSTAL_CAP = 1000
 QH_SILVER_CAP = 2000000000          -- 20 uc (tien 32 bit, Q-87)
 
 function qh_price(n)    -- gia len +n: so thuy tinh MOI LOAI, bac
 	local c = 1
 	for i = 2, n do c = c * 2 end
-	local s = c * 2000000            -- 200 van
+	local s = c * 2000000            -- 200 van (tinh theo c chua kep)
+	if c > QH_CRYSTAL_CAP then c = QH_CRYSTAL_CAP end   -- #B-035d: toi da 1000/loai
 	if s > QH_SILVER_CAP then s = QH_SILVER_CAP end
 	return c, s
 end
