@@ -21,3 +21,9 @@ Bật `/sdcard/jxtrace`, `logcat -s JXTRC`, mặc lần lượt 5 vũ khí +15 t
 - Section k=0 (pj=8): cnt 6–12 điểm, khung 5×8 px (528,324–533,332), nhấp nháy quanh ngưỡng 8 → không phải thân kiếm. Section k=1 (pj=9): cnt 96–113, khung 23×46 px (491,297–514,343) = thân kiếm.
 - Vậy **n=2 là bình thường với 1 tay** và section phụ chỉ bằng ~10% section chính. Mọi bản sửa “vẽ sét cho mọi section có cnt≥8” sẽ làm kiếm/đao/thương/bổng mọc thêm tia ở mẩu 5×8 px → vi phạm điều kiện “1 tay không đổi”. Nếu sửa phải kèm ngưỡng tỉ lệ (≥ ~40% section chính) và so sánh với số đo chùy/thích.
 - **Chưa đo chùy/thích:** nhân vật T36nv1 (cấp 1, Sức mạnh 35) không đeo được chùy/thích trong hành trang (nhấp đôi và kéo vào ô vũ khí đều không đổi; bag sau khi mở bảng nhân vật dịch sang x≈1178). Cần nhân vật đủ điều kiện (tăng thuộc tính/cấp trong DB Test-36 hoặc nhân vật tester khác) rồi đo `SECK` lại. Chưa sửa mã, chưa dùng `JX1_EFFECT_OK`.
+
+## Đo chùy (Toán Đầu chùy +15, 19/11 10:55, hướng 0) [ĐÃ KIỂM] — cách đeo: bấm vào ô hành trang → nút "Sử dụng" (nhấp đôi/kéo không có tác dụng)
+- Chùy: `SEC n=2 dom=1`; k=0 (pj=8) cnt ≈ 83–89, khung 13×31 (522,302–536,333) = chùy phải; k=1 (pj=9) cnt ≈ 128–134, khung 26×46 = chùy trái. **Hai chùy nằm ở HAI section riêng**, tỉ lệ 65%.
+- Đối chứng 1 tay (Yêu Đao +15): section phụ cnt 6–12 (≈10%). → ngưỡng sửa: bắt tia ở section phụ khi cnt ≥ 20 và ≥ 40% section chính; tách rõ hai nhóm.
+- Ảnh trước sửa: `REPORTS/img/vk04-truoc-chuy-h0.png` (chùy trái có tia, chùy phải chỉ glow).
+- Sửa (KNpcResVN.cpp bản `D:\JX-build\qh9A-vk04`, vc22): trong vòng vẽ section, nếu k≠domSec thỏa ngưỡng trên thì chạy lại lượt khô lấy mặt nạ riêng, gọi jxDrawBolts, rồi khôi phục mặt nạ chính (không đổi đường vẽ section chính, nên 1 tay không đổi). Bản này nằm ngoài kho chính nên không cần `JX1_EFFECT_OK` (nếu đưa vào kho: chỉ commit đó, lý do = VK-04).
