@@ -1975,3 +1975,5 @@ Chủ đã cài APK vc22 trên điện thoại, mở game, chọn server là Đ�
 2. Kiểm danh sách server trong APK vc22: địa chỉ/cổng nó gọi khi chọn server (đối chiếu với LD đang vào được qua DNAT 10.0.2.2?). Điện thoại phải dùng địa chỉ Tailscale máy thật (nghe 100.95.186.86:56722/51189/8080/8091) — APK bản cũ P46/P47 cấu hình thế nào? vc22 có đúng cấu hình đó không?
 3. Nếu cấu hình sai, dựng/đóng gói lại APK đúng địa chỉ (≤10 phút) hoặc đưa bản cũ đã dùng được trên điện thoại kèm LimitFPS; báo link mới vào BAO-CAO-CHU.md.
 4. Kiểm cả firewall Windows của máy thật cho các cổng đó với giao diện Tailscale. Xong gõ `A Chat` kèm kết luận 1-2 dòng; chủ đợi.
+
+- #262 (19/11 20:10): đã tìm nguyên nhân (forwarder trỏ D đang tắt), soạn script Admin cho chủ; xem BAO-CAO-CHU.md.

@@ -1118,3 +1118,6 @@ do_muot_khung.py: ffmpeg 9.0 không nhận `-vsync` → đổi `-fps_mode passth
 
 ## 19/11 20:00 — Sonnet A: #261 xong
 Đã đọc đến #261. Tệp gốc ở AppData\Local\jx1-secrets\tkchuvuong.txt; đã chép ra C:\Users\PC\OneDrive\Desktop\tkchuvuong-matkhau.txt (Desktop nằm trong OneDrive; mật khẩu không in ra chat/repo). Gộp TU-02/03, A-07g/h xong.
+
+## 19/11 20:10 — Sonnet A: #262
+Đã đọc đến #262. Forwarder Tailscale (PID 21276, Admin) trỏ 192.168.1.50 (D tắt) nên điện thoại timeout. Không tắt được (UAC); đã soạn chuyen_forwarder_sang_t36.ps1 (Desktop OneDrive + docs-analysis/scripts) cho chủ chạy Admin. Chờ chủ chạy rồi thử lại.

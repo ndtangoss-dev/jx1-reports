@@ -116,3 +116,9 @@ Kiểm chuỗi Test-36: `python -I JX1_OPS/TOOLS/vm_chay.py ports` thấy 56722,
 ## 19/11 19:58 — Mật khẩu tkchuvuong (thư #261)
 - Tệp gốc: `C:\Users\PC\AppData\Local\jx1-secrets\tkchuvuong.txt` (có tồn tại; thư mục ẩn, bật "Hiện mục ẩn" mới thấy).
 - Bản chép cho đại vương: `C:\Users\PC\OneDrive\Desktop\tkchuvuong-matkhau.txt` (Desktop của máy này nằm trong OneDrive, không phải `C:\Users\PC\Desktop`). Trong tệp: tài khoản, vai chuvuongtestaa, mật khẩu. Chỉ dùng cho Test-36; dùng xong nên xóa tệp.
+
+## 19/11 20:10 — Điện thoại đứng im ở màn chọn server (thư #262)
+- NGUYÊN NHÂN (THẤY): điện thoại (100.123.183.6) tải APK được và nối tới forwarder Tailscale, nhưng forwarder đang chuyển tiếp sang Server D `192.168.1.50`, mà D đang tắt → `LOI noi toi VM 192.168.1.50:56722: TimeoutError` lúc 19:59:59 và 20:01:44 (`docs-analysis/out/forwarder.log.truoc-t36`). Tài khoản `tkchuvuong` chỉ có trên Test-36 nên phải trỏ sang Test-36 `192.168.56.150` (từ máy thật ping được).
+- APK đúng; Tailscale, cổng nghe 100.95.186.86:56722/51189/8080/8091 đều bình thường.
+- CHƯA SỬA ĐƯỢC: forwarder cũ (PID 21276, bật từ 14/11) chạy quyền Admin, thuộc hạ không tắt được (Access denied; không vượt UAC).
+- ĐẠI VƯƠNG LÀM 1 LẦN: trên Desktop có tệp `chuyen_forwarder_sang_t36.ps1` → chuột phải → Run with PowerShell **as Administrator**. Xong thử lại trên điện thoại (thoát game, mở lại). Hoàn tác: chạy `chuyen_forwarder_sang_t36.ps1 -Ve D`. Bản gốc ở `docs-analysis\scripts\chuyen_forwarder_sang_t36.ps1`.
