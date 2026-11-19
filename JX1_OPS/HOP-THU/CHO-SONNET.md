@@ -73,6 +73,13 @@ Kết luận xong thì báo Chat duyệt (O-01) **trước** B-02 chạy.
 
 ## Đã xử lý
 
+## #283 [ĐÃ XỬ LÝ 20/11 04:10] Chat 20/11 01:45 — A: ƯU TIÊN CAO NHẤT: ĐƯA BẢN gs001 CỦA B LÊN Test-36 NGAY (chủ cần kết quả 7:00)
+B đã DỰNG xong gs001 có luật cường hóa + +14/+15 (D:\JX-build\qh-b035\, SHA ở DESIGN/QH-B035-deploy/SHA256.txt; chi tiết cuối A-B.md "B→A"). A: (1) dừng gs001 Test-36 khi không có người chơi thật (chủ đang ngủ; tk test của A thoát trước), (2) .bak 4 file (gs001, CoreServer.dll, Engine.dll, LuaLibDll.dll) + hai Lua opensysui.lua/qhcuonghoa.lua (kiểm bản VM không khác bản gốc B dựa vào, nếu khác thì thêm đúng 2 dòng), (3) chép bản B dựng, khởi động (nạp ~10 phút), báo B qua A-B.md; (4) lúc gs001 nạp, hoàn tất mục client (ngưỡng 14, UI cường hóa, tài phú) và dựng vc24. Trong lúc B phát thủy tinh + bạc cho tk test của A rồi A bấm cường hóa trên LD, chụp kết quả. Việc này đặt TRƯỚC việc đo khựng/đánh thường. Hoàn tác = chép .bak lại. Không chờ Chat.
+
+## #283b [ĐÃ XỬ LÝ 20/11 04:10] Chat 20/11 01:52 — A: thủy tinh kẹp 1000/loại từ +11 (B-035d)
+Chat chốt: số thủy tinh mỗi loại ở +n = min(2^(n−1), 1000); bạc kẹp 20 ức. UI hiển thị theo số server trả, không cứng. Test cường hóa trên LD: +1..+10 đúng công thức, +11..+15 dùng 1000 mỗi loại. Vẫn ưu tiên: kiểm [QH]|... chạy thật trên LD (xem trước/cường hóa), chụp kết quả.
+
+
 **Đã xử lý #283 (20/11 03:50):** bản gs001 của B đã chạy trên Test-36; LD cường hóa áo +0→+8 đúng [QH] (tài phú 800), dừng +8 vì thiếu thủy tinh; đang cấp thêm để chạy +9..+15 (xem A-B.md 03:45).
 **Đã xử lý #283b (20/11 03:50):** ghi nhận kẹp 1000/loại từ +11; sẽ kiểm +11..+15 khi có đủ thủy tinh.
 
@@ -2075,12 +2082,6 @@ Chủ: "Sau khi A vào được thì bảo A test trên LDplayer cho hết lỗi
 ## #282 [ĐANG CHỜ] Chat 20/11 01:05 — A: CHỦ CHỐT CƯỜNG HÓA + PHI PHONG (Q-86, L18) — LÀM NGAY, BẰNG MỌI GIÁ
 Đọc DESIGN/THIET-KE-CUONG-HOA-PHI-PHONG.md (đủ công thức, bảng giá, chia việc). Chủ nói: không chờ Chat hiểu/duyệt, hoàn thành mục chủ đưa; xong thì làm tiếp hàng đợi; việc tiểu yêu thì gọi Tổng quản.
 A làm: (1) TỰ TẠO tài khoản test RIÊNG (vm_chay.py tao-tk-test, vd tkatest01 + một vai), KHÔNG dùng tkchuvuong của chủ, KHÔNG chờ chủ (L18). Mật khẩu tự sinh, không vào kho/chat. Đăng nhập theo luật an toàn của A: client bot không giao diện (B có E-01) hoặc APK thử có tệp tự đăng nhập chỉ cho tk test này (A tự làm, không cho tk chủ). Vào LD tới màn game chính, test cho hết lỗi cũ (đánh thường/JXGive277/CmdLane/khựng/quái hiện muộn). (2) Gỡ vũ khí +15 phát thử (online.lua JXGiveWeapons/JXGive269; bản .bak, hoàn tác được). (3) Client: cửa sổ cường hóa bằng asset gốc, tooltip +N và dòng chỉ số tăng 5%/cấp, dòng kỹ năng +14/+15, hiển thị tiền bạc/vạn/ức, hiển thị điểm tài phú, thông báo phi phong. Chờ hợp đồng giao thức B soạn trong A-B.md (hoặc tự đề xuất trước nếu B chậm, ghi A-B.md). (4) Dựng APK thử mới, báo Chat link/SHA. Mọi sửa trên Test-36 + APK thử; Server D Đỏ. Gõ 'A Chat' khi có mốc.
-
-## #283 [ĐÃ XỬ LÝ 20/11 04:10] Chat 20/11 01:45 — A: ƯU TIÊN CAO NHẤT: ĐƯA BẢN gs001 CỦA B LÊN Test-36 NGAY (chủ cần kết quả 7:00)
-B đã DỰNG xong gs001 có luật cường hóa + +14/+15 (D:\JX-build\qh-b035\, SHA ở DESIGN/QH-B035-deploy/SHA256.txt; chi tiết cuối A-B.md "B→A"). A: (1) dừng gs001 Test-36 khi không có người chơi thật (chủ đang ngủ; tk test của A thoát trước), (2) .bak 4 file (gs001, CoreServer.dll, Engine.dll, LuaLibDll.dll) + hai Lua opensysui.lua/qhcuonghoa.lua (kiểm bản VM không khác bản gốc B dựa vào, nếu khác thì thêm đúng 2 dòng), (3) chép bản B dựng, khởi động (nạp ~10 phút), báo B qua A-B.md; (4) lúc gs001 nạp, hoàn tất mục client (ngưỡng 14, UI cường hóa, tài phú) và dựng vc24. Trong lúc B phát thủy tinh + bạc cho tk test của A rồi A bấm cường hóa trên LD, chụp kết quả. Việc này đặt TRƯỚC việc đo khựng/đánh thường. Hoàn tác = chép .bak lại. Không chờ Chat.
-
-## #283b [ĐÃ XỬ LÝ 20/11 04:10] Chat 20/11 01:52 — A: thủy tinh kẹp 1000/loại từ +11 (B-035d)
-Chat chốt: số thủy tinh mỗi loại ở +n = min(2^(n−1), 1000); bạc kẹp 20 ức. UI hiển thị theo số server trả, không cứng. Test cường hóa trên LD: +1..+10 đúng công thức, +11..+15 dùng 1000 mỗi loại. Vẫn ưu tiên: kiểm [QH]|... chạy thật trên LD (xem trước/cường hóa), chụp kết quả.
 
 ## #284 [ĐANG CHỜ] Chat 20/11 02:25 — A: đồng ý thêm ngựa cho tk test; thứ tự việc
 Chat chốt đề xuất của A: thêm ngựa vào online.lua Test-36 cho tk test (có .bak), để đo khựng 4–5 s đúng kịch bản. Thứ tự: (1) vc24 xong → LD thử xem trước/cường hóa, chụp; (2) đưa gs001 bản 2 (phi phong, `D:\JX-build\qh-b035-pf\` + qhcuonghoa.lua) lên Test-36, cho phi phong vàng cấp 1 và 11, thử chặn mặc; (3) ngựa + đo khựng; (4) tìm bãi quái để đo đánh thường (CmdLane) và tầm hiện quái. Không chờ Chat, 7h chủ cần kết quả. Mẫu giờ trong TU-SONNET lệch (ghi 03:00 khi đồng hồ máy chủ 02:23): ghi giờ thật của máy A.
