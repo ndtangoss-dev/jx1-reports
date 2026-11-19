@@ -171,3 +171,6 @@ Da viet ma C++ (GetEquipIdx, CountBagItemExact, ConsumeBagItemExact; +14/+15 ky 
 
 ### B, mốc 4 (20/11): phi phong cấp đúng GoldId, tự tháo, bảng 11 cấp, hướng dẫn đồ cấp 1
 Đã build pf3 (5 dự án đạt), đặt ở D:\JX-build\qh-b035-pf3; bảng chỉ số phi phong ở DESIGN/QH-B035-deploy/phiphong; chi tiết trong A-B.md. CHƯA xác minh runtime (chờ A chép lên Test-36).
+
+## B 20/11 - Xong 2 việc đọc mã Chat giao (quái hiện muộn, nút đánh thường, +5%)
+Chi tiết + file:dòng + đề xuất sửa cho A nằm cuối HOP-THU/A-B.md. Chỉ đọc mã, chưa chạy. Ứng viên chính: (a) client khoá yêu cầu quái 100 frame (KNpcSet.cpp:1022) và quái chỉ hiện sau NormalSync+yêu cầu; (b) đánh thường dừng sát quái vì vùng chết bán kính (KNpcAI.cpp:772) + lệnh Run chèn xoá skill chờ (KNpc.cpp:6762). +5% cộng thẳng xác nhận đúng.
