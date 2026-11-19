@@ -1021,3 +1021,5 @@ Dựng khung `STATE/BOT/gia-vat-pham.csv` (chỉ dòng tiêu đề, đúng cột
 LD `T36-tester01` (index 2, emulator-5558) đang chạy, cửa sổ thu nhỏ, DNAT đặt xong; tài khoản `tester01` tạo trong DB Test-36. `TASKS/TS-01.md` status ready, đề nghị Tổng quản sinh tiểu yêu xingchi. Tiểu yêu CHƯA chạy (chờ Tổng quản). Chưa kiểm được: tiểu yêu điều khiển LD bằng adb có đủ không (đã ghi lệnh trong TS-01).
 
 ## TESTER 10:20 — lượt 1 của tiểu yêu TS-01 chỉ đọc tài liệu (0/7 bước, không chạm LD). Đã gộp, giao lại lượt 2 kèm cho phép adb tới emulator-5558. Nếu sandbox chặn adb, Sonnet làm cầu nối.
+
+## #225 VK-04 10:40 — Đã tìm gốc tĩnh: sét chỉ vẽ ở `domSec` (một section) nên vũ khí hai tay thiếu một bên (`KNpcResVN.cpp` ~547-597). Báo cáo `REPORTS/VK-04-set-hai-tay.md`, ảnh trước có sẵn. Đề xuất vẽ mọi section mask≥8; CHƯA sửa, chờ Chat duyệt (hook JX1_EFFECT_OK). Chưa đóng VK-04 (cần đo n section + ảnh sau sửa).

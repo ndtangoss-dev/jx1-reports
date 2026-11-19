@@ -43,3 +43,6 @@ Test-36, nhân vật `T36nv1`, mỗi loại +15 (cấp 1), trang bị rồi đ�
 - Kết quả: bằng mắt trên ảnh, KHÔNG thấy hướng nào vũ khí vẽ sai thứ tự so với thân (N/NW vũ khí nằm sau/bên thân, các hướng còn lại ở trước/bên đúng hướng cầm). Giới hạn: chụp một khung/hướng khi đang đi, chưa xét đứng im tĩnh từng góc, chưa xét đòn đánh/cưỡi ngựa. "Che cảnh" = vật cảnh (cổng, cây, mái) che nhân vật, không phải lỗi vẽ vũ khí; các ô đó CHƯA KIỂM được vũ khí.
 - Dùng được cả 6 loại (đủ sức mạnh/thân pháp cho Thương: đã thấy "Đã trang bị"). Cần ghi chú: +15 chỉ hiện sau khi vào lại game (client nạp lại từ DB).
 - Server D chưa khởi động (làm tiếp theo #216 mục 3).
+
+## 10:40 19/11 — VK-04 (#225): sét hai tay chỉ một bên
+Ảnh trước: `ANH/t36-vu-khi-chuy-8-huong.png` (một cụm sét). Nguyên nhân [THẤY mã]: `KNpcResVN.cpp` chỉ vẽ sét ở section trội `domSec`, bỏ section kia. Đề xuất: vẽ sét cho mọi section có mask ≥ 8 (xem `REPORTS/VK-04-set-hai-tay.md`). Chưa sửa; chờ Chat duyệt. [CHƯA KIỂM] số section thực của chùy/thích.
