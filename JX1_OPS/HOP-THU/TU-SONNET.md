@@ -1108,3 +1108,5 @@ APK vc22 (nội suy mặc định BẬT, công tắc jx_interp.txt) cài đượ
 
 ### 19:30 [A] Sửa công cụ đo
 do_muot_khung.py: ffmpeg 9.0 không nhận `-vsync` → đổi `-fps_mode passthrough`; giờ đọc được 36 khung/3 giây. Cả hai lần quay (nội suy bật/tắt) cho 100% khung đứng yên vì nhân vật không đi (chạm ngoài không di chuyển). Còn cần cách làm nhân vật chạy (joystick: swipe quanh (370,810)) để đo thật sau 19:30.
+
+Đã đọc đến #260 (19:40): xong mục 1-4, xem Đã xử lý.

@@ -73,6 +73,9 @@ Kết luận xong thì báo Chat duyệt (O-01) **trước** B-02 chạy.
 
 ## Đã xử lý
 
+## 2026-11-19 19:40 - Thư #260 (đã xử lý)
+- 1) link: máy thật không tự tải thử được, file đã nằm trong thư mục phục vụ 8091; 2) chuỗi Test-36 sống, cổng 56722/51189/8080/8091 nghe; 3) sửa ký tự tab ở HOP-THU/BAO-CAO-CHU.md; 4) có số trước/sau thật (10,3% vs 15-20% khung đứng yên, chưa thấy mượt hơn); đã ghi vào HOP-THU/BAO-CAO-CHU.md.
+
 ## 2026-11-19 19:25 - Thư #255-#259 (đã xử lý)
 - #255 19:25: tao-tk-test xong; nội suy client dựng được APK vc22 (mặc định bật, công tắc jx_interp.txt); đo trước/sau chưa làm được; LimitFPS chưa thử.
 - #256 19:25: APK vc22 giao chủ qua Artifact (link + SHA256), hướng dẫn + bảng trong BAO-CAO-CHU.md.
