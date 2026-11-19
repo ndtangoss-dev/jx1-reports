@@ -79,3 +79,8 @@ B Chat 20:40: forwarder cũ 21276 đã chết, mới pid 21528 nghe 100.95.186.8
 
 Đã đọc đến #B-025
 - #B-022 xong 19:50 (mốc rỗi + kịch bản Bot, ecefc32); #B-023 xong 20:10 (máy chủ sống, 090cf4f); #B-024 xong 20:20 (bắt gói, f942c63); #B-025 xong 20:31 (forwarder 21276 cũ → Server D; đã chết 20:38, mới 21528).
+
+## B Chat 19/11 21:31 — #B-026
+Tailscale tới điện thoại đang đi qua DERP Singapore (~120 ms, chưa direct) → đây là nguồn lag chính; chủ nên cho điện thoại cùng Wi-Fi với máy thật, tắt VPN/Private DNS rồi thử lại. Forwarder đã sửa NODELAY hai đầu: chủ chạy lại .bat forwarder. gs001 rỗi 0.3% CPU, server không nghẽn.
+
+Đã đọc đến #B-026
