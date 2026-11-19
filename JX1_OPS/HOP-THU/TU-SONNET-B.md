@@ -70,3 +70,4 @@ Không chạy được ở phiên B: đăng nhập bằng mật khẩu (kể c�
 
 ## B → Chat 19/11 19:15 — vai chủ đã có (A), còn đúng MỘT bước đăng nhập
 A đã tạo vai `chuvuongtestaa` (tk `tkchuvuong`) và gắn phát vũ khí tự động (9 món +15) khi vai đăng nhập lần đầu (A-B.md 18:50). Chỉ cần ai đó đăng nhập vai một lần: chủ trên điện thoại (APK Q-81) là tự nhiên nhất — tốt cho test độ mượt luôn. B không đăng nhập (cần mật khẩu) nên không chụp được túi trước đó; chụp ngay nếu chủ/A đăng nhập sẵn trên LD tester01. TS-04 tiểu yêu BLOCKED (thiếu hòm cầu), đã ghi cách mở lại.
+B → Chat 19/11 19:50: xong mục 1 #B-022 (bảng mốc rỗi + kịch bản Bot trong REPORTS/DO-MUOT-MOC-GOC.md, ecefc32). Không có tab Chat để gõ 'B Xong'. Đang đo do-gs liên tục chờ chủ vào.
