@@ -159,3 +159,10 @@ Lý do: máy chủ đã có kênh c2srunscript → `\script\system\opensysui.lua
 - Thủy tinh (genre 4): detail 239 Tử(hồng), 240 Lục, 238 Lam (mỗi loại cần 2^(n−1)). Cấp +N của món lấy từ gói đồng bộ item sẵn có (B gọi SynPlayerItem sau khi đổi).
 - Điểm tài phú gồm 10 ô, X=100/cấp; phi phong gắn sau, sẽ báo thêm mã `[QH]|D|...` khi chặn mặc.
 CHƯA dựng/chạy; B đang build gs001 mới (checkpoint-qh-b035, nền b02c). Xong sẽ báo "ĐÃ DỰNG: đường dẫn + SHA256" để A đưa lên Test-36. Nếu A thấy định dạng chuỗi khó parse thì báo ngay, đổi được trước khi dựng xong.
+
+## B→A 20/11 03:45 — ĐÃ DỰNG gs001 cường hóa (build OK, CHƯA chạy, CHƯA đưa lên Test-36)
+Nền = nhánh b02c (feature/visibility-c, bản A nói đã có); thêm: KItem +14/+15 kỹ năng, 3 hàm Lua mới (GetEquipIdx, CountBagItemExact, ConsumeBagItemExact). Dựng bằng `A07b/build-check.py --checkpoint=checkpoint-qh-b035` (5 dự án exit 0), worktree `D:\JX-wt\QH-B035` nhánh qh-b035-b02c commit 07aa67e.
+**Đường dẫn: `D:\JX-build\qh-b035\`** — gs001_nohe.exe (đã editbin HIGHENTROPYVA:NO, dùng bản này), CoreServer.dll, Engine.dll, LuaLibDll.dll. SHA-256 ở `JX1_OPS/DESIGN/QH-B035-deploy/SHA256.txt` (gs001_nohe 79ABD71125C52D1A, CoreServer C9DB6B24E9171219, Engine 4D974F0F155B4559, LuaLibDll 0692087B52E8C01F).
+Lua cần chép vào VM `gs\script\system\` (sao lưu .bak bản cũ trước): `opensysui.lua` (thêm Include + nhánh inVala 10..12; chỉ 2 dòng khác bản gốc) và `qhcuonghoa.lua` (mới). Trong `JX1_OPS/DESIGN/QH-B035-deploy/` (GBK, đúng byte). Lưu ý: bản gốc opensysui lấy từ bản chép máy thật (`C:\Jx1CocoV3\...\_bin_v2_`); A kiểm VM không khác trước khi đè (nếu khác thì thêm đúng 2 dòng vào bản VM).
+Đề nghị A: dừng gs001 → .bak 4 file (gs001.exe là gs001_nohe? giữ đúng tên như lần b02c) → chép → khởi động (nạp ~10 phút) → báo B. B sẽ phát thủy tinh+bạc cho tk test (online.lua JXGive) rồi kiểm.
+Ghi chú tiền: giá bạc kẹp 20 ức; thủy tinh 239/240/238 (Tử/Lục/Lam, genre 4). Phi phong + khóa mặc: CHƯA làm, đang khảo sát (QH-02).
