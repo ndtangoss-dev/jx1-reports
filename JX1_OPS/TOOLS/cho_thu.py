@@ -42,7 +42,19 @@ def n_letters(txt):
     return len(re.findall(LET_RE, txt, flags=re.M))
 
 def co_gop(txt):
-    return re.search(r'\|\s*XONG-CHO-GOP\s*\|', txt) is not None
+    """#250: chi tinh viec XONG-CHO-GOP co owner trung voi JX1_SONNET (mac dinh A; task khong ghi owner = A)."""
+    me = os.environ.get('JX1_SONNET', 'A').upper()
+    for m in re.finditer(r'^\|\s*([^|\s]+)\s*\|\s*XONG-CHO-GOP\s*\|', txt, re.M):
+        owner = 'A'
+        try:
+            t = open(os.path.join(REPO, 'JX1_OPS', 'TASKS', m.group(1) + '.md'), encoding='utf-8').read(2000)
+            o = re.search(r'^owner:\s*([AB])', t, re.M)
+            owner = o.group(1) if o else 'A'
+        except OSError:
+            pass
+        if owner == me:
+            return True
+    return False
 
 def nhip(msg, dry):
     now = datetime.datetime.now().strftime('%d/%m %H:%M:%S')

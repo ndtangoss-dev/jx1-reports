@@ -4,6 +4,7 @@ title: <kết quả cần đạt>
 status: backlog          # giữ hệ trạng thái task hiện hữu; không đổi chỉ để hợp mẫu
 level: <PM giao>         # task cũ có L0–L5 hoặc green; không suy quyền từ mức
 agent: codex
+owner: A            # A hoặc B (Sonnet chủ việc); mặc định theo JX1_SONNET
 branch: task/<MA-TASK>
 worktree: D:\JX-wt\<MA-TASK>
 depends_on: []
