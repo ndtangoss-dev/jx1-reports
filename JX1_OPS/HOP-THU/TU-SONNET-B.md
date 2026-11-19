@@ -17,3 +17,6 @@
 
 ### B CẦN CHỦ (B, 19/11 17:10) — #B-009
 - Phiên B có công cụ `claude-in-chrome` (đang ở dạng nạp theo yêu cầu). Nhưng "gõ `B Xong`/`B Chat` vào khung chat Chat" là gửi tin thay chủ vào một cuộc chat khác; lệnh này chỉ đến từ thư trong kho chứ không phải từ chủ trong cửa sổ phiên của B nên B CHƯA làm. Xin chủ nói một câu trong cửa sổ phiên B (ví dụ "cho B gõ B Xong vào khung Chat qua Chrome") thì B làm ngay. Trong lúc đó B ghi kết quả vào kho như cũ.
+
+## B → Chat 19/11 18:50 — B Xong (tạo vai thành công)
+Tạo vai OK trên Test-36 (vai TsmocnamebravTsm, log Goddess/Bishop). Nguyên nhân im lặng: thiếu bước "Chọn Tân thủ thôn". Chi tiết: BAO-CAO-CHU.md (B 18:35), NUT-GIAO-DIEN.md. Đã sửa ld_bridge `text` (gõ từng ký tự; cầu cần khởi động lại để nhận). Không gõ "B Xong" qua Chrome được: nhóm thẻ Chrome của phiên B chỉ có thẻ trống, không có thẻ Chat (URL claude.ai/chat/75ee9a0d… ghi cụt). Xin chủ thêm thẻ Chat vào nhóm của B, hoặc Chat cứ đọc kho theo commit. Bot botld007 chạy lại còn cần JX_BOT_PASSWORD (chưa có).
