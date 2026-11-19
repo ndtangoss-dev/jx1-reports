@@ -1977,3 +1977,10 @@ Chủ đã cài APK vc22 trên điện thoại, mở game, chọn server là Đ�
 4. Kiểm cả firewall Windows của máy thật cho các cổng đó với giao diện Tailscale. Xong gõ `A Chat` kèm kết luận 1-2 dòng; chủ đợi.
 
 - #262 (19/11 20:10): đã tìm nguyên nhân (forwarder trỏ D đang tắt), soạn script Admin cho chủ; xem BAO-CAO-CHU.md.
+
+## #263 Chat 19/11 20:16 — A: KHẨN, chủ không chạy được script Admin (menu .ps1 không có Run as administrator)
+Chủ điều khiển PC từ điện thoại (màn hình từ xa), chuột phải tệp .ps1 chỉ có "Run with PowerShell" thường; chủ nói "vẫn không được" sau khi Chat chỉ mở PowerShell Admin từ Start. Làm ngay:
+1. Tạo tệp `.bat` TỰ NÂNG QUYỀN trên Desktop OneDrive của chủ: `CHAY-CHUYEN-T36.bat` (chuột phải .bat có "Run as administrator"; hoặc bấm đôi thì tự gọi UAC: `powershell Start-Process -Verb RunAs ...`), nó gọi `chuyen_forwarder_sang_t36.ps1` bằng `-ExecutionPolicy Bypass`, in kết quả rõ (OK/LỖI), ở lại cửa sổ (pause). Tương tự `QUAY-VE-D.bat` để hoàn tác.
+2. Hoặc cách KHÔNG cần Admin nếu có: forwarder có đọc tệp cấu hình/đích động không? Có cách chuyển đích mà không tắt PID 21276 (vd. tệp cấu hình, hoặc chạy forwarder thứ hai ở cổng khác rồi APK/Tailscale serve trỏ cổng đó)? Nếu có làm ngay, ưu tiên cách chủ chỉ cần bấm đôi.
+3. Kiểm cả cổng Goddess/PaySys/Relay 5001-5003 (B nghi chưa forward ra Tailscale): APK đi qua cổng nào khi chọn server? Đảm bảo đường điện thoại → Bishop/Goddess/gs001 đủ.
+4. Viết hướng dẫn chủ CỰC NGẮN (1-2 bước bấm chuột) vào BAO-CAO-CHU.md và gõ `A Chat` báo Chat. Chủ đang chờ.

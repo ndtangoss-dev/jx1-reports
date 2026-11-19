@@ -196,3 +196,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #B-022 (19:45) B: đo gs001 liên tục, bảng mốc rỗi, kịch bản Bot 20 tk riêng
 - #261 (19:54) A: tìm/chép tệp mật khẩu tkchuvuong ra Desktop
 - #262/#B-023 (20:05) chủ kẹt ở chọn server trên điện thoại: A xem APK/địa chỉ, B xem máy chủ/cổng
+- #263 (20:16) A: .bat tự nâng quyền cho chủ; kiểm cổng 5001-5003
