@@ -144,3 +144,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | #229 | 19/11 10:38 | Chat→Sonnet | chủ quyết Q-67: một APK gốc (qh9A), bỏ bản khác |
 | #230 | 19/11 10:40 | Chat→Sonnet | chủ sửa: bản gốc = APK T36test đang chạy (Q-68) |
 | #231 | 19/11 10:42 | Chat→Sonnet | gỡ mâu thuẫn #229/#230: gốc = APK T36test |
+| #232 | 19/11 10:52 | Chat→Sonnet | chủ quyết Q-69: một tester một khóa riêng |

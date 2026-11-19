@@ -105,3 +105,6 @@ Chủ: cứ dựa theo bản test hiện tại (dòng qh9A) và bám theo nó đ
 
 ## Q-68 (chủ 19/11 10:39) — SỬA Q-67: BẢN GỐC = BẢN T36test ĐANG CHẠY
 Chủ: khỏi quan sát lại. Lấy đúng APK đang chạy trong T36test (SHA-256 8da22c0c…, package com.jxclient.hoiuctruyenky) làm BẢN GỐC; điện thoại chủ cài theo bản đó. Thay cho "qh9A" trong Q-67.
+
+## Q-69 (chủ 19/11 10:50) — MỖI TIỂU YÊU TESTER DÙNG RIÊNG MỘT KHÓA
+Việc test game nặng: một tester = một khóa xingchi (JX-K*), không chia khóa đó cho tiểu yêu khác; tiểu yêu làm việc khác không dùng khóa của tester. Thêm tester thì lấy khóa còn trống; hết khóa trống thì không sinh thêm, không dồn hai tester vào một khóa. Khóa cho tester01: giữ khóa TS-02 đang dùng (JX-K4) để khỏi đổi giữa chừng (chủ xác nhận "Đúng vậy" sau khi Chat trình bày cách hiểu, L13).

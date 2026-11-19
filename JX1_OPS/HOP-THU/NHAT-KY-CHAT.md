@@ -296,3 +296,4 @@
 - 19/11 10:40 #230: chủ quyết bản gốc = APK đang chạy trong T36test, khỏi quan sát lại (Q-68).
 - 19/11 10:42 #231: Q-68 thay Q-67 ở điểm chọn bản gốc.
 - 19/11 10:44: chủ dặn L13 (hiểu ý chủ trước, chủ chốt mới giao Sonnet).
+- 19/11 10:52 #232: chủ chốt một tester một khóa (Q-69), giữ JX-K4 cho tester01.

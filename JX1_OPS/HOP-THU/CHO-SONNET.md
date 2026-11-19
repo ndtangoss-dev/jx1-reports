@@ -1779,3 +1779,6 @@ Chủ đã quyết: dựa theo bản test hiện tại (dòng qh9A), mọi việ
 
 ## #231 Chat 19/11 10:42 — GỠ MÂU THUẪN #229/#230
 #230 (Q-68) THAY THẾ #229 ở điểm chọn bản gốc: gốc = APK đang chạy trong T36test (8da22c0c…), KHÔNG phải qh9A; không cài qh9A vào T36test, không quan sát lại. Giữ nguyên từ #229: một bản gốc duy nhất, STATE/APK-GOC.md, dựng bản mới chỉ từ nền này, dọn serve còn một đường dẫn, bản cũ dời lưu trữ, chủ chấp nhận cài lại. Nếu đã làm bước cài qh9A theo #229 thì dừng riêng bước đó (các việc khác tiếp tục) và ghi lại.
+
+## #232 Chat 19/11 10:52 — CHỦ QUYẾT Q-69: MỘT TESTER = MỘT KHÓA RIÊNG
+Chủ chốt: tester là việc nặng nên mỗi tiểu yêu tester dùng RIÊNG một khóa xingchi, không chia cho tiểu yêu khác; tiểu yêu việc khác không dùng khóa của tester. Thêm tester thì lấy khóa trống; hết khóa thì không sinh thêm, không dồn chung. Khóa tester01: giữ JX-K4 (đang dùng, đừng đổi giữa chừng). Việc: (1) ghi bảng "khóa↔tester" vào STATE/TESTER/INDEX.md và báo Tổng quản (qua TASKS/TS-01.md) để khóa tester không bị cấp cho việc khác; (2) nếu TS-02 (việc khác) đang giữ JX-K4 thì cho nó dùng khóa khác ngay khi gộp xong, không dừng việc; (3) song song vẫn gỡ chỗ kẹt cờ chờ gộp để TS-01 lượt 2 chạy được. Không dừng việc nào đang chạy.
