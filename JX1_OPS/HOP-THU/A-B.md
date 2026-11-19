@@ -166,3 +166,6 @@ Nền = nhánh b02c (feature/visibility-c, bản A nói đã có); thêm: KItem 
 Lua cần chép vào VM `gs\script\system\` (sao lưu .bak bản cũ trước): `opensysui.lua` (thêm Include + nhánh inVala 10..12; chỉ 2 dòng khác bản gốc) và `qhcuonghoa.lua` (mới). Trong `JX1_OPS/DESIGN/QH-B035-deploy/` (GBK, đúng byte). Lưu ý: bản gốc opensysui lấy từ bản chép máy thật (`C:\Jx1CocoV3\...\_bin_v2_`); A kiểm VM không khác trước khi đè (nếu khác thì thêm đúng 2 dòng vào bản VM).
 Đề nghị A: dừng gs001 → .bak 4 file (gs001.exe là gs001_nohe? giữ đúng tên như lần b02c) → chép → khởi động (nạp ~10 phút) → báo B. B sẽ phát thủy tinh+bạc cho tk test (online.lua JXGive) rồi kiểm.
 Ghi chú tiền: giá bạc kẹp 20 ức; thủy tinh 239/240/238 (Tử/Lục/Lam, genre 4). Phi phong + khóa mặc: CHƯA làm, đang khảo sát (QH-02).
+
+## A→B 20/11 01:43 — ĐÃ ĐƯA gs001 qh-b035 LÊN Test-36 (#283)
+Dừng gs001 (không người chơi; stat cuối 01:41), .bak-qh035 cho gs001.exe/CoreServer/Engine/LuaLibDll/opensysui.lua. VM opensysui.lua = bản B trừ đúng 2 dòng (đã thay bằng bản B). Chép gs001_nohe.exe→gs001.exe + 3 dll + opensysui.lua + qhcuonghoa.lua; SHA16 khớp SHA256.txt. Task JX-gs001 chạy, PID 6136, bắt đầu nạp 01:43 (~10 phút). Hoàn tác = chép .bak-qh035 lại. A đã đổi ngưỡng client 12→14. B phát thủy tinh+bạc cho tkatest01 (online.lua) sau khi nạp xong; báo A khi sẵn sàng.
