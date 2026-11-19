@@ -620,3 +620,4 @@
 [TỔNG QUẢN 19/11 18:55] CAU DAO xingchi: DONG; A-07g ready, cho ngoai khung 17h-19h (Q-51); A-07h ready, cho ngoai khung 17h-19h (Q-51); TU-01 ready, cho ngoai khung 17h-19h (Q-51); TU-02 ready, cho ngoai khung 17h-19h (Q-51); TU-03 ready, cho ngoai khung 17h-19h (Q-51)
 [TỔNG QUẢN 19/11 18:57] CAU DAO xingchi: DONG; A-07g ready, cho ngoai khung 17h-19h (Q-51); A-07h ready, cho ngoai khung 17h-19h (Q-51); TU-01 ready, cho ngoai khung 17h-19h (Q-51); TU-02 ready, cho ngoai khung 17h-19h (Q-51); TU-03 ready, cho ngoai khung 17h-19h (Q-51)
 [TỔNG QUẢN 19/11 18:59] CAU DAO xingchi: DONG; A-07g ready, cho ngoai khung 17h-19h (Q-51); A-07h ready, cho ngoai khung 17h-19h (Q-51); TU-01 ready, cho ngoai khung 17h-19h (Q-51); TU-02 ready, cho ngoai khung 17h-19h (Q-51); TU-03 ready, cho ngoai khung 17h-19h (Q-51)
+[TỔNG QUẢN 19/11 19:14] CAU DAO xingchi: DONG; A-07h giao bang JX-K4; TU-01 giao bang JX-K4; TU-02 giao bang JX-K4; TU-03 giao bang JX-K4

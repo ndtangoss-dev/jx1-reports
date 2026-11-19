@@ -1,4 +1,4 @@
-# TIỂU YÊU (Tổng quản tự sinh lúc 2026-11-19 18:59, đừng sửa tay)
+# TIỂU YÊU (Tổng quản tự sinh lúc 2026-11-19 19:14, đừng sửa tay)
 
 **CẦU DAO xingchi: ĐÓNG (bình thường)**
 
@@ -6,14 +6,18 @@ Mức: SONG / IM-NHUNG-SONG (20–60 phút) / TREO (>60, bị dừng chạy lạ
 
 | Mã | Mức | Khóa | Log cuối | Dấu hiệu sống cuối | Lỗi cuối | Lần chạy lại | Mô hình | PID | Chờ token (giây) |
 |---|---|---|---|---|---|---|---|---|---|
+| A-07g | SONG | - | 19:13 | 19:13 | - | 0 | sol | - | - |
+| A-07h | SONG | JX-K4 | - | 19:13 | - | 0 | sol | - | - |
+| TU-01 | SONG | JX-K4 | - | 19:13 | - | 0 | sol | - | - |
+| TU-02 | SONG | JX-K4 | - | 19:14 | - | 0 | sol | - | - |
+| TU-03 | SONG | JX-K4 | - | 19:14 | - | 0 | sol | - | - |
 
-Khóa đang dùng: (không) / khóa có: JX-K2, JX-K3, JX-K4, JX-K5, JX-K6
-Đang chạy theo Task Scheduler: 0.
+Khóa đang dùng: JX-K4=4 / khóa có: JX-K2, JX-K3, JX-K4, JX-K5, JX-K6
+Đang chạy theo Task Scheduler: 5.
 
 Việc vòng này:
 - CAU DAO xingchi: DONG
-- A-07g ready, cho ngoai khung 17h-19h (Q-51)
-- A-07h ready, cho ngoai khung 17h-19h (Q-51)
-- TU-01 ready, cho ngoai khung 17h-19h (Q-51)
-- TU-02 ready, cho ngoai khung 17h-19h (Q-51)
-- TU-03 ready, cho ngoai khung 17h-19h (Q-51)
+- A-07h giao bang JX-K4
+- TU-01 giao bang JX-K4
+- TU-02 giao bang JX-K4
+- TU-03 giao bang JX-K4
