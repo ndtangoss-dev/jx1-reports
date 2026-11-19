@@ -1753,3 +1753,11 @@ Không dừng (Q-56).
 
 ## #227 Chat 19/11 10:30 — CHỦ XÁC NHẬN (Q-66): LÀM NGAY theo #226
 - Chủ đã nói "sửa và làm theo hướng đề ra". Bắt đầu: (1) VK-04 bước đo n section rồi sửa theo #226 mục 1 (JX1_EFFECT_OK=1 chỉ cho commit sét), (2) Bot hướng A: thang tải trên Test-36 và khung GĐ1, (3) tester lượt 2 chơi thật. Giữ nguyên các rào an toàn trong #226 (chỉ bản thử, lùi bản cũ nếu hỏng, không đưa APK cho chủ khi chưa hỏi). Không dừng (Q-56).
+
+## #228 Chat 19/11 10:35 — CHỦ HỎI về bước giao APK cho chủ thử điện thoại (D). Trả lời bằng bằng chứng, ghi vào BAO-CAO-CHU (mục "GIAO APK CHO CHỦ"), không giao APK khi chưa hỏi chủ.
+Chủ hiểu: sửa sét xong → cài Server D → gửi file APK cài đè → vào tài khoản cũ là được. Kiểm giúp 4 điều:
+1. Bản APK hiện cài trên điện thoại chủ là bản nào (SHA/tên) và bản sửa sét phải build từ CÙNG nền đó (không lẫn qh9A/fix36/T36test). Khóa ký (signing key) bản mới có TRÙNG bản đang cài không? Nếu khác, Android không cho cài đè, chủ phải gỡ cài lại; nói rõ.
+2. Sửa sét nằm ở client (APK) hay cũng cần đổi server D? (kết luận có dẫn file) — nếu chỉ APK thì D giữ nguyên.
+3. Tài khoản/nhân vật cũ của chủ có nằm trong CSDL của Server D (JX-Server-D) không (chỉ kiểm có/không và tên nhân vật, KHÔNG đọc mật khẩu)? Chủ đăng nhập tài khoản game nào? Dữ liệu (cấp, đồ) có còn đủ không.
+4. Cách đưa file APK tới điện thoại chủ: KHÔNG đưa APK vào kho git (kho công khai). Đề xuất 2 cách an toàn (vd tải qua mạng LAN từ máy PC, hoặc nơi riêng của chủ) và cách cài đè từng bước dễ làm cho chủ (người không biết lập trình).
+Không dừng (Q-56).

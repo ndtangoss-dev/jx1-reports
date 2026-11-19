@@ -291,3 +291,4 @@
 - 19/11 10:12 #225: sét hai tay chùy/thích (Q-64), VK-04.
 - 19/11 10:25 #226: Q-65 duyệt VK-04 sửa 2 bước và hướng Bot A.
 - 19/11 10:30 #227: chủ xác nhận sửa sét + Bot hướng A (Q-66).
+- 19/11 10:35 #228: chủ hỏi cài đè APK vào tài khoản cũ; hỏi Sonnet 4 điều.

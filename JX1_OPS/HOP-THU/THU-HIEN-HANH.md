@@ -140,3 +140,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | #225 | 19/11 10:12 | Chat→Sonnet | sét vũ khí hai tay (Q-64), VK-04 |
 | #226 | 19/11 10:25 | Chat→Sonnet | duyệt sét 2 tay 2 bước + hướng Bot A (Q-65) |
 | #227 | 19/11 10:30 | Chat→Sonnet | chủ xác nhận làm theo #226 (Q-66) |
+| #228 | 19/11 10:35 | Chat→Sonnet | kiểm 4 điều trước khi giao APK chủ |
