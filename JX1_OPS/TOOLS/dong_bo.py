@@ -63,6 +63,9 @@ def main():
             print('DUNG: xung dot o file can nguoi xu ly (rebase dang do, git rebase --abort de huy):')
             print('\n'.join(stop)); sys.exit(3)
         rc, out = git('-c', 'core.editor=true', 'rebase', '--continue', ok=True)
+    gd = git('rev-parse', '--git-dir')[1]
+    if any(os.path.isdir(os.path.join(gd, d)) for d in ('rebase-merge', 'rebase-apply')):
+        print('DUNG: rebase con dang do (git status de xem), chua day len.'); sys.exit(5)
     if os.path.isdir(os.path.join(root, '.git_dongbo_tmp')):
         import shutil; shutil.rmtree(os.path.join(root, '.git_dongbo_tmp'), ignore_errors=True)
     if '--push' in sys.argv:
