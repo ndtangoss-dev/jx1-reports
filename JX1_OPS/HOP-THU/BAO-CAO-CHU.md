@@ -46,3 +46,17 @@
 - WinRM tới `192.168.56.150` trả lời (TrustedHosts đã có IP) nhưng cần tài khoản/mật khẩu; theo ghi chú cũ tài khoản mu1 mật khẩu trống bị từ chối "Access denied". B không có thông tin đăng nhập và bộ phân loại quyền đã CHẶN khi B thử liệt kê biến môi trường tìm mật khẩu; B không lách. `admin_chay.ps1` chỉ có kill-test-vm/firewall/trustedhosts/service (dịch vụ máy thật), không chạm chương trình trong VM. Kiểm LD: DNAT + cổng vẫn thông (không đổi so với 16:20).
 - **Cần đại vương/Sonnet A, một lệnh duy nhất, chạy TRONG VM Test-36** (PowerShell, tài khoản mu1): `schtasks /run /tn JX-ChainUp` rồi đợi ~4 phút để gs001 nối lại 56732; (nếu có `JX-gs001` thì chạy thêm). Xong báo B, B thử lại tạo vai `Cctesterone` và botld007 ngay, ghi trước/sau.
 - Hoặc Sonnet A/Tổng quản đã có đường vào VM (đã làm C01/jx_env_up) thì làm giúp việc này; B làm phần thử lại.
+
+## (B) 19/11 17:00 — Bot GĐ1: 8 dòng giá mẫu xin đại vương duyệt
+Bảng đủ 1034 món: `STATE/BOT/gia-vat-pham.csv` (tên đã đổi sang chữ có dấu). Cách tính hiện tại (GIẢ ĐỊNH, chưa ai duyệt): **giá Bot bán = 50% giá gốc trong bảng game**, không thấp hơn giá sàn. Xin đại vương xem các dòng mẫu rồi nói "được" hoặc nêu hệ số khác:
+| Món | Loại | Giá gốc | Bot bán (50%) |
+|---|---|---|---|
+| Bố Mão | mũ | 360 | 180 |
+| Tu Chân đạo y | áo | 1.160 | 580 |
+| Thanh La quần | áo | 1.160 | 580 |
+| Hoàng Bố Phát Đái | mũ | 3.080 | 1.540 |
+| Lưu Tinh | ngựa | 5.000 | 2.500 |
+| Nguyện Bạch Cà Sa | áo | 5.960 | 2.980 |
+| Thôn Nhật Trãm | vũ khí cận chiến | 8.840 | 4.420 |
+| Xích Long Câu | ngựa | 250.000 | 125.000 |
+Lưu ý: 17 tên là ký tự hỏng (GBK) nên để nguyên; độ hiếm và thành thị bán chưa điền. Chưa chạy Bot bán thật.
