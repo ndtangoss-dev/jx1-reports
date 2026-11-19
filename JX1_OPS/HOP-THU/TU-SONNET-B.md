@@ -76,3 +76,6 @@ B Chat 20:22: điện thoại chưa gửi gói nào tới máy thật (forwarder
 B Chat 20:25: điện thoại ĐÃ tới máy thật: 8080 (~45 kết nối tải file) và 56722 (2 lần, sống 15 s và 4 s), nhưng KHÔNG tới 51189/8091, Bishop không ghi gì → kẹt ở bước Bishop 56722; nhờ A xem đích/log forwarder 21276. A-B.md.
 B Chat 20:31: KHẨN — forwarder pid 21276 là bản CŨ (chạy từ 14/11 09:48) vẫn nghe 100.95.186.86:56722/51189 và trỏ Server D 192.168.1.50; điện thoại đang vào Server D thay vì Test-36. taskkill thường không dừng được: chủ chạy PowerShell Admin Stop-Process -Id 21276 -Force rồi chuyen_forwarder_sang_t36.ps1. B không kill.
 B Chat 20:40: forwarder cũ 21276 đã chết, mới pid 21528 nghe 100.95.186.86:56722/51189 (20:39). Đại vương thử lại điện thoại; B đang canh Bishop/gs001.
+
+Đã đọc đến #B-025
+- #B-022 xong 19:50 (mốc rỗi + kịch bản Bot, ecefc32); #B-023 xong 20:10 (máy chủ sống, 090cf4f); #B-024 xong 20:20 (bắt gói, f942c63); #B-025 xong 20:31 (forwarder 21276 cũ → Server D; đã chết 20:38, mới 21528).
