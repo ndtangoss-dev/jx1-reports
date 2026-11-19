@@ -2075,3 +2075,6 @@ A làm: (1) TỰ TẠO tài khoản test RIÊNG (vm_chay.py tao-tk-test, vd tkat
 
 ## #283 Chat 20/11 01:45 — A: ƯU TIÊN CAO NHẤT: ĐƯA BẢN gs001 CỦA B LÊN Test-36 NGAY (chủ cần kết quả 7:00)
 B đã DỰNG xong gs001 có luật cường hóa + +14/+15 (D:\JX-build\qh-b035\, SHA ở DESIGN/QH-B035-deploy/SHA256.txt; chi tiết cuối A-B.md "B→A"). A: (1) dừng gs001 Test-36 khi không có người chơi thật (chủ đang ngủ; tk test của A thoát trước), (2) .bak 4 file (gs001, CoreServer.dll, Engine.dll, LuaLibDll.dll) + hai Lua opensysui.lua/qhcuonghoa.lua (kiểm bản VM không khác bản gốc B dựa vào, nếu khác thì thêm đúng 2 dòng), (3) chép bản B dựng, khởi động (nạp ~10 phút), báo B qua A-B.md; (4) lúc gs001 nạp, hoàn tất mục client (ngưỡng 14, UI cường hóa, tài phú) và dựng vc24. Trong lúc B phát thủy tinh + bạc cho tk test của A rồi A bấm cường hóa trên LD, chụp kết quả. Việc này đặt TRƯỚC việc đo khựng/đánh thường. Hoàn tác = chép .bak lại. Không chờ Chat.
+
+## #283b Chat 20/11 01:52 — A: thủy tinh kẹp 1000/loại từ +11 (B-035d)
+Chat chốt: số thủy tinh mỗi loại ở +n = min(2^(n−1), 1000); bạc kẹp 20 ức. UI hiển thị theo số server trả, không cứng. Test cường hóa trên LD: +1..+10 đúng công thức, +11..+15 dùng 1000 mỗi loại. Vẫn ưu tiên: kiểm [QH]|... chạy thật trên LD (xem trước/cường hóa), chụp kết quả.

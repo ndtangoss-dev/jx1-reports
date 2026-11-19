@@ -28,3 +28,6 @@ Chủ: nếu tiền tệ không cho phép thì Chat được GIẢM GIÁ cườn
 - Ưu tiên 1: mở rộng tiền lên 64 bit CHỈ NẾU làm gọn (không quá ~1 giờ công, không phá giao thức/lưu DB). Không thì sang ưu tiên 2 NGAY.
 - Ưu tiên 2 (mặc định nếu tiền là 32 bit): giá bạc mỗi cấp = min(2^(n−1) × 200 vạn, 20 ức); nguyên liệu hồng/lục/lam VẪN gấp đôi mỗi cấp. Tức +1..+11 đúng công thức chủ (+11 = 20,48 ức → kẹp 20 ức), +12..+15 giữ 20 ức bạc (nguyên liệu vẫn 2048/4096/8192/16384). 20 ức = 2.000.000.000 < 2.147.483.647.
 - B/A tự áp dụng và ghi vào báo cáo "đã giảm giá vì ..."; sau khi xong mới báo Chat/chủ. Mọi quyết định tương tự (đổi tham số cho vừa game: giới hạn kiểu dữ liệu, kích thước ô, ngưỡng) được tự quyết theo hướng "chức năng chạy được, đúng tinh thần chủ", ghi rõ lý do; chỉ Vùng Đỏ mới hỏi.
+
+## 5. CHỐT THỦY TINH (Chat 20/11 01:52, theo quyền Q-87)
+Thủy tinh chồng tối đa 200/ô nên 16384 viên (+15) = 82 ô túi mỗi loại: không chơi được. Chốt: số thủy tinh mỗi loại ở cấp +n = min(2^(n−1), 1000) → +1..+10 đúng công thức chủ (…512), +11..+15 giữ 1000 mỗi loại (5 chồng/loại, 15 ô cho 3 loại). Bạc vẫn kẹp 20 ức. KHÔNG đổi MAX_STACKNUM (đụng cả client, rủi ro). Độ khó +11..+15 còn lại nằm ở tỉ lệ (xuống 30%) và chỉ số 5%/cấp. Ghi vào báo cáo lý do thay đổi.

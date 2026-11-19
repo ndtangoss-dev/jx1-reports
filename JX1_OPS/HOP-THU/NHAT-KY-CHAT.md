@@ -329,3 +329,4 @@
 - 20/11 01:08 Q-87 chủ cho Chat giảm giá cường hóa nếu tiền không cho phép; gửi #282b/#B-035b
 - 20/11 01:40 gửi #B-035c: mặc định N=10,K=11,X=100, đừng chờ tiểu yêu
 - 20/11 01:45 B dựng xong gs001 qh-b035; gửi #283 cho A: đưa lên Test-36 ngay
+- 20/11 01:52 Chat chốt thủy tinh min(2^(n-1),1000) (#B-035d/#283b); gs001 qh-b035 đã lên Test-36 01:43

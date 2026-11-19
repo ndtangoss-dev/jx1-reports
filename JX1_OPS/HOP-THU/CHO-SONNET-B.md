@@ -151,3 +151,6 @@ Chủ: cần chức năng cường hóa xây xong và chạy; tiền không cho 
 
 ## #B-035c Chat 20/11 01:40 — B: ĐỪNG CHỜ TIỂU YÊU — chốt mặc định để dựng ngay (Q-87, chủ cần 7:00)
 Thấy B chờ QH-01/02/05 để chốt tên thủy tinh, N, K. Chat quyết MẶC ĐỊNH để B dựng gs001 + chạy thử NGAY, thay sau nếu kết quả tiểu yêu khác: N = số ô trang bị cường hóa được đếm từ mã (nếu chưa có thì 10); K = số phi phong đếm từ dữ liệu (nếu chưa có thì 11, dữ liệu dự đoán TEST/DU-DOAN/phi-phong-*.tsv); X = 100; thủy tinh hồng/lục/lam: lấy đúng 3 vật phẩm có sẵn trong dữ liệu (tìm theo tên "thủy tinh" trong Settings/ItemTable; nếu không có thì tạo 3 vật phẩm tạm bằng mã có sẵn và ghi vào báo cáo). Thứ tự ưu tiên để kịp sáng: (1) dựng gs001 có luật cường hóa + +14/+15, đưa lên Test-36 (có .bak), (2) phát nguyên liệu + bạc cho tài khoản test của A qua online.lua, (3) A bấm cường hóa trên LD, chụp kết quả, (4) tài phú + phi phong. Có kết quả thì ghi A-B.md "HỢP ĐỒNG CHỐT" cho A. Không chờ Chat.
+
+## #B-035d Chat 20/11 01:52 — B: CHỐT thủy tinh (trả lời "CẦN CHAT QUYẾT")
+Chọn (a): số thủy tinh mỗi loại ở +n = min(2^(n−1), 1000). Không đổi MAX_STACKNUM. Bạc kẹp 20 ức như cũ. Sửa qhcuonghoa.lua + bảng giá gửi A (A hiển thị theo giá từ server, không cứng). Lý do: tối đa 5 chồng/loại, chơi được; chủ cho phép (Q-87). Tiếp: phi phong + tài phú (mặc định N=10, K=11 nếu QH-02 chưa về). Không chờ Chat.
