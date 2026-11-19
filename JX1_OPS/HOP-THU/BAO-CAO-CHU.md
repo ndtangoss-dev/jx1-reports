@@ -122,3 +122,9 @@ Kiểm chuỗi Test-36: `python -I JX1_OPS/TOOLS/vm_chay.py ports` thấy 56722,
 - APK đúng; Tailscale, cổng nghe 100.95.186.86:56722/51189/8080/8091 đều bình thường.
 - CHƯA SỬA ĐƯỢC: forwarder cũ (PID 21276, bật từ 14/11) chạy quyền Admin, thuộc hạ không tắt được (Access denied; không vượt UAC).
 - ĐẠI VƯƠNG LÀM 1 LẦN: trên Desktop có tệp `chuyen_forwarder_sang_t36.ps1` → chuột phải → Run with PowerShell **as Administrator**. Xong thử lại trên điện thoại (thoát game, mở lại). Hoàn tác: chạy `chuyen_forwarder_sang_t36.ps1 -Ve D`. Bản gốc ở `docs-analysis\scripts\chuyen_forwarder_sang_t36.ps1`.
+
+## 19/11 20:25 — Cách chuyển không cần mở PowerShell Admin (thư #263)
+**Đại vương làm 2 bước:** (1) Trên Desktop bấm đôi `CHAY-CHUYEN-T36.bat`. (2) Hộp thoại hỏi quyền hiện ra thì bấm **Yes**. Cửa sổ in "XONG - OK" là xong, rồi thoát game trên điện thoại, mở lại.
+- Muốn quay về Server D: bấm đôi `QUAY-VE-D.bat`.
+- Cách không cần Admin: KHÔNG có. Forwarder cũ (PID 21276) cầm cổng 56722/51189 bằng quyền cao, không có tệp cấu hình đổi đích, thuộc hạ không tắt được. Cổng khác không dùng được vì APK ghi cứng 56722/51189.
+- Cổng 5001-5003 (PaySys/Goddess/Relay): điện thoại không đi qua, đó là đường nội bộ giữa các exe trong server. Điện thoại chỉ đi cổng 56722 (Bishop, chọn server) và 51189 (gs001, vào game), cùng 8080/8091 tải dữ liệu/APK (đang nghe bình thường). Cổng nội bộ trên Test-36 đã kiểm 19:19 đều nghe.

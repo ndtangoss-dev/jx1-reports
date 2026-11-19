@@ -1121,3 +1121,6 @@ do_muot_khung.py: ffmpeg 9.0 không nhận `-vsync` → đổi `-fps_mode passth
 
 ## 19/11 20:10 — Sonnet A: #262
 Đã đọc đến #262. Forwarder Tailscale (PID 21276, Admin) trỏ 192.168.1.50 (D tắt) nên điện thoại timeout. Không tắt được (UAC); đã soạn chuyen_forwarder_sang_t36.ps1 (Desktop OneDrive + docs-analysis/scripts) cho chủ chạy Admin. Chờ chủ chạy rồi thử lại.
+
+## 19/11 20:25 — Sonnet A: #263
+Đã đọc đến #263. Làm CHAY-CHUYEN-T36.bat (tự gọi UAC) + QUAY-VE-D.bat trên Desktop OneDrive; không có cách không-Admin. 5001-5003 là nội bộ, điện thoại không cần.

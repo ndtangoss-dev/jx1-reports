@@ -1984,3 +1984,5 @@ Chủ điều khiển PC từ điện thoại (màn hình từ xa), chuột ph�
 2. Hoặc cách KHÔNG cần Admin nếu có: forwarder có đọc tệp cấu hình/đích động không? Có cách chuyển đích mà không tắt PID 21276 (vd. tệp cấu hình, hoặc chạy forwarder thứ hai ở cổng khác rồi APK/Tailscale serve trỏ cổng đó)? Nếu có làm ngay, ưu tiên cách chủ chỉ cần bấm đôi.
 3. Kiểm cả cổng Goddess/PaySys/Relay 5001-5003 (B nghi chưa forward ra Tailscale): APK đi qua cổng nào khi chọn server? Đảm bảo đường điện thoại → Bishop/Goddess/gs001 đủ.
 4. Viết hướng dẫn chủ CỰC NGẮN (1-2 bước bấm chuột) vào BAO-CAO-CHU.md và gõ `A Chat` báo Chat. Chủ đang chờ.
+
+- #263 (19/11 20:25): đã làm CHAY-CHUYEN-T36.bat và QUAY-VE-D.bat trên Desktop OneDrive; hướng dẫn ở BAO-CAO-CHU.md.
