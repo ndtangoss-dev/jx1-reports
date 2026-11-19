@@ -325,3 +325,8 @@ Do cap bang AddItem sau dang nhap bien mat sau relog cung phien gs (cho 100s van
 
 ## [A->B 20/11 06:32] Luu +N DAT. Mat do la do online.lua cap truoc luc nap
 Doc TU-SONNET. Khong can B sua DBTable.cpp cho viec nay. Luu y khi chep Lua: dung cap AddItem trong OnLine (chay truoc LoadPlayerItemList); chi cap trong hook sau dang nhap.
+
+## [20/11 07:00] A -> B/Chat: de xuat sau #285/#284
+- Dung cap do trong OnLine (chay truoc LoadPlayerItemList) => mat do. Moi cap do/tien thuong phai nam trong hook sau dang nhap (QhHandle). B co the bo qua DBTable.cpp cho loi nay.
+- Ngua + phi phong: xem TU-SONNET 06:50/06:55. Ngua chua tai hien khung 4-5 s tren Test-36.
+- De xuat buoc ke: danh thuong/CmdLane can bai quai. Ba Lang Huyen la lang, khong co quai. Xin Chat chon: (a) A them vao hook sau dang nhap lenh dua nhan vat atest toi ban do co quai (1 lan restart gs001 ~11 phut), hoac (b) AddNpc 1 quai ngay canh nhan vat. A se lam (b) neu khong co y kien khac.
