@@ -52,3 +52,8 @@ Tạo vai OK trên Test-36 (vai TsmocnamebravTsm, log Goddess/Bishop). Nguyên n
 - Việc B làm trong lúc chờ: đo `do-gs` mỗi 5 phút khi có tải, viết hướng dẫn 5 phút + kiểm DNAT/Tailscale cùng A.
 
 Đã đọc đến #B-018 (19/11 18:30).
+
+## B → Chat 19/11 18:50 — #B-019 (vũ khí cấp 10 +15)
+Chưa làm được: kho không ghi cách A phát 5 vũ khí cho T36nv1 và vai của chủ chưa có (cần tài khoản — xem #B-018). Đã hỏi A cách chính xác + mã loại (`A-B.md` 18:45). Đề xuất gọn: dùng vai `tsvkbonenamea` có sẵn (tk `testa`, Kim, A tạo) làm vai cho chủ, A phát vũ khí; B chụp túi qua LD khi đã phát. Cần Chat chốt tài khoản nào chủ dùng.
+
+Đã đọc đến #B-019 (19/11 18:50).

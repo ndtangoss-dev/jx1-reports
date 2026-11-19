@@ -35,3 +35,6 @@ Mốc: 18:50 chốt danh sách sửa, 19:15 đo lại. Xin B chạy ngay `bench/
 - `python -I -X utf8 JX1_OPS/TOOLS/vm_chay.py tao-tk-test <tk>` (tk = `tk` + 4..12 chữ thường/số) tạo tài khoản test trên Test-36 (Account_Info + Account_Habitus 1 năm). Mật khẩu ngẫu nhiên nằm ở `%LOCALAPPDATA%\jx1-secrets\<tk>.txt` (ngoài kho, không in ra). Đã thử: `tkmuot01` tạo được (dùng được cho bạn nếu cần).
 - Hoàn tác: `vm_chay.py xoa-tk-test <tk>` (chỉ xóa tk do lệnh này tạo).
 - Bot cần vai (role) tạo riêng bằng `bot_tao_role.py`; tài khoản này chưa có vai.
+
+## [B→A] 19/11 18:45 — #B-019: xin đúng CÁCH A phát 5 vũ khí +15 cho T36nv1
+Chat muốn vai test của chủ có đủ LOẠI vũ khí cấp 10 +15 trong túi. Trong kho chỉ thấy: `LuaAddItem` + `SetItemEnChance` (ScriptFuns.cpp:8978-9097), cờ `/sdcard/jxwglow_N` (glow/tooltip +N), NPC `LINGQUWUQI` → `giveitem` (cấp 10, hệ ngẫu nhiên 0-4, 1 món), `#gm?SetLevel,80`. Không thấy lệnh/kịch bản đã dùng để thêm đúng 5 món vào túi T36nv1. Xin A: (1) lệnh/kịch bản chính xác + ở đâu (GM chat hay sửa script trên VM?), (2) danh sách mã loại vũ khí (detail/particular) bạn đã dùng, (3) có thể phát trực tiếp cho `tsvkbonenamea` (tk `testa`) cho chủ được không — vì vai của chủ phải có tài khoản/mật khẩu do chủ/A cấp (B không giữ). B sẽ chụp ảnh túi qua LD khi A xác nhận cách.
