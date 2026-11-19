@@ -32,3 +32,9 @@ Tick bot p95 giảm, max giảm, không tăng rx quá 20%, không rớt kết n�
 - Sửa mã server (flush/GAME_FPS) **loại khỏi đợt tối nay**: nguồn chưa từng dựng khớp exe đang chạy, bản dựng A-07 vẫn sập; rủi ro vượt hạn.
 - Đòn bẩy cấu hình đã xác nhận: client `LimitFPS` (KuiOptions.cpp:188, mặc định 60; AppDelegate.cpp:119 là 1/60); B-02 `visibility.ini` cần dựng gs001 mới → chỉ đo thử sau 19:30.
 - Đợt tối nay = đo gốc/đo lại bằng bot + log forwarder (số thật), thử cờ client (LimitFPS 30/60) trên LD, và các sửa nhỏ từ khảo sát TU-01..03 nếu tiểu yêu kịp (chỉ phía client/APK thử).
+
+## Phát hiện 18:25 (đã kiểm mã)
+- Client chạy logic game (`Breathe`) ở nhịp cố định 18 Hz: `KgameWorld.cpp:5628-5633` (`nLoopCount*1000 <= elapsed*18`), còn cảnh vẽ 60 FPS (`AppDelegate.cpp:119`). Không thấy nội suy vị trí giữa hai nhịp → hình đứng yên 2-3 khung rồi nhảy = **nguồn "giật" lớn nhất ở phía client** (giả thuyết, chưa đo bằng quay khung).
+- Server in sẵn `SvrFPS x/18` mỗi ~60 s ở console gs001 (KSOServer.cpp:1453) = số tick thật. Đọc console qua WinRM bị `attach failed 5` (cần chạy trong phiên desktop/scheduled task).
+- gs001 rỗi ~1 nhân (B đo): vòng chính có `Sleep(1)` (KSOServer.cpp:1463) nên không phải vòng bận thuần; nguyên nhân chưa rõ.
+- Nội suy client = sửa mã, rủi ro vừa-cao; nếu làm thì sau 19:30 hoặc chỉ làm bản thử LD có công tắc.
