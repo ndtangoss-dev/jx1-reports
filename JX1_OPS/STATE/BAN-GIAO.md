@@ -39,3 +39,5 @@ Nội suy 18→60 Hz giữ như vc22 (`jx_interp.txt`=0 tắt). Ra tệp `D:\JX1
 **Kỹ năng đánh thường của vai `chuvuongtestaa`**: chưa kiểm xong (chưa đọc danh sách kỹ năng đã học; log tải `LoadPlayerFightSkillList` báo thành công). Chủ nói chỉ đánh được sau khi nhận kỹ năng → nghi vai tạo bằng `bot_tao_role.py` chưa có kỹ năng cơ bản gán phím.
 **Chùy cấp 1 vs cấp 10**: đã phát chùy cấp 1 (`JXGive269`, cờ `gs\Logs\jx269_given.txt`), chờ chủ so hiệu ứng, chưa viết REPORTS so sánh.
 **Chuyển tài khoản**: `/tiep-tuc`; mọi việc nền ở trên; không có việc đỏ treo.
+
+| 2026-11-19 23:10 | Sonnet PM (tai khoan moi), /tiep-tuc | dong_bo OK (het UU); vc23 SHA256 cdef8446 + cert a48601f7 khop BAO-CAO-CHU; D tat, chi JX-Test-36 chay; thu den #276 da xu ly | Chua kiem: RAM (WMI loi), tieu yeu, bench vc23 tren LD |
