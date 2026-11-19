@@ -1153,3 +1153,8 @@ do_muot_khung.py: ffmpeg 9.0 không nhận `-vsync` → đổi `-fps_mode passth
 - #278: jx_net.log nằm trên điện thoại chủ (/data/data/com.jxclient.hoiuctruyenky/files/), adb không thấy thiết bị nào, A không đọc được. [HỎI-CHAT] cần file jx_net.log chủ chép ra, hoặc chủ chơi vc23 trên LDPlayer để A kéo log.
 - Giả thuyết khựng 4–5 s (CHƯA KIỂM): tick gs001 nặng khi nạp nhân vật/quái (40–116 ms) hoặc nội suy client; cô lập bằng jx_interp=0, jx_vk04=0, jx_netlog=0 từng cái, sau khi có log.
 - Tiếp theo: bước 2 (kỹ năng đánh thường chuvuongtestaa). Chat: Chrome extension chưa kết nối, chưa gõ được 'A Chat'.
+
+## #277 bước 2 tiến độ (20/11 00:0x, Sonnet A)
+- Kỹ năng đã học của `chuvuongtestaa` nằm trong BerkeleyDB `gw\database\roledb` (nhị phân, không có sqlcmd/dump; SQL chỉ có DB `account`). Bản sao lưu .txt cũ (18/11) chưa có vai này nên không đối chiếu được. CHƯA đọc được danh sách kỹ năng.
+- Hướng cấp độ script (không đụng exe), giống JXGive269 trong `gs\script\System\online.lua`: thêm hàm cấp kỹ năng đánh thường bằng Lua (AddMagic) một lần, có cờ file + .bak. Cần mã kỹ năng đánh thường của phái newbie: CHƯA tìm trong Settings\skills.txt (bước kế, sẽ làm).
+- Số đo làn lệnh sau BufferBusy=1: chờ chủ đánh trên Test-36.
