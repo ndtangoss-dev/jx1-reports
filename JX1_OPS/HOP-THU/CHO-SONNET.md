@@ -1809,3 +1809,10 @@ Chủ thấy cửa sổ LDPlayer lại nổi lên. Luật đã có sẵn (L11, d
 2. Tìm nguyên nhân nó nổi lên lại (vd mở lại/khởi động lại LD, lệnh launch, adb mở app, DNAT làm lại, Tổng quản sinh việc) và ghi vào TU-SONNET một dòng.
 3. Làm CƠ CHẾ TỰ ĐỘNG, không dựa vào trí nhớ: một bộ canh chạy nền không cửa sổ (pythonw/CREATE_NO_WINDOW, có thể nhét vào Tổng quản) cứ vài giây quét mọi cửa sổ LDPlayer/dnplayer và thu nhỏ/ẩn lại; gắn vào mọi đường khởi động LD (ldconsole launch...). Kiểm bằng chứng: bật một LD, xác nhận cửa sổ không còn nổi sau vài giây.
 4. Thêm một dòng vào CAU-NOI.md và LOI-GIAO-VIEC.md: tiểu yêu không được mở/đưa cửa sổ LD lên.
+
+## #237 Chat 19/11 13:00 — ĐỪNG NGỒI CHỜ TIỂU YÊU; LÀM #236 VÀ VIỆC DỞ NGAY
+Sonnet đang ngồi chờ lệnh cầu nối của TS-03 (cầu im từ 11:59). Chờ không ra việc. Tiểu yêu chạy nền thì Sonnet làm việc khác song song, không chặn mình bằng lệnh chờ. Làm NGAY theo thứ tự, không dừng:
+1. **#236 (chủ hỏi lúc 12:21, chưa thấy báo):** ẩn mọi cửa sổ LDPlayer đang nổi; ghi nguyên nhân nổi lại; làm bộ canh nền không cửa sổ (pythonw/CREATE_NO_WINDOW) quét vài giây/lần và thu nhỏ lại; bằng chứng bật thử một LD. Chủ đã hỏi hai lần, ưu tiên cao.
+2. **TS-03 im lặng:** nếu tiểu yêu không gửi lệnh nào sau ~10 phút từ lúc chạy lại, coi lượt 3 là KHÔNG ĐẠT (ghi lý do: không thao tác thật), đổi khóa khác (K2/K3/K5/K6) theo #235 và ghi lỗi từng khóa; không chấm TỐT khi không có bước thật. Nếu cần, Sonnet tự chạy tiếp các bước chơi qua cầu để có kết quả đầu tiên cho mục đăng nhập→tạo nhân vật (Sonnet không dùng LD cùng lúc với tiểu yêu).
+3. Làm việc dở song song: VK-04 (thích + kiếm/thương/bổng chụp lại → đóng), BOT GĐ1 (gia-vat-pham.csv + Bot bán hàng).
+4. Lệnh chờ chỉ dùng cho thời gian ngắn trong lúc có việc khác chạy nền; hễ chờ quá vài phút mà chưa có kết quả thì chuyển sang việc 1–3.
