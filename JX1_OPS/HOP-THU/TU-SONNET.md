@@ -1207,3 +1207,7 @@ do_muot_khung.py: ffmpeg 9.0 không nhận `-vsync` → đổi `-fps_mode passth
 
 ## A 20/11 02:05 (#282 mốc 3) — cửa sổ cường hóa gốc chạy trên LD
 - Bấm "Cuong hoa" trên LD mở cửa sổ gốc "Giao" + Hành trang; tooltip +N và +5%/cấp đã có ở client. Cần làm thêm: hiển thị bạc/vạn/ức (túi đang "lượng"), dòng +14/+15, tài phú, phi phong (chờ số tin của B).
+
+## A 20/11 02:20 (#278 đo 1) — chạy 15 s trên LD (đi bộ, chưa lên ngựa)
+- jx_net.log: tx 9 gói/s đều, rx ~850/s, tre_n=tx, tre_max 2–4 (đơn vị log), 0 khoảng trống 4–5 s; FPS 51–63, ping 82–121 ms.
+- KẾT LUẬN CHƯA ĐỦ: LD→Test-36 qua forwarder trong LAN không tái hiện khựng; cần chạy NGỰA (nút ngựa chưa lên được, tay chạm trúng Hành trang) và tăng độ trễ mạng/ chủ chơi qua Tailscale. Tiếp: lên ngựa bằng UI, đo lại, bật jx_interp/jx_vk04 để so sánh.
