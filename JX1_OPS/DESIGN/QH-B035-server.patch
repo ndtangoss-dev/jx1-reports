@@ -1,0 +1,160 @@
+diff --git a/server/jxOnline/gameserver/Sources/Core/Src/KItem.cpp b/server/jxOnline/gameserver/Sources/Core/Src/KItem.cpp
+index 7a90f40..2b111c1 100644
+--- a/server/jxOnline/gameserver/Sources/Core/Src/KItem.cpp
++++ b/server/jxOnline/gameserver/Sources/Core/Src/KItem.cpp
+@@ -180,8 +180,8 @@ void KItem::ApplyMagicAttribToNPC(IN KNpc* pNPC, IN int nMagicActive,int *nType)
+ 		}
+ 	}
+ 
+-	// [qh] +12: +1 tat ca ky nang, +15: +2 (chi vu khi)
+-	if (m_CommonAttrib.nItemGenre == item_equip && (m_CommonAttrib.nDetailType == equip_meleeweapon || m_CommonAttrib.nDetailType == equip_rangeweapon) && m_CommonAttrib.nEnChance >= 12)
++	// [qh] +14: +1 tat ca ky nang, +15: +2 (B-035) (chi vu khi)
++	if (m_CommonAttrib.nItemGenre == item_equip && (m_CommonAttrib.nDetailType == equip_meleeweapon || m_CommonAttrib.nDetailType == equip_rangeweapon) && m_CommonAttrib.nEnChance >= 14)
+ 	{
+ 		KItemNormalAttrib qhAttrib;
+ 		qhAttrib.nAttribType = magic_allskill_v;
+@@ -269,8 +269,8 @@ void KItem::RemoveMagicAttribFromNPC(IN KNpc* pNPC, IN int nMagicActive,IN int *
+ 
+ 	int nCount = nMagicActive;
+ 	int	i;
+-	// [qh] +12: +1 tat ca ky nang, +15: +2 (chi vu khi)
+-	if (m_CommonAttrib.nItemGenre == item_equip && (m_CommonAttrib.nDetailType == equip_meleeweapon || m_CommonAttrib.nDetailType == equip_rangeweapon) && m_CommonAttrib.nEnChance >= 12)
++	// [qh] +14: +1 tat ca ky nang, +15: +2 (B-035) (chi vu khi)
++	if (m_CommonAttrib.nItemGenre == item_equip && (m_CommonAttrib.nDetailType == equip_meleeweapon || m_CommonAttrib.nDetailType == equip_rangeweapon) && m_CommonAttrib.nEnChance >= 14)
+ 	{
+ 		KItemNormalAttrib qhAttrib;
+ 		qhAttrib.nAttribType = magic_allskill_v;
+diff --git a/server/jxOnline/gameserver/Sources/Core/Src/KItemList.cpp b/server/jxOnline/gameserver/Sources/Core/Src/KItemList.cpp
+index 8dc928f..464ed4e 100644
+--- a/server/jxOnline/gameserver/Sources/Core/Src/KItemList.cpp
++++ b/server/jxOnline/gameserver/Sources/Core/Src/KItemList.cpp
+@@ -10344,6 +10344,53 @@ int KItemList::GetCountWithName(char *nItemName)
+ }
+ 
+ 
++// [qh B-035] Nguyen lieu cuong hoa: khop CHINH XAC ten, chi trong tui (khong tinh do dang mac).
++int KItemList::QhCountExact(const char* szName)
++{
++	int nIdx = 0, nCount = 0;
++	if (!szName)
++		return 0;
++	while ((nIdx = m_UseIdxItemList.GetNext(nIdx)))
++	{
++		int nItem = m_Items[nIdx].nIdx;
++		if (nItem <= 0 || nItem >= MAX_ITEM || m_Items[nIdx].nPlace == pos_equip)
++			continue;
++		if (strcmp(Item[nItem].GetName(), szName) == 0)
++			nCount += (Item[nItem].GetStackNum() > 0 ? Item[nItem].GetStackNum() : 1);
++	}
++	return nCount;
++}
++
++int KItemList::QhConsumeExact(const char* szName, int nNeed)
++{
++	if (!szName || nNeed <= 0 || QhCountExact(szName) < nNeed)
++		return 0;
++	int nIdx = 0;
++	while (nNeed > 0 && (nIdx = m_UseIdxItemList.GetNext(nIdx)))
++	{
++		int nItem = m_Items[nIdx].nIdx;
++		if (nItem <= 0 || nItem >= MAX_ITEM || m_Items[nIdx].nPlace == pos_equip)
++			continue;
++		if (strcmp(Item[nItem].GetName(), szName) != 0)
++			continue;
++		int nStack = (Item[nItem].GetStackNum() > 0 ? Item[nItem].GetStackNum() : 1);
++		if (nStack > nNeed)
++		{
++			Item[nItem].SetStackNum(nStack - nNeed);
++			SynPlayerItem(nItem);
++			nNeed = 0;
++		}
++		else
++		{
++			nNeed -= nStack;
++			Remove(nItem);
++			ItemSet.Remove(nItem);
++			nIdx = 0; // danh sach doi sau khi xoa: duyet lai tu dau
++		}
++	}
++	return nNeed == 0 ? 1 : 0;
++}
++
+ BOOL KItemList::DelItemWithName(char *nItemName)
+ {
+ 	int nIdx = 0;
+diff --git a/server/jxOnline/gameserver/Sources/Core/Src/KItemList.h b/server/jxOnline/gameserver/Sources/Core/Src/KItemList.h
+index dccb075..97b4aa7 100644
+--- a/server/jxOnline/gameserver/Sources/Core/Src/KItemList.h
++++ b/server/jxOnline/gameserver/Sources/Core/Src/KItemList.h
+@@ -192,6 +192,8 @@ public:
+ 	BOOL		LockItemBind(int nIdx, BOOL bLock);
+ #ifdef	_SERVER
+ 	void		Abrade(int nType);
++	int         QhCountExact(const char* szName);      // [qh B-035] dem trong tui, khop chinh xac ten, bo qua do dang mac
++	int         QhConsumeExact(const char* szName, int nNeed);  // [qh B-035] tru nNeed, 1 neu du
+ 	void        SynPlayerItem(int nItemidx);
+ 	void        SyncItemMagicAttrib(int nIdx);
+ 	void        EquipAbrade(int nItemIdx,int nType,int nPart);
+diff --git a/server/jxOnline/gameserver/Sources/Core/Src/ScriptFuns.cpp b/server/jxOnline/gameserver/Sources/Core/Src/ScriptFuns.cpp
+index ebd0ea3..6f81b6a 100644
+--- a/server/jxOnline/gameserver/Sources/Core/Src/ScriptFuns.cpp
++++ b/server/jxOnline/gameserver/Sources/Core/Src/ScriptFuns.cpp
+@@ -10899,6 +10899,48 @@ int LuaGetItemIsBang(Lua_State *L)
+     return 1;
+ }
+ 
++
++// [qh B-035] Ba ham Lua phuc vu cuong hoa. GetEquipIdx(part): idx item dang mac (0 neu trong). CountBagItemExact(ten): dem trong tui (khong tinh do dang mac), khop CHINH XAC ten. ConsumeBagItemExact(ten, n): tru n cai trong tui, tra 1 neu du va da tru.
++int LuaGetEquipIdx(Lua_State *L)
++{
++	int nPlayerIndex = GetPlayerIndex(L);
++	int nPart = (int)Lua_ValueToNumber(L,1);
++	if (nPlayerIndex <= 0 || nPart < 0 || nPart >= itempart_num)
++	{
++		Lua_PushNumber(L, 0);
++		return 1;
++	}
++	Lua_PushNumber(L, Player[nPlayerIndex].m_ItemList.GetEquipment(nPart));
++	return 1;
++}
++
++int LuaCountBagItemExact(Lua_State *L)
++{
++	int nPlayerIndex = GetPlayerIndex(L);
++	const char* szName = Lua_ValueToString(L,1);
++	if (nPlayerIndex <= 0 || !szName)
++	{
++		Lua_PushNumber(L, 0);
++		return 1;
++	}
++	Lua_PushNumber(L, Player[nPlayerIndex].m_ItemList.QhCountExact(szName));
++	return 1;
++}
++
++int LuaConsumeBagItemExact(Lua_State *L)
++{
++	int nPlayerIndex = GetPlayerIndex(L);
++	const char* szName = Lua_ValueToString(L,1);
++	int nNeed = (int)Lua_ValueToNumber(L,2);
++	if (nPlayerIndex <= 0 || !szName || nNeed <= 0)
++	{
++		Lua_PushNumber(L, 0);
++		return 1;
++	}
++	Lua_PushNumber(L, Player[nPlayerIndex].m_ItemList.QhConsumeExact(szName, nNeed));
++	return 1;
++}
++
+ //获取物品的加成  GetStackNum
+ int LuaGetItemEnChance(Lua_State *L)
+ {
+@@ -25995,6 +26037,9 @@ TLua_Funcs GameScriptFuns[] =
+ 	{"GetItemName",     LuaGetItemName},       //获取物品的姓名
+ 	{"GetItemSeries",   LuaGetItemSeries},
+ 	{"GetItemStackNum", LuaGetItemStackNum},
++	{"GetEquipIdx", LuaGetEquipIdx},
++	{"CountBagItemExact", LuaCountBagItemExact},
++	{"ConsumeBagItemExact", LuaConsumeBagItemExact},
+ 	{"GetItemEnChance", LuaGetItemEnChance},
+ 	{"GetItemIsBang",   LuaGetItemIsBang},
+ 	{"GetItemUseTime",  LuaGetItemTime},
