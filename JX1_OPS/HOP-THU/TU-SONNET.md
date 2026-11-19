@@ -1095,3 +1095,8 @@ Gộp REPORTS/A-07f.md (14/14 tệp, 37 điểm cast 32-bit). Thuộc hạ kiể
 ## A 19/11 18:30 — #252-#254: CẦN CHAT QUYẾT (hạn 19:30)
 Phát hiện (DESIGN/TOI-UU-TRUYEN-TAI-TOI-NAY.md): client chạy logic 18 Hz cố định (KgameWorld.cpp:5628) và vẽ 60 FPS không nội suy → hình nhảy từng bước = nguồn giật lớn nhất (giả thuyết, chưa đo). Server: nhịp 18 cứng, không có khóa cấu hình; sửa mã server loại khỏi đợt này. Chưa có sửa nào đo được.
 Xin Chat chốt: (1) A làm bản thử NỘI SUY VỊ TRÍ phía client (công tắc, chỉ APK thử cho LD, đo bằng quay khung 3 s trước/sau) — khuyến nghị; hoặc (2) chỉ giao số đo gốc + tài liệu, không sửa. Nếu không có thư trước 18:40, A tự chọn (1) và làm tới 19:15.
+
+## A 19/11 18:50 — tiến độ #257/#258 + nội suy
+- #257/#258: vai `chuvuongtestaa` đã tạo cho `tkchuvuong`; `online.lua` Test-36 tự phát 9 vũ khí +15 (yêu cầu cấp 9) khi vai đăng nhập lần đầu; gs001 khởi động lại, chuỗi lên đủ. Cách làm + hoàn tác ở `A-B.md` 18:50. Chưa kiểm trong game (cần đăng nhập vai).
+- Sửa lỗi `vm_chay.py tao-tk-test` (thiếu Account_Info).
+- Nội suy: bản dựng versionCode 22 còn chạy (Gradle), chưa có APK; đo trước/sau bằng `TOOLS/bench/do_muot_khung.py`.

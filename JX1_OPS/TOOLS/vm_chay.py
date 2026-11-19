@@ -59,10 +59,10 @@ def tao_tk(tk):
         sys.exit("tk da ton tai hoac khong kiem duoc")
     pw = secrets.token_urlsafe(9)[:12].replace("-", "x").replace("_", "y")
     md5 = hashlib.md5(pw.encode("ascii")).hexdigest().upper()
-    out = sql("INSERT INTO Account_Info (cAccName,cPassword,iClientID) VALUES ('%s','%s',0); "
+    out = sql("INSERT INTO Account_Info (cAccName,cPassword,cSecPassword,iClientID) VALUES ('%s','%s','%s',0); "
               "INSERT INTO Account_Habitus (cAccName,iFlag,dBeginDate,dEndDate,iLeftSecond,nExtPoint,iClientID) "
-              "VALUES ('%s',0,'2026-11-19','2027-11-19',31000000,0,0)" % (tk, md5, tk))
-    if sql("SET NOCOUNT ON; SELECT COUNT(*) FROM Account_Habitus WHERE cAccName='%s'" % tk).split()[-1:] != ["1"]:
+              "VALUES ('%s',0,'2026-11-19','2027-11-19',31000000,0,0)" % (tk, md5, md5, tk))
+    if sql("SET NOCOUNT ON; SELECT COUNT(*) FROM Account_Habitus h JOIN Account_Info i ON i.cAccName=h.cAccName WHERE h.cAccName='%s'" % tk).split()[-1:] != ["1"]:
         sys.exit("INSERT khong thanh cong: " + out.replace(md5, "<md5>").strip()[-200:])
     SECRETS.mkdir(parents=True, exist_ok=True)
     (SECRETS / (tk + ".txt")).write_text(pw, "utf8")
