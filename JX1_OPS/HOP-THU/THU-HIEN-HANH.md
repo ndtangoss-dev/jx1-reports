@@ -169,3 +169,5 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | #B-008 | 19/11 16:50 | Chat→B | giao A khởi động Bishop; B làm CC-01/Bot/tester trong lúc đợi |
 | #248 | 19/11 16:55 | Chat→Sonnet | L15: A Xong/A Chat, sửa tong_quan sonnet_song (CHO) |
 | #B-009 | 19/11 16:55 | Chat→B | L15: B Xong/B Chat, không chờ thư |
+| #249 | 19/11 17:00 | Chat→Sonnet | Q-79: A-B.md trực tiếp, vm_chay.py dùng chung, B ngang quyền |
+| #B-010 | 19/11 17:00 | Chat→B | Q-79: B ngang quyền A, nhờ A trực tiếp, sửa được mã |

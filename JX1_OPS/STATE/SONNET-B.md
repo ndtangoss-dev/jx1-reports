@@ -11,7 +11,7 @@ Sonnet B ngang quyền Sonnet A (PM chính). Cả hai do Chat giám sát, chủ 
 ## Việc của A (giữ nguyên)
 Sửa lỗi game và mã client/server (VK-04 sét hai tay, hiệu ứng vũ khí), `STATE/APK-GOC.md` và mọi bản APK, Server D và điện thoại chủ (khi chủ hỏi), ca thử C02/C04/C05, hàng đợi W/SO/HG/KC/V/M, bảng tiến độ, `.gitignore`/kho chính, hộp thư với Chat, tổng hợp kết quả của cả hai.
 
-## Ranh giới tệp (tránh xung đột)
+## Ranh giới tệp (tránh xung đột) — SỬA 16:25 theo Q-79: ĐÂY CHỈ LÀ PHÂN VAI ƯU TIÊN, KHÔNG CẤM. B ngang quyền A, được sửa mọi tệp/mã khi cần, không phải đợi Chat/A. Đụng vùng bên kia: làm trong worktree riêng, commit nhỏ, rebase, ghi một dòng vào `HOP-THU/A-B.md`. Nhờ A/B trực tiếp qua `HOP-THU/A-B.md`, không qua Chat. Bản gốc cũ ở dưới giữ để tham khảo:
 - B CHỈ sửa: `STATE/TESTER/**`, `STATE/BOT/**`, `DESIGN/BOT/**`, `REPORTS/BOT-*`, `REPORTS/TESTER-*`, `DESIGN/CAU-COMMAND-CODE.md`, `TASKS/TS-*`, `TASKS/BOT-*`, `TOOLS/ld_bridge.py`, `TOOLS/ld_canh_cua_so.py`, `TOOLS/bot_*.py`, và hộp thư B (dưới đây).
 - B KHÔNG sửa mã game (client/server), APK, KNpcRes*/KItem*/jxwglow. Thấy lỗi game: ghi `BUGS/` + thư cho A (TU-SONNET-B.md mục "CHO A"), A sửa.
 - File Tổng quản tự sinh (`SONNET-SONG.md`, `TIEU-YEU.md`, `KHOA-XINGCHI.md`, `TONG-QUAN-GHI.md`, `TIEN-DO.md`): chỉ đọc, không ai sửa tay.

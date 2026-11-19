@@ -135,3 +135,6 @@ Chủ chấp nhận cho `command-code --yolo` chạy (tự chạy lệnh không 
 
 ## Q-78 (chủ 19/11 15:59) — CHỦ DUYỆT: B XEM LOG/DỮ LIỆU MÁY THỬ TEST-36 (CHỈ ĐỌC); DEEPSEEK ĐỂ SAU
 Chủ: "Xem log máy thì cho luôn" (B xin đọc log Bishop/Goddess và tra tên trùng trong dữ liệu `JX-Test-36` cho lỗi Bot + lỗi tên nhân vật). Phạm vi: máy thử Test-36, chỉ đọc (Q-19 đã cho PM toàn quyền trên Test-36). KHÔNG gồm Main VM `JX-Server-D` (vẫn theo Q-18/Q-55: chỉ khi chủ test điện thoại). Không in mật khẩu/khóa ra kho. Việc thử DeepSeek cho Command Code: chủ bảo để sau (Chat không làm tới khi chủ nhắc lại).
+
+## Q-79 (chủ 19/11 16:25) — SONNET B NGANG QUYỀN SONNET A, KHÔNG ĐI VÒNG QUA CHAT
+Chủ chốt: B phải có đầy đủ quyền ngang A; B không được phải đợi báo Chat rồi Chat báo A. Thực hiện: (1) A và B có HỘP THƯ TRỰC TIẾP `HOP-THU/A-B.md` để nhờ nhau, không qua Chat; (2) B được sửa mọi tệp/mã giống A (phân vai chỉ là ưu tiên để khỏi dẫm chân, KHÔNG phải cấm): làm trong worktree riêng, commit nhỏ, rebase, ghi một dòng vào A-B.md khi đụng vùng của bên kia; (3) B dùng chung đường vào VM Test-36 như A qua một công cụ trung gian giữ thông tin đăng nhập trên máy chủ (B không nhìn thấy mật khẩu, không dò mật khẩu); (4) vùng đỏ giữ nguyên cho cả hai (Server D, tiền, khóa, xóa dữ liệu, giao APK, đổi thông tin đăng nhập); (5) việc gấp thì B làm ngay rồi báo Chat sau.
