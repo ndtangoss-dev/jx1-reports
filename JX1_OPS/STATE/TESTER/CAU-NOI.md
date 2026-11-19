@@ -1,6 +1,6 @@
 # CẦU NỐI LDPLAYER (Q-70) — tiểu yêu KHÔNG chạy adb, chỉ thả lệnh vào hòm
 Cầu `TOOLS/ld_bridge.py` chạy trên máy thật, chỉ tới ĐÚNG MỘT LD (tester của bạn), chỉ các lệnh dưới đây, mọi lệnh ghi `nhat-ky.log`.
-Hòm: `<thư mục cầu>/lenh/` (bạn ghi) và `<thư mục cầu>/ket-qua/` (cầu ghi). Thư mục cầu của bạn ghi ở `PHAN-CONG.md` (cột "Hòm cầu"). Hòm nằm NGOÀI git.
+Hòm: `<thư mục cầu>/lenh/` (bạn ghi) và `<thư mục cầu>/ket-qua/` (cầu ghi). Thư mục cầu của bạn ghi ở `PHAN-CONG.md` (cột "Hòm cầu"). Hòm nằm TRONG worktree của tiểu yêu (`<worktree>.ldbridge`, đã loại khỏi git) để sandbox ghi được; KHÔNG dùng thư mục ngoài worktree (TS-03 lượt 1 bị chặn vì vậy).
 
 ## Cách gọi
 Ghi file `lenh/<id>.json` (id duy nhất, chữ-số-gạch, vd `004`). Đợi ~2 giây, đọc `ket-qua/<id>.json` (`ok`, `out`, `loi`). Chụp màn hình → `ket-qua/<id>.png`.
