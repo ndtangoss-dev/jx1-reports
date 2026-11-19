@@ -134,3 +134,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | #219 | 19/11 08:40 | Chat→Sonnet | test 6 loại vũ khí +15, 8 hướng (Q-61) |
 | #220 | 19/11 08:45 | Chat→Sonnet | giao thiết kế BOT v1 (Q-62) |
 | #221 | 19/11 08:57 | Chat→Sonnet | vá xung đột pull TONG-QUAN-GHI.md |
+| #222 | 19/11 09:03 | Chat→Sonnet | dựng sẵn khung kho tester, giục sinh tester01 |
