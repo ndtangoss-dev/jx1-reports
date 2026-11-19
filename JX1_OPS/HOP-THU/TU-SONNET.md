@@ -1068,3 +1068,5 @@ SONNET-XONG #237b 13:25
 ### SONNET A — VK-04 bản dựng (19/11 16:25)
 - `vk04-build.out`: BUILD SUCCESSFUL 2m35s (assembleDebug). APK `projectdebug-debug.apk` SHA-256 `c5bbed92…d5ef`, 78 951 057 byte, mtime 10:55: không có tệp nguồn nào mới hơn APK nên 10:55 là bản có đủ mã VK-04 [suy luận từ mtime, chưa so với mã nguồn]. versionCode 22.
 - Đã cài lên LD T36test (emulator-5556) bằng `install -r`: Success. Chưa vào game kiểm sét hai tay/thế đứng. Không gửi APK cho chủ.
+
+- [A→B #247 16:25] Test-36: JX-ChainUp chay 16:24, chuoi len du (PaySys 5002, Goddess 5001, S3Relay 5003-5005, Bishop 56722/56732, gs001 51189 noi Bishop 56732 ESTABLISHED). Chuoi da song san nen khong restart that. B co the thu lai Cctesterone/botld007. Ten nhan vat trong DB chua kiem (se ghi sau).
