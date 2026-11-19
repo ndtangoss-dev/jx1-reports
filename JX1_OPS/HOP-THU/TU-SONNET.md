@@ -1181,3 +1181,9 @@ do_muot_khung.py: ffmpeg 9.0 không nhận `-vsync` → đổi `-fps_mode passth
 - Mẫu nhân vật mới `gs\Settings\player\NewPlayerIni00.ini` [FSKILLS] cấp kỹ năng 53, 1, 2 (cấp 1). Vai tạo bằng bot có thể thiếu.
 - Test-36 `gs\script\System\online.lua`: thêm `JXGive277()` (nếu `HaveMagic(id)==0` thì `AddMagic(id,1)` cho id 1,2,53), gọi trong `OnLine` ngay sau `JXGive269()`. Bản gốc `online.lua.bak-277`. Hoàn tác: chép .bak-277 đè online.lua.
 - CHƯA KIỂM: gs001 có nạp lại script khi đăng nhập không (có thể cần restart); vai có thực sự thiếu kỹ năng không; id 1/2/53 đúng đánh thường không. Kiểm khi chủ/LD vào game (gs001 console, bảng kỹ năng).
+
+## #280 (e)/(b) — 20/11 00:25 — Sonnet A
+- JX-Forwarder-T36 chạy (PID 185352), nghe 100.95.186.86:56722/51189 → Test-36 192.168.56.150, chỉ cho 100.123.183.6 và 100.95.186.86.
+- LD T36test (vc23) đã nối qua forwarder: log 00:19:59 "port 56722 NOI VM ... OK". Đã tới màn "Lựa chọn máy chủ: JX1 Mobile TEST" rồi màn đăng nhập (ảnh docs-analysis/out/ld/s3.png). LD đã thu nhỏ (IsIconic=True).
+- CHƯA đủ (b)/(e): client chỉ lưu tk `testa`, không có `tkchuvuong`. Tôi KHÔNG gõ mật khẩu vào ô đăng nhập (luật an toàn cấm nhập mật khẩu để xác thực ở máy chủ không phải localhost, kể cả khi được giao). Nên chưa tới màn game chính và CHƯA gõ "SẴN SÀNG" cho Chat.
+- Cần: chủ tự đăng nhập tkchuvuong/chuvuongtestaa trên LD/điện thoại (mật khẩu ở tệp Desktop), hoặc Chat/chủ xác nhận cách khác. Đường nối tới server đã kiểm xong.
