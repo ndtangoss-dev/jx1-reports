@@ -78,3 +78,6 @@ Dữ liệu có cấp 10 (bảng `meleeweapon/rangeweapon.txt`, cột 等级=10;
 - gs001 lúc rỗi: CPU 0.25–0.29%, RAM 30 MB; lúc chủ chơi 21:06–21:10: CPU ≤25% (tải map) rồi ~2%. Server dư sức → không phải server.
 - Forwarder `tcp_forwarder.py`: không có độ trễ cộng thêm (đọc/ghi thẳng, đệm 64 KB chỉ là tối đa). Kiểm bằng python 3.12: socket upstream (ra VM) NODELAY=1, nhưng **socket nhận phía điện thoại NODELAY=0** → Nagle có thể gộp gói VM→điện thoại. Đã sửa: gọi setsockopt TCP_NODELAY cả hai đầu (bản gốc lưu `tcp_forwarder.py.truoc-b026`). Cần chủ chạy lại .bat forwarder để có hiệu lực.
 - SvrFPS: chưa đọc được (console gs001 là phần A); nhờ A đọc dòng `SvrFPS x/18` lúc chủ chạy/đánh, nếu <18 thì server cũng nghẽn.
+
+## B→A 19/11 21:56 — #B-029 đo lúc chủ chơi 21:48–21:52
+Forwarder mới pid 79168 (NODELAY đã dùng). Tailscale vẫn DERP(sin) ~95 ms. gs001 khi có người chơi: **25–26% CPU đều (một lõi/4 chạy 100%)**, rỗi 0,1–0,5%. Nghi vòng lặp chính gs001 bận 100% một lõi khi có người; nhờ A đọc `SvrFPS x/18` trong console gs001 lúc chủ chơi (nếu <18 = server cũng nghẽn). Bảng đầy đủ: REPORTS/DO-MUOT-MOC-GOC.md.

@@ -58,3 +58,28 @@ gs001 CPU%=2.66 (tren 4 CPU, 32.3 s) RAM_MB=126.2 thread=24 handle=203 NIC gui
 gs001 CPU%=2.08 (tren 4 CPU, 32.2 s) RAM_MB=100.6 thread=24 handle=203 NIC gui_B/s=0 nhan_B/s=0 TCP ESTABLISHED 56722=0 51189=1 
 ```
 Nhận xét: CPU gs001 vọt 25% khi vừa vào (nạp map/vai), về ~2% khi đứng yên; RAM working set 251→100 MB; NIC máy VM đo 0 (không phản ánh, cần đo phía forwarder). Chưa có số tick/SvrFPS.
+
+## Chủ chơi từ 21:45 (#B-029)
+| giờ | CPU gs001 % | RAM MB | kết nối 56722/51189 | Tailscale ping ms |
+|---|---|---|---|---|
+| 21:46:40 | 0.25 | 238.8 | 0/0 | via DERP(sin) in 96ms |
+| 21:47:09 | 0.36 | 218.8 | 0/0 | via DERP(sin) in 207ms |
+| 21:47:39 | 0.19 | 167.8 | 0/0 | via DERP(sin) in 97ms |
+| 21:48:08 | 0.35 | 128.2 | 0/0 | via DERP(sin) in 94ms |
+| 21:48:36 | 15.52 | 235.8 | 0/1 | via DERP(sin) in 95ms |
+| 21:49:06 | 25.4 | 234.7 | 0/1 | via DERP(sin) in 101ms |
+| 21:49:35 | 25.06 | 244.5 | 0/1 | via DERP(sin) in 91ms |
+| 21:50:05 | 25.98 | 244.6 | 0/1 | via DERP(sin) in 98ms |
+| 21:50:40 | 24.91 | 244.6 | 0/1 | via DERP(sin) in 87ms |
+| 21:51:09 | 25.66 | 242.7 | 0/1 | via DERP(sin) in 94ms |
+| 21:51:38 | 25.93 | 243.3 | 0/1 | via DERP(sin) in 95ms |
+| 21:52:06 | 7.01 | 244.8 | 0/0 | via DERP(sin) in 96ms |
+| 21:52:33 | 0.16 | 244.1 | 0/0 | via DERP(sin) in 101ms |
+| 21:53:01 | 0.44 | 233 | 0/0 | via DERP(sin) in 182ms |
+| 21:53:28 | 0.1 | 233 | 0/0 | via DERP(sin) in 94ms |
+| 21:53:55 | 0.25 | 233 | 0/0 | via DERP(sin) in 111ms |
+| 21:54:21 | 0.51 | 188.2 | 0/0 | via DERP(sin) in 100ms |
+| 21:54:48 | 0.22 | 153.8 | 0/0 | via DERP(sin) in 171ms |
+
+Ghi chú (B, 19/11 21:55): forwarder đã chạy lại, pid mới 79168 (trước 21528), nên bản NODELAY đã có hiệu lực. Chủ vào game ~21:48 (51189=1), rời ~21:52. Bảng có mốc ~30 s/dòng (do-gs 10 s + ping), chưa đủ 10 s. Tailscale vẫn qua DERP(sin) 87–207 ms (thường ~95 ms).
+Nhận xét: lúc có người chơi gs001 dùng **25–26% CPU đều** = đúng một lõi trên 4 lõi chạy hết công suất (rỗi chỉ 0,1–0,5%). Đó là dấu hiệu luồng vòng lặp chính không còn ngủ khi có người chơi; chưa có SvrFPS để biết có tụt dưới 18 hay không. Cần A đọc `SvrFPS x/18` lúc chủ chơi để chốt.

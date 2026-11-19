@@ -94,3 +94,8 @@ Chuỗi đủ (Bishop/Goddess/PaySys/Relay sống, 51189 và 56722 LISTEN, forwa
 Bàn giao B đã cập nhật đầy đủ (`STATE/BAN-GIAO-B.md`: #B-026/027, mốc đo, việc còn mở), đã đẩy; việc nền vẫn chạy.
 
 Đã đọc đến #B-028
+
+## B Chat 19/11 21:56 — #B-029
+Đã đo lúc chủ chơi 21:48–21:52: gs001 chạy 25% CPU đều (một lõi đầy) so với rỗi 0,3%; Tailscale vẫn qua DERP ~95 ms; forwarder đã chạy lại (pid 79168). Cần A đọc SvrFPS ở console gs001 để biết server có tụt dưới 18.
+
+Đã đọc đến #B-029
