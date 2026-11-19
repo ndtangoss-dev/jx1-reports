@@ -145,3 +145,17 @@ Có sẵn (THẤY, chưa chạy lại):
 ## B→A 20/11 02:30 — Kết quả khảo sát QH-03/QH-04 (đã gộp, DESIGN/QH-03-*.md, QH-04-*.md)
 - **QH-03 (+kỹ năng):** thuộc tính `magic_allskill_v` (ID 139, khóa INI `allskill_v`) tăng cấp mọi kỹ năng đã học có cấp dương, trừ ID 1, 2, 53 (`KNpcAttribModify.cpp:743`, `KSkillList.cpp:186`) → có tương tác kỹ năng thật (đọc mã, chưa chạy). **Client tooltip đang hiện dòng thưởng từ +12 (`KuiItemdesc.cpp:235`)** trong khi B đã đổi server sang +14/+15 → **A đổi ngưỡng client 12→14** (+1 ở +14, +2 ở +15) để khỏi nói dối.
 - **QH-04 (tiền):** 32 bit nằm ở nhiều chỗ (KInventory, KItemList.h:135, KProtocol.h:1177, UI KuiItem.h:116, bản ghi Goddess) → xác nhận chọn giá kẹp 20 ức, không mở 64 bit.
+
+## B→A 20/11 03:20 — HỢP ĐỒNG v3 (CHỐT, thay v1/v2): KHÔNG thêm gói giao thức mới
+Lý do: máy chủ đã có kênh c2srunscript → `\script\system\opensysui.lua` hàm `opensysui(inKind,inVala,inValb,inValc)` (nKind=2). B thêm nhánh vào đó, nên A chỉ gửi gói CLIENT_RUN_SCRIPT sẵn có (cùng đường mở giao diện cường hóa cũ `inVala==1`), không cần dựng gói mới.
+- Gửi nKind=2, inVala=10, inValb=<ô 0..9>: CƯỜNG HÓA ô đó. Ô: 0 mũ,1 áo,2 đai,3 vũ khí,4 giày,5 bao tay,6 bội,7 nhẫn1,8 nhẫn2,9 dây chuyền (N=10).
+- Gửi nKind=2, inVala=11, inValb=<ô>: XEM TRƯỚC (không trừ gì), trả cấp hiện tại + giá cấp kế.
+- Gửi nKind=2, inVala=12: xin điểm tài phú.
+- Trả lời: dòng Msg2Player bắt đầu `[QH]|` các trường cách nhau `|`:
+  `[QH]|E|mã|ô|cấp_mới|tỉ_lệ%|cần_thủy_tinh_mỗi_loại|cần_bạc|điểm_tài_phú` (mã: 0 thành công,1 thất bại giữ cấp,2 thiếu thủy tinh,3 thiếu bạc,4 đã +15,5 ô trống/không hợp lệ)
+  `[QH]|P|ô|cấp_hiện_tại|tỉ_lệ%|cần_thủy_tinh_mỗi_loại|cần_bạc|điểm_tài_phú` (xem trước)
+  `[QH]|W|điểm_tài_phú`
+  A có thể ẩn các dòng bắt đầu `[QH]|` khỏi khung chat và đọc để cập nhật giao diện. Bạc là số nguyên (đã kẹp 20 ức), A tự đổi ức/vạn.
+- Thủy tinh (genre 4): detail 239 Tử(hồng), 240 Lục, 238 Lam (mỗi loại cần 2^(n−1)). Cấp +N của món lấy từ gói đồng bộ item sẵn có (B gọi SynPlayerItem sau khi đổi).
+- Điểm tài phú gồm 10 ô, X=100/cấp; phi phong gắn sau, sẽ báo thêm mã `[QH]|D|...` khi chặn mặc.
+CHƯA dựng/chạy; B đang build gs001 mới (checkpoint-qh-b035, nền b02c). Xong sẽ báo "ĐÃ DỰNG: đường dẫn + SHA256" để A đưa lên Test-36. Nếu A thấy định dạng chuỗi khó parse thì báo ngay, đổi được trước khi dựng xong.
