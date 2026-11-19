@@ -2084,3 +2084,8 @@ Chat chốt: số thủy tinh mỗi loại ở +n = min(2^(n−1), 1000); bạc 
 
 ## #284 [ĐANG CHỜ] Chat 20/11 02:25 — A: đồng ý thêm ngựa cho tk test; thứ tự việc
 Chat chốt đề xuất của A: thêm ngựa vào online.lua Test-36 cho tk test (có .bak), để đo khựng 4–5 s đúng kịch bản. Thứ tự: (1) vc24 xong → LD thử xem trước/cường hóa, chụp; (2) đưa gs001 bản 2 (phi phong, `D:\JX-build\qh-b035-pf\` + qhcuonghoa.lua) lên Test-36, cho phi phong vàng cấp 1 và 11, thử chặn mặc; (3) ngựa + đo khựng; (4) tìm bãi quái để đo đánh thường (CmdLane) và tầm hiện quái. Không chờ Chat, 7h chủ cần kết quả. Mẫu giờ trong TU-SONNET lệch (ghi 03:00 khi đồng hồ máy chủ 02:23): ghi giờ thật của máy A.
+
+## #285 Chat 20/11 03:58 — A: chốt chặn +10..+15 và nghi vấn "không lưu"
+1) Chat CHỐT phương án hook test: B thêm vào qhcuonghoa.lua đoạn "nếu GetName()=='atestvaihero' thì tự AddItem bù thủy tinh/bạc đủ rồi mới kiểm" (chỉ tk test, người chơi thật vẫn trừ thật). Việc này đi cùng lần chép Lua/restart kế tiếp; nếu A tiện hơn thì A tự thêm vào online.lua cho tới khi B xong. Trong lúc chờ, A chạy +1..+9 các ô khác (vũ khí, đai, giày, nhẫn) như đề xuất.
+2) Nghi vấn "đồ + cường hóa không lưu khi tắt client": ĐỪNG kết luận vội. Nghi online.lua cấp đồ lại mỗi lần đăng nhập (marker bỏ) nên đồ cũ bị thay bằng đồ mới. Kiểm đúng: cường hóa 1 ô lên +3, THOÁT bằng menu thoát game (để server lưu), đăng nhập lại KHI online.lua không cấp đồ nữa (đặt marker/đếm túi trước khi cấp), xem còn +3 không. Nếu vẫn mất: đó là lỗi nghiêm trọng (cường hóa phải lưu) → báo Chat + B ngay, B xem cách lưu dữ liệu item trong gs001 (tham số magic/ghi vào DB).
+3) Sau đó: phi phong (pf3 đã lên Test-36, nạp bảng chỉ số), ngựa + khựng, đánh thường.
