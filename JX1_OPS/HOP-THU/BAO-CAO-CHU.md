@@ -141,3 +141,10 @@ Kiểm chuỗi Test-36: `python -I JX1_OPS/TOOLS/vm_chay.py ports` thấy 56722,
 - Chạy và đánh quái VẪN LAG. Nút đánh thường KHÔNG ra đánh thường: bấm vào chỉ chạy sát quái, không đánh; đã cầm chùy lên vẫn không đánh thường được. Sau khi chủ NHẬN KỸ NĂNG thì đánh được quái, nhưng lag, đánh mãi quái không chết.
 - Chùy vẫn lỗi hiệu ứng: tia sét NHẢY từ bên vũ khí này sang bên kia, không xuất hiện đồng thời cả hai bên (hai tay).
 - Mốc giờ chủ chơi: 21:48–21:52. (Chủ chưa nói đã chạy lại CHAY-CHUYEN-T36.bat chưa; A thấy tick chậm 116 ms/max 864 ms lúc nạp nhân vật 21:49.)
+
+## 19/11 22:25 — APK vc23 xong (gộp sét chùy hai tay)
+- Link (Tailscale): http://100.95.186.86:8091/jx-goc-v23-do-mang.apk — bản 23, 78.951.057 byte.
+- SHA256: cdef844634abe5b695cf00e7720c37082d48591c89a12b0330dc6c2b9f3b7c6d. Chữ ký trùng bản cũ (a48601f7…), cài đè được.
+- Có gì: (1) sét chùy hai tay (vk04), tắt bằng tệp `jx_vk04.txt` = 0; (2) ghi đo mạng `jx_net.log` mỗi giây, tắt bằng `jx_netlog.txt` = 0; (3) nội suy như bản 22 (`jx_interp.txt` = 0 tắt). Tệp để trong thư mục `files` của game.
+- Chưa kiểm bản gộp này trên LD/điện thoại; chủ cài rồi chơi, sau đó thuộc hạ đọc `jx_net.log`.
+- Lỗi "quái đánh mãi không chết": máy chủ chỉ chạy 80/525 lệnh kỹ năng chủ gửi (làn lệnh giữ một ô); tick gs001 nặng 40–116 ms chỉ khi có người online. Chưa sửa.
