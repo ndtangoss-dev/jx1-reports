@@ -14,3 +14,8 @@
 ## 19/11 10:16 — cầu nối LD (Sonnet)
 - `T36-tester01` (emulator-5558): client báo "Mất kết nối hoặc không đúng phiên bản" ở màn tải vì thiếu DNAT cổng CDN. Đã thêm `iptables -t nat -A OUTPUT -d 100.95.186.86 -p tcp --dport 8080 -j DNAT --to-destination 192.168.56.101:8080` (CDN tạm đã lắng nghe sẵn trên 192.168.56.101:8080). Sau đó vào được game (nhân vật hiển thị T36nv1, Ba Lăng Huyện, cấp 1). **Phải làm lại DNAT cả 3 cổng (56722, 51189, 8080) mỗi lần LD khởi động lại.**
 - adb từ Sonnet chạy được (chụp màn hình, tap). Chưa rõ sandbox của tiểu yêu có cho adb không; TS-01 lượt 2 tự kiểm.
+
+## Điểm tiếp tục TS-02 — 19/11/2026
+- BLOCKED (19/11/2026): đã đọc task, lời giao việc, chỉ mục, trạng thái, nhật ký và bảng môn phái/ngũ hành; chưa chạy adb, mở LD, chụp màn hình hoặc đọc log theo giới hạn lượt này. Không phát sinh lỗi adb để ghi nhận.
+- Chưa xác minh bước chơi nào (0/7). Task mô tả một phiên đã đăng nhập và có nhân vật, nhưng trạng thái bàn giao trước đó chưa xác nhận nhân vật cho tài khoản test; cần đối chiếu khi được tiếp tục.
+- Báo cáo: [TS-02](../../REPORTS/TS-02.md).
