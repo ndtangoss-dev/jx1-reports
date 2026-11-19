@@ -1241,3 +1241,9 @@ Tooltip "+N tất cả kỹ năng" nay hiện từ +14 (+1) và +15 (+2), khớp
 - Role atestvaihero mac 5 mon (bam "Su dung" tung mon trong tui). Cuong hoa Ao +0 -> +8 bang UI: [QH] hien "THANH CONG len +1 (ti le 95%)"... "hien +8, ti le 60%, can 256 thuy tinh moi loai, 5 uc 1200 van", tai phu 800 = 100 x tong(+N). Chup: docs-analysis/out/ld/v27a,v27b,v27c.png.
 - Dung o +8 vi con 217 thuy tinh/loai. Dang dang nhap lai de script cap them (khi <600), chay +9..+15, +11+ kiem kep 1000/loai (#283b).
 - Chua kiem: +8 co con sau khi tat client khong. Tiep: phi phong ban 2, ngua, danh thuong (#284).
+
+## [05:20 20/11] Moc ngan #285: luu +N CHUA KET LUAN (do do cap qua script khong luu)
+- Cuong hoa tren Test-36 chay dung: Ao len +3 (ti le 95/90/85%, ton thuy tinh+bac, diem tai phu 300).
+- Thoat bang menu (Dang xuat) roi dang nhap lai: TOAN BO trang bi (ca dang mac lan trong tui) BIEN MAT; thuy tinh 200/loai, cap do 10, tien 15 uc con. Ban than mon +3 cung mat nen khong the ket luan +N co luu hay khong.
+- Nghi van: do AddItem/AddGoldItemID cap trong script sau dang nhap khong duoc ghi vao DB khi thoat (hoac bi LoadPlayerItemList ghi de). Can B kiem tra duong luu item (Goddess/DBTable) hoac thu bang vat pham mua o NPC.
+- Viec tiep: thu bang do mua that o tiem NPC (khong cap qua Lua), roi phi phong, ngua, danh thuong.

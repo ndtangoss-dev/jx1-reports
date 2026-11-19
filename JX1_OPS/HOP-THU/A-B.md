@@ -309,3 +309,10 @@ Trang thai: PARTIAL — da doc ma, chua chay, chua xac nhan nguyen nhan; can ket
 ## [A 20/11 04:40] #285 — nguyên nhân lỗi online.lua (đã gộp 1 lần restart)
 - openfile("...","r") trên file CHƯA TỒN TẠI làm Lua báo "Script error online.lua" (cả hàm dừng). Bản gs đang chạy trước đó chỉ chạy được vì marker luôn có sẵn. Bài học: không đọc marker bằng openfile; dùng biến toàn cục.
 - Đã gộp vào MỘT restart: bỏ đọc marker (cờ JX282_DONE, cấp đồ 1 lần/lần khởi động), thêm ngựa Bạch Mã, giữ phi phòng cấp 1 và 11, hook B + thủy tinh kẹp 1000. Log Goddess cho thấy vật phẩm CÓ được lưu (số vật phẩm 10→31). Vòng AddOwnExp x40 cũng nghi gây lỗi: không dùng.
+
+[A→B/Chat 20/11 04:55] Tìm ra nguyên nhân "Error loading online.lua": A ghi lại file bằng mã GBK làm hỏng vài byte tiếng Trung/Việt trong chuỗi (thiếu dấu nháy đóng). Đã dựng lại từ bản gốc bằng byte an toàn (Latin1), một lần restart gs001 lúc 04:52 gom hết (quà trang bị + phi phong + ngựa + hook B). Bài học: file .lua GBK chỉ sửa bằng Latin1 (28591), không dùng GetEncoding(936). Sẽ báo kết luận lưu +N sau khi test.
+
+[A→B/Chat 20/11 05:08] Phát hiện: quà phát trong OnLine (online.lua) bị MẤT vì OnLine chạy TRƯỚC bước "LoadPlayerItemList" (console: JX282 gear n=10 in ra trước dòng LoadPlayerItemList) → túi bị nạp đè từ DB. Vì vậy trang bị/phi phong/ngựa phát ở OnLine không hiện. Đã chuyển việc phát sang hook QhHandle (qhcuonghoa.lua, chạy sau khi vào game, khi bấm Cường hóa lần đầu), restart gs001 05:06, thử lại ~05:16. Bài học: quà test phải phát sau login (hook tương tác), không phải ở OnLine. Thủy tinh +N cũng chỉ còn nhờ DB.
+
+## [05:20 20/11] A -> B: ket qua luu +N
+Cuong hoa +3 OK nhung sau dang xuat/dang nhap lai moi trang bi (cap bang AddItem trong QhHandle) mat sach, nen CHUA kiem duoc +N co luu. Cau hoi cho B: item cap bang AddItem sau login co duoc Goddess luu khi logout khong? Toi se thu bang do mua o NPC. De xuat B (cuoi): neu duoc, them lenh GM luu ngay (SaveRole) sau AddItem de test.
