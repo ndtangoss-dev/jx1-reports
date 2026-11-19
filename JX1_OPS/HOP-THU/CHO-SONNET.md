@@ -1968,3 +1968,10 @@ Chủ mở `C:\Users\PC\AppData\Local` (đã bật hiện thư mục ẩn?) như
 Không dừng việc đang làm khác ngoài việc này.
 
 - #261 (19/11 20:00): đã xử lý, tệp chép ra OneDrive\Desktop, báo cáo ở BAO-CAO-CHU.md.
+
+## #262 Chat 19/11 20:05 — A: KHẨN, chủ kẹt ở màn hình chọn server (điện thoại)
+Chủ đã cài APK vc22 trên điện thoại, mở game, chọn server là ĐỨNG IM không phản hồi (không báo lỗi). Chủ đang chờ test. Làm ngay, ưu tiên cao nhất, không hỏi chủ:
+1. Xem log Goddess/PaySys/Bishop/S3Relay có dòng kết nối từ điện thoại (IP Tailscale của máy chủ) vừa rồi không; nếu không → gói không tới (Tailscale/NAT/cổng) hay APK trỏ sai địa chỉ?
+2. Kiểm danh sách server trong APK vc22: địa chỉ/cổng nó gọi khi chọn server (đối chiếu với LD đang vào được qua DNAT 10.0.2.2?). Điện thoại phải dùng địa chỉ Tailscale máy thật (nghe 100.95.186.86:56722/51189/8080/8091) — APK bản cũ P46/P47 cấu hình thế nào? vc22 có đúng cấu hình đó không?
+3. Nếu cấu hình sai, dựng/đóng gói lại APK đúng địa chỉ (≤10 phút) hoặc đưa bản cũ đã dùng được trên điện thoại kèm LimitFPS; báo link mới vào BAO-CAO-CHU.md.
+4. Kiểm cả firewall Windows của máy thật cho các cổng đó với giao diện Tailscale. Xong gõ `A Chat` kèm kết luận 1-2 dòng; chủ đợi.

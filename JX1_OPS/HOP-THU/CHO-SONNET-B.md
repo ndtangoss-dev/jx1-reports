@@ -94,3 +94,6 @@ Chủ sắp nói "bắt đầu" test mượt trên Test-36 (APK vc22, tk tkchuvu
 3. Soạn sẵn kịch bản Bot 5/10/20 cần tài khoản test RIÊNG (`tao-tk-test`, 20 tài khoản mẫu, không dùng tkchuvuong); chưa thả Bot khi chủ đang chơi mà chưa có lệnh Chat.
 4. Việc hàng đợi B còn lại (CC-01, TS-04 mở lại, E-01/E-09...) làm tiếp theo `HANG-DOI-VIEC-B.md`.
 Không dừng; xong mục 1 gõ `B Xong`.
+
+## #B-023 Chat 19/11 20:05 — B: KHẨN, chủ kẹt ở chọn server trên điện thoại
+Chủ chọn server trên APK vc22 điện thoại là đứng im. A đang xem phía APK/cấu hình. B lo phía máy chủ ngay: (1) `vm_chay.py ports`/log Goddess, PaySys, Bishop: có kết nối nào tới từ IP ngoài (điện thoại qua Tailscale) trong 10 phút qua? (2) `tcp_forwarder.py` còn chạy, 100.95.186.86:56722/51189/8080/8091 có LISTEN trên máy thật, firewall có chặn không (đừng sửa firewall nếu thuộc vùng Đỏ, chỉ báo); (3) kiểm đường từ LD ra có vào được không để loại trừ server. Ghi kết luận vào A-B.md và gõ `B Chat` 1-2 dòng. Không dừng việc khác ngoài việc này.
