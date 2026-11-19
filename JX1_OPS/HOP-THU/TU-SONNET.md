@@ -1272,3 +1272,7 @@ Tooltip "+N tất cả kỹ năng" nay hiện từ +14 (+1) và +15 (+2), khớp
 - Phi phong Lang Van [cap 1] (can cap 60): bam "Su dung" khi chua du cuong hoa: he thong chan, thong bao "Khong mac duoc: chua du cuong hoa/phi phong" (2 lan thu, deu chan). Rang buoc mac HOAT DONG dung.
 - Chua do: phi phong vang cap 11 (can cap +cuong hoa du), khung ngua khi di chuyen, danh thuong/CmdLane va tam hien quai.
 Đã đọc đến #285
+
+## [20/11 06:55] #284 khung ngua — Sonnet A
+- Ngua Bach Ma, cap 86, Test-36 (ping ~51 ms, FPS 58): vuot joystick 14 s, chup 1 khung/2 s (so khac biet anh): 8 khung dau deu co chuyen dong; chi cap 7->8 it doi (~2 s, nghi khung nhe), KHONG thay dung hinh 4-5 s. Ngua tren Test-36 chua tai hien khung 4-5 s (can do tren thiet bi chu / vc23 de ket luan).
+- Con lai #284: danh thuong/CmdLane + tam hien quai; phi phong vang cap 11.
