@@ -802,3 +802,6 @@
 [TỔNG QUẢN 20/11 01:59] CAU DAO xingchi: DONG
 [TỔNG QUẢN 20/11 02:01] CAU DAO xingchi: DONG
 [TỔNG QUẢN 20/11 02:03] CAU DAO xingchi: DONG
+[TỔNG QUẢN 20/11 02:05] CAU DAO xingchi: DONG; QH-02 TREO >60 phut (log, nhip, file deu khong doi tu 01:04), da dung de chay lai; dong log cuoi: %%)"%\%\r\n2026-11-20 01:04:49 +07:00\r\nNHW%P BW% CHQ%b%N (lQ%n 2): Access to the path 'D:\\JX-wt\\QH-02.nhip' is denied.\r\n","exit_code":0,"status":"complet; QH-02 chet, chay lai lan 1 bang JX-K4
+[TỔNG QUẢN 20/11 02:07] CAU DAO xingchi: DONG
+[TỔNG QUẢN 20/11 02:09] CAU DAO xingchi: DONG
