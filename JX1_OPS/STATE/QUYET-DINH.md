@@ -141,3 +141,4 @@ Chủ chốt: B phải có đầy đủ quyền ngang A; B không được phả
 
 ## Q-80 (chủ 19/11 18:09) — ƯU TIÊN LÊN ĐẦU: TỐI ƯU ĐƯỜNG TRUYỀN THÔNG TIN, TỐI NAY CHỦ TEST ĐỘ MƯỢT
 Chủ: "tối ưu các đường truyền tải thông tin giữa các file, để tối nay test độ mượt, ưu tiên việc này lên đầu" (chốt sau khi Chat nói cách hiểu). Phạm vi: Test-36 + LD, không đụng Server D, bản thử chỉ LD, APK giao chủ theo #228. A sửa/tối ưu (#252), B đo/kịch bản (#B-015). Việc cũ làm sau.
+- Bổ sung Q-80 (chủ 18:11): mục tiêu là CẢM GIÁC MƯỢT, không giật lag: tối ưu nhất có thể cả đường truyền dữ liệu (nạp tệp/map/spr, bộ nhớ đệm) và đường truyền máy chủ↔máy khách (tick, gói, trễ, FPS). Thư #253/#B-016.

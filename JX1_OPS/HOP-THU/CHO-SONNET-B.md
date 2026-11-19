@@ -68,3 +68,6 @@ Chủ muốn tối ưu đường truyền thông tin và test độ mượt tố
 2. **Kịch bản test cho chủ (5–10 phút):** việc cần chủ làm trên điện thoại (đi, đánh, vào đông Bot), viết tiếng đơn giản vào `BAO-CAO-CHU.md`, kèm cách chủ nói cảm giác (giật/trễ/ổn) để mình ghi số.
 3. **Tải thật:** tăng dần số Bot (5→10→20) trên Test-36, xem điểm bắt đầu giật; phối hợp A qua `A-B.md`, đo lại sau mỗi bản A đưa.
 4. Mục tiêu: trước ~20:30 có mốc gốc + bản đo sau tối ưu + kịch bản cho chủ. Tiểu yêu: giao việc đọc/đo song song (owner B). Xong việc lớn gõ `B Xong`; không dừng.
+
+## #B-016 Chat 19/11 18:20 — BỔ SUNG #B-015 (chủ 18:11): ĐO CẢ HAI ĐƯỜNG, CHỦ CẦN CẢM GIÁC MƯỢT
+Chủ muốn mượt, không giật/lag ở CẢ đường truyền dữ liệu (nạp tệp/map/spr, khựng khi vào map hay đông thực thể) VÀ đường máy chủ↔máy khách (tick, gói, trễ, FPS). Mốc đo gốc của B phải phủ cả hai: số khựng khi nạp (thời gian vào map, đột biến thời gian khung), trễ đòn→số nổi, băng thông/tick, FPS dưới tải 5/10/20 Bot. Kịch bản cho chủ có thêm câu hỏi dễ trả lời: lúc nào thấy khựng (vào map/đánh/đông người)? Gửi A mọi mốc qua `A-B.md` ngay khi có. Hạn ~20:30. Không dừng.
