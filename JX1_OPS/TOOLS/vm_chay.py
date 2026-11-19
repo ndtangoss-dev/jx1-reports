@@ -6,10 +6,17 @@ Lenh:
   log <bishop|goddess|relay|gs> [n]   n dong cuoi (mac dinh 50, toi da 200) cua log moi nhat
   do-gs [giay]              DO (chi doc): CPU%% gs001 trung binh [giay, mac dinh 10, toi da 60], RAM, so luong, so ket noi TCP tai 56722/51189, byte NIC gui/nhan
   ten-co <Ten>              ten nhan vat co trong roledb khong (chi doc, tim byte ASCII; khong xuat du lieu khac)
+  tao-tk-test <tk>          (Q-45, #255) tao tai khoan test tk[a-z0-9]{4,12} tren Test-36 (db account: Account_Info + Account_Habitus 1 nam).
+                            Mat khau sinh ngau nhien, cat o %LOCALAPPDATA%/jx1-secrets/<tk>.txt (ngoai kho), KHONG in ra.
+                            Hoan tac: xoa-tk-test <tk> (chi tk do lenh nay tao, co file bi mat).
 Chay: python -I -X utf8 vm_chay.py <lenh> [doi so]. Khong mat khau/khoa trong tep."""
+import hashlib
+import os
 import re
+import secrets
 import subprocess
 import sys
+from pathlib import Path
 
 VM = "192.168.56.150"
 ROOT = r"C:\JX\ServerNew\_bin_v2_"
@@ -36,6 +43,38 @@ for ($i = 0; $i -le $b.Length - $t.Length -and -not $hit; $i++) { if ($b[$i] -eq
 if ($hit) { 'CO' } else { 'KHONG' }""",
 }
 
+SQLCMD = r"C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\SQLCMD.EXE"
+TK = re.compile(r"tk[a-z0-9]{4,12}")
+SECRETS = Path(os.environ.get("LOCALAPPDATA", ".")) / "jx1-secrets"
+
+
+def sql(q):
+    return goi("& '%s' -S '.\\SQLEXPRESS' -E -d account -W -h -1 -Q \"%s\" 2>&1" % (SQLCMD, q))
+
+
+def tao_tk(tk):
+    if not TK.fullmatch(tk):
+        sys.exit("ten tk phai la tk + 4..12 chu thuong/so")
+    if sql("SET NOCOUNT ON; SELECT COUNT(*) FROM Account_Info WHERE cAccName='%s'" % tk).split()[-1:] != ["0"]:
+        sys.exit("tk da ton tai hoac khong kiem duoc")
+    pw = secrets.token_urlsafe(9)[:12].replace("-", "x").replace("_", "y")
+    md5 = hashlib.md5(pw.encode("ascii")).hexdigest().upper()
+    out = sql("INSERT INTO Account_Info (cAccName,cPassword,iClientID) VALUES ('%s','%s',0); "
+              "INSERT INTO Account_Habitus (cAccName,iFlag,dBeginDate,dEndDate,iLeftSecond,nExtPoint,iClientID) "
+              "VALUES ('%s',0,'2026-11-19','2027-11-19',31000000,0,0)" % (tk, md5, tk))
+    if sql("SET NOCOUNT ON; SELECT COUNT(*) FROM Account_Habitus WHERE cAccName='%s'" % tk).split()[-1:] != ["1"]:
+        sys.exit("INSERT khong thanh cong: " + out.replace(md5, "<md5>").strip()[-200:])
+    SECRETS.mkdir(parents=True, exist_ok=True)
+    (SECRETS / (tk + ".txt")).write_text(pw, "utf8")
+    print(tk, "da tao (Account_Info + Account_Habitus 1 nam) | mat khau o", SECRETS / (tk + ".txt"))
+
+
+def xoa_tk(tk):
+    if not TK.fullmatch(tk) or not (SECRETS / (tk + ".txt")).exists():
+        sys.exit("chi xoa tk do tao-tk-test tao (co file bi mat)")
+    print(sql("DELETE FROM Account_Habitus WHERE cAccName='%s'; DELETE FROM Account_Info WHERE cAccName='%s'" % (tk, tk)).strip()[-80:])
+    (SECRETS / (tk + ".txt")).unlink()
+
 
 def goi(block):
     ps = ". '%s'; $c = Get-JxCred; Invoke-Command -ComputerName %s -Credential $c -ScriptBlock { %s }" % (CRED, VM, block)
@@ -61,6 +100,10 @@ def main(a):
         if len(a) < 2 or not re.fullmatch(r"[A-Za-z0-9]{3,24}", a[1]):
             sys.exit("ten-co <Ten ASCII 3-24>")
         print(a[1], goi(BLOCKS["ten-co"] % {"name": a[1]}))
+    elif cmd == "tao-tk-test" and len(a) > 1:
+        tao_tk(a[1])
+    elif cmd == "xoa-tk-test" and len(a) > 1:
+        xoa_tk(a[1])
     else:
         sys.exit("lenh khong co trong danh sach: " + cmd)
 
