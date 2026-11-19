@@ -82,3 +82,6 @@ Luôn `git pull --rebase --autostash`; `STATE/TONG-QUAN-GHI.md` đặt `merge=un
 
 ## L13. HIỂU Ý CHỦ TRƯỚC, CHỦ CHỐT RỒI MỚI GIAO SONNET (chủ chốt 19/11 10:42)
 Khi chủ bàn BẤT KỲ việc gì, Chat phải trình bày trước "thuộc hạ hiểu ý đại vương thế này" (kèm chỗ chưa chắc) và chờ chủ chốt; chỉ sau đó mới ghi quyết định và gửi thư Sonnet. Không giao nhanh khi chưa hiểu ý: thư sai gây xung đột (ví dụ #229 vs #230, Q-67 vs Q-68) và nếu chủ không nhắc thì không ai gỡ. Ngoại lệ: lệnh chủ đã ra rõ ràng, nguyên văn và không mơ hồ thì vẫn chuyển đúng nguyên văn kèm một câu xác nhận. Nếu đã lỡ gửi thư mâu thuẫn, Chat chủ động gửi thư gỡ ngay, không đợi chủ nhắc. Không bao giờ dùng luật này để ra lệnh Sonnet dừng (Q-56).
+
+## L14. VIỆC CHỦ ĐÃ DUYỆT THÌ CHAT TỰ GÕ LỆNH LÊN CỬA SỔ CHAT CỦA SONNET (chủ chốt 19/11 13:43)
+Khi chủ đã bảo/duyệt cài hay làm một việc (ví dụ Q-73 cài Node/command-code) mà Sonnet bị bộ kiểm soát quyền chặn hoặc cần một lệnh: Chat TỰ gõ lệnh vào khung chat Claude Code của Sonnet (qua Chrome), ghi rõ "chủ đã duyệt, Q-xx, giờ", KHÔNG hỏi lại chủ. Chỉ áp dụng cho việc chủ ĐÃ duyệt; việc chưa duyệt, vùng Đỏ (Main VM, tiền quá hạn mức, khóa ngoài phạm vi, xóa dữ liệu, APK cho chủ, đổi thông tin đăng nhập) vẫn phải hỏi chủ. Không bao giờ dùng để ra lệnh dừng (Q-56).
