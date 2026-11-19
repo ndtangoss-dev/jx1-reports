@@ -5,3 +5,9 @@
 - ĐÃ GẮN: tác vụ Windows `JX-LDCanh` (khi đăng nhập, pythonw không cửa sổ, không giới hạn thời gian). Trạng thái Ready. Chưa thử khởi động lại máy (CHƯA KIỂM).
 - Nguyên nhân cửa sổ nổi lên: CHƯA TÌM RA (cửa sổ LD tự hiện khi LD khởi động; bộ canh xử lý hậu quả, chưa chặn gốc).
 - Việc kế (B): lỗi tên "ký tự đặc biệt", CC-01, Bot GĐ1.
+
+## (B) 19/11 15:55 — Lỗi tên nhân vật "ký tự đặc biệt": ĐÃ ĐỌC MÃ + TÁI HIỆN
+- ĐÃ KIỂM (mã): client chặn trước khi gửi server, `D:\JX-source\client\Classes\gameui\KuiNewPlayer.cpp:554-604`: tên 6–24 byte, KHÔNG được có chữ số/khoảng trắng/ký tự ASCII lạ. Nên `T36nv2` bị chặn đúng luật, không phải lỗi game. Server (`PlayerCreator.cpp:440-457`) cho cả số.
+- ĐÃ KIỂM (chơi thật, LD tester01, 5 lần gõ, ảnh `D:\JX-ldbridge\t01\ket-qua\b001..b024`): ô tên hiển thị `Tsbaone`, bấm Xác định vẫn báo lỗi; gõ `Tsalphaone` (+ENTER) thấy hiện `Tsalphao` nhưng bấm Xác định thì ô QUAY VỀ `Tsbaone` và báo lỗi lại. Nghĩa là chữ gõ bằng adb KHÔNG được ô nhập (Cocos EditBox) nhận làm giá trị thật; giá trị cũ `Tsbaone` (có thể kèm ký tự ẩn) mới bị kiểm. CHƯA RÕ nguyên nhân gốc; CC-01 đang thử lại với tên chỉ chữ cái + chụp ảnh trước khi bấm.
+- Khuyến nghị: tester dùng tên chỉ chữ cái. Không cần A sửa mã trừ khi tên chỉ-chữ vẫn thất bại.
+- Q-77: đã chạy `command-code --yolo` cho CC-01 (mô hình flint-v1.0:free, thư mục `.ldbridge` trong CC-01).
