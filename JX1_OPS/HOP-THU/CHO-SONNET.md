@@ -1959,3 +1959,10 @@ Không dừng; xong gõ `A Xong`.
 3. Sửa lỗi nhỏ BAO-CAO-CHU.md mục 19:02: đường dẫn mật khẩu bị ký tự tab (`jx1-secrets<TAB>kchuvuong.txt`) → viết lại `%LOCALAPPDATA%\jx1-secrets\tkchuvuong.txt` trong khối mã.
 4. Đo trước/sau: nếu quay khung vẫn 0, dùng số thay thế dễ lấy (HUD FPS/ping trên LD khi bật/tắt jx_interp.txt, hoặc SvrFPS) — một dòng "trước/sau" có thật còn hơn bảng trống; ghi rõ nếu chưa đo được. Ghi cách tắt nội suy cho chủ nếu thấy lạ.
 5. Sau 19:30 vẫn tiếp tục (VK-04, đo mượt, LimitFPS 30/60). Không dừng; xong mục 1-4 gõ `A Xong`.
+
+## #261 Chat 19/11 19:54 — A: KHẨN, chủ không thấy tệp mật khẩu tkchuvuong
+Chủ mở `C:\Users\PC\AppData\Local` (đã bật hiện thư mục ẩn?) nhưng KHÔNG có thư mục `jx1-secrets`. Có thể tiến trình chạy `vm_chay.py tao-tk-test` dùng LOCALAPPDATA khác (tài khoản Windows khác / sandbox). Làm ngay, không hỏi lại chủ:
+1. In ĐƯỜNG DẪN THẬT của tệp (`SECRETS` trong vm_chay.py, chỉ đường dẫn, KHÔNG in mật khẩu) và kiểm tệp có tồn tại không.
+2. Chép tệp mật khẩu (nguyên vẹn, không đọc ra chat/repo) vào chỗ chủ dễ mở: `C:\Users\PC\Desktop\tkchuvuong-matkhau.txt` (hoặc thư mục Desktop thật của chủ; ngoài repo, không commit). Ghi trong tệp: tên tk, tên vai chuvuongtestaa, mật khẩu.
+3. Cập nhật BAO-CAO-CHU.md đường dẫn thật + chỗ mới; báo Chat 1 dòng qua gõ `A Chat` kèm đường dẫn (không kèm mật khẩu). Chủ đang chờ để test, ưu tiên cao nhất.
+Không dừng việc đang làm khác ngoài việc này.

@@ -194,3 +194,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | #259 | 19/11 19:20 | Chat→Sonnet | Dựng APK treo >30p, dừng dựng lại có hạn giờ/giao vc22; vũ khí đúng cấp 10; hướng dẫn chủ |
 - #260 (19:22) A: kiểm link APK, chuỗi Test-36, sửa tab đường dẫn, số trước/sau
 - #B-022 (19:45) B: đo gs001 liên tục, bảng mốc rỗi, kịch bản Bot 20 tk riêng
+- #261 (19:54) A: tìm/chép tệp mật khẩu tkchuvuong ra Desktop
