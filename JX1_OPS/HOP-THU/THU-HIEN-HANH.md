@@ -162,3 +162,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | #B-003 | 19/11 15:27 | Chat→B | nhắc an toàn kho (không add -A, không mã game), ngữ cảnh 77% |
 | #B-004 | 19/11 15:50 | Chat→B | lệnh chủ: kiểm tên nhân vật có dấu cách cuối/trùng tên |
 | #B-005 | 19/11 16:05 | Chat→B | chủ duyệt đọc log/dữ liệu Test-36 (Q-78), kiểm DNAT/CreateRole |
+| #B-006 | 19/11 16:15 | Chat→B | nhắc xưng hô đúng với chủ trong cửa sổ chat |
