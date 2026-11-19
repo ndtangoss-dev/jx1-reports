@@ -1266,3 +1266,9 @@ Tooltip "+N tất cả kỹ năng" nay hiện từ +14 (+1) và +15 (+2), khớp
 - Sua: vo hieu cap do trong OnLine (online.lua dong 12 "if 1 == 1 then return end", .bak-preload); chi cap sau dang nhap bang hook QhHandle (3 mon). Restart gs001 05:57 rồi 06:13.
 - Thu: do cu DB (phi phong, ngua, nhan, vu khi...) hien day du sau dang nhap. Mac Sa Di phuc, cuong hoa Ao +1 (95%), thoat menu, cho 100s, vao lai 06:31: Ao van mac, preview ghi "hien +1", tai phu 100 => +N luu qua dang xuat.
 - Gui B: dung cap do trong OnLine truoc khi nap; hook cap do phai nam trong QhHandle/sau dang nhap. Tiep: phi phong (do da co trong hanh trang) -> ngua -> danh thuong.
+
+## [20/11 06:50] #284 (mot phan) phi phong + ngua — Sonnet A
+- Ngua Bach Ma [cap 3]: can cap 30; nang nhan vat atestvaihero len cap 86, "Su dung" -> nhan vat cuoi ngua duoc tren Test-36.
+- Phi phong Lang Van [cap 1] (can cap 60): bam "Su dung" khi chua du cuong hoa: he thong chan, thong bao "Khong mac duoc: chua du cuong hoa/phi phong" (2 lan thu, deu chan). Rang buoc mac HOAT DONG dung.
+- Chua do: phi phong vang cap 11 (can cap +cuong hoa du), khung ngua khi di chuyen, danh thuong/CmdLane va tam hien quai.
+Đã đọc đến #285
