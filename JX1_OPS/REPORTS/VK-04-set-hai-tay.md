@@ -27,3 +27,9 @@ Bật `/sdcard/jxtrace`, `logcat -s JXTRC`, mặc lần lượt 5 vũ khí +15 t
 - Đối chứng 1 tay (Yêu Đao +15): section phụ cnt 6–12 (≈10%). → ngưỡng sửa: bắt tia ở section phụ khi cnt ≥ 20 và ≥ 40% section chính; tách rõ hai nhóm.
 - Ảnh trước sửa: `REPORTS/img/vk04-truoc-chuy-h0.png` (chùy trái có tia, chùy phải chỉ glow).
 - Sửa (KNpcResVN.cpp bản `D:\JX-build\qh9A-vk04`, vc22): trong vòng vẽ section, nếu k≠domSec thỏa ngưỡng trên thì chạy lại lượt khô lấy mặt nạ riêng, gọi jxDrawBolts, rồi khôi phục mặt nạ chính (không đổi đường vẽ section chính, nên 1 tay không đổi). Bản này nằm ngoài kho chính nên không cần `JX1_EFFECT_OK` (nếu đưa vào kho: chỉ commit đó, lý do = VK-04).
+
+## Kiểm bản sửa (vc22, LD T36-tester01, 19/11/2026)
+- [ĐÃ KIỂM] Chùy +15, hướng 0, 3 khung: cây bên phải nay có sét như cây bên trái (trước: chỉ vệt trắng). Ảnh trước `img/vk04-truoc-chuy-h0.png`, sau `img/vk04-sau-chuy-h0.png`.
+- [ĐÃ KIỂM] Yêu Đao +15 (một tay): sét chỉ ở một lưỡi, không thêm sét tay kia (`img/vk04-sau-dao-h0.png`). Phần thêm chỉ chạy khi section phụ ≥20 điểm và ≥40% section chính; đao một tay chỉ 6–12 điểm nên không kích hoạt.
+- [ĐÃ KIỂM một phần] FPS trên LD: sau sửa 32–38 (trung bình ~35, 5 mẫu); trước sửa (chùy) 1 mẫu = 32, vũ khí khác 38–41. Không thấy xấu đi, nhưng mẫu ít và LD dao động; chưa đo thời gian vẽ riêng.
+- [CHƯA KIỂM] 8 hướng đủ (mới hướng 0 bằng ảnh, hướng 5 qua trace `SECK`); thích/kiếm/thương/bổng chưa chụp lại. Chưa đưa vào repo chính (cần `JX1_EFFECT_OK=1` cho đúng commit đó); chưa giao APK cho chủ (vùng Đỏ).
