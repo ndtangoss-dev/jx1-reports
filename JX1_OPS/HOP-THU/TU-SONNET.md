@@ -1027,3 +1027,8 @@ LD `T36-tester01` (index 2, emulator-5558) đang chạy, cửa sổ thu nhỏ, D
 ## #220 BOT GĐ0 10:50 — khảo sát A/B xong (số đo 1 Bot có, nhiều Bot chưa). Đề xuất A. `REPORTS/BOT-GD0-khao-sat-A-B.md`, BAO-CAO-CHU. Chờ Chat duyệt trước GĐ1.
 
 ## #226 VK-04(a) 10:35 — Đo thật: SEC n=2 ở CẢ 5 loại vũ khí (cả một tay), nên giả thuyết "hai tay=2 section" chưa đúng; chưa sửa mã. Cần trace per-section (commit trace-only, JX1_EFFECT_OK) + build thử. Xem cuối REPORTS/VK-04-set-hai-tay.md. TESTER LD đã vào game; BOT thang tải cần thêm tài khoản (làm sau).
+
+## SONNET 19/11 10:58 — #226/#228/#231
+- #228: đã ghi mục "GIAO APK CHO CHỦ" vào BAO-CAO-CHU (chưa giao APK; mục 3 DB Server D chưa kiểm vì D đang tắt).
+- #231: `STATE/APK-GOC.md` xong: base.apk T36test = SHA 7894c22d…2d8 = jx-qh9-A3a (vc20); tiền tố `8da22c0c` ở thư #230 không khớp, xin Chat xác nhận. Serve dọn còn `jx-goc-v20.apk`, bản cũ ở `luu-tru`. Đã lỡ cài bản trace vc21 vào T36-tester01 (không phải T36test), ghi rõ.
+- VK-04 (a): đo 1 tay: n=2 bình thường, section phụ 5×8 px ≈10% chính → sửa "mọi section" sẽ làm 1 tay mọc tia thừa; cần ngưỡng tỉ lệ. Chưa đo chùy/thích: T36nv1 cấp 1 không đeo được. Việc kế: nhân vật đủ điều kiện (DB Test-36) rồi đo SECK.
