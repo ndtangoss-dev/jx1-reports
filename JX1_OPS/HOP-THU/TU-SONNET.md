@@ -1232,3 +1232,7 @@ Tooltip "+N tất cả kỹ năng" nay hiện từ +14 (+1) và +15 (+2), khớp
 - Test-36: .bak-qh035, chép gs001+3 dll+opensysui.lua+qhcuonghoa.lua, SHA khớp, JX-gs001 chạy PID 6136 (nạp ~10 phút từ 01:43). Báo B trong A-B.md.
 - Client (qh9A, chưa kiểm trên LD): KgameWorldVN::AMessageArrival đọc dòng [QH]|E/P/W/D → chữ dễ đọc (ức/vạn, tài phú); nút "Cuong hoa" mở menu 10 ô, bấm 1 lần = xem trước (2,11,ô), bấm lại cùng ô = cường hóa (2,10,ô); mở menu xin tài phú (2,12). Ngưỡng +14. Build vc24 chạy nền (build-vc24.ps1).
 - Chưa kiểm: Msg2Player có đi qua AMessageArrival không (kiểm khi LD thử).
+
+## [20/11 02:33] A: vc25 sua hien thi [QH] (#283)
+- Phat hien tin Msg2Player di qua kenh chat "Cong bo", parser o AMessageArrival khong duoc goi. Chuyen sang KuiChatList::addmsg, build vc25 OK (D:\JX-build\jx-vc25.apk, SHA256 266e8d3a62d662bf9e17893b97c986bfe8f263016e5ed88620274339c0ea3d73, versionCode 25). Cai tren LD, KHONG gui chu (vung Do).
+- LD: menu cuong hoa 10 o + xem truoc doc duoc ("ti le 100%, can 1 thuy tinh moi loai, 200 van"). Cuong hoa that chua test duoc: role chua co trang bi (code 5). Da nhan B cap do. Tiep: B cap do -> A bam +1..+15, chup; sau do #277/#278.

@@ -191,3 +191,8 @@ gs001 PID 6136 lên, console: CmdLane Enable=1, tkatest01/atestvaihero đăng nh
 **Khi bị chặn** server gửi một dòng thông báo hệ thống: `[QH]|D|k|can|co` (k = cấp phi phong, can = điểm cần, co = điểm hiện có). Client: hiện "Cần <can> điểm tài phú để mặc, hiện có <co>".
 **HỢP ĐỒNG CHỐT (v4):** giữ v3 + (1) `[QH]|D|k|can|co`; (2) `[QH]|P|part|lv|rate|crystal|silver|wealth` crystal đã kẹp 1000/loại; (3) `[QH]|W|wealth` điểm tài phú; (4) `[QH]|E|code|part|newlv|rate|crystal|silver|wealth` code 0 thành công, 1 thất bại giữ cấp, 2 thiếu thủy tinh, 3 thiếu bạc, 4 tối đa, 5 ô không hợp lệ; (5) ô = 0 đầu, 1 áo, 2 đai, 3 vũ khí, 4 giày, 5 tay, 6 bùa, 7 nhẫn 1, 8 nhẫn 2, 9 ngọc bội.
 Để thử phi phong: A cho vai thử 1 phi phong vàng cấp 1 và cấp 11 (item_equip detail 12 GoldId của GoldItem.txt dòng id 3465..3475), thử mặc khi tài phú thấp (kỳ vọng bị chặn + dòng [QH]|D), rồi cường hóa đủ và mặc lại.
+
+## [20/11 02:33] A -> B: vc25 client doc duoc [QH]; can trang bi cho role test
+- Msg2Player di qua kenh chat "Cong bo" (KPlayerChat::SendSystemInfo), khong qua AMessageArrival. Da chuyen bo phan tich sang KuiChatList::addmsg (vc25, SHA256 266e8d3a62d662bf9e17893b97c986bfe8f263016e5ed88620274339c0ea3d73).
+- LD thu tren Test-36 (role atestvaihero): menu 10 o hien dung; xem truoc o Vu khi ra "ti le 100%, can 1 thuy tinh moi loai, 200 van, tai phu 0"; bam lan 2 ra code 5 (o trong) vi role CHUA MAC do.
+- Can B: them vao JXGive282 (hoac online.lua) cap/mac trang bi 10 o cho atestvaihero (hoac cho minh biet item id muon dung) de A bam cuong hoa +1..+15 va chup ket qua. Ket qua code 0/1/2/3 se doc duoc tren man hinh.
