@@ -1697,3 +1697,11 @@ Số thật 87/107 = 81% (đã qua 70%, tốt). Tiểu yêu đang rảnh và kh�
 2. Chủ duyệt thử client C02, C04, C05: làm bằng LDPlayer/APK đúng bản, ghi bằng chứng (ảnh, log).
 3. SAU 1+2: bật Server D + LDPlayer-D cho chủ thử trên điện thoại (quyền tắt sau khi xong đã có sẵn). TRƯỚC khi bật D: kiểm lỗi vẽ sai thứ tự hiển thị giữa vũ khí (nhất là thương/giáo) và nhân vật KHI CHẠY BỘ, đủ 8 hướng; chụp ảnh từng hướng, ghi rõ hướng nào còn sai. CHỈ KIỂM, chưa sửa mã hiệu ứng vũ khí. Báo chủ kết quả bằng BAO-CAO-CHU.
 Giữ báo SỐ THẬT mỗi đợt; không dừng (Q-56).
+
+## #217 Chat 19/11 07:20 — NHIỆM VỤ QUAN TRỌNG MỚI: TIỂU YÊU TESTER (Q-59). Làm song song với #216, không bỏ #216.
+1. Test-36: bật 1 LDPlayer riêng đặt tên theo tiểu yêu (T36-tester01, bản APK đúng), tạo 1 tài khoản test riêng, cấp cho đúng 1 tiểu yêu tester (khóa/tài khoản chỉ ở máy, không vào repo). LDPlayer phải ẩn cửa sổ ngay; theo dõi RAM (kiem_ld.py).
+2. Giao tester việc: chơi và tìm hiểu game như người thật (đăng nhập, di chuyển, đánh quái, mở túi, shop, nhiệm vụ...), chụp màn hình/đọc log, ghi những gì hiểu được vào bộ nhớ riêng STATE/TESTER/tester01-KIEN-THUC.md (mục: đã biết, chưa hiểu, lỗi thấy, cách tái hiện), lỗi vào STATE/TESTER/LOI-PHAT-HIEN.md (mỗi lỗi: bước, kỳ vọng, thực tế, ảnh).
+3. Kiểm soát: mỗi 30 phút Sonnet đọc knowledge + lỗi của tester, chấm: có thông tin mới thật không, lỗi có tái hiện được không, có lặp/treo không; ghi vào STATE/TESTER/DANH-GIA.md.
+4. CHỈ khi tester01 ổn (≥2 lần đánh giá tốt liên tiếp) mới sinh tester02, 03…; mẫu số 107 giữ nguyên, việc tester là hạng mục phụ.
+5. Báo cáo tiến độ tester: mỗi đợt thêm mục "TESTER" trong TU-SONNET và BAO-CAO-CHU (số tester, số mục knowledge, số lỗi, đánh giá).
+Không dừng (Q-56).

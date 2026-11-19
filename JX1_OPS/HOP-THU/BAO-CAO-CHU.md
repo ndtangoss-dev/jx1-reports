@@ -20,3 +20,4 @@
 - Kẹt: B-04, E-01, E-05, E-09, C-01, P-02, W-02 chỉ còn thiếu chạy thật trên máy thử Test-36: thiếu khóa client đúng bản APK và tài khoản/vai thử cho Bot, B-04 cần 3 lượt x 3 pha x 660 s.
 - CẦN CHỦ QUYẾT sáng nay: (1) cho cấp khóa client + tài khoản thử cho Bot để chạy E-01; (2) duyệt thử client C02/C04/C05; (3) có muốn "bật D để test" bằng điện thoại không.
 - Sonnet tự dừng ~20 phút/lần: gốc là phiên Claude Code kết thúc lượt khi trả lời bằng chữ. Đề xuất chữa tận gốc: Tổng quản (tác vụ Windows, không tốn Claude) tự đánh thức phiên bằng cách chạy lệnh nhập chữ vào cửa sổ khi SONNET-SONG báo IM >10 phút, thay cho Chat gõ qua Chrome.
+- 19/11 07:20 — CHỦ GIAO: tiểu yêu TESTER (Q-59/#217): 1 con trước, ổn mới sinh tiếp; Chat báo tiến độ thường xuyên.

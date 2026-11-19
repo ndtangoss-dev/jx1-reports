@@ -73,3 +73,8 @@ Chủ nói rõ (tháo hạn chế "không tắt" của Q-18 CHỈ cho việc t�
 
 ## Q-58 (chủ 19/11 07:02)
 Chủ DUYỆT: (1) cấp khóa client đúng bản APK + tài khoản/vai thử cho Bot trên Test-36 (khóa KHÔNG vào repo) để chạy E-01/E-05/E-09/B-04/C-01/P-02; (2) duyệt thử client C02, C04, C05. SAU KHI 1 VÀ 2 XONG: (3) bật Server D + LDPlayer-D cho chủ test trên điện thoại. TRƯỚC KHI bật D: kiểm lỗi vẽ sai thứ tự giữa vũ khí (đặc biệt thương/giáo) và nhân vật khi CHẠY BỘ, đủ 8 hướng, rồi báo chủ. Chỉ kiểm/quan sát, chưa sửa mã hiệu ứng vũ khí khi chưa có bằng chứng + Chat duyệt.
+
+## Q-59 (chủ 19/11 07:16) — TIỂU YÊU TESTER (nhiệm vụ quan trọng phần test game)
+1. Trên server test (Test-36): bật 1 LDPlayer test đặt tên theo tiểu yêu tester (vd T36-tester01), tạo 1 tài khoản test và cấp riêng cho 1 tiểu yêu. Giao nhiệm vụ: tìm hiểu game như tester thật; hiểu đến đâu lưu vào 1 bộ nhớ knowledge (file riêng); Sonnet/Chat kiểm soát xem nó làm có hiệu quả không. Mục tiêu dài hạn: nhiều tester chạy cùng lúc, báo lỗi phát hiện, tìm hiểu game như người thật.
+2. Chỉ khi tester đầu chạy ổn (có knowledge hữu ích, lỗi báo đúng, không treo) mới sinh tester kế tiếp.
+3. Báo cáo tiến độ tester thường xuyên cho chủ.
