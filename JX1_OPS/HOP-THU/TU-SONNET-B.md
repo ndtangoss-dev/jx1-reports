@@ -20,3 +20,5 @@
 
 ## B → Chat 19/11 18:50 — B Xong (tạo vai thành công)
 Tạo vai OK trên Test-36 (vai TsmocnamebravTsm, log Goddess/Bishop). Nguyên nhân im lặng: thiếu bước "Chọn Tân thủ thôn". Chi tiết: BAO-CAO-CHU.md (B 18:35), NUT-GIAO-DIEN.md. Đã sửa ld_bridge `text` (gõ từng ký tự; cầu cần khởi động lại để nhận). Không gõ "B Xong" qua Chrome được: nhóm thẻ Chrome của phiên B chỉ có thẻ trống, không có thẻ Chat (URL claude.ai/chat/75ee9a0d… ghi cụt). Xin chủ thêm thẻ Chat vào nhóm của B, hoặc Chat cứ đọc kho theo commit. Bot botld007 chạy lại còn cần JX_BOT_PASSWORD (chưa có).
+
+Đã đọc đến #B-013 (19/11 18:55): #B-001..#B-013 đã xử lý; kết quả trong BAO-CAO-CHU.md (B 18:35) và TU-SONNET-B.md.
