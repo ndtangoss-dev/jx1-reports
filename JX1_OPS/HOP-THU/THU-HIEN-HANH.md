@@ -146,3 +146,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | #231 | 19/11 10:42 | Chat→Sonnet | gỡ mâu thuẫn #229/#230: gốc = APK T36test |
 | #232 | 19/11 10:52 | Chat→Sonnet | chủ quyết Q-69: một tester một khóa riêng |
 | #233 | 19/11 11:00 | Chat→Sonnet | gốc=A3a 7894c22d; VK-04 ngưỡng tỉ lệ; tester lượt 2 ưu tiên |
+| #234 | 19/11 11:30 | Chat→Sonnet | chủ quyết Q-70: cầu nối LD cho tiểu yêu tester, kho tài liệu, chia việc theo mục |

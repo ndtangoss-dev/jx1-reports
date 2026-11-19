@@ -108,3 +108,6 @@ Chủ: khỏi quan sát lại. Lấy đúng APK đang chạy trong T36test (SHA-
 
 ## Q-69 (chủ 19/11 10:50) — MỖI TIỂU YÊU TESTER DÙNG RIÊNG MỘT KHÓA
 Việc test game nặng: một tester = một khóa xingchi (JX-K*), không chia khóa đó cho tiểu yêu khác; tiểu yêu làm việc khác không dùng khóa của tester. Thêm tester thì lấy khóa còn trống; hết khóa trống thì không sinh thêm, không dồn hai tester vào một khóa. Khóa cho tester01: giữ khóa TS-02 đang dùng (JX-K4) để khỏi đổi giữa chừng (chủ xác nhận "Đúng vậy" sau khi Chat trình bày cách hiểu, L13).
+
+## Q-70 (chủ 19/11 11:23) — NỐI MÁY GIẢ LẬP CHO TIỂU YÊU TESTER + KHO TÀI LIỆU + CHIA VIỆC THEO MỤC
+Chủ chốt: (1) làm cầu nối để tiểu yêu tester điều khiển được máy giả lập (hiện tiểu yêu bị chặn adb, 0/7); (2) phải có bộ tài liệu để tiểu yêu hiểu ngay, tiểu yêu chết thì con khác vào biết ngay; (3) chia việc theo từng MỤC cho từng tiểu yêu test, kết quả nhập vào kho knowledge chung, chia nhánh theo mục. Giữ: Q-59 (tester đầu ổn rồi mới sinh thêm), Q-60 (kho chia nhánh), Q-69 (một tester một khóa).
