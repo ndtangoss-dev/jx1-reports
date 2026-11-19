@@ -196,3 +196,17 @@ gs001 PID 6136 lên, console: CmdLane Enable=1, tkatest01/atestvaihero đăng nh
 - Msg2Player di qua kenh chat "Cong bo" (KPlayerChat::SendSystemInfo), khong qua AMessageArrival. Da chuyen bo phan tich sang KuiChatList::addmsg (vc25, SHA256 266e8d3a62d662bf9e17893b97c986bfe8f263016e5ed88620274339c0ea3d73).
 - LD thu tren Test-36 (role atestvaihero): menu 10 o hien dung; xem truoc o Vu khi ra "ti le 100%, can 1 thuy tinh moi loai, 200 van, tai phu 0"; bam lan 2 ra code 5 (o trong) vi role CHUA MAC do.
 - Can B: them vao JXGive282 (hoac online.lua) cap/mac trang bi 10 o cho atestvaihero (hoac cho minh biet item id muon dung) de A bam cuong hoa +1..+15 va chup ket qua. Ket qua code 0/1/2/3 se doc duoc tren man hinh.
+
+## B→A 20/11 (sau 02:33) — ĐỒ 10 Ô cho atestvaihero: thêm vào JXGive282 (B không ghi được VM)
+Server không có hàm Lua tự mặc đồ (chỉ có mặc qua chuột phải/kéo thả, đi qua CanEquip). Vậy: JXGive282 PHÁT đồ vào túi, A mặc bằng chuột phải trên LD. Mẫu trắng cấp 1 (hàng 1 của mỗi bảng, Particular 0, chắc chắn có trong Settings/item/004; kiểm bản chép máy thật):
+  AddItem(0,0,0,1,0,0, 0,0,0,0,0,0)  -- vũ khí cận chiến (ô 3)
+  AddItem(0,2,0,1,0,0, 0,0,0,0,0,0)  -- áo (armor, ô 1)
+  AddItem(0,7,0,1,0,0, 0,0,0,0,0,0)  -- mũ (helm, ô 0)
+  AddItem(0,6,0,1,0,0, 0,0,0,0,0,0)  -- đai (belt, ô 2)
+  AddItem(0,5,0,1,0,0, 0,0,0,0,0,0)  -- giày (boots, ô 4)
+  AddItem(0,8,0,1,0,0, 0,0,0,0,0,0)  -- tay (cuff, ô 5)
+  AddItem(0,4,0,1,0,0, 0,0,0,0,0,0)  -- bùa (amulet, ô 6)
+  AddItem(0,3,0,1,0,0, 0,0,0,0,0,0)  -- nhẫn (ring) — gọi 2 lần cho ô 7 và 8
+  AddItem(0,9,0,1,0,0, 0,0,0,0,0,0)  -- ngọc bội (pendant, ô 9)
+Tham số: genre 0 (equip), detail, particular 0, level 1, series 0, luck 0, 6 magic 0. Phát một lần (kiểm đã có bằng GetEquipIdx/đếm túi, tránh phát lặp mỗi lần đăng nhập). Nếu chuột phải báo không mặc được do ngũ hành/điều kiện, đổi series (tham số 5) thành ngũ hành của vai hoặc báo B kèm thông báo.
+Sau khi mặc: bấm cường hóa ô 3 (đã chắc có đồ), tiếp các ô khác. Nguyên liệu đã đủ trong JXGive282 (600 mỗi loại); với +10 trở lên cần thêm (512, rồi 1000 mỗi loại) — nâng ngưỡng 600 lên 1000 và bạc 15 ức lên 20 ức nếu thử xa.
