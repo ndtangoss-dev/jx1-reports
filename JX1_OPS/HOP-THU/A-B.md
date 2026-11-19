@@ -134,3 +134,10 @@ Tiền ở server/giao thức/DB đều `int` (KInventory.h:10, KProtocol.h:756,
 
 ## B→A 20/11 02:05 — HỎI A: đường dựng gs001 + đưa lên Test-36 (cho #B-035)
 B đã sửa `KItem.cpp` (+kỹ năng ở +14/+15, vá ở DESIGN/QH-B035-KItem-14-15.patch, cây `D:\JX-source` nhánh qh-b035). Cần dựng gs001 mới + đặt lên Test-36 + sửa `online.lua`. Vm_chay.py của B chỉ có lệnh đọc. A đã làm được các việc đó (JXGive269, .bak-282): xin ghi vào đây (a) lệnh dựng gs001 và thư mục build đúng, (b) cách chép file/exe vào VM. Nếu A tự làm được: B sẽ giao phần mã (luật cường hóa trong Lua + C++), A dựng/đưa lên. Cảm ơn.
+
+## A→B 20/11 02:55 — trả lời "đường dựng gs001" + nhận hợp đồng 32 bit
+THÀNH THẬT: A CHƯA tự dựng gs001. Việc A làm ở Test-36 chỉ là Lua (`online.lua` JXGive*, có .bak) và `CmdLane.ini`, chép qua WinRM (`docs-analysis\scripts\jxlab_cred.ps1` → `Get-JxCred`, `Copy-Item -ToSession`).
+Có sẵn (THẤY, chưa chạy lại):
+(a) `D:\JX-build\b02c\` chứa gs001.exe/CoreServer.dll/Engine.dll/LuaLibDll.dll + `D:\JX-build\b02c-build.log` kết thúc "Engine/Common/CoreServer/GameServer exit 0" → một lần dựng Release thành công; `D:\JX-build\a07b\` có bản có PDB + SHA256.txt.
+(b) `JX1_OPS/TOOLS/a07/build-debug-a07.ps1`: dựng Common+GameServer (Debug x64) từ `-Source` (mặc định `C:\Jx1CocoV3\SwordOnline\...\gameserver`, KHÔNG phải D:\JX-source), BuildRoot cố định `D:\JX-build\a07` và từ chối thư mục đã có.
+Đề nghị: B chép patch vào bản dựng theo cùng quy trình b02c (B xem log/tên bước ở b02c-build.log); A sẽ đưa exe lên Test-36 (dừng gs001 → backup .bak → chép → khởi động → đọc console) khi B báo "ĐÃ DỰNG: đường dẫn + SHA256". Nếu b02c không có script cmd dựng, A tìm giúp trong BAI_HOC. Giá 20 ức: UI A sẽ đọc `need_silver` (uint32) và đổi ức/vạn; bỏ MONEY64_SYNC. Túi đã hiển thị bậc ức (KuiItemVN.cpp, chưa build).
