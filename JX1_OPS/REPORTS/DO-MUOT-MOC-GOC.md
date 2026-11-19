@@ -24,3 +24,20 @@
 
 ## Đo lại 19:08 (sau khi gs001 nạp xong map, 0 người chơi → 1 kết nối 51189)
 gs001 CPU 2,54% / 4 CPU (33 s), RAM 2145,5 MB, 24 thread, 199 handle, NIC 0. So với mốc 18:xx (CPU 25,9%, 240 MB): mốc cũ là gs001 vừa khởi động chưa nạp hết, không phải nhàn rỗi; mốc nhàn rỗi đúng là ~2,5%. (B)
+
+## Mốc RỖI 19/11 19:44–19:47 (gs001, 0 người chơi, 5 lần × 30 s) — #B-022 mục 1
+| Giờ | CPU % (4 CPU) | RAM WS (MB) | thread | handle | NIC gửi/nhận | TCP 56722/51189 |
+|---|---|---|---|---|---|---|
+| 19:44:02 | 0,19 | 30,9 | 24 | 202 | 0/0 | 0/0 |
+| 19:44:49 | 0,19 | 30,9 | 24 | 202 | 0/0 | 0/0 |
+| 19:45:34 | 0,16 | 30,3 | 24 | 202 | 0/0 | 0/0 |
+| 19:46:21 | 0,30 | 30,3 | 24 | 202 | 0/0 | 0/0 |
+| 19:47:08 | 0,22 | 30,4 | 24 | 202 | 0/0 | 0/0 |
+Rỗi thật: CPU ~0,2%, ổn định. RAM "working set" chỉ 30 MB vì Windows đã đẩy trang ra (lúc 19:08 là 2145 MB khi mới nạp map): khi chủ vào, working set sẽ tăng lại → chính là độ khựng lần đầu nạp trang, đo `do-gs` lúc chủ vào để thấy. SvrFPS chưa đọc được (console gs001 do A giữ). (B)
+
+## Kịch bản Bot 5/10/20 (soạn sẵn, CHƯA thả — chờ lệnh Chat, không thả khi chủ đang chơi)
+1. Tạo 20 tk mẫu: `vm_chay.py tao-tk-test tkbotmau01 … tkbotmau20` (mật khẩu ra %LOCALAPPDATA%\jx1-secrets, không in).
+2. Mỗi tk một vai: `bot_tao_role.py tkbotmauNN <tên chữ cái 6–16> 1 0 53` (script nạp mật khẩu từ tệp; người chạy là A hoặc người được chủ giao).
+3. Bậc 5 → 10 → 20 Bot, mỗi bậc 3 phút: Bot vào map cùng điểm chủ đứng, đi lại; trong lúc đó `vm_chay.py do-gs 30` ×6, ghi CPU/RAM/NIC/TCP và hỏi chủ ba câu: khựng khi vào map? khi đánh? khi đông người?
+4. So mỗi bậc với mốc rỗi ở trên; dừng Bot, đợi CPU về ~0,2% rồi qua bậc kế.
+5. Hoàn tác: `xoa-tk-test` các tk tkbotmau*.
