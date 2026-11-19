@@ -1216,3 +1216,7 @@ do_muot_khung.py: ffmpeg 9.0 không nhận `-vsync` → đổi `-fps_mode passth
 
 ## A 20/11 02:45 (#282 mốc 4) — túi hiển thị ức
 - qh9A KuiItemVN.cpp: thêm bậc 'A ức B vạn C bạc' khi tiền >=1e8 (bản gốc đã có vạn; .bak-uc). Chưa build; 64 bit thật chờ B (MONEY64_SYNC). Build vc24 sau khi gom thêm: dòng +14/+15, tài phú, phi phong.
+
+## A 20/11 03:00 (#278 đo 2)
+- Chạy 20 s lần 2 (vẫn đi bộ: vai mới không có ngựa trong túi, nút ngựa không lên được): tx 9/s đều, rx ~870/s, không khoảng trống; ping 66 ms, FPS 64. Một lần ping hiện 782 ms lúc đứng yên (jx_net.log không có khoảng trống rx quanh đó → nhiều khả năng đồng hồ ping, không phải mất gói).
+- Chưa tái hiện khựng 4–5 s trong LAN. Cần: cho vai test có ngựa (item) để đo đúng kịch bản, hoặc đo khi chủ chơi qua Tailscale. [Đề xuất tự quyết: thêm ngựa vào online.lua Test-36 cho tk test]
