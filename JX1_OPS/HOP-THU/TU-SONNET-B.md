@@ -89,3 +89,8 @@ Tailscale tới điện thoại đang đi qua DERP Singapore (~120 ms, chưa dir
 Chuỗi đủ (Bishop/Goddess/PaySys/Relay sống, 51189 và 56722 LISTEN, forwarder 21528 sống), nhưng gs001 mới khởi động lại 21:29 đang nạp bản đồ, chưa nối vào Relay/Bishop (lần trước mất ~8–10 phút) → dự kiến sẵn sàng khoảng 21:38–21:42. Chủ chờ rồi vào lại; B canh và báo khi nối xong. Không cần chain-up thêm (không khởi động lại để khỏi nạp lại từ đầu).
 
 Đã đọc đến #B-027
+
+## B Chat 19/11 21:46 — #B-028
+Bàn giao B đã cập nhật đầy đủ (`STATE/BAN-GIAO-B.md`: #B-026/027, mốc đo, việc còn mở), đã đẩy; việc nền vẫn chạy.
+
+Đã đọc đến #B-028

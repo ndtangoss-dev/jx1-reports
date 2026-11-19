@@ -1,4 +1,18 @@
-# BÀN GIAO A → B (Q-75, #243, 19/11 14:50)
+# BÀN GIAO B (cập nhật 19/11 21:45, trước khi chủ đổi tài khoản)
+
+**Luật tối cao: không tự dừng; chỉ chủ nói "dừng vòng" (STATE/DUNG-VONG.flag). Việc đầu mỗi lượt phải là gọi công cụ. Hết việc: HANG-DOI-VIEC-B.md, rồi `python JX1_OPS/TOOLS/cho_thu.py` (timeout 600000; 10 = thư mới, 11 = gộp tiểu yêu, 12 = chạy lại).**
+Đẩy: `git checkout -- JX1_OPS/TOOLS/__pycache__` rồi `python -I JX1_OPS/TOOLS/dong_bo.py --push`. Lấy: `git pull -q --rebase --autostash origin jx1-ops`. Commit kết thúc `Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>`. Đã đọc đến #B-028 (ghi dòng `Đã đọc đến #B-N` ở `TU-SONNET-B.md`, nếu không hook chặn).
+Cấm: mật khẩu (không đọc/gõ/in, kể cả qua script tôi chạy), Main VM 192.168.1.50, tiền, xóa dữ liệu, sửa tường lửa; không thả Bot khi chủ đang chơi mà chưa có lệnh Chat; không kill python lạ.
+
+## Việc test mượt cho chủ (Q-80/81/82)
+- Test-36: APK vc22, tk `tkchuvuong`, vai `chuvuongtestaa`, điện thoại xiaomi-13t-pro 100.123.183.6 qua Tailscale tới 100.95.186.86.
+- #B-026: Tailscale điện thoại↔PC đi **DERP(sin) ~105–220 ms (≈120), chưa direct** → nguồn lag chính. Cách ép direct: cùng Wi-Fi LAN, tắt VPN/Private DNS, UDP 41641. Máy chủ rỗi 0,3% CPU, không nghẽn. Forwarder `C:\Jx1CocoV3\docs-analysis\scripts	cp_forwarder.py`: socket phía điện thoại NODELAY=0 → đã sửa bật hai đầu (bản gốc `.truoc-b026`). **Chủ phải chạy lại CHAY-CHUYEN-T36.bat** thì forwarder (pid 21528) mới dùng mã mới; chưa xác nhận chủ đã chạy. Chưa đọc được SvrFPS (console gs001 là phần A). Chưa có bảng "lúc chủ chạy/đánh" 10 giây trong `REPORTS/DO-MUOT-MOC-GOC.md` (chủ rời game lúc đo); khi chủ chơi lại: `vm_chay.py do-gs 10` lặp, ghi bảng.
+- #B-027: gs001 khởi động lại cần **~8–10 phút nạp map** mới nối Relay/Bishop (21:29→21:37:50). Kiểm bằng `vm_chay.py chain-up | tail` thấy dòng `gs001 da noi du`. Đừng khởi động lại thêm. gs001 chỉ qua JX-ChainUp.
+- Mốc đo: rỗi CPU 0,16–0,30%, RAM ~30 MB; chủ chơi 21:06–21:10 CPU 25% (tải map) rồi ~2%.
+- Còn mở: Bot 5/10/20 (cần 20 tk test `tao-tk-test` + mật khẩu qua env mà B không cung cấp, và lệnh Chat), chụp túi đồ chủ (cần ai đăng nhập LD), TS-04 mở lại, khởi động lại cầu `ld_bridge` để có `text` từng ký tự, CC-01, C-01/E-01/E-09, bộ canh LD `JX-LDCanh`.
+
+---
+# (cũ) BÀN GIAO A → B (Q-75, #243, 14:50)
 
 **Từ đây A không sửa các mảng dưới; cần gì ghi vào mục "CHO B" cuối `HOP-THU/TU-SONNET.md`.**
 
