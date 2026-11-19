@@ -114,3 +114,6 @@ Chủ chốt: (1) làm cầu nối để tiểu yêu tester điều khiển đư
 
 ## Q-71 (chủ 19/11 11:27) — DUYỆT Q-70; XINGCHI HẠ KHÓA 1x → 0.5x: KHÔNG CHỜ, ĐỔI KHÓA
 Chủ duyệt Q-70 ("cứ theo dõi"). Tin mới: nhà xingchi vừa hạ các api key từ mốc 1x xuống 0.5x; có thể vì thế tiểu yêu chưa lên lại. Lệnh chủ: nếu tiểu yêu chưa lên thì TẮT con đó và dùng KHÓA KHÁC, xem lỗi thế nào; KHÔNG CHỜ ĐỢI. Vẫn giữ Q-69 (một tester một khóa riêng; đổi khóa thì cập nhật bảng khóa↔tester).
+
+## Q-72 (chủ 19/11 13:19) — THỬ COMMAND CODE (commandcode.ai) LÀM THỢ SỬA VIỆC NHỎ
+Chủ chốt "Thử" sau khi Chat trình bày cách hiểu: Command Code là thợ sửa việc nhỏ; Sonnet chỉ đúng tệp/dòng/sửa gì, Command Code sửa trong worktree riêng, Sonnet xem diff rồi gộp. Thử 3 việc nhỏ bằng 10 USD tín dụng miễn phí, đo tốc độ và đúng/sai, so với một tiểu yêu Codex làm cùng việc. Chủ tự đăng nhập/nhập khóa (Chat/Sonnet không nhập hộ, khóa không vào kho). Giới hạn: không đụng mã game riêng tư, tệp hiệu ứng vũ khí, tệp có hook chặn; mỗi việc một worktree + một nhánh.
