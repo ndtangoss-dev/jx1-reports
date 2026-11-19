@@ -84,3 +84,6 @@ Kho kiến thức và bảng lỗi PHẢI chia nhánh theo từng mục (thư m�
 
 ## Q-61 (chủ 19/11 08:38) — Test hiệu ứng vũ khí cận chiến
 Trên Test-36, tạo MỘT LẦN đủ các loại vũ khí cận chiến: kiếm, đao, thương, chùy, song đao, bổng; mỗi loại chỉ cần test CẤP 15. Sau đó test 8 hướng (thứ tự vẽ vũ khí/nhân vật khi chạy bộ). Chỉ kiểm/quan sát, chưa sửa mã hiệu ứng. Bước bật Server D vẫn sau khi kiểm xong.
+
+## Q-62 (chủ 19/11 08:41) — DUYỆT thiết kế BOT v1
+Chủ DUYỆT DESIGN/BOT/THIET-KE-BOT-v1-DUYET.md (3 loại BOT, 5 giai đoạn, file giá gia-vat-pham, cổng duyệt). Thực hiện theo thứ tự: xong #216 (khóa Bot, thử client, vũ khí +15 8 hướng #219, bật D) và tester01 (#217/#218), rồi GĐ0 khảo sát A/B → GĐ1 … → GĐ4. Sonnet khảo sát và chọn hướng nhẹ nhất cho game.

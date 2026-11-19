@@ -283,3 +283,4 @@
 - 19/11 07:25 #218: kho tester chia nhánh (Q-60).
 - 19/11 08:30 Chủ duyệt cấu trúc file giá gia-vat-pham; cập nhật KHOI-DONG-CHAT mục 7 để Chat mới nắm toàn bộ.
 - 19/11 08:40 #219: test vũ khí cận chiến đủ loại +15 rồi 8 hướng (Q-61).
+- 19/11 08:45 #220: chủ duyệt thiết kế BOT v1 (Q-62), giao Sonnet.

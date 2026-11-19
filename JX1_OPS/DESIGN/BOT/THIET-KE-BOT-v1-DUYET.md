@@ -1,4 +1,4 @@
-# THIẾT KẾ BOT v1 — CHỜ CHỦ DUYỆT (19/11 08:40). CHƯA GIAO SONNET.
+# THIẾT KẾ BOT v1 — CHỦ ĐÃ DUYỆT (19/11 08:41, Q-62). GIAO SONNET theo thư #220.
 Nguồn: DESIGN/BOT/HE-THONG-BOT-3-LOAI.md (yêu cầu chủ). Mọi điểm [CHƯA KIỂM] do Sonnet khảo sát trước khi làm.
 
 ## Nguyên tắc

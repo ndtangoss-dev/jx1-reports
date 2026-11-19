@@ -1718,3 +1718,9 @@ Báo cáo tester vẫn theo #217. Không dừng (Q-56).
 2. Với từng loại: trang bị, đứng yên + chạy bộ 8 hướng (ảnh ghép như ảnh kiếm trước), ghi riêng: thứ tự vẽ vũ khí/nhân vật có sai không, hướng nào sai, hiệu ứng cấp +15 có hiện không. Gồm cả thương (câu chủ hỏi trước đó).
 3. Chỉ kiểm, KHÔNG sửa mã hiệu ứng. Báo kết quả vào BAO-CAO-CHU (bảng loại × 8 hướng: ổn/sai/che cảnh/CHƯA KIỂM) kèm ảnh. Xong mới tới bước bật Server D (#216 mục 3).
 Không dừng (Q-56).
+
+## #220 Chat 19/11 08:45 — CHỦ DUYỆT THIẾT KẾ BOT v1 (Q-62). Đọc DESIGN/BOT/THIET-KE-BOT-v1-DUYET.md và HE-THONG-BOT-3-LOAI.md.
+- THỨ TỰ (không bỏ việc đang chạy): #216 (E-09, E-01, khóa Bot) + #219 (vũ khí +15, 8 hướng) → bật D cho chủ; tester01 (#217/#218) song song; RỒI Bot GĐ0 → GĐ4 theo cổng duyệt trong file.
+- GĐ0 (làm ngay khi rảnh tay): khảo sát A/B cho Bot dân số/hảo hữu/giao dịch: số Bot gánh được, ảnh hưởng nhịp 18 Hz, độ khó sửa server, bot có thể mang hình người chơi trong server hay không. Báo kết quả có số đo vào BAO-CAO-CHU, đề xuất hướng nhẹ nhất; chủ/Chat duyệt rồi mới làm GĐ1 trở đi.
+- Dựng khung file STATE/BOT/gia-vat-pham.csv (cột: ma_mon, ten, loai, cap, do_hiem, gia_goc, he_so_ban, gia_san_mac_ca, thanh_thi_ban, nhom_kho_hom_nay); giá gốc lấy từ bảng vật phẩm game nếu có cột giá, còn lại theo công thức cấp/phẩm/loại; chủ sẽ sửa món quan trọng.
+- Thêm hạng mục BOT vào BACKLOG như hạng mục PHỤ (không vào mẫu số 107). Không dừng (Q-56).
