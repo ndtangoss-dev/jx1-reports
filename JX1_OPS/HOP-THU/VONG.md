@@ -113,3 +113,4 @@ SONNET-XONG #242a 14:40 — Command Code: đã đăng nhập, đọc ảnh OK (f
 CHAT-DAY #244 19/11 14:56
 SONNET-XONG #243 14:55 — worktree D:\JX-wt\SONNET-B (nhánh sonnet-b) + .claude/settings.json riêng (JX1_SONNET=B); cho_thu/stop_guard/mailbox_hook hỗ trợ B (thử khô cả A và B OK); BAN-GIAO-B.md; 3 dòng mở B trong BAO-CAO-CHU.
 CHAT-DAY #245 19/11 15:00
+SONNET-XONG #244 15:10 — TOOLS/dong_bo.py + L12 mở rộng + BAN-GIAO-B mục 6 + ghi chú stash.

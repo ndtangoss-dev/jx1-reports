@@ -24,3 +24,6 @@
 
 ## 5. Dọn khi xong (Test-36)
 Task `JX-Lietke`, `JX-Gui`; CDN tạm `out/cdn-t36.pid`; forwarder PID 190524; `iptables -t nat -F OUTPUT` trong LD; luật tường lửa `JX1-AUTO-T36-56722-51189-host`; `/sdcard/jxtrace`; tắt Test-36 khi hết việc. `D:\JX-node` GIỮ.
+
+## 6. Đồng bộ git (#244)
+Dùng `python -I JX1_OPS/TOOLS/dong_bo.py --push` trong worktree của mình (commit trước; script dừng nếu còn file sửa dở). Không `git add -A` các file Tổng quản sinh. Không xóa stash khi chưa `git stash show -p`.
