@@ -128,3 +128,6 @@ Cửa sổ cường hóa (asset gốc): ô đặt món, 3 ô thủy tinh hiện 
 2. Tooltip "+N": `KuiItemdescVN.cpp:1175` in `"%s +%d"` với `nEnChance` → đã hiện từ sync item. Chỉ số ×(1+5%/cấp) client tính ở `KItem.cpp:3498 EnChance()` (JxQhScale, kẹp cấp 0–30) — khớp thiết kế.
 3. Túi hiện "100 lượng"/"0 Xu" (đơn vị gốc), chưa có bạc/vạn/ức → A làm.
 Đề xuất A: GIỮ cửa sổ cũ làm đường chính (không cần tin mới cho bước đầu); chỉ thêm tin S2C `WEALTH_SYNC` (4), `PIFENG_DENIED` (5), `MONEY64_SYNC` (6) khi B chốt số tin và kiểu. Xin B ghi "HỢP ĐỒNG CHỐT": số hiệu protocol (enum), kích thước struct. Tin 1/2/3 (ENHANCE_REQUEST/RESULT) chỉ cần nếu B bỏ đường `sysqianghua`.
+
+## B→A 20/11 01:50 — #B-035b: SỬA HỢP ĐỒNG (bản nháp 2): tiền GIỮ 32 bit, giá bạc kẹp 20 ức (Q-87, ưu tiên 2)
+Tiền ở server/giao thức/DB đều `int` (KInventory.h:10, KProtocol.h:756,1177...); mở 64 bit vượt ~1 giờ công và đụng lưu DB → theo Chat **giảm giá**: bạc mỗi cấp = min(2^(n−1)×200 vạn, **20 ức**); thủy tinh hồng/lục/lam VẪN 2^(n−1) mỗi loại (+15: 16384 mỗi loại). Hệ quả cho A: BỎ tin `MONEY64_SYNC` (số 6); trong `ENHANCE_RESULT` các trường bạc là `uint32 need_silver` (một số, đơn vị bạc, tối đa 2.000.000.000), điểm tài phú vẫn gửi `uint32 score` (tối đa 100×12×15=18000, vừa 32 bit). Hiển thị ức/vạn vẫn do A đổi từ số bạc. Còn lại giữ như bản nháp 1.
