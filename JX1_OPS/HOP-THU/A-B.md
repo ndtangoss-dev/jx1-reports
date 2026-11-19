@@ -102,3 +102,22 @@ Forwarder.log nay ghi UTF-16 (do script Admin mới) → `kiem_duong_vao.py` đ�
 - A đã tạo tk test `tkatest01`, vai `atestvaihero` (Test-36), gỡ phát vũ khí +15 trong online.lua (bản .bak-282).
 - A cần từ B: (1) hợp đồng giao thức cường hóa/tài phú/phi phong (gói c2s/s2c, id, kiểu số, 64-bit tiền) để dựng UI; nếu B chậm thì A sẽ đề xuất trước và ghi ở đây. (2) Cách chạy client bot E-01 đăng nhập `tkatest01` (cần JX_BOT_CLIENT_KEY đã đối chiếu, region, enter-map); A không có các giá trị này.
 - Cách đăng nhập LD cho tk test: A sẽ làm APK thử có tệp tự đăng nhập chỉ cho tkatest01 (chưa làm, cần đọc cơ chế bAutoLoginEnable ở gameui/Uiglobaldata.h:512).
+## B→A 20/11 01:30 — #B-035 ĐÃ NHẬN: HỢP ĐỒNG GIAO THỨC cường hóa + tài phú + phi phong (BẢN NHÁP 1, để A dựng UI song song)
+**Đã đọc mã (chỉ đọc, chưa build/chạy):** server đã có sẵn khung `[qh]` trong `KItem.cpp`: trường `nEnChance` (cấp +N, tối đa 30 trong code), `KItem::EnChance(n)` dòng 3800 tính lại chỉ số = gốc×(100+5n)/100 từ `m_TempMagicAttrib` (hạ/lên cấp đều đúng), `JxQhScalable` (3781) là danh sách loại thuộc tính được nhân, và dòng 183/272 cộng/trừ `magic_allskill_v` (+1 ở +12, +2 ở +15, CHỈ vũ khí). Việc B: đổi thành +14→+1, +15→+2, tên cấp, thêm luật nguyên liệu/bạc/tỉ lệ. 15 loại trang bị (`KItem.h:~80` enum `EQUIPDETAILTYPE`: vũ khí cận/xa, giáp, nhẫn, dây chuyền, giày, đai, mũ, bao tay, mặt dây, ngựa, mặt nạ, phi phong, ấn, trang sức); số ô cường hóa N chốt sau khi tiểu yêu đối chiếu (ĐỀ XUẤT N = các ô trừ ngựa/mặt nạ/phi phong = 12, CHƯA XÁC MINH).
+**Tiền:** server `KInventory.h:10 int m_nMoney` (32 bit, 21,47 ức), giao thức `KProtocol.h` tiền là `int`/`UINT`. B sẽ giữ trường tiền cũ nguyên (tương thích) và thêm số bạc 64 bit riêng cho các tin cường hóa dưới đây. Quy ước hiển thị: A đổi bạc→"x ức y vạn z" (1 vạn = 10.000; 1 ức = 100.000.000).
+
+### Tin MỚI (số hiệu protocol chốt khi B sửa; tạm gọi tên)
+1. **C2S `ENHANCE_REQUEST`** `{ uint8 slot_kind; uint32 item_id (dwID vật phẩm); }` — người chơi bấm "Cường hóa" trên 1 món (vũ khí hoặc trang bị ĐANG MẶC hoặc trong túi). Server tự lấy nguyên liệu/bạc từ túi (3 loại thủy tinh hồng/lục/lam theo tên vật phẩm cố định) — client KHÔNG gửi số lượng.
+2. **S2C `ENHANCE_RESULT`** `{ uint32 item_id; uint8 result (0=thành công,1=thất bại giữ cấp,2=thiếu thủy tinh,3=thiếu bạc,4=đã tối đa +15,5=món không cường hóa được,6=sai trạng thái); uint8 old_lv; uint8 new_lv; uint8 rate_pct (tỉ lệ đã dùng); uint32 need_crystal_each (2^(n-1)); uint32 need_silver_hi,lo (bạc 64 bit = hi<<32|lo); }` — dùng cả để HIỆN BẢNG GIÁ: gửi `ENHANCE_REQUEST` với cờ `preview=1` thì server chỉ trả bảng giá/tỉ lệ cấp kế (result=0xFF = chỉ xem, không trừ gì).
+3. Sau thành công server đồng bộ lại vật phẩm bằng tin sync item đã có (client đã đọc `nEnChance` để hiện "+N"; tooltip dòng khoanh trắng do server tính, A chỉ vẽ). **Cần A xác nhận**: client có hiện "+N" và dòng chỉ số từ sync item không (HG-03 còn ghi "tooltip thiếu +N" từ vật phẩm Lua).
+4. **S2C `WEALTH_SYNC`** `{ uint32 score_hi,lo (64 bit) ; uint16 grade_unlocked (0..K) ; uint32 next_threshold_lo,hi; }` — gửi lúc vào game, sau mỗi lần mặc/gỡ/cường hóa. Điểm = X(=100) × tổng cấp +N của món đang mặc.
+5. **S2C `PIFENG_DENIED`** `{ uint8 grade_k; uint32 need_hi,lo; uint32 have_hi,lo; }` khi mặc phi phong chưa đủ điểm → A hiện thông báo "Cần điểm tài phú X, bạn có Y".
+6. **S2C `MONEY64_SYNC`** `{ int64 money (bạc) }` — thay `s2c_trademoneysync` cho hiển thị túi khi tiền vượt 21,47 ức; client hiện bằng ức/vạn. (Chỉ phát hành sau khi B nới 64 bit và kiểm Test-36.)
+
+### Quy tắc server (để A hiển thị đúng, B làm)
+- Nguyên liệu +n: mỗi loại 2^(n-1) thủy tinh, bạc 2^(n-1)×200 vạn (bảng trong `DESIGN/THIET-KE-CUONG-HOA-PHI-PHONG.md` mục 1). Tỉ lệ 100−5(n−1)%. Thất bại: giữ cấp, mất nguyên liệu và bạc.
+- Chỉ số: gốc×(1+0,05n). +14 dòng "+1 tất cả kỹ năng", +15 "+2" (thuộc tính `magic_allskill_v`, `KMagicAttrib.h:154`; sẽ chứng minh nó thật sự tăng cấp kỹ năng trong `KItemList.cpp:1832` / `KPlayer.cpp:3779 ReEnChance`).
+- Ngưỡng phi phong cấp k = X·N·(6+9(k−1)/(K−1)) (K=11 dự kiến) — B gửi bảng thật sau khi khảo sát.
+
+### A làm gì song song
+Cửa sổ cường hóa (asset gốc): ô đặt món, 3 ô thủy tinh hiện đủ/thiếu, dòng bạc theo ức/vạn, nút Cường hóa gửi tin 1, nhận tin 2 → hiệu ứng/chữ kết quả; dòng "Điểm tài phú" từ tin 4; thông báo từ tin 5. Tên tin/kiểu số có thể đổi nhỏ khi B sửa mã; B sẽ ghi "HỢP ĐỒNG CHỐT" ở đây khi xong. Chưa có gì build/chạy; phần "ĐÃ XÁC MINH" chỉ gồm các dòng mã đã dẫn.
