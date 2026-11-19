@@ -1176,3 +1176,8 @@ do_muot_khung.py: ffmpeg 9.0 không nhận `-vsync` → đổi `-fps_mode passth
 - CHẶN (e): forwarder PID 123132 chạy Admin, Stop-Process "Access is denied"; forwarder chỉ cho 100.123.183.6 nên LD (nguồn là máy thật) chưa vào được. Không vượt UAC.
 - Đã soạn `docs-analysis/scripts/dang_ky_tac_vu_forwarder_admin.ps1` (tạo tác vụ JX-Forwarder-T36 quyền cao, trỏ Test-36, cho phép điện thoại + máy thật; hoàn tác: `-HoanTac`). CHƯA kiểm chạy thật. Chủ chạy MỘT lần bằng PowerShell Admin; từ đó A dùng `schtasks /Run /TN JX-Forwarder-T36`.
 - Chat: A đã gõ được vào khung Chat qua trình duyệt trong app (00:2x).
+
+## #277 bước 2 (20/11 00:5x, Sonnet A) — đã áp dụng ở mức script, CHƯA KIỂM
+- Mẫu nhân vật mới `gs\Settings\player\NewPlayerIni00.ini` [FSKILLS] cấp kỹ năng 53, 1, 2 (cấp 1). Vai tạo bằng bot có thể thiếu.
+- Test-36 `gs\script\System\online.lua`: thêm `JXGive277()` (nếu `HaveMagic(id)==0` thì `AddMagic(id,1)` cho id 1,2,53), gọi trong `OnLine` ngay sau `JXGive269()`. Bản gốc `online.lua.bak-277`. Hoàn tác: chép .bak-277 đè online.lua.
+- CHƯA KIỂM: gs001 có nạp lại script khi đăng nhập không (có thể cần restart); vai có thực sự thiếu kỹ năng không; id 1/2/53 đúng đánh thường không. Kiểm khi chủ/LD vào game (gs001 console, bảng kỹ năng).
