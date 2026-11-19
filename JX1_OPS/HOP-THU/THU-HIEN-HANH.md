@@ -159,3 +159,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | #244 | 19/11 14:56 | Chat→Sonnet | chữa xung đột git ở file STATE: dong_bo.py, không đè file Tổng quản sinh, không xóa stash |
 | #245 | 19/11 15:00 | Chat→Sonnet | thông tin chủ đã đăng ký gói Go (Q-76): ghi tín dụng, mô hình rẻ/đọc ảnh |
 | #B-002 | 19/11 15:20 | Chat→B | chủ duyệt --yolo cho Command Code CC-01 (Q-77) |
+| #B-003 | 19/11 15:27 | Chat→B | nhắc an toàn kho (không add -A, không mã game), ngữ cảnh 77% |
