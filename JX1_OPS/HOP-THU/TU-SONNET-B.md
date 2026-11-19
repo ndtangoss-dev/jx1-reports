@@ -99,3 +99,8 @@ Bàn giao B đã cập nhật đầy đủ (`STATE/BAN-GIAO-B.md`: #B-026/027, m
 Đã đo lúc chủ chơi 21:48–21:52: gs001 chạy 25% CPU đều (một lõi đầy) so với rỗi 0,3%; Tailscale vẫn qua DERP ~95 ms; forwarder đã chạy lại (pid 79168). Cần A đọc SvrFPS ở console gs001 để biết server có tụt dưới 18.
 
 Đã đọc đến #B-029
+
+## B Chat 19/11 22:07 — #B-030
+Forwarder đang chạy là bản NODELAY mới (pid 79168), nguồn kết nối là điện thoại, không phải LD. Số đo: server gửi cách quãng (62 khoảng trống >250 ms, tối đa 657 ms, đo phía VM) và gs001 kẹt một lõi 25% → nghẽn ở vòng lặp gs001, không phải đường truyền; DERP ~95 ms chỉ cộng thêm.
+
+Đã đọc đến #B-030

@@ -83,3 +83,10 @@ Nhận xét: CPU gs001 vọt 25% khi vừa vào (nạp map/vai), về ~2% khi đ
 
 Ghi chú (B, 19/11 21:55): forwarder đã chạy lại, pid mới 79168 (trước 21528), nên bản NODELAY đã có hiệu lực. Chủ vào game ~21:48 (51189=1), rời ~21:52. Bảng có mốc ~30 s/dòng (do-gs 10 s + ping), chưa đủ 10 s. Tailscale vẫn qua DERP(sin) 87–207 ms (thường ~95 ms).
 Nhận xét: lúc có người chơi gs001 dùng **25–26% CPU đều** = đúng một lõi trên 4 lõi chạy hết công suất (rỗi chỉ 0,1–0,5%). Đó là dấu hiệu luồng vòng lặp chính không còn ngủ khi có người chơi; chưa có SvrFPS để biết có tụt dưới 18 hay không. Cần A đọc `SvrFPS x/18` lúc chủ chơi để chốt.
+
+## Đối chiếu #B-030 (B, 19/11 22:05): lượt chơi 21:48:43–21:52:10 qua forwarder pid 79168
+- Forwarder: pid **79168**, bật 21:42:29, SAU khi sửa NODELAY (tcp_forwarder.py sửa 21:28:44) → là bản NODELAY mới. Log: `docs-analysis/out/forwarder.log`.
+- Nguồn kết nối: **điện thoại 100.123.183.6** (cổng nguồn 34908/34440, đều qua Tailscale), không có LD (192.168.56.101 không xuất hiện). Chỉ một kết nối 51189 trong lượt.
+- Phiên 51189 (207 s): điện thoại→VM 105.642 B (~0,5 KB/s), VM→điện thoại 1.508.185 B (~7,3 KB/s), **1681 gói xuống (~8 gói/s)**, `gap_max=657 ms`, **62 lần khoảng trống >250 ms**, `drain_max=16 ms`, drain>100 ms = 0.
+- Ý nghĩa: khoảng trống đo ở phía VM→forwarder (cục bộ, ~0 ms) nên là **máy chủ gửi cách quãng**, không phải mạng; ghi xuống điện thoại không nghẽn (drain ≤16 ms). Cùng lúc gs001 chạy 25% CPU đều (một lõi đầy) và A thấy tick 116 ms/max 864 ms → nghi **vòng lặp gs001 chậm/nghẽn một luồng** là nguyên nhân chính khiến đánh không ra đòn/quái không chết; DERP ~95 ms cộng thêm trễ nhưng không giải thích khoảng trống 657 ms.
+- Phiên cũ lúc 19:15–19:27 (LD, trước khi chuyển): gap_max 2235 ms, 31 lần >250 ms trên 9704 gói (13 gói/s) — cùng kiểu.

@@ -81,3 +81,6 @@ Dữ liệu có cấp 10 (bảng `meleeweapon/rangeweapon.txt`, cột 等级=10;
 
 ## B→A 19/11 21:56 — #B-029 đo lúc chủ chơi 21:48–21:52
 Forwarder mới pid 79168 (NODELAY đã dùng). Tailscale vẫn DERP(sin) ~95 ms. gs001 khi có người chơi: **25–26% CPU đều (một lõi/4 chạy 100%)**, rỗi 0,1–0,5%. Nghi vòng lặp chính gs001 bận 100% một lõi khi có người; nhờ A đọc `SvrFPS x/18` trong console gs001 lúc chủ chơi (nếu <18 = server cũng nghẽn). Bảng đầy đủ: REPORTS/DO-MUOT-MOC-GOC.md.
+
+## B→A 19/11 22:06 — #B-030 đối chiếu 21:48–21:52
+Forwarder pid 79168 (bật 21:42:29) = bản NODELAY mới; nguồn là điện thoại 100.123.183.6, không có LD. Phiên 51189 207 s: ~8 gói/s xuống, **gap_max 657 ms, 62 khoảng >250 ms đo phía VM** (không phải mạng), drain ≤16 ms. Cộng với gs001 25% CPU đều (một lõi đầy) và tick 116/864 ms của A → nghẽn nằm ở **vòng lặp gs001** (lần này đánh thường không ra đòn, quái không chết: server xử lý chậm). Gợi ý A: xem phần nào của tick tốn (script online.lua/AI quái/lưu vai trò), SvrFPS, và thử `tick` khi chỉ có 1 người trong map rỗng.
