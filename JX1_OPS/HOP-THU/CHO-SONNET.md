@@ -73,6 +73,9 @@ Kết luận xong thì báo Chat duyệt (O-01) **trước** B-02 chạy.
 
 ## Đã xử lý
 
+## 2026-11-19 23:59 - Thư #277, #278 (đã xử lý bước đo/cấu hình; còn chờ số đo)
+- #277: báo cáo REPORTS/LAN-LENH-KY-NANG.md; đặt CmdLane.ini BufferBusy=1,TtlActMs=400 trên Test-36 (có hoàn tác). #278: jx_net.log ở điện thoại chủ, A chưa đọc được [HỎI-CHAT]. Chi tiết ở TU-SONNET.md. Còn: bước 2 kỹ năng đánh thường, đo sau khi chủ đánh trên Test-36.
+
 ## 2026-11-19 19:40 - Thư #260 (đã xử lý)
 - 1) link: máy thật không tự tải thử được, file đã nằm trong thư mục phục vụ 8091; 2) chuỗi Test-36 sống, cổng 56722/51189/8080/8091 nghe; 3) sửa ký tự tab ở HOP-THU/BAO-CAO-CHU.md; 4) có số trước/sau thật (10,3% vs 15-20% khung đứng yên, chưa thấy mượt hơn); đã ghi vào HOP-THU/BAO-CAO-CHU.md.
 
