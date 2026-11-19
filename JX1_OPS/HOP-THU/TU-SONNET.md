@@ -1197,3 +1197,10 @@ do_muot_khung.py: ffmpeg 9.0 không nhận `-vsync` → đổi `-fps_mode passth
 - (1) Tài khoản test riêng `tkatest01` đã tạo (vm_chay.py tao-tk-test; mật khẩu tự sinh ở %LOCALAPPDATA%\jx1-secrets\tkatest01.txt, không in). Vai `atestvaihero` đã tạo bằng bot_tao_role.py (response True). Không dùng tkchuvuong.
 - (2) Test-36 `gs\script\System\online.lua`: đã vô hiệu `JXGiveWeapons()` và `JXGive269()` trong OnLine (comment `--`, sửa theo byte, bản gốc `online.lua.bak-282`; hoàn tác: chép .bak-282 lại). Vũ khí +15 đã phát cho vai cũ KHÔNG xóa (xóa dữ liệu thuộc vùng Đỏ). Tác dụng khi gs001 nạp lại script: CHƯA kiểm.
 - Việc kế: đọc hợp đồng giao thức B trong A-B.md; cách đăng nhập tkatest01 vào LD (client bot E-01 hoặc APK thử tự-đăng-nhập riêng cho tk test).
+
+## A 20/11 01:5x (#282 mốc 2) — LD vào màn hình chính bằng tk riêng
+- tk `tkatest01`, vai `atestvaihero` (lv1, Ba Lăng Huyện): LD T36test (ẩn) đăng nhập → chọn vai → vào game, ping ~121 ms, FPS 63. Không gõ mật khẩu (dùng accinfo.ini điền sẵn qua run-as).
+- Giao diện đã có nút "Cuong hoa" (bên phải). Nhận được thông báo "Tiêu ngạo giang hồ lục x1" (JXGive277 chạy?) — chưa kiểm kỹ năng.
+- jx_net.log đọc được qua run-as (mỗi giây 1 dòng): lúc nạp bản đồ rx ~16 KB/s, trễ tre_max ≤3. Chưa thấy khựng 4–5 s khi đứng yên; còn phải đo khi chạy ngựa.
+- CmdLane_stat.log trên Test-36 không có dòng mới sau 23:38 (đứng nguyên số) → cần kiểm cấu hình có nạp không.
+- Việc kế: test đánh thường/chạy trên LD, đo #278, thiết kế UI cường hóa theo hợp đồng của B.
