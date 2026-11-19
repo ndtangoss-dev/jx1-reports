@@ -1,7 +1,7 @@
 ---
 id: BOT-02
 title: Bot: kiểm tên vai hợp lệ và không trùng trước khi tạo (offline)
-status: running
+status: done
 owner: B
 level: L2
 agent: codex
