@@ -1927,3 +1927,6 @@ Chủ đã giao việc này (Q-80, L16) nên không hỏi lại. Quyết:
 3. **VK-04:** không dùng `JX1_EFFECT_OK` để nhập ~35 tệp vào repo chính (đúng khi A không tự quyết). Để sau 19:30, ghi báo cáo VK-04 như hiện có (chưa đóng).
 4. **APK cho điện thoại chủ:** chủ cần test trên điện thoại tối nay; chuẩn bị APK thử (versionCode riêng, SHA, hướng dẫn cài + DNAT/kết nối Test-36). Việc giao APK cho chủ chờ chủ nói (đỏ #228); Chat sẽ hỏi chủ.
 Không dừng; xong gõ `A Xong`.
+
+## #256 Chat 19/11 18:45 — CHỦ DUYỆT (Q-81, 18:24): GIAO APK THỬ ĐỘ MƯỢT CHO ĐIỆN THOẠI CHỦ
+Chủ đồng ý đưa APK thử (nội suy client + LimitFPS) cho điện thoại chủ tối nay, test trên Test-36. Làm: (1) APK thử có versionCode riêng, ghi SHA256, KHÔNG đưa vào git; (2) giao theo đường đã dùng cho P46/P47 (hoặc đặt vào thư mục chủ lấy được trên máy, nói rõ chỗ); (3) viết hướng dẫn cài + nối Test-36 bằng lời cực đơn giản vào `BAO-CAO-CHU.md` (cách cài, tài khoản/nhân vật test do B chuẩn bị, bật/tắt nội suy để so sánh, câu hỏi chủ trả lời: lúc nào thấy khựng); (4) kiểm trước 19:30 chuỗi Test-36 lên đủ và APK vào được game trên LD với đúng cấu hình điện thoại sẽ dùng (đường Tailscale/DNAT). Hạn 19:30. Không dừng.

@@ -143,3 +143,6 @@ Chủ chốt: B phải có đầy đủ quyền ngang A; B không được phả
 Chủ: "tối ưu các đường truyền tải thông tin giữa các file, để tối nay test độ mượt, ưu tiên việc này lên đầu" (chốt sau khi Chat nói cách hiểu). Phạm vi: Test-36 + LD, không đụng Server D, bản thử chỉ LD, APK giao chủ theo #228. A sửa/tối ưu (#252), B đo/kịch bản (#B-015). Việc cũ làm sau.
 - Bổ sung Q-80 (chủ 18:11): mục tiêu là CẢM GIÁC MƯỢT, không giật lag: tối ưu nhất có thể cả đường truyền dữ liệu (nạp tệp/map/spr, bộ nhớ đệm) và đường truyền máy chủ↔máy khách (tick, gói, trễ, FPS). Thư #253/#B-016.
 - Bổ sung Q-80 (chủ 18:14): test trên Test-36, HẠN CỨNG 19:30 tối 19/11. Thư #254/#B-017.
+
+## Q-81 (chủ 19/11 18:24) — CHO PHÉP GIAO APK THỬ ĐỘ MƯỢT CHO ĐIỆN THOẠI CHỦ TỐI NAY
+Chủ đồng ý để A đưa APK thử (nội suy client, Q-80) đến điện thoại chủ để test trên Test-36 tối nay. Chỉ APK thử này; không APK khác; APK không vào git (repo công khai); giao theo đường đã dùng cho P46/P47 hoặc thư mục trên máy chủ + hướng dẫn bằng lời đơn giản. Không đụng Server D.

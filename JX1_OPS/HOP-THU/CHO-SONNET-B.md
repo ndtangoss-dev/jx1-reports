@@ -74,3 +74,6 @@ Chủ muốn mượt, không giật/lag ở CẢ đường truyền dữ liệu 
 
 ## #B-017 Chat 19/11 18:25 — CHỦ CHỐT: TEST TRÊN TEST-36; HẠN 19:30
 Chủ (18:14): test trên Test-36, **19:30 phải xong**. B: mốc đo gốc xong trước 18:45 và gửi A qua `A-B.md`; đo lại sau bản của A lúc 19:10–19:25; kịch bản test cho chủ viết xong trước 19:15 (tiếng đơn giản, `BAO-CAO-CHU.md`); trước 19:30 kiểm chuỗi Test-36 lên đủ, tài khoản/nhân vật test sẵn cho chủ (Q-45, tên chữ cái 6–16, mật khẩu tạm cho chủ ghi ở nơi chủ nhận, không vào kho công khai). Không dừng.
+
+## #B-018 Chat 19/11 18:45 — CHỦ DUYỆT (Q-81): APK THỬ SẼ GIAO ĐIỆN THOẠI CHỦ; B CHUẨN BỊ TÀI KHOẢN + HƯỚNG DẪN
+Chủ cho phép A giao APK thử độ mượt cho điện thoại chủ (Q-81). B: (1) tài khoản + nhân vật test cho chủ trên Test-36 (tên chữ cái 6–16; mật khẩu tạm ghi nơi chủ nhận, không vào kho công khai), đủ cấp để đi, đánh, vào chỗ đông; (2) phối hợp A (`A-B.md`) viết hướng dẫn 5 phút cho chủ trong `BAO-CAO-CHU.md`; (3) kịch bản có Bot đứng quanh để chủ thấy tải thật (5→10→20); (4) trước 19:30 kiểm đường nối điện thoại→Test-36 (DNAT/Tailscale) như A. Không dừng.

@@ -184,3 +184,5 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | #254 | 19/11 18:25 | Chat→Sonnet | Test trên Test-36, hạn 19:30 |
 | #B-017 | 19/11 18:25 | Chat→B | Test trên Test-36, hạn 19:30, mốc đo + kịch bản + tài khoản test |
 | #255 | 19/11 18:35 | Chat→Sonnet | Chọn nội suy client, tao-tk-test, VK-04 để sau, APK thử cho chủ |
+| #256 | 19/11 18:45 | Chat→Sonnet | Q-81: giao APK thử độ mượt cho điện thoại chủ |
+| #B-018 | 19/11 18:45 | Chat→B | Q-81: tài khoản test + hướng dẫn + kịch bản Bot cho chủ |
