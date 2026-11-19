@@ -71,3 +71,8 @@ Em tải Node v26.13.1 (hash khớp trang chính thức) vào D:\JX-node nhưng 
 1. Mở PowerShell mới, dán: `$env:Path="D:\JX-node\npm-global;D:\JX-node\node-v26.13.1-win-x64;$env:Path"`
 2. Gõ `command-code login` (hoặc `cmdc login`), trình duyệt mở ra, đăng nhập tài khoản của anh rồi bấm cho phép.
 3. Gõ `command-code status` thấy đã đăng nhập thì nhắn "đã đăng nhập". Không dán khóa vào chat. Cần anh quyết định: có (làm 3 bước này).
+
+## Command Code tester CC-01 (#242, 19/11 ~14:55) — KẸT, cần chủ cho phép `--yolo`
+- Đã dựng worktree `D:\JX-wt\CC-01` + hòm cầu `.ldbridge` (cầu chạy trên emulator-5558) + `NHIEM-VU.md`.
+- Command Code chạy không `--yolo` thì không ghi được file lệnh (nó tự dừng và xin quyền). Chạy với `--yolo` bị bộ phân loại tự động của Claude Code chặn (agent ngoài tự chạy lệnh không giám sát). Thuộc hạ KHÔNG lách.
+- Cách mở: chủ cho phép rõ `command-code --yolo` chạy trong `D:\JX-wt\CC-01\.ldbridge` (chỉ ghi vào thư mục đó), hoặc thêm luật Bash cho lệnh đó vào settings. Khuyến nghị: cho phép.
