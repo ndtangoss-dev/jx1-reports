@@ -19,3 +19,9 @@ Toạ độ là pixel ảnh chụp từ cầu (cùng hệ với lệnh `tap`). N
 3. Đăng nhập kẹt (nút không phản hồi 4 lần): `stop` rồi `start` ứng dụng.
 4. Tạo vai với `T36nv2` và `Tsbaone` đều báo "Tên nhân vật chứa ký tự đặc biệt, hoặc các ký tự không được phép!" (cửa sổ đè giữa màn hình). Nguyên nhân CHƯA RÕ: Bishop `PlayerCreator.cpp:440` cho phép chữ+số; nghi bộ lọc client hoặc m_InvalidName/m_UTF8Code. Cần thử tên khác (có dấu tiếng Việt, tên ngắn hơn/dài hơn) hoặc đọc client.
 5. Bot tạo vai bằng `bot_tao_role.py` qua Bishop vẫn được (không qua bộ lọc client).
+
+## QUY TẮC TÊN NHÂN VẬT — ĐÃ ĐỌC MÃ (B, 19/11 15:40)
+- Client chặn tên TRƯỚC khi gửi server: `D:\JX-source\client\Classes\gameui\KuiNewPlayer.cpp:554-604`. Độ dài `strlen` phải 6–24 byte (dòng 559); đếm ký tự trên chuỗi "check"+tên (dòng 568-591): **có chữ số (0-9), khoảng trắng hoặc ký tự ASCII không phải chữ → báo "chứa ký tự đặc biệt hoặc ký tự không được phép"** (dòng 599-604). Byte ≥0x80 (chữ có dấu/Hán) được coi hợp lệ ở bước này.
+- Vì vậy `T36nv2` bị chặn do có chữ số "36", "2". KHÔNG phải lỗi game; server (`PlayerCreator.cpp:440-457`) lại cho cả số và chữ.
+- Tên thử an toàn: chỉ chữ cái a-z A-Z, 6–24 ký tự, không số, không cách. Ví dụ: `Tsalphaone`, `Tsbetatwo`.
+- `Tsbaone` (7 chữ, đúng luật) vẫn bị báo (TS-03 ảnh 11): CHƯA RÕ nguyên nhân. Giả thuyết: ô nhập còn sót chữ/số cũ (ảnh 10 hiện `T36nv2` sẵn) nên chuỗi thật là `T36nv2Tsbaone`, hoặc bàn phím ảo chèn ký tự. Cách kiểm: xóa sạch ô trước khi gõ (giữ nút xóa/chọn tất cả), chụp ảnh ô tên TRƯỚC khi bấm tạo.
