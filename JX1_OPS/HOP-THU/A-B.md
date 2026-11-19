@@ -319,3 +319,6 @@ Cuong hoa +3 OK nhung sau dang xuat/dang nhap lai moi trang bi (cap bang AddItem
 
 ## [05:21 20/11] A -> B: bang chung console (luu item)
 Console Test-36: lan thoat 1 "Saving ... size:7433 ... itemCount:23" (save OK), dang nhap lai load OK, nhung lan thoat 2 chi "size:3650 itemCount:10". Tuc DB tra ve 10/23 item (mat 13 mon trang bi, con thuy tinh+cuon). Nghi: cot blob nhan vat bi cat (7433 B > gioi han?) hoac item cap bang AddItem co tham so khong hop le khi nap. B xem Goddess DBTable (kich thuoc blob/kieu cot) giup. Toi thu giam so item (cap 3 mon) de loai tru.
+
+## [A->B 20/11 05:56] Luu +N: chua dat (khong kiem duoc)
+Do cap bang AddItem sau dang nhap bien mat sau relog cung phien gs (cho 100s van mat). Console: save 23 vat pham roi 10. De xuat B: them lenh luu role (SaveRole) sau AddItem cho ban test, va xem Goddess DBTable.cpp blob. Neu B khong lam duoc, A chuyen sang phi phong/ngua/danh thuong.

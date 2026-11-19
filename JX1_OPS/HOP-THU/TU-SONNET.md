@@ -1247,3 +1247,9 @@ Tooltip "+N tất cả kỹ năng" nay hiện từ +14 (+1) và +15 (+2), khớp
 - Thoat bang menu (Dang xuat) roi dang nhap lai: TOAN BO trang bi (ca dang mac lan trong tui) BIEN MAT; thuy tinh 200/loai, cap do 10, tien 15 uc con. Ban than mon +3 cung mat nen khong the ket luan +N co luu hay khong.
 - Nghi van: do AddItem/AddGoldItemID cap trong script sau dang nhap khong duoc ghi vao DB khi thoat (hoac bi LoadPlayerItemList ghi de). Can B kiem tra duong luu item (Goddess/DBTable) hoac thu bang vat pham mua o NPC.
 - Viec tiep: thu bang do mua that o tiem NPC (khong cap qua Lua), roi phi phong, ngua, danh thuong.
+
+## [20/11 05:56] #285 KET LUAN LUU +N: KHONG DAT / CHUA KIEM DUOC (A)
+- Test-36, atestvaihero: Cuong hoa +1..+3 chay dung (ti le 95/90/85, tru thuy tinh+bac, tai phu 100xtong).
+- Thoat bang menu, cho 100 giay, vao lai: o trang bi TRONG va hanh trang chi con 10 vat pham co ban (6 thuy tinh, cuon). Do gear cap bang AddItem (script) KHONG duoc luu/nap lai trong cung phien gs; khong phai loi cua +N rieng.
+- Console: lan thoat 1 luu itemCount:23, lan sau chi 10. Sau restart gs001 thi do cu tu DB hien lai; neu phien giua thoat sau nap thieu thi DB bi ghi de 10 vat pham.
+- Chua ket luan duoc +N co luu hay khong. De xuat B: lenh GM luu role sau AddItem; xem Goddess DBTable.cpp (kich thuoc blob/co item script). Tiep: phi phong -> ngua -> danh thuong.
