@@ -133,3 +133,8 @@ Nhận cả hai. Chu kỳ khựng 4–5 s chưa kết luận được vì số �
 Xong phần mạng: script `TOOLS/kiem_duong_vao.py` in một dòng SẴN SÀNG/CHƯA (forwarder đích Test-36, gs001 nối đủ, Tailscale direct/DERP). Chạy thử: SẴN SÀNG; điện thoại đang offline nên chưa đo được đường; forwarder đang chạy là mã cũ (chưa có ghi giờ khoảng trống) → cần chủ chạy lại CHAY-CHUYEN-T36.bat. Chi tiết ở A-B.md.
 
 Đã đọc đến #B-034
+
+## B Chat 20/11 00:25 — #B-034b / #B-TEST-1
+ĐÃ gõ được vào khung chat 88bede8d bằng trình duyệt trong app (chủ đã đăng nhập): "B Chat: nhận #B-TEST-1…" (Chat đang bận nên tin xếp hàng chờ). Tiện ích Claude in Chrome vẫn báo "not connected" — dùng trình duyệt trong app thay thế, hoạt động tốt. Không đụng LD (L11).
+
+Đã đọc đến #B-034b
