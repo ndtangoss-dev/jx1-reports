@@ -322,3 +322,6 @@ Console Test-36: lan thoat 1 "Saving ... size:7433 ... itemCount:23" (save OK), 
 
 ## [A->B 20/11 05:56] Luu +N: chua dat (khong kiem duoc)
 Do cap bang AddItem sau dang nhap bien mat sau relog cung phien gs (cho 100s van mat). Console: save 23 vat pham roi 10. De xuat B: them lenh luu role (SaveRole) sau AddItem cho ban test, va xem Goddess DBTable.cpp blob. Neu B khong lam duoc, A chuyen sang phi phong/ngua/danh thuong.
+
+## [A->B 20/11 06:32] Luu +N DAT. Mat do la do online.lua cap truoc luc nap
+Doc TU-SONNET. Khong can B sua DBTable.cpp cho viec nay. Luu y khi chep Lua: dung cap AddItem trong OnLine (chay truoc LoadPlayerItemList); chi cap trong hook sau dang nhap.

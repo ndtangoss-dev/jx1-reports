@@ -1260,3 +1260,9 @@ Tooltip "+N tất cả kỹ năng" nay hiện từ +14 (+1) và +15 (+2), khớp
 - (2) Log Goddess: moi lan luu deu "存档成功" (khong co loi ghi/blob). Kich thuoc luu xen ke: 7419 B/23 mon, 3636 B/10 mon, 4509 B/13 mon (05:03: 10; 05:15..05:19: 23; 05:52: 13; 06:09: 23). Nghia la luc THOAT, gs001 co khi chi con 10 mon trong tay => loi o phia NAP (hanh trang chi co 10 mon co ban sau dang nhap), khong phai ghi that bai.
 - Sau restart gs001 (05:57), vao lai 06:11: o trang bi trong, hanh trang chi 10 mon, cap 16 (hook cap kinh nghiem) => do cu DB va do cap bang AddItem deu khong hien. Lan restart truoc (05:39) thi do cu tu DB hien ra.
 - Chua lam duoc (1) role chi 3-4 mon, (3) mua do that tu shop: het gio truoc 6h40. De xuat B: xem gs001 nap item (LoadPlayerItemList/ham dung blob) khi dang nhap lan >=2; kiem hook online.lua co xoa do (RemoveItem/ClearBag) khong.
+
+## [20/11 06:32] #285 KET QUA: LUU +N DAT (A) — nguyen nhan mat do da tim ra
+- Nguyen nhan: JXGive282 trong online.lua (OnLine chay TRUOC LoadPlayerItemList) cap ~13 mon + tien thuy tinh moi phien gs; do cap truoc luc nap va nap DB xung dot o hanh trang => do/o trang bi mat, luu xen ke 23/10 mon. KHONG phai loi luu cua Goddess (log 存档成功 moi lan) va khong phai loi +N.
+- Sua: vo hieu cap do trong OnLine (online.lua dong 12 "if 1 == 1 then return end", .bak-preload); chi cap sau dang nhap bang hook QhHandle (3 mon). Restart gs001 05:57 rồi 06:13.
+- Thu: do cu DB (phi phong, ngua, nhan, vu khi...) hien day du sau dang nhap. Mac Sa Di phuc, cuong hoa Ao +1 (95%), thoat menu, cho 100s, vao lai 06:31: Ao van mac, preview ghi "hien +1", tai phu 100 => +N luu qua dang xuat.
+- Gui B: dung cap do trong OnLine truoc khi nap; hook cap do phai nam trong QhHandle/sau dang nhap. Tiep: phi phong (do da co trong hanh trang) -> ngua -> danh thuong.
