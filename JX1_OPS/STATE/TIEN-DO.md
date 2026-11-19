@@ -1,6 +1,6 @@
 # TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-19 10:17, đừng sửa tay)
 
-ĐANG LÀM: (không)
+ĐANG LÀM: TS-02
 KẾ TIẾP: 0-08, B-05, D-02, E-04, E-06, P-01
 BỊ CHẶN: T-04
 
@@ -14,6 +14,7 @@ flowchart LR
     T_04["T-04 chặn"]
   end
   subgraph S3["Chặng 3 tick và đồ họa"]
+    TS_02["TS-02 chạy"]
     0_08["0-08 chờ"]
     B_05["B-05 chờ"]
     D_02["D-02 chờ"]
@@ -25,4 +26,4 @@ flowchart LR
   end
 ```
 
-Tổng: 237 việc, 0 đang làm (+0 chết, 0 chờ gộp), 8 chờ, 1 bị chặn, 228 xong.
+Tổng: 238 việc, 1 đang làm (+0 chết, 0 chờ gộp), 8 chờ, 1 bị chặn, 228 xong.
