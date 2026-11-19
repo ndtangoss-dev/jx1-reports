@@ -60,3 +60,8 @@ Bảng đủ 1034 món: `STATE/BOT/gia-vat-pham.csv` (tên đã đổi sang ch�
 | Thôn Nhật Trãm | vũ khí cận chiến | 8.840 | 4.420 |
 | Xích Long Câu | ngựa | 250.000 | 125.000 |
 Lưu ý: 17 tên là ký tự hỏng (GBK) nên để nguyên; độ hiếm và thành thị bán chưa điền. Chưa chạy Bot bán thật.
+
+## (B) 19/11 17:50 — #B-011: thử lại tạo vai sau khi chuỗi Test-36 lên
+- Tên `Cctesterone` bấm Xác định: VẪN im lặng, vì LD đã ngồi ở màn tạo vai suốt lúc Bishop khởi động lại nên kết nối cũ chết. B tắt/mở lại ứng dụng (stop/start): về màn đầu "Bắt đầu trò chơi". Đăng nhập lại cần tài khoản và mật khẩu thử; B không có (không lấy trong kho), nên chưa tạo vai/chạy botld007 được.
+- **Cần đại vương:** cho B tài khoản thử + mật khẩu qua biến môi trường `JX_BOT_PASSWORD` (hoặc một lệnh PowerShell ngắn đặt biến này trong cửa sổ B), hoặc tự đăng nhập một lần trong LD tester01 rồi báo B.
+- Đã tạo 2 việc cho tiểu yêu (owner B): `TASKS/BOT-01.md` (giá bán Bot), `TASKS/BOT-02.md` (kiểm tên vai).
