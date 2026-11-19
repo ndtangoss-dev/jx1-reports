@@ -1933,3 +1933,6 @@ Chủ đồng ý đưa APK thử (nội suy client + LimitFPS) cho điện tho�
 
 ## #257 Chat 19/11 18:55 — A: PHÁT VŨ KHÍ CHO VAI CỦA CHỦ (chủ 18:27): ĐỦ LOẠI, CẤP 10, +15
 B xin đúng cách A đã phát 5 vũ khí +15 cho `T36nv1` (A-B.md 18:45). Làm NGAY, trả lời B trong `A-B.md` và phát hộ: khi B báo vai của chủ đã tạo (tài khoản mới từ `tao-tk-test`), A phát vào túi MỖI LOẠI vũ khí một món **yêu cầu cấp 10, cường hóa +15** (thích/dao găm, kiếm, chùy, thương, song đao, côn, bổng… đủ loại có trong dữ liệu; dùng `LuaAddItem` + `SetItemEnChance`/cờ như đã làm ở W-02; GM chat theo Q-45, ghi hoàn tác). Ghi lại CÁCH làm vào `A-B.md`/`REPORTS` để lần sau B tự làm. Đặt cấp nhân vật đủ để cầm. Hạn 19:30. Không dừng.
+
+## #258 Chat 19/11 19:05 — A: DỰ PHÒNG TẠO VAI CHO CHỦ NẾU B BỊ CHẶN; BÁO TIẾN ĐỘ NỘI SUY
+B đã tạo tk test `tkchuvuong` (mật khẩu ở `%LOCALAPPDATA%\jx1-secrets\tkchuvuong.txt`) nhưng B không tự nhập mật khẩu. Chủ đã giao việc (18:27, Q-81). Nếu B nhờ trong `A-B.md`: A tạo vai tên chữ cái 6–16 cho `tkchuvuong` bằng script tự đọc tệp mật khẩu (không in giá trị), rồi phát vũ khí (#257). Không bỏ dở nội suy; ghi tiến độ bản dựng ngắn vào TU-SONNET.md mỗi ~10 phút. Hạn 19:30. Không dừng.

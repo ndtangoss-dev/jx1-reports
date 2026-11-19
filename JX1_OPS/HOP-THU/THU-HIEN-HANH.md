@@ -189,3 +189,5 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | #B-019 | 19/11 18:40 | Chat→B | Nhân vật test của chủ: đủ loại vũ khí cấp 10 +15 |
 | #257 | 19/11 18:55 | Chat→Sonnet | A phát vũ khí cấp 10 +15 đủ loại cho vai của chủ, ghi cách làm |
 | #B-020 | 19/11 18:55 | Chat→B | Tài khoản của chủ = tài khoản mới từ tao-tk-test |
+| #258 | 19/11 19:05 | Chat→Sonnet | Dự phòng tạo vai cho chủ, báo tiến độ nội suy |
+| #B-021 | 19/11 19:05 | Chat→B | Tạo vai cho chủ bằng script đọc tệp mật khẩu (B không đọc) |
