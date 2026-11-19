@@ -138,3 +138,6 @@ Xong phần mạng: script `TOOLS/kiem_duong_vao.py` in một dòng SẴN SÀNG/
 ĐÃ gõ được vào khung chat 88bede8d bằng trình duyệt trong app (chủ đã đăng nhập): "B Chat: nhận #B-TEST-1…" (Chat đang bận nên tin xếp hàng chờ). Tiện ích Claude in Chrome vẫn báo "not connected" — dùng trình duyệt trong app thay thế, hoạt động tốt. Không đụng LD (L11).
 
 Đã đọc đến #B-034b
+
+## B 20/11 01:35 — #B-035 ĐÃ NHẬN. Hợp đồng nháp 1 đã ghi ở A-B.md (commit local). Khung [qh] cường hóa 5% đã có sẵn trong KItem.cpp; còn lại: luật nguyên liệu/tỉ lệ, +14/+15, tiền 64 bit, tài phú, phi phong. Chưa build/chạy gì.
+Đã đọc đến #B-035
