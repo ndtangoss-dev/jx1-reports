@@ -91,3 +91,9 @@ Thuộc hạ ghi mốc: ping, FPS, CPU máy chủ ở từng mức. (Mốc rỗi
 - Đã tạo tài khoản test **`tkchuvuong`** trên Test-36 (không phải máy chủ chính). Mật khẩu do máy tự sinh, nằm ở tệp trên máy thật: `C:\Users\PC\AppData\Local\jx1-secrets\tkchuvuong.txt` (ngoài kho, thuộc hạ KHÔNG đọc, không ghi vào đâu). Đại vương mở tệp đó lấy mật khẩu.
 - Chưa có vai: tạo vai phải đăng nhập bằng mật khẩu đó, thuộc hạ không được tự nhập mật khẩu. Hai cách: (1) đại vương tự đăng nhập trên điện thoại/LD và bấm "Tạo nhân vật mới" (chọn Ba Lăng huyện → hệ → tên chữ thường ≥12 ký tự), hoặc (2) đại vương cho phép rõ ràng "B dùng tệp mật khẩu đó để chạy `bot_tao_role.py`" thì thuộc hạ chạy (vẫn không in mật khẩu).
 - Hoàn tác: `python -I -X utf8 JX1_OPS/TOOLS/vm_chay.py xoa-tk-test tkchuvuong`.
+
+
+## 19/11 19:02 — Vai thử vũ khí cho đại vương (Test-36)
+1. Vào game bằng tài khoản **tkchuvuong**, chọn vai **chuvuongtestaa** (mật khẩu ở tệp `%LOCALAPPDATA%\jx1-secrets	kchuvuong.txt` trên máy thật, thuộc hạ không ghi ra đây).
+2. Lần vào đầu tiên, túi tự có 9 món vũ khí cấp 10, cường hóa +15 (6 loại cận chiến, 3 loại tầm xa); nhân vật lên cấp 90 kèm 300 điểm tiềm năng.
+3. Muốn cầm vũ khí: cộng điểm vào Sức (≥100) và Nhanh nhẹn (≥155 cho tầm xa) trong bảng nhân vật, rồi mặc.
