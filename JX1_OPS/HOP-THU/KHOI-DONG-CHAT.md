@@ -48,3 +48,4 @@ SỬA 16:50 (chủ): Chat KHÔNG còn lịch kiểm 30 phút, không tự quét.
 - Chủ chốt khác: Gemini bỏ; xingchi là nhà cung cấp chính (>3000 USD, GPT 1x; mở tiểu yêu không giới hạn, để ý RAM, Q-57); Server D chỉ bật khi chủ test điện thoại, tắt sạch khi xong (quyền sẵn); KHÔNG sửa mã hiệu ứng vũ khí khi chưa có bằng chứng + Chat duyệt; khóa không bao giờ vào kho; không bridge VM; ẩn cửa sổ LDPlayer ngay.
 
 LUẬT MỚI 19/11 10:42 (STATE/LUAT-COT-LOI.md L13): bàn việc gì với chủ cũng phải nói trước mình hiểu thế nào, chủ chốt rồi mới giao Sonnet; lỡ gửi mâu thuẫn thì tự gỡ ngay.
+- Đổi tài khoản: xem `STATE/QUY-TRINH-DOI-TAI-KHOAN.md` (A, B, Chat, các bước chủ làm).
