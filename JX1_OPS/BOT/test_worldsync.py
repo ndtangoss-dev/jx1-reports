@@ -57,6 +57,8 @@ class WorldSyncTests(unittest.TestCase):
     def test_each_truncated_fixed_record_rejected(self):
         for protocol, length in worldsync.FIXED_SIZES.items():
             for cut in range(1, length):
+                if cut == worldsync.LIVE_ALT_SIZES.get(protocol):
+                    continue  # 223 = layout Cocos của exe thật, test riêng
                 with self.subTest(protocol=protocol, cut=cut), self.assertRaises(ProtocolError):
                     worldsync.split_records(bytes([protocol]) + bytes(cut - 1))
 
@@ -141,3 +143,18 @@ class WorldSyncTests(unittest.TestCase):
             session.poll()
         self.assertEqual(session.state, State.CLOSED)
         self.assertEqual(sent_messages(game), [b"\x42" + GUID, END, b"\x7c\1\0\0\0"])
+
+
+class ExtendTailTests(unittest.TestCase):
+    def test_extend_record_then_unknown_tail_is_dropped_like_client(self):
+        ext = b"\xfb" + struct.pack("<H", 6) + b"abcd"
+        self.assertEqual(worldsync.split_records(ext + b"\0" * 20), [ext])
+
+    def test_unknown_tail_without_extend_still_fails_closed(self):
+        with self.assertRaises(ProtocolError):
+            worldsync.split_records(b"\x82\x01" + b"\0" * 20)
+
+    def test_npc_normal_cocos_223_only_when_next_boundary_fits(self):
+        a = b"M" + bytes(222)
+        self.assertEqual(worldsync.split_records(a + a + END), [a, a, END])
+        self.assertEqual(worldsync.split_records(a), [a])

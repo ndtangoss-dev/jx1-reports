@@ -65,6 +65,11 @@ def decode_record(record):
             kind=record[11], name=record[42:], camp=record[4], doing=record[10],
             level=setting & 0xFFFF, template=setting >> 16,
             life_ratio=struct.unpack_from("<i", record, 38)[0])
+    if protocol == 77 and len(record) < 227:
+        # Layout Cocos 223 byte của exe thật: chỉ tin id và tọa độ (offset 1/5/9 trùng).
+        return Npc(npc_id=struct.unpack_from("<I", record, 1)[0],
+                   x=struct.unpack_from("<i", record, 5)[0],
+                   y=struct.unpack_from("<i", record, 9)[0])
     if protocol == 77:
         # Bỏ các field chưa được sender khởi tạo, kể cả nLifeYu khi HP<=0.
         return Npc(

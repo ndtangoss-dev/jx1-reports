@@ -84,9 +84,11 @@ class BehaviorTests(unittest.TestCase):
     def test_truncation_extra_record_and_cocos_rejected(self):
         for record in (SKILLS, SPAWN, NORMAL, HURT, DEATH):
             for cut in range(len(record)):
+                if cut == 223 and record[0] == 77:
+                    continue  # layout Cocos 223 của exe thật được chấp nhận (tọa độ thôi)
                 with self.subTest(protocol=record[0], cut=cut), self.assertRaises(ProtocolError):
                     decode_record(record[:cut])
-        for record in (NORMAL[:223], SPAWN + HURT, DEATH + b"\0"):
+        for record in (NORMAL[:222], SPAWN + HURT, DEATH + b"\0"):
             with self.assertRaises(ProtocolError):
                 decode_record(record)
 

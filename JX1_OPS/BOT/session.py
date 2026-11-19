@@ -154,10 +154,14 @@ class Session:
             self.gateway.send(packets.select_role(role_bytes))
             self.state = State.ROLE_SELECTED
             permit = packets.permit_login(self.gateway.receive(deadline), account, role_bytes, encoding)
-            validate_target(permit.host, permit.port)
-            if permit.host != self.host or permit.port != GS_PORT:
-                raise ProtocolError("Permit không trỏ đúng gs001 của VM thử")
-            self.game = self.connector(permit.host, permit.port, self.timeout)
+            # Permit mang IP công khai của gs001 (cấu hình cho client thật), không phải IP host-only;
+            # Bot không đi theo địa chỉ server báo, luôn nối vào VM thử đã kiểm.
+            validate_target(self.host, permit.port)
+            if permit.host == "192.168.1.50":
+                raise ProtocolError("CHẶN CỨNG Main VM 192.168.1.50 (permit trỏ Main VM)")
+            if permit.port != GS_PORT:
+                raise ProtocolError("Permit không trỏ đúng cổng gs001 của VM thử")
+            self.game = self.connector(self.host, permit.port, self.timeout)
             self.game.send(packets.logic_login(permit.guid))
             self.gateway.close()
             self.gateway = None
