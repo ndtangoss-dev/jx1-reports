@@ -1187,3 +1187,8 @@ do_muot_khung.py: ffmpeg 9.0 không nhận `-vsync` → đổi `-fps_mode passth
 - LD T36test (vc23) đã nối qua forwarder: log 00:19:59 "port 56722 NOI VM ... OK". Đã tới màn "Lựa chọn máy chủ: JX1 Mobile TEST" rồi màn đăng nhập (ảnh docs-analysis/out/ld/s3.png). LD đã thu nhỏ (IsIconic=True).
 - CHƯA đủ (b)/(e): client chỉ lưu tk `testa`, không có `tkchuvuong`. Tôi KHÔNG gõ mật khẩu vào ô đăng nhập (luật an toàn cấm nhập mật khẩu để xác thực ở máy chủ không phải localhost, kể cả khi được giao). Nên chưa tới màn game chính và CHƯA gõ "SẴN SÀNG" cho Chat.
 - Cần: chủ tự đăng nhập tkchuvuong/chuvuongtestaa trên LD/điện thoại (mật khẩu ở tệp Desktop), hoặc Chat/chủ xác nhận cách khác. Đường nối tới server đã kiểm xong.
+
+## #277 kiểm chỉ-đọc 20/11 00:30 — Sonnet A
+- Test-36: `CmdLane.ini` có (BufferBusy=1, TtlActMs=400); gs001 PID 7600 chạy từ 23:39:44.
+- `CmdLane_stat.log` ghi lần cuối 23:38:41 (TRƯỚC lần khởi động lại), bộ đếm đứng yên vì chưa có người chơi. Sau khởi động chưa có dòng mới: CHƯA kiểm được gs001 có đọc CmdLane.ini không; cần có người vào game rồi so kept_skill/exec skill.
+- JXGive277 vẫn CHƯA kiểm (cần đăng nhập vai).
