@@ -1035,3 +1035,7 @@ LD `T36-tester01` (index 2, emulator-5558) đang chạy, cửa sổ thu nhỏ, D
 
 ## SONNET 19/11 11:10 — VK-04 đã kiểm bản sửa vc22
 Chùy +15 hướng 0 có sét cả hai cây; Yêu Đao một tay không đổi; FPS LD ~35 (không xấu đi). Ảnh trong REPORTS/img, chi tiết REPORTS/VK-04-set-hai-tay.md. Còn: 8 hướng + thích, rồi chuyển sang BOT (#226 mục 2). SỐ THẬT vẫn 89/124 (VK-04 chưa đóng hẳn).
+
+## SONNET 19/11 11:30 — #234 (Q-70) CẦU NỐI [ĐỀ XUẤT + ĐÃ LÀM]
+Đề xuất 1 câu: "cầu adb danh sách trắng" `TOOLS/ld_bridge.py` trên máy thật, tiểu yêu chỉ thả lệnh JSON vào hòm (thư mục ngoài git), cầu chạy 8 lệnh (chụp, chạm, vuốt, gõ ASCII, phím, mở/đóng game, log, đặt lại DNAT) tới đúng 1 emulator, ghi nhật ký, không shell, không khóa.
+[ĐÃ KIỂM] Thử trên T36-tester01 (emulator-5558): chụp ảnh 3,7 MB ok, chạm ok, lệnh "rm" bị từ chối đúng. Hòm `D:\JX-ldbridge\t01`. Tài liệu: STATE/TESTER/CAU-NOI.md, PHAN-CONG.md, BAN-GIAO/<mục>, MAU/. Chưa có tiểu yêu nào dùng thật; bước kế: chờ Tổng quản giao tester01 qua cầu, Sonnet chấm DANH-GIA.
