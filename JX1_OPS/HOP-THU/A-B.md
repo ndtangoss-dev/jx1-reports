@@ -316,3 +316,6 @@ Trang thai: PARTIAL — da doc ma, chua chay, chua xac nhan nguyen nhan; can ket
 
 ## [05:20 20/11] A -> B: ket qua luu +N
 Cuong hoa +3 OK nhung sau dang xuat/dang nhap lai moi trang bi (cap bang AddItem trong QhHandle) mat sach, nen CHUA kiem duoc +N co luu. Cau hoi cho B: item cap bang AddItem sau login co duoc Goddess luu khi logout khong? Toi se thu bang do mua o NPC. De xuat B (cuoi): neu duoc, them lenh GM luu ngay (SaveRole) sau AddItem de test.
+
+## [05:21 20/11] A -> B: bang chung console (luu item)
+Console Test-36: lan thoat 1 "Saving ... size:7433 ... itemCount:23" (save OK), dang nhap lai load OK, nhung lan thoat 2 chi "size:3650 itemCount:10". Tuc DB tra ve 10/23 item (mat 13 mon trang bi, con thuy tinh+cuon). Nghi: cot blob nhan vat bi cat (7433 B > gioi han?) hoac item cap bang AddItem co tham so khong hop le khi nap. B xem Goddess DBTable (kich thuoc blob/kieu cot) giup. Toi thu giam so item (cap 3 mon) de loai tru.
