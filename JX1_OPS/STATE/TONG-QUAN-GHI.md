@@ -217,11 +217,8 @@
 [TỔNG QUẢN 19/11 01:19] CAU DAO xingchi: DONG; KC-01 chet, chay lai lan 1 bang JX-K5; HG-03c ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); HG-05b ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); HG-08 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); HG-09 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); HG-10 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); HG-11 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); HG-12 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); HG-13 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-07 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-08 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-09 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-10 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-12 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-13 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-14 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-15 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-16 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-17 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-18 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut)
 [TỔNG QUẢN 19/11 01:21] CAU DAO xingchi: DONG; HG-03c ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); HG-05b ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); HG-08 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); HG-09 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); HG-10 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); HG-11 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); HG-12 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); HG-13 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-07 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-08 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-09 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-10 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-12 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-13 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-14 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-15 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-16 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-17 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-18 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut)
 [TỔNG QUẢN 19/11 01:24] CAU DAO xingchi: DONG; HG-03c giao bang JX-K6; HG-05b giao bang JX-K4; HG-08 giao bang JX-K4; HG-09 giao bang JX-K6; HG-10 giao bang JX-K5; HG-11 giao bang JX-K5; HG-12 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); HG-13 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-07 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-08 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-09 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-10 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-12 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-13 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-14 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-15 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-16 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-17 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-18 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut)
-<<<<<<< Updated upstream
-=======
 [TỔNG QUẢN 19/11 01:25] CAU DAO xingchi: DONG; HG-03c ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); HG-12 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); HG-13 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-07 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-08 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-09 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-10 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-12 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-13 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-14 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-15 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-16 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-17 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-18 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut)
 [TỔNG QUẢN 19/11 01:28] CAU DAO xingchi: DONG; HG-03c giao bang JX-K3; HG-12 giao bang JX-K6; HG-13 giao bang JX-K6; SO-07 giao bang JX-K6; SO-08 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-09 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-10 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-12 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-13 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-14 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-15 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-16 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-17 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-18 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut)
->>>>>>> Stashed changes
 [TỔNG QUẢN 19/11 01:29] CAU DAO xingchi: DONG; KV-05 chet, chay lai lan 1 bang JX-K4; SO-08 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-09 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-10 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-12 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-13 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-14 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-15 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-16 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-17 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-18 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut)
 [TỔNG QUẢN 19/11 01:31] CAU DAO xingchi: DONG; SO-08 giao bang JX-K4; SO-09 giao bang JX-K3; SO-10 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-12 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-13 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-14 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-15 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-16 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-17 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-18 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut)
 [TỔNG QUẢN 19/11 01:36] CAU DAO xingchi: DONG; SO-08 giao bang JX-K3; SO-09 giao bang JX-K4; SO-10 giao bang JX-K3; SO-12 giao bang JX-K2; SO-13 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-14 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-15 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-16 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-17 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut); SO-18 ready nhung CAN KHOA MOI (Sonnet tao 1 khoa, cach nhau >=1 phut)
@@ -293,11 +290,8 @@
 [TỔNG QUẢN 19/11 04:44] CAU DAO xingchi: DONG; XD-A07c giao bang JX-K3; XD-E05 giao bang JX-K4; XD-E09 giao bang JX-K4; XD-HG14 giao bang JX-K4
 [TỔNG QUẢN 19/11 04:46] CAU DAO xingchi: DONG; XD-A07c giao bang JX-K3; XD-E05 giao bang JX-K3; XD-E09 giao bang JX-K4; XD-M01 giao bang JX-K4; XD-W02c giao bang JX-K3
 [TỔNG QUẢN 19/11 04:56] CAU DAO xingchi: DONG; XD-B05 giao bang JX-K4; XD-D02 giao bang JX-K4; XD-E04 giao bang JX-K4; XD-E06 giao bang JX-K3; XD-P03 giao bang JX-K3
-<<<<<<< Updated upstream
-=======
 [TỔNG QUẢN 19/11 04:57] CAU DAO xingchi: DONG
 [TỔNG QUẢN 19/11 04:59] CAU DAO xingchi: DONG
->>>>>>> Stashed changes
 [TỔNG QUẢN 19/11 05:01] CAU DAO xingchi: DONG
 [TỔNG QUẢN 19/11 05:03] CAU DAO xingchi: DONG
 [TỔNG QUẢN 19/11 05:07] CAU DAO xingchi: DONG; HG-14 giao bang JX-K4; HG-16 giao bang JX-K4
@@ -306,10 +300,7 @@
 [TỔNG QUẢN 19/11 05:13] CAU DAO xingchi: DONG
 [TỔNG QUẢN 19/11 05:15] CAU DAO xingchi: DONG; HG-14c giao bang JX-K4; HG-16c giao bang JX-K4
 [TỔNG QUẢN 19/11 05:21] CAU DAO xingchi: DONG; HG-14c giao bang JX-K4; HG-16c giao bang JX-K4
-<<<<<<< Updated upstream
-=======
 [TỔNG QUẢN 19/11 05:23] CAU DAO xingchi: DONG
->>>>>>> Stashed changes
 [TỔNG QUẢN 19/11 05:25] CAU DAO xingchi: DONG
 [TỔNG QUẢN 19/11 05:27] CAU DAO xingchi: DONG
 [TỔNG QUẢN 19/11 05:29] CAU DAO xingchi: DONG
@@ -328,10 +319,7 @@
 [TỔNG QUẢN 19/11 06:03] CAU DAO xingchi: DONG; XD-HG16e giao bang JX-K4
 [TỔNG QUẢN 19/11 06:05] CAU DAO xingchi: DONG
 [TỔNG QUẢN 19/11 06:09] CAU DAO xingchi: DONG
-<<<<<<< Updated upstream
-=======
 [TỔNG QUẢN 19/11 06:11] CAU DAO xingchi: DONG
->>>>>>> Stashed changes
 [TỔNG QUẢN 19/11 06:13] CAU DAO xingchi: DONG
 [TỔNG QUẢN 19/11 06:15] CAU DAO xingchi: DONG
 [TỔNG QUẢN 19/11 06:17] CAU DAO xingchi: DONG
@@ -367,7 +355,6 @@
 [TỔNG QUẢN 19/11 08:25] CAU DAO xingchi: DONG
 <<<<<<< HEAD
 [TỔNG QUẢN 19/11 08:27] CAU DAO xingchi: DONG
-=======
 >>>>>>> 83924ee (E-09: đo Enabled=1 Solo trên Test-36 (giảm ~81%, chưa đóng))
 [TỔNG QUẢN 19/11 08:29] CAU DAO xingchi: DONG
 [TỔNG QUẢN 19/11 08:31] CAU DAO xingchi: DONG

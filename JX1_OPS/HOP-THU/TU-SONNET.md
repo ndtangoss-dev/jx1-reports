@@ -1007,3 +1007,6 @@ Enabled=1 Solo: 116 bản ghi người chơi/40 s so với 385/25 s khi tắt; g
 
 ## #219 — kiểm vũ khí +15 8 hướng (19/11 09:25)
 6 loại +15 trên T36nv1, ảnh `ANH/t36-vu-khi-*-8-huong.png`, bảng ở BAO-CAO-CHU. Không thấy sai thứ tự vẽ; NE/SW bị cảnh che (CHƯA KIỂM). +15 có hiệu ứng cả 6 loại kể cả thương. Chỉ kiểm, không sửa mã. SỐ THẬT 89/107.
+
+## #221 xong (19/11 09:30) [TỰ QUYẾT]
+Gỡ dấu xung đột TONG-QUAN-GHI.md (giữ cả hai bên); chọn cách (b): merge=union trong .gitattributes + pull --rebase --autostash; ghi L12 vào LUAT-COT-LOI.
