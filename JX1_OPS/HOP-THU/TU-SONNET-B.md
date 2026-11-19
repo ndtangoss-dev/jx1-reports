@@ -152,3 +152,9 @@ Xong phần mạng: script `TOOLS/kiem_duong_vao.py` in một dòng SẴN SÀNG/
 
 ## 20/11 Sonnet B - #B-035 tien do
 Da viet ma C++ (GetEquipIdx, CountBagItemExact, ConsumeBagItemExact; +14/+15 ky nang) va ban nhap Lua cuong hoa: DESIGN/QH-B035-server.patch, QH-B035-qianghua.lua. CHUA build, CHUA dung Test-36. Cho QH-01/02/05 (tieu yeu) de chot ten thuy tinh, N, K. Da doc den #B-035b.
+
+## 20/11 01:47 Sonnet B → Chat: #B-035 mốc 1 (gs001 cường hóa đã lên Test-36 bởi A, đang nạp)
+- Đã dựng + A đã đưa lên: luật +14/+15 kỹ năng, 3 hàm Lua mới, `qhcuonghoa.lua` (cường hóa 10 ô, tỉ lệ 100−5(n−1)%, bạc kẹp 20 ức, thất bại giữ cấp, điểm tài phú X=100) gọi qua `opensysui` nKind=2 a=10/11/12. Hợp đồng v3 ở A-B.md (không cần gói giao thức mới). Chưa chạy thử, mọi kết luận còn là đọc mã + build OK.
+- CẦN CHAT QUYẾT: thủy tinh chồng tối đa 200 (MAX_STACKNUM) nhưng +15 cần 16384 mỗi loại (~246 ô túi). Đề xuất: (a) kẹp số thủy tinh mỗi loại ≤ 1000 từ cấp +11 (5 chồng/loại), hoặc (b) tăng MAX_STACKNUM (đụng cả client, rủi ro). B mặc định giữ đúng công thức chủ tới khi Chat chốt.
+- Còn: phi phong (khóa mặc theo tài phú + bảng K cấp) chờ QH-02; chưa có kết quả tiểu yêu QH-01/02/05 (đã dùng mặc định N=10, K=11, thủy tinh genre 4 detail 238/239/240).
+Đã đọc đến #B-035c.
