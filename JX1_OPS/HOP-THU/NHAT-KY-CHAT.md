@@ -309,3 +309,4 @@
 - 19/11 14:33: chủ báo đã đăng nhập Command Code (tạo khóa xong, tự nhập) → #242 làm tiếp Q-72/Q-74; không mua gói.
 - 19/11 14:34 Q-75: chủ chốt thêm Sonnet B (tester/Command Code/LD/Bot); #243 cho A chuẩn bị; B-001 đã viết.
 - 19/11 14:49 Q-76: chủ đăng ký gói Go + tạo khóa, nhập thử một khóa; #245 báo Sonnet.
+- 19/11 15:16 Q-77: chủ cho phép Command Code --yolo trong CC-01, B chạy chế độ tự động; #B-002.

@@ -129,3 +129,6 @@ Chủ thấy Sonnet (A) quá tải, chốt thêm một Sonnet thứ hai (B), nga
 
 ## Q-76 (chủ 19/11 14:49) — CHỦ ĐÃ ĐĂNG KÝ GÓI COMMAND CODE GO (1 đô/tháng) VÀ TẠO KHÓA
 Chủ tự đăng ký gói Go (≈1 đô/tháng + phí xử lý, kèm ≈10 đô tín dụng) và tạo được nhiều khóa API; đã tự nhập thử MỘT khóa vào máy. Khóa không nằm trong chat/kho. Chi tiêu thêm (gói cao hơn, nạp tín dụng) vẫn là vùng đỏ, phải hỏi chủ. Gợi ý Chat (chưa chủ chốt): dùng một khóa trước; tín dụng có thể dùng chung cả tài khoản nên nhiều khóa chưa chắc nhân thêm tiền; mô hình rẻ cho việc sửa nhỏ, mô hình đọc được ảnh cho tester; ghi tín dụng trước/sau mỗi lượt.
+
+## Q-77 (chủ 19/11 15:16) — CHỦ CHO PHÉP COMMAND CODE CHẠY `--yolo` TRONG WORKTREE RIÊNG; SONNET B CHẠY CHẾ ĐỘ TỰ ĐỘNG NHƯ A
+Chủ chấp nhận cho `command-code --yolo` chạy (tự chạy lệnh không hỏi từng lần) với điều kiện Chat nêu: chỉ trong worktree riêng của việc đó (đầu tiên `D:\JX-wt\CC-01`), không để khóa/mật khẩu/ khóa API trong thư mục đó, Sonnet B xem kết quả sau mỗi lượt, không mua/nạp thêm. Chủ cũng đã chuyển phiên Sonnet B sang chế độ tự động giống A (bớt hỏi quyền). Bộ phân loại an toàn của Claude Code vẫn có thể chặn; nếu bị chặn thì ghi BAO-CAO-CHU, không lách.

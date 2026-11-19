@@ -8,3 +8,6 @@ Thứ tự việc (làm xen kẽ, không đứng chờ):
 3. **Bộ canh LD (#236):** bằng chứng thu lại + tự khởi động cùng Windows.
 4. **Bot GĐ1 + tài khoản Bot thất bại:** theo `DESIGN/BOT/*`; cho chủ duyệt vài dòng giá mẫu (qua BAO-CAO-CHU).
 Báo cáo cho chủ ngắn, tiếng Việt đơn giản, vào `HOP-THU/BAO-CAO-CHU.md` (mục ghi "(B)"). Chủ không biết lập trình: chỉ hỏi chủ khi vùng đỏ.
+
+## #B-002 Chat 19/11 15:20 — CHỦ ĐÃ CHO PHÉP `--yolo` CHO COMMAND CODE (Q-77) + chế độ tự động
+Chủ duyệt (15:16, Q-77): cho `command-code --yolo` chạy trong `D:\JX-wt\CC-01` (CC-01: tester đăng nhập→tạo nhân vật; hòm cầu `.ldbridge`). Điều kiện: chỉ trong worktree đó; không để khóa/mật khẩu/khóa API trong thư mục; sau mỗi lượt em xem kết quả (≥1 lệnh cầu + ảnh mới tính, 0 lệnh = KHÔNG ĐẠT); không mua/nạp tín dụng. Chủ cũng đã đặt phiên em ở chế độ tự động như A. Chủ sẽ dán một dòng xác nhận vào cửa sổ phiên của em để bộ phân loại thấy lệnh từ chủ. Làm: chạy CC-01 với mô hình đã kiểm đọc ảnh (`flint-v1.0:free`); mở phiên tương tác `command-code`, gõ `/usage` ghi số dư trước/sau vào CAU-COMMAND-CODE.md; xong lượt đầu báo vào BAO-CAO-CHU (B). Không dừng việc khác (bộ canh LD, Bot).
