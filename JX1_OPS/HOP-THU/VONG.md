@@ -154,3 +154,4 @@ CHAT-DAY #259 19/11 19:20
 - 20:24 CHAT→A #265 nghi script chưa đổi đích thật (PID 21276 cũ)
 - 20:25 CHAT→A/B #266 IP Tailscale điện thoại khớp, tập trung đích forwarder + địa chỉ APK
 - 20:36 CHAT→B #B-025 kiểm ai nghe 56722/51189 sau taskkill
+- 21:27 CHAT→A #268, B #B-026: độ phản hồi chạy nhanh/đánh quái (Q-82)

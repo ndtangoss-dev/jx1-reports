@@ -146,3 +146,6 @@ Chủ: "tối ưu các đường truyền tải thông tin giữa các file, đ�
 
 ## Q-81 (chủ 19/11 18:24) — CHO PHÉP GIAO APK THỬ ĐỘ MƯỢT CHO ĐIỆN THOẠI CHỦ TỐI NAY
 Chủ đồng ý để A đưa APK thử (nội suy client, Q-80) đến điện thoại chủ để test trên Test-36 tối nay. Chỉ APK thử này; không APK khác; APK không vào git (repo công khai); giao theo đường đã dùng cho P46/P47 hoặc thư mục trên máy chủ + hướng dẫn bằng lời đơn giản. Không đụng Server D.
+
+## Q-82 (19/11 21:24) Tối ưu độ phản hồi khi chạy nhanh/đánh quái (chủ)
+Chủ đã vào game trên điện thoại (Test-36, APK vc22): hoạt ảnh/hoạt cảnh đạt, truyền gói tài nguyên ổn; còn LAG khi chạy nhanh và đánh quái, phản hồi chưa tốt. Giao: A client (dự đoán di chuyển, phản hồi đánh tức thì, gộp gói, APK thử vc23 có công tắc, đo ms); B mạng/forwarder/máy chủ (Tailscale direct hay DERP, RTT, NODELAY, SvrFPS lúc chạy/đánh). Phạm vi: Test-36 + APK thử, không Server D, không sửa mã server chính.

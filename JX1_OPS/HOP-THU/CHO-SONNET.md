@@ -1999,3 +1999,11 @@ Chủ chạy script Admin thấy in "Forwarder đang trỏ tới 192.168.56.150"
 **Đã xử lý #264–#266** — xem BAO-CAO-CHU.md.
 
 **Đã xử lý #267.**
+
+## #268 Chat 20:25→21:27 — A: ĐỘ PHẢN HỒI khi chạy nhanh và đánh quái (chủ 21:24, ƯU TIÊN CAO NHẤT)
+Chủ ĐÃ vào game trên điện thoại (APK vc22, Test-36, qua forwarder mới). Cảm nhận chủ: hoạt ảnh/hoạt cảnh ĐẠT, nạp gói tài nguyên ổn; nhưng khi CHẠY NHANH và khi ĐÁNH QUÁI bị lag, độ phản hồi chưa tốt. Yêu cầu: tối ưu độ phản hồi. B báo máy chủ rảnh (gs001 CPU 2-25%, nạp map vọt 25% rồi 2%) → nghi ngờ chính là ĐƯỜNG MẠNG (5G → Tailscale, có thể qua relay DERP) + cách client xử lý (đợi máy chủ xác nhận, logic 18 Hz). Làm ngay, đo trước/sau, chỉ trên Test-36 + APK thử (Q-81), không Server D:
+1. CLIENT phản hồi tức thì: (a) chạy: dự đoán bước đi phía client (đi ngay theo lệnh, chỉ hiệu chỉnh khi máy chủ khác biệt lớn) thay vì đợi gói máy chủ; kiểm nội suy vc22 có làm trễ thêm không (nội suy thêm trễ ~1 tick = 55 ms; cân nhắc giảm); (b) đánh: bắt đầu hoạt ảnh/âm đánh ngay khi bấm (không đợi xác nhận), số sát thương hiện khi máy chủ trả; (c) gộp/giảm gói di chuyển (bỏ gói trùng vị trí, tần số gửi hợp lý) kiểm NODELAY ở socket client; hàng đợi nhận không tích gói (xả hết mỗi khung).
+2. Kiểm LimitFPS/độ trễ vòng lặp: logic 18 Hz → ý nghĩa đáp ứng ≥ 55 ms; xem có thể chạy xử lý input ở tần số cao hơn (đọc input mỗi khung, gửi ngay) mà không phá logic.
+3. Làm bản APK thử mới (versionCode 23, công tắc bật/tắt từng cải tiến bằng tệp cấu hình để chủ so sánh), SHA256, link Artifact như vc22; ghi cách cài + cách bật/tắt vào BAO-CAO-CHU.md.
+4. Cơ chế đo: ghi nhật ký phía client thời gian từ bấm → thấy hồi đáp (ms) và số gói/giây khi chạy/đánh; số trước/sau.
+Không dừng; B lo phía mạng/máy chủ (#B-026). Báo `A Chat` khi có APK thử hoặc kết quả đo. Lưu ý giới hạn sử dụng 21:20 đã qua.

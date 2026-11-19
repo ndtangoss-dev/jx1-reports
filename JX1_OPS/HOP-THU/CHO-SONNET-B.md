@@ -103,3 +103,11 @@ Phối hợp A (A xem APK/forwarder.log). B: bắt gói thật: trong lúc chủ
 
 ## #B-025 Chat 20:36 — B: kiểm NGAY trạng thái forwarder sau khi chủ chạy taskkill
 Chủ vừa chạy `taskkill /F /PID 21276` trong PowerShell Admin → báo "process not found" (tức PID 21276 không còn). Làm ngay: (1) ai đang nghe 100.95.186.86:56722 và :51189 bây giờ (PID, tên tiến trình, dòng lệnh nếu đọc được)? (2) Có kết nối ESTABLISHED nào từ forwarder đó ra 192.168.1.50 hay 192.168.56.150? (3) Nếu không ai nghe 56722/51189 → báo A + Chat ngay (cần chủ bấm đôi CHAY-CHUYEN-T36.bat để dựng forwarder mới đúng đích). Ghi A-B.md, gõ `B Chat` 1-2 dòng. Không dừng việc khác.
+
+## #B-026 Chat 21:27 — B: ĐO ĐỘ TRỄ MẠNG và máy chủ khi chủ chạy nhanh/đánh quái (chủ 21:24)
+Chủ đã vào game (Test-36, điện thoại, forwarder mới). Cảm nhận: hoạt ảnh OK, nhưng chạy nhanh và đánh quái bị LAG, phản hồi chưa tốt. B (đã có mốc rỗi 21:06-21:10: CPU gs001 2-25%) lo ĐƯỜNG MẠNG + MÁY CHỦ; A lo client (#268). Làm ngay:
+1. Điện thoại↔máy tính: Tailscale đang đi TRỰC TIẾP (direct) hay qua relay DERP? (`tailscale status` trên PC: dòng điện thoại `direct`/`relay "xxx"`; `tailscale ping 100.123.183.6`: ms mỗi lần, "via DERP" hay "via a.b.c.d:port"). Số ms RTT. Nếu qua DERP: nêu cách ép đường trực tiếp (mở UDP, tắt VPN/Private DNS, dùng Wi-Fi cùng LAN thay 5G...) và báo Chat để dặn chủ.
+2. Forwarder mới (PID 21528): độ trễ thêm (đo thời gian chuyển tiếp), TCP_NODELAY hai chiều, kích thước đệm, đường VM 192.168.56.150 (ping host→VM). Nếu forwarder gom gói (Nagle/đệm) → sửa (báo trong A-B.md, chủ chạy lại .bat nếu cần; có quyền sửa tool).
+2b. Máy chủ gs001: SvrFPS/tick trong log gs001 lúc chủ chạy/đánh (`SvrFPS x/18` mỗi ~60 s), CPU/RAM theo 10 giây, số gói/giây qua forwarder khi chạy nhanh/đánh quái.
+3. Kịch bản đo có chủ: nhờ Chat bảo chủ: chạy nhanh 1 phút rồi đánh quái 1 phút (cứ làm tự nhiên), B ghi mốc từng 10 giây (CPU, kết nối, bytes/s qua forwarder) trong lúc đó; ghi REPORTS/DO-MUOT-MOC-GOC.md mục "lúc chủ chạy/đánh".
+4. Ghi A-B.md kết luận ngắn: nút cổ chai là mạng/forwarder/máy chủ hay client; gõ `B Chat` 1-2 dòng.

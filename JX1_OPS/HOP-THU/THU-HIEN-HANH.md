@@ -201,3 +201,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #265 (20:24) A: kiểm đích thật forwarder 21276, IP điện thoại, kill bản cũ
 - #266 (20:25) ảnh Tailscale: IP điện thoại khớp --allow
 - #B-025 (20:36) B: kiểm tiến trình nghe 56722/51189 và đích
+- #268/#B-026 (21:27) Q-82: A client dự đoán/phản hồi tức thì APK vc23; B đo mạng/DERP/forwarder/SvrFPS
