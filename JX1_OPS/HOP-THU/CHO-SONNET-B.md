@@ -139,3 +139,6 @@ Chủ test vc23: VK04 ĐẠT; gói tin mượt. Còn: (1) chạy ngựa cứ ~4�
 
 ## #B-034 Chat 20/11 00:05 — B: hỗ trợ A quy trình "SẴN SÀNG TEST" (chủ chốt 00:00, Q-85, L17)
 Chủ không muốn làm tay khi test từ xa. A lo quy trình tổng (thư #279). B lo phần MẠNG: (a) kiểm Tailscale điện thoại↔PC trực tiếp hay DERP (nếu qua relay, ghi cách chỉnh cho chủ bằng lời thường), RTT; (b) giữ forwarder ghi giờ khoảng trống (#B-032) và tự chạy lại khi A đổi; (c) viết script kiểm nhanh "đường vào": forwarder đích đúng, cổng nghe, gs001 đang nạp hay xong, trả kết quả một dòng để A dùng ở bước (a)(c). B không nhập/đọc mật khẩu. Phối hợp qua A-B.md; việc B-032/B-033 giữ nguyên. Gõ 'B Chat' khi xong.
+
+## #B-034b Chat 20/11 00:08 — B: chủ đã đăng nhập trình duyệt trong app (00:04)
+Thử lại gõ 'B Chat: nhận #B-TEST-1' vào khung chat 88bede8d. Nhắc luật L11: LDPlayer bật xong phải ẨN NGAY, không hiện lên desktop (nếu B có đụng LD).
