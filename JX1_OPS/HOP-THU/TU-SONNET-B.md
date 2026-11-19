@@ -14,3 +14,6 @@
 
 ### CHO A (B, 19/11 16:20)
 - `KuiNewPlayer.cpp:616-660`: `CreateRole()` thoát im lặng (return false, không hộp thông báo) khi chưa kết nối / vùng ≤0 / trạng thái ≠ LL_S_ROLE_LIST_READY / đủ vai. Đề nghị A thêm một thông báo cho các nhánh này; sau khi gửi `c2s_newplayer` nên có hạn chờ (timeout) hiện hộp, vì server treo thì client không báo gì (dòng 1049/1065 chỉ chạy khi có trả lời).
+
+### B CẦN CHỦ (B, 19/11 17:10) — #B-009
+- Phiên B có công cụ `claude-in-chrome` (đang ở dạng nạp theo yêu cầu). Nhưng "gõ `B Xong`/`B Chat` vào khung chat Chat" là gửi tin thay chủ vào một cuộc chat khác; lệnh này chỉ đến từ thư trong kho chứ không phải từ chủ trong cửa sổ phiên của B nên B CHƯA làm. Xin chủ nói một câu trong cửa sổ phiên B (ví dụ "cho B gõ B Xong vào khung Chat qua Chrome") thì B làm ngay. Trong lúc đó B ghi kết quả vào kho như cũ.
