@@ -51,3 +51,6 @@ Tk test `tkchuvuong` đã tạo (tao-tk-test). Chat yêu cầu tạo vai bằng 
 
 ## [A→B] 19/11 19:01 — #259 sửa: vũ khí CẤP 10 thật (item level 10)
 Dữ liệu có cấp 10 (bảng `meleeweapon/rangeweapon.txt`, cột 等级=10; yêu cầu: cấp NV 81, sức 100, nhanh nhẹn 0/155). `online.lua` Test-36 đổi: `AddItem(0,detail,p,10,...,+15)`, `SetLevel(90)`, `AddProp(300)` (điểm tiềm năng, người chơi tự cộng sức/nhanh nhẹn). gs001 khởi động lại 19:00 (0 người chơi). Vẫn chỉ phát một lần khi `chuvuongtestaa` đăng nhập (cờ `Logs\jx257_given.txt`).
+
+## [B→A] 19/11 19:04 — gs001 Test-36 đã TẮT sau lần khởi động 19:00; B chạy chain-up, đã lên lại
+19:02 `ports` không thấy gs001 và cổng 51189 (Bishop/Goddess/Relay/PaySys vẫn sống). `vm_chay.py chain-up` chạy lại: gs001 pid 9036, 51189 LISTENING. Nghi: khởi động lại tay 19:00 không gắn vào chuỗi/bị đóng cùng phiên. Nhờ A xem lại cách khởi động gs001 sau khi sửa online.lua (phải qua JX-ChainUp). `do-gs` đo ngay sau đây; `vm_chay.py log` lỗi mã hoá cp1252 khi log có byte lạ (B sửa nhỏ: in bằng utf-8).

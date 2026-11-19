@@ -83,6 +83,7 @@ def goi(block):
 
 
 def main(a):
+    sys.stdout.reconfigure(encoding="utf8", errors="replace")
     if not a:
         sys.exit(__doc__)
     cmd = a[0]
