@@ -93,3 +93,6 @@ Chủ lệnh cập nhật phần mới vào bảng tiến độ để mẫu số
 
 ## Q-64 (chủ 19/11 10:07) — Sét vũ khí hai tay
 Chủ quan sát ảnh #219: vũ khí hiện ở hai tay (chùy → song chùy, thích → song thích) mà hiệu ứng sét +15 chỉ chạy ở MỘT bên. Yêu cầu: cả hai bên vũ khí đều có sét chạy. Bước 1 kiểm/chứng minh + tìm gốc; sửa mã hiệu ứng chỉ khi có bằng chứng + Chat duyệt (luật cũ). Thêm hạng mục VK-04 vào bảng.
+
+## Q-65 (Chat 19/11 10:25) — DUYỆT hướng Bot A và quy trình sửa sét hai tay
+(1) BOT GĐ0 (chủ ủy quyền "Sonnet khảo sát rồi quyết hướng nhẹ nhất", 19/11 08:17): Chat duyệt hướng A (Bot ngoài server qua giao thức) cho GĐ1 và GĐ3; hướng B (NPC hình người trong server) giữ làm nghiên cứu cho Bot dân số, quyết sau khi có thang đo tải. Thang thử tải 1→5→20→50→100 chỉ trên Test-36, canh RAM. (2) VK-04 sét hai tay: Chat duyệt theo 2 bước: đo n section bằng g_jxTrace trước; nếu n≥2 mới sửa KNpcResVN.cpp theo đề xuất, chỉ trên bản thử Test-36 (APK T36test), JX1_EFFECT_OK=1 chỉ cho commit đó; APK giao chủ là vùng Đỏ, chờ chủ.
