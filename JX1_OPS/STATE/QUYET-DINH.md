@@ -78,3 +78,6 @@ Chủ DUYỆT: (1) cấp khóa client đúng bản APK + tài khoản/vai thử 
 1. Trên server test (Test-36): bật 1 LDPlayer test đặt tên theo tiểu yêu tester (vd T36-tester01), tạo 1 tài khoản test và cấp riêng cho 1 tiểu yêu. Giao nhiệm vụ: tìm hiểu game như tester thật; hiểu đến đâu lưu vào 1 bộ nhớ knowledge (file riêng); Sonnet/Chat kiểm soát xem nó làm có hiệu quả không. Mục tiêu dài hạn: nhiều tester chạy cùng lúc, báo lỗi phát hiện, tìm hiểu game như người thật.
 2. Chỉ khi tester đầu chạy ổn (có knowledge hữu ích, lỗi báo đúng, không treo) mới sinh tester kế tiếp.
 3. Báo cáo tiến độ tester thường xuyên cho chủ.
+
+## Q-60 (chủ 19/11 07:23) — CẤU TRÚC KHO TÀI LIỆU TESTER (bổ sung Q-59)
+Kho kiến thức và bảng lỗi PHẢI chia nhánh theo từng mục (thư mục STATE/TESTER/KIEN-THUC/<mục>/ và STATE/TESTER/LOI/<mục>/), ví dụ: dang-nhap (cần làm gì, lỗi phát hiện, báo cáo ra sao), tao-nhan-vat (tạo thế nào, chọn ngũ hành thế nào), mon-phai (môn phái nào cần ngũ hành nào: vd Võ Đang, Côn Lôn cần ngũ hành Thổ → Sonnet hiểu và ra lệnh tiểu yêu lập đúng môn phái/ngũ hành cho từng ca test), di-chuyen, chien-dau, tui-do, shop, nhiem-vu... Có mục lục INDEX. Kho phải đủ để tiểu yêu chết thì con sau vào thay đọc là hiểu ngay, KHÔNG dò lại từ đầu, và làm tiếp việc dang dở (cần file TRANG-THAI/NHAT-KY-VIEC-DANG-DO cập nhật liên tục: đang ở bước nào, tài khoản/nhân vật nào, việc kế).

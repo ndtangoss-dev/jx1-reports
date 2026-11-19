@@ -1705,3 +1705,10 @@ Giữ báo SỐ THẬT mỗi đợt; không dừng (Q-56).
 4. CHỈ khi tester01 ổn (≥2 lần đánh giá tốt liên tiếp) mới sinh tester02, 03…; mẫu số 107 giữ nguyên, việc tester là hạng mục phụ.
 5. Báo cáo tiến độ tester: mỗi đợt thêm mục "TESTER" trong TU-SONNET và BAO-CAO-CHU (số tester, số mục knowledge, số lỗi, đánh giá).
 Không dừng (Q-56).
+
+## #218 Chat 19/11 07:25 — BỔ SUNG #217 (Q-60): cấu trúc kho tester. Áp dụng ngay cho tester01.
+1. Thư mục: STATE/TESTER/INDEX.md (mục lục); KIEN-THUC/<mục>/ và LOI/<mục>/ cho từng mục: dang-nhap, tao-nhan-vat, mon-phai-ngu-hanh, di-chuyen, chien-dau, tui-do, shop, nhiem-vu… (thêm mục khi gặp). Mỗi mục: "cần làm gì (từng bước)", "đã biết", "chưa hiểu", "lỗi phát hiện (bước, kỳ vọng, thực tế, ảnh, cách báo cáo)".
+2. Mục tao-nhan-vat + mon-phai-ngu-hanh: bảng môn phái ↔ ngũ hành yêu cầu, lấy từ dữ liệu game/server THẬT, có dẫn nguồn file:dòng (vd Võ Đang, Côn Lôn cần Thổ; mục nào chưa kiểm ghi CHƯA KIỂM). Khi cần test môn phái nào, Sonnet tra bảng này và ra lệnh tiểu yêu tạo ĐÚNG môn phái/ngũ hành đó (không đoán).
+3. Kho phải để tiểu yêu chết thì con sau đọc là hiểu ngay, không dò lại: file STATE/TESTER/TRANG-THAI.md (cập nhật mỗi vài phút: tài khoản/nhân vật đang dùng, đang ở bước nào, việc dang dở, việc kế) + NHAT-KY-VIEC.md. Lời giao việc cho tester mới luôn bắt đầu bằng "đọc INDEX.md rồi TRANG-THAI.md, làm tiếp, không làm lại".
+4. Thử nghiệm đạt: giả lập tiểu yêu chết, giao con mới chỉ bằng kho; nó phải làm tiếp đúng bước. Ghi kết quả vào DANH-GIA.md; chưa đạt thì chưa sinh tester02.
+Báo cáo tester vẫn theo #217. Không dừng (Q-56).
