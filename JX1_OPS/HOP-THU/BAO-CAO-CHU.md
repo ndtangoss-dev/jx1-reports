@@ -112,3 +112,7 @@ Thuộc hạ nói thẳng: số đo trên LD (1-2 lần quay, 3 giây) chưa cho
 Ghi chú: vai thử vũ khí (tkchuvuong) nằm ở Test-36, không ở máy chủ chính.
 
 Kiểm chuỗi Test-36: `python -I JX1_OPS/TOOLS/vm_chay.py ports` thấy 56722, 51189, gs001; máy thật nghe 100.95.186.86:56722/51189/8080/8091. Link APK: máy thật không tự tải thử được (tường lửa/địa chỉ nguồn), phục vụ APK đang chạy từ 17/11; xem `access.log` thư mục serve sau khi chủ tải.
+
+## 19/11 19:58 — Mật khẩu tkchuvuong (thư #261)
+- Tệp gốc: `C:\Users\PC\AppData\Local\jx1-secrets\tkchuvuong.txt` (có tồn tại; thư mục ẩn, bật "Hiện mục ẩn" mới thấy).
+- Bản chép cho đại vương: `C:\Users\PC\OneDrive\Desktop\tkchuvuong-matkhau.txt` (Desktop của máy này nằm trong OneDrive, không phải `C:\Users\PC\Desktop`). Trong tệp: tài khoản, vai chuvuongtestaa, mật khẩu. Chỉ dùng cho Test-36; dùng xong nên xóa tệp.

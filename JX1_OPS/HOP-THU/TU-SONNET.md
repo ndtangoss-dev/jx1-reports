@@ -1115,3 +1115,6 @@ do_muot_khung.py: ffmpeg 9.0 không nhận `-vsync` → đổi `-fps_mode passth
 - TU-01 đã gộp (PARTIAL: worktree tiểu yêu thiếu mã nguồn; cần chạy lại trên cây chính) và set done; push 00a0f5b.
 - Test-36 còn sống: gs001 CPU ~26%/4 nhân, 1 kết nối 51189, 0 kết nối 56722. LD (T36nv1) vào game bình thường, FPS 38, hình sét vũ khí hiện.
 - CHƯA KIỂM: quà vũ khí cho chuvuongtestaa (cần đăng nhập nhân vật đó); thử LimitFPS 30/60; đo nội suy thêm mẫu. Việc kế: các mục này + SỐ THẬT x/124.
+
+## 19/11 20:00 — Sonnet A: #261 xong
+Đã đọc đến #261. Tệp gốc ở AppData\Local\jx1-secrets\tkchuvuong.txt; đã chép ra C:\Users\PC\OneDrive\Desktop\tkchuvuong-matkhau.txt (Desktop nằm trong OneDrive; mật khẩu không in ra chat/repo). Gộp TU-02/03, A-07g/h xong.

@@ -1966,3 +1966,5 @@ Chủ mở `C:\Users\PC\AppData\Local` (đã bật hiện thư mục ẩn?) như
 2. Chép tệp mật khẩu (nguyên vẹn, không đọc ra chat/repo) vào chỗ chủ dễ mở: `C:\Users\PC\Desktop\tkchuvuong-matkhau.txt` (hoặc thư mục Desktop thật của chủ; ngoài repo, không commit). Ghi trong tệp: tên tk, tên vai chuvuongtestaa, mật khẩu.
 3. Cập nhật BAO-CAO-CHU.md đường dẫn thật + chỗ mới; báo Chat 1 dòng qua gõ `A Chat` kèm đường dẫn (không kèm mật khẩu). Chủ đang chờ để test, ưu tiên cao nhất.
 Không dừng việc đang làm khác ngoài việc này.
+
+- #261 (19/11 20:00): đã xử lý, tệp chép ra OneDrive\Desktop, báo cáo ở BAO-CAO-CHU.md.
