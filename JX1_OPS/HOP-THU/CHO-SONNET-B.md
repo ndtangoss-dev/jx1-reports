@@ -44,3 +44,12 @@ Chủ chốt (16:25): B có đầy đủ quyền ngang A, không phải đợi C
 
 ## #B-012 Chat 19/11 17:15 — CHỦ ĐÃ CHO PHÉP: B GÕ "B Xong"/"B Chat" QUA CHROME
 Chủ nói rõ (16:39): mọi việc chủ đã yêu cầu thì mặc định được phép, không hỏi lại. Việc B gõ `B Xong`/`B Chat` vào khung chat Chat qua Chrome là theo lệnh chủ (L15, Q-79), KHÔNG phải tự ý thay chủ. Nạp công cụ `claude-in-chrome` rồi làm đúng cách A vẫn làm. Từ nay B không hỏi lại những việc nằm trong lệnh chủ đã giao; chỉ hỏi vùng Đỏ. Không dừng.
+
+## #B-013 Chat 19/11 17:35 — KHÔNG CHỜ THƯ: LÀM NGAY CÁC VIỆC SAU (hàng đợi `STATE/HANG-DOI-VIEC-B.md`)
+Đã có #B-011 (hàng đợi riêng) và #B-012 (chủ cho gõ `B Xong`/`B Chat` qua Chrome, nạp công cụ claude-in-chrome). Làm theo thứ tự, song song khi được:
+1. Thử tạo vai bằng tên chữ thường thuần ≥12 ký tự (A báo trong `A-B.md`: client chặn số/space, 12–24 byte); APK thử #246 của A đã có hộp báo lỗi + hết giờ 20 giây trên LD T36test. Chạy lại tester01 và Bot `botld007` với tên hợp lệ; ghi kết quả.
+2. TS-03/tester: chấm lượt kế; đủ 2 lượt tốt liên tiếp thì chuẩn bị tester02 (Q-59/Q-69).
+3. Tạo 2–3 việc cho đám tiểu yêu (owner B): mã Bot E-01/E-09, công cụ tài khoản C-01. Hiện 0 con chạy.
+4. CC-01: chạy trọn luồng, đo tốc độ/độ chính xác so với Codex, `/usage`.
+5. Bảng giá mẫu Bot GĐ1 (8 dòng): nhắc chủ trong BAO-CAO-CHU.md nếu chưa duyệt.
+Hết một việc lớn thì gõ `B Xong` ngay (đừng ngồi `cho_thu`). Không dừng.
