@@ -285,23 +285,35 @@ def sonnet_song():
     """#197: mtime lich su phien Claude Code + commit cuoi cua Sonnet + RAM; khong goi claude."""
     import ctypes, csv, io
     now = time.time()
-    fs = glob.glob(os.path.join(os.path.expanduser('~'), '.claude', 'projects', 'C--Jx1CocoV3', '*.jsonl'))
-    last = max([os.path.getmtime(f) for f in fs] or [0])
-    cm = 0
-    try:
-        r = subprocess.run(['git', '-C', ROOT, 'log', '-1', '--grep=Sonnet', '--format=%ct', 'origin/jx1-ops'],
-                           capture_output=True, text=True, timeout=30)
-        cm = int(r.stdout.strip() or 0)
-    except Exception:
-        pass
-    try:
-        nt = os.path.getmtime(os.path.join(ROOT, 'HOP-THU', 'NHIP-TIM.md'))  # #200: cho_thu.py dang cho = con song
-    except Exception:
-        nt = 0
-    last = max(last, nt, cm)
-    mins = (now - last) / 60 if last else 9999
-    lv = 'SONG' if mins < 10 else ('IM' if mins <= 30 else 'TREO')
     hm = lambda t, f: time.strftime(f, time.localtime(t)) if t else '?'
+
+    def mot(proj_glob, grep, nhip_file):
+        # #248 (L15): nhip cho_thu (dang cho thu) KHONG la hoat dong; hoat dong = jsonl phien + commit.
+        fs = glob.glob(os.path.join(os.path.expanduser('~'), '.claude', 'projects', proj_glob, '*.jsonl'))
+        last = max([os.path.getmtime(f) for f in fs] or [0])
+        cm = 0
+        try:
+            r = subprocess.run(['git', '-C', ROOT, 'log', '-1', '-E', '--grep=' + grep, '--format=%ct', 'origin/jx1-ops'],
+                               capture_output=True, text=True, timeout=30)
+            cm = int(r.stdout.strip() or 0)
+        except Exception:
+            pass
+        try:
+            nt = os.path.getmtime(os.path.join(ROOT, 'HOP-THU', nhip_file))
+        except Exception:
+            nt = 0
+        act = max(last, cm)
+        mins = (now - act) / 60 if act else 9999
+        if mins < 10:
+            lv = 'SONG'
+        elif nt and (now - nt) < 600:
+            lv = 'CHO (dung cho %d phut, chi co nhip cho_thu)' % mins
+        else:
+            lv = 'IM' if mins <= 30 else 'TREO'
+        return act, mins, cm, lv
+
+    last, mins, cm, lv = mot('C--Jx1CocoV3', 'Sonnet', 'NHIP-TIM.md')
+    lb, minb, cmb, lvb = mot('D--JX-wt-SONNET-B', r'\(B\)|B:|Sonnet B', 'NHIP-TIM-B.md')
 
     class MS(ctypes.Structure):
         _fields_ = [('l', ctypes.c_ulong), ('ml', ctypes.c_ulong)] + [(n, ctypes.c_ulonglong) for n in ('tp', 'ap', 'tpf', 'apf', 'tv', 'av', 'ae')]
@@ -321,9 +333,11 @@ def sonnet_song():
     except Exception:
         pass
     top = sorted(top, reverse=True)[:5]
-    return ('Sonnet: hoạt động cuối %s (%d phút trước); commit cuối %s; mức %s (<10 SONG / 10-30 IM / >30 TREO). Cập nhật %s\n'
+    return ('Sonnet A: hoạt động cuối %s (%d phút trước); commit cuối %s; mức %s (<10 SONG / 10-30 IM / >30 TREO). Cập nhật %s\n'
+            'Sonnet B: hoạt động cuối %s (%d phút trước); commit cuối %s; mức %s\n'
             'RAM%s: trống %.1f/%.1f GB (%.0f%%). Top 5 bộ nhớ: %s') % (
         hm(last, '%H:%M:%S'), mins, hm(cm, '%H:%M'), lv, time.strftime('%H:%M:%S'),
+        hm(lb, '%H:%M:%S'), minb, hm(cmb, '%H:%M'), lvb,
         ' RAM-THAP (<8 GB hoac <15%, #199/#200)' if (gb(m.ap) < 8 or 100.0 * m.ap / m.tp < 15) else '', gb(m.ap), gb(m.tp), 100.0 * m.ap / m.tp, '; '.join('%s %.2f GB' % (n, v) for v, n in top))
 
 
