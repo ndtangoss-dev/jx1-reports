@@ -46,3 +46,6 @@ Test-36, nhân vật `T36nv1`, mỗi loại +15 (cấp 1), trang bị rồi đ�
 
 ## 10:40 19/11 — VK-04 (#225): sét hai tay chỉ một bên
 Ảnh trước: `ANH/t36-vu-khi-chuy-8-huong.png` (một cụm sét). Nguyên nhân [THẤY mã]: `KNpcResVN.cpp` chỉ vẽ sét ở section trội `domSec`, bỏ section kia. Đề xuất: vẽ sét cho mọi section có mask ≥ 8 (xem `REPORTS/VK-04-set-hai-tay.md`). Chưa sửa; chờ Chat duyệt. [CHƯA KIỂM] số section thực của chùy/thích.
+
+## 10:50 19/11 — BOT GĐ0 (#220): đề xuất hướng A
+1 Bot đo thật: RX ~216 kbps, khung S2C TB 32,9 ms. Chưa đo nhiều Bot / tick 18 Hz (chưa có số). Hướng B cần sửa và dựng lại server (chưa từng làm). Đề xuất: A + thang thử tải 1→100 trên Test-36 ở GĐ1. Xin Chat/chủ duyệt. Chi tiết `REPORTS/BOT-GD0-khao-sat-A-B.md`.
