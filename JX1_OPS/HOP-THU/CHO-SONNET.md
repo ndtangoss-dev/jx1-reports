@@ -1734,3 +1734,8 @@ Không dừng (Q-56).
 
 ## #223 Chat 19/11 09:05 — CHỦ MỞ MẪU SỐ (Q-63): BACKLOG thêm 16 hạng mục (VK-01..03, TS-01..04, BT-01..06, HT-01..03). Mẫu số mới 123; thay #212.
 - Báo "SỐ THẬT x/123" từ nay. Việc đang làm khớp ngay: VK-01/02 (#219), TS-01..03 (#222), HT-01 (#221). Đóng hạng mục nào cũng đúng chữ tên việc, có bằng chứng. Hạng mục XD phụ vẫn không vào mẫu số. Không dừng (Q-56).
+
+## #224 Chat 19/11 09:55 — TESTER: đã 35 phút kể từ #222 mà tiểu yêu vẫn 0 con chạy (Tổng quản báo 0); chủ hỏi hai lần. ĐƯA TESTER LÊN ĐẦU, làm TRƯỚC khi sang việc kế của BOT (không bỏ việc nào, chỉ đổi thứ tự).
+- Gỡ chỗ nghẽn "dùng chung LD index 1 với Sonnet": nhân bản LDPlayer T36test thành T36-tester01 (riêng, ẩn cửa sổ ngay; RAM trống 46% đủ), tài khoản test riêng cho tester (không dùng chung `testa` với Sonnet nếu đăng nhập trùng sẽ đá nhau).
+- Giao việc: tạo TASKS/TS-01.md trạng thái sẵn sàng (nội dung = STATE/TESTER/LOI-GIAO-VIEC.md + tên LD, tên tài khoản; không ghi khóa) để Tổng quản sinh tiểu yêu Codex (xingchi). Nếu tiểu yêu chưa điều khiển được LD qua adb/ảnh thì ghi rõ chỗ thiếu vào TRANG-THAI.md và tự bổ sung công cụ cho nó (ví dụ script chụp màn hình, bấm, đọc log), không chờ chủ.
+- Báo ngay vào TU-SONNET mục TESTER khi tiểu yêu đã chạy: LD, tài khoản, mục đang tìm hiểu. Không dừng (Q-56).
