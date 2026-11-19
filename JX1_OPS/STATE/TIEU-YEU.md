@@ -1,4 +1,4 @@
-# TIỂU YÊU (Tổng quản tự sinh lúc 2026-11-20 01:43, đừng sửa tay)
+# TIỂU YÊU (Tổng quản tự sinh lúc 2026-11-20 01:57, đừng sửa tay)
 
 **CẦU DAO xingchi: ĐÓNG (bình thường)**
 
@@ -6,12 +6,10 @@ Mức: SONG / IM-NHUNG-SONG (20–60 phút) / TREO (>60, bị dừng chạy lạ
 
 | Mã | Mức | Khóa | Log cuối | Dấu hiệu sống cuối | Lỗi cuối | Lần chạy lại | Mô hình | PID | Chờ token (giây) |
 |---|---|---|---|---|---|---|---|---|---|
-| QH-01 | SONG | JX-K4 | 01:43 | 01:43 | - | 1 | sol | - | - |
 | QH-02 | IM-NHUNG-SONG | JX-K4 | 01:04 | 01:04 | - | 0 | sol | - | - |
-| QH-05 | DA-GOP | JX-K4 | 01:39 | 01:39 | - | 0 | sol | - | - |
 
-Khóa đang dùng: JX-K4=2 / khóa có: JX-K2, JX-K3, JX-K4, JX-K5, JX-K6
-Đang chạy theo Task Scheduler: 2.
+Khóa đang dùng: JX-K4=1 / khóa có: JX-K2, JX-K3, JX-K4, JX-K5, JX-K6
+Đang chạy theo Task Scheduler: 1.
 
 Việc vòng này:
 - CAU DAO xingchi: DONG
