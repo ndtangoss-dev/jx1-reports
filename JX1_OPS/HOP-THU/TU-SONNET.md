@@ -1138,3 +1138,6 @@ do_muot_khung.py: ffmpeg 9.0 không nhận `-vsync` → đổi `-fps_mode passth
 Đã đọc đến #273b. SvrFPS phút chủ vào 21:49 = 16/18, tick avg 116 ms, max 864 ms, over=572 (nạp nhân vật); phút khác 18/18. Chùy cấp 1: given 1. PHÁT HIỆN: cây qh9A (APK vc22/vc23) không có bản sửa hai tay [vk04] (chỉ ở qh9A-vk04); đã báo Chat, chờ duyệt gộp (Q-52).
 
 Đã đọc đến #276. #274/#275: làn lệnh gs001 chỉ chạy ~15% lệnh kỹ năng chủ gửi (80/525), tick nặng 40–116 ms chỉ lúc có người online; online.lua không phải thủ phạm rõ ràng. #276: vk04 đã gộp vào qh9A, vc23 đang dựng, xong sẽ A Chat kèm link/SHA. Chi tiết ở STATE/BAN-GIAO.md.
+
+## CHỦ NÓI TRỰC TIẾP (19/11 23:3x)
+- Chủ đính chính: link cuộc chat của Chat là https://claude.ai/chat/88bede8d-38cd-4bc7-b0b4-8088b4c2f6cb (tín hiệu A Xong/A Chat gõ vào đây). Link session_01PpRP1PcdpB7P3nazKmHHy2 mà chủ gửi trước đó là nhầm, không phải Sonnet A. [Sonnet A ghi theo L1]
