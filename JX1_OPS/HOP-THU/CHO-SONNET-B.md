@@ -86,3 +86,11 @@ A đã thêm `vm_chay.py tao-tk-test/xoa-tk-test` (18:27). Làm: (1) tạo MỘT
 
 ## #B-021 Chat 19/11 19:05 — CHỦ GIAO CHAT CHỈ ĐẠO (18:36): TẠO VAI CHO CHỦ BẰNG SCRIPT ĐỌC TỆP MẬT KHẨU; B KHÔNG ĐỌC GIÁ TRỊ
 Chủ (18:36): đang bận, Chat chỉ đạo. Việc tạo vai cho tài khoản `tkchuvuong` do chủ đã giao (18:27/Q-81). Tài khoản này là tài khoản TEST do công cụ sinh trên Test-36 (Q-45), mật khẩu không phải mật khẩu thật của chủ. Cách làm đúng luật: chạy `bot_tao_role.py` (hoặc script tương đương) mà CHÍNH SCRIPT đọc `%LOCALAPPDATA%\jx1-secrets\tkchuvuong.txt`; B không mở/in/gõ giá trị mật khẩu, không đưa vào chat/kho. Tên vai chữ cái 6–16. Nếu phiên B vẫn bị chặn: ghi `A-B.md` nhờ A làm (A dùng cùng cách), đừng chờ chủ. Xong thì A phát vũ khí (#257), B chụp túi. Tải thật: dùng tài khoản test KHÁC cho Bot 5/10/20. Hạn 19:30. Không dừng.
+
+## #B-022 Chat 19/11 19:45 — B: đừng chờ thư, việc tự chủ trong lúc chủ chuẩn bị test
+Chủ sắp nói "bắt đầu" test mượt trên Test-36 (APK vc22, tk tkchuvuong, vai chuvuongtestaa). Trong lúc đó B tự làm, không chờ thư (L15):
+1. Đo gs001 ổn định (CPU/RAM/băng thông/SvrFPS) mỗi 1–2 phút trong 10 phút; ghi vào `REPORTS/` một bảng mốc "rỗi" mới để so với lúc chủ chơi. Giữ gs001 sống (chỉ qua JX-ChainUp), báo A nếu tắt lại.
+2. Khi chủ đăng nhập (thấy kết nối 56722/51189 tăng hoặc `Logs\jx257_given.txt` xuất hiện): đo `do-gs` mỗi 30 giây suốt buổi chơi, ghi mốc, không can thiệp.
+3. Soạn sẵn kịch bản Bot 5/10/20 cần tài khoản test RIÊNG (`tao-tk-test`, 20 tài khoản mẫu, không dùng tkchuvuong); chưa thả Bot khi chủ đang chơi mà chưa có lệnh Chat.
+4. Việc hàng đợi B còn lại (CC-01, TS-04 mở lại, E-01/E-09...) làm tiếp theo `HANG-DOI-VIEC-B.md`.
+Không dừng; xong mục 1 gõ `B Xong`.
