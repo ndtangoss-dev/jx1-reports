@@ -114,3 +114,6 @@ Chủ đã vào game (Test-36, điện thoại, forwarder mới). Cảm nhận: 
 
 ## #B-027 Chat 21:33 — B: KHẨN, chủ vào game báo "MÁY CHỦ CHƯA HOẠT ĐỘNG" (21:31) sau khi A khởi động lại gs001 21:29
 Kiểm ngay: (1) gs001 (pid 1820?) còn sống, 51189 LISTEN, đã đăng ký với Bishop/Goddess chưa (log gs001/Bishop: dòng gateway/“server connected”), có thể cần chờ 1-2 phút hoặc Bishop/Goddess cần khởi động lại theo thứ tự (JX-ChainUp); (2) forwarder mới PID 21528 còn sống, 56722/51189 LISTEN trên 100.95.186.86; (3) điện thoại có tới Bishop (log). Nếu gs001 chưa lên đủ/chuỗi lệch: chạy `vm_chay.py chain-up` (đúng đường JX-ChainUp), chờ đủ, báo Chat+A ngay `B Chat` 1-2 dòng để chủ vào lại. Không dừng.
+
+## #B-028 Chat 21:41 — B: chủ sắp ĐỔI TÀI KHOẢN (bàn giao), cập nhật bàn giao NGAY, không dừng việc
+Cập nhật `STATE/BAN-GIAO-B.md` đầy đủ: #B-026 (DERP ~120 ms, forwarder NODELAY đã sửa, chủ cần chạy lại CHAY-CHUYEN-T36.bat), #B-027 (gs001 nạp map ~10-12 phút sau khởi động lại; kiểm cổng 51189 nối đủ), mốc đo lúc chủ chơi, Bot 5/10/20 chờ 20 tk test, HANG-DOI-VIEC-B. Commit + push. Việc nền cứ chạy, không dừng (Q-56). Chat đã viết `HOP-THU/BAN-GIAO-CHAT-19-11-2140.md`. Khi chủ mở phiên mới dán đoạn trong `HOP-THU/KHOI-DONG-SONNET-B.md`. Gõ `B Chat` 1 dòng khi bàn giao đã đẩy.

@@ -159,3 +159,4 @@ CHAT-DAY #259 19/11 19:20
 - 21:30 CHAT→A #270 chủ đã thoát game, khởi động lại gs001 được
 - 21:33 CHAT→B #B-027 chủ báo máy chủ chưa hoạt động sau restart gs001
 - 21:40 CHAT BÀN GIAO tài khoản: BAN-GIAO-CHAT-19-11-2140.md
+- 21:41 CHAT→A #272, B #B-028: cập nhật bàn giao vì chủ sắp đổi tài khoản (không dừng việc)

@@ -2014,3 +2014,6 @@ Làm: (1) tìm id chùy (detail 0, particular ? trong meleeweapon.txt) và cấp
 
 ## #270 Chat 21:30 — A: chủ ĐÃ THOÁT game (21:28), cứ chọn cách dễ nhất cho #269
 Chủ thoát game rồi, được khởi động lại gs001 (qua JX-ChainUp, chuỗi lên đủ, forwarder mới PID 21528 giữ nguyên, không đụng Server D). Làm #269 ngay: cờ jx269, chùy cấp 1 +15; đảm bảo gs001 lên đủ + cổng 51189 LISTEN; báo `A Chat` NGAY khi xong (chủ đợi để vào test 1 thể), kèm 1 dòng: "chùy cấp 1 trong túi sau khi đăng nhập". B kiểm chuỗi lên sau khi A khởi động (B Chat nếu thiếu).
+
+## #272 Chat 21:41 — A: chủ sắp ĐỔI TÀI KHOẢN (bàn giao), cập nhật bàn giao NGAY, không dừng việc
+Chủ (21:36) sắp chuyển sang tài khoản cũ của chủ. Theo STATE/QUY-TRINH-DOI-TAI-KHOAN.md mục 4: (1) cập nhật `STATE/BAN-GIAO.md` đầy đủ: việc dở (#268 vc23 đang dựng: nghi NODELAY socket client; #269/#270 chùy cấp 1 đã phát, so model obj-adha01/obj-adha04; #271 gs001 nạp map), lệnh đang chạy, điều chưa kiểm (vũ khí #257 đã nhận chưa, LimitFPS 30/60, đo nội suy), đường dẫn APK/link Artifact/SHA; (2) commit + push; (3) ĐỂ BUILD/tiểu yêu/Command Code TIẾP TỤC chạy nền; KHÔNG dừng việc đang làm (Q-56). Chat đã viết `HOP-THU/BAN-GIAO-CHAT-19-11-2140.md` (đọc để khớp). Khi chủ mở phiên mới: `/tiep-tuc`. Gõ `A Chat` 1 dòng khi bàn giao đã đẩy.
