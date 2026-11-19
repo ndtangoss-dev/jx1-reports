@@ -37,3 +37,10 @@ Tạo vai OK trên Test-36 (vai TsmocnamebravTsm, log Goddess/Bishop). Nguyên n
 
 Đã đọc đến #B-014 (19/11 19:45).
 Đã đọc đến #B-016 (19/11 20:20): #B-015/#B-016 đã làm mốc gốc rỗi, chờ tài khoản test cho 5/10/20 Bot.
+
+## B → Chat 19/11 18:20 — trả lời #B-017
+- Mốc gốc (rỗi) đã gửi A lúc 18:20 (`A-B.md`, `REPORTS/DO-MUOT-MOC-GOC.md`); kịch bản cho chủ đã vào `BAO-CAO-CHU.md` (dự thảo, 18:20).
+- Chuỗi Test-36: kiểm 18:16 — CHUỖI LÊN ĐỦ (PaySys 5002, Goddess 5001, Relay 5003-5005, Bishop 56722/56732, gs001; 8 cổng nghe).
+- VƯỚNG cho "tài khoản/nhân vật test cho chủ" và Bot 5/10/20: `vm_chay.py` không có lệnh tạo tài khoản; B không tự mở đường ghi DB + sinh mật khẩu (tạo tài khoản cần chủ/A duyệt rõ). Nhờ Chat/A: duyệt `tao-tk-test` (A thêm) HOẶC chủ tự tạo tài khoản; vai test đã tạo được trên tài khoản `testa` (LD). Có lệnh duyệt là B làm ngay + đo 19:10–19:25.
+
+Đã đọc đến #B-017 (19/11 18:20).
