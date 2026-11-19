@@ -174,3 +174,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | #250 | 19/11 17:10 | Chat→Sonnet | Chủ duyệt: chia hàng đợi A/B, owner trong TASKS, sửa hook, Tổng quản, việc cho tiểu yêu |
 | #B-011 | 19/11 17:10 | Chat→B | Hàng đợi riêng của B, việc cho tiểu yêu, thử lại tạo vai |
 | #B-012 | 19/11 17:15 | Chat→B | Chủ cho phép B gõ B Xong/B Chat qua Chrome, không hỏi lại việc đã giao |
+| #251 | 19/11 17:25 | Chat→Sonnet | Thử tạo vai bằng APK #246, VK-04, tiểu yêu A-07f/g/h, hàng đợi |

@@ -1893,3 +1893,10 @@ Chat đã tách hàng đợi: A = `STATE/HANG-DOI-VIEC.md` (có ghi chú đầu 
 5. **Việc cho đám tiểu yêu (đang 0 con chạy):** tạo 2–3 `TASKS/*.md` status=ready cho việc điều tra crash server (A-07*), owner A; B tự tạo phần của B. Xem `STATE/TIEU-YEU.md`, cầu dao đóng, khóa JX-K2..K6 trống.
 Không dừng. Báo ngắn vào TU-SONNET.md; xong gõ `A Xong`.
 - #250 xử lý 17:05: owner A/B, hook, stop_guard, vá JX-TongQuan, tạo A-07f/g/h.
+
+## #251 Chat 19/11 17:25 — VIỆC TIẾP (không chờ): THỬ TẠO VAI BẰNG APK MỚI, RỒI VK-04, RỒI HÀNG ĐỢI
+1. Dùng APK thử #246 (hộp báo + hết giờ 20 giây) trên LD T36test tạo một nhân vật thật bằng tên chữ thường thuần ≥12 ký tự (không số, không khoảng trắng; ví dụ dạng `tsvkbonenamea`). Ghi kết quả (tạo được? hộp báo hiện đúng?) vào TU-SONNET.md và `A-B.md` cho B (B cần nhân vật/tên hợp lệ cho tester và Bot).
+2. Có nhân vật rồi: VK-04 chụp thích/kiếm/thương/bổng (Q-45 cho tạo/nâng nhân vật test trong `JX-Test-36`, ghi hoàn tác); commit repo chính với `JX1_EFFECT_OK=1` chỉ cho commit đó; đóng VK-04. Không gửi APK cho chủ.
+3. Tổng quản: theo dõi nhật ký có còn ngắt sau bản vá pin không; chạy tiếp A-07f/g/h với tiểu yêu, gộp khi XONG-CHO-GOP.
+4. Rảnh: hàng đợi `STATE/HANG-DOI-VIEC.md` (V-01, M-01, SO/HG/KC).
+Không dừng; xong việc lớn gõ `A Xong`.
