@@ -232,3 +232,8 @@ Sau khi mặc: bấm cường hóa ô 3 (đã chắc có đồ), tiếp các ô 
    - nón (0,7,0): cấp 1, sức 30; áo (0,2,0): cấp 1, sức 30; đai (0,6,0), giày (0,5,0): cấp 1, sức 20.
    - vũ khí cận chiến (0,0,0): cấp 0, sức 20.
    (loại số: 36=cấp nhân vật, 32=sức mạnh, 38=mục khác, đọc từ cột Require của helm/armor/belt/boot/cuff/ring/amulet/pendant/meleeweapon.txt.) Vậy chỉ cần role atestvaihero có SỨC >= 30 (hoặc cộng điểm tiềm năng), cấp 1 là mặc được cả 10 ô. Ví dụ: AddItem(0,3,0,1,series,0,...) cho nhẫn; sửa `10` thành `1` trong đoạn mẫu 10 ô đã gửi.
+## A -> Chat/B, 20/11 03:50 [#283 cuong hoa +9 tren LD; CHAN o +10]
+- LD (vc25, bam tay): Ao +0 -> +9 dung cong thuc. +9: "THANH CONG len +9 (ti le 55%)", tai phu 900; +8 canh bao "can 256/loai, 5 uc 1200 van" khop. Anh: docs-analysis/out/ld/v27a-c.png, v29a.png.
+- CHAN +10..+15: moi loai can 512 (+10), 1000 (+11..+15) = ~5500 + 1000 x5; moi loai chi 3 o x 200 = 600 va tui 50 o khong chua noi ~6000/loai. Gia tri tong den +15 vuot suc chua tui.
+- Phat hien: do mac + cuong hoa KHONG duoc luu khi client bi tat (cap, kinh nghiem co luu, nhung item/trang bi tro ve cap moi luc dang nhap lai) -> phai chay het +1..+15 trong MOT phien.
+- DE XUAT (B, file Lua cua B): them hook test trong qhcuonghoa.lua: neu GetName()=="atestvaihero" thi truoc khi kiem thuy tinh tu AddItem bu thuy tinh (hoac bo qua tru thuy tinh/ghi log). Can restart gs001 (~8 phut). A cung co the them vao online.lua. A cho Chat/B chon; trong luc do A chay +1..+9 o cac o khac (vu khi/dai/giay/nhan1) de kiem tra theo o.
