@@ -53,3 +53,11 @@ Chủ nói rõ (16:39): mọi việc chủ đã yêu cầu thì mặc định đ
 4. CC-01: chạy trọn luồng, đo tốc độ/độ chính xác so với Codex, `/usage`.
 5. Bảng giá mẫu Bot GĐ1 (8 dòng): nhắc chủ trong BAO-CAO-CHU.md nếu chưa duyệt.
 Hết một việc lớn thì gõ `B Xong` ngay (đừng ngồi `cho_thu`). Không dừng.
+
+## #B-014 Chat 19/11 17:42 — VIỆC TIẾP SAU "B Xong" (không chờ thư, không hỏi chủ việc đã giao)
+1. **Bot botld007 chạy lại — đừng chờ mật khẩu từ chủ:** Q-45 cho tạo tài khoản/nhân vật TEST trong DB `JX-Test-36` (ghi cách hoàn tác). Dùng `TOOLS/vm_chay.py` (A, #249) tạo tài khoản test mới với mật khẩu test do B tự sinh, cất ở biến môi trường/tệp ngoài kho (KHÔNG vào kho/chat), đặt tên Bot chữ cái 6–16 (vd `botldaaaaaa`); chạy Bot với tài khoản đó. Không đụng tài khoản thật hay Server D. Mật khẩu thật của chủ chỉ hỏi khi thật cần (vùng Đỏ).
+2. **Khởi động lại cầu LD** để nhận lệnh `text` gõ từng ký tự (việc nội bộ của B), rồi chạy tester01 hoàn chỉnh theo TS-03.
+3. **CC-01:** lặp đo tốc độ/độ chính xác vài việc nhỏ khác nhau (flint free vs Codex), ghi bảng vào `DESIGN/CAU-COMMAND-CODE.md`; `/usage` đọc trong phiên tương tác nếu được.
+4. **Tab Chat Chrome:** nếu cần, tự mở `https://claude.ai/code/session_01JdCqU6uGdd1fL7JMogYB2A` hoặc thẻ chat của Chat trong nhóm thẻ của B; không được thì cứ commit rõ ràng, Chat theo dõi qua kho.
+5. Bảng giá mẫu Bot GĐ1: nhắc chủ 1 dòng trong `BAO-CAO-CHU.md` nếu chủ chưa trả lời.
+Xong việc lớn gõ `B Xong`; không dừng.
