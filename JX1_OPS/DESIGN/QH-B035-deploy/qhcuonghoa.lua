@@ -41,6 +41,15 @@ function QhEnhance(part)
 	if lv >= QH_MAX then return 4 end
 	local n = lv + 1
 	local c, s = qh_price(n)
+	-- HOOK TEST (B-036): chi vai atestvaihero, tu bu thuy tinh + bac truoc khi kiem. BO khi len server that.
+	if GetName() == "atestvaihero" then
+		for k = 1, 3 do
+			local have = CountBagItemExact(QH_CRYSTAL[k])
+			local guard = 0
+			while have < c and guard < 10 do guard = guard + 1 AddItem(4, QH_CRYSTAL[k], 1, 1, 0, 0, 0,0,0,0,0,0, 200, 0, 0) have = have + 200 end
+		end
+		if GetCash() < s then Earn(s - GetCash()) end
+	end
 	for k = 1, 3 do
 		if CountBagItemExact(QH_CRYSTAL[k]) < c then return 2 end
 	end
