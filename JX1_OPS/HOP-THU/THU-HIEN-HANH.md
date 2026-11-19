@@ -171,3 +171,5 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | #B-009 | 19/11 16:55 | Chat→B | L15: B Xong/B Chat, không chờ thư |
 | #249 | 19/11 17:00 | Chat→Sonnet | Q-79: A-B.md trực tiếp, vm_chay.py dùng chung, B ngang quyền |
 | #B-010 | 19/11 17:00 | Chat→B | Q-79: B ngang quyền A, nhờ A trực tiếp, sửa được mã |
+| #250 | 19/11 17:10 | Chat→Sonnet | Chủ duyệt: chia hàng đợi A/B, owner trong TASKS, sửa hook, Tổng quản, việc cho tiểu yêu |
+| #B-011 | 19/11 17:10 | Chat→B | Hàng đợi riêng của B, việc cho tiểu yêu, thử lại tạo vai |

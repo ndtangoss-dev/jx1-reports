@@ -1883,3 +1883,12 @@ B không có đường vào VM Test-36 (WinRM cần tài khoản; B không lách
 
 ## #249 Chat 19/11 17:00 — Q-79: B NGANG QUYỀN A. LÀM 3 VIỆC ĐỂ B KHÔNG PHẢI ĐỢI
 Chủ chốt (16:25): "B phải có đầy đủ quyền ngang A, không thể đợi báo Chat rồi Chat báo A." (1) **Hộp thư trực tiếp A↔B:** `HOP-THU/A-B.md` (Chat đã tạo). Đọc mỗi lượt, làm ngay việc B nhờ, ghi XONG dưới mục. Không chờ Chat. (2) **Đường vào VM Test-36 dùng chung:** viết công cụ trung gian `TOOLS/vm_chay.py` (hoặc tương đương) chạy LỆNH TRONG dánh sách an toàn trong `JX-Test-36` (khởi động lại chuỗi `JX-ChainUp`, đọc N dòng cuối log Bishop/Goddess/gs001, kiểm cổng, truy vấn đọc-chỉ tên trùng trong DB Test-36) bằng thông tin đăng nhập đang giữ trên máy chủ; B gọi công cụ, KHÔNG nhìn thấy mật khẩu, không in mật khẩu vào kho. Ghi cách dùng vào `STATE/DUONG-VAO-VM.md`. Cả A và B dùng. (3) **Phân vai chỉ là ưu tiên:** B được sửa mọi tệp/mã khi cần (kể cả mã client như CreateRole) trong worktree riêng; A không cản, chỉ phối hợp qua A-B.md. Làm xong báo "A Xong #249". Vùng đỏ giữ nguyên cho cả hai.
+
+## #250 Chat 19/11 17:10 — CHỦ DUYỆT (16:37): CHIA HÀNG ĐỢI A/B, SỬA HOOK, SỬA TỔNG QUAN, TẠO VIỆC CHO TIỂU YÊU
+Chat đã tách hàng đợi: A = `STATE/HANG-DOI-VIEC.md` (có ghi chú đầu tệp), B = `STATE/HANG-DOI-VIEC-B.md`. Làm lần lượt, không chờ thư:
+1. **Trường chủ việc:** thêm `owner: A|B` vào `_MAU-TASK.md` và các `TASKS/*.md` còn mở (A: A-07,A-07b,A-07c,B-02,B-04,CL-01,D-02,T-04,M-01,P-01,0-08,O-01; B: E-01,E-04,E-05,E-06,E-09,P-03,C-01). `tong_quan.py`: XONG-CHO-GOP chỉ đánh thức đúng chủ (cho_thu A bỏ qua việc owner B và ngược lại); `set_status`/lập việc mới mặc định owner theo `JX1_SONNET`.
+2. **Hook thư mới (`mailbox_hook.py`):** regex đang đòi "Thư #" nên không bắt thư dạng `## #250 Chat ...`; sửa nhận cả `## #N` và `## #B-N`, kiểm cho cả A và B.
+3. **`stop_guard.py` `pending_letters()`:** đọc đúng mục và đúng kiểu số thư của B (`#B-\d+`); kiểm lại cho A cũng bắt được thư thật; thư đã "Đã đọc đến" thì không chặn.
+4. **Tổng quản:** làm tiếp #248 (dòng CHO riêng A và B theo hoạt động thật). Tìm vì sao `TONG-QUAN-GHI.md` ngắt từ 16:05 đến 16:27 (máy ngủ? tác vụ `JX-TongQuan` lỗi?) và vá nếu là lỗi.
+5. **Việc cho đám tiểu yêu (đang 0 con chạy):** tạo 2–3 `TASKS/*.md` status=ready cho việc điều tra crash server (A-07*), owner A; B tự tạo phần của B. Xem `STATE/TIEU-YEU.md`, cầu dao đóng, khóa JX-K2..K6 trống.
+Không dừng. Báo ngắn vào TU-SONNET.md; xong gõ `A Xong`.

@@ -1,4 +1,5 @@
 # HÀNG ĐỢI VIỆC KHÔNG-ĐỎ (Chat lập 18/11/2026 22:30; Sonnet làm theo thứ tự, KHÔNG BAO GIỜ hết việc)
+> 19/11 17:10: ĐÂY LÀ HÀNG ĐỢI CỦA SONNET A. Của B: `STATE/HANG-DOI-VIEC-B.md`. Việc cha của A: A-07, A-07b, A-07c, B-02, B-04, CL-01, D-02, T-04, M-01, P-01, 0-08, O-01. Chờ chủ: B-05, X-05, C02/C04/C05.
 
 Luật (Q-52): Sonnet không gõ "xong" vì "hết việc". Hết việc đang làm thì lấy việc kế tiếp trong hàng đợi này; hàng đợi cạn thì tự đề xuất 3–5 việc "hiểu game" mới từ mục "chưa kiểm" của các báo cáo (ghi vào cuối tệp này, đánh dấu [SONNET-THÊM]) rồi làm. Mỗi việc: tạo `TASKS/<mã>.md` để Tổng quản giao tiểu yêu; việc cần sửa mã hoặc chạm vùng Đỏ thì KHÔNG làm, ghi [CAN-CHU]. Việc đọc tĩnh, viết tài liệu, kiểm chéo, và thử trên `JX-Test-36` (trong phạm vi đã duyệt) là làm được. Báo cáo viết bằng lời thường, mỗi điều ghi nhãn THẤY / TÀI LIỆU / CHƯA KIỂM, kèm file:dòng.
 
