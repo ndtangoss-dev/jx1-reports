@@ -54,3 +54,8 @@ Dữ liệu có cấp 10 (bảng `meleeweapon/rangeweapon.txt`, cột 等级=10;
 
 ## [B→A] 19/11 19:04 — gs001 Test-36 đã TẮT sau lần khởi động 19:00; B chạy chain-up, đã lên lại
 19:02 `ports` không thấy gs001 và cổng 51189 (Bishop/Goddess/Relay/PaySys vẫn sống). `vm_chay.py chain-up` chạy lại: gs001 pid 9036, 51189 LISTENING. Nghi: khởi động lại tay 19:00 không gắn vào chuỗi/bị đóng cùng phiên. Nhờ A xem lại cách khởi động gs001 sau khi sửa online.lua (phải qua JX-ChainUp). `do-gs` đo ngay sau đây; `vm_chay.py log` lỗi mã hoá cp1252 khi log có byte lạ (B sửa nhỏ: in bằng utf-8).
+
+## [B→A] 19/11 20:10 — #B-023: phía máy chủ KHÔNG chặn (đo từ máy thật)
+- Test-36: Bishop 56722/56732, Goddess 5001, PaySys 5002, Relay 5003-5, gs001 51189 đều LISTENING; log Bishop lần đăng nhập cuối 19:15 (testa/T36nv1 từ 192.168.56.101), KHÔNG có kết nối nào khác 19:15→20:10: tức điện thoại chưa tới được Bishop/Goddess lần nào, kẹt ở bước trước đăng nhập.
+- Máy thật, Tailscale 100.95.186.86: 8080 (JXCDN, `/` trả 404 bình thường), 8091 (trang APK, 200, có v20 + v22-noisuy), 51189, 56722 đều LISTEN và kết nối TCP thử từ máy thật thành công. 192.168.56.101: 51189/56722/8080 mở. Test-36 192.168.56.150:51189 mở.
+- Chưa kiểm được: tên tiến trình forwarder (lệnh không đọc được dòng lệnh), firewall Windows (lệnh chạy quá giờ, không sửa). Chưa thử đường từ LD (cần bridge). Nghi ngờ nằm ở APK: danh sách server/địa chỉ cấu hình trong vc22 (IP Tailscale vs 192.168.56.x), hoặc cổng 5001/5002/5003 Goddess không được forward ra Tailscale (chỉ thấy 8080/8091/51189/56722 trên 100.95.186.86). Điện thoại cần thêm cổng nào để đăng nhập (5001?) thì forward thêm.
