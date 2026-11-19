@@ -79,3 +79,6 @@ Hiểu game (chuẩn hóa) → đường truyền client-server + hiểu exe →
 
 ## L12. Pull trong worktree có file ghi liên tục [TỰ QUYẾT, #221]
 Luôn `git pull --rebase --autostash`; `STATE/TONG-QUAN-GHI.md` đặt `merge=union` trong `JX1_OPS/.gitattributes`. Cấm commit file còn dấu `<<<<<<<`.
+
+## L13. HIỂU Ý CHỦ TRƯỚC, CHỦ CHỐT RỒI MỚI GIAO SONNET (chủ chốt 19/11 10:42)
+Khi chủ bàn BẤT KỲ việc gì, Chat phải trình bày trước "thuộc hạ hiểu ý đại vương thế này" (kèm chỗ chưa chắc) và chờ chủ chốt; chỉ sau đó mới ghi quyết định và gửi thư Sonnet. Không giao nhanh khi chưa hiểu ý: thư sai gây xung đột (ví dụ #229 vs #230, Q-67 vs Q-68) và nếu chủ không nhắc thì không ai gỡ. Ngoại lệ: lệnh chủ đã ra rõ ràng, nguyên văn và không mơ hồ thì vẫn chuyển đúng nguyên văn kèm một câu xác nhận. Nếu đã lỡ gửi thư mâu thuẫn, Chat chủ động gửi thư gỡ ngay, không đợi chủ nhắc. Không bao giờ dùng luật này để ra lệnh Sonnet dừng (Q-56).
