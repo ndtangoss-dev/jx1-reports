@@ -21,3 +21,6 @@
 1. Tài khoản test Bot (A thêm `tao-tk-test`, hoặc chủ duyệt) → chạy `BOT/cli.py` 5→10→20, mỗi bậc gọi `do-gs 30` + chụp HUD ping/FPS tester01.
 2. Đường dữ liệu (nạp map/spr, khựng): đo thời gian từ vào map đến hết khựng bằng ảnh HUD FPS theo mốc thời gian qua cầu; cần cổng log client (A).
 3. Tick/gói/độ trễ đòn: cần `b04a_metrics.py` với nguồn tick thật (chưa có định dạng log).
+
+## Đo lại 19:08 (sau khi gs001 nạp xong map, 0 người chơi → 1 kết nối 51189)
+gs001 CPU 2,54% / 4 CPU (33 s), RAM 2145,5 MB, 24 thread, 199 handle, NIC 0. So với mốc 18:xx (CPU 25,9%, 240 MB): mốc cũ là gs001 vừa khởi động chưa nạp hết, không phải nhàn rỗi; mốc nhàn rỗi đúng là ~2,5%. (B)
