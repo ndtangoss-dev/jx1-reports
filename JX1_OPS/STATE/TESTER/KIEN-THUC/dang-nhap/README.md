@@ -21,3 +21,9 @@
 - Bằng chứng: [form đã che ô mật khẩu](TS-03/06-tai-khoan-khong-khop.jpg), [sau chạm mũi tên](TS-03/07-sau-cham-mui-ten.jpg), `JX1_OPS/STATE/TESTER/KIEN-THUC/dang-nhap/TS-03/ket-qua.jsonl:11–14`.
 - Cách dùng lại: Kiểm đúng tên tài khoản trên form trước khi bấm Đăng nhập. Đường vừa quan sát: Cài đặt (1193,52) → Đăng xuất (1176,955) → Bắt đầu trò chơi (960,588) → máy chủ (500,298). Chỉ dùng trong phiên Test-36 được giao, kiểm ảnh ở mỗi màn.
 - Ngày, tiểu yêu: 19/11/2026 — TS-03. Chưa bấm Đăng nhập; không nhập, lấy hay suy đoán mật khẩu. Điểm dừng ở form đang lưu `testa`; cần Tổng quản lưu sẵn đúng `tester01` trong ứng dụng.
+
+## Sonnet kiểm qua cầu ld_bridge (19/11 13:00-13:20, tester01 emulator-5558) [ĐÃ KIỂM]
+- Đăng nhập testa → danh sách nhân vật (T36nv1 Nam lv1 Kim) → Tạo mới → chọn làng Ba Lăng huyện → màn "Lựa chọn hệ phái" hiện được.
+- Tật giao diện: chạm đầu tiên vào nút/ô sau khi gõ chữ chỉ bỏ tiêu điểm ô nhập; phải chạm LẦN 2 mới có tác dụng. Đăng nhập kẹt 4 lần → stop/start ứng dụng.
+- Xóa ô tên: chạm ô 2 lần rồi DEL nhiều lần (DEL khi ô chưa có tiêu điểm không làm gì).
+- Tạo nhân vật: tên "T36nv2" và cả "Tsbaone" (chỉ chữ cái) đều bị báo "Tên nhân vật chứa ký tự đặc biệt, hoặc các ký tự không được phép!" dù Bishop (PlayerCreator.cpp:440) cho phép 0-9A-Za-z. [CHƯA RÕ NGUYÊN NHÂN] nghi kiểm ở client hoặc m_UTF8Code/m_InvalidName; đã thử 2 tên, dừng theo luật 3 lần. Bot tạo vai bằng bot_tao_role.py vẫn được.

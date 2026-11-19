@@ -5,3 +5,6 @@
 - Thông tin mới thật: form đang lưu `testa` chứ không phải `tester01`; mật khẩu `tester01` chưa lưu trong app (khác lời giao). Tiểu yêu đúng khi DỪNG, không nhập/suy đoán mật khẩu (đúng luật).
 - Chất lượng: TỐT (làm thật, ghi bằng chứng, dừng đúng chỗ). Lần chấm tốt thứ 1 (Q-59 cần ≥2 liên tiếp trước tester02).
 - [TỰ QUYẾT] gỡ chặn: lượt kế cho dùng tài khoản `testa` đã lưu trên LD này (Sonnet không dùng LD cùng lúc) để tạo thêm nhân vật theo bảng ngũ hành; không nhập mật khẩu.
+
+## 19/11 13:10 — TS-03 lượt 2 và 3 (tester01, khóa JX-K4): KHÔNG ĐẠT
+- Cầu im từ 11:59; cả hai lượt tiểu yêu chạy (có nhịp tim) nhưng chỉ sửa tài liệu, 0 lệnh thật. Không phải lỗi khóa/tốc độ 0.5x (nó chạy được) mà là không thao tác. Không chấm TỐT. Chuỗi tốt liên tiếp quay về 0.
