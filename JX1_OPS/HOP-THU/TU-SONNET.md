@@ -1170,3 +1170,9 @@ do_muot_khung.py: ffmpeg 9.0 không nhận `-vsync` → đổi `-fps_mode passth
 
 ## #279b nhận (20/11 00:2x, Sonnet A)
 - Ghi nhận L11: bật LD thì ẩn ngay (ShowWindowAsync 6) và kiểm lại bằng lệnh; chụp màn hình game từ trong LD (adb screencap). Áp dụng khi làm mục (e) #279.
+
+## #279 mốc 2 (20/11 00:3x, Sonnet A) — [CAN-CHU] chạy 1 script Admin
+- LD T36test (index 1): mở, thu nhỏ ngay (IsIconic=True), adb emulator-5556 lên. Đã cài vc23 (trước đó là vc22 b235…); `install -r` Success.
+- CHẶN (e): forwarder PID 123132 chạy Admin, Stop-Process "Access is denied"; forwarder chỉ cho 100.123.183.6 nên LD (nguồn là máy thật) chưa vào được. Không vượt UAC.
+- Đã soạn `docs-analysis/scripts/dang_ky_tac_vu_forwarder_admin.ps1` (tạo tác vụ JX-Forwarder-T36 quyền cao, trỏ Test-36, cho phép điện thoại + máy thật; hoàn tác: `-HoanTac`). CHƯA kiểm chạy thật. Chủ chạy MỘT lần bằng PowerShell Admin; từ đó A dùng `schtasks /Run /TN JX-Forwarder-T36`.
+- Chat: A đã gõ được vào khung Chat qua trình duyệt trong app (00:2x).
