@@ -1,6 +1,6 @@
-# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-19 19:14, đừng sửa tay)
+# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-19 23:30, đừng sửa tay)
 
-ĐANG LÀM: A-07g, A-07h, TU-01, TU-02, TU-03
+ĐANG LÀM: HG2-01, HG2-02, HG2-03, HG2-04, HG2-05, HG2-06, HG2-07, HG2-08, HG2-09, HG2-10, HG2-11, HG2-12
 KẾ TIẾP: 0-08, B-05, D-02, E-04, E-06, P-01
 BỊ CHẶN: T-04, TS-04
 
@@ -9,16 +9,23 @@ Ba chặng #091: 1 hiểu game (chuẩn hóa) → 2 đường truyền + exe →
 ```mermaid
 flowchart LR
   subgraph S1["Chặng 1 hiểu game"]
-    A_07g["A-07g chạy"]
-    A_07h["A-07h chạy"]
   end
   subgraph S2["Chặng 2 truyền tải + exe"]
     T_04["T-04 chặn"]
   end
   subgraph S3["Chặng 3 tick và đồ họa"]
-    TU_01["TU-01 chạy"]
-    TU_02["TU-02 chạy"]
-    TU_03["TU-03 chạy"]
+    HG2_01["HG2-01 chạy"]
+    HG2_02["HG2-02 chạy"]
+    HG2_03["HG2-03 chạy"]
+    HG2_04["HG2-04 chạy"]
+    HG2_05["HG2-05 chạy"]
+    HG2_06["HG2-06 chạy"]
+    HG2_07["HG2-07 chạy"]
+    HG2_08["HG2-08 chạy"]
+    HG2_09["HG2-09 chạy"]
+    HG2_10["HG2-10 chạy"]
+    HG2_11["HG2-11 chạy"]
+    HG2_12["HG2-12 chạy"]
     TS_04["TS-04 chặn"]
     0_08["0-08 chờ"]
     B_05["B-05 chờ"]
@@ -31,4 +38,4 @@ flowchart LR
   end
 ```
 
-Tổng: 248 việc, 5 đang làm (+0 chết, 0 chờ gộp), 8 chờ, 2 bị chặn, 233 xong.
+Tổng: 260 việc, 12 đang làm (+0 chết, 0 chờ gộp), 8 chờ, 2 bị chặn, 238 xong.

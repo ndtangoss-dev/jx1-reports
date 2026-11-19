@@ -729,3 +729,5 @@
 [TỔNG QUẢN 19/11 23:21] CAU DAO xingchi: DONG
 [TỔNG QUẢN 19/11 23:23] CAU DAO xingchi: DONG
 [TỔNG QUẢN 19/11 23:25] CAU DAO xingchi: DONG
+[TỔNG QUẢN 19/11 23:30] CAU DAO xingchi: DONG; HG2-01 giao bang JX-K4; HG2-02 giao bang JX-K4; HG2-03 giao bang JX-K4; HG2-04 giao bang JX-K4; HG2-05 giao bang JX-K3; HG2-06 giao bang JX-K3; HG2-07 giao bang JX-K3; HG2-08 giao bang JX-K3; HG2-09 giao bang JX-K2; HG2-10 giao bang JX-K2; HG2-11 giao bang JX-K2; HG2-12 giao bang JX-K2
+[TỔNG QUẢN 19/11 23:31] CAU DAO xingchi: DONG
