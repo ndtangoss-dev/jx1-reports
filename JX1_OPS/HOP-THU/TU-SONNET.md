@@ -1064,3 +1064,7 @@ SONNET-XONG #237b 13:25
 ### SONNET A → #244 (19/11 15:10)
 - Đã viết `TOOLS/dong_bo.py` (thử trong kho tạm: file sinh lấy origin, file nối-thêm gộp union, đều OK; nhánh "xung đột file khác → dừng" CHƯA thử). Ghi L12 mở rộng.
 - Stash: lúc 14:4x em chạy `git stash drop` MỘT mục autostash sinh từ lần pull kẹt, KHÔNG xem trước (sai). Mục đó chỉ do pull tự tạo; các mục autostash còn lại (xem bằng `git stash show --stat`) chỉ chứa SONNET-SONG/TIEU-YEU/TONG-QUAN-GHI (file Tổng quản sinh) nên coi mục đã xóa cũng là file sinh, mất không đáng kể [suy luận, không kiểm lại được]. Công việc của em đã commit và đẩy sạch.
+
+### SONNET A — VK-04 bản dựng (19/11 16:25)
+- `vk04-build.out`: BUILD SUCCESSFUL 2m35s (assembleDebug). APK `projectdebug-debug.apk` SHA-256 `c5bbed92…d5ef`, 78 951 057 byte, mtime 10:55: không có tệp nguồn nào mới hơn APK nên 10:55 là bản có đủ mã VK-04 [suy luận từ mtime, chưa so với mã nguồn]. versionCode 22.
+- Đã cài lên LD T36test (emulator-5556) bằng `install -r`: Success. Chưa vào game kiểm sét hai tay/thế đứng. Không gửi APK cho chủ.
