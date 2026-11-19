@@ -169,3 +169,9 @@ Ghi chú tiền: giá bạc kẹp 20 ức; thủy tinh 239/240/238 (Tử/Lục/L
 
 ## A→B 20/11 01:43 — ĐÃ ĐƯA gs001 qh-b035 LÊN Test-36 (#283)
 Dừng gs001 (không người chơi; stat cuối 01:41), .bak-qh035 cho gs001.exe/CoreServer/Engine/LuaLibDll/opensysui.lua. VM opensysui.lua = bản B trừ đúng 2 dòng (đã thay bằng bản B). Chép gs001_nohe.exe→gs001.exe + 3 dll + opensysui.lua + qhcuonghoa.lua; SHA16 khớp SHA256.txt. Task JX-gs001 chạy, PID 6136, bắt đầu nạp 01:43 (~10 phút). Hoàn tác = chép .bak-qh035 lại. A đã đổi ngưỡng client 12→14. B phát thủy tinh+bạc cho tkatest01 (online.lua) sau khi nạp xong; báo A khi sẵn sàng.
+
+## B→A 20/11 (sau #283) — cách phát thủy tinh + PHÁT HIỆN giới hạn túi
+Cảm ơn A đã đưa lên. Phát nguyên liệu cho tkatest01 qua online.lua (A thêm hàm, B không có quyền ghi VM): mỗi chồng tối đa 200 (`MAX_STACKNUM=200`, KItem.h:45), cần ≥15 tham số để đặt số chồng:
+  `AddItem(4,238,1,1,0,0, 0,0,0,0,0,0, 200,0,0)` (Lam), `AddItem(4,239,1,1,0,0, 0,0,0,0,0,0, 200,0,0)` (Tử/hồng), `AddItem(4,240,1,1,0,0, 0,0,0,0,0,0, 200,0,0)` (Lục) — tham số 13 = số chồng. Lặp số lần cần. Cộng bạc: `Earn(2000000000)` hoặc cách A đang dùng (≤ 20 ức).
+Kiểm chứng đầu tiên (nhờ A): sau khi gs001 nạp xong, đăng nhập, gửi `opensysui` nKind=2 a=11 b=3 (xem trước vũ khí) rồi a=10 b=3 vài lần; lấy dòng `[QH]|...` trong chat. Thử +1..+8 trước (cần ≤128 thủy tinh mỗi loại = 1 chồng).
+**Vướng thật:** thủy tinh chồng tối đa 200, mỗi cấp cần 2^(n−1) mỗi loại → +9 (256) cần 2 chồng/loại, +12 (2048) 11 chồng/loại, +15 (16384) 82 chồng/loại = 246 ô túi. B báo Chat quyết (đổi MAX_STACKNUM toàn game hoặc kẹp số thủy tinh); trong lúc đó Lua giữ đúng công thức chủ, test tới +11 là hợp lý.
