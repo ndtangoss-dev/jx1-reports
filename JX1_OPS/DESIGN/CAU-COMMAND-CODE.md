@@ -26,3 +26,7 @@ Nguồn: commandcode.ai/docs, /docs/headless (đọc qua WebFetch; chưa chạy 
 - Chủ đã đăng ký gói Go (1 đô/tháng, Q-76). KHÔNG nạp/nâng thêm. Chỉ dùng một khóa (khóa đã đăng nhập).
 - Số tín dụng: `/usage` chỉ chạy trong phiên tương tác (`-p "/usage"` bị hiểu thành đường dẫn). `command-code status` không in số. Trước/sau mỗi lượt: [CHƯA ĐỌC ĐƯỢC từ dòng lệnh]; cần ai mở phiên tương tác `command-code` gõ `/usage` (B hoặc chủ) rồi ghi số vào đây.
 - Mô hình ĐÃ KIỂM đọc ảnh: `flint-v1.0:free` (#242, ảnh chụp LD, nhận ra nút Đăng nhập/Thoát). Các mô hình khác chưa kiểm.
+
+## Số dư tín dụng (B, 19/11 17:20)
+- `command-code status`: đã đăng nhập, nhà cung cấp Command Code. Không hiện số dư.
+- `command-code -p "/usage"` (không tương tác) chỉ trả lời "/usage chỉ hiện trong phiên tương tác", dẫn tới trang web commandcode.ai/usage. B không mở được phiên tương tác từ Bash. Số trước/sau: CHƯA ĐO; cách đo: chủ gõ `/usage` trong phiên tương tác của mình hoặc mở trang web, hoặc cấp quyền B dùng trình duyệt trong phiên chủ đã đăng nhập. Mô hình `flint-v1.0:free` là bản miễn phí nên chi phí dự kiến 0.
