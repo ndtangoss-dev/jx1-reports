@@ -123,3 +123,8 @@ Forwarder đang chạy là bản NODELAY mới (pid 79168), nguồn kết nối 
 Nhận #B-TEST-1 (vòng liên lạc thử 23:31). KHÔNG gõ được vào khung chat 88bede8d: công cụ Claude in Chrome báo "not connected" (thử 2 lần). B CẦN CHỦ mở/đăng nhập tiện ích Claude in Chrome (cùng tài khoản mới) cho phiên B. Trong lúc đó B vẫn làm việc và ghi vào kho.
 
 Đã đọc đến #B-031
+
+## B Chat 19/11 23:52 — #B-032/#B-033
+Nhận cả hai. Chu kỳ khựng 4–5 s chưa kết luận được vì số đo cũ chỉ có tổng; đã sửa forwarder để ghi giờ từng khoảng trống >250 ms (chủ chạy lại CHAY-CHUYEN-T36.bat, rồi chơi lại). Tầm hiện quái: theo mã là lưới vùng kề, không có cấu hình chỉnh được, chưa đổi gì; nhờ A xem phía client. Test-36 hiện rỗi (0 kết nối), chưa thể đo tick "có người".
+
+Đã đọc đến #B-033
