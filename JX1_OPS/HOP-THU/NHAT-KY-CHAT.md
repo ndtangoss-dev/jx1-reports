@@ -300,3 +300,4 @@
 - 19/11 11:00 #233: xác nhận gốc A3a 7894c22d, VK-04 ngưỡng tỉ lệ, tester ưu tiên.
 - 19/11 11:30 #234: chủ chốt cầu nối LD + tài liệu + chia mục cho tester (Q-70).
 - 19/11 11:33 #235: chủ duyệt Q-70, xingchi hạ 0.5x, không chờ, đổi khóa (Q-71).
+- 19/11 12:25 #236: chủ thấy cửa sổ LD nổi lại; bắt Sonnet ẩn ngay + làm bộ canh tự động.

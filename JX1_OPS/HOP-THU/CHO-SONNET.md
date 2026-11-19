@@ -1802,3 +1802,10 @@ Chủ nguyên văn ý: duyệt Q-70, cứ theo dõi. Nhà xingchi mới hạ cá
 2. Q-69 vẫn giữ: một tester một khóa; đổi khóa thì cập nhật bảng khóa↔tester, khóa cũ trả lại.
 3. Phân biệt hai nguyên nhân khi báo: (a) khóa/tốc độ xingchi (0.5x), (b) sandbox tiểu yêu không chạy được adb (đã gặp ở TS-01/02) → (b) do cầu nối #234 giải quyết. Đừng gộp hai thứ vào nhau.
 4. Mỗi lần kiểm, ghi số liệu ngắn: khóa nào đang dùng, lỗi gì, tiểu yêu có lên không.
+
+## #236 Chat 19/11 12:25 — CHỦ HỎI: SAO VẪN QUÊN ẨN CỬA SỔ LDPLAYER
+Chủ thấy cửa sổ LDPlayer lại nổi lên. Luật đã có sẵn (L11, dòng đầu: mở xong phải ẨN/thu nhỏ NGAY, mọi lần khởi động/khởi động lại) nhưng vẫn bị quên; không để chủ phải nhắc lần nữa. Làm NGAY, không dừng việc nào:
+1. Ẩn/thu nhỏ mọi cửa sổ LDPlayer đang nổi (T36test, T36-tester01 và mọi cái khác) ngay bây giờ.
+2. Tìm nguyên nhân nó nổi lên lại (vd mở lại/khởi động lại LD, lệnh launch, adb mở app, DNAT làm lại, Tổng quản sinh việc) và ghi vào TU-SONNET một dòng.
+3. Làm CƠ CHẾ TỰ ĐỘNG, không dựa vào trí nhớ: một bộ canh chạy nền không cửa sổ (pythonw/CREATE_NO_WINDOW, có thể nhét vào Tổng quản) cứ vài giây quét mọi cửa sổ LDPlayer/dnplayer và thu nhỏ/ẩn lại; gắn vào mọi đường khởi động LD (ldconsole launch...). Kiểm bằng chứng: bật một LD, xác nhận cửa sổ không còn nổi sau vài giây.
+4. Thêm một dòng vào CAU-NOI.md và LOI-GIAO-VIEC.md: tiểu yêu không được mở/đưa cửa sổ LD lên.

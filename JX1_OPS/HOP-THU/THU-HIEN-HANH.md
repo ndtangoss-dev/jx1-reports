@@ -148,3 +148,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | #233 | 19/11 11:00 | Chat→Sonnet | gốc=A3a 7894c22d; VK-04 ngưỡng tỉ lệ; tester lượt 2 ưu tiên |
 | #234 | 19/11 11:30 | Chat→Sonnet | chủ quyết Q-70: cầu nối LD cho tiểu yêu tester, kho tài liệu, chia việc theo mục |
 | #235 | 19/11 11:33 | Chat→Sonnet | chủ duyệt Q-70; xingchi hạ 0.5x: không chờ, đổi khóa (Q-71) |
+| #236 | 19/11 12:25 | Chat→Sonnet | chủ hỏi sao quên ẩn LDPlayer: ẩn ngay + bộ canh tự động |
