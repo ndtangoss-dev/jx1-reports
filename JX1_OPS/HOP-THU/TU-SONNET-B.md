@@ -174,3 +174,5 @@ Da viet ma C++ (GetEquipIdx, CountBagItemExact, ConsumeBagItemExact; +14/+15 ky 
 
 ## B 20/11 - Xong 2 việc đọc mã Chat giao (quái hiện muộn, nút đánh thường, +5%)
 Chi tiết + file:dòng + đề xuất sửa cho A nằm cuối HOP-THU/A-B.md. Chỉ đọc mã, chưa chạy. Ứng viên chính: (a) client khoá yêu cầu quái 100 frame (KNpcSet.cpp:1022) và quái chỉ hiện sau NormalSync+yêu cầu; (b) đánh thường dừng sát quái vì vùng chết bán kính (KNpcAI.cpp:772) + lệnh Run chèn xoá skill chờ (KNpc.cpp:6762). +5% cộng thẳng xác nhận đúng.
+
+Đã đọc đến #B-036 (20/11 05:10): xong bảng cường hóa/phi phong + rà hook; chi tiết ở A-B.md và DESIGN/BANG-CUONG-HOA-BAO-CAO.md.
