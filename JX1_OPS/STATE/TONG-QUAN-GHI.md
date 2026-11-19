@@ -353,9 +353,7 @@
 [TỔNG QUẢN 19/11 08:21] CAU DAO xingchi: DONG
 [TỔNG QUẢN 19/11 08:23] CAU DAO xingchi: DONG
 [TỔNG QUẢN 19/11 08:25] CAU DAO xingchi: DONG
-<<<<<<< HEAD
 [TỔNG QUẢN 19/11 08:27] CAU DAO xingchi: DONG
->>>>>>> 83924ee (E-09: đo Enabled=1 Solo trên Test-36 (giảm ~81%, chưa đóng))
 [TỔNG QUẢN 19/11 08:29] CAU DAO xingchi: DONG
 [TỔNG QUẢN 19/11 08:31] CAU DAO xingchi: DONG
 [TỔNG QUẢN 19/11 08:33] CAU DAO xingchi: DONG
