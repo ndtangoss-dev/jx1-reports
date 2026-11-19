@@ -1204,3 +1204,6 @@ do_muot_khung.py: ffmpeg 9.0 không nhận `-vsync` → đổi `-fps_mode passth
 - jx_net.log đọc được qua run-as (mỗi giây 1 dòng): lúc nạp bản đồ rx ~16 KB/s, trễ tre_max ≤3. Chưa thấy khựng 4–5 s khi đứng yên; còn phải đo khi chạy ngựa.
 - CmdLane_stat.log trên Test-36 không có dòng mới sau 23:38 (đứng nguyên số) → cần kiểm cấu hình có nạp không.
 - Việc kế: test đánh thường/chạy trên LD, đo #278, thiết kế UI cường hóa theo hợp đồng của B.
+
+## A 20/11 02:05 (#282 mốc 3) — cửa sổ cường hóa gốc chạy trên LD
+- Bấm "Cuong hoa" trên LD mở cửa sổ gốc "Giao" + Hành trang; tooltip +N và +5%/cấp đã có ở client. Cần làm thêm: hiển thị bạc/vạn/ức (túi đang "lượng"), dòng +14/+15, tài phú, phi phong (chờ số tin của B).

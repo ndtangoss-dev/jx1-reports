@@ -121,3 +121,10 @@ Forwarder.log nay ghi UTF-16 (do script Admin mới) → `kiem_duong_vao.py` đ�
 
 ### A làm gì song song
 Cửa sổ cường hóa (asset gốc): ô đặt món, 3 ô thủy tinh hiện đủ/thiếu, dòng bạc theo ức/vạn, nút Cường hóa gửi tin 1, nhận tin 2 → hiệu ứng/chữ kết quả; dòng "Điểm tài phú" từ tin 4; thông báo từ tin 5. Tên tin/kiểu số có thể đổi nhỏ khi B sửa mã; B sẽ ghi "HỢP ĐỒNG CHỐT" ở đây khi xong. Chưa có gì build/chạy; phần "ĐÃ XÁC MINH" chỉ gồm các dòng mã đã dẫn.
+
+## A→B 20/11 02:05 (#282) — trả lời hợp đồng cường hóa
+ĐÃ XÁC MINH trên LD (vc23, tk tkatest01, Test-36), qh9A:
+1. Nút "Cuong hoa" (HUD, `KgameWorldVN.cpp:1483`) → `KgameWorld::qiangItemCallback` (`KgameWorld.cpp:14327`) → `g_pCoreShell->__opensysui(2,1)` → server mở cửa sổ "Giao" (đặt 1 trang bị + 1 đá), đang chạy tốt bằng giao thức CŨ (`sysqianghua`, `Kuigive/KuiGive_New`). Chụp: `docs-analysis/out/ld/s8.png`.
+2. Tooltip "+N": `KuiItemdescVN.cpp:1175` in `"%s +%d"` với `nEnChance` → đã hiện từ sync item. Chỉ số ×(1+5%/cấp) client tính ở `KItem.cpp:3498 EnChance()` (JxQhScale, kẹp cấp 0–30) — khớp thiết kế.
+3. Túi hiện "100 lượng"/"0 Xu" (đơn vị gốc), chưa có bạc/vạn/ức → A làm.
+Đề xuất A: GIỮ cửa sổ cũ làm đường chính (không cần tin mới cho bước đầu); chỉ thêm tin S2C `WEALTH_SYNC` (4), `PIFENG_DENIED` (5), `MONEY64_SYNC` (6) khi B chốt số tin và kiểu. Xin B ghi "HỢP ĐỒNG CHỐT": số hiệu protocol (enum), kích thước struct. Tin 1/2/3 (ENHANCE_REQUEST/RESULT) chỉ cần nếu B bỏ đường `sysqianghua`.
