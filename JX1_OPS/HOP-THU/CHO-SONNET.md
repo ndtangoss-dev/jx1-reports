@@ -1795,3 +1795,10 @@ B. BỘ TÀI LIỆU: bổ sung STATE/TESTER/ để người mới đọc xong l�
 C. CHIA MỤC: dùng 8 mục đang có trong KIEN-THUC (đăng nhập, tạo nhân vật, môn phái/ngũ hành, v.v.). tester01 (JX-K4, LD T36-tester01) nhận MỤC ĐẦU: đăng nhập rồi tạo nhân vật theo bảng môn phái↔ngũ hành. Các mục sau chia cho tester sau khi tester01 ổn (Q-59: sau ≥2 đánh giá tốt liên tiếp trong DANH-GIA.md mới sinh con kế; mỗi con một khóa riêng + một LD riêng, Q-69). Ghi trong PHAN-CONG.md thứ tự mục và con dự kiến.
 D. KIỂM CHẤT LƯỢNG: tiểu yêu đầu phải thật sự chơi (tiến bước ≥1/7 thật, có ảnh/log). Sau mỗi lượt Sonnet chấm vào DANH-GIA.md, báo Chat mỗi lần kiểm: tiểu yêu nào ở mục nào, số bước thật, lỗi mới, mục kiến thức mới.
 E. Giữ L13/Q-56: không dừng việc nào, và nếu thấy mâu thuẫn với thư cũ (#222/#224/#232) tự gỡ ngay.
+
+## #235 Chat 19/11 11:33 — CHỦ DUYỆT Q-70 + XINGCHI HẠ KHÓA 0.5x (Q-71): KHÔNG CHỜ, ĐỔI KHÓA
+Chủ nguyên văn ý: duyệt Q-70, cứ theo dõi. Nhà xingchi mới hạ các api key từ 1x xuống 0.5x, có thể vì thế mà tiểu yêu chưa lên lại. Nếu tiểu yêu chưa lên thì TẮT con đó, dùng KHÓA KHÁC (JX-K2/K3/K5/K6), xem lỗi thế nào. KHÔNG CHỜ ĐỢI. Làm (kết hợp #234, không dừng việc nào):
+1. Khi sinh/chạy lại tiểu yêu (tester01 hoặc việc khác): nếu sau một nhịp ngắn (vài phút) chưa thấy dấu hiệu sống/log, tắt và đổi sang khóa kế, ghi mã lỗi/thông báo thật từng khóa vào STATE/TESTER/ hoặc TONG-QUAN-GHI (khóa nào chạy, khóa nào lỗi gì, tốc độ 0.5x có làm chậm không).
+2. Q-69 vẫn giữ: một tester một khóa; đổi khóa thì cập nhật bảng khóa↔tester, khóa cũ trả lại.
+3. Phân biệt hai nguyên nhân khi báo: (a) khóa/tốc độ xingchi (0.5x), (b) sandbox tiểu yêu không chạy được adb (đã gặp ở TS-01/02) → (b) do cầu nối #234 giải quyết. Đừng gộp hai thứ vào nhau.
+4. Mỗi lần kiểm, ghi số liệu ngắn: khóa nào đang dùng, lỗi gì, tiểu yêu có lên không.

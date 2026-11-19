@@ -111,3 +111,6 @@ Việc test game nặng: một tester = một khóa xingchi (JX-K*), không chia
 
 ## Q-70 (chủ 19/11 11:23) — NỐI MÁY GIẢ LẬP CHO TIỂU YÊU TESTER + KHO TÀI LIỆU + CHIA VIỆC THEO MỤC
 Chủ chốt: (1) làm cầu nối để tiểu yêu tester điều khiển được máy giả lập (hiện tiểu yêu bị chặn adb, 0/7); (2) phải có bộ tài liệu để tiểu yêu hiểu ngay, tiểu yêu chết thì con khác vào biết ngay; (3) chia việc theo từng MỤC cho từng tiểu yêu test, kết quả nhập vào kho knowledge chung, chia nhánh theo mục. Giữ: Q-59 (tester đầu ổn rồi mới sinh thêm), Q-60 (kho chia nhánh), Q-69 (một tester một khóa).
+
+## Q-71 (chủ 19/11 11:27) — DUYỆT Q-70; XINGCHI HẠ KHÓA 1x → 0.5x: KHÔNG CHỜ, ĐỔI KHÓA
+Chủ duyệt Q-70 ("cứ theo dõi"). Tin mới: nhà xingchi vừa hạ các api key từ mốc 1x xuống 0.5x; có thể vì thế tiểu yêu chưa lên lại. Lệnh chủ: nếu tiểu yêu chưa lên thì TẮT con đó và dùng KHÓA KHÁC, xem lỗi thế nào; KHÔNG CHỜ ĐỢI. Vẫn giữ Q-69 (một tester một khóa riêng; đổi khóa thì cập nhật bảng khóa↔tester).
