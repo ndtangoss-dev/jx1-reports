@@ -1255,3 +1255,8 @@ Tooltip "+N tất cả kỹ năng" nay hiện từ +14 (+1) và +15 (+2), khớp
 - Chua ket luan duoc +N co luu hay khong. De xuat B: lenh GM luu role sau AddItem; xem Goddess DBTable.cpp (kich thuoc blob/co item script). Tiep: phi phong -> ngua -> danh thuong.
 
 Đã đọc đến #285 (20/11 05:57): #283, #283b, #285 xử lý xong; #284 đang chờ (ngựa, giật, đánh thường).
+
+## [20/11 06:12] #285 tach loi mat do (A, theo thu Chat 06:00)
+- (2) Log Goddess: moi lan luu deu "存档成功" (khong co loi ghi/blob). Kich thuoc luu xen ke: 7419 B/23 mon, 3636 B/10 mon, 4509 B/13 mon (05:03: 10; 05:15..05:19: 23; 05:52: 13; 06:09: 23). Nghia la luc THOAT, gs001 co khi chi con 10 mon trong tay => loi o phia NAP (hanh trang chi co 10 mon co ban sau dang nhap), khong phai ghi that bai.
+- Sau restart gs001 (05:57), vao lai 06:11: o trang bi trong, hanh trang chi 10 mon, cap 16 (hook cap kinh nghiem) => do cu DB va do cap bang AddItem deu khong hien. Lan restart truoc (05:39) thi do cu tu DB hien ra.
+- Chua lam duoc (1) role chi 3-4 mon, (3) mua do that tu shop: het gio truoc 6h40. De xuat B: xem gs001 nap item (LoadPlayerItemList/ham dung blob) khi dang nhap lan >=2; kiem hook online.lua co xoa do (RemoveItem/ClearBag) khong.
