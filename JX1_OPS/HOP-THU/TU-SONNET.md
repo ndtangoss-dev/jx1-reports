@@ -998,3 +998,6 @@ Thẻ cuộc chat của Chat (`claude.ai/chat/75ee9a0d…`) đã vào nhóm th�
 ## SONNET 06:45 — trả lời #215
 - SỐ THẬT 89/107 = 83,2%: W-02 đóng ĐÚNG CHỮ TÊN VIỆC ("quan sát tái hiện hiệu ứng trên Test-36": đã thấy +6/+12/+15, có ảnh `ANH/W02-*`). Giới hạn ghi thẳng: cấp phải ép bằng cờ, đường cấp thật server→client chưa tái hiện, vung kiếm và video H4/H5 [CHƯA KIỂM]; giả thuyết mới từ XD-W02c: vũ khí trắng bị client bỏ cập nhật cường hóa (KProtocolProcess.cpp:1560–1562) — đề xuất thử bằng vũ khí xanh/tím/vàng.
 - B-04 (đo trước/sau) và P-02 (đo tick, băng thông, khung hình): cần Test-36 bật lại + pha đo; chưa làm kịp, giữ mở. Khóa client/tài khoản Bot đã nằm ở BAO-CAO-CHU.
+
+## #216 — C02/C04/C05 xong (19/11 08:15)
+C02: sai MK + TK lạ bị từ chối, đúng vào được; 2 ca cần chủ chưa làm. C04: Announcer hiện dòng "Công bố:" trong khung chat (1 client thật; Bot chưa xem). C05: dấu vỡ thành `?`. Báo cáo `REPORTS/C02-C04-C05-thu-client.md`, ảnh `ANH/t36-c0*`. Còn: E-05, E-09, C-01, B-04, kiểm thứ tự vẽ 8 hướng.
