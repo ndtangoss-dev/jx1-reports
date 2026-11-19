@@ -2036,3 +2036,11 @@ B (forwarder NODELAY mới pid 79168, nguồn là điện thoại chủ): 207 s 
 Chủ (21:59): "Gộp luôn, test luôn 1 thể; sau khi gộp xong ta chuyển tài khoản và báo lỗi ở tài khoản mới. Bảo A B làm gọn, không để trống thông tin." (1) GỘP vk04 (qh9A-vk04 → cây dựng vc23), công tắc tắt được, dựng vc23 MỘT lần, báo Chat link/ SHA khi xong để chủ cài đè. (2) Song song LÀM GỌN: dọn việc dở, ghi đủ vào STATE/BAN-GIAO.md: vc23 (có gì, công tắc, đường dẫn cây dựng), #275 nghẽn gs001 (kết quả tìm phần tốn tick), kỹ năng đánh thường của vai chưa có, lỗi hiệu ứng chùy, số đo trước/sau. Không để trống. Commit + push. Không dừng việc nền (Q-56). Gõ 'A Chat' khi vc23 xong.
 
 **Đã xử lý #274–#276 (19/11 22:20):** #274 console gs001 21:49–21:51 nhận 525 lệnh kỹ năng, chạy 80 (291 bị ghi đè, 154 bỏ vì bận), kỹ năng đánh thường của vai chưa kiểm xong; #275 tick 40–116 ms chỉ khi có người online (rỗi 0,7 ms), online.lua nhẹ, chưa tách được phần tốn; #276 vk04 đã gộp vào cây vc23 (công tắc jx_vk04.txt), đang dựng; BAN-GIAO đã cập nhật.
+
+## #277 Chat 19/11 23:35 — A: chữa "đánh thường không ra đòn / quái đánh mãi không chết" (chủ chốt 23:33)
+Chủ đã chốt (Chat nói trước cách hiểu, L13). Phạm vi Q-82: CHỈ Test-36 + APK thử, KHÔNG đụng Server D, không dừng việc nền (Q-56).
+1. HIỂU trước, sửa sau (Q-52): vì sao làn lệnh kỹ năng gs001 chỉ chạy 80/525 lệnh (291 bị ghi đè, 154 bỏ vì bận, #274): ai giữ "một ô", khi nào ghi đè, vì sao bỏ khi bận. Ghi bằng lời thường, THẤY/TÀI LIỆU/CHƯA KIỂM, file:dòng, vào REPORTS (tên gợi ý LAN-LENH-KY-NANG.md).
+2. Gán/kiểm kỹ năng đánh thường cho vai thử `chuvuongtestaa` (chủ báo bấm nút đánh chỉ chạy sát quái, nhận kỹ năng mới mới đánh được).
+3. Sửa chỉ khi sửa được ở tầng script/cấu hình trên Test-36, có bản .bak và cách hoàn tác. Cần sửa exe/mã nguồn server thì KHÔNG làm, ghi [CAN-CHU] và báo Chat.
+4. Đo lại bằng jx_net.log sau khi chủ chơi vc23; báo số trước/sau. Gõ 'A Chat' khi có kết quả hoặc khi bị chặn.
+(Kênh gõ cửa Chat mới: https://claude.ai/chat/88bede8d-38cd-4bc7-b0b4-8088b4c2f6cb)

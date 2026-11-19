@@ -126,3 +126,10 @@ Chủ chạy/đánh 21:48–21:52: vẫn lag, nút đánh thường chỉ chạy
 
 ## #B-031 Chat 22:02 — B: chủ chuyển tài khoản sau khi A gộp vk04 + dựng vc23 (Q-84): LÀM GỌN
 Chủ (21:59): bảo A B làm gọn, không để trống thông tin; chủ sẽ chuyển tài khoản và báo lỗi ở tài khoản mới. B: gom số đo 21:48–21:52 (nghẽn gs001: gap 657 ms, 62 khoảng >250 ms, 25% một lõi) vào DO-MUOT-MOC-GOC.md, cập nhật STATE/BAN-GIAO-B.md (forwarder pid 79168 bản NODELAY, nguồn điện thoại, Bot 5/10/20 chờ 20 tk, việc còn mở), dọn việc dở, commit + push. Việc nền vẫn chạy, không dừng (Q-56). Gõ 'B Chat' khi xong.
+
+## #B-032 Chat 19/11 23:35 — B: tìm phần tốn tick gs001 (chủ chốt 23:33)
+Chủ đã chốt. Phạm vi Q-82: CHỈ Test-36, KHÔNG đụng Server D, không dừng việc nền (Q-56). Việc hàng đợi B (CC-01, TS, Bot…) vẫn chạy song song.
+1. Tìm phần nào của vòng lặp gs001 tốn tick khi CÓ người (rỗi 0,7 ms; có người 40–116 ms, max 864 ms; một lõi 25%): thử map rỗng / 1 người, tách nạp nhân vật với lúc chạy/đánh. Chỉ đo và quan sát; thay đổi cấu hình cần bản .bak + hoàn tác.
+2. Phối hợp A qua A-B.md (A lo làn lệnh kỹ năng 80/525; đừng làm trùng, ghi "ĐÃ NHẬN").
+3. Khi chủ chơi vc23: thu jx_net.log + do-gs, bảng trước/sau vào REPORTS/DO-MUOT-MOC-GOC.md.
+4. Bot 5/10/20 vẫn chờ 20 tk test, chưa thả. Gõ 'B Chat' khi có kết quả hoặc bị chặn.

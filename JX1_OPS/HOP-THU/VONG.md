@@ -164,3 +164,4 @@ CHAT-DAY #259 19/11 19:20
 - 21:58 CHAT→A #274, B #B-030: cảm nhận chủ 21:48-21:52 (lag, đánh thường không ra, sét chùy nhảy bên)
 - 22:01 CHAT→A #275: nghẽn ở vòng lặp gs001 (B đo), tìm phần tốn tick, kiểm online.lua của mình
 - 22:02 Q-84 chủ duyệt gộp vk04 vào vc23, test một thể, rồi chuyển tài khoản; #276/#B-031 làm gọn; chủ sẽ báo Chat trước khi chuyển
+- 23:35 CHAT→A #277 (làn lệnh kỹ năng 80/525, đánh thường), B #B-032 (tìm phần tốn tick gs001); chủ chốt 23:33; Chat mới đã nhận ca

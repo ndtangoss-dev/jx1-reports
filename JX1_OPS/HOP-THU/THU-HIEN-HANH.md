@@ -204,3 +204,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #268/#B-026 (21:27) Q-82: A client dự đoán/phản hồi tức thì APK vc23; B đo mạng/DERP/forwarder/SvrFPS
 - #269 (21:30) A: chùy cấp 1 +15 cho chuvuongtestaa, so với cấp 10; kiểm hiệu ứng 2 tay
 - #272/#B-028 (21:41) A/B cập nhật BAN-GIAO(-B).md, push, việc nền tiếp tục
+- #277/#B-032 (23:35) chủ chốt: A chữa làn lệnh kỹ năng + đánh thường; B tìm phần tốn tick gs001 (Test-36, Q-82)
