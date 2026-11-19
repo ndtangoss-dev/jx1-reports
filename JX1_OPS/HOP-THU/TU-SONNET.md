@@ -1227,3 +1227,8 @@ do_muot_khung.py: ffmpeg 9.0 không nhận `-vsync` → đổi `-fps_mode passth
 
 ### 20/11 01:37 [#282 QH-03] A đổi ngưỡng client 12→14
 Tooltip "+N tất cả kỹ năng" nay hiện từ +14 (+1) và +15 (+2), khớp server B. Sửa KItem.cpp:2504, KuiItemdesc.cpp:236/1245, KuiItemdescVN.cpp:465 (qh9A, có .bak-qh14). Chưa build; gộp vào vc24 cùng ức/vạn.
+
+### 20/11 01:45 [#283/#282] gs001 qh-b035 đã lên Test-36; client vc24 đang dựng
+- Test-36: .bak-qh035, chép gs001+3 dll+opensysui.lua+qhcuonghoa.lua, SHA khớp, JX-gs001 chạy PID 6136 (nạp ~10 phút từ 01:43). Báo B trong A-B.md.
+- Client (qh9A, chưa kiểm trên LD): KgameWorldVN::AMessageArrival đọc dòng [QH]|E/P/W/D → chữ dễ đọc (ức/vạn, tài phú); nút "Cuong hoa" mở menu 10 ô, bấm 1 lần = xem trước (2,11,ô), bấm lại cùng ô = cường hóa (2,10,ô); mở menu xin tài phú (2,12). Ngưỡng +14. Build vc24 chạy nền (build-vc24.ps1).
+- Chưa kiểm: Msg2Player có đi qua AMessageArrival không (kiểm khi LD thử).
