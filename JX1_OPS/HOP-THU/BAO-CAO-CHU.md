@@ -65,3 +65,8 @@ Lưu ý: 17 tên là ký tự hỏng (GBK) nên để nguyên; độ hiếm và 
 - Tên `Cctesterone` bấm Xác định: VẪN im lặng, vì LD đã ngồi ở màn tạo vai suốt lúc Bishop khởi động lại nên kết nối cũ chết. B tắt/mở lại ứng dụng (stop/start): về màn đầu "Bắt đầu trò chơi". Đăng nhập lại cần tài khoản và mật khẩu thử; B không có (không lấy trong kho), nên chưa tạo vai/chạy botld007 được.
 - **Cần đại vương:** cho B tài khoản thử + mật khẩu qua biến môi trường `JX_BOT_PASSWORD` (hoặc một lệnh PowerShell ngắn đặt biến này trong cửa sổ B), hoặc tự đăng nhập một lần trong LD tester01 rồi báo B.
 - Đã tạo 2 việc cho tiểu yêu (owner B): `TASKS/BOT-01.md` (giá bán Bot), `TASKS/BOT-02.md` (kiểm tên vai).
+
+## (B) 19/11 18:10 — Bẩm đại vương, thuộc hạ đã đọc nhật ký máy chủ Test-36
+- Bishop đang chạy tốt: các tài khoản Bot (botld007/013/018 và botld069–100) đều vào được và nhận danh sách vai. Vậy lỗi "hết giờ" của Bot nằm ở phía client/bot, không phải máy chủ hỏng.
+- Máy chủ có vai T36nv1 (tạo 11:56) và một vai tên tsvkbonenamea (13 chữ, tạo 16:51) → tạo vai bằng tên dài 13 chữ THÀNH CÔNG. Các tên Tsbaone, Tsalphaone, T36nv2, Cctesterone không hề có trong kho vai.
+- Mã nguồn Bishop (GamePlayer.cpp:1942-1946) cho tên 6..16 byte, chỉ cấm ký hiệu; "Cctesterone" (11) hợp lệ về phía máy chủ → độ dài KHÔNG phải nguyên nhân. Nghi nhất vẫn là kết nối client chết sau khi Bishop khởi động lại. Cần đăng nhập lại để thử (cần tài khoản thử + mật khẩu từ đại vương).
