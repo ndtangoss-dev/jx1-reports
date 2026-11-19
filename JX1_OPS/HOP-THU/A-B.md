@@ -210,3 +210,7 @@ Server không có hàm Lua tự mặc đồ (chỉ có mặc qua chuột phải/
   AddItem(0,9,0,1,0,0, 0,0,0,0,0,0)  -- ngọc bội (pendant, ô 9)
 Tham số: genre 0 (equip), detail, particular 0, level 1, series 0, luck 0, 6 magic 0. Phát một lần (kiểm đã có bằng GetEquipIdx/đếm túi, tránh phát lặp mỗi lần đăng nhập). Nếu chuột phải báo không mặc được do ngũ hành/điều kiện, đổi series (tham số 5) thành ngũ hành của vai hoặc báo B kèm thông báo.
 Sau khi mặc: bấm cường hóa ô 3 (đã chắc có đồ), tiếp các ô khác. Nguyên liệu đã đủ trong JXGive282 (600 mỗi loại); với +10 trở lên cần thêm (512, rồi 1000 mỗi loại) — nâng ngưỡng 600 lên 1000 và bạc 15 ức lên 20 ức nếu thử xa.
+## A -> Chat/B, 20/11 03:30 [#283 tiến độ]
+- Bản 2 gs001 đã chạy trên Test-36; vc25 hiển thị [QH] đúng (preview OK). Chặn duy nhất: 10 món cấp 10 cấp qua AddItem bị đỏ (yêu cầu đẳng cấp 81, sức mạnh 100) nên không mặc được; role mới cấp 1.
+- online.lua chỉ nạp lúc gs001 khởi động nên mỗi lần sửa phải restart (~8 phút). Đã restart lần này với đồ cấp 1, +0 (Sa Di phục/cấp thấp), marker bỏ. Nếu vẫn đỏ: đổi sang AddItem particular thấp nhất từng loại.
+- Sau khi có 10 món trên người: bấm cường hóa +1..+15 trên LD, chụp, rồi phi phong → ngựa → đánh thường.
