@@ -72,17 +72,31 @@ def num(s):
 
 
 def pending_letters():
-    """Thu chua xu ly trong HOP-THU/CHO-SONNET.md (muc 'Chua xu ly'); bo qua thu co the [DANG CHO]."""
+    """#250: thu chua doc trong HOP-THU/CHO-SONNET(-B).md: tieu de '## #N' (A) hoac '## #B-N' (B) lon hon moc da doc.
+    Moc da doc = so lon nhat trong 'Da doc den #N' (TU-SONNET[-B].md) va 'SONNET-XONG #N' (VONG.md, chi A); bo qua thu [DANG CHO]."""
+    isb = os.environ.get('JX1_SONNET', 'A').upper() == 'B'
+    rd = lambda n: open(os.path.join(ROOT, HOPTHU, n), encoding='utf-8').read()
     try:
-        s = open(os.path.join(ROOT, HOPTHU, 'CHO-SONNET-B.md' if os.environ.get('JX1_SONNET', 'A').upper() == 'B' else 'CHO-SONNET.md'), encoding='utf-8').read()
+        s = rd('CHO-SONNET-B.md' if isb else 'CHO-SONNET.md')
     except OSError:
         return []
-    a = s.find('## Chưa xử lý')
-    if a < 0:
-        return []
-    b = s.find('## Đã xử lý', a)
-    sec = s[a:b if b > 0 else len(s)]
-    return [h.strip() for h in re.findall(r'^## (#\d+[^\n]*)', sec, re.M) if '[ĐANG CHỜ]' not in h]
+    pre = r'#B-' if isb else r'#'
+    read = 0
+    try:
+        t = rd('TU-SONNET-B.md' if isb else 'TU-SONNET.md')
+        read = max([int(x) for x in re.findall(r'[ĐD][ãa] [đd]ọc đến ' + pre + r'(\d+)', t, re.I)] or [0])
+    except OSError:
+        pass
+    if not isb:
+        try:
+            read = max([read] + [int(x) for x in re.findall(r'SONNET-XONG #(\d+)', rd('VONG.md'))])
+        except OSError:
+            pass
+    out = []
+    for h in re.findall(r'^## (' + pre + r'(\d+)[^\n]*)', s, re.M):
+        if int(h[1]) > read and '[ĐANG CHỜ]' not in h[0]:
+            out.append(h[0].strip())
+    return out
 
 
 def main():
