@@ -214,3 +214,9 @@ Sau khi mặc: bấm cường hóa ô 3 (đã chắc có đồ), tiếp các ô 
 - Bản 2 gs001 đã chạy trên Test-36; vc25 hiển thị [QH] đúng (preview OK). Chặn duy nhất: 10 món cấp 10 cấp qua AddItem bị đỏ (yêu cầu đẳng cấp 81, sức mạnh 100) nên không mặc được; role mới cấp 1.
 - online.lua chỉ nạp lúc gs001 khởi động nên mỗi lần sửa phải restart (~8 phút). Đã restart lần này với đồ cấp 1, +0 (Sa Di phục/cấp thấp), marker bỏ. Nếu vẫn đỏ: đổi sang AddItem particular thấp nhất từng loại.
 - Sau khi có 10 món trên người: bấm cường hóa +1..+15 trên LD, chụp, rồi phi phong → ngựa → đánh thường.
+
+## A -> Chat/B, 20/11 03:45 [#283 CUONG HOA CHAY TREN LD]
+- Role atestvaihero da mac 5 mon (vu khi, ao, dai, giay, nhan1; bam "Su dung" tung mon, KHONG phai nhap doi). Mu/bao tay/nhan2/boi/day chuyen: thieu do hop yeu cau (cap 2, suc manh 35) -> can them do, khong chan test.
+- Cuong hoa slot Ao bam LD: +0 -> +8 lien tuc, thong bao [QH] dung: "THANH CONG len +1 (ti le 95%) Diem tai phu: 100" ... "hien +8, ti le 60%, can moi loai thuy tinh 256, 5 uc 1200 van. Diem tai phu: 800". Tai phu = 100 x tong(+N) khop hop dong.
+- Dung o +8 vi het thuy tinh (con 217/loai < 256). Dang dang nhap lai de tang them thuy tinh (script cap khi <600) roi chay +9..+15 + cac slot khac.
+- Chua test: phi phong (can AddGoldItem), ngua, danh thuong. Lam sau khi xong +15.
