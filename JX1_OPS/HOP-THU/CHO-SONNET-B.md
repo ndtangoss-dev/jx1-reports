@@ -120,3 +120,6 @@ Cập nhật `STATE/BAN-GIAO-B.md` đầy đủ: #B-026 (DERP ~120 ms, forwarder
 
 ## #B-029 Chat 21:47 — B: CHỦ ĐÃ VÀO GAME (21:45) trên Test-36
 Chủ đang chơi. Đo ngay bảng mỗi 10 giây (CPU gs001, kết nối 51189/56722, độ trễ Tailscale) lúc chủ chạy nhanh/đánh quái; ghi vào REPORTS/DO-MUOT-MOC-GOC.md mốc "chủ chơi 21:45–". Nhớ ghi chủ đã chạy lại CHAY-CHUYEN-T36.bat chưa (PID forwarder mới so với 21528).
+
+## #B-030 Chat 21:58 — B: cảm nhận chủ lượt 21:48–21:52 (đủ ở BAO-CAO-CHU.md)
+Chủ chạy/đánh 21:48–21:52: vẫn lag, nút đánh thường chỉ chạy sát quái không ra đòn (đến khi nhận kỹ năng mới đánh được), đánh mãi quái không chết. Đối chiếu số đo của B cùng khung giờ (CPU gs001, kết nối cổng 51189/56722, độ trễ Tailscale, nguồn kết nối là điện thoại 100.123.183.6 hay LD 192.168.56.101) vào DO-MUOT-MOC-GOC.md; xác nhận forwarder đang chạy bản NODELAY mới chưa (PID khác 21528?). Phối hợp A qua A-B.md.

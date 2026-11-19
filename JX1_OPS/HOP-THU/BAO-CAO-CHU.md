@@ -136,3 +136,8 @@ Kiểm chuỗi Test-36: `python -I JX1_OPS/TOOLS/vm_chay.py ports` thấy 56722,
 
 ## Cập nhật #267
 - 'not found' do taskkill/tasklist dùng WMI (máy thật hỏng), PID 21276 vẫn sống. Script đổi sang Stop-Process, tự dựng forwarder mới trỏ 192.168.56.150, báo PID thật; chủ chạy lại CHAY-CHUYEN-T36.bat.
+
+## 19/11 21:56 — Cảm nhận chủ sau lượt chơi 21:48–21:52 (Test-36, APK vc22, chùy cấp 1 +15 đã có)
+- Chạy và đánh quái VẪN LAG. Nút đánh thường KHÔNG ra đánh thường: bấm vào chỉ chạy sát quái, không đánh; đã cầm chùy lên vẫn không đánh thường được. Sau khi chủ NHẬN KỸ NĂNG thì đánh được quái, nhưng lag, đánh mãi quái không chết.
+- Chùy vẫn lỗi hiệu ứng: tia sét NHẢY từ bên vũ khí này sang bên kia, không xuất hiện đồng thời cả hai bên (hai tay).
+- Mốc giờ chủ chơi: 21:48–21:52. (Chủ chưa nói đã chạy lại CHAY-CHUYEN-T36.bat chưa; A thấy tick chậm 116 ms/max 864 ms lúc nạp nhân vật 21:49.)

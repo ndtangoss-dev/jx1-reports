@@ -2025,3 +2025,6 @@ Chủ (21:36) sắp chuyển sang tài khoản cũ của chủ. Theo STATE/QUY-T
 Chủ đang trong game. Làm ngay (nền, không dừng vc23): (1) xác nhận jx269_given.txt đã tạo, chùy cấp 1 +15 đã vào túi (chủ sẽ so với chùy cấp 10); (2) đọc dòng `SvrFPS x/18` ở console gs001 lúc chủ chạy/đánh, ghi vào TU-SONNET.md; (3) khi chủ báo hiệu ứng hai tay chùy cấp 1 vs cấp 10 thì kiểm bảng item↔effect (obj-adha01 vs obj-adha04), chưa sửa mã (Q-52).
 
 **Đã xử lý #273/#273b (19/11 21:53):** chùy cấp 1 đã phát; SvrFPS đã báo; phát hiện thiếu vk04 trong qh9A, chờ Chat duyệt.
+
+## #274 Chat 21:58 — A: cảm nhận chủ lượt 21:48–21:52 (đủ ở BAO-CAO-CHU.md)
+(1) Nút đánh thường không ra đòn: bấm chỉ chạy sát quái, đã cầm chùy cũng không đánh thường; chỉ sau khi chủ NHẬN KỸ NĂNG mới đánh được → nghi vai thử chưa có kỹ năng đánh thường/chưa gán (dữ liệu vai/online.lua hoặc client chọn skill), hoặc phản hồi đánh bị chậm; kiểm xem vai chuvuongtestaa có kỹ năng cơ bản chưa và lệnh đánh thường client gửi gì/server nhận gì (log gs001 theo giờ 21:48–21:52). (2) Quái đánh mãi không chết = lag/đòn không trúng/đòn bị bỏ: đối chiếu số đòn client gửi và server nhận. (3) Hiệu ứng chùy: tia sét NHẢY bên này sang bên kia, không hiện cùng lúc hai bên — khớp nghi vấn thiếu vk04 ở qh9A: chủ chưa chốt gộp; Chat đã hỏi chủ. vc23 vẫn dựng tiếp, không dừng (Q-56).
