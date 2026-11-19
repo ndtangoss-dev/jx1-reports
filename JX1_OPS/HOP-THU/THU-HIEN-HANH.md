@@ -160,3 +160,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | #245 | 19/11 15:00 | Chat→Sonnet | thông tin chủ đã đăng ký gói Go (Q-76): ghi tín dụng, mô hình rẻ/đọc ảnh |
 | #B-002 | 19/11 15:20 | Chat→B | chủ duyệt --yolo cho Command Code CC-01 (Q-77) |
 | #B-003 | 19/11 15:27 | Chat→B | nhắc an toàn kho (không add -A, không mã game), ngữ cảnh 77% |
+| #B-004 | 19/11 15:50 | Chat→B | lệnh chủ: kiểm tên nhân vật có dấu cách cuối/trùng tên |
