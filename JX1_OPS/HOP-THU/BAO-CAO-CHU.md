@@ -97,3 +97,18 @@ Thuộc hạ ghi mốc: ping, FPS, CPU máy chủ ở từng mức. (Mốc rỗi
 1. Vào game bằng tài khoản **tkchuvuong**, chọn vai **chuvuongtestaa** (mật khẩu ở tệp `%LOCALAPPDATA%\jx1-secrets	kchuvuong.txt` trên máy thật, thuộc hạ không ghi ra đây).
 2. Lần vào đầu tiên, túi tự có 9 món vũ khí cấp 10, cường hóa +15 (6 loại cận chiến, 3 loại tầm xa); nhân vật lên cấp 90 kèm 300 điểm tiềm năng.
 3. Muốn cầm vũ khí: cộng điểm vào Sức (≥100) và Nhanh nhẹn (≥155 cho tầm xa) trong bảng nhân vật, rồi mặc.
+
+## 19:20 — Bản thử mượt hình (APK bản 22) cho đại vương
+**Cài đặt (3 dòng):** 1) Bật Tailscale. 2) Mở trang Artifact "Link tải APK" (https://claude.ai/artifact/DTwgvhWEnGXBp9dHE1uYDu), bấm "Sao chép link", dán vào Chrome, tải và cài đè. 3) Mở game, chọn máy chủ, đăng nhập như cũ.
+**File:** jx-goc-v22-noisuy.apk, 78,9 MB, SHA256 b235e8642137b0635161d22dd6d297b9bc4881332d6f2bf7b4d8aa1eceb76873.
+
+| | Trước (bản cũ) | Sau (bản 22) |
+|---|---|---|
+| Quay 3 giây khi chạy: % cặp khung đứng yên (thấp = mượt) | 10,3% (tắt nội suy, 1 lần quay) | 20,5% và 15,4% (bật nội suy, 2 lần quay) |
+| Độ dịch trung bình giữa 2 khung (điểm ảnh) | 1,54 | 1,39 và 1,62 |
+| Hình LD hiện FPS | 30-34 | 30-34 |
+
+Thuộc hạ nói thẳng: số đo trên LD (1-2 lần quay, 3 giây) chưa cho thấy bản 22 mượt hơn; chưa đủ để kết luận, có thể không khác gì. Bản 22 vào game được, cảnh đứng yên hiển thị đúng; chưa thử khi chạy thật. Công tắc tắt: ghi chữ 0 vào tệp jx_interp.txt trong thư mục dữ liệu game (nội suy tắt). Nếu thấy giật hay lệch hình hơn bản cũ, báo để thuộc hạ gỡ. Cần đại vương báo cảm nhận.
+Ghi chú: vai thử vũ khí (tkchuvuong) nằm ở Test-36, không ở máy chủ chính.
+
+Kiểm chuỗi Test-36: `python -I JX1_OPS/TOOLS/vm_chay.py ports` thấy 56722, 51189, gs001; máy thật nghe 100.95.186.86:56722/51189/8080/8091. Link APK: máy thật không tự tải thử được (tường lửa/địa chỉ nguồn), phục vụ APK đang chạy từ 17/11; xem `access.log` thư mục serve sau khi chủ tải.

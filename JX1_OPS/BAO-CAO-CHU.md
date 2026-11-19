@@ -81,15 +81,3 @@ Em tải Node v26.13.1 (hash khớp trang chính thức) vào D:\JX-node nhưng 
 1. Mở cửa sổ Claude Code MỚI trên thư mục `D:\JX-wt\SONNET-B`.
 2. Dán đúng đoạn trong `JX1_OPS/HOP-THU/KHOI-DONG-SONNET-B.md` (đã dựng sẵn hook/biến môi trường B trong `.claude/settings.json` của thư mục đó).
 3. Nhắn Chat "B đã chạy".
-
-## 19:20 — Bản thử mượt hình (APK bản 22) cho đại vương
-**Cài đặt (3 dòng):** 1) Bật Tailscale. 2) Mở trang Artifact "Link tải APK" (https://claude.ai/artifact/DTwgvhWEnGXBp9dHE1uYDu), bấm "Sao chép link", dán vào Chrome, tải và cài đè. 3) Mở game, chọn máy chủ, đăng nhập như cũ.
-**File:** jx-goc-v22-noisuy.apk, 78,9 MB, SHA256 b235e8642137b0635161d22dd6d297b9bc4881332d6f2bf7b4d8aa1eceb76873.
-
-| | Trước (bản cũ) | Sau (bản 22) |
-|---|---|---|
-| Nhân vật chạy có mượt không | giật nhẹ (hình nhảy theo nhịp 18 lần/giây) | chưa đo được số; bản này làm hình trượt đều giữa hai nhịp |
-| Số đo 3 giây quay hình | chưa có | chưa có (công cụ quay lỗi, không đọc được khung) |
-
-Thuộc hạ nói thẳng: chưa đo được trước/sau. Bản 22 vào game được, cảnh đứng yên hiển thị đúng; chưa thử khi chạy thật. Công tắc tắt: ghi chữ 0 vào tệp jx_interp.txt trong thư mục dữ liệu game (nội suy tắt). Nếu thấy giật hay lệch hình hơn bản cũ, báo để thuộc hạ gỡ. Cần đại vương báo cảm nhận.
-Ghi chú: vai thử vũ khí (tkchuvuong) nằm ở Test-36, không ở máy chủ chính.
