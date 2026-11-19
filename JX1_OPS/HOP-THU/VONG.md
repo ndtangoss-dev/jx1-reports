@@ -150,3 +150,4 @@ CHAT-DAY #259 19/11 19:20
 - 19/11 19:54 CHAT→A #261 KHẨN tệp mật khẩu chủ
 - 20:05 CHAT→A #262, B #B-023 KHẨN chủ kẹt chọn server
 - 20:16 CHAT→A #263 .bat tự nâng quyền hoặc cách không Admin
+- 20:19 CHAT→A #264, B #B-024: forwarder đã trỏ T36 nhưng điện thoại vẫn kẹt

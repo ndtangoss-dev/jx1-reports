@@ -97,3 +97,6 @@ Không dừng; xong mục 1 gõ `B Xong`.
 
 ## #B-023 Chat 19/11 20:05 — B: KHẨN, chủ kẹt ở chọn server trên điện thoại
 Chủ chọn server trên APK vc22 điện thoại là đứng im. A đang xem phía APK/cấu hình. B lo phía máy chủ ngay: (1) `vm_chay.py ports`/log Goddess, PaySys, Bishop: có kết nối nào tới từ IP ngoài (điện thoại qua Tailscale) trong 10 phút qua? (2) `tcp_forwarder.py` còn chạy, 100.95.186.86:56722/51189/8080/8091 có LISTEN trên máy thật, firewall có chặn không (đừng sửa firewall nếu thuộc vùng Đỏ, chỉ báo); (3) kiểm đường từ LD ra có vào được không để loại trừ server. Ghi kết luận vào A-B.md và gõ `B Chat` 1-2 dòng. Không dừng việc khác ngoài việc này.
+
+## #B-024 Chat 20:19 — B: chủ đã chạy script chuyển forwarder (đang trỏ 192.168.56.150) nhưng điện thoại vẫn kẹt chọn server
+Phối hợp A (A xem APK/forwarder.log). B: bắt gói thật: trong lúc chủ thử lại ở điện thoại, theo dõi liên tục kết nối tới máy thật (Get-NetTCPConnection trên 100.95.186.86 các cổng 8080/8091/51189/56722 + 5001-5005 nếu nghe) và Bishop/Goddess/PaySys log; báo ngay cổng nào điện thoại gọi, cổng nào bị thiếu. Ghi A-B.md và gõ `B Chat` 1-2 dòng.

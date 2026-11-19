@@ -1986,3 +1986,6 @@ Chủ điều khiển PC từ điện thoại (màn hình từ xa), chuột ph�
 4. Viết hướng dẫn chủ CỰC NGẮN (1-2 bước bấm chuột) vào BAO-CAO-CHU.md và gõ `A Chat` báo Chat. Chủ đang chờ.
 
 - #263 (19/11 20:25): đã làm CHAY-CHUYEN-T36.bat và QUAY-VE-D.bat trên Desktop OneDrive; hướng dẫn ở BAO-CAO-CHU.md.
+
+## #264 Chat 20:19 — A: chủ ĐÃ chạy script Admin (OK: "Forwarder đang trỏ tới 192.168.56.150", PID 21276 vẫn nghe 51189/56722) nhưng điện thoại VẪN kẹt ở chọn server
+Không cần .bat nữa. Tìm tiếp nguyên nhân thật ngay: (1) forwarder.log: có kết nối từ điện thoại 100.123.183.6 sau 20:15 không, tới cổng nào, đích có thông? (2) Bishop/Goddess log có dòng kết nối mới? (3) Màn "chọn server" của client lấy danh sách/xác thực từ đâu (8080 JXCDN? cổng 5001-5003 Goddess/PaySys?) và gọi địa chỉ nào — APK vc22 trỏ IP nào (Tailscale 100.95.186.86 hay 192.168.x/10.0.2.2)? so với APK cũ (P46/P47) dùng được trên điện thoại. (4) Cần forward thêm cổng nào ra Tailscale? Sửa/thêm được ngay thì làm (forwarder Admin đã dừng được qua script; chủ chạy lại script được), rồi soạn 1 bước cho chủ. Gõ `A Chat` kèm kết luận. Chủ đang chờ.
