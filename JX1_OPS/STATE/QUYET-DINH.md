@@ -102,3 +102,6 @@ Chủ đồng ý cho sửa VK-04 và làm hướng Bot theo #226/Q-65 (hướng 
 
 ## Q-67 (chủ 19/11 10:37) — THỐNG NHẤT MỘT BẢN APK GỐC
 Chủ: cứ dựa theo bản test hiện tại (dòng qh9A) và bám theo nó để làm tiếp; mọi bản khác cho phép BỎ để khỏi rối. Chủ chấp nhận cài lại điện thoại (gỡ rồi cài mới nếu cần). Hiệu lực từ lần này trở đi.
+
+## Q-68 (chủ 19/11 10:39) — SỬA Q-67: BẢN GỐC = BẢN T36test ĐANG CHẠY
+Chủ: khỏi quan sát lại. Lấy đúng APK đang chạy trong T36test (SHA-256 8da22c0c…, package com.jxclient.hoiuctruyenky) làm BẢN GỐC; điện thoại chủ cài theo bản đó. Thay cho "qh9A" trong Q-67.

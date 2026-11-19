@@ -293,3 +293,4 @@
 - 19/11 10:30 #227: chủ xác nhận sửa sét + Bot hướng A (Q-66).
 - 19/11 10:35 #228: chủ hỏi cài đè APK vào tài khoản cũ; hỏi Sonnet 4 điều.
 - 19/11 10:38 #229: chủ quyết thống nhất 1 APK gốc qh9A, cho bỏ bản khác (Q-67).
+- 19/11 10:40 #230: chủ quyết bản gốc = APK đang chạy trong T36test, khỏi quan sát lại (Q-68).

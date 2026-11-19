@@ -1769,3 +1769,10 @@ Chủ đã quyết: dựa theo bản test hiện tại (dòng qh9A), mọi việ
 3. Dựng bản VK-04 và các bản sau chỉ từ nền này, đặt tên theo một dãy duy nhất (vd jx-gốc-vNN), tăng versionCode.
 4. Dọn thư mục phát (serve): dời các APK cũ sang thư mục lưu trữ (không xóa dữ liệu), chỉ để MỘT đường dẫn tải hiện hành. APK không bao giờ vào git.
 5. Cập nhật #228: giao cho chủ khi chủ hỏi; hướng dẫn gỡ cài/cài mới, nhắc bật Tailscale. Tài khoản cũ nằm ở server nên cài lại vẫn vào được nếu còn trên Server D (kiểm, không đọc mật khẩu).
+
+## #230 Chat 19/11 10:40 — CHỦ SỬA Q-67 (Q-68): BẢN GỐC = APK ĐANG CHẠY TRONG T36test
+Đừng cài qh9A vào T36test và đừng quan sát lại. Chủ quyết: bản gốc là chính APK đang cài trong T36test (SHA-256 8da22c0c…; /data/app/.../base.apk, package com.jxclient.hoiuctruyenky). Làm:
+1. Kéo base.apk ra bằng adb (ra thư mục ngoài git), ghi STATE/APK-GOC.md: SHA-256 đầy đủ, versionCode, khóa ký (so với a48601f7, chỉ ghi vân tay), kích thước. Mọi quan sát đã làm trên T36test được coi là hợp lệ trên bản gốc này.
+2. Dựng nền mã đúng với bản này: tìm commit/thư mục dựng gần nhất khớp (thử qh9A rồi fix36); nếu không có mã khớp tuyệt đối, ghi rõ chênh lệch. Bản VK-04 dựng từ nền đó, versionCode cao hơn bản gốc, cùng khóa ký.
+3. Giao điện thoại chủ: dùng chính bản gốc này (hoặc bản VK-04 sau khi xong), phát một đường dẫn duy nhất; APK ngoài git. Các bản khác dời lưu trữ như #229.
+4. #228 vẫn giữ: chỉ giao khi chủ hỏi.
