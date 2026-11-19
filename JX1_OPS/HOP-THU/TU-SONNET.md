@@ -1167,3 +1167,6 @@ do_muot_khung.py: ffmpeg 9.0 không nhận `-vsync` → đổi `-fps_mode passth
 - (e) CHƯA LÀM: LDPlayer không có máy ảo nào chạy (dnconsole list2/runninglist rỗng); cần mở T36test, cài vc23, đăng nhập qua forwarder tới màn hình chính, chụp, ẩn cửa sổ. Forwarder hiện chỉ cho 100.123.183.6 nên cần mở tạm cho LD (memory ldplayer-quyen-test).
 - Mục 1 (JX-Forwarder tác vụ quyền cao): chưa soạn .ps1; việc kế.
 - KHÔNG gõ 'A Chat: SẴN SÀNG' vì (b)(e) chưa qua.
+
+## #279b nhận (20/11 00:2x, Sonnet A)
+- Ghi nhận L11: bật LD thì ẩn ngay (ShowWindowAsync 6) và kiểm lại bằng lệnh; chụp màn hình game từ trong LD (adb screencap). Áp dụng khi làm mục (e) #279.
