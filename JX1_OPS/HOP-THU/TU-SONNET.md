@@ -1013,3 +1013,6 @@ Gỡ dấu xung đột TONG-QUAN-GHI.md (giữ cả hai bên); chọn cách (b):
 
 ## TESTER (#222) 19/11 09:42
 Đã điền KIEN-THUC/mon-phai-ngu-hanh (16 môn từ A-08a, file:dòng). tester01 CHƯA sinh tiểu yêu: LD index 1 (T36test) vừa xong việc vũ khí, tài khoản `testa` có sẵn (khóa ở máy). Việc kế: dọn visibility/LD cho tester rồi giao theo LOI-GIAO-VIEC. SỐ THẬT 89/123 (mẫu số mới Q-63; VK-01/02 khớp #219, HT-01 khớp #221, chưa tự đóng).
+
+## #220 khung (19/11 09:55)
+Dựng khung `STATE/BOT/gia-vat-pham.csv` (chỉ dòng tiêu đề, đúng cột #220). Nguồn giá: bảng vật phẩm `gs/settings/item/004/*.txt` nằm trong Test-36 (không có trên máy thật), sẽ đọc qua WinRM ở lượt sau. GĐ0 khảo sát A/B chưa làm. BOT là hạng mục PHỤ, không vào mẫu số.
