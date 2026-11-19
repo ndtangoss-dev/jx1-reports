@@ -278,3 +278,4 @@
 - 04:40 Kiểm #14: Sonnet im 23 phút (04:14→04:37), 10 CHO-GOP, 1 SONG; nó hiểu sai 'chờ tiểu yêu xong' trong khi đã xong chờ gộp. Gõ CHAT-DAY #213 kèm lệnh gộp ngay.
 - 05:52 Kiểm #19: 87/107=81%. Tiểu yêu rảnh, mẫu số đóng băng. Gửi #214: dùng Test-36 đóng thật các việc cha còn thiếu bước server thật.
 - 19/11 06:32 #215 gửi Sonnet; tổng kết đêm vào BAO-CAO-CHU (88/107=82%).
+- 19/11 07:05 #216: chủ duyệt Q-58 (khóa Bot, C02/C04/C05, rồi bật D sau kiểm thương 8 hướng).

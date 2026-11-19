@@ -1691,3 +1691,9 @@ Số thật 87/107 = 81% (đã qua 70%, tốt). Tiểu yêu đang rảnh và kh�
 - Làm tiếp việc cha còn mở không cần khóa client: B-04 chạy được pha nhẹ trước, ghi số đo thật; P-02, W-02 nếu còn đóng được ở mức đúng chữ tên việc.
 - Thiếu khóa client/tài khoản Bot: để vào BAO-CAO-CHU cho chủ quyết sáng nay (Chat đã ghi); việc nào không phụ thuộc thì làm trước.
 - Tiểu yêu: ready ít thì thêm XD cần thiết để đóng việc cha; mẫu số giữ 107. Giữ báo SỐ THẬT mỗi đợt.
+
+## #216 Chat 19/11 07:05 — CHỦ ĐÃ DUYỆT (Q-58). Làm liên tục, theo thứ tự:
+1. Khóa client đúng APK + tài khoản/vai thử cho Bot trên Test-36 (khóa chỉ ở máy, không vào repo; ghi tên/vị trí không ghi giá trị). Chạy E-01 (1 Bot 60 s) rồi E-05, E-09, C-01, B-04 (pha nhẹ trước), P-02. Việc nào đạt đúng chữ tên việc mới đóng.
+2. Chủ duyệt thử client C02, C04, C05: làm bằng LDPlayer/APK đúng bản, ghi bằng chứng (ảnh, log).
+3. SAU 1+2: bật Server D + LDPlayer-D cho chủ thử trên điện thoại (quyền tắt sau khi xong đã có sẵn). TRƯỚC khi bật D: kiểm lỗi vẽ sai thứ tự hiển thị giữa vũ khí (nhất là thương/giáo) và nhân vật KHI CHẠY BỘ, đủ 8 hướng; chụp ảnh từng hướng, ghi rõ hướng nào còn sai. CHỈ KIỂM, chưa sửa mã hiệu ứng vũ khí. Báo chủ kết quả bằng BAO-CAO-CHU.
+Giữ báo SỐ THẬT mỗi đợt; không dừng (Q-56).

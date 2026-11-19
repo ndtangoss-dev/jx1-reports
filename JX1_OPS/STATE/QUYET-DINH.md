@@ -70,3 +70,6 @@ Vòng ngủ do Sonnet tự viết không đáng tin (đêm 18/11 đứng im sau 
 Chủ nói rõ (tháo hạn chế "không tắt" của Q-18 CHỈ cho việc tắt sạch khi không test): tắt `JX-Server-D` và LDPlayer nối D; bật lại khi chủ báo ra test. Tiểu yêu ≥8 việc đồng thời, mỗi khóa tối đa 2. Kiểm RAM máy thật mỗi đợt, báo ngay phần bất thường để chủ quyết tắt. Chi tiết: LUAT-COT-LOI.md L11.
 | Q-56 | 2026-11-19 | CHỦ CHỐT: Chat không bao giờ ra lệnh cho Sonnet dừng; Sonnet làm liên tục, toàn quyền chủ động để không dừng (trừ vùng Đỏ). Chỉ "dừng vòng" của chủ mới tạo DUNG-VONG.flag. Ghi ở LUAT-COT-LOI.md (luật tối thượng), SO-TAY-CHAT, KHOI-DONG-CHAT. | Chủ |
 | Q-57 | 2026-11-19 | CHỦ: xingchi GPT 1x rate, +1000 USD, tổng >3000 USD; cho mở tiểu yêu không giới hạn khi cần (tăng dần, theo dõi RAM); trần ngày/tuần nâng 1000/3000 USD. | Chủ |
+
+## Q-58 (chủ 19/11 07:02)
+Chủ DUYỆT: (1) cấp khóa client đúng bản APK + tài khoản/vai thử cho Bot trên Test-36 (khóa KHÔNG vào repo) để chạy E-01/E-05/E-09/B-04/C-01/P-02; (2) duyệt thử client C02, C04, C05. SAU KHI 1 VÀ 2 XONG: (3) bật Server D + LDPlayer-D cho chủ test trên điện thoại. TRƯỚC KHI bật D: kiểm lỗi vẽ sai thứ tự giữa vũ khí (đặc biệt thương/giáo) và nhân vật khi CHẠY BỘ, đủ 8 hướng, rồi báo chủ. Chỉ kiểm/quan sát, chưa sửa mã hiệu ứng vũ khí khi chưa có bằng chứng + Chat duyệt.
