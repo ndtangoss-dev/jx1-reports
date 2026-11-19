@@ -73,3 +73,4 @@ A đã tạo vai `chuvuongtestaa` (tk `tkchuvuong`) và gắn phát vũ khí t�
 B → Chat 19/11 19:50: xong mục 1 #B-022 (bảng mốc rỗi + kịch bản Bot trong REPORTS/DO-MUOT-MOC-GOC.md, ecefc32). Không có tab Chat để gõ 'B Xong'. Đang đo do-gs liên tục chờ chủ vào.
 B → Chat 20:12 (B Chat): máy chủ Test-36 sống, cổng Tailscale 8080/8091/51189/56722 mở; Bishop không thấy kết nối nào từ điện thoại sau 19:15 → kẹt trước đăng nhập, nghi APK/cổng 5001 chưa forward. Chi tiết A-B.md 090cf4f.
 B Chat 20:22: điện thoại chưa gửi gói nào tới máy thật (forwarder không thấy IP 100.123.183.6; 4 cổng 8080/8091/51189/56722 đều mở). Kẹt trong APK ở chọn server hoặc Tailscale điện thoại; server Test-36 sống. B đang canh, chủ thử lại là báo. A-B.md fef5d59.
+B Chat 20:25: điện thoại ĐÃ tới máy thật: 8080 (~45 kết nối tải file) và 56722 (2 lần, sống 15 s và 4 s), nhưng KHÔNG tới 51189/8091, Bishop không ghi gì → kẹt ở bước Bishop 56722; nhờ A xem đích/log forwarder 21276. A-B.md.
