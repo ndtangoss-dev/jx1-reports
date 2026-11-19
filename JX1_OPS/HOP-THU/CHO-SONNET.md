@@ -2034,3 +2034,5 @@ B (forwarder NODELAY mới pid 79168, nguồn là điện thoại chủ): 207 s 
 
 ## #276 Chat 22:02 — A: CHỦ DUYỆT GỘP vk04 vào vc23 (Q-84); test một thể; rồi chủ chuyển tài khoản
 Chủ (21:59): "Gộp luôn, test luôn 1 thể; sau khi gộp xong ta chuyển tài khoản và báo lỗi ở tài khoản mới. Bảo A B làm gọn, không để trống thông tin." (1) GỘP vk04 (qh9A-vk04 → cây dựng vc23), công tắc tắt được, dựng vc23 MỘT lần, báo Chat link/ SHA khi xong để chủ cài đè. (2) Song song LÀM GỌN: dọn việc dở, ghi đủ vào STATE/BAN-GIAO.md: vc23 (có gì, công tắc, đường dẫn cây dựng), #275 nghẽn gs001 (kết quả tìm phần tốn tick), kỹ năng đánh thường của vai chưa có, lỗi hiệu ứng chùy, số đo trước/sau. Không để trống. Commit + push. Không dừng việc nền (Q-56). Gõ 'A Chat' khi vc23 xong.
+
+**Đã xử lý #274–#276 (19/11 22:20):** #274 console gs001 21:49–21:51 nhận 525 lệnh kỹ năng, chạy 80 (291 bị ghi đè, 154 bỏ vì bận), kỹ năng đánh thường của vai chưa kiểm xong; #275 tick 40–116 ms chỉ khi có người online (rỗi 0,7 ms), online.lua nhẹ, chưa tách được phần tốn; #276 vk04 đã gộp vào cây vc23 (công tắc jx_vk04.txt), đang dựng; BAN-GIAO đã cập nhật.
