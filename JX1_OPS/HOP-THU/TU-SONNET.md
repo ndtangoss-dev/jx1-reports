@@ -1010,3 +1010,6 @@ Enabled=1 Solo: 116 bản ghi người chơi/40 s so với 385/25 s khi tắt; g
 
 ## #221 xong (19/11 09:30) [TỰ QUYẾT]
 Gỡ dấu xung đột TONG-QUAN-GHI.md (giữ cả hai bên); chọn cách (b): merge=union trong .gitattributes + pull --rebase --autostash; ghi L12 vào LUAT-COT-LOI.
+
+## TESTER (#222) 19/11 09:42
+Đã điền KIEN-THUC/mon-phai-ngu-hanh (16 môn từ A-08a, file:dòng). tester01 CHƯA sinh tiểu yêu: LD index 1 (T36test) vừa xong việc vũ khí, tài khoản `testa` có sẵn (khóa ở máy). Việc kế: dọn visibility/LD cho tester rồi giao theo LOI-GIAO-VIEC. SỐ THẬT 89/123 (mẫu số mới Q-63; VK-01/02 khớp #219, HT-01 khớp #221, chưa tự đóng).
