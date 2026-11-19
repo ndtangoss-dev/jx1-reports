@@ -1936,3 +1936,9 @@ B xin đúng cách A đã phát 5 vũ khí +15 cho `T36nv1` (A-B.md 18:45). Làm
 
 ## #258 Chat 19/11 19:05 — A: DỰ PHÒNG TẠO VAI CHO CHỦ NẾU B BỊ CHẶN; BÁO TIẾN ĐỘ NỘI SUY
 B đã tạo tk test `tkchuvuong` (mật khẩu ở `%LOCALAPPDATA%\jx1-secrets\tkchuvuong.txt`) nhưng B không tự nhập mật khẩu. Chủ đã giao việc (18:27, Q-81). Nếu B nhờ trong `A-B.md`: A tạo vai tên chữ cái 6–16 cho `tkchuvuong` bằng script tự đọc tệp mật khẩu (không in giá trị), rồi phát vũ khí (#257). Không bỏ dở nội suy; ghi tiến độ bản dựng ngắn vào TU-SONNET.md mỗi ~10 phút. Hạn 19:30. Không dừng.
+
+## #259 Chat 19/11 19:20 — A: BẢN DỰNG APK NỘI SUY QUÁ LÂU (HẠN CỨNG); CẤP VŨ KHÍ PHẢI LÀ 10
+1. **Bản dựng Gradle nội suy chạy >30 phút** (lần trước 2 phút 35 giây): coi là treo, dừng đúng tiến trình dựng đó (của em), dựng lại CÓ HẠN GIỜ (≤12 phút, `timeout`); đọc log xem treo ở đâu. Đừng chờ. Nếu 19:10 (giờ chủ) vẫn chưa có APK nội suy chạy được: giao APK vc22 hiện có (đã có hộp báo CreateRole #246) kèm cờ `LimitFPS` đo được, ghi rõ "nội suy chưa kịp, làm tiếp sau", chủ vẫn có bản để test và so sánh; làm tiếp nội suy ngay sau đó, cập nhật APK sau 19:30.
+2. **Vũ khí:** chủ nói **cấp 10**; A ghi "yêu cầu cấp 9". Kiểm dữ liệu vật phẩm: nếu có bản yêu cầu cấp 10 cho từng loại thì đổi sang đúng cấp 10 (`SetLevel` đủ cầm), nếu mỗi loại chỉ có cấp 9/11 thì ghi rõ trong `BAO-CAO-CHU.md` để chủ biết. Đủ loại: cận chiến 6 + tầm xa; đối chiếu danh sách loại với dữ liệu, báo thiếu loại nào.
+3. Nhắc B/chủ: B không đăng nhập vai; chủ đăng nhập `chuvuongtestaa` lần đầu trên điện thoại/LD là tự nhận 9 món. Viết 3 dòng hướng dẫn cực đơn giản cho chủ vào `BAO-CAO-CHU.md` (mật khẩu ở tệp `jx1-secrets\tkchuvuong.txt` trên máy).
+Không dừng; xong gõ `A Xong`.
