@@ -33,3 +33,7 @@ Bật `/sdcard/jxtrace`, `logcat -s JXTRC`, mặc lần lượt 5 vũ khí +15 t
 - [ĐÃ KIỂM] Yêu Đao +15 (một tay): sét chỉ ở một lưỡi, không thêm sét tay kia (`img/vk04-sau-dao-h0.png`). Phần thêm chỉ chạy khi section phụ ≥20 điểm và ≥40% section chính; đao một tay chỉ 6–12 điểm nên không kích hoạt.
 - [ĐÃ KIỂM một phần] FPS trên LD: sau sửa 32–38 (trung bình ~35, 5 mẫu); trước sửa (chùy) 1 mẫu = 32, vũ khí khác 38–41. Không thấy xấu đi, nhưng mẫu ít và LD dao động; chưa đo thời gian vẽ riêng.
 - [CHƯA KIỂM] 8 hướng đủ (mới hướng 0 bằng ảnh, hướng 5 qua trace `SECK`); thích/kiếm/thương/bổng chưa chụp lại. Chưa đưa vào repo chính (cần `JX1_EFFECT_OK=1` cho đúng commit đó); chưa giao APK cho chủ (vùng Đỏ).
+
+## Kiểm 8 hướng (vc22, 19/11 11:35, T36-tester01)
+[THẤY] Nhân vật cầm chùy đi theo 8 hướng bằng cách chạm quanh nó; ảnh ghép `img/vk04-sau-chuy-8huong.png`. Sét hiện ở các khung nhìn rõ nhân vật (hướng 1–3, 4, 7, 8); khung 5–6 nhân vật bị cột cổng che nên không kết luận. Không thấy khung nào mất sét dù đang đi.
+[CHƯA KIỂM] đứng yên đúng từng hướng (ảnh chụp lúc đang đi), thích, kiếm/thương/bổng, thêm mẫu FPS (hiện ~37 ở khung chụp).
