@@ -21,3 +21,9 @@
 - CẦN CHỦ QUYẾT sáng nay: (1) cho cấp khóa client + tài khoản thử cho Bot để chạy E-01; (2) duyệt thử client C02/C04/C05; (3) có muốn "bật D để test" bằng điện thoại không.
 - Sonnet tự dừng ~20 phút/lần: gốc là phiên Claude Code kết thúc lượt khi trả lời bằng chữ. Đề xuất chữa tận gốc: Tổng quản (tác vụ Windows, không tốn Claude) tự đánh thức phiên bằng cách chạy lệnh nhập chữ vào cửa sổ khi SONNET-SONG báo IM >10 phút, thay cho Chat gõ qua Chrome.
 - 19/11 07:20 — CHỦ GIAO: tiểu yêu TESTER (Q-59/#217): 1 con trước, ổn mới sinh tiếp; Chat báo tiến độ thường xuyên.
+
+## (B) 19/11 15:40 — Command Code CC-01 lượt đầu: ĐẠT (phần cầu LD)
+- Chạy `command-code --yolo -m flint-v1.0:free` đúng trong `D:\JX-wt\CC-01` (Q-77). Nó tự gửi 3 lệnh cầu (chụp ảnh, chạm, chạm) và có ảnh mới: tính là ĐẠT theo thư #B-002 (≥1 lệnh + ảnh mới).
+- Nó đọc được ảnh: tả đúng màn "Lựa chọn hệ phái", ô tên đang là "Tsbaone", nút Xác định/Hủy bỏ. Tự viết `KET-QUA.md`.
+- Chưa xong cả việc đăng nhập → tạo nhân vật; lỗi tên (gõ qua adb không được ô nhập nhận) vẫn là điểm kẹt chung. Chưa đo tốc độ/đúng so với tiểu yêu Codex; chưa ghi số dư `/usage` (cần phiên tương tác). Không mua/nạp gì.
+- Việc khác: bảng giá Bot `gia-vat-pham.csv` đã có cột tên Unicode (80a44d9). Bot vào thất bại: chạy riêng lẻ vẫn lỗi → lỗi theo vai/tài khoản, cần log Bishop/Goddess trên VM (chờ duyệt).
