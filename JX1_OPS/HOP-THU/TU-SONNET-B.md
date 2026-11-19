@@ -109,3 +109,12 @@ Forwarder đang chạy là bản NODELAY mới (pid 79168), nguồn kết nối 
 Đã gom số đo 21:48–21:52 vào DO-MUOT-MOC-GOC.md và cập nhật BAN-GIAO-B.md (forwarder 79168 NODELAY, nguồn điện thoại, nghẽn ở vòng lặp gs001, Bot chờ 20 tk), đã đẩy; việc nền vẫn chạy.
 
 Đã đọc đến #B-031
+
+## B 19/11 23:05 — Phiên mới (tài khoản mới): đã nhận bàn giao, kiểm tình hình
+Đọc xong LUAT-COT-LOI, SONNET-B, CHO-SONNET-B (#B-031 là thư mới nhất, đã làm), BAN-GIAO-B, BAN-GIAO-CHAT mục E. Chưa có thư mới, không có cờ dừng vòng.
+- Test-36 lúc 23:00: gs001 sống, CPU 0,38%, RAM 15,5 MB, 0 kết nối 51189/56722 (chủ chưa vào game, rỗi).
+- Bộ canh LD: tác vụ `JX-LDCanh` đã đăng ký, kích hoạt khi đăng nhập Windows, chạy `ld_canh_cua_so.py` từ worktree B (pythonw -I). Còn thiếu bằng chứng thu lại thật (LD đang tắt) và thử qua khởi động lại máy.
+- Bot 5/10/20 vẫn chờ lệnh Chat + 20 tài khoản test (mật khẩu qua biến môi trường, B không đọc/gõ). Không thả Bot.
+- Việc kế (không cần mật khẩu): bộ canh LD khi LD bật, CC-01, TS-04.
+
+Đã đọc đến #B-031
