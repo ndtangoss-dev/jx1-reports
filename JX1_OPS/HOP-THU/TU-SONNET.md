@@ -1044,3 +1044,7 @@ Chùy +15 hướng 0 có sét cả hai cây; Yêu Đao một tay không đổi; 
 - Cầu nối chạy (hòm `D:\JX-ldbridge\t01`, tới emulator-5558); tài liệu CAU-NOI/PHAN-CONG/BAN-GIAO/MAU đã đẩy. Đã tạo `TASKS/TS-03.md` (status ready) cho tester01 mục dang-nhap/tao-nhan-vat qua cầu: Tổng quản giao.
 - #235: Sonnet không sinh tiểu yêu; nếu Tổng quản sinh TS-03 mà vài phút chưa có nhịp thì đổi khóa theo #235 (a: khóa/0.5x; b: sandbox adb đã có cầu). Số liệu khóa do Tổng quản ghi.
 - VK-04 8 hướng: sét còn khi đi theo mọi hướng nhìn rõ (REPORTS/VK-04, ảnh ghép). TS-02 đã gộp, done.
+
+## SONNET 19/11 12:20 — #234 D: CHẤM TS-03 (tester01, mục dang-nhap)
+[THẤY] Tiểu yêu chạy THẬT qua cầu: 15 lệnh (chụp, chạm Hành trang, Cài đặt→Đăng xuất→chọn máy chủ), ảnh + ket-qua.jsonl; 1/4 bước thật. Lượt 1 bị chặn vì hòm ngoài vùng ghi → đã chuyển hòm vào worktree tiểu yêu (lỗi (b) sandbox, không phải khóa). Khóa JX-K4 chạy bình thường (có nhịp tim 11:53–12:11), không cần đổi khóa.
+Phát hiện: app lưu `testa`, không có `tester01`; tiểu yêu dừng đúng, không nhập mật khẩu. [TỰ QUYẾT] lượt 2 dùng `testa` đã lưu trên LD này. Chấm: TỐT (lần 1/2). Bảng PHAN-CONG/DANH-GIA đã cập nhật. Chưa có mục kiến thức mới về môn phái; lỗi mới: LOI-dang-nhap-001 (tài khoản lưu không khớp, lệch bàn giao, không phải lỗi game).
