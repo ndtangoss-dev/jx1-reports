@@ -132,3 +132,6 @@ Chủ tự đăng ký gói Go (≈1 đô/tháng + phí xử lý, kèm ≈10 đô
 
 ## Q-77 (chủ 19/11 15:16) — CHỦ CHO PHÉP COMMAND CODE CHẠY `--yolo` TRONG WORKTREE RIÊNG; SONNET B CHẠY CHẾ ĐỘ TỰ ĐỘNG NHƯ A
 Chủ chấp nhận cho `command-code --yolo` chạy (tự chạy lệnh không hỏi từng lần) với điều kiện Chat nêu: chỉ trong worktree riêng của việc đó (đầu tiên `D:\JX-wt\CC-01`), không để khóa/mật khẩu/ khóa API trong thư mục đó, Sonnet B xem kết quả sau mỗi lượt, không mua/nạp thêm. Chủ cũng đã chuyển phiên Sonnet B sang chế độ tự động giống A (bớt hỏi quyền). Bộ phân loại an toàn của Claude Code vẫn có thể chặn; nếu bị chặn thì ghi BAO-CAO-CHU, không lách.
+
+## Q-78 (chủ 19/11 15:59) — CHỦ DUYỆT: B XEM LOG/DỮ LIỆU MÁY THỬ TEST-36 (CHỈ ĐỌC); DEEPSEEK ĐỂ SAU
+Chủ: "Xem log máy thì cho luôn" (B xin đọc log Bishop/Goddess và tra tên trùng trong dữ liệu `JX-Test-36` cho lỗi Bot + lỗi tên nhân vật). Phạm vi: máy thử Test-36, chỉ đọc (Q-19 đã cho PM toàn quyền trên Test-36). KHÔNG gồm Main VM `JX-Server-D` (vẫn theo Q-18/Q-55: chỉ khi chủ test điện thoại). Không in mật khẩu/khóa ra kho. Việc thử DeepSeek cho Command Code: chủ bảo để sau (Chat không làm tới khi chủ nhắc lại).

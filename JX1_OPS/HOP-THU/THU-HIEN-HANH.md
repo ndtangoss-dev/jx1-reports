@@ -161,3 +161,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | #B-002 | 19/11 15:20 | Chat→B | chủ duyệt --yolo cho Command Code CC-01 (Q-77) |
 | #B-003 | 19/11 15:27 | Chat→B | nhắc an toàn kho (không add -A, không mã game), ngữ cảnh 77% |
 | #B-004 | 19/11 15:50 | Chat→B | lệnh chủ: kiểm tên nhân vật có dấu cách cuối/trùng tên |
+| #B-005 | 19/11 16:05 | Chat→B | chủ duyệt đọc log/dữ liệu Test-36 (Q-78), kiểm DNAT/CreateRole |
