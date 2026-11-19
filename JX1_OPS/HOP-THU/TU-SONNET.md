@@ -1236,3 +1236,8 @@ Tooltip "+N tất cả kỹ năng" nay hiện từ +14 (+1) và +15 (+2), khớp
 ## [20/11 02:33] A: vc25 sua hien thi [QH] (#283)
 - Phat hien tin Msg2Player di qua kenh chat "Cong bo", parser o AMessageArrival khong duoc goi. Chuyen sang KuiChatList::addmsg, build vc25 OK (D:\JX-build\jx-vc25.apk, SHA256 266e8d3a62d662bf9e17893b97c986bfe8f263016e5ed88620274339c0ea3d73, versionCode 25). Cai tren LD, KHONG gui chu (vung Do).
 - LD: menu cuong hoa 10 o + xem truoc doc duoc ("ti le 100%, can 1 thuy tinh moi loai, 200 van"). Cuong hoa that chua test duoc: role chua co trang bi (code 5). Da nhan B cap do. Tiep: B cap do -> A bam +1..+15, chup; sau do #277/#278.
+
+## [20/11 03:50] A: #283 cuong hoa chay that tren LD
+- Role atestvaihero mac 5 mon (bam "Su dung" tung mon trong tui). Cuong hoa Ao +0 -> +8 bang UI: [QH] hien "THANH CONG len +1 (ti le 95%)"... "hien +8, ti le 60%, can 256 thuy tinh moi loai, 5 uc 1200 van", tai phu 800 = 100 x tong(+N). Chup: docs-analysis/out/ld/v27a,v27b,v27c.png.
+- Dung o +8 vi con 217 thuy tinh/loai. Dang dang nhap lai de script cap them (khi <600), chay +9..+15, +11+ kiem kep 1000/loai (#283b).
+- Chua kiem: +8 co con sau khi tat client khong. Tiep: phi phong ban 2, ngua, danh thuong (#284).
