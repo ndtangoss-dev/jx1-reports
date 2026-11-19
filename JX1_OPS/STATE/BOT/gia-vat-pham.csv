@@ -1,1035 +1,1035 @@
-ma_mon,ten,loai,cap,do_hiem,gia_goc,he_so_ban,gia_san_mac_ca,thanh_thi_ban,nhom_kho_hom_nay
-meleeweapon:2,ThiÕt Trñy thñ,meleeweapon,1,,360,0.5,180,,
-meleeweapon:3,Cang KiÕm,meleeweapon,2,,1160,0.5,580,,
-meleeweapon:4,Thanh Phong KiÕm,meleeweapon,3,,2120,0.5,1060,,
-meleeweapon:5,Long TuyÒn KiÕm,meleeweapon,4,,3080,0.5,1540,,
-meleeweapon:6,Tr·m M· KiÕm,meleeweapon,5,,4040,0.5,2020,,
-meleeweapon:7,¤ Kim KiÕm,meleeweapon,6,,5000,0.5,2500,,
-meleeweapon:8,XØ KhiÕp,meleeweapon,7,,5960,0.5,2980,,
-meleeweapon:9,ThÊt XÝch KiÕm,meleeweapon,8,,6920,0.5,3460,,
-meleeweapon:10,Thiªn NhËn KiÕm,meleeweapon,9,,7880,0.5,3940,,
-meleeweapon:11,HuyÒn ThiÕt KiÕm,meleeweapon,10,,8840,0.5,4420,,
-meleeweapon:12,Yªu §ao,meleeweapon,1,,360,0.5,180,,
-meleeweapon:13,§¬n §ao,meleeweapon,2,,1160,0.5,580,,
-meleeweapon:14,Quû §Çu §ao,meleeweapon,3,,2120,0.5,1060,,
-meleeweapon:15,Nh¹n Linh §ao,meleeweapon,4,,3080,0.5,1540,,
-meleeweapon:16,NguyÖt Nha §ao,meleeweapon,5,,4040,0.5,2020,,
-meleeweapon:17,Ph¸ Phong §ao,meleeweapon,6,,5000,0.5,2500,,
-meleeweapon:18,Cæn Ch©u B¶o ®ao,meleeweapon,7,,5960,0.5,2980,,
-meleeweapon:19,YÓn NguyÖt §ao,meleeweapon,8,,6920,0.5,3460,,
-meleeweapon:20,Thanh Long §ao,meleeweapon,9,,7880,0.5,3940,,
-meleeweapon:21,§¹i Phong §ao,meleeweapon,10,,8840,0.5,4420,,
-meleeweapon:22,Thiªu Háa C«n,meleeweapon,1,,360,0.5,180,,
-meleeweapon:23,TÒ Mi C«n,meleeweapon,2,,1160,0.5,580,,
-meleeweapon:24,Bµn Hoa C«n,meleeweapon,3,,2120,0.5,1060,,
-meleeweapon:25,Hæ VÜ C«n,meleeweapon,4,,3080,0.5,1540,,
-meleeweapon:26,Tiªu Bæng,meleeweapon,5,,4040,0.5,2020,,
-meleeweapon:27,Can Bæng,meleeweapon,6,,5000,0.5,2500,,
-meleeweapon:28,Lang Nha Bæng,meleeweapon,7,,5960,0.5,2980,,
-meleeweapon:29,Hçn ThiÕt Bæng,meleeweapon,8,,6920,0.5,3460,,
-meleeweapon:30,Gi¸c H¶i Bæng,meleeweapon,9,,7880,0.5,3940,,
-meleeweapon:31,Kim C« Bæng,meleeweapon,10,,8840,0.5,4420,,
-meleeweapon:32,ThiÕt Th­¬ng,meleeweapon,1,,360,0.5,180,,
-meleeweapon:33,Tr­êng Th­¬ng,meleeweapon,2,,1160,0.5,580,,
-meleeweapon:34,§iÓm Cang Th­¬ng,meleeweapon,3,,2120,0.5,1060,,
-meleeweapon:35,C©u Liªm Th­¬ng,meleeweapon,4,,3080,0.5,1540,,
-meleeweapon:36,Hoµn tö Th­¬ng,meleeweapon,5,,4040,0.5,2020,,
-meleeweapon:37,B¸o vÜ th­¬ng,meleeweapon,6,,5000,0.5,2500,,
-meleeweapon:38,Nh¹n Linh Th­¬ng,meleeweapon,7,,5960,0.5,2980,,
-meleeweapon:39,Tó Cèt Th­¬ng,meleeweapon,8,,6920,0.5,3460,,
-meleeweapon:40,Háa NhuÖ Th­¬ng,meleeweapon,9,,7880,0.5,3940,,
-meleeweapon:41,Ph¸ Thiªn KÝch,meleeweapon,10,,8840,0.5,4420,,
-meleeweapon:42,To¸n §Çu chïy,meleeweapon,1,,360,0.5,180,,
-meleeweapon:43,B¸t L¨ng chïy,meleeweapon,2,,1160,0.5,580,,
-meleeweapon:44,Ngò Tinh chïy,meleeweapon,3,,2120,0.5,1060,,
-meleeweapon:45,TÝch LÞch chïy,meleeweapon,4,,3080,0.5,1540,,
-meleeweapon:46,L­îng Ng©n chïy,meleeweapon,5,,4040,0.5,2020,,
-meleeweapon:47,Lang Nha chïy,meleeweapon,6,,5000,0.5,2500,,
-meleeweapon:48,LiÖt T©m chïy,meleeweapon,7,,5960,0.5,2980,,
-meleeweapon:49,Kim Qua chïy,meleeweapon,8,,6920,0.5,3460,,
-meleeweapon:50,NghiÖt Long chïy,meleeweapon,9,,7880,0.5,3940,,
-meleeweapon:51,Ph¸ Thiªn chïy,meleeweapon,10,,8840,0.5,4420,,
-meleeweapon:52,Nga Mi ThÝch,meleeweapon,1,,360,0.5,180,,
-meleeweapon:53,TÊn ThiÕt Song §ao,meleeweapon,2,,1160,0.5,580,,
-meleeweapon:54,NguyÖt Nha ThÝch,meleeweapon,3,,2120,0.5,1060,,
-meleeweapon:55,H¾c B¹ch Song §ao,meleeweapon,4,,3080,0.5,1540,,
-meleeweapon:56,TuyÕt Hoa L­îng Ng©n §ao,meleeweapon,5,,4040,0.5,2020,,
-meleeweapon:57,Uyªn ¦¬ng §ao,meleeweapon,6,,5000,0.5,2500,,
-meleeweapon:58,Phï Dung §ao,meleeweapon,7,,5960,0.5,2980,,
-meleeweapon:59,Hå §iÖp Song §ao,meleeweapon,8,,6920,0.5,3460,,
-meleeweapon:60,Thu Vò §ao,meleeweapon,9,,7880,0.5,3940,,
-meleeweapon:61,Th«n NhËt Tr·m,meleeweapon,10,,8840,0.5,4420,,
-meleeweapon:62,TriÒn Thñ V¶i Th«,meleeweapon,1,,360,0.5,180,,
-meleeweapon:63,TriÒn Thñ GÊm,meleeweapon,2,,1160,0.5,580,,
-meleeweapon:64,TriÒn Thñ Da Hæ,meleeweapon,3,,2120,0.5,1060,,
-meleeweapon:65,TriÒn Thñ Tinh X¶o,meleeweapon,4,,3080,0.5,1540,,
-meleeweapon:66,TriÒn Thñ B¹c S¸ng,meleeweapon,5,,4040,0.5,2020,,
-meleeweapon:67,TriÒn Thñ M¹ Vµng,meleeweapon,6,,5000,0.5,2500,,
-meleeweapon:68,TriÒn Thñ L«ng Mùc,meleeweapon,7,,5960,0.5,2980,,
-meleeweapon:69,TriÒn Thñ T»m Vµng,meleeweapon,8,,6920,0.5,3460,,
-meleeweapon:70,TriÒn Thñ G©n Rång,meleeweapon,9,,7880,0.5,3940,,
-meleeweapon:71,TriÒn Thñ XÐ Trêi,meleeweapon,10,,8840,0.5,4420,,
-rangeweapon:2,Kim TiÒn tiªu,rangeweapon,1,,360,0.5,180,,
-rangeweapon:3,ThiÕu L©m T¸o Nh©n Tiªu,rangeweapon,2,,1160,0.5,580,,
-rangeweapon:4,YÕn tö Tiªu,rangeweapon,3,,2120,0.5,1060,,
-rangeweapon:5,ThËp tù tiªu,rangeweapon,4,,3080,0.5,1540,,
-rangeweapon:6,LiÔu DiÖp tiªu,rangeweapon,5,,4040,0.5,2020,,
-rangeweapon:7,Phi Hoµng Tiªu,rangeweapon,6,,5000,0.5,2500,,
-rangeweapon:8,ThiÕu L©m L­îng Ng©n Phi Tiªu,rangeweapon,7,,5960,0.5,2980,,
-rangeweapon:9,Hå §iÖp Tiªu,rangeweapon,8,,6920,0.5,3460,,
-rangeweapon:10,Kim Tiªu,rangeweapon,9,,7880,0.5,3940,,
-rangeweapon:11,B¸ V­¬ngTiªu,rangeweapon,10,,8840,0.5,4420,,
-rangeweapon:12,Phi §ao,rangeweapon,1,,360,0.5,180,,
-rangeweapon:13,Cang Phi §ao,rangeweapon,2,,1160,0.5,580,,
-rangeweapon:14,LiÔu DiÖp §ao,rangeweapon,3,,2120,0.5,1060,,
-rangeweapon:15,Nh¹n VÜ §ao,rangeweapon,4,,3080,0.5,1540,,
-rangeweapon:16,§¸i Y §ao,rangeweapon,5,,4040,0.5,2020,,
-rangeweapon:17,§µo Hoa §ao,rangeweapon,6,,5000,0.5,2500,,
-rangeweapon:18,Quang C¸n §ao,rangeweapon,7,,5960,0.5,2980,,
-rangeweapon:19,T©m ý §ao,rangeweapon,8,,6920,0.5,3460,,
-rangeweapon:20,§éc C¬ §ao,rangeweapon,9,,7880,0.5,3940,,
-rangeweapon:21,To¸i NguyÖt §ao,rangeweapon,10,,8840,0.5,4420,,
-rangeweapon:22,Tô TiÔn,rangeweapon,1,,360,0.5,180,,
-rangeweapon:23,Tóc §Ó Ch©m,rangeweapon,2,,1160,0.5,580,,
-rangeweapon:24,Tinh Trang Tô TiÔn,rangeweapon,3,,2120,0.5,1060,,
-rangeweapon:25,Thanh Phong §inh,rangeweapon,4,,3080,0.5,1540,,
-rangeweapon:26,Bèi Trang Nç,rangeweapon,5,,4040,0.5,2020,,
-rangeweapon:27,Hµm Sa X¹ ¶nh,rangeweapon,6,,5000,0.5,2500,,
-rangeweapon:28,Ph¸ Gi¸p Nç,rangeweapon,7,,5960,0.5,2980,,
-rangeweapon:29,B¹o Vò Lª Hoa Ch©m,rangeweapon,8,,6920,0.5,3460,,
-rangeweapon:30,Gia C¸t Nç,rangeweapon,9,,7880,0.5,3940,,
-rangeweapon:31,Khæng T­íc Linh,rangeweapon,10,,8840,0.5,4420,,
-armor:2,Sa Di phôc,armor,1,,360,0.5,180,,
-armor:3,T¨ng y,armor,2,,1160,0.5,580,,
-armor:4,B¸ch N¹p y,armor,3,,2120,0.5,1060,,
-armor:5,An ®µ héi,armor,4,,3080,0.5,1540,,
-armor:6,UÊt §a La T¨ng,armor,5,,4040,0.5,2020,,
-armor:7,T¨ng Hµi,armor,6,,5000,0.5,2500,,
-armor:8,NguyÖn B¹ch Cµ Sa,armor,7,,5960,0.5,2980,,
-armor:9,Minh TÜnh Cµ Sa,armor,8,,6920,0.5,3460,,
-armor:10,Kim L« Cµ Sa,armor,9,,7880,0.5,3940,,
-armor:11,ThÊt B¶o Cµ Sa,armor,10,,8840,0.5,4420,,
-armor:12,§¹o sÜ vâ bµo,armor,1,,360,0.5,180,,
-armor:13,§¹o sÜ tr­êng bµo,armor,2,,1160,0.5,580,,
-armor:14,TÜnh y,armor,3,,2120,0.5,1060,,
-armor:15,Thanh Tïng Ph¸p bµo,armor,4,,3080,0.5,1540,,
-armor:16,Thiªn s­ ®¹o bµo,armor,5,,4040,0.5,2020,,
-armor:17,HuyÒn Vâ ph¸p y,armor,6,,5000,0.5,2500,,
-armor:18,ThÊt B¶o H¹ y,armor,7,,5960,0.5,2980,,
-armor:19,Tam Thanh Bµo,armor,8,,6920,0.5,3460,,
-armor:20,Thiªn Niªn H¹c S­ëng,armor,9,,7880,0.5,3940,,
-armor:21,Ch©n Vò Th¸nh Y,armor,10,,8840,0.5,4420,,
-armor:22,Cæn y,armor,1,,360,0.5,180,,
-armor:23,TÕ Tróc Cæn y,armor,2,,1160,0.5,580,,
-armor:24,ThÝch Kh¸ch y,armor,3,,2120,0.5,1060,,
-armor:25,Méng mÞ y,armor,4,,3080,0.5,1540,,
-armor:26,V« S¾c y,armor,5,,4040,0.5,2020,,
-armor:27,Ng­ NhÉn y,armor,6,,5000,0.5,2500,,
-armor:28,Liªn V©n y,armor,7,,5960,0.5,2980,,
-armor:29,Thiªn Méng y,armor,8,,6920,0.5,3460,,
-armor:30,V« Dung KÝnh y,armor,9,,7880,0.5,3940,,
-armor:31,Thiªn NhÉn MËt Trang,armor,10,,8840,0.5,4420,,
-armor:32,Th« Bè tr­êng bµo,armor,1,,360,0.5,180,,
-armor:33,Khinh C¸t sam,armor,2,,1160,0.5,580,,
-armor:34,§o¹n bµo,armor,3,,2120,0.5,1060,,
-armor:35,DËt HiÖp y,armor,4,,3080,0.5,1540,,
-armor:36,NhiÖm HiÖp phôc,armor,5,,4040,0.5,2020,,
-armor:37,L­u Th¸i Phôc,armor,6,,5000,0.5,2500,,
-armor:38,Ng©n T¬ Bµo,armor,7,,5960,0.5,2980,,
-armor:39,Tö Kim bµo,armor,8,,6920,0.5,3460,,
-armor:40,Hµn S­¬ng bµo,armor,9,,7880,0.5,3940,,
-armor:41,Gi¸ng Sa Bµo,armor,10,,8840,0.5,4420,,
-armor:42,Táa Tö gi¸p,armor,1,,360,0.5,180,,
-armor:43,L­ìng §¸ng Kh¶i,armor,2,,1160,0.5,580,,
-armor:44,Minh Quang Kh¶i,armor,3,,2120,0.5,1060,,
-armor:45,TÕ L©n gi¸p,armor,4,,3080,0.5,1540,,
-armor:46,¤ Chïy gi¸p,armor,5,,4040,0.5,2020,,
-armor:47,S¬n V¨n Tù gi¸p,armor,6,,5000,0.5,2500,,
-armor:48,Gi¶i Tr¹i gi¸p,armor,7,,5960,0.5,2980,,
-armor:49,Toan Nghª gi¸p,armor,8,,6920,0.5,3460,,
-armor:50,Táa Tö Hoµng Kim gi¸p,armor,9,,7880,0.5,3940,,
-armor:51,§­êng Nghª gi¸p,armor,10,,8840,0.5,4420,,
-armor:52,Lan Bè y,armor,1,,360,0.5,180,,
-armor:53,Phæ th«ng C¸i y,armor,2,,1160,0.5,580,,
-armor:54,¸o ¨n mµy,armor,3,,2120,0.5,1060,,
-armor:55,Thæ Ma C¸i y,armor,4,,3080,0.5,1540,,
-armor:56,TÇm Ma C¸i y,armor,5,,4040,0.5,2020,,
-armor:57,Háa Ma C¸i y,armor,6,,5000,0.5,2500,,
-armor:58,ThËp ph­¬ng C¸i y,armor,7,,5960,0.5,2980,,
-armor:59,B¸ch kÕt C¸i y,armor,8,,6920,0.5,3460,,
-armor:60,TriÒn T¬ Thiªn KÕt phôc,armor,9,,7880,0.5,3940,,
-armor:61,V¹n L­u Quy T«ng Y,armor,10,,8840,0.5,4420,,
-armor:62,¸o v¶i th«,armor,1,,360,0.5,180,,
-armor:63,¸o v¶i th«,armor,2,,1160,0.5,580,,
-armor:64,¸o v¶i th«,armor,3,,2120,0.5,1060,,
-armor:65,¸o v¶i th«,armor,4,,3080,0.5,1540,,
-armor:66,Hoµng CÈm ®o¶n y,armor,5,,4040,0.5,2020,,
-armor:67,Chøc gi¸p ®o¶n sam,armor,6,,5000,0.5,2500,,
-armor:68,HuyÒn Hoµng ®o¶n gi¸p,armor,7,,5960,0.5,2980,,
-armor:69,BÝch Hoa Bµo,armor,8,,6920,0.5,3460,,
-armor:70,T­¬ng Nh­ bµo,armor,9,,7880,0.5,3940,,
-armor:71,TuyÒn Long bµo,armor,10,,8840,0.5,4420,,
-armor:72,Sa Ni phôc,armor,1,,360,0.5,180,,
-armor:73,T¨ng bµo,armor,2,,1160,0.5,580,,
-armor:74,B¸ch N¹p y,armor,3,,2120,0.5,1060,,
-armor:75,An ®µ héi,armor,4,,3080,0.5,1540,,
-armor:76,UÊt §a La T¨ng,armor,5,,4040,0.5,2020,,
-armor:77,T¨ng Hµi,armor,6,,5000,0.5,2500,,
-armor:78,NguyÖn B¹ch cµ sa,armor,7,,5960,0.5,2980,,
-armor:79,Minh tÜnh cµ sa,armor,8,,6920,0.5,3460,,
-armor:80,Kim L« cµ sa,armor,9,,7880,0.5,3940,,
-armor:81,ThÊt B¶o cµ sa,armor,10,,8840,0.5,4420,,
-armor:82,N÷ thøc ®¹o y,armor,1,,360,0.5,180,,
-armor:83,Tu Ch©n ®¹o y,armor,2,,1160,0.5,580,,
-armor:84,Háa Hoµn ®¹o y,armor,3,,2120,0.5,1060,,
-armor:85,BÝch Hµ ®¹o y,armor,4,,3080,0.5,1540,,
-armor:86,B¸t qu¸i ®¹o y,armor,5,,4040,0.5,2020,,
-armor:87,Hµn Mai ®¹o y,armor,6,,5000,0.5,2500,,
-armor:88,V« Cùc §¹o y,armor,7,,5960,0.5,2980,,
-armor:89,§Þa Duyªn ®¹o y,armor,8,,6920,0.5,3460,,
-armor:90,B¨ng Tµm ®¹o y,armor,9,,7880,0.5,3940,,
-armor:91,Long Tiªu ®¹o y,armor,10,,8840,0.5,4420,,
-armor:92,Thôc CÈm y,armor,1,,360,0.5,180,,
-armor:93,L¨ng T¬ y,armor,2,,1160,0.5,580,,
-armor:94,CÈm Träng y,armor,3,,2120,0.5,1060,,
-armor:95,Linh Xµ y,armor,4,,3080,0.5,1540,,
-armor:96,HuyÒn Ly y,armor,5,,4040,0.5,2020,,
-armor:97,H¾c B¸o y,armor,6,,5000,0.5,2500,,
-armor:98,Hæ B× y,armor,7,,5960,0.5,2980,,
-armor:99,VËn Nghª th­êng,armor,8,,6920,0.5,3460,,
-armor:100,Mª Hån Th­êng,armor,9,,7880,0.5,3940,,
-armor:101,Cöu VÜ B¹ch Hå trang,armor,10,,8840,0.5,4420,,
-armor:102,CÈm Sam,armor,1,,360,0.5,180,,
-armor:103,Khëi Ly sam,armor,2,,1160,0.5,580,,
-armor:104,Hoa Sa sam,armor,3,,2120,0.5,1060,,
-armor:105,Thôc CÈm Sam,armor,4,,3080,0.5,1540,,
-armor:106,Tèng CÈm Sam,armor,5,,4040,0.5,2020,,
-armor:107,V©n CÈm Sam,armor,6,,5000,0.5,2500,,
-armor:108,Thanh La sam,armor,7,,5960,0.5,2980,,
-armor:109,TÊt Sa sam,armor,8,,6920,0.5,3460,,
-armor:110,L¨ng La sam,armor,9,,7880,0.5,3940,,
-armor:111,TrÇm H­¬ng sam,armor,10,,8840,0.5,4420,,
-armor:112,Kh¶m ThiÕt n÷ gi¸p,armor,1,,360,0.5,180,,
-armor:113,Thanh §ång n÷ gi¸p,armor,2,,1160,0.5,580,,
-armor:114,B¹ch NhÜ gi¸p,armor,3,,2120,0.5,1060,,
-armor:115,Lam YÕn Cang gi¸p,armor,4,,3080,0.5,1540,,
-armor:116,Hång NhÜ gi¸p,armor,5,,4040,0.5,2020,,
-armor:117,XÝch Nh¹n gi¸p,armor,6,,5000,0.5,2500,,
-armor:118,HuyÕt §ång gi¸p,armor,7,,5960,0.5,2980,,
-armor:119,Lan Ng©n gi¸p,armor,8,,6920,0.5,3460,,
-armor:120,HuyÒn ThiÕt TuyÕt Ng©n gi¸p,armor,9,,7880,0.5,3940,,
-armor:121,TÝch LÞch Kim Phông gi¸p,armor,10,,8840,0.5,4420,,
-armor:122,Ph¸ Ma y,armor,1,,360,0.5,180,,
-armor:123,Ph¸ Miªn y,armor,2,,1160,0.5,580,,
-armor:124,Ph¸ Cæn y,armor,3,,2120,0.5,1060,,
-armor:125,B¹ch Bæ y,armor,4,,3080,0.5,1540,,
-armor:126,Thiªn bæ y,armor,5,,4040,0.5,2020,,
-armor:127,D­¬ng B× gi¸p,armor,6,,5000,0.5,2500,,
-armor:128,Ng­u B× gi¸p,armor,7,,5960,0.5,2980,,
-armor:129,Tö Thö y,armor,8,,6920,0.5,3460,,
-armor:130,Kh«i §iªu y,armor,9,,7880,0.5,3940,,
-armor:131,V¹n Chóng TÒ T©m Y,armor,10,,8840,0.5,4420,,
-armor:132,B¹ch §iÖp quÇn,armor,1,,360,0.5,180,,
-armor:133,Thanh La quÇn,armor,2,,1160,0.5,580,,
-armor:134,Chøc CÈm Th¹ch Lùu quÇn,armor,3,,2120,0.5,1060,,
-armor:135,Song §iÖp Tó La quÇn,armor,4,,3080,0.5,1540,,
-armor:136,B¸ch ¤ quÇn,armor,5,,4040,0.5,2020,,
-armor:137,NguyÖt Hoa quÇn,armor,6,,5000,0.5,2500,,
-armor:138,Phong VÜ quÇn,armor,7,,5960,0.5,2980,,
-armor:139,Kinh B¶o quÇn,armor,8,,6920,0.5,3460,,
-armor:140,B¸ch Phong TriÒu D­¬ng quÇn,armor,9,,7880,0.5,3940,,
-armor:141,L­u Tiªn QuÇn,armor,10,,8840,0.5,4420,,
-armor:142,Sa Di phôc,armor,1,,360,0.5,180,,
-armor:143,T¨ng y,armor,2,,1160,0.5,580,,
-armor:144,B¸ch N¹p y,armor,3,,2120,0.5,1060,,
-armor:145,An ®µ héi,armor,4,,3080,0.5,1540,,
-armor:146,UÊt §a La T¨ng,armor,5,,4040,0.5,2020,,
-armor:147,T¨ng Hµi,armor,6,,5000,0.5,2500,,
-armor:148,NguyÖn B¹ch Cµ Sa,armor,7,,5960,0.5,2980,,
-armor:149,Minh TÜnh Cµ Sa,armor,8,,6920,0.5,3460,,
-armor:150,Kim L« Cµ Sa,armor,9,,7880,0.5,3940,,
-armor:151,ThÊt B¶o Cµ Sa,armor,10,,8840,0.5,4420,,
-armor:152,§¹o sÜ vâ bµo,armor,1,,360,0.5,180,,
-armor:153,§¹o sÜ tr­êng bµo,armor,2,,1160,0.5,580,,
-armor:154,TÜnh y,armor,3,,2120,0.5,1060,,
-armor:155,Thanh Tïng Ph¸p bµo,armor,4,,3080,0.5,1540,,
-armor:156,Thiªn s­ ®¹o bµo,armor,5,,4040,0.5,2020,,
-armor:157,HuyÒn Vâ ph¸p y,armor,6,,5000,0.5,2500,,
-armor:158,ThÊt B¶o H¹ y,armor,7,,5960,0.5,2980,,
-armor:159,Tam Thanh Bµo,armor,8,,6920,0.5,3460,,
-armor:160,Thiªn Niªn H¹c S­ëng,armor,9,,7880,0.5,3940,,
-armor:161,Ch©n Vò Th¸nh Y,armor,10,,8840,0.5,4420,,
-armor:162,Cæn y,armor,1,,360,0.5,180,,
-armor:163,TÕ Tróc Cæn y,armor,2,,1160,0.5,580,,
-armor:164,ThÝch Kh¸ch y,armor,3,,2120,0.5,1060,,
-armor:165,Méng mÞ y,armor,4,,3080,0.5,1540,,
-armor:166,V« S¾c y,armor,5,,4040,0.5,2020,,
-armor:167,Ng­ NhÉn y,armor,6,,5000,0.5,2500,,
-armor:168,Liªn V©n y,armor,7,,5960,0.5,2980,,
-armor:169,Thiªn Méng y,armor,8,,6920,0.5,3460,,
-armor:170,V« Dung KÝnh y,armor,9,,7880,0.5,3940,,
-armor:171,Thiªn NhÉn MËt Trang,armor,10,,8840,0.5,4420,,
-armor:172,Th« Bè tr­êng bµo,armor,1,,360,0.5,180,,
-armor:173,Khinh C¸t sam,armor,2,,1160,0.5,580,,
-armor:174,§o¹n bµo,armor,3,,2120,0.5,1060,,
-armor:175,DËt HiÖp y,armor,4,,3080,0.5,1540,,
-armor:176,NhiÖm HiÖp phôc,armor,5,,4040,0.5,2020,,
-armor:177,L­u Th¸i Phôc,armor,6,,5000,0.5,2500,,
-armor:178,Ng©n T¬ Bµo,armor,7,,5960,0.5,2980,,
-armor:179,Tö Kim bµo,armor,8,,6920,0.5,3460,,
-armor:180,Hµn S­¬ng bµo,armor,9,,7880,0.5,3940,,
-armor:181,Gi¸ng Sa Bµo,armor,10,,8840,0.5,4420,,
-armor:182,Táa Tö gi¸p,armor,1,,360,0.5,180,,
-armor:183,L­ìng §¸ng Kh¶i,armor,2,,1160,0.5,580,,
-armor:184,Minh Quang Kh¶i,armor,3,,2120,0.5,1060,,
-armor:185,TÕ L©n gi¸p,armor,4,,3080,0.5,1540,,
-armor:186,¤ Chïy gi¸p,armor,5,,4040,0.5,2020,,
-armor:187,S¬n V¨n Tù gi¸p,armor,6,,5000,0.5,2500,,
-armor:188,Gi¶i Tr¹i gi¸p,armor,7,,5960,0.5,2980,,
-armor:189,Toan Nghª gi¸p,armor,8,,6920,0.5,3460,,
-armor:190,Táa Tö Hoµng Kim gi¸p,armor,9,,7880,0.5,3940,,
-armor:191,§­êng Nghª gi¸p,armor,10,,8840,0.5,4420,,
-armor:192,Lan Bè y,armor,1,,360,0.5,180,,
-armor:193,Phæ th«ng C¸i y,armor,2,,1160,0.5,580,,
-armor:194,¸o ¨n mµy,armor,3,,2120,0.5,1060,,
-armor:195,Thæ Ma C¸i y,armor,4,,3080,0.5,1540,,
-armor:196,TÇm Ma C¸i y,armor,5,,4040,0.5,2020,,
-armor:197,Háa Ma C¸i y,armor,6,,5000,0.5,2500,,
-armor:198,ThËp ph­¬ng C¸i y,armor,7,,5960,0.5,2980,,
-armor:199,B¸ch kÕt C¸i y,armor,8,,6920,0.5,3460,,
-armor:200,TriÒn T¬ Thiªn KÕt phôc,armor,9,,7880,0.5,3940,,
-armor:201,V¹n L­u Quy T«ng Y,armor,10,,8840,0.5,4420,,
-armor:202,¸o v¶i th«,armor,1,,360,0.5,180,,
-armor:203,¸o v¶i th«,armor,2,,1160,0.5,580,,
-armor:204,¸o v¶i th«,armor,3,,2120,0.5,1060,,
-armor:205,¸o v¶i th«,armor,4,,3080,0.5,1540,,
-armor:206,Hoµng CÈm ®o¶n y,armor,5,,4040,0.5,2020,,
-armor:207,Chøc gi¸p ®o¶n sam,armor,6,,5000,0.5,2500,,
-armor:208,HuyÒn Hoµng ®o¶n gi¸p,armor,7,,5960,0.5,2980,,
-armor:209,BÝch Hoa Bµo,armor,8,,6920,0.5,3460,,
-armor:210,T­¬ng Nh­ bµo,armor,9,,7880,0.5,3940,,
-armor:211,TuyÒn Long bµo,armor,10,,8840,0.5,4420,,
-armor:212,Sa Ni phôc,armor,1,,360,0.5,180,,
-armor:213,T¨ng bµo,armor,2,,1160,0.5,580,,
-armor:214,B¸ch N¹p y,armor,3,,2120,0.5,1060,,
-armor:215,An ®µ héi,armor,4,,3080,0.5,1540,,
-armor:216,UÊt §a La T¨ng,armor,5,,4040,0.5,2020,,
-armor:217,T¨ng Hµi,armor,6,,5000,0.5,2500,,
-armor:218,NguyÖn B¹ch cµ sa,armor,7,,5960,0.5,2980,,
-armor:219,Minh tÜnh cµ sa,armor,8,,6920,0.5,3460,,
-armor:220,Kim L« cµ sa,armor,9,,7880,0.5,3940,,
-armor:221,ThÊt B¶o cµ sa,armor,10,,8840,0.5,4420,,
-armor:222,N÷ thøc ®¹o y,armor,1,,360,0.5,180,,
-armor:223,Tu Ch©n ®¹o y,armor,2,,1160,0.5,580,,
-armor:224,Háa Hoµn ®¹o y,armor,3,,2120,0.5,1060,,
-armor:225,BÝch Hµ ®¹o y,armor,4,,3080,0.5,1540,,
-armor:226,B¸t qu¸i ®¹o y,armor,5,,4040,0.5,2020,,
-armor:227,Hµn Mai ®¹o y,armor,6,,5000,0.5,2500,,
-armor:228,V« Cùc §¹o y,armor,7,,5960,0.5,2980,,
-armor:229,§Þa Duyªn ®¹o y,armor,8,,6920,0.5,3460,,
-armor:230,B¨ng Tµm ®¹o y,armor,9,,7880,0.5,3940,,
-armor:231,Long Tiªu ®¹o y,armor,10,,8840,0.5,4420,,
-armor:232,Thôc CÈm y,armor,1,,360,0.5,180,,
-armor:233,L¨ng T¬ y,armor,2,,1160,0.5,580,,
-armor:234,CÈm Träng y,armor,3,,2120,0.5,1060,,
-armor:235,Linh Xµ y,armor,4,,3080,0.5,1540,,
-armor:236,HuyÒn Ly y,armor,5,,4040,0.5,2020,,
-armor:237,H¾c B¸o y,armor,6,,5000,0.5,2500,,
-armor:238,Hæ B× y,armor,7,,5960,0.5,2980,,
-armor:239,VËn Nghª th­êng,armor,8,,6920,0.5,3460,,
-armor:240,Mª Hån Th­êng,armor,9,,7880,0.5,3940,,
-armor:241,Cöu VÜ B¹ch Hå trang,armor,10,,8840,0.5,4420,,
-armor:242,CÈm Sam,armor,1,,360,0.5,180,,
-armor:243,Khëi Ly sam,armor,2,,1160,0.5,580,,
-armor:244,Hoa Sa sam,armor,3,,2120,0.5,1060,,
-armor:245,Thôc CÈm Sam,armor,4,,3080,0.5,1540,,
-armor:246,Tèng CÈm Sam,armor,5,,4040,0.5,2020,,
-armor:247,V©n CÈm Sam,armor,6,,5000,0.5,2500,,
-armor:248,Thanh La sam,armor,7,,5960,0.5,2980,,
-armor:249,TÊt Sa sam,armor,8,,6920,0.5,3460,,
-armor:250,L¨ng La sam,armor,9,,7880,0.5,3940,,
-armor:251,TrÇm H­¬ng sam,armor,10,,8840,0.5,4420,,
-armor:252,Kh¶m ThiÕt n÷ gi¸p,armor,1,,360,0.5,180,,
-armor:253,Thanh §ång n÷ gi¸p,armor,2,,1160,0.5,580,,
-armor:254,B¹ch NhÜ gi¸p,armor,3,,2120,0.5,1060,,
-armor:255,Lam YÕn Cang gi¸p,armor,4,,3080,0.5,1540,,
-armor:256,Hång NhÜ gi¸p,armor,5,,4040,0.5,2020,,
-armor:257,XÝch Nh¹n gi¸p,armor,6,,5000,0.5,2500,,
-armor:258,HuyÕt §ång gi¸p,armor,7,,5960,0.5,2980,,
-armor:259,Lan Ng©n gi¸p,armor,8,,6920,0.5,3460,,
-armor:260,HuyÒn ThiÕt TuyÕt Ng©n gi¸p,armor,9,,7880,0.5,3940,,
-armor:261,TÝch LÞch Kim Phông gi¸p,armor,10,,8840,0.5,4420,,
-armor:262,Ph¸ Ma y,armor,1,,360,0.5,180,,
-armor:263,Ph¸ Miªn y,armor,2,,1160,0.5,580,,
-armor:264,Ph¸ Cæn y,armor,3,,2120,0.5,1060,,
-armor:265,B¹ch Bæ y,armor,4,,3080,0.5,1540,,
-armor:266,Thiªn bæ y,armor,5,,4040,0.5,2020,,
-armor:267,D­¬ng B× gi¸p,armor,6,,5000,0.5,2500,,
-armor:268,Ng­u B× gi¸p,armor,7,,5960,0.5,2980,,
-armor:269,Tö Thö y,armor,8,,6920,0.5,3460,,
-armor:270,Kh«i §iªu y,armor,9,,7880,0.5,3940,,
-armor:271,V¹n Chóng TÒ T©m Y,armor,10,,8840,0.5,4420,,
-armor:272,B¹ch §iÖp quÇn,armor,1,,360,0.5,180,,
-armor:273,Thanh La quÇn,armor,2,,1160,0.5,580,,
-armor:274,Chøc CÈm Th¹ch Lùu quÇn,armor,3,,2120,0.5,1060,,
-armor:275,Song §iÖp Tó La quÇn,armor,4,,3080,0.5,1540,,
-armor:276,B¸ch ¤ quÇn,armor,5,,4040,0.5,2020,,
-armor:277,NguyÖt Hoa quÇn,armor,6,,5000,0.5,2500,,
-armor:278,Phong VÜ quÇn,armor,7,,5960,0.5,2980,,
-armor:279,Kinh B¶o quÇn,armor,8,,6920,0.5,3460,,
-armor:280,B¸ch Phong TriÒu D­¬ng quÇn,armor,9,,7880,0.5,3940,,
-armor:281,L­u Tiªn QuÇn,armor,10,,8840,0.5,4420,,
-armor:282,Phong Trang,armor,1,,360,0.5,180,,
-armor:283,Kinh Thiªn gi¸p,armor,2,,1160,0.5,580,,
-armor:284,Thanh TuyÖt Y,armor,3,,2120,0.5,1060,,
-armor:285,Phông quÇn,armor,4,,3080,0.5,1540,,
-armor:286,KhÊp §Þa quÇn,armor,5,,4040,0.5,2020,,
-armor:287,B¨ng Tinh QuÇn,armor,6,,5000,0.5,2500,,
-armor:288,NhËn ¸o míi,armor,7,,5960,0.5,2980,,
-armor:289,¸o mõng tuæi,armor,8,,6920,0.5,3460,,
-armor:290,B¨ng Tinh QuÇn,armor,9,,7880,0.5,3940,,
-armor:291,B¨ng Tinh QuÇn,armor,10,,8840,0.5,4420,,
-helm:2,Sa Di Giíi C«,helm,1,,360,0.5,180,,
-helm:3,T¨ng Giíi C«,helm,2,,1160,0.5,580,,
-helm:4,PhËt Ên Giíi C«,helm,3,,2120,0.5,1060,,
-helm:5,T¨ng Giµ Giíi C«,helm,4,,3080,0.5,1540,,
-helm:6,Kh«n Léc m·o,helm,5,,4040,0.5,2020,,
-helm:7,L©m Liªn M·o,helm,6,,5000,0.5,2500,,
-helm:8,Phï Dung M·o,helm,7,,5960,0.5,2980,,
-helm:9,ThÈm Lu©n M·o,helm,8,,6920,0.5,3460,,
-helm:10,NiÖm Ninh M·o,helm,9,,7880,0.5,3940,,
-helm:11,Tú L« m·o,helm,10,,8840,0.5,4420,,
-helm:12,Méc Tr©m,helm,1,,360,0.5,180,,
-helm:13,Hoµng D­¬ng Méc Tr©m,helm,2,,1160,0.5,580,,
-helm:14,Cµn Kh«n kÕt,helm,3,,2120,0.5,1060,,
-helm:15,Th¸i cùc Qu¸n,helm,4,,3080,0.5,1540,,
-helm:16,B¸t Qu¸i C©n,helm,5,,4040,0.5,2020,,
-helm:17,Cµn Kh¶m C©n,helm,6,,5000,0.5,2500,,
-helm:18,Ngò Nh¹c Qu¸n,helm,7,,5960,0.5,2980,,
-helm:19,Th­îng Thanh Qu¸n,helm,8,,6920,0.5,3460,,
-helm:20,Tinh Qu¸n,helm,9,,7880,0.5,3940,,
-helm:21,Ngò l·o qu¸n,helm,10,,8840,0.5,4420,,
-helm:22,Tróc L¹p,helm,1,,360,0.5,180,,
-helm:23,Ng­ L¹p,helm,2,,1160,0.5,580,,
-helm:24,ThÈm L« Th¶o M·o,helm,3,,2120,0.5,1060,,
-helm:25,Chu Tao th¶o M·o,helm,4,,3080,0.5,1540,,
-helm:26,HuyÒn Sa DiÖn Tr¸o,helm,5,,4040,0.5,2020,,
-helm:27,Thanh S¸t diÖn tr¸o,helm,6,,5000,0.5,2500,,
-helm:28,Nh©n B× DiÖn Tr¸o,helm,7,,5960,0.5,2980,,
-helm:29,Ngò §éc ph¸t kÕt,helm,8,,6920,0.5,3460,,
-helm:30,B¸ch §éc ph¸t kÕt,helm,9,,7880,0.5,3940,,
-helm:31,Tu La Ph¸t kÕt,helm,10,,8840,0.5,4420,,
-helm:32,Nho C©n,helm,1,,360,0.5,180,,
-helm:33,TiÕn Kiªn Qu¸n,helm,2,,1160,0.5,580,,
-helm:34,ViÖt Mü Qu¸n,helm,3,,2120,0.5,1060,,
-helm:35,Phi YÕn Qu¸n,helm,4,,3080,0.5,1540,,
-helm:36,§iªu ThiÒn Qu¸n,helm,5,,4040,0.5,2020,,
-helm:37,Lang Tµ Qu¸n,helm,6,,5000,0.5,2500,,
-helm:38,Anh L¹c Qu¸n,helm,7,,5960,0.5,2980,,
-helm:39,Tö Kim ph¸t Qu¸n,helm,8,,6920,0.5,3460,,
-helm:40,ThÊt B¶o ph¸t Qu¸n,helm,9,,7880,0.5,3940,,
-helm:41,Th«ng Thiªn Ph¸t Qu¸n,helm,10,,8840,0.5,4420,,
-helm:42,§ång Kh«i,helm,1,,360,0.5,180,,
-helm:43,B¸n DiÖn Kh«i,helm,2,,1160,0.5,580,,
-helm:44,Song DiÖn Kh«i,helm,3,,2120,0.5,1060,,
-helm:45,ThiÕt Kh«i,helm,4,,3080,0.5,1540,,
-helm:46,Tinh §ång §Çu Kh«i,helm,5,,4040,0.5,2020,,
-helm:47,Cang kh«i,helm,6,,5000,0.5,2500,,
-helm:48,Ng©n Kh«i,helm,7,,5960,0.5,2980,,
-helm:49,Tinh Cang Kh«i,helm,8,,6920,0.5,3460,,
-helm:50,Kim Kh«i,helm,9,,7880,0.5,3940,,
-helm:51,YÓm NhËt kh«i,helm,10,,8840,0.5,4420,,
-helm:52,Ph¸ Bè C©n,helm,1,,360,0.5,180,,
-helm:53,B¸t Ph­¬ng C©n,helm,2,,1160,0.5,580,,
-helm:54,Tiªu Diªu C©n,helm,3,,2120,0.5,1060,,
-helm:55,Lé Thiªn C©n,helm,4,,3080,0.5,1540,,
-helm:56,B¹ch Thùc Hoµn,helm,5,,4040,0.5,2020,,
-helm:57,L­u Ly Hoµn,helm,6,,5000,0.5,2500,,
-helm:58,Song TÇng L­u Ly Hoµn,helm,7,,5960,0.5,2980,,
-helm:59,TÝn nhía Hoµn,helm,8,,6920,0.5,3460,,
-helm:60,T×nh nhía Hoµn,helm,9,,7880,0.5,3940,,
-helm:61,TrÝch Tinh hoµn,helm,10,,8840,0.5,4420,,
-helm:62,Bè C©n,helm,1,,360,0.5,180,,
-helm:63,B×nh §Ønh C©n,helm,2,,1160,0.5,580,,
-helm:64,Bè Nhóng C©n,helm,3,,2120,0.5,1060,,
-helm:65,Nh¹n Vò C©n,helm,4,,3080,0.5,1540,,
-helm:66,Y T¬ Ph¸t §¸i,helm,5,,4040,0.5,2020,,
-helm:67,Kim T¬ Qu¸n,helm,6,,5000,0.5,2500,,
-helm:68,Chu Khëi Qu¸n,helm,7,,5960,0.5,2980,,
-helm:69,Doanh Gi¸c M·o,helm,8,,6920,0.5,3460,,
-helm:70,Tµm T¬ M·o,helm,9,,7880,0.5,3940,,
-helm:71,¤ Tµm M·o,helm,10,,8840,0.5,4420,,
-helm:72,ThÝch Ni M·o,helm,1,,360,0.5,180,,
-helm:73,ThÝch Ni M·o,helm,2,,1160,0.5,580,,
-helm:74,ThÝch Ni M·o,helm,3,,2120,0.5,1060,,
-helm:75,ThÝch Ni M·o,helm,4,,3080,0.5,1540,,
-helm:76,Thanh M·o,helm,5,,4040,0.5,2020,,
-helm:77,Thanh Anh M·o,helm,6,,5000,0.5,2500,,
-helm:78,Thiªn Thanh M·o,helm,7,,5960,0.5,2980,,
-helm:79,XÝch ¶nh ph¸t Qu¸n,helm,8,,6920,0.5,3460,,
-helm:80,V« T­íng Ph¸p Qu¸n,helm,9,,7880,0.5,3940,,
-helm:81,Quan ¢m Ph¸t Qu¸n,helm,10,,8840,0.5,4420,,
-helm:82,Ng©n Thoa,helm,1,,360,0.5,180,,
-helm:83,Ng©n Liªm Thoa,helm,2,,1160,0.5,580,,
-helm:84,Ng©n LiÖm Thoa,helm,3,,2120,0.5,1060,,
-helm:85,Ng©n Hoµn Thoa,helm,4,,3080,0.5,1540,,
-helm:86,Kim Thoa,helm,5,,4040,0.5,2020,,
-helm:87,Kim Hoµn Thoa,helm,6,,5000,0.5,2500,,
-helm:88,Kim Bé Dao,helm,7,,5960,0.5,2980,,
-helm:89,PhØ Thóy Thoa,helm,8,,6920,0.5,3460,,
-helm:90,Th¸i cùc Qu¸n,helm,9,,7880,0.5,3940,,
-helm:91,¢m D­¬ng V« Cùc qu¸n,helm,10,,8840,0.5,4420,,
-helm:92,B×Trô,helm,1,,360,0.5,180,,
-helm:93,§ång Trô,helm,2,,1160,0.5,580,,
-helm:94,Tinh §ång Trô,helm,3,,2120,0.5,1060,,
-helm:95,XÝch §ån B× M·o,helm,4,,3080,0.5,1540,,
-helm:96,Thó Cèt Tr©m,helm,5,,4040,0.5,2020,,
-helm:97,Tö Cèt Tr©m,helm,6,,5000,0.5,2500,,
-helm:98,HuyÒn Cèt Tr©m,helm,7,,5960,0.5,2980,,
-helm:99,Hæ B×DiÖn Tr¸o,helm,8,,6920,0.5,3460,,
-helm:100,§iªu B× DiÖn Tr¸o,helm,9,,7880,0.5,3940,,
-helm:101,HuyÒn Tª DiÖn Tr¸o,helm,10,,8840,0.5,4420,,
-helm:102,Th« ThiÕt §Çu Hoµn,helm,1,,360,0.5,180,,
-helm:103,TÕ ThiÕt §Çu Hoµn,helm,2,,1160,0.5,580,,
-helm:104,Hoµng §ång §Çu Hoµn,helm,3,,2120,0.5,1060,,
-helm:105,Lôc Ngäc §Çu Hoµn,helm,4,,3080,0.5,1540,,
-helm:106,Kª VÜ Thoa,helm,5,,4040,0.5,2020,,
-helm:107,Anh vò Thoa,helm,6,,5000,0.5,2500,,
-helm:108,Bµn Xµ Thoa,helm,7,,5960,0.5,2980,,
-helm:109,Chu Sa §Çu Hoµn,helm,8,,6920,0.5,3460,,
-helm:110,Minh Ch©u §Çu Hoµn,helm,9,,7880,0.5,3940,,
-helm:111,Long HuyÕt §Çu hoµn,helm,10,,8840,0.5,4420,,
-helm:112,Viªn M·o,helm,1,,360,0.5,180,,
-helm:113,§­êng M·o,helm,2,,1160,0.5,580,,
-helm:114,C©n Qu¶n M·o,helm,3,,2120,0.5,1060,,
-helm:115,Tû Gi¸c M·o,helm,4,,3080,0.5,1540,,
-helm:116,Thanh Phông Qu¸n,helm,5,,4040,0.5,2020,,
-helm:117,Kim Phông Qu¸n,helm,6,,5000,0.5,2500,,
-helm:118,Song Phông TriÒu Thiªn Qu¸n,helm,7,,5960,0.5,2980,,
-helm:119,PhØ Thóy Kh«i,helm,8,,6920,0.5,3460,,
-helm:120,Gi¶i Tr¹i Kh«i,helm,9,,7880,0.5,3940,,
-helm:121,Long L©n Kh«i,helm,10,,8840,0.5,4420,,
-helm:122,Bè M·o,helm,1,,360,0.5,180,,
-helm:123,Viªn §Ønh M·o,helm,2,,1160,0.5,580,,
-helm:124,Ph¹m V¨n M·o,helm,3,,2120,0.5,1060,,
-helm:125,Thanh V¨n Kh«i,helm,4,,3080,0.5,1540,,
-helm:126,Hång Anh Thoa,helm,5,,4040,0.5,2020,,
-helm:127,XÝch HuyÕt Thoa,helm,6,,5000,0.5,2500,,
-helm:128,L­u Ly Thoa,helm,7,,5960,0.5,2980,,
-helm:129,Léc nhÜ Thoa,helm,8,,6920,0.5,3460,,
-helm:130,Lam Tinh Thoa,helm,9,,7880,0.5,3940,,
-helm:131,Thanh Tinh Thoa,helm,10,,8840,0.5,4420,,
-helm:132,Hoµng Bè Ph¸t §¸i,helm,1,,360,0.5,180,,
-helm:133,Hoµng Bè Ph¸t §¸i,helm,2,,1160,0.5,580,,
-helm:134,Hoµng Bè Ph¸t §¸i,helm,3,,2120,0.5,1060,,
-helm:135,Hoµng Bè Ph¸t §¸i,helm,4,,3080,0.5,1540,,
-helm:136,Hoµng §ång Ph¸t Xoa,helm,5,,4040,0.5,2020,,
-helm:137,Hång M· N·o Ph¸t Xoa,helm,6,,5000,0.5,2500,,
-helm:138,Thanh L­u Ly Ph¸t Xoa,helm,7,,5960,0.5,2980,,
-helm:139,Huy Thñy Kh«i,helm,8,,6920,0.5,3460,,
-helm:140,Phông Nh·n Kh«i,helm,9,,7880,0.5,3940,,
-helm:141,Kim Phông TriÓn SÝ,helm,10,,8840,0.5,4420,,
-helm:142,½ðÏÉ¡ï½õÀ½É®Ã±,helm,10,,99999,0.5,49999,,
-boot:2,Th¶o Ngoa,boot,1,,360,0.5,180,,
-boot:3,Bè Ngoa,boot,2,,1160,0.5,580,,
-boot:4,Thiªn tÇng bè Ngoa,boot,3,,2120,0.5,1060,,
-boot:5,C¸t Ngoa,boot,4,,3080,0.5,1540,,
-boot:6,Th­¬ng C¸t Ngoa,boot,5,,4040,0.5,2020,,
-boot:7,B¸ch Niªn Th­¬ng C¸t Ngoa,boot,6,,5000,0.5,2500,,
-boot:8,TrÜ VÜ Tèng Ngoa,boot,7,,5960,0.5,2980,,
-boot:9,Giao Ngoa,boot,8,,6920,0.5,3460,,
-boot:10,Phong VÜ Tèng Ngoa,boot,9,,7880,0.5,3940,,
-boot:11,Cöu TiÕt X­¬ng VÜ Ngoa,boot,10,,8840,0.5,4420,,
-boot:12,Ng­u B× ngoa,boot,1,,360,0.5,180,,
-boot:13,TËt Ngoa,boot,2,,1160,0.5,580,,
-boot:14,¤ B× Ngoa,boot,3,,2120,0.5,1060,,
-boot:15,§»ng Méng Ngoa,boot,4,,3080,0.5,1540,,
-boot:16,Phi La Ngoa,boot,5,,4040,0.5,2020,,
-boot:17,Lôc Thóy Ngoa,boot,6,,5000,0.5,2500,,
-boot:18,Hæ B× Ngoa,boot,7,,5960,0.5,2980,,
-boot:19,Tª B× Ngoa,boot,8,,6920,0.5,3460,,
-boot:20,Long L©n Ngoa,boot,9,,7880,0.5,3940,,
-boot:21,Thiªn Tµm Ngoa,boot,10,,8840,0.5,4420,,
-boot:22,Tó Ngoa,boot,1,,360,0.5,180,,
-boot:23,L¨ng T¬ Ngoa,boot,2,,1160,0.5,580,,
-boot:24,GÊm hµi,boot,3,,2120,0.5,1060,,
-boot:25,Uyªn ¦¬ng Ngoa,boot,4,,3080,0.5,1540,,
-boot:26,Toan Ngoa,boot,5,,4040,0.5,2020,,
-boot:27,L©m Ngäc hµi,boot,6,,5000,0.5,2500,,
-boot:28,Liªn Phong Ngoa,boot,7,,5960,0.5,2980,,
-boot:29,Ph¹m Hång Ngoa,boot,8,,6920,0.5,3460,,
-boot:30,B¹ch Chu ngoa,boot,9,,7880,0.5,3940,,
-boot:31,Kim Lò hµi,boot,10,,8840,0.5,4420,,
-boot:32,Léc B× ngoa,boot,1,,360,0.5,180,,
-boot:33,Kþ hµi,boot,2,,1160,0.5,580,,
-boot:34,Ng©n §o¹n ngoa,boot,3,,2120,0.5,1060,,
-boot:35,Phï Dung ngoa,boot,4,,3080,0.5,1540,,
-boot:36,Háa T­êng Ngoa,boot,5,,4040,0.5,2020,,
-boot:37,Môc V©n ngoa,boot,6,,5000,0.5,2500,,
-boot:38,X­¬ng Hoµn ngoa,boot,7,,5960,0.5,2980,,
-boot:39,TuyÕt Doanh ngoa,boot,8,,6920,0.5,3460,,
-boot:40,SÝnh Sa ngoa,boot,9,,7880,0.5,3940,,
-boot:41,Phi Phông Ngoa,boot,10,,8840,0.5,4420,,
-belt:2,Ng­u B× Yªu §¸i,belt,1,,360,0.5,180,,
-belt:3,Lang B× Yªu §¸i,belt,2,,1160,0.5,580,,
-belt:4,¤ §»ng Yªu §¸i,belt,3,,2120,0.5,1060,,
-belt:5,M·ng B× Yªu §¸i,belt,4,,3080,0.5,1540,,
-belt:6,Ng¹c B× Yªu §¸i,belt,5,,4040,0.5,2020,,
-belt:7,T­îng B× Yªu §¸i,belt,6,,5000,0.5,2500,,
-belt:8,Sa B× Yªu §¸i,belt,7,,5960,0.5,2980,,
-belt:9,Tª Gi¸c Yªu §¸i,belt,8,,6920,0.5,3460,,
-belt:10,Long L©n Yªu §¸i,belt,9,,7880,0.5,3940,,
-belt:11,Thiªn Tµm Yªu §¸i,belt,10,,8840,0.5,4420,,
-belt:12,Tinh §ång Yªu §¸i,belt,1,,360,0.5,180,,
-belt:13,TÝch Yªu §¸i,belt,2,,1160,0.5,580,,
-belt:14,Hoµng §ång Yªu §¸i,belt,3,,2120,0.5,1060,,
-belt:15,ThiÕt Yªu §¸i,belt,4,,3080,0.5,1540,,
-belt:16,Tinh §ång Yªu §¸i,belt,5,,4040,0.5,2020,,
-belt:17,Ng©n Yªu §¸i,belt,6,,5000,0.5,2500,,
-belt:18,MËt Ng©n Yªu §¸i,belt,7,,5960,0.5,2980,,
-belt:19,Kim Yªu §¸i,belt,8,,6920,0.5,3460,,
-belt:20,¤ Ng©n Yªu §¸i,belt,9,,7880,0.5,3940,,
-belt:21,B¹ch Kim Yªu §¸i,belt,10,,8840,0.5,4420,,
-cuff:2,Thanh §ång Thñ Tr¹c,cuff,1,,360,0.5,180,,
-cuff:3,LuyÖn §ång Thñ Tr¹c,cuff,2,,1160,0.5,580,,
-cuff:4,TÊn ThiÕt Hé UyÓn,cuff,3,,2120,0.5,1060,,
-cuff:5,Ng©n T¬ Tr¹c,cuff,4,,3080,0.5,1540,,
-cuff:6,Kim T¬ Tr¹c,cuff,5,,4040,0.5,2020,,
-cuff:7,B¹ch Ngäc Tr¹c,cuff,6,,5000,0.5,2500,,
-cuff:8,PhØ Thóy Ngäc Tr¹c,cuff,7,,5960,0.5,2980,,
-cuff:9,¤n L­¬ng Ngäc TR¹c,cuff,8,,6920,0.5,3460,,
-cuff:10,B¨ng Ph¸ch Hµn Ngäc Tr¹c,cuff,9,,7880,0.5,3940,,
-cuff:11,Long Phông HuyÕt Ngäc Tr¹c,cuff,10,,8840,0.5,4420,,
-cuff:12,Ng­u B× Hé UyÓn,cuff,1,,360,0.5,180,,
-cuff:13,Lang B× Hé UyÓn,cuff,2,,1160,0.5,580,,
-cuff:14,¤ §»ng Hé UyÓn,cuff,3,,2120,0.5,1060,,
-cuff:15,M·ng B× Hé UyÓn,cuff,4,,3080,0.5,1540,,
-cuff:16,Ng¹c B× Hé UyÓn,cuff,5,,4040,0.5,2020,,
-cuff:17,T­îng B× Hé UyÓn,cuff,6,,5000,0.5,2500,,
-cuff:18,Sa B× Hé UyÓn,cuff,7,,5960,0.5,2980,,
-cuff:19,Tª Gi¸c Hé UyÓn,cuff,8,,6920,0.5,3460,,
-cuff:20,Long L©n Hé UyÓn,cuff,9,,7880,0.5,3940,,
-cuff:21,Thiªn Tµm Hé UyÓn,cuff,10,,8840,0.5,4420,,
-ring:2,Hoµng Ngäc Giíi ChØ,ring,1,,360,0.5,180,,
-ring:3,C¶m L·m Th¹ch Giíi ChØ,ring,2,,1160,0.5,580,,
-ring:4,Phï Dung Th¹ch Giíi ChØ,ring,3,,2120,0.5,1060,,
-ring:5,PhØ Thóy Giíi ChØ,ring,4,,3080,0.5,1540,,
-ring:6,Thóy Lùu Th¹ch Giíi ChØ,ring,5,,4040,0.5,2020,,
-ring:7,Tæ MÉu Lôc Giíi ChØ,ring,6,,5000,0.5,2500,,
-ring:8,H¶i Lam B¶o Th¹ch Giíi ChØ,ring,7,,5960,0.5,2980,,
-ring:9,Hång B¶o Th¹ch Giíi ChØ,ring,8,,6920,0.5,3460,,
-ring:10,Lam B¶o Th¹ch Giíi ChØ,ring,9,,7880,0.5,3940,,
-ring:11,Toµn Th¹ch Giíi ChØ,ring,10,,8840,0.5,4420,,
-amulet:2,§ång H¹ng Liªn,amulet,1,,360,0.5,180,,
-amulet:3,Ng©n H¹ng Liªn,amulet,2,,1160,0.5,580,,
-amulet:4,Kim H¹ng Liªn,amulet,3,,2120,0.5,1060,,
-amulet:5,B¹ch Kim H¹ng Liªn,amulet,4,,3080,0.5,1540,,
-amulet:6,Ngäc Ch©u H¹ng Liªn,amulet,5,,4040,0.5,2020,,
-amulet:7,Lôc Tïng Th¹ch H¹ng Liªn,amulet,6,,5000,0.5,2500,,
-amulet:8,Thñy Tinh H¹ng Liªn,amulet,7,,5960,0.5,2980,,
-amulet:9,Khæng T­íc Th¹ch H¹ng Liªn,amulet,8,,6920,0.5,3460,,
-amulet:10,Tr©n Ch©u H¹ng Liªn,amulet,9,,7880,0.5,3940,,
-amulet:11,Toµn Th¹ch H¹ng Liªn,amulet,10,,8840,0.5,4420,,
-amulet:12,Lôc Tïng Th¹ch Hé Th©n phï,amulet,1,,360,0.5,180,,
-amulet:13,San H« Hé Th©n phï,amulet,2,,1160,0.5,580,,
-amulet:14,Miªu Nh·n Hé Th©n phï,amulet,3,,2120,0.5,1060,,
-amulet:15,Hæ T×nh Hé Th©n phï,amulet,4,,3080,0.5,1540,,
-amulet:16,Thñy Tinh Hé Th©n phï,amulet,5,,4040,0.5,2020,,
-amulet:17,Hæ Ph¸ch Hé Th©n phï,amulet,6,,5000,0.5,2500,,
-amulet:18,B¹ch PhØ Thóy Hé Th©n phï,amulet,7,,5960,0.5,2980,,
-amulet:19,Hång PhØ Thóy Hé Th©n phï,amulet,8,,6920,0.5,3460,,
-amulet:20,Tö PhØ Thóy Hé Th©n phï,amulet,9,,7880,0.5,3940,,
-amulet:21,Lôc PhØ Thóy Hé Th©n phï,amulet,10,,8840,0.5,4420,,
-pendant:2,Hu©n Y H­¬ng Nang,pendant,1,,100,0.5,50,,
-pendant:3,M¹t LÞ H­¬ng Nang,pendant,2,,400,0.5,200,,
-pendant:4,Nhò H­¬ng H­¬ng Nang,pendant,3,,900,0.5,450,,
-pendant:5,Lan Hoa H­¬ng Nang,pendant,4,,1600,0.5,800,,
-pendant:6,Hîp Hoan H­¬ng Nang,pendant,5,,2500,0.5,1250,,
-pendant:7,Tö T« H­¬ng Nang,pendant,6,,3600,0.5,1800,,
-pendant:8,TrÇm §µn H­¬ng Nang,pendant,7,,4900,0.5,2450,,
-pendant:9,Tiªn X¹ H­¬ng Nang,pendant,8,,6400,0.5,3200,,
-pendant:10,Giµ Nam H­¬ng Nang,pendant,9,,8100,0.5,4050,,
-pendant:11,Long Tiªn H­¬ng Nang,pendant,10,,10000,0.5,5000,,
-pendant:12,Du Diªn Ngäc Béi,pendant,1,,100,0.5,50,,
-pendant:13,Kinh B¹ch Ngäc Béi,pendant,2,,400,0.5,200,,
-pendant:14,§µo Hoa Ngäc Béi,pendant,3,,900,0.5,450,,
-pendant:15,Mai Hoa  Ngäc Béi,pendant,4,,1600,0.5,800,,
-pendant:16,Ngò S¾c Ngäc Béi,pendant,5,,2500,0.5,1250,,
-pendant:17,Thanh Ngäc Ngäc Béi,pendant,6,,3600,0.5,1800,,
-pendant:18,BÝch Ngäc Ngäc Béi,pendant,7,,4900,0.5,2450,,
-pendant:19,MÆc Ngäc Ngäc Béi,pendant,8,,6400,0.5,3200,,
-pendant:20,Hoµng Ngäc Ngäc Béi,pendant,9,,8100,0.5,4050,,
-pendant:21,D­¬ng Chi B¹ch Ngäc,pendant,10,,10000,0.5,5000,,
-mantle:2,ÆÆ¾ÉµÄÅû·ç,mantle,1,,0,0.5,0,,
-mantle:3,ÆÆ¾ÉµÄÅû·ç1,mantle,2,,0,0.5,0,,
-mantle:4,ÆÆ¾ÉµÄÅû·ç2,mantle,3,,0,0.5,0,,
-horse:2,LiÖt Hoµng M·,horse,1,,2500,0.5,1250,,
-horse:3,LiÖt Hoµng M·,horse,2,,2500,0.5,1250,,
-horse:4,Hoµng M·,horse,3,,5000,0.5,2500,,
-horse:5,Hoµng M·,horse,4,,5000,0.5,2500,,
-horse:6,Hoµng Phiªu,horse,5,,10000,0.5,5000,,
-horse:7,Hoµng Phiªu,horse,6,,10000,0.5,5000,,
-horse:8,§¹i UyÓn Hoµng M·,horse,7,,25000,0.5,12500,,
-horse:9,§¹i UyÓn Hoµng M·,horse,8,,25000,0.5,12500,,
-horse:10,Phi Hoµng,horse,9,,50000,0.5,25000,,
-horse:11,Phi Hoµng,horse,10,,50000,0.5,25000,,
-horse:12,LiÖt Thanh M·,horse,1,,2500,0.5,1250,,
-horse:13,LiÖt Thanh M·,horse,2,,2500,0.5,1250,,
-horse:14,Thanh Th«ng,horse,3,,5000,0.5,2500,,
-horse:15,Thanh Th«ng,horse,4,,5000,0.5,2500,,
-horse:16,Tö L­u,horse,5,,10000,0.5,5000,,
-horse:17,Tö L­u,horse,6,,10000,0.5,5000,,
-horse:18,§¹i UyÓn Thanh M·,horse,7,,25000,0.5,12500,,
-horse:19,§¹i UyÓn Thanh M·,horse,8,,25000,0.5,12500,,
-horse:20,Hoa L­u,horse,9,,50000,0.5,25000,,
-horse:21,Hoa L­u,horse,10,,50000,0.5,25000,,
-horse:22,LiÖt B¹ch M·,horse,1,,2500,0.5,1250,,
-horse:23,LiÖt B¹ch M·,horse,2,,2500,0.5,1250,,
-horse:24,B¹ch M·,horse,3,,5000,0.5,2500,,
-horse:25,B¹ch M·,horse,4,,5000,0.5,2500,,
-horse:26,Ngäc Hoa Th«ng,horse,5,,10000,0.5,5000,,
-horse:27,Ngäc Hoa Th«ng,horse,6,,10000,0.5,5000,,
-horse:28,§¹i UyÓn B¹ch M·,horse,7,,25000,0.5,12500,,
-horse:29,§¹i UyÓn B¹ch M·,horse,8,,25000,0.5,12500,,
-horse:30,Tóc S­¬ng,horse,9,,50000,0.5,25000,,
-horse:31,Tóc S­¬ng,horse,10,,50000,0.5,25000,,
-horse:32,LiÖt H¾c M·,horse,1,,2500,0.5,1250,,
-horse:33,LiÖt H¾c M·,horse,2,,2500,0.5,1250,,
-horse:34,H¾c M·,horse,3,,5000,0.5,2500,,
-horse:35,H¾c M·,horse,4,,5000,0.5,2500,,
-horse:36,H¾c Kú,horse,5,,10000,0.5,5000,,
-horse:37,H¾c Kú,horse,6,,10000,0.5,5000,,
-horse:38,§¹i UyÓn H¾c M·,horse,7,,25000,0.5,12500,,
-horse:39,§¹i UyÓn H¾c M·,horse,8,,25000,0.5,12500,,
-horse:40,¤ Chïy,horse,9,,50000,0.5,25000,,
-horse:41,¤ Chïy,horse,10,,50000,0.5,25000,,
-horse:42,LiÖt Hång M·,horse,1,,2500,0.5,1250,,
-horse:43,LiÖt Hång M·,horse,2,,2500,0.5,1250,,
-horse:44,Hång M·,horse,3,,5000,0.5,2500,,
-horse:45,Hång M·,horse,4,,5000,0.5,2500,,
-horse:46,Hång Ly,horse,5,,10000,0.5,5000,,
-horse:47,Hång Ly,horse,6,,10000,0.5,5000,,
-horse:48,§¹i UyÓn H·n HuyÕt M·,horse,7,,25000,0.5,12500,,
-horse:49,§¹i UyÓn H·n HuyÕt M·,horse,8,,25000,0.5,12500,,
-horse:50,XÝch Ký,horse,9,,50000,0.5,25000,,
-horse:51,XÝch Ký,horse,10,,50000,0.5,25000,,
-horse:52,¤ V©n §¹p TuyÕt,horse,1,,250000,0.5,125000,,
-horse:53,XÝch Thè,horse,2,,250000,0.5,125000,,
-horse:54,TuyÖt ¶nh,horse,3,,250000,0.5,125000,,
-horse:55,§Ých L«,horse,4,,250000,0.5,125000,,
-horse:56,ChiÕu D¹ Ngäc S­ Tö,horse,5,,250000,0.5,125000,,
-horse:57,¤ V©n §¹p TuyÕt,horse,6,,250000,0.5,125000,,
-horse:58,XÝch Thè,horse,7,,250000,0.5,125000,,
-horse:59,TuyÖt ¶nh,horse,8,,250000,0.5,125000,,
-horse:60,§Ých L«,horse,9,,250000,0.5,125000,,
-horse:61,ChiÕu D¹ Ngäc S­ Tö,horse,10,,250000,0.5,125000,,
-horse:62,B«n Tiªu,horse,1,,250000,0.5,125000,,
-horse:63,B«n Tiªu,horse,2,,250000,0.5,125000,,
-horse:64,B«n Tiªu,horse,3,,250000,0.5,125000,,
-horse:65,B«n Tiªu,horse,4,,250000,0.5,125000,,
-horse:66,B«n Tiªu,horse,5,,250000,0.5,125000,,
-horse:67,B«n Tiªu,horse,6,,250000,0.5,125000,,
-horse:68,B«n Tiªu,horse,7,,250000,0.5,125000,,
-horse:69,B«n Tiªu,horse,8,,250000,0.5,125000,,
-horse:70,B«n Tiªu,horse,9,,250000,0.5,125000,,
-horse:71,B«n Tiªu,horse,10,,250000,0.5,125000,,
-horse:72,Phiªn Vò,horse,1,,250000,0.5,125000,,
-horse:73,Phiªn Vò,horse,2,,250000,0.5,125000,,
-horse:74,Phiªn Vò,horse,3,,250000,0.5,125000,,
-horse:75,Phiªn Vò,horse,4,,250000,0.5,125000,,
-horse:76,Phiªn Vò,horse,5,,250000,0.5,125000,,
-horse:77,Phiªn Vò,horse,6,,250000,0.5,125000,,
-horse:78,Phiªn Vò,horse,7,,250000,0.5,125000,,
-horse:79,Phiªn Vò,horse,8,,250000,0.5,125000,,
-horse:80,Phiªn Vò,horse,9,,250000,0.5,125000,,
-horse:81,Phiªn Vò,horse,10,,250000,0.5,125000,,
-horse:82,Phi V©n,horse,1,,50000,0.5,25000,,
-horse:83,Phi V©n,horse,2,,50000,0.5,25000,,
-horse:84,Phi V©n,horse,3,,50000,0.5,25000,,
-horse:85,Phi V©n,horse,4,,50000,0.5,25000,,
-horse:86,Phi V©n,horse,5,,50000,0.5,25000,,
-horse:87,Phi V©n,horse,6,,50000,0.5,25000,,
-horse:88,Phi V©n,horse,7,,50000,0.5,25000,,
-horse:89,Phi V©n,horse,8,,50000,0.5,25000,,
-horse:90,Phi V©n,horse,9,,50000,0.5,25000,,
-horse:91,Phi V©n,horse,10,,50000,0.5,25000,,
-horse:92,XÝch Long C©u,horse,1,,250000,0.5,125000,,
-horse:93,XÝch Long C©u,horse,2,,250000,0.5,125000,,
-horse:94,XÝch Long C©u,horse,3,,250000,0.5,125000,,
-horse:95,XÝch Long C©u,horse,4,,250000,0.5,125000,,
-horse:96,XÝch Long C©u,horse,5,,250000,0.5,125000,,
-horse:97,XÝch Long C©u,horse,6,,250000,0.5,125000,,
-horse:98,XÝch Long C©u,horse,7,,250000,0.5,125000,,
-horse:99,XÝch Long C©u,horse,8,,250000,0.5,125000,,
-horse:100,XÝch Long C©u,horse,9,,250000,0.5,125000,,
-horse:101,XÝch Long C©u,horse,10,,250000,0.5,125000,,
-horse:102,TuyÖt §Þa,horse,1,,250000,0.5,125000,,
-horse:103,TuyÖt §Þa,horse,2,,250000,0.5,125000,,
-horse:104,TuyÖt §Þa,horse,3,,250000,0.5,125000,,
-horse:105,TuyÖt §Þa,horse,4,,250000,0.5,125000,,
-horse:106,TuyÖt §Þa,horse,5,,250000,0.5,125000,,
-horse:107,TuyÖt §Þa,horse,6,,250000,0.5,125000,,
-horse:108,TuyÖt §Þa,horse,7,,250000,0.5,125000,,
-horse:109,TuyÖt §Þa,horse,8,,250000,0.5,125000,,
-horse:110,TuyÖt §Þa,horse,9,,250000,0.5,125000,,
-horse:111,TuyÖt §Þa,horse,10,,250000,0.5,125000,,
-horse:112,Du Huy,horse,1,,250000,0.5,125000,,
-horse:113,Du Huy,horse,2,,250000,0.5,125000,,
-horse:114,Du Huy,horse,3,,250000,0.5,125000,,
-horse:115,Du Huy,horse,4,,250000,0.5,125000,,
-horse:116,Du Huy,horse,5,,250000,0.5,125000,,
-horse:117,Du Huy,horse,6,,250000,0.5,125000,,
-horse:118,Du Huy,horse,7,,250000,0.5,125000,,
-horse:119,Du Huy,horse,8,,250000,0.5,125000,,
-horse:120,Du Huy,horse,9,,250000,0.5,125000,,
-horse:121,Du Huy,horse,10,,250000,0.5,125000,,
-horse:122,§»ng Vô,horse,1,,250000,0.5,125000,,
-horse:123,§»ng Vô,horse,2,,250000,0.5,125000,,
-horse:124,§»ng Vô,horse,3,,250000,0.5,125000,,
-horse:125,§»ng Vô,horse,4,,250000,0.5,125000,,
-horse:126,§»ng Vô,horse,5,,250000,0.5,125000,,
-horse:127,§»ng Vô,horse,6,,250000,0.5,125000,,
-horse:128,§»ng Vô,horse,7,,250000,0.5,125000,,
-horse:129,§»ng Vô,horse,8,,250000,0.5,125000,,
-horse:130,§»ng Vô,horse,9,,250000,0.5,125000,,
-horse:131,§»ng Vô,horse,10,,250000,0.5,125000,,
-horse:132,Siªu Quang,horse,1,,250000,0.5,125000,,
-horse:133,Siªu Quang,horse,2,,250000,0.5,125000,,
-horse:134,Siªu Quang,horse,3,,250000,0.5,125000,,
-horse:135,Siªu Quang,horse,4,,250000,0.5,125000,,
-horse:136,Siªu Quang,horse,5,,250000,0.5,125000,,
-horse:137,Siªu Quang,horse,6,,250000,0.5,125000,,
-horse:138,Siªu Quang,horse,7,,250000,0.5,125000,,
-horse:139,Siªu Quang,horse,8,,250000,0.5,125000,,
-horse:140,Siªu Quang,horse,9,,250000,0.5,125000,,
-horse:141,Siªu Quang,horse,10,,250000,0.5,125000,,
-horse:142,Kim Tinh Hæ V­¬ng,horse,1,,500000,0.5,250000,,
-horse:143,Kim Tinh Hæ V­¬ng,horse,2,,500000,0.5,250000,,
-horse:144,Kim Tinh Hæ V­¬ng,horse,3,,500000,0.5,250000,,
-horse:145,Kim Tinh Hæ V­¬ng,horse,4,,500000,0.5,250000,,
-horse:146,Kim Tinh Hæ V­¬ng,horse,5,,500000,0.5,250000,,
-horse:147,Kim Tinh Hæ V­¬ng,horse,6,,500000,0.5,250000,,
-horse:148,Kim Tinh Hæ V­¬ng,horse,7,,500000,0.5,250000,,
-horse:149,Kim Tinh Hæ V­¬ng,horse,8,,500000,0.5,250000,,
-horse:150,Kim Tinh Hæ V­¬ng,horse,9,,500000,0.5,250000,,
-horse:151,Kim Tinh Hæ V­¬ng,horse,10,,500000,0.5,250000,,
-horse:152,Háa Tinh Kim Hæ V­¬ng,horse,1,,500000,0.5,250000,,
-horse:153,Háa Tinh Kim Hæ V­¬ng,horse,2,,500000,0.5,250000,,
-horse:154,Háa Tinh Kim Hæ V­¬ng,horse,3,,500000,0.5,250000,,
-horse:155,Háa Tinh Kim Hæ V­¬ng,horse,4,,500000,0.5,250000,,
-horse:156,Háa Tinh Kim Hæ V­¬ng,horse,5,,500000,0.5,250000,,
-horse:157,Háa Tinh Kim Hæ V­¬ng,horse,6,,500000,0.5,250000,,
-horse:158,Háa Tinh Kim Hæ V­¬ng,horse,7,,500000,0.5,250000,,
-horse:159,Háa Tinh Kim Hæ V­¬ng,horse,8,,500000,0.5,250000,,
-horse:160,Háa Tinh Kim Hæ V­¬ng,horse,9,,500000,0.5,250000,,
-horse:161,Háa Tinh Kim Hæ V­¬ng,horse,10,,500000,0.5,250000,,
-horse:162,Kim Tinh B¹ch Hæ V­¬ng,horse,1,,500000,0.5,250000,,
-horse:163,Kim Tinh B¹ch Hæ V­¬ng,horse,2,,500000,0.5,250000,,
-horse:164,Kim Tinh B¹ch Hæ V­¬ng,horse,3,,500000,0.5,250000,,
-horse:165,Kim Tinh B¹ch Hæ V­¬ng,horse,4,,500000,0.5,250000,,
-horse:166,Kim Tinh B¹ch Hæ V­¬ng,horse,5,,500000,0.5,250000,,
-horse:167,Kim Tinh B¹ch Hæ V­¬ng,horse,6,,500000,0.5,250000,,
-horse:168,Kim Tinh B¹ch Hæ V­¬ng,horse,7,,500000,0.5,250000,,
-horse:169,Kim Tinh B¹ch Hæ V­¬ng,horse,8,,500000,0.5,250000,,
-horse:170,Kim Tinh B¹ch Hæ V­¬ng,horse,9,,500000,0.5,250000,,
-horse:171,Kim Tinh B¹ch Hæ V­¬ng,horse,10,,500000,0.5,250000,,
-horse:172,Long Tinh H¾c Hæ V­¬ng,horse,1,,500000,0.5,250000,,
-horse:173,Long Tinh H¾c Hæ V­¬ng,horse,2,,500000,0.5,250000,,
-horse:174,Long Tinh H¾c Hæ V­¬ng,horse,3,,500000,0.5,250000,,
-horse:175,Long Tinh H¾c Hæ V­¬ng,horse,4,,500000,0.5,250000,,
-horse:176,Long Tinh H¾c Hæ V­¬ng,horse,5,,500000,0.5,250000,,
-horse:177,Long Tinh H¾c Hæ V­¬ng,horse,6,,500000,0.5,250000,,
-horse:178,Long Tinh H¾c Hæ V­¬ng,horse,7,,500000,0.5,250000,,
-horse:179,Long Tinh H¾c Hæ V­¬ng,horse,8,,500000,0.5,250000,,
-horse:180,Long Tinh H¾c Hæ V­¬ng,horse,9,,500000,0.5,250000,,
-horse:181,Long Tinh H¾c Hæ V­¬ng,horse,10,,500000,0.5,250000,,
-horse:182,H·n HuyÕt Long C©u,horse,1,,500000,0.5,250000,,
-horse:183,H·n HuyÕt Long C©u,horse,2,,500000,0.5,250000,,
-horse:184,H·n HuyÕt Long C©u,horse,3,,500000,0.5,250000,,
-horse:185,H·n HuyÕt Long C©u,horse,4,,500000,0.5,250000,,
-horse:186,H·n HuyÕt Long C©u,horse,5,,500000,0.5,250000,,
-horse:187,H·n HuyÕt Long C©u,horse,6,,500000,0.5,250000,,
-horse:188,H·n HuyÕt Long C©u,horse,7,,500000,0.5,250000,,
-horse:189,H·n HuyÕt Long C©u,horse,8,,500000,0.5,250000,,
-horse:190,H·n HuyÕt Long C©u,horse,9,,500000,0.5,250000,,
-horse:191,H·n HuyÕt Long C©u,horse,10,,500000,0.5,250000,,
-horse:192,Phong V©n B¹ch M·,horse,1,,99999,0.5,49999,,
-horse:193,Phong V©n B¹ch M·,horse,2,,99999,0.5,49999,,
-horse:194,Phong V©n B¹ch M·,horse,3,,99999,0.5,49999,,
-horse:195,Phong V©n B¹ch M·,horse,4,,99999,0.5,49999,,
-horse:196,Phong V©n B¹ch M·,horse,5,,99999,0.5,49999,,
-horse:197,Phong V©n B¹ch M·,horse,6,,99999,0.5,49999,,
-horse:198,Phong V©n B¹ch M·,horse,7,,99999,0.5,49999,,
-horse:199,Phong V©n B¹ch M·,horse,8,,99999,0.5,49999,,
-horse:200,Phong V©n B¹ch M·,horse,9,,99999,0.5,49999,,
-horse:201,Phong V©n B¹ch M·,horse,10,,99999,0.5,49999,,
-horse:202,Phong V©n ChiÕn M·,horse,1,,99999,0.5,49999,,
-horse:203,Phong V©n ChiÕn M·,horse,2,,99999,0.5,49999,,
-horse:204,Phong V©n ChiÕn M·,horse,3,,99999,0.5,49999,,
-horse:205,Phong V©n ChiÕn M·,horse,4,,99999,0.5,49999,,
-horse:206,Phong V©n ChiÕn M·,horse,5,,99999,0.5,49999,,
-horse:207,Phong V©n ChiÕn M·,horse,6,,99999,0.5,49999,,
-horse:208,Phong V©n ChiÕn M·,horse,7,,99999,0.5,49999,,
-horse:209,Phong V©n ChiÕn M·,horse,8,,99999,0.5,49999,,
-horse:210,Phong V©n ChiÕn M·,horse,9,,99999,0.5,49999,,
-horse:211,Phong V©n ChiÕn M·,horse,10,,99999,0.5,49999,,
-horse:212,Phong V©n ThÇn M·,horse,1,,500000,0.5,250000,,
-horse:213,Phong V©n ThÇn M·,horse,2,,500000,0.5,250000,,
-horse:214,Phong V©n ThÇn M·,horse,3,,500000,0.5,250000,,
-horse:215,Phong V©n ThÇn M·,horse,4,,500000,0.5,250000,,
-horse:216,Phong V©n ThÇn M·,horse,5,,500000,0.5,250000,,
-horse:217,Phong V©n ThÇn M·,horse,6,,500000,0.5,250000,,
-horse:218,Phong V©n ThÇn M·,horse,7,,500000,0.5,250000,,
-horse:219,Phong V©n ThÇn M·,horse,8,,500000,0.5,250000,,
-horse:220,Phong V©n ThÇn M·,horse,9,,500000,0.5,250000,,
-horse:221,Phong V©n ThÇn M·,horse,10,,500000,0.5,250000,,
-horse:222,S­ tö,horse,1,,500000,0.5,250000,,
-horse:223,S­ tö,horse,2,,500000,0.5,250000,,
-horse:224,S­ tö,horse,3,,500000,0.5,250000,,
-horse:225,S­ tö,horse,4,,500000,0.5,250000,,
-horse:226,S­ tö,horse,5,,500000,0.5,250000,,
-horse:227,S­ tö,horse,6,,500000,0.5,250000,,
-horse:228,S­ tö,horse,7,,500000,0.5,250000,,
-horse:229,S­ tö,horse,8,,500000,0.5,250000,,
-horse:230,S­ tö,horse,9,,500000,0.5,250000,,
-horse:231,S­ tö,horse,10,,500000,0.5,250000,,
-horse:232,L¹c ®µ,horse,1,,500000,0.5,250000,,
-horse:233,L¹c ®µ,horse,2,,500000,0.5,250000,,
-horse:234,L¹c ®µ,horse,3,,500000,0.5,250000,,
-horse:235,L¹c ®µ,horse,4,,500000,0.5,250000,,
-horse:236,L¹c ®µ,horse,5,,500000,0.5,250000,,
-horse:237,L¹c ®µ,horse,6,,500000,0.5,250000,,
-horse:238,L¹c ®µ,horse,7,,500000,0.5,250000,,
-horse:239,L¹c ®µ,horse,8,,500000,0.5,250000,,
-horse:240,L¹c ®µ,horse,9,,500000,0.5,250000,,
-horse:241,L¹c ®µ,horse,10,,500000,0.5,250000,,
-horse:242,D­¬ng §µ,horse,1,,500000,0.5,250000,,
-horse:243,D­¬ng §µ,horse,2,,500000,0.5,250000,,
-horse:244,D­¬ng §µ,horse,3,,500000,0.5,250000,,
-horse:245,D­¬ng §µ,horse,4,,500000,0.5,250000,,
-horse:246,D­¬ng §µ,horse,5,,500000,0.5,250000,,
-horse:247,D­¬ng §µ,horse,6,,500000,0.5,250000,,
-horse:248,D­¬ng §µ,horse,7,,500000,0.5,250000,,
-horse:249,D­¬ng §µ,horse,8,,500000,0.5,250000,,
-horse:250,D­¬ng §µ,horse,9,,500000,0.5,250000,,
-horse:251,D­¬ng §µ,horse,10,,500000,0.5,250000,,
-horse:252,H­¬u ®èm,horse,1,,500000,0.5,250000,,
-horse:253,H­¬u ®èm,horse,2,,500000,0.5,250000,,
-horse:254,H­¬u ®èm,horse,3,,500000,0.5,250000,,
-horse:255,H­¬u ®èm,horse,4,,500000,0.5,250000,,
-horse:256,H­¬u ®èm,horse,5,,500000,0.5,250000,,
-horse:257,H­¬u ®èm,horse,6,,500000,0.5,250000,,
-horse:258,H­¬u ®èm,horse,7,,500000,0.5,250000,,
-horse:259,H­¬u ®èm,horse,8,,500000,0.5,250000,,
-horse:260,H­¬u ®èm,horse,9,,500000,0.5,250000,,
-horse:261,H­¬u ®èm,horse,10,,500000,0.5,250000,,
-horse:262,D­¬ng Sa,horse,1,,5000,0.5,2500,,
-horse:263,D­¬ng Sa,horse,2,,5000,0.5,2500,,
-horse:264,D­¬ng Sa,horse,3,,5000,0.5,2500,,
-horse:265,D­¬ng Sa,horse,4,,5000,0.5,2500,,
-horse:266,D­¬ng Sa,horse,5,,5000,0.5,2500,,
-horse:267,D­¬ng Sa,horse,6,,5000,0.5,2500,,
-horse:268,D­¬ng Sa,horse,7,,5000,0.5,2500,,
-horse:269,D­¬ng Sa,horse,8,,5000,0.5,2500,,
-horse:270,D­¬ng Sa,horse,9,,5000,0.5,2500,,
-horse:271,D­¬ng Sa,horse,10,,5000,0.5,2500,,
-horse:272,Ngù Phong,horse,1,,5000,0.5,2500,,
-horse:273,Ngù Phong,horse,2,,5000,0.5,2500,,
-horse:274,Ngù Phong,horse,3,,5000,0.5,2500,,
-horse:275,Ngù Phong,horse,4,,5000,0.5,2500,,
-horse:276,Ngù Phong,horse,5,,5000,0.5,2500,,
-horse:277,Ngù Phong,horse,6,,5000,0.5,2500,,
-horse:278,Ngù Phong,horse,7,,5000,0.5,2500,,
-horse:279,Ngù Phong,horse,8,,5000,0.5,2500,,
-horse:280,Ngù Phong,horse,9,,5000,0.5,2500,,
-horse:281,Ngù Phong,horse,10,,5000,0.5,2500,,
-horse:282,Truy ®iÖn,horse,1,,5000,0.5,2500,,
-horse:283,Truy ®iÖn,horse,2,,5000,0.5,2500,,
-horse:284,Truy ®iÖn,horse,3,,5000,0.5,2500,,
-horse:285,Truy ®iÖn,horse,4,,5000,0.5,2500,,
-horse:286,Truy ®iÖn,horse,5,,5000,0.5,2500,,
-horse:287,Truy ®iÖn,horse,6,,5000,0.5,2500,,
-horse:288,Truy ®iÖn,horse,7,,5000,0.5,2500,,
-horse:289,Truy ®iÖn,horse,8,,5000,0.5,2500,,
-horse:290,Truy ®iÖn,horse,9,,5000,0.5,2500,,
-horse:291,Truy ®iÖn,horse,10,,5000,0.5,2500,,
-horse:292,L­u Tinh,horse,1,,5000,0.5,2500,,
-horse:293,L­u Tinh,horse,2,,5000,0.5,2500,,
-horse:294,L­u Tinh,horse,3,,5000,0.5,2500,,
-horse:295,L­u Tinh,horse,4,,5000,0.5,2500,,
-horse:296,L­u Tinh,horse,5,,5000,0.5,2500,,
-horse:297,L­u Tinh,horse,6,,5000,0.5,2500,,
-horse:298,L­u Tinh,horse,7,,5000,0.5,2500,,
-horse:299,L­u Tinh,horse,8,,5000,0.5,2500,,
-horse:300,L­u Tinh,horse,9,,5000,0.5,2500,,
-horse:301,L­u Tinh,horse,10,,5000,0.5,2500,,
-horse:302,À¶÷ëÉñÂ¹,horse,1,,500000,0.5,250000,,
-horse:303,À¶÷ëÉñÂ¹,horse,2,,500000,0.5,250000,,
-horse:304,À¶÷ëÉñÂ¹,horse,3,,500000,0.5,250000,,
-horse:305,À¶÷ëÉñÂ¹,horse,4,,500000,0.5,250000,,
-horse:306,À¶÷ëÉñÂ¹,horse,5,,500000,0.5,250000,,
-horse:307,À¶÷ëÉñÂ¹,horse,6,,500000,0.5,250000,,
-horse:308,À¶÷ëÉñÂ¹,horse,7,,500000,0.5,250000,,
-horse:309,À¶÷ëÉñÂ¹,horse,8,,500000,0.5,250000,,
-horse:310,À¶÷ëÉñÂ¹,horse,9,,500000,0.5,250000,,
-horse:311,À¶÷ëÉñÂ¹,horse,10,,500000,0.5,250000,,
-horse:312,Â¿ÃÃÃÃ,horse,1,,500000,0.5,250000,,
-horse:313,Â¿ÃÃÃÃ,horse,2,,500000,0.5,250000,,
-horse:314,Â¿ÃÃÃÃ,horse,3,,500000,0.5,250000,,
-horse:315,Â¿ÃÃÃÃ,horse,4,,500000,0.5,250000,,
-horse:316,Â¿ÃÃÃÃ,horse,5,,500000,0.5,250000,,
-horse:317,Â¿ÃÃÃÃ,horse,6,,500000,0.5,250000,,
-horse:318,Â¿ÃÃÃÃ,horse,7,,500000,0.5,250000,,
-horse:319,Â¿ÃÃÃÃ,horse,8,,500000,0.5,250000,,
-horse:320,Â¿ÃÃÃÃ,horse,9,,500000,0.5,250000,,
-horse:321,Â¿ÃÃÃÃ,horse,10,,500000,0.5,250000,,
-horse:322,ÈÝ´í,horse,1,,500000,0.5,250000,,
-potion:2,Kim S¸ng D­îc (tiÓu),potion,1,,50,0.5,25,,
-potion:3,Kim S¸ng D­îc (trung),potion,2,,100,0.5,50,,
-potion:4,Kim S¸ng D­îc (®¹i),potion,3,,250,0.5,125,,
-potion:5,Håi Thiªn ®an,potion,4,,300,0.5,150,,
-potion:6,Cöu ChuyÓn Hoµn Hån ®an,potion,5,,1500,0.5,750,,
-potion:7,Ng­ng ThÇn ®an (tiÓu),potion,1,,50,0.5,25,,
-potion:8,Ng­ng ThÇn ®an (trung),potion,2,,100,0.5,50,,
-potion:9,Ng­ng ThÇn ®an (®¹i),potion,3,,250,0.5,125,,
-potion:10,§¹i Bæ t¸n,potion,4,,300,0.5,150,,
-potion:11,¤ ®Çu Hoµn thÇn ®an,potion,5,,1500,0.5,750,,
-potion:12,Thõa Tiªn MËt (tiÓu),potion,1,,80,0.5,40,,
-potion:13,Thõa Tiªn MËt (trung),potion,2,,150,0.5,75,,
-potion:14,Thõa Tiªn MËt (®¹i),potion,3,,375,0.5,187,,
-potion:15,ThÊt KhiÕu Bæ t©m ®an,potion,4,,750,0.5,375,,
-potion:16,Ngò Hoa Ngäc Lé Hoµn,potion,5,,2000,0.5,1000,,
-potion:17,Tam Hoa T¸n,potion,1,,50,0.5,25,,
-potion:18,§ïi gµ,potion,2,,50,0.5,25,,
-potion:19,B¸nh Trung Thu h­,potion,3,,50,0.5,25,,
-potion:20,Toµn Qu¶ hoµn,potion,4,,100,0.5,50,,
-potion:21,Toµn Qu¶ hoµn,potion,5,,100,0.5,50,,
-potion:22,Thanh Ng­u Gi¶i ®éc t¸n,potion,1,,5000,0.5,2500,,
-potion:23,Ho¾c H­¬ng ChÝnh khÝ hoµn,potion,2,,8000,0.5,4000,,
-potion:24,Tam ThuËn t¸n,potion,3,,10000,0.5,5000,,
-potion:25,Ng©n KiÒu Khø ®éc ®an,potion,4,,25000,0.5,12500,,
-potion:26,Long §µm Hãa §éc ®an,potion,5,,50000,0.5,25000,,
-potion:27,Tr­êng MÖnh hoµn,potion,1,,5,0.5,2,,
-potion:28,Gia Bµo hoµn,potion,2,,5,0.5,2,,
-potion:29,§¹i Lùc hoµn,potion,3,,5,0.5,2,,
-potion:30,Cao ThiÓm hoµn,potion,4,,5,0.5,2,,
-potion:31,Cao Trung hoµn,potion,5,,5,0.5,2,,
-potion:32,Phi Tèc hoµn,potion,1,,5,0.5,2,,
-potion:33,B¨ng Phßng hoµn,potion,2,,5,0.5,2,,
-potion:34,L«i Phßng hoµn,potion,3,,5,0.5,2,,
-potion:35,Háa Phßng hoµn,potion,4,,5,0.5,2,,
-potion:36,§éc Phßng hoµn,potion,5,,5,0.5,2,,
-potion:37,B¸nh ch­ng Nh©n t¸o,potion,1,,100,0.5,50,,
-potion:38,Thiªn s¬n  Håi ThÇn ®an,potion,2,,2000,0.5,1000,,
-potion:39,B¸nh ch­ng Nh©n t¸o,potion,3,,100,0.5,50,,
-potion:40,B¸nh ch­ng Nh©n t¸o,potion,4,,100,0.5,50,,
-potion:41,B¸nh ch­ng Nh©n t¸o,potion,5,,100,0.5,50,,
-potion:42,Ngò hoa ngäc lé hoµn ®Æc biÖt,potion,1,,12000,0.5,6000,,
-potion:43,Cöu chuyÓn hoµn hån ®an ®Æc biÖt,potion,2,,12000,0.5,6000,,
-potion:44,Tóc c©n tiÕp m¹ch t¸n,potion,3,,12000,0.5,6000,,
-potion:45,Håi Thiªn T¸i T¹o §¬n,potion,4,,8000,0.5,4000,,
-potion:46,»ØÌìÔÙÔìµ¤,potion,5,,8000,0.5,4000,,
-potion:47,¿ç·þÐÐ¾üµ¤,potion,1,,7000,0.5,3500,,
-potion:48,ËÎ½ðÐÐ¾üµ¤,potion,2,,7000,0.5,3500,,
-potion:49,ÌØÐ§»ØÌìÔÙÔìµ¤,potion,3,,50000,0.5,25000,,
-potion:50,ÁªÈü×¨ÓÃÒ©,potion,4,,7000,0.5,3500,,
+ma_mon,ten,loai,cap,do_hiem,gia_goc,he_so_ban,gia_san_mac_ca,thanh_thi_ban,nhom_kho_hom_nay,ten_unicode
+meleeweapon:2,ThiÕt Trñy thñ,meleeweapon,1,,360,0.5,180,,,Thiết Trủy thủ
+meleeweapon:3,Cang KiÕm,meleeweapon,2,,1160,0.5,580,,,Cang Kiếm
+meleeweapon:4,Thanh Phong KiÕm,meleeweapon,3,,2120,0.5,1060,,,Thanh Phong Kiếm
+meleeweapon:5,Long TuyÒn KiÕm,meleeweapon,4,,3080,0.5,1540,,,Long Tuyền Kiếm
+meleeweapon:6,Tr·m M· KiÕm,meleeweapon,5,,4040,0.5,2020,,,Trãm Mã Kiếm
+meleeweapon:7,¤ Kim KiÕm,meleeweapon,6,,5000,0.5,2500,,,Ô Kim Kiếm
+meleeweapon:8,XØ KhiÕp,meleeweapon,7,,5960,0.5,2980,,,Xỉ Khiếp
+meleeweapon:9,ThÊt XÝch KiÕm,meleeweapon,8,,6920,0.5,3460,,,Thất Xích Kiếm
+meleeweapon:10,Thiªn NhËn KiÕm,meleeweapon,9,,7880,0.5,3940,,,Thiên Nhận Kiếm
+meleeweapon:11,HuyÒn ThiÕt KiÕm,meleeweapon,10,,8840,0.5,4420,,,Huyền Thiết Kiếm
+meleeweapon:12,Yªu §ao,meleeweapon,1,,360,0.5,180,,,Yêu Đao
+meleeweapon:13,§¬n §ao,meleeweapon,2,,1160,0.5,580,,,Đơn Đao
+meleeweapon:14,Quû §Çu §ao,meleeweapon,3,,2120,0.5,1060,,,Quỷ Đầu Đao
+meleeweapon:15,Nh¹n Linh §ao,meleeweapon,4,,3080,0.5,1540,,,Nhạn Linh Đao
+meleeweapon:16,NguyÖt Nha §ao,meleeweapon,5,,4040,0.5,2020,,,Nguyệt Nha Đao
+meleeweapon:17,Ph¸ Phong §ao,meleeweapon,6,,5000,0.5,2500,,,Phá Phong Đao
+meleeweapon:18,Cæn Ch©u B¶o ®ao,meleeweapon,7,,5960,0.5,2980,,,Cổn Châu Bảo đao
+meleeweapon:19,YÓn NguyÖt §ao,meleeweapon,8,,6920,0.5,3460,,,Yển Nguyệt Đao
+meleeweapon:20,Thanh Long §ao,meleeweapon,9,,7880,0.5,3940,,,Thanh Long Đao
+meleeweapon:21,§¹i Phong §ao,meleeweapon,10,,8840,0.5,4420,,,Đại Phong Đao
+meleeweapon:22,Thiªu Háa C«n,meleeweapon,1,,360,0.5,180,,,Thiêu Hỏa Côn
+meleeweapon:23,TÒ Mi C«n,meleeweapon,2,,1160,0.5,580,,,Tề Mi Côn
+meleeweapon:24,Bµn Hoa C«n,meleeweapon,3,,2120,0.5,1060,,,Bàn Hoa Côn
+meleeweapon:25,Hæ VÜ C«n,meleeweapon,4,,3080,0.5,1540,,,Hổ Vĩ Côn
+meleeweapon:26,Tiªu Bæng,meleeweapon,5,,4040,0.5,2020,,,Tiêu Bổng
+meleeweapon:27,Can Bæng,meleeweapon,6,,5000,0.5,2500,,,Can Bổng
+meleeweapon:28,Lang Nha Bæng,meleeweapon,7,,5960,0.5,2980,,,Lang Nha Bổng
+meleeweapon:29,Hçn ThiÕt Bæng,meleeweapon,8,,6920,0.5,3460,,,Hỗn Thiết Bổng
+meleeweapon:30,Gi¸c H¶i Bæng,meleeweapon,9,,7880,0.5,3940,,,Giác Hải Bổng
+meleeweapon:31,Kim C« Bæng,meleeweapon,10,,8840,0.5,4420,,,Kim Cô Bổng
+meleeweapon:32,ThiÕt Th­¬ng,meleeweapon,1,,360,0.5,180,,,Thiết Thương
+meleeweapon:33,Tr­êng Th­¬ng,meleeweapon,2,,1160,0.5,580,,,Trường Thương
+meleeweapon:34,§iÓm Cang Th­¬ng,meleeweapon,3,,2120,0.5,1060,,,Điểm Cang Thương
+meleeweapon:35,C©u Liªm Th­¬ng,meleeweapon,4,,3080,0.5,1540,,,Câu Liêm Thương
+meleeweapon:36,Hoµn tö Th­¬ng,meleeweapon,5,,4040,0.5,2020,,,Hoàn tử Thương
+meleeweapon:37,B¸o vÜ th­¬ng,meleeweapon,6,,5000,0.5,2500,,,Báo vĩ thương
+meleeweapon:38,Nh¹n Linh Th­¬ng,meleeweapon,7,,5960,0.5,2980,,,Nhạn Linh Thương
+meleeweapon:39,Tó Cèt Th­¬ng,meleeweapon,8,,6920,0.5,3460,,,Tú Cốt Thương
+meleeweapon:40,Háa NhuÖ Th­¬ng,meleeweapon,9,,7880,0.5,3940,,,Hỏa Nhuệ Thương
+meleeweapon:41,Ph¸ Thiªn KÝch,meleeweapon,10,,8840,0.5,4420,,,Phá Thiên Kích
+meleeweapon:42,To¸n §Çu chïy,meleeweapon,1,,360,0.5,180,,,Toán Đầu chùy
+meleeweapon:43,B¸t L¨ng chïy,meleeweapon,2,,1160,0.5,580,,,Bát Lăng chùy
+meleeweapon:44,Ngò Tinh chïy,meleeweapon,3,,2120,0.5,1060,,,Ngũ Tinh chùy
+meleeweapon:45,TÝch LÞch chïy,meleeweapon,4,,3080,0.5,1540,,,Tích Lịch chùy
+meleeweapon:46,L­îng Ng©n chïy,meleeweapon,5,,4040,0.5,2020,,,Lượng Ngân chùy
+meleeweapon:47,Lang Nha chïy,meleeweapon,6,,5000,0.5,2500,,,Lang Nha chùy
+meleeweapon:48,LiÖt T©m chïy,meleeweapon,7,,5960,0.5,2980,,,Liệt Tâm chùy
+meleeweapon:49,Kim Qua chïy,meleeweapon,8,,6920,0.5,3460,,,Kim Qua chùy
+meleeweapon:50,NghiÖt Long chïy,meleeweapon,9,,7880,0.5,3940,,,Nghiệt Long chùy
+meleeweapon:51,Ph¸ Thiªn chïy,meleeweapon,10,,8840,0.5,4420,,,Phá Thiên chùy
+meleeweapon:52,Nga Mi ThÝch,meleeweapon,1,,360,0.5,180,,,Nga Mi Thích
+meleeweapon:53,TÊn ThiÕt Song §ao,meleeweapon,2,,1160,0.5,580,,,Tấn Thiết Song Đao
+meleeweapon:54,NguyÖt Nha ThÝch,meleeweapon,3,,2120,0.5,1060,,,Nguyệt Nha Thích
+meleeweapon:55,H¾c B¹ch Song §ao,meleeweapon,4,,3080,0.5,1540,,,Hắc Bạch Song Đao
+meleeweapon:56,TuyÕt Hoa L­îng Ng©n §ao,meleeweapon,5,,4040,0.5,2020,,,Tuyết Hoa Lượng Ngân Đao
+meleeweapon:57,Uyªn ¦¬ng §ao,meleeweapon,6,,5000,0.5,2500,,,Uyên Ương Đao
+meleeweapon:58,Phï Dung §ao,meleeweapon,7,,5960,0.5,2980,,,Phù Dung Đao
+meleeweapon:59,Hå §iÖp Song §ao,meleeweapon,8,,6920,0.5,3460,,,Hồ Điệp Song Đao
+meleeweapon:60,Thu Vò §ao,meleeweapon,9,,7880,0.5,3940,,,Thu Vũ Đao
+meleeweapon:61,Th«n NhËt Tr·m,meleeweapon,10,,8840,0.5,4420,,,Thôn Nhật Trãm
+meleeweapon:62,TriÒn Thñ V¶i Th«,meleeweapon,1,,360,0.5,180,,,Triền Thủ Vải Thô
+meleeweapon:63,TriÒn Thñ GÊm,meleeweapon,2,,1160,0.5,580,,,Triền Thủ Gấm
+meleeweapon:64,TriÒn Thñ Da Hæ,meleeweapon,3,,2120,0.5,1060,,,Triền Thủ Da Hổ
+meleeweapon:65,TriÒn Thñ Tinh X¶o,meleeweapon,4,,3080,0.5,1540,,,Triền Thủ Tinh Xảo
+meleeweapon:66,TriÒn Thñ B¹c S¸ng,meleeweapon,5,,4040,0.5,2020,,,Triền Thủ Bạc Sáng
+meleeweapon:67,TriÒn Thñ M¹ Vµng,meleeweapon,6,,5000,0.5,2500,,,Triền Thủ Mạ Vàng
+meleeweapon:68,TriÒn Thñ L«ng Mùc,meleeweapon,7,,5960,0.5,2980,,,Triền Thủ Lông Mực
+meleeweapon:69,TriÒn Thñ T»m Vµng,meleeweapon,8,,6920,0.5,3460,,,Triền Thủ Tằm Vàng
+meleeweapon:70,TriÒn Thñ G©n Rång,meleeweapon,9,,7880,0.5,3940,,,Triền Thủ Gân Rồng
+meleeweapon:71,TriÒn Thñ XÐ Trêi,meleeweapon,10,,8840,0.5,4420,,,Triền Thủ Xé Trời
+rangeweapon:2,Kim TiÒn tiªu,rangeweapon,1,,360,0.5,180,,,Kim Tiền tiêu
+rangeweapon:3,ThiÕu L©m T¸o Nh©n Tiªu,rangeweapon,2,,1160,0.5,580,,,Thiếu Lâm Táo Nhân Tiêu
+rangeweapon:4,YÕn tö Tiªu,rangeweapon,3,,2120,0.5,1060,,,Yến tử Tiêu
+rangeweapon:5,ThËp tù tiªu,rangeweapon,4,,3080,0.5,1540,,,Thập tự tiêu
+rangeweapon:6,LiÔu DiÖp tiªu,rangeweapon,5,,4040,0.5,2020,,,Liễu Diệp tiêu
+rangeweapon:7,Phi Hoµng Tiªu,rangeweapon,6,,5000,0.5,2500,,,Phi Hoàng Tiêu
+rangeweapon:8,ThiÕu L©m L­îng Ng©n Phi Tiªu,rangeweapon,7,,5960,0.5,2980,,,Thiếu Lâm Lượng Ngân Phi Tiêu
+rangeweapon:9,Hå §iÖp Tiªu,rangeweapon,8,,6920,0.5,3460,,,Hồ Điệp Tiêu
+rangeweapon:10,Kim Tiªu,rangeweapon,9,,7880,0.5,3940,,,Kim Tiêu
+rangeweapon:11,B¸ V­¬ngTiªu,rangeweapon,10,,8840,0.5,4420,,,Bá VươngTiêu
+rangeweapon:12,Phi §ao,rangeweapon,1,,360,0.5,180,,,Phi Đao
+rangeweapon:13,Cang Phi §ao,rangeweapon,2,,1160,0.5,580,,,Cang Phi Đao
+rangeweapon:14,LiÔu DiÖp §ao,rangeweapon,3,,2120,0.5,1060,,,Liễu Diệp Đao
+rangeweapon:15,Nh¹n VÜ §ao,rangeweapon,4,,3080,0.5,1540,,,Nhạn Vĩ Đao
+rangeweapon:16,§¸i Y §ao,rangeweapon,5,,4040,0.5,2020,,,Đái Y Đao
+rangeweapon:17,§µo Hoa §ao,rangeweapon,6,,5000,0.5,2500,,,Đào Hoa Đao
+rangeweapon:18,Quang C¸n §ao,rangeweapon,7,,5960,0.5,2980,,,Quang Cán Đao
+rangeweapon:19,T©m ý §ao,rangeweapon,8,,6920,0.5,3460,,,Tâm ý Đao
+rangeweapon:20,§éc C¬ §ao,rangeweapon,9,,7880,0.5,3940,,,Độc Cơ Đao
+rangeweapon:21,To¸i NguyÖt §ao,rangeweapon,10,,8840,0.5,4420,,,Toái Nguyệt Đao
+rangeweapon:22,Tô TiÔn,rangeweapon,1,,360,0.5,180,,,Tụ Tiễn
+rangeweapon:23,Tóc §Ó Ch©m,rangeweapon,2,,1160,0.5,580,,,Túc Để Châm
+rangeweapon:24,Tinh Trang Tô TiÔn,rangeweapon,3,,2120,0.5,1060,,,Tinh Trang Tụ Tiễn
+rangeweapon:25,Thanh Phong §inh,rangeweapon,4,,3080,0.5,1540,,,Thanh Phong Đinh
+rangeweapon:26,Bèi Trang Nç,rangeweapon,5,,4040,0.5,2020,,,Bối Trang Nỗ
+rangeweapon:27,Hµm Sa X¹ ¶nh,rangeweapon,6,,5000,0.5,2500,,,Hàm Sa Xạ ảnh
+rangeweapon:28,Ph¸ Gi¸p Nç,rangeweapon,7,,5960,0.5,2980,,,Phá Giáp Nỗ
+rangeweapon:29,B¹o Vò Lª Hoa Ch©m,rangeweapon,8,,6920,0.5,3460,,,Bạo Vũ Lê Hoa Châm
+rangeweapon:30,Gia C¸t Nç,rangeweapon,9,,7880,0.5,3940,,,Gia Cát Nỗ
+rangeweapon:31,Khæng T­íc Linh,rangeweapon,10,,8840,0.5,4420,,,Khổng Tước Linh
+armor:2,Sa Di phôc,armor,1,,360,0.5,180,,,Sa Di phục
+armor:3,T¨ng y,armor,2,,1160,0.5,580,,,Tăng y
+armor:4,B¸ch N¹p y,armor,3,,2120,0.5,1060,,,Bách Nạp y
+armor:5,An ®µ héi,armor,4,,3080,0.5,1540,,,An đà hội
+armor:6,UÊt §a La T¨ng,armor,5,,4040,0.5,2020,,,Uất Đa La Tăng
+armor:7,T¨ng Hµi,armor,6,,5000,0.5,2500,,,Tăng Hài
+armor:8,NguyÖn B¹ch Cµ Sa,armor,7,,5960,0.5,2980,,,Nguyện Bạch Cà Sa
+armor:9,Minh TÜnh Cµ Sa,armor,8,,6920,0.5,3460,,,Minh Tĩnh Cà Sa
+armor:10,Kim L« Cµ Sa,armor,9,,7880,0.5,3940,,,Kim Lô Cà Sa
+armor:11,ThÊt B¶o Cµ Sa,armor,10,,8840,0.5,4420,,,Thất Bảo Cà Sa
+armor:12,§¹o sÜ vâ bµo,armor,1,,360,0.5,180,,,Đạo sĩ võ bào
+armor:13,§¹o sÜ tr­êng bµo,armor,2,,1160,0.5,580,,,Đạo sĩ trường bào
+armor:14,TÜnh y,armor,3,,2120,0.5,1060,,,Tĩnh y
+armor:15,Thanh Tïng Ph¸p bµo,armor,4,,3080,0.5,1540,,,Thanh Tùng Pháp bào
+armor:16,Thiªn s­ ®¹o bµo,armor,5,,4040,0.5,2020,,,Thiên sư đạo bào
+armor:17,HuyÒn Vâ ph¸p y,armor,6,,5000,0.5,2500,,,Huyền Võ pháp y
+armor:18,ThÊt B¶o H¹ y,armor,7,,5960,0.5,2980,,,Thất Bảo Hạ y
+armor:19,Tam Thanh Bµo,armor,8,,6920,0.5,3460,,,Tam Thanh Bào
+armor:20,Thiªn Niªn H¹c S­ëng,armor,9,,7880,0.5,3940,,,Thiên Niên Hạc Sưởng
+armor:21,Ch©n Vò Th¸nh Y,armor,10,,8840,0.5,4420,,,Chân Vũ Thánh Y
+armor:22,Cæn y,armor,1,,360,0.5,180,,,Cổn y
+armor:23,TÕ Tróc Cæn y,armor,2,,1160,0.5,580,,,Tế Trúc Cổn y
+armor:24,ThÝch Kh¸ch y,armor,3,,2120,0.5,1060,,,Thích Khách y
+armor:25,Méng mÞ y,armor,4,,3080,0.5,1540,,,Mộng mị y
+armor:26,V« S¾c y,armor,5,,4040,0.5,2020,,,Vô Sắc y
+armor:27,Ng­ NhÉn y,armor,6,,5000,0.5,2500,,,Ngư Nhẫn y
+armor:28,Liªn V©n y,armor,7,,5960,0.5,2980,,,Liên Vân y
+armor:29,Thiªn Méng y,armor,8,,6920,0.5,3460,,,Thiên Mộng y
+armor:30,V« Dung KÝnh y,armor,9,,7880,0.5,3940,,,Vô Dung Kính y
+armor:31,Thiªn NhÉn MËt Trang,armor,10,,8840,0.5,4420,,,Thiên Nhẫn Mật Trang
+armor:32,Th« Bè tr­êng bµo,armor,1,,360,0.5,180,,,Thô Bố trường bào
+armor:33,Khinh C¸t sam,armor,2,,1160,0.5,580,,,Khinh Cát sam
+armor:34,§o¹n bµo,armor,3,,2120,0.5,1060,,,Đoạn bào
+armor:35,DËt HiÖp y,armor,4,,3080,0.5,1540,,,Dật Hiệp y
+armor:36,NhiÖm HiÖp phôc,armor,5,,4040,0.5,2020,,,Nhiệm Hiệp phục
+armor:37,L­u Th¸i Phôc,armor,6,,5000,0.5,2500,,,Lưu Thái Phục
+armor:38,Ng©n T¬ Bµo,armor,7,,5960,0.5,2980,,,Ngân Tơ Bào
+armor:39,Tö Kim bµo,armor,8,,6920,0.5,3460,,,Tử Kim bào
+armor:40,Hµn S­¬ng bµo,armor,9,,7880,0.5,3940,,,Hàn Sương bào
+armor:41,Gi¸ng Sa Bµo,armor,10,,8840,0.5,4420,,,Giáng Sa Bào
+armor:42,Táa Tö gi¸p,armor,1,,360,0.5,180,,,Tỏa Tử giáp
+armor:43,L­ìng §¸ng Kh¶i,armor,2,,1160,0.5,580,,,Lưỡng Đáng Khải
+armor:44,Minh Quang Kh¶i,armor,3,,2120,0.5,1060,,,Minh Quang Khải
+armor:45,TÕ L©n gi¸p,armor,4,,3080,0.5,1540,,,Tế Lân giáp
+armor:46,¤ Chïy gi¸p,armor,5,,4040,0.5,2020,,,Ô Chùy giáp
+armor:47,S¬n V¨n Tù gi¸p,armor,6,,5000,0.5,2500,,,Sơn Văn Tự giáp
+armor:48,Gi¶i Tr¹i gi¸p,armor,7,,5960,0.5,2980,,,Giải Trại giáp
+armor:49,Toan Nghª gi¸p,armor,8,,6920,0.5,3460,,,Toan Nghê giáp
+armor:50,Táa Tö Hoµng Kim gi¸p,armor,9,,7880,0.5,3940,,,Tỏa Tử Hoàng Kim giáp
+armor:51,§­êng Nghª gi¸p,armor,10,,8840,0.5,4420,,,Đường Nghê giáp
+armor:52,Lan Bè y,armor,1,,360,0.5,180,,,Lan Bố y
+armor:53,Phæ th«ng C¸i y,armor,2,,1160,0.5,580,,,Phổ thông Cái y
+armor:54,¸o ¨n mµy,armor,3,,2120,0.5,1060,,,áo ăn mày
+armor:55,Thæ Ma C¸i y,armor,4,,3080,0.5,1540,,,Thổ Ma Cái y
+armor:56,TÇm Ma C¸i y,armor,5,,4040,0.5,2020,,,Tầm Ma Cái y
+armor:57,Háa Ma C¸i y,armor,6,,5000,0.5,2500,,,Hỏa Ma Cái y
+armor:58,ThËp ph­¬ng C¸i y,armor,7,,5960,0.5,2980,,,Thập phương Cái y
+armor:59,B¸ch kÕt C¸i y,armor,8,,6920,0.5,3460,,,Bách kết Cái y
+armor:60,TriÒn T¬ Thiªn KÕt phôc,armor,9,,7880,0.5,3940,,,Triền Tơ Thiên Kết phục
+armor:61,V¹n L­u Quy T«ng Y,armor,10,,8840,0.5,4420,,,Vạn Lưu Quy Tông Y
+armor:62,¸o v¶i th«,armor,1,,360,0.5,180,,,áo vải thô
+armor:63,¸o v¶i th«,armor,2,,1160,0.5,580,,,áo vải thô
+armor:64,¸o v¶i th«,armor,3,,2120,0.5,1060,,,áo vải thô
+armor:65,¸o v¶i th«,armor,4,,3080,0.5,1540,,,áo vải thô
+armor:66,Hoµng CÈm ®o¶n y,armor,5,,4040,0.5,2020,,,Hoàng Cẩm đoản y
+armor:67,Chøc gi¸p ®o¶n sam,armor,6,,5000,0.5,2500,,,Chức giáp đoản sam
+armor:68,HuyÒn Hoµng ®o¶n gi¸p,armor,7,,5960,0.5,2980,,,Huyền Hoàng đoản giáp
+armor:69,BÝch Hoa Bµo,armor,8,,6920,0.5,3460,,,Bích Hoa Bào
+armor:70,T­¬ng Nh­ bµo,armor,9,,7880,0.5,3940,,,Tương Như bào
+armor:71,TuyÒn Long bµo,armor,10,,8840,0.5,4420,,,Tuyền Long bào
+armor:72,Sa Ni phôc,armor,1,,360,0.5,180,,,Sa Ni phục
+armor:73,T¨ng bµo,armor,2,,1160,0.5,580,,,Tăng bào
+armor:74,B¸ch N¹p y,armor,3,,2120,0.5,1060,,,Bách Nạp y
+armor:75,An ®µ héi,armor,4,,3080,0.5,1540,,,An đà hội
+armor:76,UÊt §a La T¨ng,armor,5,,4040,0.5,2020,,,Uất Đa La Tăng
+armor:77,T¨ng Hµi,armor,6,,5000,0.5,2500,,,Tăng Hài
+armor:78,NguyÖn B¹ch cµ sa,armor,7,,5960,0.5,2980,,,Nguyện Bạch cà sa
+armor:79,Minh tÜnh cµ sa,armor,8,,6920,0.5,3460,,,Minh tĩnh cà sa
+armor:80,Kim L« cµ sa,armor,9,,7880,0.5,3940,,,Kim Lô cà sa
+armor:81,ThÊt B¶o cµ sa,armor,10,,8840,0.5,4420,,,Thất Bảo cà sa
+armor:82,N÷ thøc ®¹o y,armor,1,,360,0.5,180,,,Nữ thức đạo y
+armor:83,Tu Ch©n ®¹o y,armor,2,,1160,0.5,580,,,Tu Chân đạo y
+armor:84,Háa Hoµn ®¹o y,armor,3,,2120,0.5,1060,,,Hỏa Hoàn đạo y
+armor:85,BÝch Hµ ®¹o y,armor,4,,3080,0.5,1540,,,Bích Hà đạo y
+armor:86,B¸t qu¸i ®¹o y,armor,5,,4040,0.5,2020,,,Bát quái đạo y
+armor:87,Hµn Mai ®¹o y,armor,6,,5000,0.5,2500,,,Hàn Mai đạo y
+armor:88,V« Cùc §¹o y,armor,7,,5960,0.5,2980,,,Vô Cực Đạo y
+armor:89,§Þa Duyªn ®¹o y,armor,8,,6920,0.5,3460,,,Địa Duyên đạo y
+armor:90,B¨ng Tµm ®¹o y,armor,9,,7880,0.5,3940,,,Băng Tàm đạo y
+armor:91,Long Tiªu ®¹o y,armor,10,,8840,0.5,4420,,,Long Tiêu đạo y
+armor:92,Thôc CÈm y,armor,1,,360,0.5,180,,,Thục Cẩm y
+armor:93,L¨ng T¬ y,armor,2,,1160,0.5,580,,,Lăng Tơ y
+armor:94,CÈm Träng y,armor,3,,2120,0.5,1060,,,Cẩm Trọng y
+armor:95,Linh Xµ y,armor,4,,3080,0.5,1540,,,Linh Xà y
+armor:96,HuyÒn Ly y,armor,5,,4040,0.5,2020,,,Huyền Ly y
+armor:97,H¾c B¸o y,armor,6,,5000,0.5,2500,,,Hắc Báo y
+armor:98,Hæ B× y,armor,7,,5960,0.5,2980,,,Hổ Bì y
+armor:99,VËn Nghª th­êng,armor,8,,6920,0.5,3460,,,Vận Nghê thường
+armor:100,Mª Hån Th­êng,armor,9,,7880,0.5,3940,,,Mê Hồn Thường
+armor:101,Cöu VÜ B¹ch Hå trang,armor,10,,8840,0.5,4420,,,Cửu Vĩ Bạch Hồ trang
+armor:102,CÈm Sam,armor,1,,360,0.5,180,,,Cẩm Sam
+armor:103,Khëi Ly sam,armor,2,,1160,0.5,580,,,Khởi Ly sam
+armor:104,Hoa Sa sam,armor,3,,2120,0.5,1060,,,Hoa Sa sam
+armor:105,Thôc CÈm Sam,armor,4,,3080,0.5,1540,,,Thục Cẩm Sam
+armor:106,Tèng CÈm Sam,armor,5,,4040,0.5,2020,,,Tống Cẩm Sam
+armor:107,V©n CÈm Sam,armor,6,,5000,0.5,2500,,,Vân Cẩm Sam
+armor:108,Thanh La sam,armor,7,,5960,0.5,2980,,,Thanh La sam
+armor:109,TÊt Sa sam,armor,8,,6920,0.5,3460,,,Tất Sa sam
+armor:110,L¨ng La sam,armor,9,,7880,0.5,3940,,,Lăng La sam
+armor:111,TrÇm H­¬ng sam,armor,10,,8840,0.5,4420,,,Trầm Hương sam
+armor:112,Kh¶m ThiÕt n÷ gi¸p,armor,1,,360,0.5,180,,,Khảm Thiết nữ giáp
+armor:113,Thanh §ång n÷ gi¸p,armor,2,,1160,0.5,580,,,Thanh Đồng nữ giáp
+armor:114,B¹ch NhÜ gi¸p,armor,3,,2120,0.5,1060,,,Bạch Nhĩ giáp
+armor:115,Lam YÕn Cang gi¸p,armor,4,,3080,0.5,1540,,,Lam Yến Cang giáp
+armor:116,Hång NhÜ gi¸p,armor,5,,4040,0.5,2020,,,Hồng Nhĩ giáp
+armor:117,XÝch Nh¹n gi¸p,armor,6,,5000,0.5,2500,,,Xích Nhạn giáp
+armor:118,HuyÕt §ång gi¸p,armor,7,,5960,0.5,2980,,,Huyết Đồng giáp
+armor:119,Lan Ng©n gi¸p,armor,8,,6920,0.5,3460,,,Lan Ngân giáp
+armor:120,HuyÒn ThiÕt TuyÕt Ng©n gi¸p,armor,9,,7880,0.5,3940,,,Huyền Thiết Tuyết Ngân giáp
+armor:121,TÝch LÞch Kim Phông gi¸p,armor,10,,8840,0.5,4420,,,Tích Lịch Kim Phụng giáp
+armor:122,Ph¸ Ma y,armor,1,,360,0.5,180,,,Phá Ma y
+armor:123,Ph¸ Miªn y,armor,2,,1160,0.5,580,,,Phá Miên y
+armor:124,Ph¸ Cæn y,armor,3,,2120,0.5,1060,,,Phá Cổn y
+armor:125,B¹ch Bæ y,armor,4,,3080,0.5,1540,,,Bạch Bổ y
+armor:126,Thiªn bæ y,armor,5,,4040,0.5,2020,,,Thiên bổ y
+armor:127,D­¬ng B× gi¸p,armor,6,,5000,0.5,2500,,,Dương Bì giáp
+armor:128,Ng­u B× gi¸p,armor,7,,5960,0.5,2980,,,Ngưu Bì giáp
+armor:129,Tö Thö y,armor,8,,6920,0.5,3460,,,Tử Thử y
+armor:130,Kh«i §iªu y,armor,9,,7880,0.5,3940,,,Khôi Điêu y
+armor:131,V¹n Chóng TÒ T©m Y,armor,10,,8840,0.5,4420,,,Vạn Chúng Tề Tâm Y
+armor:132,B¹ch §iÖp quÇn,armor,1,,360,0.5,180,,,Bạch Điệp quần
+armor:133,Thanh La quÇn,armor,2,,1160,0.5,580,,,Thanh La quần
+armor:134,Chøc CÈm Th¹ch Lùu quÇn,armor,3,,2120,0.5,1060,,,Chức Cẩm Thạch Lựu quần
+armor:135,Song §iÖp Tó La quÇn,armor,4,,3080,0.5,1540,,,Song Điệp Tú La quần
+armor:136,B¸ch ¤ quÇn,armor,5,,4040,0.5,2020,,,Bách Ô quần
+armor:137,NguyÖt Hoa quÇn,armor,6,,5000,0.5,2500,,,Nguyệt Hoa quần
+armor:138,Phong VÜ quÇn,armor,7,,5960,0.5,2980,,,Phong Vĩ quần
+armor:139,Kinh B¶o quÇn,armor,8,,6920,0.5,3460,,,Kinh Bảo quần
+armor:140,B¸ch Phong TriÒu D­¬ng quÇn,armor,9,,7880,0.5,3940,,,Bách Phong Triều Dương quần
+armor:141,L­u Tiªn QuÇn,armor,10,,8840,0.5,4420,,,Lưu Tiên Quần
+armor:142,Sa Di phôc,armor,1,,360,0.5,180,,,Sa Di phục
+armor:143,T¨ng y,armor,2,,1160,0.5,580,,,Tăng y
+armor:144,B¸ch N¹p y,armor,3,,2120,0.5,1060,,,Bách Nạp y
+armor:145,An ®µ héi,armor,4,,3080,0.5,1540,,,An đà hội
+armor:146,UÊt §a La T¨ng,armor,5,,4040,0.5,2020,,,Uất Đa La Tăng
+armor:147,T¨ng Hµi,armor,6,,5000,0.5,2500,,,Tăng Hài
+armor:148,NguyÖn B¹ch Cµ Sa,armor,7,,5960,0.5,2980,,,Nguyện Bạch Cà Sa
+armor:149,Minh TÜnh Cµ Sa,armor,8,,6920,0.5,3460,,,Minh Tĩnh Cà Sa
+armor:150,Kim L« Cµ Sa,armor,9,,7880,0.5,3940,,,Kim Lô Cà Sa
+armor:151,ThÊt B¶o Cµ Sa,armor,10,,8840,0.5,4420,,,Thất Bảo Cà Sa
+armor:152,§¹o sÜ vâ bµo,armor,1,,360,0.5,180,,,Đạo sĩ võ bào
+armor:153,§¹o sÜ tr­êng bµo,armor,2,,1160,0.5,580,,,Đạo sĩ trường bào
+armor:154,TÜnh y,armor,3,,2120,0.5,1060,,,Tĩnh y
+armor:155,Thanh Tïng Ph¸p bµo,armor,4,,3080,0.5,1540,,,Thanh Tùng Pháp bào
+armor:156,Thiªn s­ ®¹o bµo,armor,5,,4040,0.5,2020,,,Thiên sư đạo bào
+armor:157,HuyÒn Vâ ph¸p y,armor,6,,5000,0.5,2500,,,Huyền Võ pháp y
+armor:158,ThÊt B¶o H¹ y,armor,7,,5960,0.5,2980,,,Thất Bảo Hạ y
+armor:159,Tam Thanh Bµo,armor,8,,6920,0.5,3460,,,Tam Thanh Bào
+armor:160,Thiªn Niªn H¹c S­ëng,armor,9,,7880,0.5,3940,,,Thiên Niên Hạc Sưởng
+armor:161,Ch©n Vò Th¸nh Y,armor,10,,8840,0.5,4420,,,Chân Vũ Thánh Y
+armor:162,Cæn y,armor,1,,360,0.5,180,,,Cổn y
+armor:163,TÕ Tróc Cæn y,armor,2,,1160,0.5,580,,,Tế Trúc Cổn y
+armor:164,ThÝch Kh¸ch y,armor,3,,2120,0.5,1060,,,Thích Khách y
+armor:165,Méng mÞ y,armor,4,,3080,0.5,1540,,,Mộng mị y
+armor:166,V« S¾c y,armor,5,,4040,0.5,2020,,,Vô Sắc y
+armor:167,Ng­ NhÉn y,armor,6,,5000,0.5,2500,,,Ngư Nhẫn y
+armor:168,Liªn V©n y,armor,7,,5960,0.5,2980,,,Liên Vân y
+armor:169,Thiªn Méng y,armor,8,,6920,0.5,3460,,,Thiên Mộng y
+armor:170,V« Dung KÝnh y,armor,9,,7880,0.5,3940,,,Vô Dung Kính y
+armor:171,Thiªn NhÉn MËt Trang,armor,10,,8840,0.5,4420,,,Thiên Nhẫn Mật Trang
+armor:172,Th« Bè tr­êng bµo,armor,1,,360,0.5,180,,,Thô Bố trường bào
+armor:173,Khinh C¸t sam,armor,2,,1160,0.5,580,,,Khinh Cát sam
+armor:174,§o¹n bµo,armor,3,,2120,0.5,1060,,,Đoạn bào
+armor:175,DËt HiÖp y,armor,4,,3080,0.5,1540,,,Dật Hiệp y
+armor:176,NhiÖm HiÖp phôc,armor,5,,4040,0.5,2020,,,Nhiệm Hiệp phục
+armor:177,L­u Th¸i Phôc,armor,6,,5000,0.5,2500,,,Lưu Thái Phục
+armor:178,Ng©n T¬ Bµo,armor,7,,5960,0.5,2980,,,Ngân Tơ Bào
+armor:179,Tö Kim bµo,armor,8,,6920,0.5,3460,,,Tử Kim bào
+armor:180,Hµn S­¬ng bµo,armor,9,,7880,0.5,3940,,,Hàn Sương bào
+armor:181,Gi¸ng Sa Bµo,armor,10,,8840,0.5,4420,,,Giáng Sa Bào
+armor:182,Táa Tö gi¸p,armor,1,,360,0.5,180,,,Tỏa Tử giáp
+armor:183,L­ìng §¸ng Kh¶i,armor,2,,1160,0.5,580,,,Lưỡng Đáng Khải
+armor:184,Minh Quang Kh¶i,armor,3,,2120,0.5,1060,,,Minh Quang Khải
+armor:185,TÕ L©n gi¸p,armor,4,,3080,0.5,1540,,,Tế Lân giáp
+armor:186,¤ Chïy gi¸p,armor,5,,4040,0.5,2020,,,Ô Chùy giáp
+armor:187,S¬n V¨n Tù gi¸p,armor,6,,5000,0.5,2500,,,Sơn Văn Tự giáp
+armor:188,Gi¶i Tr¹i gi¸p,armor,7,,5960,0.5,2980,,,Giải Trại giáp
+armor:189,Toan Nghª gi¸p,armor,8,,6920,0.5,3460,,,Toan Nghê giáp
+armor:190,Táa Tö Hoµng Kim gi¸p,armor,9,,7880,0.5,3940,,,Tỏa Tử Hoàng Kim giáp
+armor:191,§­êng Nghª gi¸p,armor,10,,8840,0.5,4420,,,Đường Nghê giáp
+armor:192,Lan Bè y,armor,1,,360,0.5,180,,,Lan Bố y
+armor:193,Phæ th«ng C¸i y,armor,2,,1160,0.5,580,,,Phổ thông Cái y
+armor:194,¸o ¨n mµy,armor,3,,2120,0.5,1060,,,áo ăn mày
+armor:195,Thæ Ma C¸i y,armor,4,,3080,0.5,1540,,,Thổ Ma Cái y
+armor:196,TÇm Ma C¸i y,armor,5,,4040,0.5,2020,,,Tầm Ma Cái y
+armor:197,Háa Ma C¸i y,armor,6,,5000,0.5,2500,,,Hỏa Ma Cái y
+armor:198,ThËp ph­¬ng C¸i y,armor,7,,5960,0.5,2980,,,Thập phương Cái y
+armor:199,B¸ch kÕt C¸i y,armor,8,,6920,0.5,3460,,,Bách kết Cái y
+armor:200,TriÒn T¬ Thiªn KÕt phôc,armor,9,,7880,0.5,3940,,,Triền Tơ Thiên Kết phục
+armor:201,V¹n L­u Quy T«ng Y,armor,10,,8840,0.5,4420,,,Vạn Lưu Quy Tông Y
+armor:202,¸o v¶i th«,armor,1,,360,0.5,180,,,áo vải thô
+armor:203,¸o v¶i th«,armor,2,,1160,0.5,580,,,áo vải thô
+armor:204,¸o v¶i th«,armor,3,,2120,0.5,1060,,,áo vải thô
+armor:205,¸o v¶i th«,armor,4,,3080,0.5,1540,,,áo vải thô
+armor:206,Hoµng CÈm ®o¶n y,armor,5,,4040,0.5,2020,,,Hoàng Cẩm đoản y
+armor:207,Chøc gi¸p ®o¶n sam,armor,6,,5000,0.5,2500,,,Chức giáp đoản sam
+armor:208,HuyÒn Hoµng ®o¶n gi¸p,armor,7,,5960,0.5,2980,,,Huyền Hoàng đoản giáp
+armor:209,BÝch Hoa Bµo,armor,8,,6920,0.5,3460,,,Bích Hoa Bào
+armor:210,T­¬ng Nh­ bµo,armor,9,,7880,0.5,3940,,,Tương Như bào
+armor:211,TuyÒn Long bµo,armor,10,,8840,0.5,4420,,,Tuyền Long bào
+armor:212,Sa Ni phôc,armor,1,,360,0.5,180,,,Sa Ni phục
+armor:213,T¨ng bµo,armor,2,,1160,0.5,580,,,Tăng bào
+armor:214,B¸ch N¹p y,armor,3,,2120,0.5,1060,,,Bách Nạp y
+armor:215,An ®µ héi,armor,4,,3080,0.5,1540,,,An đà hội
+armor:216,UÊt §a La T¨ng,armor,5,,4040,0.5,2020,,,Uất Đa La Tăng
+armor:217,T¨ng Hµi,armor,6,,5000,0.5,2500,,,Tăng Hài
+armor:218,NguyÖn B¹ch cµ sa,armor,7,,5960,0.5,2980,,,Nguyện Bạch cà sa
+armor:219,Minh tÜnh cµ sa,armor,8,,6920,0.5,3460,,,Minh tĩnh cà sa
+armor:220,Kim L« cµ sa,armor,9,,7880,0.5,3940,,,Kim Lô cà sa
+armor:221,ThÊt B¶o cµ sa,armor,10,,8840,0.5,4420,,,Thất Bảo cà sa
+armor:222,N÷ thøc ®¹o y,armor,1,,360,0.5,180,,,Nữ thức đạo y
+armor:223,Tu Ch©n ®¹o y,armor,2,,1160,0.5,580,,,Tu Chân đạo y
+armor:224,Háa Hoµn ®¹o y,armor,3,,2120,0.5,1060,,,Hỏa Hoàn đạo y
+armor:225,BÝch Hµ ®¹o y,armor,4,,3080,0.5,1540,,,Bích Hà đạo y
+armor:226,B¸t qu¸i ®¹o y,armor,5,,4040,0.5,2020,,,Bát quái đạo y
+armor:227,Hµn Mai ®¹o y,armor,6,,5000,0.5,2500,,,Hàn Mai đạo y
+armor:228,V« Cùc §¹o y,armor,7,,5960,0.5,2980,,,Vô Cực Đạo y
+armor:229,§Þa Duyªn ®¹o y,armor,8,,6920,0.5,3460,,,Địa Duyên đạo y
+armor:230,B¨ng Tµm ®¹o y,armor,9,,7880,0.5,3940,,,Băng Tàm đạo y
+armor:231,Long Tiªu ®¹o y,armor,10,,8840,0.5,4420,,,Long Tiêu đạo y
+armor:232,Thôc CÈm y,armor,1,,360,0.5,180,,,Thục Cẩm y
+armor:233,L¨ng T¬ y,armor,2,,1160,0.5,580,,,Lăng Tơ y
+armor:234,CÈm Träng y,armor,3,,2120,0.5,1060,,,Cẩm Trọng y
+armor:235,Linh Xµ y,armor,4,,3080,0.5,1540,,,Linh Xà y
+armor:236,HuyÒn Ly y,armor,5,,4040,0.5,2020,,,Huyền Ly y
+armor:237,H¾c B¸o y,armor,6,,5000,0.5,2500,,,Hắc Báo y
+armor:238,Hæ B× y,armor,7,,5960,0.5,2980,,,Hổ Bì y
+armor:239,VËn Nghª th­êng,armor,8,,6920,0.5,3460,,,Vận Nghê thường
+armor:240,Mª Hån Th­êng,armor,9,,7880,0.5,3940,,,Mê Hồn Thường
+armor:241,Cöu VÜ B¹ch Hå trang,armor,10,,8840,0.5,4420,,,Cửu Vĩ Bạch Hồ trang
+armor:242,CÈm Sam,armor,1,,360,0.5,180,,,Cẩm Sam
+armor:243,Khëi Ly sam,armor,2,,1160,0.5,580,,,Khởi Ly sam
+armor:244,Hoa Sa sam,armor,3,,2120,0.5,1060,,,Hoa Sa sam
+armor:245,Thôc CÈm Sam,armor,4,,3080,0.5,1540,,,Thục Cẩm Sam
+armor:246,Tèng CÈm Sam,armor,5,,4040,0.5,2020,,,Tống Cẩm Sam
+armor:247,V©n CÈm Sam,armor,6,,5000,0.5,2500,,,Vân Cẩm Sam
+armor:248,Thanh La sam,armor,7,,5960,0.5,2980,,,Thanh La sam
+armor:249,TÊt Sa sam,armor,8,,6920,0.5,3460,,,Tất Sa sam
+armor:250,L¨ng La sam,armor,9,,7880,0.5,3940,,,Lăng La sam
+armor:251,TrÇm H­¬ng sam,armor,10,,8840,0.5,4420,,,Trầm Hương sam
+armor:252,Kh¶m ThiÕt n÷ gi¸p,armor,1,,360,0.5,180,,,Khảm Thiết nữ giáp
+armor:253,Thanh §ång n÷ gi¸p,armor,2,,1160,0.5,580,,,Thanh Đồng nữ giáp
+armor:254,B¹ch NhÜ gi¸p,armor,3,,2120,0.5,1060,,,Bạch Nhĩ giáp
+armor:255,Lam YÕn Cang gi¸p,armor,4,,3080,0.5,1540,,,Lam Yến Cang giáp
+armor:256,Hång NhÜ gi¸p,armor,5,,4040,0.5,2020,,,Hồng Nhĩ giáp
+armor:257,XÝch Nh¹n gi¸p,armor,6,,5000,0.5,2500,,,Xích Nhạn giáp
+armor:258,HuyÕt §ång gi¸p,armor,7,,5960,0.5,2980,,,Huyết Đồng giáp
+armor:259,Lan Ng©n gi¸p,armor,8,,6920,0.5,3460,,,Lan Ngân giáp
+armor:260,HuyÒn ThiÕt TuyÕt Ng©n gi¸p,armor,9,,7880,0.5,3940,,,Huyền Thiết Tuyết Ngân giáp
+armor:261,TÝch LÞch Kim Phông gi¸p,armor,10,,8840,0.5,4420,,,Tích Lịch Kim Phụng giáp
+armor:262,Ph¸ Ma y,armor,1,,360,0.5,180,,,Phá Ma y
+armor:263,Ph¸ Miªn y,armor,2,,1160,0.5,580,,,Phá Miên y
+armor:264,Ph¸ Cæn y,armor,3,,2120,0.5,1060,,,Phá Cổn y
+armor:265,B¹ch Bæ y,armor,4,,3080,0.5,1540,,,Bạch Bổ y
+armor:266,Thiªn bæ y,armor,5,,4040,0.5,2020,,,Thiên bổ y
+armor:267,D­¬ng B× gi¸p,armor,6,,5000,0.5,2500,,,Dương Bì giáp
+armor:268,Ng­u B× gi¸p,armor,7,,5960,0.5,2980,,,Ngưu Bì giáp
+armor:269,Tö Thö y,armor,8,,6920,0.5,3460,,,Tử Thử y
+armor:270,Kh«i §iªu y,armor,9,,7880,0.5,3940,,,Khôi Điêu y
+armor:271,V¹n Chóng TÒ T©m Y,armor,10,,8840,0.5,4420,,,Vạn Chúng Tề Tâm Y
+armor:272,B¹ch §iÖp quÇn,armor,1,,360,0.5,180,,,Bạch Điệp quần
+armor:273,Thanh La quÇn,armor,2,,1160,0.5,580,,,Thanh La quần
+armor:274,Chøc CÈm Th¹ch Lùu quÇn,armor,3,,2120,0.5,1060,,,Chức Cẩm Thạch Lựu quần
+armor:275,Song §iÖp Tó La quÇn,armor,4,,3080,0.5,1540,,,Song Điệp Tú La quần
+armor:276,B¸ch ¤ quÇn,armor,5,,4040,0.5,2020,,,Bách Ô quần
+armor:277,NguyÖt Hoa quÇn,armor,6,,5000,0.5,2500,,,Nguyệt Hoa quần
+armor:278,Phong VÜ quÇn,armor,7,,5960,0.5,2980,,,Phong Vĩ quần
+armor:279,Kinh B¶o quÇn,armor,8,,6920,0.5,3460,,,Kinh Bảo quần
+armor:280,B¸ch Phong TriÒu D­¬ng quÇn,armor,9,,7880,0.5,3940,,,Bách Phong Triều Dương quần
+armor:281,L­u Tiªn QuÇn,armor,10,,8840,0.5,4420,,,Lưu Tiên Quần
+armor:282,Phong Trang,armor,1,,360,0.5,180,,,Phong Trang
+armor:283,Kinh Thiªn gi¸p,armor,2,,1160,0.5,580,,,Kinh Thiên giáp
+armor:284,Thanh TuyÖt Y,armor,3,,2120,0.5,1060,,,Thanh Tuyệt Y
+armor:285,Phông quÇn,armor,4,,3080,0.5,1540,,,Phụng quần
+armor:286,KhÊp §Þa quÇn,armor,5,,4040,0.5,2020,,,Khấp Địa quần
+armor:287,B¨ng Tinh QuÇn,armor,6,,5000,0.5,2500,,,Băng Tinh Quần
+armor:288,NhËn ¸o míi,armor,7,,5960,0.5,2980,,,Nhận áo mới
+armor:289,¸o mõng tuæi,armor,8,,6920,0.5,3460,,,áo mừng tuổi
+armor:290,B¨ng Tinh QuÇn,armor,9,,7880,0.5,3940,,,Băng Tinh Quần
+armor:291,B¨ng Tinh QuÇn,armor,10,,8840,0.5,4420,,,Băng Tinh Quần
+helm:2,Sa Di Giíi C«,helm,1,,360,0.5,180,,,Sa Di Giới Cô
+helm:3,T¨ng Giíi C«,helm,2,,1160,0.5,580,,,Tăng Giới Cô
+helm:4,PhËt Ên Giíi C«,helm,3,,2120,0.5,1060,,,Phật ấn Giới Cô
+helm:5,T¨ng Giµ Giíi C«,helm,4,,3080,0.5,1540,,,Tăng Già Giới Cô
+helm:6,Kh«n Léc m·o,helm,5,,4040,0.5,2020,,,Khôn Lộc mão
+helm:7,L©m Liªn M·o,helm,6,,5000,0.5,2500,,,Lâm Liên Mão
+helm:8,Phï Dung M·o,helm,7,,5960,0.5,2980,,,Phù Dung Mão
+helm:9,ThÈm Lu©n M·o,helm,8,,6920,0.5,3460,,,Thẩm Luân Mão
+helm:10,NiÖm Ninh M·o,helm,9,,7880,0.5,3940,,,Niệm Ninh Mão
+helm:11,Tú L« m·o,helm,10,,8840,0.5,4420,,,Tỳ Lô mão
+helm:12,Méc Tr©m,helm,1,,360,0.5,180,,,Mộc Trâm
+helm:13,Hoµng D­¬ng Méc Tr©m,helm,2,,1160,0.5,580,,,Hoàng Dương Mộc Trâm
+helm:14,Cµn Kh«n kÕt,helm,3,,2120,0.5,1060,,,Càn Khôn kết
+helm:15,Th¸i cùc Qu¸n,helm,4,,3080,0.5,1540,,,Thái cực Quán
+helm:16,B¸t Qu¸i C©n,helm,5,,4040,0.5,2020,,,Bát Quái Cân
+helm:17,Cµn Kh¶m C©n,helm,6,,5000,0.5,2500,,,Càn Khảm Cân
+helm:18,Ngò Nh¹c Qu¸n,helm,7,,5960,0.5,2980,,,Ngũ Nhạc Quán
+helm:19,Th­îng Thanh Qu¸n,helm,8,,6920,0.5,3460,,,Thượng Thanh Quán
+helm:20,Tinh Qu¸n,helm,9,,7880,0.5,3940,,,Tinh Quán
+helm:21,Ngò l·o qu¸n,helm,10,,8840,0.5,4420,,,Ngũ lão quán
+helm:22,Tróc L¹p,helm,1,,360,0.5,180,,,Trúc Lạp
+helm:23,Ng­ L¹p,helm,2,,1160,0.5,580,,,Ngư Lạp
+helm:24,ThÈm L« Th¶o M·o,helm,3,,2120,0.5,1060,,,Thẩm Lô Thảo Mão
+helm:25,Chu Tao th¶o M·o,helm,4,,3080,0.5,1540,,,Chu Tao thảo Mão
+helm:26,HuyÒn Sa DiÖn Tr¸o,helm,5,,4040,0.5,2020,,,Huyền Sa Diện Tráo
+helm:27,Thanh S¸t diÖn tr¸o,helm,6,,5000,0.5,2500,,,Thanh Sát diện tráo
+helm:28,Nh©n B× DiÖn Tr¸o,helm,7,,5960,0.5,2980,,,Nhân Bì Diện Tráo
+helm:29,Ngò §éc ph¸t kÕt,helm,8,,6920,0.5,3460,,,Ngũ Độc phát kết
+helm:30,B¸ch §éc ph¸t kÕt,helm,9,,7880,0.5,3940,,,Bách Độc phát kết
+helm:31,Tu La Ph¸t kÕt,helm,10,,8840,0.5,4420,,,Tu La Phát kết
+helm:32,Nho C©n,helm,1,,360,0.5,180,,,Nho Cân
+helm:33,TiÕn Kiªn Qu¸n,helm,2,,1160,0.5,580,,,Tiến Kiên Quán
+helm:34,ViÖt Mü Qu¸n,helm,3,,2120,0.5,1060,,,Việt Mỹ Quán
+helm:35,Phi YÕn Qu¸n,helm,4,,3080,0.5,1540,,,Phi Yến Quán
+helm:36,§iªu ThiÒn Qu¸n,helm,5,,4040,0.5,2020,,,Điêu Thiền Quán
+helm:37,Lang Tµ Qu¸n,helm,6,,5000,0.5,2500,,,Lang Tà Quán
+helm:38,Anh L¹c Qu¸n,helm,7,,5960,0.5,2980,,,Anh Lạc Quán
+helm:39,Tö Kim ph¸t Qu¸n,helm,8,,6920,0.5,3460,,,Tử Kim phát Quán
+helm:40,ThÊt B¶o ph¸t Qu¸n,helm,9,,7880,0.5,3940,,,Thất Bảo phát Quán
+helm:41,Th«ng Thiªn Ph¸t Qu¸n,helm,10,,8840,0.5,4420,,,Thông Thiên Phát Quán
+helm:42,§ång Kh«i,helm,1,,360,0.5,180,,,Đồng Khôi
+helm:43,B¸n DiÖn Kh«i,helm,2,,1160,0.5,580,,,Bán Diện Khôi
+helm:44,Song DiÖn Kh«i,helm,3,,2120,0.5,1060,,,Song Diện Khôi
+helm:45,ThiÕt Kh«i,helm,4,,3080,0.5,1540,,,Thiết Khôi
+helm:46,Tinh §ång §Çu Kh«i,helm,5,,4040,0.5,2020,,,Tinh Đồng Đầu Khôi
+helm:47,Cang kh«i,helm,6,,5000,0.5,2500,,,Cang khôi
+helm:48,Ng©n Kh«i,helm,7,,5960,0.5,2980,,,Ngân Khôi
+helm:49,Tinh Cang Kh«i,helm,8,,6920,0.5,3460,,,Tinh Cang Khôi
+helm:50,Kim Kh«i,helm,9,,7880,0.5,3940,,,Kim Khôi
+helm:51,YÓm NhËt kh«i,helm,10,,8840,0.5,4420,,,Yểm Nhật khôi
+helm:52,Ph¸ Bè C©n,helm,1,,360,0.5,180,,,Phá Bố Cân
+helm:53,B¸t Ph­¬ng C©n,helm,2,,1160,0.5,580,,,Bát Phương Cân
+helm:54,Tiªu Diªu C©n,helm,3,,2120,0.5,1060,,,Tiêu Diêu Cân
+helm:55,Lé Thiªn C©n,helm,4,,3080,0.5,1540,,,Lộ Thiên Cân
+helm:56,B¹ch Thùc Hoµn,helm,5,,4040,0.5,2020,,,Bạch Thực Hoàn
+helm:57,L­u Ly Hoµn,helm,6,,5000,0.5,2500,,,Lưu Ly Hoàn
+helm:58,Song TÇng L­u Ly Hoµn,helm,7,,5960,0.5,2980,,,Song Tầng Lưu Ly Hoàn
+helm:59,TÝn nhía Hoµn,helm,8,,6920,0.5,3460,,,Tín nhớa Hoàn
+helm:60,T×nh nhía Hoµn,helm,9,,7880,0.5,3940,,,Tình nhớa Hoàn
+helm:61,TrÝch Tinh hoµn,helm,10,,8840,0.5,4420,,,Trích Tinh hoàn
+helm:62,Bè C©n,helm,1,,360,0.5,180,,,Bố Cân
+helm:63,B×nh §Ønh C©n,helm,2,,1160,0.5,580,,,Bình Đỉnh Cân
+helm:64,Bè Nhóng C©n,helm,3,,2120,0.5,1060,,,Bố Nhúng Cân
+helm:65,Nh¹n Vò C©n,helm,4,,3080,0.5,1540,,,Nhạn Vũ Cân
+helm:66,Y T¬ Ph¸t §¸i,helm,5,,4040,0.5,2020,,,Y Tơ Phát Đái
+helm:67,Kim T¬ Qu¸n,helm,6,,5000,0.5,2500,,,Kim Tơ Quán
+helm:68,Chu Khëi Qu¸n,helm,7,,5960,0.5,2980,,,Chu Khởi Quán
+helm:69,Doanh Gi¸c M·o,helm,8,,6920,0.5,3460,,,Doanh Giác Mão
+helm:70,Tµm T¬ M·o,helm,9,,7880,0.5,3940,,,Tàm Tơ Mão
+helm:71,¤ Tµm M·o,helm,10,,8840,0.5,4420,,,Ô Tàm Mão
+helm:72,ThÝch Ni M·o,helm,1,,360,0.5,180,,,Thích Ni Mão
+helm:73,ThÝch Ni M·o,helm,2,,1160,0.5,580,,,Thích Ni Mão
+helm:74,ThÝch Ni M·o,helm,3,,2120,0.5,1060,,,Thích Ni Mão
+helm:75,ThÝch Ni M·o,helm,4,,3080,0.5,1540,,,Thích Ni Mão
+helm:76,Thanh M·o,helm,5,,4040,0.5,2020,,,Thanh Mão
+helm:77,Thanh Anh M·o,helm,6,,5000,0.5,2500,,,Thanh Anh Mão
+helm:78,Thiªn Thanh M·o,helm,7,,5960,0.5,2980,,,Thiên Thanh Mão
+helm:79,XÝch ¶nh ph¸t Qu¸n,helm,8,,6920,0.5,3460,,,Xích ảnh phát Quán
+helm:80,V« T­íng Ph¸p Qu¸n,helm,9,,7880,0.5,3940,,,Vô Tướng Pháp Quán
+helm:81,Quan ¢m Ph¸t Qu¸n,helm,10,,8840,0.5,4420,,,Quan Âm Phát Quán
+helm:82,Ng©n Thoa,helm,1,,360,0.5,180,,,Ngân Thoa
+helm:83,Ng©n Liªm Thoa,helm,2,,1160,0.5,580,,,Ngân Liêm Thoa
+helm:84,Ng©n LiÖm Thoa,helm,3,,2120,0.5,1060,,,Ngân Liệm Thoa
+helm:85,Ng©n Hoµn Thoa,helm,4,,3080,0.5,1540,,,Ngân Hoàn Thoa
+helm:86,Kim Thoa,helm,5,,4040,0.5,2020,,,Kim Thoa
+helm:87,Kim Hoµn Thoa,helm,6,,5000,0.5,2500,,,Kim Hoàn Thoa
+helm:88,Kim Bé Dao,helm,7,,5960,0.5,2980,,,Kim Bộ Dao
+helm:89,PhØ Thóy Thoa,helm,8,,6920,0.5,3460,,,Phỉ Thúy Thoa
+helm:90,Th¸i cùc Qu¸n,helm,9,,7880,0.5,3940,,,Thái cực Quán
+helm:91,¢m D­¬ng V« Cùc qu¸n,helm,10,,8840,0.5,4420,,,Âm Dương Vô Cực quán
+helm:92,B×Trô,helm,1,,360,0.5,180,,,BìTrụ
+helm:93,§ång Trô,helm,2,,1160,0.5,580,,,Đồng Trụ
+helm:94,Tinh §ång Trô,helm,3,,2120,0.5,1060,,,Tinh Đồng Trụ
+helm:95,XÝch §ån B× M·o,helm,4,,3080,0.5,1540,,,Xích Đồn Bì Mão
+helm:96,Thó Cèt Tr©m,helm,5,,4040,0.5,2020,,,Thú Cốt Trâm
+helm:97,Tö Cèt Tr©m,helm,6,,5000,0.5,2500,,,Tử Cốt Trâm
+helm:98,HuyÒn Cèt Tr©m,helm,7,,5960,0.5,2980,,,Huyền Cốt Trâm
+helm:99,Hæ B×DiÖn Tr¸o,helm,8,,6920,0.5,3460,,,Hổ BìDiện Tráo
+helm:100,§iªu B× DiÖn Tr¸o,helm,9,,7880,0.5,3940,,,Điêu Bì Diện Tráo
+helm:101,HuyÒn Tª DiÖn Tr¸o,helm,10,,8840,0.5,4420,,,Huyền Tê Diện Tráo
+helm:102,Th« ThiÕt §Çu Hoµn,helm,1,,360,0.5,180,,,Thô Thiết Đầu Hoàn
+helm:103,TÕ ThiÕt §Çu Hoµn,helm,2,,1160,0.5,580,,,Tế Thiết Đầu Hoàn
+helm:104,Hoµng §ång §Çu Hoµn,helm,3,,2120,0.5,1060,,,Hoàng Đồng Đầu Hoàn
+helm:105,Lôc Ngäc §Çu Hoµn,helm,4,,3080,0.5,1540,,,Lục Ngọc Đầu Hoàn
+helm:106,Kª VÜ Thoa,helm,5,,4040,0.5,2020,,,Kê Vĩ Thoa
+helm:107,Anh vò Thoa,helm,6,,5000,0.5,2500,,,Anh vũ Thoa
+helm:108,Bµn Xµ Thoa,helm,7,,5960,0.5,2980,,,Bàn Xà Thoa
+helm:109,Chu Sa §Çu Hoµn,helm,8,,6920,0.5,3460,,,Chu Sa Đầu Hoàn
+helm:110,Minh Ch©u §Çu Hoµn,helm,9,,7880,0.5,3940,,,Minh Châu Đầu Hoàn
+helm:111,Long HuyÕt §Çu hoµn,helm,10,,8840,0.5,4420,,,Long Huyết Đầu hoàn
+helm:112,Viªn M·o,helm,1,,360,0.5,180,,,Viên Mão
+helm:113,§­êng M·o,helm,2,,1160,0.5,580,,,Đường Mão
+helm:114,C©n Qu¶n M·o,helm,3,,2120,0.5,1060,,,Cân Quản Mão
+helm:115,Tû Gi¸c M·o,helm,4,,3080,0.5,1540,,,Tỷ Giác Mão
+helm:116,Thanh Phông Qu¸n,helm,5,,4040,0.5,2020,,,Thanh Phụng Quán
+helm:117,Kim Phông Qu¸n,helm,6,,5000,0.5,2500,,,Kim Phụng Quán
+helm:118,Song Phông TriÒu Thiªn Qu¸n,helm,7,,5960,0.5,2980,,,Song Phụng Triều Thiên Quán
+helm:119,PhØ Thóy Kh«i,helm,8,,6920,0.5,3460,,,Phỉ Thúy Khôi
+helm:120,Gi¶i Tr¹i Kh«i,helm,9,,7880,0.5,3940,,,Giải Trại Khôi
+helm:121,Long L©n Kh«i,helm,10,,8840,0.5,4420,,,Long Lân Khôi
+helm:122,Bè M·o,helm,1,,360,0.5,180,,,Bố Mão
+helm:123,Viªn §Ønh M·o,helm,2,,1160,0.5,580,,,Viên Đỉnh Mão
+helm:124,Ph¹m V¨n M·o,helm,3,,2120,0.5,1060,,,Phạm Văn Mão
+helm:125,Thanh V¨n Kh«i,helm,4,,3080,0.5,1540,,,Thanh Văn Khôi
+helm:126,Hång Anh Thoa,helm,5,,4040,0.5,2020,,,Hồng Anh Thoa
+helm:127,XÝch HuyÕt Thoa,helm,6,,5000,0.5,2500,,,Xích Huyết Thoa
+helm:128,L­u Ly Thoa,helm,7,,5960,0.5,2980,,,Lưu Ly Thoa
+helm:129,Léc nhÜ Thoa,helm,8,,6920,0.5,3460,,,Lộc nhĩ Thoa
+helm:130,Lam Tinh Thoa,helm,9,,7880,0.5,3940,,,Lam Tinh Thoa
+helm:131,Thanh Tinh Thoa,helm,10,,8840,0.5,4420,,,Thanh Tinh Thoa
+helm:132,Hoµng Bè Ph¸t §¸i,helm,1,,360,0.5,180,,,Hoàng Bố Phát Đái
+helm:133,Hoµng Bè Ph¸t §¸i,helm,2,,1160,0.5,580,,,Hoàng Bố Phát Đái
+helm:134,Hoµng Bè Ph¸t §¸i,helm,3,,2120,0.5,1060,,,Hoàng Bố Phát Đái
+helm:135,Hoµng Bè Ph¸t §¸i,helm,4,,3080,0.5,1540,,,Hoàng Bố Phát Đái
+helm:136,Hoµng §ång Ph¸t Xoa,helm,5,,4040,0.5,2020,,,Hoàng Đồng Phát Xoa
+helm:137,Hång M· N·o Ph¸t Xoa,helm,6,,5000,0.5,2500,,,Hồng Mã Não Phát Xoa
+helm:138,Thanh L­u Ly Ph¸t Xoa,helm,7,,5960,0.5,2980,,,Thanh Lưu Ly Phát Xoa
+helm:139,Huy Thñy Kh«i,helm,8,,6920,0.5,3460,,,Huy Thủy Khôi
+helm:140,Phông Nh·n Kh«i,helm,9,,7880,0.5,3940,,,Phụng Nhãn Khôi
+helm:141,Kim Phông TriÓn SÝ,helm,10,,8840,0.5,4420,,,Kim Phụng Triển Sí
+helm:142,½ðÏÉ¡ï½õÀ½É®Ã±,helm,10,,99999,0.5,49999,,,ẵðẽẫĂùẵừÀẵẫđÃ±
+boot:2,Th¶o Ngoa,boot,1,,360,0.5,180,,,Thảo Ngoa
+boot:3,Bè Ngoa,boot,2,,1160,0.5,580,,,Bố Ngoa
+boot:4,Thiªn tÇng bè Ngoa,boot,3,,2120,0.5,1060,,,Thiên tầng bố Ngoa
+boot:5,C¸t Ngoa,boot,4,,3080,0.5,1540,,,Cát Ngoa
+boot:6,Th­¬ng C¸t Ngoa,boot,5,,4040,0.5,2020,,,Thương Cát Ngoa
+boot:7,B¸ch Niªn Th­¬ng C¸t Ngoa,boot,6,,5000,0.5,2500,,,Bách Niên Thương Cát Ngoa
+boot:8,TrÜ VÜ Tèng Ngoa,boot,7,,5960,0.5,2980,,,Trĩ Vĩ Tống Ngoa
+boot:9,Giao Ngoa,boot,8,,6920,0.5,3460,,,Giao Ngoa
+boot:10,Phong VÜ Tèng Ngoa,boot,9,,7880,0.5,3940,,,Phong Vĩ Tống Ngoa
+boot:11,Cöu TiÕt X­¬ng VÜ Ngoa,boot,10,,8840,0.5,4420,,,Cửu Tiết Xương Vĩ Ngoa
+boot:12,Ng­u B× ngoa,boot,1,,360,0.5,180,,,Ngưu Bì ngoa
+boot:13,TËt Ngoa,boot,2,,1160,0.5,580,,,Tật Ngoa
+boot:14,¤ B× Ngoa,boot,3,,2120,0.5,1060,,,Ô Bì Ngoa
+boot:15,§»ng Méng Ngoa,boot,4,,3080,0.5,1540,,,Đằng Mộng Ngoa
+boot:16,Phi La Ngoa,boot,5,,4040,0.5,2020,,,Phi La Ngoa
+boot:17,Lôc Thóy Ngoa,boot,6,,5000,0.5,2500,,,Lục Thúy Ngoa
+boot:18,Hæ B× Ngoa,boot,7,,5960,0.5,2980,,,Hổ Bì Ngoa
+boot:19,Tª B× Ngoa,boot,8,,6920,0.5,3460,,,Tê Bì Ngoa
+boot:20,Long L©n Ngoa,boot,9,,7880,0.5,3940,,,Long Lân Ngoa
+boot:21,Thiªn Tµm Ngoa,boot,10,,8840,0.5,4420,,,Thiên Tàm Ngoa
+boot:22,Tó Ngoa,boot,1,,360,0.5,180,,,Tú Ngoa
+boot:23,L¨ng T¬ Ngoa,boot,2,,1160,0.5,580,,,Lăng Tơ Ngoa
+boot:24,GÊm hµi,boot,3,,2120,0.5,1060,,,Gấm hài
+boot:25,Uyªn ¦¬ng Ngoa,boot,4,,3080,0.5,1540,,,Uyên Ương Ngoa
+boot:26,Toan Ngoa,boot,5,,4040,0.5,2020,,,Toan Ngoa
+boot:27,L©m Ngäc hµi,boot,6,,5000,0.5,2500,,,Lâm Ngọc hài
+boot:28,Liªn Phong Ngoa,boot,7,,5960,0.5,2980,,,Liên Phong Ngoa
+boot:29,Ph¹m Hång Ngoa,boot,8,,6920,0.5,3460,,,Phạm Hồng Ngoa
+boot:30,B¹ch Chu ngoa,boot,9,,7880,0.5,3940,,,Bạch Chu ngoa
+boot:31,Kim Lò hµi,boot,10,,8840,0.5,4420,,,Kim Lũ hài
+boot:32,Léc B× ngoa,boot,1,,360,0.5,180,,,Lộc Bì ngoa
+boot:33,Kþ hµi,boot,2,,1160,0.5,580,,,Kỵ hài
+boot:34,Ng©n §o¹n ngoa,boot,3,,2120,0.5,1060,,,Ngân Đoạn ngoa
+boot:35,Phï Dung ngoa,boot,4,,3080,0.5,1540,,,Phù Dung ngoa
+boot:36,Háa T­êng Ngoa,boot,5,,4040,0.5,2020,,,Hỏa Tường Ngoa
+boot:37,Môc V©n ngoa,boot,6,,5000,0.5,2500,,,Mục Vân ngoa
+boot:38,X­¬ng Hoµn ngoa,boot,7,,5960,0.5,2980,,,Xương Hoàn ngoa
+boot:39,TuyÕt Doanh ngoa,boot,8,,6920,0.5,3460,,,Tuyết Doanh ngoa
+boot:40,SÝnh Sa ngoa,boot,9,,7880,0.5,3940,,,Sính Sa ngoa
+boot:41,Phi Phông Ngoa,boot,10,,8840,0.5,4420,,,Phi Phụng Ngoa
+belt:2,Ng­u B× Yªu §¸i,belt,1,,360,0.5,180,,,Ngưu Bì Yêu Đái
+belt:3,Lang B× Yªu §¸i,belt,2,,1160,0.5,580,,,Lang Bì Yêu Đái
+belt:4,¤ §»ng Yªu §¸i,belt,3,,2120,0.5,1060,,,Ô Đằng Yêu Đái
+belt:5,M·ng B× Yªu §¸i,belt,4,,3080,0.5,1540,,,Mãng Bì Yêu Đái
+belt:6,Ng¹c B× Yªu §¸i,belt,5,,4040,0.5,2020,,,Ngạc Bì Yêu Đái
+belt:7,T­îng B× Yªu §¸i,belt,6,,5000,0.5,2500,,,Tượng Bì Yêu Đái
+belt:8,Sa B× Yªu §¸i,belt,7,,5960,0.5,2980,,,Sa Bì Yêu Đái
+belt:9,Tª Gi¸c Yªu §¸i,belt,8,,6920,0.5,3460,,,Tê Giác Yêu Đái
+belt:10,Long L©n Yªu §¸i,belt,9,,7880,0.5,3940,,,Long Lân Yêu Đái
+belt:11,Thiªn Tµm Yªu §¸i,belt,10,,8840,0.5,4420,,,Thiên Tàm Yêu Đái
+belt:12,Tinh §ång Yªu §¸i,belt,1,,360,0.5,180,,,Tinh Đồng Yêu Đái
+belt:13,TÝch Yªu §¸i,belt,2,,1160,0.5,580,,,Tích Yêu Đái
+belt:14,Hoµng §ång Yªu §¸i,belt,3,,2120,0.5,1060,,,Hoàng Đồng Yêu Đái
+belt:15,ThiÕt Yªu §¸i,belt,4,,3080,0.5,1540,,,Thiết Yêu Đái
+belt:16,Tinh §ång Yªu §¸i,belt,5,,4040,0.5,2020,,,Tinh Đồng Yêu Đái
+belt:17,Ng©n Yªu §¸i,belt,6,,5000,0.5,2500,,,Ngân Yêu Đái
+belt:18,MËt Ng©n Yªu §¸i,belt,7,,5960,0.5,2980,,,Mật Ngân Yêu Đái
+belt:19,Kim Yªu §¸i,belt,8,,6920,0.5,3460,,,Kim Yêu Đái
+belt:20,¤ Ng©n Yªu §¸i,belt,9,,7880,0.5,3940,,,Ô Ngân Yêu Đái
+belt:21,B¹ch Kim Yªu §¸i,belt,10,,8840,0.5,4420,,,Bạch Kim Yêu Đái
+cuff:2,Thanh §ång Thñ Tr¹c,cuff,1,,360,0.5,180,,,Thanh Đồng Thủ Trạc
+cuff:3,LuyÖn §ång Thñ Tr¹c,cuff,2,,1160,0.5,580,,,Luyện Đồng Thủ Trạc
+cuff:4,TÊn ThiÕt Hé UyÓn,cuff,3,,2120,0.5,1060,,,Tấn Thiết Hộ Uyển
+cuff:5,Ng©n T¬ Tr¹c,cuff,4,,3080,0.5,1540,,,Ngân Tơ Trạc
+cuff:6,Kim T¬ Tr¹c,cuff,5,,4040,0.5,2020,,,Kim Tơ Trạc
+cuff:7,B¹ch Ngäc Tr¹c,cuff,6,,5000,0.5,2500,,,Bạch Ngọc Trạc
+cuff:8,PhØ Thóy Ngäc Tr¹c,cuff,7,,5960,0.5,2980,,,Phỉ Thúy Ngọc Trạc
+cuff:9,¤n L­¬ng Ngäc TR¹c,cuff,8,,6920,0.5,3460,,,Ôn Lương Ngọc TRạc
+cuff:10,B¨ng Ph¸ch Hµn Ngäc Tr¹c,cuff,9,,7880,0.5,3940,,,Băng Phách Hàn Ngọc Trạc
+cuff:11,Long Phông HuyÕt Ngäc Tr¹c,cuff,10,,8840,0.5,4420,,,Long Phụng Huyết Ngọc Trạc
+cuff:12,Ng­u B× Hé UyÓn,cuff,1,,360,0.5,180,,,Ngưu Bì Hộ Uyển
+cuff:13,Lang B× Hé UyÓn,cuff,2,,1160,0.5,580,,,Lang Bì Hộ Uyển
+cuff:14,¤ §»ng Hé UyÓn,cuff,3,,2120,0.5,1060,,,Ô Đằng Hộ Uyển
+cuff:15,M·ng B× Hé UyÓn,cuff,4,,3080,0.5,1540,,,Mãng Bì Hộ Uyển
+cuff:16,Ng¹c B× Hé UyÓn,cuff,5,,4040,0.5,2020,,,Ngạc Bì Hộ Uyển
+cuff:17,T­îng B× Hé UyÓn,cuff,6,,5000,0.5,2500,,,Tượng Bì Hộ Uyển
+cuff:18,Sa B× Hé UyÓn,cuff,7,,5960,0.5,2980,,,Sa Bì Hộ Uyển
+cuff:19,Tª Gi¸c Hé UyÓn,cuff,8,,6920,0.5,3460,,,Tê Giác Hộ Uyển
+cuff:20,Long L©n Hé UyÓn,cuff,9,,7880,0.5,3940,,,Long Lân Hộ Uyển
+cuff:21,Thiªn Tµm Hé UyÓn,cuff,10,,8840,0.5,4420,,,Thiên Tàm Hộ Uyển
+ring:2,Hoµng Ngäc Giíi ChØ,ring,1,,360,0.5,180,,,Hoàng Ngọc Giới Chỉ
+ring:3,C¶m L·m Th¹ch Giíi ChØ,ring,2,,1160,0.5,580,,,Cảm Lãm Thạch Giới Chỉ
+ring:4,Phï Dung Th¹ch Giíi ChØ,ring,3,,2120,0.5,1060,,,Phù Dung Thạch Giới Chỉ
+ring:5,PhØ Thóy Giíi ChØ,ring,4,,3080,0.5,1540,,,Phỉ Thúy Giới Chỉ
+ring:6,Thóy Lùu Th¹ch Giíi ChØ,ring,5,,4040,0.5,2020,,,Thúy Lựu Thạch Giới Chỉ
+ring:7,Tæ MÉu Lôc Giíi ChØ,ring,6,,5000,0.5,2500,,,Tổ Mẫu Lục Giới Chỉ
+ring:8,H¶i Lam B¶o Th¹ch Giíi ChØ,ring,7,,5960,0.5,2980,,,Hải Lam Bảo Thạch Giới Chỉ
+ring:9,Hång B¶o Th¹ch Giíi ChØ,ring,8,,6920,0.5,3460,,,Hồng Bảo Thạch Giới Chỉ
+ring:10,Lam B¶o Th¹ch Giíi ChØ,ring,9,,7880,0.5,3940,,,Lam Bảo Thạch Giới Chỉ
+ring:11,Toµn Th¹ch Giíi ChØ,ring,10,,8840,0.5,4420,,,Toàn Thạch Giới Chỉ
+amulet:2,§ång H¹ng Liªn,amulet,1,,360,0.5,180,,,Đồng Hạng Liên
+amulet:3,Ng©n H¹ng Liªn,amulet,2,,1160,0.5,580,,,Ngân Hạng Liên
+amulet:4,Kim H¹ng Liªn,amulet,3,,2120,0.5,1060,,,Kim Hạng Liên
+amulet:5,B¹ch Kim H¹ng Liªn,amulet,4,,3080,0.5,1540,,,Bạch Kim Hạng Liên
+amulet:6,Ngäc Ch©u H¹ng Liªn,amulet,5,,4040,0.5,2020,,,Ngọc Châu Hạng Liên
+amulet:7,Lôc Tïng Th¹ch H¹ng Liªn,amulet,6,,5000,0.5,2500,,,Lục Tùng Thạch Hạng Liên
+amulet:8,Thñy Tinh H¹ng Liªn,amulet,7,,5960,0.5,2980,,,Thủy Tinh Hạng Liên
+amulet:9,Khæng T­íc Th¹ch H¹ng Liªn,amulet,8,,6920,0.5,3460,,,Khổng Tước Thạch Hạng Liên
+amulet:10,Tr©n Ch©u H¹ng Liªn,amulet,9,,7880,0.5,3940,,,Trân Châu Hạng Liên
+amulet:11,Toµn Th¹ch H¹ng Liªn,amulet,10,,8840,0.5,4420,,,Toàn Thạch Hạng Liên
+amulet:12,Lôc Tïng Th¹ch Hé Th©n phï,amulet,1,,360,0.5,180,,,Lục Tùng Thạch Hộ Thân phù
+amulet:13,San H« Hé Th©n phï,amulet,2,,1160,0.5,580,,,San Hô Hộ Thân phù
+amulet:14,Miªu Nh·n Hé Th©n phï,amulet,3,,2120,0.5,1060,,,Miêu Nhãn Hộ Thân phù
+amulet:15,Hæ T×nh Hé Th©n phï,amulet,4,,3080,0.5,1540,,,Hổ Tình Hộ Thân phù
+amulet:16,Thñy Tinh Hé Th©n phï,amulet,5,,4040,0.5,2020,,,Thủy Tinh Hộ Thân phù
+amulet:17,Hæ Ph¸ch Hé Th©n phï,amulet,6,,5000,0.5,2500,,,Hổ Phách Hộ Thân phù
+amulet:18,B¹ch PhØ Thóy Hé Th©n phï,amulet,7,,5960,0.5,2980,,,Bạch Phỉ Thúy Hộ Thân phù
+amulet:19,Hång PhØ Thóy Hé Th©n phï,amulet,8,,6920,0.5,3460,,,Hồng Phỉ Thúy Hộ Thân phù
+amulet:20,Tö PhØ Thóy Hé Th©n phï,amulet,9,,7880,0.5,3940,,,Tử Phỉ Thúy Hộ Thân phù
+amulet:21,Lôc PhØ Thóy Hé Th©n phï,amulet,10,,8840,0.5,4420,,,Lục Phỉ Thúy Hộ Thân phù
+pendant:2,Hu©n Y H­¬ng Nang,pendant,1,,100,0.5,50,,,Huân Y Hương Nang
+pendant:3,M¹t LÞ H­¬ng Nang,pendant,2,,400,0.5,200,,,Mạt Lị Hương Nang
+pendant:4,Nhò H­¬ng H­¬ng Nang,pendant,3,,900,0.5,450,,,Nhũ Hương Hương Nang
+pendant:5,Lan Hoa H­¬ng Nang,pendant,4,,1600,0.5,800,,,Lan Hoa Hương Nang
+pendant:6,Hîp Hoan H­¬ng Nang,pendant,5,,2500,0.5,1250,,,Hợp Hoan Hương Nang
+pendant:7,Tö T« H­¬ng Nang,pendant,6,,3600,0.5,1800,,,Tử Tô Hương Nang
+pendant:8,TrÇm §µn H­¬ng Nang,pendant,7,,4900,0.5,2450,,,Trầm Đàn Hương Nang
+pendant:9,Tiªn X¹ H­¬ng Nang,pendant,8,,6400,0.5,3200,,,Tiên Xạ Hương Nang
+pendant:10,Giµ Nam H­¬ng Nang,pendant,9,,8100,0.5,4050,,,Già Nam Hương Nang
+pendant:11,Long Tiªn H­¬ng Nang,pendant,10,,10000,0.5,5000,,,Long Tiên Hương Nang
+pendant:12,Du Diªn Ngäc Béi,pendant,1,,100,0.5,50,,,Du Diên Ngọc Bội
+pendant:13,Kinh B¹ch Ngäc Béi,pendant,2,,400,0.5,200,,,Kinh Bạch Ngọc Bội
+pendant:14,§µo Hoa Ngäc Béi,pendant,3,,900,0.5,450,,,Đào Hoa Ngọc Bội
+pendant:15,Mai Hoa  Ngäc Béi,pendant,4,,1600,0.5,800,,,Mai Hoa  Ngọc Bội
+pendant:16,Ngò S¾c Ngäc Béi,pendant,5,,2500,0.5,1250,,,Ngũ Sắc Ngọc Bội
+pendant:17,Thanh Ngäc Ngäc Béi,pendant,6,,3600,0.5,1800,,,Thanh Ngọc Ngọc Bội
+pendant:18,BÝch Ngäc Ngäc Béi,pendant,7,,4900,0.5,2450,,,Bích Ngọc Ngọc Bội
+pendant:19,MÆc Ngäc Ngäc Béi,pendant,8,,6400,0.5,3200,,,Mặc Ngọc Ngọc Bội
+pendant:20,Hoµng Ngäc Ngäc Béi,pendant,9,,8100,0.5,4050,,,Hoàng Ngọc Ngọc Bội
+pendant:21,D­¬ng Chi B¹ch Ngäc,pendant,10,,10000,0.5,5000,,,Dương Chi Bạch Ngọc
+mantle:2,ÆÆ¾ÉµÄÅû·ç,mantle,1,,0,0.5,0,,,ặặắẫàÄÅỷãỗ
+mantle:3,ÆÆ¾ÉµÄÅû·ç1,mantle,2,,0,0.5,0,,,ặặắẫàÄÅỷãỗ1
+mantle:4,ÆÆ¾ÉµÄÅû·ç2,mantle,3,,0,0.5,0,,,ặặắẫàÄÅỷãỗ2
+horse:2,LiÖt Hoµng M·,horse,1,,2500,0.5,1250,,,Liệt Hoàng Mã
+horse:3,LiÖt Hoµng M·,horse,2,,2500,0.5,1250,,,Liệt Hoàng Mã
+horse:4,Hoµng M·,horse,3,,5000,0.5,2500,,,Hoàng Mã
+horse:5,Hoµng M·,horse,4,,5000,0.5,2500,,,Hoàng Mã
+horse:6,Hoµng Phiªu,horse,5,,10000,0.5,5000,,,Hoàng Phiêu
+horse:7,Hoµng Phiªu,horse,6,,10000,0.5,5000,,,Hoàng Phiêu
+horse:8,§¹i UyÓn Hoµng M·,horse,7,,25000,0.5,12500,,,Đại Uyển Hoàng Mã
+horse:9,§¹i UyÓn Hoµng M·,horse,8,,25000,0.5,12500,,,Đại Uyển Hoàng Mã
+horse:10,Phi Hoµng,horse,9,,50000,0.5,25000,,,Phi Hoàng
+horse:11,Phi Hoµng,horse,10,,50000,0.5,25000,,,Phi Hoàng
+horse:12,LiÖt Thanh M·,horse,1,,2500,0.5,1250,,,Liệt Thanh Mã
+horse:13,LiÖt Thanh M·,horse,2,,2500,0.5,1250,,,Liệt Thanh Mã
+horse:14,Thanh Th«ng,horse,3,,5000,0.5,2500,,,Thanh Thông
+horse:15,Thanh Th«ng,horse,4,,5000,0.5,2500,,,Thanh Thông
+horse:16,Tö L­u,horse,5,,10000,0.5,5000,,,Tử Lưu
+horse:17,Tö L­u,horse,6,,10000,0.5,5000,,,Tử Lưu
+horse:18,§¹i UyÓn Thanh M·,horse,7,,25000,0.5,12500,,,Đại Uyển Thanh Mã
+horse:19,§¹i UyÓn Thanh M·,horse,8,,25000,0.5,12500,,,Đại Uyển Thanh Mã
+horse:20,Hoa L­u,horse,9,,50000,0.5,25000,,,Hoa Lưu
+horse:21,Hoa L­u,horse,10,,50000,0.5,25000,,,Hoa Lưu
+horse:22,LiÖt B¹ch M·,horse,1,,2500,0.5,1250,,,Liệt Bạch Mã
+horse:23,LiÖt B¹ch M·,horse,2,,2500,0.5,1250,,,Liệt Bạch Mã
+horse:24,B¹ch M·,horse,3,,5000,0.5,2500,,,Bạch Mã
+horse:25,B¹ch M·,horse,4,,5000,0.5,2500,,,Bạch Mã
+horse:26,Ngäc Hoa Th«ng,horse,5,,10000,0.5,5000,,,Ngọc Hoa Thông
+horse:27,Ngäc Hoa Th«ng,horse,6,,10000,0.5,5000,,,Ngọc Hoa Thông
+horse:28,§¹i UyÓn B¹ch M·,horse,7,,25000,0.5,12500,,,Đại Uyển Bạch Mã
+horse:29,§¹i UyÓn B¹ch M·,horse,8,,25000,0.5,12500,,,Đại Uyển Bạch Mã
+horse:30,Tóc S­¬ng,horse,9,,50000,0.5,25000,,,Túc Sương
+horse:31,Tóc S­¬ng,horse,10,,50000,0.5,25000,,,Túc Sương
+horse:32,LiÖt H¾c M·,horse,1,,2500,0.5,1250,,,Liệt Hắc Mã
+horse:33,LiÖt H¾c M·,horse,2,,2500,0.5,1250,,,Liệt Hắc Mã
+horse:34,H¾c M·,horse,3,,5000,0.5,2500,,,Hắc Mã
+horse:35,H¾c M·,horse,4,,5000,0.5,2500,,,Hắc Mã
+horse:36,H¾c Kú,horse,5,,10000,0.5,5000,,,Hắc Kỳ
+horse:37,H¾c Kú,horse,6,,10000,0.5,5000,,,Hắc Kỳ
+horse:38,§¹i UyÓn H¾c M·,horse,7,,25000,0.5,12500,,,Đại Uyển Hắc Mã
+horse:39,§¹i UyÓn H¾c M·,horse,8,,25000,0.5,12500,,,Đại Uyển Hắc Mã
+horse:40,¤ Chïy,horse,9,,50000,0.5,25000,,,Ô Chùy
+horse:41,¤ Chïy,horse,10,,50000,0.5,25000,,,Ô Chùy
+horse:42,LiÖt Hång M·,horse,1,,2500,0.5,1250,,,Liệt Hồng Mã
+horse:43,LiÖt Hång M·,horse,2,,2500,0.5,1250,,,Liệt Hồng Mã
+horse:44,Hång M·,horse,3,,5000,0.5,2500,,,Hồng Mã
+horse:45,Hång M·,horse,4,,5000,0.5,2500,,,Hồng Mã
+horse:46,Hång Ly,horse,5,,10000,0.5,5000,,,Hồng Ly
+horse:47,Hång Ly,horse,6,,10000,0.5,5000,,,Hồng Ly
+horse:48,§¹i UyÓn H·n HuyÕt M·,horse,7,,25000,0.5,12500,,,Đại Uyển Hãn Huyết Mã
+horse:49,§¹i UyÓn H·n HuyÕt M·,horse,8,,25000,0.5,12500,,,Đại Uyển Hãn Huyết Mã
+horse:50,XÝch Ký,horse,9,,50000,0.5,25000,,,Xích Ký
+horse:51,XÝch Ký,horse,10,,50000,0.5,25000,,,Xích Ký
+horse:52,¤ V©n §¹p TuyÕt,horse,1,,250000,0.5,125000,,,Ô Vân Đạp Tuyết
+horse:53,XÝch Thè,horse,2,,250000,0.5,125000,,,Xích Thố
+horse:54,TuyÖt ¶nh,horse,3,,250000,0.5,125000,,,Tuyệt ảnh
+horse:55,§Ých L«,horse,4,,250000,0.5,125000,,,Đích Lô
+horse:56,ChiÕu D¹ Ngäc S­ Tö,horse,5,,250000,0.5,125000,,,Chiếu Dạ Ngọc Sư Tử
+horse:57,¤ V©n §¹p TuyÕt,horse,6,,250000,0.5,125000,,,Ô Vân Đạp Tuyết
+horse:58,XÝch Thè,horse,7,,250000,0.5,125000,,,Xích Thố
+horse:59,TuyÖt ¶nh,horse,8,,250000,0.5,125000,,,Tuyệt ảnh
+horse:60,§Ých L«,horse,9,,250000,0.5,125000,,,Đích Lô
+horse:61,ChiÕu D¹ Ngäc S­ Tö,horse,10,,250000,0.5,125000,,,Chiếu Dạ Ngọc Sư Tử
+horse:62,B«n Tiªu,horse,1,,250000,0.5,125000,,,Bôn Tiêu
+horse:63,B«n Tiªu,horse,2,,250000,0.5,125000,,,Bôn Tiêu
+horse:64,B«n Tiªu,horse,3,,250000,0.5,125000,,,Bôn Tiêu
+horse:65,B«n Tiªu,horse,4,,250000,0.5,125000,,,Bôn Tiêu
+horse:66,B«n Tiªu,horse,5,,250000,0.5,125000,,,Bôn Tiêu
+horse:67,B«n Tiªu,horse,6,,250000,0.5,125000,,,Bôn Tiêu
+horse:68,B«n Tiªu,horse,7,,250000,0.5,125000,,,Bôn Tiêu
+horse:69,B«n Tiªu,horse,8,,250000,0.5,125000,,,Bôn Tiêu
+horse:70,B«n Tiªu,horse,9,,250000,0.5,125000,,,Bôn Tiêu
+horse:71,B«n Tiªu,horse,10,,250000,0.5,125000,,,Bôn Tiêu
+horse:72,Phiªn Vò,horse,1,,250000,0.5,125000,,,Phiên Vũ
+horse:73,Phiªn Vò,horse,2,,250000,0.5,125000,,,Phiên Vũ
+horse:74,Phiªn Vò,horse,3,,250000,0.5,125000,,,Phiên Vũ
+horse:75,Phiªn Vò,horse,4,,250000,0.5,125000,,,Phiên Vũ
+horse:76,Phiªn Vò,horse,5,,250000,0.5,125000,,,Phiên Vũ
+horse:77,Phiªn Vò,horse,6,,250000,0.5,125000,,,Phiên Vũ
+horse:78,Phiªn Vò,horse,7,,250000,0.5,125000,,,Phiên Vũ
+horse:79,Phiªn Vò,horse,8,,250000,0.5,125000,,,Phiên Vũ
+horse:80,Phiªn Vò,horse,9,,250000,0.5,125000,,,Phiên Vũ
+horse:81,Phiªn Vò,horse,10,,250000,0.5,125000,,,Phiên Vũ
+horse:82,Phi V©n,horse,1,,50000,0.5,25000,,,Phi Vân
+horse:83,Phi V©n,horse,2,,50000,0.5,25000,,,Phi Vân
+horse:84,Phi V©n,horse,3,,50000,0.5,25000,,,Phi Vân
+horse:85,Phi V©n,horse,4,,50000,0.5,25000,,,Phi Vân
+horse:86,Phi V©n,horse,5,,50000,0.5,25000,,,Phi Vân
+horse:87,Phi V©n,horse,6,,50000,0.5,25000,,,Phi Vân
+horse:88,Phi V©n,horse,7,,50000,0.5,25000,,,Phi Vân
+horse:89,Phi V©n,horse,8,,50000,0.5,25000,,,Phi Vân
+horse:90,Phi V©n,horse,9,,50000,0.5,25000,,,Phi Vân
+horse:91,Phi V©n,horse,10,,50000,0.5,25000,,,Phi Vân
+horse:92,XÝch Long C©u,horse,1,,250000,0.5,125000,,,Xích Long Câu
+horse:93,XÝch Long C©u,horse,2,,250000,0.5,125000,,,Xích Long Câu
+horse:94,XÝch Long C©u,horse,3,,250000,0.5,125000,,,Xích Long Câu
+horse:95,XÝch Long C©u,horse,4,,250000,0.5,125000,,,Xích Long Câu
+horse:96,XÝch Long C©u,horse,5,,250000,0.5,125000,,,Xích Long Câu
+horse:97,XÝch Long C©u,horse,6,,250000,0.5,125000,,,Xích Long Câu
+horse:98,XÝch Long C©u,horse,7,,250000,0.5,125000,,,Xích Long Câu
+horse:99,XÝch Long C©u,horse,8,,250000,0.5,125000,,,Xích Long Câu
+horse:100,XÝch Long C©u,horse,9,,250000,0.5,125000,,,Xích Long Câu
+horse:101,XÝch Long C©u,horse,10,,250000,0.5,125000,,,Xích Long Câu
+horse:102,TuyÖt §Þa,horse,1,,250000,0.5,125000,,,Tuyệt Địa
+horse:103,TuyÖt §Þa,horse,2,,250000,0.5,125000,,,Tuyệt Địa
+horse:104,TuyÖt §Þa,horse,3,,250000,0.5,125000,,,Tuyệt Địa
+horse:105,TuyÖt §Þa,horse,4,,250000,0.5,125000,,,Tuyệt Địa
+horse:106,TuyÖt §Þa,horse,5,,250000,0.5,125000,,,Tuyệt Địa
+horse:107,TuyÖt §Þa,horse,6,,250000,0.5,125000,,,Tuyệt Địa
+horse:108,TuyÖt §Þa,horse,7,,250000,0.5,125000,,,Tuyệt Địa
+horse:109,TuyÖt §Þa,horse,8,,250000,0.5,125000,,,Tuyệt Địa
+horse:110,TuyÖt §Þa,horse,9,,250000,0.5,125000,,,Tuyệt Địa
+horse:111,TuyÖt §Þa,horse,10,,250000,0.5,125000,,,Tuyệt Địa
+horse:112,Du Huy,horse,1,,250000,0.5,125000,,,Du Huy
+horse:113,Du Huy,horse,2,,250000,0.5,125000,,,Du Huy
+horse:114,Du Huy,horse,3,,250000,0.5,125000,,,Du Huy
+horse:115,Du Huy,horse,4,,250000,0.5,125000,,,Du Huy
+horse:116,Du Huy,horse,5,,250000,0.5,125000,,,Du Huy
+horse:117,Du Huy,horse,6,,250000,0.5,125000,,,Du Huy
+horse:118,Du Huy,horse,7,,250000,0.5,125000,,,Du Huy
+horse:119,Du Huy,horse,8,,250000,0.5,125000,,,Du Huy
+horse:120,Du Huy,horse,9,,250000,0.5,125000,,,Du Huy
+horse:121,Du Huy,horse,10,,250000,0.5,125000,,,Du Huy
+horse:122,§»ng Vô,horse,1,,250000,0.5,125000,,,Đằng Vụ
+horse:123,§»ng Vô,horse,2,,250000,0.5,125000,,,Đằng Vụ
+horse:124,§»ng Vô,horse,3,,250000,0.5,125000,,,Đằng Vụ
+horse:125,§»ng Vô,horse,4,,250000,0.5,125000,,,Đằng Vụ
+horse:126,§»ng Vô,horse,5,,250000,0.5,125000,,,Đằng Vụ
+horse:127,§»ng Vô,horse,6,,250000,0.5,125000,,,Đằng Vụ
+horse:128,§»ng Vô,horse,7,,250000,0.5,125000,,,Đằng Vụ
+horse:129,§»ng Vô,horse,8,,250000,0.5,125000,,,Đằng Vụ
+horse:130,§»ng Vô,horse,9,,250000,0.5,125000,,,Đằng Vụ
+horse:131,§»ng Vô,horse,10,,250000,0.5,125000,,,Đằng Vụ
+horse:132,Siªu Quang,horse,1,,250000,0.5,125000,,,Siêu Quang
+horse:133,Siªu Quang,horse,2,,250000,0.5,125000,,,Siêu Quang
+horse:134,Siªu Quang,horse,3,,250000,0.5,125000,,,Siêu Quang
+horse:135,Siªu Quang,horse,4,,250000,0.5,125000,,,Siêu Quang
+horse:136,Siªu Quang,horse,5,,250000,0.5,125000,,,Siêu Quang
+horse:137,Siªu Quang,horse,6,,250000,0.5,125000,,,Siêu Quang
+horse:138,Siªu Quang,horse,7,,250000,0.5,125000,,,Siêu Quang
+horse:139,Siªu Quang,horse,8,,250000,0.5,125000,,,Siêu Quang
+horse:140,Siªu Quang,horse,9,,250000,0.5,125000,,,Siêu Quang
+horse:141,Siªu Quang,horse,10,,250000,0.5,125000,,,Siêu Quang
+horse:142,Kim Tinh Hæ V­¬ng,horse,1,,500000,0.5,250000,,,Kim Tinh Hổ Vương
+horse:143,Kim Tinh Hæ V­¬ng,horse,2,,500000,0.5,250000,,,Kim Tinh Hổ Vương
+horse:144,Kim Tinh Hæ V­¬ng,horse,3,,500000,0.5,250000,,,Kim Tinh Hổ Vương
+horse:145,Kim Tinh Hæ V­¬ng,horse,4,,500000,0.5,250000,,,Kim Tinh Hổ Vương
+horse:146,Kim Tinh Hæ V­¬ng,horse,5,,500000,0.5,250000,,,Kim Tinh Hổ Vương
+horse:147,Kim Tinh Hæ V­¬ng,horse,6,,500000,0.5,250000,,,Kim Tinh Hổ Vương
+horse:148,Kim Tinh Hæ V­¬ng,horse,7,,500000,0.5,250000,,,Kim Tinh Hổ Vương
+horse:149,Kim Tinh Hæ V­¬ng,horse,8,,500000,0.5,250000,,,Kim Tinh Hổ Vương
+horse:150,Kim Tinh Hæ V­¬ng,horse,9,,500000,0.5,250000,,,Kim Tinh Hổ Vương
+horse:151,Kim Tinh Hæ V­¬ng,horse,10,,500000,0.5,250000,,,Kim Tinh Hổ Vương
+horse:152,Háa Tinh Kim Hæ V­¬ng,horse,1,,500000,0.5,250000,,,Hỏa Tinh Kim Hổ Vương
+horse:153,Háa Tinh Kim Hæ V­¬ng,horse,2,,500000,0.5,250000,,,Hỏa Tinh Kim Hổ Vương
+horse:154,Háa Tinh Kim Hæ V­¬ng,horse,3,,500000,0.5,250000,,,Hỏa Tinh Kim Hổ Vương
+horse:155,Háa Tinh Kim Hæ V­¬ng,horse,4,,500000,0.5,250000,,,Hỏa Tinh Kim Hổ Vương
+horse:156,Háa Tinh Kim Hæ V­¬ng,horse,5,,500000,0.5,250000,,,Hỏa Tinh Kim Hổ Vương
+horse:157,Háa Tinh Kim Hæ V­¬ng,horse,6,,500000,0.5,250000,,,Hỏa Tinh Kim Hổ Vương
+horse:158,Háa Tinh Kim Hæ V­¬ng,horse,7,,500000,0.5,250000,,,Hỏa Tinh Kim Hổ Vương
+horse:159,Háa Tinh Kim Hæ V­¬ng,horse,8,,500000,0.5,250000,,,Hỏa Tinh Kim Hổ Vương
+horse:160,Háa Tinh Kim Hæ V­¬ng,horse,9,,500000,0.5,250000,,,Hỏa Tinh Kim Hổ Vương
+horse:161,Háa Tinh Kim Hæ V­¬ng,horse,10,,500000,0.5,250000,,,Hỏa Tinh Kim Hổ Vương
+horse:162,Kim Tinh B¹ch Hæ V­¬ng,horse,1,,500000,0.5,250000,,,Kim Tinh Bạch Hổ Vương
+horse:163,Kim Tinh B¹ch Hæ V­¬ng,horse,2,,500000,0.5,250000,,,Kim Tinh Bạch Hổ Vương
+horse:164,Kim Tinh B¹ch Hæ V­¬ng,horse,3,,500000,0.5,250000,,,Kim Tinh Bạch Hổ Vương
+horse:165,Kim Tinh B¹ch Hæ V­¬ng,horse,4,,500000,0.5,250000,,,Kim Tinh Bạch Hổ Vương
+horse:166,Kim Tinh B¹ch Hæ V­¬ng,horse,5,,500000,0.5,250000,,,Kim Tinh Bạch Hổ Vương
+horse:167,Kim Tinh B¹ch Hæ V­¬ng,horse,6,,500000,0.5,250000,,,Kim Tinh Bạch Hổ Vương
+horse:168,Kim Tinh B¹ch Hæ V­¬ng,horse,7,,500000,0.5,250000,,,Kim Tinh Bạch Hổ Vương
+horse:169,Kim Tinh B¹ch Hæ V­¬ng,horse,8,,500000,0.5,250000,,,Kim Tinh Bạch Hổ Vương
+horse:170,Kim Tinh B¹ch Hæ V­¬ng,horse,9,,500000,0.5,250000,,,Kim Tinh Bạch Hổ Vương
+horse:171,Kim Tinh B¹ch Hæ V­¬ng,horse,10,,500000,0.5,250000,,,Kim Tinh Bạch Hổ Vương
+horse:172,Long Tinh H¾c Hæ V­¬ng,horse,1,,500000,0.5,250000,,,Long Tinh Hắc Hổ Vương
+horse:173,Long Tinh H¾c Hæ V­¬ng,horse,2,,500000,0.5,250000,,,Long Tinh Hắc Hổ Vương
+horse:174,Long Tinh H¾c Hæ V­¬ng,horse,3,,500000,0.5,250000,,,Long Tinh Hắc Hổ Vương
+horse:175,Long Tinh H¾c Hæ V­¬ng,horse,4,,500000,0.5,250000,,,Long Tinh Hắc Hổ Vương
+horse:176,Long Tinh H¾c Hæ V­¬ng,horse,5,,500000,0.5,250000,,,Long Tinh Hắc Hổ Vương
+horse:177,Long Tinh H¾c Hæ V­¬ng,horse,6,,500000,0.5,250000,,,Long Tinh Hắc Hổ Vương
+horse:178,Long Tinh H¾c Hæ V­¬ng,horse,7,,500000,0.5,250000,,,Long Tinh Hắc Hổ Vương
+horse:179,Long Tinh H¾c Hæ V­¬ng,horse,8,,500000,0.5,250000,,,Long Tinh Hắc Hổ Vương
+horse:180,Long Tinh H¾c Hæ V­¬ng,horse,9,,500000,0.5,250000,,,Long Tinh Hắc Hổ Vương
+horse:181,Long Tinh H¾c Hæ V­¬ng,horse,10,,500000,0.5,250000,,,Long Tinh Hắc Hổ Vương
+horse:182,H·n HuyÕt Long C©u,horse,1,,500000,0.5,250000,,,Hãn Huyết Long Câu
+horse:183,H·n HuyÕt Long C©u,horse,2,,500000,0.5,250000,,,Hãn Huyết Long Câu
+horse:184,H·n HuyÕt Long C©u,horse,3,,500000,0.5,250000,,,Hãn Huyết Long Câu
+horse:185,H·n HuyÕt Long C©u,horse,4,,500000,0.5,250000,,,Hãn Huyết Long Câu
+horse:186,H·n HuyÕt Long C©u,horse,5,,500000,0.5,250000,,,Hãn Huyết Long Câu
+horse:187,H·n HuyÕt Long C©u,horse,6,,500000,0.5,250000,,,Hãn Huyết Long Câu
+horse:188,H·n HuyÕt Long C©u,horse,7,,500000,0.5,250000,,,Hãn Huyết Long Câu
+horse:189,H·n HuyÕt Long C©u,horse,8,,500000,0.5,250000,,,Hãn Huyết Long Câu
+horse:190,H·n HuyÕt Long C©u,horse,9,,500000,0.5,250000,,,Hãn Huyết Long Câu
+horse:191,H·n HuyÕt Long C©u,horse,10,,500000,0.5,250000,,,Hãn Huyết Long Câu
+horse:192,Phong V©n B¹ch M·,horse,1,,99999,0.5,49999,,,Phong Vân Bạch Mã
+horse:193,Phong V©n B¹ch M·,horse,2,,99999,0.5,49999,,,Phong Vân Bạch Mã
+horse:194,Phong V©n B¹ch M·,horse,3,,99999,0.5,49999,,,Phong Vân Bạch Mã
+horse:195,Phong V©n B¹ch M·,horse,4,,99999,0.5,49999,,,Phong Vân Bạch Mã
+horse:196,Phong V©n B¹ch M·,horse,5,,99999,0.5,49999,,,Phong Vân Bạch Mã
+horse:197,Phong V©n B¹ch M·,horse,6,,99999,0.5,49999,,,Phong Vân Bạch Mã
+horse:198,Phong V©n B¹ch M·,horse,7,,99999,0.5,49999,,,Phong Vân Bạch Mã
+horse:199,Phong V©n B¹ch M·,horse,8,,99999,0.5,49999,,,Phong Vân Bạch Mã
+horse:200,Phong V©n B¹ch M·,horse,9,,99999,0.5,49999,,,Phong Vân Bạch Mã
+horse:201,Phong V©n B¹ch M·,horse,10,,99999,0.5,49999,,,Phong Vân Bạch Mã
+horse:202,Phong V©n ChiÕn M·,horse,1,,99999,0.5,49999,,,Phong Vân Chiến Mã
+horse:203,Phong V©n ChiÕn M·,horse,2,,99999,0.5,49999,,,Phong Vân Chiến Mã
+horse:204,Phong V©n ChiÕn M·,horse,3,,99999,0.5,49999,,,Phong Vân Chiến Mã
+horse:205,Phong V©n ChiÕn M·,horse,4,,99999,0.5,49999,,,Phong Vân Chiến Mã
+horse:206,Phong V©n ChiÕn M·,horse,5,,99999,0.5,49999,,,Phong Vân Chiến Mã
+horse:207,Phong V©n ChiÕn M·,horse,6,,99999,0.5,49999,,,Phong Vân Chiến Mã
+horse:208,Phong V©n ChiÕn M·,horse,7,,99999,0.5,49999,,,Phong Vân Chiến Mã
+horse:209,Phong V©n ChiÕn M·,horse,8,,99999,0.5,49999,,,Phong Vân Chiến Mã
+horse:210,Phong V©n ChiÕn M·,horse,9,,99999,0.5,49999,,,Phong Vân Chiến Mã
+horse:211,Phong V©n ChiÕn M·,horse,10,,99999,0.5,49999,,,Phong Vân Chiến Mã
+horse:212,Phong V©n ThÇn M·,horse,1,,500000,0.5,250000,,,Phong Vân Thần Mã
+horse:213,Phong V©n ThÇn M·,horse,2,,500000,0.5,250000,,,Phong Vân Thần Mã
+horse:214,Phong V©n ThÇn M·,horse,3,,500000,0.5,250000,,,Phong Vân Thần Mã
+horse:215,Phong V©n ThÇn M·,horse,4,,500000,0.5,250000,,,Phong Vân Thần Mã
+horse:216,Phong V©n ThÇn M·,horse,5,,500000,0.5,250000,,,Phong Vân Thần Mã
+horse:217,Phong V©n ThÇn M·,horse,6,,500000,0.5,250000,,,Phong Vân Thần Mã
+horse:218,Phong V©n ThÇn M·,horse,7,,500000,0.5,250000,,,Phong Vân Thần Mã
+horse:219,Phong V©n ThÇn M·,horse,8,,500000,0.5,250000,,,Phong Vân Thần Mã
+horse:220,Phong V©n ThÇn M·,horse,9,,500000,0.5,250000,,,Phong Vân Thần Mã
+horse:221,Phong V©n ThÇn M·,horse,10,,500000,0.5,250000,,,Phong Vân Thần Mã
+horse:222,S­ tö,horse,1,,500000,0.5,250000,,,Sư tử
+horse:223,S­ tö,horse,2,,500000,0.5,250000,,,Sư tử
+horse:224,S­ tö,horse,3,,500000,0.5,250000,,,Sư tử
+horse:225,S­ tö,horse,4,,500000,0.5,250000,,,Sư tử
+horse:226,S­ tö,horse,5,,500000,0.5,250000,,,Sư tử
+horse:227,S­ tö,horse,6,,500000,0.5,250000,,,Sư tử
+horse:228,S­ tö,horse,7,,500000,0.5,250000,,,Sư tử
+horse:229,S­ tö,horse,8,,500000,0.5,250000,,,Sư tử
+horse:230,S­ tö,horse,9,,500000,0.5,250000,,,Sư tử
+horse:231,S­ tö,horse,10,,500000,0.5,250000,,,Sư tử
+horse:232,L¹c ®µ,horse,1,,500000,0.5,250000,,,Lạc đà
+horse:233,L¹c ®µ,horse,2,,500000,0.5,250000,,,Lạc đà
+horse:234,L¹c ®µ,horse,3,,500000,0.5,250000,,,Lạc đà
+horse:235,L¹c ®µ,horse,4,,500000,0.5,250000,,,Lạc đà
+horse:236,L¹c ®µ,horse,5,,500000,0.5,250000,,,Lạc đà
+horse:237,L¹c ®µ,horse,6,,500000,0.5,250000,,,Lạc đà
+horse:238,L¹c ®µ,horse,7,,500000,0.5,250000,,,Lạc đà
+horse:239,L¹c ®µ,horse,8,,500000,0.5,250000,,,Lạc đà
+horse:240,L¹c ®µ,horse,9,,500000,0.5,250000,,,Lạc đà
+horse:241,L¹c ®µ,horse,10,,500000,0.5,250000,,,Lạc đà
+horse:242,D­¬ng §µ,horse,1,,500000,0.5,250000,,,Dương Đà
+horse:243,D­¬ng §µ,horse,2,,500000,0.5,250000,,,Dương Đà
+horse:244,D­¬ng §µ,horse,3,,500000,0.5,250000,,,Dương Đà
+horse:245,D­¬ng §µ,horse,4,,500000,0.5,250000,,,Dương Đà
+horse:246,D­¬ng §µ,horse,5,,500000,0.5,250000,,,Dương Đà
+horse:247,D­¬ng §µ,horse,6,,500000,0.5,250000,,,Dương Đà
+horse:248,D­¬ng §µ,horse,7,,500000,0.5,250000,,,Dương Đà
+horse:249,D­¬ng §µ,horse,8,,500000,0.5,250000,,,Dương Đà
+horse:250,D­¬ng §µ,horse,9,,500000,0.5,250000,,,Dương Đà
+horse:251,D­¬ng §µ,horse,10,,500000,0.5,250000,,,Dương Đà
+horse:252,H­¬u ®èm,horse,1,,500000,0.5,250000,,,Hươu đốm
+horse:253,H­¬u ®èm,horse,2,,500000,0.5,250000,,,Hươu đốm
+horse:254,H­¬u ®èm,horse,3,,500000,0.5,250000,,,Hươu đốm
+horse:255,H­¬u ®èm,horse,4,,500000,0.5,250000,,,Hươu đốm
+horse:256,H­¬u ®èm,horse,5,,500000,0.5,250000,,,Hươu đốm
+horse:257,H­¬u ®èm,horse,6,,500000,0.5,250000,,,Hươu đốm
+horse:258,H­¬u ®èm,horse,7,,500000,0.5,250000,,,Hươu đốm
+horse:259,H­¬u ®èm,horse,8,,500000,0.5,250000,,,Hươu đốm
+horse:260,H­¬u ®èm,horse,9,,500000,0.5,250000,,,Hươu đốm
+horse:261,H­¬u ®èm,horse,10,,500000,0.5,250000,,,Hươu đốm
+horse:262,D­¬ng Sa,horse,1,,5000,0.5,2500,,,Dương Sa
+horse:263,D­¬ng Sa,horse,2,,5000,0.5,2500,,,Dương Sa
+horse:264,D­¬ng Sa,horse,3,,5000,0.5,2500,,,Dương Sa
+horse:265,D­¬ng Sa,horse,4,,5000,0.5,2500,,,Dương Sa
+horse:266,D­¬ng Sa,horse,5,,5000,0.5,2500,,,Dương Sa
+horse:267,D­¬ng Sa,horse,6,,5000,0.5,2500,,,Dương Sa
+horse:268,D­¬ng Sa,horse,7,,5000,0.5,2500,,,Dương Sa
+horse:269,D­¬ng Sa,horse,8,,5000,0.5,2500,,,Dương Sa
+horse:270,D­¬ng Sa,horse,9,,5000,0.5,2500,,,Dương Sa
+horse:271,D­¬ng Sa,horse,10,,5000,0.5,2500,,,Dương Sa
+horse:272,Ngù Phong,horse,1,,5000,0.5,2500,,,Ngự Phong
+horse:273,Ngù Phong,horse,2,,5000,0.5,2500,,,Ngự Phong
+horse:274,Ngù Phong,horse,3,,5000,0.5,2500,,,Ngự Phong
+horse:275,Ngù Phong,horse,4,,5000,0.5,2500,,,Ngự Phong
+horse:276,Ngù Phong,horse,5,,5000,0.5,2500,,,Ngự Phong
+horse:277,Ngù Phong,horse,6,,5000,0.5,2500,,,Ngự Phong
+horse:278,Ngù Phong,horse,7,,5000,0.5,2500,,,Ngự Phong
+horse:279,Ngù Phong,horse,8,,5000,0.5,2500,,,Ngự Phong
+horse:280,Ngù Phong,horse,9,,5000,0.5,2500,,,Ngự Phong
+horse:281,Ngù Phong,horse,10,,5000,0.5,2500,,,Ngự Phong
+horse:282,Truy ®iÖn,horse,1,,5000,0.5,2500,,,Truy điện
+horse:283,Truy ®iÖn,horse,2,,5000,0.5,2500,,,Truy điện
+horse:284,Truy ®iÖn,horse,3,,5000,0.5,2500,,,Truy điện
+horse:285,Truy ®iÖn,horse,4,,5000,0.5,2500,,,Truy điện
+horse:286,Truy ®iÖn,horse,5,,5000,0.5,2500,,,Truy điện
+horse:287,Truy ®iÖn,horse,6,,5000,0.5,2500,,,Truy điện
+horse:288,Truy ®iÖn,horse,7,,5000,0.5,2500,,,Truy điện
+horse:289,Truy ®iÖn,horse,8,,5000,0.5,2500,,,Truy điện
+horse:290,Truy ®iÖn,horse,9,,5000,0.5,2500,,,Truy điện
+horse:291,Truy ®iÖn,horse,10,,5000,0.5,2500,,,Truy điện
+horse:292,L­u Tinh,horse,1,,5000,0.5,2500,,,Lưu Tinh
+horse:293,L­u Tinh,horse,2,,5000,0.5,2500,,,Lưu Tinh
+horse:294,L­u Tinh,horse,3,,5000,0.5,2500,,,Lưu Tinh
+horse:295,L­u Tinh,horse,4,,5000,0.5,2500,,,Lưu Tinh
+horse:296,L­u Tinh,horse,5,,5000,0.5,2500,,,Lưu Tinh
+horse:297,L­u Tinh,horse,6,,5000,0.5,2500,,,Lưu Tinh
+horse:298,L­u Tinh,horse,7,,5000,0.5,2500,,,Lưu Tinh
+horse:299,L­u Tinh,horse,8,,5000,0.5,2500,,,Lưu Tinh
+horse:300,L­u Tinh,horse,9,,5000,0.5,2500,,,Lưu Tinh
+horse:301,L­u Tinh,horse,10,,5000,0.5,2500,,,Lưu Tinh
+horse:302,À¶÷ëÉñÂ¹,horse,1,,500000,0.5,250000,,,ÀảữởẫủÂạ
+horse:303,À¶÷ëÉñÂ¹,horse,2,,500000,0.5,250000,,,ÀảữởẫủÂạ
+horse:304,À¶÷ëÉñÂ¹,horse,3,,500000,0.5,250000,,,ÀảữởẫủÂạ
+horse:305,À¶÷ëÉñÂ¹,horse,4,,500000,0.5,250000,,,ÀảữởẫủÂạ
+horse:306,À¶÷ëÉñÂ¹,horse,5,,500000,0.5,250000,,,ÀảữởẫủÂạ
+horse:307,À¶÷ëÉñÂ¹,horse,6,,500000,0.5,250000,,,ÀảữởẫủÂạ
+horse:308,À¶÷ëÉñÂ¹,horse,7,,500000,0.5,250000,,,ÀảữởẫủÂạ
+horse:309,À¶÷ëÉñÂ¹,horse,8,,500000,0.5,250000,,,ÀảữởẫủÂạ
+horse:310,À¶÷ëÉñÂ¹,horse,9,,500000,0.5,250000,,,ÀảữởẫủÂạ
+horse:311,À¶÷ëÉñÂ¹,horse,10,,500000,0.5,250000,,,ÀảữởẫủÂạ
+horse:312,Â¿ÃÃÃÃ,horse,1,,500000,0.5,250000,,,Â¿ÃÃÃÃ
+horse:313,Â¿ÃÃÃÃ,horse,2,,500000,0.5,250000,,,Â¿ÃÃÃÃ
+horse:314,Â¿ÃÃÃÃ,horse,3,,500000,0.5,250000,,,Â¿ÃÃÃÃ
+horse:315,Â¿ÃÃÃÃ,horse,4,,500000,0.5,250000,,,Â¿ÃÃÃÃ
+horse:316,Â¿ÃÃÃÃ,horse,5,,500000,0.5,250000,,,Â¿ÃÃÃÃ
+horse:317,Â¿ÃÃÃÃ,horse,6,,500000,0.5,250000,,,Â¿ÃÃÃÃ
+horse:318,Â¿ÃÃÃÃ,horse,7,,500000,0.5,250000,,,Â¿ÃÃÃÃ
+horse:319,Â¿ÃÃÃÃ,horse,8,,500000,0.5,250000,,,Â¿ÃÃÃÃ
+horse:320,Â¿ÃÃÃÃ,horse,9,,500000,0.5,250000,,,Â¿ÃÃÃÃ
+horse:321,Â¿ÃÃÃÃ,horse,10,,500000,0.5,250000,,,Â¿ÃÃÃÃ
+horse:322,ÈÝ´í,horse,1,,500000,0.5,250000,,,ẩí´ớ
+potion:2,Kim S¸ng D­îc (tiÓu),potion,1,,50,0.5,25,,,Kim Sáng Dược (tiểu)
+potion:3,Kim S¸ng D­îc (trung),potion,2,,100,0.5,50,,,Kim Sáng Dược (trung)
+potion:4,Kim S¸ng D­îc (®¹i),potion,3,,250,0.5,125,,,Kim Sáng Dược (đại)
+potion:5,Håi Thiªn ®an,potion,4,,300,0.5,150,,,Hồi Thiên đan
+potion:6,Cöu ChuyÓn Hoµn Hån ®an,potion,5,,1500,0.5,750,,,Cửu Chuyển Hoàn Hồn đan
+potion:7,Ng­ng ThÇn ®an (tiÓu),potion,1,,50,0.5,25,,,Ngưng Thần đan (tiểu)
+potion:8,Ng­ng ThÇn ®an (trung),potion,2,,100,0.5,50,,,Ngưng Thần đan (trung)
+potion:9,Ng­ng ThÇn ®an (®¹i),potion,3,,250,0.5,125,,,Ngưng Thần đan (đại)
+potion:10,§¹i Bæ t¸n,potion,4,,300,0.5,150,,,Đại Bổ tán
+potion:11,¤ ®Çu Hoµn thÇn ®an,potion,5,,1500,0.5,750,,,Ô đầu Hoàn thần đan
+potion:12,Thõa Tiªn MËt (tiÓu),potion,1,,80,0.5,40,,,Thừa Tiên Mật (tiểu)
+potion:13,Thõa Tiªn MËt (trung),potion,2,,150,0.5,75,,,Thừa Tiên Mật (trung)
+potion:14,Thõa Tiªn MËt (®¹i),potion,3,,375,0.5,187,,,Thừa Tiên Mật (đại)
+potion:15,ThÊt KhiÕu Bæ t©m ®an,potion,4,,750,0.5,375,,,Thất Khiếu Bổ tâm đan
+potion:16,Ngò Hoa Ngäc Lé Hoµn,potion,5,,2000,0.5,1000,,,Ngũ Hoa Ngọc Lộ Hoàn
+potion:17,Tam Hoa T¸n,potion,1,,50,0.5,25,,,Tam Hoa Tán
+potion:18,§ïi gµ,potion,2,,50,0.5,25,,,Đùi gà
+potion:19,B¸nh Trung Thu h­,potion,3,,50,0.5,25,,,Bánh Trung Thu hư
+potion:20,Toµn Qu¶ hoµn,potion,4,,100,0.5,50,,,Toàn Quả hoàn
+potion:21,Toµn Qu¶ hoµn,potion,5,,100,0.5,50,,,Toàn Quả hoàn
+potion:22,Thanh Ng­u Gi¶i ®éc t¸n,potion,1,,5000,0.5,2500,,,Thanh Ngưu Giải độc tán
+potion:23,Ho¾c H­¬ng ChÝnh khÝ hoµn,potion,2,,8000,0.5,4000,,,Hoắc Hương Chính khí hoàn
+potion:24,Tam ThuËn t¸n,potion,3,,10000,0.5,5000,,,Tam Thuận tán
+potion:25,Ng©n KiÒu Khø ®éc ®an,potion,4,,25000,0.5,12500,,,Ngân Kiều Khứ độc đan
+potion:26,Long §µm Hãa §éc ®an,potion,5,,50000,0.5,25000,,,Long Đàm Hóa Độc đan
+potion:27,Tr­êng MÖnh hoµn,potion,1,,5,0.5,2,,,Trường Mệnh hoàn
+potion:28,Gia Bµo hoµn,potion,2,,5,0.5,2,,,Gia Bào hoàn
+potion:29,§¹i Lùc hoµn,potion,3,,5,0.5,2,,,Đại Lực hoàn
+potion:30,Cao ThiÓm hoµn,potion,4,,5,0.5,2,,,Cao Thiểm hoàn
+potion:31,Cao Trung hoµn,potion,5,,5,0.5,2,,,Cao Trung hoàn
+potion:32,Phi Tèc hoµn,potion,1,,5,0.5,2,,,Phi Tốc hoàn
+potion:33,B¨ng Phßng hoµn,potion,2,,5,0.5,2,,,Băng Phòng hoàn
+potion:34,L«i Phßng hoµn,potion,3,,5,0.5,2,,,Lôi Phòng hoàn
+potion:35,Háa Phßng hoµn,potion,4,,5,0.5,2,,,Hỏa Phòng hoàn
+potion:36,§éc Phßng hoµn,potion,5,,5,0.5,2,,,Độc Phòng hoàn
+potion:37,B¸nh ch­ng Nh©n t¸o,potion,1,,100,0.5,50,,,Bánh chưng Nhân táo
+potion:38,Thiªn s¬n  Håi ThÇn ®an,potion,2,,2000,0.5,1000,,,Thiên sơn  Hồi Thần đan
+potion:39,B¸nh ch­ng Nh©n t¸o,potion,3,,100,0.5,50,,,Bánh chưng Nhân táo
+potion:40,B¸nh ch­ng Nh©n t¸o,potion,4,,100,0.5,50,,,Bánh chưng Nhân táo
+potion:41,B¸nh ch­ng Nh©n t¸o,potion,5,,100,0.5,50,,,Bánh chưng Nhân táo
+potion:42,Ngò hoa ngäc lé hoµn ®Æc biÖt,potion,1,,12000,0.5,6000,,,Ngũ hoa ngọc lộ hoàn đặc biệt
+potion:43,Cöu chuyÓn hoµn hån ®an ®Æc biÖt,potion,2,,12000,0.5,6000,,,Cửu chuyển hoàn hồn đan đặc biệt
+potion:44,Tóc c©n tiÕp m¹ch t¸n,potion,3,,12000,0.5,6000,,,Túc cân tiếp mạch tán
+potion:45,Håi Thiªn T¸i T¹o §¬n,potion,4,,8000,0.5,4000,,,Hồi Thiên Tái Tạo Đơn
+potion:46,»ØÌìÔÙÔìµ¤,potion,5,,8000,0.5,4000,,,ằỉèỡễÙễỡàÔ
+potion:47,¿ç·þÐÐ¾üµ¤,potion,1,,7000,0.5,3500,,,¿ỗãỵééắỹàÔ
+potion:48,ËÎ½ðÐÐ¾üµ¤,potion,2,,7000,0.5,3500,,,ậẻẵðééắỹàÔ
+potion:49,ÌØÐ§»ØÌìÔÙÔìµ¤,potion,3,,50000,0.5,25000,,,èỉéĐằỉèỡễÙễỡàÔ
+potion:50,ÁªÈü×¨ÓÃÒ©,potion,4,,7000,0.5,3500,,,ÁêẩỹìăểÃềâ
