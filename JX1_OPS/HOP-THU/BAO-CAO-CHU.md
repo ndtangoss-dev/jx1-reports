@@ -86,3 +86,8 @@ Bảng giá mẫu Bot GĐ1 (8 dòng trong `STATE/BOT/gia-vat-pham.csv`) vẫn ch
 3. Đánh quái 1 phút: nói số sát thương nổi lên có trễ so với đòn không.
 4. Khi thuộc hạ thả 5, 10, 20 Bot gần chỗ đại vương: lặp bước 1–3, nói "ổn/giật nhẹ/giật nặng" ở mỗi mức.
 Thuộc hạ ghi mốc: ping, FPS, CPU máy chủ ở từng mức. (Mốc rỗi đã có; mức có Bot chờ tài khoản test.)
+
+## (B) 19/11 19:00 — Tài khoản test cho đại vương (Test-36)
+- Đã tạo tài khoản test **`tkchuvuong`** trên Test-36 (không phải máy chủ chính). Mật khẩu do máy tự sinh, nằm ở tệp trên máy thật: `C:\Users\PC\AppData\Local\jx1-secrets\tkchuvuong.txt` (ngoài kho, thuộc hạ KHÔNG đọc, không ghi vào đâu). Đại vương mở tệp đó lấy mật khẩu.
+- Chưa có vai: tạo vai phải đăng nhập bằng mật khẩu đó, thuộc hạ không được tự nhập mật khẩu. Hai cách: (1) đại vương tự đăng nhập trên điện thoại/LD và bấm "Tạo nhân vật mới" (chọn Ba Lăng huyện → hệ → tên chữ thường ≥12 ký tự), hoặc (2) đại vương cho phép rõ ràng "B dùng tệp mật khẩu đó để chạy `bot_tao_role.py`" thì thuộc hạ chạy (vẫn không in mật khẩu).
+- Hoàn tác: `python -I -X utf8 JX1_OPS/TOOLS/vm_chay.py xoa-tk-test tkchuvuong`.
