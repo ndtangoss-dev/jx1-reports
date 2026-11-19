@@ -18,9 +18,9 @@ def main():
         return
     st['check'] = now
     subprocess.run(['git', '-C', WT, 'fetch', '-q', 'origin', 'jx1-ops'], timeout=40, capture_output=True)
-    txt = subprocess.run(['git', '-C', WT, 'show', 'origin/jx1-ops:JX1_OPS/HOP-THU/CHO-SONNET.md'], timeout=20,
+    txt = subprocess.run(['git', '-C', WT, 'show', 'origin/jx1-ops:JX1_OPS/HOP-THU/' + ('CHO-SONNET-B.md' if os.environ.get('JX1_SONNET', 'A').upper() == 'B' else 'CHO-SONNET.md')], timeout=20,
                          capture_output=True).stdout.decode('utf-8', 'replace')
-    nums = [int(n) for n in re.findall(r'^## .*?Th[uư] #(\d+)', txt, re.M)]
+    nums = [int(n) for n in re.findall(r'^## .*?Th[uư] #' + ('B-' if os.environ.get('JX1_SONNET', 'A').upper() == 'B' else '') + r'(\d+)', txt, re.M)]
     top = max(nums) if nums else 0
     urgent = 'CẦN-CHAT-GẤP' in txt[txt.rfind('## '):] if txt else False
     new = top > st.get('read', 0)

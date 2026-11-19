@@ -74,7 +74,7 @@ def num(s):
 def pending_letters():
     """Thu chua xu ly trong HOP-THU/CHO-SONNET.md (muc 'Chua xu ly'); bo qua thu co the [DANG CHO]."""
     try:
-        s = open(os.path.join(ROOT, HOPTHU, 'CHO-SONNET.md'), encoding='utf-8').read()
+        s = open(os.path.join(ROOT, HOPTHU, 'CHO-SONNET-B.md' if os.environ.get('JX1_SONNET', 'A').upper() == 'B' else 'CHO-SONNET.md'), encoding='utf-8').read()
     except OSError:
         return []
     a = s.find('## Chưa xử lý')

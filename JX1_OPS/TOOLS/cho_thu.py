@@ -17,6 +17,13 @@ CHO = 'JX1_OPS/HOP-THU/CHO-SONNET.md'
 TY = 'JX1_OPS/STATE/TIEU-YEU.md'
 NHIP = 'JX1_OPS/HOP-THU/NHIP-TIM.md'
 BR = 'jx1-ops'
+# Q-75: JX1_SONNET=B -> hop thu rieng cua Sonnet B (mac dinh A, khong doi hanh vi)
+B = os.environ.get('JX1_SONNET', 'A').upper() == 'B'
+if B:
+    CHO = 'JX1_OPS/HOP-THU/CHO-SONNET-B.md'
+    NHIP = 'JX1_OPS/HOP-THU/NHIP-TIM-B.md'
+DAY_RE = r'CHAT-DAY-B #(\d+)' if B else r'CHAT-DAY #(\d+)'
+LET_RE = r'^## #B-\d+' if B else r'^## #\d+'
 
 def git(*a, check=False):
     r = subprocess.run(['git', '-C', REPO, *a], capture_output=True, text=True, encoding='utf-8',
@@ -28,11 +35,11 @@ def show(path):
     return out if rc == 0 else ''
 
 def max_chat_day(txt):
-    n = [int(m) for m in re.findall(r'CHAT-DAY #(\d+)', txt)]
+    n = [int(m) for m in re.findall(DAY_RE, txt)]
     return max(n) if n else 0
 
 def n_letters(txt):
-    return len(re.findall(r'^## #\d+', txt, flags=re.M))
+    return len(re.findall(LET_RE, txt, flags=re.M))
 
 def co_gop(txt):
     return re.search(r'\|\s*XONG-CHO-GOP\s*\|', txt) is not None
