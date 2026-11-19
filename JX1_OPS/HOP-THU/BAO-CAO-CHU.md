@@ -133,3 +133,6 @@ Kiểm chuỗi Test-36: `python -I JX1_OPS/TOOLS/vm_chay.py ports` thấy 56722,
 - Kiểm: forwarder PID 21276 (bản 14/11, nâng quyền) vẫn là bản nghe 100.95.186.86:56722/51189; log 20:14, 20:19, 20:20 đều "LỖI nối tới VM 192.168.1.50 TimeoutError" → script cũ KHÔNG đổi được đích (nó in "đang trỏ" từ tham số, không kiểm PID).
 - Điện thoại 100.123.183.6 CÓ tới forwarder (3 kết nối) → Tailscale và bộ lọc đúng.
 - Đã viết lại `chuyen_forwarder_sang_t36.ps1`: tắt bằng taskkill, kiểm lại PID, báo LỖI nếu bản cũ còn. Chủ bấm đôi CHAY-CHUYEN-T36.bat trên Desktop rồi chụp màn hình. Nếu vẫn lỗi: Task Manager → Details → kết thúc pid 21276.
+
+## Cập nhật #267
+- 'not found' do taskkill/tasklist dùng WMI (máy thật hỏng), PID 21276 vẫn sống. Script đổi sang Stop-Process, tự dựng forwarder mới trỏ 192.168.56.150, báo PID thật; chủ chạy lại CHAY-CHUYEN-T36.bat.

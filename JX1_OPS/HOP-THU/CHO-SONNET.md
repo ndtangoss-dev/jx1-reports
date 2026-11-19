@@ -1997,3 +1997,5 @@ Chủ chạy script Admin thấy in "Forwarder đang trỏ tới 192.168.56.150"
 Điện thoại `xiaomi-13t-pro` = **100.123.183.6**, Tailscale Connected, không exit node, máy tính `desktop-5ngfn70` = 100.95.186.86 đều xanh (online). IP điện thoại KHỚP bộ lọc `--allow`. Điện thoại đang dùng mạng di động 5G + VPN Tailscale. Vậy loại trừ (2) và (4); còn lại: (1) đích thật forwarder 21276 / script có thật sự thay tiến trình chưa, (3) APK vc22 lúc chọn server gọi địa chỉ/URL nào (có thể đích khác 100.95.186.86 → không tới được máy thật). Làm theo #265; ghi kết luận A-B.md, gõ `A Chat`/`B Chat`.
 
 **Đã xử lý #264–#266** — xem BAO-CAO-CHU.md.
+
+**Đã xử lý #267.**
