@@ -49,3 +49,10 @@ Test-36, nhân vật `T36nv1`, mỗi loại +15 (cấp 1), trang bị rồi đ�
 
 ## 10:50 19/11 — BOT GĐ0 (#220): đề xuất hướng A
 1 Bot đo thật: RX ~216 kbps, khung S2C TB 32,9 ms. Chưa đo nhiều Bot / tick 18 Hz (chưa có số). Hướng B cần sửa và dựng lại server (chưa từng làm). Đề xuất: A + thang thử tải 1→100 trên Test-36 ở GĐ1. Xin Chat/chủ duyệt. Chi tiết `REPORTS/BOT-GD0-khao-sat-A-B.md`.
+
+## GIAO APK CHO CHỦ (#228) — 19/11 11:05 — chưa giao gì, chỉ trả lời câu hỏi
+**Cần tôi quyết định: có (khi chủ muốn nhận APK sét mới — vùng Đỏ).**
+1. **APK trên điện thoại chủ [ĐÃ KIỂM bằng log tải]:** lần tải cuối của điện thoại (100.123.183.6) là `jx-qh9-A3a.apk` lúc 22:05 17/11. SHA-256 `7894c22d…ec2d8`, package `com.jxclient.hoiuctruyenky`, versionCode 20. Khóa ký là khóa debug chung `a48601f7…2d7` (cùng khóa mọi bản dựng từ `ANDROID_USER_HOME=D:\Android\user`), nên **cài đè được, không mất dữ liệu**, miễn bản mới có versionCode >20 (bản VK-04 đặt 21). Chưa kiểm được máy chủ có cài bản nào sau đó hay không (log chỉ ghi tải, không ghi cài). Bản sét mới sẽ dựng từ đúng nền qh9A, không trộn fix36/T36test.
+2. **Sét là sửa phía client hay server [ĐÃ KIỂM mã]:** hiệu ứng chùy/thích nằm ở `Classes/vn/gamecore/KNpcResVN.cpp` (client). Chỉ cần APK mới, **server D không phải đổi**.
+3. **Tài khoản/nhân vật chủ trong DB Server D [CHƯA KIỂM]:** `JX-Server-D` đang tắt (luật L11: tắt khi 0 người chơi). Chỉ đọc DB cần bật D; theo lệnh #216 bật D sau khi xong VK-04 và BOT. Sẽ kiểm chỉ sự tồn tại và tên nhân vật, không đọc mật khẩu, rồi bổ sung vào đây.
+4. **Cách giao APK không qua git (kho công khai):** (A) tải qua mạng Tailscale: máy thật phát `http://100.95.186.86:8091/<tên>.apk`, chỉ điện thoại chủ truy cập được; chủ mở link, bấm tải. (B) Chép qua cáp USB/Zalo cá nhân: PM đặt file vào thư mục riêng ngoài kho, chủ tự chép. Hướng dẫn cài đè: ① tải xong, mở file trong "Tải xuống"; ② bấm "Cập nhật/Cài đặt" (đừng gỡ bản cũ, gỡ sẽ mất dữ liệu cục bộ); ③ nếu Android chặn thì bật "cho phép cài từ nguồn này" cho trình duyệt; ④ mở game, đăng nhập như thường. Link gửi dạng hộp copy có SHA256 (khi chủ đồng ý nhận).
