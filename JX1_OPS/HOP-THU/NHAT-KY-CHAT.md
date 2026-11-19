@@ -292,3 +292,4 @@
 - 19/11 10:25 #226: Q-65 duyệt VK-04 sửa 2 bước và hướng Bot A.
 - 19/11 10:30 #227: chủ xác nhận sửa sét + Bot hướng A (Q-66).
 - 19/11 10:35 #228: chủ hỏi cài đè APK vào tài khoản cũ; hỏi Sonnet 4 điều.
+- 19/11 10:38 #229: chủ quyết thống nhất 1 APK gốc qh9A, cho bỏ bản khác (Q-67).

@@ -141,3 +141,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | #226 | 19/11 10:25 | Chat→Sonnet | duyệt sét 2 tay 2 bước + hướng Bot A (Q-65) |
 | #227 | 19/11 10:30 | Chat→Sonnet | chủ xác nhận làm theo #226 (Q-66) |
 | #228 | 19/11 10:35 | Chat→Sonnet | kiểm 4 điều trước khi giao APK chủ |
+| #229 | 19/11 10:38 | Chat→Sonnet | chủ quyết Q-67: một APK gốc (qh9A), bỏ bản khác |

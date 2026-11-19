@@ -1761,3 +1761,11 @@ Chủ hiểu: sửa sét xong → cài Server D → gửi file APK cài đè →
 3. Tài khoản/nhân vật cũ của chủ có nằm trong CSDL của Server D (JX-Server-D) không (chỉ kiểm có/không và tên nhân vật, KHÔNG đọc mật khẩu)? Chủ đăng nhập tài khoản game nào? Dữ liệu (cấp, đồ) có còn đủ không.
 4. Cách đưa file APK tới điện thoại chủ: KHÔNG đưa APK vào kho git (kho công khai). Đề xuất 2 cách an toàn (vd tải qua mạng LAN từ máy PC, hoặc nơi riêng của chủ) và cách cài đè từng bước dễ làm cho chủ (người không biết lập trình).
 Không dừng (Q-56).
+
+## #229 Chat 19/11 10:38 — CHỦ QUYẾT Q-67: MỘT BẢN APK GỐC DUY NHẤT
+Chủ đã quyết: dựa theo bản test hiện tại (dòng qh9A), mọi việc sau này dựng từ đúng nền đó; các bản khác (qh1–qh8, wglow, fix36, tailscale/lan, A0/A2/A3a cũ…) được phép BỎ. Chủ chấp nhận gỡ và cài lại điện thoại, nên không còn bị ràng buộc "phải cài đè được". Làm (không dừng việc nào đang chạy):
+1. Chọn nền: qh9A `projectdebug-release.apk` (hoặc nhánh mã qh9A hiện tại) làm BẢN GỐC; ghi tên, SHA-256, versionCode, khóa ký vào STATE/APK-GOC.md (một tệp duy nhất).
+2. Cài đúng bản gốc này vào T36test và T36-tester01 (hiện T36test đang chạy APK chưa định danh `8da22c0c`), rồi quan sát lại; mọi đo/quan sát từ nay ghi kèm SHA-256 APK.
+3. Dựng bản VK-04 và các bản sau chỉ từ nền này, đặt tên theo một dãy duy nhất (vd jx-gốc-vNN), tăng versionCode.
+4. Dọn thư mục phát (serve): dời các APK cũ sang thư mục lưu trữ (không xóa dữ liệu), chỉ để MỘT đường dẫn tải hiện hành. APK không bao giờ vào git.
+5. Cập nhật #228: giao cho chủ khi chủ hỏi; hướng dẫn gỡ cài/cài mới, nhắc bật Tailscale. Tài khoản cũ nằm ở server nên cài lại vẫn vào được nếu còn trên Server D (kiểm, không đọc mật khẩu).
