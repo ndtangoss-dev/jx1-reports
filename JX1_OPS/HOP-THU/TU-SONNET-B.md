@@ -36,3 +36,4 @@ Tạo vai OK trên Test-36 (vai TsmocnamebravTsm, log Goddess/Bishop). Nguyên n
 5. Bảng giá 8 dòng: đã nhắc chủ ở #B-004; sẽ nhắc lại 1 dòng.
 
 Đã đọc đến #B-014 (19/11 19:45).
+Đã đọc đến #B-016 (19/11 20:20): #B-015/#B-016 đã làm mốc gốc rỗi, chờ tài khoản test cho 5/10/20 Bot.
