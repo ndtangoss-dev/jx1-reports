@@ -1039,3 +1039,8 @@ Chùy +15 hướng 0 có sét cả hai cây; Yêu Đao một tay không đổi; 
 ## SONNET 19/11 11:30 — #234 (Q-70) CẦU NỐI [ĐỀ XUẤT + ĐÃ LÀM]
 Đề xuất 1 câu: "cầu adb danh sách trắng" `TOOLS/ld_bridge.py` trên máy thật, tiểu yêu chỉ thả lệnh JSON vào hòm (thư mục ngoài git), cầu chạy 8 lệnh (chụp, chạm, vuốt, gõ ASCII, phím, mở/đóng game, log, đặt lại DNAT) tới đúng 1 emulator, ghi nhật ký, không shell, không khóa.
 [ĐÃ KIỂM] Thử trên T36-tester01 (emulator-5558): chụp ảnh 3,7 MB ok, chạm ok, lệnh "rm" bị từ chối đúng. Hòm `D:\JX-ldbridge\t01`. Tài liệu: STATE/TESTER/CAU-NOI.md, PHAN-CONG.md, BAN-GIAO/<mục>, MAU/. Chưa có tiểu yêu nào dùng thật; bước kế: chờ Tổng quản giao tester01 qua cầu, Sonnet chấm DANH-GIA.
+
+## SONNET 19/11 11:45 — TRẢ LỜI #234/#235
+- Cầu nối chạy (hòm `D:\JX-ldbridge\t01`, tới emulator-5558); tài liệu CAU-NOI/PHAN-CONG/BAN-GIAO/MAU đã đẩy. Đã tạo `TASKS/TS-03.md` (status ready) cho tester01 mục dang-nhap/tao-nhan-vat qua cầu: Tổng quản giao.
+- #235: Sonnet không sinh tiểu yêu; nếu Tổng quản sinh TS-03 mà vài phút chưa có nhịp thì đổi khóa theo #235 (a: khóa/0.5x; b: sandbox adb đã có cầu). Số liệu khóa do Tổng quản ghi.
+- VK-04 8 hướng: sét còn khi đi theo mọi hướng nhìn rõ (REPORTS/VK-04, ảnh ghép). TS-02 đã gộp, done.
