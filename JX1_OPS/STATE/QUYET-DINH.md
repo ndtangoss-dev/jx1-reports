@@ -120,3 +120,6 @@ Chủ chốt "Thử" sau khi Chat trình bày cách hiểu: Command Code là th�
 
 ## Q-73 (chủ 19/11 13:29) — DUYỆT CÀI NODE.JS (cho thử Command Code, Q-72)
 Chủ duyệt cài Node.js (bản LTS chính thức) trên máy chạy Tổng quản để thử Command Code. Đăng nhập Command Code vẫn do chủ tự làm. Ý "cho Command Code làm tester" chủ ĐANG BÀN, chưa chốt, chưa giao Sonnet.
+
+## Q-74 (chủ 19/11 13:31) — CHỐT: THỬ COMMAND CODE LÀM TESTER (đọc mã nút trước, rồi chơi qua cầu)
+Chủ chốt sau khi Chat trình bày cách hiểu: sau khi Node + đăng nhập xong (Q-72/Q-73), thử Command Code làm tester trên đúng mục đăng nhập → tạo nhân vật (mục tester01), đọc tệp giao diện/nút trước rồi chơi qua cầu adb; so với Sonnet tự chơi. Điều kiện: (1) kiểm nó nhìn được ảnh chụp màn hình không; (2) theo dõi tín dụng; (3) chỉ cho đọc tệp bố cục giao diện/tên nút, không toàn bộ mã game riêng tư; (4) Tổng quản chấm: không có lệnh cầu hoặc không có ảnh = KHÔNG ĐẠT.

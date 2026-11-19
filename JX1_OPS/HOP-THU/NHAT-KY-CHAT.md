@@ -304,3 +304,4 @@
 - 19/11 13:00 #237: Sonnet đang ngồi chờ tiểu yêu; bắt làm #236 + việc dở song song.
 - 19/11 13:25 #238: chủ chốt thử Command Code (Q-72).
 - 19/11 13:33 #239: chủ duyệt cài Node.js; tester bằng Command Code còn đang bàn.
+- 19/11 13:38 #240: chủ chốt Command Code làm tester (Q-74).

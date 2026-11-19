@@ -1829,3 +1829,12 @@ Nhớ L13/Q-56: không dừng việc nào, và nếu thư này mâu thuẫn thư
 
 ## #239 Chat 19/11 13:33 — CHỦ DUYỆT CÀI NODE.JS (Q-73), phần còn lại của #238 giữ nguyên
 Chủ duyệt cài Node.js để thử Command Code. Làm: tải Node LTS từ nguồn chính thức (nodejs.org), kiểm chữ ký/SHA-256 theo trang chính thức, cài bản LTS một lần, ghi phiên bản vào CAU-COMMAND-CODE.md; không đụng phần mềm khác. Sau đó `npm i -g command-code`, kiểm `command-code --version`, rồi viết 3 dòng hướng dẫn cho chủ tự đăng nhập (BAO-CAO-CHU). Không nhập khóa/mật khẩu hộ. Việc "Command Code làm tester" chủ đang bàn với Chat, CHƯA giao: đừng làm trước khi có thư riêng.
+
+## #240 Chat 19/11 13:38 — CHỦ CHỐT Q-74: THỬ COMMAND CODE LÀM TESTER (sau Node + đăng nhập, theo #238/#239)
+Chủ chốt: cho Command Code làm tester, đọc mã các nút trước rồi vào chơi. Làm theo thứ tự (không dừng việc nào, không chặn mình bằng lệnh chờ):
+1. Hoàn tất #239 (Node, cài command-code, hướng dẫn chủ đăng nhập). Chưa đăng nhập xong thì làm bước 2 bằng cách chuẩn bị tài liệu.
+2. TÀI LIỆU NÚT (Sonnet/đám tiểu yêu đọc tĩnh, không cần Command Code): từ tệp bố cục giao diện/tên nút của client (màn đăng nhập, chọn máy chủ, danh sách nhân vật, tạo nhân vật: tên, giới tính, hệ phái, ngũ hành, làng, nút Tạo), viết STATE/TESTER/KIEN-THUC/dang-nhap/NUT-GIAO-DIEN.md và tao-nhan-vat: tên nút, vị trí/hình dáng, bấm gì thì ra màn nào, các tật đã biết (chạm lần đầu chỉ bỏ tiêu điểm, phải chạm 2 lần; lỗi tên "ký tự đặc biệt" với T36nv2/Tsbaone). Chỉ dùng tệp bố cục/tên nút, KHÔNG đưa toàn bộ mã game riêng tư cho Command Code.
+3. KIỂM TRƯỚC: Command Code có nhận/đọc ảnh chụp màn hình không (mô hình free có hỗ trợ ảnh?). Nếu không nhìn được ảnh → báo chủ, đừng giao làm tester; chọn mô hình có hỗ trợ ảnh hoặc dừng ý này. Ghi tín dụng còn lại trước/sau.
+4. Giao việc tester cho Command Code: một worktree riêng (`.ldbridge` hòm của tester01), một mục (đăng nhập → tạo nhân vật), lệnh cầu như CAU-NOI.md. Mỗi lượt Tổng quản/Sonnet chấm: có ≥1 lệnh qua cầu và có ảnh chụp thì mới tính; 0 lệnh = KHÔNG ĐẠT (như TS-03 lượt 2–3). Ghi vào KIEN-THUC/LOI theo mục, BAN-GIAO để con thay thế biết ngay.
+5. So sánh với Sonnet tự chơi (đã ghi 13:25): thời gian, số bước thật, lỗi tìm được, chi phí. Báo chủ ngắn vào BAO-CAO-CHU.
+6. Một tester một khóa/LD (Q-69): tài khoản Command Code của chủ dùng cho đúng một tester; không chia.
