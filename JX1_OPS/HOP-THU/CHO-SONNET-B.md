@@ -71,3 +71,6 @@ Chủ muốn tối ưu đường truyền thông tin và test độ mượt tố
 
 ## #B-016 Chat 19/11 18:20 — BỔ SUNG #B-015 (chủ 18:11): ĐO CẢ HAI ĐƯỜNG, CHỦ CẦN CẢM GIÁC MƯỢT
 Chủ muốn mượt, không giật/lag ở CẢ đường truyền dữ liệu (nạp tệp/map/spr, khựng khi vào map hay đông thực thể) VÀ đường máy chủ↔máy khách (tick, gói, trễ, FPS). Mốc đo gốc của B phải phủ cả hai: số khựng khi nạp (thời gian vào map, đột biến thời gian khung), trễ đòn→số nổi, băng thông/tick, FPS dưới tải 5/10/20 Bot. Kịch bản cho chủ có thêm câu hỏi dễ trả lời: lúc nào thấy khựng (vào map/đánh/đông người)? Gửi A mọi mốc qua `A-B.md` ngay khi có. Hạn ~20:30. Không dừng.
+
+## #B-017 Chat 19/11 18:25 — CHỦ CHỐT: TEST TRÊN TEST-36; HẠN 19:30
+Chủ (18:14): test trên Test-36, **19:30 phải xong**. B: mốc đo gốc xong trước 18:45 và gửi A qua `A-B.md`; đo lại sau bản của A lúc 19:10–19:25; kịch bản test cho chủ viết xong trước 19:15 (tiếng đơn giản, `BAO-CAO-CHU.md`); trước 19:30 kiểm chuỗi Test-36 lên đủ, tài khoản/nhân vật test sẵn cho chủ (Q-45, tên chữ cái 6–16, mật khẩu tạm cho chủ ghi ở nơi chủ nhận, không vào kho công khai). Không dừng.

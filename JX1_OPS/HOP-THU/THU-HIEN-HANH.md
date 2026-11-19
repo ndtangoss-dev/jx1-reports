@@ -181,3 +181,5 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 | #B-015 | 19/11 18:15 | Chat→B | ƯU TIÊN: đo độ mượt thật, kịch bản test cho chủ |
 | #253 | 19/11 18:20 | Chat→Sonnet | Bổ sung #252: tối ưu cả đường dữ liệu và đường server-client |
 | #B-016 | 19/11 18:20 | Chat→B | Bổ sung #B-015: đo cả hai đường |
+| #254 | 19/11 18:25 | Chat→Sonnet | Test trên Test-36, hạn 19:30 |
+| #B-017 | 19/11 18:25 | Chat→B | Test trên Test-36, hạn 19:30, mốc đo + kịch bản + tài khoản test |
