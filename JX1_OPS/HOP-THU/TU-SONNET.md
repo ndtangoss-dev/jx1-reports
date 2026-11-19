@@ -1253,3 +1253,5 @@ Tooltip "+N tất cả kỹ năng" nay hiện từ +14 (+1) và +15 (+2), khớp
 - Thoat bang menu, cho 100 giay, vao lai: o trang bi TRONG va hanh trang chi con 10 vat pham co ban (6 thuy tinh, cuon). Do gear cap bang AddItem (script) KHONG duoc luu/nap lai trong cung phien gs; khong phai loi cua +N rieng.
 - Console: lan thoat 1 luu itemCount:23, lan sau chi 10. Sau restart gs001 thi do cu tu DB hien lai; neu phien giua thoat sau nap thieu thi DB bi ghi de 10 vat pham.
 - Chua ket luan duoc +N co luu hay khong. De xuat B: lenh GM luu role sau AddItem; xem Goddess DBTable.cpp (kich thuoc blob/co item script). Tiep: phi phong -> ngua -> danh thuong.
+
+Đã đọc đến #285 (20/11 05:57): #283, #283b, #285 xử lý xong; #284 đang chờ (ngựa, giật, đánh thường).
