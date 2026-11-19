@@ -456,3 +456,6 @@
 [TỔNG QUẢN 19/11 12:09] CAU DAO xingchi: DONG
 [TỔNG QUẢN 19/11 12:11] CAU DAO xingchi: DONG
 [TỔNG QUẢN 19/11 12:14] CAU DAO xingchi: DONG
+[TỔNG QUẢN 19/11 12:15] CAU DAO xingchi: DONG; TS-03 giao bang JX-K4
+[TỔNG QUẢN 19/11 12:17] CAU DAO xingchi: DONG
+[TỔNG QUẢN 19/11 12:19] CAU DAO xingchi: DONG
