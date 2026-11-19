@@ -1224,3 +1224,6 @@ do_muot_khung.py: ffmpeg 9.0 không nhận `-vsync` → đổi `-fps_mode passth
 ## A 20/11 03:10 (#277 đo 1)
 - Test-36: `CmdLane.ini` (BufferBusy=1, TtlActMs=400) ĐÃ NẠP: CmdLane_stat.log (ghi 01:25) đếm recv move=300, exec move=268 từ lúc A chạy; skill=0 vì chưa có lệnh kỹ năng.
 - Bấm nút đánh (1660,935) ở Ba Lăng Huyện ×6: nhân vật NGỒI xuống (m_FightMode==0 như CLAUDE.md `mainSkillattack`), không có lệnh kỹ năng nào tới gs001 → cần ra bãi quái/được bật trạng thái chiến đấu mới đo được kỹ năng. Tiếp: tìm cổng ra bãi quái, hoặc thử Ngồi/đứng + bật PK/Thủ công→Auto.
+
+###  [#282 QH-03] A đổi ngưỡng client 12→14
+Tooltip "+N tất cả kỹ năng" nay hiện từ +14 (+1) và +15 (+2), khớp server B. Sửa KItem.cpp:2504, KuiItemdesc.cpp:236/1245, KuiItemdescVN.cpp:465 (qh9A, có .bak-qh14). Chưa build; gộp vào vc24 cùng ức/vạn.
