@@ -171,3 +171,8 @@ flowchart TD
 
 Kỹ năng đã dùng: jx1-retrofit, jx1-read-server, jx1-read-client, jx1-parameters, jx1-knowledge, jx1-report.
 
+
+## B BỔ SUNG 20/11 (PM tự tra từ bản chép server `C:\Jx1CocoV3\Folder\ServerNew-...\_bin_v2_\gs\Settings`)
+- Ba thủy tinh nằm ở `item/004/questkey.txt` dòng 240–242 (DetailType 238/239/240, genre 4), `vn/questkey.txt` tên "Lam/Tu/Luc Thuy Tinh", goods 1309–1311 (`goods.txt` dòng 1310–1312), bán shop nội bộ 99 (10 Xu). 238 Lam, 239 Tử (làm hồng), 240 Lục. `Stack=1` trong bảng nhưng AddItem đặt được số chồng (tham số 13) đến MAX_STACKNUM=200 (KItem.h:45).
+- B dùng (genre 4, detail) thay vì tên: `CountBagItemExact(detail)` / `ConsumeBagItemExact(detail,n)` (đã đổi nhận số detail, không còn nhận tên).
+- Mâu thuẫn tên trong script cũ: `NewItemLucTT = AddItem(4,239,...)` (gọi 239 là Lục) trong khi bảng vn ghi 239 là Tử; không ảnh hưởng vì cường hóa đòi đủ cả ba.
