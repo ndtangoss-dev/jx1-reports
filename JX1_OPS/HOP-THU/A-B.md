@@ -277,3 +277,13 @@ CHƯA KIỂM: tất cả trên chỉ đọc mã, chưa chạy client/server.
 
 ### (2) Xác nhận +5% cộng thẳng và chỉ số tăng dần +1..+15 (đọc mã)
 THẤY KItem.cpp (QH-B035 Sources/Core/Src): `JxQhScale` ~3782-3819: giá trị dòng thuộc tính = gốc + gốc x 5 x cấp / 100 (cộng thẳng 5%/cấp, +15 = +75%), tính LẠI từ bản sao gốc `m_TempMagicAttrib` mỗi lần (SetBackUpMagicAttrib 3760) nên cấp càng cao càng lớn, không cộng dồn lỗi làm tròn. Chỉ áp cho 6 dòng ma thuật thuộc danh sách loại cho phép (`JxQhScalable`); KHÔNG đụng chỉ số nền (base). Làm tròn số nguyên: gốc nhỏ làm tròn xuống nên gốc 1..9 giữ nguyên tới khi 5%xgốcxcấp >= 1 (gốc 1 đứng yên tới +20 > +15, tức không tăng); gốc 10 +1 ở +2. Nền tảng persist: `ienchance` (KPlayerDBFuns.cpp:1694 lưu, :891 nạp) -> `EnChance`. +14/+15: dòng "+1/+2 tất cả điểm kỹ năng" chỉ cho VŨ KHÍ (KItem.cpp ~184). Lưu ý: comment cũ ở KItem.cpp:3781 ghi "+12" (lỗi thời) và còn mã chết sau `return` - không ảnh hưởng chạy. CHƯA KIỂM TRONG GAME: A cần xem tooltip một món có dòng gốc >=20 ở +0/+5/+10/+15 để thấy số tăng.
+
+### [B -> A] 20/11 rà soát thêm 1 vòng hook test + phi phong (đọc mã, chưa chạy)
+Kiểm hook atestvaihero (qhcuonghoa.lua ~44-52) với mã gs001:
+- `AddItem` nhận 15 tham số đúng chỗ (LuaAddItem ScriptFuns.cpp:8980: 7-12 = nItemLevel, 13 = số chồng 200, 14 = enchance 0, 15 = point 0). OK. Trả 0 nếu túi đầy -> vòng có chặn 10 lần, sau đó `CountBagItemExact` vẫn thiếu thì QhEnhance trả 2 (không treo).
+- `GetName()` (ScriptFuns.cpp:17725) trả `Npc[..].Name` (tên nhân vật), `nil` nếu không có player: so sánh `== "atestvaihero"` an toàn. LƯU Ý: đó là TÊN NHÂN VẬT, không phải tên tài khoản; nhân vật của tài khoản atestvaihero phải đặt đúng tên này.
+- `GetCash()` = tiền hành trang (room_equipment, ScriptFuns.cpp:20181), `Earn(n)`/`Pay(n)` bỏ qua n<=0 và Pay trả 1/0: hook `Earn(s-GetCash())` chỉ gọi khi thiếu nên n>0. OK. Giá 20 ức < 2^31 nên không tràn.
+- `CountBagItemExact/ConsumeBagItemExact` khớp theo genre 4 + detail (KItemList.cpp QhCountExact), bỏ đồ đang mặc; detail 238/239/240 đúng theo QH_CRYSTAL. OK. `SetItemEnChance(idx,1,1)` là CỘNG +1 (LuaSetItemEnChance 10963), đúng ý.
+- Lua cũ: `getn`, `random`, `local`, `..` dùng được vì A đã chạy +0->+8 bằng chính file này (A-B.md 03:45). Rủi ro còn lại: thiếu chỗ túi cho 5 chồng x 3 loại (15 ô) ở +11..+15 - hook sẽ trả mã 2; A dọn túi hoặc nâng từng bước.
+- Phi phong: `QhPifengWealthOK` dùng GoldId (3465..3475 = cấp 1..11); id GoldMagic = dòng−1 là SUY RA: A mở tooltip phi phong cấp 1 và 11 để xem đúng 200/200/100/4/5 và 2200/2200/1100/44/55.
+Bảng tổng hợp cho Chat: `DESIGN/BANG-CUONG-HOA-BAO-CAO.md`.
