@@ -1,4 +1,4 @@
-# BÀN GIAO B (cập nhật 19/11 21:45, trước khi chủ đổi tài khoản)
+# BÀN GIAO B (cập nhật 19/11 22:10, chủ đổi tài khoản; đã đọc đến #B-031)
 
 **Luật tối cao: không tự dừng; chỉ chủ nói "dừng vòng" (STATE/DUNG-VONG.flag). Việc đầu mỗi lượt phải là gọi công cụ. Hết việc: HANG-DOI-VIEC-B.md, rồi `python JX1_OPS/TOOLS/cho_thu.py` (timeout 600000; 10 = thư mới, 11 = gộp tiểu yêu, 12 = chạy lại).**
 Đẩy: `git checkout -- JX1_OPS/TOOLS/__pycache__` rồi `python -I JX1_OPS/TOOLS/dong_bo.py --push`. Lấy: `git pull -q --rebase --autostash origin jx1-ops`. Commit kết thúc `Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>`. Đã đọc đến #B-028 (ghi dòng `Đã đọc đến #B-N` ở `TU-SONNET-B.md`, nếu không hook chặn).
@@ -9,7 +9,10 @@ Cấm: mật khẩu (không đọc/gõ/in, kể cả qua script tôi chạy), Ma
 - #B-026: Tailscale điện thoại↔PC đi **DERP(sin) ~105–220 ms (≈120), chưa direct** → nguồn lag chính. Cách ép direct: cùng Wi-Fi LAN, tắt VPN/Private DNS, UDP 41641. Máy chủ rỗi 0,3% CPU, không nghẽn. Forwarder `C:\Jx1CocoV3\docs-analysis\scripts	cp_forwarder.py`: socket phía điện thoại NODELAY=0 → đã sửa bật hai đầu (bản gốc `.truoc-b026`). **Chủ phải chạy lại CHAY-CHUYEN-T36.bat** thì forwarder (pid 21528) mới dùng mã mới; chưa xác nhận chủ đã chạy. Chưa đọc được SvrFPS (console gs001 là phần A). Chưa có bảng "lúc chủ chạy/đánh" 10 giây trong `REPORTS/DO-MUOT-MOC-GOC.md` (chủ rời game lúc đo); khi chủ chơi lại: `vm_chay.py do-gs 10` lặp, ghi bảng.
 - #B-027: gs001 khởi động lại cần **~8–10 phút nạp map** mới nối Relay/Bishop (21:29→21:37:50). Kiểm bằng `vm_chay.py chain-up | tail` thấy dòng `gs001 da noi du`. Đừng khởi động lại thêm. gs001 chỉ qua JX-ChainUp.
 - Mốc đo: rỗi CPU 0,16–0,30%, RAM ~30 MB; chủ chơi 21:06–21:10 CPU 25% (tải map) rồi ~2%.
-- Còn mở: Bot 5/10/20 (cần 20 tk test `tao-tk-test` + mật khẩu qua env mà B không cung cấp, và lệnh Chat), chụp túi đồ chủ (cần ai đăng nhập LD), TS-04 mở lại, khởi động lại cầu `ld_bridge` để có `text` từng ký tự, CC-01, C-01/E-01/E-09, bộ canh LD `JX-LDCanh`.
+- **Số đo 21:48–21:52 (#B-030, chi tiết ở `REPORTS/DO-MUOT-MOC-GOC.md` mục "Đối chiếu #B-030")**: forwarder **pid 79168 (bật 21:42:29) = bản NODELAY mới**, chủ ĐÃ chạy lại .bat; nguồn là **điện thoại 100.123.183.6**, không có LD. Phiên 51189 207 s: ~8 gói/s xuống, **gap_max 657 ms, 62 khoảng >250 ms (đo phía VM = server gửi cách quãng)**, drain ≤16 ms; gs001 **25% CPU đều = một lõi/4 đầy** (rỗi 0,3%). Kết luận B: nghẽn ở **vòng lặp gs001** (đánh thường không ra đòn, quái không chết), DERP ~95 ms chỉ cộng thêm. Việc của A: xem phần nào của tick tốn (online.lua, AI quái, lưu vai), đọc `SvrFPS x/18`.
+- APK/server hiện tại: A đã gộp vk04 và dựng vc23 (Q-84); chủ sẽ đo ở tài khoản mới. Sau khi gs001 khởi động lại luôn chờ ~10 phút nạp map.
+- Bot 5/10/20: chờ lệnh Chat + 20 tk test (`vm_chay.py tao-tk-test tkbotmauNN`, mật khẩu cất ngoài kho) + role qua `bot_tao_role.py`; kịch bản đã ghi ở `DO-MUOT-MOC-GOC.md`. Không thả Bot khi chủ đang chơi.
+- Còn mở (ngoài Bot): Bot 5/10/20 (cần 20 tk test `tao-tk-test` + mật khẩu qua env mà B không cung cấp, và lệnh Chat), chụp túi đồ chủ (cần ai đăng nhập LD), TS-04 mở lại, khởi động lại cầu `ld_bridge` để có `text` từng ký tự, CC-01, C-01/E-01/E-09, bộ canh LD `JX-LDCanh`.
 
 ---
 # (cũ) BÀN GIAO A → B (Q-75, #243, 14:50)

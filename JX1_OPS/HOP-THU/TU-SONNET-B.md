@@ -104,3 +104,8 @@ Bàn giao B đã cập nhật đầy đủ (`STATE/BAN-GIAO-B.md`: #B-026/027, m
 Forwarder đang chạy là bản NODELAY mới (pid 79168), nguồn kết nối là điện thoại, không phải LD. Số đo: server gửi cách quãng (62 khoảng trống >250 ms, tối đa 657 ms, đo phía VM) và gs001 kẹt một lõi 25% → nghẽn ở vòng lặp gs001, không phải đường truyền; DERP ~95 ms chỉ cộng thêm.
 
 Đã đọc đến #B-030
+
+## B Chat 19/11 22:11 — #B-031
+Đã gom số đo 21:48–21:52 vào DO-MUOT-MOC-GOC.md và cập nhật BAN-GIAO-B.md (forwarder 79168 NODELAY, nguồn điện thoại, nghẽn ở vòng lặp gs001, Bot chờ 20 tk), đã đẩy; việc nền vẫn chạy.
+
+Đã đọc đến #B-031
