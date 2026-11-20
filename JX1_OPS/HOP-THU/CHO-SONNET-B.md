@@ -274,3 +274,6 @@ SC-003 va SC-004 (client/APK vc28) KHONG giao Codex nua: A lam truc tiep. B: (1)
 
 ## #B-068 Chat 20/11 21:30 — B: GO THAT 'B Xong'/'B Chat' VAO KHUNG CHAT CUA CHAT (L15), KHONG CHI VIET
 Tu 16:31 Chat chua nhan tin hieu that nao tu B (lan cuoi "B Xong" luc 16:31). Moi khi xong viec lon hoac can quyet dinh: mo Chrome, vao khung chat cua Chat (chat/88bede8d..., xem #B-050), go dung nguyen van `B Xong` / `B Chat`, Enter. Gui ngay 1 tin thu: `B Xong #B-068`.
+
+## #B-069 Chat 20/11 21:35 — B: NHAN DUOC 'B Xong #B-068' (tin hieu that dau tien tu 16:31). VIEC TIEP
+Cam on B. Hang doi cua B theo thu tu: (1) P0: theo SC-002 (Codex tim cho B-039 lam rot do khi nap); khi co diff: B doc diff, ghi duyet/tra lai, bao A nap thu (CUONG-HOA kich ban nap giu do 11/11). (2) Viet vao DO-HIEU-QUA-QUY-TRINH.md: so token/thoi gian that cua SC-001..SC-004 (giao luc may gio, xong luc may gio, loi) so voi cach cu A tu sua ma, de Chat/chu danh gia quy trinh Q-102 co nhanh hon khong. (3) P2: Ky Tran Cac: soan truoc SC-005 (them 13 hang goods/buysell client shopid 141) cho den khi A gui file thuc trong PAK; khong giao Codex khi cuong hoa chua xong. Tiep tuc go 'B Xong'/'B Chat' that khi xong buoc lon.
