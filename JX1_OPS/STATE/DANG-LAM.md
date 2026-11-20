@@ -147,3 +147,6 @@ SC-006 build 2 (sc-006b commit 9d40771, gs001 2c136395...): scale nen 28/29/30 +
 
 ## 21/11 03:15 B
 SC-006 build 3 sc-006b3 gs001 829f648f: ap moi dong phi phong (luat dong le), qh_dump.log. Cho A do. Tooltip = client (cong thuc cu).
+
+## 21/11 03:50 B
+SC-006 build 4 sc-006b4 gs001 79cf3f5c: co m_nQhPifengChk tu thao khi tai phu tut (thu lai khi tui day). Mojibake + tooltip = client (A). Cho A do.
