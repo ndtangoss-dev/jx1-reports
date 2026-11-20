@@ -1,0 +1,33 @@
+--- /d/JX-wt/L-02/qh7copy/Classes/gamecore/KItem.cpp	2026-11-13 22:26:46.508678500 +0700
++++ KItem.cpp.new	2026-11-20 14:29:16.498940300 +0700
+@@ -3563,6 +3563,30 @@
+ 
+ //强化熔炼属性
+ int KItem::EnChanceRong(int nEnChance /*= 1*/ ) {
++    // [qh] B-049: dong khoanh trang do vang: goc*(100+5N)/100, khong cong don 25% (giong server)
++    {
++        int nN = nEnChance;
++        if (nN < 0) nN = 0;
++        if (nN > 30) nN = 30;
++        int nOld = m_CommonAttrib.nEnChance;
++        if (nOld < 0) nOld = 0;
++        for (int q = 0; q < 6; ++q) {
++            int t = m_aryMagicAttrib[q].nAttribType;
++            if (t > 0 && JxQhScalable(t)) {
++                if (m_TempMagicAttrib[q].nValue[0] == 0 && m_aryMagicAttrib[q].nValue[0] != 0)
++                    m_TempMagicAttrib[q].nValue[0] = m_aryMagicAttrib[q].nValue[0] * 100 / (100 + 5 * nOld);
++                m_aryMagicAttrib[q].nValue[0] = JxQhScale(m_TempMagicAttrib[q].nValue[0], nN);
++            }
++            int r = m_ronMagicAttrib[q].nAttribType;
++            if (r > 0 && JxQhScalable(r)) {
++                if (m_TempRMagicAttrib[q].nValue[0] == 0 && m_ronMagicAttrib[q].nValue[0] != 0)
++                    m_TempRMagicAttrib[q].nValue[0] = m_ronMagicAttrib[q].nValue[0] * 100 / (100 + 5 * nOld);
++                m_ronMagicAttrib[q].nValue[0] = JxQhScale(m_TempRMagicAttrib[q].nValue[0], nN);
++            }
++        }
++        m_CommonAttrib.nEnChance = nN;
++        return 1;
++    }
+     int nCanEn = 0;
+     if (nEnChance < 31) {
+         int nOldEnChance = m_CommonAttrib.nEnChance;//原来的加成

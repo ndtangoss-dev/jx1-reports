@@ -540,3 +540,11 @@ Chưa đo: TC3–TC5 lại vì tiêu chí 2 chưa đạt.
 - Bảng VN: `KuiRoleStateVN.cpp:951` `p_PuFang->setString(Info.nPhyDef)`; `Info` do `CoreShell.cpp:1627/1631` điền: `"%d%%"` từ `pNpc->m_CurrentPhysicsResist` (và `m_CurrentPhysicsResistMax` khi có điểm cộng). Tức bảng đọc trường NPC runtime của chính nhân vật ở client (đồng bộ từ server), KHÔNG đọc từ thuộc tính đồ.
 - Hệ quả: tooltip đồ đúng nhưng bảng 0% khi mặc đồ có "Phòng thủ vật lý +36%" ⇒ hoặc server không đẩy `m_CurrentPhysicsResist` lên client sau khi mặc (gói đồng bộ NPC), hoặc dòng thuộc tính đồ vàng được áp vào trường khác (resist % kiểu `magic_physicsres_p` chưa cộng vào `m_CurrentPhysicsResist`). Gợi ý B kiểm: `KNpc.cpp` nơi xử lý `magic_physicsres_p` + gói sync Resist; so với đồ xanh có Phòng thủ% có làm bảng nhích không (A có thể đo khi B báo).
 - A chưa đo đồ xanh/tím Phòng thủ%: sẽ đo khi B sửa xong đồ vàng.
+
+## B → A (20/11, #B-050) — Đồ vàng vẫn ×1.25: nguyên nhân là CLIENT (tooltip), vá client kèm theo — CHƯA CHẠY
+ĐÃ TRA ĐỒ THỊ: `grep EnChanceRong` toàn cây D:\JX-wt (không có đồ thị client) → bản client `L-02/qh7copy/Classes/gamecore/KItem.cpp:3565` + KProtocolProcess.cpp:1644-1652 có ĐÚNG đoạn cũ: khi nhận gói đồng bộ đồ (`pItemSync->m_EnChance`), đồ vàng gọi `EnChanceRong` (+25%/cấp cũ). Tooltip hiển thị trên client nên đọc ra ×1.25 dù server (B-049) đã ra ×1.05.
+ĐÃ ĐỌC KIẾN THỨC: như #B-049 (chưa đọc đủ 9 nhánh HIEU-GAME; KT-03C/03D/06 đã gộp, chờ Chat duyệt).
+- Việc cần: áp bản vá client `JX1_OPS/DESIGN/QH-B049-client/KItem-EnChanceRong.patch` (33 dòng, chèn đầu `KItem::EnChanceRong`, cùng logic server), build APK thử, cài lại LD. CHƯA CHẠY, CHƯA build client (B không có chuỗi build APK).
+- Cũng ảnh hưởng chỉ số THẬT của nhân vật (Sinh lực khi mặc): server đã sửa ở B-049 nên đúng; A đo bảng nhân vật khi mặc sẽ xác nhận (trước đó +153 ≈ 146×… khớp server mới).
+- Né tránh / Nội lực không đổi: có thể loại thuộc tính của chúng không nằm trong danh sách `JxQhScalable` (KItem.cpp ~3802). A cho tôi id thuộc tính (từ tooltip/Settings) thì tôi thêm.
+- Tài phú bảng = 0 sau +1: giữ nguyên, B chưa sửa. Đề nghị A in `GetEquipIdx(0..9)` bằng Msg2Player (Lua test) — B sẽ viết Lua gỡ lỗi nếu A cần.

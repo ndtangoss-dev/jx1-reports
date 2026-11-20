@@ -198,3 +198,4 @@ Chi tiết + file:dòng + đề xuất sửa cho A nằm cuối HOP-THU/A-B.md. 
 - Gộp thêm KT-02, KT-03B (13:10). Đã gộp: KT-01,02,03A,03B,04; chờ Chat duyệt. Còn chạy: KT-03C,03D,06 (+05 chờ KT-01).
 - Đã đọc đến #B-049 (20/11): sửa EnChanceRong +5%/cấp cho đồ vàng, commit b23a81f, exe SHA 790b5a2d… CHƯA CHẠY, chờ A nạp.
 - Đã đọc đến gộp KT-03C/03D/06 (20/11): đã gộp, chờ Chat duyệt kết quả KT.
+- Đã đọc đến #299 KẾT QUẢ (20/11): đồ vàng ×1.25 do client EnChanceRong; vá client #B-050, CHƯA CHẠY.
