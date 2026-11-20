@@ -1403,3 +1403,8 @@ gs001.exe B-049 (790b5a2d…6c9) nạp 14:07, nạp xong 14:14, không crash. Đ
 
 ## A 21/11 00:05 — TK RIENG CHO CHU: DA TAO TK + VAI (chua co do)
 - Tk `tkchutest01` (vm_chay.py tao-tk-test; mat khau %LOCALAPPDATA%\jx1-secrets\tkchutest01.txt, khong in), vai `atestchutest` (bot_tao_role 1 0 53, response True) tren Test-36. Chua dang nhap, chua co sach/xanh/vang/thuy tinh/bac: can 1 lan vao game roi cap (hook OnLine cap truoc nap bi mat do - khong dung; dung sach/menu sau khi vao). Vang +1 van CHUA KIEM. Chu CHUA duoc moi, vc28 chua phat.
+
+## A 21/11 00:20 — #335 MOC 1: TK CHU CO DO (SO THAT)
+- `tkchutest01`/`atestchutest` vao game tren LD (vc28). Dung sach Tan thu co san trong tui -> "[TEST-36] Ho tro Cuong hoa" (KHONG hook OnLine): Thieu Lam suc manh 300, 10 do xanh co dong (10/10), do vang (tui co 10+ mon vien do/vang), thuy tinh tim/luc/lam moi loai 200x3 (3 o 200 moi mau), bac 20 uc. Tui 0/50.
+- Dang xuat/dang nhap lai: do va bac con nguyen (relog trong cung phien gs001; CHUA kiem sau restart gs001).
+- Anh: JX1_OPS/REPORTS/_CHIMUC/tk-chu-co-do-0615.png. Chua moi chu (gate #327 chua dat). Tiep: vang +1, 5 lan +2.
