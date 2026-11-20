@@ -190,3 +190,4 @@ Chi tiết + file:dòng + đề xuất sửa cho A nằm cuối HOP-THU/A-B.md. 
 - Đã đọc đến #B-044 (20/11): Lua Give gốc DESIGN/QH-B044-deploy, CHƯA CHẠY.
 - Đã đọc đến #B-045 (20/11): Graphify + bản đồ chuỗi server, CHỈ ĐỌC MÃ.
 - Đã đọc đến #B-046 (20/11): nhận Q-98b; ĐÃ TRA ĐỒ THỊ ghi trong A-B.md; làm mới đồ thị sau khi A kiểm thật.
+- Đã đọc đến #B-047 (20/11): đã điền (b) CUONG-HOA, DANG-LAM mục B, kiểm hook, dựng TAI-PHU-PHI-PHONG.md. ĐÃ TRA ĐỒ THỊ: explain .QiangHua()/.Equip()/.UnEquip()/.ExecuteScriptD(). CHƯA CHẠY.

@@ -7,7 +7,8 @@
 - Thư đã đọc đến: #297
 
 ## Sonnet B
-- Tính năng: CUONG-HOA — bước: dựng hồ sơ (B điền)
-- Lệnh chạy tiếp: (B điền)
-- Đang chờ: (B điền)
+- Tính năng: CUONG-HOA (hồ sơ DESIGN/TINH-NANG/CUONG-HOA.md), kế tiếp TAI-PHU-PHI-PHONG (hồ sơ đã dựng) — bước: (b) đã điền; Lua B-044 giao chờ A nạp (CHƯA CHẠY).
+- Lệnh chạy tiếp: chờ A báo tiêu chí 5/7; nếu hỏng → sửa Lua/C++ nhỏ (nghi: baseline m_TempMagicAttrib sau nạp DB KItem.cpp:661; vàng dùng EnChanceRong KItem.cpp:3880); rồi làm mới đồ thị (cd D:\JX-wt\QH-B035\server\jxOnline\gameserver\Sources\Core\Src; graphify update .).
+- Đang chờ: A (nạp QH-B044-deploy, đo tiêu chí 1–8).
+- Hook B (D:\JX-wt\SONNET-B\.claude\settings.json): SessionStart (hook_luat.py start/postcompact, KIỂM chạy tay: ra LUAT-COT-LOI) và Graphify hook-guard (SessionStart compact, PreToolUse Bash|Grep|Read|Glob, KIỂM chạy tay exit 0) ĐỀU CÓ. Lưu ý: thư mục B chưa có graphify-out nên hook-guard không dẫn tới đồ thị; đồ thị server nằm ở QH-B035\...\Core\Src\graphify-out.
 - Thư đã đọc đến: #B-047

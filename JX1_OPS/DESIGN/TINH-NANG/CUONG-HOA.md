@@ -7,8 +7,15 @@ Chủ hồ sơ: B (server, bản đồ chuỗi) + A (client, trạng thái kiể
 - Q-95/Q-96/Q-97: chuỗi gốc (UI Give → sysqianghua → QiangHua/EnChance → Equip/Apply); đồ trong túi; đồ đang mặc từ chối; bỏ nút cũ, tạo nút mới.
 - Q-91: cửa sổ theo ảnh DESIGN/UI-CUONG-HOA/ (làm SAU khi chuỗi đạt).
 
-## (b) Bản đồ chuỗi gốc (file:dòng, tra Graphify) — B điền/duyệt lại từ bản B-045
-(B chép phần server; A chép phần client: nút → __opensysui(2,1) → s2c_opengive → KuiGive_New → c2s_lockitem/c2s_playergiveback)
+## (b) Bản đồ chuỗi gốc (file:dòng, tra Graphify) — phần SERVER do B điền từ bản B-045
+ĐÃ TRA ĐỒ THỊ (đồ thị dựng lại cho `QH-B035\...\Core\Src`, 20/11 11:3x): `graphify explain ".QiangHua()"` → KItemList.cpp:L5487; `".Equip()"` → KItemList.cpp:L1619 (gọi `.GetEquipEnhance()` L1821); `".UnEquip()"` → L2155 (gọi `.GetEquipEnhance()` L2189); `"LuaItemQiangHua()"` → ScriptFuns.cpp:L7927; `"LuaGive()"` → ScriptFuns.cpp:L24381; `".ExecuteScriptD()"` → KPlayer.cpp:L8098. Cạnh Lua→C++ không có trong đồ thị nên đọc mã.
+Bản đầy đủ + bảng 12 bước: DESIGN/BAN-DO-CHUOI-CUONG-HOA.md. Tóm tắt server:
+1. `opensysui(2,1)` (System\opensysui.lua:25) → `Give(mô tả,nÔ,nÔCb,"sysqianghua","sysError",title)` → `LuaGive` ScriptFuns.cpp:24381 → `s2c_opengive` (PLAYER_GIVE).
+2. Client `c2s_lockitem` (KProtocolProcess.cpp:323) rồi `c2s_playergiveback` (291) → xử lý xác nhận 9214–9242 → `KPlayer::ExecuteScriptD` KPlayer.cpp:8098 → Lua `sysqianghua(chuỗi id, parm, nNum)` (qianghua.lua:10 gốc; bản mới DESIGN/QH-B044-deploy).
+3. Đổi giá trị: `SetItemEnChance` (ScriptFuns.cpp ~10963) → `KItem::EnChance` KItem.cpp:3820 (xanh/tím/vàng đều +5%; vàng gốc dùng `EnChanceRong` 3880 gộp, KHÁC — tiêu chí 7). Gốc `QiangHua` KItemList.cpp:5487 chỉ để đối chiếu, bản mới không gọi.
+4. Mặc/tháo: `Equip` 1619 → `ApplyMagicAttribToNPC` KItem.cpp:140 (KItemList.cpp:1547/1852); `UnEquip` 2155 → `RemoveMagicAttribFromNPC` KItem.cpp:275 (KItemList.cpp:2208). Dòng ảo kỹ năng +14/+15 và tài phú: KItem.cpp:184–198 / 283–297.
+RỦI RO đã biết cho tiêu chí 5: baseline `m_TempMagicAttrib` chỉ đặt trong `SetAttrib_MA` KItem.cpp:661–669; chưa xác minh sau nạp DB (CHƯA KIỂM). Cho tiêu chí 7: bản Lua dùng `EnChance` cho cả vàng; `EnChance` bỏ qua `m_ronMagicAttrib` (dòng rèn/bảo thạch của vàng) — chưa kiểm vàng có dòng nằm ở đó không.
+Client (A điền): nút → __opensysui(2,1) → s2c_opengive → KuiGive_New → c2s_lockitem/c2s_playergiveback.
 
 ## (c) Tiêu chí nghiệm thu (đo được)
 1. Nút mới mở cửa sổ đặt đồ gốc (ảnh).
