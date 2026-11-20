@@ -700,3 +700,12 @@ TRANG THAI: DONE (phan B), nguyen nhan goc CHI DOC MA + A xac nhan.
 - SC-002: them (5) Noi luc id 168-172 vao JxQhScalable + ghi chu nguyen nhan that la online.lua, pItemData++ van sua.
 - SC-003: them luu y tooltip o vn/gameui/KuiItemdescVN.cpp, hoi B neu can sua ngoai vung_file.
 Luu y: SC-002/003 dang "running" o Codex; ghi chu duoc them vao file task, Tong quan chuyen cho Codex neu da bat dau. TRANG THAI: DONE (ghi task), CHUA CHAY.
+
+## B -> A/Chat, #B-065 P0 diff B-039 vs goc + P1 SC-004 (CHI DOC MA, CHUA CHAY)
+ĐÃ TRA ĐỒ THỊ: `git diff 3802d29(A-07c goc) 1a21976(B-039)` trong QH-B035: 22 file; da doc KItem.cpp, KPlayer.cpp/.h, KCore.cpp, KItemList.cpp/.h, KProtocolProcess.cpp, KNpcSet/KSubWorld/KPlayerTeam, ScriptFuns.cpp, KItem::Add (KItemList.cpp:196-330). ĐÃ ĐỌC KIẾN THỨC: ban-do-ma, quy-trinh.
+P0:
+- KHONG co thay doi nao trong KPlayerDBFuns.cpp, KItemGenerator.CPP, KItemSet.cpp (LoadPlayerItemList/Gen_*/ItemSet.Add nguyen ban goc). KItemList::Add nhanh pos_equip KHONG goi CanEquip (dong 274 comment) => CanEquip moi (check phi phong tai phu :1213/:1247, EnoughAttrib reserve8 :1315) khong chan khi nap.
+- Chi co cac thay doi sau lien quan: (1) KPlayer.h them thanh vien (m_nWealth, m_nVisGroup, m_nVisActivity, m_bIsBot, std::map m_VisibleNpcs) => doi sizeof(KPlayer): neu build bo sot .obj cu (khong rebuild het Core+gameserver) thi layout lech => loi kho doan; (2) ScriptFuns.cpp: sua bien `nItemIndex` khong khoi tao -> nItemIdx (Lua AddItem tra ve dung), nRItemLevel[6]->[5]; (3) KSubWorld: goi goi PackVisibilityData khi VisibilityEnabled (mac dinh tat); (4) QhCheckPifeng chi goi khi doi do (KPlayer.cpp:6049, KProtocolProcess), khong khi nap.
+- KET LUAN: doc ma KHONG tim thay duong B-039 lam rot do khi nap. Phu hop #321: nguyen nhan la online.lua/hook (goc .orig-a07c cua A co the khong co hook Lua QH). De loai tru dung: chay exe goc a07c + online.lua (cap do trong OnLine, ban chua vo hieu) -> neu goc cung mat thi chot Lua; neu goc giu do thi nghi layout KPlayer (kiem build sach: xoa obj, rebuild het). TRANG THAI: PARTIAL, CHI DOC MA.
+- SC-002 da them yeu cau: worktree phai cat tu nhanh qh-b035-b02c (co KItem.cpp/KPlayerDBFuns.cpp) hoac BLOCKED.
+P1: da tao `TASKS/SC-004.md` (status ready, phu thuoc SC-003): port 31/33/34/47 tu C:\Jx1CocoV3\docs-analysis\patches vao qh9A. B thu git apply --check: ca 31,33,34 KHONG ap sach (CoreShell.cpp:5247, KNpc.cpp:483, KMissle.cpp:1179 lech) nen phai port tay; qh9A da co JXPERF va removeUnusedTextures (KgameWorld.cpp:2414) => co phan da co. Tong quan giao Codex sau SC-003.
