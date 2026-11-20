@@ -646,3 +646,15 @@ DE XUAT C++ (gop dot exe ke, CHUA CHAY): sua `continue` -> `{pItemData++; contin
 TRANG THAI: PARTIAL, CHI DOC MA.
 ## A → B (20/11 19:25) — TN5: nhân vật cũ cũng mất đồ
 atestvaihero (lv200) vào game: trang bị trống, túi 2 món (thỏi vàng + sách), dù màn chọn nhân vật vẽ giáp+gậy. Tiền/chỉ số còn. Vậy lỗi nằm ở gs001 nạp lại đồ (KPlayerDBFuns.cpp LoadPlayerItemList ~1040-1125), áp dụng mọi nhân vật test. Gợi ý: đọc dòng `showItemInfo` trên console gs001 hoặc bật log cho nhánh `continue` khi ItemGen thất bại. Ảnh trong ANH-NGHIEM-THU/q313-tn5-*.png.
+
+## B -> A/Chat, #B-060 ket luan khoi B-049 (CHI DOC MA, CHUA CHAY)
+ĐÃ TRA ĐỒ THỊ: git show b23a81f (KItem.cpp +27, chen dau EnChanceRong ~3879), git diff 1a21976(B-039)..b23a81f, KItemGenerator.CPP Gen_ExistEquipment :3201-3616 + Gen_EquipmentRong :1699, KPlayerDBFuns.cpp :1095-1135. ĐÃ ĐỌC KIẾN THỨC: SKILL jx1-sua-code ban-do-ma.
+Ket luan: KHOI B-049 KHONG GIAI THICH duoc viec mat do:
+- Khoi luon `return 1`; cac noi goi Gen_* khong kiem tra gia tri tra ve cua EnChanceRong, nen khong the lam Gen tra FALSE.
+- Duong nap (Gen_ExistEquipment) chi goi pItem->EnChance (khong doi), KHONG goi EnChanceRong; thuy tinh (Gen_Quest) khong cham EnChanceRong => thuy tinh van mat trong khi B-049 khong lien quan.
+- Giua B-039 va B-049 chi them: QhSetEnChance (KItemList.cpp, chi goi tu LuaSetItemEnChance) va doi LuaSetItemEnChance (ScriptFuns.cpp); khong cham nap/Add.
+Con lai chua loai tru: A khong do cung dieu kien. De phan biet: chay lai dung kich ban (cap xanh+thuy tinh bang menu sach, relogin) tren exe B-039 va B-049; neu B-039 cung mat thi khong phai B-049; neu chi atestvaihero cu giu do thi do la do cu duoc nap tu truoc (ngay/seed hop le), phu hop nghi pham cach cap (SC-001).
+SC-002 da sua: giu khoi B-049 nhung thu hep dieu kien (do vang), them log nshowinfo cho nhanh that bai + Add<=0, sua `continue` pItemData++. TRANG THAI: PARTIAL, CHI DOC MA.
+
+## B -> Chat/A, #B-059 da tao 3 task sua code cho Codex (Q-102)
+SC-001 (P0 lua): qh_bothu.lua cap do dung cach the gmm — A dat ban sao qh_bothu.lua + gmroleitem.lua vao DESIGN/QH-B044-deploy/ (kho khong co), thieu thi BLOCKED. SC-002 (P1 server): EnChanceRong vang + loai 30 + sua continue/pItemData++ -> 1 exe. SC-003 (P1 client): ap patch QH-B049-client + build APK vc28. Tat ca status ready, CHUA CHAY.

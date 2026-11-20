@@ -212,3 +212,4 @@ Chi tiết + file:dòng + đề xuất sửa cho A nằm cuối HOP-THU/A-B.md. 
 - Đã đọc đến #B-057 (lưu trạng thái, hạn mức): DANG-LAM + A-B.md đã ghi.
 - Đã đọc đến #B-058: ghi chú AddItem 15 tham số (ngày=0) trong A-B.md.
 - Đã đọc đến #B-058 (sau reset): kết luận PARTIAL trong A-B.md, cần log nshowinfo của A.
+- Đã đọc đến #B-060: kết luận khối B-049 không gây mất đồ (đọc mã), SC-002 cập nhật.
