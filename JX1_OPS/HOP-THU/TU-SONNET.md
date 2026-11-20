@@ -1456,3 +1456,10 @@ gs001.exe B-049 (790b5a2d…6c9) nạp 14:07, nạp xong 14:14, không crash. Đ
 - Sau +1: Sinh lực 160 (+8), Tốc đánh 28%, Vật lý 137%/+62 ĐỔI; nhưng Sát thương nhỏ/lớn nhất VẪN 40/114. NGUYÊN NHÂN (đã xác định ở mã): bảng JxQhScalable CLIENT chưa có mã 28/29/30 (server có, KItem.cpp:3813). Đã vá client qh9A (KItem.cpp:3529), đang build vc30; chưa cài. Server thực tế có tăng hay không: CHƯA KIỂM (tooltip tính ở client).
 - Giáp Hám Thiên Vũ Thần Tương Kim Giáp +0: Né tránh +720 (mốc để so +N sau khi cài vc30).
 - Ảnh: D:\tmp\sc002-dao-0.png, sc002-dao-1.png, giap0.png. Phi phong: CHƯA làm.
+
+## A 21/11 01:50 — SC-002 đo lại với client vc30 (số thật + ảnh)
+- vc30 (client có 28/29/30 trong JxQhScalable) build OK (0 lỗi), cài LD, vào lại atestchutes2.
+- Đao vàng +1 (vc30): Sát thương nhỏ/lớn nhất VẪN +40/+114 (ảnh D:\tmp\sc002-dao-1-vc30.png). Giáp Hám Thiên +0→+1: Né tránh VẪN +720; các dòng khác ĐỔI: Sinh lực 198→208, Nội lực 179→188, Kháng hỏa 25→26, Thời gian choáng 37→39, Thời gian phục hồi 49→51, Điểm tài phú +0→+100 (ảnh D:\tmp\giap0.png, giap1.png).
+- KẾT LUẬN (có bằng chứng): dòng Sát thương min/max và Né tránh trong tooltip là thuộc tính NỀN (m_aryBaseAttrib), không đi qua JxQhScalable ở client; thêm 28/29/30 vào bảng client KHÔNG đổi gì. Muốn tăng thật thì phải làm ở đường tính chỉ số nền (client hiển thị + server áp dụng) — việc của B/Chat quyết. Chỉ số THỰC trong chiến đấu (sát thương đánh ra, né tránh) CHƯA KIỂM; đo bằng đánh quái cần thêm.
+- Lưu ý: thông báo cường hóa +1 giáp ghi "tỉ lệ 95%" (công thức n=1 phải 100%); thành công, bạc -200 vạn đúng. Chưa rõ 95% là tỉ lệ của lần +1 hay +2 — CHƯA KIỂM.
+- Menu thử Test-36 đã thêm mục "[SC-006] Phi phong 11 cấp" (qh_bothu.lua, sao lưu .bak-pf; AddGoldItem(3464+k)); tiếp: thử phi phong 6 bước.
