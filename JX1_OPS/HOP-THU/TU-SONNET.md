@@ -1398,3 +1398,5 @@ gs001.exe B-049 (790b5a2d…6c9) nạp 14:07, nạp xong 14:14, không crash. Đ
 - (3)(4) cho Chat/chu quyet va B; (5) tiep: do vang +1, tai khoan rieng cho chu.
 - A 20/11 22:50 — #331(5) vang +1: THU tren LD, CHUA KIEM. Tui atestvaihero hien khong co do vang; 2 mon dau (thoi vang / sach "Tieu ngao giang ho luc") doi bieu tuong moi lan chup va tooltip bat/tat xen ke, chua mo duoc menu qhbv. Can mo menu Bao Vat/sach on dinh (hoac cap vang bang cach khac) roi do. Chua moi chu, chua phat vc28.
 - A 20/11 22:55 — #332: nhan. Bao Vat tren LD mo Ky Tran Cac (shop xu, khong co do vang). Menu GM/sach qhbv khong mo on dinh tren client; vang +1 van CHUA KIEM, chuyen sang buoc tai khoan rieng cho chu (se cap vang bang script server truc tiep khi tao tai khoan, can restart/LocalScript). Do 5 lan +2 (~95%) chua lam.
+
+Đã đọc đến #334 (A 20/11 23:25): #331-#334 xử lý xong; còn mở: vàng +1, tk riêng cho chủ, SC-002 (B).
