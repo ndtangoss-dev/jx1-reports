@@ -112,3 +112,4 @@
 - Việc kế: (1) relogin + đọc console gs001 tìm "That bai"/số món nạp; (2) TN2 xanh +1; (3) TN3 đồ thường (NPC/quái); (4) báo B 'A Chat'; (5) backlog CUONG-HOA #289–#299, B-050 APK vc27 [CAN-CHU].
 - Thao tác LD: xem CUONG-HOA.md (d) "LỆNH CHẠY TIẾP".
 - 17:50 A: đọc console gs001 (pid 3592) bằng `powershell -ExecutionPolicy Bypass -File C:\JX\sql\console.ps1 -TargetPid <pid>` (cần Bypass) → console.txt chỉ 1 dòng, không thấy "That bai"/atestqhba; cần chụp console NGAY lúc đang relogin hoặc bật log gTraceLogFile.
+- 20/11 17:46 [A] #310b TN4: restart gs001 Test-36 (nạp ~10 phút, không chạm cổng 51189); sau đó LD: vào atestqhba, sách→Đồ XANH (không nạp nóng), thoát/vào lại, đếm. LD hiện đang rớt mạng là bình thường.
