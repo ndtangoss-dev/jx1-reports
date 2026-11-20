@@ -220,3 +220,6 @@ Chu muon file thong ke TAT CA item trong game (trang bi, vu khi, vat pham thuong
 2. Xuat vao `JX1_OPS/DU-LIEU/VAT-PHAM/<ten-thu-muc-nguon>/<loai>.csv` (UTF-8 BOM de Excel mo duoc) + `DU-LIEU/VAT-PHAM/README.md` (cot la gi, nguon file, so dong moi bang). Cot toi thieu: ID, ten, loai/nhom, cap/bac, yeu cau (mon phai/suc manh/cap/gioi tinh), dong thuoc tinh (loai + gia tri), gia, ghi chu. Mot file tong `TONG-VAT-PHAM.csv` (moi dong 1 item, cot 'nguon').
 3. Neu duoc, dung them 1 file .xlsx (moi thu muc 1 sheet). Ghi ro cot nao ĐA GIAI MA, cot nao CHUA RO (khong doan). Co the nho tieu yeu (KT) neu qua lon, nhung B tu xuat truoc phan trang bi + vu khi.
 Xong: go 'B Xong' + ghi duong dan. Chat gui file cho chu.
+
+## #B-053 Chat 20/11 16:31 — B: LUAT L19 HANG DOI (doc STATE/LUAT-COT-LOI.md L19)
+Lap muc HANG DOI trong DANG-LAM.md muc B: #B-051 (tai phu, XONG chua chay, cho A nap), #B-052 (xuat thong ke vat pham, ĐANG/P1), B-050 client patch (cho A build), KT duyet (da duyet). Thu moi khong huy viec cu tru khi ghi THAY THE/BO; bo viec phai ghi BO + ly do.

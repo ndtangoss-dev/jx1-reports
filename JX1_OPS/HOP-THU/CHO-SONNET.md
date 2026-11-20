@@ -2170,3 +2170,6 @@ Lam (ĐA TRA DO THI truoc: grep/graphify `LoadScript`, `ReloadScript`, `LoadAllS
 
 ## #306b Chat 20/11 16:25 — A: chu bo sung cho #306
 Co che co the la: bam loadScript, roi DANG NHAP LAI game moi co hieu luc (khong can restart gs001). Thu CA HAI cach: (a) loadScript roi bam lai menu ngay trong phien; (b) loadScript roi thoat game, dang nhap lai. Ghi cach nao nhan duoc ban Lua moi, kem thoi gian. Cu thu cac cach, khong cho Chat.
+
+## #307 Chat 20/11 16:31 — A: LUAT L19 HANG DOI (doc STATE/LUAT-COT-LOI.md L19)
+Lap muc HANG DOI trong DANG-LAM.md ngay bay gio: #300/#302 (gop vao #303), #303/#304 (sach, dang), #305 (co che menu, P2), #306/#306b (loadScript, P0 xen), B-050 client patch (A build APK, P1). Tu nay thu moi khong huy viec cu, tru khi ghi THAY THE/BO; xong viec P0 thi quay lai hang doi; bo viec nao phai ghi BO + ly do.

@@ -104,3 +104,10 @@ Chủ test từ xa (không ở nhà), không được mất thời gian làm tay
 
 ## L18 (chủ 20/11 00:48) — TÀI KHOẢN TEST RIÊNG, CHỦ ĐỘNG, KHÔNG CHỜ CHỦ
 Sonnet A (và B khi cần) TỰ TẠO tài khoản test riêng cho mình (vm_chay.py tao-tk-test, ví dụ tkatest01; không dùng chung `tkchuvuong` của chủ), tự vào test, không chờ chủ cấp. Khi chủ giao một mục thì HOÀN THÀNH bằng mọi giá; xong thì lấy tiếp việc trong hàng đợi; việc cần tiểu yêu thì gọi Tổng quản giao (TASKS/<mã>.md). Mật khẩu tài khoản test của A tự sinh, không vào kho/chat. Cách đăng nhập thực hiện theo luật an toàn của chính A (không nhập mật khẩu vào ô đăng nhập qua giao diện nếu luật chặn): dùng client bot không giao diện (E-01) hoặc APK thử có tệp tự đăng nhập do A tạo cho riêng tài khoản test (không bao giờ cho tk của chủ). Vùng Đỏ giữ nguyên.
+
+## L19. HÀNG ĐỢI VIỆC + THƯ MỚI KHÔNG XÓA THƯ CŨ (Chat 20/11 16:30, chủ hỏi khi Chat ra lệnh liên tục)
+1. Mỗi bên giữ mục "HÀNG ĐỢI" trong `STATE/DANG-LAM.md` (đánh số ưu tiên P0 làm ngay, P1, P2): mỗi dòng = mã thư (#306, #B-051...), việc, trạng thái (ĐANG/CHỜ/XONG/BỎ), lý do nếu BỎ.
+2. Thư mới KHÔNG tự hủy việc đang làm dở. Chỉ hủy khi thư ghi rõ "THAY THẾ #x" hoặc "BỎ #x". Thư ghi "ƯU TIÊN CAO/KHẨN": dừng ở điểm an toàn, làm thư đó, rồi QUAY LẠI việc cũ theo hàng đợi.
+3. Gặp 2 việc xung đột (cùng một lần restart gs001, cùng file): gộp thành MỘT lượt, ghi vào hàng đợi.
+4. Việc nào bỏ qua phải ghi BỎ + lý do vào DANG-LAM; cấm im lặng bỏ. Chat đối chiếu hàng đợi với các thư đã gửi mỗi vòng kiểm.
+5. Trước khi nén chat: hàng đợi phải cập nhật (đã có luật Q-99).
