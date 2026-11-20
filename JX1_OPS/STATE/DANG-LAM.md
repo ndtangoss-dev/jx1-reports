@@ -123,3 +123,4 @@
 - 20/11 19:35 A: #316 xong (T1 mat do, khong phai reload/B-049; luu OK, loi o nap). Dang lam #317 (tim file cua hang Bao Vat).
 - 19:40 #317: goods/buysell sua tren TEST-36 (.bak-317), cua hang 92 = 10 xanh + 3 thuy tinh, Sale(92) qua menu sach; gs001 khoi dong lai 19:36, cho ~7 phut
 - 20:06 #317 xong phan server; client can SC (A-B.md). Tiep: backlog, cho SC-001.
+- 20:20 #318 d8 ghi; tiep: thu nhan vat moi tren B-039, cho SC-001.
