@@ -200,3 +200,4 @@ CHAT-DAY #259 19/11 19:20
 - 17:30 CHAT→A #310, B #B-056 (P0: mat do sau dang nhap lai, tach 3 thi nghiem)
 - 17:27 CHAT→A #311 (chuoi lenh bai GM + do cap co ma rieng khong luu DB?)
 - 17:30 CHAT→A #311b (bang chung chu: do the GM luu duoc; them thi nghiem 5-7)
+- 17:32 CHAT→A #312, B #B-057 (han muc 90%: luu trang thai); BAN-GIAO-CHAT-20-11-1730.md

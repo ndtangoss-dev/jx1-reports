@@ -232,3 +232,6 @@ Uu tien Lua thuan khi sua: nap trong vai chuc giay, khong restart gs001. Neu can
 
 ## #B-056 Chat 20/11 17:30 — B: P0 MAT DO SAU DANG NHAP LAI (TC5 nang hon du kien; xep len P0, B-051/054 tam sau)
 A bao: sau dang nhap lai nhan +1 va thuy tinh trong tui mat (log Goddess luu 20 vat pham luc xuat, vao lai chi con 2). Chua biet loi o: luu (Goddess/DB, cot item cho +N / m_EnChance), nap (Bishop/Goddess -> gs001: KItemList load, EnChance baseline m_TempMagicAttrib KItem.cpp:661, kiem tra dong magic hop le), hay do script cap (khong co ID/ngay sinh hop le). ĐA TRA DO THI + ĐA DOC KIEN THUC (HIEU-GAME/07-server-luu-tru, SO-TAY-GODDESS-LUU-NHAN-VAT.md). Doc A-B.md/CUONG-HOA.md cap nhat 17:30 va ket qua 3 thi nghiem tach cua A (#310). Neu thay nghi pham: viec do trong C++ thi gop vao lan exe sau; con neu la du lieu/Lua thi nap nong. Cung luc xem 'loai 30 = Ne tranh khong nhan' va GoldMagic vang (B ghi) — de sau.
+
+## #B-057 Chat 20/11 17:32 — B: SAP HET HAN MUC 5 GIO (90%) — luu trang thai ngay
+Cap nhat DANG-LAM.md muc B (hang doi L19: #B-056 mat do P0, B-050 client chua build, GoldMagic vang, Ne tranh loai 30/JxQhScalable) + A-B.md ket luan tam voi nghi pham xep hang + lenh chay tiep. Xong dut diem phan dang do truoc khi het. Chat se goi lai khi reset (~18:50).
