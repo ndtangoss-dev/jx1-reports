@@ -165,3 +165,12 @@ Chủ chốt: điểm tài phú nhân vật = TỔNG điểm tài phú từng tr
 
 ## #B-038 Chat 20/11 07:15 — B: gs001 nạp 10–15 phút → rà kỹ trước khi giao A (Q-89)
 Mỗi lần A chép bản B + restart gs001 tốn 10–15 phút nên B chỉ giao bản đã rà kỹ: tự kiểm lại mọi thay đổi (build sạch, SHA, hợp đồng, tham số Lua 5.0, cờ cấu hình), gộp nhiều sửa vào 1 bản, ghi rõ trong A-B.md "bản này đổi gì / kỳ vọng / cách A kiểm / cách hoàn tác". Việc B trong lúc A làm #286: (1) kiểm lại tổng tài phú server cộng gộp 10 ô trùng client; (2) rà đánh thường/CmdLane và tầm hiện quái: nếu cần đổi server thì gói vào 1 bản duy nhất, chưa giao ngay, chờ Chat/A chốt thời điểm; (3) soạn nghiệm thu: danh sách kiểm cho chủ test (cường hóa +1..+n, tài phú, phi phong, hiển thị).
+
+## #B-039 Chat 20/11 07:36 — B: TÀI PHÚ = THUỘC TÍNH NHÂN VẬT + YÊU CẦU MẶC PHI PHONG (Q-90) — ƯU TIÊN CAO NHẤT, chủ chờ vào test
+Đọc STATE/QUYET-DINH.md Q-90. Phía server (B):
+(1) Một loại thuộc tính ma thuật mới "tài phú" (hoặc tái dùng 1 ID thuộc tính trống/ít dùng nếu an toàn để khỏi đổi giao thức; nếu thêm mới thì ghi ID, dòng trong bảng magic của gs001 + bảng mô tả cho client). Giá trị trên món = 100 × +N, tính lại khi cường hóa (đi cùng JxQhScale/ApplyMagic để mặc → nhân vật +M, tháo → −M bằng cơ chế chuẩn khi ApplyMagicAttrib/Remove). Chỉ 10 ô tính; phi phong/ngựa... không có dòng này.
+(2) Yêu cầu mặc: phi phong vàng cấp k cần điểm tài phú nhân vật ≥ 6000 + 900(k−1) bằng loại YÊU CẦU như sức mạnh (thêm 1 loại require mới trong CanEquip/bảng Require, đọc từ dữ liệu GoldItem nếu được: cột yêu cầu). Chặn mặc theo cơ chế chuẩn, báo thiếu.
+(3) Tự tháo phi phong khi tụt dưới yêu cầu: giữ QhCheckPifeng nhưng dùng điểm tài phú thuộc tính nhân vật; kiểm trường hợp túi đầy.
+(4) Gỡ/vô hiệu cổng tự viết cũ để không chặn kép; giữ [QH]|D thông báo nếu tiện.
+(5) Đồng bộ lên client: xác định thuộc tính nhân vật nào gửi xuống để khung nhân vật hiện (nhờ A xem client đọc thuộc tính từ đâu). Soạn hợp đồng v6 trong A-B.md (ID thuộc tính, tên hiển thị, loại require, định dạng tooltip) NGAY để A làm song song.
+(6) Q-89: gộp thành 1 bản gs001 duy nhất, rà kỹ (build sạch, SHA, cách kiểm, hoàn tác) rồi giao A; nghĩ kỹ vì nạp 10–15 phút. Đây là bản cuối trước khi chủ test.

@@ -168,3 +168,9 @@ Chủ: cần kết quả cuối là chức năng cường hóa xây thành công
 
 ## Q-89 (20/11 07:12, đại vương chỉ thị) — Restart gs001 tốn 10–15 phút; thứ tự nghiệm thu
 Mỗi lần khởi động + nạp gs001 mất 10–15 phút: A/B phải suy xét kỹ rồi gộp mọi thay đổi vào 1 lần restart. Sau khi xong hiển thị tài phú (khung nhân vật + tooltip) và tổng cộng gộp, A chạy quy trình SẴN SÀNG TEST rồi báo; Chat báo chủ vào test; sau đó chủ nghiệm thu, Chat chỉ thị hướng tiếp theo.
+
+## Q-90 (20/11 07:35, đại vương chốt, ƯU TIÊN CAO NHẤT để chủ vào test) — Tài phú = thuộc tính nhân vật
+1) Điểm tài phú là 1 dòng thuộc tính (magic attrib) như sức mạnh/thân pháp: trang bị có dòng "Điểm tài phú +M" (M = 100 × +N của món, tăng theo cường hóa); nhân vật mặc lên thì điểm tài phú nhân vật TĂNG đúng M, tháo xuống thì GIẢM đúng M, theo đúng cơ chế cộng/trừ thuộc tính chuẩn của engine; hiện ở khung thông tin nhân vật như các thuộc tính khác và ở tooltip món.
+2) Điều kiện mặc phi phong = yêu cầu như điểm sức mạnh/thân pháp: tooltip "Yêu cầu tài phú: X" (đỏ nếu thiếu), chặn mặc theo cơ chế yêu cầu chuẩn. Mức X giữ nguyên bảng: cấp k = 6000 + 900(k−1), k=1..11 (6000…15000).
+3) Game của ta TỰ THÁO phi phong khi điểm tài phú tụt dưới yêu cầu (khác game chuẩn); giữ QhCheckPifeng của B, dùng điểm tài phú thuộc tính nhân vật làm chuẩn.
+4) Thay thế: tính tổng/gate tài phú tự viết cũ (QhWealth/QhPifengWealthOK, tính client) bằng cơ chế thuộc tính + yêu cầu chuẩn. Cường hóa +N/giá/tỉ lệ giữ nguyên. Không đụng vùng Đỏ. Nhớ Q-89: gộp 1 lần restart gs001.
