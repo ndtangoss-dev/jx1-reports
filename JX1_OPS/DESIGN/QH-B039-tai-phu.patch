@@ -1,0 +1,138 @@
+diff --git a/server/jxOnline/gameserver/Sources/Core/Src/KItem.cpp b/server/jxOnline/gameserver/Sources/Core/Src/KItem.cpp
+index 2b111c1..d98f5db 100644
+--- a/server/jxOnline/gameserver/Sources/Core/Src/KItem.cpp
++++ b/server/jxOnline/gameserver/Sources/Core/Src/KItem.cpp
+@@ -190,6 +190,16 @@ void KItem::ApplyMagicAttribToNPC(IN KNpc* pNPC, IN int nMagicActive,int *nType)
+ 		qhAttrib.nValue[2] = 0;
+ 		pNPC->ModifyAttrib(pNPC->m_Index, (void *)&qhAttrib);
+ 	}
++	// [qh Q-90] Diem tai phu = 100 x +N (10 o: vu khi..ngoc boi), cong/tru bang magic_special_point
++	if (m_CommonAttrib.nItemGenre == item_equip && m_CommonAttrib.nDetailType <= equip_pendant && m_CommonAttrib.nEnChance > 0)
++	{
++		KItemNormalAttrib qhW;
++		qhW.nAttribType = magic_special_point;
++		qhW.nValue[0] = 100 * m_CommonAttrib.nEnChance;
++		qhW.nValue[1] = 0;
++		qhW.nValue[2] = 0;
++		pNPC->ModifyAttrib(pNPC->m_Index, (void *)&qhW);
++	}
+ 	//for (i = 0; i < sizeof(m_yinMagicAttrib)/sizeof(m_yinMagicAttrib[0]); ++i)//sizeof(m_ronMagicAttrib)/sizeof(m_ronMagicAttrib[0])
+ 	//隐藏的属性
+ 	if (nType[0]==3)
+@@ -279,6 +289,16 @@ void KItem::RemoveMagicAttribFromNPC(IN KNpc* pNPC, IN int nMagicActive,IN int *
+ 		qhAttrib.nValue[2] = 0;
+ 		pNPC->ModifyAttrib(pNPC->m_Index, (void *)&qhAttrib);
+ 	}
++	// [qh Q-90] Diem tai phu = 100 x +N (10 o: vu khi..ngoc boi), cong/tru bang magic_special_point
++	if (m_CommonAttrib.nItemGenre == item_equip && m_CommonAttrib.nDetailType <= equip_pendant && m_CommonAttrib.nEnChance > 0)
++	{
++		KItemNormalAttrib qhW;
++		qhW.nAttribType = magic_special_point;
++		qhW.nValue[0] = -100 * m_CommonAttrib.nEnChance;
++		qhW.nValue[1] = 0;
++		qhW.nValue[2] = 0;
++		pNPC->ModifyAttrib(pNPC->m_Index, (void *)&qhW);
++	}
+ 
+ 	
+ 	// 基础属性调整NPC
+diff --git a/server/jxOnline/gameserver/Sources/Core/Src/KItemList.cpp b/server/jxOnline/gameserver/Sources/Core/Src/KItemList.cpp
+index 3abf62b..60a391f 100644
+--- a/server/jxOnline/gameserver/Sources/Core/Src/KItemList.cpp
++++ b/server/jxOnline/gameserver/Sources/Core/Src/KItemList.cpp
+@@ -1158,14 +1158,7 @@ BOOL KItemList::QhPifengWealthOK(KItem* pItem, BOOL bNotify)
+ 	else return TRUE;	// phi phong khac (khong thuoc 11 cap): khong chan
+ 	if (nGrade > QH_PIFENG_K) nGrade = QH_PIFENG_K;
+ 	int nNeed = QH_WEALTH_X * QH_WEALTH_N * (6 * (QH_PIFENG_K - 1) + 9 * (nGrade - 1)) / (QH_PIFENG_K - 1);
+-	int nSum = 0;
+-	for (int p = 0; p < QH_WEALTH_N; p++)
+-	{
+-		int nEq = GetEquipment(p);
+-		if (nEq > 0 && nEq < MAX_ITEM)
+-			nSum += Item[nEq].GetEnChance();
+-	}
+-	int nHave = QH_WEALTH_X * nSum;
++	int nHave = (m_PlayerIdx > 0) ? Player[m_PlayerIdx].m_nWealth : 0;	// [Q-90] thuoc tinh nhan vat
+ 	if (nHave >= nNeed)
+ 		return TRUE;
+ 	if (bNotify && m_PlayerIdx > 0)
+@@ -1322,6 +1315,12 @@ BOOL KItemList::EnoughAttrib(void* pAttrib,int nPlace,DWORD nDwIdx)
+ 			}  
+ 		}      
+ 		break;
++	case magic_item_reserve8:	// [qh Q-90] yeu cau tai phu (nValue[0] = X)
++		if (Player[m_PlayerIdx].m_nWealth < pData->nValue[0])
++		{
++			return FALSE;
++		}
++		break;
+ 	case magic_requiremenpai:
+ 		//if (Player[m_PlayerIdx].m_cFaction.m_nFirstAddFaction != pData->nValue[0])
+ 		if (Player[m_PlayerIdx].m_cFaction.m_nCurFaction != pData->nValue[0])
+diff --git a/server/jxOnline/gameserver/Sources/Core/Src/KNpcAttribModify.cpp b/server/jxOnline/gameserver/Sources/Core/Src/KNpcAttribModify.cpp
+index c1b1642..ea2bf1e 100644
+--- a/server/jxOnline/gameserver/Sources/Core/Src/KNpcAttribModify.cpp
++++ b/server/jxOnline/gameserver/Sources/Core/Src/KNpcAttribModify.cpp
+@@ -3398,6 +3398,15 @@ void KNpcAttribModify::lock_life(KNpc* pNpc, void* pData)
+ }
+ void KNpcAttribModify::special_point(KNpc* pNpc, void* pData)
+ {
++#ifdef _SERVER
++	// [qh Q-90] Diem tai phu: cong/tru gia tri vao nhan vat (Apply = +M, Remove = -M)
++	if (!pNpc || !pData) return;
++	int nPl = pNpc->GetPlayerIdx();
++	if (nPl <= 0 || nPl >= MAX_PLAYER) return;
++	KMagicAttrib* pAttr = (KMagicAttrib*)pData;
++	Player[nPl].m_nWealth += pAttr->nValue[0];
++	if (Player[nPl].m_nWealth < 0) Player[nPl].m_nWealth = 0;
++#endif
+ 
+ }
+ void KNpcAttribModify::resume_life_p(KNpc* pNpc, void* pData)
+diff --git a/server/jxOnline/gameserver/Sources/Core/Src/KPlayer.cpp b/server/jxOnline/gameserver/Sources/Core/Src/KPlayer.cpp
+index 3a97816..20f167c 100644
+--- a/server/jxOnline/gameserver/Sources/Core/Src/KPlayer.cpp
++++ b/server/jxOnline/gameserver/Sources/Core/Src/KPlayer.cpp
+@@ -154,6 +154,7 @@ void	KPlayer::Release()
+ 	m_nVitality = 0;
+ 	m_nEngergy = 0;
+ 	m_nLucky = 0;
++	m_nWealth = 0;
+ 	m_nCurStrength = 0;
+ 	m_nCurDexterity = 0;
+ 	m_nCurVitality = 0;
+diff --git a/server/jxOnline/gameserver/Sources/Core/Src/KPlayer.h b/server/jxOnline/gameserver/Sources/Core/Src/KPlayer.h
+index 982054e..13012e2 100644
+--- a/server/jxOnline/gameserver/Sources/Core/Src/KPlayer.h
++++ b/server/jxOnline/gameserver/Sources/Core/Src/KPlayer.h
+@@ -383,6 +383,7 @@ public:
+ 	BYTE			m_btChatSpecialChannel;		
+ 	int				m_nUpExp;                   // 杀死敌人获得经验增加百分比
+ 
++	int				m_nWealth;					// [qh Q-90] Diem tai phu = tong magic_special_point tu 10 o trang bi
+ 	int				m_nCurStrength;				// 玩家的当前力量（决定基本伤害）   力量
+ 	int				m_nCurDexterity;			// 玩家的当前敏捷（决定命中、体力） 身法
+ 	int				m_nCurVitality;				// 玩家的当前活力（决定生命、体力） 外功
+diff --git a/server/jxOnline/gameserver/Sources/Core/Src/ScriptFuns.cpp b/server/jxOnline/gameserver/Sources/Core/Src/ScriptFuns.cpp
+index 6921bb7..7622677 100644
+--- a/server/jxOnline/gameserver/Sources/Core/Src/ScriptFuns.cpp
++++ b/server/jxOnline/gameserver/Sources/Core/Src/ScriptFuns.cpp
+@@ -10974,6 +10974,18 @@ int LuaSetItemEnChance(Lua_State *L)
+ 
+ 	int nPlayerIndex = GetPlayerIndex(L);
+ 
++	// [qh Q-90] mon dang mac o 0..9: tai phu nhan vat doi theo 100 x chenh lech
++	if (nPlayerIndex > 0 && Item[nItemIdx].GetGenre() == item_equip && Item[nItemIdx].GetDetailType() <= equip_pendant)
++	{
++		for (int qp = 0; qp < 10; qp++)
++			if (Player[nPlayerIndex].m_ItemList.GetEquipment(qp) == nItemIdx)
++			{
++				Player[nPlayerIndex].m_nWealth += 100 * nItemEnChance;
++				if (Player[nPlayerIndex].m_nWealth < 0) Player[nPlayerIndex].m_nWealth = 0;
++				break;
++			}
++	}
++
+ 	if (nPlayerIndex > 0 && nIsSyn>=1)
+ 	{
+ 	   Player[nPlayerIndex].m_ItemList.SynPlayerItem(nItemIdx); //同步物品属

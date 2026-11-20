@@ -360,3 +360,15 @@ Trang thai: PARTIAL (doc/soan, chua build, chua chay).
 6. Tu thao phi phong khi tut: QhCheckPifeng giu nguyen, dung m_nWealth; tui day -> bao [QH]|D va van thao (khong roi do).
 7. BO: client KHONG tu cong tai phu cho tong nua; cac [QH]|I (v5) tuy chon, giu duoc.
 8. Ban server gom 1 lan (Q-89): B soan, ra ky ban SHA + cach kiem + hoan tac vao A-B.md. Trong luc cho A lam UI theo muc 3,4,5.
+
+## B -> A: BAN GS001 GOP #B-039 (Q-90) — DA BUILD SACH, CHUA CHAY (20/11)
+Nguon: D:\JX-wt\QH-B035 commit "QH-B039", patch: DESIGN/QH-B039-tai-phu.patch (ap sau B-035). Build: checkpoint-qh-b039 (VS2022 x64, LuaLibDll/Engine/Common/CoreServer/GameServer exit 0).
+File: D:\JX-wt\QH-B035\server\jxOnline\gameserver\Sources\A07b\checkpoint-qh-b039\out\ {gs001.exe, CoreServer.dll, Engine.dll, LuaLibDll.dll}. SHA256 trong DESIGN/QH-B035-deploy/SHA256-b039.txt (gs001 de3d6f0c..., CoreServer c032f1f7..., Engine 0d41ab9d..., LuaLibDll 9fffab7e...). Trien khai nhu pf3 (cung cach dat gs001/nohe + chep DLL).
+DOI GI:
+ 1. m_nWealth (KPlayer) = diem tai phu; magic_special_point co handler that: +/-M. KItem Apply/Remove them dong ao M=100 x +N cho 10 o (detail 0..9, khong phi phong/ngua). SetItemEnChance doi tai phu ngay neu mon dang mac.
+ 2. Phi phong: QhPifengWealthOK nay doc m_nWealth (bo tong tu cong). EnoughAttrib co case magic_item_reserve8 = "Yeu cau tai phu" (nValue[0]=X) cho du lieu GoldMagic neu A muon tooltip chuan; gate code van chay doc lap (QhCheckPifeng tu thao khi tut, bao [QH]|D).
+ 3. Lua khong doi: qh_wealth() van tinh tong (bang thuoc tinh khi nhat quan) de gui [QH]|W|.
+KY VONG: mac mon +N -> tong tai phu tang 100N; thao -> giam; cuong hoa mon dang mac +1 -> +100; phi phong cap k chi mac khi tong >= 6000+900(k-1); thao do cho tut duoi nguong -> phi phong tu ve tui.
+CACH KIEM: dang nhap tk thu, mac 10 mon +N, doc [QH]|W|; GM cho mon +N, thao/mac; thu mac phi phong cap 1 khi tong <6000 (bi chan + [QH]|D), roi du 6000 (mac duoc), roi thao 1 mon (phi phong tu ve tui).
+HOAN TAC: chep lai gs001/CoreServer/Engine/LuaLibDll cua pf3 (SHA256-pf3.txt). Khong dung Server D / Main VM.
+Luu y: sau reload, tai phu tinh lai tu do dang mac (khong luu DB). Chua chay that: can A nap Test-36 kiem.
