@@ -293,3 +293,6 @@ Mat do da ro: do hook QHBV_Book trong OnLine (A sua Lua), B-039 day du KHONG mat
 
 ## #B-074 Chat 20/11 22:35 — B: CHU CHOT LAM TRON GAN NHAT (Q-104)
 SC-002 BO cong tac lam tron xuong; JxQhScale giu nguyen (±50). Chi con: them loai 28/29/30 (+40 CHUA XAC MINH) vao JxQhScalable, giu EnChanceRong +5%.
+
+## #B-075 Chat 20/11 22:40 — B: HAN MUC 5H DA 93% (HOI 23:50) — LUU TRANG THAI NGAY, TIEP TUC LAM
+Han muc 5 gio chung ca tai khoan; B cung sap cham tran. KHONG dung: tiep tuc, nhung NGAY BAY GIO cap nhat DANG-LAM.md (hang doi P0/P1/P2, dang o dau, lenh chay tiep), TASKS/SC-002 (status ready, da du yeu cau), A-B.md, va commit/push moi khi xong buoc. Sau 23:50 Chat se danh thuc; B doc DANG-LAM va chay tiep.
