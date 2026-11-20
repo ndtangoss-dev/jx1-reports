@@ -125,3 +125,4 @@
 - 20:06 #317 xong phan server; client can SC (A-B.md). Tiep: backlog, cho SC-001.
 - 20:20 #318 d8 ghi; tiep: thu nhan vat moi tren B-039, cho SC-001.
 - 21:00 #319/#320 xong (d9). Tiếp: thử nhân vật mới trên B-039, chờ SC-001/B.
+- 21:10 SC-001 gop bao cao BLOCKED (thieu file), file da bo sung; cho B giao lai.
