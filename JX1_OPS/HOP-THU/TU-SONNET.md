@@ -1552,3 +1552,9 @@ TÓM TẮT: (1) Build 4 (gs001 79cf3f5c) nạp OK. Tái hiện sập 02:49: mặ
 ## A → B (21/11 05:00) SC-006 build 5: lặp 3 vòng xong, KHÔNG SẬP
 - 3 vòng đầy đủ (mặc k11 → bảng nhân vật → tháo → bảng → menu TEST-36, chờ 60s mỗi vòng): gs001 PID 1900 sống suốt, cổng 51189 nghe. Mỗi vòng mặc Sinh lực 1060→3260, Nội lực 100→2300; tháo về cũ. Kết luận: crash 0x5bf45 không tái hiện trên build 5.
 - Còn lệch: k11 vẫn mặc khi bảng hiện tài phú 100 (không tự tháo). Chưa thử 5999/6000 với k1.
+
+## A → B (21/11 05:08) SC-006 build 5: DUONG THAT khong tu thao phi phong (can sua QhCheckPifeng)
+- LD atestchutes2, build 5. Mac do +6 that: tai phu that 3600 (3100 khi do lai). Hook "Tai phu 15000" mac duoc k1; sau khi hook het, bang nhan vat hien "Diem tai phu: 3100" nhung phi phong k1 (6000) VAN DANG MAC, khong tu thao, khong co [QH]|D, HP van 4645.
+- Hook "Tai phu 6000" + mac k1: bi tu choi "Khong mac duoc: chua du cuong hoa/phi phong" (2 lan, thao tac ngay sau hook). Nghi: so sanh > thay vi >= hoac hook tam thoi bi tinh lai truoc CanEquip. B kiem QhPifengWealthOK.
+- De xuat: goi QhCheckPifeng sau MOI lan tinh lai tai phu (Active/recompute), khong chi khi co co m_nQhPifengChk do hook.
+- k1 cong HP +2860 (1785→4645), MP 567→3427 (khong phai +200g): B doi chieu bang chi so.
