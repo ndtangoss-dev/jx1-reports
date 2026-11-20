@@ -18,6 +18,12 @@
 - 20/11 16:20 [A] #303 (Q-101, gộp #300/#302): sách = item script có sẵn (6,1,0) + script mới \script\itemaowubox.lua gọi qhbv_menu (chỉ tên 'atest'); online.lua (.bak-q303) tự cấp lại sách khi đăng nhập; menu: Dọn hành trang (giữ sách, FindItemEx(3,i,j)+RemoveItemByIndex), Đồ xanh (luck 1000 có dòng), Đồ vàng, Thủy tinh, Bạc, Thiết lập Thiếu Lâm; nút Cường hóa về UI Giao gốc. Chép VM, restart gs001 16:20 (nạp ~10 phút). Vai atestqhhai (tkatest02) kẹt vào game; tạo thêm tkatest03/atestqhba (native_place 54). Việc kế: LD vào atestqhba -> bấm sách -> menu -> mặc, +1/+2/+3, chụp, ghi CUONG-HOA.md. CHƯA KIỂM.
 - 20/11 16:25 [A] #304+#306: menu sách có mục Đồ xanh, Đồ vàng, Tiền, Thủy tinh Tím/Lục/Lam (x600 mỗi loại), Dọn (giữ sách), Thiết lập Thiếu Lâm + mục thử "Nạp lại Lua nóng". ĐÃ TRA ĐỒ THỊ: LocalScript (ScriptFuns.cpp:20470 LuaLocalScript) -> ReLoadScript (KSortScript.cpp:444: UnLoadScript + LoadScriptToSortListA); lệnh bài GM dùng _wgm_ReloadScript/tb_LocalScript (gmroleitem.lua:1552). Restart gs001 16:21 (một lần, gộp). Việc kế: đăng nhập LD atestqhba, dùng sách, sửa 1 dòng chữ qh_bothu.lua rồi bấm Nạp lại, đo thật. CHƯA KIỂM.
 - 20/11 16:47 [A] #303/#304/#306 ĐÃ KIỂM: nạp nóng Lua không restart (dofile-on-use + LocalScript, ~30 s; HIEU-GAME/09-cong-cu-gm/LOADSCRIPT-NAP-LUA-NONG.md). Menu trong sách Tân thủ chạy thật: Đồ xanh (dòng thật), Đồ vàng 9/10, Tiền 20 ức, thủy tinh 3x600, Thiết lập Thiếu Lâm. CHƯA KIỂM: #306b sau đăng nhập lại, mặc +1/+2/+3, Cường hóa mở Give gốc. #305 xong. Việc kế: đo +1/+2/+3.
+- HÀNG ĐỢI A (L19, 20/11 16:50):
+  - P0 #306/#306b nạp nóng Lua — XONG (đăng nhập lại CHƯA KIỂM, P1 làm sau).
+  - P0 #303/#304 sách hỗ trợ — ĐANG: menu chạy; còn mặc đồ, đo +1/+2/+3, Cường hóa mở Give gốc.
+  - P1 B-050 vá client (build APK vc27+) — CHỜ; B-051 Lua tài phú — nạp NÓNG được, không cần restart.
+  - P1 đo lại TC2–TC8 sau vá B — CHỜ.
+  - P2 #305 — XONG. #300/#302 — GỘP vào #303. BỎ: không có.
 - Đang chờ: B (đồ vàng ×1,05 + qh_wealth).
 - Thư đã đọc đến: #B-054.
 - HÀNG ĐỢI B (L19, 20/11 16:35):

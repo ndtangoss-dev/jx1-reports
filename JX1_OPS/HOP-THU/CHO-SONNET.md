@@ -73,6 +73,32 @@ Kết luận xong thì báo Chat duyệt (O-01) **trước** B-02 chạy.
 
 ## Đã xử lý
 
+## #304 [ĐÃ XỬ LÝ 20/11 16:50] Chat 20/11 16:11 — A: lam ro #303 (chu noi them 16:09)
+**Kết quả:** ĐÃ KIỂM 16:47: menu sách cấp đồ xanh/vàng, tiền, thủy tinh x600; mặc/đo +N CHƯA KIỂM (làm theo #303)
+Menu trong cuon sach 'Ho tro thu nghiem' co SAN cac muc lay do, chon la nhan ngay (khong phai mo cua hang, khong phai giao tung mon): [Do xanh] (ca bo), [Do vang] (ca bo, 'hk' = vang), [Tien] (bac vat/vạn), [Thuy tinh Tu / Luc / Lam] (moi loai mot muc), [Don sach hanh trang]. Moi muc chon xong do vao tui lien. Cap du de test +15 (bac, thuy tinh nhieu). Do xanh/vang phai co dong thuoc tinh that. Cac muc giu duoc cung ban sach; khong lap lai viec tao goc/restart GS cho moi lan test.
+
+## #305 [ĐÃ XỬ LÝ 20/11 16:50] Chat 20/11 16:17 — A: (uu tien thap, sau khi #303/#304 xong) ghi lai CO CHE menu de dung lai
+**Kết quả:** XONG 16:47: HIEU-GAME/08-giao-dien/CO-CHE-MENU-LUA.md
+Chu thay menu trong nut Cuong hoa (Lua -> client hien cac nut chu dong) la tin hieu tot: sau nay dung dung co che nay cho cua so Cuong hoa va cac chuc nang cua BOT hao huu. Khi xong #303/#304, viet 1 trang `HIEU-GAME/08-giao-dien/CO-CHE-MENU-LUA.md`: menu duoc goi tu dau (nut -> opensysui -> Lua nao), dung ham gi de hien lua chon (Say/SelectUI...), nut bam tro lai server the nao, gioi han (so nut, do dai chu, tieng Viet co dau), va cho nao CAN client moi (o dat do, thanh %). ĐA TRA DO THI + ĐA DOC KIEN THUC. Khong lam gian doan viec test.
+
+## #306 [ĐÃ XỬ LÝ 20/11 16:50] Chat 20/11 16:21 — A: PHAT HIEN CUA CHU: "Lenh bai GM" co nut loadScript — DIEU TRA, co the het phai restart gs001 (UU TIEN CAO, vi moi lan nap Lua ton ~10 phut)
+**Kết quả:** ĐÃ KIỂM 16:46: nạp nóng Lua được (dofile-on-use ~30 s; LocalScript 2 s), tài liệu 09-cong-cu-gm/LOADSCRIPT-NAP-LUA-NONG.md
+Chu noi: trong tui co cuon sach/vat pham, chon 'lenh bai GM' -> co nut `loadScript`. Co the dung de NAP LAI file Lua ngay tren gs001 dang chay (khong restart) — neu dung thi moi lan sua Lua cuong hoa/sach thu chi con vai giay.
+Lam (ĐA TRA DO THI truoc: grep/graphify `LoadScript`, `ReloadScript`, `LoadAllScript`, KSortScript.cpp:208-371, `ExecuteScript`, bang GM; ĐA DOC KIEN THUC: HIEU-GAME/09-cong-cu-gm/, HIEU-LENH-GM.md, REPORTS/A-07h.md):
+1. Tim lenh bai GM o dau (item nao, script nao), nut loadScript goi ham gi, nap 1 file hay ca thu muc, co ap dung ngay cho nguoi dang online khong, nap lai ham/bien cu (tai khoan global) co bi giu ban cu khong.
+2. Thu that tren Test-36: sua 1 dong nho trong qh_bothu.lua (vd doi chu 1 muc menu), bam loadScript, mo lai menu -> thay chu moi? Ghi so lan/giay. Neu loi/sap gs001 thi ghi ngay, khong thu lai tren may chu dang chay chung.
+3. Ghi ket qua vao `HIEU-GAME/09-cong-cu-gm/LOADSCRIPT-NAP-LUA-NONG.md` (cach dung, gioi han: Lua nap duoc, C++/exe thi khong; rui ro) + DANG-LAM. Neu dung duoc: tu nay moi chinh Lua thi DUNG nut nay thay vi restart gs001 va bao Chat + B. Lam xen voi #303/#304, khong bo test do.
+
+## #306b [ĐÃ XỬ LÝ 20/11 16:50] Chat 20/11 16:25 — A: chu bo sung cho #306
+**Kết quả:** ĐÃ KIỂM trong phiên; sau đăng nhập lại CHƯA KIỂM (ghi rõ trong tài liệu)
+Co che co the la: bam loadScript, roi DANG NHAP LAI game moi co hieu luc (khong can restart gs001). Thu CA HAI cach: (a) loadScript roi bam lai menu ngay trong phien; (b) loadScript roi thoat game, dang nhap lai. Ghi cach nao nhan duoc ban Lua moi, kem thoi gian. Cu thu cac cach, khong cho Chat.
+
+## #307 [ĐÃ XỬ LÝ 20/11 16:50] Chat 20/11 16:31 — A: LUAT L19 HANG DOI (doc STATE/LUAT-COT-LOI.md L19)
+**Kết quả:** XONG 16:50: lập HÀNG ĐỢI A trong DANG-LAM.md
+Lap muc HANG DOI trong DANG-LAM.md ngay bay gio: #300/#302 (gop vao #303), #303/#304 (sach, dang), #305 (co che menu, P2), #306/#306b (loadScript, P0 xen), B-050 client patch (A build APK, P1). Tu nay thu moi khong huy viec cu, tru khi ghi THAY THE/BO; xong viec P0 thi quay lai hang doi; bo viec nao phai ghi BO + ly do.
+
+**Đã xử lý #B-053 (20/11 16:36):** đã lập HÀNG ĐỢI B (P0/P1/P2) trong DANG-LAM.md mục Sonnet B, không BỎ việc nào.
+
 **Đã xử lý #286/#287/#288 (20/11 09:20):** tài phú là thuộc tính nhân vật (B-039 nạp 07:50, 1 lần restart); client vc26 hiện bảng nhân vật + tooltip +M + yêu cầu phi phong; chặn mặc khi thiếu đã kiểm; chi tiết BAO-CAO-CHU.md "SẴN SÀNG TEST".
 
 **Đã xử lý #B-036 (20/11 05:00):** hook atestvaihero đã thêm vào qhcuonghoa.lua (QhEnhance), cường hóa lưu qua ienchance (KPlayerDBFuns.cpp:1694/891), tự tháo phi phong pf3 đã có; chi tiết A-B.md, chưa chạy trong game.
@@ -2155,23 +2181,3 @@ Chon: DUNG NHAN VAT TUI TRONG moi tren Test-36 (tai khoan thu moi bang tao-tk-te
 ## #303 Chat 20/11 16:03 — A: Q-101 SACH "Ho tro thu nghiem" (chu chot 16:01, xem QUYET-DINH.md Q-101)
 Luu y tuong cua chu: trong tui nhan vat test co MOT CUON SACH (vat pham script). An vao sach -> Su dung -> chon 'Ho tro thu nghiem' -> menu co: 'Don sach hanh trang' (khong xoa cuon sach), 'Do xanh', 'Do vang', 'Thuy tinh / bac cuong hoa'. Do xanh/vang cap ra PHAI co dong thuoc tinh that (mau do tot, dung ID do co dong; neu menu hien tai chi cap do thuong khong dong thuoc tinh thi doi sang ID do co dong, tra Settings/item + do thi). Lam: (1) chon vat pham sach co san trong file item (dung sach script san co, gan script cua menu qh_bothu thay cho gan vao nut Cuong hoa; neu khong tao duoc item moi thi dung vat pham co script mo menu san); (2) khi dang nhap Test-36 tu cap lai cuon sach neu thieu (khong lap khi da co); (3) 'Don sach' loai tru cuon sach; (4) nut Cuong hoa tro lai chi mo UI Give goc. Co the xoay chi tren 1 lan nap Lua (khong doi exe). Anh vao ANH-NGHIEM-THU, ghi dong thuoc tinh vao CUONG-HOA.md. #300/#302 gop vao day (menu Bao vat dang co giu lam noi dung). Xong: go 'A Xong'.
 
-## #304 Chat 20/11 16:11 — A: lam ro #303 (chu noi them 16:09)
-Menu trong cuon sach 'Ho tro thu nghiem' co SAN cac muc lay do, chon la nhan ngay (khong phai mo cua hang, khong phai giao tung mon): [Do xanh] (ca bo), [Do vang] (ca bo, 'hk' = vang), [Tien] (bac vat/vạn), [Thuy tinh Tu / Luc / Lam] (moi loai mot muc), [Don sach hanh trang]. Moi muc chon xong do vao tui lien. Cap du de test +15 (bac, thuy tinh nhieu). Do xanh/vang phai co dong thuoc tinh that. Cac muc giu duoc cung ban sach; khong lap lai viec tao goc/restart GS cho moi lan test.
-
-## #305 Chat 20/11 16:17 — A: (uu tien thap, sau khi #303/#304 xong) ghi lai CO CHE menu de dung lai
-Chu thay menu trong nut Cuong hoa (Lua -> client hien cac nut chu dong) la tin hieu tot: sau nay dung dung co che nay cho cua so Cuong hoa va cac chuc nang cua BOT hao huu. Khi xong #303/#304, viet 1 trang `HIEU-GAME/08-giao-dien/CO-CHE-MENU-LUA.md`: menu duoc goi tu dau (nut -> opensysui -> Lua nao), dung ham gi de hien lua chon (Say/SelectUI...), nut bam tro lai server the nao, gioi han (so nut, do dai chu, tieng Viet co dau), va cho nao CAN client moi (o dat do, thanh %). ĐA TRA DO THI + ĐA DOC KIEN THUC. Khong lam gian doan viec test.
-
-## #306 Chat 20/11 16:21 — A: PHAT HIEN CUA CHU: "Lenh bai GM" co nut loadScript — DIEU TRA, co the het phai restart gs001 (UU TIEN CAO, vi moi lan nap Lua ton ~10 phut)
-Chu noi: trong tui co cuon sach/vat pham, chon 'lenh bai GM' -> co nut `loadScript`. Co the dung de NAP LAI file Lua ngay tren gs001 dang chay (khong restart) — neu dung thi moi lan sua Lua cuong hoa/sach thu chi con vai giay.
-Lam (ĐA TRA DO THI truoc: grep/graphify `LoadScript`, `ReloadScript`, `LoadAllScript`, KSortScript.cpp:208-371, `ExecuteScript`, bang GM; ĐA DOC KIEN THUC: HIEU-GAME/09-cong-cu-gm/, HIEU-LENH-GM.md, REPORTS/A-07h.md):
-1. Tim lenh bai GM o dau (item nao, script nao), nut loadScript goi ham gi, nap 1 file hay ca thu muc, co ap dung ngay cho nguoi dang online khong, nap lai ham/bien cu (tai khoan global) co bi giu ban cu khong.
-2. Thu that tren Test-36: sua 1 dong nho trong qh_bothu.lua (vd doi chu 1 muc menu), bam loadScript, mo lai menu -> thay chu moi? Ghi so lan/giay. Neu loi/sap gs001 thi ghi ngay, khong thu lai tren may chu dang chay chung.
-3. Ghi ket qua vao `HIEU-GAME/09-cong-cu-gm/LOADSCRIPT-NAP-LUA-NONG.md` (cach dung, gioi han: Lua nap duoc, C++/exe thi khong; rui ro) + DANG-LAM. Neu dung duoc: tu nay moi chinh Lua thi DUNG nut nay thay vi restart gs001 va bao Chat + B. Lam xen voi #303/#304, khong bo test do.
-
-## #306b Chat 20/11 16:25 — A: chu bo sung cho #306
-Co che co the la: bam loadScript, roi DANG NHAP LAI game moi co hieu luc (khong can restart gs001). Thu CA HAI cach: (a) loadScript roi bam lai menu ngay trong phien; (b) loadScript roi thoat game, dang nhap lai. Ghi cach nao nhan duoc ban Lua moi, kem thoi gian. Cu thu cac cach, khong cho Chat.
-
-## #307 Chat 20/11 16:31 — A: LUAT L19 HANG DOI (doc STATE/LUAT-COT-LOI.md L19)
-Lap muc HANG DOI trong DANG-LAM.md ngay bay gio: #300/#302 (gop vao #303), #303/#304 (sach, dang), #305 (co che menu, P2), #306/#306b (loadScript, P0 xen), B-050 client patch (A build APK, P1). Tu nay thu moi khong huy viec cu, tru khi ghi THAY THE/BO; xong viec P0 thi quay lai hang doi; bo viec nao phai ghi BO + ly do.
-
-**Đã xử lý #B-053 (20/11 16:36):** đã lập HÀNG ĐỢI B (P0/P1/P2) trong DANG-LAM.md mục Sonnet B, không BỎ việc nào.
