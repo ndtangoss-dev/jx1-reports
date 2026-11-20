@@ -1283,3 +1283,13 @@ Tooltip "+N tất cả kỹ năng" nay hiện từ +14 (+1) và +15 (+2), khớp
 - Build vc26: D:\JX-build\build-vc26.ps1 -> build-vc26.done. Sau do: cai LD, chup khung + tooltip +0/+3.
 
 Đã đọc đến #288 lúc 09:20. SẴN SÀNG TEST tài phú (Q-90): gs001 B-039 (07:50) + APK vc26 SHA df809da8…, link ở BAO-CAO-CHU.md. Đã kiểm hiển thị và chặn mặc phi phong; chưa kiểm tự tháo/đổi số khi mặc-tháo.
+
+## 20/11 09:55 — Q-92 (#289) chẩn đoán (CHỜ B giao bản nạp) + Q-91 khảo sát (chỉ đọc)
+**Q-92 số liệu (LD, atestvaihero, ảnh docs-analysis/out/ld/r2.png, r5.png):**
+- Áo đang mặc "Sa Di phục [cấp 1] +7": tooltip chỉ có "Né tránh +50 điểm", "Độ bền 15/15", "Điểm tài phú +700" (= 100×7, ĐÃ đổi theo cấp). Không có dòng magic nào scale được → +5% không có gì để tăng; đây là lý do chủ thấy "thông tin áo không đổi" (ngoài dòng tài phú mới ở vc26).
+- Toàn bộ đồ trong túi/mặc của vai này là đồ trắng (dây chuyền đồng cũng 0 dòng) → CHƯA kiểm được +5%/chỉ số thật. Cần vũ khí/áo xanh-vàng nhiều dòng.
+- LỖI SERVER xác nhận qua mã: `LuaSetItemEnChance` (ScriptFuns.cpp ~10963) không Remove/Apply thuộc tính lên NPC khi đồ đang mặc → cường hóa lúc mặc không đổi chỉ số thật, tháo ra còn lệch. Nghi vấn thêm: `m_TempMagicAttrib` (gốc) có thể =0 với đồ nạp theo đường khác. Đã gửi B (A-B.md 09:50): sửa + hook cấp đồ nhiều dòng `QhHandle(13,b)`, GỘP 1 lần restart (Q-89). Sau khi có bản: tôi cấp đồ, chụp bảng +0/+1/+3/+5, so chỉ số thật mặc/tháo/cường hóa khi mặc.
+**Q-91 khảo sát tài nguyên client (qh9A/Classes):**
+- Nút mở: ĐÃ có nút "Cuong hoa" ở đầu Hành Trang (KgameWorldVN.cpp ~1483, bấm gọi `KgameWorld::qiangItemCallback` KgameWorld.cpp:14327) → tái dùng, không cần tạo nút mới.
+- Khung cửa sổ có sẵn: `gameui/KuiItemKuo.cpp` (ô gói kích thước, dùng `ui/btn_3.png`, `close.png`, lưới ô ITEM_CELL_SIZE), `KuiCompoundItem.cpp` / `KuiWenGamgItem.cpp` (cửa sổ ghép đồ có ô đặt vật phẩm, nút trang, `ui/textbg_1.png`), `KuiItemEx.cpp`/`KuiItemVN.cpp` (lưới túi kéo-thả + hiển thị số lượng), `KuiItemImmediaBox*` (ô đặt đồ), `KuiGive_New` (hộp nhập). Chưa có asset riêng 5-ô + mũi tên: cần vẽ bằng sprite khung ô sẵn có + mũi tên cắt từ ảnh chuẩn.
+- Việc kế (sau Q-92): dựng `KuiQhCuongHoa` mới từ KuiCompoundItem (ô giữa "Trang Bị", 3 ô Nguyên Liệu, 2 ô Bùa/Phù khóa "chưa mở"), nút "Cường hóa" gửi lệnh `QhHandle(10,slot)` hiện có.
