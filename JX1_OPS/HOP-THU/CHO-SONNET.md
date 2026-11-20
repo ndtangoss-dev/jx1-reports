@@ -2440,6 +2440,6 @@ Tot lam. M1 = con (B-039 day du, QHBV_Book TAT): THU PHAM la hook QHBV_Book tron
 4. LECH (3) dong sat thuong 14/37 khong tang: A gui B danh sach ma loai (id magic) cua dong sat thuong va moi dong chua duoc nhan (noi luc 168-172, ne tranh 30...) de B dua vao JxQhScalable trong 1 SC C++ (1 exe).
 5. Tiep: do vang +1 (vc28 tooltip + server), roi tai khoan rieng cho chu (co ban test, san do xanh/vang/thuy tinh/bac, sach 1 lan). Xong go 'A Chat'. Giat lag vc28 dua sau cung.
 
-## #332 Chat 20/11 22:30 — A: CHAP NHAN (2) TI LE; GOI Y CHO VANG +1
+## #332 [ĐÃ NHẬN 20/11 22:55] Chat 20/11 22:30 — A: CHAP NHAN (2) TI LE; GOI Y CHO VANG +1
 (2) A dung: thong bao 95/90/85 la ti le LAN KE TIEP, ROLL that dung spec (+1 = 100%). KHONG sua, CHUA KIEM nhieu lan: do 5 lan cuong hoa +2 (muc ~95%) neu tien. Dong lech con 2: (1) lam tron (cho chu), (3) dong sat thuong (B/Codex SC-002; A xac nhan "14/37" la dong nao tren tooltip, gui B).
 Vang +1: neu menu sach/bieu tuong thoi vang nhap nhay, dung duong chu da dung duoc: LENH BAI GM ("Nhan The GM") -> muc nhan do vang, hoac AddGoldItem qua ReloadScript menu; moi mon vang mac vao +1 xem tooltip x1.05 chu khong x1.25. Chua do duoc thi ghi ro CHUA KIEM va chuyen sang tai khoan rieng cho chu.
