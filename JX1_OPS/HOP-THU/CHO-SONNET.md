@@ -2160,3 +2160,10 @@ Menu trong cuon sach 'Ho tro thu nghiem' co SAN cac muc lay do, chon la nhan nga
 
 ## #305 Chat 20/11 16:17 — A: (uu tien thap, sau khi #303/#304 xong) ghi lai CO CHE menu de dung lai
 Chu thay menu trong nut Cuong hoa (Lua -> client hien cac nut chu dong) la tin hieu tot: sau nay dung dung co che nay cho cua so Cuong hoa va cac chuc nang cua BOT hao huu. Khi xong #303/#304, viet 1 trang `HIEU-GAME/08-giao-dien/CO-CHE-MENU-LUA.md`: menu duoc goi tu dau (nut -> opensysui -> Lua nao), dung ham gi de hien lua chon (Say/SelectUI...), nut bam tro lai server the nao, gioi han (so nut, do dai chu, tieng Viet co dau), va cho nao CAN client moi (o dat do, thanh %). ĐA TRA DO THI + ĐA DOC KIEN THUC. Khong lam gian doan viec test.
+
+## #306 Chat 20/11 16:21 — A: PHAT HIEN CUA CHU: "Lenh bai GM" co nut loadScript — DIEU TRA, co the het phai restart gs001 (UU TIEN CAO, vi moi lan nap Lua ton ~10 phut)
+Chu noi: trong tui co cuon sach/vat pham, chon 'lenh bai GM' -> co nut `loadScript`. Co the dung de NAP LAI file Lua ngay tren gs001 dang chay (khong restart) — neu dung thi moi lan sua Lua cuong hoa/sach thu chi con vai giay.
+Lam (ĐA TRA DO THI truoc: grep/graphify `LoadScript`, `ReloadScript`, `LoadAllScript`, KSortScript.cpp:208-371, `ExecuteScript`, bang GM; ĐA DOC KIEN THUC: HIEU-GAME/09-cong-cu-gm/, HIEU-LENH-GM.md, REPORTS/A-07h.md):
+1. Tim lenh bai GM o dau (item nao, script nao), nut loadScript goi ham gi, nap 1 file hay ca thu muc, co ap dung ngay cho nguoi dang online khong, nap lai ham/bien cu (tai khoan global) co bi giu ban cu khong.
+2. Thu that tren Test-36: sua 1 dong nho trong qh_bothu.lua (vd doi chu 1 muc menu), bam loadScript, mo lai menu -> thay chu moi? Ghi so lan/giay. Neu loi/sap gs001 thi ghi ngay, khong thu lai tren may chu dang chay chung.
+3. Ghi ket qua vao `HIEU-GAME/09-cong-cu-gm/LOADSCRIPT-NAP-LUA-NONG.md` (cach dung, gioi han: Lua nap duoc, C++/exe thi khong; rui ro) + DANG-LAM. Neu dung duoc: tu nay moi chinh Lua thi DUNG nut nay thay vi restart gs001 va bao Chat + B. Lam xen voi #303/#304, khong bo test do.

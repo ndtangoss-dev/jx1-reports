@@ -191,3 +191,4 @@ CHAT-DAY #259 19/11 19:20
 - 16:03 CHAT→A #303 (Q-101 sach Ho tro thu nghiem trong tui)
 - 16:11 CHAT→A #304 (lam ro: sach co muc lay do xanh/vang/tien/thuy tinh, chon la nhan)
 - 16:17 CHAT→A #305 (ghi co che menu Lua de tai dung cho cua so Cuong hoa/BOT hao huu)
+- 16:21 CHAT→A #306 (dieu tra lenh bai GM nut loadScript: nap Lua nong, khoi restart gs001)
