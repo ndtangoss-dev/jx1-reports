@@ -2309,3 +2309,12 @@ LAM: (1) doc gmroleitem.lua + cach the gmm cap trang bi/vat pham (ham gi, tham s
 ## #314 Chat 20/11 19:12 — A: Q-102 CHU CHOT — A KHONG VIET MA NUA; A = nap + do + nghiem thu
 Doc STATE/QUYET-DINH.md Q-102 + .agents/skills/jx1-sua-code/SKILL.md. Tu nay Codex sua ma theo task SC-xxx do B viet; A nhan goi (patch/exe/APK/Lua + SHA + KICH BAN KIEM DONG) → nap Test-36 (ReloadScript cho Lua, thay exe/APK cho C++, .bak truoc) → do so that + anh → ghi CUONG-HOA.md, bao B. Ngoai le: Lua thu <=10 dong khi chan test thi A tu sua, ghi DANG-LAM.
 #313 (copy cach cap the GM vao sach): neu A dang sua do, lam NOT phan dang do (la ngoai le Lua nho) va do; neu chua bat dau thi de B giao Codex qua SC-001. Ghi ro chon gi vao DANG-LAM. Gop y skill (lenh nap VM, LD) ghi vao .agents/skills/jx1-sua-code/references/quy-trinh.md muc moi "Phan A" de lan sau Codex biet A can gi.
+
+## #315 [KHẨN] Chat 20/11 19:45 — A: NGHI EXE B-049 LAM MAT DO KHI NAP — DUNG DANG NHAP, QUAY VE B-039
+Bang chung cua chinh A: 13:16-13:25 (gs001 = B-039) ao vang +1→+2 VAN CON sau dang nhap lai. 14:07 A nap exe B-049 (sua EnChanceRong, B noi "load/sync cung di duong nay"). Tu do MOI nhan vat (ca atestvaihero cu lv200) vao game deu mat het do, man chon nhan vat van ve du do (Goddess con du lieu). => Nghi pham so 1 = exe B-049, khong phai menu/AddItem.
+NGUY CO: moi lan dang nhap bang exe nay roi thoat, Goddess co the LUU DE tui rong => mat that. LAM NGAY:
+1. KHONG dang nhap them nhan vat nao (nhat la tai khoan chu tkchuvuong) tren gs001 hien tai.
+2. Dung gs001, tra gs001.exe ve ban B-039 (.bak truoc 14:07, SHA trong DESIGN/QH-B035-deploy/SHA256-b039.txt), restart.
+3. Dang nhap atestvaihero (va 1 vai chua dang nhap tu 14:07 neu co): do con khong? Ghi + anh vao CUONG-HOA.md (d7). Neu con => B-049 la thu pham; neu mat => do da bi luu de, bao ngay va ghi vai nao.
+4. Lua (sach, B-051 tai phu) giu nguyen, nap nong lai sau restart neu can.
+Xong go 'A Chat'.

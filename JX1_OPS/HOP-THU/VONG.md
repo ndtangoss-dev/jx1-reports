@@ -203,3 +203,4 @@ CHAT-DAY #259 19/11 19:20
 - 17:32 CHAT→A #312, B #B-057 (han muc 90%: luu trang thai); BAN-GIAO-CHAT-20-11-1730.md
 - 17:40 CHAT→A #313, B #B-058 (mat do la do cach cap, khong phai cuong hoa; copy cach the GM gmm)
 - 19:12 Q-102 Codex sua ma (skill jx1-sua-code), CHAT→A #314, B #B-059
+- 19:45 [KHAN] CHAT→A #315, B #B-060: nghi exe B-049 lam mat do khi nap; dung dang nhap, quay ve B-039
