@@ -120,3 +120,8 @@ A: bước 1→4. B: điền (b), sẵn sàng sửa nếu tiêu chí 5 hoặc 7 
 - **Kết luận tạm (có bằng chứng)**: phía LƯU đúng (Goddess nhận đủ 12/5/3); món mất ở phía NẠP lúc đăng nhập (`LoadPlayerItemList` bỏ món sinh lại thất bại, `KPlayerDBFuns.cpp:1110-1115`) hoặc DB trả thiếu. Chưa phải lỗi cường hóa, chưa phải lỗi riêng đồ xanh.
 - **Đối chứng nhân vật cũ (TN5, từ log)**: atestvaihero lưu 31 món ở mọi lần 14:14→15:53 (không giảm sau nhiều lần vào/ra) → đồ do script cấp (AddGoldItem từ hook) GIỮ được ở nhân vật cũ. Chỉ nhân vật mới atestqhba (acc tkatest03) mất. Nghi: khác biệt nhân vật/tài khoản (hoặc chỉ vàng giữ được). CHƯA kiểm TN5 bằng mắt (cần đăng nhập tkatest01/atestvaihero).
 - Việc tiếp: TN5 bằng mắt; bật/đọc log nạp (`showItemInfo`) hoặc console gs001 khi vào lại; TN4 (restart gs001).
+
+### (d5) #310b TN4 — restart gs001 rồi cấp đồ xanh KHÔNG nạp nóng (A, 20/11 17:52)
+- gs001 restart 17:39:07, nối đủ 5 cổng 17:46:17. atestqhba: sách → Đồ XANH (9/10 món, túi đầy) → 11 món (ảnh `q310-tn4-truoc-11mon.png`). Goddess lưu **11** lúc 17:49:35. Thoát sạch + vào lại → còn **2** món (`q310-tn4-sau-2mon.png`).
+- Kết luận: KHÔNG phải do nạp nóng (hot reload) vs script lúc khởi động. Mất đồ lặp lại 4/4 thí nghiệm (xanh, thủy tinh, thẻ GM, xanh sau restart) trên atestqhba; Goddess luôn lưu đủ, phía nạp mất.
+- Còn lại: TN5 nhân vật cũ bằng mắt; nguyên nhân nạp (thử đồ do quái rơi/NPC bán TN3).

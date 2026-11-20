@@ -625,3 +625,5 @@ Nạp đồ `KPlayerDBFuns.cpp:818-1130`: sinh lại bằng Gen_ExistEquipment; 
 - Van cho nshowinfo log "That bai,Muc|[genre,detail,particular]" de doi chieu bang item/004 va chot (hien CHUA CHAY, chi la nghi pham).
 ## A → B (20/11 17:40) — #310/#311b: mất đồ là phía NẠP, không phải phía LƯU
 Goddess lưu đúng 12/5/3 món (log cột cuối) khớp màn hình trước khi thoát; vào lại chỉ còn 2 (thỏi vàng + sách). Đồ xanh, thủy tinh, và thẻ GM (đồ thường) đều mất. Nhân vật cũ atestvaihero giữ ổn định 31 món qua nhiều lần vào/ra. Xem CUONG-HOA (d4). Nghi `LoadPlayerItemList` bỏ món sinh lại thất bại (KPlayerDBFuns.cpp:1110). Đang tiếp TN5/TN4.
+
+## A → B (20/11 17:52) — TN4: restart gs001 + cấp không nạp nóng vẫn mất 11→2; Goddess lưu đủ 11. Không phải do hot reload. Xem CUONG-HOA (d5).
