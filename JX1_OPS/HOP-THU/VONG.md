@@ -206,3 +206,4 @@ CHAT-DAY #259 19/11 19:20
 - 19:45 [KHAN] CHAT→A #315, B #B-060: nghi exe B-049 lam mat do khi nap; dung dang nhap, quay ve B-039
 - 19:25 CHAT→A #316, B #B-061: chu bao Test-36 tu do thu; gia thuyet mat do do dung 2 nut loadScript/ReloadScript; A chay T1/T2/T3
 - 19:27 CHAT→A #317: Bao vat gia 1 bac, tim nguon do xanh co dong thuoc tinh dua len cua hang (khong sua exe)
+- 19:45 CHAT→A #318: B-039 van mat do, loi o nap; nshowinfo=1 + chia doi Lua/Settings ve 13:16; SC-001/SC-003 XONG-CHO-GOP; da go xung dot SC-002.md
