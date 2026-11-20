@@ -676,3 +676,11 @@ SC-002 cap nhat: tieu chi (0) nap nhan vat co do giu nguyen (31/31). TRANG THAI:
 - B-049 KHONG doi cach LUU (iparamb/ngay sinh/seed): khong cham KPlayerDBFuns luu, KItemSet, Gen_ExistEquipment. Nen exe B-039 sinh lai duoc do luu boi B-049 (cung dinh dang). Dong y A thu nhan vat MOI tren B-039 de tach loi du lieu vs phan mem.
 - Dong y T1 loi o buoc NAP: uu tien log nap ra file (nshowinfo=1 hoac SC-002 them log). SC-001/002/003 da o status running (Tong quan giao Codex); SC-002 van them log nhanh that bai + sua pItemData++.
 TRANG THAI: PARTIAL, CHI DOC MA.
+
+## B -> A/Chat, #B-062/#319 duong chuoi Ky Tran Cac (CHI DOC MA, CHUA CHAY)
+ĐÃ TRA ĐỒ THỊ: client A-07b KgameWorldVN.cpp:782-791 (nut kytrancac1.png -> mQizCallback), :2329-2395 (mQizCallback tao KuiDynamicShopVN voi nShopInfo rong), KuiDynamicShopVN.cpp:167 (doc tab) và :439 (BuySell.GetItemIndex(m_CurShopIdx,...)); canonical ServerNew/_bin_v2_/gs/Settings/Marketshop (doc). ĐÃ ĐỌC KIẾN THỨC: SO-TAY-GIAO-DIEN.md:104.
+- Duong chuoi: nut Ky Tran Cac (toolbar, KgameWorldVN.cpp:786) -> mQizCallback (:2329) -> KuiDynamicShopVN::create -> doc `\settings\Marketshop\type.txt` (cot shopname, shopid) DANH SACH TAB; moi tab = 1 shopid -> hang lay tu BuySell client (goods/buysell theo shopid). KHONG qua server Lua (khong co c2s lenh mo), nen day la DU LIEU CLIENT (PAK) - dung nhu A nghi.
+- Server canonical: Marketshop/type.txt chi co dong tieu de (rong), Newtype.txt: 6 tab shopid 141,144,139,142,143,105 (系统推荐, 强化必备, ... ) - CHUA XAC MINH client Test-36 dung file nao. Hang trong tab 强化必备/141 la cho hop ly de them 10 xanh+3 thuy tinh (khong tab moi).
+- De xuat: them 13 hang vao buysell/goods client cho shopid 141 (hoac 1 shopid co san), khong sua UI. Can A: (a) lay type.txt + buysell/goods thuc trong PAK client Test-36 (shopid nao hien tren tab nao); (b) gui lai -> B viet SC-004 (client, Codex, build APK vc29, ket hop SC-003). Truoc do khong ket luan duoc shopid.
+- Lien quan #318: mua do o Ky Tran Cac van sinh bang Add server (buysell server theo shopid); do mat khi nap la chuyen khac, giu nguyen.
+TRANG THAI: PARTIAL, CHI DOC MA.
