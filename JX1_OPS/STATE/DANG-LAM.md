@@ -111,3 +111,4 @@
 - Xong: #310 TN1 (CUONG-HOA (d)), #311 tạm (d2). showItemInfo mặc định =1 (KGameglobalSet.cpp:52) nên log "San xuat ... That bai" đã bật; log nạp đồ KHÔNG nằm ở gs\Logs\login_log.txt, gs\gameser_log\gs001\<ngày> (log mới nhất 16:25) hay gw\ (chỉ database đổi) — cần tìm file `LoadPlayerItemList` (gTraceLogFile) hoặc đọc console gs001 bằng C:\JX\sql\console.ps1 lúc relogin.
 - Việc kế: (1) relogin + đọc console gs001 tìm "That bai"/số món nạp; (2) TN2 xanh +1; (3) TN3 đồ thường (NPC/quái); (4) báo B 'A Chat'; (5) backlog CUONG-HOA #289–#299, B-050 APK vc27 [CAN-CHU].
 - Thao tác LD: xem CUONG-HOA.md (d) "LỆNH CHẠY TIẾP".
+- 17:50 A: đọc console gs001 (pid 3592) bằng `powershell -ExecutionPolicy Bypass -File C:\JX\sql\console.ps1 -TargetPid <pid>` (cần Bypass) → console.txt chỉ 1 dòng, không thấy "That bai"/atestqhba; cần chụp console NGAY lúc đang relogin hoặc bật log gTraceLogFile.
