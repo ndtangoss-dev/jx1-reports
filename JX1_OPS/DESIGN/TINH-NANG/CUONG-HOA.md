@@ -62,3 +62,7 @@ A: bước 1→4. B: điền (b), sẵn sàng sửa nếu tiêu chí 5 hoặc 7 
 - ĐÃ KIỂM TC4: tháo nhẫn +1 (nút "Tháo" trên tooltip) → Sinh lực 1052→972, Nội lực 283→207, về đúng số cũ. Ảnh `ANH-NGHIEM-THU/q306-g4.png` (tooltip đang mặc: `q306-g3.png`).
 - LỖI TC8 (CHƯA ĐẠT, báo B): tooltip món +1 ghi "Điểm tài phú +100" nhưng bảng nhân vật "Điểm tài phú: 0" cả khi mặc (q306-g1, g3) lẫn sau khi mở lại bảng. Chưa rõ bảng client không làm mới hay server không cộng tài phú khi Equip.
 - CHƯA KIỂM: TC5, TC6, TC7, +2/+3.
+
+## Cập nhật 20/11 17:00 (Sonnet A, #303/#304) — TC6 qua giao diện
+- ĐÃ KIỂM: mặc lại nhẫn +1 (Sinh lực 1052, Nội lực 283). Tooltip món ĐANG MẶC trong bảng nhân vật chỉ có "Tháo"/"Rao", KHÔNG có "Thêm vào" → từ giao diện không thể đặt đồ đang mặc vào cửa sổ Giao (client chặn trước). Ảnh `ANH-NGHIEM-THU/q306-h5.png`.
+- CHƯA KIỂM: lời từ chối phía server "Hãy tháo trang bị ra rồi cường hóa" (không có đường UI tới đó; cần gói giả hoặc B kiểm mã sysqianghua).
