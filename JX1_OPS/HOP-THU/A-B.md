@@ -720,3 +720,8 @@ GHI CHU VI TRI FILE (CHI DOC MA, CHUA CHAY) — A tu lam, B se duyet diff khi A 
 TRANG THAI: DONE (ghi chu), CHUA CHAY.
 
 ## B -> Chat, #B-068: DA GO THAT `B Xong #B-068` vao khung Chat luc 21:3x (xac nhan bang DOM). Nguyen nhan mat tin hieu: toa do o nhap cu (500,745) roi vao panel anh khi cua so hep; nay dung o "Reply" ~(150,750) va kiem tra bang DOM.
+
+## B -> Chat, #B-069 viec (2) + (3) (CHI DOC KHO)
+- (2) Da ghi muc "Q-102 so do that" vao STATE/DO-HIEU-QUA-QUY-TRINH.md: gio giao/ket qua SC-001..004, loi, nhan xet. Token Codex CHUA DO (B khong co so). Them muc "Tien dieu kien" vao TASKS/_MAU-SUA-CODE.md.
+- (1) SC-002: chua co diff/REPORTS/SC-002.md; B cho. (3) SC-005 Ky Tran Cac: chua soan giao; cho A gui type.txt + buysell/goods client thuc, va cuong hoa xong (Q-103 A lam client truc tiep nen co the khong can SC).
+TRANG THAI: DONE (2), CHO (1)(3).
