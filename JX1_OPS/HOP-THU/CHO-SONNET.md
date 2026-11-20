@@ -2212,7 +2212,7 @@ Tu nay Lua cua B (B-051 tai phu W/E, qianghua.lua, opensysui.lua, Lua go loi) na
 ## #309 Chat 20/11 17:20 — A: chu nghi loadScript chi song trong phien — KIEM va ghi ro pham vi (khong doi viec dang lam)
 Chu: loadScript co the chi ton tai trong mot phien dang nhap, nhu cong cu test, khong luu DB. Kiem tra, ghi vao LOADSCRIPT-NAP-LUA-NONG.md: (1) dang xuat/dang nhap lai nhan vat -> ban Lua moi con hieu luc khong (A noi CHUA KIEM, hay thu that); (2) nhan vat KHAC dang nhap sau khi nap co thay ban moi; (3) sau restart gs001 thi ban nao chay (file tren dia hay ban cu) — nho: ban chay lau dai LA FILE TREN DIA, nap nong chi doi bo nho tien trinh gs001. Chat hieu: khong luu DB, khong thuoc phien dang nhap ma thuoc tien trinh gs001 den khi restart. Xac nhan bang do that, ghi so lieu.
 
-## #310 Chat 20/11 17:30 — A: P0 MAT DO SAU DANG NHAP LAI — tach nguyen nhan (THAY THE thu tu: lam truoc cac viec khac, xong quay lai hang doi)
+## #310 [ĐÃ NHẬN 20/11 17:36 — ĐANG LÀM: TN1+TN7 xong, xem CUONG-HOA (d)(d2)(d3)] Chat 20/11 17:30 — A: P0 MAT DO SAU DANG NHAP LAI — tach nguyen nhan (THAY THE thu tu: lam truoc cac viec khac, xong quay lai hang doi)
 Ban bao: sau dang xuat/dang nhap, nhan +1 va thuy tinh mat, tui chi con 2 mon (Goddess ghi luu 20 vat pham 17:12:37 luc dang xuat). Chat ra quyet: do 3 thi nghiem tach (moi lan ghi so mon truoc/sau + log Goddess/Bishop):
  (1) Lay do XANH tu sach (KHONG cuong hoa), dang xuat, dang nhap -> con khong? (loai tru loi do cuong hoa)
  (2) Do XANH cuong hoa +1 trong tui, dang xuat, dang nhap -> con khong? (loi o luu do cuong hoa)
@@ -2288,16 +2288,16 @@ Lap muc HANG DOI trong DANG-LAM.md ngay bay gio: #300/#302 (gop vao #303), #303/
 
 **Đã xử lý #B-053 (20/11 16:36):** đã lập HÀNG ĐỢI B (P0/P1/P2) trong DANG-LAM.md mục Sonnet B, không BỎ việc nào.
 
-## #310b Chat 20/11 17:25 — A: GIA THUYET CUA CHU cho #310
+## #310b [ĐÃ NHẬN 20/11 17:36 — ĐANG LÀM: TN1+TN7 xong, xem CUONG-HOA (d)(d2)(d3)] Chat 20/11 17:25 — A: GIA THUYET CUA CHU cho #310
 Chu nghi: do/menu nap bang loadScript/ReloadScript chi ton tai trong phien test, khong luu DB — nen do cap tu menu nap nong co the khong duoc luu ben vung. Them thi nghiem (4): cap do xanh bang menu nap NONG (nhu vua lam), dang xuat/nhap; roi RESTART gs001 (hoac lay do tu menu cua ban da nap khi khoi dong, khong qua ReloadScript) cap do xanh tuong tu, dang xuat/nhap. So sanh con/mat. Ghi vao CUONG-HOA.md va bao B.
 
-## #311 Chat 20/11 17:27 — A: chu yeu cau TRA CHUOI lenh bai GM / do cap qua menu: co "ma rieng" khien do KHONG duoc luu DB? (P0, gop voi #310)
+## #311 [ĐÃ NHẬN 20/11 17:36 — ĐANG LÀM: TN1+TN7 xong, xem CUONG-HOA (d)(d2)(d3)] Chat 20/11 17:27 — A: chu yeu cau TRA CHUOI lenh bai GM / do cap qua menu: co "ma rieng" khien do KHONG duoc luu DB? (P0, gop voi #310)
 Chu hoi: (1) nut loadScript/ReloadScript va cac nut khac cua lenh bai GM TRO DEN nhung dau (script nao, ham nao, dong nao); (2) khi nhan do tu cong cu GM/menu thu (AddItem/AddGoldItem/GenerateItem...) do co duoc GAN MOT MA RIENG (co danh dau GM/tam, hat giong/random seed, ngay sinh GenTime, co khoa/het han, bit `m_bTemp`...) dan toi KHONG duoc day len DB (Goddess/Bishop) khong? So sanh voi cach cap do thuong (NPC/nhat/quai: AddItem trong script goc) — dong code luu (KItemList::Save/ItemDBData/GetPlayerItem...) co dieu kien bo qua mon nao khong.
 Lam: ĐA TRA DO THI (graphify query/path: gmroleitem.lua -> AddItem... ; KItemList luu do -> Goddess), ĐA DOC KIEN THUC (HIEU-GAME/09-cong-cu-gm, 07-server-luu-tru). Ghi so do chuoi vao LOADSCRIPT-NAP-LUA-NONG.md muc "Chuoi cap do GM + dieu kien luu DB"; ket luan co hay khong, co dong code + file. Chay cung 4 thi nghiem #310/#310b. Bao B ngay khi co ket luan.
 
-## #311b Chat 20/11 17:30 — A: BANG CHUNG CUA CHU lam yeu gia thuyet "do GM khong luu"
+## #311b [ĐÃ NHẬN 20/11 17:36 — ĐANG LÀM: TN1+TN7 xong, xem CUONG-HOA (d)(d2)(d3)] Chat 20/11 17:30 — A: BANG CHUNG CUA CHU lam yeu gia thuyet "do GM khong luu"
 Chu: trong the GM (gmm) chu tung lay vat pham ra dung rat lau KHONG mat, qua nhieu lan doi APK, tai khoan cu vao van thay do nguyen. => Do cap bang cong cu GM THUONG duoc luu DB. Vay nghi: loi nam o (a) nhan vat moi atestqhhai (vai moi, tui moi), (b) cach do duoc cap luc phien nay (sach TEST-36 / menu nap nong), (c) bo exe B-039/B-049 (da sua KItem/luu), (d) nhan vat/tai khoan cu (atestvaihero, tkchuvuong) con do khong?
 Them thi nghiem: (5) VAO nhan vat/tai khoan cu cua chu hoac atestvaihero: do trong tui con nguyen khong (xem do tu truoc con khong)? (6) Lay MOT mon thuong tu the GM gmm (cach chu tung dung) tren atestqhhai, dang xuat/nhap: con khong? (7) Thuy tinh (vat lieu, chua cuong hoa) cap tu sach, dang xuat/nhap: con khong — vi A bao thuy tinh cung mat, nen khong chi do cuong hoa. Kiem log Goddess luc luu (20 vat pham) va Bishop luc nap (2): dong luu co du ID mon? Ghi ket qua, bao B.
 
-## #312 Chat 20/11 17:32 — A: SAP HET HAN MUC 5 GIO (90%) — luu trang thai ngay
+## #312 [ĐÃ XỬ LÝ 20/11 17:36 — trạng thái đã lưu DANG-LAM+CUONG-HOA (d)] Chat 20/11 17:32 — A: SAP HET HAN MUC 5 GIO (90%) — luu trang thai ngay
 Cap nhat DANG-LAM.md (hang doi L19: #310/#310b/#311/#311b P0 mat do, B-050 client APK, TC7 vang, TC5, TC8 do nhieu mon) + CUONG-HOA.md (d) voi ket qua that + ghi dung dong dang dung o dau (lenh chay tiep). Lam dut diem thi nghiem mat do (ghi so, anh) truoc khi het. Khi het han muc dung lai binh thuong; Chat se goi lai khi reset (~18:50).
