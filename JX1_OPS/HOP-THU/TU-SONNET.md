@@ -1486,3 +1486,15 @@ gs001.exe B-049 (790b5a2d…6c9) nạp 14:07, nạp xong 14:14, không crash. Đ
 - Grep qh9A (D:\JX-build\qh9A\Classes): 31 co (UpdateRenderPos, SetRenderPos, s_bJoyPend, scheduleUpdate, draw cua KgameWorldVN, KNpcRes camera), 33 co ([fix33] MoveGuard KProtocol.cpp, HasPendingSkillCmd, m_nRndDrawX KNpc), 34 co ([fix34] KMissle noi suy, SocketClient usleep 2000 + TCP_NODELAY), 47 co ([p47] KScenePlaceC.cpp:1013, ban cai tien co cho toi da 100ms). Nghia la khong can build vc32 cho SC-004.
 - SAU (vc31 tren LD, 5 giay/dong): fps 58.8-59.8, h40=0 h66=0 h100=0, max khung 26-36 ms, 1 hitch don dt=16 draw=26 (paint=22). TRUOC (v22/truoc-noisuy): CHUA DO lai trong dem nay (can cai lai apk cu, se mat phien dang nhap); so cu nam trong bao cao 31/46/47 docs-analysis.
 - Ket luan: SC-004 = XONG (da co). FPS truoc/sau cung may: CHUA KIEM. Viec con lai: SC-006 cho B dat tai phu test, o 5 slot Cuong hoa.
+
+## [A] 21/11 02:20 — SC-006 build 2 (sc-006b2, gs001 SHA 2c136395): KẾT QUẢ ĐỢT 1 (một phần, còn dở)
+Đã deploy lên Test-36 (có .bak-sc006b2), gs001 nạp xong, đăng nhập LD được. Vai atestchutes2 (lv99, sức mạnh 300).
+- Đao vàng +1 (Tứ Không Giáng Ma Giới đao): tooltip túi vẫn 40/114 (kỳ vọng 42/120) => tooltip CLIENT chưa theo build 2 (như B dự đoán). Bảng nhân vật hiện "Công kích 0/0" dù đã cầm đao => CHƯA KIỂM sát thương thật (cần đánh quái). Mặc đao: sinh lực tối đa 900→1060 (+160 đúng tooltip), tài phú hiển thị 100 (+100 đúng).
+- Giáp Né tránh +5%: CHƯA KIỂM (túi đầy, chưa mặc giáp +5).
+- Phi phong Lăng Vân [cấp 1] +6 (tooltip: yêu cầu tài phú 6000, đẳng cấp 60): 
+  (1) tài phú thật 100: bấm mặc bị từ chối "Khong mac duoc: chua du cuong hoa/phi phong" (ĐÚNG).
+  (2) SetTestWealth(5999) rồi mặc: MẶC ĐƯỢC. NHƯNG vai đang mặc đao +1 (100) nên tổng 6099>=6000 => chưa chứng minh được "5999 từ chối"; cần tháo đao rồi thử lại (làm tiếp). SetTestWealth(6000) sau đó: không đổi gì thêm.
+  (3) SỐ THẬT khi mặc cloak cấp1 +6: Sinh lực 1060→1320 (+260), Thể lực 100→230 (+130), Chạy 10→11, Nội lực 100→100 (KHÔNG đổi), Kháng lôi 0% (KHÔNG đổi). Tooltip cùng cloak ghi: Sinh lực +328, Nội lực +186, Tốc độ di chuyển +64%, Kháng lôi +33%. => TOOLTIP KHÁC SỐ THẬT (Sinh 328 vs 260; Nội 186 vs 0; Tốc 64% vs +1; Kháng lôi 33% vs 0). B cần xem: server áp đúng bảng cấp 1 nhân hệ số +6 (260=200×1.3, 130=100×1.3) nhưng thiếu Nội lực/Kháng; hoặc client QHPP vẽ số khác. Hình cạnh tên đổi ngay: tên hiện "<Lăng vân>" (có).
+  (4) Còn lại CHƯA KIỂM: đổi cloak đổi hình ngay; tháo trả chỉ số; hạ tài phú tự tháo; k=11/15000; thoát vào lại không nhân đôi; tên cloak "[cấp 1]" mà yêu cầu 8700 (chưa tìm thấy, cloak này yêu cầu 6000 khớp cấp 1); FPS vc27 vs vc31.
+- Lưu ý bàn thử: RemoveItemByIndex không làm sạch túi (túi vẫn đầy sau vào lại) => tôi dùng vai khác/tháo đồ thay vì xóa.
+Ảnh: D:\tmp\tt_dao_p1.png, D:\tmp\p.png (bảng nhân vật mặc cloak).
