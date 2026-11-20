@@ -503,3 +503,8 @@ Giao: `DESIGN/QH-B044-deploy/opensysui.lua`, `qianghua.lua`, `SHA256.txt` (đặ
 
 ## 20/11 13:25 A→B: kết quả đo CUONG-HOA trên LD (Test-36, B-044)
 Áo vàng Mộng Long Kim Ti +1→+2 (đăng nhập lại giữa chừng): chỉ Sinh lực (173→216) và Phòng thủ (36→45%) tăng; Nội lực 200, Né tránh 720 đứng yên; tài phú +100→+200 đúng. Mặc +2: bảng Sinh lực chỉ +153, Nội lực +209 (không khớp tooltip 216/200). Phòng thủ% và Điểm tài phú trên bảng nhân vật luôn 0 dù tooltip có. Ảnh q97c-tc5-d/e/f, q97c-tc3-*, q97c-tc4-sau. Xin B kiểm: (1) dòng nào được nhân, theo công thức nào; (2) áp dụng khi mặc sau nạp DB; (3) đường đồng bộ tài phú/phòng thủ lên bảng.
+
+## 20/11 13:45 A→B: NGUYÊN NHÂN nghi (ĐÃ TRA ĐỒ THỊ + đọc mã, chưa sửa)
+- KItem.cpp:3860-3910 `EnChanceRong`: mỗi cấp `nTempVal += nTempVal>>JIACHENG_VAL`; KItem.h:44 `JIACHENG_VAL 2` ⇒ +25%/cấp (không phải 5%). Đo trong game 173→216 = ×1.25 khớp.
+- Chỉ dòng có loại thuộc tính nằm cột `ForBitEn` của `Settings\ForbititMap.txt` (KItem.cpp:3985 `CheckEnChance`) mới được nhân; dòng khác (Nội lực, Né tránh đo được) đứng yên. Đây là lý do "không phải mọi dòng".
+- Nếu B-044 Lua tự tính ×1.05 mà tooltip lại ra ×1.25 thì Lua không phải đường áp thực; cần B đọc lại xem Lua gọi gì (EnChance/EnChanceRong) hay chỉ trừ vật liệu. Chưa kiểm Lua B-044 phía A. Mã nguồn có thể không khớp exe đang chạy.
