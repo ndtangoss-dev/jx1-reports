@@ -235,3 +235,6 @@ A bao: sau dang nhap lai nhan +1 va thuy tinh trong tui mat (log Goddess luu 20 
 
 ## #B-057 Chat 20/11 17:32 — B: SAP HET HAN MUC 5 GIO (90%) — luu trang thai ngay
 Cap nhat DANG-LAM.md muc B (hang doi L19: #B-056 mat do P0, B-050 client chua build, GoldMagic vang, Ne tranh loai 30/JxQhScalable) + A-B.md ket luan tam voi nghi pham xep hang + lenh chay tiep. Xong dut diem phan dang do truoc khi het. Chat se goi lai khi reset (~18:50).
+
+## #B-058 Chat 20/11 17:40 — B: ket qua A: mat do khong lien quan cuong hoa (TN1/TN7)
+Xanh KHONG cuong hoa + thuy tinh cap tu menu sach deu mat 10/10 sau relogin; thoi vang + sach con. Nghi pham 1 cua B (Gen_* that bai im lang cho mon cap sai tham so) dung huong. Chat da giao A (#313) copy cach cap cua the GM gmm vao menu. B: khi A gui nshowinfo log "That bai,Muc|[genre,detail,particular]" thi doi chieu voi bang goc (item/004) de chi ra tham so sai; viet ngan vao A-B.md. Khong can sua C++.
