@@ -66,3 +66,9 @@ A: bước 1→4. B: điền (b), sẵn sàng sửa nếu tiêu chí 5 hoặc 7 
 ## Cập nhật 20/11 17:00 (Sonnet A, #303/#304) — TC6 qua giao diện
 - ĐÃ KIỂM: mặc lại nhẫn +1 (Sinh lực 1052, Nội lực 283). Tooltip món ĐANG MẶC trong bảng nhân vật chỉ có "Tháo"/"Rao", KHÔNG có "Thêm vào" → từ giao diện không thể đặt đồ đang mặc vào cửa sổ Giao (client chặn trước). Ảnh `ANH-NGHIEM-THU/q306-h5.png`.
 - CHƯA KIỂM: lời từ chối phía server "Hãy tháo trang bị ra rồi cường hóa" (không có đường UI tới đó; cần gói giả hoặc B kiểm mã sysqianghua).
+
+## Cập nhật 20/11 16:59 (Sonnet A, #303/#304) — +2 đồ xanh, đo mặc (TEST-36)
+- ĐÃ KIỂM: nhẫn +1 → +2 qua nút Cường hóa gốc, "tỉ lệ 90%" (bảng 100−5(n−1)) thành công. Thủy tinh 199→197 (đúng 2^1=2/loại), bạc 19 ức 9800 → 19 ức 9400 vạn (−400 vạn = 2×200, đúng bảng). Ảnh `q306-i4.png`.
+- ĐÃ KIỂM dòng ×1,10 từ gốc (không nhân chồng): Nội lực tối đa 72→79, Sinh lực tối đa 76→84 (làm tròn gần nhất), Sức mạnh +7, Hồi thể lực +8, Kháng độc +3%, Điểm tài phú +200 (tooltip). Ảnh `q306-i5.png`.
+- ĐÃ KIỂM mặc +2: Sinh lực 972→1056 (+84), Nội lực 207→286 (+79) đúng tooltip. Ảnh `q306-i6.png`. Bảng nhân vật "Điểm tài phú" vẫn 0 (xem lỗi TC8 ở trên).
+- CHƯA KIỂM: TC5 sau đăng nhập lại (+1 tiếp = ×1,10 không chồng), TC7 vàng, +3 trở lên.
