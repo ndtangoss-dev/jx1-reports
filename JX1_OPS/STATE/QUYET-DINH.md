@@ -162,3 +162,6 @@ Chủ chốt: cường hóa cho TẤT CẢ vũ khí/trang bị trên người, t
 
 ## Q-87 (chủ 20/11 00:59) Chat được giảm giá cường hóa nếu tiền không cho phép; không máy móc
 Chủ: cần kết quả cuối là chức năng cường hóa xây thành công; tiền tệ không cho phép thì Chat quyết giảm giá cho hợp game, không dừng tiến độ. Phương án sẵn: DESIGN/THIET-KE-CUONG-HOA-PHI-PHONG.md mục 4 (64 bit nếu gọn, không thì kẹp 20 ức/cấp, nguyên liệu vẫn gấp đôi).
+
+## Q-88 (20/11 07:00, đại vương chốt) — Hiển thị điểm tài phú
+Điểm tài phú nhân vật = tổng điểm tài phú từng trang bị đang mặc (10 ô, mỗi món 100 × +N). Hiển thị: 1 dòng trong GIAO DIỆN NHÂN VẬT (asset gốc) + 1 dòng "Điểm tài phú" trong tooltip từng trang bị. Giao A (#286), B hỗ trợ đối chiếu (#B-037).

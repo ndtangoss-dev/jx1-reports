@@ -170,3 +170,4 @@ CHAT-DAY #259 19/11 19:20
 - 01:05 CHAT→A #282, B #B-035: chủ chốt cường hóa/phi phong/tài phú (Q-86, L18, DESIGN/THIET-KE-CUONG-HOA-PHI-PHONG.md)
 - 02:25 CHAT→A #284 (ngựa tk test + thứ tự vc24 → gs001 bản 2 → khựng → đánh thường)
 - 03:58 CHAT→A #285, B #B-036 (hook test thuy tinh cho atestvaihero; kiem luu cuong hoa)
+- 07:00 CHAT→A #286, B #B-037 (hiển thị điểm tài phú khung nhân vật + tooltip; Q-88)
