@@ -194,3 +194,4 @@ CHAT-DAY #259 19/11 19:20
 - 16:21 CHAT→A #306 (dieu tra lenh bai GM nut loadScript: nap Lua nong, khoi restart gs001)
 - 16:25 CHAT→A #306b (loadScript roi dang nhap lai, thu ca hai), B #B-052 (xuat thong ke vat pham theo thu muc)
 - 16:31 CHAT→A #307, B #B-053 (L19 hang doi viec)
+- 16:35 CHAT→B #B-054 (bang doi chieu loai thuoc tinh + gop vao thong ke vat pham)
