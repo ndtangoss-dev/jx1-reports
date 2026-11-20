@@ -187,3 +187,4 @@ CHAT-DAY #259 19/11 19:20
 - 14:10 CHAT→A #299, B #B-049 (nap exe B-049 do vang +5%, do lai; duyet gop KT)
 - 14:30 CHAT→A #300 (cua hang Bao vat gia 0: bo xanh + bo vang + thuy tinh cho test cuong hoa)
 - 14:36 CHAT→A #301, B #B-050: link goi Chat dung = chat/88bede8d (link 75ee9a0d cu loi)
+- 15:42 CHAT→A #302 (quyet: nhan vat tui trong moi, khong doi exe)

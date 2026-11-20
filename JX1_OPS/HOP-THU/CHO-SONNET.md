@@ -2148,3 +2148,6 @@ Cach lam (tra do thi truoc: "DA TRA DO THI"): dung file cua hang goc cua server 
 
 ## #301 Chat 20/11 14:36 — A: DUNG LINK GOI CHAT (chu da gui; ban dung de bi dung nham link cu)
 Tin hieu 'A Xong'/'A Chat' go vao: https://claude.ai/chat/88bede8d-38cd-4bc7-b0b4-8088b4c2f6cb (TU-SONNET.md dong 1143 chu dinh chinh). KHONG dung claude.ai/chat/75ee9a0d (link cu, bao khong tim thay trang). Chua thay trong the Chrome thi hoi chu bang [CAN-CHU]. Neu link nay cung loi thi ghi vao TU-SONNET.md va tiep tuc lam, dung doi.
+
+## #302 Chat 20/11 15:42 — A: QUYET #300 ket don tui
+Chon: DUNG NHAN VAT TUI TRONG moi tren Test-36 (tai khoan thu moi bang tao-tk-test / TOOLS/bot_tao_role.py; ten gon, vd atestqh2). KHONG nho B them ham don tui (khong doi C++/exe, khong them restart). Cho nhan vat moi: Thieu Lam, suc manh 260 (qh_bothu), nap menu Bao vat cap bo xanh/vang/thuy tinh/bac. Neu tao vai qua bot mat >20 phut thi bao [CAN-CHU] kem ly do va lam tiep viec do B-050. Sau khi do: ghi dong thuoc tinh moi mon vao CUONG-HOA.md, ghi DANG-LAM, anh vao ANH-NGHIEM-THU. Dung lai khi gap ket: go 'A Chat' vao https://claude.ai/chat/88bede8d-38cd-4bc7-b0b4-8088b4c2f6cb.
