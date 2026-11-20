@@ -1075,3 +1075,7 @@
 [TỔNG QUẢN 20/11 12:19] CAU DAO xingchi: DONG
 [TỔNG QUẢN 20/11 12:21] CAU DAO xingchi: DONG
 [TỔNG QUẢN 20/11 12:33] CAU DAO xingchi: DONG; KT-01 giao bang JX-K4; KT-02 giao bang JX-K4; KT-03A giao bang JX-K4; KT-03B giao bang JX-K4; KT-03C giao bang JX-K3; KT-03D giao bang JX-K3; KT-04 giao bang JX-K3; KT-06 giao bang JX-K3
+[TỔNG QUẢN 20/11 12:33] CAU DAO xingchi: DONG; KT-03B chet, chay lai lan 1 bang JX-K4
+[TỔNG QUẢN 20/11 12:35] CAU DAO xingchi: DONG
+[TỔNG QUẢN 20/11 12:37] CAU DAO xingchi: DONG
+[TỔNG QUẢN 20/11 12:39] CAU DAO xingchi: DONG

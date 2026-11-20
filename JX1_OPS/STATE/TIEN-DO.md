@@ -1,6 +1,6 @@
 # TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-20 12:33, đừng sửa tay)
 
-ĐANG LÀM: KT-01, KT-02, KT-03A, KT-03C, KT-03D, KT-04, KT-06
+ĐANG LÀM: KT-01, KT-02, KT-03A, KT-03B, KT-03C, KT-03D, KT-04, KT-06
 KẾ TIẾP: 0-08, B-05, D-02, E-04, E-06, KT-05
 BỊ CHẶN: T-04, TS-04
 
@@ -17,11 +17,11 @@ flowchart LR
     KT_01["KT-01 chạy"]
     KT_02["KT-02 chạy"]
     KT_03A["KT-03A chạy"]
+    KT_03B["KT-03B chạy"]
     KT_03C["KT-03C chạy"]
     KT_03D["KT-03D chạy"]
     KT_04["KT-04 chạy"]
     KT_06["KT-06 chạy"]
-    KT_03B["KT-03B chờ gộp"]
     TS_04["TS-04 chặn"]
     0_08["0-08 chờ"]
     B_05["B-05 chờ"]
@@ -36,4 +36,4 @@ flowchart LR
   KT_01 --> KT_05
 ```
 
-Tổng: 274 việc, 7 đang làm (+0 chết, 1 chờ gộp), 9 chờ, 2 bị chặn, 255 xong.
+Tổng: 274 việc, 8 đang làm (+0 chết, 0 chờ gộp), 9 chờ, 2 bị chặn, 255 xong.
