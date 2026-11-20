@@ -204,3 +204,4 @@ Chi tiết + file:dòng + đề xuất sửa cho A nằm cuối HOP-THU/A-B.md. 
 - Đã đọc đến #B-052 (20/11/2026): xuất DU-LIEU/VAT-PHAM xong (chỉ đọc dữ liệu), chờ Chat gửi chủ.
 - Đã đọc đến #B-053 (20/11 16:36): lập HÀNG ĐỢI B trong DANG-LAM.md (L19), không bỏ việc nào.
 - Đã đọc đến #B-054 (20/11/2026): bảng loại thuộc tính + cột đọc được + ban_trung xong.
+- 20/11 17:00: ghi nguyên nhân Né tránh (loại 30 base, loại 150 đã nhân) vào A-B.md

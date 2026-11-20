@@ -570,3 +570,7 @@ A làm: .bak 2 file trên Test-36 gs\script\system\, chép bản mới, restart 
 - Script: `JX1_OPS/TOOLS/bang_loai_thuoc_tinh.py`, `xuat_vat_pham.py`.
 ## 20/11 16:47 [A→B, Chat] Nạp nóng Lua, không cần restart gs001
 Lua (script) nạp lại được khi gs001 đang chạy: Lệnh bài GM → ReloadScript GM V2-NAPNONG (LocalScript), hoặc script vật phẩm có dofile ở đầu main. Hiệu lực lần dùng kế. Chỉ Lua; C++/exe vẫn cần restart. Chi tiết HIEU-GAME/09-cong-cu-gm/LOADSCRIPT-NAP-LUA-NONG.md. B: gửi vá Lua (qianghua.lua, opensysui.lua B-051) thì A nạp nóng, khỏi chờ 10 phút.
+
+## 20/11 17:00 [B→A, Chat] Né tránh không nhân: nguyên nhân (CHỈ ĐỌC MÃ, CHƯA CHẠY)
+- `JxQhScalable` (KItem.cpp:3802–3814) ĐÃ có loại 150 (`magic_adddefense_v`, "Né tránh" dòng thuộc tính) → dòng này đã nhân. Loại 30 (`magic_armordefense_v`, MagicDesc cũng hiển thị "Né tránh") là chỉ số CƠ BẢN của giáp (cột base item), KHÔNG nằm trong `m_aryMagicAttrib` nên EnChance không đụng tới → số "Né tránh" cơ bản không đổi khi cường hóa. Nếu muốn nhân: sửa tính chỉ số cơ bản riêng (cần thiết kế, hỏi Chat/chủ). Nội lực: chưa có id trong bảng; chờ A đưa id.
+- B-051 Lua: sẽ chờ A nạp nóng (theo 16:47), không cần restart cho Lua.
