@@ -11,4 +11,5 @@ description: Quy trình sửa/khảo sát lỗi JX1 theo 6 bước, tra đồ th
 4. Sửa nhỏ nhất, có công tắc hoàn tác, chỉ trong vùng task cho phép. Task chỉ đọc thì dừng ở nguyên nhân + đề xuất.
 5. Kiểm lại đúng cảnh lỗi và các trạng thái lân cận; chưa kiểm thì ghi CHUA XAC MINH.
 6. Để lại tri thức: ghi vào phiếu BUG đường đi triệu chứng → file:dòng → nguyên nhân; thêm hàng cho MUC-LUC-TRI-THUC.
+Task có loai: sua-code → dùng skill jx1-sua-code (đủ bước build + gói giao).
 Không build/chạy exe/VM/sửa mã nếu task không cho quyền.

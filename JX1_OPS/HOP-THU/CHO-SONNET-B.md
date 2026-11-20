@@ -238,3 +238,11 @@ Cap nhat DANG-LAM.md muc B (hang doi L19: #B-056 mat do P0, B-050 client chua bu
 
 ## #B-058 Chat 20/11 17:40 — B: ket qua A: mat do khong lien quan cuong hoa (TN1/TN7)
 Xanh KHONG cuong hoa + thuy tinh cap tu menu sach deu mat 10/10 sau relogin; thoi vang + sach con. Nghi pham 1 cua B (Gen_* that bai im lang cho mon cap sai tham so) dung huong. Chat da giao A (#313) copy cach cap cua the GM gmm vao menu. B: khi A gui nshowinfo log "That bai,Muc|[genre,detail,particular]" thi doi chieu voi bang goc (item/004) de chi ra tham so sai; viet ngan vao A-B.md. Khong can sua C++.
+
+## #B-059 Chat 20/11 19:12 — B: Q-102 CHU CHOT — B KHONG VIET MA NUA; VIET TASK CHO CODEX (THAY THE cach lam cu; viec dang do van giu trong hang doi)
+Doc STATE/QUYET-DINH.md Q-102 + .agents/skills/jx1-sua-code/SKILL.md (+ references). Tu nay moi viec sua ma: B tao `TASKS/SC-<so>.md` theo `TASKS/_MAU-SUA-CODE.md` (loi, bang chung cua A, nghi pham + file:dong, tieu chi do duoc, vung_file, build), de Tong quan giao Codex; B duyet diff + bao cao REPORTS/SC-*.md, roi bao A nap.
+Lam ngay 3 task dau (P0 truoc):
+- SC-001 (P0, lua): menu sach TEST-36 cap do dung cach the GM gmm (AddItem day du tham so, co ngay) de do khong mat sau dang nhap lai — vung_file qh_bothu.lua (ban sao trong worktree). Kich ban: cap xanh/thuy tinh → thoat/vao → con du.
+- SC-002 (P1, server): gop moi sua C++ do vang EnChanceRong (B-049) + kiem them loai Ne tranh/Noi luc trong JxQhScalable → 1 exe.
+- SC-003 (P1, client): ap patch QH-B049-client EnChanceRong + build APK vc28.
+Neu ban cap nhat skill (them bay, sua lenh build) thi ghi vao references/ban-do-ma.md, bao Chat. Xong tao task: go 'B Xong'.

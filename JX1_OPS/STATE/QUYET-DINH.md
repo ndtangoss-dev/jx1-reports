@@ -224,3 +224,11 @@ Quyết định: (1) A/B ghi "ĐÃ ĐỌC KIẾN THỨC: sổ tay/REPORTS + dòn
 
 ## Q-101 (chủ chốt 20/11 16:01) — Sách "Hỗ trợ thử nghiệm" trong túi
 Thay menu thử gắn nút Cường hóa bằng MỘT cuốn sách trong túi đồ nhân vật test. Bấm dùng sách → chọn "Hỗ trợ thử nghiệm" → menu: Dọn sạch hành trang (KHÔNG xóa chính cuốn sách), Đồ xanh (bộ đủ dòng thuộc tính), Đồ vàng, Thủy tinh/bạc cường hóa. Mục đích: mỗi lần test lấy đồ ngay, không tạo gốc/restart GS. Chỉ Test-36, đánh dấu TEST, gỡ trước server thật. Đồ phải CÓ dòng thuộc tính thật (nếu không đo cường hóa vô nghĩa).
+
+## Q-102 (chủ chốt 20/11 19:09) — Codex sửa mã, Sonnet chỉ đạo
+Đóng gói cách A đọc/sửa mã thành skill `.agents/skills/jx1-sua-code/` (SKILL.md + references: quy-trinh, ban-do-ma, ban-giao) và mẫu task `TASKS/_MAU-SUA-CODE.md`.
+- Codex (tiểu yêu, qua Tổng quản): đọc kiến thức → tra đồ thị → lần chuỗi → sửa nhỏ có công tắc → build → giao gói + KỊCH BẢN KIỂM ĐỘNG. Không chạm VM/Test-36/LD.
+- Sonnet B: viết task SC-xxx (lỗi, bằng chứng, nghi phạm, tiêu chí đo được), duyệt diff + báo cáo, không tự viết mã.
+- Sonnet A: nạp gói lên Test-36 (ReloadScript cho Lua, thay exe/APK cho C++), đo trong game, chụp ảnh, nghiệm thu; không tự viết mã.
+- Ngoại lệ: Lua thử ≤ 10 dòng khi đang chặn test (sách thử, in gỡ lỗi) A/B được tự sửa, ghi rõ vào DANG-LAM.
+- Đo hiệu quả: so token/thời gian 2 việc đầu SC với cách cũ, ghi vào STATE/DO-HIEU-QUA-QUY-TRINH.md.
