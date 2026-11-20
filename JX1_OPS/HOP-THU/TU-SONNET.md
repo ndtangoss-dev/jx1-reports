@@ -1506,3 +1506,11 @@ gs001.exe B-049 (790b5a2d…6c9) nạp 14:07, nạp xong 14:14, không crash. Đ
 - (LỆCH, báo B) Ngay sau đó, cùng trạng thái hook 5999 + đao +1, mặc tay lại cloak: SERVER CHO MẶC (không từ chối). Kiểm tự tháo và kiểm khi mặc dùng hai cách tính tài phú khác nhau => ngưỡng 5999 chưa đáng tin. Chưa chứng minh được "5999 từ chối" khi mặc tay. Ghi chú: hook đã sửa 5899/5900 nhưng tin nhắn vẫn in "5999" (Lua nóng chưa nạp đè bản cũ?).
 - (tooltip) Hai cloak cùng "[cấp 1] +6" nhưng khác dòng: Sinh lực +328 vs +389, Kháng lôi 33% vs 36%, Tốc chạy 64% vs 52%; thực tế chỉ +260 Sinh lực, +1 Chạy. Tooltip khách vẫn lệch số thật.
 - Chưa làm: k=11 với 15000, vào lại không nhân đôi, FPS vc27/vc31, tên cloak "[cấp 1]" yêu cầu 8700.
+
+### [A] 21/11 02:33 — SC-006 build 2: ĐỢT 3 (bổ sung cho B)
+- (d) Tài phú 6000 + Lăng Vân (cần 6000): mặc được, Sinh lực 1060→1320, nhãn <Lăng vân> hiện lại. ĐẠT.
+- Tài phú 6000, mặc "Phi Phong Tuyệt Thế [cấp 1] +6" (yêu cầu 6900, Mộc): TỪ CHỐI đúng, báo "Khong mac duoc: chua du cuong hoa/phi phong". ĐẠT.
+- **LỖI MỚI cho B:** đang mặc Lăng Vân rồi thử mặc Tuyệt Thế thiếu tài phú → bị từ chối NHƯNG Lăng Vân bị tháo khỏi người (Sinh lực 1320→1060, nhãn mất, cloak nằm lại túi). Phải kiểm tra ngưỡng TRƯỚC khi tháo đồ cũ (hoặc trả lại đồ cũ khi từ chối).
+- (e) Tên phi phong nhãn "[cấp 1]" mà yêu cầu cao hơn cấp 1: "Phi Phong Tuyệt Thế [cấp 1] +6", Yêu cầu tài phú 6900 (đúng cấp 2), Đẳng cấp yêu cầu +60. Nhãn cấp trong tên không khớp yêu cầu (cần GoldId/dòng [QH]|D|k|can|co từ log gs001 để chốt; chưa lấy).
+- Tooltip Lăng Vân vẫn +389 Sinh lực / +52% tốc / Kháng lôi 36% / Nội lực +174 — không khớp thực (+260 Sinh lực, +1 Chạy).
+- Chưa đo: k=11 với 15000, thoát-vào lại, Né tránh giáp, sát thương đao +1, FPS vc27/vc31.
