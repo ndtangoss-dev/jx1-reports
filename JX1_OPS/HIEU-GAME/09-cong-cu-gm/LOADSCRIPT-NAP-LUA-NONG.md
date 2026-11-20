@@ -37,3 +37,12 @@ Khuyến nghị: từ nay sửa Lua (qianghua.lua, qh_bothu.lua, opensysui.lua) 
 ## Cập nhật 20/11 17:20 — đã nạp nóng B-051 thật (#308)
 - Nạp nóng được (không restart, đã đo): `qianghua.lua` (hàm mới `qh_wealth`, có hiệu lực ngay lần dùng kế), `opensysui.lua` (nhánh `inVala==12` gửi `[QH]|W|`), `qh_bothu.lua`. Cách: mục "[#306] Nap lai Lua nong" trong menu Hỗ trợ Thử nghiệm gọi LocalScript từng file (nạp đúng 1 lần là đủ; lần đầu sau khi sửa chính hàm `qhbv_reload` cần bấm 2 lần).
 - Cần relogin: chưa gặp. C++ (EnChanceRong B-049/B-050 client) vẫn phải thay exe/APK.
+
+## Chuỗi cấp đồ GM + điều kiện lưu DB (#311, A, 20/11 17:55 — BẢN NHÁP, còn chờ TN4/TN5)
+**Chuỗi nút → script (đã thấy trên LD + mã):**
+1. Túi có sách (6,1,0) → "Sử dụng" → `\script\item\baowubox.lua` → `qhbv_menu()` (qh_bothu.lua, GBK) hoặc menu Tân thủ (`lenhbaitanthu.lua`): "[TEST-36] Hỗ trợ Cường hóa", "Hỗ trợ tân thủ", "Nhận Code Tân Thủ", "Nhận Thẻ GM", "Hỗ trợ Thử Nghiệm".
+2. "Nhận Thẻ GM" → script cấp "Lệnh bài GM x1" (qua AddItem). "Đồ XANH" → `qhbv_blue` → `AddItem(0,b[1],b[2],b[3],b[4],1000,6,6,6,6,6,6,1,0,0)`. Thủy tinh → `qhbv_cry` → `AddItem(4,239..240..238,...,200,0,0)`.
+3. `LuaAddItem` (`gameserver/Sources/Core/Src/ScriptFuns.cpp:8978`): `ItemSet.AddOther(...)` rồi `m_ItemList.Add(nIndex,pos_equiproom,x,y,0,0,nStackNum)` (dòng 9053–9093). KHÔNG đặt cờ "tạm/không lưu" nào; item cấp bằng AddItem đi cùng đường `Add` như item nhặt/mua.
+**Điều kiện lưu**: Goddess nhận đủ (log `gw\goddes_log`, cột cuối = số món: 12→5→3 khớp màn hình trước khi thoát, 20/11 17:28/17:33/17:36).
+**Điều kiện nạp**: `KPlayer::LoadPlayerItemList` (`KPlayerDBFuns.cpp:818`) sinh lại từng món bằng ItemGen; món nào sinh lại thất bại bị bỏ im lặng (dòng ~1110–1115). Log chi tiết chỉ khi `showItemInfo` bật (`KGameglobalSet.cpp:52`) nhưng `gs\gameser_log` không có dòng nào.
+**Kết luận hiện tại**: không có cờ GM/tạm trong LuaAddItem; mất đồ xảy ra ở bước NẠP sau đăng nhập (đã chứng minh bằng đếm 3 lần). Chưa biết vì sao món bị bỏ: kiểm tiếp bằng TN4 (restart gs001) và TN5 (nhân vật cũ).
