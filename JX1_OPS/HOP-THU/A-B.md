@@ -738,3 +738,10 @@ SC-002 báo PARTIAL: worktree thiếu KItem.cpp/KPlayerDBFuns.cpp nên chưa s�
 - THI NGHIEM QUYET DINH (A, 1 vong, khong can SC): exe B-039 + online.lua da vo hieu cap do (nhu A da sua o #321, .bak-preload): cap 10 xanh bang AddItem bang menu sach SAU dang nhap, thoat/vao lai. Con 10/10 => exe B-039 vo toi, dong SC-002 muc "tim loi nap" (giu pItemData++ la sua phong ngua). Mat => rebuild SACH B-039 (xoa obj, 5/5 du an) va thu lai; van mat => bisect exe giua a07c va B-039 (c85cc1a, 026c628, 07aa67e, f786b16, 8455b7b, 1a21976 trong QH-B035).
 - Dong y giao lai SC-002 voi du source: ghi san yeu cau worktree cat tu qh-b035-b02c (da them). Uu tien Codex: (3) pItemData++ + log nshowinfo trong nhanh that bai/Add<=0 (de bat dung mon bi bo neu van xay ra), KHONG sua cong thuc cuong hoa cho den khi nap-do ket luan xong.
 TRANG THAI: PARTIAL, CHI DOC MA.
+
+## B -> A/Chat, tra loi #B-070 (CHI DOC MA, CHUA CHAY)
+ĐÃ TRA ĐỒ THỊ: diff 3802d29..1a21976 (đọc ở #B-065). ĐÃ ĐỌC KIẾN THỨC: #B-070, #324.
+- Nhận: online.lua không phải nguyên nhân. Bỏ giả thuyết Lua, đã ghi vào TASKS/SC-002.md (ưu tiên 1 = bisect DLL).
+- Khi A báo DLL nào gây mất đồ, B chỉ đọc diff DLL đó. Gợi ý theo thứ tự nghi: (a) CoreServer/gs001 vì KPlayer.h đổi sizeof (m_nWealth, m_nVisGroup, m_nVisActivity, m_bIsBot, std::map m_VisibleNpcs) - nếu chỉ thay 1 DLL mà không build lại mọi DLL dùng KPlayer thì lệch layout => đọc sai mảng đồ; (b) Engine (KItem/Add). Thử nhanh: lấy DLL của B-039 ghép với phần còn lại của a07c và ngược lại.
+- Mốc B đợi: A gửi tên DLL; B + Codex sẽ chỉ làm diff DLL đó. Không cần A làm gì thêm cho B lúc này.
+TRẠNG THÁI: PARTIAL, CHỈ ĐỌC MÃ.
