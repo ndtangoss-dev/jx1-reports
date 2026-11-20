@@ -1,7 +1,7 @@
 ---
 id: KT-03D
 title: Bản đồ chuỗi: di chuyển và cưỡi ngựa (nguồn gây khựng 4–5 giây)
-status: ready
+status: running
 level: L3
 agent: codex
 effort: high
@@ -14,6 +14,7 @@ backlog_ref: "Q-100 (20/11 12:02, đại vương duyệt: tiểu yêu bù kiến
 vung_file: ['JX1_OPS/HIEU-GAME/02-nhan-vat-thuoc-tinh/BAN-DO-DI-CHUYEN-CUOI-NGUA.md']
 tai_nguyen: []
 updated: 2026-11-20
+status_note: "Tong quan giao bang JX-K3"
 ---
 
 ## Mục tiêu và tiêu chí xong

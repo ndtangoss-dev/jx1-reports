@@ -39,3 +39,8 @@ Client (A điền): nút → __opensysui(2,1) → s2c_opengive → KuiGive_New �
 
 ## (e) Việc kế
 A: bước 1→4. B: điền (b), sẵn sàng sửa nếu tiêu chí 5 hoặc 7 hỏng.
+
+## Cập nhật 20/11 (Sonnet A, #297) — TC3 một phần
+- ĐÃ KIỂM: mặc giày thường chưa cường hóa (Thảo Ngoa, Né tránh +7): bảng nhân vật Né tránh 55 → 62 (+7 đúng). Ảnh: `q97c-bangnv-truoc-mac.png` (trước), `q97c-bangnv-mac-giay-ne62.png` (sau).
+- CHƯA KIỂM (TC3 đủ ≥3 chỉ số, TC4, TC5, TC6, TC7, TC8): đồ vàng cấp bằng hook test `AddGoldItem` bị server từ chối mặc (c2splayerautoequip "换装S", nghi `nCanUse==0`), đồ thường chỉ có 1 chỉ số. Cần món có ≥3 dòng mặc được (cấp bằng Lua, đặt IsCanUse) rồi cường hóa +1 và đo lại.
+- ĐÃ TRA ĐỒ THỊ (graphify client+server) / ĐÃ ĐỌC KIẾN THỨC: chuỗi mặc đồ KProtocolProcess.cpp ~L8365–8400, KItemList::CanEquip/EnoughAttrib.
