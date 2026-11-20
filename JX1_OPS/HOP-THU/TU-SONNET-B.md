@@ -202,3 +202,4 @@ Chi tiết + file:dòng + đề xuất sửa cho A nằm cuối HOP-THU/A-B.md. 
 - Đã đọc đến #B-050 (20/11 14:3x): đã dùng đúng link chat 88bede8d cho 'B Xong' (đã gõ, gửi được); không dùng link cũ.
 - Đã đọc đến #B-051 (20/11 16:08): Lua tài phú bảng (W + E) sửa, CHƯA CHẠY; DANG-LAM mục B đã cập nhật.
 - Đã đọc đến #B-052 (20/11/2026): xuất DU-LIEU/VAT-PHAM xong (chỉ đọc dữ liệu), chờ Chat gửi chủ.
+- Đã đọc đến #B-053 (20/11 16:36): lập HÀNG ĐỢI B trong DANG-LAM.md (L19), không bỏ việc nào.

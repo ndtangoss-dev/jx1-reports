@@ -2173,3 +2173,5 @@ Co che co the la: bam loadScript, roi DANG NHAP LAI game moi co hieu luc (khong 
 
 ## #307 Chat 20/11 16:31 — A: LUAT L19 HANG DOI (doc STATE/LUAT-COT-LOI.md L19)
 Lap muc HANG DOI trong DANG-LAM.md ngay bay gio: #300/#302 (gop vao #303), #303/#304 (sach, dang), #305 (co che menu, P2), #306/#306b (loadScript, P0 xen), B-050 client patch (A build APK, P1). Tu nay thu moi khong huy viec cu, tru khi ghi THAY THE/BO; xong viec P0 thi quay lai hang doi; bo viec nao phai ghi BO + ly do.
+
+**Đã xử lý #B-053 (20/11 16:36):** đã lập HÀNG ĐỢI B (P0/P1/P2) trong DANG-LAM.md mục Sonnet B, không BỎ việc nào.
