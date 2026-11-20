@@ -1341,3 +1341,5 @@ Tooltip "+N tất cả kỹ năng" nay hiện từ +14 (+1) và +15 (+2), khớp
 
 ## 20/11 14:25 [A] #299 B-049 nạp Test-36, đo TC2: KHÔNG ĐẠT
 gs001.exe B-049 (790b5a2d…6c9) nạp 14:07, nạp xong 14:14, không crash. Đồ vàng +0→+1: Sinh 148→185 (×1,25), Phòng thủ 28→36%, Né/Nội không đổi; tài phú đồ +100 đúng, nhưng bảng/dòng công bố "Điểm tài phú: 0" dù đang mặc đồ +1. Đã báo B (A-B.md 14:25). CHƯA KIỂM: TC3–TC5 lại, TC6–TC8. Ảnh q99-tc2-*.
+
+## 20/11 15:25 [A] #300 KẸT: cửa hàng giá 0 không làm được (KBuySell::Buy từ chối giá<=0) nên dùng menu Lua "Bao vat" (qh_bothu.lua, TEST, nằm trong danh sách gỡ). Menu hiện đúng khi bấm Cường hóa (ĐÃ KIỂM, ảnh q300-m3). Giao đồ bị chặn vì túi đầy; hàm dọn túi ClearAllItem/DelAllHanhTrang báo ScriptError trên exe hiện tại. CHƯA KIỂM: bộ xanh/vàng đủ 10 món, thủy tinh, bạc. Đã tra đồ thị server (ScriptFuns.cpp:8929,10042) / ĐÃ ĐỌC KIẾN THỨC. Cần quyết (tự quyết kế): dựng nhân vật túi trống cho Test-36 hoặc nhờ B thêm hàm dọn túi.
