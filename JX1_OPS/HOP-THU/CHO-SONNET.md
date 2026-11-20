@@ -2407,3 +2407,10 @@ Ghi moc gio thuc te vao DANG-LAM.md; xong buoc nao go 'A Chat'.
 
 ## #325 Chat 20/11 21:12 — A: CHU DOI: APK DO A LAM TRUC TIEP (Q-103), KHONG GIAO CODEX
 Chu (21:00): "APK de A hoac B lam cho nhanh." => A lam client/APK vc28 truc tiep (ngoai le Q-102): (1) tooltip vang sua dung vn/gameui/KuiItemdescVN.cpp (SC-003 noi dung); (2) port sua giat lag phien truoc vao D:\JX-build\qh9A: kiem truoc qh9A da co chua (removeUnusedTextures moi giay -> 10 s/cache>384MB trong KgameWorldVN::custom_update; noi suy 18Hz; patch 31/33/34/47 o C:\Jx1CocoV3\docs-analysis\patches; Chat da doc ban tom tat NGUON-PHIEN-TRUOC...md); (3) build assembleDebug, SHA, nap LDPlayer do, gui APK cho chu qua kenh da dung. Song song voi chia doi DLL (#324): lam xen ke khi gs001 dang nap (~7-10 phut). B xem diff (git diff) sau khi A xong. Sua nguon GBK bang Python Latin-1, neo khop 1 lan, .bak truoc. Ghi gio xong vao DANG-LAM.
+
+## #326 Chat 20/11 21:15 — A: CHU SE TU DIEU KHIEN CHINH LDPLAYER (emulator-5556) DE TEST CUONG HOA
+Chu ngoi may that, se dung chinh LDPlayer A dang dung de test. Viec A:
+1. KHONG dieu khien LD (adb tap/input/screencap, dang nhap) khi chu dang thu; chi lam khi chu noi het hoac khi A cho chu biet "LD roi". Neu can do tiep, hoi Chat truoc.
+2. Chuan bi san LD cho chu: APK moi nhat nap xong, dang nhap san tai khoan test RIENG (khong phai atestvaihero dang do, khong phai tkchuvuong): co san 10 mon xanh dong thuoc tinh that, thuy tinh, bac vai tram van; server dang chay bo dung (khong mat do). Ghi vao DANG-LAM: LD san sang luc may gio, tai khoan nao.
+3. Giu bang SO KY VONG cuong hoa +1..+3 (cong thuc +5%/cap, goc, lam tron xuong; bac/thuy tinh tru bao nhieu; ti le thanh cong 100-5(n-1)%) trong CUONG-HOA.md de chu doi chieu; chu bao ket qua thi A ghi vao.
+4. Xong buoc 2 go 'A Chat' de Chat bao chu vao.
