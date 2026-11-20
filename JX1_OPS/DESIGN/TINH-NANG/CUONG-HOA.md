@@ -83,3 +83,10 @@ A: bước 1→4. B: điền (b), sẵn sàng sửa nếu tiêu chí 5 hoặc 7 
 - KẾT QUẢ: Sinh lực 900/900 (gốc, không còn nhẫn mặc); hành trang chỉ còn 2 vật phẩm (1 "Thương Long Văn Cương - Giáp [Cấp 1]", 1 sách), mất cả 2 nhẫn +1/+2 và thủy tinh. Bạc vẫn 19 ức 9200 vạn. Ảnh `q306-k7.png`.
 - Nhận định (CHƯA KIỂM): nhân vật quay về bản lưu cũ vì tắt cứng không kịp lưu (Goddess lưu theo chu kỳ/khi thoát). Chưa đủ chứng cứ để kết luận lỗi của tính năng Cường hóa; cần lặp lại với thoát sạch (menu Cài đặt → thoát về chọn nhân vật) rồi đăng nhập lại.
 - TC5 vẫn CHƯA KIỂM.
+
+## Cập nhật 20/11 17:15 (Sonnet A, #303/#304) — +1 THÀNH CÔNG qua UI Give gốc; TC5 lần 2: VẪN MẤT ĐỒ sau thoát SẠCH
+- Đính chính lỗi vận hành của thuộc hạ: các lần báo "Ô trang bị trống / Chỉ đặt 1 trang bị" trước đó do thuộc hạ bỏ cả thủy tinh vào ô Giao. Đúng: ô Giao chỉ đặt 1 trang bị; thủy tinh bị trừ thẳng từ hành trang (`sysqianghua`, `qh-b043-qianghua.lua` dòng 24–59). Không phải lỗi tính năng.
+- 17:12: nhẫn Hoàng Ngọc Giới Chỉ xanh +0→+1: "Cuong hoa THANH CONG: len +1 (ti le 95%)"; thủy tinh 200→199; bạc 19 ức 9200→9000 vạn. Ảnh `ANH-NGHIEM-THU/q306-o4.png`. (Điểm tài phú vẫn 0 khi mặc nhẫn: lỗi đã báo B.)
+- TC5 lần 2: Cài đặt → Đăng xuất (thoát SẠCH, không tắt cứng) → đăng nhập lại → vào game 17:13. KẾT QUẢ: hành trang chỉ còn giáp "Thương Long Văn Cương - Giáp [Cấp 1]" + sách; MẤT nhẫn +1 và toàn bộ thủy tinh. Bạc vẫn 19 ức 9000 vạn (tức bạc đã lưu SAU cường hóa, nhưng vật phẩm thì không). Ảnh `q306-o9.png`, `q306-o10.png`.
+- Nhận định (CHƯA KIỂM nguyên nhân): không phải do tắt cứng. Vật phẩm thêm bằng GM (AddItem/ConsumeBagItem) hoặc nhẫn đã SetItemEnChance không được Goddess lưu lại, trong khi bạc được lưu. Cần: so với đồ nhặt/mua thường; thử đồ xanh chưa cường hóa sống qua đăng xuất không; đọc log Goddess lúc đăng xuất.
+- Hệ quả: TC5 (đăng nhập lại +1 ×1,10 không cộng dồn) vẫn CHƯA KIỂM; tiêu chí #297 mục 5 chưa đạt.
