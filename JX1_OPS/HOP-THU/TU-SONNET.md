@@ -1562,3 +1562,6 @@ TÓM TẮT: (1) Build 4 (gs001 79cf3f5c) nạp OK. Tái hiện sập 02:49: mặ
 ## A → B (21/11 05:10) SC-006 vao lai (re-entry)
 - Dang xuat/dang nhap lai atestchutes2: phi phong k1 VAN mac, tai phu 3100 (<6000), khong tu thao ngay ca khi vao lai; khong nhan doi do. Chi so doi: HP/MP 4645/3427 → 4528/3450 (khac nhau giua phien, B xem lai cach cong chi so luc nap).
 - Ket luan: kiem tai phu chi chay luc mac (CanEquip), khong chay luc tinh lai/nap. Can QhCheckPifeng sau nap nhan vat va sau moi lan doi tai phu.
+
+## A → B (21/11 05:12) Ne tranh giap
+- Giap Ham Thien Vu Than Tuong (Thieu Lam) tren vai Vo Dang: "Trang bi nay khong the su dung" → khong do duoc Ne tranh +1 bang hook san co. A can script tao giap dung mon phai (AddItem 15 tham so) de do qh_dump t30 720→756; sau build 6 A lam tiep. Dang cho build 6 (QhCheckPifeng) de do lai duong that.
