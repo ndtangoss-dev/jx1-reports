@@ -20,6 +20,17 @@ function qh_price(n)
 end
 function qh_rate(n) return 100 - 5 * (n - 1) end
 
+QH_WEALTH_X = 100
+-- diem tai phu = 100 * tong cap +N cac mon dang mac (o 0..9), B-051
+function qh_wealth()
+	local sum = 0
+	for p = 0, 9 do
+		local ix = GetEquipIdx(p)
+		if ix > 0 then sum = sum + GetItemEnChance(ix) end
+	end
+	return QH_WEALTH_X * sum
+end
+
 -- ma tra ve: 0 OK, 1 hut (mat NL+bac, giu cap), 2 thieu thuy tinh, 3 thieu bac, 4 da toi da, 5 khong hop le / dang mac
 function sysqianghua(nItemID, nNalla, nNum)
 	local Idx = split(nItemID)
@@ -32,18 +43,18 @@ function sysqianghua(nItemID, nNalla, nNum)
 		local a8, a6 = tonumber(arr[8]), tonumber(arr[6])
 		if kind == 0 and (a8 == 1 or a6 > 0) then idx = id cnt = cnt + 1 end
 	end
-	if cnt ~= 1 or nNum ~= 1 then Msg2Player("[QH]|E|5|0|0|0|0|0|0") Talk(1, "", "Chi dat 1 trang bi (xanh/tim/vang) vao o cuong hoa.") return end
+	if cnt ~= 1 or nNum ~= 1 then Msg2Player("[QH]|E|5|0|0|0|0|0|" .. qh_wealth()) Talk(1, "", "Chi dat 1 trang bi (xanh/tim/vang) vao o cuong hoa.") return end
 	for p = 0, 9 do
-		if GetEquipIdx(p) == idx then Msg2Player("[QH]|E|5|0|0|0|0|0|0") Talk(1, "", "Hay thao trang bi ra roi cuong hoa.") return end
+		if GetEquipIdx(p) == idx then Msg2Player("[QH]|E|5|0|0|0|0|0|" .. qh_wealth()) Talk(1, "", "Hay thao trang bi ra roi cuong hoa.") return end
 	end
 	local lv = GetItemEnChance(idx)
-	if lv >= QH_MAX then Msg2Player("[QH]|E|4|" .. lv .. "|0|0|0|0|0") Talk(1, "", "Da toi da +15.") return end
+	if lv >= QH_MAX then Msg2Player("[QH]|E|4|" .. lv .. "|0|0|0|0|" .. qh_wealth()) Talk(1, "", "Da toi da +15.") return end
 	local n = lv + 1
 	local c, s = qh_price(n)
 	for k = 1, 3 do
-		if CountBagItemExact(QH_CRYSTAL[k]) < c then Msg2Player("[QH]|E|2|" .. lv .. "|" .. qh_rate(n) .. "|" .. c .. "|" .. s .. "|0|0") Talk(1, "", "Thieu thuy tinh (can " .. c .. " moi loai).") return end
+		if CountBagItemExact(QH_CRYSTAL[k]) < c then Msg2Player("[QH]|E|2|" .. lv .. "|" .. qh_rate(n) .. "|" .. c .. "|" .. s .. "|0|" .. qh_wealth()) Talk(1, "", "Thieu thuy tinh (can " .. c .. " moi loai).") return end
 	end
-	if GetCash() < s then Msg2Player("[QH]|E|3|" .. lv .. "|" .. qh_rate(n) .. "|" .. c .. "|" .. s .. "|0|0") Talk(1, "", "Thieu bac.") return end
+	if GetCash() < s then Msg2Player("[QH]|E|3|" .. lv .. "|" .. qh_rate(n) .. "|" .. c .. "|" .. s .. "|0|" .. qh_wealth()) Talk(1, "", "Thieu bac.") return end
 	for k = 1, 3 do ConsumeBagItemExact(QH_CRYSTAL[k], c) end
 	Pay(s)
 	local code = 1
@@ -55,7 +66,7 @@ function sysqianghua(nItemID, nNalla, nNum)
 	local n2 = lv + 1
 	if n2 > QH_MAX then n2 = QH_MAX end
 	local c2, s2 = qh_price(n2)
-	Msg2Player("[QH]|E|" .. code .. "|0|" .. lv .. "|" .. qh_rate(n2) .. "|" .. c2 .. "|" .. s2 .. "|0")
+	Msg2Player("[QH]|E|" .. code .. "|0|" .. lv .. "|" .. qh_rate(n2) .. "|" .. c2 .. "|" .. s2 .. "|" .. qh_wealth())
 end
 
 function sysError()

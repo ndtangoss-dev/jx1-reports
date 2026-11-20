@@ -200,3 +200,4 @@ Chi tiết + file:dòng + đề xuất sửa cho A nằm cuối HOP-THU/A-B.md. 
 - Đã đọc đến gộp KT-03C/03D/06 (20/11): đã gộp, chờ Chat duyệt kết quả KT.
 - Đã đọc đến #299 KẾT QUẢ (20/11): đồ vàng ×1.25 do client EnChanceRong; vá client #B-050, CHƯA CHẠY.
 - Đã đọc đến #B-050 (20/11 14:3x): đã dùng đúng link chat 88bede8d cho 'B Xong' (đã gõ, gửi được); không dùng link cũ.
+- Đã đọc đến #B-051 (20/11 16:08): Lua tài phú bảng (W + E) sửa, CHƯA CHẠY; DANG-LAM mục B đã cập nhật.

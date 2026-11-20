@@ -14,11 +14,11 @@
 - 20/11 14:47 [A] #300: AddItem chỉ nhét vừa vài món (túi server đầy rác). Thêm tùy chọn menu "Don sach tui" (ClearAllItem: xóa hết + tự thoát), chép lên VM, restart gs001 14:47 (nạp ~10 phút). Việc kế: LD vào lại -> Cường hóa -> Don sach tui -> vào lại -> bộ xanh -> mặc, chụp, ghi dòng thuộc tính vào CUONG-HOA.md. CHƯA KIỂM.
 - 20/11 15:25 [A] #300 KẸT (3 lần): menu Bảo vật hiện đúng (ảnh q300-m3) nhưng túi nhân vật đầy rác nên AddItem chỉ nhét vài món; ClearAllItem và DelAllHanhTrang đều ScriptError 4 trên exe đang chạy (log gs001 14:58, 15:13). Thủ công "Rao" trong LD chưa vứt được. Cần: nhân vật mới túi trống (đổi tên hook) hoặc B thêm hàm dọn túi vào exe. Đã thấy trong túi: bộ vàng Mộng Long Thiếu Lâm (str 135, Hoàng Kim) có dòng tooltip (ảnh q300-one). CHƯA KIỂM: bộ xanh, nâng cấp +1/+2/+3.
 - Đang chờ: B (đồ vàng ×1,05 + qh_wealth).
-- Thư đã đọc đến: #298
+- Thư đã đọc đến: #B-051 (KT-01..04,03C,03D,06 đã gộp, Chat duyệt).
 
 ## Sonnet B
-- Tính năng: CUONG-HOA (hồ sơ DESIGN/TINH-NANG/CUONG-HOA.md), kế tiếp TAI-PHU-PHI-PHONG (hồ sơ đã dựng) — bước: (b) đã điền; Lua B-044 giao chờ A nạp (CHƯA CHẠY).
-- Lệnh chạy tiếp: chờ A báo tiêu chí 5/7; nếu hỏng → sửa Lua/C++ nhỏ (nghi: baseline m_TempMagicAttrib sau nạp DB KItem.cpp:661; vàng dùng EnChanceRong KItem.cpp:3880); rồi làm mới đồ thị (cd D:\JX-wt\QH-B035\server\jxOnline\gameserver\Sources\Core\Src; graphify update .).
-- Đang chờ: A (nạp QH-B044-deploy, đo tiêu chí 1–8).
+- Tính năng: CUONG-HOA + TAI-PHU-PHI-PHONG — bước: server EnChanceRong (B-049, A nạp, đồ vàng vẫn ×1.25 do CLIENT) → vá client B-050 (DESIGN/QH-B049-client, CHƯA CHẠY) → Lua B-051 sửa bảng tài phú=0 (QH-B044-deploy/qianghua.lua + opensysui.lua, CHƯA CHẠY).
+- Lệnh chạy tiếp: chờ A áp vá client + nạp Lua B-051 (1 lần restart gs001), đo lại tài phú bảng và đồ vàng ×1.05; sau đó Phòng thủ% (A truy client: CoreShell.cpp:1627, trường m_CurrentPhysicsResist).
+- Đang chờ: A (vá client B-050, nạp Lua B-051 cùng đợt restart gs001).
 - Hook B (D:\JX-wt\SONNET-B\.claude\settings.json): SessionStart (hook_luat.py start/postcompact, KIỂM chạy tay: ra LUAT-COT-LOI) và Graphify hook-guard (SessionStart compact, PreToolUse Bash|Grep|Read|Glob, KIỂM chạy tay exit 0) ĐỀU CÓ. Lưu ý: thư mục B chưa có graphify-out nên hook-guard không dẫn tới đồ thị; đồ thị server nằm ở QH-B035\...\Core\Src\graphify-out.
-- Thư đã đọc đến: #B-047
+- Thư đã đọc đến: #B-051 (KT-01..04,03C,03D,06 đã gộp, Chat duyệt).

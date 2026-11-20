@@ -23,6 +23,9 @@ Include("\\script\\system\\qianghua.lua");  -- dam bao sysqianghua/sysError co t
 function opensysui(inKind,inVala,inValb,inValc)
  
  if (inKind==2) then  --- 打开系统ui
+    if (inVala==12) then  -- B-051: client xin diem tai phu (bang nhan vat)
+	   Msg2Player("[QH]|W|" .. qh_wealth())
+	end
     if (inVala==1) then  --cuong hoa: mo UI Give goc, callback sysqianghua (qianghua.lua)
 	   Give("Dat <c=cyan>1 mon trang bi trong tui<c> (xanh/tim/vang) de cuong hoa. Trang bi dang mac: hay thao ra truoc. Ti le: 100-5(n-1)%, that bai chi mat nguyen lieu va bac.(:01)",1,1,"sysqianghua","sysError","Cuong hoa trang bi")
 	end

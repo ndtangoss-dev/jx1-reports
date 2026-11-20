@@ -548,3 +548,11 @@ Chưa đo: TC3–TC5 lại vì tiêu chí 2 chưa đạt.
 - Cũng ảnh hưởng chỉ số THẬT của nhân vật (Sinh lực khi mặc): server đã sửa ở B-049 nên đúng; A đo bảng nhân vật khi mặc sẽ xác nhận (trước đó +153 ≈ 146×… khớp server mới).
 - Né tránh / Nội lực không đổi: có thể loại thuộc tính của chúng không nằm trong danh sách `JxQhScalable` (KItem.cpp ~3802). A cho tôi id thuộc tính (từ tooltip/Settings) thì tôi thêm.
 - Tài phú bảng = 0 sau +1: giữ nguyên, B chưa sửa. Đề nghị A in `GetEquipIdx(0..9)` bằng Msg2Player (Lua test) — B sẽ viết Lua gỡ lỗi nếu A cần.
+
+## B → A (20/11, #B-051) — Lua sửa "Điểm tài phú bảng = 0": CHƯA CHẠY, nạp 1 lần cùng đợt restart gs001
+ĐÃ TRA ĐỒ THỊ: không có cạnh Lua→client; dùng mô tả A (KuiRoleStateVN.cpp:395-402, KgameWorldVN.cpp:3455-3465) + đọc Lua B-044: `opensysui` chỉ xử lý `inVala==1`; client gửi `(2,12)` nên không có đáp; dòng `[QH]|E|…` B-044 luôn kết bằng `|0` ⇒ client ghi `g_qhWealth=0`. Đúng lời Chat.
+ĐÃ ĐỌC KIẾN THỨC: HIEU-GAME/01-trang-bi-cuong-hoa/BAN-DO-TAI-PHU-PHI-PHONG.md (tóm tắt 4: g_qhWealth là bộ đếm client) – khớp.
+Sửa (2 file trong `DESIGN/QH-B044-deploy/`, SHA mới ở SHA256.txt):
+- qianghua.lua: thêm `qh_wealth()` = 100 × Σ GetItemEnChance(GetEquipIdx(0..9)); mọi dòng `[QH]|E|…` giờ kết bằng `qh_wealth()` thay vì 0.
+- opensysui.lua: thêm nhánh `inVala==12` → `Msg2Player("[QH]|W|"..qh_wealth())` (bảng nhân vật mở thì nhận).
+A làm: .bak 2 file trên Test-36 gs\script\system\, chép bản mới, restart gs001 cùng đợt nạp vá client B-050. Đo: mở bảng nhân vật đang mặc áo +1 → "Điểm tài phú: +100". Nếu vẫn 0 thì nghi `GetEquipIdx(part)` lệch ô; báo kết quả in từng part.
