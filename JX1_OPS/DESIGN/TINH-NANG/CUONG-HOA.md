@@ -113,3 +113,10 @@ A: bước 1→4. B: điền (b), sẵn sàng sửa nếu tiêu chí 5 hoặc 7 
 ### (d3) TN7 (#311b mục 7) — 20/11 17:34 (A, LD)
 - Thủy tinh TÍM x600 (3 chồng ×200, vật liệu chưa cường hóa) cấp từ sách: trước thoát = 5 món (thỏi vàng, sách, 3 chồng tinh thể), ảnh `q310-tn7-truoc-5mon.png`. Thoát sạch → đăng nhập lại: còn 2 món (thỏi vàng + sách), ảnh `q310-tn7-sau-2mon.png`. => MẤT cả vật liệu: lỗi KHÔNG chỉ ở đồ cường hóa/đồ trang bị.
 - Tổng hợp: mọi thứ cấp qua menu sách (xanh, tinh thể) đều mất sau relogin; chỉ còn thỏi vàng + sách (sách tự cấp lại lúc đăng nhập). Chưa làm: TN2, TN3 (đồ thường), TN4 (restart gs001 rồi cấp), TN5/6 (nhân vật cũ, thẻ GM gmm). Nghi: nạp lại về trạng thái cũ hoặc dựng lại thất bại hàng loạt (xem d2).
+
+### (d4) #310/#311b — TN6 thẻ GM + đọc log Goddess (A, 20/11 17:40)
+- **TN6**: atestqhba, mục "Nhận Thẻ GM" trong sách Tân thủ → "Lệnh bài GM x1" (ảnh `q310-tn6-truoc-3mon.png`: 3 món). Thoát sạch + vào lại → còn 2 món (thỏi vàng + sách), thẻ GM MẤT (`q310-tn6-sau-2mon.png`). Thẻ GM là đồ thường do script cấp, KHÔNG cường hóa → mất.
+- **Log Goddess (gw\goddes_log\2026_11_19\07_08_02_060.log, cột cuối = số món đã lưu)**: lúc 17:28:21 lưu **12** món (TN1), 17:33:05 lưu **5** (TN7), 17:36:19 lưu **3** (TN6). Khớp đúng số món trên màn hình TRƯỚC khi thoát. Sau khi vào lại màn hình chỉ có 2.
+- **Kết luận tạm (có bằng chứng)**: phía LƯU đúng (Goddess nhận đủ 12/5/3); món mất ở phía NẠP lúc đăng nhập (`LoadPlayerItemList` bỏ món sinh lại thất bại, `KPlayerDBFuns.cpp:1110-1115`) hoặc DB trả thiếu. Chưa phải lỗi cường hóa, chưa phải lỗi riêng đồ xanh.
+- **Đối chứng nhân vật cũ (TN5, từ log)**: atestvaihero lưu 31 món ở mọi lần 14:14→15:53 (không giảm sau nhiều lần vào/ra) → đồ do script cấp (AddGoldItem từ hook) GIỮ được ở nhân vật cũ. Chỉ nhân vật mới atestqhba (acc tkatest03) mất. Nghi: khác biệt nhân vật/tài khoản (hoặc chỉ vàng giữ được). CHƯA kiểm TN5 bằng mắt (cần đăng nhập tkatest01/atestvaihero).
+- Việc tiếp: TN5 bằng mắt; bật/đọc log nạp (`showItemInfo`) hoặc console gs001 khi vào lại; TN4 (restart gs001).

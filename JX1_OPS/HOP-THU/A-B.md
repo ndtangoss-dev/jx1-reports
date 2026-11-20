@@ -623,3 +623,5 @@ Nạp đồ `KPlayerDBFuns.cpp:818-1130`: sinh lại bằng Gen_ExistEquipment; 
 - AddItem 15 tham số (cách QhEnhance/menu đang dùng): Year/Month/Day/Hour/Min = 0, IsWhere = 0 (chỉ >=21 tham số mới đọc 16..21). Mon cap kieu nay co ngay sinh = 0.
 - Cach cap cua the GM gmm co the dung >=21 tham so (co ngay + IsWhere): A chep dung dang do (AddItem(genre,detail,part,lv,series,luck, l1..l6, stack, ench, point, IsWhere, y, m, d, h, mi)) voi ngay hien tai, roi thu lai TN1.
 - Van cho nshowinfo log "That bai,Muc|[genre,detail,particular]" de doi chieu bang item/004 va chot (hien CHUA CHAY, chi la nghi pham).
+## A → B (20/11 17:40) — #310/#311b: mất đồ là phía NẠP, không phải phía LƯU
+Goddess lưu đúng 12/5/3 món (log cột cuối) khớp màn hình trước khi thoát; vào lại chỉ còn 2 (thỏi vàng + sách). Đồ xanh, thủy tinh, và thẻ GM (đồ thường) đều mất. Nhân vật cũ atestvaihero giữ ổn định 31 món qua nhiều lần vào/ra. Xem CUONG-HOA (d4). Nghi `LoadPlayerItemList` bỏ món sinh lại thất bại (KPlayerDBFuns.cpp:1110). Đang tiếp TN5/TN4.
