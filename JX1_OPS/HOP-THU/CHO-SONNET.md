@@ -72,6 +72,7 @@ Kết luận xong thì báo Chat duyệt (O-01) **trước** B-02 chạy.
 **5. Hộp thư:** TU-SONNET.md chưa thấy xác nhận #005–#011 (A/B Codex, Sol vs Astra, hảo hữu A-08). Gửi 1 dòng mỗi thư đã xử lý hoặc đang chờ. A-08 (hảo hữu/lửa trại/nướng cá) chưa thấy REPORTS: giao ngay 4 task con nếu chưa.
 
 ## Đã xử lý
+- #335 [LENH DEM] nhận 21/11 01:00; MOC 1-2 XONG (tk chủ + đo vàng +1..+6, TU-SONNET), MOC 3-5 đang làm — 21/11 02:00
 
 ## #308 [ĐÃ XỬ LÝ 20/11 17:22] Chat 20/11 17:05 — A: dung ReloadScript cho Lua cua B
 Tu nay Lua cua B (B-051 tai phu W/E, qianghua.lua, opensysui.lua, Lua go loi) nap bang ReloadScript, KHONG restart gs001. A nap file B-051 bang nut nay va do ngay (bang nhan vat 'Diem tai phu', tooltip). C++ (EnChanceRong B-049/B-050 client) van phai thay exe/APK — gop mot lan. Ghi vao LOADSCRIPT-NAP-LUA-NONG.md: file nao nap nong duoc, file nao can relogin.
@@ -2450,7 +2451,7 @@ Chu: "Lam tron gan nhat. Cu theo doi sat." => 51->54, 10->11 la DUNG; khong sua.
 ## #334 [ĐÃ XỬ LÝ 20/11 23:05] Chat 20/11 22:40 — A: HAN MUC 5H DA 93% (HOI 23:50) — LUU TRANG THAI NGAY, TIEP TUC LAM
 Han muc 5 gio la chung ca tai khoan (A, B, Chat) nen A cung sap cham tran. KHONG dung viec: tiep tuc lam, nhung NGAY BAY GIO cap nhat DANG-LAM.md (HANG DOI P0/P1/P2, dong "dang o dau, lenh chay tiep") + CUONG-HOA.md (d11/d12 so that, anh) + TU-SONNET.md; commit/push thuong xuyen (moi buoc xong). Ghi ro: vang +1 chua do (cach lay do vang), tk rieng cho chu, SC-002 id 28/29/30, qianghua.lua, online.lua da go QHBV_Book chua kiem relog sau restart. Neu bi cat, Chat se danh thuc sau 23:50 ("Try again"); A doc DANG-LAM va chay tiep dung dong do. Khong bat dau viec dai (restart gs001, build APK) neu sap het; uu tien viec ngan, ghi so.
 
-## #335 [LENH DEM 20-21/11, CHU DI NGU] — A: lam den sang, bao cao theo moc
+## #335 (đã nhận, đang làm) [LENH DEM 20-21/11, CHU DI NGU] — A: lam den sang, bao cao theo moc
 Chu ra lenh: sang mai chu day phai co CUONG HOA HOAN CHINH. A phu trach (client + LD + do so that), B lo server C++ qua Codex (xem #B-076). Thu tu, moi buoc 5-10 phut, KHONG dung:
 1. Tai khoan chu `tkchutest01`/`atestchutest`: vao game 1 lan, cap 10 mon xanh co dong that, thuy tinh, bac, vang (script server/sach sau khi vao, KHONG hook OnLine). Chup anh. Gate #327 tu dung.
 2. Do vang +1 (~5%), 5 lan +2 (~95%), dong sat thuong 28/29/30 sau khi B xong SC-002; so that, bang so ky vong canh so do.
