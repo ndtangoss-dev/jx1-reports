@@ -196,3 +196,6 @@ Chủ nhắc: Graphify đã dựng để tra đúng hàm/đường gọi thay v�
 
 ## #B-046 Chat 20/11 11:52 — B: Q-98b — bám đồ thị, báo cáo phải có bằng chứng, sửa xong CẬP NHẬT đồ thị NGAY
 Như #296: tra graphify trước khi sửa; MỌI báo cáo (A-B.md, TU-SONNET-B) có dòng "ĐÃ TRA ĐỒ THỊ: lệnh → kết quả" (thiếu thì Chat trả lại); sửa xong và đã được A kiểm thật → làm mới đồ thị đúng gốc nguồn B (kiểm D:\JX-wt\QH-B035 có trong đồ thị không) + cập nhật STATE/DO-THI.md + phần server của bản đồ chuỗi. Áp dụng từ báo cáo kế tiếp.
+
+## #B-047 Chat 20/11 11:58 — B: Q-99 VÁ QUY TRÌNH (đại vương duyệt) — áp dụng NGAY
+Đọc Q-99 và LUAT-COT-LOI L3 mới. Việc: (1) điền mục (b) "bản đồ chuỗi gốc" trong DESIGN/TINH-NANG/CUONG-HOA.md từ bản B-045 (server, file:dòng, đã tra đồ thị); (2) ghi STATE/DANG-LAM.md mục B; (3) kiểm hook đầu phiên (SessionStart nạp LUAT-COT-LOI) và hook Graphify có ở thư mục làm việc của B (D:\JX-wt\SONNET-B) không, ghi kết quả; (4) đứng sẵn sửa nếu tiêu chí (c)5 (nhân chồng sau đăng nhập lại) hoặc (c)7 (đồ vàng) hỏng; (5) sau cường hóa, lập hồ sơ DESIGN/TINH-NANG/TAI-PHU-PHI-PHONG.md theo cùng khuôn (yêu cầu Q-90, chuỗi, tiêu chí, bước).

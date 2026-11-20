@@ -20,6 +20,8 @@ File này ngắn có chủ ý. Đọc nó: đầu mỗi phiên, sau mỗi lần 
 - TRƯỚC khi nén: ghi "ĐANG LÀM DỞ" (việc, bước, lệnh chạy lại) vào `STATE/TRANG-THAI.md`, push.
 - SAU khi nén, đọc theo thứ tự: file này → `STATE/TIEN-DO.md` → `HOP-THU/THU-HIEN-HANH.md` + thư mới trong `CHO-SONNET.md` → `STATE/QUYET-DINH.md` → lịch sử chat Claude Code (`C:\Users\PC\.claude\projects\...\*.jsonl`) từ lần push cuối lùi 15 phút, tối thiểu 60 phút, tối đa 3 giờ; chỉ đọc tin của chủ và trả lời cuối của Sonnet, bỏ log/kết quả lệnh. Điều chủ nói mà chưa có trong kho thì ghi vào kho ngay.
 
+- (Q-99, 20/11) THỨ TỰ ĐỌC SAU NÉN MỚI (thay dòng trên): file này → `STATE/DANG-LAM.md` (mục của mình) → hồ sơ tính năng trong `DESIGN/TINH-NANG/` (đúng bước đang làm) → `HOP-THU/THU-HIEN-HANH.md` + CHỈ thư mới hơn số thư đã ghi trong DANG-LAM → tra Graphify phần đang làm rồi mới đọc mã. KHÔNG đọc lại toàn bộ CHO-SONNET.md. Ghi DANG-LAM trước khi nén và sau mỗi bước.
+
 ## L4. Tiến độ
 - `STATE/TIEN-DO.md` sinh TỰ ĐỘNG bằng script từ front-matter `TASKS/*.md` (không viết tay). Đầu file 3 dòng: ĐANG LÀM / KẾ TIẾP / BỊ CHẶN (vì sao). Dưới là một sơ đồ Mermaid ≤30 ô theo 3 chặng (#091), màu theo trạng thái, mũi tên = chặn; việc xong lâu gom thành một ô.
 

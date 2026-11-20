@@ -208,3 +208,14 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #278/#B-033 (23:40) kết quả chủ test vc23: khựng 4–5 s, quái hiện muộn, đánh thường
 - #279/#B-034 (00:05) A quyền chủ động + quy trình SẴN SÀNG TEST; B phần mạng (Q-85, L17)
 - #282/#B-035 (01:05) chủ chốt cường hóa + phi phong + tài phú; A tk test riêng
+- #283–#288/#B-036–#B-039 (03:50–07:36) cường hóa chạy thật, lưu +N, tài phú; Q-88..Q-90 tài phú = thuộc tính nhân vật — XONG phần hiển thị (vc26), còn mục chưa kiểm ở hồ sơ
+- #289/#B-040 (09:40) Q-92 cường hóa phải đổi thật dòng + chỉ số — THAY bởi Q-95
+- #290 (09:45) Q-93 Chat nghiệm thu hình ảnh — HIỆU LỰC
+- #291/#B-042 (10:50) Q-94 bám logic gốc, XONG = số thật — HIỆU LỰC
+- #B-041 (10:40) B-040 sập — BỎ (Q-95)
+- #292/#B-043 (10:57) Q-95 quay về chuỗi gốc — HIỆU LỰC
+- #293/#B-044 (11:27) Q-96 nút mở UI Give gốc — HIỆU LỰC (phần server)
+- #294 (11:30) Q-97 bỏ nút cũ, tạo nút mới — HIỆU LỰC
+- #295/#B-045, #296/#B-046 (11:42–11:52) Q-98/Q-98b Graphify, bằng chứng tra đồ thị — HIỆU LỰC
+- #297/#B-047 (11:58) Q-99 VÁ QUY TRÌNH: hồ sơ DESIGN/TINH-NANG/CUONG-HOA.md là nguồn sự thật; STATE/DANG-LAM.md; L3 mới — HIỆU LỰC, đọc đầu tiên
+

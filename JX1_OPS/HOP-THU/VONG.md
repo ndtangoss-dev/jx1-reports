@@ -182,3 +182,4 @@ CHAT-DAY #259 19/11 19:20
 - 11:30 CHAT→A #294 (Q-97: bo nut Cuong hoa cu, tao nut moi -> opensysui(2,1))
 - 11:42 CHAT→A #295, B #B-045 (Q-98: dung Graphify truoc khi doc ma; lam moi do thi; ban do chuoi cuong hoa)
 - 11:52 CHAT→A #296, B #B-046 (Q-98b: bam do thi, bao cao phai co bang chung tra do thi, sua xong cap nhat do thi ngay)
+- 11:58 CHAT→A #297, B #B-047 (Q-99: vá quy trình; hồ sơ tính năng CUONG-HOA.md; DANG-LAM.md; L3 mới)
