@@ -193,3 +193,4 @@ Chi tiết + file:dòng + đề xuất sửa cho A nằm cuối HOP-THU/A-B.md. 
 - Đã đọc đến #B-047 (20/11): đã điền (b) CUONG-HOA, DANG-LAM mục B, kiểm hook, dựng TAI-PHU-PHI-PHONG.md. ĐÃ TRA ĐỒ THỊ: explain .QiangHua()/.Equip()/.UnEquip()/.ExecuteScriptD(). CHƯA CHẠY.
 - Đã đọc đến #B-047 (20/11): ghi thêm ghi chú sysError Give (m_uId rỗng) vào A-B.md. CHƯA CHẠY. ĐÃ TRA ĐỒ THỊ: explain .ExecuteScriptD() → KPlayer.cpp:8098.
 - Đã đọc đến #B-048 (20/11): 9 task KT-01..06 đều status ready, Tổng quản chưa nhận (ghi 12:01 chỉ cầu dao). B không bỏ cường hóa; sẽ kiểm lại sau 15 phút (L9, không gọi chay_codex tay). ĐÃ ĐỌC KIẾN THỨC: chưa (chờ KT-01 xong). CHƯA CHẠY.
+- Đã đọc đến #B-048 (20/11 12:25): KIỂM L9: Tổng quản tự nhận KT-01/02/03A/03B đang running (worktree D:\JX-wt\KT-*, chưa tới tay B), 5 task còn lại ready chờ lượt/phụ thuộc; KHÔNG kích. ĐÃ ĐỌC KIẾN THỨC: chưa (chờ KT-01 xong). B tiếp tục cường hóa.
