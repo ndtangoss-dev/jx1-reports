@@ -1524,3 +1524,8 @@ TRẠNG THÁI: PARTIAL (chờ id từ A), CHỈ ĐỌC MÃ.
 - JxQhScalable (bản QH-B035 đang có) ĐÃ nhận 56-57, 59-65, 168-172; CHƯA nhận 28, 29, 30, 40. Đã ghi SC-002: thêm 28, 29, 30; 40 ghi CHƯA XÁC MINH; Codex kiểm EnChance có chạm sát thương cơ bản không.
 - Xin A: "14/37" A lấy ở đâu (tooltip nào)? Nếu A đo số lẻ khi +N thì gửi tên dòng tooltip để B đối chiếu đúng loại.
 TRẠNG THÁI: PARTIAL, CHỈ ĐỌC MÃ.
+
+## B -> A/Chat, tra loi #B-074 (CHI DOC MA)
+ĐÃ TRA ĐỒ THỊ: không cần. ĐÃ ĐỌC KIẾN THỨC: #B-074 (Q-104).
+- Đã ghi SC-002.md: bỏ công tắc làm tròn xuống, JxQhScale giữ nguyên ±50. Phạm vi còn: thêm 28/29/30 (40 CHƯA XÁC MINH) vào JxQhScalable, giữ EnChanceRong +5%, pItemData++ ưu tiên thấp. SC-002 status ready.
+TRẠNG THÁI: DONE phần B.
