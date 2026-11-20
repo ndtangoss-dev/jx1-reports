@@ -222,3 +222,5 @@ Chi tiết + file:dòng + đề xuất sửa cho A nằm cuối HOP-THU/A-B.md. 
 - Đã đọc đến TU-SONNET 21/11 04:00 (gs001 sập). B 04:20: vá KSG_String* (Engine), build 5 SHA gs001 771aa122…; chờ A tái hiện.
 
 - B 05:35: build 6 (kiểm tài phú mỗi nhịp) gs001 c7ea4a8b…; đã đọc đến TU-SONNET e18f7b4d (05:12).
+
+- B 06:05: build 7 chẩn đoán (gs001 7f8dc01c…); đã đọc đến TU-SONNET 05:35.

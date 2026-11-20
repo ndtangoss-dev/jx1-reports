@@ -154,3 +154,5 @@ SC-006 build 4 sc-006b4 gs001 79cf3f5c: co m_nQhPifengChk tu thao khi tai phu tu
 ## 21/11 04:20 B: crash gs001 -> range check Engine, vá KSG_String*, build sc-006b5 (PARTIAL, chờ A)
 
 ## 21/11 05:35 B: build 6 sc-006b6, QhPifengBad moi nhip (PARTIAL, cho A)
+
+## 21/11 06:05 B: build 7 chan doan [pifeng-*] (PARTIAL, cho A)
