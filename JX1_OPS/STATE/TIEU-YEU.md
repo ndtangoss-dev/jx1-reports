@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
-# TIỂU YÊU (Tổng quản tự sinh lúc 2026-11-20 10:51, đừng sửa tay)
-=======
-# TIỂU YÊU (Tổng quản tự sinh lúc 2026-11-20 10:53, đừng sửa tay)
->>>>>>> Stashed changes
+# TIỂU YÊU (Tổng quản tự sinh lúc 2026-11-20 10:57, đừng sửa tay)
 
 **CẦU DAO xingchi: ĐÓNG (bình thường)**
 
