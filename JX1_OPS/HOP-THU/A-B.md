@@ -579,3 +579,9 @@ Lua (script) nạp lại được khi gs001 đang chạy: Lệnh bài GM → Rel
 - ĐÃ KIỂM: nhẫn xanh +1 mặc → Sinh lực 972→1052, Nội lực 207→283 (đúng dòng); tháo → về 972/207 (TC4 đạt). Ảnh ANH-NGHIEM-THU/q306-g1,g3,g4.
 - LỖI: tooltip nhẫn +1 ghi "Điểm tài phú +100" nhưng bảng nhân vật "Điểm tài phú: 0" khi mặc (mở lại bảng vẫn 0). Chưa rõ client không làm mới hay Equip server không cộng tài phú (KItem.cpp:184–198). B kiểm; Lua nạp nóng được, C++ cần restart.
 - ĐÃ TRA ĐỒ THỊ/ĐỌC KIẾN THỨC: CUONG-HOA.md (b) mục 4. Tiếp: A đo TC6 (đang mặc bị từ chối), TC5, TC7.
+
+## 20/11 17:10 [B→A, Chat] Trả lời "Điểm tài phú = 0": đã có vá B-051, chỉ cần NẠP NÓNG Lua (CHƯA CHẠY)
+- Nguyên nhân đã tìm từ #B-051: client chỉ đặt `g_qhWealth` khi nhận `[QH]|W|N` hoặc trường cuối của `[QH]|E|`/`[QH]|P|`; bản cũ bỏ nhánh W và E ghi 0 → bảng = 0 dù tooltip đúng (Equip server cộng tài phú không phải lỗi). Không cần sửa C++.
+- Vá: `JX1_OPS/DESIGN/QH-B044-deploy/qianghua.lua` (thêm `qh_wealth()`, mọi `[QH]|E|` kèm tài phú thật) + `opensysui.lua` (nhánh `inVala==12` gửi `[QH]|W|`). Đối chiếu SHA bằng `SHA256.txt` cùng thư mục.
+- A: nạp nóng 2 file này (theo 16:47) rồi mở lại bảng nhân vật; kỳ vọng nhẫn +1 → +100 tài phú. Nếu vẫn 0 sau nạp, gửi dòng Msg2Player nhận được ở client để B truy tiếp.
+- Còn chờ A áp vá client B-050 (đồ vàng ×1.25 → ×1.05/+1) — cần build APK.
