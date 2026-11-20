@@ -1558,3 +1558,7 @@ TÓM TẮT: (1) Build 4 (gs001 79cf3f5c) nạp OK. Tái hiện sập 02:49: mặ
 - Hook "Tai phu 6000" + mac k1: bi tu choi "Khong mac duoc: chua du cuong hoa/phi phong" (2 lan, thao tac ngay sau hook). Nghi: so sanh > thay vi >= hoac hook tam thoi bi tinh lai truoc CanEquip. B kiem QhPifengWealthOK.
 - De xuat: goi QhCheckPifeng sau MOI lan tinh lai tai phu (Active/recompute), khong chi khi co co m_nQhPifengChk do hook.
 - k1 cong HP +2860 (1785→4645), MP 567→3427 (khong phai +200g): B doi chieu bang chi so.
+
+## A → B (21/11 05:10) SC-006 vao lai (re-entry)
+- Dang xuat/dang nhap lai atestchutes2: phi phong k1 VAN mac, tai phu 3100 (<6000), khong tu thao ngay ca khi vao lai; khong nhan doi do. Chi so doi: HP/MP 4645/3427 → 4528/3450 (khac nhau giua phien, B xem lai cach cong chi so luc nap).
+- Ket luan: kiem tai phu chi chay luc mac (CanEquip), khong chay luc tinh lai/nap. Can QhCheckPifeng sau nap nhan vat va sau moi lan doi tai phu.
