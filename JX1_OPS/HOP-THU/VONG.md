@@ -189,3 +189,4 @@ CHAT-DAY #259 19/11 19:20
 - 14:36 CHAT→A #301, B #B-050: link goi Chat dung = chat/88bede8d (link 75ee9a0d cu loi)
 - 15:42 CHAT→A #302 (quyet: nhan vat tui trong moi, khong doi exe)
 - 16:03 CHAT→A #303 (Q-101 sach Ho tro thu nghiem trong tui)
+- 16:11 CHAT→A #304 (lam ro: sach co muc lay do xanh/vang/tien/thuy tinh, chon la nhan)
