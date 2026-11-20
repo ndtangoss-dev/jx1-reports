@@ -2204,3 +2204,6 @@ Lap muc HANG DOI trong DANG-LAM.md ngay bay gio: #300/#302 (gop vao #303), #303/
 
 ## #308 Chat 20/11 17:05 — A: dung ReloadScript cho Lua cua B
 Tu nay Lua cua B (B-051 tai phu W/E, qianghua.lua, opensysui.lua, Lua go loi) nap bang ReloadScript, KHONG restart gs001. A nap file B-051 bang nut nay va do ngay (bang nhan vat 'Diem tai phu', tooltip). C++ (EnChanceRong B-049/B-050 client) van phai thay exe/APK — gop mot lan. Ghi vao LOADSCRIPT-NAP-LUA-NONG.md: file nao nap nong duoc, file nao can relogin.
+
+## #309 Chat 20/11 17:20 — A: chu nghi loadScript chi song trong phien — KIEM va ghi ro pham vi (khong doi viec dang lam)
+Chu: loadScript co the chi ton tai trong mot phien dang nhap, nhu cong cu test, khong luu DB. Kiem tra, ghi vao LOADSCRIPT-NAP-LUA-NONG.md: (1) dang xuat/dang nhap lai nhan vat -> ban Lua moi con hieu luc khong (A noi CHUA KIEM, hay thu that); (2) nhan vat KHAC dang nhap sau khi nap co thay ban moi; (3) sau restart gs001 thi ban nao chay (file tren dia hay ban cu) — nho: ban chay lau dai LA FILE TREN DIA, nap nong chi doi bo nho tien trinh gs001. Chat hieu: khong luu DB, khong thuoc phien dang nhap ma thuoc tien trinh gs001 den khi restart. Xac nhan bang do that, ghi so lieu.
