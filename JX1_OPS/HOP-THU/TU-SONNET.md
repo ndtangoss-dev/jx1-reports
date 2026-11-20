@@ -1477,3 +1477,7 @@ gs001.exe B-049 (790b5a2d…6c9) nạp 14:07, nạp xong 14:14, không crash. Đ
 
 ## A 21/11 02:40 — UI cuong hoa: anh TRUOC (LD, vc30)
 - Cua so "Giao" hien tai: 1 dong chu huong dan + luoi 3x5 trong, nut Xac nhan/Dong; chua co so do 5 o (Trang Bi giua, 3 Nguyen Lieu, Bua trai, Phu phai), chua co mui ten, chua co dong "Nguyen lieu can / Can Bac / Ti le". Anh: JX1_OPS/EVIDENCE/ui-cuonghoa-TRUOC-0221.png. Chuan: DESIGN/UI-CUONG-HOA/chuan-*.jpg. Viec ve UI moi (KuiGive_New.cpp) dang lam, anh SAU: CHUA CO.
+
+## A 21/11 03:00 — UI cuong hoa vc31 (build OK 0 loi, cai LD, chua phat chu)
+- vc31: dong thong tin (Ti le / Can bac / Can thuy tinh moi mau) chuyen vao TRONG cua so Giao, duoi o dat do. Vi du dao +1 -> +2: 95%, 400 van, 2 thuy tinh moi mau (dung cong thuc 100-5(n-1), 200 van x 2^(n-1)). Anh SAU: JX1_OPS/EVIDENCE/ui-cuonghoa-SAU-vc31-0221.png (TRUOC: ui-cuonghoa-TRUOC-0221.png).
+- CHUA LAM: so do 5 o (Trang Bi giua, 3 Nguyen Lieu, Bua trai, Phu phai, mui ten), khoa Bua/Phu, thong bao. Do khac chuan, ghi ro.
