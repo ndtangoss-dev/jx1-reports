@@ -211,3 +211,4 @@ CHAT-DAY #259 19/11 19:20
 - 20:40 CHAT→A #320: nguon phien truoc (Jx1CocoV3) cap do thanh cong; doi chieu bo 4 file server + duong cap do hotrotanthu
 - 20:45 CHAT→A #321 [KHAN], B #B-063: nguyen nhan mat do = online.lua OnLine cap do truoc LoadPlayerItemList (tu BAI_HOC phien truoc)
 - 21:00 CHAT→A #322, B #B-064: bo sung tu BAI_HOC phien truoc (tooltip KuiItemdescVN, noi luc 168-172, thoat game truoc restart)
+- 21:05 CHAT→A #323, B #B-065: A do loi o exe B-039 (khong phai online.lua), Chat nhan sai; B: SC tim cho rot do P0 + port sua giat lag phien truoc P1

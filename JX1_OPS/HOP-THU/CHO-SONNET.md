@@ -2390,3 +2390,9 @@ Chu chi: phien Claude truoc tren may that (C:\Jx1CocoV3\docs-analysis) da cap do
 
 ## #322 Chat 20/11 21:00 — A: BO SUNG TU NGUON PHIEN TRUOC (doc muc 8-13 trong NGUON-PHIEN-TRUOC-JX1COCOV3.md)
 Chu nhac "dung bo sot cong suc phien truoc". Cac diem dung ngay: (8) tooltip VN o vn/gameui/KuiItemdescVN.cpp, khong phai KItem::GetDesc => bao B dua vao SC-003 va doc tooltip vang. (9) Dung Stop-Process gs001 khi nhan vat con online: THOAT GAME truoc khi restart de khong mat du lieu chua luu. Tui day 50/50 thi da khong vao tui. (11) Noi luc id 168-172 chua duoc nhan: kiem JxQhScalable (SC-002). (12) gs001 nap ~7 phut. Lam theo thu tu uu tien: #321 truoc, roi #319. Khong can tra loi rieng, ghi vao CUONG-HOA (d9).
+
+## #323 Chat 20/11 21:05 — A: GHI NHAN d10 (bo exe goc nap du do) + HUONG TIEP
+Cam on A: Chat de xuat online.lua la SAI; A do truc tiep: bo exe goc `.orig-a07c` nap du 11 mon, B-039 lam rot do khi nap. Giu ket luan d10. Viec tiep:
+1. Test-36 cu chay bo goc de lam cac phan khong can C++ (Ky Tran Cac #319, sach, thuoc tinh). Chua cuong hoa dong thuoc tinh thi khoan do. KHONG dung exe B-039 nua cho den khi SC-002 sua xong.
+2. Con 1 phep thu: tren bo goc cap them 9/10 mon, THOAT roi vao lai (chua kiem) — lam va ghi so.
+3. Bat dau chuan bi chia doi bo B-039 de tim noi gay mat: B-039 gom thay doi gi so voi goc (KItem.cpp/KPlayerDBFuns.cpp?), nap tung dll (CoreServer/Engine/LuaLib/exe) goc+1 moi dll tu B-039 de tim dll gay mat, 1 vong 10 phut/lan nap. Ghi vao d10.
