@@ -19,7 +19,7 @@ return str1
 end;
 
 --系统调用脚本入口
-Include("\script\system\qianghua.lua");  -- dam bao sysqianghua/sysError co trong script callback
+Include("\\script\\system\\qianghua.lua");  -- dam bao sysqianghua/sysError co trong script callback
 function opensysui(inKind,inVala,inValb,inValc)
  
  if (inKind==2) then  --- 打开系统ui
