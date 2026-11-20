@@ -25,9 +25,3 @@ Chờ chủ duyệt: C-02, C-04, C-05; #134; Xưởng JX1; nhân vật thứ 4.
 - V-01 lượt 3/5 (A-05): REPORTS/KIEM-CHEO-04.md, 6/6 đúng. Còn K-02-nhan-vat, R-07a.
 - V-01 lượt 4/5 (K-02-nhan-vat): REPORTS/KIEM-CHEO-05.md, 3/3 mốc đúng. Còn R-07a.
 - V-01 XONG 5/5 (19/11): KIEM-CHEO-06.md (R-07a đúng); tổng không sai nội dung, lệch dòng chỉ ở E-01.
-
-
-## Bổ sung kiểm toán phục hồi ngữ cảnh (20/11/2026)
-| # | Mã | Việc | Đầu ra | Ghi chú |
-|---|---|---|---|---|
-| 8 | RECOVERY-01 | Kiểm toán và chuẩn hóa bàn giao/phục hồi ngữ cảnh A/B: checkpoint hiện hành, đồng bộ trạng thái task/hộp thư, phân biệt DONE_UNVERIFIED và DONE_VERIFIED, kiểm tra đường dẫn, diễn tập phục hồi phiên mới | `REPORTS/RECOVERY-01-KIEM-TOAN-PHUC-HOI-2026-11-20.md` | ĐÃ GHI NHẬN KIỂM TOÁN TÀI LIỆU; CHƯA VÁ, CHƯA DIỄN TẬP. Thực hiện theo quy trình hiện hành; không thay đổi hook/prompt/worker khi chưa được duyệt. |
