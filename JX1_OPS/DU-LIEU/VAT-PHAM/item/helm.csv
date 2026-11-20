@@ -1,0 +1,141 @@
+﻿名称,道具种类,具体类别,详细类别,动画文件名,对应物件索引,宽度,高度,说明文字,五行属性,价格,等级,是否叠放,基础属性1类型,基础属性1最小值,基础属性1最大值,基础属性2类型,基础属性2最小值,基础属性2最大值,基础属性3类型,基础属性3最小值,基础属性3最大值,基础属性4类型,基础属性4最小值,基础属性4最大值,基础属性5类型,基础属性5最小值,基础属性5最大值,基础属性6类型,基础属性6最小值,基础属性6最大值,基础属性7类型,基础属性7最小值,基础属性7最大值,需求属性1类型,需求属性1数值,需求属性2类型,需求属性2数值,需求属性3类型,需求属性3数值,需求属性4类型,需求属性4数值,需求属性5类型,需求属性5数值,需求属性6类型,需求属性6数值
+Sa di giới cô,0,7,0,\spr\item\equip\cap\obj-ma-cap01-1.spr,28,2,2,Đai của các tiểu Sa Di thường đeo. ,,100,1,0,30,25,25,31,5,5,,,,,,,,,,,,,,,,36,1,32,30,33,0,,,38,0,,
+Tăng giới cô,0,7,0,\spr\item\equip\cap\obj-ma-cap01-1.spr,28,2,2,Đai của các tiểu Sa Di thường đeo. ,,250,2,0,30,50,50,31,7,7,,,,,,,,,,,,,,,,36,7,32,50,33,0,,,38,0,,
+Phật ấn giới cô,0,7,0,\spr\item\equip\cap\obj-ma-cap01-1.spr,28,2,2,Đai trên đó có ấn của Phật môn. ,,500,3,0,30,75,75,31,9,9,,,,,,,,,,,,,,,,36,13,32,70,33,0,,,38,0,,
+Tăng già giới cô,0,7,0,\spr\item\equip\cap\obj-ma-cap01-1.spr,28,2,2,Đai của các tiểu Sa Di thường đeo. ,,800,4,0,30,100,100,31,11,11,,,,,,,,,,,,,,,,36,19,32,90,33,0,,,38,0,,
+Khôn lộc mão,0,7,0,\spr\item\equip\cap\obj-ma-cap02-1.spr,28,2,2,Mũ đội bằng bông thượng hạng. ,,1200,5,0,30,125,125,31,13,13,,,,,,,,,,,,,,,,36,26,32,110,33,0,,,38,0,,
+Lâm liên mão,0,7,0,\spr\item\equip\cap\obj-ma-cap02-2.spr,28,2,2,Loại mão làm từ những loại tơ điều thượng hạng. ,,1800,6,0,30,150,150,31,15,15,,,,,,,,,,,,,,,,36,33,32,130,33,0,,,38,0,,
+Phù dung mão,0,7,0,\spr\item\equip\cap\obj-ma-cap02-3.spr,28,2,2,"""Các Tăng Lữ trung đẳng thường đeo, làm bằng thứ lụa thượng đẳng. """,,2500,7,0,30,175,175,31,17,17,,,,,,,,,,,,,,,,36,40,32,150,33,0,,,38,0,,
+Thẩm luân mão,0,7,0,\spr\item\equip\cap\obj-ma-cap03-1.spr,28,2,2,"""Các Tăng Lữ trung đẳng thường đeo, làm bằng thứ lụa thượng đẳng. """,,3200,8,0,30,200,200,31,19,19,,,,,,,,,,,,,,,,36,46,32,170,33,0,,,38,0,,
+Niệm ninh mão,0,7,0,\spr\item\equip\cap\obj-ma-cap03-2.spr,28,2,2,Các Tăng Lữ thượng đẳng thường đeo. ,,4000,9,0,30,225,225,31,21,21,,,,,,,,,,,,,,,,36,53,32,190,33,0,,,38,0,,
+Tì lô mão,0,7,0,\spr\item\equip\cap\obj-ma-cap03-3.spr,28,2,2,"""Các Tăng Lữ thượng đẳng thường đeo, trên có ấn Phật, Đường Tăng thường đeo nó""",,5000,10,0,30,250,250,31,23,23,,,,,,,,,,,,,,,,36,60,32,210,33,0,,,38,0,,
+Mộc trâm,0,7,1,\spr\item\equip\cap\obj-ma-cap04-1.spr,29,2,2,Loại Trâm Các Đạo sĩ thường dùng. ,,100,1,0,30,20,20,31,8,8,,,,,,,,,,,,,,,,36,1,32,20,33,0,,,38,0,37,4
+Hoàng dương mộc trâm,0,7,1,\spr\item\equip\cap\obj-ma-cap04-1.spr,29,2,2,Loại trâm được tinh chế từ cây Hoàng Dương. ,,200,2,0,30,30,30,31,10,10,,,,,,,,,,,,,,,,36,7,32,30,33,0,,,38,0,37,4
+Càn khôn kết,0,7,1,\spr\item\equip\cap\obj-ma-cap04-2.spr,28,2,2,Loại đai Các Đạo sĩ thường đeo. ,,400,3,0,30,45,45,31,12,12,,,,,,,,,,,,,,,,36,13,32,40,33,0,,,38,0,37,4
+Thái cực quán,0,7,1,\spr\item\equip\cap\obj-ma-cap04-3.spr,28,2,2,Loại mũ Các Đạo sĩ thường đeo. ,,700,4,0,30,60,60,31,14,14,,,,,,,,,,,,,,,,36,19,32,50,33,0,,,38,0,37,4
+Bát quái cân,0,7,1,\spr\item\equip\cap\obj-ma-cap05-1.spr,28,2,2,"""Loại khăn Đạo sĩ thường quấn, làm bằng lụa thượng đẳng. """,,1000,5,0,30,75,75,31,16,16,,,,,,,,,,,,,,,,36,26,32,60,33,0,,,38,0,37,4
+Càn khảm cân,0,7,1,\spr\item\equip\cap\obj-ma-cap05-2.spr,28,2,2,"""Loại khăn Đạo sĩ thường quấn, làm bằng lụa thượng đẳng. . """,,1500,6,0,30,90,90,31,18,18,,,,,,,,,,,,,,,,36,33,32,70,33,0,,,38,0,37,4
+Ngũ nhạc quán,0,7,1,\spr\item\equip\cap\obj-ma-cap05-3.spr,28,2,2,Loại mũ Đạo sĩ thường quấn. . ,,2000,7,0,30,105,105,31,20,20,,,,,,,,,,,,,,,,36,40,32,80,33,0,,,38,0,37,4
+Thượng thanh quán,0,7,1,\spr\item\equip\cap\obj-ma-cap06-1.spr,28,2,2,chỉ có những đạo sĩ nào đã tu luyện đến một trình độ nhất định thì mới có thể đội. ,,2500,8,0,30,120,120,31,22,22,,,,,,,,,,,,,,,,36,46,32,90,33,0,,,38,0,37,4
+Tinh quán,0,7,1,\spr\item\equip\cap\obj-ma-cap06-2.spr,28,2,2,"""Loại mũ có khắc tên của vị đạo sĩ, thường thấy ở vùng Giang Nam. """,,3200,9,0,30,135,135,31,24,24,,,,,,,,,,,,,,,,36,53,32,100,33,0,,,38,0,37,4
+Ngũ lão quán,0,7,1,\spr\item\equip\cap\obj-ma-cap06-3.spr,28,2,2,Là một trong những loại mũ thượng đẳng. ,,4000,10,0,30,150,150,31,26,26,,,,,,,,,,,,,,,,36,60,32,110,33,0,,,38,0,37,4
+Trúc lạp,0,7,2,\spr\item\equip\cap\obj-ma-cap07-1.spr,28,2,2,Loại mũ thường thấy ở vùng Giang Nam. ,,100,1,0,30,40,40,31,8,8,,,,,,,,,,,,,,,,36,1,32,30,33,20,,,38,0,,
+Ngư lạp,0,7,2,\spr\item\equip\cap\obj-ma-cap07-1.spr,28,2,2,loại mũ ngư gia thường đội. ,,300,2,0,30,68,68,31,10,10,,,,,,,,,,,,,,,,36,7,32,50,33,30,,,38,0,,
+Thẩm lô thảo mão,0,7,2,\spr\item\equip\cap\obj-ma-cap07-2.spr,28,2,2,Loại mũ được tinh chế từ những loài cỏ quý hiếm. ,,600,3,0,30,96,96,31,13,13,,,,,,,,,,,,,,,,36,13,32,70,33,40,,,38,0,,
+Chu tao thảo mão,0,7,2,\spr\item\equip\cap\obj-ma-cap07-3.spr,28,2,2,Loại mũ được tinh chế từ những loài cỏ quý hiếm. o. ,,1000,4,0,30,124,124,31,15,15,,,,,,,,,,,,,,,,36,19,32,90,33,50,,,38,0,,
+Huyền sa diện tráo,0,7,2,\spr\item\equip\cap\obj-ma-cap08-1.spr,28,2,2,Loại áo sát thủ thường mặc. ,,1600,5,0,30,152,152,31,17,17,,,,,,,,,,,,,,,,36,26,32,110,33,60,,,38,0,,
+Thanh sát diện tráo,0,7,2,\spr\item\equip\cap\obj-ma-cap08-2.spr,28,2,2,Loại áo sát thủ cao cấp thường mặc. ,,2400,6,0,30,170,170,31,20,20,,,,,,,,,,,,,,,,36,33,32,130,33,70,,,38,0,,
+Nhân bì diện tráo,0,7,2,\spr\item\equip\cap\obj-ma-cap08-3.spr,28,2,2,"""Nghe nói sau khi giết người thì lột da làm áo, oán khí cuồn cuộn. """,,3500,7,0,30,192,192,31,22,22,,,,,,,,,,,,,,,,36,40,32,150,33,80,,,38,0,,
+Ngũ độc phát kết,0,7,2,\spr\item\equip\cap\obj-ma-cap09-1.spr,28,2,2,Loại Độc dược chế từ năm loài rắn độc. ,,4800,8,0,30,220,220,31,25,25,,,,,,,,,,,,,,,,36,46,32,170,33,90,,,38,0,,
+Bách độc phát kết,0,7,2,\spr\item\equip\cap\obj-ma-cap09-2.spr,28,2,2,Loại Độc dược chế từ 100 loại hoa có độc. ,,6400,9,0,30,248,248,31,27,27,,,,,,,,,,,,,,,,36,53,32,190,33,100,,,38,0,,
+Tu la phát kết,0,7,2,\spr\item\equip\cap\obj-ma-cap09-3.spr,28,2,2,"""Là một dị vật trên thế gian, sát khí tỏa ra ngùn ngụt. """,,8000,10,0,30,276,276,31,30,30,,,,,,,,,,,,,,,,36,60,32,210,33,110,,,38,0,,
+Nho cân,0,7,3,\spr\item\equip\cap\obj-ma-cap10-1.spr,28,2,2,"""Loại khăn các tú tài thường quấn, đi đâu cũng thấy. """,,120,1,0,30,40,40,31,8,8,,,,,,,,,,,,,,,,36,1,32,30,33,30,,,38,0,,
+Tiến kiên quán,0,7,3,\spr\item\equip\cap\obj-ma-cap10-1.spr,28,2,2,Loại khăn các tú tài thường đội. ,,320,2,0,30,70,70,31,10,10,,,,,,,,,,,,,,,,36,7,32,45,33,45,,,38,0
+Việt mỹ quán,0,7,3,\spr\item\equip\cap\obj-ma-cap10-2.spr,28,2,2,Loại khăn mũ các văn nhân thường đội. ,,750,3,0,30,100,100,31,13,13,,,,,,,,,,,,,,,,36,13,32,60,33,60,,,38,0
+Phi yến quán,0,7,3,\spr\item\equip\cap\obj-ma-cap10-3.spr,28,2,2,"""Loại mũ rất đẹp, danh sĩ ưa dùng. """,,1200,4,0,30,130,130,31,15,15,,,,,,,,,,,,,,,,36,19,32,75,33,75,,,38,0
+Điêu thiền quán,0,7,3,\spr\item\equip\cap\obj-ma-cap11-1.spr,28,2,2,"""Loại mũ rất đẹp, danh sĩ ưa dùng. """,,1800,5,0,30,160,160,31,17,17,,,,,,,,,,,,,,,,36,26,32,90,33,90,,,38,0
+Lang tà quán,0,7,3,\spr\item\equip\cap\obj-ma-cap11-2.spr,28,2,2,"""Tinh chế bằng thép, đội vào tinh lực tăng lên rất nhanh. """,,2500,6,0,30,190,190,31,20,20,,,,,,,,,,,,,,,,36,33,32,105,33,105,,,38,0
+Anh lạc quán,0,7,3,\spr\item\equip\cap\obj-ma-cap11-3.spr,28,2,2,"""Loại mũ rất đẹp, được khảm bằng cỏ Anh Lạc, các văn nhân Nho sĩ thường thích đội""",,3700,7,0,30,220,220,31,22,22,,,,,,,,,,,,,,,,36,40,32,120,33,120,,,38,0
+Tử kim phát quán,0,7,3,\spr\item\equip\cap\obj-ma-cap12-1.spr,28,2,2,"""Dùng những loại bạch kim và bảo thạch quý hiếm chế thành, cự kỳ cao quý. """,,5000,8,0,30,250,250,31,25,25,,,,,,,,,,,,,,,,36,46,32,135,33,135,,,38,0
+Thất bảo phát quán,0,7,3,\spr\item\equip\cap\obj-ma-cap12-2.spr,28,2,2,"""Là loại mũ cao quý, thường do Hoàng Thượng ban tặng. """,,6000,9,0,30,280,280,31,27,27,,,,,,,,,,,,,,,,36,53,32,150,33,150,,,38,0
+Thông thiên phát quán,0,7,3,\spr\item\equip\cap\obj-ma-cap12-3.spr,28,2,2,"""Là loại mũ cao quý, chỉ có Hoàng Thượng mới được đội""",,7500,10,0,30,310,310,31,30,30,,,,,,,,,,,,,,,,36,60,32,165,33,165,,,38,0
+Đồng khôi,0,7,4,\spr\item\equip\cap\obj-ma-cap13-1.spr,29,2,2,Loại khôi làm bằng tinh đồng thượng đẳng. ,,370,1,0,30,45,45,31,10,10,,,,,,,,,,,,,,,,36,1,32,35,33,0,,,38,0
+Bán diện khôi,0,7,4,\spr\item\equip\cap\obj-ma-cap13-1.spr,29,2,2,"""Loại khôi che một nửa mặt phía trước, có thể chống tên. """,,610,2,0,30,75,75,31,13,13,,,,,,,,,,,,,,,,36,7,32,60,33,0,,,38,0
+Song diện khôi,0,7,4,\spr\item\equip\cap\obj-ma-cap13-2.spr,29,2,2,"""Loại khôi che kín đầu, chỉ chừa hai lỗ mắt để nhìn. """,,1120,3,0,30,105,105,31,16,16,,,,,,,,,,,,,,,,36,13,32,85,33,0,,,38,0
+Thiết khôi,0,7,4,\spr\item\equip\cap\obj-ma-cap13-3.spr,29,2,2,Loại khôi làm bằng tinh thép thượng đẳng. ,,1800,4,0,30,135,135,31,19,19,,,,,,,,,,,,,,,,36,19,32,110,33,0,,,38,0
+Tinh đồng đầu khôi,0,7,4,\spr\item\equip\cap\obj-ma-cap14-1.spr,29,2,2,Loại khôi làm bằng tinh đồng thượng đẳng. ,,2700,5,0,30,165,165,31,22,22,,,,,,,,,,,,,,,,36,26,32,135,33,0,,,38,0
+Cang khôi,0,7,4,\spr\item\equip\cap\obj-ma-cap14-2.spr,29,2,2,Loại khôi bằng thép nguyên chất. ,,3700,6,0,30,195,195,31,25,25,,,,,,,,,,,,,,,,36,33,32,160,33,0,,,38,0
+Ngân khôi,0,7,4,\spr\item\equip\cap\obj-ma-cap14-3.spr,29,2,2,Loại khôi bằng bạc nguyên chất. ,,5100,7,0,30,225,225,31,28,28,,,,,,,,,,,,,,,,36,40,32,185,33,0,,,38,0
+Ô cang khôi,0,7,4,\spr\item\equip\cap\obj-ma-cap15-1.spr,29,2,2,Loại khôi bằng thép nguyên chất. . ,,6500,8,0,30,255,255,31,31,31,,,,,,,,,,,,,,,,36,46,32,210,33,0,,,38,0
+Kim khôi,0,7,4,\spr\item\equip\cap\obj-ma-cap15-2.spr,31,2,2,"""Loại khôi giáp bằng vàng, khả năng phòng ngự rất cao. """,,8100,9,0,30,285,285,31,34,34,,,,,,,,,,,,,,,,36,53,32,235,33,0,,,38,0
+Yểm nhật khôi,0,7,4,\spr\item\equip\cap\obj-ma-cap15-3.spr,31,2,2,"""Loại khôi giáp bằng vàng, khả năng phòng ngự rất cao. """,,10000,10,0,30,315,315,31,37,37,,,,,,,,,,,,,,,,36,60,32,260,33,0,,,38,0
+Phá bố cân,0,7,5,\spr\item\equip\cap\obj-ma-cap16-1.spr,28,2,2,"""Loại khăn những người an mày thường quấn trên đầu, rất rách nát. """,,60,1,0,30,25,25,31,8,8,,,,,,,,,,,,,,,,36,1,32,30,33,20,,,38,0
+Bát phương cân,0,7,5,\spr\item\equip\cap\obj-ma-cap16-1.spr,28,2,2,"""Loại khăn những người an mày thường quấn trên đầu, hình như cũng không có công dụng gì. """,,160,2,0,30,50,50,31,10,10,,,,,,,,,,,,,,,,36,7,32,45,33,25,,,38,0
+Tiêu diêu cân,0,7,5,\spr\item\equip\cap\obj-ma-cap16-2.spr,28,2,2,Loại khăn những người an mày thường quấn trên đầu. ,,370,3,0,30,75,75,31,13,13,,,,,,,,,,,,,,,,36,13,32,60,33,30,,,38,0
+Lộ thiên cân,0,7,5,\spr\item\equip\cap\obj-ma-cap16-3.spr,28,2,2,"""Loại khăn những người ăn mày thường quấn trên đầu, rất thông dụng""",,600,4,0,30,100,100,31,15,15,,,,,,,,,,,,,,,,36,19,32,75,33,35,,,38,0
+Bạch thực hoàn,0,7,5,\spr\item\equip\cap\obj-ma-cap17-1.spr,28,2,2,"""Vòng đeo trên cổ, tượng trưng cho đẳng cấp Cái Bang. """,,900,5,0,30,125,125,31,17,17,,,,,,,,,,,,,,,,36,26,32,90,33,40,,,38,0
+Lưu ly hoàn,0,7,5,\spr\item\equip\cap\obj-ma-cap17-2.spr,28,2,2,Loại vòng đeo có khảm nhiều ngọc Lưu Ly. ,,1200,6,0,30,150,150,31,20,20,,,,,,,,,,,,,,,,36,33,32,105,33,45,,,38,0
+Song tầng lưu ly hoàn,0,7,5,\spr\item\equip\cap\obj-ma-cap17-3.spr,28,2,2,"""Loại vòng đeo có khảm nhiều ngọc Lưu Ly, có hai lớp. """,,1800,7,0,30,175,175,31,22,22,,,,,,,,,,,,,,,,36,40,32,120,33,50,,,38,0
+Tín nhớa hoàn,0,7,5,\spr\item\equip\cap\obj-ma-cap18-1.spr,28,2,2,Loại vòng đeo thể hiện tinh thần của Cái Bang. ,,2500,8,0,30,200,200,31,25,25,,,,,,,,,,,,,,,,36,46,32,135,33,55,,,38,0
+Tình nhớa hoàn,0,7,5,\spr\item\equip\cap\obj-ma-cap18-2.spr,28,2,2,Loại vòng đeo thể hiện tinh thần của Cái Bang. ,,3000,9,0,30,225,225,31,27,27,,,,,,,,,,,,,,,,36,53,32,150,33,60,,,38,0
+Trích tinh hoàn,0,7,5,\spr\item\equip\cap\obj-ma-cap18-3.spr,28,2,2,"""Loại vòng đeo có khảm nhiều ngọc Lưu Ly, bảo vật của Cái Bang. """,,3700,10,0,30,250,250,31,30,30,,,,,,,,,,,,,,,,36,60,32,165,33,65,,,38,0
+Bố cân,0,7,6,\spr\item\equip\cap\obj-ma-cap19-1.spr,28,2,2,Loại khăn thường đội của những người bình dân. ,,120,1,0,30,20,20,31,8,8,,,,,,,,,,,,,,,,36,1,32,0,33,20,,,38,0
+Bình đỉnh cân,0,7,6,\spr\item\equip\cap\obj-ma-cap19-1.spr,28,2,2,Loại khăn thường đội của những người bình dân nhưng đẳng cấp cao hơn một chút so với Bố Cân. ,,320,2,0,30,40,40,31,10,10,,,,,,,,,,,,,,,,36,7,32,0,33,25,,,38,0
+Bố nhúng cân,0,7,6,\spr\item\equip\cap\obj-ma-cap19-1.spr,28,2,2,"""Loại khăn của những người bình dân, tương đối ấm. """,,750,3,0,30,60,60,31,13,13,,,,,,,,,,,,,,,,36,13,32,0,33,30,,,38,0
+Nhạn vũ cân,0,7,6,\spr\item\equip\cap\obj-ma-cap19-1.spr,28,2,2,"""Nghe nói dùng lông chim nhạn dệt thành, thực tế chỉ là làm từ những lông chim bình thường mà thôi. """,,1200,4,0,30,80,80,31,15,15,,,,,,,,,,,,,,,,36,19,32,0,33,35,,,38,0
+Y tơ phát đái,0,7,6,\spr\item\equip\cap\obj-ma-cap20-1.spr,28,2,2,"""Dùng loại tơ tinh phẩm dệt thành, kiểu dáng rất đẹp. """,,1800,5,0,30,100,100,31,17,17,,,,,,,,,,,,,,,,36,26,32,0,33,40,,,38,0
+Kim tơ quán,0,7,6,\spr\item\equip\cap\obj-ma-cap20-2.spr,28,2,2,"""Loại mũ dệt bằng tơ thượng phẩm, kiểu dáng rất đẹp, Khả năng giữ ấm rất tốt.""",,2500,6,0,30,120,120,31,20,20,,,,,,,,,,,,,,,,36,33,32,0,33,45,,,38,0
+Chu khởi quán,0,7,6,\spr\item\equip\cap\obj-ma-cap20-3.spr,28,2,2,"""Loại mũ dệt bằng tơ thượng phẩm, kiểu dáng rất đẹp. """,,3700,7,0,30,140,140,31,22,22,,,,,,,,,,,,,,,,36,40,32,0,33,50,,,38,0
+Doanh giác mão,0,7,6,\spr\item\equip\cap\obj-ma-cap21-1.spr,28,2,2,"""Loại mũ dệt bằng tơ thượng phẩm có điểm thêm nhiều hạt ngọc nhỏ, giá rất đắt. """,,5000,8,0,30,160,160,31,25,25,,,,,,,,,,,,,,,,36,46,32,0,33,55,,,38,0
+Tàm tơ mão,0,7,6,\spr\item\equip\cap\obj-ma-cap21-2.spr,28,2,2,"""Loại mũ dệt bằng tơ thượng phẩm, phong cách quý phái. """,,6000,9,0,30,180,180,31,27,27,,,,,,,,,,,,,,,,36,53,32,0,33,60,,,38,0
+Ô tàm mão,0,7,6,\spr\item\equip\cap\obj-ma-cap21-3.spr,28,2,2,"""Loại mũ dệt bằng tơ Ô Tầm thượng phẩm, phong cách quý phái. """,,7500,10,0,30,200,200,31,30,30,,,,,,,,,,,,,,,,36,60,32,0,33,65,,,38,0
+Thích ni mão,0,7,7,\spr\item\equip\cap\obj-fm-cap01-1.spr,28,2,2,Loại mũ các ni cô thường đội. ,,100,1,0,30,25,25,31,5,5,,,,,,,,,,,,,,,,36,1,32,30,,,,,38,1
+Thích ni mão,0,7,7,\spr\item\equip\cap\obj-fm-cap01-1.spr,28,2,2,Loại mũ các ni cô thường đội. ,,250,2,0,30,50,50,31,7,7,,,,,,,,,,,,,,,,36,7,32,50,,,,,38,1
+Thích ni mão,0,7,7,\spr\item\equip\cap\obj-fm-cap01-1.spr,28,2,2,Loại mũ các ni cô thường đội. ,,500,3,0,30,75,75,31,9,9,,,,,,,,,,,,,,,,36,13,32,70,,,,,38,1
+Thích ni mão,0,7,7,\spr\item\equip\cap\obj-fm-cap01-1.spr,28,2,2,Loại mũ các ni cô thường đội. ,,800,4,0,30,100,100,31,11,11,,,,,,,,,,,,,,,,36,19,32,90,,,,,38,1
+Thanh mão,0,7,7,\spr\item\equip\cap\obj-fm-cap02-1.spr,28,2,2,Loại mũ màu xanh của Phật gia. ,,1200,5,0,30,125,125,31,13,13,,,,,,,,,,,,,,,,36,26,32,110,,,,,38,1
+Thanh anh mão,0,7,7,\spr\item\equip\cap\obj-fm-cap02-2.spr,28,2,2,"""Loại mũ màu xanh của Phật gia, có tua rũ xuống. """,,1800,6,0,30,150,150,31,15,15,,,,,,,,,,,,,,,,36,33,32,130,,,,,38,1
+Thiên thanh mão,0,7,7,\spr\item\equip\cap\obj-fm-cap02-3.spr,28,2,2,"""Loại mũ màu xanh của Phật gia, thanh thoát cao quý. """,,2500,7,0,30,175,175,31,17,17,,,,,,,,,,,,,,,,36,40,32,150,,,,,38,1
+Xích ảnh phát quán,0,7,7,\spr\item\equip\cap\obj-fm-cap03-1.spr,28,2,2,"""Loại mũ cao cấp của Phật gia, dùng trong những lúc nghiêm trang. """,,3200,8,0,30,200,200,31,19,19,,,,,,,,,,,,,,,,36,46,32,170,,,,,38,1
+Vô tướng pháp quán,0,7,7,\spr\item\equip\cap\obj-fm-cap03-2.spr,28,2,2,"""Loại mũ cao cấp của Phật gia, dùng trong những lúc nghiêm trang. """,,4000,9,0,30,225,225,31,21,21,,,,,,,,,,,,,,,,36,53,32,190,,,,,38,1
+Quan âm pháp quán,0,7,7,\spr\item\equip\cap\obj-fm-cap03-3.spr,28,2,2,Loại mũ cao cấp của Phật gia. ,,5000,10,0,30,250,250,31,23,23,,,,,,,,,,,,,,,,36,60,32,210,,,,,38,1
+Ngân thoa,0,7,8,\spr\item\equip\cap\obj-fm-cap04-1.spr,30,2,2,Loại trâm cài tóc bằng bạc. ,,100,1,0,30,20,20,31,8,8,,,,,,,,,,,,,,,,36,1,32,0,33,20,,,38,1
+Ngân liêm thoa,0,7,8,\spr\item\equip\cap\obj-fm-cap04-1.spr,30,2,2,Loại trâm cài tóc bằng bạc. ,,200,2,0,30,40,40,31,10,10,,,,,,,,,,,,,,,,36,7,32,0,33,25,,,38,1
+Ngân liệm thoa,0,7,8,\spr\item\equip\cap\obj-fm-cap04-2.spr,30,2,2,Loại trâm cài tóc bằng bạc. ,,400,3,0,30,60,60,31,13,13,,,,,,,,,,,,,,,,36,13,32,0,33,30,,,38,1
+Ngân hoàn thoa,0,7,8,\spr\item\equip\cap\obj-fm-cap04-3.spr,30,2,2,Loại trâm cài tóc bằng bạc. ,,700,4,0,30,80,80,31,15,15,,,,,,,,,,,,,,,,36,19,32,0,33,35,,,38,1
+Kim thoa,0,7,8,\spr\item\equip\cap\obj-fm-cap05-1.spr,30,2,2,Loại trâm cài tóc bằng bạc. ,,1000,5,0,30,100,100,31,17,17,,,,,,,,,,,,,,,,36,26,32,0,33,40,,,38,1
+Kim hoàn thoa,0,7,8,\spr\item\equip\cap\obj-fm-cap05-2.spr,30,2,2,"""Loại trâm cài tóc bằng bạc, dáng hơi tròn. """,,1500,6,0,30,120,120,31,20,20,,,,,,,,,,,,,,,,36,33,32,0,33,45,,,38,1
+Kim bộ dao,0,7,8,\spr\item\equip\cap\obj-fm-cap05-3.spr,30,2,2,Loại trâm cài tóc bằng vàng. ,,2000,7,0,30,140,140,31,22,22,,,,,,,,,,,,,,,,36,40,32,0,33,50,,,38,1
+Phỉ thúy thoa,0,7,8,\spr\item\equip\cap\obj-fm-cap06-1.spr,30,2,2,"""Loại trâm cài tóc bằng lụa, có điểm vàng. """,,2500,8,0,30,160,160,31,25,25,,,,,,,,,,,,,,,,36,46,32,0,33,55,,,38,1
+Thái cực quán,0,7,8,\spr\item\equip\cap\obj-fm-cap06-2.spr,30,2,2,"""Là Một loại mũ của các đạo sĩ thường đội, có thể trừ yêu diệt quái. """,,3200,9,0,30,180,180,31,27,27,,,,,,,,,,,,,,,,36,53,32,0,33,60,,,38,1
+Âm dương vô cực quán,0,7,8,\spr\item\equip\cap\obj-fm-cap06-3.spr,30,2,2,Bảo vật của các đạo gia. ,,4000,10,0,30,200,200,31,30,30,,,,,,,,,,,,,,,,36,60,32,0,33,65,,,38,1
+Bìtrụ,0,7,9,\spr\item\equip\cap\obj-fm-cap07-1.spr,28,2,2,"""Loại mũ bảo hộ được tinh chế từ những loại da thú, có khả năng tấn công và phòng ngự rất tốt. """,,100,1,0,30,25,25,31,8,8,,,,,,,,,,,,,,,,36,1,32,30,33,20,,,38,1
+Đồng trụ,0,7,9,\spr\item\equip\cap\obj-fm-cap07-1.spr,28,2,2,"""Loại giáp trụ bằng đồng, các sĩ binh thường mặc. """,,300,2,0,30,50,50,31,10,10,,,,,,,,,,,,,,,,36,7,32,45,33,25,,,38,1
+Tinh đồng trụ,0,7,9,\spr\item\equip\cap\obj-fm-cap07-2.spr,28,2,2,Loại khôi được tinh chế bằng đồng. ,,600,3,0,30,75,75,31,13,13,,,,,,,,,,,,,,,,36,13,32,60,33,30,,,38,1
+Xích đồn bì mão,0,7,9,\spr\item\equip\cap\obj-fm-cap07-3.spr,28,2,2,"""Loại mũ bảo hộ được làm từ da sư tử biển, tính phòng ngự tất cao. """,,1000,4,0,30,100,100,31,15,15,,,,,,,,,,,,,,,,36,19,32,75,33,35,,,38,1
+Thú cốt trâm,0,7,9,\spr\item\equip\cap\obj-fm-cap08-1.spr,30,2,2,Loại Trâm làm bằng xương thú. ,,1600,5,0,30,125,125,31,17,17,,,,,,,,,,,,,,,,36,26,32,90,33,40,,,38,1
+Tử cốt trâm,0,7,9,\spr\item\equip\cap\obj-fm-cap08-2.spr,30,2,2,Loại Trâm làm bằng xương thú. ,,2400,6,0,30,150,150,31,20,20,,,,,,,,,,,,,,,,36,33,32,105,33,45,,,38,1
+Huyền cốt trâm,0,7,9,\spr\item\equip\cap\obj-fm-cap08-3.spr,30,2,2,"""Loại Trâm làm bằng xương thú, rất quý hiếm. """,,3500,7,0,30,175,175,31,22,22,,,,,,,,,,,,,,,,36,40,32,120,33,50,,,38,1
+Hổ bìdiện tráo,0,7,9,\spr\item\equip\cap\obj-fm-cap09-1.spr,28,2,2,Loại mũ phòng hộ thượng đẳng bằng da Hổ. ,,4800,8,0,30,200,200,31,25,25,,,,,,,,,,,,,,,,36,46,32,135,33,55,,,38,1
+Điêu bì diện tráo,0,7,9,\spr\item\equip\cap\obj-fm-cap09-2.spr,28,2,2,Loại mũ phòng hộ thượng đẳng bằng da chồn. ,,6400,9,0,30,225,225,31,27,27,,,,,,,,,,,,,,,,36,53,32,150,33,60,,,38,1
+Huyền tê diện tráo,0,7,9,\spr\item\equip\cap\obj-fm-cap09-3.spr,28,2,2,"""Loại mũ phòng hộ thượng đẳng bằng da tê giác, cực kỳ quý hiếm. """,,8000,10,0,30,250,250,31,30,30,,,,,,,,,,,,,,,,36,60,32,165,33,65,,,38,1
+Thô thiết đầu hoàn,0,7,10,\spr\item\equip\cap\obj-fm-cap10-1.spr,28,2,2,"""Loại mũ bảo hộ tinh chế từ thép, khả năng phòng ngự rất cao. """,,120,1,0,30,25,25,31,8,8,,,,,,,,,,,,,,,,36,1,32,30,33,20,,,38,1
+Tế thiết đầu hoàn,0,7,10,\spr\item\equip\cap\obj-fm-cap10-1.spr,28,2,2,"""Loại mũ bảo hộ tinh chế từ thép, khả năng phòng ngự rất cao. """,,320,2,0,30,50,50,31,10,10,,,,,,,,,,,,,,,,36,7,32,45,33,25,,,38,1
+Hoàng đồng đầu hoàn,0,7,10,\spr\item\equip\cap\obj-fm-cap10-2.spr,28,2,2,"""Loại mũ bảo hộ tinh chế từ đồng, khả năng phòng ngự rất cao""",,750,3,0,30,75,75,31,13,13,,,,,,,,,,,,,,,,36,13,32,60,33,30,,,38,1
+Lục ngọc đầu hoàn,0,7,10,\spr\item\equip\cap\obj-fm-cap10-3.spr,28,2,2,Loại mũ bảo hộ tinh chế từ thép có khảm ngọc. ,,1200,4,0,30,100,100,31,15,15,,,,,,,,,,,,,,,,36,19,32,75,33,35,,,38,1
+Kê vĩ thoa,0,7,10,\spr\item\equip\cap\obj-fm-cap11-1.spr,30,2,2,"""Loại thoa được làm từ đuôi chim, rất nữ tính. """,,1800,5,0,30,125,125,31,17,17,,,,,,,,,,,,,,,,36,26,32,90,33,40,,,38,1
+Anh vũ thoa,0,7,10,\spr\item\equip\cap\obj-fm-cap11-2.spr,30,2,2,"""Loại trâm thoa làm từ lông chim anh Vũ, rất đẹp. """,,2500,6,0,30,150,150,31,20,20,,,,,,,,,,,,,,,,36,33,32,105,33,45,,,38,1
+Bàn xà thoa,0,7,10,\spr\item\equip\cap\obj-fm-cap11-3.spr,30,2,2,"""Loại trâm thoa được mài từ bảo thạch, trộn lẫn với da rắn, cực kỳ cao quý. """,,3700,7,0,30,175,175,31,22,22,,,,,,,,,,,,,,,,36,40,32,120,33,50,,,38,1
+Chu sa đầu hoàn,0,7,10,\spr\item\equip\cap\obj-fm-cap12-1.spr,28,2,2,"""Loại mũ bảo hộ tinh chế từ thép, có khảm rất nhiều loại đá quý""",,5000,8,0,30,200,200,31,25,25,,,,,,,,,,,,,,,,36,46,32,135,33,55,,,38,1
+Minh châu đầu hoàn,0,7,10,\spr\item\equip\cap\obj-fm-cap12-2.spr,28,2,2,"""Loại mũ bảo hộ tinh chế từ vàng, có khảm rất nhiều hạt Dạ Minh Châu. """,,6000,9,0,30,225,225,31,27,27,,,,,,,,,,,,,,,,36,53,32,150,33,60,,,38,1
+Long huyết đầu hoàn,0,7,10,\spr\item\equip\cap\obj-fm-cap12-3.spr,28,2,2,Loại mũ bảo hộ tinhchế từ vàng cực kỳ quý hiếm. ,,7500,10,0,30,250,250,31,30,30,,,,,,,,,,,,,,,,36,60,32,165,33,65,,,38,1
+Viên mão,0,7,11,\spr\item\equip\cap\obj-fm-cap13-1.spr,28,2,2,Một loại mũ thông thường. ,,370,1,0,30,20,20,31,8,8,,,,,,,,,,,,,,,,36,1,32,0,33,20,,,38,1
+Đường mão,0,7,11,\spr\item\equip\cap\obj-fm-cap13-1.spr,28,2,2,Một loại mũ thông thường. ,,610,2,0,30,40,40,31,10,10,,,,,,,,,,,,,,,,36,7,32,0,33,25,,,38,1
+Cân quản mão,0,7,11,\spr\item\equip\cap\obj-fm-cap13-2.spr,28,2,2,"""Loại mũ thông thường, ai cũng có thể đội. """,,1120,3,0,30,60,60,31,13,13,,,,,,,,,,,,,,,,36,13,32,0,33,30,,,38,1
+Tỷ giác mão,0,7,11,\spr\item\equip\cap\obj-fm-cap13-3.spr,28,2,2,Một loại mũ tương đối cao cấp. ,,1800,4,0,30,80,80,31,15,15,,,,,,,,,,,,,,,,36,19,32,0,33,35,,,38,1
+Thanh phụng quán,0,7,11,\spr\item\equip\cap\obj-fm-cap14-1.spr,28,2,2,Một loại khăn mà các nữ tướng rất thích quấn. ,,2700,5,0,30,100,100,31,17,17,,,,,,,,,,,,,,,,36,26,32,0,33,40,,,38,1
+Kim phụng quán,0,7,11,\spr\item\equip\cap\obj-fm-cap14-2.spr,28,2,2,Một loại khăn được dệt từ Kim Tơ. ,,3700,6,0,30,120,120,31,20,20,,,,,,,,,,,,,,,,36,33,32,0,33,45,,,38,1
+Song phụng triều thiên quán,0,7,11,\spr\item\equip\cap\obj-fm-cap14-3.spr,28,2,2,"""Loại mũ bảo hộ tinh chế từ vàng, trùm kín cả đầu. """,,5100,7,0,30,140,140,31,22,22,,,,,,,,,,,,,,,,36,40,32,0,33,50,,,38,1
+Phỉ thúy khôi,0,7,11,\spr\item\equip\cap\obj-fm-cap15-1.spr,31,2,2,"""Loại mũ bảo hộ tinh chế từ vàng, trùm kín cả đầu. """,,6500,8,0,30,160,160,31,25,25,,,,,,,,,,,,,,,,36,46,32,0,33,55,,,38,1
+Giải trại khôi,0,7,11,\spr\item\equip\cap\obj-fm-cap15-2.spr,31,2,2,"""Loại mũ đã được yếm bùa chú, tượng trưng cho quyền lực. """,,8100,9,0,30,180,180,31,27,27,,,,,,,,,,,,,,,,36,53,32,0,33,60,,,38,1
+Long lân khôi,0,7,11,\spr\item\equip\cap\obj-fm-cap15-3.spr,31,2,2,"""Khôi phát ra hào quang như rồng lân uốn lượn, Vừa nhìn đã biết ngay là một phẩm vật cực kỳ quý hiếm. """,,10000,10,0,30,200,200,31,30,30,,,,,,,,,,,,,,,,36,60,32,0,33,65,,,38,1
+Bố mão,0,7,12,\spr\item\equip\cap\obj-fm-cap16-1.spr,28,2,2,Loại mũ thông thường. ,,60,1,0,30,45,45,31,10,10,,,,,,,,,,,,,,,,36,1,32,35,33,0,,,38,1
+Viên đỉnh mão,0,7,12,\spr\item\equip\cap\obj-fm-cap16-1.spr,28,2,2,Loại mũ bằng vải có đỉnh tròn. ,,160,2,0,30,75,75,31,13,13,,,,,,,,,,,,,,,,36,7,32,60,33,0,,,38,1
+Phạm văn mão,0,7,12,\spr\item\equip\cap\obj-fm-cap16-2.spr,28,2,2,"""Loại áo truyền thống của Phật gia, trên đầu có ấn Phật. """,,370,3,0,30,105,105,31,16,16,,,,,,,,,,,,,,,,36,13,32,85,33,0,,,38,1
+Thanh văn khôi,0,7,12,\spr\item\equip\cap\obj-fm-cap16-3.spr,28,2,2,Loại khôi có rất nhiều hoa văn. ,,600,4,0,30,135,135,31,19,19,,,,,,,,,,,,,,,,36,19,32,110,33,0,,,38,1
+Hồng anh thoa,0,7,12,\spr\item\equip\cap\obj-fm-cap17-1.spr,30,2,2,"""Loại thoa có các tua nhỏ bằng lông chim rũ xuống, cao quý mỹ lệ. """,,900,5,0,30,165,165,31,22,22,,,,,,,,,,,,,,,,36,26,32,135,33,0,,,38,1
+Xích huyết thoa,0,7,12,\spr\item\equip\cap\obj-fm-cap17-2.spr,30,2,2,"""Một loại trâm thoa quý hiếm, có màu đỏ như huyết. """,,1200,6,0,30,195,195,31,25,25,,,,,,,,,,,,,,,,36,33,32,160,33,0,,,38,1
+Lưu ly thoa,0,7,12,\spr\item\equip\cap\obj-fm-cap17-3.spr,30,2,2,"""Thoa làm từ ngọc Lưu Ly, cực kỳ quý hiếm. """,,1800,7,0,30,225,225,31,28,28,,,,,,,,,,,,,,,,36,40,32,185,33,0,,,38,1
+Lộc nhĩ thoa,0,7,12,\spr\item\equip\cap\obj-fm-cap18-1.spr,30,2,2,"""Thoa làm từ gạc hươu, vừa đẹp vừa hữu dụng. """,,2500,8,0,30,255,255,31,31,31,,,,,,,,,,,,,,,,36,46,32,210,33,0,,,38,1
+Lam tinh thoa,0,7,12,\spr\item\equip\cap\obj-fm-cap18-2.spr,30,2,2,"""Thoa có khảm thủy tinh, cực kỳ quý hiếm. """,,3000,9,0,30,285,285,31,34,34,,,,,,,,,,,,,,,,36,53,32,235,33,0,,,38,1
+Thanh tinh thoa,0,7,12,\spr\item\equip\cap\obj-fm-cap18-3.spr,30,2,2,"""Thoa có khảm thủy tinh xanh, ánh sáng huyền ảo, cực kỳ quý hiếm""",,3700,10,0,30,315,315,31,37,37,,,,,,,,,,,,,,,,36,60,32,260,33,0,,,38,1
+Hoàng bố phát đái,0,7,13,\spr\item\equip\cap\obj-fm-cap19-1.spr,28,2,2,Một loại đai thắt thông thường. ,,120,1,0,30,25,25,31,8,8,,,,,,,,,,,,,,,,36,1,32,30,33,20,,,38,1
+Hoàng bố phát đái,0,7,13,\spr\item\equip\cap\obj-fm-cap19-1.spr,28,2,2,Một loại đai thắt thông thường. ,,320,2,0,30,50,50,31,10,10,,,,,,,,,,,,,,,,36,7,32,45,33,25,,,38,1
+Hoàng bố phát đái,0,7,13,\spr\item\equip\cap\obj-fm-cap19-1.spr,28,2,2,Một loại đai thắt thông thường. ,,750,3,0,30,75,75,31,13,13,,,,,,,,,,,,,,,,36,13,32,60,33,30,,,38,1
+Hoàng bố phát đái,0,7,13,\spr\item\equip\cap\obj-fm-cap19-1.spr,28,2,2,Một loại đai thắt thông thường. ,,1200,4,0,30,100,100,31,15,15,,,,,,,,,,,,,,,,36,19,32,75,33,35,,,38,1
+Hoàng đồng phát xoa,0,7,13,\spr\item\equip\cap\obj-fm-cap20-1.spr,30,2,2,"""Loại trâm cài bằng đồng, giá trị tầm thường. """,,1800,5,0,30,125,125,31,17,17,,,,,,,,,,,,,,,,36,26,32,90,33,40,,,38,1
+Hồng mã não phát xoa,0,7,13,\spr\item\equip\cap\obj-fm-cap20-2.spr,30,2,2,Loại trâm cài bằng Mã Não pha lẫn nhiều loại bảo thạch. ,,2500,6,0,30,150,150,31,20,20,,,,,,,,,,,,,,,,36,33,32,105,33,45,,,38,1
+Thanh lưu ly phát xoa,0,7,13,\spr\item\equip\cap\obj-fm-cap20-3.spr,30,2,2,Loại trâm cài bằng Lưu Ly pha lẫn nhiều loại bảo thạch. ,,3700,7,0,30,175,175,31,22,22,,,,,,,,,,,,,,,,36,40,32,120,33,50,,,38,1
+Huy thủy khôi,0,7,13,\spr\item\equip\cap\obj-fm-cap21-1.spr,29,2,2,Loại khôi giáp chỉ dành riêng cho các tướng lĩnh chỉ huy. ,,5000,8,0,30,200,200,31,25,25,,,,,,,,,,,,,,,,36,46,32,135,33,55,,,38,1
+Phụng nhãn khôi,0,7,13,\spr\item\equip\cap\obj-fm-cap21-2.spr,29,2,2,Loại khôi giáp có hình dáng như đầu chim phụng. ,,6000,9,0,30,225,225,31,27,27,,,,,,,,,,,,,,,,36,53,32,150,33,60,,,38,1
+Kim phụng triển sí,0,7,13,\spr\item\equip\cap\obj-fm-cap21-3.spr,29,2,2,"""Loại khôi giáp có hình dáng như đầu chim phụng, chỉ dành cho tướng lĩnh. """,,7500,10,0,30,250,250,31,30,30,,,,,,,,,,,,,,,,36,60,32,165,33,65,,,38,1

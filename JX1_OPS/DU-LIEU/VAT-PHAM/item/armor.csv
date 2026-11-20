@@ -1,0 +1,291 @@
+﻿名称,道具种类,具体类别,详细类别,动画文件名,对应物件索引,宽度,高度,说明文字,五行属性,价格,等级,是否叠放,基础属性1类型,基础属性1最小值,基础属性1最大值,基础属性2类型,基础属性2最小值,基础属性2最大值,基础属性3类型,基础属性3最小值,基础属性3最大值,基础属性4类型,基础属性4最小值,基础属性4最大值,基础属性5类型,基础属性5最小值,基础属性5最大值,基础属性6类型,基础属性6最小值,基础属性6最大值,基础属性7类型,基础属性7最小值,基础属性7最大值,需求属性1类型,需求属性1数值,需求属性2类型,需求属性2数值,需求属性3类型,需求属性3数值,需求属性4类型,需求属性4数值,需求属性5类型,需求属性5数值,需求属性6类型,需求属性6数值
+Sa di phục,0,2,0,\spr\item\equip\armor\obj-ma-cloth01-1.spr,22,2,3,Tăng y dành cho các tiểu Sa Di vừa nhập môn,,100,1,0,30,50,50,31,15,15,,,,,,,,,,,,,,,,36,1,32,30,,,,,38,0,,
+Tăng y,0,2,0,\spr\item\equip\armor\obj-ma-cloth01-1.spr,22,2,3,Y phục tăng nhân thường mặc,,400,2,0,30,100,100,31,20,20,,,,,,,,,,,,,,,,36,7,32,50,,,,,38,0,,
+Bách nạp y,0,2,0,\spr\item\equip\armor\obj-ma-cloth01-2.spr,22,2,3,Thường phục chủ yếu của các Tăng nhân Hán triều,,800,3,0,30,150,150,31,25,25,,,,,,,,,,,,,,,,36,13,32,70,,,,,38,0,,
+An đà hội,0,2,0,\spr\item\equip\armor\obj-ma-cloth01-3.spr,22,2,3,"""Còn gọi là Ngũ Điều y, áo của các tăng nhân mặc trong những lúc thông thường""",,1000,4,0,30,200,200,31,30,30,,,,,,,,,,,,,,,,36,19,32,90,,,,,38,0,,
+Uất đa la tăng,0,2,0,\spr\item\equip\armor\obj-ma-cloth02-1.spr,22,2,3,"""Còn gọi là Thất Điều y, áo của các tăng nhân mặc trong những lúc trang nghiêm""",,2000,5,0,30,250,250,31,35,35,,,,,,,,,,,,,,,,36,26,32,110,,,,,38,0,,
+Tăng già y,0,2,0,\spr\item\equip\armor\obj-ma-cloth02-2.spr,22,2,3,"""Lễ phục của Tăng nhân, mặc trong những lúc trang nghiêm""",,3000,6,0,30,300,300,31,40,40,,,,,,,,,,,,,,,,36,33,32,130,,,,,38,0,,
+Nguyệt bạch cà sa,0,2,0,\spr\item\equip\armor\obj-ma-cloth02-3.spr,22,2,3,"""Còn gọi là Thất Điều y, y phục của các tăng nhân chức vị cao""",,4000,7,0,30,250,250,31,45,45,,,,,,,,,,,,,,,,36,40,32,150,,,,,38,0,,
+Minh tĩnh cà sa,0,2,0,\spr\item\equip\armor\obj-ma-cloth03-1.spr,22,2,3,Y phục thường ngày của các vị cao tăng,,5000,8,0,30,400,400,31,50,50,,,,,,,,,,,,,,,,36,46,32,170,,,,,38,0,,
+Kim lô cà sa,0,2,0,\spr\item\equip\armor\obj-ma-cloth03-2.spr,22,2,3,bảo vật của Phật môn,,7500,9,0,30,450,450,31,55,55,,,,,,,,,,,,,,,,36,53,32,190,,,,,38,0,,
+Thất bảo cà sa,0,2,0,\spr\item\equip\armor\obj-ma-cloth03-3.spr,22,2,3,"""Là """"Phật môn chi bảo"""", do Phật Tổ tặng cho Đường Tam Tạng khi đi thỉnh kinh""",,10000,10,0,30,500,500,31,60,60,,,,,,,,,,,,,,,,36,60,32,210,,,,,38,0,,
+Đạo sĩ trường bào,0,2,1,\spr\item\equip\armor\obj-ma-cloth04-1.spr,24,2,3,Là y phục của các đạo sĩ thường mặc khi luyện võ,,100,1,0,30,30,30,31,15,15,,,,,,,,,,,,,,,,36,1,32,20,,,,,38,0,37,4
+Đạo sĩ trường bào,0,2,1,\spr\item\equip\armor\obj-ma-cloth04-1.spr,24,2,3,Y phục thường ngày của Đạo sĩ,,300,2,0,30,60,60,31,20,20,,,,,,,,,,,,,,,,36,7,32,30,,,,,38,0,37,4
+Tĩnh y,0,2,1,\spr\item\equip\armor\obj-ma-cloth04-2.spr,24,2,3,Lễ phục của các Đạo sĩ thường mặc khi làm phép,,600,3,0,30,90,90,31,25,25,,,,,,,,,,,,,,,,36,13,32,40,,,,,38,0,37,4
+Thanh tùng pháp bào,0,2,1,\spr\item\equip\armor\obj-ma-cloth04-3.spr,24,2,3,Y phục của những đạo sĩ mới nhập môn,,900,4,0,30,120,120,31,30,30,,,,,,,,,,,,,,,,36,19,32,50,,,,,38,0,37,4
+Thiên sư đạo bào,0,2,1,\spr\item\equip\armor\obj-ma-cloth05-1.spr,24,2,3,"""Y phục chỉ dành cho những người đạo hạnh thâm sâu, được tôn danh Thiên Sư""",,1600,5,0,30,150,150,31,35,35,,,,,,,,,,,,,,,,36,26,32,60,,,,,38,0,37,4
+Huyền võ pháp y,0,2,1,\spr\item\equip\armor\obj-ma-cloth05-2.spr,24,2,3,"""Tập hợp linh khí Huyền Võ, """"Huyền môn chi bảo""""""",,2500,6,0,30,180,180,31,40,40,,,,,,,,,,,,,,,,36,33,32,70,,,,,38,0,37,4
+Thất bảo hạ y,0,2,1,\spr\item\equip\armor\obj-ma-cloth05-3.spr,24,2,3,"""Trong bên ngoài có vẻ tầm thường, nhưng thực chất là một """"bảo y""""""",,3500,7,0,30,210,210,31,45,45,,,,,,,,,,,,,,,,36,40,32,80,,,,,38,0,37,4
+Tam thanh bào,0,2,1,\spr\item\equip\armor\obj-ma-cloth06-1.spr,24,2,3,"""Phản tà quy chánh, người mặc nó luôn có lòng thiện tâm. """,,4500,8,0,30,240,240,31,50,50,,,,,,,,,,,,,,,,36,46,32,90,,,,,38,0,37,4
+Thiên niên hạc sưởng,0,2,1,\spr\item\equip\armor\obj-ma-cloth06-2.spr,24,2,3,"""Dùng lông Hạc để điểm xuyến xung quanh, đây chính là sự tượng trưng cho trí huệ. """,,6000,9,0,30,270,270,31,55,55,,,,,,,,,,,,,,,,36,53,32,100,,,,,38,0,37,4
+Chân thức thánh y,0,2,1,\spr\item\equip\armor\obj-ma-cloth06-3.spr,24,2,3,Mặc vào sẽ giúp ta tăng nhanh thần lực,,8000,10,0,30,300,300,31,60,60,,,,,,,,,,,,,,,,36,60,32,110,,,,,38,0,37,4
+Cổn y,0,2,2,\spr\item\equip\armor\obj-ma-cloth07-1.spr,22,2,3,áo dành cho các sát thủ cấp thấp nhất ẩn giấu thân phận,,100,1,0,30,80,80,31,20,20,,,,,,,,,,,,,,,,36,1,32,30,33,20,,,38,0,,
+Tế trúc cổn y,0,2,2,\spr\item\equip\armor\obj-ma-cloth07-1.spr,22,2,3,Cổn y được đặc chế,,500,2,0,30,135,135,31,25,25,,,,,,,,,,,,,,,,36,7,32,50,33,30,,,38,0,,
+Thích khách y,0,2,2,\spr\item\equip\armor\obj-ma-cloth07-2.spr,22,2,3,Cũng giống như Cổn y nhưng có nhiều túi để chứa ám khí. ,,1000,3,0,30,190,190,31,30,30,,,,,,,,,,,,,,,,36,13,32,70,33,40,,,38,0,,
+Mộng mị y,0,2,2,\spr\item\equip\armor\obj-ma-cloth07-3.spr,22,2,3,"""Dùng các vật liệu đặc biệt mà chế thành, sử dụng linh hoạt. """,,2500,4,0,30,245,245,31,35,35,,,,,,,,,,,,,,,,36,19,32,90,33,50,,,38,0,,
+Vô sắc y,0,2,2,\spr\item\equip\armor\obj-ma-cloth08-1.spr,22,2,3,"""Có thể tàng hình đi vào nhiều nơi, thích hợp cho sát thủ""",,6000,5,0,30,300,300,31,40,40,,,,,,,,,,,,,,,,36,26,32,110,33,60,,,38,0,,
+Ngư nhẫn y,0,2,2,\spr\item\equip\armor\obj-ma-cloth08-2.spr,22,2,3,Trang bị cho các sát thủ cấp cao. ,,10000,6,0,30,355,355,31,45,45,,,,,,,,,,,,,,,,36,33,32,130,33,70,,,38,0,,
+Liên vân y,0,2,2,\spr\item\equip\armor\obj-ma-cloth08-3.spr,22,2,3,"""Y phục hiếm có, tính linh hoạt và tính phòng ngự cực cao""",,15000,7,0,30,410,410,31,50,50,,,,,,,,,,,,,,,,36,40,32,150,33,80,,,38,0,,
+Thiên mộng y,0,2,2,\spr\item\equip\armor\obj-ma-cloth09-1.spr,22,2,3,"""Người mặc vào hình bóng giống như trong mơ, không thể bắt được""",,20000,8,0,30,465,465,31,55,55,,,,,,,,,,,,,,,,36,46,32,170,33,90,,,38,0,,
+Vô dung kính y,0,2,2,\spr\item\equip\armor\obj-ma-cloth09-2.spr,22,2,3,"""Là thứ áo mà các thích khách đều thích trang bị, có thể giấu được nhiều ám khí. """,,25000,9,0,30,520,520,31,60,60,,,,,,,,,,,,,,,,36,53,32,190,33,100,,,38,0,,
+Thiên nhẫn mật y,0,2,2,\spr\item\equip\armor\obj-ma-cloth09-3.spr,22,2,3,"""Tập trung sát khí vô biên, gặp thần giết thần, gặp Phật giết Phật. """,,30000,10,0,30,575,575,31,65,65,,,,,,,,,,,,,,,,36,60,32,210,33,110,,,38,0,,
+Thô bố trường bào,0,2,3,\spr\item\equip\armor\obj-ma-cloth10-1.spr,22,2,3,Do các loại vải thô dệt thành,,100,1,0,30,50,50,31,20,20,,,,,,,,,,,,,,,,36,1,32,30,33,30,,,38,0,,
+Khinh cát sam,0,2,3,\spr\item\equip\armor\obj-ma-cloth10-1.spr,22,2,3,"""Tơ Cát dệt thành, chắc chắn khó xuyên. """,,400,2,0,30,100,100,31,26,26,,,,,,,,,,,,,,,,36,7,32,45,33,45,,,38,0
+Đoạn bào,0,2,3,\spr\item\equip\armor\obj-ma-cloth10-2.spr,22,2,3,"""Cẩm đoạn dệt thành, mềm mại thoải mái. """,,800,3,0,30,150,150,31,32,32,,,,,,,,,,,,,,,,36,13,32,60,33,60,,,38,0
+Dật hiệp y,0,2,3,\spr\item\equip\armor\obj-ma-cloth10-3.spr,22,2,3,"""Thích hợp với các hiệp khách, nhẹ nhàng linh hoạt. """,,2000,4,0,30,200,200,31,38,38,,,,,,,,,,,,,,,,36,19,32,75,33,75,,,38,0
+Nhiệm hiệp phục,0,2,3,\spr\item\equip\armor\obj-ma-cloth11-1.spr,22,2,3,Là loại y phục mà các hiệp khách ở Ngũ Lăng thường mặc. ,,5000,5,0,30,250,250,31,44,44,,,,,,,,,,,,,,,,36,26,32,90,33,90,,,38,0
+Lưu thái phục,0,2,3,\spr\item\equip\armor\obj-ma-cloth11-2.spr,22,2,3,"""Dáng vẻ nho nhã, mềm mại mà nghiêm trang. """,,7000,6,0,30,300,300,31,50,50,,,,,,,,,,,,,,,,36,33,32,105,33,105,,,38,0
+Ngân tơ bào,0,2,3,\spr\item\equip\armor\obj-ma-cloth11-3.spr,22,2,3,"""Dùng Tàm tơ phối hợp với Ngân tơ chế thành, có khả năng phòng ngự cực tốt. """,,9000,7,0,30,350,350,31,56,56,,,,,,,,,,,,,,,,36,40,32,120,33,120,,,38,0
+Tử kim bào,0,2,3,\spr\item\equip\armor\obj-ma-cloth12-1.spr,22,2,3,"""Dùng Tàm tơ phối hợp với Kim tơ chế thành, vừa danh quý vừa có thể hộ thân. """,,12000,8,0,30,400,400,31,62,62,,,,,,,,,,,,,,,,36,46,32,135,33,135,,,38,0
+Hàn sương bào,0,2,3,\spr\item\equip\armor\obj-ma-cloth12-2.spr,22,2,3,"""Dùng Tàm tơ phối hợp với Bạch Kim tơ chế thành, danh quý vô cùng. """,,16000,9,0,30,450,450,31,68,68,,,,,,,,,,,,,,,,36,53,32,150,33,150,,,38,0
+Giáng sa bào,0,2,3,\spr\item\equip\armor\obj-ma-cloth12-3.spr,22,2,3,"""Dùng Giáng Sa chế thành, dùng cho các bậc đế vương, cao quý khó tả. """,,20000,10,0,30,500,500,31,74,74,,,,,,,,,,,,,,,,36,60,32,165,33,165,,,38,0
+Tỏa tử giáp,0,2,4,\spr\item\equip\armor\obj-ma-cloth13-1.spr,23,2,3,"""Trang bị cho những sĩ tốt trong quân đội, sức phòng ngự kém. """,,400,1,0,30,90,90,31,30,30,,,,,,,,,,,,,,,,36,1,32,35,,,,,38,0
+Lưỡng đáng khải,0,2,4,\spr\item\equip\armor\obj-ma-cloth13-1.spr,23,2,3,"""Do hai mảnh trước sau hợp thành, thời Phổ Đường thường thấy. """,,1000,2,0,30,150,150,31,37,37,,,,,,,,,,,,,,,,36,7,32,60,,,,,38,0
+Minh quang khải,0,2,4,\spr\item\equip\armor\obj-ma-cloth13-2.spr,23,2,3,Loại áo giáp thường trang bị cho binh sĩ thời Đường. ,,2500,3,0,30,210,210,31,44,44,,,,,,,,,,,,,,,,36,13,32,85,,,,,38,0
+Tế lân giáp,0,2,4,\spr\item\equip\armor\obj-ma-cloth13-3.spr,23,2,3,"""Do nhiều miếng thép mỏng ghép thành, gọn nhẹ linh hoạt. """,,5000,4,0,30,270,270,31,51,51,,,,,,,,,,,,,,,,36,19,32,110,,,,,38,0
+Ô chùy giáp,0,2,4,\spr\item\equip\armor\obj-ma-cloth14-1.spr,23,2,3,"""áo giáp như hình dáng quạ, gọn nhẹ linh hoạt. """,,10000,5,0,30,330,330,31,58,58,,,,,,,,,,,,,,,,36,26,32,135,,,,,38,0
+Sơn văn tự giáp,0,2,4,\spr\item\equip\armor\obj-ma-cloth14-2.spr,23,2,3,"""Là một mảnh áo giáp. giữa lồi, hai bên lõm, công dụng chống tên. """,,16000,6,0,30,390,390,31,65,65,,,,,,,,,,,,,,,,36,33,32,160,,,,,38,0
+Giải trại giáp,0,2,4,\spr\item\equip\armor\obj-ma-cloth14-3.spr,23,2,3,"""Dùng toàn da của quái thú và da Giải Trại kết thành, kiên cố vô cùng. """,,25000,7,0,30,450,450,31,72,72,,,,,,,,,,,,,,,,36,40,32,185,,,,,38,0
+Toan nghê giáp,0,2,4,\spr\item\equip\armor\obj-ma-cloth15-1.spr,23,2,3,"""Là loại áo giáp của các danh tướng, đao tên không thể xuyên thủng. """,,32000,8,0,30,510,510,31,79,79,,,,,,,,,,,,,,,,36,46,32,210,,,,,38,0
+Tỏa tử hoàng kim giáp,0,2,4,\spr\item\equip\armor\obj-ma-cloth15-2.spr,23,2,3,"""Thiên hạ vang danh, đao tên không thể phạm vào da""",,40000,9,0,30,570,570,31,86,86,,,,,,,,,,,,,,,,36,53,32,235,,,,,38,0
+Đường nghê giáp,0,2,4,\spr\item\equip\armor\obj-ma-cloth15-3.spr,23,2,3,"""truyền thiết đây là hộ thân bảo giáp của Lã Ôn Hầu, là hộ pháp cực phẩm""",,50000,10,0,30,630,630,31,93,93,,,,,,,,,,,,,,,,36,60,32,260,,,,,38,0
+Lan bố y,0,2,5,\spr\item\equip\armor\obj-ma-cloth16-1.spr,22,2,3,"""là thứ vải bằng võ cây, chỉ mặc những lúc bình thường""",,100,1,0,30,20,20,31,12,12,,,,,,,,,,,,,,,,36,1,32,0,,,,,38,0
+Phổ thông cái y,0,2,5,\spr\item\equip\armor\obj-ma-cloth16-1.spr,22,2,3,"""Là y phục của những người ăn mày bình thường, giống như Bố y, có rất nhiều túi""",,250,2,0,30,90,90,31,16,16,,,,,,,,,,,,,,,,36,7,32,45,,,39,6,38,0
+áo ăn mày,0,2,5,\spr\item\equip\armor\obj-ma-cloth16-2.spr,22,2,3,"""Là y phục của những người ăn mày bình thường, dành cho người cấp thấp nhất""",,500,3,0,30,140,140,31,20,20,,,,,,,,,,,,,,,,36,13,32,60,,,39,6,38,0
+Thổ ma cái y,0,2,5,\spr\item\equip\armor\obj-ma-cloth16-3.spr,22,2,3,Là y phục của những người ăn mày bình thườnglàm bằng vỏ cây,,800,4,0,30,185,185,31,24,24,,,,,,,,,,,,,,,,36,19,32,75,,,39,6,38,0
+Tầm ma cái y,0,2,5,\spr\item\equip\armor\obj-ma-cloth17-1.spr,22,2,3,"""Thường phục của Cái Bang trưởng lão, tinh chế từ những cây Tầm Ma. """,,1200,5,0,30,230,230,31,28,28,,,,,,,,,,,,,,,,36,26,32,90,,,39,6,38,0
+Hỏa ma cái y,0,2,5,\spr\item\equip\armor\obj-ma-cloth17-2.spr,22,2,3,"""Thường phục của Cái Bang trưởng lão, dùng vỏ cây Hỏa Ma chế thành, Tương đối kiên cố. """,,1800,6,0,30,270,270,31,32,32,,,,,,,,,,,,,,,,36,33,32,105,,,39,6,38,0
+Thập phương cái y,0,2,5,\spr\item\equip\armor\obj-ma-cloth17-3.spr,22,2,3,"""Thường phục của Cái Bang trưởng lão, rộng mà không dư, thích hợp chiến đấu""",,2500,7,0,30,315,315,31,36,36,,,,,,,,,,,,,,,,36,40,32,120,,,39,6,38,0
+Bách kết cái y,0,2,5,\spr\item\equip\armor\obj-ma-cloth18-1.spr,22,2,3,"""Thường phục của các trưởng lão 9 túi, chỉ có bang chủ và trưởng lão 9 túi mới được dùng""",,3200,8,0,30,360,360,31,40,40,,,,,,,,,,,,,,,,36,46,32,135,,,39,6,38,0
+Triền tơ thiên kết phục,0,2,5,\spr\item\equip\armor\obj-ma-cloth18-2.spr,22,2,3,"""Do vô vàn sợi tơ kết thành, người mặc vào sẽ có thiện tính""",,4000,9,0,30,405,405,31,44,44,,,,,,,,,,,,,,,,36,53,32,150,,,39,6,38,0
+Vạn lưu quy tông y,0,2,5,\spr\item\equip\armor\obj-ma-cloth18-3.spr,22,2,3,"""Y phục dành cho bang chủ Cái Bang và các vị trưởng lão 10 túi, tượng trưng cho võ công và đia vị. """,,5000,10,0,30,450,450,31,48,48,,,,,,,,,,,,,,,,36,60,32,165,,,39,6,38,0
+áo vải thô,0,2,6,\spr\item\equip\armor\obj-ma-cloth19-1.spr,22,2,3,"""áo vải thô sơ, không có tên gọi""",,100,1,0,30,30,30,31,15,15,,,,,,,,,,,,,,,,36,1,32,0,,,,,38,0
+áo vải thô,0,2,6,\spr\item\equip\armor\obj-ma-cloth19-1.spr,22,2,3,"""áo vải thô sơ, không có tên gọi""",,100,2,0,30,30,30,31,20,20,,,,,,,,,,,,,,,,36,1,32,0,,,,,38,0
+áo vải thô,0,2,6,\spr\item\equip\armor\obj-ma-cloth19-1.spr,22,2,3,"""áo vải thô sơ, không có tên gọi""",,100,3,0,30,30,30,31,25,25,,,,,,,,,,,,,,,,36,1,32,0,,,,,38,0
+áo vải thô,0,2,6,\spr\item\equip\armor\obj-ma-cloth19-1.spr,22,2,3,"""áo vải thô sơ, không có tên gọi""",,100,4,0,30,30,30,31,30,30,,,,,,,,,,,,,,,,36,1,32,0,,,,,38,0
+Hoàng cẩm đoản y,0,2,6,\spr\item\equip\armor\obj-ma-cloth20-1.spr,22,2,3,"""Cẩm y tinh chế, gọn nhẹ linh hoạt. """,,6000,5,0,30,150,150,31,35,35,,,,,,,,,,,,,,,,36,26,32,0,,,,,38,0
+Chức giáp đoản sam,0,2,6,\spr\item\equip\armor\obj-ma-cloth20-2.spr,22,2,3,"""Bên trong có khảm giáp, có khả năng phòng ngự. """,,10000,6,0,30,180,180,31,40,40,,,,,,,,,,,,,,,,36,33,32,0,,,,,38,0
+Huyền hoàng đoản giáp,0,2,6,\spr\item\equip\armor\obj-ma-cloth20-3.spr,22,2,3,"""Bên ngoài là áo, bên trong thực chất là một áo giáp, sức phòng ngự cự hạn. """,,15000,7,0,30,210,210,31,45,45,,,,,,,,,,,,,,,,36,40,32,0,,,,,38,0
+Bích hoa bào,0,2,6,\spr\item\equip\armor\obj-ma-cloth21-1.spr,22,2,3,"""Dệt từ tơ Bích Tàm, mềm mại """,,20000,8,0,30,240,240,31,50,50,,,,,,,,,,,,,,,,36,46,32,0,,,,,38,0
+Tương như bào,0,2,6,\spr\item\equip\armor\obj-ma-cloth21-2.spr,22,2,3,áo này sẽ làm cho người mặc nó có một khí phách bất phàm,,25000,9,0,30,270,270,31,55,55,,,,,,,,,,,,,,,,36,53,32,0,,,,,38,0
+Tuyền long bào,0,2,6,\spr\item\equip\armor\obj-ma-cloth21-3.spr,22,2,3,Phải hao sức của 100 người thợ rèn làm trong mười năm,,30000,10,0,30,300,300,31,60,60,,,,,,,,,,,,,,,,36,60,32,0,,,,,38,0
+Sa ni phục,0,2,7,\spr\item\equip\armor\obj-fm-cloth01-1.spr,22,2,3,Tăng y dành cho các tiểu Sa Di vừa nhập môn,,100,1,0,30,50,50,31,15,15,,,,,,,,,,,,,,,,36,1,32,15,,,,,38,1
+Tăng y,0,2,7,\spr\item\equip\armor\obj-fm-cloth01-1.spr,22,2,3,Y phục tăng nhân thường mặc,,400,2,0,30,100,100,31,20,20,,,,,,,,,,,,,,,,36,7,32,30,,,,,38,1
+Bách nạp y,0,2,7,\spr\item\equip\armor\obj-fm-cloth01-2.spr,22,2,3,Thường phục chủ yếu của các Tăng nhân Hán triều,,800,3,0,30,150,150,31,25,25,,,,,,,,,,,,,,,,36,13,32,45,,,,,38,1
+An đà hội,0,2,7,\spr\item\equip\armor\obj-fm-cloth01-3.spr,22,2,3,"""Còn gọi là Ngũ Điều y, áo của các tăng nhân mặc trong những lúc thông thường""",,1000,4,0,30,200,200,31,30,30,,,,,,,,,,,,,,,,36,19,32,60,,,,,38,1
+Uất đa la tăng,0,2,7,\spr\item\equip\armor\obj-fm-cloth02-1.spr,22,2,3,"""Còn gọi là Thất Điều y, áo của các tăng nhân mặc trong những lúc trang nghiêm""",,2000,5,0,30,250,250,31,35,35,,,,,,,,,,,,,,,,36,26,32,75,,,,,38,1
+Tăng già y,0,2,7,\spr\item\equip\armor\obj-fm-cloth02-2.spr,22,2,3,"""Lễ phục của Tăng nhân, mặc trong những lúc trang nghiêm""",,3000,6,0,30,300,300,31,40,40,,,,,,,,,,,,,,,,36,33,32,90,,,,,38,1
+Nguyệt bạch cà sa,0,2,7,\spr\item\equip\armor\obj-fm-cloth02-3.spr,22,2,3,"""Còn gọi là Thất Điều y, y phục của các tăng nhân chức vị cao""",,4000,7,0,30,350,350,31,45,45,,,,,,,,,,,,,,,,36,40,32,105,,,,,38,1
+Minh tĩnh cà sa,0,2,7,\spr\item\equip\armor\obj-fm-cloth03-1.spr,22,2,3,Y phục thường ngày của các vị cao tăng,,5000,8,0,30,400,400,31,50,50,,,,,,,,,,,,,,,,36,46,32,120,,,,,38,1
+Kim lô cà sa,0,2,7,\spr\item\equip\armor\obj-fm-cloth03-2.spr,22,2,3,bảo vật của Phật môn,,7500,9,0,30,450,450,31,55,55,,,,,,,,,,,,,,,,36,53,32,135,,,,,38,1
+Thất bảo cà sa,0,2,7,\spr\item\equip\armor\obj-fm-cloth03-3.spr,22,2,3,"""Là """"Phật môn chi bảo"""", do Phật Tổ tặng cho Đường Tam Tạng khi đi thỉnh kinh""",,10000,10,0,30,500,500,31,60,60,,,,,,,,,,,,,,,,36,60,32,150,,,,,38,1,,
+Nữ thức đạo y,0,2,8,\spr\item\equip\armor\obj-fm-cloth04-1.spr,24,2,3,Y phục thường nhật của các nữ đạo sĩ. ,,100,1,0,30,30,30,31,15,15,,,,,,,,,,,,,,,,36,1,32,20,,,,,38,1,37,4
+Tu chân đạo y,0,2,8,\spr\item\equip\armor\obj-fm-cloth04-1.spr,24,2,3,Y phục làm việc của các nữ đạo sĩ nghèo,,300,2,0,30,60,60,31,20,20,,,,,,,,,,,,,,,,36,7,32,30,,,,,38,1,37,4
+Hỏa hoàn đạo y,0,2,8,\spr\item\equip\armor\obj-fm-cloth04-2.spr,24,2,3,Đạo y cao cấp được làm từ vải Hỏa Hoàn,,600,3,0,30,90,90,31,25,25,,,,,,,,,,,,,,,,36,13,32,40,,,,,38,1,37,4
+Bích hà đạo y,0,2,8,\spr\item\equip\armor\obj-fm-cloth04-3.spr,24,2,3,"""Màu sắc thanh thoát, tuy là đạo y nhưng cũng không kém phần linh động""",,900,4,0,30,120,120,31,30,30,,,,,,,,,,,,,,,,36,19,32,50,,,,,38,1,37,4
+Bát quái đạo y,0,2,8,\spr\item\equip\armor\obj-fm-cloth05-1.spr,24,2,3,Y phục của những đạo sĩ mới nhập môn,,1600,5,0,30,150,150,31,35,35,,,,,,,,,,,,,,,,36,26,32,60,,,,,38,1,37,4
+Hàn mai đạo y,0,2,8,\spr\item\equip\armor\obj-fm-cloth05-2.spr,24,2,3,"""Tuyệt phẩm đạo y của các nữ đạo sĩ, tuy nghiêm trang mà thanh thoát""",,2500,6,0,30,180,180,31,40,40,,,,,,,,,,,,,,,,36,33,32,70,,,,,38,1,37,4
+Vô cực đạo y,0,2,8,\spr\item\equip\armor\obj-fm-cloth05-3.spr,24,2,3,"""Đại thành vô dụng, đại đạo vô cực. """,,3500,7,0,30,210,210,31,45,45,,,,,,,,,,,,,,,,36,40,32,80,,,,,38,1,37,4
+Địa duyên đạo y,0,2,8,\spr\item\equip\armor\obj-fm-cloth06-1.spr,24,2,3,Là một bảo y có chứa Âm Linh khí. ,,4500,8,0,30,240,240,31,50,50,,,,,,,,,,,,,,,,36,46,32,90,,,,,38,1,37,4
+Băng tàm đạo y,0,2,8,\spr\item\equip\armor\obj-fm-cloth06-2.spr,24,2,3,"""Tơ của Băng Tàm kết thành, người mặc vào cốt cách như thần tiên""",,6000,9,0,30,270,270,31,55,55,,,,,,,,,,,,,,,,36,53,32,100,,,,,38,1,37,4
+Long tiêu đạo nhân,0,2,8,\spr\item\equip\armor\obj-fm-cloth06-3.spr,24,2,3,"""Đạo y được kết bằng nhiều thứ lụa quý, cốt cách phi thường, có thể xem là bảo bối. """,,8000,10,0,30,300,300,31,60,60,,,,,,,,,,,,,,,,36,60,32,110,,,,,38,1,37,4
+Thục cẩm y,0,2,9,\spr\item\equip\armor\obj-fm-cloth07-1.spr,24,2,3,"""Kết bằng thứ tơ điều của vùng tỷ Xuyên, chắc chắn khó xuyên""",,100,1,0,30,80,80,31,20,20,,,,,,,,,,,,,,,,36,1,32,30,33,20,,,38,1,,
+Lăng tơ y,0,2,9,\spr\item\equip\armor\obj-fm-cloth07-1.spr,24,2,3,Là nữ y cao cấp dệt bẳng tơ thượng hạng. ,,500,2,0,30,135,135,31,26,26,,,,,,,,,,,,,,,,36,7,32,50,33,25,,,38,1,,
+Cẩm trọng y,0,2,9,\spr\item\equip\armor\obj-fm-cloth07-2.spr,24,2,3,Là nữ y cao cấp dệt bẳng tơ thượng hạng. ,,1000,3,0,30,190,190,31,32,32,,,,,,,,,,,,,,,,36,13,32,70,33,30,,,38,1,,
+Linh xà y,0,2,9,\spr\item\equip\armor\obj-fm-cloth07-3.spr,24,2,3,"""Giống như khoát trên người một tấm da rắn, cử động cực kỳ linh hoạt""",,2500,4,0,30,245,245,31,38,38,,,,,,,,,,,,,,,,36,19,32,90,33,35,,,38,1,,
+Huyền ly y,0,2,9,\spr\item\equip\armor\obj-fm-cloth08-1.spr,24,2,3,"""Nữ phục, được may bằng da rái cá. """,,6000,5,0,30,300,300,31,44,44,,,,,,,,,,,,,,,,36,26,32,110,33,40,,,38,1,,
+Hắc báo y,0,2,9,\spr\item\equip\armor\obj-fm-cloth08-2.spr,24,2,3,"""áo được may từ da Hắc Báo, mềm mại mà phú quý các danh gia vọng tộc. """,,10000,6,0,30,355,355,31,50,50,,,,,,,,,,,,,,,,36,33,32,130,33,45,,,38,1
+Hổ bì y,0,2,9,\spr\item\equip\armor\obj-fm-cloth08-3.spr,24,2,3,"""May bằng da hổ, mặc vào khí lực tăng lên, cực kỳ hiếm thấy. """,,15000,7,0,30,410,410,31,56,56,,,,,,,,,,,,,,,,36,40,32,150,33,50,,,38,1
+Vận nghê thường,0,2,9,\spr\item\equip\armor\obj-fm-cloth09-1.spr,24,2,3,"""Mềm dẻo lả lướt, dễ động lòng người""",,20000,8,0,30,465,465,31,62,62,,,,,,,,,,,,,,,,36,46,32,170,33,55,,,38,1
+Mê hồn thường,0,2,9,\spr\item\equip\armor\obj-fm-cloth09-2.spr,24,2,3,"""Khiến cho người khác phải hồn phi phách lạc khi nhìn thấy, tiềm ẩn ma lực""",,25000,9,0,30,520,520,31,68,68,,,,,,,,,,,,,,,,36,53,32,190,33,60,,,38,1
+Cửu vĩ bạch hồ y,0,2,9,\spr\item\equip\armor\obj-fm-cloth09-3.spr,24,2,3,"""Được may từ đuôi của 9 con Hồ Ly tinh, mặc vào năng lực vô song""",,30000,10,0,30,575,575,31,74,74,,,,,,,,,,,,,,,,36,60,32,210,33,65,,,38,1
+Cẩm sam,0,2,10,\spr\item\equip\armor\obj-fm-cloth10-1.spr,24,2,3,Y phục được chế từ những loại vải thông thường. ,,100,1,0,30,50,50,31,20,20,,,,,,,,,,,,,,,,36,1,32,30,33,30,,,38,1
+Khởi ly sam,0,2,10,\spr\item\equip\armor\obj-fm-cloth10-1.spr,24,2,3,Y phục đẹp như hoa tươi của nữ đạo sĩ. ,,400,2,0,30,100,100,31,26,26,,,,,,,,,,,,,,,,36,7,32,45,33,45,,,38,1
+Hoa sa sam,0,2,10,\spr\item\equip\armor\obj-fm-cloth10-2.spr,24,2,3,Y phục được kết từ nhiều sợi tơ của hoa. ,,800,3,0,30,150,150,31,32,32,,,,,,,,,,,,,,,,36,13,32,60,33,60,,,38,1
+Thục cẩm sam,0,2,10,\spr\item\equip\armor\obj-fm-cloth10-3.spr,24,2,3,Là loại y phục được chế thành từ nhiều loại thảo địa. ,,2000,4,0,30,200,200,31,38,38,,,,,,,,,,,,,,,,36,19,32,75,33,75,,,38,1
+Tống cẩm sam,0,2,10,\spr\item\equip\armor\obj-fm-cloth11-1.spr,24,2,3,Là loại y phục được chế thành từ nhiều loại thảo địa nổi tiếng ở Tô Châu. ,,5000,5,0,30,250,250,31,44,44,,,,,,,,,,,,,,,,36,26,32,90,33,90,,,38,1
+Vân cẩm sam,0,2,10,\spr\item\equip\armor\obj-fm-cloth11-2.spr,24,2,3,Là loại y phục được chế thành từ nhiều loại thảo địa nổi tiếng ở Kim Lăng,,7000,6,0,30,300,300,31,50,50,,,,,,,,,,,,,,,,36,33,32,105,33,105,,,38,1
+Thanh la sam,0,2,10,\spr\item\equip\armor\obj-fm-cloth11-3.spr,24,2,3,"""Bên ngoài là áo nhưng bên trong là giáp, khả năng phòng ngự rất tốt""",,9000,7,0,30,250,250,31,56,56,,,,,,,,,,,,,,,,36,40,32,120,33,120,,,38,1
+Tất sa sam,0,2,10,\spr\item\equip\armor\obj-fm-cloth12-1.spr,24,2,3,"""Dùng toàn là những thảo dược quý chế thành, Có khả năng phòng ngự rất tốt. """,,12000,8,0,30,400,400,31,62,62,,,,,,,,,,,,,,,,36,46,32,135,33,135,,,38,1
+Lăng la sam,0,2,10,\spr\item\equip\armor\obj-fm-cloth12-2.spr,24,2,3,"""Dùng toàn là những thảo dược quý chế thành, đẹp đẽ lạ kỳ. """,,16000,9,0,30,450,450,31,68,68,,,,,,,,,,,,,,,,36,53,32,150,33,150,,,38,1
+Trầm hương sam,0,2,10,\spr\item\equip\armor\obj-fm-cloth12-3.spr,24,2,3,"""Trong áo luôn phảng phất mùi trầm hương, như tiên nữ giáng trần. """,,20000,10,0,30,500,500,31,74,74,,,,,,,,,,,,,,,,36,60,32,165,33,165,,,38,1
+Khảm thiết nữ giáp,0,2,11,\spr\item\equip\armor\obj-fm-cloth13-1.spr,25,2,3,áo giáp thông thường của nữ giới. ,,400,1,0,30,90,90,31,30,30,,,,,,,,,,,,,,,,36,1,32,35,,,,,38,1
+Thanh đồng nữ giáp,0,2,11,\spr\item\equip\armor\obj-fm-cloth13-1.spr,25,2,3,"""Là áo giáp của nữ, được kết bằng nghững miếng đồng xanh, có khả năng phòng ngự cực tốt. """,,1000,2,0,30,150,150,31,37,37,,,,,,,,,,,,,,,,36,7,32,60,,,,,38,1
+Bạch nhĩ giáp,0,2,11,\spr\item\equip\armor\obj-fm-cloth13-2.spr,25,2,3,Là loại áo giáp thường thấy của các nữ tướng. ,,2500,3,0,30,210,210,31,44,44,,,,,,,,,,,,,,,,36,13,32,85,,,,,38,1
+Lam yến cang giáp,0,2,11,\spr\item\equip\armor\obj-fm-cloth13-3.spr,25,2,3,"""Là áo giáp được kết bằng những miếng thép cự mỏng, khó mà tìm thấy""",,5000,4,0,30,270,270,31,51,51,,,,,,,,,,,,,,,,36,19,32,110,,,,,38,1
+Hồng nhĩ giáp,0,2,11,\spr\item\equip\armor\obj-fm-cloth14-1.spr,25,2,3,Là loại áo giáp cao cấp của các nữ tướng. ,,10000,5,0,30,330,330,31,58,58,,,,,,,,,,,,,,,,36,26,32,135,,,,,38,1
+Xích nhạn giáp,0,2,11,\spr\item\equip\armor\obj-fm-cloth14-2.spr,25,2,3,"""áo giáp được kết bằng lông Nhạn đỏ, nữ tính thường hay dùng. """,,16000,6,0,30,390,390,31,65,65,,,,,,,,,,,,,,,,36,33,32,160,,,,,38,1
+Huyết đồng giáp,0,2,11,\spr\item\equip\armor\obj-fm-cloth14-3.spr,25,2,3,"""Chế tạo bí truyền, màu đỏ huyền bí. """,,25000,7,0,30,450,450,31,72,72,,,,,,,,,,,,,,,,36,40,32,185,,,,,38,1
+Lan ngân giáp,0,2,11,\spr\item\equip\armor\obj-fm-cloth15-1.spr,25,2,3,"""Lan Ngân tạo thành, nhẹ mà chắc chắn. """,,32000,8,0,30,510,510,31,79,79,,,,,,,,,,,,,,,,36,46,32,210,,,,,38,1
+Huyền thiết tuyết ngân giáp,0,2,11,\spr\item\equip\armor\obj-fm-cloth15-2.spr,25,2,3,"""Là loại giáp kết hợp Thiết và Bạc, các nữ tướng thường rất thích dùng. """,,40000,9,0,30,570,570,31,86,86,,,,,,,,,,,,,,,,36,53,32,235,,,,,38,1
+Tích lịch kim phong giáp,0,2,11,\spr\item\equip\armor\obj-fm-cloth15-3.spr,25,2,3,"""Hộ giáp của Mục Quế Anh, theo truyền thuyết là do Thánh Mẫu ban tặng. """,,50000,10,0,30,630,630,31,93,93,,,,,,,,,,,,,,,,36,60,32,260,,,,,38,1
+Phá ma y,0,2,12,\spr\item\equip\armor\obj-fm-cloth16-1.spr,24,2,3,Là loại áo được làm từ vỏ cây Ma thụ. ,,100,1,0,30,20,20,31,12,12,,,,,,,,,,,,,,,,36,1,32,0,,,,,38,1
+Phá miên y,0,2,12,\spr\item\equip\armor\obj-fm-cloth16-1.spr,24,2,3,Là loại áo được kết bằng bông. ,,250,2,0,30,90,90,31,16,16,,,,,,,,,,,,,,,,36,7,32,45,,,39,6,38,1
+Phá cổn y,0,2,12,\spr\item\equip\armor\obj-fm-cloth16-2.spr,24,2,3,Là loại Cổn y nhưng bên ngoài hơi giống Phá Miên y. ,,500,3,0,30,140,140,31,20,20,,,,,,,,,,,,,,,,36,13,32,60,,,39,6,38,1
+Bạch bổ y,0,2,12,\spr\item\equip\armor\obj-fm-cloth16-3.spr,24,2,3,Loại áo được kết lại từ những áo cũ rách khác. ,,800,4,0,30,185,185,31,24,24,,,,,,,,,,,,,,,,36,19,32,75,,,39,6,38,1
+Thiên bổ y,0,2,12,\spr\item\equip\armor\obj-fm-cloth17-1.spr,24,2,3,"""Loại áo được may từ vô số áo cũ rách khác, dày và ấm. """,,1200,5,0,30,230,230,31,28,28,,,,,,,,,,,,,,,,36,26,32,90,,,39,6,38,1
+Dương bì giáp,0,2,12,\spr\item\equip\armor\obj-fm-cloth17-2.spr,24,2,3,"""Dùng da dê và Ma Bố hợp thành, tính phòng ngự rất cao. """,,1800,6,0,30,270,270,31,32,32,,,,,,,,,,,,,,,,36,33,32,105,,,39,6,38,1
+Ngưu bì giáp,0,2,12,\spr\item\equip\armor\obj-fm-cloth17-3.spr,24,2,3,"""Dùng da trâu và Ma Bố hợp thành, tính phòng ngự rất cao. """,,2500,7,0,30,315,315,31,36,36,,,,,,,,,,,,,,,,36,40,32,120,,,39,6,38,1
+Tử thử y,0,2,12,\spr\item\equip\armor\obj-fm-cloth18-1.spr,24,2,3,"""Dùng da màu tím của loài chuột kỳ dị, tính phòng ngự rất cao. """,,3200,8,0,30,360,360,31,40,40,,,,,,,,,,,,,,,,36,46,32,135,,,39,6,38,1
+Khôi điêu y,0,2,12,\spr\item\equip\armor\obj-fm-cloth18-2.spr,24,2,3,"""Kết từ đuôi của dã Điêu, trông có vẻ cũ kỹ nhưng sức phòng ngự phi thường. """,,4000,9,0,30,405,405,31,44,44,,,,,,,,,,,,,,,,36,53,32,150,,,39,6,38,1
+Vạn chúng tề tâm y,0,2,12,\spr\item\equip\armor\obj-fm-cloth18-3.spr,24,2,3,"""Thể hiện tinh thần đoàn kết của Cái bang, trên dưới đồng lòng, việc gì cũng xong. """,,5000,10,0,30,450,450,31,48,48,,,,,,,,,,,,,,,,36,60,32,165,,,39,6,38,1
+Bạch điệp quần,0,2,13,\spr\item\equip\armor\obj-fm-cloth19-1.spr,24,2,3,Là loại thường phục của nữ giới. ,,100,1,0,30,40,40,31,20,20,,,,,,,,,,,,,,,,36,1,32,0,33,20,,,38,1
+Thanh la quần,0,2,13,\spr\item\equip\armor\obj-fm-cloth19-1.spr,24,2,3,Loại quần áo được dệt bằng những loại tơ thường. ,,100,2,0,30,80,80,31,25,25,,,,,,,,,,,,,,,,36,7,32,0,33,30,,,38,1
+Chức cẩm thạch lựu quần,0,2,13,\spr\item\equip\armor\obj-fm-cloth19-1.spr,24,2,3,"""Dệt bằng cẩm Tú Hoa, giá trị phi phàm. """,,100,3,0,30,120,120,31,30,30,,,,,,,,,,,,,,,,36,13,32,0,33,40,,,38,1
+Song điệp tú la quần,0,2,13,\spr\item\equip\armor\obj-fm-cloth19-1.spr,24,2,3,"""Dệt bằng cẩm Tú Hoa, cốt cách quý phái. """,,100,4,0,30,160,160,31,35,35,,,,,,,,,,,,,,,,36,19,32,0,33,50,,,38,1
+Bách ô quần,0,2,13,\spr\item\equip\armor\obj-fm-cloth20-1.spr,24,2,3,"""Dệt bằng lông của 100 con quạ, cực kỳ hiếm thấy. """,,6000,5,0,30,200,200,31,40,40,,,,,,,,,,,,,,,,36,26,32,0,33,60,,,38,1
+Nguyệt hoa quần,0,2,13,\spr\item\equip\armor\obj-fm-cloth20-2.spr,24,2,3,Loại quần phát ra ánh sáng kỳ ảo như ánh sáng trăng. ,,10000,6,0,30,240,240,31,45,45,,,,,,,,,,,,,,,,36,33,32,0,33,70,,,38,1
+Phong vĩ quần,0,2,13,\spr\item\equip\armor\obj-fm-cloth20-3.spr,24,2,3,"""Dệt bằng lông Đổng Tước, vừa cao quý vừa có tính năng bảo vệ. """,,15000,7,0,30,280,280,31,50,50,,,,,,,,,,,,,,,,36,40,32,0,33,80,,,38,1
+Kinh bảo quần,0,2,13,\spr\item\equip\armor\obj-fm-cloth21-1.spr,24,2,3,Loại y phục được khảm bằng nhiều loại nữ trang quý. ,,20000,8,0,30,320,320,31,55,55,,,,,,,,,,,,,,,,36,46,32,0,33,90,,,38,1
+Bách phong triều dương quần,0,2,13,\spr\item\equip\armor\obj-fm-cloth21-2.spr,24,2,3,ánh sáng huyền diệu như buổi chiều tà. ,,25000,9,0,30,360,360,31,60,60,,,,,,,,,,,,,,,,36,53,32,0,33,100,,,38,1
+Lưu tiên quần,0,2,13,\spr\item\equip\armor\obj-fm-cloth21-3.spr,24,2,3,"""Truyền thuyết nói rằng đây là do Triệu Phi Yến thời Hán tự tay làm ra, mặc vào như đang du tiên. """,,30000,10,0,30,400,400,31,65,65,,,,,,,,,,,,,,,,36,60,32,0,33,110,,,38,1
+Sa di phục,0,2,14,\spr\item\equip\armor\obj-ma-cloth01-1.spr,22,2,3,Tăng y dành cho các tiểu Sa Di vừa nhập môn,,100,1,0,30,50,50,31,15,15,,,,,,,,,,,,,,,,36,1,32,30,,,,,38,0
+Tăng y,0,2,14,\spr\item\equip\armor\obj-ma-cloth01-1.spr,22,2,3,Y phục tăng nhân thường mặc,,400,2,0,30,100,100,31,20,20,,,,,,,,,,,,,,,,36,7,32,50,,,,,38,0
+Bách nạp y,0,2,14,\spr\item\equip\armor\obj-ma-cloth01-2.spr,22,2,3,Thường phục chủ yếu của các Tăng nhân Hán triều,,800,3,0,30,150,150,31,25,25,,,,,,,,,,,,,,,,36,13,32,70,,,,,38,0
+An đà hội,0,2,14,\spr\item\equip\armor\obj-ma-cloth01-3.spr,22,2,3,"""Còn gọi là Ngũ Điều y, áo của các tăng nhân mặc trong những lúc thông thường""",,1000,4,0,30,200,200,31,30,30,,,,,,,,,,,,,,,,36,19,32,90,,,,,38,0,,
+Uất đa la tăng,0,2,14,\spr\item\equip\armor\obj-ma-cloth02-1.spr,22,2,3,"""Còn gọi là Thất Điều y, áo của các tăng nhân mặc trong những lúc trang nghiêm""",,2000,5,0,30,250,250,31,35,35,,,,,,,,,,,,,,,,36,26,32,110,,,,,38,0,,
+Tăng già y,0,2,14,\spr\item\equip\armor\obj-ma-cloth02-2.spr,22,2,3,"""Lễ phục của Tăng nhân, mặc trong những lúc trang nghiêm""",,3000,6,0,30,300,300,31,40,40,,,,,,,,,,,,,,,,36,33,32,130,,,,,38,0,,
+Nguyệt bạch cà sa,0,2,14,\spr\item\equip\armor\obj-ma-cloth02-3.spr,22,2,3,"""Còn gọi là Thất Điều y, y phục của các tăng nhân chức vị cao""",,4000,7,0,30,250,250,31,45,45,,,,,,,,,,,,,,,,36,40,32,150,,,,,38,0,,
+Minh tĩnh cà sa,0,2,14,\spr\item\equip\armor\obj-ma-cloth03-1.spr,22,2,3,Y phục thường ngày của các vị cao tăng,,5000,8,0,30,400,400,31,50,50,,,,,,,,,,,,,,,,36,46,32,170,,,,,38,0,,
+Kim lô cà sa,0,2,14,\spr\item\equip\armor\obj-ma-cloth03-2.spr,22,2,3,bảo vật của Phật môn,,7500,9,0,30,450,450,31,55,55,,,,,,,,,,,,,,,,36,53,32,190,,,,,38,0,,
+Thất bảo cà sa,0,2,14,\spr\item\equip\armor\obj-ma-cloth03-3.spr,22,2,3,"""Là """"Phật môn chi bảo"""", do Phật Tổ tặng cho Đường Tam Tạng khi đi thỉnh kinh""",,10000,10,0,30,500,500,31,60,60,,,,,,,,,,,,,,,,36,60,32,210,,,,,38,0,,
+Đạo sĩ trường bào,0,2,15,\spr\item\equip\armor\obj-ma-cloth04-1.spr,24,2,3,Là y phục của các đạo sĩ thường mặc khi luyện võ,,100,1,0,30,30,30,31,15,15,,,,,,,,,,,,,,,,36,1,32,20,,,,,38,0,37,4
+Đạo sĩ trường bào,0,2,15,\spr\item\equip\armor\obj-ma-cloth04-1.spr,24,2,3,Y phục thường ngày của Đạo sĩ,,300,2,0,30,60,60,31,20,20,,,,,,,,,,,,,,,,36,7,32,30,,,,,38,0,37,4
+Tĩnh y,0,2,15,\spr\item\equip\armor\obj-ma-cloth04-2.spr,24,2,3,Lễ phục của các Đạo sĩ thường mặc khi làm phép,,600,3,0,30,90,90,31,25,25,,,,,,,,,,,,,,,,36,13,32,40,,,,,38,0,37,4
+Thanh tùng pháp bào,0,2,15,\spr\item\equip\armor\obj-ma-cloth04-3.spr,24,2,3,Y phục của những đạo sĩ mới nhập môn,,900,4,0,30,120,120,31,30,30,,,,,,,,,,,,,,,,36,19,32,50,,,,,38,0,37,4
+Thiên sư đạo bào,0,2,15,\spr\item\equip\armor\obj-ma-cloth05-1.spr,24,2,3,"""Y phục chỉ dành cho những người đạo hạnh thâm sâu, được tôn danh Thiên Sư""",,1600,5,0,30,150,150,31,35,35,,,,,,,,,,,,,,,,36,26,32,60,,,,,38,0,37,4
+Huyền võ pháp y,0,2,15,\spr\item\equip\armor\obj-ma-cloth05-2.spr,24,2,3,"""Tập hợp linh khí Huyền Võ, """"Huyền môn chi bảo""""""",,2500,6,0,30,180,180,31,40,40,,,,,,,,,,,,,,,,36,33,32,70,,,,,38,0,37,4
+Thất bảo hạ y,0,2,15,\spr\item\equip\armor\obj-ma-cloth05-3.spr,24,2,3,"""Trong bên ngoài có vẻ tầm thường, nhưng thực chất là một """"bảo y""""""",,3500,7,0,30,210,210,31,45,45,,,,,,,,,,,,,,,,36,40,32,80,,,,,38,0,37,4
+Tam thanh bào,0,2,15,\spr\item\equip\armor\obj-ma-cloth06-1.spr,24,2,3,"""Phản tà quy chánh, người mặc nó luôn có lòng thiện tâm. """,,4500,8,0,30,240,240,31,50,50,,,,,,,,,,,,,,,,36,46,32,90,,,,,38,0,37,4
+Thiên niên hạc sưởng,0,2,15,\spr\item\equip\armor\obj-ma-cloth06-2.spr,24,2,3,"""Dùng lông Hạc để điểm xuyến xung quanh, đây chính là sự tượng trưng cho trí huệ. """,,6000,9,0,30,270,270,31,55,55,,,,,,,,,,,,,,,,36,53,32,100,,,,,38,0,37,4
+Chân thức thánh y,0,2,15,\spr\item\equip\armor\obj-ma-cloth06-3.spr,24,2,3,Mặc vào sẽ giúp ta tăng nhanh thần lực,,8000,10,0,30,300,300,31,60,60,,,,,,,,,,,,,,,,36,60,32,110,,,,,38,0,37,4
+Cổn y,0,2,16,\spr\item\equip\armor\obj-ma-cloth07-1.spr,22,2,3,áo dành cho các sát thủ cấp thấp nhất ẩn giấu thân phận,,100,1,0,30,80,80,31,20,20,,,,,,,,,,,,,,,,36,1,32,30,33,20,,,38,0,,
+Tế trúc cổn y,0,2,16,\spr\item\equip\armor\obj-ma-cloth07-1.spr,22,2,3,Cổn y được đặc chế,,500,2,0,30,135,135,31,25,25,,,,,,,,,,,,,,,,36,7,32,50,33,30,,,38,0,,
+Thích khách y,0,2,16,\spr\item\equip\armor\obj-ma-cloth07-2.spr,22,2,3,Cũng giống như Cổn y nhưng có nhiều túi để chứa ám khí. ,,1000,3,0,30,190,190,31,30,30,,,,,,,,,,,,,,,,36,13,32,70,33,40,,,38,0,,
+Mộng mị y,0,2,16,\spr\item\equip\armor\obj-ma-cloth07-3.spr,22,2,3,"""Dùng các vật liệu đặc biệt mà chế thành, sử dụng linh hoạt. """,,2500,4,0,30,245,245,31,35,35,,,,,,,,,,,,,,,,36,19,32,90,33,50,,,38,0,,
+Vô sắc y,0,2,16,\spr\item\equip\armor\obj-ma-cloth08-1.spr,22,2,3,"""Có thể tàng hình đi vào nhiều nơi, thích hợp cho sát thủ""",,6000,5,0,30,300,300,31,40,40,,,,,,,,,,,,,,,,36,26,32,110,33,60,,,38,0,,
+Ngư nhẫn y,0,2,16,\spr\item\equip\armor\obj-ma-cloth08-2.spr,22,2,3,Trang bị cho các sát thủ cấp cao. ,,10000,6,0,30,355,355,31,45,45,,,,,,,,,,,,,,,,36,33,32,130,33,70,,,38,0,,
+Liên vân y,0,2,16,\spr\item\equip\armor\obj-ma-cloth08-3.spr,22,2,3,"""Y phục hiếm có, tính linh hoạt và tính phòng ngự cực cao""",,15000,7,0,30,410,410,31,50,50,,,,,,,,,,,,,,,,36,40,32,150,33,80,,,38,0,,
+Thiên mộng y,0,2,16,\spr\item\equip\armor\obj-ma-cloth09-1.spr,22,2,3,"""Người mặc vào hình bóng giống như trong mơ, không thể bắt được""",,20000,8,0,30,465,465,31,55,55,,,,,,,,,,,,,,,,36,46,32,170,33,90,,,38,0,,
+Vô dung kính y,0,2,16,\spr\item\equip\armor\obj-ma-cloth09-2.spr,22,2,3,"""Là thứ áo mà các thích khách đều thích trang bị, có thể giấu được nhiều ám khí. """,,25000,9,0,30,520,520,31,60,60,,,,,,,,,,,,,,,,36,53,32,190,33,100,,,38,0,,
+Thiên nhẫn mật y,0,2,16,\spr\item\equip\armor\obj-ma-cloth09-3.spr,22,2,3,"""Tập trung sát khí vô biên, gặp thần giết thần, gặp Phật giết Phật. """,,30000,10,0,30,575,575,31,65,65,,,,,,,,,,,,,,,,36,60,32,210,33,110,,,38,0,,
+Thô bố trường bào,0,2,17,\spr\item\equip\armor\obj-ma-cloth10-1.spr,22,2,3,Do các loại vải thô dệt thành,,100,1,0,30,50,50,31,20,20,,,,,,,,,,,,,,,,36,1,32,30,33,30,,,38,0,,
+Khinh cát sam,0,2,17,\spr\item\equip\armor\obj-ma-cloth10-1.spr,22,2,3,"""Tơ Cát dệt thành, chắc chắn khó xuyên. """,,400,2,0,30,100,100,31,26,26,,,,,,,,,,,,,,,,36,7,32,45,33,45,,,38,0,,
+Dật hiệp y,0,2,17,\spr\item\equip\armor\obj-ma-cloth10-2.spr,22,2,3,"""Cẩm đoạn dệt thành, mềm mại thoải mái. """,,800,3,0,30,150,150,31,32,32,,,,,,,,,,,,,,,,36,13,32,60,33,60,,,38,0,,
+Dật hiệp y,0,2,17,\spr\item\equip\armor\obj-ma-cloth10-3.spr,22,2,3,"""Thích hợp với các hiệp khách, nhẹ nhàng linh hoạt. """,,2000,4,0,30,200,200,31,38,38,,,,,,,,,,,,,,,,36,19,32,75,33,75,,,38,0,,
+Nhiệm hiệp phục,0,2,17,\spr\item\equip\armor\obj-ma-cloth11-1.spr,22,2,3,Là loại y phục mà các hiệp khách ở Ngũ Lăng thường mặc. ,,5000,5,0,30,250,250,31,44,44,,,,,,,,,,,,,,,,36,26,32,90,33,90,,,38,0,,
+Lưu thái phục,0,2,17,\spr\item\equip\armor\obj-ma-cloth11-2.spr,22,2,3,"""Dáng vẻ nho nhã, mềm mại mà nghiêm trang. """,,7000,6,0,30,300,300,31,50,50,,,,,,,,,,,,,,,,36,33,32,105,33,105,,,38,0
+Ngân tơ bào,0,2,17,\spr\item\equip\armor\obj-ma-cloth11-3.spr,22,2,3,"""Dùng Tàm tơ phối hợp với Ngân tơ chế thành, có khả năng phòng ngự cực tốt. """,,9000,7,0,30,350,350,31,56,56,,,,,,,,,,,,,,,,36,40,32,120,33,120,,,38,0
+Tử kim bào,0,2,17,\spr\item\equip\armor\obj-ma-cloth12-1.spr,22,2,3,"""Dùng Tàm tơ phối hợp với Kim tơ chế thành, vừa danh quý vừa có thể hộ thân. """,,12000,8,0,30,400,400,31,62,62,,,,,,,,,,,,,,,,36,46,32,135,33,135,,,38,0
+Hàn sương bào,0,2,17,\spr\item\equip\armor\obj-ma-cloth12-2.spr,22,2,3,"""Dùng Tàm tơ phối hợp với Bạch Kim tơ chế thành, danh quý vô cùng. """,,16000,9,0,30,450,450,31,68,68,,,,,,,,,,,,,,,,36,53,32,150,33,150,,,38,0
+Giáng sa bào,0,2,17,\spr\item\equip\armor\obj-ma-cloth12-3.spr,22,2,3,"""Dùng Giáng Sa chế thành, dùng cho các bậc đế vương, cao quý khó tả. """,,20000,10,0,30,500,500,31,74,74,,,,,,,,,,,,,,,,36,60,32,165,33,165,,,38,0
+Tỏa tử giáp,0,2,18,\spr\item\equip\armor\obj-ma-cloth13-1.spr,23,2,3,"""Trang bị cho những sĩ tốt trong quân đội, sức phòng ngự kém. """,,400,1,0,30,90,90,31,30,30,,,,,,,,,,,,,,,,36,1,32,35,,,,,38,0
+Lưỡng đáng khải,0,2,18,\spr\item\equip\armor\obj-ma-cloth13-1.spr,23,2,3,"""Do hai mảnh trước sau hợp thành, thời Phổ Đường thường thấy. """,,1000,2,0,30,150,150,31,37,37,,,,,,,,,,,,,,,,36,7,32,60,,,,,38,0
+Minh quang khải,0,2,18,\spr\item\equip\armor\obj-ma-cloth13-2.spr,23,2,3,Loại áo giáp thường trang bị cho binh sĩ thời Đường. ,,2500,3,0,30,210,210,31,44,44,,,,,,,,,,,,,,,,36,13,32,85,,,,,38,0
+Tế lân giáp,0,2,18,\spr\item\equip\armor\obj-ma-cloth13-3.spr,23,2,3,"""Do nhiều miếng thép mỏng ghép thành, gọn nhẹ linh hoạt. """,,5000,4,0,30,270,270,31,51,51,,,,,,,,,,,,,,,,36,19,32,110,,,,,38,0
+Ô chùy giáp,0,2,18,\spr\item\equip\armor\obj-ma-cloth14-1.spr,23,2,3,"""áo giáp như hình dáng quạ, gọn nhẹ linh hoạt. """,,10000,5,0,30,330,330,31,58,58,,,,,,,,,,,,,,,,36,26,32,135,,,,,38,0
+Sơn văn tự giáp,0,2,18,\spr\item\equip\armor\obj-ma-cloth14-2.spr,23,2,3,"""Là một mảnh áo giáp. giữa lồi, hai bên lõm, công dụng chống tên. """,,16000,6,0,30,390,390,31,65,65,,,,,,,,,,,,,,,,36,33,32,160,,,,,38,0
+Giải trại giáp,0,2,18,\spr\item\equip\armor\obj-ma-cloth14-3.spr,23,2,3,"""Dùng toàn da của quái thú và da Giải Trại kết thành, kiên cố vô cùng. """,,25000,7,0,30,450,450,31,72,72,,,,,,,,,,,,,,,,36,40,32,185,,,,,38,0
+Toan nghê giáp,0,2,18,\spr\item\equip\armor\obj-ma-cloth15-1.spr,23,2,3,"""Là loại áo giáp của các danh tướng, đao tên không thể xuyên thủng. """,,32000,8,0,30,510,510,31,79,79,,,,,,,,,,,,,,,,36,46,32,210,,,,,38,0
+Tỏa tử hoàng kim giáp,0,2,18,\spr\item\equip\armor\obj-ma-cloth15-2.spr,23,2,3,"""Thiên hạ vang danh, đao tên không thể phạm vào da""",,40000,9,0,30,570,570,31,86,86,,,,,,,,,,,,,,,,36,53,32,235,,,,,38,0
+Đường nghê giáp,0,2,18,\spr\item\equip\armor\obj-ma-cloth15-3.spr,23,2,3,"""truyền thiết đây là hộ thân bảo giáp của Lã Ôn Hầu, là hộ pháp cực phẩm""",,50000,10,0,30,630,630,31,93,93,,,,,,,,,,,,,,,,36,60,32,260,,,,,38,0
+Lan bố y,0,2,19,\spr\item\equip\armor\obj-ma-cloth16-1.spr,22,2,3,"""là thứ vải bằng võ cây, chỉ mặc những lúc bình thường""",,100,1,0,30,20,20,31,12,12,,,,,,,,,,,,,,,,36,1,32,0,,,,,38,0
+Phổ thông cái y,0,2,19,\spr\item\equip\armor\obj-ma-cloth16-1.spr,22,2,3,"""Là y phục của những người ăn mày bình thường, giống như Bố y, có rất nhiều túi""",,250,2,0,30,90,90,31,16,16,,,,,,,,,,,,,,,,36,7,32,45,,,39,6,38,0
+áo ăn mày,0,2,19,\spr\item\equip\armor\obj-ma-cloth16-2.spr,22,2,3,"""Là y phục của những người ăn mày bình thường, dành cho người cấp thấp nhất""",,500,3,0,30,140,140,31,20,20,,,,,,,,,,,,,,,,36,13,32,60,,,39,6,38,0
+Thổ ma cái y,0,2,19,\spr\item\equip\armor\obj-ma-cloth16-3.spr,22,2,3,Là y phục của những người ăn mày bình thườnglàm bằng vỏ cây,,800,4,0,30,185,185,31,24,24,,,,,,,,,,,,,,,,36,19,32,75,,,39,6,38,0
+Tầm ma cái y,0,2,19,\spr\item\equip\armor\obj-ma-cloth17-1.spr,22,2,3,"""Thường phục của Cái Bang trưởng lão, tinh chế từ những cây Tầm Ma. """,,1200,5,0,30,230,230,31,28,28,,,,,,,,,,,,,,,,36,26,32,90,,,39,6,38,0
+Hỏa ma cái y,0,2,19,\spr\item\equip\armor\obj-ma-cloth17-2.spr,22,2,3,"""Thường phục của Cái Bang trưởng lão, dùng vỏ cây Hỏa Ma chế thành, Tương đối kiên cố. """,,1800,6,0,30,270,270,31,32,32,,,,,,,,,,,,,,,,36,33,32,105,,,39,6,38,0
+Thập phương cái y,0,2,19,\spr\item\equip\armor\obj-ma-cloth17-3.spr,22,2,3,"""Thường phục của Cái Bang trưởng lão, rộng mà không dư, thích hợp chiến đấu""",,2500,7,0,30,315,315,31,36,36,,,,,,,,,,,,,,,,36,40,32,120,,,39,6,38,0
+Bách kết cái y,0,2,19,\spr\item\equip\armor\obj-ma-cloth18-1.spr,22,2,3,"""Thường phục của các trưởng lão 9 túi, chỉ có bang chủ và trưởng lão 9 túi mới được dùng""",,3200,8,0,30,360,360,31,40,40,,,,,,,,,,,,,,,,36,46,32,135,,,39,6,38,0
+Triền tơ thiên kết phục,0,2,19,\spr\item\equip\armor\obj-ma-cloth18-2.spr,22,2,3,"""Do vô vàn sợi tơ kết thành, người mặc vào sẽ có thiện tính""",,4000,9,0,30,405,405,31,44,44,,,,,,,,,,,,,,,,36,53,32,150,,,39,6,38,0
+Vạn lưu quy tông y,0,2,19,\spr\item\equip\armor\obj-ma-cloth18-3.spr,22,2,3,"""Y phục dành cho bang chủ Cái Bang và các vị trưởng lão 10 túi, tượng trưng cho võ công và đia vị. """,,5000,10,0,30,450,450,31,48,48,,,,,,,,,,,,,,,,36,60,32,165,,,39,6,38,0
+áo vải thô,0,2,20,\spr\item\equip\armor\obj-ma-cloth19-1.spr,22,2,3,"""áo vải thô sơ, không có tên gọi""",,100,1,0,30,30,30,31,15,15,,,,,,,,,,,,,,,,36,1,32,0,,,,,38,0
+áo vải thô,0,2,20,\spr\item\equip\armor\obj-ma-cloth19-1.spr,22,2,3,"""áo vải thô sơ, không có tên gọi""",,100,2,0,30,30,30,31,20,20,,,,,,,,,,,,,,,,36,1,32,0,,,,,38,0
+áo vải thô,0,2,20,\spr\item\equip\armor\obj-ma-cloth19-1.spr,22,2,3,"""áo vải thô sơ, không có tên gọi""",,100,3,0,30,30,30,31,25,25,,,,,,,,,,,,,,,,36,1,32,0,,,,,38,0
+áo vải thô,0,2,20,\spr\item\equip\armor\obj-ma-cloth19-1.spr,22,2,3,"""áo vải thô sơ, không có tên gọi""",,100,4,0,30,30,30,31,30,30,,,,,,,,,,,,,,,,36,1,32,0,,,,,38,0
+Hoàng cẩm đoản y,0,2,20,\spr\item\equip\armor\obj-ma-cloth20-1.spr,22,2,3,"""Cẩm y tinh chế, gọn nhẹ linh hoạt. """,,6000,5,0,30,150,150,31,35,35,,,,,,,,,,,,,,,,36,26,32,0,,,,,38,0
+Chức giáp đoản sam,0,2,20,\spr\item\equip\armor\obj-ma-cloth20-2.spr,22,2,3,"""Bên trong có khảm giáp, có khả năng phòng ngự. """,,10000,6,0,30,180,180,31,40,40,,,,,,,,,,,,,,,,36,33,32,0,,,,,38,0
+Huyền hoàng đoản giáp,0,2,20,\spr\item\equip\armor\obj-ma-cloth20-3.spr,22,2,3,"""Bên ngoài là áo, bên trong thực chất là một áo giáp, sức phòng ngự cự hạn. """,,15000,7,0,30,210,210,31,45,45,,,,,,,,,,,,,,,,36,40,32,0,,,,,38,0
+Bích hoa bào,0,2,20,\spr\item\equip\armor\obj-ma-cloth21-1.spr,22,2,3,"""Dệt từ tơ Bích Tàm, mềm mại """,,20000,8,0,30,240,240,31,50,50,,,,,,,,,,,,,,,,36,46,32,0,,,,,38,0,,
+Tương như bào,0,2,20,\spr\item\equip\armor\obj-ma-cloth21-2.spr,22,2,3,áo này sẽ làm cho người mặc nó có một khí phách bất phàm,,25000,9,0,30,270,270,31,55,55,,,,,,,,,,,,,,,,36,53,32,0,,,,,38,0,,
+Tuyền long bào,0,2,20,\spr\item\equip\armor\obj-ma-cloth21-3.spr,22,2,3,Phải hao sức của 100 người thợ rèn làm trong mười năm,,30000,10,0,30,300,300,31,60,60,,,,,,,,,,,,,,,,36,60,32,0,,,,,38,0,,
+Sa ni phục,0,2,21,\spr\item\equip\armor\obj-fm-cloth01-1.spr,22,2,3,Tăng y dành cho các tiểu Sa Di vừa nhập môn,,100,1,0,30,50,50,31,15,15,,,,,,,,,,,,,,,,36,1,32,15,,,,,38,1,,
+Tăng y,0,2,21,\spr\item\equip\armor\obj-fm-cloth01-1.spr,22,2,3,Y phục tăng nhân thường mặc,,400,2,0,30,100,100,31,20,20,,,,,,,,,,,,,,,,36,7,32,30,,,,,38,1,,
+Bách nạp y,0,2,21,\spr\item\equip\armor\obj-fm-cloth01-2.spr,22,2,3,Thường phục chủ yếu của các Tăng nhân Hán triều,,800,3,0,30,150,150,31,25,25,,,,,,,,,,,,,,,,36,13,32,45,,,,,38,1,,
+An đà hội,0,2,21,\spr\item\equip\armor\obj-fm-cloth01-3.spr,22,2,3,"""Còn gọi là Ngũ Điều y, áo của các tăng nhân mặc trong những lúc thông thường""",,1000,4,0,30,200,200,31,30,30,,,,,,,,,,,,,,,,36,19,32,60,,,,,38,1,,
+Uất đa la tăng,0,2,21,\spr\item\equip\armor\obj-fm-cloth02-1.spr,22,2,3,"""Còn gọi là Thất Điều y, áo của các tăng nhân mặc trong những lúc trang nghiêm""",,2000,5,0,30,250,250,31,35,35,,,,,,,,,,,,,,,,36,26,32,75,,,,,38,1,,
+Tăng già y,0,2,21,\spr\item\equip\armor\obj-fm-cloth02-2.spr,22,2,3,"""Lễ phục của Tăng nhân, mặc trong những lúc trang nghiêm""",,3000,6,0,30,300,300,31,40,40,,,,,,,,,,,,,,,,36,33,32,90,,,,,38,1,,
+Nguyệt bạch cà sa,0,2,21,\spr\item\equip\armor\obj-fm-cloth02-3.spr,22,2,3,"""Còn gọi là Thất Điều y, y phục của các tăng nhân chức vị cao""",,4000,7,0,30,350,350,31,45,45,,,,,,,,,,,,,,,,36,40,32,105,,,,,38,1,,
+Minh tĩnh cà sa,0,2,21,\spr\item\equip\armor\obj-fm-cloth03-1.spr,22,2,3,Y phục thường ngày của các vị cao tăng,,5000,8,0,30,400,400,31,50,50,,,,,,,,,,,,,,,,36,46,32,120,,,,,38,1,,
+Kim lô cà sa,0,2,21,\spr\item\equip\armor\obj-fm-cloth03-2.spr,22,2,3,bảo vật của Phật môn,,7500,9,0,30,450,450,31,55,55,,,,,,,,,,,,,,,,36,53,32,135,,,,,38,1,,
+Thất bảo cà sa,0,2,21,\spr\item\equip\armor\obj-fm-cloth03-3.spr,22,2,3,"""Là """"Phật môn chi bảo"""", do Phật Tổ tặng cho Đường Tam Tạng khi đi thỉnh kinh""",,10000,10,0,30,500,500,31,60,60,,,,,,,,,,,,,,,,36,60,32,150,,,,,38,1,,
+Nữ thức đạo y,0,2,22,\spr\item\equip\armor\obj-fm-cloth04-1.spr,24,2,3,Y phục thường nhật của các nữ đạo sĩ. ,,100,1,0,30,30,30,31,15,15,,,,,,,,,,,,,,,,36,1,32,20,,,,,38,1,37,4
+Tu chân đạo y,0,2,22,\spr\item\equip\armor\obj-fm-cloth04-1.spr,24,2,3,Y phục làm việc của các nữ đạo sĩ nghèo,,300,2,0,30,60,60,31,20,20,,,,,,,,,,,,,,,,36,7,32,30,,,,,38,1,37,4
+Hỏa hoàn đạo y,0,2,22,\spr\item\equip\armor\obj-fm-cloth04-2.spr,24,2,3,Đạo y cao cấp được làm từ vải Hỏa Hoàn,,600,3,0,30,90,90,31,25,25,,,,,,,,,,,,,,,,36,13,32,40,,,,,38,1,37,4
+Bích hà đạo y,0,2,22,\spr\item\equip\armor\obj-fm-cloth04-3.spr,24,2,3,"""Màu sắc thanh thoát, tuy là đạo y nhưng cũng không kém phần linh động""",,900,4,0,30,120,120,31,30,30,,,,,,,,,,,,,,,,36,19,32,50,,,,,38,1,37,4
+Bát quái đạo y,0,2,22,\spr\item\equip\armor\obj-fm-cloth05-1.spr,24,2,3,Y phục của những đạo sĩ mới nhập môn,,1600,5,0,30,150,150,31,35,35,,,,,,,,,,,,,,,,36,26,32,60,,,,,38,1,37,4
+Hàn mai đạo y,0,2,22,\spr\item\equip\armor\obj-fm-cloth05-2.spr,24,2,3,"""Tuyệt phẩm đạo y của các nữ đạo sĩ, tuy nghiêm trang mà thanh thoát""",,2500,6,0,30,180,180,31,40,40,,,,,,,,,,,,,,,,36,33,32,70,,,,,38,1,37,4
+Vô cực đạo y,0,2,22,\spr\item\equip\armor\obj-fm-cloth05-3.spr,24,2,3,"""Đại thành vô dụng, đại đạo vô cực. """,,3500,7,0,30,210,210,31,45,45,,,,,,,,,,,,,,,,36,40,32,80,,,,,38,1,37,4
+Địa duyên đạo y,0,2,22,\spr\item\equip\armor\obj-fm-cloth06-1.spr,24,2,3,Là một bảo y có chứa Âm Linh khí. ,,4500,8,0,30,240,240,31,50,50,,,,,,,,,,,,,,,,36,46,32,90,,,,,38,1,37,4
+Băng tàm đạo y,0,2,22,\spr\item\equip\armor\obj-fm-cloth06-2.spr,24,2,3,"""Tơ của Băng Tàm kết thành, người mặc vào cốt cách như thần tiên""",,6000,9,0,30,270,270,31,55,55,,,,,,,,,,,,,,,,36,53,32,100,,,,,38,1,37,4
+Long tiêu đạo nhân,0,2,22,\spr\item\equip\armor\obj-fm-cloth06-3.spr,24,2,3,"""Đạo y được kết bằng nhiều thứ lụa quý, cốt cách phi thường, có thể xem là bảo bối. """,,8000,10,0,30,300,300,31,60,60,,,,,,,,,,,,,,,,36,60,32,110,,,,,38,1,37,4
+Thục cẩm y,0,2,23,\spr\item\equip\armor\obj-fm-cloth07-1.spr,24,2,3,"""Kết bằng thứ tơ điều của vùng tỷ Xuyên, chắc chắn khó xuyên""",,100,1,0,30,80,80,31,20,20,,,,,,,,,,,,,,,,36,1,32,30,33,20,,,38,1,,
+Lăng tơ y,0,2,23,\spr\item\equip\armor\obj-fm-cloth07-1.spr,24,2,3,Là nữ y cao cấp dệt bẳng tơ thượng hạng. ,,500,2,0,30,135,135,31,26,26,,,,,,,,,,,,,,,,36,7,32,50,33,25,,,38,1,,
+Cẩm trọng y,0,2,23,\spr\item\equip\armor\obj-fm-cloth07-2.spr,24,2,3,Là nữ y cao cấp dệt bẳng tơ thượng hạng. ,,1000,3,0,30,190,190,31,32,32,,,,,,,,,,,,,,,,36,13,32,70,33,30,,,38,1,,
+Linh xà y,0,2,23,\spr\item\equip\armor\obj-fm-cloth07-3.spr,24,2,3,"""Giống như khoát trên người một tấm da rắn, cử động cực kỳ linh hoạt""",,2500,4,0,30,245,245,31,38,38,,,,,,,,,,,,,,,,36,19,32,90,33,35,,,38,1,,
+Huyền ly y,0,2,23,\spr\item\equip\armor\obj-fm-cloth08-1.spr,24,2,3,"""Nữ phục, được may bằng da rái cá. """,,6000,5,0,30,300,300,31,44,44,,,,,,,,,,,,,,,,36,26,32,110,33,40,,,38,1,,
+Hắc báo y,0,2,23,\spr\item\equip\armor\obj-fm-cloth08-2.spr,24,2,3,"""áo được may từ da Hắc Báo, mềm mại mà phú quý các danh gia vọng tộc. """,,10000,6,0,30,355,355,31,50,50,,,,,,,,,,,,,,,,36,33,32,130,33,45,,,38,1,,
+Hổ bì y,0,2,23,\spr\item\equip\armor\obj-fm-cloth08-3.spr,24,2,3,"""May bằng da hổ, mặc vào khí lực tăng lên, cực kỳ hiếm thấy. """,,15000,7,0,30,410,410,31,56,56,,,,,,,,,,,,,,,,36,40,32,150,33,50,,,38,1,,
+Vận nghê thường,0,2,23,\spr\item\equip\armor\obj-fm-cloth09-1.spr,24,2,3,"""Mềm dẻo lả lướt, dễ động lòng người""",,20000,8,0,30,465,465,31,62,62,,,,,,,,,,,,,,,,36,46,32,170,33,55,,,38,1,,
+Mê hồn thường,0,2,23,\spr\item\equip\armor\obj-fm-cloth09-2.spr,24,2,3,"""Khiến cho người khác phải hồn phi phách lạc khi nhìn thấy, tiềm ẩn ma lực""",,25000,9,0,30,520,520,31,68,68,,,,,,,,,,,,,,,,36,53,32,190,33,60,,,38,1,,
+Cửu vĩ bạch hồ y,0,2,23,\spr\item\equip\armor\obj-fm-cloth09-3.spr,24,2,3,"""Được may từ đuôi của 9 con Hồ Ly tinh, mặc vào năng lực vô song""",,30000,10,0,30,575,575,31,74,74,,,,,,,,,,,,,,,,36,60,32,210,33,65,,,38,1
+Cẩm sam,0,2,24,\spr\item\equip\armor\obj-fm-cloth10-1.spr,24,2,3,Y phục được chế từ những loại vải thông thường. ,,100,1,0,30,50,50,31,20,20,,,,,,,,,,,,,,,,36,1,32,30,33,30,,,38,1
+Khởi ly sam,0,2,24,\spr\item\equip\armor\obj-fm-cloth10-1.spr,24,2,3,Y phục đẹp như hoa tươi của nữ đạo sĩ. ,,400,2,0,30,100,100,31,26,26,,,,,,,,,,,,,,,,36,7,32,45,33,45,,,38,1
+Hoa sa sam,0,2,24,\spr\item\equip\armor\obj-fm-cloth10-2.spr,24,2,3,Y phục được kết từ nhiều sợi tơ của hoa. ,,800,3,0,30,150,150,31,32,32,,,,,,,,,,,,,,,,36,13,32,60,33,60,,,38,1
+Thục cẩm sam,0,2,24,\spr\item\equip\armor\obj-fm-cloth10-3.spr,24,2,3,Là loại y phục được chế thành từ nhiều loại thảo địa. ,,2000,4,0,30,200,200,31,38,38,,,,,,,,,,,,,,,,36,19,32,75,33,75,,,38,1
+Tống cẩm sam,0,2,24,\spr\item\equip\armor\obj-fm-cloth11-1.spr,24,2,3,Là loại y phục được chế thành từ nhiều loại thảo địa nổi tiếng ở Tô Châu. ,,5000,5,0,30,250,250,31,44,44,,,,,,,,,,,,,,,,36,26,32,90,33,90,,,38,1
+Vân cẩm sam,0,2,24,\spr\item\equip\armor\obj-fm-cloth11-2.spr,24,2,3,Là loại y phục được chế thành từ nhiều loại thảo địa nổi tiếng ở Kim Lăng,,7000,6,0,30,300,300,31,50,50,,,,,,,,,,,,,,,,36,33,32,105,33,105,,,38,1
+Thanh la sam,0,2,24,\spr\item\equip\armor\obj-fm-cloth11-3.spr,24,2,3,"""Bên ngoài là áo nhưng bên trong là giáp, khả năng phòng ngự rất tốt""",,9000,7,0,30,250,250,31,56,56,,,,,,,,,,,,,,,,36,40,32,120,33,120,,,38,1
+Tất sa sam,0,2,24,\spr\item\equip\armor\obj-fm-cloth12-1.spr,24,2,3,"""Dùng toàn là những thảo dược quý chế thành, Có khả năng phòng ngự rất tốt. """,,12000,8,0,30,400,400,31,62,62,,,,,,,,,,,,,,,,36,46,32,135,33,135,,,38,1
+Lăng la sam,0,2,24,\spr\item\equip\armor\obj-fm-cloth12-2.spr,24,2,3,"""Dùng toàn là những thảo dược quý chế thành, đẹp đẽ lạ kỳ. """,,16000,9,0,30,450,450,31,68,68,,,,,,,,,,,,,,,,36,53,32,150,33,150,,,38,1
+Trầm hương sam,0,2,24,\spr\item\equip\armor\obj-fm-cloth12-3.spr,24,2,3,"""Trong áo luôn phảng phất mùi trầm hương, như tiên nữ giáng trần. """,,20000,10,0,30,500,500,31,74,74,,,,,,,,,,,,,,,,36,60,32,165,33,165,,,38,1
+Khảm thiết nữ giáp,0,2,25,\spr\item\equip\armor\obj-fm-cloth13-1.spr,25,2,3,áo giáp thông thường của nữ giới. ,,400,1,0,30,90,90,31,30,30,,,,,,,,,,,,,,,,36,1,32,35,,,,,38,1
+Thanh đồng nữ giáp,0,2,25,\spr\item\equip\armor\obj-fm-cloth13-1.spr,25,2,3,"""Là áo giáp của nữ, được kết bằng nghững miếng đồng xanh, có khả năng phòng ngự cực tốt. """,,1000,2,0,30,150,150,31,37,37,,,,,,,,,,,,,,,,36,7,32,60,,,,,38,1
+Bạch nhĩ giáp,0,2,25,\spr\item\equip\armor\obj-fm-cloth13-2.spr,25,2,3,Là loại áo giáp thường thấy của các nữ tướng. ,,2500,3,0,30,210,210,31,44,44,,,,,,,,,,,,,,,,36,13,32,85,,,,,38,1
+Lam yến cang giáp,0,2,25,\spr\item\equip\armor\obj-fm-cloth13-3.spr,25,2,3,"""Là áo giáp được kết bằng những miếng thép cự mỏng, khó mà tìm thấy""",,5000,4,0,30,270,270,31,51,51,,,,,,,,,,,,,,,,36,19,32,110,,,,,38,1
+Hồng nhĩ giáp,0,2,25,\spr\item\equip\armor\obj-fm-cloth14-1.spr,25,2,3,Là loại áo giáp cao cấp của các nữ tướng. ,,10000,5,0,30,330,330,31,58,58,,,,,,,,,,,,,,,,36,26,32,135,,,,,38,1
+Xích nhạn giáp,0,2,25,\spr\item\equip\armor\obj-fm-cloth14-2.spr,25,2,3,"""áo giáp được kết bằng lông Nhạn đỏ, nữ tính thường hay dùng. """,,16000,6,0,30,390,390,31,65,65,,,,,,,,,,,,,,,,36,33,32,160,,,,,38,1
+Huyết đồng giáp,0,2,25,\spr\item\equip\armor\obj-fm-cloth14-3.spr,25,2,3,"""Chế tạo bí truyền, màu đỏ huyền bí. """,,25000,7,0,30,450,450,31,72,72,,,,,,,,,,,,,,,,36,40,32,185,,,,,38,1
+Lan ngân giáp,0,2,25,\spr\item\equip\armor\obj-fm-cloth15-1.spr,25,2,3,"""Lan Ngân tạo thành, nhẹ mà chắc chắn. """,,32000,8,0,30,510,510,31,79,79,,,,,,,,,,,,,,,,36,46,32,210,,,,,38,1
+Huyền thiết tuyết ngân giáp,0,2,25,\spr\item\equip\armor\obj-fm-cloth15-2.spr,25,2,3,"""Là loại giáp kết hợp Thiết và Bạc, các nữ tướng thường rất thích dùng. """,,40000,9,0,30,570,570,31,86,86,,,,,,,,,,,,,,,,36,53,32,235,,,,,38,1
+Tích lịch kim phong giáp,0,2,25,\spr\item\equip\armor\obj-fm-cloth15-3.spr,25,2,3,"""Hộ giáp của Mục Quế Anh, theo truyền thuyết là do Thánh Mẫu ban tặng. """,,50000,10,0,30,630,630,31,93,93,,,,,,,,,,,,,,,,36,60,32,260,,,,,38,1
+Phá ma y,0,2,26,\spr\item\equip\armor\obj-fm-cloth16-1.spr,24,2,3,Là loại áo được làm từ vỏ cây Ma thụ. ,,100,1,0,30,20,20,31,12,12,,,,,,,,,,,,,,,,36,1,32,0,,,,,38,1
+Phá miên y,0,2,26,\spr\item\equip\armor\obj-fm-cloth16-1.spr,24,2,3,Là loại áo được kết bằng bông. ,,250,2,0,30,90,90,31,16,16,,,,,,,,,,,,,,,,36,7,32,45,,,39,6,38,1
+Phá cổn y,0,2,26,\spr\item\equip\armor\obj-fm-cloth16-2.spr,24,2,3,Là loại Cổn y nhưng bên ngoài hơi giống Phá Miên y. ,,500,3,0,30,140,140,31,20,20,,,,,,,,,,,,,,,,36,13,32,60,,,39,6,38,1
+Bạch bổ y,0,2,26,\spr\item\equip\armor\obj-fm-cloth16-3.spr,24,2,3,Loại áo được kết lại từ những áo cũ rách khác. ,,800,4,0,30,185,185,31,24,24,,,,,,,,,,,,,,,,36,19,32,75,,,39,6,38,1
+Thiên bổ y,0,2,26,\spr\item\equip\armor\obj-fm-cloth17-1.spr,24,2,3,"""Loại áo được may từ vô số áo cũ rách khác, dày và ấm. """,,1200,5,0,30,230,230,31,28,28,,,,,,,,,,,,,,,,36,26,32,90,,,39,6,38,1
+Dương bì giáp,0,2,26,\spr\item\equip\armor\obj-fm-cloth17-2.spr,24,2,3,"""Dùng da dê và Ma Bố hợp thành, tính phòng ngự rất cao. """,,1800,6,0,30,270,270,31,32,32,,,,,,,,,,,,,,,,36,33,32,105,,,39,6,38,1
+Ngưu bì giáp,0,2,26,\spr\item\equip\armor\obj-fm-cloth17-3.spr,24,2,3,"""Dùng da trâu và Ma Bố hợp thành, tính phòng ngự rất cao. """,,2500,7,0,30,315,315,31,36,36,,,,,,,,,,,,,,,,36,40,32,120,,,39,6,38,1
+Tử thử y,0,2,26,\spr\item\equip\armor\obj-fm-cloth18-1.spr,24,2,3,"""Dùng da màu tím của loài chuột kỳ dị, tính phòng ngự rất cao. """,,3200,8,0,30,360,360,31,40,40,,,,,,,,,,,,,,,,36,46,32,135,,,39,6,38,1
+Khôi điêu y,0,2,26,\spr\item\equip\armor\obj-fm-cloth18-2.spr,24,2,3,"""Kết từ đuôi của dã Điêu, trông có vẻ cũ kỹ nhưng sức phòng ngự phi thường. """,,4000,9,0,30,405,405,31,44,44,,,,,,,,,,,,,,,,36,53,32,150,,,39,6,38,1
+Vạn chúng tề tâm y,0,2,26,\spr\item\equip\armor\obj-fm-cloth18-3.spr,24,2,3,"""Thể hiện tinh thần đoàn kết của Cái bang, trên dưới đồng lòng, việc gì cũng xong. """,,5000,10,0,30,450,450,31,48,48,,,,,,,,,,,,,,,,36,60,32,165,,,39,6,38,1
+Bạch điệp quần,0,2,27,\spr\item\equip\armor\obj-fm-cloth19-1.spr,24,2,3,Là loại thường phục của nữ giới. ,,100,1,0,30,40,40,31,20,20,,,,,,,,,,,,,,,,36,1,32,0,33,20,,,38,1
+Thanh la quần,0,2,27,\spr\item\equip\armor\obj-fm-cloth19-1.spr,24,2,3,Loại quần áo được dệt bằng những loại tơ thường. ,,100,2,0,30,80,80,31,25,25,,,,,,,,,,,,,,,,36,7,32,0,33,30,,,38,1
+Chức cẩm thạch lựu quần,0,2,27,\spr\item\equip\armor\obj-fm-cloth19-1.spr,24,2,3,"""Dệt bằng cẩm Tú Hoa, giá trị phi phàm. """,,100,3,0,30,120,120,31,30,30,,,,,,,,,,,,,,,,36,13,32,0,33,40,,,38,1
+Song điệp tú la quần,0,2,27,\spr\item\equip\armor\obj-fm-cloth19-1.spr,24,2,3,"""Dệt bằng cẩm Tú Hoa, cốt cách quý phái. """,,100,4,0,30,160,160,31,35,35,,,,,,,,,,,,,,,,36,19,32,0,33,50,,,38,1
+Bách ô quần,0,2,27,\spr\item\equip\armor\obj-fm-cloth20-1.spr,24,2,3,"""Dệt bằng lông của 100 con quạ, cực kỳ hiếm thấy. """,,6000,5,0,30,200,200,31,40,40,,,,,,,,,,,,,,,,36,26,32,0,33,60,,,38,1
+Nguyệt hoa quần,0,2,27,\spr\item\equip\armor\obj-fm-cloth20-2.spr,24,2,3,Loại quần phát ra ánh sáng kỳ ảo như ánh sáng trăng. ,,10000,6,0,30,240,240,31,45,45,,,,,,,,,,,,,,,,36,33,32,0,33,70,,,38,1
+Phong vĩ quần,0,2,27,\spr\item\equip\armor\obj-fm-cloth20-3.spr,24,2,3,"""Dệt bằng lông Đổng Tước, vừa cao quý vừa có tính năng bảo vệ. """,,15000,7,0,30,280,280,31,50,50,,,,,,,,,,,,,,,,36,40,32,0,33,80,,,38,1
+Kinh bảo quần,0,2,27,\spr\item\equip\armor\obj-fm-cloth21-1.spr,24,2,3,Loại y phục được khảm bằng nhiều loại nữ trang quý. ,,20000,8,0,30,320,320,31,55,55,,,,,,,,,,,,,,,,36,46,32,0,33,90,,,38,1
+Bách phong triều dương quần,0,2,27,\spr\item\equip\armor\obj-fm-cloth21-2.spr,24,2,3,ánh sáng huyền diệu như buổi chiều tà. ,,25000,9,0,30,360,360,31,60,60,,,,,,,,,,,,,,,,36,53,32,0,33,100,,,38,1
+Lưu tiên quần,0,2,27,\spr\item\equip\armor\obj-fm-cloth21-3.spr,24,2,3,"""Truyền thuyết nói rằng đây là do Triệu Phi Yến thời Hán tự tay làm ra, mặc vào như đang du tiên. """,,30000,10,0,30,400,400,31,65,65,,,,,,,,,,,,,,,,36,60,32,0,33,110,,,38,1
+Phong trang,0,2,28,\spr\item\equip\armor\obj_ma_lf_000.spr,24,2,3,Lễ phục của tân nương mặc trong hôn lễ,,50000,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,38,0
+Kinh thiên giáp,0,2,28,\spr\item\equip\armor\obj_ma_lf_001.spr,24,2,3,"""áo giáp dệt bằng vàng, sắc thái uy phong, bảo vật hiếm thấy, Vừa nhìn đã thấy thể hiện đượcSức mạnh. """,,50000,2,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,38,0
+Thanh tuyệt y,0,2,28,\spr\item\equip\armor\obj_ma_lf_002.spr,24,2,3,"""Là loại áo dài thường thấy, sắc thái uy phong, tượng trưng cho sự cao quý""",,50000,3,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,38,0
+Phụng quần,0,2,28,\spr\item\equip\armor\obj_fm_lf_000.spr,24,2,3,Lễ phục của tân nương mặc trong hôn lễ,,50000,4,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,38,1
+Khấp địa quần,0,2,28,\spr\item\equip\armor\obj_fm_lf_001.spr,24,2,3,"""Là loại áo dài thường thấy, sắc thái uy phong, tượng trưng cho sự cao quý. """,,50000,5,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,38,1
+Băng tinh quần,0,2,28,\spr\item\equip\armor\obj_fm_lf_002.spr,24,2,3,"""Loại áo dài nữ tướng thích mặc, thể hiện vẻ đẹp nhu mì hoàn mỹ của nữ tính. """,,50000,6,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,38,1
+Nghinh tân y,0,2,28,\spr\item\equip\armor\obj_ma_lf_003.spr,24,2,3,"""Loại trường y may từ Kim tơ, mặc vào những dịp năm mới""",,50000,7,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,38,0
+Giá mộng quần,0,2,28,\spr\item\equip\armor\obj_fm_lf_003.spr,24,2,3,"""Loại quần áo được may từ những loại lụa quý, mặc trong những dịp lễ tiết.""",,50000,8,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,38,1
+Băng tinh quần,0,2,28,\spr\item\equip\armor\obj_fm_lf_002.spr,24,2,3,"""Loại áo dài nữ tướng thích mặc, thể hiện vẻ đẹp nhu mì hoàn mỹ của nữ tính. """,,50000,9,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,38,1
+Băng tinh quần,0,2,28,\spr\item\equip\armor\obj_fm_lf_002.spr,24,2,3,"""Loại áo dài nữ tướng thích mặc, thể hiện vẻ đẹp nhu mì hoàn mỹ của nữ tính. """,,50000,10,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,38,1

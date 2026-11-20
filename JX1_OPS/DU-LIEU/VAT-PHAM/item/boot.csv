@@ -1,0 +1,41 @@
+﻿名称,道具种类,具体类别,详细类别,动画文件名,对应物件索引,宽度,高度,说明文字,五行属性,价格,等级,是否叠放,基础属性1类型,基础属性1最小值,基础属性1最大值,基础属性2类型,基础属性2最小值,基础属性2最大值,基础属性3类型,基础属性3最小值,基础属性3最大值,基础属性4类型,基础属性4最小值,基础属性4最大值,基础属性5类型,基础属性5最小值,基础属性5最大值,基础属性6类型,基础属性6最小值,基础属性6最大值,基础属性7类型,基础属性7最小值,基础属性7最大值,需求属性1类型,需求属性1数值,需求属性2类型,需求属性2数值,需求属性3类型,需求属性3数值,需求属性4类型,需求属性4数值,需求属性5类型,需求属性5数值,需求属性6类型,需求属性6数值
+Thảo ngoa,0,5,0,\spr\item\equip\boots\obj-shoes01.spr,26,2,2,"""Loại giày bằng cỏ thường, chế tác thô sơ. """,,70,1,0,30,7,7,31,20,20,,,,,,,,,,,,,,,,36,1,32,20,33,0,,,38,0,,
+Bố ngoa,0,5,0,\spr\item\equip\boots\obj-shoes01.spr,26,2,2,Loại giày bằng vải thường trong nhân gian thường dùng. ,,260,2,0,30,12,12,31,20,20,,,,,,,,,,,,,,,,36,8,32,29,33,0,,,38,0,,
+Thiên tầng bố ngoa,0,5,0,\spr\item\equip\boots\obj-shoes02.spr,26,2,2,"""Loại giày vải dày, màu xám tro. """,,650,3,0,30,18,18,31,20,20,,,,,,,,,,,,,,,,36,14,32,39,33,0,,,38,0,,
+Cát ngoa,0,5,0,\spr\item\equip\boots\obj-shoes02.spr,26,2,2,Loại giày được tinh chế từ cỏ Cát đằng. ,,1000,4,0,30,24,24,31,20,20,,,,,,,,,,,,,,,,36,20,32,49,33,0,,,38,0,,
+Thương cát ngoa,0,5,0,\spr\item\equip\boots\obj-shoes03.spr,26,2,2,"""Dùng loại Cát Đàng lâu năm, tính dẻo cực cao. """,,1600,5,0,30,30,30,31,20,20,,,,,,,,,,,,,,,,36,27,32,59,33,0,,,38,0,,
+Bách niên thương cát ngoa,0,5,0,\spr\item\equip\boots\obj-shoes03.spr,26,2,2,Loại giày cỏ được dùng nhiều ở vùng Vân Nam. ,,2500,6,0,30,36,36,31,20,20,,,,,,,,,,,,,,,,36,33,32,69,33,0,,,38,0,,
+Trĩ vĩ tống ngoa,0,5,0,\spr\item\equip\boots\obj-shoes04.spr,26,2,2,Loại giày cực phẩm đã có danh tiếng hơn trăm năm. ,,3300,7,0,30,42,42,31,20,20,,,,,,,,,,,,,,,,36,40,32,79,33,0,,,38,0,,
+Giao ngoa,0,5,0,\spr\item\equip\boots\obj-shoes04.spr,26,2,2,Loại giày được làm từ lông chim trĩ. ,,3850,8,0,30,48,48,31,20,20,,,,,,,,,,,,,,,,36,47,32,89,33,0,,,38,0,,
+Phong vĩ tống ngoa,0,5,0,\spr\item\equip\boots\obj-shoes05.spr,26,2,2,"""Loại giày được làm từ tơ lụa cực hiếm, chỉ có ở phương Nam. """,,5000,9,0,30,54,54,31,20,20,,,,,,,,,,,,,,,,36,54,32,99,33,0,,,38,0,,
+Cửu tiết xương vĩ ngoa,0,5,0,\spr\item\equip\boots\obj-shoes05.spr,26,2,2,"""Loại giày được kết từ loại cỏ Cửu Tiết Xương ở cố hương của Khuất Nguyên, nhẹ nhưng chắc chắn """,,6400,10,0,30,60,60,31,20,20,,,,,,,,,,,,,,,,36,60,32,109,33,0,,,38,0,,
+Ngưu bì ngoa,0,5,1,\spr\item\equip\boots\obj-shoes06.spr,26,2,2,Loại giày làm bằng da bò thông thường. ,,150,1,0,30,17,17,31,20,20,,,,,,,,,,,,,,,,36,3,32,30,33,0,,,38,0,,
+Tật ngoa,0,5,1,\spr\item\equip\boots\obj-shoes06.spr,26,2,2,Loại giày làm từ loại cỏ đặc biệt. ,,600,2,0,30,28,28,31,20,20,,,,,,,,,,,,,,,,36,10,32,44,33,0,,,38,0,,
+Ô bì ngoa,0,5,1,\spr\item\equip\boots\obj-shoes07.spr,26,2,2,Loại giày da bò nhưng đã qua tinh chế. ,,1400,3,0,30,42,42,31,20,20,,,,,,,,,,,,,,,,36,16,32,59,33,0,,,38,0,,
+Đằng mộng ngoa,0,5,1,\spr\item\equip\boots\obj-shoes07.spr,26,2,2,Loại giày thượng đẳng tinh chế từ cỏ Đằng Mộng. ,,2400,4,0,30,56,56,31,20,20,,,,,,,,,,,,,,,,36,22,32,74,33,0,,,38,0,,
+Phi la ngoa,0,5,1,\spr\item\equip\boots\obj-shoes08.spr,26,2,2,Loại giày thượng đẳng tinh chế từ cỏ Đằng Mộng và tơ diều. ,,3600,5,0,30,70,70,31,20,20,,,,,,,,,,,,,,,,36,29,32,89,33,0,,,38,0,,
+Lục thúy ngoa,0,5,1,\spr\item\equip\boots\obj-shoes08.spr,26,2,2,Giày làm từ tơ trúc. ,,5000,6,0,30,84,84,31,20,20,,,,,,,,,,,,,,,,36,35,32,104,33,0,,,38,0
+Hổ bì ngoa,0,5,1,\spr\item\equip\boots\obj-shoes09.spr,26,2,2,Loại giày may từ da hổ trắng hiếm thấy. ,,6500,7,0,30,98,98,31,20,20,,,,,,,,,,,,,,,,36,42,32,119,33,0,,,38,0
+Tê bì ngoa,0,5,1,\spr\item\equip\boots\obj-shoes09.spr,26,2,2,"""Loại giày thượng đẳng, tinh chế từ lụa và da tê giác. """,,9000,8,0,30,112,112,31,20,20,,,,,,,,,,,,,,,,36,49,32,134,33,0,,,38,0
+Long lân ngoa,0,5,1,\spr\item\equip\boots\obj-shoes10.spr,26,2,2,"""Mặc dù gọi là Long Lân Ngoa, nhưng thực chất chỉ là da của Giải Long-Da của cá sấu may thành.""",,12000,9,0,30,126,126,31,20,20,,,,,,,,,,,,,,,,36,56,32,149,33,0,,,38,0
+Thiên tàm ngoa,0,5,1,\spr\item\equip\boots\obj-shoes10.spr,26,2,2,"""Dùng Loại tơ Thiên Tầm thượng đẳng may thành, tính dẻo cựa cao. """,,14500,10,0,30,140,140,31,20,20,,,,,,,,,,,,,,,,36,62,32,164,33,0,,,38,0
+Tú ngoa,0,5,2,\spr\item\equip\boots\obj-shoes11.spr,27,2,2,"""Là loại hài thông thường, ở đâu cũng thấy. """,,70,1,0,30,7,7,31,20,20,,,,,,,,,,,,,,,,36,1,32,20,33,0,,,38,1
+Lăng tơ ngoa,0,5,2,\spr\item\equip\boots\obj-shoes11.spr,27,2,2,Là loại giày dùng Loại tơ thượng đẳng may thành. ,,260,2,0,30,12,12,31,20,20,,,,,,,,,,,,,,,,36,8,32,29,33,0,,,38,1
+Gấm hài,0,5,2,\spr\item\equip\boots\obj-shoes12.spr,27,2,2,"""Loại giày của nữ giới, được may từ gấm thượng hạng. """,,650,3,0,30,18,18,31,20,20,,,,,,,,,,,,,,,,36,14,32,39,33,0,,,38,1
+Uyên ương ngoa,0,5,2,\spr\item\equip\boots\obj-shoes12.spr,27,2,2,Loại giày có thêu hình hoa bướm. ,,1000,4,0,30,24,24,31,20,20,,,,,,,,,,,,,,,,36,20,32,49,33,0,,,38,1
+Toan ngoa,0,5,2,\spr\item\equip\boots\obj-shoes13.spr,27,2,2,"""Dùng loại tơ danh tiếng chế thành, độ dẻo cực cao. """,,1600,5,0,30,30,30,31,20,20,,,,,,,,,,,,,,,,36,27,32,59,33,0,,,38,1
+Lâm ngọc hài,0,5,2,\spr\item\equip\boots\obj-shoes13.spr,27,2,2,"""Loại giày từ tơ thượng đẳng, màu sắc trắng xanh rất đẹp mắt. """,,2500,6,0,30,36,36,31,20,20,,,,,,,,,,,,,,,,36,33,32,69,33,0,,,38,1
+Liên phong ngoa,0,5,2,\spr\item\equip\boots\obj-shoes14.spr,27,2,2,"""Loại giày từ tơ thượng đẳng, dành cho nữ giới. """,,3300,7,0,30,42,42,31,20,20,,,,,,,,,,,,,,,,36,40,32,79,33,0,,,38,1
+Phạm hồng ngoa,0,5,2,\spr\item\equip\boots\obj-shoes14.spr,27,2,2,Là loại giày thường dùng trong nhà Phật. ,,3850,8,0,30,48,48,31,20,20,,,,,,,,,,,,,,,,36,47,32,89,33,0,,,38,1
+Bạch chu ngoa,0,5,2,\spr\item\equip\boots\obj-shoes15.spr,27,2,2,Loại giày được may từ lụa điều và tơ Thiên Tầm. ,,5000,9,0,30,54,54,31,20,20,,,,,,,,,,,,,,,,36,54,32,99,33,0,,,38,1
+Kim lũ hài,0,5,2,\spr\item\equip\boots\obj-shoes15.spr,27,2,2,Dùng tơ Thiên Tầm và các sợi vàng mỏng may thành. ,,6400,10,0,30,60,60,31,20,20,,,,,,,,,,,,,,,,36,60,32,109,33,0,,,38,1
+Lộc bì ngoa,0,5,3,\spr\item\equip\boots\obj-shoes16.spr,27,2,2,Loại giày được may từda Nai trắng. ,,150,1,0,30,17,17,31,20,20,,,,,,,,,,,,,,,,36,3,32,30,33,0,,,38,1
+Kỵ hài,0,5,3,\spr\item\equip\boots\obj-shoes16.spr,27,2,2,Dùng những loại thực vật thượng đẳng may thành. ,,600,2,0,30,28,28,31,20,20,,,,,,,,,,,,,,,,36,10,32,44,33,0,,,38,1
+Ngân đoạn ngoa,0,5,3,\spr\item\equip\boots\obj-shoes17.spr,27,2,2,Loại giày may từ các thứ lụa thông thường. ,,1400,3,0,30,42,42,31,20,20,,,,,,,,,,,,,,,,36,16,32,59,33,0,,,38,1
+Phù dung ngoa,0,5,3,\spr\item\equip\boots\obj-shoes17.spr,27,2,2,Dùng những loại lụa thượng đẳng may thành. ,,2400,4,0,30,56,56,31,20,20,,,,,,,,,,,,,,,,36,22,32,74,33,0,,,38,1
+Hỏa tường ngoa,0,5,3,\spr\item\equip\boots\obj-shoes18.spr,27,2,2,Loại giày may từ gấm đỏ. ,,3600,5,0,30,70,70,31,20,20,,,,,,,,,,,,,,,,36,29,32,89,33,0,,,38,1
+Mục vân ngoa,0,5,3,\spr\item\equip\boots\obj-shoes18.spr,27,2,2,May từ vỏ cây và các loại tơ thượng đẳng. ,,5000,6,0,30,84,84,31,20,20,,,,,,,,,,,,,,,,36,35,32,104,33,0,,,38,1
+Xương hoàn ngoa,0,5,3,\spr\item\equip\boots\obj-shoes19.spr,27,2,2,Loại giày bí truyền được làm từ lụa tơ hoàn. ,,6500,7,0,30,98,98,31,20,20,,,,,,,,,,,,,,,,36,42,32,119,33,0,,,38,1
+Tuyết doanh ngoa,0,5,3,\spr\item\equip\boots\obj-shoes19.spr,27,2,2,Được làm từ tơ Thiên Tầm và tơ Bạch Ngân. ,,9000,8,0,30,112,112,31,20,20,,,,,,,,,,,,,,,,36,49,32,134,33,0,,,38,1
+Sính sa ngoa,0,5,3,\spr\item\equip\boots\obj-shoes20.spr,27,2,2,"""Dùng các loại tơ cực nhẹ chế thành, độ dẻo rất cao. """,,12000,9,0,30,126,126,31,20,20,,,,,,,,,,,,,,,,36,56,32,149,33,0,,,38,1
+Phi phụng ngoa,0,5,3,\spr\item\equip\boots\obj-shoes20.spr,27,2,2,"""Theo truyền thuyết, loại giày này được may từ lông chim Phụng Hoàng, có thể cỡi mây, đi trên mặt nước. """,,14500,10,0,30,140,140,31,20,20,,,,,,,,,,,,,,,,36,62,32,164,33,0,,,38,1

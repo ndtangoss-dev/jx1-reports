@@ -1,0 +1,11 @@
+﻿名称,道具种类,具体类别,详细类别,动画文件名,对应物件索引,宽度,高度,说明文字,五行属性,价格,等级,是否叠放,基础属性1类型,基础属性1最小值,基础属性1最大值,基础属性2类型,基础属性2最小值,基础属性2最大值,基础属性3类型,基础属性3最小值,基础属性3最大值,基础属性4类型,基础属性4最小值,基础属性4最大值,基础属性5类型,基础属性5最小值,基础属性5最大值,基础属性6类型,基础属性6最小值,基础属性6最大值,基础属性7类型,基础属性7最小值,基础属性7最大值,需求属性1类型,需求属性1数值,需求属性2类型,需求属性2数值,需求属性3类型,需求属性3数值,需求属性4类型,需求属性4数值,需求属性5类型,需求属性5数值,需求属性6类型,需求属性6数值
+Hoàng ngọc giới chỉ,0,3,0,\spr\item\equip\ring\obj-ring01.spr,37,1,1,"""Loại nhẫn đeo bằng Hoàng Ngọc thường thấy, không đáng giá. """,,300,1,0,,,,,,,,,,,,,,,,,,,,,,36,1,,,,,,,,,,
+Nhẫn quả trám,0,3,0,\spr\item\equip\ring\obj-ring02.spr,37,1,1,"""Loại nhẫn đeo bằng quả trám thường thấy, không đáng giá. """,,1200,2,0,,,,,,,,,,,,,,,,,,,,,,36,7,,,,,,,,,,
+Phù dung thạch giới chỉ,0,3,0,\spr\item\equip\ring\obj-ring03.spr,37,1,1,"""Loại nhẫn được khãm vào những hạt Mã Não nhỏ, không quý lắm. """,,2700,3,0,,,,,,,,,,,,,,,,,,,,,,36,14,,,,,,,,,,
+Phỉ thúy giới chỉ,0,3,0,\spr\item\equip\ring\obj-ring04.spr,37,1,1,"""Loại nhẫn đeo rất hiếm nhìn thấy được, giá trị cực quý. """,,4800,4,0,,,,,,,,,,,,,,,,,,,,,,36,20,,,,,,,,,,
+Thúy lựu thạch giới chỉ,0,3,0,\spr\item\equip\ring\obj-ring05.spr,37,1,1,"""Loại nhẫn bằng Thúy Lựu quý hiếm, chỉ những người có thanh danh mới được đeo. """,,7500,5,0,,,,,,,,,,,,,,,,,,,,,,36,27,,,,,,,,,,
+Tổ mẫu lục giới chỉ,0,3,0,\spr\item\equip\ring\obj-ring06.spr,37,1,1,"""Loại nhẫn được khảm Tổ Mẫu Lục do Miến Điện tiến cống, cực kỳ cao quý. """,,10800,6,0,,,,,,,,,,,,,,,,,,,,,,36,34,,,,,,,,,,
+Hải lam bảo thạch giới chỉ,0,3,0,\spr\item\equip\ring\obj-ring07.spr,37,1,1,"""Loại nhẫn khảm Hải Lam Bảo Thạch do các thương nhân nước ngoài mang vào, vật phẩm cực hiếm. """,,14700,7,0,,,,,,,,,,,,,,,,,,,,,,36,40,,,,,,,,,,
+Hồng bảo thạch giới chỉ,0,3,0,\spr\item\equip\ring\obj-ring08.spr,37,1,1,Loại nhẫn khảm Hồng Bảo Thạch xuất xứ từ nước Tích Lan nhưng rất được lưu dụng trong nước. ,,19200,8,0,,,,,,,,,,,,,,,,,,,,,,36,47,,,,,,,,,,
+Lam bảo thạch giới chỉ,0,3,0,\spr\item\equip\ring\obj-ring09.spr,37,1,1,"""Loại nhẫn khảm Lam Bảo Thạch do các cao tăng mang từ Thiên Trúc về, cực kỳ cao quý. """,,24300,9,0,,,,,,,,,,,,,,,,,,,,,,36,54,,,,,,,,,,
+Toàn thạch giới chỉ,0,3,0,\spr\item\equip\ring\obj-ring10.spr,37,1,1,"""Loại nhẫn khảm Toàn Thạch mang từ hải ngoại về, nghe nói có tiềm ẩn một sức mạnh thần bí. """,,30000,10,0,,,,,,,,,,,,,,,,,,,,,,36,60,,,,,,,,,,

@@ -1,0 +1,21 @@
+﻿名称,道具种类,具体类别,详细类别,动画文件名,对应物件索引,宽度,高度,说明文字,五行属性,价格,等级,是否叠放,基础属性1类型,基础属性1最小值,基础属性1最大值,基础属性2类型,基础属性2最小值,基础属性2最大值,基础属性3类型,基础属性3最小值,基础属性3最大值,基础属性4类型,基础属性4最小值,基础属性4最大值,基础属性5类型,基础属性5最小值,基础属性5最大值,基础属性6类型,基础属性6最小值,基础属性6最大值,基础属性7类型,基础属性7最小值,基础属性7最大值,需求属性1类型,需求属性1数值,需求属性2类型,需求属性2数值,需求属性3类型,需求属性3数值,需求属性4类型,需求属性4数值,需求属性5类型,需求属性5数值,需求属性6类型,需求属性6数值
+Thanh đồng thủ trạc,0,8,0,\spr\item\equip\bangle\obj-bangle01.spr,35,1,2,"""Loại vòng được tinh chế từ Đồng, khả năng phòng ngự rất tốt. """,,100,1,0,30,13,13,31,20,20,,,,,,,,,,,,,,,,36,1,32,0,33,0,,,38,1,,
+Luyện đồng thủ trạc,0,8,0,\spr\item\equip\bangle\obj-bangle02.spr,35,1,2,"""Loại vòng được tinh chế từ Đồng, khả năng phòng ngự rất tốt. """,,300,2,0,30,22,22,31,20,20,,,,,,,,,,,,,,,,36,8,32,20,33,0,,,38,1,,
+Tấn thiết hộ uyển,0,8,0,\spr\item\equip\bangle\obj-bangle03.spr,35,1,2,"""Loại hộ giáp được tinh chế từ thép già, phòng ngự rất tốt""",,600,3,0,30,33,33,31,20,20,,,,,,,,,,,,,,,,36,14,32,27,33,0,,,38,1,,
+Ngân tơ trạc,0,8,0,\spr\item\equip\bangle\obj-bangle04.spr,35,1,2,"""Loại vòng bằng bạc nhỏ, có thể dùng để trang sức. """,,1000,4,0,30,45,45,31,20,20,,,,,,,,,,,,,,,,36,20,32,35,33,0,,,38,1,,
+Kim tơ trạc,0,8,0,\spr\item\equip\bangle\obj-bangle05.spr,35,1,2,"""Loại vòng bằngvàng nhỏ, có thể dùng để trang sức. """,,1800,5,0,30,56,56,31,20,20,,,,,,,,,,,,,,,,36,27,32,42,33,0,,,38,1,,
+Bạch ngọc trạc,0,8,0,\spr\item\equip\bangle\obj-bangle06.spr,35,1,2,"""Mài từ Bạch Ngọc, cực kỳ quý hiếm. """,,2600,6,0,30,67,67,31,20,20,,,,,,,,,,,,,,,,36,33,32,49,33,0,,,38,1,,
+Phỉ thúy ngọc trạc,0,8,0,\spr\item\equip\bangle\obj-bangle07.spr,35,1,2,"""Màu sắc trang nhã, làm đồ trang sức. """,,3600,7,0,30,78,78,31,20,20,,,,,,,,,,,,,,,,36,40,32,56,33,0,,,38,1,,
+ôn lương ngọc trạc,0,8,0,\spr\item\equip\bangle\obj-bangle08.spr,35,1,2,"""Bên trong có Âm dương hòa khí, Đông ấm, Hạ mát. """,,4900,8,0,30,89,89,31,20,20,,,,,,,,,,,,,,,,36,47,32,64,33,0,,,38,1,,
+Băng phách hàn ngọc trạc,0,8,0,\spr\item\equip\bangle\obj-bangle09.spr,35,1,2,"""Mài từ loại Bạch Ngọc ngàn năm, khí lạnh kinh người. """,,6400,9,0,30,100,100,31,20,20,,,,,,,,,,,,,,,,36,54,32,72,33,0,,,38,1,,
+Long phụng huyết ngọc trạc,0,8,0,\spr\item\equip\bangle\obj-bangle10.spr,35,1,2,Là loại vòng đeo có tiềm ẩn sức mãnh thần bí. ,,8100,10,0,30,111,111,31,20,20,,,,,,,,,,,,,,,,36,60,32,80,33,0,,,38,1,,
+Ngưu bì hộ uyển,0,8,1,\spr\item\equip\bangle\obj-bangle11.spr,34,1,2,"""Là loại hộ uyển thông thường bằng da trâu, đao kiếm khó đâm thủng. """,,100,1,0,30,13,13,31,20,20,,,,,,,,,,,,,,,,36,1,32,0,33,0,,,38,0,,
+Lang bì hộ uyển,0,8,1,\spr\item\equip\bangle\obj-bangle12.spr,34,1,2,"""Làm bằng da sói, mềm dẻo linh hoạt. """,,300,2,0,30,22,22,31,20,20,,,,,,,,,,,,,,,,36,8,32,20,33,0,,,38,0,,
+Ô đằng hộ uyển,0,8,1,\spr\item\equip\bangle\obj-bangle13.spr,34,1,2,"""Kết từ loại dây mây 100 năm, rắn chắc vô cùng. """,,600,3,0,30,33,33,31,20,20,,,,,,,,,,,,,,,,36,14,32,30,33,0,,,38,0,,
+Mãng bì hộ uyển,0,8,1,\spr\item\equip\bangle\obj-bangle14.spr,34,1,2,"""Làm từ da Mãng xà, đẹp và chắc vô cùng. """,,1000,4,0,30,45,45,31,20,20,,,,,,,,,,,,,,,,36,20,32,40,33,0,,,38,0,,
+Ngạc bì hộ uyển,0,8,1,\spr\item\equip\bangle\obj-bangle15.spr,34,1,2,"""Làm từ da cá sấu, đẹp và chắc vô cùng, có thể dùng làm binh khí. """,,1800,5,0,30,56,56,31,20,20,,,,,,,,,,,,,,,,36,27,32,50,33,0,,,38,0,,
+Tượng bì hộ uyển,0,8,1,\spr\item\equip\bangle\obj-bangle16.spr,34,1,2,"""Làm từ da voi, vừa dẻo vừa chắc. """,,2600,6,0,30,67,67,31,20,20,,,,,,,,,,,,,,,,36,33,32,60,33,0,,,38,0
+Sa bì hộ uyển,0,8,1,\spr\item\equip\bangle\obj-bangle17.spr,34,1,2,"""Làm từ da cá mập, đao tên khó mà xuyên thủng. """,,3600,7,0,30,78,78,31,20,20,,,,,,,,,,,,,,,,36,40,32,70,33,0,,,38,0
+Tê giác hộ uyển,0,8,1,\spr\item\equip\bangle\obj-bangle18.spr,34,1,2,"""Làm từ da Tê Giác, đao kiếm thường khó mà xuyên thủng. """,,4900,8,0,30,89,89,31,20,20,,,,,,,,,,,,,,,,36,47,32,80,33,0,,,38,0
+Long lân hộ uyển,0,8,1,\spr\item\equip\bangle\obj-bangle19.spr,34,1,2,"""Làm từ da Giải Long, có thể bảo vệ cho toàn cánh tay. """,,6400,9,0,30,100,100,31,20,20,,,,,,,,,,,,,,,,36,54,32,90,33,0,,,38,0
+Thiên tầm hộ uyển,0,8,1,\spr\item\equip\bangle\obj-bangle20.spr,34,1,2,"""Kết bằng tơ Thiên Tầm, đao thương bất nhập, không sợ lửa. """,,8100,10,0,30,111,111,31,20,20,,,,,,,,,,,,,,,,36,60,32,100,33,0,,,38,0

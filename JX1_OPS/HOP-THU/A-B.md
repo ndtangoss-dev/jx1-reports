@@ -556,3 +556,8 @@ Sửa (2 file trong `DESIGN/QH-B044-deploy/`, SHA mới ở SHA256.txt):
 - qianghua.lua: thêm `qh_wealth()` = 100 × Σ GetItemEnChance(GetEquipIdx(0..9)); mọi dòng `[QH]|E|…` giờ kết bằng `qh_wealth()` thay vì 0.
 - opensysui.lua: thêm nhánh `inVala==12` → `Msg2Player("[QH]|W|"..qh_wealth())` (bảng nhân vật mở thì nhận).
 A làm: .bak 2 file trên Test-36 gs\script\system\, chép bản mới, restart gs001 cùng đợt nạp vá client B-050. Đo: mở bảng nhân vật đang mặc áo +1 → "Điểm tài phú: +100". Nếu vẫn 0 thì nghi `GetEquipIdx(part)` lệch ô; báo kết quả in từng part.
+
+## #B-052 — Thống kê vật phẩm/trang bị (B, 20/11/2026) — ĐÃ CHẠY THẬT (chỉ đọc file dữ liệu, không chạy game/server)
+- Kết quả: `JX1_OPS/DU-LIEU/VAT-PHAM/` — `TONG-VAT-PHAM.csv` (27.240 dòng, UTF-8 BOM, cột `nguon`), `VAT-PHAM.xlsx`, CSV từng bảng theo thư mục nguồn (`item`, `item_004`, `item_004_itemvalue`), `README.md` (cột, file nguồn, số dòng).
+- ĐÃ GIẢI MÃ: tên/mô tả (Hán GBK + Việt TCVN3). CHƯA RÕ: ý nghĩa số loại thuộc tính/yêu cầu, genre/detail; server nạp thư mục nào (gốc hay 004) CHƯA KIỂM; xlsx chưa mở thử bằng Excel.
+- ĐÃ TRA ĐỒ THỊ: không dùng (chỉ đọc bảng dữ liệu, không có mã để tra). ĐÃ ĐỌC KIẾN THỨC: KBasPropTbl.cpp:16–23 (client đọc `004`), cột bảng item/004.
