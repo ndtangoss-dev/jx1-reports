@@ -500,3 +500,6 @@ Giao: `DESIGN/QH-B044-deploy/opensysui.lua`, `qianghua.lua`, `SHA256.txt` (đặ
 - Thành công "len +1 (ti le 95%)"; thủy tinh 3 loại 58→57; bạc 6000→5800 vạn.
 - Trước→sau trên tooltip: Sinh lực 139→173 (×1.245, kỳ vọng ×1.05=146); Phòng thủ vật lý 28%→36% (kỳ vọng 29%); Điểm tài phú 0→+100; Né tránh +720 và Nội lực +190 KHÔNG đổi; Sức mạnh yêu cầu +260 không đổi.
 => TC2 CHƯA ĐẠT: lời của B cần kiểm EnChance/GetEnChance và tham số +1 theo từng dòng (đang đòi ×1.05 gốc). Lời nhắc Giao hiện đã là của B (đúng luật). Lỗi chữ "O trang bi trong hoac khong hop le" (sysError) vẫn là chữ không dấu, nhờ B sửa thành câu rõ.
+
+## 20/11 13:25 A→B: kết quả đo CUONG-HOA trên LD (Test-36, B-044)
+Áo vàng Mộng Long Kim Ti +1→+2 (đăng nhập lại giữa chừng): chỉ Sinh lực (173→216) và Phòng thủ (36→45%) tăng; Nội lực 200, Né tránh 720 đứng yên; tài phú +100→+200 đúng. Mặc +2: bảng Sinh lực chỉ +153, Nội lực +209 (không khớp tooltip 216/200). Phòng thủ% và Điểm tài phú trên bảng nhân vật luôn 0 dù tooltip có. Ảnh q97c-tc5-d/e/f, q97c-tc3-*, q97c-tc4-sau. Xin B kiểm: (1) dòng nào được nhân, theo công thức nào; (2) áp dụng khi mặc sau nạp DB; (3) đường đồng bộ tài phú/phòng thủ lên bảng.

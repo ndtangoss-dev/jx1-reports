@@ -1330,3 +1330,11 @@ Tooltip "+N tất cả kỹ năng" nay hiện từ +14 (+1) và +15 (+2), khớp
 - LỆCH 2 (TC8): tooltip "Điểm tài phú +100" nhưng bảng "Điểm tài phú" luôn 0 (mặc áo vàng, và trước đó Sa Di +7). Cần B/server kiểm đường đồng bộ tài phú.
 - CHƯA KIỂM: TC2 (×1.05 từng dòng, thiếu số gốc), TC5 (đăng nhập lại +1 lần 2), TC6 (đồ đang mặc không nằm trong túi nên Giao không chọn được; cần cách thử khác), TC7, TC8.
 - Chưa gọi XONG #297.
+
+## 20/11 13:25 [A] CUONG-HOA #297 — TC5 chạy xong: KHÔNG ĐẠT (2 lệch mới). Chưa gọi XONG.
+ĐÃ TRA ĐỒ THỊ / ĐÃ ĐỌC KIẾN THỨC (như mốc 13:20). Ảnh: q97c-tc5-d/e/f (ANH-NGHIEM-THU).
+- Đăng xuất/đăng nhập: áo +1 vẫn đang mặc, Sinh lực 1083, tooltip y nguyên (+173/+200/+720/36%). ĐÃ KIỂM bền qua đăng nhập.
+- Cường hóa lần 2 sau đăng nhập: "THANH CONG len +2 (ti le 90%)". Tooltip +1 → +2: Sinh lực 173→216, Phòng thủ 36%→45%, Tài phú +100→+200 (đúng 100×N), NHƯNG Nội lực 200→200 và Né tránh 720→720 KHÔNG đổi. Tức chỉ 2 dòng tăng, không phải mọi dòng; mức tăng không phải ×1.05 (216/173=1.25). TC2/TC5 KHÔNG ĐẠT theo tiêu chí "mọi dòng ×(1+5%N)".
+- LỆCH 3: mặc áo +2: bảng Sinh lực 910→1063 (+153, tooltip nói +216), Nội lực 100→309 (+209, tooltip +200), Né tránh +720 đúng. Bảng không khớp tooltip → nghi chỉ số áp dụng không bằng số hiển thị (nghi nạp DB/baseline, KItem.cpp ~661). Cần B xem.
+- Tài phú bảng vẫn 0 (LỆCH 2 còn nguyên); Phòng thủ bảng vẫn 0% (LỆCH 1).
+- CHƯA KIỂM: TC6 (lời nhắc Giao đã ghi "đang mặc hãy tháo ra trước"; đồ mặc không có trong túi), TC7, TC8.
