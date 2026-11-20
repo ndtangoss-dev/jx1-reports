@@ -132,3 +132,4 @@ A: bước 1→4. B: điền (b), sẵn sàng sửa nếu tiêu chí 5 hoặc 7 
 - Lần 2: ngày = 2030-01-01 (hạn xa). Hiện đủ 9 món xanh (bảo vật khác loại có nền đỏ). Thoát sạch, vào lại: còn 2 món (thỏi vàng + sách). Ảnh `q313-tn1b-truoc/sau.png`. => **VẪN MẤT**, cùng kết quả 15 tham số.
 - Kết luận: 15 hay 21 tham số, có/không có hạn dùng, đều không giữ được. Giả thuyết "ngày sinh = 0" (B-058) bị loại cho trường hợp này. Hơn nữa tham số ngày là hạn dùng chứ không phải ngày sinh (`SetTime`, KItemSet.cpp:414).
 - Còn lại: khác biệt theo nhân vật (atestqhba cấp 1 mới tạo, mất; atestvaihero cấp 200 giữ 31 món) hoặc cách lưu/nạp theo vị trí; cần TN5 và đọc `KPlayerDBFuns.cpp:818-1115`.
+- (d6b, 19:05) Đọc console gs001 để xem dòng "San xuat" lúc nạp (showItemInfo mặc định 1): `console.ps1` báo "attach failed 5" (từ chối truy cập) cả khi chạy qua tác vụ Interactive; 3 lần, dừng theo luật. Cần cách khác (chủ chạy tay trên VM thử hoặc B đọc log qua `gameser_log` bật in file).
