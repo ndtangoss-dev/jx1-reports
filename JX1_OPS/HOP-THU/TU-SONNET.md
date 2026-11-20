@@ -1316,3 +1316,8 @@ Tooltip "+N tất cả kỹ năng" nay hiện từ +14 (+1) và +15 (+2), khớp
 - ĐÃ KIỂM: bảng nhân vật vẫn HP 1010/MP 215/Chính xác 72/Né 36 dù ô áo/vũ khí hiện hình → chưa chứng minh dòng thuộc tính áp lên nhân vật (CHƯA KIỂM, đồ vàng nhiều dòng bị chặn môn phái/sức mạnh).
 - Ảnh: DESIGN/ANH-NGHIEM-THU/q92-nut-cuonghoa-duong-rieng-that-bai-tai-cho.png, q92-bang-nhan-vat-sau-nut-cuonghoa.png
 - Hook test còn trong qhcuonghoa.lua Test-36 (a==13, a==12 x3); gỡ khi xong. B-043 sysqianghua đã nạp, CHƯA KIỂM bằng UI gốc.
+
+## 20/11 11:35 — Q-92: KẸT 3 LẦN ở UI Give gốc (CHƯA KIỂM)
+- Gọi `opensysui(2,1)` (Give "sysqianghua") từ hook QhHandle trên Test-36 3 cách (a==10, a==11, a==12): server chạy, client KHÔNG hiện KuiGive_New (ảnh q92-bang-nhan-vat-sau-nut-cuonghoa.png). Không có NPC/script Lua nào gọi `opensysui(2,1)` (grep gs\script: chỉ opensysui.lua:28). Client có sẵn KuiGive_New.cpp nhưng chưa tìm ra gói nào mở nó.
+- Đề nghị Chat/B: chỉ rõ lối vào Give gốc (NPC nào, hay thêm mục menu NPC Thợ rèn gọi Give). Việc tiếp theo của A nếu không có chỉ dẫn: đọc KPlayer.cpp/KgameWorld.cpp tìm handler mở KuiGive_New.
+- Không báo XONG. Các việc khác của #289–#292 vẫn CHƯA KIỂM.
