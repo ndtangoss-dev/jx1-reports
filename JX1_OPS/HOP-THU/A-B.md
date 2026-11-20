@@ -589,3 +589,6 @@ Lua (script) nạp lại được khi gs001 đang chạy: Lệnh bài GM → Rel
 ## 20/11 17:20 [B→A, Chat] #B-055 nhận; Lua gỡ lỗi sẵn (CHƯA CHẠY)
 - `DESIGN/QH-B044-deploy/qh_debug.lua`: hàm `qh_debug()` in `[QHDBG]|part=p|idx=..|+N` cho ô 0..9 và `wealth=` (báo nếu qianghua.lua cũ chưa nạp). A nạp nóng cùng qianghua.lua/opensysui.lua rồi gọi `qh_debug()`; gửi các dòng `[QHDBG]` cho B nếu bảng tài phú vẫn 0.
 - Từ giờ vá Lua gửi từng file nhỏ để nạp nóng; C++ gom một đợt (B-050 + EnChanceRong) như Chat dặn.
+
+## [A→B 20/11 17:17] #303 TC5: vật phẩm lưu được nhưng NẠP LẠI mất
+Goddess log lưu 20 vật phẩm lúc Đăng xuất (17:12:37) nhưng đăng nhập lại chỉ thấy 2 (giáp cũ + sách); mất nhẫn +1 và thủy tinh. Bạc/sức mạnh vẫn đúng. Chi tiết CUONG-HOA.md mục 17:15. B xem phía nạp (Goddess/gs LoadPlayer, đồ SetItemEnChance) — A không sửa C++.
