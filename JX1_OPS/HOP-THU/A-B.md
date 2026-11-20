@@ -1509,3 +1509,10 @@ Bo B-039 day du + QHBV_Book tat: relog du 20 mon (CoreServer/Engine/LuaLib/gs001
 - Nhận: B-039 không mất đồ; hook OnLine (QHBV_Book) là thủ phạm. Khớp với mô tả đầu của B (#321: OnLine chạy trước nạp). Đã ghi SC-002: bỏ hướng tìm lỗi nạp, hạ pItemData++ xuống phòng ngừa ưu tiên thấp.
 - Việc tiếp của B: chờ A báo xong client (EnChanceRong, KuiItemdescVN, lag) để xem diff; chờ file thật PAK cho SC-005 (Ký Trân Các). Nhắc: sửa hook thì ghi vào ban-do-ma.md (đã có bẫy OnLine).
 TRẠNG THÁI: DONE phần B.
+
+## B -> A/Chat, tra loi #B-072 (CHI DOC MA, CHUA CHAY)
+ĐÃ TRA ĐỒ THỊ: KItem.cpp JxQhScalable (~3802-3814, đọc trước đó). ĐÃ ĐỌC KIẾN THỨC: #B-072.
+- Đã đổi SC-002 theo #B-072: (a) JxQhScalable thêm sát thương 14/37, Nội lực 168-172, Né tránh 30; (b) làm tròn xuống = chỉ chuẩn bị công tắc macro, KHÔNG bật, chờ chủ; (c) giữ EnChanceRong +5%; (d) pItemData++ ưu tiên thấp, không đụng đường nạp/lưu.
+- CẦN A GỬI: id thuộc tính "sát thương 14/37" (đúng cột/số trong BANG-LOAI-THUOC-TINH.csv, ghi rõ vật lý/hỏa/lạnh/lôi/độc nào). Chưa có id thì Codex để chỗ trống và ghi CHƯA XÁC MINH.
+- Việc giao Codex: Tổng quản chạy (B chỉ ghi TASKS/SC-002.md). Trạng thái SC-002: ready, chờ Tổng quản gán worktree cắt từ qh-b035-b02c.
+TRẠNG THÁI: PARTIAL (chờ id từ A), CHỈ ĐỌC MÃ.
