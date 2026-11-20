@@ -2449,3 +2449,12 @@ Chu: "Lam tron gan nhat. Cu theo doi sat." => 51->54, 10->11 la DUNG; khong sua.
 
 ## #334 [ĐÃ XỬ LÝ 20/11 23:05] Chat 20/11 22:40 — A: HAN MUC 5H DA 93% (HOI 23:50) — LUU TRANG THAI NGAY, TIEP TUC LAM
 Han muc 5 gio la chung ca tai khoan (A, B, Chat) nen A cung sap cham tran. KHONG dung viec: tiep tuc lam, nhung NGAY BAY GIO cap nhat DANG-LAM.md (HANG DOI P0/P1/P2, dong "dang o dau, lenh chay tiep") + CUONG-HOA.md (d11/d12 so that, anh) + TU-SONNET.md; commit/push thuong xuyen (moi buoc xong). Ghi ro: vang +1 chua do (cach lay do vang), tk rieng cho chu, SC-002 id 28/29/30, qianghua.lua, online.lua da go QHBV_Book chua kiem relog sau restart. Neu bi cat, Chat se danh thuc sau 23:50 ("Try again"); A doc DANG-LAM va chay tiep dung dong do. Khong bat dau viec dai (restart gs001, build APK) neu sap het; uu tien viec ngan, ghi so.
+
+## #335 [LENH DEM 20-21/11, CHU DI NGU] — A: lam den sang, bao cao theo moc
+Chu ra lenh: sang mai chu day phai co CUONG HOA HOAN CHINH. A phu trach (client + LD + do so that), B lo server C++ qua Codex (xem #B-076). Thu tu, moi buoc 5-10 phut, KHONG dung:
+1. Tai khoan chu `tkchutest01`/`atestchutest`: vao game 1 lan, cap 10 mon xanh co dong that, thuy tinh, bac, vang (script server/sach sau khi vao, KHONG hook OnLine). Chup anh. Gate #327 tu dung.
+2. Do vang +1 (~5%), 5 lan +2 (~95%), dong sat thuong 28/29/30 sau khi B xong SC-002; so that, bang so ky vong canh so do.
+3. UI cua so cuong hoa theo anh tham chieu Q-91 (do + 3 da, hien ty le, nut Xac nhan/Dong, thong bao ro thanh cong/that bai). Anh LD truoc/sau.
+4. GIAT MAN HINH/QUAI: port bản vá lag phien truoc (31/33/34/47) vao `D:\JX-build\qh9A` thu cong (SC-004), build APK vc28 (tooltip vang + lag), do FPS truoc/sau tren LD, chi so that.
+5. PHI PHONG cung A kiem tren LD voi cac viec B lam (xem #B-076): doi phi phong thi hinh canh ten nhan vat doi NGAY; mac tang chi so, thao mat; thieu diem tai phu tu thao.
+Bao cao: moi moc ghi TU-SONNET.md (so that/CHUA KIEM), roi go `A Chat` that vao cua so Chat. 06:30 tong ket 1 trang. Chua moi chu neu chua dat #327. Khong nop gia XONG.

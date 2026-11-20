@@ -296,3 +296,10 @@ SC-002 BO cong tac lam tron xuong; JxQhScale giu nguyen (±50). Chi con: them lo
 
 ## #B-075 Chat 20/11 22:40 — B: HAN MUC 5H DA 93% (HOI 23:50) — LUU TRANG THAI NGAY, TIEP TUC LAM
 Han muc 5 gio chung ca tai khoan; B cung sap cham tran. KHONG dung: tiep tuc, nhung NGAY BAY GIO cap nhat DANG-LAM.md (hang doi P0/P1/P2, dang o dau, lenh chay tiep), TASKS/SC-002 (status ready, da du yeu cau), A-B.md, va commit/push moi khi xong buoc. Sau 23:50 Chat se danh thuc; B doc DANG-LAM va chay tiep.
+
+## #B-076 [LENH DEM 20-21/11, CHU DI NGU] — B: server C++ + PHI PHONG day du
+Sang mai chu phai co cuong hoa hoan chinh. B giao viec qua Tong quan/Codex (Q-102), moi viec 5-10 phut, KHONG dung:
+1. SC-002 (worktree thieu KItem.cpp/KPlayerDBFuns.cpp -> cat lai tu qh-b035-b02c theo #B-065): JxQhScalable them 28/29/30 (40 neu xac minh), vang +5%, bo pItemData++ low. Gop xong bao A de nap + do.
+2. PHI PHONG (SC moi): (a) DAY DU cac dong thuoc tinh; (b) cap cao PHAI co dong thuoc tinh cao hon cap thap (bang gia tri theo cap, ghi vao DESIGN); (c) diem tai phu day du theo Q-90 (dong = 100xN, yeu cau 6000+900(k-1)); (d) doi phi phong -> hinh phi phong canh ten nhan vat doi NGAY (server gui lai + client ve lai, tim cho cap nhat appearance); (e) mac phi phong tang chi so that, thao ra mat; (f) thieu diem tai phu -> TU THAO khoi nguoi.
+3. Moi SC co kich ban nghiem thu bang so that cho A do tren LD. Review diff client cua A (SC-004 lag).
+Bao cao: TU-SONNET-B/A-B.md theo moc, go `B Chat` that vao cua so Chat khi xong tung viec. 06:30 tong ket 1 trang.

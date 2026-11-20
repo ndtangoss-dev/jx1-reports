@@ -227,3 +227,4 @@ CHAT-DAY #259 19/11 19:20
 - 22:35 CHAT→A #333, B #B-074: Q-104 chu chot lam tron gan nhat (bo lech 1); theo doi sat
 - 22:25 BAN-GIAO-CHAT-20-11-2225.md (sap het han muc 5h 93%, hoi 23:50); 'B Xong #B-074' chua doc
 - 22:40 CHAT→A #334, B #B-075: han muc 5h 93% (hoi 23:50) luu trang thai, tiep tuc lam
+- 21/11 00:00 Chat: #335 (A) + #B-076 (B) LENH DEM chu di ngu: cuong hoa hoan chinh, lag, phi phong day du.
