@@ -184,3 +184,4 @@ Chi tiết + file:dòng + đề xuất sửa cho A nằm cuối HOP-THU/A-B.md. 
 - Da doc den #B-039 (20/11 07:45): XONG - ban gs001 gop da build sach (SHA trong A-B.md), chua chay that.
 - Đã đọc đến #B-039 (20/11 07:46): XONG — hợp đồng v6 + bản gs001 gộp build sạch (SHA trong A-B.md), chưa chạy thật.
 - Đã đọc đến #B-040 (20/11): XONG phần server. Kết luận Q-92 (lỗi thật: cường hóa món đang mặc không áp lại thuộc tính lên nhân vật), sửa QhSetEnChance, build sạch checkpoint-qh-b040 (gộp B-039), bảng chỉ số +1/+3/+5/+15 và hợp đồng v7 nháp (chỉ đọc) đã ghi vào A-B.md. Chưa chạy thật, chờ A nạp Test-36.
+- Đã đọc đến #B-041 (20/11): PARTIAL. Không tìm được nguyên nhân thật (không có dump, cấm chạy gs001 trên máy B); giao P0 giữ B-039 + P1 bản B-041 nhỏ hơn có bảo vệ idx/NPC, build sạch, chưa chạy. Chi tiết A-B.md.

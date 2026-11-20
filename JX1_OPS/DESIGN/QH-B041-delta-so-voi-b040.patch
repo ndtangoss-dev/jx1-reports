@@ -1,0 +1,43 @@
+diff --git a/server/jxOnline/gameserver/Sources/Core/Src/KItem.cpp b/server/jxOnline/gameserver/Sources/Core/Src/KItem.cpp
+index 7283447..d98f5db 100644
+--- a/server/jxOnline/gameserver/Sources/Core/Src/KItem.cpp
++++ b/server/jxOnline/gameserver/Sources/Core/Src/KItem.cpp
+@@ -3824,19 +3824,11 @@ int KItem::EnChance( int nEnChance /*= 1*/ )
+ 		int nN = nEnChance;
+ 		if (nN < 0) nN = 0;
+ 		if (nN > 30) nN = 30;
+-		int nOldN = m_CommonAttrib.nEnChance;
+-		if (nOldN < 0) nOldN = 0;
+ 		for (int q = 0; q < 6; ++q)
+ 		{
+ 			int t = m_aryMagicAttrib[q].nAttribType;
+ 			if (t > 0 && JxQhScalable(t))
+ 			{
+-				// [Q-92] goc chua duoc luu (nap tu DB/khoi tao) -> suy ra tu gia tri hien tai chia he so cap cu
+-				if (m_TempMagicAttrib[q].nAttribType != t || (m_TempMagicAttrib[q].nValue[0] == 0 && m_aryMagicAttrib[q].nValue[0] != 0))
+-				{
+-					m_TempMagicAttrib[q] = m_aryMagicAttrib[q];
+-					m_TempMagicAttrib[q].nValue[0] = (m_aryMagicAttrib[q].nValue[0] * 100 + (m_aryMagicAttrib[q].nValue[0] >= 0 ? 1 : -1) * (100 + 5 * nOldN) / 2) / (100 + 5 * nOldN);
+-				}
+ 				m_aryMagicAttrib[q].nValue[0] = JxQhScale(m_TempMagicAttrib[q].nValue[0], nN);
+ 				if (t >= 59 && t <= 64 && m_TempMagicAttrib[q].nValue[2] > 0)
+ 					m_aryMagicAttrib[q].nValue[2] = JxQhScale(m_TempMagicAttrib[q].nValue[2], nN);
+diff --git a/server/jxOnline/gameserver/Sources/Core/Src/KItemList.cpp b/server/jxOnline/gameserver/Sources/Core/Src/KItemList.cpp
+index 22e3a2a..3d10548 100644
+--- a/server/jxOnline/gameserver/Sources/Core/Src/KItemList.cpp
++++ b/server/jxOnline/gameserver/Sources/Core/Src/KItemList.cpp
+@@ -1177,11 +1177,13 @@ void KItemList::QhSetEnChance(int nIdx, int nLevel)
+ 	if (nIdx <= 0 || nIdx >= MAX_ITEM)
+ 		return;
+ 	int i = itempart_num;
+-	if (m_PlayerIdx > 0)
++	if (m_PlayerIdx > 0 && m_PlayerIdx < MAX_PLAYER)
+ 		for (i = 0; i < itempart_num; ++i)
+ 			if (m_EquipItem[i] == nIdx) break;
+ 	BOOL bWorn = (m_PlayerIdx > 0 && i < itempart_num && Item[nIdx].GetIsCanUse() == 1);
+ 	int nNpcIdx = bWorn ? Player[m_PlayerIdx].m_nIndex : 0;
++	if (bWorn && (m_PlayerIdx >= MAX_PLAYER || !NpcSet.IsIdxValid(nNpcIdx) || Npc[nNpcIdx].m_Index <= 0))
++		bWorn = FALSE;   // chua online/NPC chua co: chi doi cap, khong dong vao nhan vat
+ 	int nActive = 0;
+ 	int nInfo[2] = {0, 0};
+ 	if (bWorn)
