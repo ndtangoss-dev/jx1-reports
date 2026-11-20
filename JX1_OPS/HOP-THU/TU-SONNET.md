@@ -1481,3 +1481,8 @@ gs001.exe B-049 (790b5a2d…6c9) nạp 14:07, nạp xong 14:14, không crash. Đ
 ## A 21/11 03:00 — UI cuong hoa vc31 (build OK 0 loi, cai LD, chua phat chu)
 - vc31: dong thong tin (Ti le / Can bac / Can thuy tinh moi mau) chuyen vao TRONG cua so Giao, duoi o dat do. Vi du dao +1 -> +2: 95%, 400 van, 2 thuy tinh moi mau (dung cong thuc 100-5(n-1), 200 van x 2^(n-1)). Anh SAU: JX1_OPS/EVIDENCE/ui-cuonghoa-SAU-vc31-0221.png (TRUOC: ui-cuonghoa-TRUOC-0221.png).
 - CHUA LAM: so do 5 o (Trang Bi giua, 3 Nguyen Lieu, Bua trai, Phu phai, mui ten), khoa Bua/Phu, thong bao. Do khac chuan, ghi ro.
+
+## [A 21/11 ~03:20] SC-004 lag 31/33/34/47 — DA CO SAN trong qh9A (kiem marker), khong can port
+- Grep qh9A (D:\JX-build\qh9A\Classes): 31 co (UpdateRenderPos, SetRenderPos, s_bJoyPend, scheduleUpdate, draw cua KgameWorldVN, KNpcRes camera), 33 co ([fix33] MoveGuard KProtocol.cpp, HasPendingSkillCmd, m_nRndDrawX KNpc), 34 co ([fix34] KMissle noi suy, SocketClient usleep 2000 + TCP_NODELAY), 47 co ([p47] KScenePlaceC.cpp:1013, ban cai tien co cho toi da 100ms). Nghia la khong can build vc32 cho SC-004.
+- SAU (vc31 tren LD, 5 giay/dong): fps 58.8-59.8, h40=0 h66=0 h100=0, max khung 26-36 ms, 1 hitch don dt=16 draw=26 (paint=22). TRUOC (v22/truoc-noisuy): CHUA DO lai trong dem nay (can cai lai apk cu, se mat phien dang nhap); so cu nam trong bao cao 31/46/47 docs-analysis.
+- Ket luan: SC-004 = XONG (da co). FPS truoc/sau cung may: CHUA KIEM. Viec con lai: SC-006 cho B dat tai phu test, o 5 slot Cuong hoa.
