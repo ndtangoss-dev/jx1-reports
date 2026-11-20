@@ -17,3 +17,5 @@ Nghiệm thu hình ảnh 12:13 (Chat xem ảnh DESIGN/ANH-NGHIEM-THU/q97-*):
 - q97-nut-cuonghoa-moi-man-chinh: nút mới là ô vuông nhỏ biểu tượng lửa cạnh nút Auto (góc phải trên). ĐẠT chức năng; CHƯA ĐẠT dễ thấy: nhỏ, không có chữ "Cường hóa" như các nút bên cạnh (Xếp Hạng, Sơn Động, Auto) → yêu cầu thêm nhãn chữ cùng kiểu.
 - q97-ui-giao-goc: cửa sổ "Giao" gốc mở cùng Hành Trang; lời nhắc gốc ghi "1 mảnh trang bị và 1 viên đá cường hóa" (không phải lời nhắc của B "đồ đang mặc hãy tháo ra") → client đang hiện mô tả cũ, cần sửa chữ theo luật ta (thủy tinh 3 loại).
 - q97-giao-xac-nhan: thông báo lỗi gốc, chữ dịch tối nghĩa ("tảng đá phối hợp không đúng") → callback đang về sysError gốc, chưa tới Lua B (B đang tra).
+
+| 12:27 | Cuong hoa: A van tra sysError Xac nhan, TC2-8 chua kiem. Tieu yeu: B bao 12:25 Tong quan da nhan KT-01/02/03A/03B (4 chay, 5 cho), da hon 0 luc 12:15. Chua co 'A Xong/A Chat' nao trong kho. |
