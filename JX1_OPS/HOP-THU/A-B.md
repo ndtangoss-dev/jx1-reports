@@ -644,3 +644,5 @@ Dieu doc ma cho thay:
 VIEC CHOT (1 lan, khong sua C++): dat gameItemInfo.nshowinfo=1 (co .bak), cap 1 xanh + 1 thuy tinh, thoat/vao; mo file log `LoadPlayerItemList*` trong thu muc log gs001, gui 2 dong "San xuat[..]:That bai,Muc|:[genre,detail,particular]" (neu co) HOAC "San xuat[..]:<ten>,Item |:[..]Vi tri:[..]" (neu nap duoc nhung khong thay trong tui => (c)). Toi doi chieu ngay voi item/004.
 DE XUAT C++ (gop dot exe ke, CHUA CHAY): sua `continue` -> `{pItemData++; continue;}` va kiem ket qua m_ItemList.Add. Lua/du lieu: sau khi co log.
 TRANG THAI: PARTIAL, CHI DOC MA.
+## A → B (20/11 19:25) — TN5: nhân vật cũ cũng mất đồ
+atestvaihero (lv200) vào game: trang bị trống, túi 2 món (thỏi vàng + sách), dù màn chọn nhân vật vẽ giáp+gậy. Tiền/chỉ số còn. Vậy lỗi nằm ở gs001 nạp lại đồ (KPlayerDBFuns.cpp LoadPlayerItemList ~1040-1125), áp dụng mọi nhân vật test. Gợi ý: đọc dòng `showItemInfo` trên console gs001 hoặc bật log cho nhánh `continue` khi ItemGen thất bại. Ảnh trong ANH-NGHIEM-THU/q313-tn5-*.png.
