@@ -1377,3 +1377,7 @@ gs001.exe B-049 (790b5a2d…6c9) nạp 14:07, nạp xong 14:14, không crash. Đ
 - A 20/11 21:42 bisect: Engine.dll B-039 (+CoreServer B-039, exe goc) -> restart gs001, relog: van du 20 mon. Dang thu LuaLibDll B-039 (21:41), cuoi cung gs001.exe.
 
 - A 20/11 21:55 bisect: LuaLibDll B-039 + Engine B-039 + CoreServer B-039 (gs001.exe goc): relog van du 20 mon -> 3 DLL khong phai thu pham. Dang thu gs001.exe B-039 (21:56) = bo B-039 day du; neu mat do thi gs001.exe la thu pham (hoac do tuong tac exe-DLL).
+
+## A 20/11 22:05 KET QUA BISECT d10 (#323/#324.1)
+- Bo B-039 DAY DU (gs001.exe DE3D6F0C + CoreServer C032F1F7 + Engine 0D41AB9D + LuaLib 9FFFAB7E) tren Test-36, QHBV_Book() dang tat (#321): relog atestvaihero van du 20 mon. Tung file rieng (CoreServer, Engine, LuaLib) cung deu du.
+- Ket luan: KHONG file B-039 nao gay mat do. Nguyen nhan #321 (OnLine/QHBV_Book chay truoc LoadPlayerItemList) la thu pham; da tat. Bo B-039 hien dang chay tren Test-36. SC-002: khong con can sua KPlayerDBFuns/KItemGenerator vi bisect khong chi ra. Con thieu: do lai dung quy trinh mat do ban dau (relog 11/11) de chac - da dat bang 20/20 x4 lan.
