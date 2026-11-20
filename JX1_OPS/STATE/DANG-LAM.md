@@ -1,9 +1,10 @@
 # ĐANG LÀM (mỗi bên tự ghi 5–10 dòng; ghi TRƯỚC khi nén và SAU mỗi bước — Q-99)
 
 ## Sonnet A
-- Tính năng: CUONG-HOA (DESIGN/TINH-NANG/CUONG-HOA.md) — bước: 1,3 xong (ĐÃ KIỂM trong game 20/11 11:55); đang ở 2/4: bộ thử qh_bothu.lua + tiêu chí 2
-- Lệnh chạy tiếp: LD emulator-5556 đang đăng nhập atestvaihero, vc27 đã cài. Hook tạm: VM gs\script\systemtest_hook.lua (+1 dòng Include cuối opensysui.lua, gốc B ở .bak-q97) -> đổi thành qh_bothu.lua; ảnh q97-*.png ở docs-analysis/out/ld. Vấn đề: bấm Xác nhận Give (chỉ côn / côn+đá) đều ra sysError (không tới Lua B) -> tra Give(...,1,1,...) trong ScriptFuns/KuiGive_New
-- Đang chờ: không (tự làm). Hook chưa áp môn phái/sức mạnh (tooltip côn vẫn đỏ).
+- Tính năng: CUONG-HOA (DESIGN/TINH-NANG/CUONG-HOA.md) — bước 1,3 xong (ĐÃ KIỂM trong game 20/11 11:55); đang 2/4: tiêu chí 2.
+- NGUYÊN NHÂN sysError (tìm 20/11 12:10): UI Giao gửi đúng (kind 3), nhưng gs001 Test-36 vẫn chạy qianghua.lua GỐC đã nạp trong bộ nhớ lúc 10:54 (trước khi chép B-044 lúc 11:05); Lua chỉ nạp lại khi gs001 khởi động lại. Đã khởi động lại gs001 (task JX-gs001) 12:1x; file qianghua.lua = B-044 (SHA b03981...cdd5).
+- Lệnh chạy tiếp: chờ gs001 nạp xong (~7 phút), vào LD atestvaihero, nút mới -> đặt đồ trong túi -> Xác nhận; đo tiêu chí 2-8. Bộ thử: VM gs\script\system\qh_bothu.lua (nguồn docs-analysis/out/qh_bothu.lua; Include cuối opensysui.lua, gốc B ở .bak-q97): Thiếu Lâm + ResetBaseAttrib sức mạnh 300. Chưa kiểm hiệu lực.
+- Đang chờ: không (tự làm).
 - Thư đã đọc đến: #297
 
 ## Sonnet B
