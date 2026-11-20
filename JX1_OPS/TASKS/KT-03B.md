@@ -38,5 +38,11 @@ Lỗi chủ báo: bấm nút đánh thường chỉ chạy tới quái, không �
 
 ## Kết quả
 
+- **PARTIAL — nội dung tĩnh hoàn tất, thủ tục nhịp còn thiếu.** Đã tạo `JX1_OPS/HIEU-GAME/03-ky-nang-chien-dau/BAN-DO-DANH-THUONG-LAN-LENH.md`: phủ 12 nhóm/14 bước, đối chiếu sửa đè, 10 giả thuyết, sổ thông số và 8 ca “KỊCH BẢN KIỂM ĐỘNG” chưa chạy.
+- Báo cáo bàn giao: `JX1_OPS/REPORTS/KT-03B.md`. Đã đọc kiến thức cũ, tra Graphify lưu cục bộ và kiểm file:dòng hiện tại; không chạy CLI .exe theo lệnh cấm exe, không sửa kết luận cũ.
+- Điểm cần A/B biết: C/KNpcAI.cpp:772 là phép so tầm client; ba đoạn CmdLaneReceive/CmdLaneProc/DoSkill của src18 và QH-B035 giống nhau, hiện giữ skill trước MOVE; qh9A đã có guard fix33. Chưa chốt nguyên nhân lỗi/bản thực nạp trong game.
+- Không ghi được `D:\JX-wt\KT-03B.nhip` vì ngoài writable root của phiên; không vượt sandbox. Không tạo TSV/mục lục ngoài vung_file; có hàng đề nghị trong báo cáo để PM ghép.
+- Không sửa mã/cấu hình, không build/chạy exe/VM/mạng; không stage/commit/push theo phân công. Tổng quản nhận ba tệp và commit hộ.
+
 ## Nhịp sống
 Ở mốc lớn ghi một dòng vào `D:\JX-wt\KT-03B.nhip`.
