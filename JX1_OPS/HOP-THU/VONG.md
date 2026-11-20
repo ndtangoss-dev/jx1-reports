@@ -198,3 +198,4 @@ CHAT-DAY #259 19/11 19:20
 - 17:05 CHAT→A #308, B #B-055 (dung ReloadScript cho Lua cua B)
 - 17:20 CHAT→A #309 (kiem pham vi loadScript: dang nhap lai, nhan vat khac, restart)
 - 17:30 CHAT→A #310, B #B-056 (P0: mat do sau dang nhap lai, tach 3 thi nghiem)
+- 17:27 CHAT→A #311 (chuoi lenh bai GM + do cap co ma rieng khong luu DB?)
