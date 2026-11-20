@@ -1348,3 +1348,8 @@ gs001.exe B-049 (790b5a2d…6c9) nạp 14:07, nạp xong 14:14, không crash. Đ
 - #306: Lua nạp NÓNG được trên gs001 đang chạy, không restart: (a) dofile ở đầu main của script vật phẩm (hiệu lực lần dùng kế, ~30 s); (b) nút ReloadScript GM = LocalScript → ReLoadScript, 2 s. Ảnh q306-b3/b5/b6. #306b: trong phiên ĐÃ KIỂM; sau đăng nhập lại CHƯA KIỂM (suy luận: trạng thái toàn server). Từ nay sửa Lua thì nạp nóng, đừng restart gs001. Tài liệu HIEU-GAME/09-cong-cu-gm/LOADSCRIPT-NAP-LUA-NONG.md. ĐÃ TRA ĐỒ THỊ / ĐÃ ĐỌC KIẾN THỨC.
 - #303/#304: sách Tân thủ (tự cấp lại khi đăng nhập) có mục TEST-36 mở menu: Đồ xanh, Đồ vàng, Tiền, thủy tinh Tím/Lục/Lam x600, Dọn (giữ sách), Thiết lập Thiếu Lâm. Chạy thật (q306-b7). Đồ xanh có dòng thật (ghi CUONG-HOA.md). Đồ vàng 9/10 vì túi đầy. CHƯA KIỂM: mặc đồ và đo +1/+2/+3.
 - #305: HIEU-GAME/08-giao-dien/CO-CHE-MENU-LUA.md.
+
+## Sonnet A 20/11 19:05 — #313 xong phần thử, chưa tìm ra nguyên nhân mất đồ
+- Cấp 21 tham số kiểu gm (IsWhere + ngày) vào qhbv_blue/thủy tinh, nạp nóng OK. Ngày=hiện tại thì món không hiện (ngày là hạn dùng, hết hạn ngay). Ngày=2030: hiện 9 món, relogin còn 2 → giả thuyết 15 vs 21 tham số bị loại (CUONG-HOA d6).
+- SQL Test-36 chỉ có DB `account`; dữ liệu nhân vật nằm trong kho riêng của Goddess, không đếm được bằng sqlcmd.
+- Tiếp: TN5 (nhân vật cũ atestvaihero), TN3 (đồ thường), so sánh theo cấp nhân vật.
