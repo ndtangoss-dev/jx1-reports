@@ -425,3 +425,42 @@ SOAT PHAN KHAC LOGIC GOC (liet ke, CHUA kiem runtime):
  2. Tai phu: virtual line trong ApplyMagicAttribToNPC/Remove (KItem.cpp) chi cho itemGenre==item_equip, detail<=equip_pendant, nEnChance>0: tu tao, khong co trong game goc (day la logic moi theo Q-90, khong co "ham goc" de doi chieu).
  3. Phi phong: cong CanEquip/QhPifengWealthOK + QhCheckPifeng tu thao: logic them (Q-90), chua doi chieu voi goc vi khong co o goc; can chay thu.
  4. +14/+15 ky nang: magic_allskill_v nam trong Apply/Remove (Q-89 patch), di theo chuoi goc nay.
+
+---
+## [B → A, Chat] #B-043 (Q-95): VỀ CHUỖI CƯỜNG HÓA GỐC — thiết kế + diff nhỏ (20/11)
+**Trạng thái: CHỈ ĐỌC MÃ. KHÔNG build mới, KHÔNG chạy gì (CHƯA CHẠY). Bỏ B-040/B-041/B-042 (QhSetEnChance). Server giữ nguyên B-039.**
+
+### 1. Đã đối chiếu hàm gốc
+- `qianghua.lua::sysqianghua(nItemID,nNalla,nNum)` (gốc, Coco ServerNew gs/script/System): chọn ≤2 món từ UI, đá genre 4 detail 403/404/405, trả 200000, gọi `ItemQiangHua`.
+- `LuaItemQiangHua` ScriptFuns.cpp:7927 → `KItemList::QiangHua` KItemList.cpp:5487 (gốc).
+- QiangHua chỉ nhận `item_equip` có GoldId>0 / Purple / Blue (5491). Không có kiểm đồ đang mặc trong C++; UI (KuiGive_New: c2s_lockitem → c2s_playergiveback nKind=3) chỉ liệt kê đồ **trong túi**. ⇒ **cường hóa gốc chạy trên đồ TRONG TÚI**, không phải đồ đang mặc.
+- Giá trị: xanh/tím → `KItem::EnChance(n+1)` (KItemList.cpp:5596/5601; KItem.cpp:3820, công thức +5% cộng thẳng từ gốc `m_TempMagicAttrib`); vàng → `EnChanceRong(n+1)`+`EnChanceBao` (5572; KItem.cpp:3880, công thức GỘP cũ, KHÁC +5%); cấp tối đa lấy `QiangHuaRank` Nmax (5521); hỏng: n≥2 và `g_Random(A+nRank)<g_Random(B)` → hạ 2 cấp nếu n<`QiangHuaSet`, ngược lại mất đá giữ cấp (5527–5545); đá bị trừ qua `Remove(nBaoshiID)`.
+- Mặc/tháo gốc: Equip KItemList.cpp:1621 (`ApplyMagicAttribToNPC` đọc `m_aryMagicAttrib` hiện tại của item), UnEquip 2157 (`RemoveMagicAttribFromNPC`). Vì item +N giữ nguyên `m_aryMagicAttrib` đã nhân, **mặc lại đồ đã +N áp đúng dòng đã nhân** (suy từ mã; CHƯA chạy). Việc đổi cấp khi đang mặc làm Remove/Apply lệch, đó là lý do Q-94 — nay bỏ vì đồ mặc bị từ chối.
+- Chưa xác minh: sau đăng xuất/đăng nhập (nạp DB) item +N có còn `m_aryMagicAttrib` đã nhân và `m_TempMagicAttrib` gốc không. `SetAttrib_MA` (KItem.cpp:661) chỉ đặt baseline từ giá trị truyền vào; nếu DB lưu giá trị đã nhân thì +1 tiếp theo tính trên giá trị đã nhân (sai). **Bước thử bắt buộc: +N → thoát/vào lại → +1 → xem dòng.** Nếu sai, vá nhỏ ở C++ khi nạp (đặt lại baseline = giá trị / (1+0,05N)).
+
+### 2. Kiến trúc chọn (Lua thuần, 0 dòng C++ mới)
+Luật Q-86 đặt BÊN TRONG `sysqianghua` (cùng tên hàm, cùng đường UI lockitem/playergiveback), file thiết kế `DESIGN/QH-B043-qianghua.lua` (bản nháp, CHƯA nạp):
+1. Chỉ nhận 1 trang bị (xanh/tím/vàng) trong túi; nếu đang mặc (`GetEquipIdx(0..9)==idx`) → từ chối "Hãy tháo trang bị ra rồi cường hóa".
+2. Cấp tối đa +15; giá bạc min(2^(n−1)×200 vạn, 20 ức), thủy tinh mỗi loại min(2^(n−1),1000) (detail 239/240/238) qua `CountBagItemExact/ConsumeBagItemExact` (đã có từ B-035, đã chạy trong B-039 baseline).
+3. Tỉ lệ 100−5(n−1)% bằng `random()` trong Lua; hỏng = mất vật liệu + bạc, giữ cấp (không hạ cấp, nên không cần QiangHuaRank/Set).
+4. Thành công → `SetItemEnChance(idx,1,1)` → `Item[idx].EnChance(n)` (đúng hàm gốc xanh/tím gọi) + `SynPlayerItem`. Dùng cho CẢ vàng (khác gốc vàng dùng EnChanceRong/Bao) để mọi món cùng +5%.
+5. Dòng +14/+15 (kỹ năng): đã nằm trong `Apply/Remove` (KItem.cpp:184–198 / 283–297), không cần thêm.
+6. Tài phú: tính qua Apply/Remove (dòng ảo `nEnChance×100`, KItem.cpp:194/293) khi mặc/tháo — đúng đường gốc; B-039. Không còn cộng tay.
+Vì sao không sửa `QiangHua` C++: tỉ lệ −5%/cấp, giữ cấp, nhiều loại vật liệu không biểu diễn được bằng QiangHuaRank/Set + 1 đá; sửa ở Lua nhỏ và an toàn hơn. Phương án thay (nếu chủ muốn gọi đúng `ItemQiangHua`): đổi 2 dòng vàng ở KItemList.cpp:5572–5573 thành `EnChance(nEnChance+1)` và truyền 1 viên thủy tinh làm `nBaoshiID`; tôi KHÔNG làm vì phải build + khởi động lại.
+
+### 3. Đồ đang mặc
+Từ chối bằng thông báo (khuyến nghị đã chọn). Không có UnEquip→Equip tự động.
+
+### 4. Diff nhỏ
+- C++: **không đổi** so với B-039 (SHA256-b039.txt). Bản B-039 chạy được (A đã xác nhận quay về). Chỉ cần nạp 1 file Lua + sửa `QhHandle` thành đường `sysqianghua`.
+- Lua: `DESIGN/QH-B043-qianghua.lua` (thay `sysqianghua`). Mã trả về qua `Msg2Player("[QH]|E|code|0|lvMoi|tile|thuytinh|bac|0")`.
+- Gỡ hook `atestvaihero` (qhcuonghoa.lua 44–52) và `QhHandle(13)`: sẽ giao bản test riêng nếu A cần.
+
+### 5. Hợp đồng v7 (sửa theo chuỗi gốc)
+- Cửa sổ dùng KuiGive_New: `c2s_lockitem` (đặt 1 món trong túi vào ô), `c2s_playergiveback nKind=3` (xác nhận) → server chạy `sysqianghua`. Danh sách bên phải = đồ TRONG TÚI (Q-91).
+- Server phản hồi bằng dòng `[QH]|E|code|0|lvMoi|tỉ lệ kế|thủy tinh kế|bạc kế|0`; code 0 thành công, 1 hỏng, 2 thiếu thủy tinh, 3 thiếu bạc, 4 tối đa, 5 không hợp lệ/đang mặc. `[QH]|P`/`[QH]|W` cũ không dùng cho cường hóa nữa (tài phú vẫn qua thuộc tính nhân vật B-039).
+- Khi nào dùng: 1 lượt cường hóa = 1 lần xác nhận.
+
+### 6. Cách thử (A, trên Test-36, sau khi nạp 1 file Lua, 0 restart exe)
+Cường hóa túi +1 → tooltip dòng ×1,05 → mặc → chỉ số nhân vật tăng đúng → tháo → về cũ → mặc lại; thoát/vào lại rồi +1 tiếp (kiểm baseline); thử đồ đang mặc phải bị từ chối. Báo ĐÃ CHẠY THẬT hay chưa.
+**CHƯA CHẠY: toàn bộ mục trên. Chưa nạp Lua nào. Không đụng gs001.**
