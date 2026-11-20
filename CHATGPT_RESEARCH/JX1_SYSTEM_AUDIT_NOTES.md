@@ -649,3 +649,60 @@ Lượt này chỉ đọc nhánh `jx1-ops` và ghi bổ sung đúng file ghi ch�
 
 - `TASKS/SC-006.md` khai báo `vung_file` chỉ gồm `KItemList.cpp`, `KItem.cpp`, `GoldMagic.txt`, `GoldItem.txt`. Nhưng bản ghi build 5 của B nói có sửa `Engine/Src/KSG_StringProcess.cpp`. Đây là file ngoài vùng đã khai báo; trước khi nghiệm thu phải có task/scope được duyệt hoặc ghi rõ ngoại lệ, kèm diff review và manifest. Không thể coi phần sửa Engine là nằm trong scope SC-006 chỉ vì được gộp vào cùng binary.
 - SC-006 khai báo `depends_on: [SC-002]`, trong khi SC-002 vẫn `partial`; chưa có bằng chứng dependency được nghiệm thu trước khi SC-006 đóng. Cần phân biệt “đủ artifact để thử tích hợp” với “dependency đã ACCEPTED”. Không tự kết luận việc triển khai là sai, nhưng cổng dependency hiện chưa được chứng minh.
+
+
+## 14. Đối chiếu tiến độ JX1 mới nhất — 2026-11-21 05:56 (Asia/Ho_Chi_Minh)
+
+### 14.1 Phạm vi và thay đổi Git kể từ lượt 05:01
+
+- Chỉ đọc nhánh vận hành \`jx1-ops\`. HEAD tại lúc kiểm tra: [2384f9df52f7e0061cccf2618ebb36eae7cabba6](https://github.com/ndtangoss-dev/jx1-reports/commit/2384f9df52f7e0061cccf2618ebb36eae7cabba6), thông điệp commit là cập nhật TIEU-YEU/KHOA/TIEN-DO. Commit trước lượt kiểm tra 05:01 là [e593e67e4279e905c61fd6c082e57cbcd31c8010](https://github.com/ndtangoss-dev/jx1-reports/commit/e593e67e4279e905c61fd6c082e57cbcd31c8010).
+- Git compare cho thấy nhánh có 31 commit mới so với mốc trên. Các file thay đổi task-specific tập trung ở HOP-THU/A-B.md, HOP-THU/TU-SONNET.md, HOP-THU/TU-SONNET-B.md, STATE/DANG-LAM.md và TASKS/SC-006.md; các file còn lại chủ yếu là heartbeat/trạng thái tự sinh.
+- Không có file mã nguồn C++/Lua, build artifact, build manifest hoặc REPORTS/SC-006.md mới trong diff của nhánh vận hành. Do đó, các sửa mã/build SC-006 dưới đây là báo cáo của B về nhánh/worktree task local; không có source diff tương ứng trên jx1-ops để review độc lập.
+- HEAD 05:55 chỉ là snapshot trạng thái; không dùng riêng timestamp hoặc heartbeat để suy ra worker đã hoàn tất hay tính năng đã đạt.
+
+### 14.2 Ma trận tiến độ theo từng cổng bằng chứng
+
+| Hạng mục | Giao việc / worker thực sự bắt đầu | Thay đổi mã nguồn | Build | Runtime đã chứng minh | Nghiệm thu |
+|---|---|---|---|---|---|
+| Cửa sổ cường hóa | H-05 vẫn là khảo sát tĩnh; không thấy giao việc hoặc worker-start mới cho phần UI trong diff kể từ mốc 05:01. | Không có source diff UI mới trên jx1-ops. | Không có build UI mới được ghi nhận; mốc gần nhất vẫn là vc31 từ lượt trước. | Không có ca runtime mới; ảnh vc31 trước/sau là bằng chứng cũ, chưa chứng minh đủ thao tác. | Chưa đạt Q-91: còn thiếu bố cục 5 ô, mũi tên, khóa ô Bùa/Phù và trạng thái thành công/thất bại. |
+| Lag/giật | SC-004 vẫn đã hủy theo hồ sơ trước; không thấy task/worker-start mới cho phép đo trước-sau. | Không có diff mới về Fix31/33/34/47 hoặc tối ưu lag trong khoảng compare. | Không có build benchmark mới được chứng minh. | Không có phép đo vc27/vc31 cùng thiết bị, map, tuyến và thời lượng; không có runtime mới tái hiện quái hiện muộn/khựng 4–5 giây. | Chưa chứng minh lag đã sửa; số FPS vc31 cũ không có baseline tương đương. |
+| Quái / đạn xuyên quái | H-15/I-03/E-08 vẫn là khảo sát hoặc kiểm thử protocol; không có worker-start runtime mới trong các commit task-specific. | Không có source diff mới cho projectile, NPC hurt/death hoặc kill credit. | Không có build gameplay mới. | Không có test đạn xuyên quái, hurt/death hoặc kill-credit trên gs001 thật. E-08 vẫn ghi rõ không có killerID/ACK đủ chứng minh BOT được credit. | Chưa nghiệm thu gameplay quái hoặc kill credit. |
+| Phi phong / tài phú (SC-006) | TASKS/SC-006 giao B; A/B thực sự bắt đầu: A nạp và thử các build 5, 6, 7 trên Test-36/LD; B báo các vòng sửa/build 6 và 7. | B báo build 6 thay logic kiểm tài phú trong KPlayer.cpp Active (kiểm mỗi nhịp); build 7 thêm log [pifeng-can], [pifeng-tick], [pifeng-deny] và [pifeng-unknown-goldid]. Đây là báo cáo worker, không có diff mã trên jx1-ops. | B báo build 6 5/5 exit 0: gs001 c7ea4a8b26c7c32aba6dac243d704b841b7a58ebe2faf4ed82eee189a8f0c163; CoreServer 94ef41ab0f398802849877a99bc28e5acfefba8a55067b6956fd62601227a5d0; Engine 3371436b96247a55d7011641c5da0b38d530373792298659be0a680b7de6fba7. Build 7 5/5 exit 0 theo B: gs001 7f8dc01caff4bceeb9e89cd1a634731224f423817e38a2f94781dd5622f01c1c; CoreServer 1e2a9558ef2b120a0d44a2ebd86550683dffd72d5f1a3778c342da36b989f49d; Engine giữ bản build 6. A ghi đã nạp đúng SHA gs001/CoreServer của build 7. Không có build log/manifest độc lập trong jx1-ops. | Build 5: A lặp 3 vòng mặc k11 → mở bảng nhân vật → tháo → menu TEST-36, chờ 60 giây mỗi vòng; gs001 không sập, không có Event 1000/1001 mới. Đây chỉ là không tái hiện crash 0xc0000409 trong ca đó, không chứng minh nguyên nhân gốc đã được sửa. Build 6: A xác nhận món đang mặc là k11, GoldId 3475, cần 15000; panel client 3100. Tháo rồi bấm Sử dụng lại ở 3100 vẫn mặc được, không có [pifeng-deny]; sau đăng nhập lại, k11 cũng vẫn nằm trên người khi panel 3100. Build 7: A nạp gs001 7f8dc01c và CoreServer 1e2a9558; log thực tế ghi [pifeng-tick] goldid=3475 have=18300 bad=0 trong khi panel client là 3100. Chênh lệch 15200 phù hợp với việc server tính cả điểm tài phú của chính phi phong k11 vào have, khiến phép so ngưỡng 15000 tự vượt qua. Sau tháo rồi mặc lại ở 3100, không có [pifeng-can]. Đường gọi thực tế chưa được xác định hoàn toàn: có thể bypass CanEquip/QhPifengWealthOK hoặc log chưa bao phủ đúng nhánh. | **Chưa đạt.** Build 6/7 không khắc phục được lỗi mặc phi phong khi thiếu tài phú hoặc tự tháo. Build 7 là build chẩn đoán, không phải bản pass. Chưa có REPORTS/SC-006.md hoặc chữ ký nghiệm thu. |
+| Thuộc tính / điểm tài phú (SC-002) | SC-002 vẫn partial; không có bằng chứng worker-start hoặc A retest mới trong các commit task-specific kể từ mốc 05:01. | Không có source diff SC-002 mới trên jx1-ops. | Không có build SC-002 mới được chứng minh. | Số đo cũ vc30 (đao 40/114, giáp né tránh 720) vẫn chưa có phép đo combat/base attribute mới. | Chưa nghiệm thu; REPORTS/SC-002.md không đổi trong compare và vẫn không đồng bộ với status_note/build local được báo ở hộp thư. |
+| Kiểm thử tổng thể | Không có task kiểm thử end-to-end mới trong khoảng compare. | Không có thay đổi TESTER/BOT mới gắn với kiểm chứng gameplay của các hạng mục trên. | Không có build/test artifact mới. | E-05b vẫn là fixture loopback 18/18 TESTER và 41/41 BOT; tạo nhân vật, verify_kill và persistence bị BỎ QUA. E-08 vẫn là khảo sát protocol, không chạy runtime. | Fixture pass không phải nghiệm thu game thật; chưa có E2E trên gs001 xác nhận damage, kill credit, logout và persistence. |
+
+### 14.3 Phân tích sâu SC-006 — bằng chứng mới quan trọng nhất
+
+**Giao việc và bắt đầu**
+- TASKS/SC-006.md vẫn ghi owner B, status running, dependency SC-002.
+- A có bằng chứng runtime cụ thể ở TU-SONNET.md; B có các báo cáo build/đọc mã trong A-B.md. Đây là worker thực sự làm và A thực sự chạy thử, không chỉ là task được giao.
+- TIEU-YEU.md lúc 05:55 ghi SC-006 XONG-CHO-GOP; nhưng TASKS/SC-006 vẫn running, DANG-LAM.md ghi build 7 PARTIAL/chờ A, và A-B.md ghi kết quả build 7 chẩn đoán. XONG-CHO-GOP chỉ là trạng thái worker chờ gộp, không phải ACCEPTED.
+
+**Nguyên nhân kỹ thuật được runtime làm rõ**
+- Bản ghi A 05:53 cho thấy server log have=18300 trong khi panel client 3100, với nhân vật đang mang phi phong GoldId 3475 (cấp 11, yêu cầu 15000).
+- B suy ra m_nWealth server đang cộng cả magic_special_point của chính phi phong đang xét; do đó kiểm tra tổng tài phú sau khi mặc có thể tự thỏa điều kiện. Đây là chẩn đoán phù hợp với số đo runtime, nhưng phép tính loại trừ điểm của chính phi phong chưa được triển khai/kiểm chứng.
+- A tháo rồi mặc lại ở panel 3100 vẫn thành công và không có log [pifeng-can]. Điều này chỉ ra đường trang bị thật có thể không đi qua gate/log đang được quan sát; cần xác định call path trước khi tuyên bố sửa xong.
+- Các lần thử 5999/6000 trước đó dùng hook SetTestWealth không đại diện đầy đủ cho đường thao tác trang bị thật. Không dùng các ca hook đó để kết luận điều kiện tài phú thật đã đạt.
+
+**Rủi ro scope và dependency**
+- vung_file của SC-006 vẫn chỉ liệt kê KItemList.cpp, KItem.cpp, GoldMagic.txt và GoldItem.txt. Báo cáo build 6 nói sửa KPlayer.cpp; build 5 nói sửa Engine/Src/KSG_StringProcess.cpp. Cả hai file C++ này nằm ngoài vung_file hiện tại. Cần được duyệt scope và review diff riêng trước nghiệm thu; không coi build thành công là tự động hợp thức hóa thay đổi ngoài phạm vi.
+- SC-006 vẫn depends_on SC-002 trong khi SC-002 vẫn partial. Chưa có bằng chứng dependency đã ACCEPTED.
+- Không có REPORTS/SC-006.md trong cây file jx1-ops tại HEAD quan sát được.
+
+### 14.4 Kết luận lượt 05:56
+
+- **Có tiến triển runtime mới xác minh được ở phi phong:** A đã chạy build 5/6/7; build 5 không tái hiện crash trong ba vòng; build 6/7 vẫn cho phép k11 được mặc khi panel chỉ 3100; build 7 cung cấp log chỉ ra server have=18300 vì nhiều khả năng tự tính cả phi phong. Đây là phát hiện lỗi rõ hơn, không phải hoàn thành tính năng.
+- **Không có tiến triển mới xác minh được** cho UI cường hóa, lag/giật, quái/đạn xuyên quái, SC-002 hoặc kiểm thử E2E kể từ mốc 05:01.
+- Không có source diff/build manifest trên jx1-ops để review độc lập. Không hạng mục nào trong nhóm được chứng minh đã nghiệm thu cuối.
+
+### 14.5 Cổng kiểm chứng tiếp theo — ghi nhận đề xuất, không dispatch
+
+1. SC-006: xác định gate thực sự của đường client trang bị phi phong; đặt kiểm tra tại đúng đường đó và tính tài phú không bao gồm điểm của chính phi phong đang xét. Log phải ghi goldid, cấp, need, have trước/sau khi mặc.
+2. A retest trên nhân vật thật, không dựa hook SetTestWealth: k11 ở 3100 phải bị chặn/tự tháo; k11 ở 15000 được mặc; k1 ở 5999 bị chặn và 6000 được mặc; kiểm tra tháo/mặc lại, relog, túi đầy rồi giải phóng ô. Giữ qh_dump.log và ảnh trước/sau.
+3. B cung cấp diff/source commit và manifest gắn source SHA với ba binary SHA; scope KPlayer.cpp và Engine/Src/KSG_StringProcess.cpp phải được xử lý rõ ràng trước review. A nạp đúng artifact đã review.
+4. Không đóng SC-006 khi SC-002 dependency chưa được nghiệm thu hoặc khi chưa có report cuối và owner acceptance.
+5. UI, lag/quái, SC-002 và E-05b/E-08 giữ trạng thái cũ; cần bằng chứng task-specific/runtime mới trước khi nâng trạng thái.
+
+### 14.6 Giới hạn thao tác của lượt này
+
+Chỉ đọc nhánh jx1-ops, so sánh commit/file và đọc các task/report/hộp thư liên quan. Chỉ cập nhật sổ nghiên cứu trên nhánh chatgpt-research/jx1-system-audit-2026-11-20. Không ghi/sửa/tạo task, không dispatch worker, không can thiệp worktree, queue, lock, cấu hình, hook, build hoặc runtime; không ghi bất kỳ nội dung nào lên jx1-ops.
