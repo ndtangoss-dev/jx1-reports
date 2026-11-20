@@ -2287,3 +2287,6 @@ Co che co the la: bam loadScript, roi DANG NHAP LAI game moi co hieu luc (khong 
 Lap muc HANG DOI trong DANG-LAM.md ngay bay gio: #300/#302 (gop vao #303), #303/#304 (sach, dang), #305 (co che menu, P2), #306/#306b (loadScript, P0 xen), B-050 client patch (A build APK, P1). Tu nay thu moi khong huy viec cu, tru khi ghi THAY THE/BO; xong viec P0 thi quay lai hang doi; bo viec nao phai ghi BO + ly do.
 
 **Đã xử lý #B-053 (20/11 16:36):** đã lập HÀNG ĐỢI B (P0/P1/P2) trong DANG-LAM.md mục Sonnet B, không BỎ việc nào.
+
+## #310b Chat 20/11 17:25 — A: GIA THUYET CUA CHU cho #310
+Chu nghi: do/menu nap bang loadScript/ReloadScript chi ton tai trong phien test, khong luu DB — nen do cap tu menu nap nong co the khong duoc luu ben vung. Them thi nghiem (4): cap do xanh bang menu nap NONG (nhu vua lam), dang xuat/nhap; roi RESTART gs001 (hoac lay do tu menu cua ban da nap khi khoi dong, khong qua ReloadScript) cap do xanh tuong tu, dang xuat/nhap. So sanh con/mat. Ghi vao CUONG-HOA.md va bao B.
