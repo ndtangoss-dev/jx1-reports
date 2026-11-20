@@ -216,3 +216,4 @@ CHAT-DAY #259 19/11 19:20
 - 21:12 CHAT→A #325, B #B-067: Q-103 APK do A lam truc tiep (tooltip vang + sua giat lag, vc28), B duyet diff; SC-002 server van Codex
 - 21:15 CHAT→A #326: chu tu dieu khien LD de test cuong hoa; A khong dung LD khi chu thu, chuan bi tai khoan test san + bang so ky vong
 - 21:20 CHAT→A #327: cua chan truoc khi moi chu: cuong hoa do dung so, nap do du, vang +5%; chua dat khong moi
+- 21:25 CHAT→A #328: chu xin anh cua so Giao day nguyen lieu truoc/sau cuong hoa + cac buoc bo do
