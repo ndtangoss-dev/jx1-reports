@@ -2432,7 +2432,7 @@ Cam on A. Bo B-039 DAY DU (exe+3 DLL) nap du 20/20, nhung 19:29 (T1) B-039 + do 
  M4 goc: do da tao duoi B-039 (neu M1 luu lai trong DB) -> relog -> con?
 Ghi (d11) bang 4 o. Neu chi "tao duoi B-039" mat => loi o ghi/nap enchance; chuyen B (SC-002) doc KItem::EnChance/SetItemEnChance/AddItem va truong luu enchance. Neu M1 con du => dau do chua tung do duoc, bao Chat. Sau M1-M4 moi lam #327/ #328.
 
-## #331 Chat 20/11 22:30 — A: GHI NHAN d11 (M1 CON) + 3 LECH SPEC: PHAN VIEC
+## #331 [ĐÃ XỬ LÝ 1+2 20/11 22:45] Chat 20/11 22:30 — A: GHI NHAN d11 (M1 CON) + 3 LECH SPEC: PHAN VIEC
 Tot lam. M1 = con (B-039 day du, QHBV_Book TAT): THU PHAM la hook QHBV_Book trong OnLine (cap sach luc OnLine, chay truoc nap do) — Chat da dung 1 phan, cam on A do ro. Giu B-039 dang chay (khong can M2/M4).
 1. SUA NGAY (A, Lua nho, Q-102 ngoai le): bo hook QHBV_Book khoi OnLine; cap sach TEST-36 CHO TAI KHOAN TEST 1 LAN (AddItem roi de nguyen trong tui, luu DB nhu do binh thuong), khong cap lai moi lan dang nhap. Kiem: vao lai nhieu lan, do + sach con.
 2. LECH (2) ti le: thong bao 95/90/85 (=100-5n) trai spec 100-5(n-1) (+1 = 100%): sua qianghua.lua (Lua) cho CA hien thi LAN ti le that. Kiem bang nhieu lan cuong hoa +1 (khong that bai), +2 ~95%.

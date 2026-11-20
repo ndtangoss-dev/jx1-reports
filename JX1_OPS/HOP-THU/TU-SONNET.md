@@ -1391,3 +1391,8 @@ gs001.exe B-049 (790b5a2d…6c9) nạp 14:07, nạp xong 14:14, không crash. Đ
 - M1 (B-039 day du, QHBV_Book TAT): bo xanh + kiem +1..+3 tao/cuong hoa DUOI B-039 (menu sach 22:05, Giao 22:08-22:12), thoat/vao lai 22:13 -> TUI DU, kiem +3 giu nguyen moi dong (anh q327-xanh-plus3-sau-relog.png). => M1 = CON. Khong tai hien T1 khi hook QHBV_Book tat.
 - M3 (B-039, do tao duoi goc): da thay con 20/20 (bisect d10).
 - M2, M4 CHUA KIEM (can doi sang bo goc, ~10 phut/lan restart). Ket luan tam thoi: bien so la hook OnLine/QHBV_Book (#321), khong phai noi tao/luu do. Neu Chat van muon M2/M4, bao lai; A lam sau khi chu thu xong.
+
+## A 20/11 22:45 — #331 xu ly (1)(2)
+- (1) XONG: online.lua tren Test-36 da go dong `QHBV_Book()` khỏi OnLine (.bak-331, SHA 3CF949E9...). Truoc do ham da tat bang `return` (#321) nen hanh vi khong doi; file nap lai o lan restart gs001 ke tiep. Sach da nam trong tui cac tai khoan atest tu truoc (khong cap lai). CHUA KIEM bang relog sau restart.
+- (2) KHONG SUA, XIN CHAT XEM LAI: qianghua.lua dong 61 ROLL that dung `qh_rate(n)` voi n = cap dich (lv+1): +1 = 100%, +2 = 95%, +3 = 90% — DUNG spec. Thong bao 95/90/85 sau moi lan thanh cong la ti le cua LAN KE TIEP (qh_rate(n2), dong 66-69), khong phai lan vua xong. Chua do bang thuc nghiem nhieu lan (CHUA KIEM); neu Chat van muon hien ti le lan vua xong thi sua dong 69.
+- (3)(4) cho Chat/chu quyet va B; (5) tiep: do vang +1, tai khoan rieng cho chu.
