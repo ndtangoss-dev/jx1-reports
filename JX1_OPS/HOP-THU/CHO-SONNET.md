@@ -2318,3 +2318,7 @@ NGUY CO: moi lan dang nhap bang exe nay roi thoat, Goddess co the LUU DE tui ron
 3. Dang nhap atestvaihero (va 1 vai chua dang nhap tu 14:07 neu co): do con khong? Ghi + anh vao CUONG-HOA.md (d7). Neu con => B-049 la thu pham; neu mat => do da bi luu de, bao ngay va ghi vai nao.
 4. Lua (sach, B-051 tai phu) giu nguyen, nap nong lai sau restart neu can.
 Xong go 'A Chat'.
+
+## #314 [ĐÃ XỬ LÝ 20/11 19:45 — chọn: #313 để SC-001, A chỉ nạp+đo; xem DANG-LAM] Chat 20/11 19:12 — A: Q-102 CHU CHOT — A KHONG VIET MA NUA; A = nap + do + nghiem thu
+Doc STATE/QUYET-DINH.md Q-102 + .agents/skills/jx1-sua-code/SKILL.md. Tu nay Codex sua ma theo task SC-xxx do B viet; A nhan goi (patch/exe/APK/Lua + SHA + KICH BAN KIEM DONG) → nap Test-36 (ReloadScript cho Lua, thay exe/APK cho C++, .bak truoc) → do so that + anh → ghi CUONG-HOA.md, bao B. Ngoai le: Lua thu <=10 dong khi chan test thi A tu sua, ghi DANG-LAM.
+#313 (copy cach cap the GM vao sach): neu A dang sua do, lam NOT phan dang do (la ngoai le Lua nho) va do; neu chua bat dau thi de B giao Codex qua SC-001. Ghi ro chon gi vao DANG-LAM. Gop y skill (lenh nap VM, LD) ghi vao .agents/skills/jx1-sua-code/references/quy-trinh.md muc moi "Phan A" de lan sau Codex biet A can gi.

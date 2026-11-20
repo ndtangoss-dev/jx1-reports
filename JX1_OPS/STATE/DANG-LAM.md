@@ -116,3 +116,4 @@
 
 - 20/11 19:05 #313 xong thử 21 tham số (van mat). Dang lam: TN5 atestvaihero, TN3, nguyen nhan nap do (KPlayerDBFuns.cpp:818-1115).
 - 20/11 19:20 A: vc26 build OK (sha256 35b4c8ee...d5b2a, sua \n trong KuiRoleState/KItem). Phat cho chu = [CAN-CHU], chua gui. Con lai: TN3 (mua do shop), TN5 (atestvaihero), cho B doc KPlayerDBFuns.cpp:818.
+- 20/11 19:45 A [Q-102/#314]: CHON = A không viết mã nữa. #313 đã làm xong phần thử (Lua nhỏ, 21 tham số) và KẾT LUẬN vẫn mất đồ → phần sửa gốc (gs001 LoadPlayerItemList nạp đồ + ghi log file) để B giao Codex qua SC-001. A chỉ nạp+đo+nghiệm thu. Phần A đã ghi vào skill jx1-sua-code/references/quy-trinh.md.

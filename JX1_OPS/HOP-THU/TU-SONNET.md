@@ -1355,3 +1355,5 @@ gs001.exe B-049 (790b5a2d…6c9) nạp 14:07, nạp xong 14:14, không crash. Đ
 - Tiếp: TN5 (nhân vật cũ atestvaihero), TN3 (đồ thường), so sánh theo cấp nhân vật.
 
 - Sonnet A 20/11 19:30 — Đã đọc đến #313 (các thư #289–#313 đã đọc; trạng thái từng thư xem tiêu đề trong CHO-SONNET.md và CUONG-HOA d6–d6d).
+
+- Sonnet A 20/11 19:46 — Đã đọc đến #314 (Q-102: A không viết mã; #313 giao SC-001; Phần A ghi vào quy-trinh.md).

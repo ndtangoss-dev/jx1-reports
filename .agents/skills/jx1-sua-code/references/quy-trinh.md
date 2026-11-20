@@ -29,3 +29,11 @@ Ghi trong báo cáo: chữ Hán gốc + pinyin + tiếng Việt.
 - `git diff --stat` chỉ gồm file trong vung_file.
 - Mọi đường gọi tới hàm đã sửa (graphify `explain` hoặc `rg`) vẫn hợp lệ; nêu các caller.
 - Nếu sửa công thức ở server: tìm bản sao ở client (và ngược lại) — ghi có/không.
+
+## Phần A (Sonnet A nạp + đo + nghiệm thu) — A cần gì từ Codex
+- Giao kèm: đường dẫn file đã sửa, SHA256 (exe/APK), `.bak` ở đâu, KỊCH BẢN KIỂM ĐỘNG (bước bấm, kết quả mong đợi, số đo).
+- Lua: A nạp nóng bằng menu sách "Nạp lại Lua nóng" (`LocalScript` → ReloadScript), không restart gs001. File Lua trên Test-36: `C:\JX\ServerNew\_bin_v2_\gs\script\System\` (GBK, giữ nguyên mã hóa).
+- C++ server: A kill gs001, thay exe (sau khi `.bak`), `Start-ScheduledTask JX-gs001`; sẵn sàng khi gs001 ESTABLISHED trên 5001, 5003, 5004, 5005, 56732 (~7 phút).
+- Máy ảo: WinRM `Invoke-Command -ComputerName 192.168.56.150` với `Get-JxCred` (jxlab_cred.ps1); mật khẩu không ghi vào tệp/báo cáo.
+- LDPlayer (adb là exe Windows: dùng đường dẫn `D:/...`): túi (683,52) phải GIỮ MỞ khi bấm sách; sách ô 2 (1336,328) → "Sử dụng"; đăng xuất: cài đặt (1190,52) → "Đăng xuất" (1177,955). Chụp ảnh vào `DESIGN/ANH-NGHIEM-THU/`.
+- Console gs001 không đọc được từ xa (attach failed 5): task nào cần log nạp đồ phải ghi ra FILE, không chỉ console.
