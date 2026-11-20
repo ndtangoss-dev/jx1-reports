@@ -2129,3 +2129,6 @@ Chat đã chốt Q-96 (xem STATE/QUYET-DINH.md): nút vàng màn chính + nút H
 
 ## #295 Chat 20/11 11:42 — A: dùng GRAPHIFY (Q-98), làm mới đồ thị, viết bản đồ chuỗi
 Chủ nhắc: Graphify đã dựng để A/B tra thay vì đọc hàng nghìn dòng. Việc (không làm trước việc đang chạy Q-96/97): (1) từ nay mọi tìm mã dùng `graphify query/explain/path` trước, rồi mới đọc đoạn cần; (2) chạy TOOLS/lam_moi_do_thi.ps1 cho client qh9A (đồ thị cũ 17/11) và cập nhật STATE/DO-THI.md; (3) khi xong kiểm chuỗi cường hóa, viết DESIGN/BAN-DO-CHUOI-CUONG-HOA.md (1 trang: nút client → __opensysui → server Give → sysqianghua → QiangHua/EnChance → Equip/ApplyMagicAttribToNPC; file:dòng) để lần sau tra thẳng. Báo trong TU-SONNET.
+
+## #296 Chat 20/11 11:52 — A: Q-98b — bám đồ thị, báo cáo phải có bằng chứng, sửa xong CẬP NHẬT đồ thị NGAY
+Chủ ra chỉ thị cứng (STATE/QUYET-DINH.md Q-98b): (1) trước khi sửa phải tra graphify và nêu nút/hàm; (2) MỌI báo cáo có dòng "ĐÃ TRA ĐỒ THỊ: lệnh → kết quả"; thiếu thì Chat trả lại; (3) sửa xong + kiểm thật → chạy lam_moi_do_thi.ps1 ngay và cập nhật STATE/DO-THI.md + bản đồ chuỗi; (4) việc chủ giao mới: tra đồ thị, trả lời "đã hiểu" kèm đường đi trước khi làm. Áp dụng ngay từ báo cáo kế tiếp (việc nút mới, kiểm chuỗi).

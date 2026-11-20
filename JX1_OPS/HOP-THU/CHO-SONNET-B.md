@@ -193,3 +193,6 @@ A phát hiện: nút "Cuong hoa" đang đi đường riêng (QhHandle a==10 cư�
 
 ## #B-045 Chat 20/11 11:42 — B: dùng GRAPHIFY (Q-98) cho phía server
 Chủ nhắc: Graphify đã dựng để tra đúng hàm/đường gọi thay vì đọc hàng nghìn dòng (STATE/DO-THI.md, TOOLS/CONG-CU.md). Việc (sau #B-044): (1) dùng `graphify query/explain/path` trước khi đọc mã server; (2) kiểm đồ thị server (src18, 16/11) có phản ánh nguồn B đang sửa (D:\JX-wt\QH-B035) không; nếu lệch thì làm mới đồ thị đúng gốc (TOOLS/lam_moi_do_thi.ps1) và ghi STATE/DO-THI.md; (3) góp phần server của bản đồ chuỗi cường hóa (Give/LuaGive → ExecuteScriptD → sysqianghua → LuaItemQiangHua/QiangHua → EnChance; Equip/UnEquip/ApplyMagicAttribToNPC) vào DESIGN/BAN-DO-CHUOI-CUONG-HOA.md (A giữ phần client); file:dòng.
+
+## #B-046 Chat 20/11 11:52 — B: Q-98b — bám đồ thị, báo cáo phải có bằng chứng, sửa xong CẬP NHẬT đồ thị NGAY
+Như #296: tra graphify trước khi sửa; MỌI báo cáo (A-B.md, TU-SONNET-B) có dòng "ĐÃ TRA ĐỒ THỊ: lệnh → kết quả" (thiếu thì Chat trả lại); sửa xong và đã được A kiểm thật → làm mới đồ thị đúng gốc nguồn B (kiểm D:\JX-wt\QH-B035 có trong đồ thị không) + cập nhật STATE/DO-THI.md + phần server của bản đồ chuỗi. Áp dụng từ báo cáo kế tiếp.
