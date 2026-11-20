@@ -1523,3 +1523,14 @@ gs001.exe B-049 (790b5a2d…6c9) nạp 14:07, nạp xong 14:14, không crash. Đ
 - Tooltip client vẫn sai (+389/+52%/Kháng lôi 36%/Nội lực +174; nhãn "[cấp 1]" kèm yêu cầu 6000): cần vá dữ liệu GoldMagic/GoldItem client (PAK/CDN) — chưa làm.
 - **!!! gs001 SẬP** (Event 1000, Engine.dll, 0xc0000409, offset 0x5bf45, PID 0x1f30 = 7984) lúc 02:49:15, ~35 giây sau khi A THÁO phi phong +6 (02:48:40) rồi mở/đóng bảng nhân vật + bấm menu [TEST-36]. Client kẹt "đang giải kẹt tài khoản". Chưa chắc do tháo phi phong hay do thao tác sau đó (AddGoldItem 11 phi phong / SetTestWealth); đã chép `qh_dump.log.crash1` ở thư mục gs VM. A đã restart gs001 để tái hiện từng bước (mặc → tháo → chờ 60s).
 - Lỗi cũ vẫn mở (đợt 3): đổi phi phong thất bại thì mất phi phong đang mặc; nhãn [cấp 1] của Tuyệt Thế yêu cầu 6900.
+
+## [A] 21/11 03:20 — SC-006 build 3: TRẢ LỜI CHAT 03:10 (đợt 5)
+- gs001 trên Test-36 = SHA256 829F648F…E498B (build 3) — ĐÃ nạp, đã băm lại bằng Get-FileHash.
+- (1) BIÊN 6000 (tháo đao trước): tài phú 5999 + phi phong cấp 1 → TỪ CHỐI "Khong mac duoc: chua du cuong hoa/phi phong"; 6000 → MẶC ĐƯỢC. ĐÚNG. Nhận định 02:32 "hai chỗ đếm" của A là SAI (đao vàng +1 cộng 100), xin rút.
+- (4/3) CHỈ SỐ THẬT (qh_dump.log + bảng nhân vật): k=1 → 200/200/100/kháng 4/chạy 5 (mặc +6: 260/260/130/5/7 = ×1.3 đúng); k=11 (15000) → 2200/2200/1100/44/55; panel Sinh 900→3100, Nội 100→2300, Thể 100→1200 khớp. Tháo thì về 900/100/100.
+- Đao vàng +1: dump NEN t28=42 (gốc 40), t29=120 (gốc 114); tooltip client vẫn 40/114 => KHÁC số thật (dòng lẻ 1,3 sai) — việc dữ liệu client (APK mới, vùng Đỏ chờ chủ).
+- Tooltip phi phong: k=1 hiện bảng cũ (Sinh +229, Nội +188, tốc +53%, kháng lôi 30%, choáng 31%) ≠ thật 200/200/100; k=2..11 KHÔNG có dòng chỉ số nào; nhãn luôn "[cấp 1]".
+- LỖI MỚI (f): đang mặc k=11 mà tài phú tụt 15000→100 (tháo đao) →0: phi phong KHÔNG tự tháo, vẫn +2200 chỉ số. Đường "hạ +N/tháo đồ cộng tài phú" chưa gọi QhCheckPifeng. Hook SetTestWealth bị tính lại về tổng đồ khi mặc/tháo (mất giá trị tuyệt đối).
+- Tháo phi phong khi hành trang đầy: im lặng, không tháo. Đổi phi phong (ô đã có) bị từ chối bằng dòng chữ mojibake (ảăï:ÿáÔ…) dù đủ tài phú 6000 — nên báo B xem chuỗi/đường đổi chỗ.
+- Panel: Chạy chỉ +5 (10→15) khi k=11 (dump t111=55), kháng t114=44 không hiện ở ô kháng nào — chưa rõ do cách hiển thị; chưa kiểm.
+- CHƯA XONG: Né tránh giáp +5%, đao vàng +1 sát thương thật khi đánh quái, thoát/vào lại, FPS vc27/vc31. gs001 sập 02:49 (Engine.dll 0xc0000409) chưa rõ nguyên nhân. Hook thử (qh_bothu.lua) vẫn trên VM; xóa trước server thật.
