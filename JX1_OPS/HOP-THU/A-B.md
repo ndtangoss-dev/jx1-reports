@@ -1604,3 +1604,11 @@ SỬA (commit sc-006b d950689, Engine/Src/KSG_StringProcess.cpp): mảng +2 byte
 - CoreServer.dll 2d5f26868c1c614269fe2b019ac36bbe433a6d243b7272bc82ad585cd3984215
 Build 5 gồm cả build 4 (kiểm lại giá trị tài phú mỗi nhịp). Lưu ý: build 4 mỗi nhịp gọi QhCheckPifeng khi tài phú < mức cần; túi đầy thì thử lại mỗi nhịp (không treo, không đệ quy) – A giữ ≥1 ô trống.
 A LÀM: nạp build 5 (Engine.dll + CoreServer.dll + gs001.exe), lặp đúng chuỗi: tháo phi phong +6 → mở bảng nhân vật → bấm menu TEST-36. Nếu còn sập: gửi cho B (a) dòng cuối qh_dump.log, (b) Event 1000 có offset mới, (c) file .dmp/WER nếu có, (d) Lua nào vừa chạy (bấm nút nào). B sẽ tra tiếp theo offset mới. CHƯA XÁC MINH ngoài đời thật: B không chạy game. Trạng thái: PARTIAL.
+
+## B → A (21/11 ~05:35) SC-006 build 6: kiểm tài phú phi phong MỖI NHỊP (sửa "không tự tháo")
+TÓM TẮT: (1) Nguyên nhân build 5: kiểm tra chỉ chạy khi có CỜ (đặt khi tài phú GIẢM theo đường magic_special_point hoặc hook); tài phú đổi đường khác (hook đặt tuyệt đối, nạp nhân vật, đổi đồ) thì cờ không bật → phi phong ở lại. ĐÃ ĐỌC MÃ. (2) Sửa (commit sc-006b, KPlayer.cpp Active): BỎ cờ, MỖI NHỊP gọi `QhPifengBad()` (so `m_nWealth >= nNeed` bằng đúng MỘT hàm QhPifengWealthOK, dùng cả cho CanEquip) và nếu thiếu thì `QhCheckPifeng()` tự tháo về túi. Phủ: mặc/tháo/đổi/cường hóa/nạp nhân vật/hook. (3) Dấu bằng đã là `>=` (6000 mặc k1 được ở build 3 đo của A). Lần 6000 bị từ chối của A chưa giải thích được bằng mã: nghi tài phú thật lúc đó ≠ 6000 (hook bị tính lại khi mặc/tháo). Build 6 ghi vào `qh_dump.log` dòng `[pifeng-deny] goldid= grade= need= have=` mỗi lần từ chối/tự tháo → A gửi dòng này nếu còn từ chối. (4) Túi đầy thì không tháo được, thử lại mỗi nhịp: A giữ ≥1 ô trống. (5) HP/MP lệch giữa các phiên (4645/3427 → 4528/3450) chưa tra: CHƯA XÁC MINH (có thể do nhiều món khác cộng, không riêng phi phong).
+ĐÃ CHẠY THẬT build 5/5 exit 0, checkpoint-sc-006b6:
+- gs001.exe SHA256 c7ea4a8b26c7c32aba6dac243d704b841b7a58ebe2faf4ed82eee189a8f0c163
+- CoreServer.dll 94ef41ab0f398802849877a99bc28e5acfefba8a55067b6956fd62601227a5d0
+- Engine.dll 3371436b96247a55d7011641c5da0b38d530373792298659be0a680b7de6fba7
+B CHƯA chạy game. A nạp build 6 (cả 3 file), đo: mặc k1 với 6000 → vào lại → tài phú thấp <6000 → phải tự tháo trong vài giây. Trạng thái PARTIAL (chờ A đo thật).

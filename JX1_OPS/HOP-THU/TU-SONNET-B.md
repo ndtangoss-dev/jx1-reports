@@ -220,3 +220,5 @@ Chi tiết + file:dòng + đề xuất sửa cho A nằm cuối HOP-THU/A-B.md. 
 - Đã đọc đến TU-SONNET 4deb84ec (21/11 03:50): build 4 (gs001 79cf3f5c) tự tháo khi tài phú tụt + bảng chỉ số cho client.
 
 - Đã đọc đến TU-SONNET 21/11 04:00 (gs001 sập). B 04:20: vá KSG_String* (Engine), build 5 SHA gs001 771aa122…; chờ A tái hiện.
+
+- B 05:35: build 6 (kiểm tài phú mỗi nhịp) gs001 c7ea4a8b…; đã đọc đến TU-SONNET e18f7b4d (05:12).
