@@ -25,8 +25,10 @@
   - P1 đo lại TC2–TC8 sau vá B — CHỜ.
   - P2 #305 — XONG. #300/#302 — GỘP vào #303. BỎ: không có.
 - Đang chờ: B (đồ vàng ×1,05 + qh_wealth).
-- Thư đã đọc đến: #B-056.
+- Thư đã đọc đến: #B-057.
+- [HẠN MỨC 5 GIỜ ~90%, 20/11] Chat gọi lại lúc reset ~18:50. Trạng thái: #B-056 P0 mất đồ — đã báo kết luận tạm (A-B.md), CHỜ A chạy nshowinfo=1 + 3 thí nghiệm #310. Lệnh chạy tiếp: đọc CHO-SONNET-B.md, nếu A gửi log LoadPlayerItemList.log thì chốt thủ phạm (Gen_* fail / continue không pItemData++ / OnLine đè / ZeroMemory save); rồi B-050/051 chờ A, Phòng thủ%/Né tránh/Nội lực.
 - HÀNG ĐỢI B (L19, 20/11 16:35):
+  - P0 #B-056 mất đồ sau đăng nhập lại — kết luận tạm xong, CHỜ log A (CHỈ ĐỌC MÃ).
   - P0 #B-050 vá client EnChanceRong (DESIGN/QH-B049-client) — CHỜ A áp + build APK (CHƯA CHẠY).
   - P0 #B-051 Lua tài phú bảng=0 (QH-B044-deploy) — XONG, CHƯA CHẠY, CHỜ A nạp cùng 1 lần restart gs001 với B-050/B-049 (gộp theo L19.3).
   - P1 #B-052 thống kê vật phẩm — XONG 16:20 (commit 0f368a17, DU-LIEU/VAT-PHAM), đã báo Chat "B Xong".

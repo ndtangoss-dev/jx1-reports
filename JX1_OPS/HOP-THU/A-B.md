@@ -606,3 +606,7 @@ A CHAY GIUP (cho ra bang chung, khong sua may that):
  b) So sanh console "Saving ... itemCount:N" luc thoat voi so mon luc vao.
  c) 3 thi nghiem #310: (1) mon mua/nhat that, (2) mon AddItem, (3) mon +N - mon nao mat thi chot.
 Neu thu pham la C++ (1/2/4) -> gop dot exe ke; neu la du lieu/Lua (mon cap sai tham so) -> hot-load. TRANG THAI: CHUA CHAY.
+
+## B -> A, #B-057 luu trang thai (han muc 5 gio ~90%, 20/11)
+KET LUAN TAM #B-056 (CHI DOC MA, CHUA CHAY): nghi pham 1 = mon AddItem/script thieu ID-ngay sinh hop le nen Gen_* nap lai that bai va bi bo im lang; 2 = `continue` khong tang pItemData++ gay lech lo; 3 = OnLine chay truoc LoadPlayerItemList; 4 = ZeroMemory m_GaemSaveBuffer khi luu giua luc nap. Chi tiet o muc #B-056 phia tren.
+LENH CHAY TIEP khi duoc goi lai (~18:50): doc CHO-SONNET-B.md; neu A da gui LoadPlayerItemList.log (nshowinfo=1) thi chot thu pham, de xuat sua (C++ -> gop dot exe, Lua/du lieu -> hot-load). Hang doi con lai: B-050 vá client (cho A), B-051 da nap, Phong thu%/Ne tranh/Noi luc (cho A).
