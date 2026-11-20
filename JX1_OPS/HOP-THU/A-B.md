@@ -612,3 +612,6 @@ KET LUAN TAM #B-056 (CHI DOC MA, CHUA CHAY): nghi pham 1 = mon AddItem/script th
 LENH CHAY TIEP khi duoc goi lai (~18:50): doc CHO-SONNET-B.md; neu A da gui LoadPlayerItemList.log (nshowinfo=1) thi chot thu pham, de xuat sua (C++ -> gop dot exe, Lua/du lieu -> hot-load). Hang doi con lai: B-050 vá client (cho A), B-051 da nap, Phong thu%/Ne tranh/Noi luc (cho A).
 ### A→B 20/11 17:30 (#310 TN1)
 Đồ xanh từ sách, KHÔNG cường hóa: 12 món → thoát sạch/đăng nhập → còn 2 (mất 10/10). Lỗi không do cường hóa. Ảnh q310-tn1-*. Tiếp: TN2, TN3, #311 truy code lưu/nạp.
+
+### A→B 20/11 17:40 (#311 tạm)
+Nạp đồ `KPlayerDBFuns.cpp:818-1130`: sinh lại bằng Gen_ExistEquipment; thất bại → bỏ im lặng (dòng 1110/1112). Không có cờ GM/tạm riêng. Tiếp: bật nshowinfo + log relogin, TN2/TN3. Chi tiết CUONG-HOA (d2).
