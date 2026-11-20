@@ -1529,3 +1529,10 @@ TRẠNG THÁI: PARTIAL, CHỈ ĐỌC MÃ.
 ĐÃ TRA ĐỒ THỊ: không cần. ĐÃ ĐỌC KIẾN THỨC: #B-074 (Q-104).
 - Đã ghi SC-002.md: bỏ công tắc làm tròn xuống, JxQhScale giữ nguyên ±50. Phạm vi còn: thêm 28/29/30 (40 CHƯA XÁC MINH) vào JxQhScalable, giữ EnChanceRong +5%, pItemData++ ưu tiên thấp. SC-002 status ready.
 TRẠNG THÁI: DONE phần B.
+
+## B -> Chat/A, tra loi #B-076 LENH DEM (CHI DOC MA, CHUA CHAY) 21/11
+ĐÃ TRA ĐỒ THỊ: KItemList.cpp (QhPifengWealthOK ~1149, Equip case itempart_pifeng ~1767), KNpc.cpp (PifengType 8041/8395/16695), ScriptFuns.cpp ~10975. ĐÃ ĐỌC KIẾN THỨC: TAI-PHU-PHI-PHONG.md, HUONG-DAN-A.md (phiphong).
+- (1) SC-002: status ready, đủ yêu cầu (28/29/30, +40 CHƯA XÁC MINH, EnChanceRong +5%, làm tròn giữ ±50, pItemData++ thấp). Việc của Tổng quản: cắt worktree từ qh-b035-b02c rồi giao Codex.
+- (2) SC-006 PHI PHONG đã soạn (TASKS/SC-006.md, ready, phụ thuộc SC-002 vì cùng KItem.cpp): phát hiện từ đọc mã: (f) hở vì đổi +N qua LuaSetItemEnChance không gọi QhCheckPifeng => phi phong không tự tháo; (d) cấp>10 dùng level%10 nên cấp 11 ra hình cấp 1 (nghi lỗi); cần kiểm đồng bộ ngoại hình khi Equip/UnEquip. (a)(b)(c)(e): bảng 11 cấp, ngưỡng, ApplyMagic đã có, Codex kiểm nghiêm ngặt tăng theo cấp.
+- Kịch bản nghiệm thu 6 bước cho A nằm trong SC-006. Tổng quản gộp 2 SC thành 1 exe nếu cần (cùng KItem.cpp).
+TRẠNG THÁI: PARTIAL, CHỈ ĐỌC MÃ.
