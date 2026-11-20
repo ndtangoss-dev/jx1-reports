@@ -212,3 +212,4 @@ CHAT-DAY #259 19/11 19:20
 - 20:45 CHAT→A #321 [KHAN], B #B-063: nguyen nhan mat do = online.lua OnLine cap do truoc LoadPlayerItemList (tu BAI_HOC phien truoc)
 - 21:00 CHAT→A #322, B #B-064: bo sung tu BAI_HOC phien truoc (tooltip KuiItemdescVN, noi luc 168-172, thoat game truoc restart)
 - 21:05 CHAT→A #323, B #B-065: A do loi o exe B-039 (khong phai online.lua), Chat nhan sai; B: SC tim cho rot do P0 + port sua giat lag phien truoc P1
+- 21:10 CHAT→A #324, B #B-066 [KHAN]: hoan thien nhanh de chu test cuong hoa + giat lag (chia doi DLL, SC-002/003/004, APK vc28)

@@ -2396,3 +2396,11 @@ Cam on A: Chat de xuat online.lua la SAI; A do truc tiep: bo exe goc `.orig-a07c
 1. Test-36 cu chay bo goc de lam cac phan khong can C++ (Ky Tran Cac #319, sach, thuoc tinh). Chua cuong hoa dong thuoc tinh thi khoan do. KHONG dung exe B-039 nua cho den khi SC-002 sua xong.
 2. Con 1 phep thu: tren bo goc cap them 9/10 mon, THOAT roi vao lai (chua kiem) — lam va ghi so.
 3. Bat dau chuan bi chia doi bo B-039 de tim noi gay mat: B-039 gom thay doi gi so voi goc (KItem.cpp/KPlayerDBFuns.cpp?), nap tung dll (CoreServer/Engine/LuaLib/exe) goc+1 moi dll tu B-039 de tim dll gay mat, 1 vong 10 phut/lan nap. Ghi vao d10.
+
+## #324 [KHAN] Chat 20/11 21:10 — A: CHU MUON TEST CUONG HOA + GIAT LAG: HOAN THIEN NHANH
+Chu (20:58): "Hoan thien nhanh, sau do de ta vao test cuong hoa, giat lag." Muc tieu cua dem nay: Test-36 + 1 APK de chu tu test. Thu tu (khong cho nhau, chay song song voi B):
+1. CHIA DOI DLL (uu tien): tren bo goc .orig-a07c, thay tung file tu B-039 (gs001.exe -> CoreServer.dll -> Engine.dll -> LuaLibDll.dll), nap, dang nhap atestvaihero, xem do con khong; tim file gay mat. Moi lan <=10 phut. Neu CoreServer.dll la thu pham: bao B ngay (SC-002 tim cho do trong KPlayerDBFuns/KItemGenerator).
+2. Trong khi cho gs001 nap: lam cac viec Lua/data (Ky Tran Cac #319 neu B da co SC, sach, tai khoan test san do xanh cho chu).
+3. Chuan bi cho chu: 1 tai khoan test (khong phai tkchuvuong) co san: 10 mon xanh + thuy tinh/bac + tien, mat khau luu o noi chu da biet; cac buoc test cuong hoa +1..+3 va ky vong so (bang so cua A).
+4. APK: gop SC-003 (tooltip vang) + sua giat lag (B-065 muc P1) thanh MOT APK vc28; A chi nap + do.
+Ghi moc gio thuc te vao DANG-LAM.md; xong buoc nao go 'A Chat'.
