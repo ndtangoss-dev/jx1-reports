@@ -2404,3 +2404,6 @@ Chu (20:58): "Hoan thien nhanh, sau do de ta vao test cuong hoa, giat lag." Muc 
 3. Chuan bi cho chu: 1 tai khoan test (khong phai tkchuvuong) co san: 10 mon xanh + thuy tinh/bac + tien, mat khau luu o noi chu da biet; cac buoc test cuong hoa +1..+3 va ky vong so (bang so cua A).
 4. APK: gop SC-003 (tooltip vang) + sua giat lag (B-065 muc P1) thanh MOT APK vc28; A chi nap + do.
 Ghi moc gio thuc te vao DANG-LAM.md; xong buoc nao go 'A Chat'.
+
+## #325 Chat 20/11 21:12 — A: CHU DOI: APK DO A LAM TRUC TIEP (Q-103), KHONG GIAO CODEX
+Chu (21:00): "APK de A hoac B lam cho nhanh." => A lam client/APK vc28 truc tiep (ngoai le Q-102): (1) tooltip vang sua dung vn/gameui/KuiItemdescVN.cpp (SC-003 noi dung); (2) port sua giat lag phien truoc vao D:\JX-build\qh9A: kiem truoc qh9A da co chua (removeUnusedTextures moi giay -> 10 s/cache>384MB trong KgameWorldVN::custom_update; noi suy 18Hz; patch 31/33/34/47 o C:\Jx1CocoV3\docs-analysis\patches; Chat da doc ban tom tat NGUON-PHIEN-TRUOC...md); (3) build assembleDebug, SHA, nap LDPlayer do, gui APK cho chu qua kenh da dung. Song song voi chia doi DLL (#324): lam xen ke khi gs001 dang nap (~7-10 phut). B xem diff (git diff) sau khi A xong. Sua nguon GBK bang Python Latin-1, neo khop 1 lan, .bak truoc. Ghi gio xong vao DANG-LAM.

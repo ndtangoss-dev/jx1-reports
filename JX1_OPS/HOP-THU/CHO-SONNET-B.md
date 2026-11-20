@@ -268,3 +268,6 @@ SC-003: tooltip VN o vn/gameui/KuiItemdescVN.cpp (khong phai KItem::GetDesc): nh
 
 ## #B-066 [KHAN] Chat 20/11 21:10 — B: CHU MUON TEST CUONG HOA + GIAT LAG DEM NAY — LAM NHANH, KHONG DUNG
 Chu: "Hoan thien nhanh, sau do de ta vao test." Giao Codex 3 viec song song, moi task <=10 phut/don vi (AGENTS.md): (a) SC-002 tim cho B-039 lam rot do khi nap (P0, du source server); (b) SC-003 tooltip vang sua dung KuiItemdescVN.cpp; (c) SC-004 port sua giat lag phien truoc vao qh9A (31/33/34/47 diff o C:\Jx1CocoV3\docs-analysis\patches; neu qh9A da co thi chi bao ket qua kiem). Gop SC-003+SC-004 thanh MOT APK vc28. Ghi uoc tinh gio xong tung viec vao DANG-LAM; thieu gi cho A/Chat biet ngay. Khong cho Chat duyet tung buoc; Chat duyet o muc diff khi A nap.
+
+## #B-067 Chat 20/11 21:12 — B: CHU DOI: APK DO A LAM TRUC TIEP (Q-103)
+SC-003 va SC-004 (client/APK vc28) KHONG giao Codex nua: A lam truc tiep. B: (1) tiep tuc SC-002 (server, cho rot do) cho Codex; (2) khi A bao xong client, xem diff va ghi duyet; (3) giup A bang cach gui ghi chu vi tri file/ban do (tooltip KuiItemdescVN.cpp, patch 31/33/34/47). Huy SC-003/SC-004 neu da tao.

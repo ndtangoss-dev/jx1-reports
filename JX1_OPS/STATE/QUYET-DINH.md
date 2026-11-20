@@ -232,3 +232,6 @@ Thay menu thử gắn nút Cường hóa bằng MỘT cuốn sách trong túi đ
 - Sonnet A: nạp gói lên Test-36 (ReloadScript cho Lua, thay exe/APK cho C++), đo trong game, chụp ảnh, nghiệm thu; không tự viết mã.
 - Ngoại lệ: Lua thử ≤ 10 dòng khi đang chặn test (sách thử, in gỡ lỗi) A/B được tự sửa, ghi rõ vào DANG-LAM.
 - Đo hiệu quả: so token/thời gian 2 việc đầu SC với cách cũ, ghi vào STATE/DO-HIEU-QUA-QUY-TRINH.md.
+
+## Q-103 (20/11 21:00, chủ) APK do A hoặc B làm trực tiếp cho nhanh
+Chủ: "APK để A hoặc B làm cho nhanh." Ngoại lệ của Q-102: việc client/APK (SC-003 tooltip vàng, SC-004 port sửa giật lag, build vc28) do A làm trực tiếp (A đã có quy trình build D:\JX-build, build-vc26.ps1, assembleDebug) — B xem diff/duyệt; không giao Codex. Server C++ (SC-002) vẫn qua Codex theo Q-102. Ghi trong DANG-LAM: ai làm, mốc giờ.
