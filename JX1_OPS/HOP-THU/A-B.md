@@ -350,3 +350,13 @@ Doc TU-SONNET. Khong can B sua DBTable.cpp cho viec nay. Luu y khi chep Lua: dun
  Doi gi/ky vong/cach kiem/hoan tac: b,c,d doi hanh vi server (can build Core + chep exe, 10-15 phut nap); ky vong: bam nut danh thuong gan quai la danh ngay, quai hien khi vao 30 don vi; kiem bang A tren Ba Lang... can map co quai (A de xuat AddNpc 1 quai); hoan tac: giu .bak GameServer.exe + CmdLane.ini cu. Chua build, chua chay -> khong giao cho den khi Chat/A chot.
 (3) **Nghiem thu cho chu:** `DESIGN/NGHIEM-THU-CUONG-HOA.md` (A: cuong hoa, tai phu, phi phong, hien thi, buoc don hook test truoc khi giao chu).
 Trang thai: PARTIAL (doc/soan, chua build, chua chay).
+
+## B -> A: HOP DONG v6 (20/11, Q-90 / #B-039) — TAI PHU = THUOC TINH NHAN VAT. Thay v5 phan tai phu.
+1. Thuoc tinh: dung enum co san `magic_special_point` (KMagicAttrib.h:322; tinh tu magic_normal_begin(dong 99) la phan tu thu ~220; A doi chieu enum client cho chac). Ten hien thi: "Điểm tài phú". Server them truong `m_nWealth` cua nhan vat, cong/tru dung bang ApplyMagicAttribToNPC/RemoveMagicAttribFromNPC chuan.
+2. Gia tri tren mon = 100 x +N (N = nEnChance), CHI 10 o: dau, ao, that lung, vu khi, giay, tay, bua, nhan1, nhan2, ngoc boi. Phi phong/ngua khong tinh. Doi +N khi cuong hoa -> server thao + mac lai (nhan vat tu doi tong).
+3. Tooltip mon: them dong "Điểm tài phú +M" (M = 100 x nEnChance, client tu tinh tu nEnChance nhu v5, khong can goi server) o 10 o tren.
+4. Yeu cau phi phong: loai yeu cau moi `magic_requirewealth` (them cuoi nhom require trong enum; id cuoi cung server bao A sau khi build, ghi trong ban ky). Tooltip: "Yêu cầu tài phú: X" (do neu thieu), X = 6000+900(k-1), k=1..11 (GoldId 3465..3475). Mac that bai theo co che yeu cau chuan (EnoughAttrib), khong can client chan.
+5. Tong tai phu nhan vat (khung thong tin): server van gui `[QH]|W|tong` khi dang nhap + moi lan doi do/cuong hoa (A hien thi, khong tu cong nua). Neu A doc duoc thuoc tinh qua khung nhan vat chuan thi dung, neu chua thi dung dong [QH]|W| lam nguon.
+6. Tu thao phi phong khi tut: QhCheckPifeng giu nguyen, dung m_nWealth; tui day -> bao [QH]|D va van thao (khong roi do).
+7. BO: client KHONG tu cong tai phu cho tong nua; cac [QH]|I (v5) tuy chon, giu duoc.
+8. Ban server gom 1 lan (Q-89): B soan, ra ky ban SHA + cach kiem + hoan tac vao A-B.md. Trong luc cho A lam UI theo muc 3,4,5.

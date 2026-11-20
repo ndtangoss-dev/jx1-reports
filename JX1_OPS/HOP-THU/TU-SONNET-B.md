@@ -180,3 +180,4 @@ Chi tiết + file:dòng + đề xuất sửa cho A nằm cuối HOP-THU/A-B.md. 
 Đã đọc đến #B-037 (20/11 07:10): xác nhận công thức tài phú, hợp đồng v5 ở A-B.md.
 
 Đã đọc đến #B-038 (20/11 07:25): ra soát + bản gộp (chưa giao) + danh sách nghiệm thu, ở A-B.md và DESIGN/NGHIEM-THU-CUONG-HOA.md.
+- Da doc den #B-039 (20/11 07:39): hop dong v6 da ghi A-B.md; dang soan ban gs001 gop.
