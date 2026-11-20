@@ -561,3 +561,10 @@ A làm: .bak 2 file trên Test-36 gs\script\system\, chép bản mới, restart 
 - Kết quả: `JX1_OPS/DU-LIEU/VAT-PHAM/` — `TONG-VAT-PHAM.csv` (27.240 dòng, UTF-8 BOM, cột `nguon`), `VAT-PHAM.xlsx`, CSV từng bảng theo thư mục nguồn (`item`, `item_004`, `item_004_itemvalue`), `README.md` (cột, file nguồn, số dòng).
 - ĐÃ GIẢI MÃ: tên/mô tả (Hán GBK + Việt TCVN3). CHƯA RÕ: ý nghĩa số loại thuộc tính/yêu cầu, genre/detail; server nạp thư mục nào (gốc hay 004) CHƯA KIỂM; xlsx chưa mở thử bằng Excel.
 - ĐÃ TRA ĐỒ THỊ: không dùng (chỉ đọc bảng dữ liệu, không có mã để tra). ĐÃ ĐỌC KIẾN THỨC: KBasPropTbl.cpp:16–23 (client đọc `004`), cột bảng item/004.
+
+## #B-054 — Bảng đối chiếu loại thuộc tính + cột đọc được + ban_trung (B, 20/11/2026) — ĐÃ CHẠY THẬT (chỉ đọc file dữ liệu/mã, không chạy game/server)
+- `DU-LIEU/VAT-PHAM/BANG-LOAI-THUOC-TINH.csv`: 312 loại enum, 239 có mô tả Hán+Việt (MagicDesc.ini/MagicDesc_mobile.ini), 73 ghi CHƯA RÕ. TONG thêm 3 cột: `dong_thuoc_tinh_doc_duoc`, `yeu_cau_doc_duoc`, `ban_trung`; cột gốc giữ nguyên. Đã xuất lại CSV + xlsx.
+- Phát hiện: loại 30 `magic_armordefense_v` được MagicDesc hiển thị là "Né tránh" (liên quan lỗi Né tránh không nhân ở cường hóa: loại 30/150 có nằm trong `JxQhScalable` chưa — A/B kiểm tiếp).
+- CHƯA RÕ: bảng số→tên cho môn phái/giới tính/ngũ hành; file nào server thật nạp (gốc hay 004). xlsx chưa mở thử bằng Excel.
+- ĐÃ TRA ĐỒ THỊ: `graphify` QH-B035 Core/Src không có cạnh cho enum → đọc thẳng KMagicAttrib.h:6 (enum MAGIC_ATTRIB). ĐÃ ĐỌC KIẾN THỨC: MagicDesc.ini, MagicDesc_mobile.ini, KMagicAttrib.h.
+- Script: `JX1_OPS/TOOLS/bang_loai_thuoc_tinh.py`, `xuat_vat_pham.py`.

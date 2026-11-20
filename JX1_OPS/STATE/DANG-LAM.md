@@ -17,13 +17,14 @@
 - 20/11 15:44 [A] #302: theo chủ chốt, dùng vai túi trống: tk tkatest02, vai atestqhhai (đã tạo bằng bot_tao_role). Đổi cổng hook qh_bothu.lua sang tiền tố 'atest' (hook TEST, nằm trong danh sách gỡ), chép VM, restart gs001 15:43 (nạp ~10 phút; gộp, không đổi exe). Việc kế: LD đăng nhập atestqhhai -> menu Bảo vật -> bộ xanh/vàng/thủy tinh/bạc -> mặc, đo +1/+2/+3, chụp, ghi CUONG-HOA.md. CHƯA KIỂM.
 - 20/11 16:20 [A] #303 (Q-101, gộp #300/#302): sách = item script có sẵn (6,1,0) + script mới \script\itemaowubox.lua gọi qhbv_menu (chỉ tên 'atest'); online.lua (.bak-q303) tự cấp lại sách khi đăng nhập; menu: Dọn hành trang (giữ sách, FindItemEx(3,i,j)+RemoveItemByIndex), Đồ xanh (luck 1000 có dòng), Đồ vàng, Thủy tinh, Bạc, Thiết lập Thiếu Lâm; nút Cường hóa về UI Giao gốc. Chép VM, restart gs001 16:20 (nạp ~10 phút). Vai atestqhhai (tkatest02) kẹt vào game; tạo thêm tkatest03/atestqhba (native_place 54). Việc kế: LD vào atestqhba -> bấm sách -> menu -> mặc, +1/+2/+3, chụp, ghi CUONG-HOA.md. CHƯA KIỂM.
 - Đang chờ: B (đồ vàng ×1,05 + qh_wealth).
-- Thư đã đọc đến: #B-053 (L19).
+- Thư đã đọc đến: #B-054.
 - HÀNG ĐỢI B (L19, 20/11 16:35):
   - P0 #B-050 vá client EnChanceRong (DESIGN/QH-B049-client) — CHỜ A áp + build APK (CHƯA CHẠY).
   - P0 #B-051 Lua tài phú bảng=0 (QH-B044-deploy) — XONG, CHƯA CHẠY, CHỜ A nạp cùng 1 lần restart gs001 với B-050/B-049 (gộp theo L19.3).
   - P1 #B-052 thống kê vật phẩm — XONG 16:20 (commit 0f368a17, DU-LIEU/VAT-PHAM), đã báo Chat "B Xong".
   - P1 KT-01..06 — XONG, Chat đã duyệt.
   - P2 Phòng thủ% bảng = 0 (KNpc.cpp magic_physicsres_p) — CHỜ A truy client; Né tránh/Nội lực chưa nhân (thiếu id trong JxQhScalable) — CHỜ id từ A.
+  - P1 #B-054 bảng đối chiếu loại thuộc tính + cột đọc được + ban_trung — XONG 20/11 (đợi Chat gửi chủ).
   - BỎ: không có.
 
 ## Sonnet B
@@ -31,11 +32,12 @@
 - Lệnh chạy tiếp: chờ A áp vá client + nạp Lua B-051 (1 lần restart gs001), đo lại tài phú bảng và đồ vàng ×1.05; sau đó Phòng thủ% (A truy client: CoreShell.cpp:1627, trường m_CurrentPhysicsResist).
 - Đang chờ: A (vá client B-050, nạp Lua B-051 cùng đợt restart gs001).
 - Hook B (D:\JX-wt\SONNET-B\.claude\settings.json): SessionStart (hook_luat.py start/postcompact, KIỂM chạy tay: ra LUAT-COT-LOI) và Graphify hook-guard (SessionStart compact, PreToolUse Bash|Grep|Read|Glob, KIỂM chạy tay exit 0) ĐỀU CÓ. Lưu ý: thư mục B chưa có graphify-out nên hook-guard không dẫn tới đồ thị; đồ thị server nằm ở QH-B035\...\Core\Src\graphify-out.
-- Thư đã đọc đến: #B-053 (L19).
+- Thư đã đọc đến: #B-054.
 - HÀNG ĐỢI B (L19, 20/11 16:35):
   - P0 #B-050 vá client EnChanceRong (DESIGN/QH-B049-client) — CHỜ A áp + build APK (CHƯA CHẠY).
   - P0 #B-051 Lua tài phú bảng=0 (QH-B044-deploy) — XONG, CHƯA CHẠY, CHỜ A nạp cùng 1 lần restart gs001 với B-050/B-049 (gộp theo L19.3).
   - P1 #B-052 thống kê vật phẩm — XONG 16:20 (commit 0f368a17, DU-LIEU/VAT-PHAM), đã báo Chat "B Xong".
   - P1 KT-01..06 — XONG, Chat đã duyệt.
   - P2 Phòng thủ% bảng = 0 (KNpc.cpp magic_physicsres_p) — CHỜ A truy client; Né tránh/Nội lực chưa nhân (thiếu id trong JxQhScalable) — CHỜ id từ A.
+  - P1 #B-054 bảng đối chiếu loại thuộc tính + cột đọc được + ban_trung — XONG 20/11 (đợi Chat gửi chủ).
   - BỎ: không có.

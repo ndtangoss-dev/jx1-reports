@@ -67,7 +67,8 @@ EQUIP = {"meleeweapon", "rangeweapon", "armor", "helm", "boot", "belt", "cuff", 
          "mantle", "horse", "golditem", "platinaequip", "unique", "signet", "pifeng", "mask", "yinjian", "shipin"}
 OTHER = {"potion", "questkey", "mine", "medmaterialbase", "charm", "townportal", "minebase", "plantitem", "key"}
 TONG_HEADER = ["nguon", "file", "dong", "ten", "genre", "detail", "particular", "cap", "gia", "ngu_hanh", "mo_ta",
-               "dong_thuoc_tinh_goc(loai:min-max)", "yeu_cau(loai:gia_tri)", "du_lieu_tho_con_lai"]
+               "dong_thuoc_tinh_goc(loai:min-max)", "yeu_cau(loai:gia_tri)", "du_lieu_tho_con_lai",
+               "dong_thuoc_tinh_doc_duoc", "yeu_cau_doc_duoc", "ban_trung"]
 
 def norm_equip(src, fn, rows):
     out = []
@@ -146,6 +147,42 @@ def write_xlsx(path, sheets):
             parts.append("</sheetData></worksheet>")
             z.writestr(f"xl/worksheets/sheet{i+1}.xml", "".join(parts))
 
+def load_bang():
+    f = os.path.join(DST, "BANG-LOAI-THUOC-TINH.csv")
+    b = {}
+    if os.path.exists(f):
+        for r in list(csv.reader(open(f, encoding="utf-8-sig")))[1:]:
+            t = r[4] or r[3]
+            lab = t.split(":")[0].strip() if ":" in t else t
+            lab = re.sub(r"#\w+[~+\-]?", "", lab).strip() if ":" not in t else lab
+            b[r[0]] = (lab if r[6] == "DA TRA" else "CHUA RO(" + r[1] + ")")
+    return b
+
+def doc_duoc(txt, b):
+    out = []
+    for part in txt.split(";"):
+        if not part:
+            continue
+        t, _, v = part.partition(":")
+        lab = b.get(t.strip(), "CHUA RO(loai " + t + ")") if t.strip() else "CHUA RO(loai trong)"
+        m = re.match(r"^(-?\d+)-(-?\d+)$", v)
+        if m:
+            lo, hi = m.groups()
+            v = lo if lo == hi else lo + "~" + hi
+        out.append(lab + " " + v)
+    return "; ".join(out)
+
+SAOLUU = re.compile(r"(_cu|copy|bak|-bak|_old)|_\.txt$|_$", re.I)
+
+def ban_trung(src, fn, root_in_004):
+    base = os.path.splitext(fn)[0]
+    tag = []
+    if SAOLUU.search(fn) or base.endswith("_"):
+        tag.append("nghi_ban_phu(ten file _/Copy/cu/bak)")
+    if src == "item" and fn.lower() in root_in_004:
+        tag.append("trung_ten_file_voi_004")
+    return "|".join(tag)
+
 def main():
     tong = []
     per_folder = {}
@@ -180,6 +217,14 @@ def main():
             tong += n
             per_folder.setdefault(folder, []).extend(n)
             readme.append((folder, fn, kind, len(rows) - 1, len(rows[0])))
+    b = load_bang()
+    f004 = {fn.lower() for fn in os.listdir(os.path.join(SRC, "004"))} if os.path.isdir(os.path.join(SRC, "004")) else set()
+    for r in tong:
+        r += [doc_duoc(r[11], b), doc_duoc(r[12], b), ban_trung(r[0], r[1], f004)]
+    for rs in per_folder.values():
+        for r in rs:
+            if len(r) == 14:
+                r += [doc_duoc(r[11], b), doc_duoc(r[12], b), ban_trung(r[0], r[1], f004)]
     write_csv(os.path.join(DST, "TONG-VAT-PHAM.csv"), [TONG_HEADER] + tong)
     write_xlsx(os.path.join(DST, "VAT-PHAM.xlsx"), [("TONG", [TONG_HEADER] + tong)] +
                [(f, [TONG_HEADER] + r) for f, r in sorted(per_folder.items()) if r])

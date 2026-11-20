@@ -1,10 +1,10 @@
-﻿# THỐNG KÊ VẬT PHẨM / TRANG BỊ (B-052)
+﻿# THỐNG KÊ VẬT PHẨM / TRANG BỊ (B-052 + B-054)
 
 Trạng thái: **CHỈ ĐỌC DỮ LIỆU** (chưa chạy game/server). Sinh bằng `JX1_OPS/TOOLS/xuat_vat_pham.py` từ
 `C:\Jx1CocoV3\...\ServerNew\_bin_v2_\gs\Settings\item` (chỉ đọc, không sửa nguồn).
 
 ## File chính
-- `TONG-VAT-PHAM.csv` (UTF-8 BOM): một dòng một vật phẩm, cột `nguon` = thư mục nguồn (`item` = thư mục gốc, `item_004` = thư mục `004`). 27.240 dòng.
+- `TONG-VAT-PHAM.csv` (UTF-8 BOM): một dòng một vật phẩm, cột `nguon` = thư mục nguồn (`item` = thư mục gốc, `item_004` = thư mục `004`). 27.241 dòng. Từ B-054 có thêm 3 cột cuối: `dong_thuoc_tinh_doc_duoc`, `yeu_cau_doc_duoc`, `ban_trung`.
 - `VAT-PHAM.xlsx`: sheet `TONG` + mỗi thư mục nguồn một sheet. (Tự viết bằng zipfile, CHƯA mở thử bằng Excel.)
 - `item/`, `item_004/`, `item_004_itemvalue/`: CSV từng bảng gốc, giữ NGUYÊN mọi cột (không bỏ gì). File `.ini` chép sang `.ini.txt`.
 
@@ -19,6 +19,15 @@ Trạng thái: **CHỈ ĐỌC DỮ LIỆU** (chưa chạy game/server). Sinh b�
 | yeu_cau | dạng `loại:giá_trị`; loại là SỐ THÔ, CHƯA RÕ |
 | du_lieu_tho_con_lai | các cột phía sau, CHƯA RÕ |
 Bảng không phải trang bị (potion, questkey, mine, key…): chỉ lấy tên/cấp/giá nếu tìm thấy cột tiêu đề; phần còn lại nằm ở `du_lieu_tho_con_lai`. Cần cột đầy đủ → xem CSV từng bảng.
+
+## B-054: bảng đối chiếu loại thuộc tính (`BANG-LOAI-THUOC-TINH.csv`)
+- Số loại = thứ tự trong `enum MAGIC_ATTRIB` (KMagicAttrib.h, đếm từ 0, 312 giá trị) → tên enum → mô tả Hán (`Settings/MagicDesc.ini`) → mô tả Việt (`MagicDesc_mobile.ini`, TCVN3) → dạng giá trị. Khóa trong MagicDesc = tên enum bỏ `magic_`.
+- ĐÃ TRA: 239/312 loại có mô tả hiển thị. 73 loại **CHƯA RÕ** (không có mô tả hiển thị) — ghi "CHƯA RÕ(tên enum)", không đoán.
+- Ví dụ đối chiếu: 28/29 sát thương nhỏ/lớn nhất, 30 `armordefense_v` (MagicDesc hiển thị là **"Né tránh"**, không phải phòng thủ), 31 độ bền, 32 sức mạnh, 33 thân pháp, 36 đẳng cấp, 37 ngũ hành, 38 giới tính, 39 môn phái.
+- Cách đối chiếu số↔enum là suy từ thứ tự enum và khớp với mô tả (28/29/30/31 khớp dữ liệu vũ khí/giáp). CHƯA kiểm bằng chạy game.
+- Cột đọc được: giá trị số giữ nguyên. Mã môn phái / giới tính / ngũ hành là SỐ, bảng giải số → tên CHƯA CÓ (chưa tra), nên hiện "Môn phái 2", "Giới tính 1".
+- `ban_trung`: `nghi_ban_phu(...)` = tên file có `_`/Copy/cu/bak (7.271 dòng); `trung_ten_file_voi_004` = file thư mục gốc có file cùng tên trong `004` (783 dòng). Chỉ là đánh dấu theo tên file; file nào server thật nạp vẫn CHƯA KIỂM.
+- Đồ vàng (tên Hán): dòng thuộc tính nằm ở bảng GoldMagic, nên cột đọc được có thể trống.
 
 ## Cần biết
 - Mã hóa đoán theo từng ô: >25% chữ Latin → TCVN3, còn lại → GBK. Đã soát mẫu, 0 ký tự lỗi; vài tên hiếm có thể sai dấu.

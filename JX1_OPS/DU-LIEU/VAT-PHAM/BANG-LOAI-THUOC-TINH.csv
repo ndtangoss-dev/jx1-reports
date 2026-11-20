@@ -1,0 +1,313 @@
+﻿so_loai,ten_enum,ghi_chu_trong_ma(Han),mo_ta_Han(MagicDesc.ini),mo_ta_Viet(MagicDesc_mobile.ini),dang_gia_tri,trang_thai
+0,magic_skill_begin,,,,,CHUA RO (khong co mo ta hien thi)
+1,magic_skill_cost_v,消耗MANA,消耗:#d1-点,Tiêu hao: #d1- điểm,gia tri,DA TRA
+2,magic_skill_costtype_v,,消耗类型:#k1-,Loại hình tiêu hao: #k1-,gia tri,DA TRA
+3,magic_skill_mintimepercast_v,每次发魔法的间隔时间,释放间隔时间#d1-秒,Thời gian khôi phục chiêu thức: <c=orange>#f1- giây<c>,gia tri,DA TRA
+4,magic_skill_misslenum_v,子弹数量,同时发出#d1+个,Đồng thời xuất #d1-,gia tri,DA TRA
+5,magic_skill_misslesform_v,子弹的形状,,,gia tri,CHUA RO (khong co mo ta hien thi)
+6,magic_skill_param1_v,,,,gia tri,CHUA RO (khong co mo ta hien thi)
+7,magic_skill_param2_v,,,,gia tri,CHUA RO (khong co mo ta hien thi)
+8,magic_skill_attackradius,"magic_skill_reserve1, 攻击范围调整",,,,CHUA RO (khong co mo ta hien thi)
+9,magic_skill_mintimepercastonhorse_v,"magic_skill_reserve2,//骑马冷冻时间",,,gia tri,CHUA RO (khong co mo ta hien thi)
+10,magic_skill_skillexp_v,"magic_skill_reserve3,技能熟练度",,,gia tri,CHUA RO (khong co mo ta hien thi)
+11,magic_skill_desc,技能描述,,,,CHUA RO (khong co mo ta hien thi)
+12,magic_skill_eventskilllevel,,,,,CHUA RO (khong co mo ta hien thi)
+13,magic_skill_end,,,,,CHUA RO (khong co mo ta hien thi)
+14,magic_missle_begin,,,,,CHUA RO (khong co mo ta hien thi)
+15,magic_missle_movekind_v,子弹格式,,,gia tri,CHUA RO (khong co mo ta hien thi)
+16,magic_missle_speed_v,子弹飞行速度,气功飞行速度,Tốc độ xuất chiêu khí công,gia tri,DA TRA
+17,magic_missle_lifetime_v,子弹的生命时间,气功持续时间,Hiệu quả xuất chiêu khí công,gia tri,DA TRA
+18,magic_missle_height_v,子弹的高度,,,gia tri,CHUA RO (khong co mo ta hien thi)
+19,magic_missle_damagerange_v,子弹破坏范围,气功伤害波及范围,Phạm vi sát thương khí công,gia tri,DA TRA
+20,magic_missle_radius_v,子弹飞行半径,,,gia tri,CHUA RO (khong co mo ta hien thi)
+21,magic_missle_missrate,子弹击中的概率,,,,CHUA RO (khong co mo ta hien thi)
+22,magic_missle_hitcount,子弹击中的人数,,,,CHUA RO (khong co mo ta hien thi)
+23,magic_missile_drag,"magic_missle_reserve3,",,,,CHUA RO (khong co mo ta hien thi)
+24,magic_missle_reserve4,,,,,CHUA RO (khong co mo ta hien thi)
+25,magic_missle_reserve5,,,,,CHUA RO (khong co mo ta hien thi)
+26,magic_missle_end,,,,,CHUA RO (khong co mo ta hien thi)
+27,magic_item_begin,,,,,CHUA RO (khong co mo ta hien thi)
+28,magic_weapondamagemin_v,,武器最小杀伤力:#d1~点,Sát thương nhỏ nhất: #d1- điểm,gia tri; min-max,DA TRA
+29,magic_weapondamagemax_v,,武器最大杀伤力:#d1~点,Sát thương lớn nhất: #d1- điểm,gia tri; min-max,DA TRA
+30,magic_armordefense_v,,闪避率:#d1~点,Né tránh: #d1- điểm,gia tri; min-max,DA TRA
+31,magic_durability_v,,耐久度:#d1~点,Độ bền: #d1- điểm,gia tri; min-max,DA TRA
+32,magic_requirestr,,力量需求:#d1~点,Yêu cầu sức mạnh: #d1- điểm,min-max,DA TRA
+33,magic_requiredex,,身法需求:#d1~点,Yêu cầu thân pháp: #d1- điểm,min-max,DA TRA
+34,magic_requirevit,,外功需求:#d1~点,Yêu cầu sinh khí: #d1- điểm,min-max,DA TRA
+35,magic_requireeng,,内功需求:#d1~点,Yêu cầu nội công: #d1- điểm,min-max,DA TRA
+36,magic_requirelevel,,等级需求:#d1~,Đẳng cấp yêu cầu: #d1-,min-max,DA TRA
+37,magic_requireseries,,五行属性需求:#s1~,Thuộc tính ngũ hành: #s1-,ngu hanh,DA TRA
+38,magic_requiresex,男 或女,性别需求:#x1~,Giới tính: #x1-,gioi tinh,DA TRA
+39,magic_requiremenpai,,门派需求:#m1~,Môn phái: #m1-,mon phai,DA TRA
+40,magic_weapondamageenhance_p,,增强伤害:#d1~%,Tăng sát thương: #d1-%,phan tram; min-max,DA TRA
+41,magic_armordefenseenhance_p,,增强闪避:#d1~%,Tăng né tránh: #d1-%,phan tram; min-max,DA TRA
+42,magic_requirementreduce_p,,需求减少:#d1~%,Giảm thiểu yêu cầu: #d1-%,phan tram; min-max,DA TRA
+43,magic_indestructible_b,永不磨损,永不磨损,Không thể phá hủy,co/khong,DA TRA
+44,magic_item_nouser,不能使用的门派,"[#m1~]使用后,基本属性无效",,mon phai,DA TRA
+45,magic_item_needskill,需要学会什么技能才能使用,需要学会[#l1-]技能,,,DA TRA
+46,magic_item_needreborn,需要转生次数,需要转生[#d1~]次才可以使用,,min-max,DA TRA
+47,magic_item_needtongban,需要是同伴才可以装备,需要召唤[神将#d1~]才可以使用,,min-max,DA TRA
+48,magic_item_needbangzhu,需要帮主,,,,CHUA RO (khong co mo ta hien thi)
+49,magic_item_needcity,需要城主,,,,CHUA RO (khong co mo ta hien thi)
+50,magic_item_noseries,某五行不能用的,,,,CHUA RO (khong co mo ta hien thi)
+51,magic_item_reserve8,,,,,CHUA RO (khong co mo ta hien thi)
+52,magic_item_reserve9,,,,,CHUA RO (khong co mo ta hien thi)
+53,magic_item_reserve10,,,,,CHUA RO (khong co mo ta hien thi)
+54,magic_item_end,,,,,CHUA RO (khong co mo ta hien thi)
+55,magic_damage_begin,,,,,CHUA RO (khong co mo ta hien thi)
+56,magic_attackrating_v,命中点,攻击命中率:#d1-点,Độ chính xác: #d1- điểm,gia tri,DA TRA
+57,magic_attackrating_p,命中率百分比,攻击命中率:#d1-%,Độ chính xác: #d1-%,phan tram,DA TRA
+58,magic_ignoredefense_p,忽略敌人闪避率,忽略敌人闪避率:#d1+%,Bỏ qua né tránh: #d1-%,phan tram,DA TRA
+59,magic_physicsdamage_v,攻击技能普点,普攻伤害:#d1+到#d3+点,Sát thương vật lý: #d1- đến #d3- điểm,gia tri,DA TRA
+60,magic_colddamage_v,攻击技能冰点,冰攻伤害:#d1+到#d3+点,Băng sát: #d1- đến #d3- điểm,gia tri,DA TRA
+61,magic_firedamage_v,攻击技能火,火攻伤害:#d1+到#d3+点,Hỏa sát: #d1- đến #d3- điểm,gia tri,DA TRA
+62,magic_lightingdamage_v,攻击技能雷,雷攻伤害:#d1+到#d3+点,Lôi sát: #d1- đến #d3- điểm,gia tri,DA TRA
+63,magic_poisondamage_v,攻击技能毒,毒攻伤害:#d1+点/次,Độc sát: #d1- điểm/lần,gia tri,DA TRA
+64,magic_magicdamage_v,,五行伤害:#d1+到#d3+点,Sát thương ngũ hành #d1- #d3 điểm,gia tri,DA TRA
+65,magic_physicsenhance_p,普点加强百分比,普攻伤害:#d1+%,Sát thương vật lý: #d1-%,phan tram,DA TRA
+66,magic_steallife_p,偷生命 技能,命中偷取其生命:#d1+%,Hút Sinh lực: #d1-%,phan tram,DA TRA
+67,magic_stealmana_p,偷内力 技能,命中偷取其内力:#d1+%,Hút Nội lực: #d1-%,phan tram,DA TRA
+68,magic_stealstamina_p,偷体力 技能,命中偷取其体力:#d1+%,Hút Thể lực: #d1-%,phan tram,DA TRA
+69,magic_knockback_p,增加攻击震退对手几率:#d1-%,攻击震退对手几率:#d1+%,Đẩy lùi đối phương: #d1-%,phan tram,DA TRA
+70,magic_deadlystrike_p,攻击致命一击率,攻击会心一击率:#d1+%,Tấn công chí mạng: #d1-%,phan tram,DA TRA
+71,magic_fatallystrike_p,致命一击,攻击致命一击率:#d1+%,Tấn công chí tử: #d1-%,phan tram,DA TRA
+72,magic_stun_p,=眩晕时间加强,攻击致昏对手几率:#d1+%,Làm choáng: #d1-%,phan tram,DA TRA
+73,magic_damage_reserve1,,,,,CHUA RO (khong co mo ta hien thi)
+74,magic_damage_reserve2,,,,,CHUA RO (khong co mo ta hien thi)
+75,magic_damage_reserve3,,,,,CHUA RO (khong co mo ta hien thi)
+76,magic_damage_reserve4,,,,,CHUA RO (khong co mo ta hien thi)
+77,magic_damage_reserve5,,,,,CHUA RO (khong co mo ta hien thi)
+78,magic_damage_reserve6,,,,,CHUA RO (khong co mo ta hien thi)
+79,magic_damage_reserve7,,,,,CHUA RO (khong co mo ta hien thi)
+80,magic_addzhuabu_v,抓捕技能,抓捕BB几率::#d1+%,,gia tri,DA TRA
+81,magic_autoattackskill,自动技能,,,,CHUA RO (khong co mo ta hien thi)
+82,magic_seriesdamage_p,五行相克五行伤害,五行相克:#d1+%,Ngũ hành tương khắc #d1+%,phan tram,DA TRA
+83,magic_damage_end,,,,,CHUA RO (khong co mo ta hien thi)
+84,magic_normal_begin,,,,,CHUA RO (khong co mo ta hien thi)
+85,magic_lifemax_v,最大值点,生命最大值:#d1+点,Sinh lực tối đa: #d1+ điểm,gia tri,DA TRA
+86,magic_lifemax_p,生命最大值百分比,生命最大值:#d1+%,Sinh lực tối đa: #d1+%,phan tram,DA TRA
+87,magic_life_v,当前生命,当前生命:#d1+点,Sinh lực: #d1+ điểm,gia tri,DA TRA
+88,magic_lifereplenish_v,生命恢复 点,每半秒生命回复:#d1+点,Phục hồi sinh lực mỗi nửa giây: #d1+ điểm,gia tri,DA TRA
+89,magic_manamax_v,,内力最大值:#d1+点,Nội lực tối đa: #d1+ điểm,gia tri,DA TRA
+90,magic_manamax_p,,内力最大值:#d1+%,Nội lực tối đa: #d1+%,phan tram,DA TRA
+91,magic_mana_v,当前内力,当前内力:#d1+点,Nội lực: #d1+ điểm,gia tri,DA TRA
+92,magic_manareplenish_v,内力恢复 点,每半秒内力回复:#d1+点,Phục hồi nội lực mỗi nửa giây: #d1+ điểm,gia tri,DA TRA
+93,magic_staminamax_v,,体力最大值:#d1+点,Thể lực tối đa: #d1+ điểm,gia tri,DA TRA
+94,magic_staminamax_p,,体力最大值:#d1+%,Thể lực tối đa: #d1+%,phan tram,DA TRA
+95,magic_stamina_v,,体力当前值:#d1+%,Thể lực: #d1+%,gia tri,DA TRA
+96,magic_staminareplenish_v,,每半秒体力回复:#d1+点,Phục hồi thể lực mỗi nửa giây: #d1+ điểm,gia tri,DA TRA
+97,magic_strength_v,,力量:#d1+点,Sức mạnh: #d1+ điểm,gia tri,DA TRA
+98,magic_dexterity_v,,身法:#d1+点,Thân pháp: #d1+ điểm,gia tri,DA TRA
+99,magic_vitality_v,增加外功增加多少点,外功:#d1+点,Sinh khí: #d1+ điểm,gia tri,DA TRA
+100,magic_energy_v,,内功:#d1+点,Nội công: #d1+ điểm,gia tri,DA TRA
+101,magic_poisonres_p,毒防 百分比,毒防:#d1+%,Kháng độc: #d1+%,phan tram,DA TRA
+102,magic_fireres_p,火方,火防:#d1+%,Kháng hỏa: #d1+%,phan tram,DA TRA
+103,magic_lightingres_p,雷防,雷防:#d1+%,Kháng lôi: #d1+%,phan tram,DA TRA
+104,magic_physicsres_p,普防,普防:#d1+%,Phòng thủ vật lý: #d1+%,phan tram,DA TRA
+105,magic_coldres_p,冰防,冰防:#d1+%,Kháng băng: #d1+%,phan tram,DA TRA
+106,magic_freezetimereduce_p,减少冰冻时间百分比,迟缓时间:#d1-%,Thời gian làm chậm: #d1~%,phan tram,DA TRA
+107,magic_burntimereduce_p,燃烧时间 火,燃烧时间:#d1+%,,phan tram,DA TRA
+108,magic_poisontimereduce_p,中毒时间百分比减少 对自己,中毒时间:#d1-%,Thời gian trúng độc: #d1~%,phan tram,DA TRA
+109,magic_poisondamagereduce_v,中毒伤害减少,毒伤害:#d1+点,Độc sát: #d1~,gia tri,DA TRA
+110,magic_stuntimereduce_p,减少眩晕时间百分比,眩晕时间:#d1-%,Thời gian choáng: #d1~%,phan tram,DA TRA
+111,magic_fastwalkrun_p,移动速度,移动速度:#d1+%,Tốc độ di chuyển: #d1+%,phan tram,DA TRA
+112,magic_visionradius_p,,扩大视野范围#d1+%,Phạm vi sát thương: #d1-%,phan tram,DA TRA
+113,magic_fasthitrecover_v,自己受伤动作时间减少,受伤动作时间:#d1-%,Thời gian phục hồi: #d1~,gia tri,DA TRA
+114,magic_allres_p,全抗  点,所有抗性:#d1+%,Kháng tất cả: #d1+%,phan tram,DA TRA
+115,magic_attackspeed_v,外功攻速,外功系武功出招动作:#d1+%,Tốc độ đánh - ngoại công: #d1+%,gia tri,DA TRA
+116,magic_castspeed_v,内功攻速,内功系武功出招动作:#d1+%,Tốc độ đánh - nội công: #d1+%,gia tri,DA TRA
+117,magic_meleedamagereturn_v,反弹点,受近身攻击时伤害反弹:#d1+点,Phản đòn cận chiến: #d1+ điểm,gia tri,DA TRA
+118,magic_meleedamagereturn_p,减少近身伤害反弹百分比,受近身攻击时伤害反弹:#d1+%,Phản đòn cận chiến: #d1+%,phan tram,DA TRA
+119,magic_rangedamagereturn_v,,受远程攻击时伤害反弹:#d1+点,Phản đòn tầm xa:: #d1+ điểm,gia tri,DA TRA
+120,magic_rangedamagereturn_p,,受远程攻击时伤害反弹:#d1+%,Phản đòn tầm xa: #d1+%,phan tram,DA TRA
+121,magic_addphysicsdamage_v,状态外功普点 121,外功系普攻伤害:#d1+点,Sát thương vật lý - ngoại công: #d1+ điểm,gia tri,DA TRA
+122,magic_addfiredamage_v,状态外火,外功系火攻伤害:#d1+点,Hỏa sát - ngoại công: #d1+ điểm,gia tri,DA TRA
+123,magic_addcolddamage_v,状态外冰,外功系冰攻伤害:#d1+点,Băng sát - ngoại công: #d1+ điểm,gia tri,DA TRA
+124,magic_addlightingdamage_v,状态外雷,外功系雷攻伤害:#d1+点,Lôi sát - ngoại công: #d1+ điểm,gia tri,DA TRA
+125,magic_addpoisondamage_v,状态外毒,外功系毒攻伤害:#d1+点/次,Độc sát - ngoại công: #d1+ điểm/lần,gia tri,DA TRA
+126,magic_addphysicsdamage_p,状态外普百分比 --辅助技能,外功系普攻伤害:#d1+%,Sát thương vật lý - ngoại công: #d1+%,phan tram,DA TRA
+127,magic_slowmissle_b,减缓子弹飞行速度,减缓气功飞行速度,Giảm tốc độ xuất chiêu khí công,co/khong,DA TRA
+128,magic_changecamp_b,迷惑敌人  改变阵营,迷惑敌人,Mê hoặc đối phương,co/khong,DA TRA
+129,magic_physicsarmor_v,物理护盾,增加物理护甲#d1+点,Phòng thủ vật lý: #d1- điểm,gia tri,DA TRA
+130,magic_coldarmor_v,,增加冰护甲#d1+点,Kháng băng: #d1- điểm,gia tri,DA TRA
+131,magic_firearmor_v,,增加火护甲#d1+点,Kháng hỏa: #d1- điểm,gia tri,DA TRA
+132,magic_poisonarmor_v,,增加毒护甲#d1+点,Kháng độc: #d1- điểm,gia tri,DA TRA
+133,magic_lightingarmor_v,,增加电护甲#d1+点,Kháng lôi: #d1- điểm,gia tri,DA TRA
+134,magic_damagetomana_p,伤转内,伤害转化为内力增加:#d1+%,Chuyển hóa sát thương thành nội lực: #d1+%,phan tram,DA TRA
+135,magic_lucky_v,幸运,幸运值:#d1+%,May mắn: #d1+%,gia tri,DA TRA
+136,magic_steallifeenhance_p,吸血,命中敌人吸取其生命:#d1+%,Hút sinh lực: #d1+%,phan tram,DA TRA
+137,magic_stealmanaenhance_p,吸内,命中敌人吸取其内力:#d1+%,Hút nội lực: #d1+%,phan tram,DA TRA
+138,magic_stealstaminaenhance_p,吸体,命中敌人吸取其体力:#d1+%,Hút thể lực: #d1+%,phan tram,DA TRA
+139,magic_allskill_v,加技能 等级,增加#l3-技能等级:#d1+级,Kỹ năng #l3: #d1+ cấp,gia tri,DA TRA
+140,magic_metalskill_v,加金系技能,增加金系武功等级:#d1+级,Kỹ năng hệ Kim: #d1- cấp,gia tri,DA TRA
+141,magic_woodskill_v,加木系技能,增加木系武功等级:#d1+级,Kỹ năng hệ Mộc: #d1- cấp,gia tri,DA TRA
+142,magic_waterskill_v,加水系技能,增加水系武功等级:#d1+级,Kỹ năng hệ Thủy: #d1- cấp,gia tri,DA TRA
+143,magic_fireskill_v,加火系技能,增加火系武功等级:#d1+级,Kỹ năng hệ Hỏa: #d1- cấp,gia tri,DA TRA
+144,magic_earthskill_v,加土系技能,增加土系武功等级:#d1+级,Kỹ năng hệ Thổ: #d1- cấp,gia tri,DA TRA
+145,magic_knockbackenhance_p,命中敌人震退对方的几率:#d1-%,命中敌人震退对方的几率:#d1+%,Đẩy lui: #d1-%,phan tram,DA TRA
+146,magic_deadlystrikeenhance_p,攻击会心一击率,攻击会心一击率:#d1+%,Tăng tấn công chí mạng: #d1+%,phan tram,DA TRA
+147,magic_stunenhance_p,命中敌人致晕对方的几率:#d1+%,命中敌人致晕对方的几率:#d1+%,Làm choáng: #d1+%,phan tram,DA TRA
+148,magic_badstatustimereduce_v,不良状态时间增加,不良状态持续时间:#d1~秒,Thời gian kéo dài trạng thái không tốt: #d1~giây,gia tri; min-max,DA TRA
+149,magic_manashield_p,内力吸收伤害,内力吸收伤害:#d1+%,Nội lực hộ thân: #d1+%,phan tram,DA TRA
+150,magic_adddefense_v,,闪避率:#d1+点,Né tránh: #d1+ điểm,gia tri,DA TRA
+151,magic_adddefense_p,,闪避率:#d1+%,Né tránh: #d1+%,phan tram,DA TRA
+152,magic_fatallystrikeenhance_p,攻击致命一击率:#d1+%,攻击致命一击率:#d1+%,Tấn công chí mạng: #d1+%,phan tram,DA TRA
+153,magic_lifepotion_v,药品的喝血状态,每半秒生命回复:#d1+点,Phục hồi sinh lực mỗi nửa giây: #d1+ điểm,gia tri,DA TRA
+154,magic_manapotion_v,药品的喝蓝状态,每半秒内力回复:#d1+点,Phục hồi nội lực mỗi nửa giây: #d1+ điểm,gia tri,DA TRA
+155,magic_physicsresmax_p,普防最大值,普防最大值:#d1+%,Phòng thủ vật lý tối đa: #d1+%,phan tram,DA TRA
+156,magic_coldresmax_p,,冰防最大值:#d1+%,Kháng băng tối đa: #d1+%,phan tram,DA TRA
+157,magic_fireresmax_p,,火防最大值:#d1+%,Kháng hỏa tối đa: #d1+%,phan tram,DA TRA
+158,magic_lightingresmax_p,,雷防最大值:#d1+%,Kháng lôi tối đa: #d1+%,phan tram,DA TRA
+159,magic_poisonresmax_p,,毒防最大值:#d1+%,Kháng độc tối đa: #d1+%,phan tram,DA TRA
+160,magic_allresmax_p,所有抗性最大值,ậựểé¿ạéễìợ´úệà:<c=orange>#d1+%<c>,Mức kháng tính tối đa: <c=orange>#d1+%<c>,phan tram,DA TRA
+161,magic_coldenhance_p,增加对方迟缓时间百分比,"造成迟缓时间:#d1+%,概率:#d2~%",Kháng băng: #d1+%,phan tram,DA TRA
+162,magic_fireenhance_p,火时间加强百分比,对火攻击加强:#d1+%,Kháng hỏa: #d1+%,phan tram,DA TRA
+163,magic_lightingenhance_p,雷晕时间加强加强,对雷攻击加强:#d1+%,Kháng lôi: #d1+%,phan tram,DA TRA
+164,magic_poisonenhance_p,毒发间隔时间,"毒发间隔时间:#d1-%,概率:#d2~%",Kháng độc: #d1~%,phan tram,DA TRA
+165,magic_magicenhance_p,,对[所有]攻击加强:#d1-%,Sát thương ngũ hành: #d1-%,phan tram,DA TRA
+166,magic_attackratingenhance_v,命中率加强点,攻击命中:#d1+点,Độ chính xác: #d1+ điểm,gia tri,DA TRA
+167,magic_attackratingenhance_p,命中率增加减少百分比,攻击命中:#d1+%,Độ chính xác: #d1+%,phan tram,DA TRA
+168,magic_addphysicsmagic_v,被动内功铺点,内功系普攻伤害:#d1+点,Sát thương vật lý - nội công: #d1+ điểm,gia tri,DA TRA
+169,magic_addcoldmagic_v,状态内冰,内功系冰攻伤害:#d1+点,Băng sát - nội công: #d1+ điểm,gia tri,DA TRA
+170,magic_addfiremagic_v,状态内火,内功系火攻伤害:#d1+点,Hỏa sát - nội công: #d1+ điểm,gia tri,DA TRA
+171,magic_addlightingmagic_v,状态内雷,内功系雷攻伤害:#d1+点,Lôi sát - nội công: #d1+ điểm,gia tri,DA TRA
+172,magic_addpoisonmagic_v,状态内毒,内功系毒攻伤害:#d1+点/次,Độc sát - nội công: #d1+ điểm/lần,gia tri,DA TRA
+173,magic_fatallystrikeres_p,致命一击抵抗力,致命一击抵抗力:#d1+%,Kháng đòn chí mạng: #d1+%,phan tram,DA TRA
+174,magic_addskilldamage1,对「#l1-」技能加成#d3-%,对#l1-技能加成#d3+%,Kĩ năng #l1- #d3-%,,DA TRA
+175,magic_addskilldamage2,对「#l2-」技能加成#d3-%,对#l1-技能加成#d3+%,Kĩ năng #l1- #d3-%,,DA TRA
+176,magic_expenhance_p,杀死敌人获得经验 加,杀死敌人获得经验#d1+%,Sát thương địch nhận được kinh nghiệm #d1+%,phan tram,DA TRA
+177,magic_addskilldamage3,,对#l1-技能加成#d3+%,Kĩ năng #l1- #d3-%,,DA TRA
+178,magic_addskilldamage4,,对#l1-技能加成#d3+%,Kĩ năng #l1- #d3-%,,DA TRA
+179,magic_addskilldamage5,,对#l1-技能加成#d3+%,Kĩ năng #l1- #d3-%,,DA TRA
+180,magic_addskilldamage6,,对#l1-技能加成#d3+%,Kĩ năng #l1- #d3-%,,DA TRA
+181,magic_dynamicmagicshield_v,化解伤害点数,化解伤害点数:#d1+点,Nội lực hộ thân: #d1+ điểm,gia tri,DA TRA
+182,magic_addstealfeatureskill,伪装技能剩余使用次数,伪装技能剩余使用次数:#d1-次,Số lần sử dụng còn lại của kỹ năng ngụy trang: #d1- lần,,DA TRA
+183,magic_lifereplenish_p,生命回复效率提升 百分比,ẫỳÃỹằỉá´éĐÂấèỏẫý:<c=orange>#d1+%<c>,Hồi phục sinh lực: <c=orange>#d1+%<c>,phan tram,DA TRA
+184,magic_ignoreskill_p,无视降低抗性诅咒的概率,无视降低抗性诅咒的概率:<c=orange>#d1+%<c>,Xác suất bỏ qua bùa giảm kháng: <c=orange>#d1+%<c>,phan tram,DA TRA
+185,magic_poisondamagereturn_v,受到毒伤害时反弹点,受到毒伤害时反弹:<c=orange>#d1+点<c>,Phản đòn khi bị trúng độc: <c=orange>#d1+ điểm<c>,gia tri,DA TRA
+186,magic_poisondamagereturn_p,受到毒伤害时反弹%,ấĩàẵảắẫậºƯấ±ã´à¯:<c=orange>#d1+%<c>,Phản đòn khi bị trúng độc: <c=orange>#d1+%<c>,phan tram,DA TRA
+187,magic_returnskill_p,反弹所受到诅咒的概率,反弹所受到诅咒的概率:<c=orange>#d1+%<c>,Xác suất phản đòn bùa chú: <c=orange>#d1+%<c>,phan tram,DA TRA
+188,magic_autoreplyskill,击中时以<color=orange>#d9-%<color>的概率自动施放,±ằằữệéấ±ềễ<c=orange>#d9-%<c>àÄáÅÂấìễả¯ấâãÅ<c=orange>#d7-ẳả<c><c=water>#l4-<c>Àọẩ´ấ±ẳọ<c=orange>#f6-<c>Ãở,Khi bị trúng đòn có xác suất <c=orange>#d9-%<c> tự thi triển <c=water>#l4-<c> <c=orange>cấp #d7-<c>,,DA TRA
+189,magic_mintimepercastonhorse_v,骑马释放间隔时间,骑马释放间隔时间:<c=orange>#f1-秒<c>,Thời gian khôi phục chiêu thức trên ngựa: <c=orange>#f1- giây<c>,gia tri,DA TRA
+190,magic_poison2decmana_p,使目标受到毒伤害的同时以,使目标受到毒伤害的同时以<c=orange>#d1-%<c>比例损失内力，持续<c=orange>#f2-秒<c>,"Hạ độc đối phương, đồng thời làm giảm <c=orange>#d1-%<c> nội lực trong <c=orange>#f2- giây<c>",phan tram,DA TRA
+191,magic_skill_appendskill,包含技能<color=water>#l1-<color>，最高等级<color=orange>#d3-级<color>,"°ỹºơẳẳÄĩ<c=water>#l1-<c>,àẩẳả:<c=orange>#d2-<c>","Gồm kỹ năng: <c=water>#l1-<c>, đẳng cấp cao nhất: <c=orange>cấp #d3-<c>",,DA TRA
+192,magic_hide,隐身<color=orange>#f2-秒<color>，释放任意武功后显形,"隐身<c=orange>#d2+秒<c>,释放任意武功后显形","ẩn thân <c=orange>#f2- giây<c>, thi triển võ công sẽ hiện hình trở lại",,DA TRA
+193,magic_clearnegativestate,以<color=orange>#d1-%<color>的概率清除周围一定范围内友方玩家的异常状态,以<c=orange>#d1-%<c>的概率清除周围一定范围内友方玩家的异常状态,Xác suất <c=orange>#d1-%<c> loại bỏ trạng thái dị thường cho đồng đội,,DA TRA
+194,magic_returnres_p,对反弹伤害的抗性,ảễã´à¯ẫậºƯàÄ¿ạéễ:<c=orange>#d1+%<c>,Kháng phản đòn: <c=orange>#d1+%<c>,phan tram,DA TRA
+195,magic_dec_percasttimehorse,减少#l3-冷却时间:马下<color=orange>#f7-秒<color>、马上<color=orange>#f4-秒<color>,"ẳừẫÙ#l3-Àọẩ´ấ±ẳọ:ÂớẽÂ<c=orange>#f7-Ãở<c>,Âớẫẽ<c=orange>#f4-Ãở<c>","Giảm #l3- thời gian xuất chiêu: dưới ngựa<c=orange>#f7-giây<c>, trên ngựa <c=orange>#f4- giây<c>",,DA TRA
+196,magic_dec_percasttime,减少#l3-冷却时间:<color=orange>#f1-秒<color>,ẳừẫÙ#l3-Àọẩ´ấ±ẳọ:<c=orange>#f1-Ãở<c>,Giảm #l3- thời gian xuất chiêu: <c=orange>#f1- giây<c>,,DA TRA
+197,magic_enhance_autoSkill,触发「狮子吼」概率<color=orange>#d1+%<color>          //自动触发某技能的概率,,,,CHUA RO (khong co mo ta hien thi)
+198,magic_enhance_life_p,「倒虚天」生命回复效率提升<color=orange>#d1+%<color>  //对某技能的生命回复效率加成百分比,「倒虚天」生命回复效率提升<c=orange>#d1+%<c>,,phan tram,DA TRA
+199,magic_enhance_life_v,「慈航普渡」生命恢复点数<color=orange>#d1+<color>点   //对某技能的生命回复效率加成点,「慈航普渡」生命恢复点数<c=orange>#d1+<c>点,,gia tri,DA TRA
+200,magic_enhance_711_auto,触发「吸星魇」概率<color=orange>#d1+%<color>,触发「吸星魇」概率<c=orange>#d1+%<c>,Xác suất phát chiêu [Hấp Tinh Yểm] <c=orange>#d1+%<c>,,DA TRA
+201,magic_enhance_714_auto,触发「混天气功」概率<color=orange>#d1+%<color>,触发「混天气功」概率<c=orange>#d1+%<c>,Xác suất phát chiêu [Hỗn Thiên Khí Công] <c=orange>#d1+%<c>,,DA TRA
+202,magic_enhance_717_auto,触发「两仪真气」概率<color=orange>#d1+%<color>,触发「两仪真气」概率<c=orange>#d1+%<c>,Xác suất phát chiêu [Lưỡng Nghi Chân Khí] <c=orange>#d1+%<c>,,DA TRA
+203,magic_enhance_723_miss_p,「魔音噬魄」恐惧敌人几率<color=orange>#d1+%<color>,「魔音噬魄」恐惧敌人几率<c=orange>#d1+%<c>,Xác suất khiến cho đối phương hoảng loạn [Ma Âm Phệ Phách] <c=orange>#d1+%<c>,phan tram,DA TRA
+204,magic_no,未镶套,,,,CHUA RO (khong co mo ta hien thi)
+205,magic_skill_collideevent,碰撞子弹时,,,,CHUA RO (khong co mo ta hien thi)
+206,magic_skill_vanishedevent,子弹结束时,,,,CHUA RO (khong co mo ta hien thi)
+207,magic_skill_startevent,子弹开始时,,,,CHUA RO (khong co mo ta hien thi)
+208,magic_skill_flyevent,子弹飞行时,,,,CHUA RO (khong co mo ta hien thi)
+209,magic_block_rate,档格概率,格挡概率:#d1+%,Xác suất hóa giải sát thương: #d1+%,,DA TRA
+210,magic_enhancehit_rate,重击概率,重击概率:#d1+%,Xác suất trọng kích: #d1+%,,DA TRA
+211,magic_anti_block_rate,=拆解格挡概率：#d1+%,拆解格挡概率:#d1+%,tỷ lệ hóa giải cách đảng:#d1+%,,DA TRA
+212,magic_anti_enhancehit_rate,=抵挡重击概率：#d1+%,抵挡重击概率:#d1+%,tỷ lệ giảm trọng kích:#d1+%,,DA TRA
+213,magic_sorbdamage_p,=抵消伤害:#d1+%,抵消伤害:#d1+点,Triệt tiêu sát thương: #d1+,phan tram,DA TRA
+214,magic_anti_poisonres_p,=忽略对方毒防:#d1-%,忽略对方毒防:#d1+%,Xem nhẹ độc phòng của đổi phương: #d1-%,phan tram,DA TRA
+215,magic_anti_fireres_p,=忽略对方火防:#d1-%,忽略对方火防:#d1+%,Xem nhẹ hỏa phòng của đổi phương: #d1-%,phan tram,DA TRA
+216,magic_anti_lightingres_p,=忽略对方雷防:#d1-%,忽略对方雷防:#d1+%,Xem nhẹ lôi phòng của đối phương: #d1-%,phan tram,DA TRA
+217,magic_anti_physicsres_p,=忽略对方普防:#d1-%,忽略对方普防:#d1+%,Xem nhẹ phổ phòng của đối phương: #d1-%,phan tram,DA TRA
+218,magic_anti_coldres_p,=忽略对方冰防:#d1-%,忽略对方冰防:#d1+%,Xem nhẹ băng phòng của đối phương: #d1-%,phan tram,DA TRA
+219,magic_not_add_pkvalue_p,=不增加PK值概率:#d1+%,不增加PK值概率:#d1+%,Tỉ lệ không tăng trị số PK: #d1+%,phan tram,DA TRA
+220,magic_add_boss_damage,=对黄金boss攻击伤害<color=orange>#d1+%<color>,ảễằặẵðbossạƠằữẫậºƯ<c=orange>#d1+%<c>,Lực công kích sát thương đối với boss Hoàng Kim<c=orange>#d1+%<c>,,DA TRA
+221,magic_five_elements_enhance_v,=五行强化值：#d1-点。强化对相克五行的克制效果,五行强化值:#d1+点.强化对相克五行的克制效果,Ngũ hành cường hóa: #d1- điểm. Cường hóa có hiệu quả khắc chế ngũ hành tương khắc,gia tri,DA TRA
+222,magic_five_elements_resist_v,=五行弱化值：#d1-点。弱化受相克五行的克制效果,五行弱化值:#d1+点.弱化受相克五行的克制效果,Ngũ hành nhược hóa: #d1- điểm. Nhược hóa hiệu quả khắc chế ngũ hành tương khắc,gia tri,DA TRA
+223,magic_skill_enhance,=对攻击技能加成：#d1+%,对攻击技能加成:#d1+%,Tăng công kích kỹ năng: #d1+%,,DA TRA
+224,magic_anti_allres_p,忽略对方所有抗性:#d1+%,忽略对方所有抗性:#d1+%,,phan tram,DA TRA
+225,magic_add_alldamage_p,加强伤害:#d1+%,加强伤害:#d1+%,,phan tram,DA TRA
+226,magic_auto_Revive_rate,自动原地复活,自动原地复活,,,DA TRA
+227,magic_addphysicsmagic_p,内功铺百分比,内功系普攻伤害:#d1+%,,phan tram,DA TRA
+228,magic_addcreatnpc_v,抓捕BB,抓捕宝宝概率增加:#d1+点,,gia tri,DA TRA
+229,magic_reduceskillcd1,=减少技能#l1-冷却时间#f3-秒  （某技能的冷却时间）,减少#l1-冷却时间#f3-秒,,,DA TRA
+230,magic_reduceskillcd2,=减少技能#l1-冷却时间#f3-秒,减少#l1-冷却时间#f3-秒,,,DA TRA
+231,magic_reduceskillcd3,=减少技能#l1-冷却时间#f3-秒,减少#l1-冷却时间#f3-秒,,,DA TRA
+232,magic_clearallcd,"#d1,+%的几率清除自己所有技能冷却时间",#d1+%的几率清除自己所有技能冷却时间,,,DA TRA
+233,magic_addblockrate,=周围每#d1+个人#d3+%格挡率,周围每#d1+个人#d3+%格挡率,,,DA TRA
+234,magic_walkrunshadow,=凌波微步,凌波微步,,,DA TRA
+235,magic_returnskill2enemy,=被敌人攻击时有#d1+%几率使敌人被技能#l3-攻击,被敌人攻击时有#d1+%几率使敌人被技能#l3-攻击,,,DA TRA
+236,magic_manatoskill_enhance,=满内力时对攻击技能加成：#d1+%,满内力时对攻击技能加成:#d1+%,,,DA TRA
+237,magic_add_alldamage_v,加深伤害点,加深伤害:#d1+点,,gia tri,DA TRA
+238,magic_addskilldamage7,=增加「#l1」攻击伤害#d3-%,对#l1-技能加成#d3+%,,,DA TRA
+239,magic_ignoreattacrating_v,忽略对方命中率,忽悠对方命中:#d1+点,,gia tri,DA TRA
+240,magic_alljihuo_v,激活全身,,,gia tri,CHUA RO (khong co mo ta hien thi)
+241,magic_addexp_v,间隔多少秒 增加经验,,,gia tri,CHUA RO (khong co mo ta hien thi)
+242,magic_doscript_v,执行脚本状态,,,gia tri,CHUA RO (khong co mo ta hien thi)
+243,magic_me2metaldamage_p,=对金系伤害增加：#d1+%,,Tăng sát thương đối với hệ Kim: #d1+%,phan tram,DA TRA
+244,magic_metal2medamage_p,=减少来自金系的伤害：#d1-%,,Giảm sát thương đến từ hệ Kim: #d1-%,phan tram,DA TRA
+245,magic_me2wooddamage_p,=对木系伤害增加：#d1+%,,Tăng sát thương đối với hệ Mộc: #d1+%,phan tram,DA TRA
+246,magic_wood2medamage_p,=减少来自木系的伤害：#d1-%,,Giảm sát thương đến từ hệ Mộc: #d1-%,phan tram,DA TRA
+247,magic_me2waterdamage_p,=对水系伤害增加：#d1+%,,Tăng sát thương đối với hệ Thủy: #d1+%,phan tram,DA TRA
+248,magic_water2medamage_p,=减少来自水系的伤害：#d1-%,,Giảm sát thương đến từ hệ Thủy: #d1-%,phan tram,DA TRA
+249,magic_me2firedamage_p,=对火系伤害增加：#d1+%,,Tăng sát thương đối với hệ Hỏa: #d1+%,phan tram,DA TRA
+250,magic_fire2medamage_p,=减少来自火系的伤害：#d1-%,,Giảm sát thương đến từ hệ Hỏa: #d1-%,phan tram,DA TRA
+251,magic_me2earthdamage_p,=对土系伤害增加：#d1+%,,Tăng sát thương đối với hệ Thổ: #d1+%,phan tram,DA TRA
+252,magic_earth2medamage_p,=减少来自土系的伤害：#d1-%,,Giảm sát thương đến từ hệ Thổ: #d1-%,phan tram,DA TRA
+253,magic_manareplenish_p,内力恢复百分比,,Nâng cao hiệu suất phục hồi nội lực: <c=orange>#d1+%<c>,phan tram,DA TRA
+254,magic_fasthitrecover_p,自己受伤动作时间增加减少百分比,,,phan tram,CHUA RO (khong co mo ta hien thi)
+255,magic_stuntrank_p,眩晕几率减少百分比,,,phan tram,CHUA RO (khong co mo ta hien thi)
+256,magic_sorbdamage_v,抵消伤害点,,,gia tri,CHUA RO (khong co mo ta hien thi)
+257,magic_creatstatus_v,,,,gia tri,CHUA RO (khong co mo ta hien thi)
+258,magic_randmove,不能出招 以及随机巡逻,,,,CHUA RO (khong co mo ta hien thi)
+259,magic_addbaopoisondmax_p,增加爆毒上限,爆毒上限增加:#d1+%,,phan tram,DA TRA
+260,magic_dupotion_v,药品的减毒状态,,,gia tri,CHUA RO (khong co mo ta hien thi)
+261,magic_npcallattackSpeed_v,同伴攻速增加,,,gia tri,CHUA RO (khong co mo ta hien thi)
+262,magic_eqaddskill_v,装备了就增加什么技能,,,gia tri,CHUA RO (khong co mo ta hien thi)
+263,magic_autodeathskill,,,,,CHUA RO (khong co mo ta hien thi)
+264,magic_autorescueskill,救命技能,,,,CHUA RO (khong co mo ta hien thi)
+265,magic_staticmagicshield_p,昆仑120级技能魔法盾,,,phan tram,CHUA RO (khong co mo ta hien thi)
+266,magic_ignorenegativestate_p,武当120各种负面状态和技能免疫,,,phan tram,CHUA RO (khong co mo ta hien thi)
+267,magic_poisonres_yan_p,=毒防：#d1+%（阳）,毒防:#d1+%(阳),Kháng độc: #d1+% (Dương),phan tram,DA TRA
+268,magic_fireres_yan_p,=火防：#d1+%（阳）,火防:#d1+%(阳),Kháng hỏa: #d1+% (Dương),phan tram,DA TRA
+269,magic_lightingres_yan_p,=雷防：#d1+%（阳）,雷防:#d1+%(阳),Kháng lôi: #d1+% (Dương),phan tram,DA TRA
+270,magic_physicsres_yan_p,=普防：#d1+%（阳）,普防:#d1+%(阳),Phòng thủ vật lý: #d1+% (Dương),phan tram,DA TRA
+271,magic_coldres_yan_p,=冰防：#d1+%（阳）,冰防:#d1+%(阳),Kháng băng: #d1+% (Dương),phan tram,DA TRA
+272,magic_lifemax_yan_v,=生命最大值：#d1+点（阳）,生命最大值:#d1+点(阳),Sinh lực tối đa: #d1+(Dương),gia tri,DA TRA
+273,magic_lifemax_yan_p,=生命最大值：#d1+%（阳）,生命最大值:#d1+%(阳),Sinh lực tối đa: #d1+% (Dương),phan tram,DA TRA
+274,magic_manamax_yan_v,=内力最大值：#d1+点（阳）,内力最大值:#d1+点(阳),Nội lực tối đa: #d1+(Dương),gia tri,DA TRA
+275,magic_manamax_yan_p,=内力最大值：#d1+%（阳）,内力最大值:#d1+%(阳),Nội lực tối đa: #d1+% (Dương),phan tram,DA TRA
+276,magic_sorbdamage_yan_p,=抵消伤害：#d1+（阳）,抵消伤害:#d1+(阳),Triệt tiêu sát thương: #d1+(Dương),phan tram,DA TRA
+277,magic_fastwalkrun_yan_p,=移动速度：#d1+%（阳）,移动速度:#d1+%(阳),Tốc độ chạy: #d1+% (Dương),phan tram,DA TRA
+278,magic_attackspeed_yan_v,=外功系武功出招动作：#d1+%（阳）,外功系武功出招动作:#d1+%(阳),Tốc độ đánh - ngoại công: #d1+% (Dương),gia tri,DA TRA
+279,magic_castspeed_yan_v,=内功系武功出招动作：#d1+%（阳）,内功系武功出招动作:#d1+%(阳),Tốc độ đánh - nội công: #d1+% (Dương),gia tri,DA TRA
+280,magic_allres_yan_p,=所有抗性：#d1+%（阳）,所有抗性:#d1+%(阳),Kháng tất cả: #d1+% (Dương),phan tram,DA TRA
+281,magic_fasthitrecover_yan_v,=受伤动作时间：#d1~（阳）,受伤动作时间:#d1~(阳),Thời gian phục hồi: #d1~(Dương),gia tri; min-max,DA TRA
+282,magic_anti_physicsres_yan_p,=忽略对方普防：#d1-%（阳）,忽略对方普防:#d1-%(阳),bỏ qua phổ phòng đối phương:#d1-% (dương),phan tram,DA TRA
+283,magic_anti_poisonres_yan_p,=忽略对方毒防：#d1-%（阳）,忽略对方毒防:#d1-%(阳),bỏ qua độc phòng đối phương:#d1-% (dương),phan tram,DA TRA
+284,magic_anti_coldres_yan_p,=忽略对方冰防：#d1-%（阳）,忽略对方冰防:#d1-%(阳),bỏ qua băng phòng đối phương:#d1-% (dương),phan tram,DA TRA
+285,magic_anti_fireres_yan_p,=忽略对方火防：#d1-%（阳）,忽略对方火防:#d1-%(阳),bỏ qua hỏa phòng đối phương:#d1-% (dương),phan tram,DA TRA
+286,magic_anti_lightingres_yan_p,=忽略对方雷防：#d1-%（阳）,忽略对方雷防:#d1-%(阳),bỏ qua lôi phòng đối phương:#d1-% (dương),phan tram,DA TRA
+287,magic_anti_allres_yan_p,=忽略对方所有抗性：#d1-%（阳）,忽略对方所有抗性:#d1-%(阳),bỏ qua tất cả kháng tính đối phương:#d1-% (dương),phan tram,DA TRA
+288,magic_anti_sorbdamage_yan_p,=加深伤害：#d1+（阴阳）,加深伤害:#d1+(阴阳),gia tăng sát thương:#d1+ (âm dương),phan tram,DA TRA
+289,magic_anti_hitrecover,=造成对方受伤动作时间：#d1+,造成受伤动作时间：#d1+,Tạo thành sát thương có thời gian hoạt động: #d1+,,DA TRA
+290,magic_do_hurt_p,=造成受伤概率：#d1+%,造成受伤概率：#d1+%,tỷ lệ tạo thành sát thương:#d1+%,phan tram,DA TRA
+291,magic_skill_showevent,飞行事件,,,,CHUA RO (khong co mo ta hien thi)
+292,magic_addskillexp1,,,,,CHUA RO (khong co mo ta hien thi)
+293,magic_anti_poisontimereduce_p,造成中毒时间增加  对敌人,,thời gian tạo thành trúng độc:#d1+%,phan tram,DA TRA
+294,magic_anti_stuntimereduce_p,造成眩晕时间增加  对敌人,,Tạo thành thời gian choáng: #d1+%,phan tram,DA TRA
+295,magic_addskilldamage8,,对#l1-技能加成：#d3+%,,,DA TRA
+296,magic_addskilldamage9,,对#l1-技能加成：#d3+%,,,DA TRA
+297,magic_addskilldamage10,,对#l1-技能加成：#d3+%,,,DA TRA
+298,magic_anti_do_hurt_p,抵抗受伤概率：#d1+%,,tỷ lệ sát thương giảm kháng:#d1+%,phan tram,DA TRA
+299,magic_do_stun_p,造成眩晕概率：#d1+%,,tỷ lệ tạo thành choáng:#d1+%,phan tram,DA TRA
+300,magic_anti_do_stun_p,抵抗眩晕概率：#d1+%,,抵抗眩晕概率：#d1+%,phan tram,DA TRA
+301,magic_meleedamagereturnmana_p,受近身攻击伤害时减少敌方内力：#d1+%,,,phan tram,CHUA RO (khong co mo ta hien thi)
+302,magic_rangedamagereturnmana_p,受远程攻击伤害时减少敌方内力：#d1+%,,,phan tram,CHUA RO (khong co mo ta hien thi)
+303,magic_lock_life,,,,,CHUA RO (khong co mo ta hien thi)
+304,magic_special_point,,,,,CHUA RO (khong co mo ta hien thi)
+305,magic_resume_life_p,,,,phan tram,CHUA RO (khong co mo ta hien thi)
+306,magic_reset_bufftime,,,,,CHUA RO (khong co mo ta hien thi)
+307,magic_reset_bufftime_recv,,,,,CHUA RO (khong co mo ta hien thi)
+308,magic_cost_sp,,,,,CHUA RO (khong co mo ta hien thi)
+309,magic_cast_when_buff_removed,,,,,CHUA RO (khong co mo ta hien thi)
+310,magic_autocastskill,,,,,CHUA RO (khong co mo ta hien thi)
+311,magic_normal_end,,,,,CHUA RO (khong co mo ta hien thi)
