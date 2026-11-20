@@ -1463,3 +1463,8 @@ gs001.exe B-049 (790b5a2d…6c9) nạp 14:07, nạp xong 14:14, không crash. Đ
 - KẾT LUẬN (có bằng chứng): dòng Sát thương min/max và Né tránh trong tooltip là thuộc tính NỀN (m_aryBaseAttrib), không đi qua JxQhScalable ở client; thêm 28/29/30 vào bảng client KHÔNG đổi gì. Muốn tăng thật thì phải làm ở đường tính chỉ số nền (client hiển thị + server áp dụng) — việc của B/Chat quyết. Chỉ số THỰC trong chiến đấu (sát thương đánh ra, né tránh) CHƯA KIỂM; đo bằng đánh quái cần thêm.
 - Lưu ý: thông báo cường hóa +1 giáp ghi "tỉ lệ 95%" (công thức n=1 phải 100%); thành công, bạc -200 vạn đúng. Chưa rõ 95% là tỉ lệ của lần +1 hay +2 — CHƯA KIỂM.
 - Menu thử Test-36 đã thêm mục "[SC-006] Phi phong 11 cấp" (qh_bothu.lua, sao lưu .bak-pf; AddGoldItem(3464+k)); tiếp: thử phi phong 6 bước.
+
+## A 21/11 02:10 — SC-006 phi phong, buoc dau tren LD (gs001 ca16705b, vc30)
+- Menu "[SC-006] Phi phong 11 cap" cap 9/11 (tui day). Tooltip mon dau: "Phi Phong Ngao tuyet [cap 1]", Yeu cau tai phu 8700 (= k4 theo 6000+900(k-1), nhung ten hien "cap 1"), Dang cap yeu cau +60, KHONG co dong chi so nao trong tooltip (chi 3 dong ten bo). Anh D:/tmp/x.png.
+- Bam Su dung (nhan vat cap 1): "Trang bi nay khong the su dung.!" => chan do cap/tai phu, chua thay duoc [QH]|D. Buoc 1-7 CHUA KIEM: can nhan vat cap 60 va tai phu du; chua co lenh nang cap tren menu test.
+- Nghi van cho B: (a) tooltip khong hien chi so phi phong; (b) nhan "[cap 1]" lech yeu cau tai phu 8700.
