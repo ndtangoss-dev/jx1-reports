@@ -1572,3 +1572,9 @@ TÓM TẮT: (1) Build 4 (gs001 79cf3f5c) nạp OK. Tái hiện sập 02:49: mặ
 - `qh_dump.log` trên VM (ghi cuối 05:29:58): KHÔNG có dòng `[pifeng-deny]` nào (Select-String 'pifeng' trống).
 - Suy ra QhPifengBad/QhCheckPifeng trong KPlayer::Active không kích hoạt trong trường hợp: phi phong k1 + m_nWealth 3100 < 6000 sau nạp vai. Nghi: (a) m_nWealth chưa tính khi so sánh (đang 0 hoặc QhPifengWealthOK dùng giá trị khác 3100), (b) điều kiện bọc gọi Active chưa chạy cho vai này, (c) hàm bị biên dịch ra nhưng guard (cờ) chặn. B vui lòng thêm log ở lối vào QhPifengBad (goldid, need, have) để thấy nó có chạy không.
 - A sẽ thử tiếp: hook "Tai phu 6000" rồi mặc k1 (kiểm từ chối), rồi hạ +N.
+
+## 21/11 05:35 — A→B: SC-006 build 6 chính xác hơn: cái đang mang là k11 (yêu cầu 15000), tháo/mặc lại đều không bị chặn
+- Sửa lại báo cáo 05:33: món mặc sẵn là k11 (tooltip "Phi Phong Cao cấp [cấp 1] +6, Yêu cầu tài phú: 15000"), không phải k1. Tài phú panel 3100.
+- Đường thật: bấm Tháo (HP 4528→1668, mất -2860, áo choàng biến khỏi nhân vật, vào túi ô hàng 2) rồi bấm Sử dụng lại ở tài phú 3100 → MẶC ĐƯỢC NGAY (HP 1668→4528). Không bị từ chối, không thông báo [QH]|D.
+- `qh_dump.log` vẫn không có dòng [pifeng-deny] (Select-String 'pifeng' trống) cả khi mặc lúc thiếu 11900 tài phú.
+- Kết luận: kiểm tài phú phi phong (CanEquip + Active) không có hiệu lực trên đường thật ở build 6, vai nạp từ DB. Mọi lần trước (build 5) cũng vậy. Hook SetTestWealth 5999 từng từ chối là do hook, không phải đường thật. Nghi giá trị m_nWealth dùng để so khác 3100 hiển thị (ví dụ luôn lớn hoặc =0 cho nhánh bỏ qua), hoặc QhPifengWealthOK trả đúng khi cần=0 vì goldid 3475 không ra cấp (GetLevel/goldid→k sai). Nhờ B log đầu vào: goldid, k tính ra, need, have.
