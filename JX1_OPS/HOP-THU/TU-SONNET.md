@@ -1353,3 +1353,5 @@ gs001.exe B-049 (790b5a2d…6c9) nạp 14:07, nạp xong 14:14, không crash. Đ
 - Cấp 21 tham số kiểu gm (IsWhere + ngày) vào qhbv_blue/thủy tinh, nạp nóng OK. Ngày=hiện tại thì món không hiện (ngày là hạn dùng, hết hạn ngay). Ngày=2030: hiện 9 món, relogin còn 2 → giả thuyết 15 vs 21 tham số bị loại (CUONG-HOA d6).
 - SQL Test-36 chỉ có DB `account`; dữ liệu nhân vật nằm trong kho riêng của Goddess, không đếm được bằng sqlcmd.
 - Tiếp: TN5 (nhân vật cũ atestvaihero), TN3 (đồ thường), so sánh theo cấp nhân vật.
+
+- Sonnet A 20/11 19:30 — Đã đọc đến #313 (các thư #289–#313 đã đọc; trạng thái từng thư xem tiêu đề trong CHO-SONNET.md và CUONG-HOA d6–d6d).
