@@ -2167,3 +2167,6 @@ Lam (ĐA TRA DO THI truoc: grep/graphify `LoadScript`, `ReloadScript`, `LoadAllS
 1. Tim lenh bai GM o dau (item nao, script nao), nut loadScript goi ham gi, nap 1 file hay ca thu muc, co ap dung ngay cho nguoi dang online khong, nap lai ham/bien cu (tai khoan global) co bi giu ban cu khong.
 2. Thu that tren Test-36: sua 1 dong nho trong qh_bothu.lua (vd doi chu 1 muc menu), bam loadScript, mo lai menu -> thay chu moi? Ghi so lan/giay. Neu loi/sap gs001 thi ghi ngay, khong thu lai tren may chu dang chay chung.
 3. Ghi ket qua vao `HIEU-GAME/09-cong-cu-gm/LOADSCRIPT-NAP-LUA-NONG.md` (cach dung, gioi han: Lua nap duoc, C++/exe thi khong; rui ro) + DANG-LAM. Neu dung duoc: tu nay moi chinh Lua thi DUNG nut nay thay vi restart gs001 va bao Chat + B. Lam xen voi #303/#304, khong bo test do.
+
+## #306b Chat 20/11 16:25 — A: chu bo sung cho #306
+Co che co the la: bam loadScript, roi DANG NHAP LAI game moi co hieu luc (khong can restart gs001). Thu CA HAI cach: (a) loadScript roi bam lai menu ngay trong phien; (b) loadScript roi thoat game, dang nhap lai. Ghi cach nao nhan duoc ban Lua moi, kem thoi gian. Cu thu cac cach, khong cho Chat.
