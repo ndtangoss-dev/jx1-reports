@@ -115,3 +115,4 @@
 - 20/11 17:46 [A] #310b TN4: restart gs001 Test-36 (nạp ~10 phút, không chạm cổng 51189); sau đó LD: vào atestqhba, sách→Đồ XANH (không nạp nóng), thoát/vào lại, đếm. LD hiện đang rớt mạng là bình thường.
 
 - 20/11 19:05 #313 xong thử 21 tham số (van mat). Dang lam: TN5 atestvaihero, TN3, nguyen nhan nap do (KPlayerDBFuns.cpp:818-1115).
+- 20/11 19:20 A: vc26 build OK (sha256 35b4c8ee...d5b2a, sua \n trong KuiRoleState/KItem). Phat cho chu = [CAN-CHU], chua gui. Con lai: TN3 (mua do shop), TN5 (atestvaihero), cho B doc KPlayerDBFuns.cpp:818.
