@@ -37,7 +37,13 @@ Lỗi chủ báo: đi tới nơi quái mới đột ngột hiện. Nguồn sẵn
 ## Báo cáo cuối
 `JX1_OPS/REPORTS/KT-03C.md` theo DESIGN/CHUAN-BAO-CAO.md: TÓM TẮT 5 DÒNG, 1 sơ đồ Mermaid, dòng `liên quan: ...`, ĐÃ TRA ĐỒ THỊ, ĐÃ ĐỌC KIẾN THỨC, DA XAC MINH / CHUA XAC MINH, DONE/PARTIAL/BLOCKED.
 
-## Kết quả
-
 ## Nhịp sống
 Ở mốc lớn ghi một dòng vào `D:\JX-wt\KT-03C.nhip`.
+
+## Kết quả
+- Trạng thái: DONE cho bản đồ chuỗi tĩnh; không chạy build/game/VM/mạng.
+- Đầu ra: `JX1_OPS/HIEU-GAME/04-quai-npc-ban-do/BAN-DO-QUAI-HIEN-THI.md` và báo cáo `JX1_OPS/REPORTS/KT-03C.md`.
+- Đã đối chiếu movement → NormalSync/BroadCast → request NPC → NPC_SYNC → tạo/vẽ; B-02 tách riêng và runtime chưa xác minh.
+- Kịch bản kiểm động đã chuẩn bị cho A/bot; worker không chạy.
+- Không commit theo phân công Tổng quan; chưa có SHA.
+- Nhịp ngoài workspace: ghi `D:\JX-wt\KT-03C.nhip` bị Access denied tại mốc bắt đầu.
