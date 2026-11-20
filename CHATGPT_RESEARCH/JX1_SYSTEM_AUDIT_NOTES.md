@@ -589,3 +589,57 @@ Chủ giao yêu cầu
 - Activity timestamp mới nhưng không có event/commit/worktree diff >12 phút → trạng thái “SESSION_ACTIVE_NO_PROGRESS”, không gọi là SONG/đang làm.
 
 **Tự cải tiến an toàn:** mọi cảnh báo/incident được lưu thành event; sau mỗi đợt, PM xem thống kê và đề xuất thay đổi. Thử bằng unit test/fake-worker và dry-run; chỉ chủ duyệt mới chuyển thay đổi lên nhánh vận hành. Không cho agent tự thay đổi điều kiện dừng, quyền ghi, khóa, lịch Task Scheduler hoặc vùng Đỏ chỉ dựa trên kết quả tự đánh giá của chính nó.
+
+
+## 13. Đối chiếu tiến độ JX1 mới nhất — 2026-11-21 05:01 (Asia/Ho_Chi_Minh)
+
+### 13.1 Phạm vi và mốc Git
+
+- Chỉ đọc nhánh vận hành `jx1-ops`. HEAD quan sát được: [`e593e67e4279e905c61fd6c082e57cbcd31c8010`](https://github.com/ndtangoss-dev/jx1-reports/commit/e593e67e4279e905c61fd6c082e57cbcd31c8010), commit lúc 2026-11-20 22:01:32 UTC (05:01:32 giờ Việt Nam).
+- Hai commit gần nhất chỉ cập nhật trạng thái tự sinh/heartbeat: `KHOA-XINGCHI.md`, `SONNET-SONG.md`, `TIEU-YEU.md`, `TONG-QUAN-GHI.md`. Chúng không chứa diff mã, build artifact hay kết quả runtime mới.
+- `SONNET-SONG.md` ghi A/B còn hoạt động lúc 05:01 nhưng commit cuối 03:47. Đây là tín hiệu phiên còn sống, không phải bằng chứng có tiến độ task. Không thể loại trừ thay đổi local chưa commit; chỉ kết luận rằng Git chưa có artifact task-specific mới sau mốc commit đó.
+- Mọi trạng thái bên dưới là phân loại theo bằng chứng trong file; không suy từ front matter, heartbeat hoặc timestamp commit đơn lẻ.
+
+### 13.2 Ma trận tiến độ theo các cổng bằng chứng
+
+| Hạng mục | Giao việc / worker thực sự bắt đầu | Mã nguồn / build | Runtime đã chứng minh | Nghiệm thu |
+|---|---|---|---|---|
+| Cửa sổ cường hóa | H-05 đã hoàn thành **khảo sát tĩnh**; A triển khai UI trong nhật ký #335. H-05 không phải task sửa UI. SC-003 bị hủy theo Q-103 để A làm trực tiếp. | A báo vc29 build OK và cài LD; vc31 build OK 0 lỗi, cài LD. vc31 chuyển dòng tỷ lệ/bạc/thủy tinh vào trong cửa sổ Giao. Ảnh trước/sau có trong `JX1_OPS/EVIDENCE/ui-cuonghoa-TRUOC-0221.png` và `ui-cuonghoa-SAU-vc31-0221.png`. Không có source diff/build manifest vc31 trong nhánh vận hành để review độc lập. | Đã mở UI trên LD và có ảnh sau vc31; chưa chứng minh toàn bộ luồng cường hóa hoặc mọi kích thước màn hình. | **Chưa đạt Q-91**: còn thiếu sơ đồ 5 ô, mũi tên, khóa ô Bùa/Phù và thông báo thành công/thất bại. Chưa phát APK cho chủ, chưa có nghiệm thu. |
+| Lag/giật | SC-004 đã bị hủy theo Q-103; A kiểm tra qh9A trực tiếp. | A ghi marker 31/33/34/47 đã có sẵn trong qh9A, nên không port lại và không cần vc32 cho SC-004. | A báo vc31 trên LD: 58.8–59.8 FPS trong 5 giây; h40/h66/h100 = 0; khung tối đa 26–36 ms; một hitch dt=16, draw=26, paint=22. Không đo lại bản trước trên cùng máy/đường chạy. | Không có phép đo trước/sau tương đương; chưa chứng minh hết khựng 4–5 giây hoặc quái hiện muộn. Không được ghi “lag đã sửa”. |
+| Quái / đạn xuyên quái | H-15 và I-03 là khảo sát; không có task runtime được chứng minh đã bắt đầu trong đợt này. | H-15 chỉ đọc source một phần; I-03 kiểm kê bảng/PAK tĩnh. I-03 ghi 94.098 bản ghi NPC `shKind=0` trong dữ liệu PAK đã đọc, không phải số quái đang spawn/sống. | H-15 không tái hiện/đo. I-03 không chạy ca quái. E-08 chỉ khảo sát protocol; gói death không có killerID nên chưa chứng minh kill credit. | H-15 report là PARTIAL dù task front matter ghi done; I-03 done chỉ trong phạm vi khảo sát tĩnh. Chưa nghiệm thu gameplay. |
+| Phi phong / tài phú | SC-006 được giao cho B, phụ thuộc SC-002. A thực sự đã chạy các ca trên Test-36/LD tới build 3; B thực sự sửa và build nhiều vòng. | B báo build 3, 4, 5 đều 5/5 exit 0. Build 5 gồm logic build 4 và vá nghi phạm crash trong `Engine/Src/KSG_StringProcess.cpp`; SHA được B ghi: gs001 `771aa1224039640ee627f878e977306e9b85c42cf53c614fab84f92b5062bed56`, Engine.dll `99c4f8a57ae8649baefdd48e977306e9b85c42cf53c614fab84f92b5062bed56`, CoreServer.dll `2d5f26868c1c614269fe2b019ac36bbe433a6d243b7272bc82ad585cd3984215`. Source commit `d950689` chỉ được nhắc trong hộp thư; diff không nằm trên `jx1-ops`, nên chưa review độc lập từ nhánh được phép đọc. | Trên build 3, A báo: 5999 từ chối và 6000 cho mặc; phi phong cấp 1 +6 tăng HP/MP/Thể lực/Kháng/Chạy thành 260/260/130/5/7; cấp 11 +6 đạt 2200/2200/1100/44/55 theo qh_dump; tháo trả chỉ số cũ. **Chưa có bằng chứng A đã nạp và chạy build 4 hoặc 5.** | Chưa nghiệm thu. Tooltip client sai/thiếu dòng ở cấp 2–11, nhãn cấp không khớp ở một số món, ngoại hình cấp cao chưa phân biệt đủ, đổi món thiếu tài phú từng làm mất phi phong cũ. Tự tháo sau khi tài phú giảm là mục tiêu của build 4 nhưng chưa retest. |
+| Thuộc tính / điểm tài phú | SC-002 còn status partial; SC-003 bị hủy để A làm trực tiếp. Task SC-002 ghi B có local commit `f1d3187`, build 5/5, gs001 SHA bắt đầu `af223995`, chờ A đo. | Báo cáo `REPORTS/SC-002.md` vẫn ghi 0/3 mục tiêu sửa mã, không build và không có SHA mới; báo cáo này đã cũ so với status_note và nhật ký A/B. Không có source diff SC-002 để review trên `jx1-ops`. | A báo vc30 build 0 lỗi, cài LD: đao vàng +1 vẫn hiện sát thương min/max 40/114; giáp +1 vẫn Né tránh 720. Một số magic khác thay đổi và Điểm tài phú tăng +100. A kết luận 28/29/30 thêm vào JxQhScalable không làm đổi thuộc tính nền; sát thương thực khi đánh quái và né tránh trong combat vẫn chưa đo. | Chưa nghiệm thu. Phải tách thuộc tính magic khỏi base attribute; không dùng tooltip hoặc build pass thay cho đo combat/server. |
+| Kiểm thử tổng thể | E-05b là task kiểm thử fixture; E-08 là khảo sát protocol; không phải một phiên nghiệm thu game thật. | E-05b ghi TESTER 18/18 và BOT 41/41 pass trong fixture loopback; CLI hai bot chạy 30 giây. | E-05b gửi được một SKILL nhưng `verify_kill`, tạo nhân vật và persistence bị BỎ QUA; gs001 thật [CHƯA KIỂM]. E-08 chưa chạy build/test/runtime; kill credit chưa xác minh. | Fixture pass không đồng nghĩa gameplay pass. Chưa có bộ kiểm thử end-to-end trên gs001 thật chứng minh kill, damage, lưu/nạp và persistence. |
+
+### 13.3 Các điểm SC-006 cần phân biệt rõ
+
+1. **Giao việc:** `TASKS/SC-006.md` ghi owner B, status running, dependency SC-002.
+2. **Worker bắt đầu:** `A-B.md`, `TU-SONNET-B.md` và `DANG-LAM.md` có các bản ghi B làm build 3/4/5; A có các bản ghi chạy LD/Test-36 và thu qh_dump.
+3. **Thay đổi mã:** B báo đã sửa áp magic phi phong, kiểm tra tự tháo khi tài phú giảm và sửa lỗi range-check trong KSG_StringProcess. Đây là **báo cáo của worker**; source diff/commit không có trong nhánh `jx1-ops`, nên không xác nhận độc lập được ở đây.
+4. **Build:** B báo build 5/5 exit 0 và ghi SHA cho ba binary. Đây là bằng chứng build do B báo; chưa có build log/manifest gắn với source commit trong nhánh vận hành.
+5. **Runtime:** A mới ghi nhận kết quả rõ ràng trên build 3. Build 4/5 chưa có bằng chứng nạp và retest.
+6. **Nghiệm thu:** `REPORTS/SC-006.md` không tồn tại; task vẫn running. `TIEU-YEU.md` lại ghi SC-006 là XONG-CHO-GOP, trong khi `A-B.md` ghi PARTIAL, build 5 chờ A. Đây là status drift; XONG-CHO-GOP chỉ có nghĩa worker chờ gộp, không phải runtime accepted.
+7. Crash gs001 `0xc0000409`, offset `0x5bf45`, được ghi sau chuỗi tháo phi phong + mở bảng nhân vật/menu TEST-36. B tìm thấy lỗi range-check khả nghi trong KSG_StringProcess và vá ở build 5, nhưng B nói rõ chưa có `qh_dump.log.crash1` trong kho và chưa chứng minh nguyên nhân gốc. Không ghi crash là FIXED trước khi A tái hiện/không tái hiện trên build 5.
+
+### 13.4 Status drift và đánh giá chỉ huy
+
+- SC-006: TASKS = running; TIEU-YEU = XONG-CHO-GOP; A-B = PARTIAL/chờ A; chưa có report cuối. Ba trạng thái đang mô tả ba tầng khác nhau nhưng chưa có quy tắc hiển thị đủ rõ.
+- SC-002: TASKS = partial và có status_note build local; REPORTS/SC-002.md vẫn là báo cáo cũ 0/3 mục tiêu sửa mã.
+- H-15: TASKS = done nhưng REPORTS/H-15 ghi PARTIAL và không có runtime.
+- H-05/H-07/I-03 done là hoàn tất khảo sát tĩnh; không phải nghiệm thu tính năng.
+- `TIEN-DO.md` được sinh lúc 02:30, trong khi `TIEU-YEU.md` và `SONNET-SONG.md` cập nhật tới 05:01. Dashboard tiến độ do đó cũ hơn trạng thái worker.
+- Heartbeat A/B 05:01 không đủ để kết luận họ đang tiến triển task. Bằng chứng Git-visible mới nhất sau 03:47 chỉ là các commit trạng thái tự sinh; không có commit task-specific mới.
+
+**Kết luận kiểm toán lượt này:** Có tiến triển xác minh được ở mức A đã chạy runtime trên build 3 phi phong, UI vc31 đã được build/cài LD và B báo build 5 SC-006 thành công. Nhưng không có hạng mục nào trong nhóm UI cường hóa, lag/quái, phi phong, thuộc tính/tài phú hoặc kill-credit được chứng minh đã nghiệm thu cuối. Không suy tiến độ từ status hoặc timestamp đơn lẻ.
+
+### 13.5 Cổng kiểm chứng tiếp theo (đề xuất, không phải lệnh dispatch)
+
+- SC-006: đưa source diff/build manifest có thể review vào nhánh task; A nạp đúng ba SHA build 5, giữ ít nhất một ô túi trống, chạy lại crash case, 5999/6000, cấp 11/15000, giảm tài phú khi đang mặc, túi đầy rồi giải phóng ô, đổi phi phong thiếu điều kiện, tháo/relogin và so qh_dump. Ghi PASS/FAIL từng ca.
+- SC-002: cập nhật báo cáo sau khi đối chiếu source thực; kiểm riêng magic và base attributes; đo damage thực khi đánh quái và Né tránh trong combat, không chỉ tooltip.
+- UI: hoàn thành các phần Q-91 còn thiếu, chụp ảnh trước/sau, chạy thao tác đặt/khóa/hủy/xác nhận và chờ nghiệm thu; không coi vc31 build pass là hoàn tất.
+- Lag/quái: đo vc27/vc31 cùng LD, cùng map, cùng tuyến, cùng thời lượng; lưu FPS/hitch trước-sau. Chạy ma trận FPS 20/30/45/60/90/120 và ít nhất 30 lần/điều kiện cho đạn xuyên quái; xác minh hurt/death và kill credit riêng.
+- Đồng bộ status: mỗi task phải có các trường tách biệt ASSIGNED, WORKER_STARTED, CODED/DIFF, REVIEWED, BUILT, DEPLOYED_TEST, RUNTIME_PASS, ACCEPTED. Không để heartbeat, XONG-CHO-GOP hoặc khảo sát tĩnh tự động nâng task lên accepted.
+
+### 13.6 Giới hạn thao tác
+
+Lượt này chỉ đọc nhánh `jx1-ops` và ghi bổ sung đúng file ghi chép trên nhánh nghiên cứu `chatgpt-research/jx1-system-audit-2026-11-20`. Không ghi/sửa/tạo task, không dispatch worker, không đụng nhánh `jx1-ops`, worktree, queue, lock, cấu hình, hook, build hoặc runtime.
