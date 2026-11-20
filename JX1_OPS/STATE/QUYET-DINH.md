@@ -165,3 +165,6 @@ Chủ: cần kết quả cuối là chức năng cường hóa xây thành công
 
 ## Q-88 (20/11 07:00, đại vương chốt) — Hiển thị điểm tài phú
 Điểm tài phú nhân vật = tổng điểm tài phú từng trang bị đang mặc (10 ô, mỗi món 100 × +N). Hiển thị: 1 dòng trong GIAO DIỆN NHÂN VẬT (asset gốc) + 1 dòng "Điểm tài phú" trong tooltip từng trang bị. Giao A (#286), B hỗ trợ đối chiếu (#B-037).
+
+## Q-89 (20/11 07:12, đại vương chỉ thị) — Restart gs001 tốn 10–15 phút; thứ tự nghiệm thu
+Mỗi lần khởi động + nạp gs001 mất 10–15 phút: A/B phải suy xét kỹ rồi gộp mọi thay đổi vào 1 lần restart. Sau khi xong hiển thị tài phú (khung nhân vật + tooltip) và tổng cộng gộp, A chạy quy trình SẴN SÀNG TEST rồi báo; Chat báo chủ vào test; sau đó chủ nghiệm thu, Chat chỉ thị hướng tiếp theo.

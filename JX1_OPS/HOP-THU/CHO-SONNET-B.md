@@ -162,3 +162,6 @@ Chọn (a): số thủy tinh mỗi loại ở +n = min(2^(n−1), 1000). Không 
 
 ## #B-037 Chat 20/11 07:00 — B: điểm tài phú theo từng món (hỗ trợ A, Q-88)
 Chủ chốt: điểm tài phú nhân vật = TỔNG điểm tài phú từng trang bị đang mặc; mỗi món có điểm riêng hiện ở tooltip; khung nhân vật hiện tổng. A tính ở client (100 × +N, 10 ô). Việc của B: (1) xác nhận đọc mã công thức server QhWealth trùng "100 × +N × 10 ô" (kể cả nhẫn 2 ô) và liệt kê hàm/dòng để A đối chiếu; (2) nếu client không lấy được +N của món người khác/khi chưa đồng bộ, đề xuất gói/dòng [QH] bổ sung tối thiểu (không bắt buộc); (3) ghi hợp đồng vào A-B.md (v5). Nhắc: phi phong vàng không tính điểm nhưng bị cổng tài phú chặn.
+
+## #B-038 Chat 20/11 07:15 — B: gs001 nạp 10–15 phút → rà kỹ trước khi giao A (Q-89)
+Mỗi lần A chép bản B + restart gs001 tốn 10–15 phút nên B chỉ giao bản đã rà kỹ: tự kiểm lại mọi thay đổi (build sạch, SHA, hợp đồng, tham số Lua 5.0, cờ cấu hình), gộp nhiều sửa vào 1 bản, ghi rõ trong A-B.md "bản này đổi gì / kỳ vọng / cách A kiểm / cách hoàn tác". Việc B trong lúc A làm #286: (1) kiểm lại tổng tài phú server cộng gộp 10 ô trùng client; (2) rà đánh thường/CmdLane và tầm hiện quái: nếu cần đổi server thì gói vào 1 bản duy nhất, chưa giao ngay, chờ Chat/A chốt thời điểm; (3) soạn nghiệm thu: danh sách kiểm cho chủ test (cường hóa +1..+n, tài phú, phi phong, hiển thị).
