@@ -1375,3 +1375,5 @@ gs001.exe B-049 (790b5a2d…6c9) nạp 14:07, nạp xong 14:14, không crash. Đ
 - Chua kiem: tai khoan test cho chu, bang gia tri ky vong, cong #327, anh #328.
 
 - A 20/11 21:42 bisect: Engine.dll B-039 (+CoreServer B-039, exe goc) -> restart gs001, relog: van du 20 mon. Dang thu LuaLibDll B-039 (21:41), cuoi cung gs001.exe.
+
+- A 20/11 21:55 bisect: LuaLibDll B-039 + Engine B-039 + CoreServer B-039 (gs001.exe goc): relog van du 20 mon -> 3 DLL khong phai thu pham. Dang thu gs001.exe B-039 (21:56) = bo B-039 day du; neu mat do thi gs001.exe la thu pham (hoac do tuong tac exe-DLL).
