@@ -177,3 +177,4 @@ CHAT-DAY #259 19/11 19:20
 - 09:45 CHAT→A #290 (Q-93: Chat nghiem thu hinh anh; A ghi duong dan anh)
 - 10:40 CHAT→B #B-041 (B-040 sap khoi dong 0xC0000005: tim nguyen nhan that, tu chay toi listening 51189, co phuong an du phong)
 - 10:50 CHAT→A #291, B #B-042 (Q-94: bam logic goc; XONG = da thay so that trong game; ra lai tien do)
+- 10:57 CHAT→A #292, B #B-043 (Q-95: quay ve chuoi cuong hoa goc qianghua.lua/ItemQiangHua/QiangHua; bo B-040/B-041; do trong tui, mac thi dong goc ap)
