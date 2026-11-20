@@ -26,7 +26,7 @@
   - P1 đo lại TC2–TC8 sau vá B — CHỜ.
   - P2 #305 — XONG. #300/#302 — GỘP vào #303. BỎ: không có.
 - Đang chờ: B (đồ vàng ×1,05 + qh_wealth).
-- Thư đã đọc đến: #B-072.
+- Thư đã đọc đến: #B-073.
 - [HẠN MỨC 5 GIỜ ~90%, 20/11] Chat gọi lại lúc reset ~18:50. Trạng thái: #B-056 P0 mất đồ — đã báo kết luận tạm (A-B.md), CHỜ A chạy nshowinfo=1 + 3 thí nghiệm #310. Lệnh chạy tiếp: đọc CHO-SONNET-B.md, nếu A gửi log LoadPlayerItemList.log thì chốt thủ phạm (Gen_* fail / continue không pItemData++ / OnLine đè / ZeroMemory save); rồi B-050/051 chờ A, Phòng thủ%/Né tránh/Nội lực.
 - HÀNG ĐỢI B (L19, 20/11 16:35):
   - P0 #B-056 mất đồ sau đăng nhập lại — kết luận tạm xong, CHỜ log A (CHỈ ĐỌC MÃ).

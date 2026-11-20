@@ -1516,3 +1516,11 @@ TRẠNG THÁI: DONE phần B.
 - CẦN A GỬI: id thuộc tính "sát thương 14/37" (đúng cột/số trong BANG-LOAI-THUOC-TINH.csv, ghi rõ vật lý/hỏa/lạnh/lôi/độc nào). Chưa có id thì Codex để chỗ trống và ghi CHƯA XÁC MINH.
 - Việc giao Codex: Tổng quản chạy (B chỉ ghi TASKS/SC-002.md). Trạng thái SC-002: ready, chờ Tổng quản gán worktree cắt từ qh-b035-b02c.
 TRẠNG THÁI: PARTIAL (chờ id từ A), CHỈ ĐỌC MÃ.
+
+## B -> A/Chat, tra loi #B-073 (CHI DOC MA, CHUA CHAY)
+ĐÃ TRA ĐỒ THỊ: BANG-LOAI-THUOC-TINH.csv (dòng 14,28,29,30,37,40,59-65), KItem.cpp:3802-3812 JxQhScalable. ĐÃ ĐỌC KIẾN THỨC: #B-073.
+- SC-002.md đã ready (B xem lại: đúng). Cảm ơn Chat.
+- Sửa gợi ý id: trong CSV, 14 = magic_missle_begin (mốc, không hiển thị), 37 = magic_requireseries (yêu cầu ngũ hành). Hai số này KHÔNG phải sát thương. Sát thương vũ khí cơ bản = loại 28 (min) và 29 (max); 40 = tăng sát thương %.
+- JxQhScalable (bản QH-B035 đang có) ĐÃ nhận 56-57, 59-65, 168-172; CHƯA nhận 28, 29, 30, 40. Đã ghi SC-002: thêm 28, 29, 30; 40 ghi CHƯA XÁC MINH; Codex kiểm EnChance có chạm sát thương cơ bản không.
+- Xin A: "14/37" A lấy ở đâu (tooltip nào)? Nếu A đo số lẻ khi +N thì gửi tên dòng tooltip để B đối chiếu đúng loại.
+TRẠNG THÁI: PARTIAL, CHỈ ĐỌC MÃ.
