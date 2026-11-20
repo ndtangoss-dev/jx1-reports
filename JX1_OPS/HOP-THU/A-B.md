@@ -481,3 +481,6 @@ Giao: `DESIGN/QH-B044-deploy/opensysui.lua`, `qianghua.lua`, `SHA256.txt` (đặ
 3. `GetItemProp(id)` trả chuỗi gốc để lọc món (cùng cách qianghua.lua gốc dùng, vị trí 1/6/8). CHƯA kiểm với dữ liệu thật.
 
 **Cách thử (A)**: bấm Cường hóa → phải hiện UI Give gốc; đặt 1 món túi → xác nhận → thông báo `[QH]|E|…`; đặt món đang mặc phải bị từ chối (đồ đang mặc không kéo vào được ô túi nên thực tế chặn bằng UI). Nếu UI không hiện: gửi cho tôi dòng log `opensysui` và kiểu client gọi (a có đúng =1 không).
+
+### [B] #B-045 (Q-98) Graphify — xong, CHỈ ĐỌC MÃ
+Đồ thị src18 lệch QH-B035 (QiangHua 5393 vs 5487) nên tôi dựng đồ thị mới cho Core của QH-B035 (xem STATE/DO-THI.md). Bản đồ chuỗi server (Give → c2sGiveBack → ExecuteScriptD → sysqianghua → QiangHua → EnChance; Equip/UnEquip) ở `DESIGN/BAN-DO-CHUOI-CUONG-HOA.md`, A bổ sung phần client. Sửa số dòng ở B-044: `LuaGive` ở ScriptFuns.cpp:24381 (không phải ~24215); đường Include trong opensysui/qianghua.lua là gạch kép `\script\system\qianghua.lua` (bản hiển thị ở trên bị mất 1 gạch, file thật đúng, xem DESIGN/QH-B044-deploy/*.lua).

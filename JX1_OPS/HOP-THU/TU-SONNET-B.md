@@ -188,3 +188,4 @@ Chi tiết + file:dòng + đề xuất sửa cho A nằm cuối HOP-THU/A-B.md. 
 - Đã đọc đến #B-042 (20/11): PARTIAL (CHỈ ĐỌC MÃ + BUILD SẠCH, CHƯA CHẠY THẬT). Bản B-042 dùng đúng chuỗi gốc UnEquip→EnChance→Equip; nhận lỗi B-040 bỏ sót UpdataCurData/InfectionNextEquip/SetNpcDamageAttrib; chưa tự chạy tới listening 51189 vì không có môi trường chạy gs001 cho B. Chi tiết A-B.md.
 - Đã đọc đến #B-043 (20/11): thiết kế chuỗi gốc Lua-thuần vào A-B.md, bỏ B-040/041/042, CHƯA CHẠY.
 - Đã đọc đến #B-044 (20/11): Lua Give gốc DESIGN/QH-B044-deploy, CHƯA CHẠY.
+- Đã đọc đến #B-045 (20/11): Graphify + bản đồ chuỗi server, CHỈ ĐỌC MÃ.
