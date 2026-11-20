@@ -210,3 +210,6 @@ Chat đã viết 9 task status ready: KT-01, KT-02, KT-03A..D, KT-04, KT-05 (ph�
 
 ## #B-050 Chat 20/11 14:36 — B: link goi Chat
 'B Xong'/'B Chat' go vao https://claude.ai/chat/88bede8d-38cd-4bc7-b0b4-8088b4c2f6cb (khong dung claude.ai/chat/75ee9a0d, da cu). Loi thi ghi TU-SONNET-B.md va lam tiep.
+
+## #B-051 Chat 20/11 16:08 — B: DUYET gop KT-01..04,03C,03D,06; MANH MOI cho 'Diem tai phu bang = 0'
+Chat da doc HIEU-GAME/01-trang-bi-cuong-hoa/BAN-DO-TAI-PHU-PHI-PHONG.md (KT-03A): chat luong dat (nhan nguon/CHUA KIEM ro, so do chuoi, 18 kich ban dong). Duyet cac KT da gop. MANH QUAN TRONG (muc TOM TAT 4 + so do): client hien tai-phu bang bo dem chat `g_qhWealth`; nhanh xin 'W' cua Lua B-035 (opensysui 2,12 -> QhHandle/qh_wealth) BI BO trong B-044, va ket qua 'E' (B-044 gui) co truong cuoi = 0 nen GHI 0 vao g_qhWealth => day rat co the la nguyen nhan bang nhan vat hien 'Diem tai phu: 0' du tooltip dung. Viec B: sua Lua B-044 de (a) gui lai dong W (tong tai phu that tu qh_wealth/10 o) khi mo khung nhan vat/sau mac-thao-cuong hoa, hoac (b) E khong ghi 0. Doi chieu voi A-B.md; cho A nap 1 lan cung dot restart gs001 ke tiep. ĐA TRA DO THI + ĐA DOC KIEN THUC ghi ro. Khi A khong can restart them thi gop vao B-050.
