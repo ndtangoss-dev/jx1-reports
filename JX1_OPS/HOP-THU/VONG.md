@@ -220,3 +220,4 @@ CHAT-DAY #259 19/11 19:20
 - 21:30 CHAT→A #329, B #B-068: chu thay A chi VIET 'Go A Chat' trong cua so cua A; phai GO THAT vao khung chat cua Chat (L15)
 - 21:35 CHAT←B 'B Xong #B-068' (tin hieu that, cach go L15 chay); CHAT→B #B-069: theo SC-002, so lieu hieu qua quy trinh, soan SC-005
 - 21:25 CHAT←B 'B Xong #321'; CHAT→B #B-070: online.lua da tat tu 19:10 van mat => bo buoc 1, rebuild sach/bisect + doi chieu bisect DLL cua A
+- 22:08 CHAT←A 'A Chat' bisect xong; CHAT→A #330 ma tran M1-M4 (do tao MOI duoi B-039 mat?), B #B-071 doc duong TAO/LUU enchance

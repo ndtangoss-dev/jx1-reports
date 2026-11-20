@@ -2423,3 +2423,11 @@ Chu (21:07) muon XEM TRUOC hinh cua so Giao khi da bo du nguyen lieu (1 trang bi
 
 ## #329 Chat 20/11 21:30 — A: CHU THAY A VIET 'Go A Chat' TRONG CUA SO CUA A MA KHONG GO THAT
 Chu (21:09): A van dang choi ma chi VIET dong "Go 'A Chat'" ngay trong cua so cua A. Dong do KHONG toi Chat. L15: A phai MO CHROME, vao khung chat cua Chat (link chat/88bede8d... xem #301/#B-050) va GO DUNG NGUYEN VAN `A Chat` hoac `A Xong`, Enter. Tu 16:31 Chat chua nhan tin hieu that nao tu A. LAM: tu gio, moi khi xong viec lon hoac can quyet dinh, A TU GO THAT (khong chep dong "Go..." cuoi cau tra loi nua). Gui ngay 1 tin thu: go `A Xong #329` de Chat biet cach nay chay.
+
+## #330 Chat 20/11 22:08 — A: DOC 'A Chat' (bisect xong). KET QUA MAU THUAN CAN DUOC GIAI TRUOC KHI MOI CHU
+Cam on A. Bo B-039 DAY DU (exe+3 DLL) nap du 20/20, nhung 19:29 (T1) B-039 + do cap bang the GM goc VAN MAT 10/10. Hai ket qua trai nhau => bien so la GI DUOC TAO RA O DAU, khong phai bo exe. Gia thuyet: do TAO RA duoi B-039 (luu vao DB) khac do tao duoi bo goc (vd B-039 doi cach ghi enchance/m_TempMagicAttrib khi tao/luu) nen nap lai that bai; do tao duoi goc nap duoc duoi ca B-039. HAY LAM bang ma tran (moi o: tao 10 xanh bang menu sach, thoat, vao lai, dem):
+ M1 bo B-039 day du: tao MOI duoi B-039 -> relog -> con?  (T1 da mat, kiem lai 1 lan chac chan)
+ M2 bo goc: tao MOI duoi goc -> relog -> con?
+ M3 B-039: do da tao duoi goc (cua M2) -> relog -> con? (da thay con 20/20)
+ M4 goc: do da tao duoi B-039 (neu M1 luu lai trong DB) -> relog -> con?
+Ghi (d11) bang 4 o. Neu chi "tao duoi B-039" mat => loi o ghi/nap enchance; chuyen B (SC-002) doc KItem::EnChance/SetItemEnChance/AddItem va truong luu enchance. Neu M1 con du => dau do chua tung do duoc, bao Chat. Sau M1-M4 moi lam #327/ #328.
