@@ -1,2 +1,2 @@
 f43adcddf61c9461a742dba7b39fc5b1af23ebe0d1deff201e193d0f8278678e *opensysui.lua
-daa0fdc651b7be57b0bf52eaa0143f904e93b402dd20191222d4b9bf3460ec8b *qianghua.lua
+b03981365b863c2f3e8ee9beb5143d39eb18716c5e7366d2e05a201102eecdd5 *qianghua.lua

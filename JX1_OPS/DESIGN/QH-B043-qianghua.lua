@@ -2,8 +2,8 @@
 -- c2s_playergiveback nKind=3 -> day). Giu chuoi goc: UI khoa do trong TUI -> Lua nay -> luat Q-86 -> SetItemEnChance -> KItem::EnChance -> SynPlayerItem.
 -- Do dang MAC khong vao duoc UI (UI chi liet ke do trong tui); Lua van tu choi them cho chac.
 -- Khong C++ moi: dung CountBagItemExact / ConsumeBagItemExact / GetEquipIdx da co tu B-035 (chi chay khi nguoi choi bam cuong hoa).
-Include("\script\lib\string.lua");
-Include("\script\lib\basic.lua");
+Include("\\script\\lib\\string.lua");
+Include("\\script\\lib\\basic.lua");
 
 QH_CRYSTAL = { 239, 240, 238 }
 QH_MAX = 15
