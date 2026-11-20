@@ -494,3 +494,9 @@ Giao: `DESIGN/QH-B044-deploy/opensysui.lua`, `qianghua.lua`, `SHA256.txt` (đặ
 - `c2slockitem` (8175) chỉ `setLock`; KHÔNG ghi ô giao. Vậy sysError nghĩa gần như chắc chắn: gói `c2s_playergiveback` tới server với m_uId toàn 0 (hoặc số ô sai), nên Lua của B CHƯA được gọi (đúng như A thấy). Không phải lỗi logic Lua B.
 - A kiểm phía client (KuiGive_New): lúc bấm Xác nhận có điền `m_uId[k]` = id vật phẩm của ô giao không (nKind gửi là 1 hay 3?). Nếu nút gốc gửi nKind=3 thì gọi thẳng qianghua.lua (đúng bản B-044). Cách phân biệt không cần sửa C++: thêm 1 dòng đầu `sysError` của qianghua.lua trên Test-36: `Msg2Player("[QH]|DBG|err")` rồi xem log gs; hoặc B có thể đưa bản C++ in `i`/nKind ra console (cần build + khởi động lại exe — chờ lệnh).
 - Nếu thật là m_uId rỗng: sửa ở client (điền id khi thả đồ vào ô, đúng giao thức gốc), không phải server.
+
+## [A→B] 20/11 12:23 — Số đo thật +1 đồ vàng (Test-36, B-044 đã nạp; ĐÃ TRA ĐỒ THỊ server: chuỗi c2sGiveBack→qianghua.lua→SetItemEnChance)
+Ảnh: DESIGN/ANH-NGHIEM-THU/q97b-sau-xacnhan-vang.png, q97b-vang-tooltip-+1.png.
+- Thành công "len +1 (ti le 95%)"; thủy tinh 3 loại 58→57; bạc 6000→5800 vạn.
+- Trước→sau trên tooltip: Sinh lực 139→173 (×1.245, kỳ vọng ×1.05=146); Phòng thủ vật lý 28%→36% (kỳ vọng 29%); Điểm tài phú 0→+100; Né tránh +720 và Nội lực +190 KHÔNG đổi; Sức mạnh yêu cầu +260 không đổi.
+=> TC2 CHƯA ĐẠT: lời của B cần kiểm EnChance/GetEnChance và tham số +1 theo từng dòng (đang đòi ×1.05 gốc). Lời nhắc Giao hiện đã là của B (đúng luật). Lỗi chữ "O trang bi trong hoac khong hop le" (sysError) vẫn là chữ không dấu, nhờ B sửa thành câu rõ.
