@@ -1309,3 +1309,10 @@ Tooltip "+N tất cả kỹ năng" nay hiện từ +14 (+1) và +15 (+2), khớp
 - ĐÃ KIỂM (ảnh tooltip +0): áo Mộng Long Kim Ti Chính Hồng Cà Sa (HP +139, MP +190, né tránh 720, thủ vật lý 28%) và côn Phục Ma Tử Kim Côn (sát thương +69~128, chính xác 565): q92-tooltip-ao-do-+0.png, q92-tooltip-vukhi-+0.png (cùng thư mục).
 - CHƯA KIỂM: cường hóa +1/+3/+5 trong túi, tooltip ×1,05, mặc/tháo/mặc lại, baseline sau đăng nhập lại, đồ đang mặc bị từ chối.
 - VƯỚNG: đồ nhiều dòng đều đòi môn phái Thiếu Lâm + sức mạnh 135–260 (nhân vật sức mạnh 35, môn phái khác). Đang đặt môn phái/cộng sức mạnh bằng hook Test-36 (không thuộc bản giao). Menu chuột phải món trong túi KHÔNG có "Cường hóa" (chỉ Sử dụng/Rao/Sửa/Định giá/Ném/Đính): đang tìm đường mở KuiGive_New (nút túi "Cuong hoa" → opensysui(2,1) hay NPC).
+
+## 20/11 11:20 — Q-92/B-043: BÁO CÁO PHÁT HIỆN (CHƯA KIỂM xong, KHÔNG báo XONG)
+- ĐÃ KIỂM TRONG GAME: nút vàng "Cuong hoa" trên màn chính (client qh9A) mở menu chọn ô (Ao, Mu, Vu khi...). Chạm 1 ô = cường hóa NGAY TẠI CHỖ đồ ĐANG MẶC (đường riêng B-035 `QhHandle` a==10), tiêu 200 Tử/Lục/Lam thủy tinh, báo "THAT BAI, giu +7 (65%)". KHÔNG đi qua KuiGive_New → c2s_lockitem → qianghua.lua gốc. => LỆCH với Q-95 (đường gốc chỉ cho đồ trong TÚI). Chat quyết: tắt/ẩn nút này trên client, hay chuyển nó mở UI Give gốc.
+- Hook Lua mở `opensysui(2,1)` từ QhHandle (Test-36) KHÔNG làm hiện UI Give: chưa có cách chạm tới UI Give gốc từ client hiện tại (CHƯA KIỂM đường gốc).
+- ĐÃ KIỂM: bảng nhân vật vẫn HP 1010/MP 215/Chính xác 72/Né 36 dù ô áo/vũ khí hiện hình → chưa chứng minh dòng thuộc tính áp lên nhân vật (CHƯA KIỂM, đồ vàng nhiều dòng bị chặn môn phái/sức mạnh).
+- Ảnh: DESIGN/ANH-NGHIEM-THU/q92-nut-cuonghoa-duong-rieng-that-bai-tai-cho.png, q92-bang-nhan-vat-sau-nut-cuonghoa.png
+- Hook test còn trong qhcuonghoa.lua Test-36 (a==13, a==12 x3); gỡ khi xong. B-043 sysqianghua đã nạp, CHƯA KIỂM bằng UI gốc.
