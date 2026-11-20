@@ -1276,3 +1276,8 @@ Tooltip "+N tất cả kỹ năng" nay hiện từ +14 (+1) và +15 (+2), khớp
 ## [20/11 06:55] #284 khung ngua — Sonnet A
 - Ngua Bach Ma, cap 86, Test-36 (ping ~51 ms, FPS 58): vuot joystick 14 s, chup 1 khung/2 s (so khac biet anh): 8 khung dau deu co chuyen dong; chi cap 7->8 it doi (~2 s, nghi khung nhe), KHONG thay dung hinh 4-5 s. Ngua tren Test-36 chua tai hien khung 4-5 s (can do tren thiet bi chu / vc23 de ket luan).
 - Con lai #284: danh thuong/CmdLane + tam hien quai; phi phong vang cap 11.
+
+## [20/11 07:25] #286 tai phu client — Sonnet A (dang build vc26)
+- Tooltip: KItem.cpp them dong vang "Diem tai phu: 100xN" cho trang bi detail 0..9 (phi phong/ngua/mat na/an khong tinh); .bak-q88.
+- Khung nhan vat (trang 2, KuiRoleState.cpp): Label TTF cung font goc "Diem tai phu: N", N = tong 100xGetEnChance 10 o dang mac, cap nhat moi tick trong UpdateAllEquips; .bak-q88. Vi tri (w-190, h/2+112) chua xem tren LD, co the chinh.
+- Build vc26: D:\JX-build\build-vc26.ps1 -> build-vc26.done. Sau do: cai LD, chup khung + tooltip +0/+3.
