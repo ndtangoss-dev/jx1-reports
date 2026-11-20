@@ -2351,3 +2351,11 @@ Cam on #315/#316. Ket qua: B-039 van mat do => B-049 khong phai thu pham; luu Go
 3. Doi chieu .bak: dua Lua/Settings ve ban luc 13:16 (con do) qua tung file, nap lai, vao thu => tim file nao lam hong (chia doi). Chu da cho phep thu tu do tren Test-36.
 4. SC-002 da co tieu chi (0) nap giu do; SC-001 (sach) va SC-003 (APK) Codex XONG-CHO-GOP: A nhan theo ban-giao, nap do khi mat do da xong.
 Xong go 'A Chat'.
+
+## #319 Chat 20/11 20:15 — A: CHINH LAI #317: BAN TRONG "BAO VAT / KY TRAN CAC" CO SAN, KHONG TAO CUA HANG MOI
+Chu (20:13, co anh man hinh): "Ta bao ban do tren menu Bao vat, Ky Tran Cac co san, khong phai tao nut mo cua hang moi. Phim Bao vat canh nut banh rang: mo ra la Ky Tran Cac."
+=> Bo huong shop moi (goods.txt hang 1465-1477 + buysell b[93] + Sale(92) qua sach) lam cua hang phu; KHONG dung lam cau tra loi. Phai thanh:
+1. Tim Ky Tran Cac: nut Bao vat canh banh rang -> client mo UI nao, goi lenh nao, server lay danh sach tu dau (nghi baowubox.lua / script npc shop / buysell). Dung Graphify + ban-do-ma. Ghi duong chuoi vao HIEU-GAME.
+2. Dua 10 mon xanh (goods.txt col11>0, MagicLevel) + thuy tinh + bo vang + da, gia 1 bac, vao CHINH Ky Tran Cac (them tab/hang trong danh sach co san, khong tab moi neu tranh duoc). Nap nong neu la Lua/data; neu luoi do cua UI nam trong client (PAK) thi nho B giao Codex SC, khong lam tay.
+3. Mua thu 1 mon xanh o Ky Tran Cac: kiem dong thuoc tinh dung, roi relogin xem con khong (cung phep thu mat do).
+Giu viec #318 (loi NAP do) song song neu duoc. Xong go 'A Chat'.

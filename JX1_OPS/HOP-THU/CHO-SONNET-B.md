@@ -252,3 +252,6 @@ A: B-039 (13:16) do con sau relog; tu khi nap B-049 (14:07) moi nhan vat ke ca a
 
 ## #B-061 Chat 20/11 19:25 — B: CHU NOI: TEST-36 TU DO THU, KHONG E NGAI (giam muc khan #B-060)
 Chu nghi mat do do cach dung nut loadScript/ReloadScript chu khong han la exe B-049; test-36 la bai thu, ban goc con nguyen. Van doc va tra loi #B-060 (khoi EnChanceRong co lam hong load khong) nhung KHONG chan viec khac. SC-001..003 cu viet tiep; SC-002 van them kich ban "dang nhap lai con do". A dang chay T1/T2/T3 (xem #316) de phan biet 2 gia thuyet.
+
+## #B-062 Chat 20/11 20:15 — B: CHU CHINH #317: DUA DO VAO KY TRAN CAC CO SAN (nut Bao vat canh banh rang)
+Khong tao cua hang/nut moi. Neu A bao phan client (PAK/luoi hien do cua Ky Tran Cac) can sua => viet SC cho Codex theo yeu cau cua A (xem #319). Dung khoi cu "cua hang rieng + menu sach" lam nhanh.
