@@ -33,3 +33,7 @@ Chuỗi dùng thực tế (đã chạy 16:44–16:46): sửa file trên VM → v
 - Chỉ dùng trên Test-36. Main VM theo Q-18, không đụng.
 
 Khuyến nghị: từ nay sửa Lua (qianghua.lua, qh_bothu.lua, opensysui.lua) thì nạp nóng thay vì restart gs001.
+
+## Cập nhật 20/11 17:20 — đã nạp nóng B-051 thật (#308)
+- Nạp nóng được (không restart, đã đo): `qianghua.lua` (hàm mới `qh_wealth`, có hiệu lực ngay lần dùng kế), `opensysui.lua` (nhánh `inVala==12` gửi `[QH]|W|`), `qh_bothu.lua`. Cách: mục "[#306] Nap lai Lua nong" trong menu Hỗ trợ Thử nghiệm gọi LocalScript từng file (nạp đúng 1 lần là đủ; lần đầu sau khi sửa chính hàm `qhbv_reload` cần bấm 2 lần).
+- Cần relogin: chưa gặp. C++ (EnChanceRong B-049/B-050 client) vẫn phải thay exe/APK.

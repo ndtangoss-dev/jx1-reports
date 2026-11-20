@@ -91,3 +91,9 @@ A: bước 1→4. B: điền (b), sẵn sàng sửa nếu tiêu chí 5 hoặc 7 
 - Nhận định (CHƯA KIỂM nguyên nhân): không phải do tắt cứng. Vật phẩm thêm bằng GM (AddItem/ConsumeBagItem) hoặc nhẫn đã SetItemEnChance không được Goddess lưu lại, trong khi bạc được lưu. Cần: so với đồ nhặt/mua thường; thử đồ xanh chưa cường hóa sống qua đăng xuất không; đọc log Goddess lúc đăng xuất.
 - Hệ quả: TC5 (đăng nhập lại +1 ×1,10 không cộng dồn) vẫn CHƯA KIỂM; tiêu chí #297 mục 5 chưa đạt.
 - Bổ sung 17:16: log Goddess `gw\goddes_log\2026_11_19\07_08_02_060.log` ghi LƯU atestqhba 17:01 = 30 vật phẩm, 17:12:37 (lúc Đăng xuất) = 20 vật phẩm, nhưng sau đăng nhập lại hành trang chỉ hiện 2; bảng nhân vật không mặc gì (ảnh `q306-o11.png`). `online.lua` chỉ gọi QHBV_Book (thêm sách, không xóa). → Lưu có, NẠP LẠI mất: nghi lỗi nạp vật phẩm (đồ AddItem/SetItemEnChance, hoặc giới hạn nạp) — chưa kiểm. Đã thử 2 lần (tắt cứng, thoát sạch); chuyển B/Chat theo luật 3 lần.
+
+## Cập nhật 20/11 17:20 (Sonnet A, #308) — B-051 NẠP NÓNG: "Điểm tài phú" bảng nhân vật = 100 ĐẠT
+- Làm: .bak-b051 rồi chép `qianghua.lua` B-051 (SHA ad58b89b… khớp SHA256.txt) vào `gs\script\System`; vá `opensysui.lua` thêm nhánh `inVala==12` (giữ dòng Include qh_bothu của TEST); sửa `qhbv_reload` nạp thêm qianghua.lua + opensysui.lua. KHÔNG restart gs001. Nạp bằng mục "[#306] Nap lai Lua nong" của sách (thông báo "da nap lai qh_bothu.lua, ket qua=4480").
+- Đo (TEST-36, atestqhba): nhẫn xanh Hoàng Ngọc Giới Chỉ +0 (Thể lực 6, Sức mạnh 1, Sinh lực 51, Kháng độc 10%, tài phú +0) → +1 (95%): Thể lực 6, Sinh lực 54, Kháng độc 11%, tài phú +100 (ảnh q308-q306-r10.png). Thủy tinh −1 mỗi loại (199), bạc 19 ức 9000→8800 vạn.
+- Mặc nhẫn: Sinh lực 900→954, bảng nhân vật "Điểm tài phú: 100" (trước nạp = 0). Ảnh `q308-r11.png`. → TC8 phía nhân vật ĐẠT.
+- Không còn cần restart cho Lua. Chưa nạp: `qh_debug.lua` (B-055, không cần vì đã đạt).
