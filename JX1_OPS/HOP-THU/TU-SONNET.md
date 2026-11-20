@@ -1449,3 +1449,10 @@ gs001.exe B-049 (790b5a2d…6c9) nạp 14:07, nạp xong 14:14, không crash. Đ
 ### A 21/11 01:05 — NAP gs001 SC-006 len Test-36 (theo Chat 01:00)
 - Da chep gs001.exe (SHA ca16705bbd58...870a2), CoreServer.dll (ca6486c9...), Engine.dll (24731aac...) tu D:\JX-wt\SC-006B\...\A07b\checkpoint-sc-006\out; SHA tren VM trung khop. Ban cu giu .b039-live (gs001 de3d6f0c, CoreServer c032f1f7, Engine 0d41ab9d) de quay lui.
 - Khoi dong lai JX-gs001 luc 01:01:12, doi 7-10 phut. Chua do sat thuong 28/29/30, Ne tranh, phi phong: CHUA KIEM.
+
+## A 21/11 01:35 — gs001 SC-006 (ca16705b) sẵn sàng; đo SC-002 trên LD (số thật)
+- gs001 nạp xong ~01:19. LD vào vai mới `atestchutes2` (tk chủ test `tkchutest01`; vai đầu `atestchutest` bị trống do TA bấm "Don hanh trang" — lỗi của A, ghi nhận, không mất dữ liệu quan trọng).
+- Đao vàng Tứ Không Giáng Ma Giới đao +0: Sát thương nhỏ nhất +40, lớn nhất +114, Sinh lực +152, Tốc đánh +27%, Vật lý % +130%, +59 điểm. Cường hóa +1 THÀNH CÔNG (bạc 20ức→19ức9800vạn = -200 vạn đúng, thủy tinh mỗi màu -1).
+- Sau +1: Sinh lực 160 (+8), Tốc đánh 28%, Vật lý 137%/+62 ĐỔI; nhưng Sát thương nhỏ/lớn nhất VẪN 40/114. NGUYÊN NHÂN (đã xác định ở mã): bảng JxQhScalable CLIENT chưa có mã 28/29/30 (server có, KItem.cpp:3813). Đã vá client qh9A (KItem.cpp:3529), đang build vc30; chưa cài. Server thực tế có tăng hay không: CHƯA KIỂM (tooltip tính ở client).
+- Giáp Hám Thiên Vũ Thần Tương Kim Giáp +0: Né tránh +720 (mốc để so +N sau khi cài vc30).
+- Ảnh: D:\tmp\sc002-dao-0.png, sc002-dao-1.png, giap0.png. Phi phong: CHƯA làm.
