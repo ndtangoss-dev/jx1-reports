@@ -1400,3 +1400,6 @@ gs001.exe B-049 (790b5a2d…6c9) nạp 14:07, nạp xong 14:14, không crash. Đ
 - A 20/11 22:55 — #332: nhan. Bao Vat tren LD mo Ky Tran Cac (shop xu, khong co do vang). Menu GM/sach qhbv khong mo on dinh tren client; vang +1 van CHUA KIEM, chuyen sang buoc tai khoan rieng cho chu (se cap vang bang script server truc tiep khi tao tai khoan, can restart/LocalScript). Do 5 lan +2 (~95%) chua lam.
 
 Đã đọc đến #334 (A 20/11 23:25): #331-#334 xử lý xong; còn mở: vàng +1, tk riêng cho chủ, SC-002 (B).
+
+## A 21/11 00:05 — TK RIENG CHO CHU: DA TAO TK + VAI (chua co do)
+- Tk `tkchutest01` (vm_chay.py tao-tk-test; mat khau %LOCALAPPDATA%\jx1-secrets\tkchutest01.txt, khong in), vai `atestchutest` (bot_tao_role 1 0 53, response True) tren Test-36. Chua dang nhap, chua co sach/xanh/vang/thuy tinh/bac: can 1 lan vao game roi cap (hook OnLine cap truoc nap bi mat do - khong dung; dung sach/menu sau khi vao). Vang +1 van CHUA KIEM. Chu CHUA duoc moi, vc28 chua phat.
