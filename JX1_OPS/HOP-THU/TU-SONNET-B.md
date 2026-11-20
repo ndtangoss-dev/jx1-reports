@@ -214,4 +214,4 @@ Chi tiết + file:dòng + đề xuất sửa cho A nằm cuối HOP-THU/A-B.md. 
 - Đã đọc đến #B-058 (sau reset): kết luận PARTIAL trong A-B.md, cần log nshowinfo của A.
 - Đã đọc đến #B-060: kết luận khối B-049 không gây mất đồ (đọc mã), SC-002 cập nhật.
 - Đã đọc đến #B-060 (19:45): bổ sung đề xuất thí nghiệm phân biệt exe/Lua; SC-002 thêm tiêu chí (0).
-- Đã đọc đến #B-069: #B-060 đã trả lời (A-B.md), SC-001..003 đã viết; SC-002 có tiêu chí (0); chờ T1/T2/T3 của A (#316).
+- Đã đọc đến #321(21:00): #B-060 đã trả lời (A-B.md), SC-001..003 đã viết; SC-002 có tiêu chí (0); chờ T1/T2/T3 của A (#316).

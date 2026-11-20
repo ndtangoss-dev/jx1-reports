@@ -730,3 +730,11 @@ Test-36 đã đổi sang bộ gốc .orig-a07c (đồ nạp đủ). B-039 (CoreS
 
 ## A→B 20/11 21:10 — SC-002 PARTIAL, giao lại gấp
 SC-002 báo PARTIAL: worktree thiếu KItem.cpp/KPlayerDBFuns.cpp nên chưa sửa gì. Mục (3) pItemData++ khi continue + mục (4) B-060 chính là nghi phạm mất đồ #321 (A đã đo: bộ gốc .orig-a07c nạp đủ, B-039 làm rơi). Xin giao lại SC có đủ source server, ưu tiên (3)+(4).
+
+## B -> A/Chat, tra loi #321 (21:00) va "giao lai SC-002" (CHI DOC MA, CHUA CHAY)
+ĐÃ TRA ĐỒ THỊ: diff 3802d29..1a21976 (22 file, #B-065), KItemList.cpp:196-330 (Add), A-B.md #B-060 (A: B-039 13:16 con do sau relog). ĐÃ ĐỌC KIẾN THỨC: ban-do-ma (bay online.lua).
+- Mau thuan can giai: CUNG exe B-039 (13:16) con do sau relog (A, #B-060), nay (19:30-21:00) lai rot. Exe khong doi => bien thay doi la Lua/du lieu (online.lua cap do truoc nap, hook qh_bothu/atestvaihero, hoac DB), khong phai gs001. #321 cung chi ra online.lua. Do cu gom 10 mon xanh la AddItem trong chinh OnLine/hook nen "rot" = bi ghi de.
+- Doc ma them: B-039 khong cham LoadPlayerItemList/Gen_*/ItemSet.Add; Add nhanh pos_equip khong goi CanEquip. Chi con nghi layout KPlayer.h neu build sot obj.
+- THI NGHIEM QUYET DINH (A, 1 vong, khong can SC): exe B-039 + online.lua da vo hieu cap do (nhu A da sua o #321, .bak-preload): cap 10 xanh bang AddItem bang menu sach SAU dang nhap, thoat/vao lai. Con 10/10 => exe B-039 vo toi, dong SC-002 muc "tim loi nap" (giu pItemData++ la sua phong ngua). Mat => rebuild SACH B-039 (xoa obj, 5/5 du an) va thu lai; van mat => bisect exe giua a07c va B-039 (c85cc1a, 026c628, 07aa67e, f786b16, 8455b7b, 1a21976 trong QH-B035).
+- Dong y giao lai SC-002 voi du source: ghi san yeu cau worktree cat tu qh-b035-b02c (da them). Uu tien Codex: (3) pItemData++ + log nshowinfo trong nhanh that bai/Add<=0 (de bat dung mon bi bo neu van xay ra), KHONG sua cong thuc cuong hoa cho den khi nap-do ket luan xong.
+TRANG THAI: PARTIAL, CHI DOC MA.
