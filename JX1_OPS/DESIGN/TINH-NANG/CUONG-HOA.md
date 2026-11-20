@@ -97,3 +97,9 @@ A: bước 1→4. B: điền (b), sẵn sàng sửa nếu tiêu chí 5 hoặc 7 
 - Đo (TEST-36, atestqhba): nhẫn xanh Hoàng Ngọc Giới Chỉ +0 (Thể lực 6, Sức mạnh 1, Sinh lực 51, Kháng độc 10%, tài phú +0) → +1 (95%): Thể lực 6, Sinh lực 54, Kháng độc 11%, tài phú +100 (ảnh q308-q306-r10.png). Thủy tinh −1 mỗi loại (199), bạc 19 ức 9000→8800 vạn.
 - Mặc nhẫn: Sinh lực 900→954, bảng nhân vật "Điểm tài phú: 100" (trước nạp = 0). Ảnh `q308-r11.png`. → TC8 phía nhân vật ĐẠT.
 - Không còn cần restart cho Lua. Chưa nạp: `qh_debug.lua` (B-055, không cần vì đã đạt).
+
+## (d) #310 TN1 — 20/11 17:29 (A, LD thật, tkatest03/atestqhba)
+- TN1 = đồ XANH từ sách, KHÔNG cường hóa: trước thoát = 12 món trong hành trang (10 xanh + sách + 1 thỏi vàng), ảnh `ANH-NGHIEM-THU/q310-tn1-truoc-12mon.png`. Thoát sạch (Đăng xuất) → đăng nhập lại: còn 2 món (thỏi vàng + sách), ảnh `q310-tn1-sau-2mon.png`. => MẤT 10/10 món xanh dù KHÔNG cường hóa.
+- Kết luận: lỗi KHÔNG do cường hóa. Đồ tạo bằng script (AddItem/AddGoldItem) không còn sau relogin; 2 món còn lại (sách, thỏi vàng) là đồ cấp lại lúc đăng nhập (OnLine/QHBV_Book) hoặc đồ có sẵn.
+- Chưa làm: TN2 (xanh +1 trong túi), TN3 (đồ thường từ NPC/quái), log Goddess/Bishop theo từng TN, truy mã #311 (KItemSet::AddOther / lưu-nạp Goddess).
+- LỆNH CHẠY TIẾP: LD emulator-5556, bấm sách ô 2 (1336,328) → Sử dụng (1231,249) → mục 1 (570,540) → Đồ XANH (950,540); đăng xuất: túi (683,52), đóng (1550,958), cài đặt (1190,52), Đăng xuất (1177,955); đăng nhập: (960,588),(500,297),(840,772),(686,1016).
