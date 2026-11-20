@@ -31,9 +31,9 @@ Client (A điền): nút → __opensysui(2,1) → s2c_opengive → KuiGive_New �
 | Bước | Ai | Trạng thái | Bằng chứng |
 |---|---|---|---|
 | 1 Nạp Lua B-044 (opensysui.lua + qianghua.lua) | A | ĐÃ KIỂM (nạp+SHA khớp; UI Give mở trong game) | docs-analysis/out/ld/q97-ui-giao-goc-sau-nut-moi.png |
-| 2 Bộ thử qh_bothu.lua | A | MỘT PHẦN: cấp đồ vàng ĐÃ KIỂM; môn phái/sức mạnh CHƯA áp (tooltip côn đỏ) | q97-tooltip-con-vang-+0-yeu-cau-do.png |
+| 2 Bộ thử qh_bothu.lua | A | ĐÃ KIỂM 20/11 12:20: tooltip vàng hết đỏ (Thiếu Lâm phái, sức mạnh +260 trắng); chỉ số nhân vật HP 910, nội 100, thể 200 | q97b-giao-moi.png |
 | 3 Nút mới + vc27 | A | ĐÃ KIỂM trong game (nút lửa gốc open.spr -> opensysui(2,1) -> UI Giao gốc). APK vc27 SHA256 dad627d5ac1fa0ecba4d7614f5f4087a0c64809b2c735391a1ae0bcae067cdbb (chưa phát chủ) | q97-nut-cuonghoa-moi-man-chinh.png, q97-ui-giao-goc-sau-nut-moi.png |
-| 4 Tiêu chí 1–8 | A | TC1 ĐÃ KIỂM; TC2: Xác nhận -> sysError (côn đơn và côn+đá lục), đang tra; TC3-8 CHƯA KIỂM | q97-giao-xac-nhan-thieu-da-thong-bao-sysError.png |
+| 4 Tiêu chí 1–8 | A | TC1 ĐÃ KIỂM. TC2 MỘT PHẦN 12:21: đồ vàng trong túi +0→+1 thành công "tỉ lệ 95%", thủy tinh 3 loại 58→57, bạc 6000→5800 vạn (đúng bảng); nhưng dòng KHÔNG ×1.05: Sinh lực 139→173, Phòng thủ vật lý 28%→36%, Điểm tài phú 0→+100; Né tránh 720 và Nội lực 190 KHÔNG đổi (lỗi cho B). Lời nhắc Giao đã đúng (B). TC3-8 CHƯA KIỂM | q97b-sau-xacnhan-vang.png, q97b-vang-tooltip-+1.png |
 | 5 Làm mới đồ thị + bản đồ chuỗi | A,B | CHƯA KIỂM | |
 | 6 Cửa sổ theo ảnh chuẩn (Q-91) | A | CHƯA LÀM | |
 
