@@ -224,3 +224,5 @@ Chi tiết + file:dòng + đề xuất sửa cho A nằm cuối HOP-THU/A-B.md. 
 - B 05:35: build 6 (kiểm tài phú mỗi nhịp) gs001 c7ea4a8b…; đã đọc đến TU-SONNET e18f7b4d (05:12).
 
 - B 06:05: build 7 chẩn đoán (gs001 7f8dc01c…); đã đọc đến TU-SONNET 05:35.
+
+- B 06:40: build 8 (trừ tài phú của chính phi phong) gs001 d25a49a7…; đã đọc đến TU-SONNET af9dfb59.
