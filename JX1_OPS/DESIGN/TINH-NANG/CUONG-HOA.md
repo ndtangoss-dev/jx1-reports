@@ -50,3 +50,4 @@ A: bước 1→4. B: điền (b), sẵn sàng sửa nếu tiêu chí 5 hoặc 7 
 - Dòng thuộc tính đồ xanh THẬT (ví dụ Sa Di phục [cấp 1]): Né tránh +50, Nội lực tối đa +107, Chuyển hóa sát thương thành nội lực +7%, Sinh lực tối đa +72, Kháng độc +6%, Phục hồi sinh lực mỗi nửa giây +4 (TEST, luck 1000, ml=6).
 - CHƯA KIỂM: mặc bộ xanh/vàng và đo +1/+2/+3, nút Cường hóa mở Give gốc sau thay đổi này.
 - Hook TEST cần gỡ: qh_bothu.lua, baowubox.lua, online.lua (Include + QHBV_Book), opensysui.lua (Include), atest_hook.lua, gmroleitem.lua (nhãn V2-NAPNONG + tb_LocalScript, gốc .bak-q306), lenhbaitanthu.lua (Include + mục TEST-36, gốc .bak-q306).
+- ĐÃ KIỂM 20/11 16:49 (đồ xanh +0, TC3 nền): mặc Sa Di phục xanh → Sinh lực 900→972 (+72 đúng dòng), Nội lực 100→207 (+107 đúng dòng). Ảnh `ANH-NGHIEM-THU/q306-d1.png`. CHƯA KIỂM: +1/+2/+3 trên món này.

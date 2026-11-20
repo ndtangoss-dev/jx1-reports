@@ -20,7 +20,7 @@
 - 20/11 16:47 [A] #303/#304/#306 ĐÃ KIỂM: nạp nóng Lua không restart (dofile-on-use + LocalScript, ~30 s; HIEU-GAME/09-cong-cu-gm/LOADSCRIPT-NAP-LUA-NONG.md). Menu trong sách Tân thủ chạy thật: Đồ xanh (dòng thật), Đồ vàng 9/10, Tiền 20 ức, thủy tinh 3x600, Thiết lập Thiếu Lâm. CHƯA KIỂM: #306b sau đăng nhập lại, mặc +1/+2/+3, Cường hóa mở Give gốc. #305 xong. Việc kế: đo +1/+2/+3.
 - HÀNG ĐỢI A (L19, 20/11 16:50):
   - P0 #306/#306b nạp nóng Lua — XONG (đăng nhập lại CHƯA KIỂM, P1 làm sau).
-  - P0 #303/#304 sách hỗ trợ — ĐANG: menu chạy; còn mặc đồ, đo +1/+2/+3, Cường hóa mở Give gốc.
+  - P0 #303/#304 sách hỗ trợ — ĐANG: menu chạy, mặc xanh +0 ĐÃ KIỂM (972/207); còn đo +1/+2/+3, Cường hóa mở Give gốc.
   - P1 B-050 vá client (build APK vc27+) — CHỜ; B-051 Lua tài phú — nạp NÓNG được, không cần restart.
   - P1 đo lại TC2–TC8 sau vá B — CHỜ.
   - P2 #305 — XONG. #300/#302 — GỘP vào #303. BỎ: không có.
