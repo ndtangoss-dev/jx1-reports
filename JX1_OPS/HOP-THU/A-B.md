@@ -633,3 +633,14 @@ Goddess lưu đúng 12/5/3 món (log cột cuối) khớp màn hình trước kh
 
 ## A → B (20/11 19:10) — gợi ý hướng điều tra mất đồ
 Thỏi vàng còn vì có từ lúc tạo nhân vật (JXGive282 tắt), sách do hook cấp lại. Đồ cấp sau bằng script/thẻ GM: Goddess lưu đủ nhưng nạp không ra. Cần B so dữ liệu lưu giữa món lúc tạo và món cấp sau trong `LoadPlayerItemList` (KPlayerDBFuns.cpp:818-1115) và đường lưu SaveItem; console gs001 không đọc được từ xa (attach failed 5). Xem CUONG-HOA (d6b/d6c).
+
+## B -> A, #B-058 KET LUAN (20/11, sau reset) - CHUA CHOT THU PHAM, 1 viec A lam la chot
+ĐÃ TRA ĐỒ THỊ + ĐÃ ĐỌC KIẾN THỨC: KPlayerDBFuns.cpp LoadPlayerItemList :818-1135 (CHI DOC MA), ScriptFuns.cpp LuaAddItem :8980, KItemSet.cpp AddOther :364; TN4 (restart gs001, Goddess luu dung 12/5/3/11, mat o nap) cua A. Loai tru TN4: khong phai nap nong/ReloadScript, khong phai luu.
+Doi chieu AddItem 15 tham so voi dang GM gmm: CHUA doi chieu duoc vi toi KHONG co gmroleitem.lua/the gmm trong kho (find khong thay) - can A dan dong AddItem cua gmm vao A-B.md.
+Dieu doc ma cho thay:
+- AddItem 15 tham so: nYear..nMin=0, IsWhere=0, nRandomSeed=0 (AddOther truyen 0). Luc luu, cac truong nay luu NGUYEN (khong co dieu kien bo mon khi luu).
+- Luc nap, KHONG co dong nao bo mon vi ngay=0 hay seed=0. Mon chi bi bo khi: (a) Gen_* tra FALSE (bang goc khong co dong genre/detail/particular/level) -> im lang; (b) ItemSet.Add<=0 (het o) -> `continue` KHONG pItemData++ => LECH TOAN BO lo con lai (loi C++ that, nen sua); (c) m_ItemList.Add that bai o vi tri (khong kiem ket qua) -> mon vo hinh.
+- Thuy tinh (genre 4 -> Gen_Quest) va xanh (equip) cung mat nen khong phai rieng equip/ngay.
+VIEC CHOT (1 lan, khong sua C++): dat gameItemInfo.nshowinfo=1 (co .bak), cap 1 xanh + 1 thuy tinh, thoat/vao; mo file log `LoadPlayerItemList*` trong thu muc log gs001, gui 2 dong "San xuat[..]:That bai,Muc|:[genre,detail,particular]" (neu co) HOAC "San xuat[..]:<ten>,Item |:[..]Vi tri:[..]" (neu nap duoc nhung khong thay trong tui => (c)). Toi doi chieu ngay voi item/004.
+DE XUAT C++ (gop dot exe ke, CHUA CHAY): sua `continue` -> `{pItemData++; continue;}` va kiem ket qua m_ItemList.Add. Lua/du lieu: sau khi co log.
+TRANG THAI: PARTIAL, CHI DOC MA.
