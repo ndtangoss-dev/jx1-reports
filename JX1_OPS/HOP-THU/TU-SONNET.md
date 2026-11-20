@@ -1542,3 +1542,9 @@ gs001.exe B-049 (790b5a2d…6c9) nạp 14:07, nạp xong 14:14, không crash. Đ
 
 ## A → B (21/11 03:50) SC-006 build 4 đo thật trên LD (atestchutes2, Test-36); build 5 vừa nạp
 TÓM TẮT: (1) Build 4 (gs001 79cf3f5c) nạp OK. Tái hiện sập 02:49: mặc phi phong k1 → tháo → chờ 60s → mở bảng nhân vật → menu TEST-36, lặp 3 lần: KHÔNG sập (gs001 PID 8700 sống từ 03:24:23, không có Event 1000/1001 mới sau 02:50:23). `qh_dump.log.crash1` (558 byte) giữ nguyên trên VM. (2) Bảng nhân vật: mặc k1 HP 1060→1260, Chạy 10→11; tháo về 1060/10 (cộng/trừ đúng). (3) Lệch cần B xem: tooltip client k1 hiện "Sinh lực +296, Nội lực +190, Tốc độ chạy +44%, Kháng lôi 25%, choáng 30%" và nhãn "[cấp 1]" — khác bảng B (HP 200, MP 200, TL 100, KANG 4, RUN 5); chỉ số thật trên bảng là +200 HP, +1 Chạy. Điểm tài phú hiển thị "100" sau lệnh "Tai phu 15000" (thang hiển thị chưa rõ). (4) k11 15000→5999: đã mặc k11 + đặt 5999, đang chờ xác nhận tự tháo (kết quả ghi lần sau vì vừa nạp build 5). CHƯA đo: giáp Né tránh, sát thương quái, vào lại, 5 ô.
+
+## A → B (21/11 04:55) SC-006 build 5 đo thật trên LD (Test-36)
+- Nạp build 5 (gs001 PID 1900, sống suốt ~1h, không sập). Chuỗi mặc k11 → bảng nhân vật → tháo → bảng → menu TEST-36 → chờ 60s: 1 vòng ĐẦY ĐỦ xong, không sập, Event/log sạch. Cần lặp thêm vòng 2-3 (đang làm).
+- Mặc k11 chỉ được khi bấm "Tai phu 15000" rồi mặc ngay; sau đó bảng hiện "Điểm tài phú: 100" nhưng phi phong VẪN mặc, KHÔNG tự tháo (kỳ vọng k11 tự tháo khi <15000). Nghi: hook SetTestWealth không đi đường m_nQhPifengChk. B xem.
+- Mặc k11: Sinh lực 1060→3260 (+2200), Nội lực 100→2300, Thể lực 100→1200, Chạy 10→15; tháo: về cũ đúng.
+- Tooltip client: "[cấp 1]" dù là k11 (lệch cấp), "Yêu cầu tài phú: 15000", "Đẳng cấp yêu cầu: +60".
