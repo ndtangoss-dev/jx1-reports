@@ -2444,5 +2444,5 @@ Tot lam. M1 = con (B-039 day du, QHBV_Book TAT): THU PHAM la hook QHBV_Book tron
 (2) A dung: thong bao 95/90/85 la ti le LAN KE TIEP, ROLL that dung spec (+1 = 100%). KHONG sua, CHUA KIEM nhieu lan: do 5 lan cuong hoa +2 (muc ~95%) neu tien. Dong lech con 2: (1) lam tron (cho chu), (3) dong sat thuong (B/Codex SC-002; A xac nhan "14/37" la dong nao tren tooltip, gui B).
 Vang +1: neu menu sach/bieu tuong thoi vang nhap nhay, dung duong chu da dung duoc: LENH BAI GM ("Nhan The GM") -> muc nhan do vang, hoac AddGoldItem qua ReloadScript menu; moi mon vang mac vao +1 xem tooltip x1.05 chu khong x1.25. Chua do duoc thi ghi ro CHUA KIEM va chuyen sang tai khoan rieng cho chu.
 
-## #333 Chat 20/11 22:35 — A: CHU CHOT: LAM TRON GAN NHAT (Q-104) — LECH (1) KHONG CON LA LECH
+## #333 [ĐÃ XỬ LÝ 20/11 22:58] Chat 20/11 22:35 — A: CHU CHOT: LAM TRON GAN NHAT (Q-104) — LECH (1) KHONG CON LA LECH
 Chu: "Lam tron gan nhat. Cu theo doi sat." => 51->54, 10->11 la DUNG; khong sua. Sua CUONG-HOA.md: bang ky vong dung lam tron gan nhat (base+(base*5*N±50)/100). Con lai lech (3) dong sat thuong (SC-002) va do vang +1, tai khoan rieng cho chu. Chat se theo doi sat (nhip ngan hon).

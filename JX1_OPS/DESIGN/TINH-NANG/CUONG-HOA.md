@@ -202,3 +202,6 @@ Mặc/tháo: mặc kiếm +1 → Thể lực tối đa 154 = 100+54 khớp toolt
 2. Mở túi (683,52), chạm kiếm xanh trong túi → hộp mô tả có nút "Thêm vào" (khi Giao mở) → chạm.
 3. Thủy tinh tím/lục/lam lấy tự động từ túi (cần đủ số). Chụp màn: q328-giao-day-du.png TRƯỚC khi Xác nhận.
 4. Bấm Xác nhận → Giao đóng, thông báo "Cuong hoa THANH CONG: len +N"; chụp q328-sau-cuong-hoa.png; chạm kiếm xem tooltip.
+
+### Cap nhat 20/11 22:58 — Q-104 (chu chot): LAM TRON GAN NHAT
+- Bang ky vong dung `JxQhScale(base,N) = base + (base*5*N ± 50)/100` (gan nhat, khong lam tron xuong). 51->54, 10->11 la DUNG; lech (1) dong. (3: dong sat thuong 14/37 khong tang) con mo, giao SC-002. Ti le hien thi 95/90/85 la ti le LAN KE TIEP (roll that +1=100%), xem #332.
