@@ -335,3 +335,49 @@ Mốc quan sát Git đầu tiên của lệnh đêm: commit #335 lúc 23:59 ngà
 Không đánh đồng các trạng thái này. Nếu chỉ có báo cáo hoặc task status mà không có bằng chứng phù hợp, giữ nhãn [BÁO CÁO] hoặc [CHƯA XÁC MINH].
 
 **Trạng thái sổ nghiên cứu sau cập nhật:** ghi nhận lệnh đêm và checkpoint ban đầu; không can thiệp vận hành. Nhánh `jx1-ops` được dùng làm nguồn đọc, không phải đích ghi.
+
+
+## 11. Kiểm tra bổ sung lúc 04:14 ngày 21/11/2026 — trạng thái sau đêm làm việc
+
+**Phạm vi:** đọc GitHub ở nhánh `jx1-ops`; chỉ ghi phần nghiên cứu này vào nhánh `chatgpt-research/jx1-system-audit-2026-11-20`. Không ghi hoặc can thiệp nhánh vận hành.
+
+### 11.1 Dấu vết mới
+
+- HEAD `jx1-ops`: `6eea8773af8418cd0430605121d1b9a497533b6b`, commit tổng quan lúc `2026-11-20T21:13:33Z` = 04:13 ngày 21/11 giờ Việt Nam. Commit chỉ cập nhật các snapshot tổng quan/khóa/tiểu yêu.
+- Các commit tổng quan trước đó: `5de2fb193e34852ff9a2eae0ff07ea67a0411c2f` (04:07 VN), `b5f246fcfb4444dcff74e463c1a2bb48f336ecc7` (04:01 VN).
+- Commit code/report liên quan SC-006 gần nhất thấy trong chuỗi đã kiểm: `c165cf96a6ebbc9e119894e02205606853d3d136` (Git time `2026-11-20T20:47:03Z`, 03:47 VN), message B sửa lỗi nghi phạm range-check trong `KSG_StringProcess.cpp`, build 5. Commit ghi SHA256 gs001 `771aa1224039640ee627f878e710bf0ff438f90c3704fd7108cda29deda691a3`, Engine.dll `99c4f8a57ae8649baefdd48e977306e9b85c42cf53c614fab84f92b5062bed56`, CoreServer.dll `2d5f26868c1c614269fe2b019ac36bbe433a6d243b7272bc82ad585cd3984215`; build ghi nhận 5/5 exit 0.
+- Diff của B nói crash `0xc0000409` được suy đoán là range-check/ghi vượt mảng trong `KSG_StringProcess.cpp`; đã vá nghi phạm và build 5. Nguyên nhân vẫn **chưa chắc chắn** vì không có `qh_dump.log.crash1`; game chưa được chạy lại sau bản build 5.
+
+### 11.2 Snapshot task và trạng thái không đồng nhất
+
+| Nguồn | SHA blob | Nội dung tại thời điểm đọc | Ý nghĩa |
+|---|---|---|---|
+| `JX1_OPS/TASKS/SC-006.md` | `c8df2296cd02ad81727ff50e9297d7ec01d72b24` | `status: running`; status_note nói A kiểm đợt 2 xong một phần, còn 6000/k11/vào lại/Né tránh/FPS; B sửa lệch tài phú mặc tay vs tự tháo | Trạng thái task, không chứng minh runtime |
+| `JX1_OPS/STATE/TIEU-YEU.md` | `9e40b7c2621ec4c3a3ca0e4f5219d1d61e00b5cf` | snapshot 04:13: SC-006 `XONG-CHO-GOP`, log cuối 00:22, dấu hiệu sống cuối 00:22; SC-001 cùng trạng thái; `Đang chạy theo Task Scheduler: 0` | Worker state nói đã xong phần việc/chờ gộp; không còn dấu hiệu chạy mới ở snapshot này |
+| `JX1_OPS/STATE/TIEN-DO.md` | `5c9f4965c94dab923ff8dfb992e5b036d59f713c` | snapshot 02:30: 0 việc đang làm, SC-006 chờ gộp | Snapshot cũ hơn, không dùng làm trạng thái hiện thời |
+| `JX1_OPS/STATE/KHOA.md` | `9c0a780454e2b92a69dc071077666b2d5ed1073b` | bảng vùng khóa không liệt kê SC-006 | Không thấy khóa SC-006 trong snapshot này |
+
+**Đánh giá:** trạng thái task `running` mâu thuẫn với snapshot worker 04:13 ghi `XONG-CHO-GOP` và Task Scheduler 0. Ưu tiên coi đây là DRIFT giữa metadata task và snapshot tổng quản, không khẳng định Codex vẫn đang chạy. Snapshot tổng quan nói Sonnet A hoạt động cuối 04:11, Sonnet B 04:06, nhưng commit code gần nhất vẫn 03:47; activity timestamp không chứng minh có code diff mới.
+
+### 11.3 Kết quả SC-006 theo tiêu chí
+
+- **Server code/build:** có ghi nhận B build 3, 4, 5 exit 0; build 5 bao gồm tự kiểm tra tài phú theo nhịp và vá nghi phạm crash. Đây là BUILD_PASS theo báo cáo/commit; chưa chứng minh artifact đã được A nạp vào máy test.
+- **Thuộc tính phi phong:** B báo sửa cơ chế áp tất cả 5 dòng, trước đó đã xác định dòng MP và kháng bị bỏ; kỳ vọng cấp 1 +6: HP 260, MP 260, thể lực 130, kháng 5%, tốc chạy 6.5%. Chưa có log đo sau build 5 để xác nhận.
+- **Tự tháo khi thiếu tài phú:** build 4/5 có cơ chế đánh dấu kiểm tra khi tài phú giảm và thử lại mỗi nhịp nếu túi đầy. Chưa có bằng chứng A đã chạy ca hạ +N dưới ngưỡng và quan sát món tự tháo.
+- **Ngoại hình cạnh tên:** vẫn chưa thấy bằng chứng xác nhận mapping cấp 11, tháo biến mất, đổi cấp cập nhật ngay và người chơi khác nhìn thấy. Không được coi là PASS.
+- **Tooltip/client:** các ghi chú nói client cần bảng GoldMagic đủ 55 dòng và cùng công thức JxQhScale; chưa thấy diff/build APK client hoặc ảnh kiểm chứng.
+- **Crash:** build 5 là sửa nghi phạm; A được yêu cầu nạp gs001 + Engine.dll + CoreServer.dll và lặp tháo phi phong +6 → mở bảng nhân vật → TEST-36. Chưa có A reply hoặc log crash/retest trong phần hộp thư đã đọc.
+- **Cường hóa/UI, lag/quái/FPS:** chưa thấy commit/diff/build/APK hoặc kết quả runtime mới trong các bằng chứng được đọc ở lượt này. H-05 vẫn chỉ là khảo sát tĩnh, 11 ca TESTER chưa chạy.
+
+### 11.4 Trạng thái chứng cứ tổng hợp
+
+- `DISPATCH_RECORDED`: có từ đêm trước.
+- `CODE_CHANGED`: có cho nhánh server SC-006 qua commit B.
+- `BUILD_PASS`: có theo ghi nhận build 3/4/5 exit 0.
+- `WORKER_STARTED`: snapshot trạng thái có dấu hiệu worker hoạt động trước đó, nhưng không xác nhận tiến trình đang chạy tại 04:13.
+- `RUNTIME_PASS`: **chưa có bằng chứng đủ** cho build 5 hoặc toàn bộ tiêu chí SC-006.
+- `ACCEPTED`: **chưa có bằng chứng nghiệm thu**.
+
+### 11.5 Giới hạn và hành động của ChatGPT
+
+Đã đọc GitHub, task, snapshot worker, hộp thư và báo cáo. Không truy cập máy Windows, Codex process, worktree, VM, LDPlayer hoặc log runtime; không nạp build, không chạy game, không dispatch hoặc gửi lệnh. Không ghi bất cứ nội dung nào lên `jx1-ops`. Chỉ cập nhật sổ nghiên cứu riêng. Đây là kiểm tra theo yêu cầu tại 04:14, không phải theo dõi nền liên tục trong đêm.
