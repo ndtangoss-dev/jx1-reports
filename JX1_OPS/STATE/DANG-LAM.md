@@ -5,6 +5,7 @@
 - Tính năng: CUONG-HOA (DESIGN/TINH-NANG/CUONG-HOA.md) — bước 1,3 xong (ĐÃ KIỂM trong game 20/11 11:55); đang 2/4: tiêu chí 2.
 - NGUYÊN NHÂN sysError (tìm 20/11 12:10): UI Giao gửi đúng (kind 3), nhưng gs001 Test-36 vẫn chạy qianghua.lua GỐC đã nạp trong bộ nhớ lúc 10:54 (trước khi chép B-044 lúc 11:05); Lua chỉ nạp lại khi gs001 khởi động lại. Đã khởi động lại gs001 (task JX-gs001) 12:1x; file qianghua.lua = B-044 (SHA b03981...cdd5).
 - Lệnh chạy tiếp: chờ gs001 nạp xong (~7 phút), vào LD atestvaihero, nút mới -> đặt đồ trong túi -> Xác nhận; đo tiêu chí 2-8. Bộ thử: VM gs\script\system\qh_bothu.lua (nguồn docs-analysis/out/qh_bothu.lua; Include cuối opensysui.lua, gốc B ở .bak-q97): Thiếu Lâm + ResetBaseAttrib sức mạnh 300. Chưa kiểm hiệu lực.
+- 20/11 12:55 [A] TC3 đang dở: ĐÃ KIỂM boots Né tránh 55→62 (1 chỉ số). Đồ vàng hook cũ không mặc được (nghi nCanUse=0) -> hook mới gọi SetAndSycItem canuse=1; túi LD đã ném 3 món rác để có chỗ; đã khởi động lại gs001 (nạp ~10 phút) để cờ QH_GIVEN2 reset. Việc kế: LD vào lại, bấm nút Cường hóa kích hook, mặc 3 đồ vàng, chụp bảng nhân vật trước/sau (TC3), TC4–8. CHƯA KIỂM: TC3 đủ, TC4–TC8.
 - Đang chờ: không (tự làm).
 - Thư đã đọc đến: #297
 
