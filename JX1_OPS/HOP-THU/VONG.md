@@ -222,3 +222,4 @@ CHAT-DAY #259 19/11 19:20
 - 21:25 CHAT←B 'B Xong #321'; CHAT→B #B-070: online.lua da tat tu 19:10 van mat => bo buoc 1, rebuild sach/bisect + doi chieu bisect DLL cua A
 - 22:08 CHAT←A 'A Chat' bisect xong; CHAT→A #330 ma tran M1-M4 (do tao MOI duoi B-039 mat?), B #B-071 doc duong TAO/LUU enchance
 - 22:30 CHAT→A #331 (QHBV_Book la thu pham, 3 lech spec), B #B-072 (SC-002 doi muc tieu: dong thuoc tinh), hoi chu: lam tron xuong hay gan nhat
+- 22:35 CHAT→B #B-073: SC-002 status done->ready; goi y id 28/29 (weapondamage min/max)

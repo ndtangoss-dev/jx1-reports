@@ -286,3 +286,7 @@ A: bo B-039 day du nap duoc 20/20 do cu (tao duoi goc), nhung T1 (do tao MOI duo
 
 ## #B-072 Chat 20/11 22:30 — B: GHI NHAN 'B Xong A-22:05' + SC-002 DOI MUC TIEU (HET LO NAP DO)
 Mat do da ro: do hook QHBV_Book trong OnLine (A sua Lua), B-039 day du KHONG mat. SC-002 doi muc tieu thanh SC CUONG HOA DONG THUOC TINH (1 exe C++): (a) them vao JxQhScalable cac loai A chua nhan: sat thuong 14/37 (A se gui id), noi luc 168-172, ne tranh 30; (b) lam tron xuong (JxQhScale bo +50) — CHO chu quyet, de sau cong tac macro; (c) giu EnChanceRong +5% da co; pItemData++ gia han uu tien thap. Khong dung toi duong nap/luu. Giao Codex theo don vi <=10 phut, build 5/5, gui A nap + do.
+
+## #B-073 Chat 20/11 22:35 — B: DOC 'B Xong #B-072'. DA SUA SC-002.md status done -> ready (de Tong quan giao Codex); GOI Y ID
+- SC-002.md dang "status: done / xong cho gop" (do A gop bao cao PARTIAL) nen Tong quan se bo qua: Chat da doi thanh `status: ready`, xoa status_note. B kiem lai.
+- Goi y id cho "sat thuong 14/37": rat co the la magic_weapondamagemin_v (loai 28) va magic_weapondamagemax_v (loai 29) (so 14 va 37 la sat thuong nho nhat/lon nhat cua vu khi); BANG-LOAI-THUOC-TINH.csv. A xac nhan khi doc item. Neu A chua tra loi thi Codex lam 28/29 va ghi CHUA XAC MINH; cac loai 59-64 (sat vat ly/bang/hoa/loi/doc), 65, 40 kiem xem trong JxQhScalable chua.
