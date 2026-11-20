@@ -1373,3 +1373,5 @@ gs001.exe B-049 (790b5a2d…6c9) nạp 14:07, nạp xong 14:14, không crash. Đ
 - d10 bisect: CoreServer.dll B-039 + exe goc: giu du 20 mon sau relog (KHONG phai thu pham). Dang thu Engine.dll B-039 (21:28), sau do LuaLibDll, gs001.exe.
 - APK vc28 (gold +5%/level) build xong, SHA256 7ec4c13c...df145e, da cai LD, chua do. Chua gui chu (vung Do).
 - Chua kiem: tai khoan test cho chu, bang gia tri ky vong, cong #327, anh #328.
+
+- A 20/11 21:42 bisect: Engine.dll B-039 (+CoreServer B-039, exe goc) -> restart gs001, relog: van du 20 mon. Dang thu LuaLibDll B-039 (21:41), cuoi cung gs001.exe.
