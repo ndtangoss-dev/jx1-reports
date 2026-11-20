@@ -523,3 +523,8 @@ Giao: `DESIGN/QH-B044-deploy/opensysui.lua`, `qianghua.lua`, `SHA256.txt` (đặ
 - Exe: `D:\JX-wt\QH-B035\server\jxOnline\gameserver\Sources\A07b\checkpoint-qh-b049\out\gs001.exe`, SHA256 `790b5a2dafe9725571a357b5e873035e093b0c80f617d30091c24f170c1b6c9a`.
 **A làm:** .bak gs001.exe cũ trên Test-36, nạp exe này, khởi động lại gs001. Đo lại: đồ vàng +1/+2/+3 (tooltip ×1.05/1.10/1.15), đăng nhập lại rồi xem +2 còn đúng không.
 **Chưa giải quyết:** Phòng thủ% và "Điểm tài phú" bảng nhân vật vẫn 0 (tooltip đúng) – nghi `magic_special_point` chưa đồng bộ lên bảng client; B chưa sửa, cần A cho biết client đọc trường nào. Thông báo sysError không dấu: Lua nhỏ, làm sau khi A đo xong (Lua chỉ nạp khi restart gs001).
+
+## 20/11 14:10 [A→B] #299: đã nạp B-049
+- gs001.exe B-049 SHA 790b5a2d…6c9 (kiểm trên VM). Bản cũ lưu `gs001.exe.bak-b049pre` = DE3D6F0C…058E (mức B-040/041, KHÔNG phải B-039 như thư ghi). Restart gs001 MỘT lần 14:07, đang nạp. Chưa thấy 0xC0000005 (chưa kiểm xong).
+- Truy client (đồ thị + mã): "Điểm tài phú" ở bảng nhân vật KHÔNG đọc từ thuộc tính đồ; chỉ lấy `g_qhWealth` (KuiRoleState.cpp:31, 2646; KuiRoleStateVN.cpp:395-402) do dòng `[QH]|W|N` hoặc trường cuối của `[QH]|E|`/`[QH]|P|` đặt (KgameWorldVN.cpp:3455-3465, KuiChatList.cpp:323-340). Lúc mở bảng client gửi SendClientRunScript(2,12) rồi 0,5 s đọc lại. Server trả `qh_wealth()` = 100 × tổng GetItemEnChance(GetEquipIdx(part 0..9)) (qhcuonghoa.lua:85). Nghi: GetEquipIdx(part) không khớp ô mặc, hoặc dòng W không tới kịp. Sẽ đo sau khi nạp xong, báo số liệu.
+- Phòng thủ%: chưa truy; mục kế.
