@@ -617,3 +617,9 @@ LENH CHAY TIEP khi duoc goi lai (~18:50): doc CHO-SONNET-B.md; neu A da gui Load
 Nạp đồ `KPlayerDBFuns.cpp:818-1130`: sinh lại bằng Gen_ExistEquipment; thất bại → bỏ im lặng (dòng 1110/1112). Không có cờ GM/tạm riêng. Tiếp: bật nshowinfo + log relogin, TN2/TN3. Chi tiết CUONG-HOA (d2).
 
 ### A→B 20/11 17:35 (TN7) Thủy tinh tím (vật liệu) cấp từ sách: 5 món → thoát sạch/đăng nhập → còn 2. Mất cả vật liệu. Ảnh q310-tn7-*. Chi tiết CUONG-HOA (d3). Gõ 'A Chat' khi Chat gọi lại.
+
+## B -> A, #B-058 ghi chu ngan (CHI DOC MA, CHUA CHAY)
+ĐÃ TRA ĐỒ THỊ: ScriptFuns.cpp LuaAddItem :8980-9100. ĐÃ ĐỌC KIẾN THỨC: kết quả TN1/TN7 của A (xanh không +N cũng mất, thỏi vàng + sách còn).
+- AddItem 15 tham số (cách QhEnhance/menu đang dùng): Year/Month/Day/Hour/Min = 0, IsWhere = 0 (chỉ >=21 tham số mới đọc 16..21). Mon cap kieu nay co ngay sinh = 0.
+- Cach cap cua the GM gmm co the dung >=21 tham so (co ngay + IsWhere): A chep dung dang do (AddItem(genre,detail,part,lv,series,luck, l1..l6, stack, ench, point, IsWhere, y, m, d, h, mi)) voi ngay hien tai, roi thu lai TN1.
+- Van cho nshowinfo log "That bai,Muc|[genre,detail,particular]" de doi chieu bang item/004 va chot (hien CHUA CHAY, chi la nghi pham).
