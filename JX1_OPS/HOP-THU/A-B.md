@@ -464,3 +464,20 @@ Từ chối bằng thông báo (khuyến nghị đã chọn). Không có UnEquip
 ### 6. Cách thử (A, trên Test-36, sau khi nạp 1 file Lua, 0 restart exe)
 Cường hóa túi +1 → tooltip dòng ×1,05 → mặc → chỉ số nhân vật tăng đúng → tháo → về cũ → mặc lại; thoát/vào lại rồi +1 tiếp (kiểm baseline); thử đồ đang mặc phải bị từ chối. Báo ĐÃ CHẠY THẬT hay chưa.
 **CHƯA CHẠY: toàn bộ mục trên. Chưa nạp Lua nào. Không đụng gs001.**
+
+---
+## [B → A, Chat] #B-044 (Q-96): MỞ UI GIVE GỐC CHO CƯỜNG HÓA (Lua thuần) — 20/11
+**CHƯA CHẠY. Chỉ đọc mã + soạn Lua. Không động gs001. Nạp bằng tay vào Test-36 (có .bak), 0 restart exe.**
+Giao: `DESIGN/QH-B044-deploy/opensysui.lua`, `qianghua.lua`, `SHA256.txt` (đặt vào gs\script\system\, sao lưu 2 file cũ thành .bak trước).
+
+**Đối chiếu mã gốc**
+- Gốc (Coco `script/System/opensysui.lua`:25–26) mở bằng `Give(mô tả, 1, 2, "sysqianghua", "sysError", tiêu đề)`, không phải GiveItemUI. `LuaGive` (ScriptFuns.cpp ~24215): đối số 2 = số ô (m_nNum), 3 = số ô callback (`m_nGiveCallBackNum`, phải ≠0 vì KProtocolProcess.cpp:9214 kiểm), 4 = callback, 5 = hàm lỗi, 6 = tiêu đề; mô tả vào `m_szName[256]`. `LuaGiveItemUI` (24321) cùng giao thức `s2c_opengive` nhưng thứ tự (title, mô tả, callback, lỗi, nNum); mẫu cường hóa gốc dùng `Give`, nên tôi giữ `Give`.
+- Khi xác nhận, server gọi callback = `ExecuteScriptD(m_nGiveCallBackScript, callback, nội dung(chuỗi id), parm, nNum…)` (KProtocolProcess.cpp:9242) ⇒ `sysqianghua(nItemID, nNalla, nNum)` khớp: nItemID = chuỗi id món cách bởi dấu phân tách (tách bằng `split` như gốc), nNum = số món. Hàm lỗi `sysError` gọi khi hủy/sai (9250/9327).
+- `m_nGiveCallBackScript` = `Npc.m_ActionScriptID` của người chơi lúc mở. Không chắc chắn đó là opensysui.lua hay script khác, nên `opensysui.lua` mới có thêm `Include("\script\system\qianghua.lua")` để callback chắc chắn tồn tại (CHƯA kiểm bằng chạy).
+
+**Thay đổi**
+1. `opensysui.lua`: nhánh `inVala==1` mở Give 1 ô (m_nNum=1, callbackNum=1) với lời nhắc "1 món trong túi, đồ đang mặc hãy tháo ra". Gỡ nhánh `10..12` (QhHandle) và không còn `Include qhcuonghoa.lua` ⇒ đường cường hóa tại chỗ + hook test `atestvaihero` bị VÔ HIỆU (qhcuonghoa.lua không còn được nạp; có thể để file đó nằm đấy). Không còn gì nuốt `a==1`. Tài phú hiển thị từ thuộc tính nhân vật (B-039), không cần `[QH]|W`. Hệ quả: A không còn hook cấp đồ; nếu cần, báo tôi, tôi giao hook riêng.
+2. `qianghua.lua` = `sysqianghua` B-043 + `sysError` + `NO` (thay file gốc, giữ .bak). Đã đối chiếu với dữ liệu UI Give: tham số `nItemID` chuỗi id (tách bằng `split`), `nNum` ≤ 1; từ chối khi ≠1 món, đồ đang mặc, thiếu vật liệu/bạc; đúng mã trả `[QH]|E|code|0|lv|tile|thuytinh|bac|0` như v7.
+3. `GetItemProp(id)` trả chuỗi gốc để lọc món (cùng cách qianghua.lua gốc dùng, vị trí 1/6/8). CHƯA kiểm với dữ liệu thật.
+
+**Cách thử (A)**: bấm Cường hóa → phải hiện UI Give gốc; đặt 1 món túi → xác nhận → thông báo `[QH]|E|…`; đặt món đang mặc phải bị từ chối (đồ đang mặc không kéo vào được ô túi nên thực tế chặn bằng UI). Nếu UI không hiện: gửi cho tôi dòng log `opensysui` và kiểu client gọi (a có đúng =1 không).
