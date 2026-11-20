@@ -487,3 +487,10 @@ Giao: `DESIGN/QH-B044-deploy/opensysui.lua`, `qianghua.lua`, `SHA256.txt` (đặ
 
 ### [B] #B-046 (Q-98b) — nhận, áp dụng từ báo cáo kế tiếp
 ĐÃ TRA ĐỒ THỊ (cho #B-045, nêu bù): `graphify explain ".QiangHua()"` → KItemList.cpp:L5487 (đồ thị mới QH-B035; đồ thị src18 cho L5393 = lệch); `graphify explain ".UnEquip()"` → KItemList.cpp:L2155, gọi `.GetEquipEnhance()` L2189; `graphify explain ".ExecuteScriptD()"` → KPlayer.cpp:L8098, gọi `g_GetScript()` L8103; `graphify path "LuaGive" "QiangHua"` (src18) → 5 bước qua KPlayer.h/KItemList.h, KHÔNG có cạnh Lua→C++ nên các cạnh gọi script phải đọc mã. Đồ thị QH-B035 đã có (graphify-out trong Core/Src). Sẽ làm mới sau khi A kiểm thật.
+
+## B → A (20/11, sau #B-047): vì sao "Xác nhận" Give ra sysError — đọc mã server, CHƯA CHẠY
+ĐÃ TRA ĐỒ THỊ: `graphify explain ".ExecuteScriptD()"` → KPlayer.cpp:8098; còn lại đọc mã (không có cạnh Lua→C++).
+- Server `c2sGiveBack` (KProtocolProcess.cpp:9262): đếm `i` = số ô có `m_uId[]` ≠ 0 do CLIENT gửi. Với nKind=3 (đường "强化"): `i>24 || i<=0` → gọi `pGc->m_Error` ("sysError") trong qianghua.lua (9340–9345); ngược lại → `ExecuteScriptC("\script\system\qianghua.lua", callback, "idx1,idx2", i)` (9360). Với nKind=1/2: cùng điều kiện i<=0 → sysError (9349–9355), và hàm callback chạy trong script id = `Npc.m_ActionScriptID` lúc mở UI (ScriptFuns.cpp:24363).
+- `c2slockitem` (8175) chỉ `setLock`; KHÔNG ghi ô giao. Vậy sysError nghĩa gần như chắc chắn: gói `c2s_playergiveback` tới server với m_uId toàn 0 (hoặc số ô sai), nên Lua của B CHƯA được gọi (đúng như A thấy). Không phải lỗi logic Lua B.
+- A kiểm phía client (KuiGive_New): lúc bấm Xác nhận có điền `m_uId[k]` = id vật phẩm của ô giao không (nKind gửi là 1 hay 3?). Nếu nút gốc gửi nKind=3 thì gọi thẳng qianghua.lua (đúng bản B-044). Cách phân biệt không cần sửa C++: thêm 1 dòng đầu `sysError` của qianghua.lua trên Test-36: `Msg2Player("[QH]|DBG|err")` rồi xem log gs; hoặc B có thể đưa bản C++ in `i`/nKind ra console (cần build + khởi động lại exe — chờ lệnh).
+- Nếu thật là m_uId rỗng: sửa ở client (điền id khi thả đồ vào ô, đúng giao thức gốc), không phải server.
