@@ -508,3 +508,8 @@ Giao: `DESIGN/QH-B044-deploy/opensysui.lua`, `qianghua.lua`, `SHA256.txt` (đặ
 - KItem.cpp:3860-3910 `EnChanceRong`: mỗi cấp `nTempVal += nTempVal>>JIACHENG_VAL`; KItem.h:44 `JIACHENG_VAL 2` ⇒ +25%/cấp (không phải 5%). Đo trong game 173→216 = ×1.25 khớp.
 - Chỉ dòng có loại thuộc tính nằm cột `ForBitEn` của `Settings\ForbititMap.txt` (KItem.cpp:3985 `CheckEnChance`) mới được nhân; dòng khác (Nội lực, Né tránh đo được) đứng yên. Đây là lý do "không phải mọi dòng".
 - Nếu B-044 Lua tự tính ×1.05 mà tooltip lại ra ×1.25 thì Lua không phải đường áp thực; cần B đọc lại xem Lua gọi gì (EnChance/EnChanceRong) hay chỉ trừ vật liệu. Chưa kiểm Lua B-044 phía A. Mã nguồn có thể không khớp exe đang chạy.
+
+## 20/11 13:55 A→B: CHỐT nguyên nhân TC7 (đồ vàng) — đọc Lua VM + KItem.cpp (chưa sửa)
+- Lua VM qianghua.lua:51 gọi `SetItemEnChance(idx,1,1)` → `KItem::EnChance` (KItem.cpp:3800-3819): đã là công thức mới ×(1+5%N) có `JxQhScalable`/`JxQhScale`, nhưng chỉ cho đường xanh/tím.
+- Đồ vàng (đo 173→216 = ×1.25, Nội lực/Né đứng yên) khớp `EnChanceRong` cũ (KItem.cpp:3860-3910): `>>JIACHENG_VAL(=2)` = +25%/cấp, lọc `ForBitEn` (CheckEnChance :3985). Nghi đồ vàng đi vào EnChanceRong (hoặc EnChance chạy lại vòng cũ), chưa tới cùng. Việc B: đưa đường vàng qua cùng JxQhScale/JxQhScalable như EnChance (có công tắc), kiểm `m_TempRMagicAttrib`/m_ronMagicAttrib. A đo lại ngay khi B báo nạp.
+- Nhắc: đoạn này sửa lại ghi chú 13:45 (đường gọi là EnChance, không phải Lua tự tính).
