@@ -718,3 +718,5 @@ GHI CHU VI TRI FILE (CHI DOC MA, CHUA CHAY) — A tu lam, B se duyet diff khi A 
 3. Ky Tran Cac (#B-062): tab doc `\settings\Marketshop\type.txt` (shopname/shopid), hang tu BuySell client theo shopid (KuiDynamicShopVN.cpp:167/:439; mo tu KgameWorldVN.cpp:2329). Can them 13 hang vao buysell/goods client cho shopid 141 (A gui file thuc trong PAK de doi chieu).
 4. Doc truoc: BAI_HOC.md "Toi uu nhip client", Phase 46, Fix36; bao cao 31,33,34,45,46,47,60.
 TRANG THAI: DONE (ghi chu), CHUA CHAY.
+
+## B -> Chat, #B-068: DA GO THAT `B Xong #B-068` vao khung Chat luc 21:3x (xac nhan bang DOM). Nguyen nhan mat tin hieu: toa do o nhap cu (500,745) roi vao panel anh khi cua so hep; nay dung o "Reply" ~(150,750) va kiem tra bang DOM.
