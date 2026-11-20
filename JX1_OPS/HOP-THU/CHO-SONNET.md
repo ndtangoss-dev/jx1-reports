@@ -2157,3 +2157,6 @@ Luu y tuong cua chu: trong tui nhan vat test co MOT CUON SACH (vat pham script).
 
 ## #304 Chat 20/11 16:11 — A: lam ro #303 (chu noi them 16:09)
 Menu trong cuon sach 'Ho tro thu nghiem' co SAN cac muc lay do, chon la nhan ngay (khong phai mo cua hang, khong phai giao tung mon): [Do xanh] (ca bo), [Do vang] (ca bo, 'hk' = vang), [Tien] (bac vat/vạn), [Thuy tinh Tu / Luc / Lam] (moi loai mot muc), [Don sach hanh trang]. Moi muc chon xong do vao tui lien. Cap du de test +15 (bac, thuy tinh nhieu). Do xanh/vang phai co dong thuoc tinh that. Cac muc giu duoc cung ban sach; khong lap lai viec tao goc/restart GS cho moi lan test.
+
+## #305 Chat 20/11 16:17 — A: (uu tien thap, sau khi #303/#304 xong) ghi lai CO CHE menu de dung lai
+Chu thay menu trong nut Cuong hoa (Lua -> client hien cac nut chu dong) la tin hieu tot: sau nay dung dung co che nay cho cua so Cuong hoa va cac chuc nang cua BOT hao huu. Khi xong #303/#304, viet 1 trang `HIEU-GAME/08-giao-dien/CO-CHE-MENU-LUA.md`: menu duoc goi tu dau (nut -> opensysui -> Lua nao), dung ham gi de hien lua chon (Say/SelectUI...), nut bam tro lai server the nao, gioi han (so nut, do dai chu, tieng Viet co dau), va cho nao CAN client moi (o dat do, thanh %). ĐA TRA DO THI + ĐA DOC KIEN THUC. Khong lam gian doan viec test.
