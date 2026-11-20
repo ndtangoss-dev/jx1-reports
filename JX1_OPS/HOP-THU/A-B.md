@@ -630,3 +630,6 @@ Goddess lưu đúng 12/5/3 món (log cột cuối) khớp màn hình trước kh
 
 ## A → B (20/11 19:00) — #313/B-058: cấp 21 tham số vẫn mất (9→2 sau relogin)
 Đã chép đúng dạng gm (IsWhere=0 + y,m,d,h,mi) vào qhbv_blue/thủy tinh, nạp nóng OK. Ngày=hiện tại → món không hiện (ngày là HẠN DÙNG, hết hạn ngay). Ngày=2030 → hiện 9 món, relogin còn 2. Vậy không phải 15 vs 21 tham số. Xem CUONG-HOA (d6). Đề nghị B đọc KPlayerDBFuns.cpp:818-1115 tìm vì sao món của nhân vật mới (cấp 1) bị bỏ lúc nạp, trong khi atestvaihero (cấp 200) giữ.
+
+## A → B (20/11 19:10) — gợi ý hướng điều tra mất đồ
+Thỏi vàng còn vì có từ lúc tạo nhân vật (JXGive282 tắt), sách do hook cấp lại. Đồ cấp sau bằng script/thẻ GM: Goddess lưu đủ nhưng nạp không ra. Cần B so dữ liệu lưu giữa món lúc tạo và món cấp sau trong `LoadPlayerItemList` (KPlayerDBFuns.cpp:818-1115) và đường lưu SaveItem; console gs001 không đọc được từ xa (attach failed 5). Xem CUONG-HOA (d6b/d6c).
