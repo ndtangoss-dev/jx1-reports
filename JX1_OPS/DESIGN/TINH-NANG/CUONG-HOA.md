@@ -51,3 +51,14 @@ A: bước 1→4. B: điền (b), sẵn sàng sửa nếu tiêu chí 5 hoặc 7 
 - CHƯA KIỂM: mặc bộ xanh/vàng và đo +1/+2/+3, nút Cường hóa mở Give gốc sau thay đổi này.
 - Hook TEST cần gỡ: qh_bothu.lua, baowubox.lua, online.lua (Include + QHBV_Book), opensysui.lua (Include), atest_hook.lua, gmroleitem.lua (nhãn V2-NAPNONG + tb_LocalScript, gốc .bak-q306), lenhbaitanthu.lua (Include + mục TEST-36, gốc .bak-q306).
 - ĐÃ KIỂM 20/11 16:49 (đồ xanh +0, TC3 nền): mặc Sa Di phục xanh → Sinh lực 900→972 (+72 đúng dòng), Nội lực 100→207 (+107 đúng dòng). Ảnh `ANH-NGHIEM-THU/q306-d1.png`. CHƯA KIỂM: +1/+2/+3 trên món này.
+
+## Cập nhật 20/11 16:54 (Sonnet A, #303/#304) — +1 đồ xanh qua nút Cường hóa gốc (TEST-36)
+- ĐÃ KIỂM TC1: nút lửa "Cường hóa" màn chính mở UI Giao gốc (ảnh q306-e5). Đặt đồ: chạm món trong túi → nút "Thêm vào" → Xác nhận.
+- ĐÃ KIỂM TC2 (đồ xanh, Hoàng Ngọc Giới Chỉ cấp 1): +0→+1 "tỉ lệ 95%", thủy tinh 200→199 (3 loại), bạc 20 ức→19 ức 9800 vạn (đúng bảng). Dòng ×1,05 làm tròn: Nội lực tối đa 72→76, Sinh lực tối đa 76→80, Sức mạnh +6, Hồi thể lực +7, Kháng độc +3% (phần lẻ làm tròn xuống); Điểm tài phú 0→+100 (TC8 phía món). Ảnh `ANH-NGHIEM-THU/q306-f3-nhan-xanh-+1.png`.
+- ĐÃ KIỂM TC3 (≥2 chỉ số): mặc nhẫn +1 → Sinh lực 972→1052 (+80), Nội lực 207→283 (+76), đúng dòng tooltip. Ảnh `q306-f4-mac-nhan-+1.png`.
+- CHƯA KIỂM: TC4 (tháo), TC5 (vào lại +1 ×1,10), TC6 (đang mặc bị từ chối), TC7 (vàng), TC8 phía nhân vật (tài phú +100 trên bảng), +2/+3.
+
+## Cập nhật 20/11 16:57 (Sonnet A, #303/#304) — TC4 và TC8 phía nhân vật (TEST-36)
+- ĐÃ KIỂM TC4: tháo nhẫn +1 (nút "Tháo" trên tooltip) → Sinh lực 1052→972, Nội lực 283→207, về đúng số cũ. Ảnh `ANH-NGHIEM-THU/q306-g4.png` (tooltip đang mặc: `q306-g3.png`).
+- LỖI TC8 (CHƯA ĐẠT, báo B): tooltip món +1 ghi "Điểm tài phú +100" nhưng bảng nhân vật "Điểm tài phú: 0" cả khi mặc (q306-g1, g3) lẫn sau khi mở lại bảng. Chưa rõ bảng client không làm mới hay server không cộng tài phú khi Equip.
+- CHƯA KIỂM: TC5, TC6, TC7, +2/+3.
