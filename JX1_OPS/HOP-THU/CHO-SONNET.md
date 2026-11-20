@@ -2359,3 +2359,9 @@ Chu (20:13, co anh man hinh): "Ta bao ban do tren menu Bao vat, Ky Tran Cac co s
 2. Dua 10 mon xanh (goods.txt col11>0, MagicLevel) + thuy tinh + bo vang + da, gia 1 bac, vao CHINH Ky Tran Cac (them tab/hang trong danh sach co san, khong tab moi neu tranh duoc). Nap nong neu la Lua/data; neu luoi do cua UI nam trong client (PAK) thi nho B giao Codex SC, khong lam tay.
 3. Mua thu 1 mon xanh o Ky Tran Cac: kiem dong thuoc tinh dung, roi relogin xem con khong (cung phep thu mat do).
 Giu viec #318 (loi NAP do) song song neu duoc. Xong go 'A Chat'.
+
+## #320 Chat 20/11 20:40 — A: NGUON PHIEN TRUOC DA CAP DO THANH CONG (chu chi ra) — DOC VA DOI CHIEU
+Chu chi: phien Claude truoc tren may that (C:\Jx1CocoV3\docs-analysis) da cap do thanh cong. Chat da doc (bai hoc + bao cao 61-67), tom tat chon loc (da bo IP/mat khau) o HIEU-GAME/09-cong-cu-gm/NGUON-PHIEN-TRUOC-JX1COCOV3.md. DOC FILE DO, roi lam:
+1. Cap do theo dung duong cu: lenhbaitanthu.lua -> hotrotanthu.lua, AddItem 15 tham so (vd kiem xanh 0,0,0,10,0,10, 10,10,10,10,10,10, 1,0,0) — doi chieu voi qh_bothu.lua / ref gmroleitem.lua cua minh, tham so nao khac.
+2. DOI CHIEU BO FILE SERVER: Test-36 hien chay CoreServer.dll/Engine.dll/LuaLibDll.dll/gs001.exe ban nao? Cung build voi exe B-039/B-049 khong? Lech bo co the lam nap trang bi sai (vang/sach song, trang bi mat). Liet ke SHA 4 file + ban .goc-qh (ban goc); thu nap lai CUNG BO goc .goc-qh roi vao thu atestvaihero. Chu da cho phep thu tu do.
+3. Ket hop #319 (Ky Tran Cac) va #318 (nap do). Ghi (d9) CUONG-HOA. Xong go 'A Chat'.

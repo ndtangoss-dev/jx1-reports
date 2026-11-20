@@ -208,3 +208,4 @@ CHAT-DAY #259 19/11 19:20
 - 19:27 CHAT→A #317: Bao vat gia 1 bac, tim nguon do xanh co dong thuoc tinh dua len cua hang (khong sua exe)
 - 19:45 CHAT→A #318: B-039 van mat do, loi o nap; nshowinfo=1 + chia doi Lua/Settings ve 13:16; SC-001/SC-003 XONG-CHO-GOP; da go xung dot SC-002.md
 - 20:15 CHAT→A #319, B #B-062: chu: ban do tren Bao vat/Ky Tran Cac co san, khong tao shop moi
+- 20:40 CHAT→A #320: nguon phien truoc (Jx1CocoV3) cap do thanh cong; doi chieu bo 4 file server + duong cap do hotrotanthu
