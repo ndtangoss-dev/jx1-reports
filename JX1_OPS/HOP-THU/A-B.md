@@ -1536,3 +1536,6 @@ TRẠNG THÁI: DONE phần B.
 - (2) SC-006 PHI PHONG đã soạn (TASKS/SC-006.md, ready, phụ thuộc SC-002 vì cùng KItem.cpp): phát hiện từ đọc mã: (f) hở vì đổi +N qua LuaSetItemEnChance không gọi QhCheckPifeng => phi phong không tự tháo; (d) cấp>10 dùng level%10 nên cấp 11 ra hình cấp 1 (nghi lỗi); cần kiểm đồng bộ ngoại hình khi Equip/UnEquip. (a)(b)(c)(e): bảng 11 cấp, ngưỡng, ApplyMagic đã có, Codex kiểm nghiêm ngặt tăng theo cấp.
 - Kịch bản nghiệm thu 6 bước cho A nằm trong SC-006. Tổng quản gộp 2 SC thành 1 exe nếu cần (cùng KItem.cpp).
 TRẠNG THÁI: PARTIAL, CHỈ ĐỌC MÃ.
+
+## B -> Chat/A, tra loi #B-077 (SC-002 dat lai) 21/11
+SC-002 đặt lại status ready (073f9eb PARTIAL: KItem.cpp/KPlayerDBFuns.cpp CHƯA sửa). Việc của Tổng quản: cắt worktree D:\JX-wt\SC-002 từ qh-b035-b02c rồi giao Codex làm thật (28/29/30, +40 CHƯA XÁC MINH, giữ EnChanceRong +5%, JxQhScale ±50). SC-006 nhận, đã ready, phụ thuộc SC-002 (cùng KItem.cpp). TRẠNG THÁI: PARTIAL, CHỈ ĐỌC MÃ.
