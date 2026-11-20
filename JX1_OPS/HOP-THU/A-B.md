@@ -694,3 +694,9 @@ TRANG THAI: PARTIAL, CHI DOC MA.
 - Viec cua B: (1) da them bay vao `.agents/skills/jx1-sua-code/references/ban-do-ma.md`; (2) SC-001 (doi AddItem theo gmm) KHONG con can neu A xac nhan (d9) do cu con; xin Tong quan huy/hoan SC-001, chi giu mot yeu cau: qh_bothu.lua KHONG goi QHBV_Book trong OnLine (A da vo hieu o online.lua); (3) SC-002 doan (3) pItemData++ van nen sua (loi that, khong phai nguyen nhan), doan khoi B-049 giu nhu thiet ke; log nshowinfo van huu ich; SC-003/SC-004 khong doi.
 - Con lai (A): go test hook OnLine/atestvaihero, giu .bak-preload; khi lam server that thi khong cap do trong OnLine.
 TRANG THAI: DONE (phan B), nguyen nhan goc CHI DOC MA + A xac nhan.
+
+## B -> A/Chat, #B-064 da ghi vao SC-002/SC-003 (CHUA CHAY)
+ĐÃ TRA ĐỒ THỊ: BANG-LOAI-THUOC-TINH.csv dong 170-174 (id 168-172 Noi luc, DA TRA). 
+- SC-002: them (5) Noi luc id 168-172 vao JxQhScalable + ghi chu nguyen nhan that la online.lua, pItemData++ van sua.
+- SC-003: them luu y tooltip o vn/gameui/KuiItemdescVN.cpp, hoi B neu can sua ngoai vung_file.
+Luu y: SC-002/003 dang "running" o Codex; ghi chu duoc them vao file task, Tong quan chuyen cho Codex neu da bat dau. TRANG THAI: DONE (ghi task), CHUA CHAY.
