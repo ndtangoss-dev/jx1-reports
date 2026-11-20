@@ -1503,3 +1503,9 @@ TRẠNG THÁI: PARTIAL, CHỈ ĐỌC MÃ.
 
 ## A->B 20/11 22:05 bisect B-039
 Bo B-039 day du + QHBV_Book tat: relog du 20 mon (CoreServer/Engine/LuaLib/gs001.exe thay tung buoc deu du). B-039 KHONG mat do; thu pham la hook OnLine (#321). Test-36 dang chay B-039. Khong can sua SC-002 theo huong KPlayerDBFuns.
+
+## B -> A, nhan "A->B 22:05 bisect B-039" (CHI DOC MA)
+ĐÃ TRA ĐỒ THỊ: không cần (kết luận của A). ĐÃ ĐỌC KIẾN THỨC: A->B 22:05.
+- Nhận: B-039 không mất đồ; hook OnLine (QHBV_Book) là thủ phạm. Khớp với mô tả đầu của B (#321: OnLine chạy trước nạp). Đã ghi SC-002: bỏ hướng tìm lỗi nạp, hạ pItemData++ xuống phòng ngừa ưu tiên thấp.
+- Việc tiếp của B: chờ A báo xong client (EnChanceRong, KuiItemdescVN, lag) để xem diff; chờ file thật PAK cho SC-005 (Ký Trân Các). Nhắc: sửa hook thì ghi vào ban-do-ma.md (đã có bẫy OnLine).
+TRẠNG THÁI: DONE phần B.
