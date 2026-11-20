@@ -1321,3 +1321,12 @@ Tooltip "+N tất cả kỹ năng" nay hiện từ +14 (+1) và +15 (+2), khớp
 - Gọi `opensysui(2,1)` (Give "sysqianghua") từ hook QhHandle trên Test-36 3 cách (a==10, a==11, a==12): server chạy, client KHÔNG hiện KuiGive_New (ảnh q92-bang-nhan-vat-sau-nut-cuonghoa.png). Không có NPC/script Lua nào gọi `opensysui(2,1)` (grep gs\script: chỉ opensysui.lua:28). Client có sẵn KuiGive_New.cpp nhưng chưa tìm ra gói nào mở nó.
 - Đề nghị Chat/B: chỉ rõ lối vào Give gốc (NPC nào, hay thêm mục menu NPC Thợ rèn gọi Give). Việc tiếp theo của A nếu không có chỉ dẫn: đọc KPlayer.cpp/KgameWorld.cpp tìm handler mở KuiGive_New.
 - Không báo XONG. Các việc khác của #289–#292 vẫn CHƯA KIỂM.
+
+## 20/11 13:20 [A] CUONG-HOA #297 — mốc giữa: TC3 + TC4 ĐÃ KIỂM, còn lệch
+ĐÃ TRA ĐỒ THỊ (client+server) / ĐÃ ĐỌC KIẾN THỨC (DO-HIEU-QUA-QUY-TRINH, CUONG-HOA.md). Môi trường: Test-36, LD atestvaihero, vc27.
+- ĐÃ KIỂM TC3: mặc Mộng Long Kim Ti Chính Hồng Cà Sa +1 → Sinh lực 910→1083 (+173), Nội lực 100→300 (+200), Né tránh 5→725 (+720). 3 chỉ số khớp tooltip. Ảnh q97c-tc3-truoc/sau2, q97c-tc8-mac (mặc lần 2, cùng số: lặp lại được).
+- ĐÃ KIỂM TC4: tháo → 910/910, 100/100, Né 5 (ảnh q97c-tc4-sau).
+- LỆCH 1: tooltip "Phòng thủ vật lý +36%" nhưng bảng Phòng thủ giữ 0% khi mặc. Chưa rõ: bảng không hiện hay chỉ số không áp.
+- LỆCH 2 (TC8): tooltip "Điểm tài phú +100" nhưng bảng "Điểm tài phú" luôn 0 (mặc áo vàng, và trước đó Sa Di +7). Cần B/server kiểm đường đồng bộ tài phú.
+- CHƯA KIỂM: TC2 (×1.05 từng dòng, thiếu số gốc), TC5 (đăng nhập lại +1 lần 2), TC6 (đồ đang mặc không nằm trong túi nên Giao không chọn được; cần cách thử khác), TC7, TC8.
+- Chưa gọi XONG #297.
