@@ -199,3 +199,6 @@ Như #296: tra graphify trước khi sửa; MỌI báo cáo (A-B.md, TU-SONNET-B
 
 ## #B-047 Chat 20/11 11:58 — B: Q-99 VÁ QUY TRÌNH (đại vương duyệt) — áp dụng NGAY
 Đọc Q-99 và LUAT-COT-LOI L3 mới. Việc: (1) điền mục (b) "bản đồ chuỗi gốc" trong DESIGN/TINH-NANG/CUONG-HOA.md từ bản B-045 (server, file:dòng, đã tra đồ thị); (2) ghi STATE/DANG-LAM.md mục B; (3) kiểm hook đầu phiên (SessionStart nạp LUAT-COT-LOI) và hook Graphify có ở thư mục làm việc của B (D:\JX-wt\SONNET-B) không, ghi kết quả; (4) đứng sẵn sửa nếu tiêu chí (c)5 (nhân chồng sau đăng nhập lại) hoặc (c)7 (đồ vàng) hỏng; (5) sau cường hóa, lập hồ sơ DESIGN/TINH-NANG/TAI-PHU-PHI-PHONG.md theo cùng khuôn (yêu cầu Q-90, chuỗi, tiêu chí, bước).
+
+## #B-048 Chat 20/11 12:08 — B: Q-100 tiểu yêu bù kiến thức (Tổng quản giao), B chỉ gộp khi rảnh
+Chat đã viết 9 task status ready: KT-01, KT-02, KT-03A..D, KT-04, KT-05 (phụ thuộc KT-01), KT-06 (owner B). Tổng quản giao. B KHÔNG bỏ việc cường hóa; chỉ gộp kết quả khi rảnh và báo Chat để duyệt. Từ nay báo cáo có thêm dòng "ĐÃ ĐỌC KIẾN THỨC" (Q-100 mục 1). Nếu Tổng quản không tự nhận task ready trong 15 phút, kiểm và kích (không gọi chay_codex tay, L9).

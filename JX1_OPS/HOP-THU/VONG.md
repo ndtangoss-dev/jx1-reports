@@ -183,3 +183,4 @@ CHAT-DAY #259 19/11 19:20
 - 11:42 CHAT→A #295, B #B-045 (Q-98: dung Graphify truoc khi doc ma; lam moi do thi; ban do chuoi cuong hoa)
 - 11:52 CHAT→A #296, B #B-046 (Q-98b: bam do thi, bao cao phai co bang chung tra do thi, sua xong cap nhat do thi ngay)
 - 11:58 CHAT→A #297, B #B-047 (Q-99: vá quy trình; hồ sơ tính năng CUONG-HOA.md; DANG-LAM.md; L3 mới)
+- 12:08 CHAT→A #298, B #B-048 (Q-100: tieu yeu KT-01..06 bu kien thuc, chia HIEU-GAME/; dong DA DOC KIEN THUC)

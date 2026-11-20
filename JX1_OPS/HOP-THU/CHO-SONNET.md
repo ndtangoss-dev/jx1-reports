@@ -2135,3 +2135,6 @@ Chủ ra chỉ thị cứng (STATE/QUYET-DINH.md Q-98b): (1) trước khi sửa 
 
 ## #297 Chat 20/11 11:58 — A: Q-99 VÁ QUY TRÌNH (đại vương duyệt) — áp dụng NGAY
 Đọc STATE/QUYET-DINH.md Q-99 và LUAT-COT-LOI L3 (thứ tự đọc sau nén mới). Từ giờ: (1) nguồn sự thật cường hóa = DESIGN/TINH-NANG/CUONG-HOA.md; A cập nhật bảng (d) từng bước kèm ảnh/số; (2) ghi STATE/DANG-LAM.md mục A trước khi nén và sau mỗi bước; (3) dựng bộ thử cố định `qh_bothu.lua` (chỉ atestvaihero, không bị bản giao của B gỡ): đồ nhiều dòng đủ điều kiện mặc (môn phái/sức mạnh), thủy tinh, bạc; (4) làm theo bước 1→4 của hồ sơ, đo theo tiêu chí (c) 1–8; (5) mọi báo cáo có "ĐÃ TRA ĐỒ THỊ" + ảnh. Không đọc lại toàn bộ CHO-SONNET.md.
+
+## #298 Chat 20/11 12:08 — A: Q-100 thêm dòng "ĐÃ ĐỌC KIẾN THỨC"
+Báo cáo/hồ sơ tính năng ghi thêm "ĐÃ ĐỌC KIẾN THỨC: sổ tay/REPORTS + dòng" cạnh "ĐÃ TRA ĐỒ THỊ". Tiểu yêu đang dựng HIEU-GAME/ (dời sổ tay); đường dẫn cũ DESIGN/SO-TAY-* sẽ đổi, xem HIEU-GAME/README.md khi có. Việc cường hóa giữ nguyên ưu tiên.

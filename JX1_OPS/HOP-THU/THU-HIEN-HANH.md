@@ -218,4 +218,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #294 (11:30) Q-97 bỏ nút cũ, tạo nút mới — HIỆU LỰC
 - #295/#B-045, #296/#B-046 (11:42–11:52) Q-98/Q-98b Graphify, bằng chứng tra đồ thị — HIỆU LỰC
 - #297/#B-047 (11:58) Q-99 VÁ QUY TRÌNH: hồ sơ DESIGN/TINH-NANG/CUONG-HOA.md là nguồn sự thật; STATE/DANG-LAM.md; L3 mới — HIỆU LỰC, đọc đầu tiên
-
+- #298/#B-048 (12:08) Q-100 kiến thức chuẩn hóa: dòng ĐÃ ĐỌC KIẾN THỨC; tiểu yêu KT-01..KT-06 (HIEU-GAME/) — HIỆU LỰC
