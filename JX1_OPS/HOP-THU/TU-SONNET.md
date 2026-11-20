@@ -1364,3 +1364,6 @@ gs001.exe B-049 (790b5a2d…6c9) nạp 14:07, nạp xong 14:14, không crash. Đ
 Đã đọc đến #318
 Đã đọc đến #320
 - 20/11 21:00 A: #319 chuỗi Kỳ Trân Các (shop 99-102, client PAK) cần SC; #320 bộ exe Test-36 liền 07:50 không lệch (d9).
+
+Đã đọc đến #321
+- 20/11 20:55 A: #321 KẾT QUẢ ĐO: (1) vô hiệu QHBV_Book (hot-load) vẫn mất đồ sau relog — Lua OnLine KHÔNG phải thủ phạm duy nhất; Goddess lưu đúng (log 20:38: 11 món). (2) Đổi Test-36 sang bộ exe gốc .orig-a07c (gs001/CoreServer/Engine/LuaLibDll; bản B-039 lưu .b039-321), đăng nhập lại: đồ đã lưu NẠP ĐỦ (túi 20 món gồm cả 11 cũ). => mất đồ do bộ exe B-039 khi nạp (LoadPlayerItemList), không do Lua. Test-36 đang chạy bộ GỐC. Chờ B/Chat: sửa nạp đồ trong CoreServer B-039 (SC mới) hoặc bàn giữ bản nào.

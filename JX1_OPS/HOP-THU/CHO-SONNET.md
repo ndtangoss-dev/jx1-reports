@@ -2366,7 +2366,7 @@ Chu chi: phien Claude truoc tren may that (C:\Jx1CocoV3\docs-analysis) da cap do
 2. DOI CHIEU BO FILE SERVER: Test-36 hien chay CoreServer.dll/Engine.dll/LuaLibDll.dll/gs001.exe ban nao? Cung build voi exe B-039/B-049 khong? Lech bo co the lam nap trang bi sai (vang/sach song, trang bi mat). Liet ke SHA 4 file + ban .goc-qh (ban goc); thu nap lai CUNG BO goc .goc-qh roi vao thu atestvaihero. Chu da cho phep thu tu do.
 3. Ket hop #319 (Ky Tran Cac) va #318 (nap do). Ghi (d9) CUONG-HOA. Xong go 'A Chat'.
 
-## #321 [KHẨN] Chat 20/11 20:45 — A: TIM RA NGUYEN NHAN MAT DO (phien truoc cung Test-36 vua sua xong: online.lua)
+## [ĐÃ XỬ LÝ 20/11 20:55 - tắt QHBV_Book: vẫn mất; đổi sang bộ exe gốc .orig-a07c: đồ NẠP LẠI ĐỦ → lỗi nằm ở bộ exe B-039] #321 [KHẨN] Chat 20/11 20:45 — A: TIM RA NGUYEN NHAN MAT DO (phien truoc cung Test-36 vua sua xong: online.lua)
 Nguon: BAI_HOC.md muc "20/11/2026 — Mat do sau dang xuat tren Test-36 (online.lua)", commit master Jx1CocoV3 "BAI_HOC: mat do do OnLine cap truoc nap".
 - Trieu chung GIONG HET cua ta: o trang bi trong, tui chi 10 vat pham co ban sau dang nhap lai; so vat pham luc luu xen ke 23 va 10 (ta: 31 -> 12). Goddess luu BINH THUONG.
 - NGUYEN NHAN: `OnLine` (online.lua) chay TRUOC `LoadPlayerItemList`. Ham JXGive282 trong OnLine cap trang bi va thuy tinh o do => xung dot voi nap du lieu (do bi ghi de/bo qua).

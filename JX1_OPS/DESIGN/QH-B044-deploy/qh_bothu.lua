@@ -49,6 +49,7 @@ function qhbv_scan(del)
 end
 
 function QHBV_Book()
+	if 1 == 1 then return end -- #321: OnLine chay truoc LoadPlayerItemList
 	if strsub(GetName(), 1, 5) ~= "atest" then return end
 	local books = qhbv_scan(0)
 	if books < 1 then

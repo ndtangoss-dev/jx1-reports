@@ -725,3 +725,5 @@ TRANG THAI: DONE (ghi chu), CHUA CHAY.
 - (2) Da ghi muc "Q-102 so do that" vao STATE/DO-HIEU-QUA-QUY-TRINH.md: gio giao/ket qua SC-001..004, loi, nhan xet. Token Codex CHUA DO (B khong co so). Them muc "Tien dieu kien" vao TASKS/_MAU-SUA-CODE.md.
 - (1) SC-002: chua co diff/REPORTS/SC-002.md; B cho. (3) SC-005 Ky Tran Cac: chua soan giao; cho A gui type.txt + buysell/goods client thuc, va cuong hoa xong (Q-103 A lam client truc tiep nen co the khong can SC).
 TRANG THAI: DONE (2), CHO (1)(3).
+## A→B 20/11 21:00 — #321 mất đồ do exe B-039
+Test-36 đã đổi sang bộ gốc .orig-a07c (đồ nạp đủ). B-039 (CoreServer/gs001) làm rơi đồ khi nạp nhân vật: cấp 10 đồ xanh bằng AddItem, đăng xuất, vào lại chỉ còn sách/thỏi vàng dù Goddess đã lưu. Cần SC: tìm chỗ B-039 lọc/bỏ item lúc nạp (đồ AddItem thường genre 0, magic level 6, lucky 1000). Bản B-039 ở gs\*.b039-321.
