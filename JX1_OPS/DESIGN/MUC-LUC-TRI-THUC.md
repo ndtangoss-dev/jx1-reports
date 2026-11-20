@@ -1,25 +1,21 @@
-# MỤC LỤC TRI THỨC JX1 (tra ở đây trước, rồi mới mở báo cáo)
+# MỤC LỤC TRI THỨC JX1
 
-Cập nhật: 17/11/2026. Quy tắc: mỗi báo cáo mới phải có dòng "liên quan: ..." và được thêm vào bảng này khi gộp. Cột Độ chắc: **chắc** = đã đo/đọc mã có file:dòng; **giả thuyết** = chưa kiểm; **khảo sát tĩnh** = chỉ đọc, chưa chạy. Đây là tóm tắt định vị, mở báo cáo để lấy số liệu; không coi mục lục là bằng chứng.
+Cập nhật: 20/11/2026. Đây là bản đồ tra cứu; mở sổ tay và báo cáo để lấy bằng chứng `file:dòng`. Độ chắc: **chắc** = đã đọc mã có dòng; **khảo sát tĩnh** = chỉ đọc tài liệu/mã, chưa chạy; **chưa kiểm** = chưa có bằng chứng triển khai/runtime.
 
-| Chủ đề | Báo cáo / tài liệu | File, hàm chính | Độ chắc |
-|---|---|---|---|
-| Kiến thức QA do chủ nạp từ 12/11 (Fix36): minimap, NPC, bản đồ Ba Lăng Huyện/Phong Lăng Độ, di chuyển, menu Lệnh bài GM, vật phẩm test, điểm tiềm năng, **bảng kỹ năng cấp 200** | `knowledge/README.md`, `knowledge/skills/bang-ky-nang-cap-200.md`, `knowledge/npcs/*`, `knowledge/maps/*`, `knowledge/stats/diem-tiem-nang.md` | từ ảnh và ghi chép QA (Haiku/Opus), chưa đối chiếu với dữ liệu server; TRA ĐÂY TRƯỚC khi trả lời câu hỏi về game |
-| Vẽ bộ phận nhân vật, thứ tự lớp | `DESIGN/QUY-LUAT-VE-BO-PHAN.md`, `BUGS/BUG-001.md`, J-04, H-04, L-01..L-03 | `KNpcResNode.cpp` (`GetkTable`, `GetSort`), `KNpcResVN.cpp::Draw`, ini `女主角贴图顺序表.ini` | bảng đứng yên **chắc**; bảng đi bộ/chạy **giả thuyết** |
-| Animation nhân vật, quái, kỹ năng, cắt khung | J-01, J-02, J-03, J-05 | `KNpcRes*.cpp` | khảo sát tĩnh |
-| Hiệu ứng vũ khí, glow, tia sét, mất khung | H-04, H-14, BUG-002 | `KNpcResVN.cpp` khối glow, `KgameWorld.cpp::jxDrawBolts` | glow **chắc**; lỗi khung nhảy **chưa tái hiện** |
-| Làm mượt hình ảnh, nội suy, xBRZ, FPS | L-01, L-02, L-03, H-15, `DESIGN/TOI-UU-120FPS.md` | `JxPerf.h`, `KgameWorld.cpp` | đo trên LD; máy thật theo chủ |
-| Trang bị, thuộc tính, cường hóa, ấn, tài phú | H-01, H-02, H-03, H-05, H-06, H-07, H-08 | `KItem.cpp`, `Core/Src` | khảo sát tĩnh |
-| Phím tắt, nút, tự động chiến đấu | H-10, H-11, H-12 | `KgameWorld*.cpp` | khảo sát tĩnh |
-| Tick, độ trễ đơn | H-13, B-04a | `Core/Src/KNpc.cpp`, vòng lặp gs001 | số đo có điều kiện, xem báo cáo |
-| Điểm, tiền, cửa hàng, quái, bản đồ, NPC, nhiệm vụ | I-01..I-08, `DESIGN/THE-GIOI-TONG-QUAN.md` | script Lua `gs\script`, `Settings` | khảo sát tĩnh, độ phủ hữu hạn |
-| Môn phái, kỹ năng, kinh nghiệm, rơi đồ, Tống Kim | A-08a..d, A-15a..c, A-16, A-17, A-10 | `Settings`, Lua | khảo sát tĩnh |
-| Mạng, gói tin, tiến trình, đăng nhập | A-01, A-02, A-04, A-06, K-01 | `KProtocolDef.h`, `KProtocolProcess.cpp`, `Bishop`, `gs001` | khảo sát tĩnh |
-| Crash, gốc lỗi gs001 | A-07, A-07b..e | `gs001` | xem từng báo cáo |
-| Bạn bè, đồng bản, hoạt động | A-09, A-12, A-13, A-14, D-01 | `S3Relay`, Lua | khảo sát tĩnh |
-| Bot, tester, điều phối | E-01..E-13b, B-02..B-03, C-01..C-03, JIBS, TESTER | `TOOLS/jxadm`, `jxweb` | xem từng báo cáo |
-| Đồ thị Graphify, cách làm mới | `STATE/DO-THI.md`, `TOOLS/lam_moi_do_thi.ps1` | `D:JX-toolsgraphify-venv` | chắc |
-| Công cụ, quy trình, môi trường | `QUY-TAC-VAN-HANH.md`, `TOOLS/CONG-CU.md`, `ENVIRONMENT.md`, `DESIGN/QUY-TRINH-SUA-LOI.md`, `DESIGN/HUONG-DAN-TRA-CUU.md` | | chắc |
+| Chủ đề và câu hỏi người chơi tra ở đây | Nhánh HIEU-GAME | Sổ tay | REPORTS liên quan | Hàm chính / điểm vào | Độ chắc |
+|---|---|---|---|---|---|
+| Trang bị, cường hóa, ma pháp, độ bền: món đồ có điều kiện gì và cộng thuộc tính nào? | `01-trang-bi-cuong-hoa` | `HIEU-BANG-SORT-VA-ITEM`, `HIEU-CAP-CUONG-HOA-LUA`, `HIEU-CAP-CUONG-HOA-LUA-2`, `HIEU-DO-BEN-SUA-DO`, `HIEU-HIEU-UNG-VU-KHI`, `SO-TAY-GHEP-TACH-DO`, `SO-TAY-NGUA-PHI-PHONG`, `SO-TAY-THUOC-TINH-MA-PHAP`, `SO-TAY-TRANG-BI` | `H-01..H-08`, `A-17`, `H-04` | `KItemList::Equip/UnEquip`, `KItem::EnChance`, `ApplyMagicAttribToNPC` | khảo sát tĩnh |
+| Nhân vật và thuộc tính: tạo nhân vật, nhập phái, lên cấp, PK và hồi sinh diễn ra thế nào? | `02-nhan-vat-thuoc-tinh` | `HIEU-CAP-KINH-NGHIEM`, `HIEU-MON-PHAI`, `HIEU-TAO-NHAN-VAT-MOI`, `SO-TAY-NHAN-VAT`, `SO-TAY-PK-CHET-HOI-SINH` | `A-08a`, `A-15a..c`, `HG-10`, `SO-01` | `KPlayer::LevelUp`, `KPlayerDBFuns`, `KPlayerFaction` | khảo sát tĩnh |
+| Kỹ năng và chiến đấu: buff, sát thương, đội và Tống Kim được tính/đồng bộ ra sao? | `03-ky-nang-chien-dau` | `HIEU-BUFF-TRANG-THAI`, `HIEU-CONG-THUC-SAT-THUONG`, `HIEU-TRANG-THAI-CHIEN-DAU`, `SO-TAY-KY-NANG`, `SO-TAY-KY-NANG-CAP`, `SO-TAY-TO-DOI`, `SO-TAY-TONG-KIM-BANG-HOI` | `A-08a`, `A-15a..c`, `D-01`, `H-13` | `KNpc::AddState`, `KSkills`, `KPlayer::AddExp` | khảo sát tĩnh |
+| Quái, NPC và bản đồ: map, trap, hội thoại, hồi sinh và rơi đồ nằm ở đâu? | `04-quai-npc-ban-do` | `HIEU-BAN-DO-TRAP`, `HIEU-NAP-VA-CHUYEN-BAN-DO`, `HIEU-QUAI-HOI-SINH-VAT-PHAM-ROI`, `SO-TAY-AI-QUAI`, `SO-TAY-HOP-THOAI-NPC`, `SO-TAY-QUAI-NPC-BAN-DO`, `SO-TAY-QUAI-VANG`, `SO-TAY-ROI-DO` | `I-03`, `I-04`, `I-05`, `K-02`, `HG-09`, `HG-12` | `KSubWorldSet`, `KSubWorld`, `KNpc::NewWorld`, `KNpc::Activate` | khảo sát tĩnh |
+| Nhiệm vụ và kinh tế: task-value/Lua, cửa hàng, kho, giao dịch và lịch sự kiện chạy thế nào? | `05-nhiem-vu-kinh-te` | `HIEU-GIAO-DICH-KHO-DO`, `SO-TAY-CUA-HANG`, `SO-TAY-GIAO-DICH-KHO`, `SO-TAY-KINH-TE`, `SO-TAY-NHIEM-VU`, `SO-TAY-NHIEM-VU-LUA`, `SO-TAY-THOI-GIAN-SU-KIEN` | `I-02`, `I-07`, `I-08`, `D-01` | `KPlayerTask`, `ScriptFuns`, `KItemList` | khảo sát tĩnh |
+| Mạng và gói tin: đăng nhập, chat, đồng bạn, relay và đồng bộ thế giới đi qua đâu? | `06-mang-goi-tin` | `HIEU-DANG-NHAP-VAO-GAME`, `SO-TAY-BAN-BE-ONLINE`, `SO-TAY-CHAT`, `SO-TAY-DONG-BAN`, `SO-TAY-GOI-TIN`, `SO-TAY-S3RELAY`, `SO-TAY-THONG-BAO-HE-THONG`, `SO-TAY-VONG-LAP-SERVER` | `A-01`, `A-02`, `A-06`, `A-09`, `K-01`, `N-06` | `KProtocolProcess`, `KSOServer`, `S3Relay::MainLoop` | khảo sát tĩnh |
+| Server và lưu trữ: hồ sơ tài khoản/nhân vật và cấu hình GameServer đọc từ đâu? | `07-server-luu-tru` | `SO-TAY-GODDESS-LUU-NHAN-VAT`, `SO-TAY-TAI-KHOAN-PAYSYS`, `SO-TAY-TEP-CAU-HINH-GS` | `A-01`, `A-04`, `N-06` | `GamePlayer`, `KPlayerDBFuns`, `KFile` | khảo sát tĩnh; triển khai chưa kiểm |
+| Giao diện và tài nguyên client: người chơi thấy gì và PAK/SPR được nạp thế nào? | `08-giao-dien` | `HIEU-GAME-CHO-NGUOI-KHONG-LAP-TRINH`, `SO-TAY-GIAO-DIEN`, `SO-TAY-TAI-NGUYEN-CLIENT` | `SO-01`, `SO-02`, `K-02` | `KGameWorld`, `KUi`, `KPakList`, `KNpcRes` | khảo sát tĩnh |
+| Công cụ và GM: lệnh quản trị đi qua client/server nào, giới hạn gì? | `09-cong-cu-gm` | `HIEU-LENH-GM`, `SO-TAY-CHONG-GIAN-LAN` | `H-13`, `C-01`, `C-02`, `E-01` | `KProtocolProcess::ProcessGMCmd`, `KGMCommand`, `KJxAdm` | khảo sát tĩnh; không chạy lệnh |
 
-## Báo cáo chờ tổng hợp
-- U-01 (hiểu game cho người không lập trình) và U-02 (truyền tải, exe server): đang giao Codex; khi xong thêm dòng vào bảng trên.
+## Bằng chứng và cách tra
+
+- 52 sổ tay đã được chuyển từ `DESIGN/` vào `HIEU-GAME/`; ánh xạ đầy đủ ở `HIEU-GAME/README.md`.
+- `MA-NGUON/*.md` là bản đồ định vị mã tự sinh; Graphify chỉ định vị, phải kiểm file thật và dòng trong sổ tay/báo cáo.
+- Các báo cáo cũ về QA (minimap, NPC, kỹ năng cấp 200...) vẫn được tra theo các mục `REPORTS/` hiện hữu; không xem mục lục này là bằng chứng runtime.
