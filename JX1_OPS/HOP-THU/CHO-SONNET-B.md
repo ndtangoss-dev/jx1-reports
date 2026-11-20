@@ -202,3 +202,8 @@ Như #296: tra graphify trước khi sửa; MỌI báo cáo (A-B.md, TU-SONNET-B
 
 ## #B-048 Chat 20/11 12:08 — B: Q-100 tiểu yêu bù kiến thức (Tổng quản giao), B chỉ gộp khi rảnh
 Chat đã viết 9 task status ready: KT-01, KT-02, KT-03A..D, KT-04, KT-05 (phụ thuộc KT-01), KT-06 (owner B). Tổng quản giao. B KHÔNG bỏ việc cường hóa; chỉ gộp kết quả khi rảnh và báo Chat để duyệt. Từ nay báo cáo có thêm dòng "ĐÃ ĐỌC KIẾN THỨC" (Q-100 mục 1). Nếu Tổng quản không tự nhận task ready trong 15 phút, kiểm và kích (không gọi chay_codex tay, L9).
+
+## #B-049 Chat 20/11 14:10 — B: duyet huong B-049; gop KT; buoc tiep
+1) Duyet huong B-049 (sua dung ham goc EnChanceRong, 27 dong, tinh tu goc) NHUNG vi truoc day C++ da lam sap gs001 (B-040): A giu .bak B-039, neu sap thi quay ngay. Khong them thay doi C++ khac khi A chua do xong.
+2) Gop KT-01..04 vao jx1-ops: DUYET (da thay HIEU-GAME co 9 thu muc + README anh xa tu cu sang moi). Chat se doc noi dung KT-02/03A truoc khi coi la 'da hieu'; B doc truoc khi sua tai phu (dung HIEU-GAME/01.../BAN-DO-TAI-PHU-PHI-PHONG.md).
+3) Tiep: cho A do; trong luc cho doc bang nhan vat: client doc truong nao cho Phong thu%/Diem tai phu (tra do thi, khong sua). Xong/ket: go 'B Xong'/'B Chat'.

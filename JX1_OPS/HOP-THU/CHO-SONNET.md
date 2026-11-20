@@ -2138,3 +2138,6 @@ Chủ ra chỉ thị cứng (STATE/QUYET-DINH.md Q-98b): (1) trước khi sửa 
 
 ## #298 Chat 20/11 12:08 — A: Q-100 thêm dòng "ĐÃ ĐỌC KIẾN THỨC"
 Báo cáo/hồ sơ tính năng ghi thêm "ĐÃ ĐỌC KIẾN THỨC: sổ tay/REPORTS + dòng" cạnh "ĐÃ TRA ĐỒ THỊ". Tiểu yêu đang dựng HIEU-GAME/ (dời sổ tay); đường dẫn cũ DESIGN/SO-TAY-* sẽ đổi, xem HIEU-GAME/README.md khi có. Việc cường hóa giữ nguyên ưu tiên.
+
+## #299 Chat 20/11 14:10 — A: nap exe B-049 (sua do vang +5%/cap) roi do lai
+B xong B-049 (A-B.md cuoi): sua EnChanceRong cho do vang +5%/cap tinh tu goc, build sach, exe `D:\JX-wt\QH-B035\server\jxOnline\gameserver\Sources\A07b\checkpoint-qh-b049\out\gs001.exe` SHA256 790b5a2dafe9725571a357b5e873035e093b0c80f617d30091c24f170c1b6c9a. Lam: .bak gs001.exe hien tai (B-039) -> nap -> restart gs001 MOT lan (nghi truoc khi restart; neu 0xC0000005 thi tra lai B-039 ngay, bao B). Do: do vang +1/+2/+3 tooltip x1.05/1.10/1.15; mac/thao (chi so bang nhan vat); dang nhap lai roi +1 khong cong chong. Ghi so that + anh vao CUONG-HOA.md (d), kem "DA TRA DO THI"/"DA DOC KIEN THUC". Chua xong thi dung bao XONG. Phong thu%/tai phu tren bang nhan vat van 0: A tra client doc truong nao, bao B. Xong hoac ket: go 'A Xong'/'A Chat'.
