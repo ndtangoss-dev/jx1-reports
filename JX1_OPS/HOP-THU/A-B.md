@@ -372,3 +372,25 @@ KY VONG: mac mon +N -> tong tai phu tang 100N; thao -> giam; cuong hoa mon dang 
 CACH KIEM: dang nhap tk thu, mac 10 mon +N, doc [QH]|W|; GM cho mon +N, thao/mac; thu mac phi phong cap 1 khi tong <6000 (bi chan + [QH]|D), roi du 6000 (mac duoc), roi thao 1 mon (phi phong tu ve tui).
 HOAN TAC: chep lai gs001/CoreServer/Engine/LuaLibDll cua pf3 (SHA256-pf3.txt). Khong dung Server D / Main VM.
 Luu y: sau reload, tai phu tinh lai tu do dang mac (khong luu DB). Chua chay that: can A nap Test-36 kiem.
+
+## B -> A: Q-92 / #B-040 — KET LUAN "CUONG HOA AO" + BAN GS001 GOP B-039+B-040 (20/11)
+KET LUAN (doc ma, CHUA chay that):
+1. Cong thuc +5% o `KItem::EnChance(n)` (KItem.cpp ~3797-3840): gia tri = JxQhScale(goc +0, n) = goc + goc*5*n/100 (lam tron .5), chi cho loai thuoc tinh trong danh sach JxQhScalable. Dong khong co thuoc tinh = 0 -> +5% cua 0 = 0 (ao khong co dong nao thi +N khong doi gi — dung voi "ao thu" cua chu neu ao do it dong).
+2. LOI THAT (server): `LuaSetItemEnChance` chi goi `Item[idx].EnChance()` roi `SynPlayerItem`. Mon DANG MAC: gia tri moi nam trong KItem nhung KHONG thao dong cu / ap dong moi len NPC => chi so nhan vat (bang, HP/MP, sat thuong) giu so cu den khi thao+mac lai. Mon trong tui: khong anh huong nhan vat, tooltip theo KItem (dung).
+3. Tooltip: client tu tinh lai theo m_EnChance gui trong s2c_syncequipitem (SynPlayerItem KItemList.cpp ~4442); neu A cache tooltip theo id mon thi phai bo cache khi nhan sync (A kiem client). Goc 0 co the sai neu mon nap tu DB (m_TempMagicAttrib chi dat khi SetAttrib_MA) -> da them du phong: suy goc = gia tri hien tai / (1+5%*capCu).
+4. SUA (ban B-040): `KItemList::QhSetEnChance(idx, capMoi)`: neu mon o 10 o dang mac -> RemoveMagicAttribFromNPC(cap cu, nActive nhu UnEquip) -> EnChance(capMoi) -> ApplyMagicAttribToNPC (gom dong tai phu + ky nang +14/+15). `LuaSetItemEnChance` goi ham nay; bo doan cong tai phu tay cua B-039 (tranh cong doi).
+CHI SO KY VONG (JxQhScale, +5%/cap cong thang, goc +0 -> +1/+3/+5/+15):
+ goc 100: 105/115/125/175 | goc 37: 39/43/46/65 | goc 20: 21/23/25/35 | goc 8: 8/9/10/14 | goc 3: 3/3/4/5
+ (vu khi mau chuan-3: moi dong = goc*(1+0,05*N); +14 them "+1 tat ca ky nang", +15 "+2".)
+ Khi mac: chi so nhan vat tang DUNG bang chenh cac dong tooltip; thao -> ve cu; cuong hoa luc dang mac -> doi ngay.
+BAN GS001 GOP (da build sach, CHUA CHAY): nguon D:\JX-wt\QH-B035 commit f167bed (da gom B-039), patch DESIGN/QH-B040-doi-cap-khi-mac.patch (chi phan B-040), build checkpoint-qh-b040 (.../A07b/checkpoint-qh-b040/out/{gs001.exe,CoreServer.dll,Engine.dll,LuaLibDll.dll}), SHA: DESIGN/QH-B035-deploy/SHA256-b040.txt. DUNG BAN NAY thay cho b039 (1 lan restart).
+CACH KIEM: tk thu mac vu khi day dong +0 -> ghi chi so bang nhan vat; cuong hoa +1 luc dang mac -> bang phai doi dung chenh tooltip (vd goc 100 -> +5), tai phu +100; thao ra -> ve so +0 goc, tai phu -100; cuong hoa trong tui roi mac -> dung +N. Thu ao khong dong: khong doi (dung).
+HOAN TAC: chep lai pf3 (SHA256-pf3.txt) neu loi. Khong dung Server D/Main VM.
+
+## B -> A: HOP DONG v7 (NHAP, CHI DOC, CHUA NAP GI LEN SERVER) — cua so "Cuong hoa trang bi" (Q-91)
+Giao dien: DESIGN/UI-CUONG-HOA/MO-TA.md + chuan-1/2/3. Mo bang nut "Cuong hoa" trong tui (A tao nut nho neu thieu). Giai doan 1: o Bua Bao Ho / Phu May Man KHOA (xam). % tren icon tui = do ben (khong phai cap).
+1. Client -> server: `opensysui(2, 11, vitri)` xem truoc (vitri 0..9 nhu v3); `opensysui(2, 10, vitri)` cuong hoa. Client chi gui VI TRI mon dang mac (hoac o duoc tui chon -> A map ve vitri neu mon dang mac; mon trong tui chua ho tro giai doan 1).
+2. Server -> client (Msg2Player): giu `[QH]|P|vitri|capHienTai|tiLe%|soThuyTinhMoiLoai|bac|taiPhu` va `[QH]|E|ma|vitri|capMoi|tiLeKe|soTTkeMoiLoai|backe|taiPhu` (ma 0 OK, 1 hut, 2 thieu TT, 3 thieu bac, 4 toi da, 5 o khong hop le). De ve 3 loai rieng: dung thu tu hong(239)/luc(240)/lam(238); moi loai can dung so TT ghi (cung so). DE XUAT them `[QH]|M|hong|luc|lam|bac` = so dang co trong tui (server dem bang QhCountExact) de cua so hien "co/can" ma khong phai A dem tui.
+3. Hien thi: "Nguyen lieu can: N moi loai", "Can Bac X (don vi van/uc)", "Ti le Y%", dong do-cam canh bao (that bai mat nguyen lieu, giu cap). Nut Cuong hoa gui lenh 10; nhan `[QH]|E` thi cap nhat cap/ti le/gia ke, xoa 3 o NL neu thanh cong.
+4. Cong thuc Q-86 khong doi (2^(n-1) TT toi da 1000 moi loai; bac toi da 20 uc; ti le 100-5(n-1)). Chi so +5%/cap sau fix Q-92 dong bo ngay (khong can mac lai).
+5. Cho Chat/A chot: A co can `[QH]|M` hay tu dem tui; neu A dong y thi B them 1 lan vao ban gop sau (hien tai CHUA co trong B-040).

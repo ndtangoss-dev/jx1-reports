@@ -1,0 +1,109 @@
+diff --git a/server/jxOnline/gameserver/Sources/Core/Src/KItem.cpp b/server/jxOnline/gameserver/Sources/Core/Src/KItem.cpp
+index d98f5db..7283447 100644
+--- a/server/jxOnline/gameserver/Sources/Core/Src/KItem.cpp
++++ b/server/jxOnline/gameserver/Sources/Core/Src/KItem.cpp
+@@ -3824,11 +3824,19 @@ int KItem::EnChance( int nEnChance /*= 1*/ )
+ 		int nN = nEnChance;
+ 		if (nN < 0) nN = 0;
+ 		if (nN > 30) nN = 30;
++		int nOldN = m_CommonAttrib.nEnChance;
++		if (nOldN < 0) nOldN = 0;
+ 		for (int q = 0; q < 6; ++q)
+ 		{
+ 			int t = m_aryMagicAttrib[q].nAttribType;
+ 			if (t > 0 && JxQhScalable(t))
+ 			{
++				// [Q-92] goc chua duoc luu (nap tu DB/khoi tao) -> suy ra tu gia tri hien tai chia he so cap cu
++				if (m_TempMagicAttrib[q].nAttribType != t || (m_TempMagicAttrib[q].nValue[0] == 0 && m_aryMagicAttrib[q].nValue[0] != 0))
++				{
++					m_TempMagicAttrib[q] = m_aryMagicAttrib[q];
++					m_TempMagicAttrib[q].nValue[0] = (m_aryMagicAttrib[q].nValue[0] * 100 + (m_aryMagicAttrib[q].nValue[0] >= 0 ? 1 : -1) * (100 + 5 * nOldN) / 2) / (100 + 5 * nOldN);
++				}
+ 				m_aryMagicAttrib[q].nValue[0] = JxQhScale(m_TempMagicAttrib[q].nValue[0], nN);
+ 				if (t >= 59 && t <= 64 && m_TempMagicAttrib[q].nValue[2] > 0)
+ 					m_aryMagicAttrib[q].nValue[2] = JxQhScale(m_TempMagicAttrib[q].nValue[2], nN);
+diff --git a/server/jxOnline/gameserver/Sources/Core/Src/KItemList.cpp b/server/jxOnline/gameserver/Sources/Core/Src/KItemList.cpp
+index 60a391f..22e3a2a 100644
+--- a/server/jxOnline/gameserver/Sources/Core/Src/KItemList.cpp
++++ b/server/jxOnline/gameserver/Sources/Core/Src/KItemList.cpp
+@@ -1171,6 +1171,37 @@ BOOL KItemList::QhPifengWealthOK(KItem* pItem, BOOL bNotify)
+ 	return FALSE;
+ }
+ 
++// [qh Q-92] Doi cap cuong hoa: neu mon dang mac thi thao dong thuoc tinh cu khoi nhan vat, tinh lai, ap dong moi (gom ca tai phu / +14 ky nang)
++void KItemList::QhSetEnChance(int nIdx, int nLevel)
++{
++	if (nIdx <= 0 || nIdx >= MAX_ITEM)
++		return;
++	int i = itempart_num;
++	if (m_PlayerIdx > 0)
++		for (i = 0; i < itempart_num; ++i)
++			if (m_EquipItem[i] == nIdx) break;
++	BOOL bWorn = (m_PlayerIdx > 0 && i < itempart_num && Item[nIdx].GetIsCanUse() == 1);
++	int nNpcIdx = bWorn ? Player[m_PlayerIdx].m_nIndex : 0;
++	int nActive = 0;
++	int nInfo[2] = {0, 0};
++	if (bWorn)
++	{
++		nActive = GetEquipEnhance(i);
++		if (m_bActiveSet) nActive = 3;
++		if (Item[nIdx].GetGoldId() > 0) { nInfo[0] = 3; nInfo[1] = Item[nIdx].GetLevel(); }
++		Item[nIdx].RemoveMagicAttribFromNPC(&Npc[nNpcIdx], nActive, nInfo);
++	}
++	Item[nIdx].EnChance(nLevel);
++	if (bWorn)
++	{
++		nInfo[0] = 0; nInfo[1] = 0;
++		if (Item[nIdx].IsBlue()) { nInfo[0] = 1; nInfo[1] = Item[nIdx].GetIsWhere(); }
++		else if (Item[nIdx].IsPurple()) { nInfo[0] = 2; nInfo[1] = Item[nIdx].GetIsWhere(); }
++		else if (Item[nIdx].IsGold()) { nInfo[0] = 3; nInfo[1] = Item[nIdx].GetLevel(); }
++		Item[nIdx].ApplyMagicAttribToNPC(&Npc[nNpcIdx], nActive, nInfo);
++	}
++}
++
+ // [qh] B-035: sau khi doi do, neu tai phu tut duoi nguong phi phong vang dang mac thi thao ve tui
+ void KItemList::QhCheckPifeng()
+ {
+diff --git a/server/jxOnline/gameserver/Sources/Core/Src/KItemList.h b/server/jxOnline/gameserver/Sources/Core/Src/KItemList.h
+index d3ff14f..73755b4 100644
+--- a/server/jxOnline/gameserver/Sources/Core/Src/KItemList.h
++++ b/server/jxOnline/gameserver/Sources/Core/Src/KItemList.h
+@@ -195,6 +195,7 @@ public:
+ 	int         QhCountExact(int nDetail);      // [qh B-035] dem trong tui, genre 4 + detail, bo qua do dang mac
+ 	int         QhConsumeExact(int nDetail, int nNeed);  // [qh B-035] tru nNeed, 1 neu du
+ 	BOOL        QhPifengWealthOK(KItem* pItem, BOOL bNotify = TRUE);
++	void        QhSetEnChance(int nIdx, int nLevel);   // [qh Q-92] doi cap +N: thao thuoc tinh cu, tinh lai, ap thuoc tinh moi len nhan vat neu dang mac
+ 	void        QhCheckPifeng();   // [qh B-035] cong mac phi phong
+ 	void        SynPlayerItem(int nItemidx);
+ 	void        SyncItemMagicAttrib(int nIdx);
+diff --git a/server/jxOnline/gameserver/Sources/Core/Src/ScriptFuns.cpp b/server/jxOnline/gameserver/Sources/Core/Src/ScriptFuns.cpp
+index 7622677..251ec3f 100644
+--- a/server/jxOnline/gameserver/Sources/Core/Src/ScriptFuns.cpp
++++ b/server/jxOnline/gameserver/Sources/Core/Src/ScriptFuns.cpp
+@@ -10970,21 +10970,13 @@ int LuaSetItemEnChance(Lua_State *L)
+ 
+ 	int  nEnChance=Item[nItemIdx].GetEnChance();
+ 
+-	Item[nItemIdx].EnChance(nEnChance+nItemEnChance);
+-
+ 	int nPlayerIndex = GetPlayerIndex(L);
+ 
+-	// [qh Q-90] mon dang mac o 0..9: tai phu nhan vat doi theo 100 x chenh lech
+-	if (nPlayerIndex > 0 && Item[nItemIdx].GetGenre() == item_equip && Item[nItemIdx].GetDetailType() <= equip_pendant)
+-	{
+-		for (int qp = 0; qp < 10; qp++)
+-			if (Player[nPlayerIndex].m_ItemList.GetEquipment(qp) == nItemIdx)
+-			{
+-				Player[nPlayerIndex].m_nWealth += 100 * nItemEnChance;
+-				if (Player[nPlayerIndex].m_nWealth < 0) Player[nPlayerIndex].m_nWealth = 0;
+-				break;
+-			}
+-	}
++	// [qh Q-92] thuoc tinh + tai phu nhan vat doi theo cap moi neu mon dang mac
++	if (nPlayerIndex > 0)
++		Player[nPlayerIndex].m_ItemList.QhSetEnChance(nItemIdx, nEnChance + nItemEnChance);
++	else
++		Item[nItemIdx].EnChance(nEnChance + nItemEnChance);
+ 
+ 	if (nPlayerIndex > 0 && nIsSyn>=1)
+ 	{
