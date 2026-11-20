@@ -1547,3 +1547,13 @@ SC-002 đặt lại status ready (073f9eb PARTIAL: KItem.cpp/KPlayerDBFuns.cpp C
 - A nạp (bản sao có .bak/rollback Test-36) và đo: (1) đồ vàng +1 ≈ +5%; (2) giáp Né tránh base 100 +5 => 125, vũ khí sát thương cơ bản +N theo JxQhScale, +0 không đổi; (3) nạp nhân vật nhiều món: số món sau nạp = lúc lưu (atestvaihero 31/31). Lưu ý: EnChance chỉ nhân m_aryMagicAttrib 6 dòng; nếu 28/29 là sát thương cơ bản ngoài mảng này thì KHÔNG tăng, báo B.
 - SC-006 B cũng tự sửa: nhánh local sc-006b (từ sc-002b) commit 6acde3d: (f) QhSetEnChance gọi QhCheckPifeng cuối hàm (đổi +N làm tài phú tụt thì phi phong tự tháo); (d) hình phi phong cấp 11 không còn %10 (trước ra hình cấp 1; PaintPifeng đã kẹp theo số thư mục Spr_). Đang build checkpoint-sc-006 (D:\JX-wt\SC-006B). (a)(b)(c)(e) dữ liệu GoldMagic từng cấp CHƯA kiểm: B làm tiếp.
 TRẠNG THÁI SC-002: PARTIAL (build xong, chờ A đo). SC-006: PARTIAL.
+
+## B -> Chat/A, SC-006 PHI PHONG B TU SUA XONG BUILD 21/11 — ĐÃ CHẠY THẬT (build), CHƯA NẠP/ĐO
+ĐÃ TRA ĐỒ THỊ: KItemList.cpp (QhSetEnChance, QhCheckPifeng, Equip/UnEquip pifeng). ĐÃ ĐỌC KIẾN THỨC: GoldMagic.txt/GoldItem.txt (phiphong), TAI-PHU-PHI-PHONG.md (đã thêm bảng giá trị 11 cấp mục (f)).
+- Build 5/5 exit 0, D:\JX-wt\SC-006B\...\A07b\checkpoint-sc-006\out\ (nhánh local sc-006b, commit 6acde3d, = SC-002 + SC-006). gs001.exe SHA256 ca16705bbd5805698cef0117b3c0f163355ff525ef5a1b5084e6c0455e5870a2. A NẠP BẢN NÀY (đã gồm 28/29/30) thay bản SC-002 nếu muốn đo cả hai.
+- (a)(b) ĐÃ ĐỌC DỮ LIỆU: 11 phi phong gốc đều đủ 5 dòng (Sinh lực 200g, Nội lực 200g, Thể lực 100g, Kháng tất cả 4g%, Tốc chạy 5g), tăng nghiêm ngặt theo cấp g. (c) ngưỡng code = 6000+900(g-1) đúng. (e) Apply/Remove dòng ra/vào do hàm gốc: CẦN A ĐO.
+- (f) SỬA: QhSetEnChance gọi QhCheckPifeng cuối hàm => hạ +N làm tài phú tụt dưới ngưỡng thì phi phong tự tháo vào túi (túi đầy: giữ, lần sau kiểm lại).
+- (d) hình đổi ngay: Equip/UnEquip đã gán m_PifengType (0 khi tháo) và đồng bộ qua PlayerSync; CHƯA đọc đủ đường client vẽ lại: A đo (người khác nhìn thấy không cần đổi map). Sửa nhỏ: cấp>10 không %10. CHÚ Ý: hình lấy theo nLevel của món (cấp 1 và 2 cùng nLevel=1 => cùng hình; 11 cấp chỉ có 5 hình), muốn mỗi cấp 1 hình riêng phải đổi nLevel/ItemResIdx trong GoldItem: chờ chủ.
+- Bất thường: dòng GoldItem 3487 (biến thể cấp 10 "dịch chuyển tức thời") có chỉ số riêng (loại 233/227), không theo bảng 11 cấp.
+KỊCH BẢN A (LD, Test-36, có .bak): xem TASKS/SC-006.md 6 bước, thêm bước 7: tháo phi phong, chỉ số về cũ.
+TRẠNG THÁI SC-006: PARTIAL (build xong, chờ A đo).
