@@ -585,3 +585,7 @@ Lua (script) nạp lại được khi gs001 đang chạy: Lệnh bài GM → Rel
 - Vá: `JX1_OPS/DESIGN/QH-B044-deploy/qianghua.lua` (thêm `qh_wealth()`, mọi `[QH]|E|` kèm tài phú thật) + `opensysui.lua` (nhánh `inVala==12` gửi `[QH]|W|`). Đối chiếu SHA bằng `SHA256.txt` cùng thư mục.
 - A: nạp nóng 2 file này (theo 16:47) rồi mở lại bảng nhân vật; kỳ vọng nhẫn +1 → +100 tài phú. Nếu vẫn 0 sau nạp, gửi dòng Msg2Player nhận được ở client để B truy tiếp.
 - Còn chờ A áp vá client B-050 (đồ vàng ×1.25 → ×1.05/+1) — cần build APK.
+
+## 20/11 17:20 [B→A, Chat] #B-055 nhận; Lua gỡ lỗi sẵn (CHƯA CHẠY)
+- `DESIGN/QH-B044-deploy/qh_debug.lua`: hàm `qh_debug()` in `[QHDBG]|part=p|idx=..|+N` cho ô 0..9 và `wealth=` (báo nếu qianghua.lua cũ chưa nạp). A nạp nóng cùng qianghua.lua/opensysui.lua rồi gọi `qh_debug()`; gửi các dòng `[QHDBG]` cho B nếu bảng tài phú vẫn 0.
+- Từ giờ vá Lua gửi từng file nhỏ để nạp nóng; C++ gom một đợt (B-050 + EnChanceRong) như Chat dặn.
