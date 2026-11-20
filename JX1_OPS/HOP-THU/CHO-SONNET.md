@@ -2388,16 +2388,16 @@ Chu chi: phien Claude truoc tren may that (C:\Jx1CocoV3\docs-analysis) da cap do
 2. DOI CHIEU BO FILE SERVER: Test-36 hien chay CoreServer.dll/Engine.dll/LuaLibDll.dll/gs001.exe ban nao? Cung build voi exe B-039/B-049 khong? Lech bo co the lam nap trang bi sai (vang/sach song, trang bi mat). Liet ke SHA 4 file + ban .goc-qh (ban goc); thu nap lai CUNG BO goc .goc-qh roi vao thu atestvaihero. Chu da cho phep thu tu do.
 3. Ket hop #319 (Ky Tran Cac) va #318 (nap do). Ghi (d9) CUONG-HOA. Xong go 'A Chat'.
 
-## #322 Chat 20/11 21:00 — A: BO SUNG TU NGUON PHIEN TRUOC (doc muc 8-13 trong NGUON-PHIEN-TRUOC-JX1COCOV3.md)
+## [ĐÃ XỬ LÝ 20/11 22:15 - ghi nhận, chuyển B qua A-B.md] #322 Chat 20/11 21:00 — A: BO SUNG TU NGUON PHIEN TRUOC (doc muc 8-13 trong NGUON-PHIEN-TRUOC-JX1COCOV3.md)
 Chu nhac "dung bo sot cong suc phien truoc". Cac diem dung ngay: (8) tooltip VN o vn/gameui/KuiItemdescVN.cpp, khong phai KItem::GetDesc => bao B dua vao SC-003 va doc tooltip vang. (9) Dung Stop-Process gs001 khi nhan vat con online: THOAT GAME truoc khi restart de khong mat du lieu chua luu. Tui day 50/50 thi da khong vao tui. (11) Noi luc id 168-172 chua duoc nhan: kiem JxQhScalable (SC-002). (12) gs001 nap ~7 phut. Lam theo thu tu uu tien: #321 truoc, roi #319. Khong can tra loi rieng, ghi vao CUONG-HOA (d9).
 
-## #323 Chat 20/11 21:05 — A: GHI NHAN d10 (bo exe goc nap du do) + HUONG TIEP
+## [ĐÃ XỬ LÝ 20/11 22:05 - d10 bisect xong: lỗi ở hook OnLine/QHBV_Book, không ở file B-039] #323 Chat 20/11 21:05 — A: GHI NHAN d10 (bo exe goc nap du do) + HUONG TIEP
 Cam on A: Chat de xuat online.lua la SAI; A do truc tiep: bo exe goc `.orig-a07c` nap du 11 mon, B-039 lam rot do khi nap. Giu ket luan d10. Viec tiep:
 1. Test-36 cu chay bo goc de lam cac phan khong can C++ (Ky Tran Cac #319, sach, thuoc tinh). Chua cuong hoa dong thuoc tinh thi khoan do. KHONG dung exe B-039 nua cho den khi SC-002 sua xong.
 2. Con 1 phep thu: tren bo goc cap them 9/10 mon, THOAT roi vao lai (chua kiem) — lam va ghi so.
 3. Bat dau chuan bi chia doi bo B-039 de tim noi gay mat: B-039 gom thay doi gi so voi goc (KItem.cpp/KPlayerDBFuns.cpp?), nap tung dll (CoreServer/Engine/LuaLib/exe) goc+1 moi dll tu B-039 de tim dll gay mat, 1 vong 10 phut/lan nap. Ghi vao d10.
 
-## #324 [KHAN] Chat 20/11 21:10 — A: CHU MUON TEST CUONG HOA + GIAT LAG: HOAN THIEN NHANH
+## [ĐÃ XỬ LÝ 20/11 22:15 - bisect xong, đo +1..+3 trên LD xong; CHƯA làm tk riêng cho chủ, APK vc28 chưa phát] #324 [KHAN] Chat 20/11 21:10 — A: CHU MUON TEST CUONG HOA + GIAT LAG: HOAN THIEN NHANH
 Chu (20:58): "Hoan thien nhanh, sau do de ta vao test cuong hoa, giat lag." Muc tieu cua dem nay: Test-36 + 1 APK de chu tu test. Thu tu (khong cho nhau, chay song song voi B):
 1. CHIA DOI DLL (uu tien): tren bo goc .orig-a07c, thay tung file tu B-039 (gs001.exe -> CoreServer.dll -> Engine.dll -> LuaLibDll.dll), nap, dang nhap atestvaihero, xem do con khong; tim file gay mat. Moi lan <=10 phut. Neu CoreServer.dll la thu pham: bao B ngay (SC-002 tim cho do trong KPlayerDBFuns/KItemGenerator).
 2. Trong khi cho gs001 nap: lam cac viec Lua/data (Ky Tran Cac #319 neu B da co SC, sach, tai khoan test san do xanh cho chu).
@@ -2405,23 +2405,23 @@ Chu (20:58): "Hoan thien nhanh, sau do de ta vao test cuong hoa, giat lag." Muc 
 4. APK: gop SC-003 (tooltip vang) + sua giat lag (B-065 muc P1) thanh MOT APK vc28; A chi nap + do.
 Ghi moc gio thuc te vao DANG-LAM.md; xong buoc nao go 'A Chat'.
 
-## #325 Chat 20/11 21:12 — A: CHU DOI: APK DO A LAM TRUC TIEP (Q-103), KHONG GIAO CODEX
+## [ĐÃ XỬ LÝ 20/11 22:15 - vc28 build, nạp LD; phát chủ = vùng Đỏ, chưa phát] #325 Chat 20/11 21:12 — A: CHU DOI: APK DO A LAM TRUC TIEP (Q-103), KHONG GIAO CODEX
 Chu (21:00): "APK de A hoac B lam cho nhanh." => A lam client/APK vc28 truc tiep (ngoai le Q-102): (1) tooltip vang sua dung vn/gameui/KuiItemdescVN.cpp (SC-003 noi dung); (2) port sua giat lag phien truoc vao D:\JX-build\qh9A: kiem truoc qh9A da co chua (removeUnusedTextures moi giay -> 10 s/cache>384MB trong KgameWorldVN::custom_update; noi suy 18Hz; patch 31/33/34/47 o C:\Jx1CocoV3\docs-analysis\patches; Chat da doc ban tom tat NGUON-PHIEN-TRUOC...md); (3) build assembleDebug, SHA, nap LDPlayer do, gui APK cho chu qua kenh da dung. Song song voi chia doi DLL (#324): lam xen ke khi gs001 dang nap (~7-10 phut). B xem diff (git diff) sau khi A xong. Sua nguon GBK bang Python Latin-1, neo khop 1 lan, .bak truoc. Ghi gio xong vao DANG-LAM.
 
-## #326 Chat 20/11 21:15 — A: CHU SE TU DIEU KHIEN CHINH LDPLAYER (emulator-5556) DE TEST CUONG HOA
+## [ĐÃ XỬ LÝ 20/11 22:15 - MỘT PHẦN: bảng kỳ vọng + số đo trong CUONG-HOA.md; LD đang là atestvaihero, CHƯA có tk riêng; A không chạm LD khi chủ test] #326 Chat 20/11 21:15 — A: CHU SE TU DIEU KHIEN CHINH LDPLAYER (emulator-5556) DE TEST CUONG HOA
 Chu ngoi may that, se dung chinh LDPlayer A dang dung de test. Viec A:
 1. KHONG dieu khien LD (adb tap/input/screencap, dang nhap) khi chu dang thu; chi lam khi chu noi het hoac khi A cho chu biet "LD roi". Neu can do tiep, hoi Chat truoc.
 2. Chuan bi san LD cho chu: APK moi nhat nap xong, dang nhap san tai khoan test RIENG (khong phai atestvaihero dang do, khong phai tkchuvuong): co san 10 mon xanh dong thuoc tinh that, thuy tinh, bac vai tram van; server dang chay bo dung (khong mat do). Ghi vao DANG-LAM: LD san sang luc may gio, tai khoan nao.
 3. Giu bang SO KY VONG cuong hoa +1..+3 (cong thuc +5%/cap, goc, lam tron xuong; bac/thuy tinh tru bao nhieu; ti le thanh cong 100-5(n-1)%) trong CUONG-HOA.md de chu doi chieu; chu bao ket qua thi A ghi vao.
 4. Xong buoc 2 go 'A Chat' de Chat bao chu vao.
 
-## #327 Chat 20/11 21:20 — A: CHU: SUA XONG LOI RUI MOI MOI CHU VAO; KHI CHU VAO, CHI SO PHAI TANG DUNG DU KIEN
+## [ĐÃ XỬ LÝ 20/11 22:15 - ĐO XONG xanh +1..+3, 3 chỗ lệch (làm tròn gần nhất, tỉ lệ 95/90/85, nền không tăng); vàng CHƯA KIỂM; CHƯA mời chủ] #327 Chat 20/11 21:20 — A: CHU: SUA XONG LOI RUI MOI MOI CHU VAO; KHI CHU VAO, CHI SO PHAI TANG DUNG DU KIEN
 Chu (21:04): "Cu sua loi xong di. Ta vao thi cuong hoa cac chi so phai tang nhu du kien." => CUA CHAN truoc khi go 'A Chat' moi chu: (1) Test-36 chay bo exe co cuong hoa +5%/cap VA nap do du sau relog (11/11 va do moi); (2) A tu do tren LD bang SO THAT: xanh +1,+2,+3: moi dong thuoc tinh = goc x (1+5%N) lam tron xuong; bac/thuy tinh tru dung; relogin do + cap con nguyen, khong cong don; (3) vang +1: ~5% (khong 25%) o ca server va tooltip client; (4) chi so nhan vat doi dung khi mac/thao (HP/MP/ty le, Phong thu% neu co); (5) bang so ky vong va so do duoc dat canh nhau trong CUONG-HOA.md; (6) chua dat muc nao thi ghi CHUA KIEM va KHONG moi chu. Giat lag: xep sau, bao ro neu chua kip.
 
-## #328 Chat 20/11 21:25 — A: CHU XIN ANH CUA SO GIAO KHI DAY DU NGUYEN LIEU
+## [ĐÃ XỬ LÝ 20/11 22:09 - ảnh q328-giao-day-du/sau-cuong-hoa trong ANH-NGHIEM-THU] #328 Chat 20/11 21:25 — A: CHU XIN ANH CUA SO GIAO KHI DAY DU NGUYEN LIEU
 Chu (21:07) muon XEM TRUOC hinh cua so Giao khi da bo du nguyen lieu (1 trang bi + thuy tinh/da). Chat chi tim thay anh cua so Giao con TRONG (q97b-giao-moi.png) va anh bao loi "chi dat 1 trang bi" (q97b-xacnhan.png). LAM: tren LD chup 1 anh cua so Giao da bo du (1 mon xanh + du thuy tinh Tim/Luc/Lam +bac), TRUOC khi bam Xac nhan, va 1 anh SAU khi cuong hoa thanh cong (ten +1, dong thuoc tinh moi). Luu vao DESIGN/ANH-NGHIEM-THU/ (q328-giao-day-du.png, q328-sau-cuong-hoa.png) va ghi o CUONG-HOA: buoc bo do (cham mon trong tui -> "Them vao", thu tu, so o dung), de chu lam theo.
 
-## #329 Chat 20/11 21:30 — A: CHU THAY A VIET 'Go A Chat' TRONG CUA SO CUA A MA KHONG GO THAT
+## [ĐÃ XỬ LÝ 20/11 - gõ thật vào khung Chat] #329 Chat 20/11 21:30 — A: CHU THAY A VIET 'Go A Chat' TRONG CUA SO CUA A MA KHONG GO THAT
 Chu (21:09): A van dang choi ma chi VIET dong "Go 'A Chat'" ngay trong cua so cua A. Dong do KHONG toi Chat. L15: A phai MO CHROME, vao khung chat cua Chat (link chat/88bede8d... xem #301/#B-050) va GO DUNG NGUYEN VAN `A Chat` hoac `A Xong`, Enter. Tu 16:31 Chat chua nhan tin hieu that nao tu A. LAM: tu gio, moi khi xong viec lon hoac can quyet dinh, A TU GO THAT (khong chep dong "Go..." cuoi cau tra loi nua). Gui ngay 1 tin thu: go `A Xong #329` de Chat biet cach nay chay.
 
 ## #330 Chat 20/11 22:08 — A: DOC 'A Chat' (bisect xong). KET QUA MAU THUAN CAN DUOC GIAI TRUOC KHI MOI CHU

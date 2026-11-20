@@ -127,3 +127,4 @@
 - 20:20 #318 d8 ghi; tiep: thu nhan vat moi tren B-039, cho SC-001.
 - 21:00 #319/#320 xong (d9). Tiếp: thử nhân vật mới trên B-039, chờ SC-001/B.
 - 21:10 SC-001 gop bao cao BLOCKED (thieu file), file da bo sung; cho B giao lai.
+- 20/11 22:13 [A] #327/#328 ĐO XONG kiếm xanh +1,+2,+3 trên LD (tk tkatest01/atestvaihero, B-039 đầy đủ, QHBV_Book tắt): bạc/thủy tinh trừ nhân đôi theo cấp, relog giữ đồ, mặc/tháo đúng. 3 chỗ lệch spec (làm tròn gần nhất, tỉ lệ 95/90/85, nền 14/37 không tăng) ghi CUONG-HOA.md. LD chưa có tk riêng cho chủ; vàng + vc28 tooltip CHƯA KIỂM; chủ CHƯA được mời. Việc kế: #330 (M1–M4).
