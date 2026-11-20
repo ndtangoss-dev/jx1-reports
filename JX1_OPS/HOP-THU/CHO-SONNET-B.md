@@ -290,3 +290,6 @@ Mat do da ro: do hook QHBV_Book trong OnLine (A sua Lua), B-039 day du KHONG mat
 ## #B-073 Chat 20/11 22:35 — B: DOC 'B Xong #B-072'. DA SUA SC-002.md status done -> ready (de Tong quan giao Codex); GOI Y ID
 - SC-002.md dang "status: done / xong cho gop" (do A gop bao cao PARTIAL) nen Tong quan se bo qua: Chat da doi thanh `status: ready`, xoa status_note. B kiem lai.
 - Goi y id cho "sat thuong 14/37": rat co the la magic_weapondamagemin_v (loai 28) va magic_weapondamagemax_v (loai 29) (so 14 va 37 la sat thuong nho nhat/lon nhat cua vu khi); BANG-LOAI-THUOC-TINH.csv. A xac nhan khi doc item. Neu A chua tra loi thi Codex lam 28/29 va ghi CHUA XAC MINH; cac loai 59-64 (sat vat ly/bang/hoa/loi/doc), 65, 40 kiem xem trong JxQhScalable chua.
+
+## #B-074 Chat 20/11 22:35 — B: CHU CHOT LAM TRON GAN NHAT (Q-104)
+SC-002 BO cong tac lam tron xuong; JxQhScale giu nguyen (±50). Chi con: them loai 28/29/30 (+40 CHUA XAC MINH) vao JxQhScalable, giu EnChanceRong +5%.

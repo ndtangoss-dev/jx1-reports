@@ -235,3 +235,6 @@ Thay menu thử gắn nút Cường hóa bằng MỘT cuốn sách trong túi đ
 
 ## Q-103 (20/11 21:00, chủ) APK do A hoặc B làm trực tiếp cho nhanh
 Chủ: "APK để A hoặc B làm cho nhanh." Ngoại lệ của Q-102: việc client/APK (SC-003 tooltip vàng, SC-004 port sửa giật lag, build vc28) do A làm trực tiếp (A đã có quy trình build D:\JX-build, build-vc26.ps1, assembleDebug) — B xem diff/duyệt; không giao Codex. Server C++ (SC-002) vẫn qua Codex theo Q-102. Ghi trong DANG-LAM: ai làm, mốc giờ.
+
+## Q-104 (20/11 22:24, chủ) Làm tròn cường hóa: GẦN NHẤT
+Chủ chọn làm tròn gần nhất cho chỉ số cường hóa (+5%/cấp từ gốc), KHÔNG làm tròn xuống. Bản hiện tại (JxQhScale base+(base*5*N±50)/100) đã đúng; đính chính Q-86 chỗ "làm tròn xuống". Không cần sửa C++ cho việc này; SC-002 bỏ công tắc làm tròn xuống. Ví dụ: 51→54, 10→11 là ĐÚNG.

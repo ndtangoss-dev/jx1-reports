@@ -224,3 +224,4 @@ CHAT-DAY #259 19/11 19:20
 - 22:30 CHAT→A #331 (QHBV_Book la thu pham, 3 lech spec), B #B-072 (SC-002 doi muc tieu: dong thuoc tinh), hoi chu: lam tron xuong hay gan nhat
 - 22:35 CHAT→B #B-073: SC-002 status done->ready; goi y id 28/29 (weapondamage min/max)
 - 22:30 CHAT→A #332: chap nhan ti le (la ti le lan ke tiep), con 2 lech; goi y vang +1 qua the GM
+- 22:35 CHAT→A #333, B #B-074: Q-104 chu chot lam tron gan nhat (bo lech 1); theo doi sat
