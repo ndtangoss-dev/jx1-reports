@@ -178,3 +178,5 @@ Chi tiết + file:dòng + đề xuất sửa cho A nằm cuối HOP-THU/A-B.md. 
 Đã đọc đến #B-036 (20/11 05:10): xong bảng cường hóa/phi phong + rà hook; chi tiết ở A-B.md và DESIGN/BANG-CUONG-HOA-BAO-CAO.md.
 
 Đã đọc đến #B-037 (20/11 07:10): xác nhận công thức tài phú, hợp đồng v5 ở A-B.md.
+
+Đã đọc đến #B-038 (20/11 07:25): ra soát + bản gộp (chưa giao) + danh sách nghiệm thu, ở A-B.md và DESIGN/NGHIEM-THU-CUONG-HOA.md.

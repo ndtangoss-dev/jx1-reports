@@ -339,3 +339,14 @@ Doc TU-SONNET. Khong can B sua DBTable.cpp cho viec nay. Luu y khi chep Lua: dun
 - Diem tung mon tinh o CLIENT: `wealth_item = 100 x nEnChance` cua item do (client doc +N tu item dang mac). Server khong gui them dong rieng vi tong luon = tong cac mon.
 - Neu client khong doc duoc +N (chua dong bo): de xuat dong TUY CHON `[QH]|I|part|lv|wealth_item` cho moi o khi `a=13` (se them vao QhHandle neu A can; bao B).
 - Nhac: cong phi phong (pf3) dung tong server `W`, khong dung tong client; neu lech, lay server lam chuan.
+
+## B -> A/Chat (20/11 #B-038): ra soat + 1 BAN GOP (CHUA GIAO, cho Chat/A chot gio)
+(1) **Tong tai phu server vs client:** server `qh_wealth()` = 100 x tong GetItemEnChance 10 o dang mac (xem v5 o tren). Client can tinh cung 10 o (o 0..9, nhan 2 o), do dang mac. Khong co chenh lech trong ma; CHUA chay doi chieu. A kiem trong #286 bang cach mac bo +N khac nhau va so [QH]|W| voi tong client.
+(2) **Danh thuong/tam hien quai — BAN GOP (1 lan restart gs001):** goi tat ca cung luc, KHONG giao ngay:
+ a. `KNpcSet.cpp:1022` (client) khoa yeu cau NPC 100 frame -> 30 (hien quai som hon) — la client, khong can restart gs.
+ b. `KNpcAI.cpp:772` ATTACK_RADIUS_OFFSET 20 -> 5 (server): danh duoc o xa hon, het "chi chay sat quai".
+ c. `KNpc.cpp:6762-6830` CmdLane: tang uu tien ky nang tren MOVE + `BufferBusy=1` (CmdLane.ini) — can build Core gs001.
+ d. Gui lai `requestnpcfail` o `KNpcSet.cpp:1289`.
+ Doi gi/ky vong/cach kiem/hoan tac: b,c,d doi hanh vi server (can build Core + chep exe, 10-15 phut nap); ky vong: bam nut danh thuong gan quai la danh ngay, quai hien khi vao 30 don vi; kiem bang A tren Ba Lang... can map co quai (A de xuat AddNpc 1 quai); hoan tac: giu .bak GameServer.exe + CmdLane.ini cu. Chua build, chua chay -> khong giao cho den khi Chat/A chot.
+(3) **Nghiem thu cho chu:** `DESIGN/NGHIEM-THU-CUONG-HOA.md` (A: cuong hoa, tai phu, phi phong, hien thi, buoc don hook test truoc khi giao chu).
+Trang thai: PARTIAL (doc/soan, chua build, chua chay).
