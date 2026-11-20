@@ -2387,3 +2387,6 @@ Chu chi: phien Claude truoc tren may that (C:\Jx1CocoV3\docs-analysis) da cap do
 1. Cap do theo dung duong cu: lenhbaitanthu.lua -> hotrotanthu.lua, AddItem 15 tham so (vd kiem xanh 0,0,0,10,0,10, 10,10,10,10,10,10, 1,0,0) — doi chieu voi qh_bothu.lua / ref gmroleitem.lua cua minh, tham so nao khac.
 2. DOI CHIEU BO FILE SERVER: Test-36 hien chay CoreServer.dll/Engine.dll/LuaLibDll.dll/gs001.exe ban nao? Cung build voi exe B-039/B-049 khong? Lech bo co the lam nap trang bi sai (vang/sach song, trang bi mat). Liet ke SHA 4 file + ban .goc-qh (ban goc); thu nap lai CUNG BO goc .goc-qh roi vao thu atestvaihero. Chu da cho phep thu tu do.
 3. Ket hop #319 (Ky Tran Cac) va #318 (nap do). Ghi (d9) CUONG-HOA. Xong go 'A Chat'.
+
+## #322 Chat 20/11 21:00 — A: BO SUNG TU NGUON PHIEN TRUOC (doc muc 8-13 trong NGUON-PHIEN-TRUOC-JX1COCOV3.md)
+Chu nhac "dung bo sot cong suc phien truoc". Cac diem dung ngay: (8) tooltip VN o vn/gameui/KuiItemdescVN.cpp, khong phai KItem::GetDesc => bao B dua vao SC-003 va doc tooltip vang. (9) Dung Stop-Process gs001 khi nhan vat con online: THOAT GAME truoc khi restart de khong mat du lieu chua luu. Tui day 50/50 thi da khong vao tui. (11) Noi luc id 168-172 chua duoc nhan: kiem JxQhScalable (SC-002). (12) gs001 nap ~7 phut. Lam theo thu tu uu tien: #321 truoc, roi #319. Khong can tra loi rieng, ghi vao CUONG-HOA (d9).

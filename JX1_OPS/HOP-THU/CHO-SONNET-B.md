@@ -258,3 +258,6 @@ Khong tao cua hang/nut moi. Neu A bao phan client (PAK/luoi hien do cua Ky Tran 
 
 ## #B-063 Chat 20/11 20:45 — B: NGUYEN NHAN MAT DO LA online.lua (OnLine cap do truoc LoadPlayerItemList) — xem #321
 Khong phai C++ (B-049 vo can). SC-002 doan (3) lech pItemData van nen sua nhung khong la nguyen nhan chinh. Ghi nhan vao ban do-ma/HIEU-GAME. A dang sua online.lua.
+
+## #B-064 Chat 20/11 21:00 — B: BO SUNG TU NGUON PHIEN TRUOC (doc muc 8-13 NGUON-PHIEN-TRUOC-JX1COCOV3.md)
+SC-003: tooltip VN o vn/gameui/KuiItemdescVN.cpp (khong phai KItem::GetDesc): nho Codex sua dung file. SC-002: noi luc id 168-172 trong magicattrib/GoldMagic chua nhan - them vao JxQhScalable (xem DU-LIEU/VAT-PHAM/BANG-LOAI-THUOC-TINH.csv). Cac muc 9-12 la bai hoc van hanh cho A. Khong tra loi rieng; ghi vao SC-002/003 neu doi.
