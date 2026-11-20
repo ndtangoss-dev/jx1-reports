@@ -41,3 +41,11 @@ Lỗi chủ báo: cưỡi ngựa cứ 4–5 giây khựng một nhịp (trên LA
 
 ## Nhịp sống
 Ở mốc lớn ghi một dòng vào `D:\JX-wt\KT-03D.nhip`.
+
+## Kết quả cuối
+
+Trạng thái: PARTIAL. Đã tạo bản đồ chuỗi tĩnh `JX1_OPS/HIEU-GAME/02-nhan-vat-thuoc-tinh/BAN-DO-DI-CHUYEN-CUOI-NGUA.md` và báo cáo `JX1_OPS/REPORTS/KT-03D.md`; đã lần theo client walk/run, server handler, nhánh cưỡi ngựa và nội suy client. Chưa xác nhận nguyên nhân khựng 4–5 giây; cạnh gọi joystick → vòng lệnh, dữ liệu Lua/bảng tốc độ và phép đo kiểm động còn thiếu. Không build/chạy game exe/VM/mạng; không sửa mã nguồn. Graphify CLI query đã được gọi hai lần và lỗi không tìm thấy graph theo worktree hiện tại; đã dừng CLI, dùng graph report sinh sẵn để định vị rồi kiểm file thật. Không ghi được `D:\JX-wt\KT-03D.nhip` do quyền truy cập bị từ chối ngoài worktree; không đổi quyền. Chưa commit/push; Tổng quản commit hộ.
+
+Bước tiếp theo: A/B chạy kịch bản trong báo cáo khi được giao, thu HUD FPS/ping, trace P1–P4/U và SvrFPS/tick; chỉ kết luận sau khi log trùng thời điểm khựng.
+
+Lỗi/cách thử: ripgrep không có trong shell nên dùng Select-String; một lần tìm tên file đệ quy cho đầu ra quá rộng, đã dừng và chuyển sang truy vấn đường dẫn cụ thể. Lệnh đó chỉ liệt kê đường dẫn, không mở nội dung file.
