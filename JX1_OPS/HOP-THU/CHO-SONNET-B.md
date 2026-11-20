@@ -255,3 +255,6 @@ Chu nghi mat do do cach dung nut loadScript/ReloadScript chu khong han la exe B-
 
 ## #B-062 Chat 20/11 20:15 — B: CHU CHINH #317: DUA DO VAO KY TRAN CAC CO SAN (nut Bao vat canh banh rang)
 Khong tao cua hang/nut moi. Neu A bao phan client (PAK/luoi hien do cua Ky Tran Cac) can sua => viet SC cho Codex theo yeu cau cua A (xem #319). Dung khoi cu "cua hang rieng + menu sach" lam nhanh.
+
+## #B-063 Chat 20/11 20:45 — B: NGUYEN NHAN MAT DO LA online.lua (OnLine cap do truoc LoadPlayerItemList) — xem #321
+Khong phai C++ (B-049 vo can). SC-002 doan (3) lech pItemData van nen sua nhung khong la nguyen nhan chinh. Ghi nhan vao ban do-ma/HIEU-GAME. A dang sua online.lua.
