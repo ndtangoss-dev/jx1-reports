@@ -255,3 +255,83 @@ Các SHA là dấu nhận dạng blob tại thời điểm đọc; không chứn
 
 **Trạng thái cập nhật:** `RESEARCH_NOTES_UPDATED`; chỉ lưu kiến thức và đề xuất cải tiến trên nhánh nghiên cứu riêng. Không thay đổi `jx1-ops`.
 
+
+
+## 10. Cập nhật giám sát nhiệm vụ đêm 20–21/11/2026 — chỉ đọc nguồn vận hành, không can thiệp
+
+**Phạm vi cập nhật:** ghi nhận lệnh mới của chủ dự án và phản hồi Sonnet trên Git; đối chiếu task/report liên quan để lập ảnh chụp trạng thái ban đầu cho đợt theo dõi. Chỉ sửa sổ nghiên cứu ở nhánh `chatgpt-research/jx1-system-audit-2026-11-20`. Không tạo/sửa task, không gửi lệnh, không commit/push vào `jx1-ops`, không thay đổi worker, worktree, runtime, VM, LDPlayer, cấu hình hoặc queue.
+
+### 10.1 Dấu vết Sonnet đã nhận lệnh
+
+Đã đọc trực tiếp hai commit trên `jx1-ops`:
+
+- `a997df0a6efee510b00164934e9e32a5efc84e1e` — commit message `Chat: lenh dem #335/#B-076 cuong hoa hoan chinh, lag, phi phong`; thời gian GitHub ghi `2026-11-20T16:59:09Z` (23:59 ngày 20/11 giờ Việt Nam). Diff bổ sung:
+  - #335 cho A: chuẩn bị tài khoản thử riêng, đo đồ vàng +1 và +2, đo UI theo ảnh Q-91, port bản vá lag 31/33/34/47 và build APK vc28, kiểm phi phong trên LD; ghi từng mốc và bằng chứng số thật.
+  - #B-076 cho B: SC-002, task phi phong mới (SC-006), review diff client của A; nghiệm thu trên LD và báo theo mốc.
+  - Cập nhật hộp thư và dòng lịch sử cho thấy đây là lệnh được ghi vào kênh vận hành.
+- `e47370ee0301a9517db7799a38cd3e75356ac09a` — commit message `B: SC-006 phi phong, tra loi #B-076`; thời gian `2026-11-20T17:00:27Z` (00:00 ngày 21/11 giờ Việt Nam). Diff tạo task SC-006 và ghi phản hồi của B.
+
+**Kết luận có giới hạn:** [XÁC MINH TRONG GIT] lệnh #335/#B-076 đã được ghi vào hộp thư/kênh vận hành và có commit phản hồi của B. Điều này chứng minh dấu vết giao tiếp Git, không chứng minh Sonnet còn đang suy nghĩ, Codex đã được khởi chạy, hoặc bất kỳ worker/runtime nào đang hoạt động.
+
+### 10.2 Ảnh chụp task và báo cáo liên quan
+
+Đã đọc lại các file hiện hành trên `jx1-ops`:
+
+| Nguồn | SHA blob tại thời điểm đọc | Nội dung/trạng thái ghi trong file | Mức xác minh |
+|---|---|---|---|
+| `JX1_OPS/TASKS/SC-006.md` | `6cfd5f7573eca70364ab92b54e34cbcdfa9e8b0b` | `ready`, L3, owner B, agent Codex, branch `task/SC-006`, worktree `D:\\JX-wt\\SC-006`, depends_on SC-002; phạm vi KItemList.cpp/KItem.cpp và GoldMagic/GoldItem | [XÁC MINH TRONG FILE], không xác minh worker/worktree thực |
+| `JX1_OPS/TASKS/SC-002.md` | `89739f0fc1166eee4a1b674b4d59f0cfe2448c18` | `done`; mô tả JxQhScalable 28/29/30, +40 chưa xác minh, giữ EnChanceRong +5%, làm tròn gần nhất; phần pItemData++ ưu tiên thấp | [XÁC MINH TRONG FILE], chưa kiểm diff/build/merge/runtime |
+| `JX1_OPS/REPORTS/H-05-ui-cuong-hoa.md` | `fbb5ab7bc0333562f1dfec2aba3491ceebfb4803` | DONE khảo sát tĩnh UI; chưa build/chạy game; Lua nghiệp vụ, SPR, UI runtime và kết quả cường hóa chưa xác minh; 0/11 ca đề xuất đã chạy | [BÁO CÁO], không phải nghiệm thu tính năng |
+| `JX1_OPS/REPORTS/H-03-cuong-hoa.md` | `df9d49679953d76ef7d0018935eb48622c783094` | DONE khảo sát tĩnh; cấu hình/binary thực nạp, xác suất runtime và trạng thái triển khai chưa xác minh | [BÁO CÁO], không phải nghiệm thu tính năng |
+
+SC-006 ghi rõ:
+- Mục tiêu phi phong: đủ dòng thuộc tính; cấp cao tăng hơn cấp thấp; tài phú theo Q-90; đổi ngoại hình cạnh tên ngay; mặc tăng chỉ số thật và tháo thì mất; tài phú thiếu thì tự tháo.
+- B đã ghi nhận qua đọc mã rằng `QhCheckPifeng` không được gọi ở đường `LuaSetItemEnChance`, nên khi hạ +N làm tài phú giảm, phi phong có thể vẫn đang mặc. Đây là phát hiện đọc mã trong task, chưa phải phép thử runtime.
+- Đường ngoại hình đang có nghi vấn cấp >10 dùng `level%10`, có thể làm cấp 11 trùng hình cấp 1; cần kiểm tra mapping tài nguyên và đồng bộ server/client.
+- Task yêu cầu test sáu kịch bản trên LD; nhưng task hiện vẫn ghi `ready`, không có bằng chứng test nào được chạy.
+
+### 10.3 Phạm vi đêm được giao và chuỗi phụ thuộc
+
+**Cường hóa/UI**
+- #335 yêu cầu A đo đồ vàng +1, +2; làm UI cửa sổ cường hóa theo ảnh Q-91 (đồ + 3 đá, tỷ lệ, nút xác nhận/đóng, thông báo thành công/thất bại); ảnh LD trước/sau.
+- H-05 chỉ chứng minh luồng tĩnh: nút → `c2s_runscript` → Lua mở `s2c_opengive` → `KuiGive_New` → khóa item → xác nhận `c2s_playergiveback`. Chưa chứng minh cửa sổ có đầy đủ các trường/nhãn/hiển thị mà #335 yêu cầu, cũng chưa có test tương tác.
+- SC-002 có status `done` trong task file mới đọc, trong khi SC-006 vẫn `ready` và khai báo phụ thuộc SC-002. Cần theo dõi xem Sonnet đã xác nhận dependency và giao Codex thật chưa; không suy luận từ status đơn lẻ.
+
+**Lag/quái vật**
+- #335 ghi A port các bản vá lag 31/33/34/47 vào `D:\\JX-build\\qh9A`, build APK vc28, đo FPS trước/sau trên LD.
+- Tại thời điểm cập nhật này chưa đọc được diff port, build log, APK hash mới, FPS đo lặp hoặc bằng chứng riêng về lỗi quái vật. Không kết luận lag/quái vật đã sửa.
+
+**Phi phong**
+- SC-006 là task code server phía B; #335 giao A kiểm trên LD sau khi có phần sửa.
+- Cần theo dõi riêng kết quả build server, test từng tiêu chí, đồng bộ ngoại hình ở góc nhìn người chơi khác, chỉ số trước/sau mặc-tháo, ngưỡng tài phú và ca giảm +N khi đang mặc.
+- Báo cáo static không thay cho kiểm tra chỉ số chiến đấu và relogin.
+
+### 10.4 Những gì đã và chưa được thực hiện bởi ChatGPT trong lượt giám sát
+
+Đã thực hiện:
+- Đọc commit #335/#B-076 và commit phản hồi SC-006.
+- Đọc task SC-006, SC-002 và báo cáo H-05, H-03 từ `jx1-ops`.
+- Ghi nhận trạng thái, dependency, điểm nghi vấn và khoảng trống bằng chứng trong sổ nghiên cứu riêng.
+
+Không thực hiện:
+- Không gửi thêm lệnh cho Sonnet/B/Codex và không tạo task.
+- Không đọc/ghi các worktree hoặc truy cập máy Windows, tiến trình Claude Code, Codex, VM, LDPlayer.
+- Không build APK/server, không chạy test, không đo FPS, không xem runtime log.
+- Không sửa bất kỳ file nào trên `jx1-ops`; không thay đổi queue/lock/config/hook/worker.
+- Không khẳng định đang giám sát liên tục nền; ảnh chụp này chỉ phản ánh dữ liệu Git được đọc trong lượt.
+
+### 10.5 Mốc baseline và cách tiếp tục
+
+Mốc quan sát Git đầu tiên của lệnh đêm: commit #335 lúc 23:59 ngày 20/11 giờ Việt Nam; phản hồi B và task SC-006 xuất hiện lúc 00:00 ngày 21/11. Đây là mốc ghi nhận lệnh trong Git, **không phải** thời điểm chắc chắn Sonnet bắt đầu suy nghĩ hoặc Codex bắt đầu làm việc.
+
+Ở lần kiểm tra kế tiếp, chỉ đọc các bằng chứng mới trên Git: task/report, commit, diff, build/test report và trạng thái được cập nhật. Ghi rõ thời điểm, ref, SHA và phân biệt:
+- `DISPATCH_RECORDED`: có dấu vết lệnh trong Git.
+- `WORKER_STARTED`: chỉ ghi khi có bằng chứng worker/session/process bắt đầu.
+- `CODE_CHANGED`: có commit/diff xác định.
+- `BUILD_PASS`: có log build exit 0 và artifact/hash.
+- `RUNTIME_PASS`: có test runtime tái lập được.
+- `ACCEPTED`: có bằng chứng nghiệm thu theo từng tiêu chí.
+
+Không đánh đồng các trạng thái này. Nếu chỉ có báo cáo hoặc task status mà không có bằng chứng phù hợp, giữ nhãn [BÁO CÁO] hoặc [CHƯA XÁC MINH].
+
+**Trạng thái sổ nghiên cứu sau cập nhật:** ghi nhận lệnh đêm và checkpoint ban đầu; không can thiệp vận hành. Nhánh `jx1-ops` được dùng làm nguồn đọc, không phải đích ghi.
