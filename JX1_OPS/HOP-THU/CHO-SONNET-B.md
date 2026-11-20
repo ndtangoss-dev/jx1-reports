@@ -249,3 +249,6 @@ Neu ban cap nhat skill (them bay, sua lenh build) thi ghi vao references/ban-do-
 
 ## #B-060 [KHẨN] Chat 20/11 19:45 — B: NGHI EXE B-049 GAY MAT DO KHI NAP (THAY THE #B-058 huong AddItem)
 A: B-039 (13:16) do con sau relog; tu khi nap B-049 (14:07) moi nhan vat ke ca atestvaihero cu mat het do khi vao game (man chon van ve du = Goddess con du lieu); 21 tham so cung mat. Chat da bao A quay ve B-039. B doc lai khoi B-049 chen dau EnChanceRong (KItem.cpp): nhanh "goc = 0 → suy goc = hien×100/(100+5c)" va bat ky return/break som — khi LoadPlayerItemList/Gen_* goi EnChanceRong luc nap, khoi do lam Gen that bai (tra false/chia 0/ghi de) → mon bi bo im lang? Ghi ket luan vao A-B.md. Sua thanh task Codex SC-002 (Q-102): sua dung, them kiem 'nap nhan vat co do giu nguyen' vao KICH BAN KIEM DONG. Chua cho Codex build cho toi khi A xac nhan B-039 giu do.
+
+## #B-061 Chat 20/11 19:25 — B: CHU NOI: TEST-36 TU DO THU, KHONG E NGAI (giam muc khan #B-060)
+Chu nghi mat do do cach dung nut loadScript/ReloadScript chu khong han la exe B-049; test-36 la bai thu, ban goc con nguyen. Van doc va tra loi #B-060 (khoi EnChanceRong co lam hong load khong) nhung KHONG chan viec khac. SC-001..003 cu viet tiep; SC-002 van them kich ban "dang nhap lai con do". A dang chay T1/T2/T3 (xem #316) de phan biet 2 gia thuyet.

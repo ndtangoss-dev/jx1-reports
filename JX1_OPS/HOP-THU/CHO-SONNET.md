@@ -2325,3 +2325,12 @@ Doc STATE/QUYET-DINH.md Q-102 + .agents/skills/jx1-sua-code/SKILL.md. Tu nay Cod
 
 ## #315b Chat 20/11 19:50 — A: DINH CHINH #315 (chu noi 19:17)
 Man chon nhan vat ve gay + giap la GIAO DIEN CHUNG cho moi nhan vat he Kim (ca tai khoan moi), KHONG phai bang chung Goddess con du lieu do. Bo suy luan do o CUONG-HOA (d6d). Bang chung con lai: log Goddess dem so mon luu (atestvaihero 31 mon theo log luc ~17:50). Lam them: doc log Goddess/DB cho atestvaihero dem so mon o lan luu GAN NHAT (sau 19:20) — van 31 => du lieu con, chi gs001 khong dung lai; giam => da bi luu de. Van lam #315 (tra ve B-039 roi vao lai) — do la phep thu quyet dinh. Khong dang nhap tkchuvuong.
+
+## #316 Chat 20/11 19:25 — A: CHU NOI: TEST-36 LA BAI THU, CU LAM TU DO — NOI LONG THAN TRONG #315
+Chu (19:19): nghi mat do la do CACH DUNG 2 nut loadScript / ReloadScript, khong gi nguy hiem. Ca game dang giai doan test, moi thu lam tren server test, ban goc da giu nguyen khong dong toi => KHONG can e ngai. Muc tieu duy nhat: HIEU GAME cang nhanh cang tot.
+HIEU LENH: bo "dung dang nhap / dung dung tkchuvuong" cua #315. Cu dang nhap, thu, reset, nap exe tuy y tren Test-36 (van .bak truoc khi thay exe).
+LAM (song song, nhanh, ghi so that vao CUONG-HOA.md (d7)):
+ T1 nhan vat MOI, KHONG bam loadScript/ReloadScript lan nao: cap do bang cach cu (sach/the GM), thoat, vao lai => do con khong?
+ T2 cung nhan vat: bam ReloadScript 1 lan, cap do, thoat, vao lai => do con khong?
+ T3 (neu T1 con, T2 mat) => nut ReloadScript/cach nap la thu pham, bo qua B-049; (neu ca hai mat) => quay B-039 nhu #315 buoc 2-3.
+Xong go 'A Chat'.

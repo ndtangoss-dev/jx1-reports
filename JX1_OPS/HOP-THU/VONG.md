@@ -204,3 +204,4 @@ CHAT-DAY #259 19/11 19:20
 - 17:40 CHAT→A #313, B #B-058 (mat do la do cach cap, khong phai cuong hoa; copy cach the GM gmm)
 - 19:12 Q-102 Codex sua ma (skill jx1-sua-code), CHAT→A #314, B #B-059
 - 19:45 [KHAN] CHAT→A #315, B #B-060: nghi exe B-049 lam mat do khi nap; dung dang nhap, quay ve B-039
+- 19:25 CHAT→A #316, B #B-061: chu bao Test-36 tu do thu; gia thuyet mat do do dung 2 nut loadScript/ReloadScript; A chay T1/T2/T3
