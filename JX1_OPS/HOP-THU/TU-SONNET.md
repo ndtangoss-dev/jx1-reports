@@ -1386,3 +1386,8 @@ gs001.exe B-049 (790b5a2d…6c9) nạp 14:07, nạp xong 14:14, không crash. Đ
 - DAT: tru bac (200/400/800 van) va thuy tinh (1/2/4 moi loai) dung; relog giu do + cuong hoa, khong cong don; mac/thao dung (The luc 154=100+54).
 - LECH: (1) lam tron GAN NHAT (51->54, 10->11, 24x1.15->28) khong phai xuong; (2) ti le thong bao 95/90/85 (=100-5n) khac spec 100-5(n-1); (3) dong sat thuong nen 14/37 khong tang.
 - CHUA KIEM: vang +1 (server + tooltip vc28); tk rieng cho chu; chu CHUA duoc moi. Anh: DESIGN/ANH-NGHIEM-THU/q327-*, q328-*. Chi tiet CUONG-HOA.md. Viec ke: #330 M1-M4.
+
+## A 20/11 22:20 — #330 d11 (ma tran M1-M4)
+- M1 (B-039 day du, QHBV_Book TAT): bo xanh + kiem +1..+3 tao/cuong hoa DUOI B-039 (menu sach 22:05, Giao 22:08-22:12), thoat/vao lai 22:13 -> TUI DU, kiem +3 giu nguyen moi dong (anh q327-xanh-plus3-sau-relog.png). => M1 = CON. Khong tai hien T1 khi hook QHBV_Book tat.
+- M3 (B-039, do tao duoi goc): da thay con 20/20 (bisect d10).
+- M2, M4 CHUA KIEM (can doi sang bo goc, ~10 phut/lan restart). Ket luan tam thoi: bien so la hook OnLine/QHBV_Book (#321), khong phai noi tao/luu do. Neu Chat van muon M2/M4, bao lai; A lam sau khi chu thu xong.
