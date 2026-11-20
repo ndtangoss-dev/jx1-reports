@@ -1514,3 +1514,12 @@ gs001.exe B-049 (790b5a2d…6c9) nạp 14:07, nạp xong 14:14, không crash. Đ
 - (e) Tên phi phong nhãn "[cấp 1]" mà yêu cầu cao hơn cấp 1: "Phi Phong Tuyệt Thế [cấp 1] +6", Yêu cầu tài phú 6900 (đúng cấp 2), Đẳng cấp yêu cầu +60. Nhãn cấp trong tên không khớp yêu cầu (cần GoldId/dòng [QH]|D|k|can|co từ log gs001 để chốt; chưa lấy).
 - Tooltip Lăng Vân vẫn +389 Sinh lực / +52% tốc / Kháng lôi 36% / Nội lực +174 — không khớp thực (+260 Sinh lực, +1 Chạy).
 - Chưa đo: k=11 với 15000, thoát-vào lại, Né tránh giáp, sát thương đao +1, FPS vc27/vc31.
+
+## [A] 21/11 02:55 — SC-006 build 3: KẾT QUẢ ĐỢT 4 (LD + qh_dump.log, Test-36)
+- Nạp build 3 OK (SHA gs001 829f648f…). Lỗi phía A: `qh_bothu.lua` của A bị lỗi cú pháp (chuỗi `\t` thừa) làm menu [TEST-36] chết; đã vá, không liên quan build.
+- **Mặc 6000**: Lăng Vân +6 mặc được. Bảng nhân vật trước→sau: Sinh lực 1060→1320 (+260 ĐÚNG), Nội lực 100→360 (+260 ĐÚNG), Thể lực 100→230 (+130 ĐÚNG), Chạy 10→11. qh_dump: `t85=260(gốc 200) t89=260(200) t93=130(100) t114=5(4) t111=7(5)` => server đúng bảng. Tháo: về 1060/100/100/10 (đúng, tháo mất chỉ số).
+- **Kháng**: server cộng t114=5 nhưng bảng nhân vật vẫn Kháng hàn/lôi 0%, hỏa -24%, độc 24% (không đổi) => dòng t114 không hiện ở ô kháng nào của client; cần B cho biết t114 là kháng gì và client hiển thị ở đâu (CHƯA rõ).
+- **Vàng +1 (dao)**: qh_dump `genre=0 detail=0 goldid=11 enchance=1 t28=42(gốc 40) t29=120(gốc 114)` + `t167=-20 t31=99`. t28/t29 tăng đúng JxQhScale (+5%/ +120?). Gốc 114→120 = +5.3%, đúng quy tắc.
+- Tooltip client vẫn sai (+389/+52%/Kháng lôi 36%/Nội lực +174; nhãn "[cấp 1]" kèm yêu cầu 6000): cần vá dữ liệu GoldMagic/GoldItem client (PAK/CDN) — chưa làm.
+- **!!! gs001 SẬP** (Event 1000, Engine.dll, 0xc0000409, offset 0x5bf45, PID 0x1f30 = 7984) lúc 02:49:15, ~35 giây sau khi A THÁO phi phong +6 (02:48:40) rồi mở/đóng bảng nhân vật + bấm menu [TEST-36]. Client kẹt "đang giải kẹt tài khoản". Chưa chắc do tháo phi phong hay do thao tác sau đó (AddGoldItem 11 phi phong / SetTestWealth); đã chép `qh_dump.log.crash1` ở thư mục gs VM. A đã restart gs001 để tái hiện từng bước (mặc → tháo → chờ 60s).
+- Lỗi cũ vẫn mở (đợt 3): đổi phi phong thất bại thì mất phi phong đang mặc; nhãn [cấp 1] của Tuyệt Thế yêu cầu 6900.
