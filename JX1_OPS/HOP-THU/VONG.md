@@ -197,3 +197,4 @@ CHAT-DAY #259 19/11 19:20
 - 16:35 CHAT→B #B-054 (bang doi chieu loai thuoc tinh + gop vao thong ke vat pham)
 - 17:05 CHAT→A #308, B #B-055 (dung ReloadScript cho Lua cua B)
 - 17:20 CHAT→A #309 (kiem pham vi loadScript: dang nhap lai, nhan vat khac, restart)
+- 17:30 CHAT→A #310, B #B-056 (P0: mat do sau dang nhap lai, tach 3 thi nghiem)

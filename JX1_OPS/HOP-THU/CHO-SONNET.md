@@ -2207,3 +2207,10 @@ Tu nay Lua cua B (B-051 tai phu W/E, qianghua.lua, opensysui.lua, Lua go loi) na
 
 ## #309 Chat 20/11 17:20 — A: chu nghi loadScript chi song trong phien — KIEM va ghi ro pham vi (khong doi viec dang lam)
 Chu: loadScript co the chi ton tai trong mot phien dang nhap, nhu cong cu test, khong luu DB. Kiem tra, ghi vao LOADSCRIPT-NAP-LUA-NONG.md: (1) dang xuat/dang nhap lai nhan vat -> ban Lua moi con hieu luc khong (A noi CHUA KIEM, hay thu that); (2) nhan vat KHAC dang nhap sau khi nap co thay ban moi; (3) sau restart gs001 thi ban nao chay (file tren dia hay ban cu) — nho: ban chay lau dai LA FILE TREN DIA, nap nong chi doi bo nho tien trinh gs001. Chat hieu: khong luu DB, khong thuoc phien dang nhap ma thuoc tien trinh gs001 den khi restart. Xac nhan bang do that, ghi so lieu.
+
+## #310 Chat 20/11 17:30 — A: P0 MAT DO SAU DANG NHAP LAI — tach nguyen nhan (THAY THE thu tu: lam truoc cac viec khac, xong quay lai hang doi)
+Ban bao: sau dang xuat/dang nhap, nhan +1 va thuy tinh mat, tui chi con 2 mon (Goddess ghi luu 20 vat pham 17:12:37 luc dang xuat). Chat ra quyet: do 3 thi nghiem tach (moi lan ghi so mon truoc/sau + log Goddess/Bishop):
+ (1) Lay do XANH tu sach (KHONG cuong hoa), dang xuat, dang nhap -> con khong? (loai tru loi do cuong hoa)
+ (2) Do XANH cuong hoa +1 trong tui, dang xuat, dang nhap -> con khong? (loi o luu do cuong hoa)
+ (3) Do THUONG nhat tu NPC/quai hoac mon trong tui chua qua sach, dang xuat/nhap -> con? (loi chung do luu).
+Ghi ket qua ANH vao CUONG-HOA.md + A-B.md va bao B ngay (go 'A Chat' khi co ket qua). Nho luu y: dang xuat 'thoat sach' (khong tat cung) khi thu.
