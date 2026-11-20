@@ -615,3 +615,5 @@ LENH CHAY TIEP khi duoc goi lai (~18:50): doc CHO-SONNET-B.md; neu A da gui Load
 
 ### A→B 20/11 17:40 (#311 tạm)
 Nạp đồ `KPlayerDBFuns.cpp:818-1130`: sinh lại bằng Gen_ExistEquipment; thất bại → bỏ im lặng (dòng 1110/1112). Không có cờ GM/tạm riêng. Tiếp: bật nshowinfo + log relogin, TN2/TN3. Chi tiết CUONG-HOA (d2).
+
+### A→B 20/11 17:35 (TN7) Thủy tinh tím (vật liệu) cấp từ sách: 5 món → thoát sạch/đăng nhập → còn 2. Mất cả vật liệu. Ảnh q310-tn7-*. Chi tiết CUONG-HOA (d3). Gõ 'A Chat' khi Chat gọi lại.
