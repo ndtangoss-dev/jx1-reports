@@ -17,6 +17,8 @@ Môi trường: Test-36 (192.168.56.150), tài khoản test riêng; KHÔNG Serve
 2. ☐ Mỗi món có điểm riêng trên tooltip = 100 × +N; khung nhân vật hiện tổng; tổng server (`[QH]|W|`) = tổng client. LỆCH → lấy server làm chuẩn, báo lỗi.
 3. ☐ Tháo một món +N → tổng giảm đúng 100×N ngay lập tức; mặc lại tăng lại.
 4. ☐ Đồ trong túi KHÔNG tính.
+5. ☐ (Q-90) Tài phú là thuộc tính nhân vật: mặc món +N tăng đúng 100×N, tháo giảm đúng, cường hóa món đang mặc +1 → tăng 100 ngay; đăng nhập lại vẫn đúng (tính lại từ đồ đang mặc). Tooltip món có dòng "Điểm tài phú +M".
+6. ☐ (Q-90) Tooltip phi phong có "Yêu cầu tài phú: X" (đỏ nếu thiếu); mặc khi thiếu bị chặn bằng cơ chế yêu cầu chuẩn. Cần bản gs001 B-039 (SHA256-b039.txt).
 
 ## C. Phi phong 11 cấp
 1. ☐ Cấp k cần tài phú ≥ 6000+900(k−1): 6000, 6900, ..., 15000. Thử đúng ngưỡng (mặc được) và dưới 1 điểm (bị chặn, có thông báo).
