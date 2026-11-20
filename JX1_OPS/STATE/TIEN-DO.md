@@ -1,4 +1,4 @@
-# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-20 20:35, đừng sửa tay)
+# TIẾN ĐỘ (tự sinh bằng TOOLS/tien_do.py lúc 2026-11-20 20:52, đừng sửa tay)
 
 ĐANG LÀM: (không)
 KẾ TIẾP: 0-08, B-05, D-02, E-04, E-06, P-01
@@ -14,7 +14,6 @@ flowchart LR
     T_04["T-04 chặn"]
   end
   subgraph S3["Chặng 3 tick và đồ họa"]
-    SC_002["SC-002 chờ gộp"]
     SC_003["SC-003 chờ gộp"]
     TS_04["TS-04 chặn"]
     0_08["0-08 chờ"]
@@ -25,8 +24,9 @@ flowchart LR
     P_01["P-01 chờ"]
     P_03["P-03 chờ"]
     SC_001["SC-001 chờ"]
+    SC_002["SC-002 chờ"]
     X_05["X-05 chờ"]
   end
 ```
 
-Tổng: 277 việc, 0 đang làm (+0 chết, 2 chờ gộp), 9 chờ, 2 bị chặn, 264 xong.
+Tổng: 277 việc, 0 đang làm (+0 chết, 1 chờ gộp), 10 chờ, 2 bị chặn, 264 xong.
