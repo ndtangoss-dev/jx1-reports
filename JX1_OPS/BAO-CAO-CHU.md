@@ -1,3 +1,15 @@
+# SẴN SÀNG TEST — Điểm tài phú (Q-90), 20/11 09:20
+
+Bản cho đại vương thử trên Test-36 (nhân vật `atestvaihero`; KHÔNG dùng tkchuvuong).
+
+- Server: gs001 bản B-039 nạp lúc 07:50 (đủ 1 lần restart, có `*.bak-b039pre`, SHA khớp SHA256-b039.txt). Hoàn tác: chép lại các file `.bak-b039pre`.
+- Client: APK vc26, 95,09 MB, SHA256 df809da874acb643492e357c9f7b0aed6cbe9a77a73a8a3333783770374230d3. Link (Tailscale, cổng 8091): http://100.95.186.86:8091/jx-vc26.apk. Trang có nút Sao chép: https://claude.ai/artifact/A999YqY16WvJBRpWDNXXaR
+- Cái mới: bảng nhân vật hiện "Điểm tài phú: N"; mô tả đồ hiện "Điểm tài phú +M" (M = 100 × cấp +N, ô 0..9); phi phong hiện "Yêu cầu tài phú: X" (đỏ khi thiếu), X = 6000 + 900 × (cấp − 1).
+- Đã kiểm trên LDPlayer (ảnh docs-analysis/out/ld/q11, q13–q16): bảng nhân vật = 1500; đồ mặc +7 hiện "+700", đồ trong túi +0 hiện "+0"; phi phong cấp 1 hiện "Yêu cầu tài phú: 6000" màu đỏ; bấm Sử dụng khi thiếu → bị chặn, báo "Không mặc được".
+- CHƯA kiểm tự động: phi phong mở được khi đủ ngưỡng, tự tháo khi tụt dưới ngưỡng, số tài phú đổi ngay khi mặc/tháo/cường hóa (chỉ mới thấy giá trị lúc đăng nhập). Ghi trung thực: đại vương thử giúp.
+- Lưu ý: tài phú không lưu DB, tính lại từ đồ đang mặc sau khi vào game. Nhân vật test đang cấp 156 vì hook QhGiveTest cộng exp mỗi lần đăng nhập.
+- Còn mở từ #284: đánh thường/làn lệnh (gói B-038 chưa giao), phi phong vàng cấp 11.
+
 # BÁO CÁO CHỦ — việc cần đại vương mới tới 100% (19/11, 02:40)
 
 Các mục dưới đây không tính được "xong" nếu thiếu đại vương; thuộc hạ KHÔNG hạ mẫu số, chỉ ghi rõ chờ ai.

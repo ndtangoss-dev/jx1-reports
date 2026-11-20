@@ -1281,3 +1281,5 @@ Tooltip "+N tất cả kỹ năng" nay hiện từ +14 (+1) và +15 (+2), khớp
 - Tooltip: KItem.cpp them dong vang "Diem tai phu: 100xN" cho trang bi detail 0..9 (phi phong/ngua/mat na/an khong tinh); .bak-q88.
 - Khung nhan vat (trang 2, KuiRoleState.cpp): Label TTF cung font goc "Diem tai phu: N", N = tong 100xGetEnChance 10 o dang mac, cap nhat moi tick trong UpdateAllEquips; .bak-q88. Vi tri (w-190, h/2+112) chua xem tren LD, co the chinh.
 - Build vc26: D:\JX-build\build-vc26.ps1 -> build-vc26.done. Sau do: cai LD, chup khung + tooltip +0/+3.
+
+Đã đọc đến #288 lúc 09:20. SẴN SÀNG TEST tài phú (Q-90): gs001 B-039 (07:50) + APK vc26 SHA df809da8…, link ở BAO-CAO-CHU.md. Đã kiểm hiển thị và chặn mặc phi phong; chưa kiểm tự tháo/đổi số khi mặc-tháo.

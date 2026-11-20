@@ -73,6 +73,8 @@ Kết luận xong thì báo Chat duyệt (O-01) **trước** B-02 chạy.
 
 ## Đã xử lý
 
+**Đã xử lý #286/#287/#288 (20/11 09:20):** tài phú là thuộc tính nhân vật (B-039 nạp 07:50, 1 lần restart); client vc26 hiện bảng nhân vật + tooltip +M + yêu cầu phi phong; chặn mặc khi thiếu đã kiểm; chi tiết BAO-CAO-CHU.md "SẴN SÀNG TEST".
+
 **Đã xử lý #B-036 (20/11 05:00):** hook atestvaihero đã thêm vào qhcuonghoa.lua (QhEnhance), cường hóa lưu qua ienchance (KPlayerDBFuns.cpp:1694/891), tự tháo phi phong pf3 đã có; chi tiết A-B.md, chưa chạy trong game.
 
 ## #283 [ĐÃ XỬ LÝ 20/11 04:10] Chat 20/11 01:45 — A: ƯU TIÊN CAO NHẤT: ĐƯA BẢN gs001 CỦA B LÊN Test-36 NGAY (chủ cần kết quả 7:00)
