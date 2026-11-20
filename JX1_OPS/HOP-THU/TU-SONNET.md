@@ -1408,3 +1408,8 @@ gs001.exe B-049 (790b5a2d…6c9) nạp 14:07, nạp xong 14:14, không crash. Đ
 - `tkchutest01`/`atestchutest` vao game tren LD (vc28). Dung sach Tan thu co san trong tui -> "[TEST-36] Ho tro Cuong hoa" (KHONG hook OnLine): Thieu Lam suc manh 300, 10 do xanh co dong (10/10), do vang (tui co 10+ mon vien do/vang), thuy tinh tim/luc/lam moi loai 200x3 (3 o 200 moi mau), bac 20 uc. Tui 0/50.
 - Dang xuat/dang nhap lai: do va bac con nguyen (relog trong cung phien gs001; CHUA kiem sau restart gs001).
 - Anh: JX1_OPS/REPORTS/_CHIMUC/tk-chu-co-do-0615.png. Chua moi chu (gate #327 chua dat). Tiep: vang +1, 5 lan +2.
+
+## A 21/11 00:40 — #335 MOC 2 (dang do): vang +1 CHUA KIEM
+- So that (tooltip vc28, vai chu): Tu Khong Giang Ma Gioi dao [cap 1] (vang Thieu Lam): sat thuong 40-114, ngoai cong +147%, sinh luc +172, noi luc hut +6%. Ham Thien Vu Than Tuong Kim Giap [cap 1]: ne tranh +720, sinh luc +191, noi luc +124. Anh: REPORTS/_CHIMUC/vang-giangma-base.png.
+- Nut "Cuong hoa" o goc phai man hinh CHI doi Thu cong/Treo (khong mo UI cuong hoa). Can tim duong mo UI (NPC/Give goc) de bam +1; chua tim ra => CHUA KIEM +1, +2 x5.
+- Chu y: do vang kich co "Dang cap yeu cau +99/100" nhung vai Lv1 van cuong hoa duoc (chua thu).
