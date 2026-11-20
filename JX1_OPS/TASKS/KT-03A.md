@@ -1,7 +1,7 @@
 ---
 id: KT-03A
 title: Bản đồ chuỗi: tài phú và phi phong (yêu cầu, tự tháo)
-status: running
+status: done
 level: L3
 agent: codex
 effort: high
@@ -14,7 +14,7 @@ backlog_ref: "Q-100 (20/11 12:02, đại vương duyệt: tiểu yêu bù kiến
 vung_file: ['JX1_OPS/HIEU-GAME/01-trang-bi-cuong-hoa/BAN-DO-TAI-PHU-PHI-PHONG.md']
 tai_nguyen: []
 updated: 2026-11-20
-status_note: "Tong quan giao bang JX-K4"
+status_note: "da gop (B), Chat duyet #B-051"
 ---
 
 ## Mục tiêu và tiêu chí xong

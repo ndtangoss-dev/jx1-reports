@@ -1,7 +1,7 @@
 ---
 id: KT-03B
 title: Bản đồ chuỗi: nút đánh thường và làn lệnh kỹ năng
-status: running
+status: done
 level: L3
 agent: codex
 effort: high
@@ -14,7 +14,7 @@ backlog_ref: "Q-100 (20/11 12:02, đại vương duyệt: tiểu yêu bù kiến
 vung_file: ['JX1_OPS/HIEU-GAME/03-ky-nang-chien-dau/BAN-DO-DANH-THUONG-LAN-LENH.md']
 tai_nguyen: []
 updated: 2026-11-20
-status_note: "Tong quan giao bang JX-K4"
+status_note: "da gop (B), Chat duyet #B-051"
 ---
 
 ## Mục tiêu và tiêu chí xong
