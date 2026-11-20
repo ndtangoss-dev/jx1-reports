@@ -1302,3 +1302,10 @@ Tooltip "+N tất cả kỹ năng" nay hiện từ +14 (+1) và +15 (+2), khớp
 ## 20/11 10:58 — #291/#292 (Q-94/Q-95)
 - B-041 da nap thu Test-36 luc 10:44: gs001 KHONG sap (PID 5512, nghe 51189, WER dump bat o C:\JX\dumps). Theo #292 da HOAN TAC VE B-039 luc 10:54 (file B-041 giu ten *.b041). KHONG nap B-040/B-041 nua.
 - CHUA KIEM trong game: +5%/cap tren do nhieu dong, chi so that khi mac/thao, cuong hoa khi mac (tat ca CHUA KIEM, khong ghi hoan thanh). Cho thiet ke B (#B-043) theo chuoi goc de thu cuong hoa do TRONG TUI.
+
+## 20/11 11:15 — Q-92/B-043: BÁO TIẾN ĐỘ (CHƯA XONG, chưa có số thật sau mặc/cường hóa)
+- ĐÃ NẠP: qianghua.lua bản B-043 (+sysError/NO gốc) lên Test-36, gs001 vẫn B-039, 0 restart. ĐÃ KIỂM: server chạy, LD vào game được.
+- ĐÃ KIỂM TRONG GAME (ảnh): chỉ số nhân vật TRƯỚC mặc: HP 1010, MP 215, Chính xác 72, Né tránh 36, kháng hỏa -50%, kháng độc 50%, tài phú 1500. Ảnh: DESIGN/ANH-NGHIEM-THU/q92-chiso-nhanvat-truoc-mac.png
+- ĐÃ KIỂM (ảnh tooltip +0): áo Mộng Long Kim Ti Chính Hồng Cà Sa (HP +139, MP +190, né tránh 720, thủ vật lý 28%) và côn Phục Ma Tử Kim Côn (sát thương +69~128, chính xác 565): q92-tooltip-ao-do-+0.png, q92-tooltip-vukhi-+0.png (cùng thư mục).
+- CHƯA KIỂM: cường hóa +1/+3/+5 trong túi, tooltip ×1,05, mặc/tháo/mặc lại, baseline sau đăng nhập lại, đồ đang mặc bị từ chối.
+- VƯỚNG: đồ nhiều dòng đều đòi môn phái Thiếu Lâm + sức mạnh 135–260 (nhân vật sức mạnh 35, môn phái khác). Đang đặt môn phái/cộng sức mạnh bằng hook Test-36 (không thuộc bản giao). Menu chuột phải món trong túi KHÔNG có "Cường hóa" (chỉ Sử dụng/Rao/Sửa/Định giá/Ném/Đính): đang tìm đường mở KuiGive_New (nút túi "Cuong hoa" → opensysui(2,1) hay NPC).
