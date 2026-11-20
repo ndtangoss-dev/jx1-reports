@@ -182,3 +182,76 @@ Một số tài liệu trong lần đọc chứa thông tin lịch sử hoặc b
 
 ---
 **Nguyên tắc của sổ nghiên cứu:** Nhớ để định hướng; đọc nguồn để xác minh; quan sát runtime để kết luận.
+
+---
+
+## 9. Cập nhật nghiên cứu: bàn giao và phục hồi phiên khi nén/chuyển phiên (đọc lại 20/11/2026)
+
+**Phạm vi:** chỉ cập nhật sổ nghiên cứu trên nhánh riêng `chatgpt-research/jx1-system-audit-2026-11-20`. Không ghi bất kỳ nội dung nào vào `jx1-ops`; không thay đổi trạng thái vận hành, hàng đợi, hook, prompt, worker hay máy đang chạy.
+
+### 9.1 Nguồn vận hành mới nhất đã đối chiếu
+
+Đọc trực tiếp từ `jx1-ops`:
+- `JX1_OPS/README.md` — SHA blob `98c08dbfe33969a4065b3e86f1a82e04fe9363b9`.
+- `JX1_OPS/STATE/BAN-GIAO.md` — SHA `807c1161dd70a231c83aa3a6fec3285db0edf677`.
+- `JX1_OPS/STATE/TRANG-THAI.md` — SHA `a8a7787e1f0f07cdf4d14b89baeea0a98e5e635d`.
+- `JX1_OPS/STATE/KHOA.md` — SHA `9c0a780454e2b92a69dc071077666b2d5ed1073b`.
+- `JX1_OPS/STATE/DANG-LAM.md` — SHA `e841a6573b5702ad9aecb5448455d6268c9511a1`.
+- `JX1_OPS/HOP-THU/CHO-SONNET-B.md` — đã đọc phần cuối, có các chỉ thị #B-060 đến #B-075.
+- `JX1_OPS/HOP-THU/TU-SONNET-B.md` — SHA `990254493182a77402c590273c7e05e4d883a523`.
+- `JX1_OPS/HOP-THU/A-B.md` — SHA `b7abe5677447212444d566ef21e85bf1fcd22706`.
+- `JX1_OPS/STATE/HANG-DOI-VIEC.md` — SHA `689200bb9a89d66917a27505824b99d048771df3`.
+- `JX1_OPS/STATE/HANG-DOI-VIEC-B.md` — SHA `2a5099c1acd3408ca44a4eb8229d6dffa4446fc0`.
+- `JX1_OPS/QUY-TAC-VAN-HANH.md` — SHA `c2459509e9a6bd68e84a448aacf0db734b3e446c`.
+
+Các SHA là dấu nhận dạng blob tại thời điểm đọc; không chứng minh runtime trên máy đồng bộ với Git.
+
+### 9.2 Ảnh chụp bàn giao theo dấu thời gian trong tài liệu
+
+**Sonnet A — mốc #334, 20/11 23:05, ghi trong `STATE/DANG-LAM.md`:**
+- Hạn mức sắp hết; chỉ thị lưu trạng thái và chờ Chat đánh thức sau 23:50.
+- P0: đo cường hóa đồ vàng +1, lúc đó CHƯA ĐO; thao tác menu sách/GM trên LD chưa ổn định. Tài liệu nêu các phương án chuẩn bị đồ: lệnh GM “Nhận Thẻ GM”, AddGoldItem qua ReloadScript menu, hoặc cấp đồ khi tạo tài khoản riêng.
+- P1: tạo tài khoản riêng cho chủ, chuẩn bị một lần bộ 10 đồ xanh + thủy tinh + bạc + đồ vàng + sách; CHƯA LÀM. Không dùng tài khoản tkchuvuong/atestvaihero.
+- P2: kiểm tra giật lag vc28, đo 5 lần +2 (tài liệu ghi khoảng 95%).
+- Đã đo đồ xanh +1..+3; kết quả và sai lệch/spec được ghi ở `CUONG-HOA.md`. Đã gỡ hook QHBV_Book khỏi online.lua trên Test-36, nhưng chưa xác minh relog sau restart gs001.
+- APK vc28 đã cài LD, CHƯA phát cho chủ; chủ CHƯA được mời test.
+- Lệnh tiếp: đọc hộp thư #335 trở đi; không restart gs001/build APK khi sắp hết hạn mức.
+
+**Sonnet B — mốc #B-075, 20/11 22:45, ghi trong `STATE/DANG-LAM.md`:**
+- Hạn mức 5 giờ chung được ghi là 93%; cần lưu trạng thái ngay và tiếp tục sau khi được đánh thức.
+- Thư đã đọc đến #B-075; `A-B.md` ghi đã trả lời #B-074, commit tham chiếu `390e0742`.
+- P0: SC-002 ở trạng thái ready, chờ Tổng quản giao Codex. Phạm vi lúc lưu: thêm loại thuộc tính 28/29/30 vào `JxQhScalable`; loại 40 còn CHƯA XÁC MINH; giữ EnChanceRong +5%; giữ JxQhScale ±50 theo Q-104; pItemData++ ưu tiên thấp. Khi có diff, B đọc, duyệt/trả lại và báo A nạp + đo.
+- P1: review diff client của A (EnChanceRong, tooltip `KuiItemdescVN.cpp`, và các bản vá lag 31/33/34/47 trên qh9A).
+- P2: SC-005 Ký Trân Các, chờ A gửi type.txt và dữ liệu buysell/goods thật từ PAK; chưa giao Codex khi cường hóa chưa xong.
+- P3: backlog gồm Phòng thủ%, GoldMagic vàng, và dọn hook thử trước khi lên server thật.
+- Hướng dẫn tiếp tục được ghi: fetch-poll hộp thư, khi có thư thì đọc, trả lời ở A-B.md + TU-SONNET-B.md, cập nhật marker, commit/push và gửi tín hiệu “B Xong #...”. Đây là hướng dẫn trong tài liệu, chưa phải xác minh poller vẫn đang chạy.
+
+**Bản bàn giao tổng quát `STATE/BAN-GIAO.md`:**
+- Mốc hiện tại mà file tự ghi là 20/11 22:14 (hook PreCompact), đang chạy SC-002, thư cuối #157; chỉ dẫn PM mới đọc các file cốt lõi và lấy chi tiết bước dở từ dòng cuối TRANG-THAI.md.
+- Mốc 22:14 cũ hơn các ghi nhận A #334 (23:05) và B #B-075 (22:45) trong DANG-LAM. Vì vậy không dùng riêng BAN-GIAO.md làm trạng thái mới nhất; cần đối chiếu timestamp và trạng thái theo từng phiên/worker.
+- README chỉ định PM đọc BAN-GIAO, TRANG-THAI, KHOA, quy tắc, backlog/task active, quyết định và báo cáo mới nhất. Worker chỉ đọc đúng phần quy tắc và task được giao.
+- Quy tắc vận hành mục 11 yêu cầu không giao việc từ trí nhớ; trước dispatch/merge/report phải đọc lại TRANG-THAI, KHOA và task liên quan. Hook sau compact phải được kiểm tra thực tế, không giả định hoạt động chỉ vì có mô tả.
+
+### 9.3 Những điểm cần giữ tách biệt khi phục hồi
+
+1. **Bàn giao tổng thể khác checkpoint của từng phiên.** BAN-GIAO.md là entry point cho PM, nhưng A và B có checkpoint riêng nằm trong DANG-LAM, hộp thư và A-B.md. Khi timestamp lệch, phải ghi rõ nguồn nào mới hơn; không tự ghi đè mốc cũ bằng suy đoán.
+2. **Mốc Git không phải trạng thái runtime.** “running”, “ready”, “đang poll”, “đã build”, “đã cài” trong tài liệu cần được xác minh bằng task file, process/log, branch/worktree, commit và test tương ứng trước khi tuyên bố vẫn đang đúng.
+3. **Trạng thái hoàn thành phải gắn mức xác minh.** Phân biệt đã viết/đã đọc mã/đã build/đã chạy trên Test-36/đã nghiệm thu bởi chủ. Ví dụ trong mốc A #334, vc28 đã cài trên LD nhưng chưa phát chủ test; hook đã gỡ nhưng chưa xác minh relog sau restart.
+4. **Bàn giao cần chỉ rõ bước tiếp theo có thể thực thi.** Với từng việc: ID, owner, status, branch/worktree, commit hoặc artifact mới nhất, tiến trình/tài nguyên đang dùng, bước kế tiếp, điều kiện chờ, lệnh/đường dẫn phục hồi và điều tuyệt đối không được làm.
+5. **Giới hạn phiên/hạn mức là tín hiệu lưu checkpoint, không phải tín hiệu dừng tùy tiện.** Ghi lại phần đã làm, phần chưa kiểm, việc nền, hạn mức được báo trong nguồn và điều kiện tiếp tục; không tự khởi động lại tiến trình hoặc tiêu thụ thêm tài nguyên nếu không có quyền.
+6. **Không hợp nhất lịch sử A/B thành kiến trúc hiện hành.** README và quy tắc vận hành xác định Sonnet là PM/PM kế nhiệm; các ghi chú A/B được dùng như dữ liệu lịch sử hoặc checkpoint cụ thể trong tài liệu. Cần xác minh ai đang chạy ở runtime trước khi áp dụng các chỉ thị A/B.
+
+### 9.4 Đề xuất cải tiến cho nhánh nghiên cứu — chưa áp dụng vào vận hành
+
+- Tạo mẫu checkpoint chuẩn theo phiên/worker với trường bắt buộc: timestamp + timezone, session/owner, task IDs, state, branch/worktree, HEAD commit, process/PID và tài nguyên đang giữ, artifacts, verified/unverified, inbox cursor, next action, blockers, resume command, safety boundaries.
+- Duy trì một “handoff index” chỉ trỏ tới checkpoint mới nhất của mỗi vai trò; không sao chép toàn bộ lịch sử vào một file và không để một timestamp cũ được hiểu nhầm là trạng thái mới nhất.
+- Khi resume, thực hiện đối chiếu ba chiều: checkpoint → Git/task/inbox → runtime. Ghi rõ kết quả từng chiều: MATCH / DRIFT / UNKNOWN.
+- Tạo recovery drill có kiểm soát trên phiên thử hoặc bản sao an toàn: phiên mới đọc đúng entry point, xác định đúng task và bước kế tiếp, không dispatch trùng, không bỏ qua blocker, không chạm vùng Đỏ. Ghi thời gian phục hồi, sai lệch và lỗi.
+- Chỉ sau khi có số liệu drill mới đề xuất thay đổi hook, prompt, quy tắc hoặc cấu trúc checkpoint. Không tự thay đổi chúng từ nhánh nghiên cứu.
+
+### 9.5 Giới hạn xác minh
+
+Đây là **đọc tài liệu GitHub**, không phải kiểm tra máy Windows, Claude Code, tiến trình poller, Codex workers, VM, LDPlayer hay runtime. Không kết luận SC-002 đang thực sự chạy; không kết luận A/B còn tồn tại như hai phiên đang hoạt động; không kết luận các tác vụ A #334/B #B-075 đã được tiếp tục hoặc hoàn tất sau các mốc ghi trong tài liệu.
+
+**Trạng thái cập nhật:** `RESEARCH_NOTES_UPDATED`; chỉ lưu kiến thức và đề xuất cải tiến trên nhánh nghiên cứu riêng. Không thay đổi `jx1-ops`.
+
