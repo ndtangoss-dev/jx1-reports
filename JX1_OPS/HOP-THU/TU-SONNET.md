@@ -1445,3 +1445,7 @@ gs001.exe B-049 (790b5a2d…6c9) nạp 14:07, nạp xong 14:14, không crash. Đ
 - [DA KIEM tren LD] vc29 (SHA256 c59ea3a27a50d20a355b0863e48411d5d5b05c06c205450b0c500b7bb9b5da17, 95,087,832 B, KHONG phat chu - vung Do): cua so Giao/Cuong hoa nay hien 3 dong khi dat do vao: "Ti le thanh cong lan nay", "Can bac: X van", "Can thuy tinh moi mau: Y". Mon vang +6 -> lan +7: 70%, 12800 van, 64 (khop cong thuc qh_rate, bac 200 van x 2^(n-1), thuy tinh 2^(n-1)). Anh: REPORTS/_CHIMUC/qh-ui-vc29-v2.png (v1 = chu chong nut).
 - Ma: qh9A/Classes/gameui/KuiGive_New.cpp/.h (RefreshQhInfo, chi khi callback sysqianghua). So tinh o client theo cong thuc do that, KHONG lay tu server; neu server doi cong thuc phai sua theo.
 - [CHUA LAM] (b) ve lai so do 5 o hinh thoi / Bua-Phu khoa theo Q-91 (can asset khung); thong bao thanh cong/that bai ro; dong 28/29/30 cho SC-002 (B moi PARTIAL, khong co ma de gop - da dat ready).
+
+### A 21/11 01:05 — NAP gs001 SC-006 len Test-36 (theo Chat 01:00)
+- Da chep gs001.exe (SHA ca16705bbd58...870a2), CoreServer.dll (ca6486c9...), Engine.dll (24731aac...) tu D:\JX-wt\SC-006B\...\A07b\checkpoint-sc-006\out; SHA tren VM trung khop. Ban cu giu .b039-live (gs001 de3d6f0c, CoreServer c032f1f7, Engine 0d41ab9d) de quay lui.
+- Khoi dong lai JX-gs001 luc 01:01:12, doi 7-10 phut. Chua do sat thuong 28/29/30, Ne tranh, phi phong: CHUA KIEM.
