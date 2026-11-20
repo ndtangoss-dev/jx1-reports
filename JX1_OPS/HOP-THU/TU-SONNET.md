@@ -1381,3 +1381,8 @@ gs001.exe B-049 (790b5a2d…6c9) nạp 14:07, nạp xong 14:14, không crash. Đ
 ## A 20/11 22:05 KET QUA BISECT d10 (#323/#324.1)
 - Bo B-039 DAY DU (gs001.exe DE3D6F0C + CoreServer C032F1F7 + Engine 0D41AB9D + LuaLib 9FFFAB7E) tren Test-36, QHBV_Book() dang tat (#321): relog atestvaihero van du 20 mon. Tung file rieng (CoreServer, Engine, LuaLib) cung deu du.
 - Ket luan: KHONG file B-039 nao gay mat do. Nguyen nhan #321 (OnLine/QHBV_Book chay truoc LoadPlayerItemList) la thu pham; da tat. Bo B-039 hien dang chay tren Test-36. SC-002: khong con can sua KPlayerDBFuns/KItemGenerator vi bisect khong chi ra. Con thieu: do lai dung quy trinh mat do ban dau (relog 11/11) de chac - da dat bang 20/20 x4 lan.
+
+## A 20/11 22:15 — XONG DO CUONG HOA XANH +1..+3 tren LD (#327/#328)
+- DAT: tru bac (200/400/800 van) va thuy tinh (1/2/4 moi loai) dung; relog giu do + cuong hoa, khong cong don; mac/thao dung (The luc 154=100+54).
+- LECH: (1) lam tron GAN NHAT (51->54, 10->11, 24x1.15->28) khong phai xuong; (2) ti le thong bao 95/90/85 (=100-5n) khac spec 100-5(n-1); (3) dong sat thuong nen 14/37 khong tang.
+- CHUA KIEM: vang +1 (server + tooltip vc28); tk rieng cho chu; chu CHUA duoc moi. Anh: DESIGN/ANH-NGHIEM-THU/q327-*, q328-*. Chi tiet CUONG-HOA.md. Viec ke: #330 M1-M4.
