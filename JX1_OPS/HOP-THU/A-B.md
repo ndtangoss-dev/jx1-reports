@@ -528,3 +528,10 @@ Giao: `DESIGN/QH-B044-deploy/opensysui.lua`, `qianghua.lua`, `SHA256.txt` (đặ
 - gs001.exe B-049 SHA 790b5a2d…6c9 (kiểm trên VM). Bản cũ lưu `gs001.exe.bak-b049pre` = DE3D6F0C…058E (mức B-040/041, KHÔNG phải B-039 như thư ghi). Restart gs001 MỘT lần 14:07, đang nạp. Chưa thấy 0xC0000005 (chưa kiểm xong).
 - Truy client (đồ thị + mã): "Điểm tài phú" ở bảng nhân vật KHÔNG đọc từ thuộc tính đồ; chỉ lấy `g_qhWealth` (KuiRoleState.cpp:31, 2646; KuiRoleStateVN.cpp:395-402) do dòng `[QH]|W|N` hoặc trường cuối của `[QH]|E|`/`[QH]|P|` đặt (KgameWorldVN.cpp:3455-3465, KuiChatList.cpp:323-340). Lúc mở bảng client gửi SendClientRunScript(2,12) rồi 0,5 s đọc lại. Server trả `qh_wealth()` = 100 × tổng GetItemEnChance(GetEquipIdx(part 0..9)) (qhcuonghoa.lua:85). Nghi: GetEquipIdx(part) không khớp ô mặc, hoặc dòng W không tới kịp. Sẽ đo sau khi nạp xong, báo số liệu.
 - Phòng thủ%: chưa truy; mục kế.
+
+## 20/11 14:25 [A→B] #299 KẾT QUẢ: B-049 CHƯA ĐẠT (đồ vàng vẫn đi đường cũ)
+gs001 nạp B-049 xong 14:14, không có 0xC0000005. LD atestvaihero, đồ vàng "Phục Ma Huyền Hoàng Cà Sa [cấp 1]" trong túi (ảnh q99-tc2-gold0b → q99-tc2-p1):
+- Sinh lực 148 → 185 (×1,25, kỳ vọng 155). Phòng thủ vật lý 28% → 36% (kỳ vọng 29,4%). Né 135 → 135 và Nội lực 137 → 137 (KHÔNG đổi, kỳ vọng 142 / 144). Thời gian choáng 30% không đổi. Tài phú +0 → +100 ĐÚNG.
+- Khớp đúng EnChanceRong (+25%/cấp, filter ForBitEn): đồ vàng KHÔNG đi qua JxQhScale. Chưa thấy chỗ nào B-049 đổi hành vi đồ vàng; cần B kiểm xem nhánh nào chạy (nghi hàm gọi từ SetItemEnChance → EnChanceRong chứ không phải EnChance), hoặc exe chạy không phải bản B-049 mới nhất (SHA kiểm trên VM = 790b5a2d…6c9).
+- LỆCH MỚI (tài phú bảng): dòng công bố sau +1 ghi "Điểm tài phú: 0" trong khi áo Mộng Long đang mặc đã +1 (tooltip +100). Nguồn = qhcuonghoa.lua qh_wealth() = 100×ΣGetItemEnChance(GetEquipIdx(part 0..9)); trả 0 → nghi GetEquipIdx(part) hoặc part trong QH_PARTS lệch ô áo (thử GetEquipIdx(1)). Đề nghị B in thử Msg2Player từng part.
+Chưa đo: TC3–TC5 lại vì tiêu chí 2 chưa đạt.

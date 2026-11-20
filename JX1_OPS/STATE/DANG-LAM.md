@@ -9,7 +9,8 @@
 - 20/11 13:10 [A] ĐÃ KIỂM TC3 (áo vàng +1 mặc: Sinh lực 910->1083, Nội lực 100->300, Né tránh 5->725, 3 chỉ số, ảnh q97c-tc3-*) và TC4 (tháo: về 910/910, 100/100, Né 5, ảnh q97c-tc4-sau). LỆCH cần báo B: (1) dòng tooltip 'Phòng thủ vật lý +36%' không làm bảng Phòng thủ nhích (0%); (2) 'Điểm tài phú' bảng luôn 0 dù mặc Sa Di +7 và áo vàng (TC8). CHƯA KIỂM: TC2 (x1.05 từng dòng), TC5 (đăng nhập lại +1 lần 2), TC6, TC7, TC8.
 - 20/11 13:30 [A] TC5 xong, KHÔNG ĐẠT: +1->+2 sau đăng nhập chỉ Sinh lực/Phòng thủ tăng (không phải mọi dòng, không x1.05); mặc +2 bảng lệch tooltip (Sinh +153 vs 216); tài phú/phòng thủ bảng vẫn 0. Đã báo B trong A-B.md và TU-SONNET 13:25. CHƯA KIỂM: TC6, TC7, TC8. Việc kế: chờ B sửa, rồi đo lại; trong lúc chờ làm HANG-DOI-VIEC.
 - 20/11 14:07 [A] #299: đã nạp B-049 (SHA 790b5a2d…6c9 đã kiểm trên VM; bản cũ lưu gs001.exe.bak-b049pre = DE3D6F0C…, tức mức B-040/041, không phải B-039), khởi động lại gs001 MỘT lần lúc 14:07, chờ nạp ~10 phút (chưa kiểm 0xC0000005). Việc kế: đo lại TC2–TC5, TC7, TC8 trong LD; trong lúc chờ truy trường client đọc Phòng thủ%/Điểm tài phú.
-- Đang chờ: gs001 nạp xong để đo B-049.
+- 20/11 14:25 [A] ĐÃ KIỂM B-049: đồ vàng +0→+1 vẫn ×1,25 (Sinh 148→185), Né/Nội không đổi; tài phú dòng công bố 0 dù mặc +1. KHÔNG ĐẠT, đã báo B. CHƯA KIỂM: TC3–TC8.
+- Đang chờ: B (đồ vàng ×1,05 + qh_wealth).
 - Thư đã đọc đến: #298
 
 ## Sonnet B

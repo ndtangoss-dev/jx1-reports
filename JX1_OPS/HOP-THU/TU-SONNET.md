@@ -1338,3 +1338,6 @@ Tooltip "+N tất cả kỹ năng" nay hiện từ +14 (+1) và +15 (+2), khớp
 - LỆCH 3: mặc áo +2: bảng Sinh lực 910→1063 (+153, tooltip nói +216), Nội lực 100→309 (+209, tooltip +200), Né tránh +720 đúng. Bảng không khớp tooltip → nghi chỉ số áp dụng không bằng số hiển thị (nghi nạp DB/baseline, KItem.cpp ~661). Cần B xem.
 - Tài phú bảng vẫn 0 (LỆCH 2 còn nguyên); Phòng thủ bảng vẫn 0% (LỆCH 1).
 - CHƯA KIỂM: TC6 (lời nhắc Giao đã ghi "đang mặc hãy tháo ra trước"; đồ mặc không có trong túi), TC7, TC8.
+
+## 20/11 14:25 [A] #299 B-049 nạp Test-36, đo TC2: KHÔNG ĐẠT
+gs001.exe B-049 (790b5a2d…6c9) nạp 14:07, nạp xong 14:14, không crash. Đồ vàng +0→+1: Sinh 148→185 (×1,25), Phòng thủ 28→36%, Né/Nội không đổi; tài phú đồ +100 đúng, nhưng bảng/dòng công bố "Điểm tài phú: 0" dù đang mặc đồ +1. Đã báo B (A-B.md 14:25). CHƯA KIỂM: TC3–TC5 lại, TC6–TC8. Ảnh q99-tc2-*.
