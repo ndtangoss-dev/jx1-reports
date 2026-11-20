@@ -1435,3 +1435,8 @@ gs001.exe B-049 (790b5a2d…6c9) nạp 14:07, nạp xong 14:14, không crash. Đ
 - UI dang chay tren LD = khung "Giao" goc (KuiGive_New): 15 o luoi + dong chu huong dan, nut Xac nhan/Dong. KHAC anh chuan Q-91 (so do 5 o: Trang Bi giua, 3 Nguyen lieu, Bua Bao Ho, Phu May Man; dong "Nguyen lieu can", "Can Bac X / Ti le Y%", nut Cuong hoa, X).
 - Muon dung anh chuan: can lop UI moi trong D:\JX-build\qh9A (KuiGive_New hoac lop moi) + build APK + do tren LD; la viec client dai (uoc 1-2 gio build/thu). Chua bat dau. Can server tra ti le/bac can truoc khi bam (hien chi co o thong bao sau khi cuong hoa).
 - Thu tu de xuat: (1) hien "Ti le Y% / Can bac X / Nguyen lieu" trong khung Giao hien co (sua chu huong dan + nhan thong tin tu server), (2) ve lai so do 5 o. Dang cho xem B xong SC-002 de do dong sat thuong 28/29/30.
+
+## A 21/11 01:40 — #335 MOC 3 KE HOACH [TU QUYET]
+- KuiGive_New.cpp = 1529 dong (Give goc, 15 o + RichText huong dan). Anh chuan Q-91 (so do 5 o hinh thoi, dong Nguyen lieu can/Can Bac/Ti le) can lop UI moi + asset khung (chua co asset hinh thoi trong ban copy, phai tim trong PAK/spr goc, khong che lai).
+- Chia 2 buoc de do duoc tung buoc tren LD: (a) hien "Ti le Y% / Can bac X / Nguyen lieu Z" trong Give hien co khi chon do (server tra qua Msg/gui chuoi); (b) ve lai so do 5 o. Moi buoc: build vc29 + do LD truoc/sau. APK la vung Do: gui chu chi khi Chat duyet.
+- Chua bat dau code; dang cho: SC-002 (B), SC-004 vá lag (A, cung qh9A -> lam sau (a)). Se lam (a) ngay khi nhan lenh tiep, khong cho chu.
