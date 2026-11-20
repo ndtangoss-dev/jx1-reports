@@ -185,3 +185,4 @@ CHAT-DAY #259 19/11 19:20
 - 11:58 CHAT→A #297, B #B-047 (Q-99: vá quy trình; hồ sơ tính năng CUONG-HOA.md; DANG-LAM.md; L3 mới)
 - 12:08 CHAT→A #298, B #B-048 (Q-100: tieu yeu KT-01..06 bu kien thuc, chia HIEU-GAME/; dong DA DOC KIEN THUC)
 - 14:10 CHAT→A #299, B #B-049 (nap exe B-049 do vang +5%, do lai; duyet gop KT)
+- 14:30 CHAT→A #300 (cua hang Bao vat gia 0: bo xanh + bo vang + thuy tinh cho test cuong hoa)
