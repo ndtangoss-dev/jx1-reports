@@ -1395,3 +1395,5 @@
 [TỔNG QUẢN 21/11 00:05] CAU DAO xingchi: DONG
 [TỔNG QUẢN 21/11 00:07] CAU DAO xingchi: DONG
 [TỔNG QUẢN 21/11 00:09] CAU DAO xingchi: DONG; SC-006 giao bang JX-K4
+[TỔNG QUẢN 21/11 00:11] CAU DAO xingchi: DONG
+[TỔNG QUẢN 21/11 00:13] CAU DAO xingchi: DONG

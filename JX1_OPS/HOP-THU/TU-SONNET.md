@@ -1413,3 +1413,20 @@ gs001.exe B-049 (790b5a2d…6c9) nạp 14:07, nạp xong 14:14, không crash. Đ
 - So that (tooltip vc28, vai chu): Tu Khong Giang Ma Gioi dao [cap 1] (vang Thieu Lam): sat thuong 40-114, ngoai cong +147%, sinh luc +172, noi luc hut +6%. Ham Thien Vu Than Tuong Kim Giap [cap 1]: ne tranh +720, sinh luc +191, noi luc +124. Anh: REPORTS/_CHIMUC/vang-giangma-base.png.
 - Nut "Cuong hoa" o goc phai man hinh CHI doi Thu cong/Treo (khong mo UI cuong hoa). Can tim duong mo UI (NPC/Give goc) de bam +1; chua tim ra => CHUA KIEM +1, +2 x5.
 - Chu y: do vang kich co "Dang cap yeu cau +99/100" nhung vai Lv1 van cuong hoa duoc (chua thu).
+
+## A 21/11 01:10 — #335 MOC 2: VANG +1 VA CHUOI +2..+6 (SO THAT, LD, tkchutest01)
+- Duong mo UI: bam icon "Cuong hoa" goc phai (1660,325) khi TUI DANG DONG (neu tui mo thi nut bi de). Hien khung "Giao": chon 1 trang bi trong tui -> "Them vao" -> "Xac nhan". Nguyen lieu (thuy tinh 3 mau) + bac TU TRU, khong can dat da vao khung.
+- Mon do: Tu Khong Giang Ma Gioi dao [cap 1] (vang, Thieu Lam). Cong bo he thong: "Cuong hoa THANH CONG: len +N (ti le X%)" — X la ti le LAN KE (Q-104).
+- 6 lan lien tiep deu THANH CONG (+1..+6; xac suat chuoi ~44%, khong phai bang chung ti le): thong bao ti le lan ke 95/90/85/80/75/70% KHOP qh_rate.
+- Chi phi (do tu so du): thuy tinh moi mau 1,2,4,8,16,32 (tong 63; 200->137); bac 200 van x2^(n-1) (+1 = 200 van; 19.98 uc... con 18.74 uc sau 6 lan).
+- Thuoc tinh THAT (tooltip): goc / +1 / +6
+  - Sinh luc toi da: 172 / 181 / 224
+  - Toc do danh: 40% / 42% / 52%
+  - Sat thuong vat ly ngoai cong %: 147 / 154 / 191
+  - Sat thuong vat ly ngoai cong diem: 50 / 53 / 65
+  - Hut noi luc: 6% / 6% / 8%
+  - Diem tai phu: 0 / +100 / +600
+  - KHONG DOI: Sat thuong 40-114, Do chinh xac -20%, Do ben 99/99, Ky nang +1 cap.
+- Muc tang +1 ~5% so voi goc (Sinh luc 172->181 = +5,2%; ngoai cong 147->154 = +4,8%): KHOP ~5%.
+- CHUA KIEM: 5 lan +2 tren do moi (tu +1) de do ti le 95% thong ke (can do/qua nhieu mon); dong sat thuong 28/29/30 (cho B xong SC-002); cuong hoa sau khi gs001 khoi dong lai.
+- Anh: _CHIMUC/vang-giangma-plus1.png, vang-giangma-plus6.png, qh-giao-thanh-cong-plus4.png
