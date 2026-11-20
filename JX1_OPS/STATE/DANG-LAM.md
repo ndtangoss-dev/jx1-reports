@@ -118,3 +118,4 @@
 - 20/11 19:20 A: vc26 build OK (sha256 35b4c8ee...d5b2a, sua \n trong KuiRoleState/KItem). Phat cho chu = [CAN-CHU], chua gui. Con lai: TN3 (mua do shop), TN5 (atestvaihero), cho B doc KPlayerDBFuns.cpp:818.
 - 20/11 19:45 A [Q-102/#314]: CHON = A không viết mã nữa. #313 đã làm xong phần thử (Lua nhỏ, 21 tham số) và KẾT LUẬN vẫn mất đồ → phần sửa gốc (gs001 LoadPlayerItemList nạp đồ + ghi log file) để B giao Codex qua SC-001. A chỉ nạp+đo+nghiệm thu. Phần A đã ghi vào skill jx1-sua-code/references/quy-trinh.md.
 - 20/11 19:55 A: gop KT-05 (DO-CHAC.md 305 muc: 299 doc tinh, 6 kiem trong game; PARTIAL do Graphify chua tra).
+- 20/11 19:50 A [#315 KHAN]: DUNG gs001, tra gs001.exe = gs001.exe.bak-b049pre (SHA de3d6f0c...058e = B-039, khop SHA256-b039.txt; 3 DLL khop); ban dang chay B-049 luu gs001.exe.b049-live (790B5A2D...). Restart 19:15 (gio VM). Khong dang nhap them vai. Dang cho gs001 nap xong roi vao atestvaihero.
