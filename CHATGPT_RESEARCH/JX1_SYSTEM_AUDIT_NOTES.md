@@ -381,3 +381,161 @@ Không đánh đồng các trạng thái này. Nếu chỉ có báo cáo hoặc 
 ### 11.5 Giới hạn và hành động của ChatGPT
 
 Đã đọc GitHub, task, snapshot worker, hộp thư và báo cáo. Không truy cập máy Windows, Codex process, worktree, VM, LDPlayer hoặc log runtime; không nạp build, không chạy game, không dispatch hoặc gửi lệnh. Không ghi bất cứ nội dung nào lên `jx1-ops`. Chỉ cập nhật sổ nghiên cứu riêng. Đây là kiểm tra theo yêu cầu tại 04:14, không phải theo dõi nền liên tục trong đêm.
+
+
+## 12. Kiểm toán vận hành toàn chuỗi 20/11 21:05 → 21/11 04:25 (giờ Việt Nam)
+
+**Mục tiêu:** đánh giá Chat với vai trò chỉ huy thay chủ; chuỗi lệnh Chat → A/B → Codex; phản hồi và bằng chứng thực thi; nguyên nhân lỗi kéo dài; đề xuất kiểm soát và tự động hóa. Đây là kiểm toán lịch sử Git, không phải phiên truy cập máy thật.
+
+### 12.1 Nguồn và giới hạn kiểm toán
+
+Đã đối chiếu:
+- Lịch sử commit jx1-ops từ 20/11 23:57 đến snapshot mới nhất 21/11 04:25; 100 commit gần nhất trong cửa sổ truy vấn.
+- HOP-THU/CHO-SONNET.md, CHO-SONNET-B.md, TU-SONNET.md, TU-SONNET-B.md, A-B.md, VONG.md, NHAT-KY-CHAT.md.
+- STATE/LUAT-COT-LOI.md, QUYET-DINH.md, DANG-LAM.md, TONG-QUAN-GHI.md, TIEN-DO.md, TIEU-YEU.md, SONNET-SONG.md, KHOA.md, DO-HIEU-QUA-QUY-TRINH.md.
+- TASKS/SC-002.md, TASKS/SC-006.md, REPORTS/SC-002.md và các diff build/tiến độ B ghi trong A-B/TU-SONNET.
+
+Không truy cập Windows, tiến trình Claude/Codex, worktree, log cục bộ, VM, LDPlayer hoặc artifact build thực. Các SHA256/build exit được ghi là bằng chứng trong commit/báo cáo của worker; không phải thuộc hạ tự xác minh file nhị phân trong máy.
+
+### 12.2 Dòng thời gian có bằng chứng
+
+| Giờ VN | Lệnh / phản hồi | Điều thực sự được chứng minh |
+|---|---|---|
+| 21:05 20/11 | #323: Chat đổi hướng sau dữ liệu A về B-039 | Chat thừa nhận giả thuyết trước cần xem lại; chưa có ma trận thử cô lập biến |
+| 21:10–21:20 | #324–#327: giao A chia DLL, làm client/APK, chuẩn bị LD, đặt cổng không mời chủ nếu chưa đạt | Chỉ huy đã nêu thứ tự và gate; phạm vi khá rộng |
+| 21:12 | #325/Q-103: A tự làm client/APK, B review diff; B giữ SC-002 server | Phân quyền được điều chỉnh theo năng lực và quyền chủ đã duyệt |
+| 21:30–22:45 | #329–#334: sửa giao thức báo A/B, đối chiếu M1-M4, thay mục tiêu SC-002, chủ chốt làm tròn gần nhất, xử lý hạn mức 5 giờ | Có các lần sửa hướng dựa trên dữ liệu; đồng thời xuất hiện nhiều giả thuyết và thay đổi task |
+| 23:59 20/11 / 00:00 21/11 | Commit Chat a997df0...: #335 cho A và #B-076 cho B | Lệnh đêm được ghi vào Git; #335 gồm 5 mốc A, #B-076 giao SC-002 + SC-006 cho B |
+| 00:05–00:20 | A tạo tkchutest01/atestchutest, vào LD, cấp 10 món xanh + vàng + nguyên liệu; đăng xuất/đăng nhập trong cùng phiên server vẫn giữ đồ | Mốc tài khoản/test fixture đã hoàn tất; chưa kiểm qua restart server |
+| 00:40–01:10 | A đo baseline vàng và +1..+6 | +1 tăng xấp xỉ 5%; +1..+6 thành công liên tiếp chỉ là quan sát, KHÔNG đủ chứng minh xác suất 95/90/85; tooltip và chỉ số có bảng số liệu |
+| 01:05 | A nạp server build ca16705... của B lên Test-36, giữ bản cũ để rollback | Artifact đã được nạp, có SHA đối chiếu theo báo cáo; các phép đo SC-006 vẫn chưa đủ |
+| 01:25–03:00 | A khảo sát rồi dựng UI vc31 | 03:00 build 0 lỗi và cài LD; đã thêm dòng tỷ lệ/bạc/thủy tinh trong cửa sổ Giao; vẫn thiếu sơ đồ 5 ô, khóa Bùa/Phù và thông báo đầy đủ; chưa phát cho chủ |
+| Khoảng 01:xx–03:50 | B tạo build SC-006 2, 3, 4; ghi dữ liệu 11 cấp, sửa thuộc tính, tài phú/tự tháo, đồng bộ ngoại hình | Nhiều bản build 5/5 exit 0 được ghi trong Git; B không chạy game |
+| 02:30–03:20 | A thử nhiều ca phi phong trên LD, cập nhật từng đợt | Có kết quả số thật, có lỗi tái hiện được; build 3 xác nhận một số chỉ số nhưng vẫn có lỗi khác |
+| 03:00–03:20 | A kiểm SC-004 và SC-006 | Patch 31/33/34/47 đã có trong qh9A; vc31 đo 58.8–59.8 FPS trong 5 giây, nhưng không có baseline trước tương đương. SC-006 build 3 có các ca 5999/6000, cấp 11 và hạ tài phú |
+| 03:47–04:20 | B ghi build 5 và vá nghi phạm crash Engine KSG_StringProcess.cpp | Build 5/5 exit 0, có SHA gs001/Engine/CoreServer; nguyên nhân crash vẫn là giả thuyết, chưa tái kiểm sau nạp |
+| 04:25 | Snapshot Tổng quản mới nhất trong lịch sử đã đọc | Sonnet A/B được ghi hoạt động 04:19/04:24, commit code cuối vẫn 03:47; SC-006 ở worker snapshot XONG-CHO-GOP, Task Scheduler 0 |
+
+### 12.3 A đã làm gì và chưa làm gì
+
+**Đã có bằng chứng tốt:**
+- Tài khoản test riêng và dữ liệu thử có kiểm soát hơn trước; 10 món xanh, vàng, thủy tinh, bạc đã được cấp sau khi nhân vật vào game, không dùng hook OnLine cấp đồ trước lúc nạp danh sách.
+- Vàng +1 đo được mức tăng gần 5%; A đo chuỗi +1 đến +6 và chi phí nguyên liệu. Sáu lần thành công liên tiếp không thể dùng để kết luận tỷ lệ thành công của từng cấp.
+- Phi phong: build 3 cho số thật cấp 1 +6 là HP 260, MP 260, thể lực 130; qh_dump ghi kháng 5 và tốc chạy 7; tháo về số cũ. Cấp 11 ở tài phú 15000 có số thật 2200/2200/1100/44/55 theo báo cáo.
+- A phát hiện đổi phi phong không đủ tài phú có thể làm mất phi phong cũ trước khi từ chối; đây là lỗi giao dịch không nguyên tử, phải kiểm tra điều kiện trước khi tháo đồ cũ.
+- A phát hiện khi tài phú tụt từ 15000 xuống 0, phi phong cấp 11 vẫn mặc; khi túi đầy thì tháo không thành công; thông báo bị mojibake; tooltip client không khớp số thật.
+- UI vc31 được build/cài LD; phần hiển thị thông tin đã cải thiện nhưng không đạt bố cục Q-91. A chưa phát APK cho chủ.
+- SC-004: A tìm thấy các marker patch 31/33/34/47 đã có sẵn trong qh9A, nên quyết định không port lại. Đo vc31 5 giây cho 58.8–59.8 FPS; không có phép đo trước trên cùng máy, cùng map, cùng tuyến di chuyển/thời lượng. Vấn đề quái xuất hiện muộn từ #278 chưa có phép đo/giải pháp xác nhận trong đợt này.
+
+**Chưa có bằng chứng hoàn tất:**
+- Không có phép đo FPS trước/sau cùng điều kiện; không chứng minh patch đã sửa khựng 4–5 giây hoặc quái hiện muộn.
+- UI thiếu các phần Q-91 còn lại; chưa có bản APK được chủ nghiệm thu.
+- Ngoại hình phi phong chưa được kiểm đủ cấp 1 → cấp 5, cấp 11, tháo, góc nhìn người chơi khác và cập nhật ngay. B ghi nhận hệ thống hiện chỉ có 5 thư mục hình Spr_; cấp 1 và 2 có thể cùng hình do nLevel. Không thể cam kết mỗi cấp có hình riêng khi asset không có.
+- Chưa kiểm đầy đủ tooltip client 55 dòng GoldMagic, công thức hiển thị, dòng kháng/Né tránh và đồng bộ bảng client/server.
+- Build 4 tự tháo khi tài phú tụt và build 5 sửa nghi phạm crash chưa có bằng chứng A nạp và chạy lại các ca thất bại sau build tương ứng.
+- Không thấy báo cáo nghiệm thu cuối REPORTS/SC-006.md; task còn running, trong khi worker snapshot lại ghi XONG-CHO-GOP.
+
+### 12.4 B đã làm gì và điểm cần kiểm soát
+
+- B đã lập SC-006; đọc đồ thị KItemList/KNpc/ScriptFuns; ghi bảng 11 cấp phi phong; sửa tự tháo khi tài phú tụt, mapping cấp 11, áp đủ magic; tạo nhiều build 5/5.
+- B ghi SC-002 build local sc-002b commit f1d3187, SHA gs001 af223995...; sau đó nhánh local sc-006b commit 6acde3d được mô tả là gộp SC-002 + SC-006, build SHA gs001 ca16705...
+- B không chạy game; A là người duy nhất xác nhận runtime. B build 3/4/5 tiếp tục sau khi A báo lỗi; build 5 ghi SHA gs001 771aa122..., Engine.dll 99c4f8a..., CoreServer.dll 2d5f268...
+- Các sửa mã B mô tả là ở worktree/nhánh local, không push source diff lên GitHub; kho chỉ có báo cáo và SHA binary. Vì vậy Chat/QA không thể review độc lập patch source từ GitHub, so sánh diff và tái tạo build.
+- B tự sửa SC-002/SC-006 thay vì chỉ giao Codex như quy trình Q-102/#B-076. A-B ghi việc này viện dẫn “ngoại lệ Q-103, lệnh Chat 00:42”, nhưng không tìm thấy thư #B-077 tương ứng trong CHO-SONNET-B.md ở snapshot hiện tại. Không thể xác nhận chính xác nội dung/phạm vi ủy quyền từ nguồn hộp thư chuẩn. Đây là lỗi lưu vết chỉ huy, không đủ căn cứ kết luận B cố ý vi phạm.
+- SC-002 task hiện partial, báo cáo SC-002 vẫn là báo cáo khảo sát cũ “0/3 mục tiêu sửa mã”; chưa được cập nhật thành báo cáo build/test mới. SC-006 task running dù snapshot Tổng quản ghi XONG-CHO-GOP. Đây là DRIFT trạng thái.
+
+### 12.5 Đánh giá Chat với vai trò chỉ huy thay chủ
+
+**Điểm làm đúng**
+1. Chuyển yêu cầu của chủ thành các việc A/B riêng; A làm client/LD, B xử lý server; không để hai người cùng sửa một vùng tùy tiện.
+2. Có tiêu chí không mời chủ test khi chưa đạt gate; giữ LD cho chủ điều khiển khi chủ yêu cầu.
+3. Khi dữ liệu mới xuất hiện, Chat có điều chỉnh giả thuyết, bỏ các bước không còn cần và đổi ưu tiên; Q-104 được chốt trước khi sửa công thức.
+4. Ghi lại giới hạn an toàn, hạn mức, rollback, thời gian nạp server và yêu cầu cập nhật trạng thái.
+
+**Điểm chỉ huy chưa đạt**
+1. **Lệnh #335 quá rộng:** một đợt gồm tài khoản/test data, vàng, UI, lag/quái, phi phong; trong khi ghi “mỗi bước 5–10 phút”. UI vẽ lại, build APK, khởi động gs001 và kiểm phi phong nhiều cấp không phải việc 5–10 phút. Ước lượng thấp khiến lịch và kỳ vọng không thực tế.
+2. **Không có một bảng nghiệm thu cha:** #335 được chuyển xuống “Đã xử lý” lúc 02:05 trong khi ghi rõ mốc 3–5 còn đang làm. “Đã đọc/đã nhận/đã xử lý thư” bị trộn với “đạt tính năng”.
+3. **Không khóa điều kiện thử trước khi kết luận:** các ca tài phú bị nhiễu bởi đao +1 cộng thêm 100 điểm, túi đầy, hook test, Lua nóng chưa nạp; việc thay nhiều biến giữa hai lần thử làm kết quả ban đầu mâu thuẫn. Ma trận M1-M4 về sau tốt hơn, nhưng lẽ ra phải được định nghĩa trước.
+4. **Không đóng vòng sau mỗi build:** B có build 4 và 5; A có bằng chứng lỗi từ build 3, nhưng chưa thấy một lệnh Chat mới trong hộp thư yêu cầu A chạy lại chính xác các ca lỗi trên build 4/5, chụp log và đóng từng bug.
+5. **Thiếu bằng chứng chỉ huy sau #335:** VONG.md không có CHAT-DAY/sự kiện chỉ huy tiếp theo sau #335 trong phần lịch sử được đọc; NHAT-KY-CHAT.md ghi lịch kiểm 10 phút và báo cáo sáng, nhưng không có log thực thi tương ứng trong kho. Không kết luận Chat chắc chắn không kiểm tra; kết luận đúng là Git chưa chứng minh được vòng giám sát đã chạy.
+6. **Kỷ luật báo cáo chưa được thực thi:** DANG-LAM.md không theo kịp build 5; TIEN-DO.md ở snapshot 02:30; TIEU-YEU.md/SONNET-SONG.md 04:25; NHIP-TIM.md A dừng ở 00:27, B ở 20/11 19:31. Nhiều chỉ báo liveness khác nhau, không có một trạng thái chuẩn.
+7. **Không bắt buộc source diff phải có thể review:** B dùng nhánh local, không push patch; Chat chỉ có báo cáo/SHA. Một build pass không thay thế code review, và hash binary không cho biết chính xác source diff.
+8. **Không quản lý sự kiện theo ID lỗi:** “phi phong chưa xong” chứa nhiều lỗi độc lập (đổi món mất đồ, tự tháo, đầy túi, kháng không hiện, tooltip, ngoại hình, crash). Chúng bị gom vào một task, làm khó phân công, hồi quy và nghiệm thu.
+
+**Kết luận:** Chat đã làm được vai trò phân công và ra quyết định theo dữ liệu ở mức khá, nhưng chưa hoàn thành vai trò incident commander có vòng giám sát, kiểm chứng và đóng lỗi. Sai sót lớn nhất không phải là chọn sai người làm; mà là không duy trì một sổ trạng thái có bằng chứng, không bắt buộc mỗi lỗi quay lại đúng ca test sau bản sửa, và không có cơ chế ngăn task “xong” khi runtime còn mở.
+
+### 12.6 Vì sao lỗi kéo dài và vì sao build liên tiếp chưa làm lỗi biến mất
+
+1. **Một tên tính năng che nhiều defect độc lập.** Ví dụ phi phong có ít nhất: tính tài phú, kiểm tra khi hạ +N, tự tháo, chỗ trống túi, tính/loại magic, tooltip, nhãn cấp, mapping Spr, đồng bộ ngoại hình, crash. Sửa một đường gọi không tự sửa các đường còn lại.
+2. **Phân tách server/client nhưng thiếu release manifest chung.** Server có thể cộng đúng 260/260/130 trong khi tooltip client vẫn hiện 389/174 hoặc cấp 2–11 không có dòng. Server build đúng không có nghĩa APK đúng.
+3. **B không thể tự xác nhận runtime; A phải nạp và đo.** Chu kỳ build → chờ A rảnh LD → restart gs001 7–10 phút → nạp map → tái hiện → gửi log khiến feedback loop chậm. Khi B build tiếp trước khi A kiểm xong bản trước, số bản build tăng nhưng chưa biết bản nào đã qua nghiệm thu.
+4. **Fixture thử chưa sạch ở các lượt đầu.** Đao +1 cộng tài phú, túi đầy không có ô trả đồ, SetTestWealth bị tính lại, hook test lỗi cú pháp và Lua chưa nạp lại đều làm kết quả sai hoặc khó diễn giải.
+5. **Worktree/đầu vào và status không nhất quán.** SC-002 trước đó thiếu source trong worktree, Codex không tạo diff; sau đó B tự sửa local. Task, report, worker snapshot và dashboard không đồng bộ.
+6. **Không có regression suite tự động.** Những ca 5999/6000, cấp 11/15000, giảm +N khi đang mặc, đổi phi phong khi thiếu tài phú, túi đầy, tháo và relogin đều phải được kiểm thủ công; chưa có test harness khóa các hành vi này.
+7. **Phạm vi UI/lag chen vào cùng đợt với server phi phong.** Nhiều nhánh độc lập tranh cùng thời gian A/LD, build và hạn mức; không có critical path rõ.
+
+### 12.7 Đề xuất cải tiến theo thứ tự ưu tiên
+
+**P0 — Bắt buộc trước khi giao đợt lớn tiếp theo**
+- Tạo một Parent Epic cho mỗi yêu cầu của chủ; mỗi tiêu chí thành bug/task con riêng, ví dụ PF-01..PF-08, QH-UI-01.., LAG-01, MOB-01.
+- Mỗi defect có: bước tái hiện, điều kiện đầu vào, expected/actual, phiên bản server/APK, log/ảnh, root-cause confidence, fix commit, build SHA, retest result, người nghiệm thu.
+- Dùng trạng thái có nghĩa duy nhất: NEW → REPRODUCED → ASSIGNED → CODED → REVIEWED → BUILT → DEPLOYED_TEST → RUNTIME_PASS → ACCEPTED; các trạng thái BLOCKED, NEEDS_RETEST, REOPENED riêng. DONE của worker chỉ có nghĩa worker xong, không tự động đóng defect.
+- Không cho Parent Epic sang “đã xử lý” nếu còn một tiêu chí con chưa ACCEPTED. “Thư đã nhận” chỉ đổi trạng thái dispatch, không đổi trạng thái công việc.
+- Mọi lệnh Chat → A/B phải có ID và được ghi vào đúng hộp thư chính thức. Lệnh miệng/Chrome không có trong Git phải được Sonnet ghi lại ngay, nếu không thì không được dùng làm căn cứ đổi quyền hoặc đổi scope.
+
+**P1 — Chặn lỗi quy trình trước khi khởi chạy Codex**
+- Preflight tự động: kiểm đủ vung_file trong worktree, đúng base commit/branch, dependency đã pass, worktree sạch, không trùng lock/resource, test fixture có sẵn, prompt có tiêu chí nghiệm thu và quyền build/runtime rõ. Thiếu bất cứ điều kiện nào thì BLOCKED, không READY.
+- Worker phải tạo branch/commit có thể review; artifact build gắn với source commit SHA. Không dùng “local-only” làm đầu ra cuối, trừ khi có lệnh ngoại lệ ghi rõ vào hộp thư.
+- Build manifest cho mỗi bản: source commit, compiler/config, file thay đổi, SHA từng exe/dll/apk, build log, rollback artifact. A nạp đúng artifact theo manifest, không chép nhầm checkpoint.
+- Review diff trước khi A nạp; nếu patch vượt vùng file hoặc sửa thêm Engine/utility ngoài task thì yêu cầu review riêng.
+
+**P1 — Kiểm thử để giảm vòng restart và lỗi giả**
+- Tạo fixture nhân vật kiểm thử sạch: không có trang bị cộng tài phú ngoài dự kiến, túi có sẵn ít nhất 2 ô trống, không dùng hook OnLine cấp đồ, lưu snapshot trước test.
+- Có lệnh test-only đặt tài phú tuyệt đối và xác minh giá trị sau khi mọi trang bị đã tháo; log phải in wealth_before, wealth_after, nguồn cộng/trừ và ngưỡng phi phong. Tách riêng ca có/không có đao +1.
+- Gom các ca server vào một phiên nạp: (1) 5999/6000; (2) cấp 11/15000; (3) đang mặc rồi giảm +N; (4) túi đầy rồi có ô trống; (5) đổi phi phong thiếu tài phú không làm mất món cũ; (6) mặc/tháo và so chỉ số; (7) relogin. Chỉ restart một lần cho một artifact.
+- Test client riêng: bảng GoldMagic 55 dòng, tooltip so với server, nhãn cấp, ngoại hình ở người nhìn khác, cập nhật tức thời. Không gộp tooltip vào “server pass”.
+- Test crash: lưu dump/WER và qh_dump.log, tái hiện trước/sau cùng thao tác; nếu không tái hiện sau bản vá thì ghi NOT_REPRODUCED, không ghi FIXED chỉ vì build pass.
+
+**P2 — Vòng chỉ huy và giám sát tự động**
+- Có một monitor chạy ngoài phiên Claude/Sonnet (Windows Task Scheduler hoặc service giám sát hiện hữu), không phụ thuộc cửa sổ Chat đang mở. Mỗi 2–3 phút đọc Git/task/worker heartbeat/commit/build state; mỗi 10 phút tạo báo cáo khác biệt cho PM.
+- Phát cảnh báo khi: task running nhưng worker XONG-CHO-GOP; task partial nhưng report cũ; dashboard quá 10 phút không cập nhật; không có commit/worktree activity >12 phút; heartbeat A/B stale; task có dependency chưa pass; artifact không có source commit; build mới chưa retest sau 30 phút.
+- Chat không cần đọc toàn bộ repo mỗi vòng. Monitor tạo một EVENTS.jsonl append-only và CURRENT_STATE.json chuẩn; Chat/PM chỉ đọc events mới và trạng thái tổng hợp.
+- A/B gửi event có cấu trúc sau mỗi mốc: START, BLOCKED, CODED, BUILD_PASS, DEPLOYED, TEST_FAIL, TEST_PASS, NEEDS_DECISION, DONE. Tín hiệu “A Chat/B Chat” chỉ là tiện ích đánh thức, không phải nguồn dữ liệu duy nhất.
+- PM phải có vòng điều phối: khi A báo lỗi, tự tạo defect/reopen đúng ID; khi B có build mới, tự tạo retest request cho A; khi retest fail, quay lại B với log; khi pass tất cả, reviewer mới đề nghị ACCEPTED.
+- Báo cáo cho chủ theo sự kiện quan trọng, không spam heartbeat: build pass, test fail, blocker, cần chủ quyết, hoặc epic được nghiệm thu.
+
+**P3 — Tăng tốc và tự cải tiến có kiểm soát**
+- Ưu tiên sửa Lua qua hot reload khi có thể; gom thay đổi C++ vào một release server, gom client vào một APK; tránh restart GS lặp lại cho từng chỉnh sửa nhỏ.
+- Chạy việc độc lập song song (A: client/UI; B: server; Codex: code task) nhưng chỉ khi lock và dependency đã xác nhận. Không để A chờ SC-002 nếu có thể làm ca test phi phong độc lập.
+- Đo thời gian từng pha: queue wait, preflight, coding, review, build, deploy, runtime test, rework; đo token/chi phí theo task nếu có dữ liệu. Tính first-pass yield, số lần build đến runtime pass, tỷ lệ task bị chặn do thiếu source, thời gian từ TEST_FAIL đến RETEST.
+- Mỗi 3 defect hoặc sau một incident, PM tổng hợp “nguyên nhân lặp lại” và đề xuất patch quy trình. Patch quy trình chạy dry-run/test trước, lưu ở nhánh nghiên cứu; chỉ đưa vào jx1-ops sau khi chủ cho phép. Không để agent tự sửa luật chỉ huy đang điều khiển chính nó mà không có review.
+
+### 12.8 Cách tự động hóa vòng tự cải tiến
+
+Chủ giao yêu cầu
+→ Chat ghi Parent Epic + quyết định + phạm vi
+→ Sonnet PM tách defect/task + tiêu chí định lượng
+→ Preflight kiểm nguồn / worktree / lock / dependency / fixture
+→ Dispatcher giao Codex theo ưu tiên và tài nguyên
+→ Worker commit + diff + build manifest
+→ Sonnet review
+→ A nạp artifact đúng SHA và chạy test matrix trên Test-36
+→ Monitor đối chiếu expected/actual/log/ảnh
+→ FAIL: reopen defect, gửi B đúng ca lỗi, giữ artifact/rollback
+→ PASS: QA đánh dấu runtime pass
+→ Chủ nghiệm thu khi cần
+→ Metrics + incident review + đề xuất cải tiến
+→ Dry-run trên nhánh nghiên cứu
+→ Chủ duyệt mới promote.
+
+**Nguyên tắc an toàn:** tự động hóa việc phát hiện sai lệch, lập báo cáo, mở lại bug, yêu cầu retest và đề xuất thay đổi; không tự động sửa luật vận hành, đụng Main VM, phát APK cho chủ hoặc ghi lên jx1-ops nếu chưa có quyền.
+
+### 12.9 Kết luận kiểm toán
+
+- **Chat:** chỉ huy và chia việc khá tốt ở khâu phản ứng theo thông tin, nhưng vòng giám sát sau #335 không có dấu vết đủ để chứng minh đã hoạt động; chưa có cơ chế giữ Parent Epic mở cho đến khi tất cả tiêu chí pass.
+- **A:** có dữ liệu runtime giá trị; đã làm UI vc31 và xác định patch lag sẵn có. Chưa hoàn tất UI theo Q-91, chưa chứng minh cải thiện lag bằng phép đo trước/sau, chưa kiểm hết phi phong sau build 4/5.
+- **B:** đã sửa/build nhiều vòng, có phân tích kỹ thuật sâu; nhưng không tự chạy runtime, source diff local không có trên GitHub, báo cáo và task chưa cập nhật đồng bộ.
+- **Codex/Tổng quản:** preflight và trạng thái worker chưa ngăn được task thiếu source hoặc trạng thái lệch; snapshot hiện tại cho thấy worker Codex không chạy trong khi Sonnet A/B còn được ghi hoạt động.
+- **Lỗi kéo dài:** do nhiều defect bị gộp, thử nghiệm bị nhiễu, client/server tách rời, build không đi kèm một vòng retest bắt buộc, và trạng thái nhiều nguồn không đồng nhất. Không thể quy đơn giản cho một model “code kém”.
+
+**Giới hạn ghi nhận:** đây là phân tích và đề xuất. Không thay đổi jx1-ops, không gửi lệnh A/B/Codex, không sửa hook/dispatcher/Task Scheduler, không truy cập runtime. Chỉ cập nhật nhánh nghiên cứu riêng.
