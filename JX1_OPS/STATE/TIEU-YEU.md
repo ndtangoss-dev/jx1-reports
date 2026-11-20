@@ -1,4 +1,4 @@
-# TIỂU YÊU (Tổng quản tự sinh lúc 2026-11-20 13:33, đừng sửa tay)
+# TIỂU YÊU (Tổng quản tự sinh lúc 2026-11-20 13:39, đừng sửa tay)
 
 **CẦU DAO xingchi: ĐÓNG (bình thường)**
 
@@ -10,8 +10,8 @@ Mức: SONG / IM-NHUNG-SONG (20–60 phút) / TREO (>60, bị dừng chạy lạ
 | KT-02 | XONG-CHO-GOP | JX-K4 | 13:00 | 13:00 | - | 0 | sol | - | - |
 | KT-03A | XONG-CHO-GOP | JX-K4 | 12:54 | 12:54 | - | 0 | sol | - | - |
 | KT-03B | XONG-CHO-GOP | JX-K4 | 12:57 | 12:57 | - | 1 | sol | - | - |
-| KT-03C | SONG | JX-K3 | 13:32 | 13:32 | loi mang | 0 | sol | - | - |
-| KT-03D | SONG | JX-K3 | 13:33 | 13:33 | - | 0 | sol | - | - |
+| KT-03C | SONG | JX-K3 | 13:38 | 13:38 | - | 0 | sol | - | - |
+| KT-03D | SONG | JX-K3 | 13:39 | 13:39 | - | 0 | sol | - | - |
 | KT-04 | XONG-CHO-GOP | JX-K3 | 12:53 | 12:53 | - | 0 | sol | - | - |
 | KT-06 | XONG-CHO-GOP | JX-K3 | 13:13 | 13:13 | - | 0 | sol | - | <=38 |
 
