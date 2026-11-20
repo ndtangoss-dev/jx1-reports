@@ -2126,3 +2126,6 @@ Chat đã chốt Q-96 (xem STATE/QUYET-DINH.md): nút vàng màn chính + nút H
 
 ## #294 Chat 20/11 11:30 — A: BỎ nút "Cuong hoa" cũ, TẠO NÚT MỚI (Q-97)
 Đại vương chốt: gỡ hẳn nút vàng "Cuong hoa" cũ (menu chọn ô, cường hóa tại chỗ) và tạo nút MỚI chỉ gọi opensysui(2,1) → UI Give gốc → sysqianghua. A: (1) gỡ mã nút cũ + menu chọn ô (giữ bản .bak); (2) tạo nút mới dùng asset gốc (kiểu nút sẵn có), đặt ở chỗ dễ thấy, nối __opensysui(2,1) qua đường qiangItemCallback gốc (kiểm các chặn: shop, autoplay, skill 1705/1706); (3) chụp ảnh nút trong game để Chat duyệt hình ảnh; (4) gộp với việc kiểm toàn chuỗi sau Lua B-044; build vc27, ghi link/SHA. Ghi ĐÃ KIỂM/CHƯA KIỂM.
+
+## #295 Chat 20/11 11:42 — A: dùng GRAPHIFY (Q-98), làm mới đồ thị, viết bản đồ chuỗi
+Chủ nhắc: Graphify đã dựng để A/B tra thay vì đọc hàng nghìn dòng. Việc (không làm trước việc đang chạy Q-96/97): (1) từ nay mọi tìm mã dùng `graphify query/explain/path` trước, rồi mới đọc đoạn cần; (2) chạy TOOLS/lam_moi_do_thi.ps1 cho client qh9A (đồ thị cũ 17/11) và cập nhật STATE/DO-THI.md; (3) khi xong kiểm chuỗi cường hóa, viết DESIGN/BAN-DO-CHUOI-CUONG-HOA.md (1 trang: nút client → __opensysui → server Give → sysqianghua → QiangHua/EnChance → Equip/ApplyMagicAttribToNPC; file:dòng) để lần sau tra thẳng. Báo trong TU-SONNET.

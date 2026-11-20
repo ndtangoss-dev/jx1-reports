@@ -180,3 +180,4 @@ CHAT-DAY #259 19/11 19:20
 - 10:57 CHAT→A #292, B #B-043 (Q-95: quay ve chuoi cuong hoa goc qianghua.lua/ItemQiangHua/QiangHua; bo B-040/B-041; do trong tui, mac thi dong goc ap)
 - 11:27 CHAT→A #293, B #B-044 (Q-96: nut Cuong hoa -> opensysui(2,1) -> UI Give goc -> sysqianghua; bo cuong hoa tai cho do dang mac)
 - 11:30 CHAT→A #294 (Q-97: bo nut Cuong hoa cu, tao nut moi -> opensysui(2,1))
+- 11:42 CHAT→A #295, B #B-045 (Q-98: dung Graphify truoc khi doc ma; lam moi do thi; ban do chuoi cuong hoa)
