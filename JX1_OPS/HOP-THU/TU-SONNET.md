@@ -1343,3 +1343,8 @@ Tooltip "+N tất cả kỹ năng" nay hiện từ +14 (+1) và +15 (+2), khớp
 gs001.exe B-049 (790b5a2d…6c9) nạp 14:07, nạp xong 14:14, không crash. Đồ vàng +0→+1: Sinh 148→185 (×1,25), Phòng thủ 28→36%, Né/Nội không đổi; tài phú đồ +100 đúng, nhưng bảng/dòng công bố "Điểm tài phú: 0" dù đang mặc đồ +1. Đã báo B (A-B.md 14:25). CHƯA KIỂM: TC3–TC5 lại, TC6–TC8. Ảnh q99-tc2-*.
 
 ## 20/11 15:25 [A] #300 KẸT: cửa hàng giá 0 không làm được (KBuySell::Buy từ chối giá<=0) nên dùng menu Lua "Bao vat" (qh_bothu.lua, TEST, nằm trong danh sách gỡ). Menu hiện đúng khi bấm Cường hóa (ĐÃ KIỂM, ảnh q300-m3). Giao đồ bị chặn vì túi đầy; hàm dọn túi ClearAllItem/DelAllHanhTrang báo ScriptError trên exe hiện tại. CHƯA KIỂM: bộ xanh/vàng đủ 10 món, thủy tinh, bạc. Đã tra đồ thị server (ScriptFuns.cpp:8929,10042) / ĐÃ ĐỌC KIẾN THỨC. Cần quyết (tự quyết kế): dựng nhân vật túi trống cho Test-36 hoặc nhờ B thêm hàm dọn túi.
+
+## 20/11 16:47 [A] #303/#304/#305/#306: XONG phần chính (ĐÃ KIỂM trong game)
+- #306: Lua nạp NÓNG được trên gs001 đang chạy, không restart: (a) dofile ở đầu main của script vật phẩm (hiệu lực lần dùng kế, ~30 s); (b) nút ReloadScript GM = LocalScript → ReLoadScript, 2 s. Ảnh q306-b3/b5/b6. #306b: trong phiên ĐÃ KIỂM; sau đăng nhập lại CHƯA KIỂM (suy luận: trạng thái toàn server). Từ nay sửa Lua thì nạp nóng, đừng restart gs001. Tài liệu HIEU-GAME/09-cong-cu-gm/LOADSCRIPT-NAP-LUA-NONG.md. ĐÃ TRA ĐỒ THỊ / ĐÃ ĐỌC KIẾN THỨC.
+- #303/#304: sách Tân thủ (tự cấp lại khi đăng nhập) có mục TEST-36 mở menu: Đồ xanh, Đồ vàng, Tiền, thủy tinh Tím/Lục/Lam x600, Dọn (giữ sách), Thiết lập Thiếu Lâm. Chạy thật (q306-b7). Đồ xanh có dòng thật (ghi CUONG-HOA.md). Đồ vàng 9/10 vì túi đầy. CHƯA KIỂM: mặc đồ và đo +1/+2/+3.
+- #305: HIEU-GAME/08-giao-dien/CO-CHE-MENU-LUA.md.

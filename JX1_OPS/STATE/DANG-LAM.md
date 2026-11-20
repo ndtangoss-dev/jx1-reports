@@ -17,6 +17,7 @@
 - 20/11 15:44 [A] #302: theo chủ chốt, dùng vai túi trống: tk tkatest02, vai atestqhhai (đã tạo bằng bot_tao_role). Đổi cổng hook qh_bothu.lua sang tiền tố 'atest' (hook TEST, nằm trong danh sách gỡ), chép VM, restart gs001 15:43 (nạp ~10 phút; gộp, không đổi exe). Việc kế: LD đăng nhập atestqhhai -> menu Bảo vật -> bộ xanh/vàng/thủy tinh/bạc -> mặc, đo +1/+2/+3, chụp, ghi CUONG-HOA.md. CHƯA KIỂM.
 - 20/11 16:20 [A] #303 (Q-101, gộp #300/#302): sách = item script có sẵn (6,1,0) + script mới \script\itemaowubox.lua gọi qhbv_menu (chỉ tên 'atest'); online.lua (.bak-q303) tự cấp lại sách khi đăng nhập; menu: Dọn hành trang (giữ sách, FindItemEx(3,i,j)+RemoveItemByIndex), Đồ xanh (luck 1000 có dòng), Đồ vàng, Thủy tinh, Bạc, Thiết lập Thiếu Lâm; nút Cường hóa về UI Giao gốc. Chép VM, restart gs001 16:20 (nạp ~10 phút). Vai atestqhhai (tkatest02) kẹt vào game; tạo thêm tkatest03/atestqhba (native_place 54). Việc kế: LD vào atestqhba -> bấm sách -> menu -> mặc, +1/+2/+3, chụp, ghi CUONG-HOA.md. CHƯA KIỂM.
 - 20/11 16:25 [A] #304+#306: menu sách có mục Đồ xanh, Đồ vàng, Tiền, Thủy tinh Tím/Lục/Lam (x600 mỗi loại), Dọn (giữ sách), Thiết lập Thiếu Lâm + mục thử "Nạp lại Lua nóng". ĐÃ TRA ĐỒ THỊ: LocalScript (ScriptFuns.cpp:20470 LuaLocalScript) -> ReLoadScript (KSortScript.cpp:444: UnLoadScript + LoadScriptToSortListA); lệnh bài GM dùng _wgm_ReloadScript/tb_LocalScript (gmroleitem.lua:1552). Restart gs001 16:21 (một lần, gộp). Việc kế: đăng nhập LD atestqhba, dùng sách, sửa 1 dòng chữ qh_bothu.lua rồi bấm Nạp lại, đo thật. CHƯA KIỂM.
+<<<<<<< HEAD
 - 20/11 16:47 [A] #303/#304/#306 ĐÃ KIỂM: nạp nóng Lua không restart (dofile-on-use + LocalScript, ~30 s; HIEU-GAME/09-cong-cu-gm/LOADSCRIPT-NAP-LUA-NONG.md). Menu trong sách Tân thủ chạy thật: Đồ xanh (dòng thật), Đồ vàng 9/10, Tiền 20 ức, thủy tinh 3x600, Thiết lập Thiếu Lâm. CHƯA KIỂM: #306b sau đăng nhập lại, mặc +1/+2/+3, Cường hóa mở Give gốc. #305 xong. Việc kế: đo +1/+2/+3.
 - Đang chờ: B (đồ vàng ×1,05 + qh_wealth).
 - Thư đã đọc đến: #B-054.
@@ -43,3 +44,15 @@
   - P2 Phòng thủ% bảng = 0 (KNpc.cpp magic_physicsres_p) — CHỜ A truy client; Né tránh/Nội lực chưa nhân (thiếu id trong JxQhScalable) — CHỜ id từ A.
   - P1 #B-054 bảng đối chiếu loại thuộc tính + cột đọc được + ban_trung — XONG 20/11 (đợi Chat gửi chủ).
   - BỎ: không có.
+=======
+- 20/11 16:47 [A] #303/#304/#306 ĐÃ KIỂM: nạp nóng Lua không restart (dofile-on-use + LocalScript, ~30 s; tài liệu HIEU-GAME/09-cong-cu-gm/LOADSCRIPT-NAP-LUA-NONG.md). Menu hỗ trợ trong sách Tân thủ chạy thật: Đồ xanh (có dòng thật), Đồ vàng 9/10, Tiền 20 ức, thủy tinh 3x600, Thiết lập Thiếu Lâm. CHƯA KIỂM: #306b sau đăng nhập lại, mặc +1/+2/+3, Cường hóa mở Give gốc. #305 viết xong CO-CHE-MENU-LUA.md. Việc kế: đo +1/+2/+3.
+- Đang chờ: B (đồ vàng ×1,05 + qh_wealth).
+- Thư đã đọc đến: #B-051 (KT-01..04,03C,03D,06 đã gộp, Chat duyệt).
+
+## Sonnet B
+- Tính năng: CUONG-HOA + TAI-PHU-PHI-PHONG — bước: server EnChanceRong (B-049, A nạp, đồ vàng vẫn ×1.25 do CLIENT) → vá client B-050 (DESIGN/QH-B049-client, CHƯA CHẠY) → Lua B-051 sửa bảng tài phú=0 (QH-B044-deploy/qianghua.lua + opensysui.lua, CHƯA CHẠY).
+- Lệnh chạy tiếp: chờ A áp vá client + nạp Lua B-051 (1 lần restart gs001), đo lại tài phú bảng và đồ vàng ×1.05; sau đó Phòng thủ% (A truy client: CoreShell.cpp:1627, trường m_CurrentPhysicsResist).
+- Đang chờ: A (vá client B-050, nạp Lua B-051 cùng đợt restart gs001).
+- Hook B (D:\JX-wt\SONNET-B\.claude\settings.json): SessionStart (hook_luat.py start/postcompact, KIỂM chạy tay: ra LUAT-COT-LOI) và Graphify hook-guard (SessionStart compact, PreToolUse Bash|Grep|Read|Glob, KIỂM chạy tay exit 0) ĐỀU CÓ. Lưu ý: thư mục B chưa có graphify-out nên hook-guard không dẫn tới đồ thị; đồ thị server nằm ở QH-B035\...\Core\Src\graphify-out.
+- Thư đã đọc đến: #B-051 (KT-01..04,03C,03D,06 đã gộp, Chat duyệt).
+>>>>>>> 68792dd (A: #303-#306 nap nong Lua, menu ho tro thu nghiem, tai lieu GM va menu Lua)

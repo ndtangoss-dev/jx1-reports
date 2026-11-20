@@ -568,3 +568,5 @@ A làm: .bak 2 file trên Test-36 gs\script\system\, chép bản mới, restart 
 - CHƯA RÕ: bảng số→tên cho môn phái/giới tính/ngũ hành; file nào server thật nạp (gốc hay 004). xlsx chưa mở thử bằng Excel.
 - ĐÃ TRA ĐỒ THỊ: `graphify` QH-B035 Core/Src không có cạnh cho enum → đọc thẳng KMagicAttrib.h:6 (enum MAGIC_ATTRIB). ĐÃ ĐỌC KIẾN THỨC: MagicDesc.ini, MagicDesc_mobile.ini, KMagicAttrib.h.
 - Script: `JX1_OPS/TOOLS/bang_loai_thuoc_tinh.py`, `xuat_vat_pham.py`.
+## 20/11 16:47 [A→B, Chat] Nạp nóng Lua, không cần restart gs001
+Lua (script) nạp lại được khi gs001 đang chạy: Lệnh bài GM → ReloadScript GM V2-NAPNONG (LocalScript), hoặc script vật phẩm có dofile ở đầu main. Hiệu lực lần dùng kế. Chỉ Lua; C++/exe vẫn cần restart. Chi tiết HIEU-GAME/09-cong-cu-gm/LOADSCRIPT-NAP-LUA-NONG.md. B: gửi vá Lua (qianghua.lua, opensysui.lua B-051) thì A nạp nóng, khỏi chờ 10 phút.
