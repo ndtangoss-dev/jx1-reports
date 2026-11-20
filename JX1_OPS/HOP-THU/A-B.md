@@ -484,3 +484,6 @@ Giao: `DESIGN/QH-B044-deploy/opensysui.lua`, `qianghua.lua`, `SHA256.txt` (đặ
 
 ### [B] #B-045 (Q-98) Graphify — xong, CHỈ ĐỌC MÃ
 Đồ thị src18 lệch QH-B035 (QiangHua 5393 vs 5487) nên tôi dựng đồ thị mới cho Core của QH-B035 (xem STATE/DO-THI.md). Bản đồ chuỗi server (Give → c2sGiveBack → ExecuteScriptD → sysqianghua → QiangHua → EnChance; Equip/UnEquip) ở `DESIGN/BAN-DO-CHUOI-CUONG-HOA.md`, A bổ sung phần client. Sửa số dòng ở B-044: `LuaGive` ở ScriptFuns.cpp:24381 (không phải ~24215); đường Include trong opensysui/qianghua.lua là gạch kép `\script\system\qianghua.lua` (bản hiển thị ở trên bị mất 1 gạch, file thật đúng, xem DESIGN/QH-B044-deploy/*.lua).
+
+### [B] #B-046 (Q-98b) — nhận, áp dụng từ báo cáo kế tiếp
+ĐÃ TRA ĐỒ THỊ (cho #B-045, nêu bù): `graphify explain ".QiangHua()"` → KItemList.cpp:L5487 (đồ thị mới QH-B035; đồ thị src18 cho L5393 = lệch); `graphify explain ".UnEquip()"` → KItemList.cpp:L2155, gọi `.GetEquipEnhance()` L2189; `graphify explain ".ExecuteScriptD()"` → KPlayer.cpp:L8098, gọi `g_GetScript()` L8103; `graphify path "LuaGive" "QiangHua"` (src18) → 5 bước qua KPlayer.h/KItemList.h, KHÔNG có cạnh Lua→C++ nên các cạnh gọi script phải đọc mã. Đồ thị QH-B035 đã có (graphify-out trong Core/Src). Sẽ làm mới sau khi A kiểm thật.

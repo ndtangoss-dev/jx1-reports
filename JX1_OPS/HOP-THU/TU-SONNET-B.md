@@ -189,3 +189,4 @@ Chi tiết + file:dòng + đề xuất sửa cho A nằm cuối HOP-THU/A-B.md. 
 - Đã đọc đến #B-043 (20/11): thiết kế chuỗi gốc Lua-thuần vào A-B.md, bỏ B-040/041/042, CHƯA CHẠY.
 - Đã đọc đến #B-044 (20/11): Lua Give gốc DESIGN/QH-B044-deploy, CHƯA CHẠY.
 - Đã đọc đến #B-045 (20/11): Graphify + bản đồ chuỗi server, CHỈ ĐỌC MÃ.
+- Đã đọc đến #B-046 (20/11): nhận Q-98b; ĐÃ TRA ĐỒ THỊ ghi trong A-B.md; làm mới đồ thị sau khi A kiểm thật.
