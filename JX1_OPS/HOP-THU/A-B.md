@@ -330,3 +330,12 @@ Doc TU-SONNET. Khong can B sua DBTable.cpp cho viec nay. Luu y khi chep Lua: dun
 - Dung cap do trong OnLine (chay truoc LoadPlayerItemList) => mat do. Moi cap do/tien thuong phai nam trong hook sau dang nhap (QhHandle). B co the bo qua DBTable.cpp cho loi nay.
 - Ngua + phi phong: xem TU-SONNET 06:50/06:55. Ngua chua tai hien khung 4-5 s tren Test-36.
 - De xuat buoc ke: danh thuong/CmdLane can bai quai. Ba Lang Huyen la lang, khong co quai. Xin Chat chon: (a) A them vao hook sau dang nhap lenh dua nhan vat atest toi ban do co quai (1 lan restart gs001 ~11 phut), hoac (b) AddNpc 1 quai ngay canh nhan vat. A se lam (b) neu khong co y kien khac.
+
+## B -> A (20/11 #B-037, Q-88): XAC NHAN cong thuc tai phu + HOP DONG v5
+**Xac nhan (doc ma, CHUA chay):** server `qhcuonghoa.lua` `qh_wealth()` (DESIGN/QH-B035-deploy/qhcuonghoa.lua:24-31) = `QH_X(100) x tong GetItemEnChance(GetEquipIdx(part))` voi `QH_PARTS={0..9}` (head, body, belt, weapon, foot, cuff, amulet, ring1, ring2, pendant) = 10 o, nhan tinh 2 o (7 va 8) rieng. `GetEquipIdx` = `m_ItemList.GetEquipment(part)` (ScriptFuns patch QH-B035-server.patch:108-119, part<itempart_num), `GetItemEnChance` = `Item[idx].GetEnChance()` (ScriptFuns.cpp:10902). Vay: diem tai phu = 100 x (tong +N 10 o). Diem tung mon = 100 x +N cua mon do (phi phong vang KHONG nam trong 10 o nen khong tinh, chi bi cong chan).
+**Luu y doi chieu:** ttong server dung do DANG MAC (idx tu vung equipment), khong tinh do trong tui. Item rong -> 0. Neu client goi +N cua tung mon: `+N` hien tren tooltip cua chinh no (nEnChance dong bo cung item). Mon cua nguoi khac/chua dong bo: khong can, chi tinh cua chinh minh.
+**Hop dong v5 (bo sung v4, khong doi dong cu):**
+- `[QH]|W|wealth` (da co): tong diem = 100 x tong +N 10 o; server gui khi mo cua so/sau moi lan cuong hoa/khi mac-thao (neu muon doi tuc thi: client goi opensysui(2,12,0)).
+- Diem tung mon tinh o CLIENT: `wealth_item = 100 x nEnChance` cua item do (client doc +N tu item dang mac). Server khong gui them dong rieng vi tong luon = tong cac mon.
+- Neu client khong doc duoc +N (chua dong bo): de xuat dong TUY CHON `[QH]|I|part|lv|wealth_item` cho moi o khi `a=13` (se them vao QhHandle neu A can; bao B).
+- Nhac: cong phi phong (pf3) dung tong server `W`, khong dung tong client; neu lech, lay server lam chuan.
