@@ -1,0 +1,3 @@
+# Giao diện cường hóa chuẩn (ảnh đại vương gửi 20/11)
+Ảnh 1 = đã đặt nguyên liệu; ảnh 2 = cửa sổ rỗng; ảnh 3 = tooltip vũ khí +15 (khung trắng = các dòng thuộc tính phải đủ và phải đổi theo cường hóa).
+Cửa sổ "Cường hóa trang bị": dải gợi ý "Đặt vào trang bị muốn cường hóa"; sơ đồ 5 ô quanh ô giữa "Trang Bị": trên + 2 dưới = "Nguyên Liệu" (3 loại thủy tinh xanh lá/xanh dương/tím), trái = "Bùa Bảo Hộ", phải = "Phù May Mắn", mũi tên vào giữa; dòng "Nguyên liệu cần: 3 mỗi loại Thủy Tinh, ..."; "Cần Bạc X bạc / Tỉ lệ Y%"; dòng chú ý đỏ-cam; bên phải lưới túi 5 cột (trang bị + nguyên liệu kèm số lượng), 2 thanh tiền (vàng, bạc theo Ức/Vạn), nút "Cường hóa", nút đóng X.

@@ -173,3 +173,4 @@ CHAT-DAY #259 19/11 19:20
 - 07:00 CHAT→A #286, B #B-037 (hiển thị điểm tài phú khung nhân vật + tooltip; Q-88)
 - 07:15 CHAT→A #287, B #B-038 (nghĩ kỹ trước mỗi restart gs001; xong tài phú → SẴN SÀNG TEST; Q-89)
 - 07:36 CHAT→A #288, B #B-039 (Q-90: tài phú = thuộc tính nhân vật + yêu cầu phi phong chuẩn + tự tháo; ƯU TIÊN CAO NHẤT, chủ vào test)
+- 09:40 CHAT→A #289, B #B-040 (Q-92: cuong hoa phai doi that dong thuoc tinh + chi so nhan vat; Q-91: giao dien cuong hoa theo anh chuan, lam sau)
