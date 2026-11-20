@@ -170,3 +170,35 @@ A: bước 1→4. B: điền (b), sẵn sàng sửa nếu tiêu chí 5 hoặc 7 
 - Muốn thêm món vào Kỳ Trân Các phải sửa CẢ hai: server (nối hàng vào b[100]…) và buysell/goods trong PAK client (cần SC cho B, hoặc cách tạm: thay NỘI DUNG hàng goods.txt của server cho đúng số hàng đã có sẵn ở client — hiển thị tên/hình sai, không khuyến nghị).
 
 **d10 (#321, 20/11 20:55) — SỬA d8/d9:** nguyên nhân mất đồ sau relog nằm ở bộ exe B-039 (gs001 DE3D6F0C/CoreServer C032F1F7/Engine/LuaLib), KHÔNG phải Lua. Bằng chứng: Goddess lưu 11 món lúc 20:38 → nạp lại bằng B-039 chỉ còn sách+thỏi vàng (đã tắt QHBV_Book vẫn vậy) → thay bộ `.orig-a07c`, vào lại: đủ 11 món (+9 mới cấp). Test-36 hiện chạy bộ gốc; bản B-039 lưu `*.b039-321` cùng thư mục gs. Việc của B: tìm lỗi nạp đồ (LoadPlayerItemList) trong B-039.
+
+## ĐO THỰC TRÊN LD — 20/11 22:00–22:13 (#327/#328, A đo trực tiếp, bộ B-039 đầy đủ, QHBV_Book tắt)
+Máy: LD emulator-5556, APK vc28, tk tkatest01 / nhân vật atestvaihero, kiếm xanh "Thiết Truỵ thủ [cấp 1]" (6 dòng ML). Ảnh trong `DESIGN/ANH-NGHIEM-THU/`: q327-xanh-kiem-goc, q328-giao-day-du, q328-sau-cuong-hoa, q327-xanh-plus1/2/3, q327-xanh-plus3-sau-relog.
+
+| Dòng | Gốc | +1 kỳ vọng (floor) / đo | +2 kỳ vọng / đo | +3 kỳ vọng / đo |
+|---|---|---|---|---|
+| Thể lực tối đa | 51 | 53 / **54** | 56 / 56 | 58 / **59** |
+| ST vật lý ngoại công | 22 | 23 / 23 | 24 / 24 | 25 / 25 |
+| ST vật lý nội công | 24 | 25 / 25 | 26 / 26 | 27 / **28** |
+| Tốc độ đánh ngoại | 10% | 10 / **11** | 11 / 11 | 11 / **12** |
+| Kháng độc | 7% | 7 / 7 | 7 / **8** | 8 / 8 |
+| Hút sinh lực | 3% | 3 / 3 | 3 / 3 | 3 / 3 |
+| ST nhỏ/lớn nhất (nền) | 14/37 | 14/38 / **14/37** | 15/40 / **14/37** | **không đổi** |
+| Điểm tài phú | 0 | — / +100 | — / +200 | — / +300 |
+
+Trừ liệu (đo): bạc −200 vạn (+1), −400 vạn (+2), −800 vạn (+3) = nhân đôi mỗi cấp; mỗi loại thủy tinh (tím/lục/lam) −1, −2, −4. Tỉ lệ thông báo: +1 95%, +2 90%, +3 85%.
+Relog sau +3: tooltip giống hệt (+3, mọi dòng giữ nguyên), túi giữ đủ đồ, không cộng dồn (ảnh sau-relog).
+Mặc/tháo: mặc kiếm +1 → Thể lực tối đa 154 = 100+54 khớp tooltip; tháo → 100/100, công kích 0/0 (đúng). Mặc kiếm +2 → 156.
+
+### Kết luận so với cổng #327
+- ĐẠT: trừ bạc/thủy tinh đúng quy luật; relog giữ đồ và cường hóa, không cộng dồn; chỉ số nhân vật đúng khi mặc/tháo; kiếm +N tăng theo ~5%/cấp.
+- LỆCH 1: làm tròn là GẦN NHẤT (51×1.05=53.55→54; 10×1.05=10.5→11; 24×1.15=27.6→28), không phải làm tròn xuống như bảng kỳ vọng. Cần Chat/chủ chốt quy tắc làm tròn.
+- LỆCH 2: tỉ lệ hiển thị 95/90/85 (=100−5n), spec ghi 100−5(n−1) (+1 phải 100%). Cần chốt.
+- LỆCH 3: dòng sát thương nền (14/37) không tăng theo cấp; chỉ dòng ML tăng. Cần chốt có nhân nền không.
+- CHƯA KIỂM: vàng +1 ≈5% (server và tooltip vc28); cấu hình +5%/cấp của "bộ exe" đã bisect nhưng chưa đối chiếu bảng giá trị vàng. Chủ CHƯA được mời.
+- Lỗi thao tác khi đo: bấm "Sử dụng" thay vì "Thêm vào" khiến kiếm bị mặc vào người (2 lần) — chỉ là lỗi thao tác tự động, đã tháo ra; không phải lỗi game.
+
+### Cách tạo ảnh #328 (các bước)
+1. Đóng túi; bấm nút Cường hóa ở màn chính (1660,330) mở cửa sổ "Giao".
+2. Mở túi (683,52), chạm kiếm xanh trong túi → hộp mô tả có nút "Thêm vào" (khi Giao mở) → chạm.
+3. Thủy tinh tím/lục/lam lấy tự động từ túi (cần đủ số). Chụp màn: q328-giao-day-du.png TRƯỚC khi Xác nhận.
+4. Bấm Xác nhận → Giao đóng, thông báo "Cuong hoa THANH CONG: len +N"; chụp q328-sau-cuong-hoa.png; chạm kiếm xem tooltip.
