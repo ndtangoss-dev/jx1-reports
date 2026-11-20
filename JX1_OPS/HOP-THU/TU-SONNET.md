@@ -1298,3 +1298,7 @@ Tooltip "+N tất cả kỹ năng" nay hiện từ +14 (+1) và +15 (+2), khớp
 - B-040 (4 file, SHA khop) nap Test-36 luc 09:59: gs001 sap luc khoi dong, 0xC0000005, khong len 51189. Da hoan tac B-039, gs001 dang nghe 51189 (10:26). File loi giu ten *.b040-crash. Da bao B trong A-B.md.
 - Chua co bang +0/+1/+3/+5 va chi so that, chua co anh nghiem thu. Se chup (ten q92-tooltip-...) ngay khi B giao B-041.
 - Hook test cap do cua A (qhcuonghoa.lua, a==13 va QH_GAVE) con tren Test-36; B-039 khong co QhHandle(13) cua B nen se gui cap vang 1..8 cho atestvaihero khi mo tai phu; gỡ khi xong.
+
+## 20/11 10:58 — #291/#292 (Q-94/Q-95)
+- B-041 da nap thu Test-36 luc 10:44: gs001 KHONG sap (PID 5512, nghe 51189, WER dump bat o C:\JX\dumps). Theo #292 da HOAN TAC VE B-039 luc 10:54 (file B-041 giu ten *.b041). KHONG nap B-040/B-041 nua.
+- CHUA KIEM trong game: +5%/cap tren do nhieu dong, chi so that khi mac/thao, cuong hoa khi mac (tat ca CHUA KIEM, khong ghi hoan thanh). Cho thiet ke B (#B-043) theo chuoi goc de thu cuong hoa do TRONG TUI.
