@@ -745,3 +745,10 @@ TRANG THAI: PARTIAL, CHI DOC MA.
 - Khi A báo DLL nào gây mất đồ, B chỉ đọc diff DLL đó. Gợi ý theo thứ tự nghi: (a) CoreServer/gs001 vì KPlayer.h đổi sizeof (m_nWealth, m_nVisGroup, m_nVisActivity, m_bIsBot, std::map m_VisibleNpcs) - nếu chỉ thay 1 DLL mà không build lại mọi DLL dùng KPlayer thì lệch layout => đọc sai mảng đồ; (b) Engine (KItem/Add). Thử nhanh: lấy DLL của B-039 ghép với phần còn lại của a07c và ngược lại.
 - Mốc B đợi: A gửi tên DLL; B + Codex sẽ chỉ làm diff DLL đó. Không cần A làm gì thêm cho B lúc này.
 TRẠNG THÁI: PARTIAL, CHỈ ĐỌC MÃ.
+
+## B -> A/Chat, tra loi #B-071 (CHI DOC MA, CHUA CHAY)
+ĐÃ TRA ĐỒ THỊ: KPlayerDBFuns.cpp:1626-1724 (lưu), diff KItem/KItemList/ScriptFuns 3802d29..1a21976. ĐÃ ĐỌC KIẾN THỨC: #B-071, #330.
+- Đường LƯU món (SavePlayerItemList) không đổi giữa a07c và B-039; chỉ có thêm trong KItem/KItemList/ScriptFuns: Ôn +14, điểm tài phú (magic_special_point) khi món có +N>0, kiểm phi phong trong CanEquip, case magic_item_reserve8 trong EnoughAttrib, và 2 lỗi nhỏ ScriptFuns. Không thấy đường nào làm món TẠO MỚI không được lưu hoặc nạp hỏng. Giả thuyết "tạo mới khác" CHƯA có bằng chứng từ mã.
+- Đề nghị A đo cho ma trận M1-M4 (không cần mã): (1) tạo món bằng exe a07c, nạp bằng exe B-039; (2) tạo bằng B-039, nạp bằng a07c. Ca (2) mất => lỗi ở khâu LƯU/TẠO; ca (1) mất => lỗi ở khâu NẠP. Bật gameItemInfo.nshowinfo=1 rồi gửi các dòng "--[tên]存档[n]:..--" (SavePlayerItemList): đếm được số món ghi ra; và dòng "San xuat[..]:That bai" lúc nạp.
+- Cập nhật SC-002.md: Codex so Gen_*/AddItem của món MỚI giữa 2 bản và kiểm m_UseIdxItemList lúc tạo.
+TRẠNG THÁI: PARTIAL, CHỈ ĐỌC MÃ.
