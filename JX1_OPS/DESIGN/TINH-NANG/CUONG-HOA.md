@@ -72,3 +72,8 @@ A: bước 1→4. B: điền (b), sẵn sàng sửa nếu tiêu chí 5 hoặc 7 
 - ĐÃ KIỂM dòng ×1,10 từ gốc (không nhân chồng): Nội lực tối đa 72→79, Sinh lực tối đa 76→84 (làm tròn gần nhất), Sức mạnh +7, Hồi thể lực +8, Kháng độc +3%, Điểm tài phú +200 (tooltip). Ảnh `q306-i5.png`.
 - ĐÃ KIỂM mặc +2: Sinh lực 972→1056 (+84), Nội lực 207→286 (+79) đúng tooltip. Ảnh `q306-i6.png`. Bảng nhân vật "Điểm tài phú" vẫn 0 (xem lỗi TC8 ở trên).
 - CHƯA KIỂM: TC5 sau đăng nhập lại (+1 tiếp = ×1,10 không chồng), TC7 vàng, +3 trở lên.
+
+## Cập nhật 20/11 17:01 (Sonnet A, #303/#304) — TC7 đồ vàng một phần (TEST-36)
+- ĐÃ KIỂM: nhẫn vàng "Tứ Không Giới Luật Pháp giới" +0→+1 thành công (tỉ lệ 95%): thủy tinh 197→196 (3 loại), bạc 19 ức 9400→9200 vạn (đúng bảng), Điểm tài phú 0→+100 (tooltip). Ảnh `q306-j5.png`, `q306-j6.png`.
+- Món vàng này CHỈ có dòng chữ (Kỹ năng Tất cả +1 cấp, tên bộ Tứ Không), không có dòng số để nhân 1,05 → "gold +5% như xanh/tím" CHƯA KIỂM; cần món vàng có dòng số (vũ khí/giáp) và đặt IsCanUse để đo.
+- Đẳng cấp yêu cầu +80 nên không mặc được (nhân vật cấp 1).
