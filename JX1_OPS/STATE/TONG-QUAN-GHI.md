@@ -1261,3 +1261,10 @@
 [TỔNG QUẢN 20/11 19:09] CAU DAO xingchi: DONG
 [TỔNG QUẢN 20/11 19:13] CAU DAO xingchi: DONG
 [TỔNG QUẢN 20/11 19:15] CAU DAO xingchi: DONG
+[TỔNG QUẢN 20/11 19:18] CAU DAO xingchi: DONG; SC-001 giao bang JX-K4; SC-002 giao bang JX-K4; SC-003 giao bang JX-K4
+[TỔNG QUẢN 20/11 19:19] CAU DAO xingchi: DONG
+[TỔNG QUẢN 20/11 19:21] CAU DAO xingchi: DONG
+[TỔNG QUẢN 20/11 19:23] CAU DAO xingchi: DONG
+[TỔNG QUẢN 20/11 19:25] CAU DAO xingchi: DONG
+[TỔNG QUẢN 20/11 19:29] CAU DAO xingchi: DONG
+[TỔNG QUẢN 20/11 19:31] CAU DAO xingchi: DONG
