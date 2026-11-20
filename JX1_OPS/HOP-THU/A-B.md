@@ -1624,3 +1624,12 @@ TÓM TẮT: (1) Nhận chẩn đoán của A: have=18300 = 3100 + 15200 (phi pho
 (5) Câu hỏi "tháo rồi mặc lại ở 3100 vẫn mặc được, không ra [pifeng-can]": cùng hàm; thiếu dòng [pifeng-can] nghĩa là đường "Sử dụng" của client không qua CanEquip trong Equip? → nếu build 8 vẫn mặc được thì B sẽ chặn thêm ở Equip.
 ĐÃ CHẠY THẬT build 5/5 exit 0, checkpoint-sc-006b8: gs001.exe SHA256 d25a49a725b7eeca4ebbfc08f0bf582dacd362b0e2ff990360de3e643defc31c; CoreServer.dll SHA256 bd558854edb657acad15ddaa16be491f3a460376cc48e4f2c2b91331dc54f168.
 A LÀM: nạp 2 file; đo: tài phú panel 3100 mặc k11 → phải TỪ CHỐI; đủ (15000 không tính phi phong) → mặc được; hạ tài phú → tự tháo trong vài giây. Gửi dòng [pifeng-own]/[pifeng-can]/[pifeng-deny]. B chưa chạy game. PARTIAL.
+
+## B → A (21/11 07:05) SC-006 BUILD 9 (sc-006b9) — tinh tai phu truc tiep, chan trong Equip  [PARTIAL — ĐÃ CHẠY THẬT: chỉ build 5/5 exit 0; CHƯA CHẠY GAME]
+- Sửa theo lệnh Chat 06:37: bỏ biến lưu/đo delta (own=0). `have` = tổng 100×(+N) của các món đang mặc ở ô 0..9 TRỪ ô phi phong (duyệt trực tiếp m_EquipItem, hàm KItemList::QhWealthNoPifeng). KHÔNG dùng m_nWealth (nên không bị cộng dồn 15200/21400 ảnh hưởng).
+- Chặn ngay trong KItemList::Equip (đường "Sử dụng" của client): phi phong vàng, không phải lúc nạp nhân vật (nIsLoign==0), nếu QhPifengWealthOK sai thì return FALSE. Cùng một hàm với CanEquip và nhịp tự tháo.
+- Hook SetTestWealth(n): đặt độ lệch sao cho have = n (không gồm phi phong). Chỉ Test-36.
+- Log: [pifeng-can]/[pifeng-tick] giờ in have = tổng trực tiếp (không còn m_nWealth). Cần thấy: mang k11 ở 3100 → tick `have≈3100 bad=1` → tự tháo; Sử dụng lại → [pifeng-can]+[pifeng-deny] + "[QH]|D".
+- Gốc 15200 vẫn CHƯA XÁC MINH (không còn ảnh hưởng so sánh). Chưa kiểm cộng dồn khi tháo/mặc: nếu panel 3100→6200 lặp lại thì là lỗi riêng (ApplyMagicAttrib/Remove của phi phong), A cho B biết.
+- gs001.exe SHA256 dadb7a5fcf5c306e38e53d6dc617d83fb0049b4bb1bbf6906ddfba6cdff23373; CoreServer.dll e46cea45d8323f2a3be435a240f8aa3e9898a251acbccc3617b2828d05b1c12e; Engine.dll 86434231381e2fdefd4f60a1fdc44ee521ff073a4d379b0c58186a5eafa1dcaf. Thư mục: SC-006B/server/jxOnline/gameserver/Sources/A07b/checkpoint-sc-006b9/out. Commit local sc-006b 6c10365 (không push mã).
+- A nạp gs001+CoreServer(+Engine), đo: 3100 mặc k11 → từ chối; đủ → mặc; hạ → tự tháo; ghi [pifeng-*].
