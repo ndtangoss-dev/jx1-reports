@@ -1474,3 +1474,6 @@ gs001.exe B-049 (790b5a2d…6c9) nạp 14:07, nạp xong 14:14, không crash. Đ
 - Mac phi phong tai phu 0 (cap 60): bi chan, thong bao "Khong mac duoc: chua du cuong hoa/phi phong" (CHAN DUNG; chua thay chuoi [QH]|D nhu kich ban).
 - Buoc 1 (5999 tu choi / 6000 mac duoc) va buoc 2-7 CHUA KIEM: tai phu 6000 can tong +60 tren 10 o (~126000 van bac + ~630 thuy tinh moi mau, ty le roi 95%..): qua ton cho test tay. DE NGHI B: them ham Lua test-only (vi du SetTestWealth(n)) hoac cho menu "tai phu +N", de A dat 5999/6000/15000 chinh xac.
 - SC-006 chua gop: status van running, REPORTS/SC-006.md chua co, chua co bang chung dong.
+
+## A 21/11 02:40 — UI cuong hoa: anh TRUOC (LD, vc30)
+- Cua so "Giao" hien tai: 1 dong chu huong dan + luoi 3x5 trong, nut Xac nhan/Dong; chua co so do 5 o (Trang Bi giua, 3 Nguyen Lieu, Bua trai, Phu phai), chua co mui ten, chua co dong "Nguyen lieu can / Can Bac / Ti le". Anh: JX1_OPS/EVIDENCE/ui-cuonghoa-TRUOC-0221.png. Chuan: DESIGN/UI-CUONG-HOA/chuan-*.jpg. Viec ve UI moi (KuiGive_New.cpp) dang lam, anh SAU: CHUA CO.
