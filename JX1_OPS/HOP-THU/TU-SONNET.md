@@ -1440,3 +1440,8 @@ gs001.exe B-049 (790b5a2d…6c9) nạp 14:07, nạp xong 14:14, không crash. Đ
 - KuiGive_New.cpp = 1529 dong (Give goc, 15 o + RichText huong dan). Anh chuan Q-91 (so do 5 o hinh thoi, dong Nguyen lieu can/Can Bac/Ti le) can lop UI moi + asset khung (chua co asset hinh thoi trong ban copy, phai tim trong PAK/spr goc, khong che lai).
 - Chia 2 buoc de do duoc tung buoc tren LD: (a) hien "Ti le Y% / Can bac X / Nguyen lieu Z" trong Give hien co khi chon do (server tra qua Msg/gui chuoi); (b) ve lai so do 5 o. Moi buoc: build vc29 + do LD truoc/sau. APK la vung Do: gui chu chi khi Chat duyet.
 - Chua bat dau code; dang cho: SC-002 (B), SC-004 vá lag (A, cung qh9A -> lam sau (a)). Se lam (a) ngay khi nhan lenh tiep, khong cho chu.
+
+## A 21/11 01:00 — #335 MOC 3 (UI cuong hoa) BUOC (a) XONG tren LD
+- [DA KIEM tren LD] vc29 (SHA256 c59ea3a27a50d20a355b0863e48411d5d5b05c06c205450b0c500b7bb9b5da17, 95,087,832 B, KHONG phat chu - vung Do): cua so Giao/Cuong hoa nay hien 3 dong khi dat do vao: "Ti le thanh cong lan nay", "Can bac: X van", "Can thuy tinh moi mau: Y". Mon vang +6 -> lan +7: 70%, 12800 van, 64 (khop cong thuc qh_rate, bac 200 van x 2^(n-1), thuy tinh 2^(n-1)). Anh: REPORTS/_CHIMUC/qh-ui-vc29-v2.png (v1 = chu chong nut).
+- Ma: qh9A/Classes/gameui/KuiGive_New.cpp/.h (RefreshQhInfo, chi khi callback sysqianghua). So tinh o client theo cong thuc do that, KHONG lay tu server; neu server doi cong thuc phai sua theo.
+- [CHUA LAM] (b) ve lai so do 5 o hinh thoi / Bua-Phu khoa theo Q-91 (can asset khung); thong bao thanh cong/that bai ro; dong 28/29/30 cho SC-002 (B moi PARTIAL, khong co ma de gop - da dat ready).
