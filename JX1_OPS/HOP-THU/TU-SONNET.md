@@ -1430,3 +1430,8 @@ gs001.exe B-049 (790b5a2d…6c9) nạp 14:07, nạp xong 14:14, không crash. Đ
 - Muc tang +1 ~5% so voi goc (Sinh luc 172->181 = +5,2%; ngoai cong 147->154 = +4,8%): KHOP ~5%.
 - CHUA KIEM: 5 lan +2 tren do moi (tu +1) de do ti le 95% thong ke (can do/qua nhieu mon); dong sat thuong 28/29/30 (cho B xong SC-002); cuong hoa sau khi gs001 khoi dong lai.
 - Anh: _CHIMUC/vang-giangma-plus1.png, vang-giangma-plus6.png, qh-giao-thanh-cong-plus4.png
+
+## A 21/11 01:25 — #335 MOC 3: UI CUONG HOA — HIEN TRANG (CHUA LAM)
+- UI dang chay tren LD = khung "Giao" goc (KuiGive_New): 15 o luoi + dong chu huong dan, nut Xac nhan/Dong. KHAC anh chuan Q-91 (so do 5 o: Trang Bi giua, 3 Nguyen lieu, Bua Bao Ho, Phu May Man; dong "Nguyen lieu can", "Can Bac X / Ti le Y%", nut Cuong hoa, X).
+- Muon dung anh chuan: can lop UI moi trong D:\JX-build\qh9A (KuiGive_New hoac lop moi) + build APK + do tren LD; la viec client dai (uoc 1-2 gio build/thu). Chua bat dau. Can server tra ti le/bac can truoc khi bam (hien chi co o thong bao sau khi cuong hoa).
+- Thu tu de xuat: (1) hien "Ti le Y% / Can bac X / Nguyen lieu" trong khung Giao hien co (sua chu huong dan + nhan thong tin tu server), (2) ve lai so do 5 o. Dang cho xem B xong SC-002 de do dong sat thuong 28/29/30.
