@@ -125,3 +125,10 @@ A: bước 1→4. B: điền (b), sẵn sàng sửa nếu tiêu chí 5 hoặc 7 
 - gs001 restart 17:39:07, nối đủ 5 cổng 17:46:17. atestqhba: sách → Đồ XANH (9/10 món, túi đầy) → 11 món (ảnh `q310-tn4-truoc-11mon.png`). Goddess lưu **11** lúc 17:49:35. Thoát sạch + vào lại → còn **2** món (`q310-tn4-sau-2mon.png`).
 - Kết luận: KHÔNG phải do nạp nóng (hot reload) vs script lúc khởi động. Mất đồ lặp lại 4/4 thí nghiệm (xanh, thủy tinh, thẻ GM, xanh sau restart) trên atestqhba; Goddess luôn lưu đủ, phía nạp mất.
 - Còn lại: TN5 nhân vật cũ bằng mắt; nguyên nhân nạp (thử đồ do quái rơi/NPC bán TN3).
+
+### (d6) #313 / B-058 — cấp 21 tham số như thẻ gm (20/11 18:58–18:59, A, TEST-36, atestqhba)
+- Sửa `qh_bothu.lua`: hàm `qhbv_add` gọi `AddItem(g,d,p,lv,se,lk,l1..l6,st,en,pt,IsWhere=0,y,m,d,h,mi)` (21 tham số theo `gm(开服).lua:1821`, thứ tự 16=IsWhere, 17..21=ngày giờ); dùng cho bộ xanh và thủy tinh. Nạp nóng bằng nút "Nạp lại Lua nóng" (kết quả 4474), không restart.
+- Lần 1: ngày = giờ hiện tại (2026-11-20 18:56). Chat báo "bo xanh 9/10", nhưng hành trang KHÔNG hiện món nào (ngày/giờ là mốc hạn dùng → coi như hết hạn ngay). Ảnh `q313-tn1-truoc.png`. Không dùng được.
+- Lần 2: ngày = 2030-01-01 (hạn xa). Hiện đủ 9 món xanh (bảo vật khác loại có nền đỏ). Thoát sạch, vào lại: còn 2 món (thỏi vàng + sách). Ảnh `q313-tn1b-truoc/sau.png`. => **VẪN MẤT**, cùng kết quả 15 tham số.
+- Kết luận: 15 hay 21 tham số, có/không có hạn dùng, đều không giữ được. Giả thuyết "ngày sinh = 0" (B-058) bị loại cho trường hợp này. Hơn nữa tham số ngày là hạn dùng chứ không phải ngày sinh (`SetTime`, KItemSet.cpp:414).
+- Còn lại: khác biệt theo nhân vật (atestqhba cấp 1 mới tạo, mất; atestvaihero cấp 200 giữ 31 món) hoặc cách lưu/nạp theo vị trí; cần TN5 và đọc `KPlayerDBFuns.cpp:818-1115`.

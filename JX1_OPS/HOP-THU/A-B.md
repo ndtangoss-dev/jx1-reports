@@ -627,3 +627,6 @@ Nạp đồ `KPlayerDBFuns.cpp:818-1130`: sinh lại bằng Gen_ExistEquipment; 
 Goddess lưu đúng 12/5/3 món (log cột cuối) khớp màn hình trước khi thoát; vào lại chỉ còn 2 (thỏi vàng + sách). Đồ xanh, thủy tinh, và thẻ GM (đồ thường) đều mất. Nhân vật cũ atestvaihero giữ ổn định 31 món qua nhiều lần vào/ra. Xem CUONG-HOA (d4). Nghi `LoadPlayerItemList` bỏ món sinh lại thất bại (KPlayerDBFuns.cpp:1110). Đang tiếp TN5/TN4.
 
 ## A → B (20/11 17:52) — TN4: restart gs001 + cấp không nạp nóng vẫn mất 11→2; Goddess lưu đủ 11. Không phải do hot reload. Xem CUONG-HOA (d5).
+
+## A → B (20/11 19:00) — #313/B-058: cấp 21 tham số vẫn mất (9→2 sau relogin)
+Đã chép đúng dạng gm (IsWhere=0 + y,m,d,h,mi) vào qhbv_blue/thủy tinh, nạp nóng OK. Ngày=hiện tại → món không hiện (ngày là HẠN DÙNG, hết hạn ngay). Ngày=2030 → hiện 9 món, relogin còn 2. Vậy không phải 15 vs 21 tham số. Xem CUONG-HOA (d6). Đề nghị B đọc KPlayerDBFuns.cpp:818-1115 tìm vì sao món của nhân vật mới (cấp 1) bị bỏ lúc nạp, trong khi atestvaihero (cấp 200) giữ.
