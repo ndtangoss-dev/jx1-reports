@@ -36,7 +36,14 @@ Theo Q-90: tài phú là thuộc tính nhân vật (magic_special_point, m_nWeal
 ## Báo cáo cuối
 `JX1_OPS/REPORTS/KT-03A.md` theo DESIGN/CHUAN-BAO-CAO.md: TÓM TẮT 5 DÒNG, 1 sơ đồ Mermaid, dòng `liên quan: ...`, ĐÃ TRA ĐỒ THỊ, ĐÃ ĐỌC KIẾN THỨC, DA XAC MINH / CHUA XAC MINH, DONE/PARTIAL/BLOCKED.
 
-## Kết quả
-
 ## Nhịp sống
 Ở mốc lớn ghi một dòng vào `D:\JX-wt\KT-03A.nhip`.
+
+## Kết quả
+
+- **DONE — khảo sát tĩnh ngày 20/11/2026.** Đã tạo `JX1_OPS/HIEU-GAME/01-trang-bi-cuong-hoa/BAN-DO-TAI-PHU-PHI-PHONG.md` và báo cáo `JX1_OPS/REPORTS/KT-03A.md`; đủ 8/8 nhóm phạm vi, 10 ô tài phú, 11 bậc/nhóm biến thể phi phong và 18 kịch bản kiểm động (0/18 đã chạy).
+- Đã tra Graphify và ghi đúng kết quả thiếu/mơ hồ/chờ không trả kết quả; đã đối chiếu file thật ở src18, QH-B035 và qh9A. Không dùng đồ thị hoặc báo cáo cũ thay bằng chứng mã hiện tại.
+- Ghi riêng các khác biệt: mobile AutoEquip rồi hậu kiểm; túi đầy giữ phi phong khác lời v6; reserve8 khác tên requirement nháp; Lua B-044 bỏ đường xin W và E cuối0 có thể ghi đè cache UI. Không sửa kết luận, số liệu hoặc tệp báo cáo cũ.
+- Không sửa mã/Settings, không build, chạy game/exe server/VM, dùng mạng hoặc đọc khóa/mật khẩu. Không stage/commit/push theo yêu cầu; Tổng quản commit hộ, chưa có SHA mới.
+- Tệp nhịp `D:\JX-wt\KT-03A.nhip` ngoài vùng ghi sandbox nên không tạo/cập nhật; các mốc quan sát được và giới hạn này được ghi trong báo cáo, không bịa giờ bắt đầu hoặc nhận đã ghi nhịp.
+- Bàn giao: Tổng quản rà tài liệu/commit; A/B xác nhận đúng cặp client/server/Lua rồi giao A/bot kiểm động theo 18 ca. Dữ liệu requirement, binary/APK triển khai, đăng nhập và hành vi thật vẫn CHƯA XÁC MINH.
