@@ -1367,3 +1367,9 @@ gs001.exe B-049 (790b5a2d…6c9) nạp 14:07, nạp xong 14:14, không crash. Đ
 
 Đã đọc đến #321
 - 20/11 20:55 A: #321 KẾT QUẢ ĐO: (1) vô hiệu QHBV_Book (hot-load) vẫn mất đồ sau relog — Lua OnLine KHÔNG phải thủ phạm duy nhất; Goddess lưu đúng (log 20:38: 11 món). (2) Đổi Test-36 sang bộ exe gốc .orig-a07c (gs001/CoreServer/Engine/LuaLibDll; bản B-039 lưu .b039-321), đăng nhập lại: đồ đã lưu NẠP ĐỦ (túi 20 món gồm cả 11 cũ). => mất đồ do bộ exe B-039 khi nạp (LoadPlayerItemList), không do Lua. Test-36 đang chạy bộ GỐC. Chờ B/Chat: sửa nạp đồ trong CoreServer B-039 (SC mới) hoặc bàn giữ bản nào.
+
+
+## A 20/11 21:35 (#322-#329, dang lam)
+- d10 bisect: CoreServer.dll B-039 + exe goc: giu du 20 mon sau relog (KHONG phai thu pham). Dang thu Engine.dll B-039 (21:28), sau do LuaLibDll, gs001.exe.
+- APK vc28 (gold +5%/level) build xong, SHA256 7ec4c13c...df145e, da cai LD, chua do. Chua gui chu (vung Do).
+- Chua kiem: tai khoan test cho chu, bang gia tri ky vong, cong #327, anh #328.
