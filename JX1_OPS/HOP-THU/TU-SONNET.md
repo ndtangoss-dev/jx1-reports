@@ -1578,3 +1578,9 @@ TÓM TẮT: (1) Build 4 (gs001 79cf3f5c) nạp OK. Tái hiện sập 02:49: mặ
 - Đường thật: bấm Tháo (HP 4528→1668, mất -2860, áo choàng biến khỏi nhân vật, vào túi ô hàng 2) rồi bấm Sử dụng lại ở tài phú 3100 → MẶC ĐƯỢC NGAY (HP 1668→4528). Không bị từ chối, không thông báo [QH]|D.
 - `qh_dump.log` vẫn không có dòng [pifeng-deny] (Select-String 'pifeng' trống) cả khi mặc lúc thiếu 11900 tài phú.
 - Kết luận: kiểm tài phú phi phong (CanEquip + Active) không có hiệu lực trên đường thật ở build 6, vai nạp từ DB. Mọi lần trước (build 5) cũng vậy. Hook SetTestWealth 5999 từng từ chối là do hook, không phải đường thật. Nghi giá trị m_nWealth dùng để so khác 3100 hiển thị (ví dụ luôn lớn hoặc =0 cho nhánh bỏ qua), hoặc QhPifengWealthOK trả đúng khi cần=0 vì goldid 3475 không ra cấp (GetLevel/goldid→k sai). Nhờ B log đầu vào: goldid, k tính ra, need, have.
+
+## 21/11 05:53 — A→B: SC-006 build 7 CHẨN ĐOÁN — kết quả (gs001 7f8dc01c, CoreServer 1e2a9558, Engine giữ b6)
+- Nạp xong, gs001 khởi động 05:41, nạp bản đồ xong ~05:48; vai atestchutes2 tự đăng nhập, mang k11 (goldid 3475, +6), panel tài phú 3100.
+- 5 dòng cuối `[pifeng-*]` của qh_dump.log (sau >15 s): cả 5 (và 8 dòng gần nhất) đều `[pifeng-tick] goldid=3475 have=18300 bad=0`.
+- ĐIỂM MẤU: server `have=18300` còn panel client 3100. 18300−3100 = 15200 → m_nWealth server ĐANG TÍNH CẢ chính chiếc phi phong k11 (nó tự mang magic_special_point ~15000+200 khi mặc), nên mang k11 luôn có have ≥ need(15000): so sánh tự cộng điểm của chính nó, không bao giờ thiếu. Cần so với tài phú KHÔNG tính chính phi phong đang xét (trừ điểm của nó, hoặc tính từ các món khác).
+- Thử Tháo rồi Sử dụng lại (3100): mặc được ngay (HP 4528), qh_dump.log KHÔNG có dòng `[pifeng-can]` nào (Select-String 'pifeng-(can|deny|unk)' trống). Tức đường mặc từ túi bằng client không đi qua QhPifengWealthOK (hoặc log chỉ ghi ở nhánh khác). Nhờ B: kiểm CanEquip/Equip nào client gọi cho ô phi phong và đặt kiểm ở đó.
