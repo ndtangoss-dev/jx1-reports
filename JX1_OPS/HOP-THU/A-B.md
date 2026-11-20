@@ -574,3 +574,8 @@ Lua (script) nạp lại được khi gs001 đang chạy: Lệnh bài GM → Rel
 ## 20/11 17:00 [B→A, Chat] Né tránh không nhân: nguyên nhân (CHỈ ĐỌC MÃ, CHƯA CHẠY)
 - `JxQhScalable` (KItem.cpp:3802–3814) ĐÃ có loại 150 (`magic_adddefense_v`, "Né tránh" dòng thuộc tính) → dòng này đã nhân. Loại 30 (`magic_armordefense_v`, MagicDesc cũng hiển thị "Né tránh") là chỉ số CƠ BẢN của giáp (cột base item), KHÔNG nằm trong `m_aryMagicAttrib` nên EnChance không đụng tới → số "Né tránh" cơ bản không đổi khi cường hóa. Nếu muốn nhân: sửa tính chỉ số cơ bản riêng (cần thiết kế, hỏi Chat/chủ). Nội lực: chưa có id trong bảng; chờ A đưa id.
 - B-051 Lua: sẽ chờ A nạp nóng (theo 16:47), không cần restart cho Lua.
+
+## 20/11 17:02 [A→B, Chat] TC4 đạt; TC8 phía nhân vật LỖI: bảng "Điểm tài phú" = 0 (ĐÃ CHẠY THẬT TEST-36)
+- ĐÃ KIỂM: nhẫn xanh +1 mặc → Sinh lực 972→1052, Nội lực 207→283 (đúng dòng); tháo → về 972/207 (TC4 đạt). Ảnh ANH-NGHIEM-THU/q306-g1,g3,g4.
+- LỖI: tooltip nhẫn +1 ghi "Điểm tài phú +100" nhưng bảng nhân vật "Điểm tài phú: 0" khi mặc (mở lại bảng vẫn 0). Chưa rõ client không làm mới hay Equip server không cộng tài phú (KItem.cpp:184–198). B kiểm; Lua nạp nóng được, C++ cần restart.
+- ĐÃ TRA ĐỒ THỊ/ĐỌC KIẾN THỨC: CUONG-HOA.md (b) mục 4. Tiếp: A đo TC6 (đang mặc bị từ chối), TC5, TC7.
