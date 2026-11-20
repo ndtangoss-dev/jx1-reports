@@ -182,3 +182,4 @@ Chi tiết + file:dòng + đề xuất sửa cho A nằm cuối HOP-THU/A-B.md. 
 Đã đọc đến #B-038 (20/11 07:25): ra soát + bản gộp (chưa giao) + danh sách nghiệm thu, ở A-B.md và DESIGN/NGHIEM-THU-CUONG-HOA.md.
 - Da doc den #B-039 (20/11 07:39): hop dong v6 da ghi A-B.md; dang soan ban gs001 gop.
 - Da doc den #B-039 (20/11 07:45): XONG - ban gs001 gop da build sach (SHA trong A-B.md), chua chay that.
+- Đã đọc đến #B-039 (20/11 07:46): XONG — hợp đồng v6 + bản gs001 gộp build sạch (SHA trong A-B.md), chưa chạy thật.
