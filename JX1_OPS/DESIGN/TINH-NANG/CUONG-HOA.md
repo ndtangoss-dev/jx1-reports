@@ -77,3 +77,9 @@ A: bước 1→4. B: điền (b), sẵn sàng sửa nếu tiêu chí 5 hoặc 7 
 - ĐÃ KIỂM: nhẫn vàng "Tứ Không Giới Luật Pháp giới" +0→+1 thành công (tỉ lệ 95%): thủy tinh 197→196 (3 loại), bạc 19 ức 9400→9200 vạn (đúng bảng), Điểm tài phú 0→+100 (tooltip). Ảnh `q306-j5.png`, `q306-j6.png`.
 - Món vàng này CHỈ có dòng chữ (Kỹ năng Tất cả +1 cấp, tên bộ Tứ Không), không có dòng số để nhân 1,05 → "gold +5% như xanh/tím" CHƯA KIỂM; cần món vàng có dòng số (vũ khí/giáp) và đặt IsCanUse để đo.
 - Đẳng cấp yêu cầu +80 nên không mặc được (nhân vật cấp 1).
+
+## Cập nhật 20/11 17:04 (Sonnet A, #303/#304) — TC5 lần 1: MẤT ĐỒ sau đăng nhập lại (tắt cứng app)
+- Cách làm: `am force-stop` app LDPlayer (tắt cứng, KHÔNG thoát bằng menu game) → mở lại → đăng nhập atestqhba → vào game.
+- KẾT QUẢ: Sinh lực 900/900 (gốc, không còn nhẫn mặc); hành trang chỉ còn 2 vật phẩm (1 "Thương Long Văn Cương - Giáp [Cấp 1]", 1 sách), mất cả 2 nhẫn +1/+2 và thủy tinh. Bạc vẫn 19 ức 9200 vạn. Ảnh `q306-k7.png`.
+- Nhận định (CHƯA KIỂM): nhân vật quay về bản lưu cũ vì tắt cứng không kịp lưu (Goddess lưu theo chu kỳ/khi thoát). Chưa đủ chứng cứ để kết luận lỗi của tính năng Cường hóa; cần lặp lại với thoát sạch (menu Cài đặt → thoát về chọn nhân vật) rồi đăng nhập lại.
+- TC5 vẫn CHƯA KIỂM.
