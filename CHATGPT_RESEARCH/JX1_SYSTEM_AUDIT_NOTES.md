@@ -539,3 +539,53 @@ Chủ giao yêu cầu
 - **Lỗi kéo dài:** do nhiều defect bị gộp, thử nghiệm bị nhiễu, client/server tách rời, build không đi kèm một vòng retest bắt buộc, và trạng thái nhiều nguồn không đồng nhất. Không thể quy đơn giản cho một model “code kém”.
 
 **Giới hạn ghi nhận:** đây là phân tích và đề xuất. Không thay đổi jx1-ops, không gửi lệnh A/B/Codex, không sửa hook/dispatcher/Task Scheduler, không truy cập runtime. Chỉ cập nhật nhánh nghiên cứu riêng.
+
+
+### 12.10 Kiểm toán sâu bộ điều phối và các hook tự động
+
+Đã đọc trực tiếp mã hiện hành của guard.ps1, stop_guard.py, mailbox_hook.py, cho_thu.py, dong_bo.py, set_status.py, tien_do.py, tong_quan.py và README của dispatcher P1b.
+
+**Phát hiện về kiến trúc hiện tại**
+1. Có ít nhất hai hướng điều phối Codex:
+   - tong_quan.py được mô tả là chạy mỗi 3 phút bằng Task Scheduler JX-TongQuan; tự phân loại worker, chạy lại, chọn khóa, giao task ready, sinh TIEU-YEU/TIEN-DO.
+   - dispatcher P1b có QUEUE, watchdog, preflight budget, dependency, worker retry và incident breaker; README lại ghi giao thật do PM thực hiện riêng, cần --run-real/allowlist/budget/probe và runtime chưa kiểm.
+   - Chưa có bằng chứng dispatcher P1b thay thế tong_quan.py trong production. Vì vậy hiện có hai thiết kế nhưng chưa thấy một control plane duy nhất được xác nhận đang chạy.
+2. ensure_worktree() trong tong_quan.py tạo worktree từ nhánh jx1-ops và chép task file, nhưng không kiểm tra các đường vung_file có tồn tại trong worktree. Đây là nguyên nhân hệ thống có thể giao Codex một task mà nguồn C++ cần sửa bị thiếu. Điều này khớp sự cố SC-002 được ghi trong Q-102/#B-065.
+3. Vòng giao task của tong_quan.py kiểm status ready và depends_on dựa trên front matter status của task cha; không thấy kiểm acceptance runtime hoặc manifest artifact. Status done của dependency có thể mở task tiếp theo dù chưa có runtime pass.
+4. set_status.py sửa trực tiếp front matter và gọi tien_do.py; không ghi event bất biến, không giữ lịch sử chuyển trạng thái. Vì vậy khi status bị đổi ready/running/partial/done, khó dựng lại ai đổi, vì sao và dựa trên bằng chứng nào nếu chỉ nhìn file hiện tại.
+5. tien_do.py sinh dashboard từ front matter và file .done cục bộ. Nó không phải nguồn sự thật độc lập; nếu TASKS hoặc .done lệch nhau thì dashboard sẽ lệch. Snapshot TIEN-DO lúc 02:30 trong khi TIEU-YEU/SONNET-SONG cập nhật tới 04:25 cho thấy dashboard có thể cũ mà không bị chặn.
+6. TIEU-YEU là trạng thái Codex worker; SONNET-SONG là tín hiệu hoạt động phiên Sonnet; NHIP-TIM là heartbeat cho_thu. Chúng đo ba loại khác nhau nhưng người đọc dễ hiểu nhầm là một trạng thái. SONNET-SONG 04:25 ghi A/B hoạt động, commit cuối 03:47; TIEU-YEU cùng lúc ghi SC-006 XONG-CHO-GOP và Task Scheduler 0. Đây không nhất thiết mâu thuẫn về process, nhưng không có trường “đang làm bước gì / đợi ai / blocker nào” để giải thích.
+7. mailbox_hook.py chỉ kiểm hộp thư sau UserPromptSubmit/PostToolUse và có giới hạn 10 phút; nó không phải dịch vụ monitor độc lập. Nếu phiên Sonnet không phát sinh tool event, hook không tự thức dậy.
+8. cho_thu.py có thể chờ tối đa 9 phút, ghi heartbeat 5 phút và thoát khi có thư/việc chờ gộp. L15 đã đúng khi yêu cầu không coi heartbeat cho_thu là tiến độ. Tuy nhiên, cơ chế này vẫn tạo thêm một loại “sống” dễ bị nhầm nếu dashboard/Chat không phân biệt.
+9. guard.ps1 là một người gác riêng: chạy theo Task Scheduler 5 phút, có thể gọi claude -c -p khi im lặng >30 phút hoặc có thư khẩn/tổng quản mới. Guard đọc CHO-SONNET.md/TU-SONNET.md của A; không thấy trong file này một đường điều phối đối xứng rõ cho B. Đây là cơ chế đánh thức Sonnet, không phải cơ chế nghiệm thu defect; nó không bảo đảm Chat đã đọc và ra quyết định.
+10. stop_guard.py chủ yếu ngăn Sonnet kết thúc lượt khi còn thư/task. Nó không chứng minh công việc đang tiến triển; MAX_BLOCKS=400 và MAX_WAIT_BLOCKS=150 còn có thể giữ phiên lâu nếu trạng thái backlog không được làm sạch.
+11. dong_bo.py phân loại file sinh tự động, file append-only và file phải dừng để xử lý tay. Đây là cơ chế giảm xung đột Git hữu ích, nhưng không thay thế event ledger; merge-file --union có thể giữ cả hai dòng nhưng không tự giải quyết ý nghĩa trùng/lặp.
+
+**Kết luận kỹ thuật:** hệ thống có tự động hóa khởi chạy/giám sát Codex và một số cơ chế đánh thức Sonnet, nhưng chưa có tự động hóa khép kín từ TEST_FAIL → tạo defect → giao sửa → build → yêu cầu retest → ACCEPTED. Tổng quản theo dõi worker process; Chat theo dõi quyết định và A/B; các nguồn chưa hợp nhất. Điều này giải thích vì sao worker có thể build xong mà task/report/parent epic vẫn không đóng đúng, và vì sao Chat phải tự đọc nhiều file để hiểu trạng thái.
+
+### 12.11 Cải tiến kỹ thuật cụ thể cho control plane
+
+**Không nên viết thêm một dispatcher thứ ba.** Nên chọn một bộ điều phối duy nhất làm nguồn sự thật:
+- Nếu tiếp tục tong_quan.py: bổ sung preflight vung_file, source base SHA, fixture, dependency acceptance, unique resource lock và event ledger; đồng thời chuyển các tính năng watchdog/budget/retry đã kiểm chứng từ dispatcher P1b vào cùng kiến trúc có kiểm thử.
+- Nếu chọn dispatcher P1b: chứng minh end-to-end trên fake-worker, sau đó một task thật allowlist trên worktree thử; chỉ khi xác minh stop/reap process tree, budget, lock, retry, artifact và merge mới thay thế tong_quan.py. Không chạy hai dispatcher thật song song.
+
+**Các cổng kỹ thuật bắt buộc**
+1. PRECHECK: tất cả file vung_file tồn tại; base branch/commit đúng; task không đụng vùng khóa; dependencies ở trạng thái ACCEPTED; prompt có test matrix; worktree sạch.
+2. CODE: worker ghi branch/commit và diff; không được coi báo cáo tự khai là bằng chứng thay cho source diff.
+3. REVIEW: reviewer khác worker đọc diff, kiểm scope, kiểm logic rollback.
+4. BUILD: build log, exit code, compiler config, source SHA và artifact SHA được lưu cùng một manifest.
+5. DEPLOY_TEST: chỉ A hoặc tester được cấp quyền nạp artifact đúng manifest lên Test-36; giữ bản rollback.
+6. RUNTIME: test runner ghi từng case PASS/FAIL/SKIP cùng điều kiện, ảnh/log; FAIL tự mở/reopen defect.
+7. ACCEPT: tất cả tiêu chí parent pass; owner/reviewer ký nhận. Worker không được tự đặt ACCEPTED.
+
+**Các cảnh báo phải tự phát hiện**
+- READY nhưng thiếu source/worktree → BLOCKED ngay, không tiêu token.
+- RUNNING nhưng .done exit=0 → WAIT_MERGE/REVIEW, không còn hiển thị đang chạy.
+- XONG-CHO-GOP quá 10 phút → ping Sonnet PM; quá 20 phút → escalation Chat.
+- Build SHA mới nhưng chưa có DEPLOYED_TEST sau 20 phút → retest pending.
+- TEST_FAIL không có task sửa liên kết trong 5 phút → PM alert.
+- Report SHA không thay đổi trong khi task status đổi → stale report warning.
+- Parent command moved to “Đã xử lý” khi còn child open → reject transition.
+- Activity timestamp mới nhưng không có event/commit/worktree diff >12 phút → trạng thái “SESSION_ACTIVE_NO_PROGRESS”, không gọi là SONG/đang làm.
+
+**Tự cải tiến an toàn:** mọi cảnh báo/incident được lưu thành event; sau mỗi đợt, PM xem thống kê và đề xuất thay đổi. Thử bằng unit test/fake-worker và dry-run; chỉ chủ duyệt mới chuyển thay đổi lên nhánh vận hành. Không cho agent tự thay đổi điều kiện dừng, quyền ghi, khóa, lịch Task Scheduler hoặc vùng Đỏ chỉ dựa trên kết quả tự đánh giá của chính nó.
