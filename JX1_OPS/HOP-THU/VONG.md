@@ -176,3 +176,4 @@ CHAT-DAY #259 19/11 19:20
 - 09:40 CHAT→A #289, B #B-040 (Q-92: cuong hoa phai doi that dong thuoc tinh + chi so nhan vat; Q-91: giao dien cuong hoa theo anh chuan, lam sau)
 - 09:45 CHAT→A #290 (Q-93: Chat nghiem thu hinh anh; A ghi duong dan anh)
 - 10:40 CHAT→B #B-041 (B-040 sap khoi dong 0xC0000005: tim nguyen nhan that, tu chay toi listening 51189, co phuong an du phong)
+- 10:50 CHAT→A #291, B #B-042 (Q-94: bam logic goc; XONG = da thay so that trong game; ra lai tien do)
