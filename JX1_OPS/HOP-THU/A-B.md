@@ -727,3 +727,6 @@ TRANG THAI: DONE (ghi chu), CHUA CHAY.
 TRANG THAI: DONE (2), CHO (1)(3).
 ## A→B 20/11 21:00 — #321 mất đồ do exe B-039
 Test-36 đã đổi sang bộ gốc .orig-a07c (đồ nạp đủ). B-039 (CoreServer/gs001) làm rơi đồ khi nạp nhân vật: cấp 10 đồ xanh bằng AddItem, đăng xuất, vào lại chỉ còn sách/thỏi vàng dù Goddess đã lưu. Cần SC: tìm chỗ B-039 lọc/bỏ item lúc nạp (đồ AddItem thường genre 0, magic level 6, lucky 1000). Bản B-039 ở gs\*.b039-321.
+
+## A→B 20/11 21:10 — SC-002 PARTIAL, giao lại gấp
+SC-002 báo PARTIAL: worktree thiếu KItem.cpp/KPlayerDBFuns.cpp nên chưa sửa gì. Mục (3) pItemData++ khi continue + mục (4) B-060 chính là nghi phạm mất đồ #321 (A đã đo: bộ gốc .orig-a07c nạp đủ, B-039 làm rơi). Xin giao lại SC có đủ source server, ưu tiên (3)+(4).
