@@ -176,3 +176,5 @@ Da viet ma C++ (GetEquipIdx, CountBagItemExact, ConsumeBagItemExact; +14/+15 ky 
 Chi tiết + file:dòng + đề xuất sửa cho A nằm cuối HOP-THU/A-B.md. Chỉ đọc mã, chưa chạy. Ứng viên chính: (a) client khoá yêu cầu quái 100 frame (KNpcSet.cpp:1022) và quái chỉ hiện sau NormalSync+yêu cầu; (b) đánh thường dừng sát quái vì vùng chết bán kính (KNpcAI.cpp:772) + lệnh Run chèn xoá skill chờ (KNpc.cpp:6762). +5% cộng thẳng xác nhận đúng.
 
 Đã đọc đến #B-036 (20/11 05:10): xong bảng cường hóa/phi phong + rà hook; chi tiết ở A-B.md và DESIGN/BANG-CUONG-HOA-BAO-CAO.md.
+
+Đã đọc đến #B-037 (20/11 07:10): xác nhận công thức tài phú, hợp đồng v5 ở A-B.md.
