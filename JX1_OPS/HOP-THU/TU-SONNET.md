@@ -1359,3 +1359,5 @@ gs001.exe B-049 (790b5a2d…6c9) nạp 14:07, nạp xong 14:14, không crash. Đ
 - Sonnet A 20/11 19:46 — Đã đọc đến #314 (Q-102: A không viết mã; #313 giao SC-001; Phần A ghi vào quy-trinh.md).
 Đã đọc đến #315
 Đã đọc đến #316
+Đã đọc đến #317
+- Sonnet A 20/11 20:06 — #317: tìm ra nguồn đồ xanh có dòng cố định = goods.txt cột MagicLevel (col11>0). Server xong, client chưa hiện (PAK riêng) -> giao B làm SC (A-B.md). Chưa mua/relog được.

@@ -185,3 +185,14 @@ flowchart TD
 - [TÀI LIỆU] Bước tiếp theo chỉ là đề xuất: duyệt riêng nguồn settings/script hoặc kiểm thử cô lập nếu cần xác nhận trải nghiệm chạy. Task hiện tại chỉ cho phép đọc tĩnh; nguồn `JX1_OPS/TASKS/SO-20.md:27`.
 
 Kỹ năng đã dùng: jx1-retrofit (khuôn trình bày, không sửa kết luận cũ), jx1-read-server, jx1-read-client, jx1-parameters, jx1-knowledge, jx1-report.
+
+## Bảng cửa hàng thật (đọc từ TEST-36, 20/11/2026, #317) — ĐÃ KIỂM
+- `gs\Settings\buysell.txt`: dòng 1 là tiêu đề; dòng N (N=1..161) là cửa hàng số N, gồm các số thứ tự dòng trong `goods.txt` (1 = dòng dữ liệu đầu), cách nhau TAB. Lua `Sale(N)` mở cửa hàng N (`ScriptFuns.cpp:5418`, trừ 1 bên trong). Cửa hàng 92–99, 104, 106–147, 157–161 trống. Kết thúc dòng CRLF, mã GBK.
+- `gs\Settings\goods.txt` (1464 dòng dữ liệu, GBK, tab): cột 1 Genre (0 trang bị, 1 thuốc, 2 khoáng, 4 nhiệm vụ), 2 Detail, 3 Particular, 4 Series, 5 Level, 6 Price (BẠC; cột 7 PriceXu bị mã bỏ qua: `KBuySell.cpp:121` gán PriceXu = Price), 8 PriceShopType, 9 ThoiGianBan, 10 LockItem, 11 nEquipType, 12 tên, 13 IsShow, 14–19 MagicLevel1..6.
+- Trang bị (Genre 0) mua ở cửa hàng KHÔNG có dòng thuộc tính cố định: 1078/1161 dòng để trống cột 11 và cột 14–19 = 0 → ra đồ trắng. MagicLevel1..6 chỉ được đọc khi cột 11 (nEquipType) > 0 (`KBuySell.cpp:129`), rồi chuyển thẳng làm mảng cấp dòng thuộc tính (giống tham số l1..l6 của AddItem) → ra đồ XANH. Cột 11 đi vào tham số nPoint của Gen_Equipment (chưa kiểm ý nghĩa; đặt 1).
+- Cách tạo cửa hàng đồ xanh 1 bạc: thêm dòng goods với Price=1, cột 11=1, cột 14–19=6; liệt kê id vào một dòng buysell trống. Cần khởi động lại gs001 (bảng nạp lúc khởi động, `KBuySell.cpp:89`).
+- Đồ VÀNG (unique) không tạo được bằng bảng này; dùng AddGoldItem trong Lua.
+
+### Hiệu chỉnh (#317, 20/11 20:05)
+- `Sale(N)` hiện dòng file b[N+1] (b[0] là header), không phải dòng N. Ví dụ Sale(92) -> b[93].
+- Client dùng BẢN COPY RIÊNG của `goods.txt`/`buysell.txt` trong PAK. Server thêm hàng 1465-1477 + dòng b[93], gs001 khởi động lại, cửa hàng MỞ ĐƯỢC nhưng LƯỚI TRỐNG (đã thử trên LDPlayer). Muốn hiện hàng, phải thêm đúng 13 hàng đó vào goods.txt và dòng b[93] vào buysell.txt phía client (PAK/APK) = việc của SC task, không sửa tay.

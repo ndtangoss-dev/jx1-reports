@@ -151,3 +151,7 @@ A: bước 1→4. B: điền (b), sẵn sàng sửa nếu tiêu chí 5 hoặc 7 
 - T3: CA HAI MAT => nut ReloadScript/cach nap KHONG phai thu pham; B-049 cung khong (da quay B-039, #315). Mat do xay ra voi duong cap the GM goc.
 - BANG CHUNG MOI (Goddess log `gw\goddes_log\2026_11_19\07_08_02_060.log`, dong luu vai): 15:53 atestvaihero cap 200 luu voi so cuoi = 31; 19:29:38 (thoat) luu voi so cuoi = 12 (khop 10 non + thoi vang + sach). => LUU len Goddess THANH CONG; mat do xay ra o buoc NAP (gs001 dung lai vat pham tu DB va bo qua mon loi, `KPlayerDBFuns.cpp:818` ~1040-1125), khong phai o buoc luu. (Chua xac nhan y nghia cua truong cuoi: suy tu so khop, chua doc ma Goddess.)
 - Tin hieu phu: thoi vang va sach (6,1,0) song sot sau relog, mon trang bi (genre 0, non/ao/...) mat. File gs doi sau 13:25: online.lua, qh_bothu.lua, baowubox.lua, gmroleitem.lua (16:41), lenhbaitanthu.lua (16:43), qianghua.lua, opensysui.lua (17:17), co dump gs001 luc 16:07 (script\global\npcchucnang\DumpInfo). Chua kiem: Settings\item doi hay khong (loc khong thay file nao sau 13:25).
+
+## d7 #317 (20/11 20:06)
+- Nguồn đồ xanh dòng cố định: `goods.txt` MagicLevel1..6 (col 14-19), chỉ đọc khi col 11 > 0 (KBuySell.cpp:129). Đã thêm 10 mon xanh + 3 thủy tinh giá 1 bạc ở Test-36 (hàng 1465-1477, buysell b[93]).
+- Kết quả: cửa hàng mở nhưng lưới trống, vì client có bản goods/buysell riêng. Cần SC phía client. Chưa mua thử, chưa relog thử đường Buy. Tiền test: atestvaihero ~158M, đã có menu Tiền.

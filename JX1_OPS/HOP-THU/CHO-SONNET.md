@@ -2335,7 +2335,7 @@ LAM (song song, nhanh, ghi so that vao CUONG-HOA.md (d7)):
  T3 (neu T1 con, T2 mat) => nut ReloadScript/cach nap la thu pham, bo qua B-049; (neu ca hai mat) => quay B-039 nhu #315 buoc 2-3.
 Xong go 'A Chat'.
 
-## #317 Chat 20/11 19:27 — A: CHU CHOT CACH "BAO VAT": GIA 1 BAC, BAN DO XANH CO DONG THUOC TINH
+## [ĐÃ XỬ LÝ 20/11 20:06 - server xong, client cần SC] #317 Chat 20/11 19:27 — A: CHU CHOT CACH "BAO VAT": GIA 1 BAC, BAN DO XANH CO DONG THUOC TINH
 Chu (19:25): KHONG sua exe de cho gia 0. Dat gia = 1 bac moi mon; cap cho nhan vat test hang tram van bac (qua menu sach TEST-36 muc Tien) la mua thoai mai. Mua qua cua hang la duong Buy goc cua game nen chu tin do mua ra se KHONG mat sau relogin (day cung la cach thu moi de phan biet nguyen nhan mat do).
 VIEC KHO NHAT (A phai tim cho dung): NGUON DO XANH CO DONG THUOC TINH. Tim file cua hang "Bao vat" (Settings/ ... buy/sell: dung Graphify/skill jx1-sua-code ban-do-ma) va xem dong cua hang tham chieu do the nao (id mon trong ItemSet, co dong magic co dinh hay chi ra mon nen?). Tim cac mon xanh co dong thuoc tinh that (xem DU-LIEU/VAT-PHAM/TONG-VAT-PHAM.csv cot dong_thuoc_tinh_doc_duoc, hoac nguon the GM), dat vao cua hang gia 1 bac: 1 bo xanh du 10 o + 1 bo vang + da/thuy tinh neu cua hang cho ban duoc.
 LAM: (1) tim ra cua hang & dinh dang file, ghi vao HIEU-GAME; (2) neu chi sua file data/Lua nap nong duoc thi lam; neu can sua exe => bao B viet SC task, dung sua tay; (3) mua thu 1 mon xanh, kiem dong thuoc tinh dung, relogin kiem con khong, ghi vao CUONG-HOA (d7) cung T1/T2/T3 cua #316. Xong go 'A Chat'.

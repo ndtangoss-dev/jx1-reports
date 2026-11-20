@@ -121,3 +121,5 @@
 - 20/11 19:50 A [#315 KHAN]: DUNG gs001, tra gs001.exe = gs001.exe.bak-b049pre (SHA de3d6f0c...058e = B-039, khop SHA256-b039.txt; 3 DLL khop); ban dang chay B-049 luu gs001.exe.b049-live (790B5A2D...). Restart 19:15 (gio VM). Khong dang nhap them vai. Dang cho gs001 nap xong roi vao atestvaihero.
 - 20/11 19:30 A: #315 xong: B-039 van mat do => khong phai B-049; ghi de DB. Dang cho Chat.
 - 20/11 19:35 A: #316 xong (T1 mat do, khong phai reload/B-049; luu OK, loi o nap). Dang lam #317 (tim file cua hang Bao Vat).
+- 19:40 #317: goods/buysell sua tren TEST-36 (.bak-317), cua hang 92 = 10 xanh + 3 thuy tinh, Sale(92) qua menu sach; gs001 khoi dong lai 19:36, cho ~7 phut
+- 20:06 #317 xong phan server; client can SC (A-B.md). Tiep: backlog, cho SC-001.
