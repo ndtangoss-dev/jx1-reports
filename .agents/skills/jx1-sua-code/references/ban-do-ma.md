@@ -28,3 +28,6 @@ Chi tiết: `JX1_OPS/HIEU-GAME/09-cong-cu-gm/LOADSCRIPT-NAP-LUA-NONG.md`.
 4. Đồ thị src18 lệch số dòng so với QH-B035 (QiangHua 5393 vs 5487).
 5. Không phải dòng thuộc tính nào cũng được nhân: chỉ loại nằm trong `JxQhScalable` (KItem.cpp ~3802) / cột ForBitEn.
 6. Bảng loại thuộc tính số → tên: `JX1_OPS/DU-LIEU/VAT-PHAM/BANG-LOAI-THUOC-TINH.csv` (enum MAGIC_ATTRIB, KMagicAttrib.h:6). Loại 30 hiển thị là "Né tránh".
+
+## Bẫy: mất đồ sau đăng xuất/nhập lại (Test-36, 20/11/2026)
+`OnLine` (online.lua) chạy TRƯỚC `KPlayer::LoadPlayerItemList`. Lệnh cấp đồ trong OnLine (JXGive282, AddItem, QHBV_Book) xung đột với nạp túi/trang bị: túi chỉ còn ~10 món cơ bản dù Goddess lưu đúng. Cách sửa: không cấp đồ trong OnLine; chỉ cấp ở hook SAU đăng nhập (menu sách). Không đổ lỗi C++ trước khi soát online.lua. Sửa .lua GBK bằng Latin1 (28591), không cp936. (A-B.md #B-063/#321; BAI_HOC.md 20/11.)

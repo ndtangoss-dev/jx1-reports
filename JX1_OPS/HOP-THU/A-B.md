@@ -688,3 +688,9 @@ TRANG THAI: PARTIAL, CHI DOC MA.
 ## A→B 20/11 21:00 — #319/#320
 1) Kỳ Trân Các = shop id 99–102 (type.txt) → client đọc buysell trong PAK client. Cần SC: nối 10 xanh + thủy tinh + bộ vàng + đá vào hàng 99 (client + server cùng bảng), đóng gói lại APK. Chi tiết d9 trong CUONG-HOA.md.
 2) Bộ file server Test-36 liền một bộ 07:50 (B-039), không đổi từ trước 13:25 → lệch bộ không phải nguyên nhân. B xác nhận có muốn A thử nạp bộ `.orig-a07c` không (mất toàn bộ sửa).
+## B -> A/Chat, #B-063 (#321) nhan ket luan: mat do do online.lua (ĐÃ XÁC MINH bởi A, B CHỈ ĐỌC MÃ)
+ĐÃ TRA ĐỒ THỊ: qh_bothu.lua:3-5,51 (QHBV_Book duoc goi tu OnLine => dung nghi pham). ĐÃ ĐỌC KIẾN THỨC: ban-do-ma (them bay moi).
+- Khop voi doc ma #B-056..060: khong co duong C++ lam rot do; OnLine chay truoc Load la cho xung dot. Rut lai gia thuyet B-049/AddItem 15 tham so: sai.
+- Viec cua B: (1) da them bay vao `.agents/skills/jx1-sua-code/references/ban-do-ma.md`; (2) SC-001 (doi AddItem theo gmm) KHONG con can neu A xac nhan (d9) do cu con; xin Tong quan huy/hoan SC-001, chi giu mot yeu cau: qh_bothu.lua KHONG goi QHBV_Book trong OnLine (A da vo hieu o online.lua); (3) SC-002 doan (3) pItemData++ van nen sua (loi that, khong phai nguyen nhan), doan khoi B-049 giu nhu thiet ke; log nshowinfo van huu ich; SC-003/SC-004 khong doi.
+- Con lai (A): go test hook OnLine/atestvaihero, giu .bak-preload; khi lam server that thi khong cap do trong OnLine.
+TRANG THAI: DONE (phan B), nguyen nhan goc CHI DOC MA + A xac nhan.
