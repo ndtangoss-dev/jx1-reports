@@ -218,3 +218,5 @@ Chi tiết + file:dòng + đề xuất sửa cho A nằm cuối HOP-THU/A-B.md. 
 - Đã đọc đến #B-076 (21/11 02:05): đã trả lời lệnh đêm; SC-006 build 2 (sc-006b2) gs001 2c136395 chờ A đo.
 - Đã đọc đến TU-SONNET d536bbff (21/11 03:15): SC-006 build 3 (gs001 829f648f) sửa phi phong thiếu dòng + qh_dump.log, chờ A đo.
 - Đã đọc đến TU-SONNET 4deb84ec (21/11 03:50): build 4 (gs001 79cf3f5c) tự tháo khi tài phú tụt + bảng chỉ số cho client.
+
+- Đã đọc đến TU-SONNET 21/11 04:00 (gs001 sập). B 04:20: vá KSG_String* (Engine), build 5 SHA gs001 771aa122…; chờ A tái hiện.
