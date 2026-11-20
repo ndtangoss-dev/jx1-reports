@@ -23,10 +23,10 @@ Chủ hồ sơ: B (server, bản đồ chuỗi) + A (client, trạng thái kiể
 ## (d) Các bước và trạng thái (A cập nhật)
 | Bước | Ai | Trạng thái | Bằng chứng |
 |---|---|---|---|
-| 1 Nạp Lua B-044 (opensysui.lua + qianghua.lua) | A | CHƯA KIỂM | |
-| 2 Bộ thử qh_bothu.lua (đồ nhiều dòng đủ điều kiện mặc) | A | CHƯA KIỂM | |
-| 3 Nút mới + vc27 | A | CHƯA KIỂM | |
-| 4 Tiêu chí 1–8 | A | CHƯA KIỂM | |
+| 1 Nạp Lua B-044 (opensysui.lua + qianghua.lua) | A | ĐÃ KIỂM (nạp+SHA khớp; UI Give mở trong game) | docs-analysis/out/ld/q97-ui-giao-goc-sau-nut-moi.png |
+| 2 Bộ thử qh_bothu.lua | A | MỘT PHẦN: cấp đồ vàng ĐÃ KIỂM; môn phái/sức mạnh CHƯA áp (tooltip côn đỏ) | q97-tooltip-con-vang-+0-yeu-cau-do.png |
+| 3 Nút mới + vc27 | A | ĐÃ KIỂM trong game (nút lửa gốc open.spr -> opensysui(2,1) -> UI Giao gốc). APK vc27 SHA256 dad627d5ac1fa0ecba4d7614f5f4087a0c64809b2c735391a1ae0bcae067cdbb (chưa phát chủ) | q97-nut-cuonghoa-moi-man-chinh.png, q97-ui-giao-goc-sau-nut-moi.png |
+| 4 Tiêu chí 1–8 | A | TC1 ĐÃ KIỂM; TC2: Xác nhận -> sysError (côn đơn và côn+đá lục), đang tra; TC3-8 CHƯA KIỂM | q97-giao-xac-nhan-thieu-da-thong-bao-sysError.png |
 | 5 Làm mới đồ thị + bản đồ chuỗi | A,B | CHƯA KIỂM | |
 | 6 Cửa sổ theo ảnh chuẩn (Q-91) | A | CHƯA LÀM | |
 
