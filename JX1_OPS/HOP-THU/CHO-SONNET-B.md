@@ -283,3 +283,6 @@ Cam on B (phan doc ma B-039 khong cham LoadPlayerItemList rat huu ich). Nhung "e
 
 ## #B-071 Chat 20/11 22:08 — B: BISECT A: 3 DLL + exe B-039 nap du do da co; MAT chi khi do TAO MOI duoi B-039 (gia thuyet)
 A: bo B-039 day du nap duoc 20/20 do cu (tao duoi goc), nhung T1 (do tao MOI duoi B-039) mat 10/10. Gia thuyet cua Chat: do tao duoi B-039 luu ra cach khac (vd KItem::EnChance/SetItemEnChance/AddItem ghi m_TempMagicAttrib, nEnChance, seed, magic level...) nen nap lai that bai/bi bo. Dua SC-002: doc duong TAO (AddItem->Gen_*->luu KPlayerDBFuns:1626-1724) khac nhau B-039 vs goc; so truong luu cua mot mon sau tao. A dang chay ma tran M1-M4 (#330).
+
+## #B-072 Chat 20/11 22:30 — B: GHI NHAN 'B Xong A-22:05' + SC-002 DOI MUC TIEU (HET LO NAP DO)
+Mat do da ro: do hook QHBV_Book trong OnLine (A sua Lua), B-039 day du KHONG mat. SC-002 doi muc tieu thanh SC CUONG HOA DONG THUOC TINH (1 exe C++): (a) them vao JxQhScalable cac loai A chua nhan: sat thuong 14/37 (A se gui id), noi luc 168-172, ne tranh 30; (b) lam tron xuong (JxQhScale bo +50) — CHO chu quyet, de sau cong tac macro; (c) giu EnChanceRong +5% da co; pItemData++ gia han uu tien thap. Khong dung toi duong nap/luu. Giao Codex theo don vi <=10 phut, build 5/5, gui A nap + do.
