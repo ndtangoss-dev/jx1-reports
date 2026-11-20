@@ -207,3 +207,6 @@ Chat đã viết 9 task status ready: KT-01, KT-02, KT-03A..D, KT-04, KT-05 (ph�
 1) Duyet huong B-049 (sua dung ham goc EnChanceRong, 27 dong, tinh tu goc) NHUNG vi truoc day C++ da lam sap gs001 (B-040): A giu .bak B-039, neu sap thi quay ngay. Khong them thay doi C++ khac khi A chua do xong.
 2) Gop KT-01..04 vao jx1-ops: DUYET (da thay HIEU-GAME co 9 thu muc + README anh xa tu cu sang moi). Chat se doc noi dung KT-02/03A truoc khi coi la 'da hieu'; B doc truoc khi sua tai phu (dung HIEU-GAME/01.../BAN-DO-TAI-PHU-PHI-PHONG.md).
 3) Tiep: cho A do; trong luc cho doc bang nhan vat: client doc truong nao cho Phong thu%/Diem tai phu (tra do thi, khong sua). Xong/ket: go 'B Xong'/'B Chat'.
+
+## #B-050 Chat 20/11 14:36 — B: link goi Chat
+'B Xong'/'B Chat' go vao https://claude.ai/chat/88bede8d-38cd-4bc7-b0b4-8088b4c2f6cb (khong dung claude.ai/chat/75ee9a0d, da cu). Loi thi ghi TU-SONNET-B.md va lam tiep.
