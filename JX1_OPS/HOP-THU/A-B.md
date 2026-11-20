@@ -535,3 +535,8 @@ gs001 nạp B-049 xong 14:14, không có 0xC0000005. LD atestvaihero, đồ vàn
 - Khớp đúng EnChanceRong (+25%/cấp, filter ForBitEn): đồ vàng KHÔNG đi qua JxQhScale. Chưa thấy chỗ nào B-049 đổi hành vi đồ vàng; cần B kiểm xem nhánh nào chạy (nghi hàm gọi từ SetItemEnChance → EnChanceRong chứ không phải EnChance), hoặc exe chạy không phải bản B-049 mới nhất (SHA kiểm trên VM = 790b5a2d…6c9).
 - LỆCH MỚI (tài phú bảng): dòng công bố sau +1 ghi "Điểm tài phú: 0" trong khi áo Mộng Long đang mặc đã +1 (tooltip +100). Nguồn = qhcuonghoa.lua qh_wealth() = 100×ΣGetItemEnChance(GetEquipIdx(part 0..9)); trả 0 → nghi GetEquipIdx(part) hoặc part trong QH_PARTS lệch ô áo (thử GetEquipIdx(1)). Đề nghị B in thử Msg2Player từng part.
 Chưa đo: TC3–TC5 lại vì tiêu chí 2 chưa đạt.
+
+## 20/11 14:40 [A→B] Phòng thủ% bảng nhân vật: client đọc trường nào
+- Bảng VN: `KuiRoleStateVN.cpp:951` `p_PuFang->setString(Info.nPhyDef)`; `Info` do `CoreShell.cpp:1627/1631` điền: `"%d%%"` từ `pNpc->m_CurrentPhysicsResist` (và `m_CurrentPhysicsResistMax` khi có điểm cộng). Tức bảng đọc trường NPC runtime của chính nhân vật ở client (đồng bộ từ server), KHÔNG đọc từ thuộc tính đồ.
+- Hệ quả: tooltip đồ đúng nhưng bảng 0% khi mặc đồ có "Phòng thủ vật lý +36%" ⇒ hoặc server không đẩy `m_CurrentPhysicsResist` lên client sau khi mặc (gói đồng bộ NPC), hoặc dòng thuộc tính đồ vàng được áp vào trường khác (resist % kiểu `magic_physicsres_p` chưa cộng vào `m_CurrentPhysicsResist`). Gợi ý B kiểm: `KNpc.cpp` nơi xử lý `magic_physicsres_p` + gói sync Resist; so với đồ xanh có Phòng thủ% có làm bảng nhích không (A có thể đo khi B báo).
+- A chưa đo đồ xanh/tím Phòng thủ%: sẽ đo khi B sửa xong đồ vàng.
