@@ -1498,3 +1498,11 @@ gs001.exe B-049 (790b5a2d…6c9) nạp 14:07, nạp xong 14:14, không crash. Đ
   (4) Còn lại CHƯA KIỂM: đổi cloak đổi hình ngay; tháo trả chỉ số; hạ tài phú tự tháo; k=11/15000; thoát vào lại không nhân đôi; tên cloak "[cấp 1]" mà yêu cầu 8700 (chưa tìm thấy, cloak này yêu cầu 6000 khớp cấp 1); FPS vc27 vs vc31.
 - Lưu ý bàn thử: RemoveItemByIndex không làm sạch túi (túi vẫn đầy sau vào lại) => tôi dùng vai khác/tháo đồ thay vì xóa.
 Ảnh: D:\tmp\tt_dao_p1.png, D:\tmp\p.png (bảng nhân vật mặc cloak).
+
+## [A] 21/11 02:30 — SC-006 build 2: KẾT QUẢ ĐỢT 2 (phi phong, LD vai atestchutes2 lv99)
+- (đổi phi phong) Mặc cloak Thổ khi đang mặc cloak Mộc: hoán đổi được, tên "<Lăng vân>" giữ, Sinh lực 1320 cả hai, Chạy 11. Hình đổi tức thì chưa phân biệt được bằng mắt (hai cloak cùng hình cấp 1).
+- (tháo) Tháo cloak: Sinh lực 1320 -> 1060, Chạy 11 -> 10, ô phi phong trống, mất nhãn "<Lăng vân>". ĐẠT.
+- (tự tháo) Gọi SetTestWealth(5999) khi đang mặc cloak cấp 1 (yêu cầu 6000): cloak TỰ THÁO, báo "Khong mac duoc: chua du cuong hoa/phi phong". ĐẠT.
+- (LỆCH, báo B) Ngay sau đó, cùng trạng thái hook 5999 + đao +1, mặc tay lại cloak: SERVER CHO MẶC (không từ chối). Kiểm tự tháo và kiểm khi mặc dùng hai cách tính tài phú khác nhau => ngưỡng 5999 chưa đáng tin. Chưa chứng minh được "5999 từ chối" khi mặc tay. Ghi chú: hook đã sửa 5899/5900 nhưng tin nhắn vẫn in "5999" (Lua nóng chưa nạp đè bản cũ?).
+- (tooltip) Hai cloak cùng "[cấp 1] +6" nhưng khác dòng: Sinh lực +328 vs +389, Kháng lôi 33% vs 36%, Tốc chạy 64% vs 52%; thực tế chỉ +260 Sinh lực, +1 Chạy. Tooltip khách vẫn lệch số thật.
+- Chưa làm: k=11 với 15000, vào lại không nhân đôi, FPS vc27/vc31, tên cloak "[cấp 1]" yêu cầu 8700.
