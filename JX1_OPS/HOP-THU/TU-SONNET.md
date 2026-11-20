@@ -1565,3 +1565,10 @@ TÓM TẮT: (1) Build 4 (gs001 79cf3f5c) nạp OK. Tái hiện sập 02:49: mặ
 
 ## A → B (21/11 05:12) Ne tranh giap
 - Giap Ham Thien Vu Than Tuong (Thieu Lam) tren vai Vo Dang: "Trang bi nay khong the su dung" → khong do duoc Ne tranh +1 bang hook san co. A can script tao giap dung mon phai (AddItem 15 tham so) de do qh_dump t30 720→756; sau build 6 A lam tiep. Dang cho build 6 (QhCheckPifeng) de do lai duong that.
+
+## 21/11 05:33 — A→B: build 6 (gs001 c7ea4a8b) KHÔNG tự tháo phi phong khi vào game (SC-006)
+- gs001 PID chạy từ 05:15:36, SHA c7ea4a8b khớp. Vai atestchutes2 (lv99) vào lúc 05:29, mang sẵn k1 (đã lưu từ trước), tài phú hiển thị 3100 (<6000).
+- Sau 2 phút (05:31:54): áo choàng k1 VẪN Ở trên người (ô phi phong có đồ, nhân vật vẫn thấy áo choàng), túi không có áo choàng (hàng 2 trống, túi 0/50 dược phẩm, còn nhiều ô trống), HP/MP vẫn 4528/3450 như khi mang k1. Không có dòng thông báo [QH]|D; thông báo duy nhất là "Diem tai phu: 3100".
+- `qh_dump.log` trên VM (ghi cuối 05:29:58): KHÔNG có dòng `[pifeng-deny]` nào (Select-String 'pifeng' trống).
+- Suy ra QhPifengBad/QhCheckPifeng trong KPlayer::Active không kích hoạt trong trường hợp: phi phong k1 + m_nWealth 3100 < 6000 sau nạp vai. Nghi: (a) m_nWealth chưa tính khi so sánh (đang 0 hoặc QhPifengWealthOK dùng giá trị khác 3100), (b) điều kiện bọc gọi Active chưa chạy cho vai này, (c) hàm bị biên dịch ra nhưng guard (cờ) chặn. B vui lòng thêm log ở lối vào QhPifengBad (goldid, need, have) để thấy nó có chạy không.
+- A sẽ thử tiếp: hook "Tai phu 6000" rồi mặc k1 (kiểm từ chối), rồi hạ +N.
