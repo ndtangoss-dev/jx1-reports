@@ -2373,3 +2373,17 @@ Nguon: BAI_HOC.md muc "20/11/2026 — Mat do sau dang xuat tren Test-36 (online.
 - CACH SUA (da kiem): vo hieu cap do trong OnLine: dat `if 1 == 1 then return end` o dau doan cap do (.bak-preload truoc); chi cap do trong hook SAU dang nhap. Ket qua: do cu hien du, cuong hoa +1 con sau dang xuat 100 s.
 - Sua file .lua GBK chi bang Latin1 (28591), KHONG cp936.
 LAM NGAY (A tu lam, la ngoai le Lua nho, Q-102): (1) mo online.lua tren Test-36 (file doi sau 13:25 trong danh sach cua A!), tim JXGive282 / cac lenh AddItem trong OnLine; .bak-preload; vo hieu; nap nong (ReloadScript) hoac restart. (2) menu sach cap do sau dang nhap vo van dung duoc. (3) vao atestvaihero: cap do bang sach, thoat, vao lai => con khong? ghi (d9) so that + anh. (4) dieu chinh lai ket luan d8 ("Lua khong can thiep luc nap"): sai, OnLine chay truoc nap. Xong go 'A Chat'.
+
+## [ĐÃ XỬ LÝ 20/11 21:00 - chuỗi Kỳ Trân Các tìm ra, cần SC client] #319 Chat 20/11 20:15 — A: CHINH LAI #317: BAN TRONG "BAO VAT / KY TRAN CAC" CO SAN, KHONG TAO CUA HANG MOI
+Chu (20:13, co anh man hinh): "Ta bao ban do tren menu Bao vat, Ky Tran Cac co san, khong phai tao nut mo cua hang moi. Phim Bao vat canh nut banh rang: mo ra la Ky Tran Cac."
+=> Bo huong shop moi (goods.txt hang 1465-1477 + buysell b[93] + Sale(92) qua sach) lam cua hang phu; KHONG dung lam cau tra loi. Phai thanh:
+1. Tim Ky Tran Cac: nut Bao vat canh banh rang -> client mo UI nao, goi lenh nao, server lay danh sach tu dau (nghi baowubox.lua / script npc shop / buysell). Dung Graphify + ban-do-ma. Ghi duong chuoi vao HIEU-GAME.
+2. Dua 10 mon xanh (goods.txt col11>0, MagicLevel) + thuy tinh + bo vang + da, gia 1 bac, vao CHINH Ky Tran Cac (them tab/hang trong danh sach co san, khong tab moi neu tranh duoc). Nap nong neu la Lua/data; neu luoi do cua UI nam trong client (PAK) thi nho B giao Codex SC, khong lam tay.
+3. Mua thu 1 mon xanh o Ky Tran Cac: kiem dong thuoc tinh dung, roi relogin xem con khong (cung phep thu mat do).
+Giu viec #318 (loi NAP do) song song neu duoc. Xong go 'A Chat'.
+
+## [ĐÃ XỬ LÝ 20/11 21:00 - đối chiếu SHA: bộ liền 07:50, không lệch] #320 Chat 20/11 20:40 — A: NGUON PHIEN TRUOC DA CAP DO THANH CONG (chu chi ra) — DOC VA DOI CHIEU
+Chu chi: phien Claude truoc tren may that (C:\Jx1CocoV3\docs-analysis) da cap do thanh cong. Chat da doc (bai hoc + bao cao 61-67), tom tat chon loc (da bo IP/mat khau) o HIEU-GAME/09-cong-cu-gm/NGUON-PHIEN-TRUOC-JX1COCOV3.md. DOC FILE DO, roi lam:
+1. Cap do theo dung duong cu: lenhbaitanthu.lua -> hotrotanthu.lua, AddItem 15 tham so (vd kiem xanh 0,0,0,10,0,10, 10,10,10,10,10,10, 1,0,0) — doi chieu voi qh_bothu.lua / ref gmroleitem.lua cua minh, tham so nao khac.
+2. DOI CHIEU BO FILE SERVER: Test-36 hien chay CoreServer.dll/Engine.dll/LuaLibDll.dll/gs001.exe ban nao? Cung build voi exe B-039/B-049 khong? Lech bo co the lam nap trang bi sai (vang/sach song, trang bi mat). Liet ke SHA 4 file + ban .goc-qh (ban goc); thu nap lai CUNG BO goc .goc-qh roi vao thu atestvaihero. Chu da cho phep thu tu do.
+3. Ket hop #319 (Ky Tran Cac) va #318 (nap do). Ghi (d9) CUONG-HOA. Xong go 'A Chat'.

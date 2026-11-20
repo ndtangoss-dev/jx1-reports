@@ -1362,3 +1362,5 @@ gs001.exe B-049 (790b5a2d…6c9) nạp 14:07, nạp xong 14:14, không crash. Đ
 Đã đọc đến #317
 - Sonnet A 20/11 20:06 — #317: tìm ra nguồn đồ xanh có dòng cố định = goods.txt cột MagicLevel (col11>0). Server xong, client chưa hiện (PAK riêng) -> giao B làm SC (A-B.md). Chưa mua/relog được.
 Đã đọc đến #318
+Đã đọc đến #320
+- 20/11 21:00 A: #319 chuỗi Kỳ Trân Các (shop 99-102, client PAK) cần SC; #320 bộ exe Test-36 liền 07:50 không lệch (d9).

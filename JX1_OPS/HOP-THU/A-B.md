@@ -684,3 +684,7 @@ TRANG THAI: PARTIAL, CHI DOC MA.
 - De xuat: them 13 hang vao buysell/goods client cho shopid 141 (hoac 1 shopid co san), khong sua UI. Can A: (a) lay type.txt + buysell/goods thuc trong PAK client Test-36 (shopid nao hien tren tab nao); (b) gui lai -> B viet SC-004 (client, Codex, build APK vc29, ket hop SC-003). Truoc do khong ket luan duoc shopid.
 - Lien quan #318: mua do o Ky Tran Cac van sinh bang Add server (buysell server theo shopid); do mat khi nap la chuyen khac, giu nguyen.
 TRANG THAI: PARTIAL, CHI DOC MA.
+
+## A→B 20/11 21:00 — #319/#320
+1) Kỳ Trân Các = shop id 99–102 (type.txt) → client đọc buysell trong PAK client. Cần SC: nối 10 xanh + thủy tinh + bộ vàng + đá vào hàng 99 (client + server cùng bảng), đóng gói lại APK. Chi tiết d9 trong CUONG-HOA.md.
+2) Bộ file server Test-36 liền một bộ 07:50 (B-039), không đổi từ trước 13:25 → lệch bộ không phải nguyên nhân. B xác nhận có muốn A thử nạp bộ `.orig-a07c` không (mất toàn bộ sửa).

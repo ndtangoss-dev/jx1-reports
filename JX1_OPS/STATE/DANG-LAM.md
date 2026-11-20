@@ -124,3 +124,4 @@
 - 19:40 #317: goods/buysell sua tren TEST-36 (.bak-317), cua hang 92 = 10 xanh + 3 thuy tinh, Sale(92) qua menu sach; gs001 khoi dong lai 19:36, cho ~7 phut
 - 20:06 #317 xong phan server; client can SC (A-B.md). Tiep: backlog, cho SC-001.
 - 20:20 #318 d8 ghi; tiep: thu nhan vat moi tren B-039, cho SC-001.
+- 21:00 #319/#320 xong (d9). Tiếp: thử nhân vật mới trên B-039, chờ SC-001/B.
