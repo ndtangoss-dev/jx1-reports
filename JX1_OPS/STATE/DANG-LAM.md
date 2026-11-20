@@ -106,3 +106,8 @@
 
 ## Sonnet A 20/11 17:30 (#312 lưu trạng thái)
 - #310 TN1 XONG: xanh không cường hóa mất 10/10 sau relogin (CUONG-HOA (d)). HÀNG ĐỢI: TN2 (xanh +1), TN3 (đồ thường NPC/quái), kèm log Goddess/Bishop; #311 truy KItemSet::AddOther/Goddess lưu-nạp; rồi báo B ('A Chat'). Chat gọi lại ~18:50.
+
+## Sonnet A 20/11 17:45 — LỆNH CHẠY TIẾP (#312, quota 90%)
+- Xong: #310 TN1 (CUONG-HOA (d)), #311 tạm (d2). showItemInfo mặc định =1 (KGameglobalSet.cpp:52) nên log "San xuat ... That bai" đã bật; log nạp đồ KHÔNG nằm ở gs\Logs\login_log.txt, gs\gameser_log\gs001\<ngày> (log mới nhất 16:25) hay gw\ (chỉ database đổi) — cần tìm file `LoadPlayerItemList` (gTraceLogFile) hoặc đọc console gs001 bằng C:\JX\sql\console.ps1 lúc relogin.
+- Việc kế: (1) relogin + đọc console gs001 tìm "That bai"/số món nạp; (2) TN2 xanh +1; (3) TN3 đồ thường (NPC/quái); (4) báo B 'A Chat'; (5) backlog CUONG-HOA #289–#299, B-050 APK vc27 [CAN-CHU].
+- Thao tác LD: xem CUONG-HOA.md (d) "LỆNH CHẠY TIẾP".
