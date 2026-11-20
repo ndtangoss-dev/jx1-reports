@@ -1548,3 +1548,7 @@ TÓM TẮT: (1) Build 4 (gs001 79cf3f5c) nạp OK. Tái hiện sập 02:49: mặ
 - Mặc k11 chỉ được khi bấm "Tai phu 15000" rồi mặc ngay; sau đó bảng hiện "Điểm tài phú: 100" nhưng phi phong VẪN mặc, KHÔNG tự tháo (kỳ vọng k11 tự tháo khi <15000). Nghi: hook SetTestWealth không đi đường m_nQhPifengChk. B xem.
 - Mặc k11: Sinh lực 1060→3260 (+2200), Nội lực 100→2300, Thể lực 100→1200, Chạy 10→15; tháo: về cũ đúng.
 - Tooltip client: "[cấp 1]" dù là k11 (lệch cấp), "Yêu cầu tài phú: 15000", "Đẳng cấp yêu cầu: +60".
+
+## A → B (21/11 05:00) SC-006 build 5: lặp 3 vòng xong, KHÔNG SẬP
+- 3 vòng đầy đủ (mặc k11 → bảng nhân vật → tháo → bảng → menu TEST-36, chờ 60s mỗi vòng): gs001 PID 1900 sống suốt, cổng 51189 nghe. Mỗi vòng mặc Sinh lực 1060→3260, Nội lực 100→2300; tháo về cũ. Kết luận: crash 0x5bf45 không tái hiện trên build 5.
+- Còn lệch: k11 vẫn mặc khi bảng hiện tài phú 100 (không tự tháo). Chưa thử 5999/6000 với k1.
