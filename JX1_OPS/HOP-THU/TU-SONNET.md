@@ -1468,3 +1468,9 @@ gs001.exe B-049 (790b5a2d…6c9) nạp 14:07, nạp xong 14:14, không crash. Đ
 - Menu "[SC-006] Phi phong 11 cap" cap 9/11 (tui day). Tooltip mon dau: "Phi Phong Ngao tuyet [cap 1]", Yeu cau tai phu 8700 (= k4 theo 6000+900(k-1), nhung ten hien "cap 1"), Dang cap yeu cau +60, KHONG co dong chi so nao trong tooltip (chi 3 dong ten bo). Anh D:/tmp/x.png.
 - Bam Su dung (nhan vat cap 1): "Trang bi nay khong the su dung.!" => chan do cap/tai phu, chua thay duoc [QH]|D. Buoc 1-7 CHUA KIEM: can nhan vat cap 60 va tai phu du; chua co lenh nang cap tren menu test.
 - Nghi van cho B: (a) tooltip khong hien chi so phi phong; (b) nhan "[cap 1]" lech yeu cau tai phu 8700.
+
+## A 21/11 02:25 — SC-006 buoc 1 mot phan (LD, gs001 ca16705b)
+- Them menu test-36 "[SC-006] Len cap 60" (SetLevel(60), qh_bothu.lua, .bak-lv). Nhan vat atestchutes2 len cap 60 OK (anh D:/tmp/x.png).
+- Mac phi phong tai phu 0 (cap 60): bi chan, thong bao "Khong mac duoc: chua du cuong hoa/phi phong" (CHAN DUNG; chua thay chuoi [QH]|D nhu kich ban).
+- Buoc 1 (5999 tu choi / 6000 mac duoc) va buoc 2-7 CHUA KIEM: tai phu 6000 can tong +60 tren 10 o (~126000 van bac + ~630 thuy tinh moi mau, ty le roi 95%..): qua ton cho test tay. DE NGHI B: them ham Lua test-only (vi du SetTestWealth(n)) hoac cho menu "tai phu +N", de A dat 5999/6000/15000 chinh xac.
+- SC-006 chua gop: status van running, REPORTS/SC-006.md chua co, chua co bang chung dong.
