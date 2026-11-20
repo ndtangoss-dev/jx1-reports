@@ -128,9 +128,18 @@
 - 21:00 #319/#320 xong (d9). Tiếp: thử nhân vật mới trên B-039, chờ SC-001/B.
 - 21:10 SC-001 gop bao cao BLOCKED (thieu file), file da bo sung; cho B giao lai.
 - 20/11 22:13 [A] #327/#328 ĐO XONG kiếm xanh +1,+2,+3 trên LD (tk tkatest01/atestvaihero, B-039 đầy đủ, QHBV_Book tắt): bạc/thủy tinh trừ nhân đôi theo cấp, relog giữ đồ, mặc/tháo đúng. 3 chỗ lệch spec (làm tròn gần nhất, tỉ lệ 95/90/85, nền 14/37 không tăng) ghi CUONG-HOA.md. LD chưa có tk riêng cho chủ; vàng + vc28 tooltip CHƯA KIỂM; chủ CHƯA được mời. Việc kế: #330 (M1–M4).
+<<<<<<< HEAD
 20/11 23:05 [A] #334 LUU TRANG THAI (han muc sap het; Chat danh thuc sau 23:50):
 - HANG DOI: P0 vang +1 (CHUA DO; mo menu sach/GM tren LD khong on dinh, chua lay duoc do vang; cach: LENH BAI GM "Nhan The GM" -> nhan do vang, hoac AddGoldItem qua ReloadScript menu, hoac cap vang khi tao tk rieng). P1 tk rieng cho chu (CHUA LAM; 10 xanh + thuy tinh + hang tram trieu bac + vang + sach 1 lan; khong dung tkchuvuong/atestvaihero). P2 giat lag vc28 (B-065 P1) + do 5 lan +2 (~95%).
 - DA XONG: do xanh +1..+3 (CUONG-HOA.md muc 22:00 va cap nhat 22:58 Q-104 lam tron gan nhat); ti le 95/90/85 = ti le lan ke tiep, roll that dung spec (#332); online.lua tren Test-36 da go QHBV_Book (.bak-331, SHA 3CF949E9...) — CHUA KIEM relog sau restart gs001 (file chi nap lai khi restart ~10 phut).
 - SC-002 (B/Codex): chi co bao cao PARTIAL (khong sua ma, thieu KItem.cpp/KPlayerDBFuns.cpp trong worktree), da gop; id Noi luc 168-172, Ne tranh 30, dong sat thuong 14/37 (con mo (3)). Cho B dua vao JxQhScalable 1 exe.
 - vc28 APK (95,087,144 B, SHA 7ec4c13c...) da cai tren LD, CHUA phat chu (vung Do). Chu CHUA duoc moi.
 - LENH CHAY TIEP: doc CHO-SONNET (#335+), lam tk rieng neu Chat bao; khong restart gs001/build APK khi sap het han muc.
+=======
+
+## Sonnet B 20/11 22:45 (#B-075 lưu trạng thái, hạn mức 5h 93%) — LỆNH CHẠY TIẾP
+- Thư đã đọc đến: #B-075 (A-B.md: đã trả lời #B-074; commit 390e0742).
+- HÀNG ĐỢI B: P0 SC-002 (ready, Tổng quản giao Codex): chỉ còn thêm 28/29/30 (+40 CHƯA XÁC MINH) vào JxQhScalable, giữ EnChanceRong +5%, làm tròn gần nhất (Q-104, JxQhScale giữ ±50), pItemData++ ưu tiên thấp — khi có diff: B đọc, ghi duyệt/trả lại, báo A nạp + đo. P1 duyệt diff client của A (EnChanceRong KItem.cpp:3565/KProtocolProcess.cpp:1644, KuiItemdescVN.cpp, ports lag 31/33/34/47 vào qh9A). P2 SC-005 Ký Trân Các (13 hàng goods/buysell shopid 141): chờ A gửi type.txt + buysell/goods thật từ PAK; không giao Codex khi cường hóa chưa xong. P3 backlog: Phòng thủ% (KNpc magic_physicsres_p, CoreShell.cpp:1627), GoldMagic vàng, xóa hook thử qh_bothu/atestvaihero trước server thật.
+- Mất đồ: nguyên nhân = hook OnLine/QHBV_Book (A xác nhận 22:05); B-039 không lỗi nạp.
+- Chạy tiếp: vòng chờ fetch-poll (python, ≤540s) so blob origin/jx1-ops A-B.md + CHO-SONNET-B.md; có thư thì pull, trả lời trong A-B.md + TU-SONNET-B.md, cập nhật marker, commit/push, gõ "B Xong #..." vào Chat (Reply ~ (150,750)). Dừng chỉ khi DUNG-VONG.flag hoặc chủ nói dừng.
+>>>>>>> caa8dfad (B: luu trang thai #B-075 (DANG-LAM))
