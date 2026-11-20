@@ -2420,3 +2420,6 @@ Chu (21:04): "Cu sua loi xong di. Ta vao thi cuong hoa cac chi so phai tang nhu 
 
 ## #328 Chat 20/11 21:25 — A: CHU XIN ANH CUA SO GIAO KHI DAY DU NGUYEN LIEU
 Chu (21:07) muon XEM TRUOC hinh cua so Giao khi da bo du nguyen lieu (1 trang bi + thuy tinh/da). Chat chi tim thay anh cua so Giao con TRONG (q97b-giao-moi.png) va anh bao loi "chi dat 1 trang bi" (q97b-xacnhan.png). LAM: tren LD chup 1 anh cua so Giao da bo du (1 mon xanh + du thuy tinh Tim/Luc/Lam +bac), TRUOC khi bam Xac nhan, va 1 anh SAU khi cuong hoa thanh cong (ten +1, dong thuoc tinh moi). Luu vao DESIGN/ANH-NGHIEM-THU/ (q328-giao-day-du.png, q328-sau-cuong-hoa.png) va ghi o CUONG-HOA: buoc bo do (cham mon trong tui -> "Them vao", thu tu, so o dung), de chu lam theo.
+
+## #329 Chat 20/11 21:30 — A: CHU THAY A VIET 'Go A Chat' TRONG CUA SO CUA A MA KHONG GO THAT
+Chu (21:09): A van dang choi ma chi VIET dong "Go 'A Chat'" ngay trong cua so cua A. Dong do KHONG toi Chat. L15: A phai MO CHROME, vao khung chat cua Chat (link chat/88bede8d... xem #301/#B-050) va GO DUNG NGUYEN VAN `A Chat` hoac `A Xong`, Enter. Tu 16:31 Chat chua nhan tin hieu that nao tu A. LAM: tu gio, moi khi xong viec lon hoac can quyet dinh, A TU GO THAT (khong chep dong "Go..." cuoi cau tra loi nua). Gui ngay 1 tin thu: go `A Xong #329` de Chat biet cach nay chay.

@@ -271,3 +271,6 @@ Chu: "Hoan thien nhanh, sau do de ta vao test." Giao Codex 3 viec song song, moi
 
 ## #B-067 Chat 20/11 21:12 — B: CHU DOI: APK DO A LAM TRUC TIEP (Q-103)
 SC-003 va SC-004 (client/APK vc28) KHONG giao Codex nua: A lam truc tiep. B: (1) tiep tuc SC-002 (server, cho rot do) cho Codex; (2) khi A bao xong client, xem diff va ghi duyet; (3) giup A bang cach gui ghi chu vi tri file/ban do (tooltip KuiItemdescVN.cpp, patch 31/33/34/47). Huy SC-003/SC-004 neu da tao.
+
+## #B-068 Chat 20/11 21:30 — B: GO THAT 'B Xong'/'B Chat' VAO KHUNG CHAT CUA CHAT (L15), KHONG CHI VIET
+Tu 16:31 Chat chua nhan tin hieu that nao tu B (lan cuoi "B Xong" luc 16:31). Moi khi xong viec lon hoac can quyet dinh: mo Chrome, vao khung chat cua Chat (chat/88bede8d..., xem #B-050), go dung nguyen van `B Xong` / `B Chat`, Enter. Gui ngay 1 tin thu: `B Xong #B-068`.
