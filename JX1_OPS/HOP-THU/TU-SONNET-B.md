@@ -216,3 +216,4 @@ Chi tiết + file:dòng + đề xuất sửa cho A nằm cuối HOP-THU/A-B.md. 
 - Đã đọc đến #B-060 (19:45): bổ sung đề xuất thí nghiệm phân biệt exe/Lua; SC-002 thêm tiêu chí (0).
 - Đã đọc đến #B-076: #B-060 đã trả lời (A-B.md), SC-001..003 đã viết; SC-002 có tiêu chí (0); chờ T1/T2/T3 của A (#316).
 - Đã đọc đến #B-076 (21/11 02:05): đã trả lời lệnh đêm; SC-006 build 2 (sc-006b2) gs001 2c136395 chờ A đo.
+- Đã đọc đến TU-SONNET d536bbff (21/11 03:15): SC-006 build 3 (gs001 829f648f) sửa phi phong thiếu dòng + qh_dump.log, chờ A đo.

@@ -144,3 +144,6 @@
 
 ## 21/11 02:05 B
 SC-006 build 2 (sc-006b commit 9d40771, gs001 2c136395...): scale nen 28/29/30 + SetTestWealth. Cho A nap + do. Con: tooltip (client GoldMagic), nhan [cap 1] vs 8700. 06:30 tong ket.
+
+## 21/11 03:15 B
+SC-006 build 3 sc-006b3 gs001 829f648f: ap moi dong phi phong (luat dong le), qh_dump.log. Cho A do. Tooltip = client (cong thuc cu).
