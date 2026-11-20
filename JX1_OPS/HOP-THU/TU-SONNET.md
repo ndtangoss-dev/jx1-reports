@@ -1534,3 +1534,8 @@ gs001.exe B-049 (790b5a2d…6c9) nạp 14:07, nạp xong 14:14, không crash. Đ
 - Tháo phi phong khi hành trang đầy: im lặng, không tháo. Đổi phi phong (ô đã có) bị từ chối bằng dòng chữ mojibake (ảăï:ÿáÔ…) dù đủ tài phú 6000 — nên báo B xem chuỗi/đường đổi chỗ.
 - Panel: Chạy chỉ +5 (10→15) khi k=11 (dump t111=55), kháng t114=44 không hiện ở ô kháng nào — chưa rõ do cách hiển thị; chưa kiểm.
 - CHƯA XONG: Né tránh giáp +5%, đao vàng +1 sát thương thật khi đánh quái, thoát/vào lại, FPS vc27/vc31. gs001 sập 02:49 (Engine.dll 0xc0000409) chưa rõ nguyên nhân. Hook thử (qh_bothu.lua) vẫn trên VM; xóa trước server thật.
+
+## [A] 21/11 03:25 — SC-006: nhận Chat 03:19, đo Né tránh giáp (CHƯA ĐỦ)
+- qh_dump.log chưa có dòng nào t30 (Né tránh): chưa có lần mặc giáp nào ghi lại. Giáp trong túi (Hám Thiên Vũ Thần Tương Kim Giáp +6, tooltip Né tránh +720) bị từ chối "Trang bị này không thể sử dụng" (đòi môn phái Thiên Vương Bang/sức mạnh 260; nhân vật không đủ). Các ô còn lại thử là phi phong, không phải giáp.
+- CẦN B/hook: cấp giáp +1 và +0 hợp môn phái nhân vật (hoặc đổi nhân vật Thiên Vương) để đo t30 720→756. Chưa kiểm: sát thương đao vàng +1 trên quái, vào lại, ô 5 slot, FPS vc27/vc31.
+- Tooltip phi phong client: A nhận làm; công thức nhãn cấp/chỉ số k2-11 chờ B (đã giao).
