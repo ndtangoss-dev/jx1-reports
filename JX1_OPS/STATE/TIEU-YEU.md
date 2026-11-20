@@ -1,4 +1,4 @@
-# TIỂU YÊU (Tổng quản tự sinh lúc 2026-11-20 12:45, đừng sửa tay)
+# TIỂU YÊU (Tổng quản tự sinh lúc 2026-11-20 12:57, đừng sửa tay)
 
 **CẦU DAO xingchi: ĐÓNG (bình thường)**
 
@@ -6,17 +6,17 @@ Mức: SONG / IM-NHUNG-SONG (20–60 phút) / TREO (>60, bị dừng chạy lạ
 
 | Mã | Mức | Khóa | Log cuối | Dấu hiệu sống cuối | Lỗi cuối | Lần chạy lại | Mô hình | PID | Chờ token (giây) |
 |---|---|---|---|---|---|---|---|---|---|
-| KT-01 | SONG | JX-K4 | 12:45 | 12:45 | - | 0 | sol | - | - |
-| KT-02 | SONG | JX-K4 | 12:44 | 12:44 | - | 0 | sol | - | - |
-| KT-03A | SONG | JX-K4 | 12:43 | 12:43 | - | 0 | sol | - | - |
-| KT-03B | SONG | JX-K4 | 12:45 | 12:45 | - | 1 | sol | - | - |
-| KT-03C | SONG | JX-K3 | 12:44 | 12:44 | - | 0 | sol | - | - |
-| KT-03D | SONG | JX-K3 | 12:45 | 12:45 | - | 0 | sol | - | - |
-| KT-04 | SONG | JX-K3 | 12:45 | 12:45 | - | 0 | sol | - | - |
-| KT-06 | SONG | JX-K3 | 12:45 | 12:45 | - | 0 | sol | - | <=38 |
+| KT-01 | XONG-CHO-GOP | JX-K4 | 12:54 | 12:54 | - | 0 | sol | - | - |
+| KT-02 | SONG | JX-K4 | 12:56 | 12:56 | - | 0 | sol | - | - |
+| KT-03A | XONG-CHO-GOP | JX-K4 | 12:54 | 12:54 | - | 0 | sol | - | - |
+| KT-03B | SONG | JX-K4 | 12:56 | 12:56 | - | 1 | sol | - | - |
+| KT-03C | SONG | JX-K3 | 12:57 | 12:57 | - | 0 | sol | - | - |
+| KT-03D | SONG | JX-K3 | 12:57 | 12:57 | loi mang | 0 | sol | - | - |
+| KT-04 | XONG-CHO-GOP | JX-K3 | 12:53 | 12:53 | - | 0 | sol | - | - |
+| KT-06 | SONG | JX-K3 | 12:55 | 12:55 | - | 0 | sol | - | <=38 |
 
-Khóa đang dùng: JX-K3=4, JX-K4=4 / khóa có: JX-K2, JX-K3, JX-K4, JX-K5, JX-K6
-Đang chạy theo Task Scheduler: 8.
+Khóa đang dùng: JX-K3=3, JX-K4=2 / khóa có: JX-K2, JX-K3, JX-K4, JX-K5, JX-K6
+Đang chạy theo Task Scheduler: 5.
 
 Việc vòng này:
 - CAU DAO xingchi: DONG
