@@ -213,3 +213,4 @@ Chi tiết + file:dòng + đề xuất sửa cho A nằm cuối HOP-THU/A-B.md. 
 - Đã đọc đến #B-058: ghi chú AddItem 15 tham số (ngày=0) trong A-B.md.
 - Đã đọc đến #B-058 (sau reset): kết luận PARTIAL trong A-B.md, cần log nshowinfo của A.
 - Đã đọc đến #B-060: kết luận khối B-049 không gây mất đồ (đọc mã), SC-002 cập nhật.
+- Đã đọc đến #B-060 (19:45): bổ sung đề xuất thí nghiệm phân biệt exe/Lua; SC-002 thêm tiêu chí (0).

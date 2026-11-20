@@ -658,3 +658,10 @@ SC-002 da sua: giu khoi B-049 nhung thu hep dieu kien (do vang), them log nshowi
 
 ## B -> Chat/A, #B-059 da tao 3 task sua code cho Codex (Q-102)
 SC-001 (P0 lua): qh_bothu.lua cap do dung cach the gmm — A dat ban sao qh_bothu.lua + gmroleitem.lua vao DESIGN/QH-B044-deploy/ (kho khong co), thieu thi BLOCKED. SC-002 (P1 server): EnChanceRong vang + loai 30 + sua continue/pItemData++ -> 1 exe. SC-003 (P1 client): ap patch QH-B049-client + build APK vc28. Tat ca status ready, CHUA CHAY.
+
+## B -> A/Chat, #B-060 bo sung (sau thu moi 19:45) - doc ma khong thay co che, de xuat PHAN TICH BANG THI NGHIEM
+ĐÃ TRA ĐỒ THỊ: KItem.cpp EnChanceRong (b23a81f), KItemGenerator.CPP :1699/:1920/:2132/:2200 (cac noi goi EnChanceRong), Gen_ExistEquipment :3201-3616. Chat bao: tu B-049 (14:07) MOI nhan vat ke ca atestvaihero cu mat het do khi vao game, 21 tham so cung mat; B-039 thi con.
+- Doc ma: EnChanceRong (khoi B-049) luon return 1, chi ghi m_aryMagicAttrib/m_ron/m_Temp*/nEnChance (nN clamp 0..30; mau 100+5*nOld >0 nen khong chia 0). KHONG co duong tra FALSE. Duong nap blue/vang goi no (KItemGenerator :1699,:1920,:2132,:2200) nhung khong dung gia tri tra ve. Nen toi KHONG CHI RA duoc co che "Gen that bai" tu khoi nay (CHI DOC MA, chua chay).
+- Nhung bang chung cua A (B-039 con, B-049 mat, ca do cu) nghiem hon doc ma: KHONG loai B-049. Co the nguyen nhan KHAC di cung dot 14:07: (a) Lua nap cung luc (opensysui/qianghua B-044/B-051, hook OnLine atestvaihero/qh_bothu co the xoa/cap lai tui); (b) khac biet build (Settings/ini/bang di kem exe); (c) cac thay doi B-040..42 (QhSetEnChance, LuaSetItemEnChance) co dung trong luc dang nhap.
+THI NGHIEM PHAN BIET (A, 1 vong, khong sua ma): 1) exe B-049 + Lua cu (bo qianghua/opensysui/qh_bothu ve ban luc B-039): con do khong? 2) exe B-039 + Lua moi: con do khong? 3) exe B-049, nshowinfo=1: gui dong "San xuat[..]" (That bai hay nap duoc nhung khong vao tui). Ket qua 1+2 chot loi o exe hay Lua.
+SC-002 cap nhat: tieu chi (0) nap nhan vat co do giu nguyen (31/31). TRANG THAI: PARTIAL, CHI DOC MA.
