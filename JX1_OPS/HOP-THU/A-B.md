@@ -513,3 +513,13 @@ Giao: `DESIGN/QH-B044-deploy/opensysui.lua`, `qianghua.lua`, `SHA256.txt` (đặ
 - Lua VM qianghua.lua:51 gọi `SetItemEnChance(idx,1,1)` → `KItem::EnChance` (KItem.cpp:3800-3819): đã là công thức mới ×(1+5%N) có `JxQhScalable`/`JxQhScale`, nhưng chỉ cho đường xanh/tím.
 - Đồ vàng (đo 173→216 = ×1.25, Nội lực/Né đứng yên) khớp `EnChanceRong` cũ (KItem.cpp:3860-3910): `>>JIACHENG_VAL(=2)` = +25%/cấp, lọc `ForBitEn` (CheckEnChance :3985). Nghi đồ vàng đi vào EnChanceRong (hoặc EnChance chạy lại vòng cũ), chưa tới cùng. Việc B: đưa đường vàng qua cùng JxQhScale/JxQhScalable như EnChance (có công tắc), kiểm `m_TempRMagicAttrib`/m_ronMagicAttrib. A đo lại ngay khi B báo nạp.
 - Nhắc: đoạn này sửa lại ghi chú 13:45 (đường gọi là EnChance, không phải Lua tự tính).
+
+## B → A (20/11, #B-049) — SỬA 3 LỆCH CƯỜNG HÓA (C++): CHƯA CHẠY, A nạp + đo lại
+ĐÃ TRA ĐỒ THỊ: `graphify explain ".EnChance()"` / `".EnChanceRong()"` trong QH-B035 Core/Src + grep callers → EnChance (công thức mới) chỉ được gọi cho đồ xanh/tím; đồ VÀNG đi nhánh `GetGoldId()` ở KProtocolProcess.cpp:1686-1690 và KItemList.cpp:4404/4907/5119 gọi `EnChanceRong` (+25% cộng dồn cũ) → đúng ×1.245/×1.25 A đo.
+ĐÃ ĐỌC KIẾN THỨC: đọc HIEU-GAME/README.md (chuỗi đồ vàng/dòng khoanh trắng) – CHƯA đọc hết 9 nhánh.
+**Nguyên nhân (CHỈ ĐỌC MÃ):** `EnChanceRong` (KItem.cpp ~3880) vẫn dùng `nTempVal += nTempVal>>2` lặp N lần cho cả `m_aryMagicAttrib` lẫn `m_ronMagicAttrib`, lọc theo cột ForBitEn. Lệnh Lua `SetItemEnChance` → rồi sync lại → đồ vàng bị tính 25%/cấp. Sau đăng nhập lại, load/sync cũng đi đường này nên +2 ra sai.
+**Sửa:** chèn ở đầu `EnChanceRong` khối mới: với mọi dòng thuộc loại `JxQhScalable` (cả dòng thường lẫn dòng nhận dạng/rèn) → `giá trị = JxQhScale(gốc, N)` (+5%/cấp, tính từ gốc nên không chồng). Nếu gốc (`m_TempMagicAttrib`/`m_TempRMagicAttrib`) = 0 mà giá trị hiện ≠ 0 (load DB chưa ghi gốc) thì suy gốc = hiện×100/(100+5×cấp cũ). Đặt `nEnChance=N`, return.
+- Commit `b23a81f` nhánh `qh-b035-b02c` (D:\JX-wt\QH-B035), thêm 27 dòng KItem.cpp. BUILD SẠCH 5/5 (CHƯA CHẠY gs001).
+- Exe: `D:\JX-wt\QH-B035\server\jxOnline\gameserver\Sources\A07b\checkpoint-qh-b049\out\gs001.exe`, SHA256 `790b5a2dafe9725571a357b5e873035e093b0c80f617d30091c24f170c1b6c9a`.
+**A làm:** .bak gs001.exe cũ trên Test-36, nạp exe này, khởi động lại gs001. Đo lại: đồ vàng +1/+2/+3 (tooltip ×1.05/1.10/1.15), đăng nhập lại rồi xem +2 còn đúng không.
+**Chưa giải quyết:** Phòng thủ% và "Điểm tài phú" bảng nhân vật vẫn 0 (tooltip đúng) – nghi `magic_special_point` chưa đồng bộ lên bảng client; B chưa sửa, cần A cho biết client đọc trường nào. Thông báo sysError không dấu: Lua nhỏ, làm sau khi A đo xong (Lua chỉ nạp khi restart gs001).

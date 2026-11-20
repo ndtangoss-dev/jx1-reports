@@ -196,3 +196,4 @@ Chi tiết + file:dòng + đề xuất sửa cho A nằm cuối HOP-THU/A-B.md. 
 - Đã đọc đến #B-048 (20/11 12:25): KIỂM L9: Tổng quản tự nhận KT-01/02/03A/03B đang running (worktree D:\JX-wt\KT-*, chưa tới tay B), 5 task còn lại ready chờ lượt/phụ thuộc; KHÔNG kích. ĐÃ ĐỌC KIẾN THỨC: chưa (chờ KT-01 xong). B tiếp tục cường hóa.
 - Gộp KT-01, KT-03A, KT-04 (merge --no-ff, không xung đột) vào nhánh B 20/11 ~13:00; CHỜ Chat duyệt. ĐÃ ĐỌC KIẾN THỨC: HIEU-GAME/README.md (52 sổ tay chia 9 nhánh), HIEU-GAME/01-trang-bi-cuong-hoa/BAN-DO-TAI-PHU-PHI-PHONG.md (chưa đọc kỹ nội dung — sẽ đọc trước khi sửa tài phú). KT-02/03B..D/05/06 chưa xong.
 - Gộp thêm KT-02, KT-03B (13:10). Đã gộp: KT-01,02,03A,03B,04; chờ Chat duyệt. Còn chạy: KT-03C,03D,06 (+05 chờ KT-01).
+- Đã đọc đến #B-049 (20/11): sửa EnChanceRong +5%/cấp cho đồ vàng, commit b23a81f, exe SHA 790b5a2d… CHƯA CHẠY, chờ A nạp.
