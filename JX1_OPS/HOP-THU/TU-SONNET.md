@@ -1293,3 +1293,8 @@ Tooltip "+N tất cả kỹ năng" nay hiện từ +14 (+1) và +15 (+2), khớp
 - Nút mở: ĐÃ có nút "Cuong hoa" ở đầu Hành Trang (KgameWorldVN.cpp ~1483, bấm gọi `KgameWorld::qiangItemCallback` KgameWorld.cpp:14327) → tái dùng, không cần tạo nút mới.
 - Khung cửa sổ có sẵn: `gameui/KuiItemKuo.cpp` (ô gói kích thước, dùng `ui/btn_3.png`, `close.png`, lưới ô ITEM_CELL_SIZE), `KuiCompoundItem.cpp` / `KuiWenGamgItem.cpp` (cửa sổ ghép đồ có ô đặt vật phẩm, nút trang, `ui/textbg_1.png`), `KuiItemEx.cpp`/`KuiItemVN.cpp` (lưới túi kéo-thả + hiển thị số lượng), `KuiItemImmediaBox*` (ô đặt đồ), `KuiGive_New` (hộp nhập). Chưa có asset riêng 5-ô + mũi tên: cần vẽ bằng sprite khung ô sẵn có + mũi tên cắt từ ảnh chuẩn.
 - Việc kế (sau Q-92): dựng `KuiQhCuongHoa` mới từ KuiCompoundItem (ô giữa "Trang Bị", 3 ô Nguyên Liệu, 2 ô Bùa/Phù khóa "chưa mở"), nút "Cường hóa" gửi lệnh `QhHandle(10,slot)` hiện có.
+
+## 20/11 10:32 — Q-92 (#289) / Q-93 (#290): CHUA XONG, CHO B-041
+- B-040 (4 file, SHA khop) nap Test-36 luc 09:59: gs001 sap luc khoi dong, 0xC0000005, khong len 51189. Da hoan tac B-039, gs001 dang nghe 51189 (10:26). File loi giu ten *.b040-crash. Da bao B trong A-B.md.
+- Chua co bang +0/+1/+3/+5 va chi so that, chua co anh nghiem thu. Se chup (ten q92-tooltip-...) ngay khi B giao B-041.
+- Hook test cap do cua A (qhcuonghoa.lua, a==13 va QH_GAVE) con tren Test-36; B-039 khong co QhHandle(13) cua B nen se gui cap vang 1..8 cho atestvaihero khi mo tai phu; gỡ khi xong.
