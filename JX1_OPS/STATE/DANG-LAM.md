@@ -141,3 +141,6 @@
 - HÀNG ĐỢI B: P0 SC-002 (ready, Tổng quản giao Codex): chỉ còn thêm 28/29/30 (+40 CHƯA XÁC MINH) vào JxQhScalable, giữ EnChanceRong +5%, làm tròn gần nhất (Q-104, JxQhScale giữ ±50), pItemData++ ưu tiên thấp — khi có diff: B đọc, ghi duyệt/trả lại, báo A nạp + đo. P1 duyệt diff client của A (EnChanceRong KItem.cpp:3565/KProtocolProcess.cpp:1644, KuiItemdescVN.cpp, ports lag 31/33/34/47 vào qh9A). P2 SC-005 Ký Trân Các (13 hàng goods/buysell shopid 141): chờ A gửi type.txt + buysell/goods thật từ PAK; không giao Codex khi cường hóa chưa xong. P3 backlog: Phòng thủ% (KNpc magic_physicsres_p, CoreShell.cpp:1627), GoldMagic vàng, xóa hook thử qh_bothu/atestvaihero trước server thật.
 - Mất đồ: nguyên nhân = hook OnLine/QHBV_Book (A xác nhận 22:05); B-039 không lỗi nạp.
 - Chạy tiếp: vòng chờ fetch-poll (python, ≤540s) so blob origin/jx1-ops A-B.md + CHO-SONNET-B.md; có thư thì pull, trả lời trong A-B.md + TU-SONNET-B.md, cập nhật marker, commit/push, gõ "B Xong #..." vào Chat (Reply ~ (150,750)). Dừng chỉ khi DUNG-VONG.flag hoặc chủ nói dừng.
+
+## 21/11 02:05 B
+SC-006 build 2 (sc-006b commit 9d40771, gs001 2c136395...): scale nen 28/29/30 + SetTestWealth. Cho A nap + do. Con: tooltip (client GoldMagic), nhan [cap 1] vs 8700. 06:30 tong ket.

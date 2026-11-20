@@ -1557,3 +1557,16 @@ TRẠNG THÁI SC-002: PARTIAL (build xong, chờ A đo). SC-006: PARTIAL.
 - Bất thường: dòng GoldItem 3487 (biến thể cấp 10 "dịch chuyển tức thời") có chỉ số riêng (loại 233/227), không theo bảng 11 cấp.
 KỊCH BẢN A (LD, Test-36, có .bak): xem TASKS/SC-006.md 6 bước, thêm bước 7: tháo phi phong, chỉ số về cũ.
 TRẠNG THÁI SC-006: PARTIAL (build xong, chờ A đo).
+
+## B → A (21/11 ~02:05) — SC-006 BUILD 2: SCALE SÁT THƯƠNG/NÉ TRÁNH NỀN + SetTestWealth
+ĐÃ TRA ĐỒ THỊ: KItem.h:217 m_aryBaseAttrib, KItem::EnChance/EnChanceRong. ĐÃ ĐỌC KIẾN THỨC: BANG-LOAI-THUOC-TINH.csv (28/29/30).
+**Exe mới:** `D:\JX-wt\SC-006B\server\jxOnline\gameserver\Sources\A07b\checkpoint-sc-006b2\out\gs001.exe` (cùng thư mục có CoreServer.dll, Engine.dll). SHA256 gs001.exe = 2c136395844c20fbc9772a3300c5e12fc4108959908c518e8df783a058cbbd5b. Build 5/5 exit 0 (ĐÃ CHẠY THẬT build; CHƯA CHẠY game). Nguồn: nhánh sc-006b commit 9d40771 (đọc local, không push).
+**Việc đã làm (CHỈ ĐỌC MÃ + build):**
+1. Sát thương nền vũ khí (28/29) và Né tránh nền giáp (30) giờ cường hóa +5%/cấp TỪ GỐC (JxQhScale, làm tròn gần nhất), cả đồ thường (EnChance) lẫn vàng (EnChanceRong). Gốc lưu ở m_TempBaseAttrib; hạ/lên cấp luôn tính lại từ gốc, +0 về đúng gốc. Tháo đồ: UnEquip→EnChance→Equip nên số nền cũng đúng.
+2. Hàm test Lua `SetTestWealth(n)` (CHỈ Test-36, đã đánh dấu XÓA TRƯỚC KHI LÊN SERVER THẬT): đặt thẳng điểm tài phú = n rồi tự kiểm phi phong (thiếu thì tự tháo). Gọi trong script GM/menu: `SetTestWealth(5999)`.
+**Kịch bản đo (số thật):**
+- Vũ khí gốc min/max 40/114: +1 → 42/120, +5 → 50/143 (JxQhScale), +0 → 40/114. Giáp Né tránh nền 720: +1 → 756, +5 → 900. Tháo ra mặc lại: số theo +N, không cộng dồn. Thoát/vào lại: số giữ nguyên.
+- SetTestWealth(5999): mặc phi phong cấp 1 bị chặn; (6000): mặc được; nếu đang mặc rồi SetTestWealth(5999) → tự tháo; (15000): mặc được cấp 11.
+**Tooltip phi phong không có dòng chỉ số (nguyên nhân, CHƯA XÁC MINH trên client):** server tạo 5 dòng từ GoldMagic.txt (id 4361-4415). Tooltip vẽ ở client theo bảng GoldItem/GoldMagic CỦA CLIENT; nếu client chưa có 55 dòng QHPP thì tooltip trống. A kiểm: chép `DESIGN/QH-B035-deploy/phiphong/GoldItem.txt` + `GoldMagic.txt` vào dữ liệu client (APK/PAK) cùng phiên bản bảng server. Nếu đã chép mà vẫn trống, gửi B tên món + log client để tra tiếp đường đọc.
+**Nhãn [cấp 1] vvs 8700 (k4):** CHƯA GIẢI ĐƯỢC. Server tính cấp từ GoldId (3465..3475 → cấp 1..11), yêu cầu = 6000+900(cấp-1); 8700 = cấp 4 (6000+2700). Nhãn [cấp 1] có thể từ nLevel (nhiều cấp cùng nLevel) hoặc tên món. A gửi B: tên món đúng như hiện, lệnh tạo (GoldId), dòng `[QH]|D|k|can|co` nhận được.
+TRẠNG THÁI: SC-006 PARTIAL (build xong, chờ A nạp + đo).
