@@ -643,3 +643,9 @@ Chủ giao yêu cầu
 ### 13.6 Giới hạn thao tác
 
 Lượt này chỉ đọc nhánh `jx1-ops` và ghi bổ sung đúng file ghi chép trên nhánh nghiên cứu `chatgpt-research/jx1-system-audit-2026-11-20`. Không ghi/sửa/tạo task, không dispatch worker, không đụng nhánh `jx1-ops`, worktree, queue, lock, cấu hình, hook, build hoặc runtime.
+
+
+### 13.7 Hai rủi ro scope/dependency cần giữ mở
+
+- `TASKS/SC-006.md` khai báo `vung_file` chỉ gồm `KItemList.cpp`, `KItem.cpp`, `GoldMagic.txt`, `GoldItem.txt`. Nhưng bản ghi build 5 của B nói có sửa `Engine/Src/KSG_StringProcess.cpp`. Đây là file ngoài vùng đã khai báo; trước khi nghiệm thu phải có task/scope được duyệt hoặc ghi rõ ngoại lệ, kèm diff review và manifest. Không thể coi phần sửa Engine là nằm trong scope SC-006 chỉ vì được gộp vào cùng binary.
+- SC-006 khai báo `depends_on: [SC-002]`, trong khi SC-002 vẫn `partial`; chưa có bằng chứng dependency được nghiệm thu trước khi SC-006 đóng. Cần phân biệt “đủ artifact để thử tích hợp” với “dependency đã ACCEPTED”. Không tự kết luận việc triển khai là sai, nhưng cổng dependency hiện chưa được chứng minh.
