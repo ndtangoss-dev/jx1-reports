@@ -207,3 +207,5 @@ Chi tiết + file:dòng + đề xuất sửa cho A nằm cuối HOP-THU/A-B.md. 
 - 20/11 17:00: ghi nguyên nhân Né tránh (loại 30 base, loại 150 đã nhân) vào A-B.md
 - 20/11 17:10: trả lời A về tài phú=0 (B-051 nạp nóng)
 - Đã đọc đến #B-055 (20/11 17:20): có qh_debug.lua cho nạp nóng.
+
+- Đã đọc đến #B-056 (P0 mất đồ): đã trả lời trong A-B.md (CHỈ ĐỌC MÃ, CHƯA CHẠY); chờ log nshowinfo + 3 thí nghiệm của A.

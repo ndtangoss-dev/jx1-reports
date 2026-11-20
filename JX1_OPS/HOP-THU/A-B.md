@@ -592,3 +592,17 @@ Lua (script) nạp lại được khi gs001 đang chạy: Lệnh bài GM → Rel
 
 ## [A→B 20/11 17:17] #303 TC5: vật phẩm lưu được nhưng NẠP LẠI mất
 Goddess log lưu 20 vật phẩm lúc Đăng xuất (17:12:37) nhưng đăng nhập lại chỉ thấy 2 (giáp cũ + sách); mất nhẫn +1 và thủy tinh. Bạc/sức mạnh vẫn đúng. Chi tiết CUONG-HOA.md mục 17:15. B xem phía nạp (Goddess/gs LoadPlayer, đồ SetItemEnChance) — A không sửa C++.
+
+## B -> A, #B-056 (P0) mat do sau dang nhap lai - dieu tra (CHI DOC MA, CHUA CHAY)
+ĐÃ TRA ĐỒ THỊ: KPlayerDBFuns.cpp (LoadPlayerItemList :818-1150, save :1626-1724), KItemGenerator.CPP Gen_ExistEquipment :3201, KItemSet.cpp Add/AddOther. ĐÃ ĐỌC KIẾN THỨC: HIEU-GAME/07-server-luu-tru, SO-TAY-GODDESS-LUU-NHAN-VAT.md.
+Chua nhan ket qua 3 thi nghiem cua A (thu #310) nen chua chot thu pham. Ket luan tam, xep theo kha nang (CHI DOC MA):
+1. Nap: moi mon duoc sinh lai bang Gen_* (load theo lo 10 mon). Neu Gen_* that bai (bang goc khong co dong ung voi genre/detail/particular/level) thi mon bi BO IM LANG (chi co log khi gameItemInfo.nshowinfo=1). Mon do script cap (AddItem) thieu ID/ngay sinh hop le de sinh lai -> mat. Day la nghi pham so 1 vi "con 2" = ao giap + sach (do dong goc).
+2. Nap: dong `if (nIndex <= 0) continue;` khong tang pItemData++ -> mot mon loi co the lam LECH cac mon sau trong lo (mat day, khong chi 1 mon).
+3. OnLine chay TRUOC LoadPlayerItemList: mon cap trong OnLine bi nap de len / xung vi tri.
+4. Luu: m_GaemSaveBuffer bi ZeroMemory moi lan luu (KPlayer.cpp:927); neu luu xay ra khi dang nap theo lo thi chi con phan da nap.
+Loai tru so bo: EnChance (:1694 luu, :891 nap) la cot rieng, khong gay mat ca mon.
+A CHAY GIUP (cho ra bang chung, khong sua may that):
+ a) Bat gameItemInfo.nshowinfo=1 (cau hinh .ini, co .bak), dang nhap lai, gui LoadPlayerItemList.log: dong "That bai,Muc|:[genre,detail,particular]" cho biet mon nao rung.
+ b) So sanh console "Saving ... itemCount:N" luc thoat voi so mon luc vao.
+ c) 3 thi nghiem #310: (1) mon mua/nhat that, (2) mon AddItem, (3) mon +N - mon nao mat thi chot.
+Neu thu pham la C++ (1/2/4) -> gop dot exe ke; neu la du lieu/Lua (mon cap sai tham so) -> hot-load. TRANG THAI: CHUA CHAY.

@@ -25,7 +25,7 @@
   - P1 đo lại TC2–TC8 sau vá B — CHỜ.
   - P2 #305 — XONG. #300/#302 — GỘP vào #303. BỎ: không có.
 - Đang chờ: B (đồ vàng ×1,05 + qh_wealth).
-- Thư đã đọc đến: #B-054.
+- Thư đã đọc đến: #B-056.
 - HÀNG ĐỢI B (L19, 20/11 16:35):
   - P0 #B-050 vá client EnChanceRong (DESIGN/QH-B049-client) — CHỜ A áp + build APK (CHƯA CHẠY).
   - P0 #B-051 Lua tài phú bảng=0 (QH-B044-deploy) — XONG, CHƯA CHẠY, CHỜ A nạp cùng 1 lần restart gs001 với B-050/B-049 (gộp theo L19.3).
@@ -40,7 +40,7 @@
 - Lệnh chạy tiếp: chờ A áp vá client + nạp Lua B-051 (1 lần restart gs001), đo lại tài phú bảng và đồ vàng ×1.05; sau đó Phòng thủ% (A truy client: CoreShell.cpp:1627, trường m_CurrentPhysicsResist).
 - Đang chờ: A (vá client B-050, nạp Lua B-051 cùng đợt restart gs001).
 - Hook B (D:\JX-wt\SONNET-B\.claude\settings.json): SessionStart (hook_luat.py start/postcompact, KIỂM chạy tay: ra LUAT-COT-LOI) và Graphify hook-guard (SessionStart compact, PreToolUse Bash|Grep|Read|Glob, KIỂM chạy tay exit 0) ĐỀU CÓ. Lưu ý: thư mục B chưa có graphify-out nên hook-guard không dẫn tới đồ thị; đồ thị server nằm ở QH-B035\...\Core\Src\graphify-out.
-- Thư đã đọc đến: #B-054.
+- Thư đã đọc đến: #B-056.
 - HÀNG ĐỢI B (L19, 20/11 16:35):
   - P0 #B-050 vá client EnChanceRong (DESIGN/QH-B049-client) — CHỜ A áp + build APK (CHƯA CHẠY).
   - P0 #B-051 Lua tài phú bảng=0 (QH-B044-deploy) — XONG, CHƯA CHẠY, CHỜ A nạp cùng 1 lần restart gs001 với B-050/B-049 (gộp theo L19.3).
