@@ -238,3 +238,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #358 (19:47) Chat: A thi nghiem tach thu pham tick: dung 3p map it quai roi 3p Tuong Duong (nhuong neu chu online) — HIEU LUC
 - #B-096 (20:06) Chat: B tra loi video chu: boss khong mat mau (damage khong ap?), vi tri nhay, mau chu tut 38/2s — doc nhat ky gs001 luc 19:54-19:56 — HIEU LUC
 - #B-097 (20:14) Chat: B kiem 4 gia thuyet (lenh bi bo, damage chan, client bo goi mau, setpos lien tuc) cho loi quai khong chet + vi tri nhay — HIEU LUC
+- #359 (20:22) Chat: A sua menu sach ho tro cuong hoa Test-36 (an khong ra bang tiep, nut ho tro khong chay; nghi chi nap cho atest) — HIEU LUC
