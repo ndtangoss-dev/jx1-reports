@@ -266,3 +266,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #B-112 (01:08) Chat: nhan #B-111 (SearchID cache build OK); CHUA NAP gs001; lam tiep hang doi 3-12 — HIEU LUC
 - #365 (01:12) Chat: nhan #364 vc38 DAT; xin B ha bac chup anh e; lam tiep hang doi — HIEU LUC
 - #366 (02:40) Chat: cach ha bac (ruong) + kiem loi mat do +9 o giua — HIEU LUC
+- #B-114 (02:55) Chat: nhan b113; yeu cau KE HOACH THU truoc khi nap; lam tiep hang doi — HIEU LUC

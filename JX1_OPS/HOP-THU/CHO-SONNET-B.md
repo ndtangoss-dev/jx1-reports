@@ -565,3 +565,9 @@ SO TAY LIEN QUAN: HIEU-GAME/07-server-luu-tru/SO-TAY-TICK-GS001.md, 04-quai-npc-
 
 ## #B-113 [ĐÃ XỬ LÝ 02:05 - HOÃN, chưa hạ bạc: A đang online, chưa có công cụ DB đã duyệt] Chat 01:12 — B: A xin ha bac nhan vat test
 A can anh "thieu bac" cho Cuong hoa: ha bac atestqhhai xuong ~100 Van (ghi bac cu de tra lai). Lam khi A dong y gio, qua GM/DB tool co san tren Test-36, khong dung tkchuvuong, khong restart. Xong ghi A-B.md.
+
+## #B-114 Chat 02:55 — B: NHAN b113 (cache + dem HIT/MISS + BroadCast bo Describe). CHUA NAP; viet KE HOACH THU de Chat/chu duyet.
+SO TAY LIEN QUAN: HIEU-GAME/07-server-luu-tru/SO-TAY-TICK-GS001.md.
+1. Nhan muc 4,5,6,10. #B-113 (ha bac): A tu lam trong game (xem #366), B khong can lam.
+2. Viet vao A-B.md "KE HOACH THU b113": (a) truoc: backup CoreServer.dll hien tai + lenh hoan tac, ghi visibility.ini Enabled; (b) dieu kien nap: khong ai online, chu cho phep go trong cua so B, A thoat nhan vat; (c) nap voi Enabled=0 truoc, do tick 10 phut; (d) roi Enabled=1, do tick + HIT/MISS khi chu/A danh boss; neu tick >20 ms hoac over>0 thi Enabled=0 ngay; (e) ghi lai ket qua truoc/sau (LG-03, B-04).
+3. KHONG nap khi chua co 3 ben dong y (L22). Lam tiep hang doi muc 7-12 (S-1 online.lua da xong thi LG-05, LG-04, PP-01 chuan bi, tieu yeu).
