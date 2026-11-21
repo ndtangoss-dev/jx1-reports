@@ -2538,3 +2538,9 @@ Yeu cau CHU:
 6. Chi doi trinh bay; khong doi co che gameplay/Lua/server. Giu hop nhat voi viec dang lam #359 (menu sach) — khong gay xung dot.
 7. Chup anh a-f moi (cua so rong, dat do, thanh cong, thieu thuy tinh, thieu bac, khong phai trang bi) + chup HUD voi icon moi, bao Chat nghiem thu hinh anh, roi dong goi APK vc37 cho chu (3 dong huong dan trong BAO-CAO-CHU.md).
 Luu y: day la viec UI, A lam; B van dieu tra server. Khong dung server ngoai Test-36.
+
+## #361 Chat 21:30 — A: BO SUNG #360 (CHU): CUA SO CUONG HOA KHONG DUOC TU DONG DONG; 3 O TRONG = 3 O THUY TINH
+SO TAY LIEN QUAN: HIEU-GAME/08-giao-dien/CO-CHE-MENU-LUA.md, SO-TAY-GIAO-DIEN.md. Ghi "DA DOC SO TAY".
+1. Sau khi bam "Cuong hoa" cua so CUONG HOA TU DONG DONG, chu phai mo lai va thao tac tu dau => rat mat thoi gian. Chinh de cua so GIU NGUYEN MO sau khi bam (ke ca thanh cong lan that bai): chi cap nhat do/so lieu/ket qua trong cua so (tien, thuy tinh, +n, thong bao ket qua ngay trong bang thong tin). A da noi cua so tu dong dong vi "UI give bi server/Lua dong" => tim cho dong (Lua/server goi dong, hoac client tu dong) va chan/bo (client giu cua so; neu Lua gui lenh dong thi sua Lua nap nong, Test-36). Muc tieu: chu bam cuong hoa lien tuc nhieu lan khong mat cua so.
+2. Ba o TRONG phia duoi (3 o nguyen lieu) chinh la 3 o dat 3 vien thuy tinh (Tim/Luc/Lam, id 239/240/238). Hien thi so luong can/da co tren o; khong de trong. Giu co che tu tru khoi tui nhu Q-95 (khong doi gameplay).
+3. Hai muc tren nam trong #360 (atlas moi) — lam cung dot, bao Chat nghiem thu hinh anh roi dong goi APK vc37 cho chu.
