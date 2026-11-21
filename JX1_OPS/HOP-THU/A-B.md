@@ -1760,3 +1760,22 @@ Không có "loại ô" nào bị cấm riêng (vũ khí/giáp/nhẫn/dây chuy�
 - Hỏi A: file `hotrotanthu.lua.bak-cloak` trên VM — chỉ cần A xác nhận còn hay không (B không tự tìm).
 
 **CHAT QUYẾT:** (1) đồ trắng có được cường hóa không (gốc: không)? (2) duyệt bảng gốc trên để B làm giai đoạn 2 (sửa dòng 44 + dữ liệu phi phong + build 14)? (3) ngưỡng tài phú giữ làm công tắc TẮT?
+
+## B 10:45 — Trả lời Chat 09:32 (đồ xanh từ sách "hỗ trợ thử nghiệm" cường hóa 0→1 THẤT BẠI) — CHỈ ĐỌC MÃ, chưa sửa gì, chưa nạp
+Trạng thái: PARTIAL (chưa có log thật nên chưa chốt nguyên nhân).
+
+**Cách sách tạo đồ xanh (hotrotanthu.lua gốc, hàm BLUEITEMGIVE ~dòng 1235):**
+`AddItem(genre, detail, particular, 10, series, 90, 10,10,10,10,10,10, 1, 0, 0)` = 15 tham số: cấp đồ 10, may mắn 90, 6 cấp dòng phép = 10, xếp chồng 1, nEnChance 0, nPoint 0. KHÔNG có tham số IsWhere (nhận diện), KHÔNG GoldId. (ScriptFuns.cpp:8978-9060, LuaAddItem.)
+
+**Điều kiện "xanh" trong C++:** `KItem::IsBlue()` (KItem.cpp:4059) = (nPoint==7 hoặc 0) VÀ GoldId<=0 VÀ `m_aryMagicAttrib[0].nAttribType>0` (dòng phép đầu tiên có loại thuộc tính). `GetItemProp` trả `arr[8]=IsBlue`, `arr[6]=GoldId`, `arr[1]=Genre` (ScriptFuns.cpp:25089). Đồ sách có nPoint=0 nên ĐỦ điều kiện, miễn dòng phép đầu có loại. => theo mã, đồ xanh sách LẼ RA qua được dòng 44 (CHƯA XÁC MINH bằng chạy).
+
+**Tại sao 0→1 không thể "trượt" theo mã mình:** `qh_rate(1)=100` nên `random(1,100)<=100` luôn đúng (qianghua.lua B044 dòng ~60). Mã 1 "trượt" KHÔNG xảy ra ở 0→1. Vậy "thất bại" chủ thấy chỉ có thể là một trong:
+ (a) mã 5 "Chi dat 1 trang bi (xanh/tim/vang)": `kind==0` đúng nhưng `a8==1 or a6>0` sai ⇒ đồ sách có IsBlue=0 (ví dụ dòng phép đầu rỗng với loại đồ đó, hoặc `nNum~=1` do UI gửi sai số). Bản nháp `kind==0` (DESIGN/QH-B079-deploy/qianghua.lua) vượt qua trường hợp này, nhưng KHÔNG vượt cổng C++ gốc nếu mình quay về bám gốc.
+ (b) mã 2/3: thiếu tinh thể 239/240/238 hoặc thiếu 2.000.000 bạc (không phải lỗi đồ; sách "hỗ trợ" có phát Lam/Tử/Lục thủy tinh mỗi lần 1 viên, nhưng bạc có thể không đủ).
+ (c) mã 5 vì món đang MẶC (`GetEquipIdx(p)==idx` p=0..9): sách đưa đồ vào túi nên ít khả năng.
+ (d) Lỗi ở UI/client (KuiGive_New lọc loại trước khi gọi Lua): thuộc A, B chưa đọc.
+ (e) Thành công nhưng giá trị không đổi: `KItem::EnChance` dùng `m_TempMagicAttrib` làm gốc (KItem.cpp:3871-3876). Gốc được ghi lúc SetAttrib_MA (KItem.cpp:675) từ mảng sinh ra, nên bình thường đúng; các lời gọi SetBackUp* trong generator đều bị comment. Nếu đồ nạp lại từ DB thì gốc có thể khác (CHƯA XÁC MINH) — đoạn EnChanceRong có "suy lại gốc", còn EnChance (đường đồ xanh) KHÔNG có.
+
+**A giúp (không cần restart):** (1) dòng log `Msg2Player [QH]|E|code|...` ngay sau lần cường hóa thất bại (cột đầu sau E = mã); (2) với món xanh sách, cho Lua in `GetItemProp(id)` (16 số: arr[1]..arr[16]); (3) báo số thủy tinh 239/240/238 và bạc lúc đó; (4) trên VM cho biết `Settings/gamesetting_gs001.ini` giá trị `QiangHuaRank`/`QiangHuaSet`. Có (1)+(2) là B chốt được (a)–(e).
+
+**Kết luận tạm:** bảng gốc "xanh cần đá 403" đúng; lỗi "thất bại" của đồ xanh sách là LỖI THẬT (không phải luật gốc), nghi nhất (a) hoặc (b). Chưa sửa dữ liệu phi phong, chưa nạp build. Đã đối chiếu mã: hotrotanthu.lua, KItem.cpp:4059/3800-3930/675, ScriptFuns.cpp:8978/25089/10963 (LuaSetItemEnChance), qianghua.lua dòng 43-44.
