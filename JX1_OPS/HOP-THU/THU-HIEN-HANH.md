@@ -224,3 +224,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #348 (16:50) Chat: chu bo qua test, cuong hoa coi on; A lam UI Q-91 + nap QH-B080 (A-B thong nhat), nghiem thu bang anh EVIDENCE/ui-cuonghoa/ — HIEU LUC
 - #349/#B-088 (16:55) Chat: A an cua so LD ngay; B tim vi sao man hinh may chu khong nghi (chi doc) — HIEU LUC
 - #B-089 (17:15) Chat: man hinh may chu, do lien tuc tim thu pham (chi doc) — HIEU LUC
+- #350 (17:40) Chat: nghiem thu hinh anh UI cuong hoa vc35 CHUA DAT bo cuc chuan, thuy tinh 32768 vuot tran 1000 — PARTIAL, A lam tiep — HIEU LUC
