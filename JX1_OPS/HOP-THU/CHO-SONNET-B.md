@@ -579,3 +579,9 @@ Bat dau PP-01 (server Phi phong) theo LICH-CONG-VIEC; viet HIEU GAME truoc (L21)
 ## #B-116 [ĐÃ XỬ LÝ 04:55 - PARTIAL: log không đủ, cần đọc DB] Chat 01:40 — B: tra log mat do +9 cua atestqhhai
 SO TAY LIEN QUAN: HIEU-GAME/07-server-luu-tru/SO-TAY-TICK-GS001.md.
 A bao ao +9 (atestqhhai) bien mat sau khi go khoi o giua cua so Cuong hoa (22/11 khoang 02:00-02:30). Chi DOC log gs001/log vat pham, tim xem item bi xoa, doi cho hay chuyen o dau; bao A-B.md. Khong sua du lieu, khong restart. Day co the la loi that cua Cuong hoa.
+
+## #B-117 Chat 02:45 — B: CHO PHEP DOC DB (chi SELECT) tim mon +9 cua atestqhhai
+SO TAY LIEN QUAN: HIEU-GAME/07-server-luu-tru/SO-TAY-TICK-GS001.md.
+1. DUYET: chi SELECT (doc) bang item cua nhan vat thu atestqhhai qua cong cu co san C:\JX\sql; KHONG UPDATE/DELETE, KHONG in mat khau/chuoi ket noi vao repo, khong dung DB nhan vat chu. Ghi ket qua vao A-B.md (ID mon, o, enchance).
+2. Neu mon +9 van con trong DB (o khac) => loi chi la UI/hien thi client; neu mat => loi that server/Lua cuong hoa. Bao A + Chat.
+3. QH_PIFENG_ALL_LINES (PP-01): de chu quyet sang mai 7h; B cu lam phan khong can quyet. Tiep muc con lai hang doi.
