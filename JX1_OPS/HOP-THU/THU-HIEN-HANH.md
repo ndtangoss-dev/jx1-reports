@@ -229,3 +229,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #352 (18:10) Chat: A giao tieu yeu tim tai nguyen hinh anh UI cuong hoa (chi doc), A lam viec khac song song (chu duyet) — HIEU LUC
 - #353/#B-090 (18:25) Chat: giat ngua/tick gs001: A do song khi atest online, B doc online.lua + ma tick (chi doc) — HIEU LUC
 - #354/#B-091 (18:40) Chat: chu doi viec: B chu tri giat ngua/tick, A chi lam UI cuong hoa; thu hoi #353 — HIEU LUC
+- #B-092 (18:55) Chat: B them gs-console doc-chi vao vm_chay.py (khong restart), tim nguon lenh move moi phut, do khi co nguoi online — HIEU LUC

@@ -378,3 +378,11 @@ Chu 18:31: B ranh thi B xu ly phan giat; A lam UI cuong hoa cho xong. Chat da TH
 3. Lay dong tick luc CO nguoi online: atest dang online tren Test-36 (A) hoac xin A de nhan vat dung yen 5 phut trong luc B do; ghi Online=?. Neu chu choi thi do tot nhat.
 4. Voi tung nghi pham da xep (KRegion NPC Active/NormalSync, printf console, qh_dump.log KItemList.cpp:1235): de xuat cach TACH/do/go nhanh; sua gi phai qua Chat duyet; nap nong Lua khong can restart; doi C++ = build moi.
 5. Bao cao A-B.md: so that (tick avg/max/over, Online, gio), nguyen nhan co bang chung, de xuat. Giu "CHUA KIEM" cho cai chua do. Vung Do (Main VM, Server D bat/tat, khoa, xoa du lieu) van hoi chu.
+
+## #B-092 Chat 18:55 — B: DUYET CACH LAY DONG tick/SvrFPS (console -> doc song, KHONG restart); TIM "1 LENH MOVE MOI PHUT"
+SO TAY LIEN QUAN: HIEU-GAME/07-server-luu-tru/SO-TAY-TICK-GS001.md, HIEU-GAME/04-quai-npc-ban-do/. Ghi "DA DOC SO TAY".
+Da doc #B-091 cua B (3 lenh doc-chi gs-info/gs-ghi/gs-lane; Online=0; CPU roi 0%/1 lan 21%; CmdLane_stat.log 1 lenh move moi phut; thieu dong tick vi chi in console). Chat QUYET:
+1. Lay dong tick/SvrFPS: KHONG sua gs001, KHONG restart, KHONG doi cai dat console. B them lenh doc-chi `gs-console` vao `vm_chay.py` (danh sach trang, chi Test-36) theo cach A da dung va CHAY DUOC (TU-SONNET.md ~12:10): task Interactive (RunLevel Highest) chay `console.ps1 -TargetPid <gs001>` doc 3-5 dong `-----NetCount=.. GameLoop=.. SvrFPS=x/18 tick avg=..us max=..us over=.. Time=..-----` va `[fix36] LogicFps=` roi ghi ra tep doc duoc. Hoan tac: xoa task. Khong dung Stop-Process; khong dong vao nhan vat online.
+2. "1 lenh move moi phut" trong CmdLane_stat.log: tim NGUON (lenh do ai gui: client LD cua A auto-move/bot/relog, hook online.lua [TEST-A], hay lenh GM): doi chieu gio, ma ket noi (`ports`), nhan vat. Bao A tat neu la bot cua A.
+3. Do luc CO nguoi: khi A xong UI hoac A cho nhan vat atest dung yen 5 phut thi B do; hoac B hoi A mot cau ngan. Neu chu choi thi do tot nhat. Ghi Online=? kem moi so.
+4. Bao cao A-B.md: so that (tick avg/max/over, Online, gio) + nguon lenh move + phan an tick theo bang chung. Nho "CHUA KIEM" cho cai chua do.
