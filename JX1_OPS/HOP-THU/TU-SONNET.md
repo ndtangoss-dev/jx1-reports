@@ -1679,3 +1679,5 @@ TÓM TẮT: (1) Build 4 (gs001 79cf3f5c) nạp OK. Tái hiện sập 02:49: mặ
 - Lan 2 (du tim 11 + luc 10 + lam 20, bac 19 uc): "Cuong hoa THANH CONG: len +1 (ti le 95%). Diem tai phu: 3100" (anh chup 09:31:39).
 - KET LUAN: mon xanh tu sach CUONG HOA DUOC 0->1 khi du 3 loai thuy tinh (tim/luc/lam, moi loai 1) + 2.000.000 bac. Cai chu thay "that bai" nhieu kha nang la code 2 (thieu 1 trong 3 loai: luc de thieu nhat) kem thong bao hien nham 2000000. Chua do do trang (se khong qua line 44) — theo A2 sau khi B sua kind==0.
 - Chua co dong [QH]|E|code| trong qh_dump.log: hook chi ghi pifeng/equip, Msg2Player la client; thong bao doc tu man hinh. [CHUA KIEM] GetItemProp arr[1]/[6]/[8] cua mon (hook khong dump); neu can, dat hook dump ngay trong sysqianghua.
+
+- Đã đọc đến #338 (21/11 10:30): B1 (npcbobo/FortuneRank) và đo xanh 0->1 xong; B5 gộp [pfl] đã sửa repo, CHƯA build vc32 (không build khi chủ test LD); A2/B3 chờ B sửa dòng 44.
