@@ -1842,3 +1842,5 @@ Chat nghiệm thu hình ảnh: xem EVIDENCE/ui-cuonghoa.
 5. Cần tôi quyết định: không. Tín hiệu "A Xong" vào khung Chat bị hộp thoại đăng nhập lại chặn.
 
 Đã đọc đến #364 (22/11): xong, xem trên.
+
+Đã đọc đến #365 (22/11 01:30): nhận vc38 đạt; đã xin B hạ bạc (A-B.md); sổ tay HIEU-GAME/08-giao-dien/SO-TAY-CUA-SO-CUONG-HOA-VC38.md; làm tiếp hàng đợi (LG-07, PP-03).
