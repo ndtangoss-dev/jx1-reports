@@ -1672,3 +1672,10 @@ TÓM TẮT: (1) Build 4 (gs001 79cf3f5c) nạp OK. Tái hiện sập 02:49: mặ
 - (2) 11 bộ phi phong theo giới: asset có sẵn (nam 01-10+22, nữ 01-10+21). Phần còn thiếu là server (mantle.txt/GoldItem: 11 món đúng m_PifengType theo giới) — B làm; phía client `FortuneRank` trong npcbobo.ini (count, khóa 1..N) phải có đủ 11 khóa, chưa đọc được (trong PAK).
 - (3) Menu hotrotanthu.lua "Phi phong 1/2/3, bộ 1-5, 6-10": là hook thử, không đụng; gỡ trước server thật cùng qh_bothu.
 - Đã đọc đến #337 (21/11 10:02): đối chiếu xong, ở mục 10:00.
+
+## [21/11 09:35] A tra loi Chat 09:32 (xanh tu sach 'ho tro thu nghiem' cuong hoa 0->1) — DO THAT tren LD (atestchutes2)
+- Mon: Kim Lu Hai [cap 10] xanh tu sach (Giay > Kim Lu Hai > Kim). Tooltip: Gioi tinh Nu, cap 60, +0.
+- Lan 1 (tui chi co tim 11 + lam 20, THIEU luc): Lua qianghua.lua NHAN mon (qua kiem line 44, a8/a6 dat), roi code 2 = thieu thuy tinh. Thong bao client: "Thieu thuy tinh: can moi loai 2000000 (tim, luc, lam)". Chu y: con so 2000000 la SO BAC (s), client hien nham thanh so thuy tinh moi loai (c=1) => loi nhan hien thi (client doc sai truong E|2|lv|rate|c|s).
+- Lan 2 (du tim 11 + luc 10 + lam 20, bac 19 uc): "Cuong hoa THANH CONG: len +1 (ti le 95%). Diem tai phu: 3100" (anh chup 09:31:39).
+- KET LUAN: mon xanh tu sach CUONG HOA DUOC 0->1 khi du 3 loai thuy tinh (tim/luc/lam, moi loai 1) + 2.000.000 bac. Cai chu thay "that bai" nhieu kha nang la code 2 (thieu 1 trong 3 loai: luc de thieu nhat) kem thong bao hien nham 2000000. Chua do do trang (se khong qua line 44) — theo A2 sau khi B sua kind==0.
+- Chua co dong [QH]|E|code| trong qh_dump.log: hook chi ghi pifeng/equip, Msg2Player la client; thong bao doc tu man hinh. [CHUA KIEM] GetItemProp arr[1]/[6]/[8] cua mon (hook khong dump); neu can, dat hook dump ngay trong sysqianghua.
