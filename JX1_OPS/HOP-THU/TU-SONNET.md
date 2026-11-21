@@ -1804,3 +1804,13 @@ TÓM TẮT 5 DÒNG
 4. Đã thêm 4 mục thủy tinh/bạc vào menu atest trên VM Test-36 (.bak-menu, chỉ tên atest).
 5. Chưa làm: dựng lại bố cục chuẩn, trần thủy tinh 1000, dấu tiếng Việt, khung kim cương.
 Cần tôi quyết định: không
+
+## A — UI Cuong hoa vc36 lam lai (#350/#351/#352/#354) 21/11 19:05
+TOM TAT:
+1. Panel vc36 theo chuan: tieu de "Cuong hoa trang bi", dong goi y, so do 5 o quanh o giua, mui ten, nut Cuong hoa, luoi tui + 2 thanh tien, "Nguyen lieu can / Can Bac / Ti le / Chu y"; dau tieng Viet dung; dat sang trai de khong de len hanh trang.
+2. Thuy tinh can = min(2^(n-1),1000) moi loai, hien +n tren o giua; don vi van = 10000 bac (+1->+2 = 400 van, khop man hinh).
+3. Khung kim cuong: KHONG tim thay (XD-UI01 PARTIAL, ui.pak/spr.pak khong co trong ban copy client) -> dung khung don gian dung thu tu. Anh: EVIDENCE/ui-cuonghoa/ (a, b, c, f moi; d, e chua chup lai).
+4. CHUA DAT: sau khi cuong hoa xong, cua so tu dong dong (UI give bi server/Lua dong) nen thong bao hien o khung chat chu khong trong panel (anh c); d (thieu thuy tinh) / e (thieu bac) chua chup vc36.
+5. Mat khau atest lay tu kho rieng, khong in/ghi. #354: chua kiem bot/relog tu chay; con lai lam tiep.
+Can toi quyet dinh: khong
+DA DOC SO TAY: HIEU-GAME/08-giao-dien/SO-TAY-GIAO-DIEN.md, SO-TAY-TAI-NGUYEN-CLIENT.md
