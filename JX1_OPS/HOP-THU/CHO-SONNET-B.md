@@ -403,7 +403,7 @@ Chu noi: kiem tra APK cua chu dang tro ve server nao; phai tro ve CUNG server A 
 3. Kiem: tu may chu thu ket noi forwarder -> Test-36 cac cong; ghi ket qua A-B.md "Dien thoai chu se vao: Test-36 (dung/sai)", kem A kiem tra APK vc36 co IP/cong Tailscale dung.
 4. Xong truoc 19:30 va bao Chat ngay.
 
-## #B-095 Chat 19:40 — B: DUYET KET QUA #B-094; TIEP: TIM NGUYEN NHAN GS001 GUI CHAM (137 lan >250ms, max 2,6s) — chu se choi lai
+## #B-095 [ĐÃ XỬ LÝ 19:55 - PARTIAL] Chat 19:40 — B: DUYET KET QUA #B-094; TIEP: TIM NGUYEN NHAN GS001 GUI CHAM (137 lan >250ms, max 2,6s) — chu se choi lai
 SO TAY LIEN QUAN: HIEU-GAME/07-server-luu-tru/SO-TAY-TICK-GS001.md. Ghi "DA DOC SO TAY".
 Chat nhan #B-094 (forwarder dung Test-36; giat nam o gs001 gui cham, khong phai forwarder). Viec tiep (doc-chi, khong restart khi chu dang choi):
 1. Lay tick/SvrFPS cua phien chu 19:0x-19:29 neu console con luu (gs-console / console.txt); neu mat thi do ngay khi chu vao lai, ghi A-B.md moi 2-3 phut: Online, tick avg/max/over, so lan gui >250ms.

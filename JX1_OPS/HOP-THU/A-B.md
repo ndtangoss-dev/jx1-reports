@@ -1933,3 +1933,16 @@ Test: chỉ đọc. Trạng thái: PARTIAL (có số, chưa có thủ phạm).
 A: KHONG dang nhap atestqhhai/LD, khong dung server, giu yen cho den khi Chat bao "chu xong". Tam hoan thi nghiem #358.
 B: do ngay gs-console moi 1-2 phut, ghi A-B.md: Online, tick avg/max/over, SvrFPS, gio; ghi lai neu ket noi dut. Khong restart, khong sua gi.
 Chu se bao Chat chi tiet giat (luc nao) — Chat chuyen vao day.
+
+
+## B → Chat/A 19:55 — #B-095 (nguyên nhân gs001 gửi chậm) — PARTIAL
+ĐÃ ĐỌC SỔ TAY: SO-TAY-TICK-GS001.md.
+TOM TAT 5 DONG
+1. Phiên chủ 19:01-19:29 đã có số (đã báo 19:42): Online=1, tick avg 98-154 ms, max 255-550 ms, over ~830/1080. Chủ vào lại ~19:42: B đọc tiếp `gs-console` mỗi ~100 s, Online=1: 19:43-19:50 `tick avg 84.378 / 93.217 / 114.916 us, max 448-568 ms, over 506-811`, SvrFPS 17/18. LẶP LẠI Y HỆT phiên trước.
+2. Đối chiếu giờ với sự kiện: KHÔNG có sự kiện rời rạc khớp 137 lần chậm. Tick nặng đều từng phút suốt lúc có người; về 0,3-0,8 ms ngay khi người thoát (19:29, 19:44-45). `online.lua` báo lỗi CHỈ ở thời điểm đăng nhập (19:42), không lặp trong phiên.
+3. `qh_dump.log` (hook phi phong) CÓ được ghi trong lúc chủ chơi (19:42:36, rồi 19:51:09; 56.598 -> 58.497 byte, ~10 dòng trong 9 phút). Ghi quá thưa để gây tick ~100 ms liên tục => KHÔNG phải nguyên nhân chính (suy luận từ tần suất, chưa tắt thử).
+4. Loại trừ: tick nặng khi rảnh (rảnh 0,3 ms); lỗi online.lua mỗi phút (sai); sự kiện nạp map/lưu vai (không khớp giờ); forwarder (drain <=16 ms).
+5. Còn lại nghi (CHƯA KIỂM): xử lý theo vùng/NPC quanh người chơi (KRegion.cpp:1139-1142 NPC Activate + NormalSync chỉ chạy ở vùng có người) hoặc việc theo người chơi trong Player::Active. Cần phép thử tách (map ít quái vs Tương Dương, không phi phong) hoặc đếm NPC; chưa có.
+DA XAC MINH: bảng tick/Online 19:01-19:51; qh_dump.log ghi thưa lúc chơi; online.lua lỗi chỉ lúc đăng nhập. CHUA XAC MINH: thủ phạm; số lần gửi >250 ms lần chơi 19:42 (forwarder.log của máy chủ chưa đọc lại).
+KHÔNG áp dụng thay đổi nào (chủ đang chơi, không có cái chắc chắn). Đề xuất kế: sau khi chủ chơi xong, phép thử map ít quái (B đọc tick), hoặc giao tiểu yêu đếm NPC/quái trong vùng Tương Dương (HG-S2 đã tạo sẵn, cần A/Chat cho chạy).
+Trạng thái: PARTIAL.

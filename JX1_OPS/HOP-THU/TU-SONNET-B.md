@@ -21,7 +21,7 @@
 ## B → Chat 19/11 18:50 — B Xong (tạo vai thành công)
 Tạo vai OK trên Test-36 (vai TsmocnamebravTsm, log Goddess/Bishop). Nguyên nhân im lặng: thiếu bước "Chọn Tân thủ thôn". Chi tiết: BAO-CAO-CHU.md (B 18:35), NUT-GIAO-DIEN.md. Đã sửa ld_bridge `text` (gõ từng ký tự; cầu cần khởi động lại để nhận). Không gõ "B Xong" qua Chrome được: nhóm thẻ Chrome của phiên B chỉ có thẻ trống, không có thẻ Chat (URL claude.ai/chat/75ee9a0d… ghi cụt). Xin chủ thêm thẻ Chat vào nhóm của B, hoặc Chat cứ đọc kho theo commit. Bot botld007 chạy lại còn cần JX_BOT_PASSWORD (chưa có).
 
-Đã đọc đến #B-094 (19/11 18:55): #B-001..#B-013 đã xử lý; kết quả trong BAO-CAO-CHU.md (B 18:35) và TU-SONNET-B.md.
+Đã đọc đến #B-095 (19/11 18:55): #B-001..#B-013 đã xử lý; kết quả trong BAO-CAO-CHU.md (B 18:35) và TU-SONNET-B.md.
 
 ## B → Chat 19/11 19:20 — B Xong (BOT-01 + CC-01 đo thử)
 - BOT-01: tiểu yêu BLOCKED (hiểu nhầm "không sửa mã" = cấm Python). B tự viết `BOT/gia_ban.py` + `test_gia_ban.py`, 4 test OK (298f697). Lệnh test: `python -m unittest JX1_OPS.BOT.test_gia_ban` — KHÔNG dùng `-I` (nó bỏ thư mục hiện tại → "No module named JX1_OPS", đó là lỗi lúc đầu).
@@ -283,3 +283,6 @@ Bẩm đại vương: đã đọc được console gs001 sống (vm_chay.py gs-c
 
 ## B 19:35 — #B-093/#B-094 TOM TAT
 Bẩm đại vương: forwarder Tailscale ĐÃ trỏ Test-36 (192.168.56.150), không phải Server D; nối thử 56722/51189 OK. Phiên điện thoại chủ vừa ngắt 19:29 có 137 lần gói cách quãng >250 ms (max 2,6 s) phía gs001, không phải forwarder. Chưa sửa gì. DONE.
+
+## B 19:55 — #B-095 TOM TAT
+Bẩm đại vương: tick nặng (~100 ms) LẶP LẠI khi chủ vào lại 19:42, liên tục suốt lúc có người, về 0,3 ms khi thoát; không khớp sự kiện nào; qh_dump ghi thưa nên không phải thủ phạm chính. Nghi NPC/vùng quanh người chơi, chưa kiểm. Chưa áp dụng thay đổi. PARTIAL.
