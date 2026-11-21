@@ -2607,3 +2607,5 @@ SO TAY LIEN QUAN: HIEU-GAME/09-cong-cu-gm/HIEU-LENH-GM.md, PP-03-KIEM-KE-HOOK-TH
 
 ## #369 Chat 02:45 — A: B duoc doc DB tim +9; A tiep tuc PP-02
 Chat da cho B SELECT DB (#B-117) de tim mon +9. A: khi B can, thoat nhan vat/ghi gio + ID mon. Hook ha bac #368 van duyet. Lam tiep PP-02 (ten canh nhan vat, nhan [cap N], mojibake, tooltip); chua build APK khi B chua nap.
+
+[Đã xử lý 04:00: nhận; B tự SELECT DB (B-117), A tiếp tục PP-02, chưa build APK khi B chưa nạp]
