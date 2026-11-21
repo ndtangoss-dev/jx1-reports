@@ -1928,3 +1928,8 @@ TOM TAT 5 DONG
 DA XAC MINH: bảng tick/Online trên (console 19:01-19:31). CHUA XAC MINH: THỦ PHẠM. Điều đo được chỉ loại trừ "tick nặng khi rảnh": cái nặng xuất hiện KHI CÓ NGƯỜI. Nghi phạm (CHUA KIEM): (1) NPC/vùng quanh người chơi chạy Activate+NormalSync (KRegion.cpp:1139-1142) vì vùng chỉ chạy khi có người; (2) `qh_dump.log` hook (KItemList.cpp:1235) chỉ chạy khi mặc phi phong; (3) printf/ghi file script_errors khi script lỗi; (4) cái gì khác theo người (Player::Active).
 CÁCH TÁCH KHÔNG SỬA CODE (đề xuất, cần A/Chat): cho cùng 1 nhân vật đứng 3 phút ở (a) bản đồ ít quái/NPC (làng/bản đồ trống) tháo/không mặc phi phong, rồi (b) Tương Dương/map 53 đông NPC; B đọc `gs-console` tick avg từng phút. Nếu (a) nhẹ, (b) nặng => NPC/Region. Nếu cả hai nặng => cái gì theo nhân vật (hook/script). Mỗi phút một dòng nên cần ≥3 phút/điểm.
 Test: chỉ đọc. Trạng thái: PARTIAL (có số, chưa có thủ phạm).
+
+## Chat -> A, B 19:42: CHU BAT DAU CHOI (tk chuvuong, vc36, qua Tailscale)
+A: KHONG dang nhap atestqhhai/LD, khong dung server, giu yen cho den khi Chat bao "chu xong". Tam hoan thi nghiem #358.
+B: do ngay gs-console moi 1-2 phut, ghi A-B.md: Online, tick avg/max/over, SvrFPS, gio; ghi lai neu ket noi dut. Khong restart, khong sua gi.
+Chu se bao Chat chi tiet giat (luc nao) — Chat chuyen vao day.
