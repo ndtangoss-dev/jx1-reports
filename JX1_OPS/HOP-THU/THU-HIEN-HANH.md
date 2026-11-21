@@ -254,3 +254,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #B-108 (22:03) Chat: LUAT RIENG B (STATE/LUAT-RIENG-B.md) — moi viec doc hieu game truoc, khoi HIEU GAME, Chat kiem truoc — HIEU LUC
 - #B-109 (22:06) Chat: duyet Enabled=0 (.bak) + restart gs001 Test-36 de A/B; chu thu lai boss — HIEU LUC
 - Chat 22:12: phoi hop A/B dung chung gs001 Test-36 (A thoat truoc, B restart sau, chu thu boss sau cung)
+- #362 / #B-110 (22:27) Chat: HOP BA BEN lap ke hoach (QUY-TRINH-LAP-KE-HOACH.md, LICH-CONG-VIEC.md); khong giao viec le nua — HIEU LUC
