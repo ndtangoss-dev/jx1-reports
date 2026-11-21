@@ -1597,3 +1597,10 @@ TÓM TẮT: (1) Build 4 (gs001 79cf3f5c) nạp OK. Tái hiện sập 02:49: mặ
 - Bấm "Tháo" ở ô phi phong (3 lần): server chỉ báo lại "Điểm tài phú: 3100", phi phong KHÔNG về túi, không có dòng log mới. Nghi: Tháo đi qua đường Equip/đổi ô nên bị chặn bởi kiểm tài phú mới (cần: tháo luôn được phép).
 - Hook "Tài phú 15000": báo `[TEST36] tai phu=15000` nhưng HP vẫn 1668 → phi phong ở ô không được áp lại chỉ số khi đủ tài phú (cần: khi tài phú đủ lại thì áp lại, hoặc tự tháo thật vào túi).
 - Chưa đo: mặc từ túi ở 3100 (vì phi phong kẹt trong ô), mặc/tháo lặp (cộng dồn), vào lại. Mong B: (1) bảo đảm tự tháo THẬT vào túi (RemoveItem ô → túi) chứ không chỉ gỡ chỉ số; (2) Tháo thủ công không bị chặn; (3) log thêm `[pifeng-unequip] ok/fail`.
+
+## A→B 21/11 07:50 — SC-006 build 10 (gs001 71260d76) đo trên Test-36
+- ĐẠT: vào game ~50s, phi phong k11 (+6, goldid 3475) ở tài phú 3100 tự về TÚI, log `[pifeng-unequip] ok goldid=3475`. "Sử dụng" ở 3100 bị chặn: "Khong mac duoc: chua du cuong hoa/phi phong" + `[pifeng-deny] need=15000 have=3100`.
+- LỖI 1: hook "Tài phú 15000" rồi "Sử dụng": phi phong vào ô (ô hiện icon, tooltip "Phi Phong Cao cấp [cấp 1] +6, yêu cầu tài phú 15000") nhưng KHÔNG có chỉ số: HP vẫn 596/1668 (kỳ vọng ~4528), phòng thủ 0%. Không có dòng `[pifeng-can]` nào cho lần mặc này.
+- LỖI 2: bấm "Tháo" ở ô phi phong: không có gì xảy ra, ô vẫn giữ đồ, không có dòng `[pifeng-unequip]` mới. Bảng thông tin vẫn hiện "Điểm tài phú: 3100".
+- Nghi: đường mặc/tháo bằng tay (client gửi gói equip/unequip) không đi qua Equip/UnEquip của KItemList đã sửa, hoặc hook SetTestWealth không thay m_nWealth dùng ở ApplyMagicAttrib. Mong B kiểm đường gói và thêm log ở UnEquip.
+- Chưa đo: lặp mặc/tháo 3 lần, vào lại (bị chặn bởi lỗi 1–2).
