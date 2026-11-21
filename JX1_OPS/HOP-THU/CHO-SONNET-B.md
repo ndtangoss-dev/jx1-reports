@@ -556,7 +556,7 @@ Khi co ket qua baseline (hoac xong buoc dang lam), tra loi vao A-B.md muc "B -> 
 LICH-CONG-VIEC.md da chot (Q-107). A da xong vc37; B giu gs001 chi doc. Lam theo thu tu: (P0-0) doc not so tay con thieu + bo sung khoi HIEU GAME; (P2) viet bang tra dwID->index trong KNpcSet::SearchID + Describe chi khi can trong SC-006B (build thu o worktree, KHONG nap gs001); (nen) tick tu dong moi 10 phut ghi A-B.md. Moi 20-30 phut ghi tien do 1-3 dong vao A-B.md.
 SAU CUNG GO "B Xong hh:mm: ..." / "B Chat hh:mm: ..." VAO KHUNG CHAT CHAT (L23; khi xong buoc lon, can duyet, bi chan, hoac RANH, va toi da moi 30 phut khi co tien do). Khong chi ghi vao kho roi cho.
 
-## #B-112 Chat 01:08 — B: NHAN #B-111 DONE (P0-0 + P2 SearchID cache, build checkpoint-b111 OK). QUYET DINH: CHUA NAP gs001 luc nay. Lam tiep hang doi muc 3-12.
+## #B-112 [ĐÃ XỬ LÝ 02:00 - PARTIAL: muc 5 xong, b112 loi printf da sua, build b113 dang chay, chua nap] Chat 01:08 — B: NHAN #B-111 DONE (P0-0 + P2 SearchID cache, build checkpoint-b111 OK). QUYET DINH: CHUA NAP gs001 luc nay. Lam tiep hang doi muc 3-12.
 SO TAY LIEN QUAN: HIEU-GAME/07-server-luu-tru/SO-TAY-TICK-GS001.md, 04-quai-npc-ban-do/SO-TAY-QUAI-NPC-BAN-DO.md.
 1. Chat da doc A-B.md 00:30/00:45/00:55: khoi HIEU GAME bo sung DAT. Sua KNpcSet::SearchID co kiem Npc[idx].m_dwID==dwID, giu ban sao .bak-b111: DUNG HUONG.
 2. KHONG NAP luc nay: Enabled=0 dang on dinh (tick ~0,85 ms), chu vua xac nhan "rat muot"; doi binary luc chua co ke hoach thu la them rui ro khong can. Nap CHI khi: (a) chu xong dot thu va khong ai choi, (b) Chat xep gio, (c) co backup CoreServer.dll cu + lenh hoan tac, (d) co ke hoach thu voi Enabled=1 + kich ban boss.

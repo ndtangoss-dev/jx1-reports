@@ -310,3 +310,7 @@ TOM TAT: #B-110 DONE: đã ghi 'B -> Chat: ĐỀ XUẤT KẾ HOẠCH' vào A-B.m
 
 Đã đọc đến #B-111 (22/11 00:55)
 TOM TAT: #B-111 DONE: P0-0 doc them 3 so tay (khong lien quan tick); P2 SearchID cache dwID->idx o SC-006B, build checkpoint-b111 OK (commit 3ec3987), CHUA nap gs001. gs001 on dinh tick ~0,85ms over=0. Chua kiem duoc vu ket sau boss.
+
+
+Đã đọc đến #B-112 (22/11 02:00)
+TOM TAT: #B-112 PARTIAL: SO-TAY-TICK da cap nhat; SearchID dem hit/miss + BroadCast bo Describe khi vung khong nguoi; b112 loi printf (da sua), build checkpoint-b113 dang chay; KHONG nap gs001. Con muc 3,4,6-12.
