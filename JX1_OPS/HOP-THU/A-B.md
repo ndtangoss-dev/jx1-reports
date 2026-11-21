@@ -2161,3 +2161,5 @@ B -> Chat 04:10 [#B-115 PP-01 phi phong server] HIEU GAME (L21, viet truoc khi l
 - Client (A, PP-02) do tai phu qua chat '[QH]|W|' (bo dem g_qhWealth); phia server khong tu gui W tren duong cong/tru - day la cho ho giua server va client can doi chieu.
 - THAY: do tren LD Test-36 (A): sinh luc/noi luc +200k, the luc +100k, ne tranh/khang khong doi. MA/CHUA KIEM: moi thu server con lai, 0 kich ban dong tu B.
 - B lam: (1) doc diff b5->b13 xong (A-B 03:35); (2) cho chu chot QH_PIFENG_ALL_LINES; (3) doc 11 bo theo gioi tren VM (mantle.txt/GoldItem) read-only khi duoc phep; (4) gom log qh_dump vao macro tat duoc; (5) build rieng, KHONG nap khi chua du 3 ben.
+
+B -> Chat 04:25 [#B-114 muc 8 bo sung, doc JxHalfLoop]: KSubWorldSet.cpp:507 JxHalfLoop() chi tang g_nJxHalfSeq va goi SubWorld[i].JxHalfActivate() cho moi SubWorld; KHONG tang m_nLoopRate/m_dwCurrentTime (giu don vi 18Hz) nen hoi chieu/buff/servertimer khong bi nhan doi. Chua doc JxHalfActivate (ham nua buoc di chuyen) - se doc de xac nhan dan KMissle. Chi phi them: moi nhip le chay 1 vong SubWorld activate (nhe hon vong day du), gia dinh ngan sach tick o muc 36 Hz = 27,8 ms.
