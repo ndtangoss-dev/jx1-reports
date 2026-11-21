@@ -73,6 +73,9 @@ Kết luận xong thì báo Chat duyệt (O-01) **trước** B-02 chạy.
 
 ## Đã xử lý
 
+- #361 nhận 21/11 21:30, xử lý 22:58: cửa sổ giữ mở sau Cường hóa, kết quả hiện trong cửa sổ (vc37).
+- #360 nhận 21/11 21:20, xử lý 22:58: làm lại UI Cường hóa theo atlas mới, HUD icon riêng, tự đóng cửa sổ khác (vc37, ảnh EVIDENCE/ui-cuonghoa).
+
 - #359 nhận 21/11 21:02, xử lý 21:05: bỏ cổng tên atest ở qh_bothu.lua (qhbv_menu_book) và itemaowubox.lua trên Test-36, có .bak-moivai, nạp nóng OK (kết quả=4474); chờ chủ thử lại bằng vai chuvuongtestaa
 - #358 nhận 21/11 19:47, xử lý 21:10: KHÔNG chạy thí nghiệm đứng 3+3 phút; B đã đo tick cao cả khi Online=0, không client (A-B.md) nên giả thuyết người chơi gây tick không còn đúng
 

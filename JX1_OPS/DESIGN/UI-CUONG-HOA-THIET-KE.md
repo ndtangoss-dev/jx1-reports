@@ -29,3 +29,6 @@ Nguồn: DESIGN/UI-CUONG-HOA/MO-TA.md + 3 ảnh chuẩn; client `gameui/KuiGive_
 
 ### §6b — Ảnh c–f: KẸT, CHƯA KIỂM (21/11)
 Cần món xanh/tím/vàng +0 trong túi. Menu "Bảo vật" (qh_bothu.lua) chỉ mở cho vai tên bắt đầu `atest` (vai atestqhhai, tk tkatest02); mật khẩu tk đó không có trong kho/biến môi trường của A, T36nv1 không qua được cổng tên. Đã thử 3 hướng (tìm công cụ cấp đồ, tìm mật khẩu, quy ước bot_tao_role), đều không ra. Còn CHƯA KIỂM: c (0→1 thành công), d (thiếu 1 loại thủy tinh), e (thiếu bạc), f (đồ đang mặc), đơn vị "vạn", dòng kết quả m_qhResult. Cách gỡ: chủ cấp mật khẩu tkatest02 qua biến môi trường, hoặc nới cổng tên sang `T36` (restart gs001 ~10 phút).
+
+### §6c — vc37 (A, 21/11 22:58)
+Giao diện theo atlas mới (JX1_CuongHoa_UI_Atlas.png); cửa sổ giữ mở sau khi Cường hóa (đóng rồi mở lại cửa sổ để làm mới đồ); kết quả lấy từ KuiChatList::addmsg (g_qhResultLine). Ảnh a,b,c,d,f,HUD có; e (thiếu bạc) chưa chụp.

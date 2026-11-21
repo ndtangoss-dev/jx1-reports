@@ -173,3 +173,8 @@ Chủ đăng nhập lại claude.ai; B mở https://claude.ai/code/session_01Mrv
 3. Cài vc36: mở trang Artifact "Link tải APK" (https://claude.ai/artifact/AZvpZmtEtJs41rfGDHJ1dh), sao chép link dán vào Chrome, tải rồi cài đè bản cũ (SHA256 a0ec09bc…8a58d6).
 4. Tài khoản: tkchuvuong, vai chuvuongtestaa (của chủ). atestqhhai đã tắt khỏi LD, không chiếm tài khoản.
 5. Mất kết nối: tắt/bật lại Tailscale, thoát hẳn game vào lại; vẫn không được thì nhắn Chat "A Chat mất kết nối" kèm giờ để A/B xem nhật ký forwarder.
+
+## 21/11 22:58 — APK vc37 (Cường hóa giao diện mới)
+1. Mở Tailscale trên điện thoại, bật công tắc, đúng tài khoản cũ; mở trang Artifact "Link APK vc37", sao chép link, dán vào Chrome, tải và cài đè (SHA256 eba6a9b1e74cf23a80604a79ffe0631447dc8fa22128b6a179dc9be66af29a10).
+2. Vào game (tk tkchuvuong, vai chuvuongtestaa), bấm icon Cường hóa bên phải màn hình: cửa sổ mới hiện một mình.
+3. Đặt trang bị, bấm Cường Hóa nhiều lần: cửa sổ giữ mở, kết quả hiện trong cửa sổ.

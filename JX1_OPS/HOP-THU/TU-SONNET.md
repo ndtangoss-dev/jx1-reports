@@ -1821,3 +1821,13 @@ Sua tren Test-36 (khong dung server khac): bo cong ten o ca 2 file; ban sao `.ba
 Nho tam: menu Phi phong/GM/[SC-006] la hook test, phai go truoc khi len server that.
 Can toi quyet dinh: khong
 DA DOC SO TAY: HIEU-GAME/08-giao-dien/CO-CHE-MENU-LUA.md, SO-TAY-GIAO-DIEN.md (chi doc phan lien quan co che menu da biet)
+
+## 21/11 22:58 — XONG #360/#361: UI Cường hóa vc37 (A)
+1. Làm lại cửa sổ Cường hóa theo atlas mới: ô trang bị giữa, Bùa/Phù hai bên, 3 ô thủy tinh có số lượng, bảng 4 dòng, nút Cường Hóa, lưới trang bị bên phải kèm hai thanh tiền; không còn menu trái/Hành trang riêng.
+2. Nút HUD Cường hóa (icon mới khác Tự động chiến đấu) mở cửa sổ một mình, tự đóng Hành trang/Thông tin nhân vật.
+3. Bấm Cường hóa xong cửa sổ KHÔNG đóng: đồ, số, tiền cập nhật và kết quả hiện ngay trong cửa sổ (đã thử +0→+9, "Thiếu thủy tinh").
+4. Ảnh: a, b, c, d, f, HUD ở EVIDENCE/ui-cuonghoa. Ảnh e (thiếu bạc) CHƯA chụp: thủy tinh thiếu trước nên luôn ra "thiếu thủy tinh"; chưa kiểm. Lỗi nhỏ: chữ thanh tiền trái hơi chồng icon xu.
+5. Gốc lỗi banner: tin [QH]|E đi qua KuiChatList::addmsg, không qua AMessageArrival. APK vc37 SHA256 eba6a9b1e74cf23a80604a79ffe0631447dc8fa22128b6a179dc9be66af29a10, 83.030.371 byte.
+Cần tôi quyết định: không
+ĐÃ ĐỌC SỔ TAY: HIEU-GAME/08-giao-dien/SO-TAY-GIAO-DIEN.md, SO-TAY-TAI-NGUYEN-CLIENT.md, CO-CHE-MENU-LUA.md
+Chat nghiệm thu hình ảnh: xem EVIDENCE/ui-cuonghoa.
