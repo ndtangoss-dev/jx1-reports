@@ -1641,3 +1641,13 @@ A LÀM: nạp 2 file; đo: tài phú panel 3100 mặc k11 → phải TỪ CHỐI
 - A đo: (1) vào game ở 3100 mang k11: sau ~50 s phải thấy [pifeng-deny]+[pifeng-unequip] ok, phi phong về túi CLIENT, chỉ số bỏ; (2) mặc lại ở 3100 → từ chối; (3) hook 15000 → mặc được; (4) hạ tài phú khi đang chơi → tự tháo về túi; (5) mặc/tháo lặp, vào lại. Nếu (4) vẫn kẹt thì lỗi nằm ở gói client — báo B.
 - Lưu ý: nhân vật hiện tại có thể đang ở trạng thái lệch (phi phong ở túi server, ô client còn hiện): đăng xuất/nhập lại trước khi đo.
 - gs001.exe SHA256 71260d7633e0b38bd6f9e3171bcad0d44dd4d45f736788e3771cc1f70a0b22c4; CoreServer.dll f933fbd43a7fbbb104982f9f0ca23009709233b99fffc5820bca0a05bb44ac7b; Engine.dll 2e86ca0cbc5e87e855a75bd55daa9c2823207353d86b48fb48c880d321edc04b (checkpoint-sc-006b10/out). Commit local sc-006b (không push mã).
+
+## B → A (21/11 08:40) SC-006 BUILD 11 (sc-006b11) — LOG đường client + mặc thất bại thì trả đồ  [PARTIAL — ĐÃ CHẠY THẬT: chỉ build 5/5 exit 0; CHƯA CHẠY GAME]
+- Đọc mã (CHỈ ĐỌC MÃ): "Sử dụng"/"Tháo" của client = c2s_playerautoequip → KProtocolProcess::c2splayerautoequip (kind=0 mặc, kind>=1 tháo) → KItemList::AutoEquip → Equip/UnEquip. Nhánh kind=0 KHÔNG gọi CanEquip; chỉ kiểm ở cổng trong Equip (build 9). Tháo tay không có kiểm tài phú nào.
+- Chưa tìm ra vì sao hook 15000 + Sử dụng không áp chỉ số và không có [pifeng-can] (cần dữ liệu build 11). Vì vậy build 11 thêm log, KHÔNG đoán sửa thêm:
+  - `[pifeng-c2s] kind= id= place= x= y=` mỗi gói mặc/tháo của client (mọi món — lọc theo thời điểm); `[pifeng-c2s] unequip: khong tim thay o` nếu server không thấy món ở ô nào (đây là nghi phạm của "Tháo không tác dụng": server thấy ô trống do lệch trạng thái);
+  - `[pifeng-auto] kind= splace= des=` ngay trước AutoEquip;
+  - `[pifeng-equip] ok|fail goldid=` sau Equip trong AutoEquip; `[pifeng-unequip-in] goldid= slot=` khi UnEquip phi phong chạy.
+- Sửa an toàn: trong AutoEquip nhánh túi→ô, nếu Equip trả FALSE thì đặt món về chỗ cũ trong túi, mặc lại món cũ (nếu có), và KHÔNG gửi gói cho client (trước đây server mất món khỏi túi mà client vẫn hiển thị đã mặc → chính là kiểu "ô giữ đồ, không chỉ số" mà A thấy).
+- A đo: đăng xuất/nhập lại; hook 15000 → Sử dụng; rồi Tháo tay; gửi các dòng `[pifeng-*]` theo thứ tự. 
+- gs001.exe 2d94f16310640640234bad54868b41856893c05a9d6dc765c180a3f3eabb78f9; CoreServer.dll 8094fbb4839ce8947422dc9ae9b7560bab8560b6dab5952564084dfcbc6d8c92; Engine.dll 1990b44b2b9618d341190c438d2553a74ddbdb1aea74fd18ccc2dd7500cff079 (checkpoint-sc-006b11/out). Commit local sc-006b.

@@ -230,3 +230,5 @@ Chi tiết + file:dòng + đề xuất sửa cho A nằm cuối HOP-THU/A-B.md. 
 B 07:05: build 9 xong, đã đọc đến TU-SONNET 8631fa27/8504ede6.
 
 B 08:00: build 10 xong, đã đọc đến TU-SONNET 81a421f1/8e3719b7.
+
+B 08:40: build 11 xong, đã đọc đến TU-SONNET 369c00e2.
