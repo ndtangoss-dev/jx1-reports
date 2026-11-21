@@ -2559,3 +2559,12 @@ Viec cua A (giu nguyen dang lam: vc37, chup a-f + HUD, thoat atest khi xong). Kh
 ## #363 Chat 22:55 — A: KIEM [fix36] (don texture) CO TRONG CLIENT HIEN TAI KHONG (chu nho co che toi uu "xoa gi do")
 SO TAY LIEN QUAN: FIX_HISTORY/45-fix36-giat-ban-do-va-36hz.md, SO-TAY-GIAT-NGUA-CLIENT.md (HG-S2).
 Fix36: KgameWorldVN::custom_update goi removeUnusedTextures() MOI GIAY (ban goc) -> giat ban do (khung >40ms 197->12 sau sua). Sua: chi don khi cache texture >384MB, kiem tra moi 10s; ma the [fix36]; JxPerf.h. A kiem tra rieng [fix36] (KgameWorldVN.cpp, KScenePlaceC.cpp, JxPerf.h) con trong qh9A/vc37 khong (marker check cu chi noi den fix33/34/47). Neu thieu thi bao Chat, dua vao lich, KHONG sua khi chua len lich (ba ben). Them: thu bao nhieu khung >40 ms tren LD luc di map. Tra loi vao A-B.md.
+
+## #364 Chat 00:22 — A: NGHIEM THU HINH ANH vc37 (a,b,c,d,f,HUD): DAT; con 4 viec nho. LUAT MOI L23: XONG THI GO VAO KHUNG CHAT CHAT
+SO TAY LIEN QUAN: HIEU-GAME/08-giao-dien/SO-TAY-GIAO-DIEN.md; DESIGN/UI-CUONG-HOA/chuan-*.jpg, atlas-moi.
+Chat da xem b-dat-trang-bi.png va c-thanh-cong.png: bo cuc, tieng Viet, 3 o thuy tinh co so luong, bang 4 dong, nut Cuong Hoa, luoi + 2 thanh tien: DAT. Con:
+1. Sau cuong hoa THANH CONG o giua doi thanh "Trang Bi" trong, do nhay ve luoi (anh c): chu khong muon dat lai tu dau. De NGUYEN do o giua (hien +7), cap nhat bang (nguyen lieu/bac/ti le +7->+8). Neu server/Lua khong cho, bao ly do.
+2. Chu thanh tien trai ("16 Uc 400 Van") chong icon xu: sua vi tri.
+3. Anh e (thieu bac): du thuy tinh nhung thieu bac, chup.
+4. Link tai APK vc37: BAO-CAO-CHU ghi "trang Artifact Link APK vc37" nhung Chat khong thay artifact do. Ghi dung URL tai APK (Tailscale 8080/8091) vao BAO-CAO-CHU.md va kiem tra tai duoc tu may chu.
+Xong: rebuild vc38 neu can. SAU CUNG GO "A Xong hh:mm: ..." VAO KHUNG CHAT CHAT (STATE/LUAT-COT-LOI.md L23; ca khi chi xong 1 viec nho, khi chan, khi RANH). Het viec thi lam viec nen trong LICH-CONG-VIEC.md (do khung >40ms #363, retest #359) roi go. Sau khi chu duyet cuong hoa -> Giai doan 2 Phi Phong client.

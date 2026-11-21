@@ -126,3 +126,12 @@ Kho `HIEU-GAME/` (9 nhóm, mục lục ở `HIEU-GAME/README.md`) là công sứ
 ## L21 (chủ chốt 21/11 22:02) — LUẬT RIÊNG CỦA B: xem `STATE/LUAT-RIENG-B.md` (việc đầu tiên mọi việc là đọc hiểu game, khối "HIỂU GAME", Chat kiểm trước).
 
 ## L22 (chủ chốt 21/11 22:23) — LẬP KẾ HOẠCH BA BÊN TRƯỚC KHI GIAO: xem `STATE/QUY-TRINH-LAP-KE-HOACH.md` và lịch `STATE/LICH-CONG-VIEC.md`.
+
+## L23 (chủ chốt 22/11 00:17) — A VÀ B CHỦ ĐỘNG GÕ VÀO KHUNG CHAT ĐỂ ĐÁNH THỨC CHAT (vá L15; Chat không phải kiểm dày)
+Nguyên nhân sự cố 22/11 00:14: A xong vc37 lúc 22:58, B xong đề xuất 22:35, chỉ ghi vào kho rồi chờ; Chat cũng chờ → cả hai bên chờ ~75 phút. Chủ nói: không cần Chat kiểm dày, chỉ cần A/B chủ động gọi.
+1. BẮT BUỘC: mỗi khi A/B (a) xong một việc hoặc một buổi chụp/đo/build, (b) cần Chat duyệt/quyết định/chủ, (c) bị chặn quyền hoặc gặp lỗi, (d) hết việc trong lịch — việc CUỐI CÙNG của lượt là gõ vào khung chat Chat (Claude in Chrome / trình duyệt, URL phiên Chat: https://claude.ai/code/session_01MrvZcvMaZXNKa8dLsj2hfU) đúng mẫu: `A Xong hh:mm: <1 câu việc đã xong + tệp báo cáo>; cần: <việc tiếp/quyết định>` hoặc `A Chat hh:mm: ...`; B dùng `B Xong`/`B Chat`. Gõ xong nhấn gửi (Ctrl+Enter nếu Chat đang bận) và xác nhận tin hiện trong khung.
+2. KHÔNG kết thúc lượt, không ghi "chờ Chat" khi chưa gõ tin này. Báo kho (TU-SONNET/A-B.md) vẫn làm, nhưng tin gõ là tín hiệu đánh thức.
+3. Đang làm việc dài: gõ `A Chat hh:mm: tiến độ ...` tối đa mỗi 30 phút nếu có thay đổi đáng kể; không gõ liên tục.
+4. Hết việc trong lịch: gõ `A Chat hh:mm: RẢNH` (không tự bịa việc to; có thể làm việc nền trong LICH-CONG-VIEC.md rồi gõ).
+5. Nếu hộp thoại "Đăng nhập lại" chặn khung nhập thì bấm "Để sau" rồi gõ lại; nếu khung Chat bận, dùng Ctrl+Enter (hàng đợi).
+6. Chat: mỗi thư giao việc kết thúc bằng dòng "XONG thì gõ `A Xong`/`B Xong` vào khung Chat (L23)". Chat chỉ đặt vòng kiểm thưa 30 phút làm lưới an toàn, và đọc tin A/B gõ ngay khi tới. Tổng quản kiểm: A/B im >40 phút mà không có gõ gọi Chat → ghi CHO vào TONG-QUAN-GHI để Chat biết.

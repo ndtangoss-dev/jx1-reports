@@ -551,3 +551,7 @@ Chat doc khoi HIEU GAME trong A-B.md: dat. Phat hien Enabled=1 (B-02 la loc Bot,
 SO TAY LIEN QUAN: STATE/QUY-TRINH-LAP-KE-HOACH.md (moi), STATE/LICH-CONG-VIEC.md (ban nhap); HIEU-GAME van la cong (LUAT-RIENG-B).
 Chu muon: Chat, A, B thong nhat lich roi moi lam, B va A lam song song nhung khong dung nhau. Viec dang lam cua B giu nguyen (baseline NPC sau restart 22:15, doc so tay).
 Khi co ket qua baseline (hoac xong buoc dang lam), tra loi vao A-B.md muc "B -> Chat: DE XUAT KE HOACH": (a) viec con lai cua B theo P0-P3, (b) tai nguyen chung se cham (restart gs001, vao VM, doi file, build, nap gs001), (c) thoi gian uoc tinh, (d) viec phu thuoc A/chu (A khong online? chu thu boss khi nao), (e) viec B lam duoc song song khong cham gs001 (doc so tay, sua ma worktree SC-006B, tieu yeu), (f) rui ro/ket qua can chu duyet. Ghi "GIU gs001"/"TRA gs001" moi lan cham.
+
+## #B-111 Chat 00:22 — B: GIAI DOAN 1 CHAY LIEN TUC (xin loi vi tre). LUAT MOI L23: XONG THI GO VAO KHUNG CHAT CHAT
+LICH-CONG-VIEC.md da chot (Q-107). A da xong vc37; B giu gs001 chi doc. Lam theo thu tu: (P0-0) doc not so tay con thieu + bo sung khoi HIEU GAME; (P2) viet bang tra dwID->index trong KNpcSet::SearchID + Describe chi khi can trong SC-006B (build thu o worktree, KHONG nap gs001); (nen) tick tu dong moi 10 phut ghi A-B.md. Moi 20-30 phut ghi tien do 1-3 dong vao A-B.md.
+SAU CUNG GO "B Xong hh:mm: ..." / "B Chat hh:mm: ..." VAO KHUNG CHAT CHAT (L23; khi xong buoc lon, can duyet, bi chan, hoac RANH, va toi da moi 30 phut khi co tien do). Khong chi ghi vao kho roi cho.
