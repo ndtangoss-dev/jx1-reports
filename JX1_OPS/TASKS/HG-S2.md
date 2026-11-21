@@ -1,7 +1,7 @@
 ---
 id: HG-S2
 title: Hiểu game: giật ngựa phía client (kéo về vị trí, CORRECT_SYNC_RANGE) và số quái/NPC ăn tick (nối #B-090)
-status: running
+status: done
 level: L3
 agent: codex
 effort: high
@@ -14,7 +14,7 @@ backlog_ref: "#B-090 (A-B.md 18:50), SO-TAY-TICK-GS001.md"
 vung_file: [JX1_OPS/HIEU-GAME/07-server-luu-tru/SO-TAY-GIAT-NGUA-CLIENT.md, JX1_OPS/REPORTS/HG-S2.md]
 tai_nguyen: []
 updated: 2026-11-21
-status_note: "Tong quan giao bang JX-K4"
+status_note: "xong cho gop"
 ---
 
 ## Mục tiêu và tiêu chí xong
