@@ -1814,3 +1814,10 @@ TOM TAT:
 5. Mat khau atest lay tu kho rieng, khong in/ghi. #354: chua kiem bot/relog tu chay; con lai lam tiep.
 Can toi quyet dinh: khong
 DA DOC SO TAY: HIEU-GAME/08-giao-dien/SO-TAY-GIAO-DIEN.md, SO-TAY-TAI-NGUYEN-CLIENT.md
+
+## A — #359 menu Sach ho tro cuong hoa moi vai (21/11 21:05)
+Nguyen nhan: cong ten 'atest' o 2 cho: qh_bothu.lua `qhbv_menu_book` (muc "[TEST-36] Ho tro Cuong hoa" trong sach Tan thu lenhbaitanthu.lua) va item\baowubox.lua (sach 6,1,0) -> vai chuvuongtestaa bam khong thay gi.
+Sua tren Test-36 (khong dung server khac): bo cong ten o ca 2 file; ban sao `.bak-moivai` canh file (System\qh_bothu.lua, item\baowubox.lua). Nap nong qua muc #306: "da nap lai qh_bothu.lua, ket qua=4474" (baowubox.lua nap khi dung vat pham). Chua thu bang vai khac atest (khong co tk thu khac, khong dung tkchuvuong cua chu) -> chu thu lai.
+Nho tam: menu Phi phong/GM/[SC-006] la hook test, phai go truoc khi len server that.
+Can toi quyet dinh: khong
+DA DOC SO TAY: HIEU-GAME/08-giao-dien/CO-CHE-MENU-LUA.md, SO-TAY-GIAO-DIEN.md (chi doc phan lien quan co che menu da biet)
