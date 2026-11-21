@@ -330,3 +330,7 @@ TOM TAT: #B-115: da viet HIEU GAME phi phong (A-B.md 04:10), PP-01 chuan bi xong
 
 Đã đọc đến #B-116 (22/11 04:55)
 TOM TAT: #B-116 PARTIAL: log gs001/qh_dump khong co dong xoa/chuyen mon +9 (gs001 khong ghi log vat pham); can Chat cho phep SELECT DB hoac A cho gio/ID. Khong sua du lieu.
+
+
+Đã đọc đến #B-117 (22/11 06:05)
+TOM TAT: #B-117 PARTIAL: SQL chi co DB account; vat pham nam trong goi TRoleData cua roledb (BDB) - khong SELECT duoc. De xuat A giai ma doc-chi tren ban sao / C kiem UI client. Khong sua du lieu.
