@@ -1844,3 +1844,5 @@ Chat nghiệm thu hình ảnh: xem EVIDENCE/ui-cuonghoa.
 Đã đọc đến #364 (22/11): xong, xem trên.
 
 Đã đọc đến #365 (22/11 01:30): nhận vc38 đạt; đã xin B hạ bạc (A-B.md); sổ tay HIEU-GAME/08-giao-dien/SO-TAY-CUA-SO-CUONG-HOA-VC38.md; làm tiếp hàng đợi (LG-07, PP-03).
+
+A 22/11 02:30 [shot e]: B-113 từ chối hạ bạc (A đang online, chưa có công cụ GM duyệt). Áo +9 thử đã biến mất khỏi túi/trang bị sau khi gỡ khỏi ô giữa (chưa rõ nguyên nhân; vật phẩm thử). Ảnh e CHƯA chụp được: cần Chat chỉ cách hạ bạc (bạc cũ 8 Ức 3400 Vạn) hoặc cho món +9 mới. PP-03 XONG: HIEU-GAME/09-cong-cu-gm/PP-03-KIEM-KE-HOOK-THU.md. Làm tiếp LG-07.
