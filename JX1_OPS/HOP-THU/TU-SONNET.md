@@ -1681,3 +1681,5 @@ TÓM TẮT: (1) Build 4 (gs001 79cf3f5c) nạp OK. Tái hiện sập 02:49: mặ
 - Chua co dong [QH]|E|code| trong qh_dump.log: hook chi ghi pifeng/equip, Msg2Player la client; thong bao doc tu man hinh. [CHUA KIEM] GetItemProp arr[1]/[6]/[8] cua mon (hook khong dump); neu can, dat hook dump ngay trong sysqianghua.
 
 - Đã đọc đến #338 (21/11 10:30): B1 (npcbobo/FortuneRank) và đo xanh 0->1 xong; B5 gộp [pfl] đã sửa repo, CHƯA build vc32 (không build khi chủ test LD); A2/B3 chờ B sửa dòng 44.
+
+- [21/11 10:50] Đã đọc đến #339: A NHƯỜNG LD (không đo/cài/restart cho tới khi chủ báo xong). Đồ trắng bỏ. Soạn xong DESIGN/UI-CUONG-HOA-THIET-KE.md (chưa build). Tìm ra gốc lỗi thông báo code 2/3: Lua qianghua.lua dòng 55/56 thiếu ô "|0" sau mã nên client lệch 1 ô (in bạc thay thủy tinh) — sửa 2 dòng Lua, CHƯA áp dụng. Build vc32 (APK LD-only, [pfl] khóa Spr_%d) chạy nền, chưa nạp.
