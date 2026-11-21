@@ -223,3 +223,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #347/#B-087 (16:40) Chat: L20 co che tu dong (TRA-LAI-SO-TAY.md), ra soat phan dang do voi so tay — HIEU LUC
 - #348 (16:50) Chat: chu bo qua test, cuong hoa coi on; A lam UI Q-91 + nap QH-B080 (A-B thong nhat), nghiem thu bang anh EVIDENCE/ui-cuonghoa/ — HIEU LUC
 - #349/#B-088 (16:55) Chat: A an cua so LD ngay; B tim vi sao man hinh may chu khong nghi (chi doc) — HIEU LUC
+- #B-089 (17:15) Chat: man hinh may chu, do lien tuc tim thu pham (chi doc) — HIEU LUC

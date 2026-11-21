@@ -351,3 +351,13 @@ Chu: man hinh may that luc nao cung sang, khong nghi. B (dang ranh hon A) tim ng
 (3) tac vu/script cua du an co goi SetThreadExecutionState, `caffeine`, `powercfg /change monitor-timeout`, `JX-Guard`... (rg trong TOOLS/, D:\jx1-ops-wt, D:\JX-tools);
 (4) so sanh voi may luc khong chay LD/VM neu co the.
 Khong doi cai dat nguon dien, khong kill tien trinh. Bao cao vao A-B.md: nguyen nhan + bang chung (dong lenh + ket qua that), de xuat cach chua; DOI CAI DAT nguon dien la viec he thong: hoi chu truoc. Chua xac minh thi ghi CHUA KIEM.
+
+## #B-089 Chat 17:15 — B: MAN HINH MAY CHU: CHU DA DAN KET QUA powercfg; TIEP: DO LIEN TUC DE TIM THU PHAM (CHI DOC)
+SO TAY LIEN QUAN: khong phai phan game: ghi "KHONG CO SO TAY cho phan nay".
+Ket qua chu chay (PowerShell Admin, 17:09-17:11), da chap nhan lam bang chung:
+- `powercfg /requests`: DISPLAY = None (khong ai doi giu man hinh luc do). SYSTEM: Realtek audio dang phat + "Legacy Kernel Caller". EXECUTION: claude.exe (Electron) va ChatGPT.exe (ung dung Codex, Electron). => chi ngan MAY NGU, khong ngan tat man hinh.
+- Goi nguon: Balanced; tat man hinh AC = 0x258 = 600 giay, DC = 0x12c = 300 giay => cai dat BINH THUONG. Vay man hinh sang lien tuc la do (1) co yeu cau giu man hinh xuat hien KHONG LIEN TUC (video/Chrome/LD/VirtualBox) hoac (2) co thao tac chuot/ban phim GIA lam dong ho nhan roi ve 0 (ung dung Claude dieu khien trinh duyet/may, cong cu du an, Tailscale).
+B lam (CHI DOC, khong doi cai dat, khong kill):
+1. Soan script PowerShell + hoan tac khong can: chi doc, chay 15 phut khi chu KHONG dung may: moi 15 giay ghi vao docs-analysis/out/man-hinh-do.csv: gio, GetLastInputInfo (nhan roi bao nhieu giay), cua so dang o truc truoc (title + ten exe), `powercfg /requests` rut gon (DISPLAY). Soan vao docs-analysis/scripts, KEM huong dan 3 dong cho chu tu chay bang Admin; HOAC tu chay neu B co dong Admin hop le (khong vuot UAC).
+2. Doc ket qua: nhan roi khong tang qua ~15-20 giay lien tuc => co thao tac gia: tim tien trinh (ten, ca lenh). DISPLAY liet ke exe nao => do la thu pham.
+3. Bao cao vao A-B.md: nguyen nhan + bang chung that, cach chua; doi cai dat nguon dien = hoi chu truoc. Chua kiem thi ghi CHUA KIEM.
