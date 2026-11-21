@@ -1674,3 +1674,21 @@ A LÀM: nạp 2 file; đo: tài phú panel 3100 mặc k11 → phải TỪ CHỐI
 - SHA256 Engine.dll 3fd27c143a4f1b254e10c35256fec0bdd73bd3cd0ecb5fa0e6977a80af8d16d3
 - Khác build 11: phi phong theo LUẬT GỐC (dòng lẻ chỉ mở theo ngũ hành), không ép mọi dòng; thêm log `[pifeng-active]` vào qh_dump.log.
 - A nạp, mặc k1/k3/k4/k6/k11 (kèm/không kèm Ngựa, Mặt nạ, Ngọc bội), gửi dòng `[pifeng-active]` + `[equip]` + số HP/MP/kháng/né. Chủ so với build 11 để chọn phương án 1/2/3 (xem BANG-DONG-AN-KICH-HOAT.md). SC-006 vẫn PARTIAL.
+
+## B→A/Chat 21/11 09:40 — Trả lời #B-077 (CHỈ ĐỌC DỮ LIỆU; chưa nạp build 13, không chạy game)
+Nguồn: `C:\Jx1CocoV3\...\gs\Settings\item\004\PiFeng.txt` (gốc, 14 dòng) + `GoldItem.txt`/`GoldMagic.txt` (bản đang chạy, DESIGN/QH-B035-deploy/phiphong) + `item/PiFengRes.txt`.
+**1. Phi phong GỐC (PiFeng.txt, trắng, 14 mẫu)**: nLevel 1..14 (Lăng Vân…Cao cấp, VIP, GM). Chỉ 2 dòng chỉ số: Sinh lực(85) và Nội lực(89), khoảng min-max tăng theo cấp (cấp1 50-100, cấp2 100-150, … cấp11 13000-15000, cấp12 1000-1500, VIP 15000, GM 600000). Yêu cầu: chỉ cấp nhân vật 10 (loại 36=10) và 1 yêu cầu loại 45. KHÔNG có yêu cầu giới tính (loại 38) ở dòng nào. Tên ghi mojibake do bảng gốc (cp936) lệch bảng mã.
+**2. Phi phong VÀNG (GoldItem, đang chạy)**: 11 mẫu gốc + 15 mẫu biến thể + 7 mẫu lạ (dòng 吃 "绝世/破军/傲雪/惊雷/御风" x2 bộ, có dòng 61-64 riêng). Yêu cầu: CHỈ cấp nhân vật 60 (loại 36). KHÔNG có yêu cầu giới tính ở mọi dòng. nLevel cột 11 = 1,1,2,3,3,4,4,4,5,5,5 (11 mẫu) → đây là "cấp" hiển thị tooltip; trùng nhiều cấp là do dữ liệu, không phải do mình.
+**3. Giới tính**: PiFengRes.txt chỉ có Line→ResId (27 dòng, không có cột giới). Dữ liệu server KHÔNG phân giới. Việc "chia giới tính, hình khác" nhiều khả năng ở CLIENT (chọn hình theo giới nhân vật) — CHƯA XÁC MINH, cần A xác nhận trong client (KItemList client ~869-893 / bảng hình).
+**4. Bảng đối chiếu** (gốc trắng vs vàng đang chạy vs luật mình thêm)
+| Mục | Gốc (PiFeng.txt) | Vàng đang chạy | Mình thêm (B-035/039) |
+|---|---|---|---|
+| Số mẫu | 14 | 11+15 biến thể | không đổi |
+| Dòng chỉ số | HP, MP (khoảng) | 5 dòng: HP85 MP89 TL93 Kháng114 Chạy111, giá trị CỐ ĐỊNH tăng theo cấp | cộng bảng 11 cấp (DESIGN/TINH-NANG/TAI-PHU-PHI-PHONG.md f) |
+| Giới tính | không có | không có | không |
+| Yêu cầu | cấp 10 | cấp 60 | + tài phú 6000+900(k-1) (do mình thiết kế, KHÔNG gốc) |
+| Hình | PiFengRes theo nLevel | theo nLevel (5 hình / 11 cấp) | không |
+KẾT LUẬN: bảng 11 cấp tăng đều + ngưỡng tài phú là THIẾT KẾ CỦA MÌNH, đúng như chủ nghi. Gốc: phi phong cùng dòng/cấp mô tả, chỉ chênh khoảng HP/MP; chủ muốn "giống nhau mọi cấp" thì phải sửa dữ liệu (đặt mọi mẫu cùng bộ dòng) — chờ chủ chọn.
+**5. Tên cạnh tên nhân vật không đổi**: tên trên đầu do CLIENT vẽ theo appearance; server gửi appearance qua đường thay đổi trang bị (KItemList.cpp gán hình ~1688 theo nLevel). CHƯA XÁC MINH cần đọc client. Hướng: A kiểm xem thay phi phong có gửi lại appearance không (so sổ tay NGUA-PHI-PHONG).
+**6. Cường hóa 0→1 THẤT BẠI (CHỈ ĐỌC MÃ, CHƯA có log máy chủ lần đó)**: tôi KHÔNG tìm thấy log máy chủ của lần chủ thử trong kho/thư mục máy này (qh_dump.log chưa tồn tại). Đọc QH-B044-deploy/qianghua.lua: tỷ lệ 0→1 = 100-5*(1-1) = 100% nên không thể "hụt ngẫu nhiên" → thất bại chỉ có thể do (a) bộ lọc dòng 43-44: chỉ nhận `kind==0 and (a8==1 or a6>0)` — món TẠP HÓA/trắng thường (a8≠1, a6=0) bị loại → báo "không hợp lệ" (mã 5, có thể hiện như thất bại); (b) thiếu đá (mã 2) hoặc bạc (mã 3: giá 0→1 = 1 mỗi loại + 2.000.000 bạc); (c) món đang mặc (mã 5). Đây KHÔNG khớp "mọi loại trang bị cường hóa được": bộ lọc là điểm chặn. Sửa: bỏ điều kiện a8/a6, nhận mọi item_equip (genre 0) trừ ô đang mặc. Cần A gửi dòng `[QH]|E|code|...` thật + GetItemProp của món tạp hóa để chốt.
+**7. KHÔNG nạp build 13** (build 13 vẫn nằm ở checkpoint-sc-006b13, chờ lệnh Chat). SC-006 PARTIAL.
