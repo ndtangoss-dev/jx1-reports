@@ -6,7 +6,7 @@
 3. Không tắt VM bằng cách cắt ngang (QUY-TAC mục 7). Không đụng Main VM `JX-Server-D`.
 
 ## B. BẬT MÁY LẠI (máy chủ dự án, Windows)
-Việc tự chạy (không cần làm): Tổng quản (tác vụ Windows), bộ canh LD `JX-LDCanh`, cầu LD, khóa xingchi, đám tiểu yêu Codex đang chạy; Command Code đăng nhập riêng (commandcode.ai), không đổi theo tài khoản Claude.
+Sau lần tắt 21/11 (chủ chốt: tắt máy = dừng hết) KHÔNG còn gì tự chạy: tác vụ `JX-TongQuan` đang DISABLED, các `JX-codex-*` ở trạng thái Ready (không chạy), `JX-Guard` DISABLED. Thứ tự bật theo `STATE/QUY-TRINH-TAT-BAT-MAY.md` mục II: hạ tầng (B.1–B.3 dưới đây) → phiên Claude A/B/Chat đọc bàn giao → bật lại bộ canh LD/cầu LD/người gác → BẬT TỔNG QUẢN TRƯỚC (`python -I JX1_OPS/TOOLS/tong_quan.py --dry`, hợp lý thì `schtasks /Change /TN JX-TongQuan /ENABLE` rồi `/Run`) → Tổng quản giao lại worker (việc `ready`, WIP tiếp tục). Command Code đăng nhập riêng (commandcode.ai), không đổi theo tài khoản Claude.
 Việc cần lên đủ trước khi test (A kiểm theo `/tiep-tuc` bước 3 và 3b):
 1. VirtualBox: `VBoxManage list runningvms`. `JX-Server-D` (Main VM) tắt thì bật headless; VM thử `JX-Test-36` (192.168.56.150) phải chạy.
 2. Chuỗi máy chủ trong Test-36: dùng `python -I -X utf8 JX1_OPS/TOOLS/vm_chay.py chain-up` rồi `ports` (cổng 5001–5005/56722/56732/51189). gs001 nạp 7–10 phút, KHÔNG chạm cổng 51189 khi đang nạp. Đợi A/B báo gs001 lên.

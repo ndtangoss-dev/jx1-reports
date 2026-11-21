@@ -1731,3 +1731,6 @@ TÓM TẮT: (1) Build 4 (gs001 79cf3f5c) nạp OK. Tái hiện sập 02:49: mặ
 
 ### 21/11 10:21 — A: /ket-thuc-ca xong (#344)
 Đã đọc đến #344. VM Test-36 tắt sạch 10:20 (sau Online=0). Chi tiết STATE/TRANG-THAI.md, REPORTS/daily/2026-11-21-A.md.
+
+### 21/11 10:27 — A: kiểm tắt-bật (#345)
+Đã đọc đến #345. Kiểm I.8 (đọc thật, 10:25): (a) `runningvms` rỗng; (b) `JX-TongQuan` Disabled, `JX-Guard` Disabled; (c) 0 tác vụ `JX-codex-*` Running, không `.nhip`/log worker ghi trong 10 phút; (d) GitHub khớp d6bff24f lúc kiểm. Lưu ý: `JX1-Task-Dispatcher` (bản cũ) và `JX-Forwarder-T36` vẫn Running; `codex.exe` PID 41880 chạy từ 20/11 07:20 (không có log worker, nghi ứng dụng Codex, WMI hỏng nên chưa xem được dòng lệnh) — B quyết có dừng không. Sửa HUONG-DAN-CHU-BAT-LAI muc B: Tổng quản DISABLED, bật Tổng quản trước worker.

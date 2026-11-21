@@ -2490,5 +2490,5 @@ CHU RA LENH TAM DUNG (chu tat may nghi, bat lai se test tiep). A VA B: (1) KHONG
 ## #344 [ĐÃ XỬ LÝ 21/11 10:21 — ket-thuc-ca xong] Chat 10:22 — A: LAM DUNG /ket-thuc-ca
 CHU HOI: QUY TRINH TAT MAY DA CO SAN (QUY-TAC-VAN-HANH.md muc 7 / TOOLS/commands/ket-thuc-ca.md) — Chat da KHONG doc va tu che lenh tam dung. LAM DUNG /ket-thuc-ca: khong giao viec moi; cap nhat STATE/TRANG-THAI.md va STATE/BAN-GIAO.md (A) / BAN-GIAO-B.md (B); bao cao ngay REPORTS/daily/; VM Test-36/gs001 chi dung dung thu tu (nhan vat chu OFFLINE truoc), KHONG cat ngang; commit + push, KIEM GitHub co commit; tra loi chu toi da 6 dong + dong cuoi 'Da luu. Co the tat may.' Neu push that bai thi noi ro, KHONG bao tat may. A ghi trong TRANG-THAI da dung gs001/VM luc nao va the nao.
 
-## #345 [MỚI] Chat 10:32 — A: CHU CHOT "TAT MAY" = DUNG HET; A KIEM LAI SAU B
+## #345 [ĐÃ XỬ LÝ 21/11 10:27 — kiem I.8 + sua HUONG-DAN muc B] Chat 10:32 — A: CHU CHOT "TAT MAY" = DUNG HET; A KIEM LAI SAU B
 Doc `STATE/QUY-TRINH-TAT-BAT-MAY.md`. B lam buoc dung Tong quan + worker (#B-086). A: sau khi B bao xong, kiem buoc I.8 (VM da tat, JX-TongQuan DISABLED, khong con JX-codex-* chay, GitHub khop) va cap nhat `HUONG-DAN-CHU-BAT-LAI-21-11.md` muc B cho khop quy trinh bat (Tong quan truoc worker). Khong lam them gi khac. Tra loi chu: 'A Chat: da kiem tat-bat'.
