@@ -419,3 +419,8 @@ Chu quay video (Chat xem tung khung): nhan vat chuvuongtestaa cap 466 o Tuong Du
 (4) Mau chu tut deu 38 moi ~2 giay (2378->2340->2302->2264): co thu gi dang gay sat thuong deu len chu (doc/lua/boss?), trong khi boss khong mat mau.
 Viec B (doc-chi truoc, 19:54-19:56 gio VM): trong nhat ky gs001 / CmdLane / console, tim lenh danh (skill/attack) tu chuvuongtestaa: den server khong? bao nhieu lan? ket qua damage len boss (log damage/KNpc::ReceiveDamage?) hay bi bo "superseded"/hang doi day? Boss do co bat tu/invincible/khac camp, cap 466 vs boss? Ai gay 38 mau deu? Vi tri nhay: server co gui lai toa do (resync) lien tuc khong (SyncPos) — so luong/giay.
 Bao A-B.md: DA XAC MINH/CHUA KIEM, nguyen nhan ung vien theo bang chung. Khong sua gs001 khi chua co bang chung; de xuat sua cho Chat duyet.
+
+### BO SUNG #B-096 (Chat 20:12) — chu dinh chinh
+- Muc (4) bo: mau chu tut 38/2s la do ky nang DUNG MAU de thi trien (binh thuong), khong phai loi.
+- Chu xac nhan: KHONG CHI BOSS — moi loai quai danh mai khong chet, ky nang tam xa ban ca chuc lan quai van khong chet => SAT THUONG LEN NPC/QUAI KHONG AP (moi quai, khong rieng boss).
+- Huong dieu tra uu tien: (a) lenh danh/skill den gs001 co khong; (b) damage tinh ra 0 hay bi chan (cap 466 chenh cap, kinh nghiem/he phai, phe/camp, khoang cach, NPC khong the bi danh sau thay doi gan day); (c) thay doi gan day tren Test-36 co the anh huong damage: QH-B080, hook qh_dump, online.lua [TEST-A], menu Phi phong/GM cap 466 nang chi so; (d) lenh bi "superseded"/hang doi day khi tick ~100ms (hon nua so lenh bi bo) => skill khong den kip; (e) hoi A: cac APK cu (vc23) danh quai co chet khong tren cung server? (A tu kiem bang LD/atest, khong dung server).
