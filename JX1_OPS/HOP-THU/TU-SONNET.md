@@ -1740,3 +1740,22 @@ TÓM TẮT: (1) Build 4 (gs001 79cf3f5c) nạp OK. Tái hiện sập 02:49: mặ
 - Chrome (MCP của A) vẫn ở trang đăng nhập claude.ai, A không đăng nhập thay chủ => KHÔNG gõ được "A Chat". Chat đọc thư này khi vào.
 - Chưa đo SvrFPS/tick, chưa xem online.lua; chưa sửa, chưa nạp (chờ chủ báo xong test cường hóa). Làm tiếp: đo tick 3-5 dòng, kiểm Server-D, KHOA.md, bật lại JX-TongQuan.
 - Đã đọc đến #346 (21/11 16:52).
+
+## 21/11 17:05 — A: RÀ SOÁT #347 (chỉ đọc, không sửa, không nạp)
+ĐÃ ĐỌC SỔ TAY: HIEU-GAME/01-trang-bi-cuong-hoa/HIEU-CAP-CUONG-HOA-LUA.md
+ĐÃ ĐỌC SỔ TAY: HIEU-GAME/01-trang-bi-cuong-hoa/HIEU-CAP-CUONG-HOA-LUA-2.md
+ĐÃ ĐỌC SỔ TAY: HIEU-GAME/01-trang-bi-cuong-hoa/PHI-PHONG-NGU-HANH-VA-DONG-AN.md
+ĐÃ ĐỌC SỔ TAY: HIEU-GAME/01-trang-bi-cuong-hoa/SO-TAY-NGUA-PHI-PHONG.md (đầu, mục tóm tắt)
+ĐÃ ĐỌC SỔ TAY: HIEU-GAME/01-trang-bi-cuong-hoa/HIEU-HIEU-UNG-VU-KHI.md (đầu, mục 1)
+ĐÃ ĐỌC SỔ TAY: HIEU-GAME/01-trang-bi-cuong-hoa/BAN-DO-TAI-PHU-PHI-PHONG.md (mục đồng bộ, dòng 187-189)
+KHÔNG CÓ SỔ TAY cho: online.lua / vòng tick gs001 / giật ngựa (HIEU-GAME/06 chỉ có gói tin, bạn bè, chat; 07 chưa có tick).
+
+Đối chiếu việc A:
+1. Cường hóa 0→1 đồ trắng: A nghi bộ lọc `sysqianghua` (docs-analysis/out/qh-b043-qianghua.lua ~31, chỉ nhận xanh/tím). Sổ tay HG-03c cho thêm LÝ DO PHÍA CLIENT: gói `s2csyncequipitem` chỉ cập nhật cấp trong nhánh xanh/tím/vàng (client KProtocolProcess.cpp:1640-1651; HIEU-CAP-CUONG-HOA-LUA-2.md:60), đồ trắng rơi ngoài. KHỚP, không mâu thuẫn; A trước đó chưa nêu phía client. Lua gọi `SetItemEnChance(idx,1,1)` đúng cờ nIsSyn>=1 (ScriptFuns.cpp:10912-10929).
+2. Lua dòng 55/56 thiếu `|0`: sổ tay BAN-DO-TAI-PHU-PHI-PHONG.md:189 ghi định dạng đúng `[QH]|E|code|0|lv|rate|c|s|0` (qianghua.lua:58 của B-044) và parser cache `f[7]` (KuiChatList.cpp:338). KHỚP với kết luận A (lệch 1 ô). Chưa sửa.
+3. Nhãn phi phong "[cấp N]" luôn "[cấp 1]": sổ tay chỉ có `+N` từ GetEnChance() (KuiItemdescVN.cpp:1146-1176), KHÔNG nói nhãn "[cấp N]" lấy từ đâu. A nói client ghép từ GetLevel()/level item; chưa đối chiếu được. → THIẾU SỔ TAY.
+4. PaintPifeng giữ nhãn cũ: sổ tay PHI-PHONG-NGU-HANH-VA-DONG-AN.md:15 là chính ghi chú của A; chưa có nguồn độc lập. Bản sửa [pfl] ở vc32, chưa kiểm trên máy.
+5. Glow vũ khí — LỆCH GIỮA HAI SỔ TAY (không phải việc sai của A nhưng ảnh hưởng vc32): HIEU-HIEU-UNG-VU-KHI.md tóm tắt 1 (KNpcResVN.cpp:503-522, qh9A) nói glow đọc nEnChance vũ khí đang mặc; HIEU-CAP-CUONG-HOA-LUA-2.md:62 (Client2912, KNpcResVN.cpp:670-671) nói CHƯA tìm điểm đọc cấp cho glow. vc32 build từ Client2912 → cần đối chiếu qh9A vs Client2912 trước khi hứa glow. Chưa sửa sổ tay (chưa đọc đủ mã hai bên).
+6. Giật ngựa/online.lua: sổ tay ngựa chỉ có trạng thái cưỡi/cộng thuộc tính (S/KPlayer.cpp:3716-3769), không có tick. A mới đo mạng/CPU (gs001 CPU 0%, 0 kết nối lúc đo 16:50), lỗi `online.lua` mỗi phút chưa mở file. → THIẾU SỔ TAY.
+
+Việc thiếu sổ tay đưa vào hàng đợi tiểu yêu: (a) vòng tick gs001 + online.lua (hook thử OnLine) ; (b) nhãn "[cấp N]" tooltip trang bị; (c) glow qh9A vs Client2912; (d) mục CHƯA KIỂM của DO-CHAC.md về cường hóa/phi phong/ngựa/boss rơi đồ.

@@ -25,3 +25,11 @@ Chờ chủ duyệt: C-02, C-04, C-05; #134; Xưởng JX1; nhân vật thứ 4.
 - V-01 lượt 3/5 (A-05): REPORTS/KIEM-CHEO-04.md, 6/6 đúng. Còn K-02-nhan-vat, R-07a.
 - V-01 lượt 4/5 (K-02-nhan-vat): REPORTS/KIEM-CHEO-05.md, 3/3 mốc đúng. Còn R-07a.
 - V-01 XONG 5/5 (19/11): KIEM-CHEO-06.md (R-07a đúng); tổng không sai nội dung, lệch dòng chỉ ở E-01.
+
+## Thêm 21/11 17:05 (A, #347): lấp chỗ thiếu HIEU-GAME cho tiểu yêu (1 con trước, Q-59/60)
+| # | Việc | Đầu ra |
+|---|---|---|
+| S-1 | Vòng tick gs001 + `online.lua` mỗi phút lỗi + giật ngựa (sổ tay 07/06 chưa có) | HIEU-GAME/07-server-luu-tru/SO-TAY-TICK-GS001.md |
+| S-2 | Nhãn "[cấp N]" trên tooltip trang bị/phi phong lấy từ đâu (client) | HIEU-GAME/01-trang-bi-cuong-hoa/SO-TAY-NHAN-CAP.md |
+| S-3 | Glow vũ khí: đối chiếu qh9A vs Client2912 (HIEU-HIEU-UNG-VU-KHI vs HG-03c) | sửa HIEU-HIEU-UNG-VU-KHI.md thêm bảng lệch |
+| S-4 | Mục CHƯA KIỂM/chỉ-đọc-mã của DO-CHAC.md: cường hóa, phi phong, ngựa/giật, boss rơi đồ | cập nhật DO-CHAC.md |
