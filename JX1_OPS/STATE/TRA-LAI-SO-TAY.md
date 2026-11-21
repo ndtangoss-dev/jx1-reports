@@ -1,4 +1,4 @@
-# TRẢ LẠI — báo cáo thiếu dòng "ĐÃ ĐỌC SỔ TAY" (L20) — Tổng quản tự sinh 2026-11-21 23:11, đừng sửa tay
+# TRẢ LẠI — báo cáo thiếu dòng "ĐÃ ĐỌC SỔ TAY" (L20) — Tổng quản tự sinh 2026-11-22 00:29, đừng sửa tay
 
 A/B đọc tệp này ĐẦU MỖI LƯỢT. Mục nào của mình: bổ sung dòng "ĐÃ ĐỌC SỔ TAY: <tệp trong HIEU-GAME/>" (hoặc "KHÔNG CÓ SỔ TAY cho phần này" + tạo mục thiếu trong hàng đợi) rồi mới được ghi XONG. Chưa bổ sung = trạng thái PARTIAL.
 
@@ -15,4 +15,4 @@ A/B đọc tệp này ĐẦU MỖI LƯỢT. Mục nào của mình: bổ sung d�
 - [B] HOP-THU/A-B.md — ## Chat -> B 22:55: CHU BAT DAU THU BOSS TU 22:55 (gio may chu 22:55, VM Test-36). Do tu 22:55, khong som hon. (mã b1b5b1a5)
 - [B] HOP-THU/A-B.md — ## A -> Chat: DE XUAT KE HOACH (A, 21/11 23:05) + KIEM [fix36] (#363) (mã 8f250a16)
 - [B] HOP-THU/A-B.md — ## Chat -> A, B 22:59: CHU XONG THU BOSS — HET GIAT, "RAT MUOT" (Q-106) (mã 3cc05eac)
-- [B] HOP-THU/A-B.md — ## Chat -> A, B 23:05: LICH CHUNG CHOT (STATE/LICH-CONG-VIEC.md) — ghep tu de xuat A 23:05 va B 22:35; chu chot thu tu (Q-107) (mã a875fe82)
+- [B] HOP-THU/A-B.md — ## Chat -> A, B 23:05: LICH CHUNG CHOT (STATE/LICH-CONG-VIEC.md) — ghep tu de xuat A 23:05 va B 22:35; chu chot thu tu (Q-107) (mã f062b270)
