@@ -1846,3 +1846,6 @@ Chat nghiệm thu hình ảnh: xem EVIDENCE/ui-cuonghoa.
 Đã đọc đến #365 (22/11 01:30): nhận vc38 đạt; đã xin B hạ bạc (A-B.md); sổ tay HIEU-GAME/08-giao-dien/SO-TAY-CUA-SO-CUONG-HOA-VC38.md; làm tiếp hàng đợi (LG-07, PP-03).
 
 A 22/11 02:30 [shot e]: B-113 từ chối hạ bạc (A đang online, chưa có công cụ GM duyệt). Áo +9 thử đã biến mất khỏi túi/trang bị sau khi gỡ khỏi ô giữa (chưa rõ nguyên nhân; vật phẩm thử). Ảnh e CHƯA chụp được: cần Chat chỉ cách hạ bạc (bạc cũ 8 Ức 3400 Vạn) hoặc cho món +9 mới. PP-03 XONG: HIEU-GAME/09-cong-cu-gm/PP-03-KIEM-KE-HOOK-THU.md. Làm tiếp LG-07.
+
+A 22/11 02:50 [#366 + LG-07]: LG-07 XONG (HIEU-GAME/08-giao-dien/LG-07-DO-KHUNG-HINH-LD.md: 15 phut, fps TB 55,2, min 48,6; >40ms 0,25%; max 93ms; texture 77->78,6MB; purge=0; KHONG co log fix36 nen chua xac nhan don texture). #366: nhan vat dang dung ngoai thanh Ba Lang Huyen (dang nhap lai vao vi tri cu), chua cat bac vao ruong duoc; dang tim duong ve thanh. Nghi van mat ao +9: UI give chi go local (KuiGive_New::UpdateGiveItem bAdd=0 chi xoa o + m_giveItemData), khong co goi gui server tra do; can doc log gs001 de biet server con giu do hay khong. Chua ket luan.
+Đã đọc đến #366 (22/11 02:40).
