@@ -115,3 +115,13 @@ Nguồn: thư #046/#047, #062, #073, #090 trong `HOP-THU/CHO-SONNET.md`; `REPORT
 - **Quay video H4/H5:** chưa làm (cần mục tiêu đánh được hoặc cách bật trạng thái chiến đấu; xem HG-02).
 
 - **Cập nhật #216 (19/11 08:00):** APK trong T36test ban đầu là `8da22c0c` (khác chữ ký qh9A); bản release `47eb28e3` nối thẳng 103.228.37.206:80 nên đã gỡ. T36test hiện chạy APK debug bản chủ thử, SHA-256 `7894c22d08491facbe909c17f00fd31b034a89eeb4894730f0d3f1ad57cec2d8`. Mọi ảnh test client từ giờ ghi SHA này (xem `REPORTS/C02-C04-C05-thu-client.md`).
+
+## 5. Bảng lệch qh9A so với Client2912 gốc (S-3, A, 21/11; chỉ grep, chưa đọc từng dòng)
+| Dấu hiệu | Client2912 gốc | qh9A |
+|---|---|---|
+| `jxDrawBolts` (sét) | 0 file | 2 file (KgameWorld.cpp, …) |
+| shader `glow.fsh` | 0 file | 1 file |
+| blend additive `SRC_ALPHA, GL_ONE` | 0 file | 1 file |
+| cờ `jxlayeroff` | 0 file | 1 file |
+| `nEnChance` (cấp cường hóa) | có trong gamecore (KItem*, KBuySell) | có, cùng nhóm file |
+Kết luận: glow, sét, shader, cờ tắt layer là phần THÊM ở qh9A, bản gốc không có; mọi mô tả ở mục 1-4 chỉ đúng cho qh9A. Đối chiếu từng dòng chưa làm.

@@ -31,5 +31,5 @@ Chờ chủ duyệt: C-02, C-04, C-05; #134; Xưởng JX1; nhân vật thứ 4.
 |---|---|---|
 | S-1 | Vòng tick gs001 + `online.lua` mỗi phút lỗi + giật ngựa (sổ tay 07/06 chưa có) | HIEU-GAME/07-server-luu-tru/SO-TAY-TICK-GS001.md |
 | S-2 (XONG 21/11, SO-TAY-NHAN-CAP.md) | Nhãn "[cấp N]" trên tooltip trang bị/phi phong lấy từ đâu (client) | HIEU-GAME/01-trang-bi-cuong-hoa/SO-TAY-NHAN-CAP.md |
-| S-3 | Glow vũ khí: đối chiếu qh9A vs Client2912 (HIEU-HIEU-UNG-VU-KHI vs HG-03c) | sửa HIEU-HIEU-UNG-VU-KHI.md thêm bảng lệch |
+| S-3 (XONG 21/11, bảng lệch mục 5) | Glow vũ khí: đối chiếu qh9A vs Client2912 (HIEU-HIEU-UNG-VU-KHI vs HG-03c) | sửa HIEU-HIEU-UNG-VU-KHI.md thêm bảng lệch |
 | S-4 | Mục CHƯA KIỂM/chỉ-đọc-mã của DO-CHAC.md: cường hóa, phi phong, ngựa/giật, boss rơi đồ | cập nhật DO-CHAC.md |
