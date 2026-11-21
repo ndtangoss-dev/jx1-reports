@@ -272,3 +272,5 @@ TOM TAT: Đã đọc đến #B-088. #B-088 ĐÃ XỬ LÝ 17:20 (chỉ đọc): K
 TOM TAT: Đã đọc đến #B-089. #B-089 ĐÃ XỬ LÝ 17:40 (chỉ đọc): KHÔNG CÓ SỔ TAY cho phần này. Soạn script đo `TOOLS/do_man_hinh.ps1` (cú pháp OK, chưa chạy, cần chủ chạy Admin 15 phút lúc không dùng máy), hướng dẫn 3 dòng ở A-B.md. Chưa biết thủ phạm. Trạng thái: PARTIAL.
 
 TOM TAT: Đã đọc đến #B-090. #B-090 ĐÃ XỬ LÝ 18:50 (chỉ đọc): ĐÃ ĐỌC SỔ TAY SO-TAY-TICK-GS001, LOADSCRIPT-NAP-LUA-NONG, BAN-DO-DI-CHUYEN-CUOI-NGUA (chưa mở 04-quai-npc-ban-do). online.lua thật chưa có để đọc; lỗi script = script chưa nạp (KPlayer.cpp:8189-8199), chỉ được gọi lúc vào game (KPlayer.cpp:1056) nên có ai vào lại mỗi phút (CHƯA KIỂM). Nghi phạm tick xếp hạng: NPC Activate+NormalSync, printf, hook qh_dump.log (A-B.md 18:50). Chưa đo, chưa sửa, chưa nạp. Trạng thái: PARTIAL.
+
+TOM TAT: Gộp SC-001 (XONG-CHO-GOP): cherry-pick 5fa2f2ac, báo cáo cũ BLOCKED vì thiếu 2 file Lua (nay đã có ở DESIGN/QH-B044-deploy). Chưa giao lại tiểu yêu (A đã phân tích chuỗi cấp đồ ở BAN-GIAO #311); giữ failed, chờ Chat/A nói có cần chạy lại.
