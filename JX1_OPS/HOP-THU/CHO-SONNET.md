@@ -73,6 +73,9 @@ Kết luận xong thì báo Chat duyệt (O-01) **trước** B-02 chạy.
 
 ## Đã xử lý
 
+- #359 nhận 21/11 21:02, xử lý 21:05: bỏ cổng tên atest ở qh_bothu.lua (qhbv_menu_book) và itemaowubox.lua trên Test-36, có .bak-moivai, nạp nóng OK (kết quả=4474); chờ chủ thử lại bằng vai chuvuongtestaa
+- #358 nhận 21/11 19:47, xử lý 21:10: KHÔNG chạy thí nghiệm đứng 3+3 phút; B đã đo tick cao cả khi Online=0, không client (A-B.md) nên giả thuyết người chơi gây tick không còn đúng
+
 - #357 nhận 21/11 19:18, xử lý 19:32: viết 5 dòng Tailscale vào BAO-CAO-CHU, báo B trong A-B (100.95.186.86:56722/51189), tắt atestqhhai; chưa tự đo FPS/ping vc36 trên LD
 
 - #350-#356 nhận 21/11 17:40-18:58, xử lý 19:10: A: UI Cường hóa vc36 làm lại, ảnh a,b,c,f chụp; d,e và thông báo trong panel còn thiếu (xem TU-SONNET); APK vc36 giao chủ (Q-81, lệnh chủ #356); #351 mật khẩu atest dùng nội bộ không lộ; #353 thu hồi; #355 xong 19:00
@@ -2522,14 +2525,3 @@ Chu 16:42: ban, khong test duoc; COI CUONG HOA DA ON; A lam den UI cuong hoa; Ch
 
 ## #349 Chat 16:55 — A: AN CUA SO LDPLAYER NGAY (viec nho, xen truoc UI)
 SO TAY LIEN QUAN: STATE/QUY-TRINH-TAT-BAT-MAY.md, TOOLS/ld_canh_cua_so.py (khong phai phan game). Chu: "khoi dong LD tren may ta lai quen an xuong roi". Luat chu: an cua so LDPlayer ngay (thu nho, khong dong, khong dong vao tien trinh). A: chay `pythonw -I TOOLS/ld_canh_cua_so.py` (co `--once` de kiem 1 lan; chua thu voi LD that) NGAY; kiem LD da thu nho; dua viec an LD vao buoc /tiep-tuc de lan khoi dong sau tu an. Bao 1 dong ket qua. Roi lam tiep #348.
-
-## #358 Chat 19:47 — A: THI NGHIEM TACH THU PHAM TICK: atestqhhai dung 3 phut map it quai, roi 3 phut o Tuong Duong
-SO TAY LIEN QUAN: HIEU-GAME/07-server-luu-tru/SO-TAY-TICK-GS001.md, HIEU-GAME/04-quai-npc-ban-do/. Ghi "DA DOC SO TAY".
-B do duoc (A-B.md 19:42): 1 nguoi online lam tick tang ~300 lan, LIEN TUC (avg 98-154ms, SvrFPS 16-17/18); thoat -> 0,3ms ngay. Chua biet thu pham (NPC/vung quanh nguoi, hook qh_dump, script loi).
-Viec A (khong sua code): 1) Truoc khi lam, doc BAO-CAO-CHU/A-B.md xem chu co dang choi khong (chu vao thi NHUONG, khong dang nhap song song). 2) Neu chu khong online: dang nhap atestqhhai, dua nhan vat toi map IT QUAI, KHONG mang do phi phong, dung yen 3 phut; ghi A-B.md "A->B hh:mm: dung o map X tu hh:mm". 3) Roi chuyen toi Tuong Duong dung yen 3 phut, ghi tuong tu. 4) Ghi "het do". B doc tick tung phut. 5) Sau do ve lai UI cuong hoa (d, e chua chup + thong bao ket qua).
-
-## #359 Chat 20:22 — A: LOI MENU "SACH HO TRO CUONG HOA" (Test-36): AN KHONG HIEN BANG TIEP, NUT HO TRO KHONG CHAY
-SO TAY LIEN QUAN: HIEU-GAME/08-giao-dien/CO-CHE-MENU-LUA.md, SO-TAY-GIAO-DIEN.md. Ghi "DA DOC SO TAY".
-Chu bao (vc36, tk chuvuong, vai chuvuongtestaa): mo quyen sach "ho tro cuong hoa" (Test-36), an vao muc nao cung KHONG hien bang tiep theo; nut "ho tro cuong hoa/ho tro thu nghiem" trong sach hinh nhu khong hoat dong. Chu phai dung ho tro thu nghiem + lenh bai GM de nhan tien/do roi len Ky Tran Cac mua thuy tinh de test cuong hoa => menu nap tien/do tu sach khong dung duoc.
-Nghi van: A da them 4 muc thuy tinh/bac vao menu CHI cho atest (#350 muc 4, .bak-menu, "chi ten atest") nen vai chuvuongtestaa khong co/khong chay; hoac menu Lua nong nap lai that bai; hoac bang tiep theo thieu Lua/tep menu cho vai khac.
-Viec A: (1) tai hien tren LD bang vai KHAC atest (hoac xem Lua menu theo ten vai); (2) sua de menu ho tro cuong hoa (nap tien, thuy tinh 238/239/240, mo cua so cuong hoa) chay cho MOI vai test tren Test-36 (khong chi atest), ghi ro file da sua + ban sao .bak; (3) bao ket qua + nho "tam" menu Phi phong/GM la test hook can go truoc khi len server that. Khong dung server ngoai Test-36.
