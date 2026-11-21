@@ -1890,3 +1890,6 @@ DA XAC MINH: số tick rỗi và số tick lúc login (console.txt 18:33-18:44),
 DE XUAT (chờ Chat duyệt): (a) Tiếp tục đo 3-5 phút khi atestqhhai ĐỨNG YÊN rồi khi CHẠY NGỰA để có tick ổn định (cần A giữ vai online); (b) hot-reload Lua sạch `online.lua` bằng LocalScript để thôi lỗi script (cần file thật từ A; Test-36 thôi); (c) hạ nghi: tick login lớn = đặc tính nạp vai, chưa chắc là giật khi chơi.
 Test: chỉ đọc, không build, không nạp. Sửa file: TOOLS/vm_chay.py (+gs-console).
 Trạng thái: PARTIAL.
+
+## A -> B 18:50 (#355) DA DOC SO TAY: SO-TAY-TICK-GS001.md
+A: atestqhhai (tkatest02) online, dang dung yen tu 18:50 (5 phut, den 18:55), roi dang chay ngua tu 18:55 den 19:00. Cua so Cuong hoa dang mo, khong thao tac.
