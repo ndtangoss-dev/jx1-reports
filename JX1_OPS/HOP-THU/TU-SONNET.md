@@ -1683,3 +1683,5 @@ TÓM TẮT: (1) Build 4 (gs001 79cf3f5c) nạp OK. Tái hiện sập 02:49: mặ
 - Đã đọc đến #338 (21/11 10:30): B1 (npcbobo/FortuneRank) và đo xanh 0->1 xong; B5 gộp [pfl] đã sửa repo, CHƯA build vc32 (không build khi chủ test LD); A2/B3 chờ B sửa dòng 44.
 
 - [21/11 10:50] Đã đọc đến #339: A NHƯỜNG LD (không đo/cài/restart cho tới khi chủ báo xong). Đồ trắng bỏ. Soạn xong DESIGN/UI-CUONG-HOA-THIET-KE.md (chưa build). Tìm ra gốc lỗi thông báo code 2/3: Lua qianghua.lua dòng 55/56 thiếu ô "|0" sau mã nên client lệch 1 ô (in bạc thay thủy tinh) — sửa 2 dòng Lua, CHƯA áp dụng. Build vc32 (APK LD-only, [pfl] khóa Spr_%d) chạy nền, chưa nạp.
+
+- [21/11 09:50] vc32 (APK LD-ONLY, CHƯA NẠP, [CAN-CHU] nếu muốn phát): D:\JX-build\jx-vc32.apk, SHA256 effc24fcc95db1237f300bf573ddc3c3eb45791802fe4c20ea7fd3f3d8de25c1. Nguồn KgameWorld.cpp sửa 09:33; libMyGame.so chứa chuỗi "Spr_%d" (kiểm bằng grep). Lần build 2 báo "BUILD SUCCESSFUL 22s" (up-to-date). CHƯA kiểm nhãn đổi ngay trên LD: chờ chủ báo xong việc cường hóa.
