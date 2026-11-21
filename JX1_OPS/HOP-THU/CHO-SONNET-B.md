@@ -457,7 +457,7 @@ Viec B (doc-chi, KHONG sua code khi chua duoc duyet):
 3. Khi gs001 len du (~21:25) va tick ve ~0,3ms: bao Chat NGAY de chu vao lap kich ban danh boss Tuong Duong; B do tick + so NPC moi phut, ghi A-B.md. Mau ngan xep lai neu tick tang.
 4. Bao nguyen nhan ung vien theo bang chung; de xuat sua (vd bang tra ID thay quet tuyen tinh, hoac giai phong NPC/dan) cho Chat/chu duyet truoc khi ap dung.
 
-## #B-100 Chat 21:30 — B: CHU PHE BINH CACH DIEU TRA — DOC RONG HIEU-GAME + LICH SU LAN SUA GIAT TRUOC, KHONG CHI DOC NGUOC MA
+## #B-100 [ĐÃ XỬ LÝ 22:50 - PARTIAL: tìm ra Enabled=1] Chat 21:30 — B: CHU PHE BINH CACH DIEU TRA — DOC RONG HIEU-GAME + LICH SU LAN SUA GIAT TRUOC, KHONG CHI DOC NGUOC MA
 Chu noi (nguyen y): "neu ham goi NPC qua nhieu thi tai sao di chuyen cung giat, phai tim hieu ky; B cu nhu dang doc nguoc code ma khong doc HIEU GAME; quan sat rong len; loi nay o phien truoc xu ly rat nhanh." Chat dong y: SearchID 92% la TRIEU CHUNG o 1 diem, chua giai thich (a) vi sao DI CHUYEN cung giat, (b) vi sao KET sau tran danh boss va khong ve binh thuong, (c) lan sua truoc da lam gi.
 SO TAY BAT BUOC doc truoc (ghi "DA DOC SO TAY"): HIEU-GAME/06-mang-goi-tin/SO-TAY-VONG-LAP-SERVER.md, SO-TAY-GOI-TIN.md; 07-server-luu-tru/SO-TAY-TICK-GS001.md, SO-TAY-GIAT-NGUA-CLIENT.md; 04-quai-npc-ban-do/SO-TAY-AI-QUAI.md, SO-TAY-QUAI-NPC-BAN-DO.md; 03-ky-nang-chien-dau/BAN-DO-DANH-THUONG-LAN-LENH.md, HIEU-TRANG-THAI-CHIEN-DAU.md.
 Viec B:
@@ -526,7 +526,7 @@ Chat doc tin B 22:26. DUYET restart gs001 Test-36 ngay bay gio (chua ai vao):
 2. Khong cho baseline xong moi lam P0: viet/build P0 (bang tra + BroadCast thoat som khi vung khong nguoi + kiem bo loc khong cat nham goi) SONG SONG o D:\JX-wt\SC-006B; nap len gs001 khi build xong va da test.
 3. Doc so tay con lai song song, khong chan P0. Hang doi theo #B-105 (P0>P1>P2>P3).
 
-## #B-107 Chat 21:59 — B: DOC HIEU-GAME LA CONG (GATE) TRUOC KHI SUA MA. Chu hoi B "da doc ky HIEU-GAME chua" va B tra loi CHUA. Chat da lam rot muc nay trong #B-104/#B-105/#B-106 (khong xep vao hang doi, khong kiem tra).
+## #B-107 [ĐÃ XỬ LÝ 22:50 - PARTIAL: tìm ra Enabled=1] Chat 21:59 — B: DOC HIEU-GAME LA CONG (GATE) TRUOC KHI SUA MA. Chu hoi B "da doc ky HIEU-GAME chua" va B tra loi CHUA. Chat da lam rot muc nay trong #B-104/#B-105/#B-106 (khong xep vao hang doi, khong kiem tra).
 THU TU MOI (thay #B-105 phan P0):
 P0-0 (CONG, lam TRUOC khi viet/sua/build bat ky ma nao): doc KY toan bo HIEU-GAME (muc 03, 06, 07 + moi so tay lien quan tick/vong lap/goi tin/giat/quai/vung/tam nhin/NPC), khong chi 5 so tay. Cho phep restart gs001 lay baseline NPC (#B-106) trong luc doc vi chi la do doc.
 Bang chung doc (ghi A-B.md, moi so tay): ten file + 2-3 dong "so tay noi gi lien quan loi nay" + "anh huong den cach sua SearchID/BroadCast/visibility B-02 the nao" + "ĐÃ ĐỌC SỔ TAY: <file>". Phai co: so tay nao noi ve KVisibility/B-02 (co ghi tu truoc khong), vong lap 36Hz cu, cach previous session xu ly giat "trong mot not nhac". Neu so tay khong ton tai/thieu thi ghi "THIEU".

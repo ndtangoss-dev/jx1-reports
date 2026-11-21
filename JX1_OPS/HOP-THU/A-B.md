@@ -2042,3 +2042,15 @@ Hệ quả: tick rỗi 1 ms lúc không ai ở vùng nào (region không active 
 Đề xuất đo (chỉ-đọc, sau khi Chat duyệt restart): đọc NpcSet/ObjSet NGAY khi gs001 lên (chưa ai vào) rồi lại khi có người vào, rồi sau boss ⇒ biết nền hay rò. Sửa (a)/(b) 21:58 vẫn đúng hướng vì SearchID O(N) bất kể nguyên nhân.
 (tin do Sonnet B go, khong phai chu)
 
+
+## B → Chat 22:50 — #B-100 / #B-107 (P0-0): PHAT HIEN KVisibility Enabled=1 TREN TEST-36 (goc cua duong SearchID). RESTART BI CHAN.
+TOM TAT 5 DONG:
+1. Test-36 co C:\JX\ServerNew\_bin_v2_\gs\Settingsisibility.ini = [General] Enabled=1 (sua 19/11 08:16). DA XAC MINH doc truc tiep tren VM.
+2. Ma b11 (KVisibility.cpp:235): DescribeVisibilityPacket thoat som neu !enabled, nen duong BroadCast->Describe->SearchID (92% thread) CHI CHAY KHI Enabled=1. Mac dinh ma la Enabled=0 (KVisibility.cpp:135; BAN-DO-QUAI-HIEN-THI.md:51,57).
+3. Ban goc src18 (tuc ban 18/36Hz on dinh truoc) KHONG co KVisibility.cpp/.h (BAN-DO-QUAI-HIEN-THI.md:58): server cu khong co duong nay => Phase 48 tick <1ms la hop ly.
+4. => De xuat nho nhat, hoan tac duoc: dat Enabled=0 (sao luu .bak) + restart gs001 va do lai (la muc (c) #B-104, nhung day co the la CAU TRA LOI (a)(b)(c) cua #B-100). Sau do moi sua SearchID/BroadCast neu van can bo loc B-02.
+5. Restart gs001 (#B-106 duyet): thuoc ha chay Stop-Process + JX-ChainUp thi bo phan loai quyen cua Claude Code CHAN lenh. Thuoc ha KHONG lach. gs001 van dang ket nhu cu. Can chu/Chat cho phep lenh nay (hoac chu tu chay).
+DA XAC MINH: visibility.ini Enabled=1 tren VM; ma b11 Describe return khi !enabled (dong 235); Enabled mac dinh 0; src18 khong co KVisibility; Established :51189 duy nhat = 192.168.56.101 (Relay noi bo), khong co nguoi choi.
+CHUA XAC MINH: tai sao Enabled=1 duoc bat (ai/ly do, co lien quan bot/VT-Bot khong); Enabled=0 co het ket sau boss khong; gs001 cfg LogicFps/[fix36] (chua doc, lenh doc cfg tra rong); baseline NPC sau restart; goi tin (#B-102) chua do.
+DA DOC SO TAY them: 04/BAN-DO-QUAI-HIEN-THI.md (noi ve B-02/KVisibility). Con THIEU: BAN-DO-DANH-THUONG-LAN-LENH, HIEU-TRANG-THAI-CHIEN-DAU, phan con lai AI-QUAI/QUAI-NPC-BAN-DO. Chua sua ma nao.
+Trang thai: PARTIAL. Buoc tiep: Chat cho phep restart (hoac lenh doi Enabled=0), sau do thuoc ha do baseline.

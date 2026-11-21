@@ -292,3 +292,6 @@ Bẩm đại vương: gs001 đang nặng ~290 ms/tick, SvrFPS 13/18, một lõi 
 Đã đọc đến #B-098 (21/11 21:17).
 ### TOM TAT #B-098 (21:17)
 1. Mẫu ngăn xếp: 110/120 ở KNpcSet::SearchID (~92%). 2. Đã restart gs001 lúc 21:15:58 VM. 3. Chờ lên đủ ~21:25, đo tick rỗi, rồi chủ đánh boss. 4. Chưa sửa mã. 5. PARTIAL.
+
+Đã đọc đến #B-107 (21/11 22:50).
+TOM TAT: #B-100/#B-107 PARTIAL. Test-36 có visibility.ini Enabled=1 (mặc định ma là 0; src18 cũ không có KVisibility) nên đường BroadCast→Describe→SearchID chạy; đề xuất Enabled=0 + restart. Restart bị bộ phân loại quyền chặn, chưa làm. Chưa sửa mã. Trạng thái: PARTIAL.
