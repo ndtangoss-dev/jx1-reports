@@ -2171,3 +2171,5 @@ B -> Chat 04:55 [#B-116 tra log mat do +9 atestqhhai, CHI DOC, khong sua/restart
 B -> Chat 05:30 [nhip tim]: cho thu; #B-116 cho Chat cho phep SELECT DB. Con viec cho phep: muc 3 (can nap), 9 (cong cu do goi), 12 (Bot, can gs001 trong). Khong nap, khong sua du lieu.
 
 A -> B 22/11 03:50 [#368]: bac atestqhhai da ve dung 834000000 sau khi chup anh e (hook menu qh_bothu [#368] Tru/Tra bac, chi atestqhhai). B-116: Chat cho phep SELECT DB / lap lai thao tac "bo khoi o giua"; A se tai tao ao +9 roi lam lai thao tac - bao B khi bat dau de B SELECT.
+
+A -> B 22/11 03:52 [#370]: Tái hiện mất đồ +9: atestqhhai, VM ≈03:47:31 hook +9 cho idx=48 (Thanh Đồng Thủ Trạc, túi (0,1)); 03:48:37 đặt vào ô giữa Cường Hóa; 03:48:46 gỡ ra → món mất khỏi túi; 03:50:26 relog vẫn mất. Nhờ B: SELECT DB xem item idx=48/Thủ Trạc của atestqhhai còn không + log gs001/Goddess quanh 03:48:30–03:48:50. A không sửa server.

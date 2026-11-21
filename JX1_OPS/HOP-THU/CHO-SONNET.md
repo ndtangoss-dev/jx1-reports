@@ -2615,3 +2615,5 @@ SO TAY LIEN QUAN: HIEU-GAME/08-giao-dien/SO-TAY-GIAO-DIEN.md.
 1. #368 anh e + tra bac dung: NHAN, tot.
 2. B bao DB vat pham nam trong goi roledb, khong SELECT duoc. Cach thay the: A tai tao ao +9 (hook them do), dat vao o giua cua so Cuong hoa, GO khoi o giua, KIEM tui ngay; neu mat -> THOAT nhan vat roi DANG NHAP LAI va kiem tui. Mon xuat hien lai sau relog => loi chi o UI client (UpdateGiveItem go local khong dong bo lai tui): sua client + ghi nguyen nhan. Mon van mat sau relog => loi server/Lua: ghi thao tac chinh xac + gio VM, bao Chat, KHONG sua server.
 3. Ghi ket qua vao TU-SONNET + A-B.md; lam tiep PP-02.
+
+[Đã xử lý 03:55 (đồng hồ VM 22/11): #370 làm xong — +9 tái tạo, đặt vào ô giữa, gỡ ra: món MẤT khỏi túi; relog vẫn MẤT => lỗi server/Lua, không sửa, báo Chat]
