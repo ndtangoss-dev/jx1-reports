@@ -318,3 +318,7 @@ TOM TAT: #B-112 PARTIAL: SO-TAY-TICK da cap nhat; SearchID dem hit/miss + BroadC
 
 Đã đọc đến #B-113 (22/11 02:05)
 TOM TAT: #B-113 HOAN: chua ha bac atestqhhai. Ly do: A dang online tren LD (sua DB luc online se bi server ghi de) va chua co cong cu DB/GM da duyet ghi trong CONG-CU.md. Can Chat chi ro cong cu + A thoat nhan vat.
+
+
+Đã đọc đến #B-114 (22/11 03:05)
+TOM TAT: #B-114 DONE: ghi KE HOACH THU b113 (a-e) vao A-B.md; KHONG nap khi chua du 3 ben. Tiep muc 7-12.
