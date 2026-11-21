@@ -33,3 +33,19 @@ Chờ chủ duyệt: C-02, C-04, C-05; #134; Xưởng JX1; nhân vật thứ 4.
 | S-2 (XONG 21/11, SO-TAY-NHAN-CAP.md) | Nhãn "[cấp N]" trên tooltip trang bị/phi phong lấy từ đâu (client) | HIEU-GAME/01-trang-bi-cuong-hoa/SO-TAY-NHAN-CAP.md |
 | S-3 (XONG 21/11, bảng lệch mục 5) | Glow vũ khí: đối chiếu qh9A vs Client2912 (HIEU-HIEU-UNG-VU-KHI vs HG-03c) | sửa HIEU-HIEU-UNG-VU-KHI.md thêm bảng lệch |
 | S-4 (XONG 21/11) | Mục CHƯA KIỂM/chỉ-đọc-mã của DO-CHAC.md: cường hóa, phi phong, ngựa/giật, boss rơi đồ | cập nhật DO-CHAC.md |
+
+## NẠP LẠI 22/11 00:40 (L24: luôn ≥10 việc; lấy từ bảng tiến độ + LICH-CONG-VIEC.md) — HÀNG ĐỢI CỦA A
+Thứ tự theo lịch (Q-107: cường hóa trước, phi phong sau). Làm từ trên xuống, xong gõ `A Xong` vào khung Chat (L23); dưới 10 việc thì tự báo Chat nạp thêm.
+| # | Mã bảng | Việc | Ghi chú |
+|---|---|---|---|
+| 1 | CH-03 | 4 việc nhỏ UI cường hóa: giữ trang bị ở ô giữa sau cường hóa; chữ thanh tiền chồng icon xu; ảnh e (thiếu bạc); ghi link APK | thư #364 |
+| 2 | CH-03 | Ghi URL tải APK vc37 (Tailscale 8080/8091) + 3 dòng cài đặt vào BAO-CAO-CHU.md, kiểm tải được từ máy chủ | Chat không thấy artifact "Link APK vc37" |
+| 3 | CH-02 | Rebuild vc38 nếu sửa UI; giữ SHA256 | sau #1 |
+| 4 | LG-07 | Đo khung >40 ms trên LD khi đi map 15 phút; xác nhận [fix36] dọn texture đúng trong vc37 | không chạm gs001 lâu |
+| 5 | HG | Retest #359 (sách hỗ trợ cường hóa) bằng vai khác atest; #354 bot/relog tự chạy chưa kiểm | |
+| 6 | HG | Cập nhật sổ tay `HIEU-GAME/08-giao-dien/` với cơ chế cửa sổ cường hóa vc37 (KuiGiveVN/buildQhPanel, banner qua KuiChatList) | công sức cộng dồn (L20.4) |
+| 7 | PP-03 | Kiểm kê menu/hook thử phía client + Lua cần gỡ trước server thật (hotrotanthu, qh_bothu, baowubox, [SC-006]) | đọc tĩnh, ghi danh sách |
+| 8 | PP-02 | CHUẨN BỊ phi phong client (đọc SO-TAY-NHAN-CAP, PaintPifeng KgameWorld.cpp:11189, 11 bộ theo giới); chưa sửa | sau chủ duyệt CH-04 mới sửa |
+| 9 | LG-04 | Chuẩn bị bật jx_netlog/JXPERF ghi thời điểm nhận s2c / gửi c2s (không chạy) | chỉ dùng khi giật quay lại |
+| 10 | FX-01 | Khảo sát nâng cấp hiệu ứng hình ảnh: danh sách hiệu ứng thiếu/xấu, ưu tiên, ước tính (đọc HIEU-HIEU-UNG-VU-KHI) | sau cường hóa/phi phong mới làm |
+| 11 | HG | Ảnh d (thiếu thủy tinh) cập nhật cho vc37; chụp bộ ảnh nghiệm thu cuối a–f + HUD | |

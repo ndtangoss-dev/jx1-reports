@@ -208,3 +208,28 @@ Sonnet lấy việc từ trên xuống, theo phụ thuộc. Khi bắt đầu m�
 | HT-01 | Vá gốc xung đột pull STATE/TONG-QUAN-GHI.md (#221), không còn dấu xung đột trên nhánh | L2 | Sonnet |
 | HT-02 | Cơ chế Tổng quản tự đánh thức Sonnet khi im >10 phút (không tốn Claude), chữa gốc việc tự dừng | L3 | Sonnet |
 | HT-03 | Tìm gốc lỗi dấu tiếng Việt vỡ thành "?" ở client (C05), đề xuất cách chữa | L3 | Codex |
+
+## Nhóm 21–22/11 (cường hóa, lag boss, phi phong, hạ tầng; chủ lệnh 22/11 00:34 vào bảng tiến độ)
+
+| ID | Việc | Cấp | Ai |
+|---|---|---|---|
+| CH-01 | Cường hóa chức năng +1..+15 trên server (thủy tinh, bạc, tỉ lệ, tài phú) | L3 | A+B |
+| CH-02 | Giao diện cường hóa vc37 theo atlas mới (cửa sổ giữ mở, HUD icon, 3 ô thủy tinh) | L3 | A |
+| CH-03 | 4 việc nhỏ UI cường hóa: giữ trang bị ở ô giữa sau khi cường hóa, chữ chồng icon xu, ảnh thiếu bạc, ghi link APK | L3 | A |
+| CH-04 | Chủ test cường hóa vc37 trên điện thoại và duyệt | L3 | Chủ |
+| LG-01 | Tìm gốc giật/lag/quái chết trễ khi đánh boss | L3 | B |
+| LG-02 | Sửa lâu dài SearchID: bảng tra dwID→index + Describe chỉ khi cần (để bật lại lọc Bot) | L3 | B |
+| LG-03 | Đo tick và băng thông B-02 trước/sau (việc B-04 bị bỏ sót) | L3 | B |
+| LG-04 | Đo gói tin đường truyền client↔server (độ trễ lệnh→phản hồi, gap, setpos) | L3 | B+A |
+| LG-05 | 36 Hz + đạn mịn hơn (Q-105) | L3 | B |
+| LG-06 | Cảnh báo Obj pool 29466/30000 (còn 534 chỗ): đo thành phần, ngưỡng an toàn | L3 | B |
+| LG-07 | Đo khung >40 ms trên LD khi đi map; kiểm [fix36] dọn texture trong vc37 | L3 | A |
+| PP-01 | Phi phong server (SC-006): 11 bộ theo giới, tự tháo khi tụt tài phú, nạp bản đúng và đo | L3 | B |
+| PP-02 | Phi phong client: tên cạnh nhân vật (PaintPifeng), nhãn [cấp N], chữ lỗi mojibake, tooltip | L3 | A |
+| PP-03 | Gỡ menu thử trước server thật: Phi phong/GM/[SC-006], [TEST-A] online.lua, hook qh_dump | L3 | A+B |
+| HT-04 | Luật L20–L24 và quy trình lập kế hoạch ba bên (LICH-CONG-VIEC) | L3 | Chat |
+| HT-05 | Bảng tiến độ artifact: dựng lại, cập nhật mỗi giờ, hàng đợi ≥10 việc nạp từ bảng | L3 | Chat |
+| HT-06 | B đọc hiểu game đủ (khối HIỂU GAME) theo LUAT-RIENG-B | L3 | B |
+| HT-07 | Đo màn hình giữ sáng: chủ chạy do_man_hinh.ps1 15 phút, B đọc CSV | L3 | Chủ+B |
+| VPS-01 | Kế hoạch VPS riêng + BOT chạy dài (cấu hình, chi phí) | L3 | Chat |
+| FX-01 | Nâng cấp hiệu ứng hình ảnh | L3 | A |

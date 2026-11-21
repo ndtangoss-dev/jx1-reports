@@ -11,3 +11,20 @@ Luật: B không chờ thư Chat (L15). Hết việc đang làm thì lấy việ
 | 6 | LD | Bộ canh cửa sổ LD: thử qua khởi động lại máy, tìm gốc rễ vì sao cửa sổ bật lên | `JX-LDCanh` |
 | 7 | BOT-GD1 | Bảng giá mẫu 8 dòng chờ chủ duyệt; nhắc chủ nếu chưa trả lời | Q-62 |
 | 8 | TIEUYEU | Tạo việc cho đám tiểu yêu (đang 0 con chạy): mã Bot, công cụ tài khoản, tài liệu tester | `TASKS/*.md`, owner: B |
+
+## NẠP LẠI 22/11 00:40 (L24: luôn ≥10 việc; lấy từ bảng tiến độ + LICH-CONG-VIEC.md) — HÀNG ĐỢI CỦA B
+Thứ tự: P0 → P3. Làm từ trên xuống, xong gõ `B Xong` vào khung Chat (L23). Việc 1–8 ở LICH-CONG-VIEC giai đoạn 1 không chạm gs001.
+| # | Mã bảng | Việc | Ghi chú |
+|---|---|---|---|
+| 1 | HT-06 | Đọc nốt sổ tay còn thiếu (AI quái, QUAI-NPC-BAN-DO, BAN-DO-DANH-THUONG-LAN-LENH, S3RELAY, FIX_HISTORY 45–48, SC-004, Q-80/82), bổ sung khối HIỂU GAME | cổng LUAT-RIENG-B |
+| 2 | LG-02 | Bảng tra dwID→index trong KNpcSet::SearchID + Describe chỉ khi vùng cần, trong SC-006B, build thử, KHÔNG nạp | P2 cũ, nay làm sớm |
+| 3 | LG-03 | Đo tick/băng thông B-02 trước/sau (việc B-04 bị bỏ sót) bằng test đơn vị hoặc VM không người | sau #2 |
+| 4 | LG-06 | Đo Obj pool 29466/30000: thành phần, ngưỡng an toàn khi thêm quái/vật phẩm | chỉ đọc |
+| 5 | HG | Cập nhật `HIEU-GAME/07-server-luu-tru/SO-TAY-TICK-GS001.md` với bài học visibility.ini Enabled=1 / SearchID O(N) | cộng dồn (L20.4) |
+| 6 | S-1 | Lỗi `online.lua` mỗi phút + hook `[TEST-A]` (vòng tick gs001) | sổ tay 07/06 |
+| 7 | PP-01 | CHUẨN BỊ phi phong server SC-006: đọc diff build b5 → hiện tại, 11 bộ theo giới (mantle.txt/GoldItem), kế hoạch nạp + đo | chưa nạp; chờ chủ duyệt CH-04 |
+| 8 | LG-05 | Kế hoạch 36 Hz + đạn mịn hơn (Q-105) bằng đọc mã/nhánh T4; chưa làm | hoãn |
+| 9 | LG-04 | Chuẩn bị công cụ đo gói tin ở forwarder (không chạy) | chỉ khi giật quay lại |
+| 10 | PP-03 | Kiểm kê menu/hook thử phía server cần gỡ trước server thật (menu Phi phong/GM, [TEST-A], qh_dump.log) | đọc tĩnh |
+| 11 | TIEUYEU | Việc cho tiểu yêu: so 36 Hz cũ vs b11; SearchID callers còn lại | Tổng quản giao |
+| 12 | E-01 | Bot client Python không giao diện vào gs001 Test-36 (khi gs001 trống) | việc cũ |
