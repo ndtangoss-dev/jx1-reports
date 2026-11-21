@@ -8,3 +8,8 @@
 - Cột mới cuối file: `ten_unicode` (TCVN3 → Unicode bằng `TOOLS/bot_tcvn3.py`, chạy: `python -I TOOLS/bot_tcvn3.py <vào> <ra>`).
 - 17 dòng tên rác (ví dụ `ặặắẫàÄÅỷãỗ`, `Â¿ÃÃÃÃ`) là tên GBK/ký tự lạ, không phải TCVN3: để nguyên, bot không bán theo tên mà theo `ma_mon`.
 - Vài tên gốc trong game có thể gõ sai chính tả (ví dụ "Trãm Mã Kiếm"): giữ nguyên như game.
+
+## Sửa (B, 21/11): hệ số bán lại THẬT là 1/4, không phải 0,5
+- ĐÃ ĐỌC SỔ TAY: HIEU-GAME/05-nhiem-vu-kinh-te/SO-TAY-CUA-HANG.md (mục 4, "Bán vật phẩm lại cho NPC"): server bán lại = `GetPrice() / 4` chia nguyên, tối thiểu 1 (S/KBuySell.cpp:621-630, S/KBuySell.h:4 `BUY_SELL_SCALE`), đồ khóa/ràng buộc (`GetIsBang`) bị từ chối. [THẤY trong mã, CHƯA ĐO trong game]
+- Cột `he_so_ban` đổi 0,5 → 0,25; `gia_san_mac_ca` = max(1, gia_goc/4) (đúng số tiền NPC trả cho món đó). Bản trước lưu ở git history.
+- Chưa rõ: bán cả chồng đồ có nhân số lượng không (sổ tay ghi CHƯA KIỂM); `GetPrice()` có thể khác cột "Giá" của bảng nếu đồ có dòng ma thuật. Bot chỉ dùng giá sàn này làm mốc, không phải số tuyệt đối.
