@@ -1,7 +1,7 @@
 ---
 id: XD-UI01
 title: Tìm tài nguyên hình ảnh UI Cường hóa trang bị trong PAK/spr gốc (chỉ đọc)
-status: ready
+status: running
 level: L1
 agent: codex
 loai: tra-cuu
@@ -16,6 +16,7 @@ timeout_s: 1500
 priority: 1
 budget_usd: 5
 updated: 2026-11-21
+status_note: "Tong quan giao bang JX-K4"
 ---
 ## Mục tiêu
 CHỈ ĐỌC. Đọc trước HIEU-GAME/08-giao-dien/SO-TAY-TAI-NGUYEN-CLIENT.md và SO-TAY-GIAO-DIEN.md; ảnh chuẩn DESIGN/UI-CUONG-HOA/chuan-1/2/3.jpg (+MO-TA.md). Trong client gốc (bản copy D:\Android\b\Client, Resources/ + PAK/spr ui), tìm các tài nguyên cho cửa sổ "Cường hóa trang bị": khung hình thoi (ô), ô giữa "Trang Bị", mũi tên (xuống/ngang), nền cửa sổ + tiêu đề, dải gợi ý (khung bo tròn), nút "Cường hóa", ô lưới túi + thanh tiền (vàng/bạc), khung ô nguyên liệu. Mỗi mục: đường dẫn trong PAK, tên/ID spr/frame, kích thước, cách nạp (hàm, file ini/ui). Không chế lại, không sửa. Chưa thấy thì ghi "KHÔNG TÌM THẤY" + gợi ý tài nguyên gần nhất.
