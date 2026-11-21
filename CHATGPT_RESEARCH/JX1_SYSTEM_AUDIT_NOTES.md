@@ -773,3 +773,89 @@ Chỉ đọc nhánh jx1-ops, so sánh commit/file và đọc các task/report/h�
 ### 15.6 Giới hạn thao tác
 
 Chỉ đọc nhánh jx1-ops và ghi bổ sung sổ nghiên cứu trên nhánh chatgpt-research/jx1-system-audit-2026-11-20. Không ghi/sửa/tạo task, không dispatch worker, không can thiệp worktree, queue, lock, cấu hình, hook, build hoặc runtime. Không ghi bất kỳ nội dung nào lên jx1-ops.
+
+
+## 16. Kết luận kiểm toán tổng thể và kế hoạch nâng cấp — 2026-11-21 07:07 (Asia/Ho_Chi_Minh)
+
+### 16.1 Chốt bằng chứng
+
+- Snapshot A-B.md mới nhất có B → A build 9 lúc 07:05. B báo build 5/5 exit 0; chưa có bằng chứng A nạp hoặc runtime retest. A-B.md chưa có kết quả runtime sau build 8.
+- SONNET-SONG.md ghi A hoạt động 07:07:25, B 06:58:50; đây chỉ là heartbeat/session activity. TIEU-YEU.md 07:07 ghi SC-006 XONG-CHO-GOP nhưng dấu hiệu sống cuối 00:22; TASKS/SC-006.md vẫn RUNNING. Không dùng các trạng thái/timestamp để kết luận build 9 đã chạy.
+- SC-006 build 8 runtime FAIL: phi phong cấp 11 GoldId 3475 (ngưỡng 15.000) vẫn được mặc khi panel tài phú 3.100; log have=18.300, build8 own=0. Build9 duyệt trực tiếp ô trang bị 0..9, bỏ ô phi phong và chặn tại Equip; đây mới là mô tả sửa + build PASS, chưa phải runtime PASS. Gốc chênh lệch 15.200 chưa giải thích.
+- UI cường hóa: H-05 DONE chỉ là khảo sát tĩnh; báo cáo ghi 0/11 ca chạy. vc31 là mốc cũ, chưa đủ layout Q-91.
+- Lag/giật: SC-004 bị hủy theo Q-103; không có benchmark trước/sau cùng điều kiện.
+- Quái/đạn xuyên quái/kill credit: H-15/E-08 mới khảo sát; không có runtime gameplay test mới. E-05b 18/18 TESTER và 41/41 BOT là fixture loopback; verify_kill, tạo nhân vật và persistence bị bỏ qua.
+- SC-002 vẫn PARTIAL. Số đo server-side t28/t29 cũ chỉ đúng trong ca thử cụ thể, chưa xác nhận combat damage, né tránh, tooltip/client và toàn bộ cấp +N.
+- Không hạng mục nào trong sáu nhóm UI, lag, quái, phi phong, thuộc tính/tài phú và E2E đủ chuỗi bằng chứng để kết luận ACCEPTED cuối.
+
+### 16.2 Bài học rút ra
+
+1. Hệ thống hiện theo dõi hoạt động tốt hơn quản lý kết quả đầu-cuối. Task, heartbeat, hộp thư, snapshot worker và dashboard có trạng thái khác nhau, chưa nối bằng event ledger và acceptance gate.
+2. Build xanh không có nghĩa tính năng đúng. Build6/7/8 được báo 5/5 nhưng runtime phi phong vẫn FAIL; build9 chỉ là build PASS chờ runtime.
+3. Không có artifact provenance thì không thể review độc lập. Source commit local và binary SHA được báo nhưng mã không có trên jx1-ops; thiếu manifest nối source SHA → build config → binary SHA → runtime log.
+4. Phải phân loại VERIFIED / PROBABLE / UNKNOWN / DISPROVED. K11 mặc được ở panel 3100 là VERIFIED; have=18300 do điểm phi phong là PROBABLE theo số đo; nguyên nhân gốc 15.200 và call path bypass gate còn UNKNOWN; build9 đã sửa là NOT VERIFIED.
+5. Test phải phản ánh đường sử dụng thật. SetTestWealth, fixture loopback và mock giúp cô lập logic nhưng không thay thế client → protocol → server → DB → relogin. Test hook chỉ tồn tại trong Test-36 và phải có bước loại bỏ/xác nhận không có trong artifact phát hành.
+6. Người sửa không thể tự thay vai trò runtime QA. B/Codex phân tích và build; A nạp đúng artifact; PM kiểm tra bằng chứng; Chat quyết định ACCEPTED.
+7. Scope và dependency là cổng chất lượng. SC-006 có thay đổi được báo cáo ngoài vung_file (KPlayer.cpp, Engine/Src/KSG_StringProcess.cpp); SC-006 phụ thuộc SC-002 vẫn PARTIAL.
+8. Task quá rộng và đóng trạng thái sớm tạo nợ điều phối. XONG-CHO-GOP không phải ACCEPTED; parent không thể đóng khi child còn mở.
+9. Không thêm dispatcher thứ ba. Trước hết chọn một dispatcher hiện hữu làm nguồn chạy duy nhất và kiểm chứng nó.
+
+### 16.3 Kiến trúc nâng cấp: Control Plane V2
+
+Nguyên tắc: một nguồn sự thật, một dispatcher production, nhiều worker chuyên trách; mọi kết luận phải gắn với artifact và bằng chứng.
+
+- Chat Command Center: chốt mục tiêu/ưu tiên, scope, blocker, ngoại lệ và nghiệm thu cuối.
+- Sonnet PM duy nhất: phân rã Epic thành defect/task nhỏ; quản lý dependency, assignment, acceptance criteria và state drift.
+- Codex/worker: sửa đúng allowlist, commit source diff reviewable, build, xuất manifest; không tự mở rộng vung_file.
+- Sonnet B/reviewer: review diff, thiết kế và manifest; không thay A làm runtime acceptance.
+- Sonnet A/runtime QA: nạp đúng binary SHA đã review, chạy test matrix Test-36/LD, lưu log/ảnh/dump và báo PASS/FAIL/INCONCLUSIVE.
+- Monitor độc lập: phát hiện stale worker, task-state drift, thiếu artifact, thiếu retest; không tự sửa source hoặc quyền.
+
+Dữ liệu tối thiểu:
+- EVENTS.jsonl append-only với các event ASSIGNED, STARTED, PREFLIGHT_BLOCKED, SOURCE_COMMITTED, REVIEW_PASS/FAIL, BUILD_PASS/FAIL, DEPLOYED_TEST, RUNTIME_PASS/FAIL, NEEDS_RETEST, ACCEPTED, REOPENED.
+- CURRENT_STATE.json được sinh từ events; không cho worker sửa tùy ý.
+- Mỗi defect lưu ID/parent, repro, expected/actual, môi trường, source base SHA, allowlist, source commit SHA, review verdict, build config, binary SHA256, deploy record, runtime evidence, tester và acceptance owner.
+- Task status chỉ là projection cho giao diện; heartbeat chỉ là telemetry.
+
+State machine bắt buộc:
+NEW → ASSIGNED → STARTED → PREFLIGHT_OK → CODED → REVIEWED → BUILT → DEPLOYED_TEST → RUNTIME_PASS → ACCEPTED.
+Nhánh lỗi: BLOCKED, BUILD_FAIL, RUNTIME_FAIL, NEEDS_RETEST, REOPENED. Không nhảy từ BUILT sang ACCEPTED.
+
+### 16.4 Lộ trình nâng cấp
+
+**P0 — độ đúng đắn trước tốc độ**
+1. Chuẩn hóa DONE (worker xong phần được giao), MERGED (đã gộp), ACCEPTED (đã kiểm thử và nghiệm thu). XONG-CHO-GOP không được hiển thị như hoàn thành.
+2. Preflight: source path tồn tại; worktree đúng base SHA; clean/dirty được khai báo; dependency ACCEPTED; lock hợp lệ; fixture/quyền runtime rõ; allowlist đúng. Thiếu nguồn/dependency → BLOCKED, không READY.
+3. Mọi source change phải có branch/commit reviewable. Build manifest ghi source SHA, toolchain/config, binary SHA256 và artifact path. Thiếu diff/manifest → không qua REVIEWED/BUILT.
+4. A phải retest đúng binary SHA sau mỗi build candidate; runtime FAIL tự REOPENED/NEEDS_RETEST.
+5. Tách fixture, integration, E2E và regression; báo rõ test skipped, không suy rộng kết quả.
+
+**P1 — đồng bộ và đóng vòng**
+6. Chọn một dispatcher duy nhất. Audit tong_quan.py hoặc kiểm chứng Dispatcher P1b trong fake-worker sandbox; không chạy hai dispatcher production song song.
+7. Dùng event ledger append-only và CURRENT_STATE projection; dashboard lấy trạng thái từ events, không suy từ heartbeat/frontmatter.
+8. Monitor độc lập mỗi 2–3 phút; delta report khoảng 10 phút hoặc khi có lỗi trọng yếu. Cảnh báo worker stale, task không đổi artifact, build mới thiếu runtime retest, dependency chưa ACCEPTED, source SHA không khớp manifest.
+9. Parent Epic chỉ đóng khi mọi child ACCEPTED hoặc chủ loại khỏi scope có lý do.
+
+**P2 — throughput có kiểm soát**
+10. Chia việc thành đơn vị 5–10 phút với đầu ra rõ; nhóm thay đổi phụ thuộc chung trong Epic nhưng không giao lệnh quá rộng.
+11. Chỉ chạy song song task độc lập, worktree riêng, allowlist không chồng, dependency đạt và lock được kiểm tra.
+12. Fixture nhanh để feedback sớm, sau đó test tích hợp/E2E đúng cổng; chỉ build lại khi source/config đổi; không lặp kiểm tra đã có artifact chứng minh.
+13. Đo queue wait, preflight, coding, review, build, deploy, runtime retest, rework, token/cost; theo dõi first-pass yield, tỷ lệ thiếu source, thời gian FAIL→retest và số lần reopen.
+
+**P3 — tự cải thiện có kiểm soát**
+14. Sau mỗi 3 defect hoặc incident lớn, PM đề xuất cải tiến dựa trên dữ liệu.
+15. Dry-run trên research branch/fake-worker, so sánh trước-sau; chỉ promote sau khi owner phê duyệt.
+16. AI không tự sửa quyền, hook, dispatcher production, branch protection hoặc luật nghiệm thu. AI đề xuất/kiểm tra/mô phỏng; chủ phê duyệt thay đổi production.
+
+### 16.5 Ưu tiên sản phẩm sau khi có gate
+
+1. SC-006: A kiểm build9 đúng SHA trên Test-36; k11 ở 3100 phải bị từ chối, ở 15000 được mặc, hạ tài phú thì tự tháo; kiểm log, túi đầy, relogin và không cộng dồn. FAIL thì giữ defect mở và truy đúng call path.
+2. SC-002: chốt loại thuộc tính/công thức; A kiểm sát thương và né tránh thật, tooltip, relogin; đồng bộ source/report.
+3. UI cường hóa: hoàn thiện Q-91 (5 ô, mũi tên, khóa Bùa/Phù, tỷ lệ/chi phí/thông báo), chạy 11 ca đề xuất và test client.
+4. Lag/giật: dựng baseline cùng máy/map/tuyến/số người-bot/thời lượng; đo CPU/RAM, tick p50/p95/p99, frame time và network gap; chỉ nhận fix khi so cùng điều kiện.
+5. Quái: test đạn xuyên quái, spawn/late appearance, hurt/death, killer attribution trên gs001 thật; xác nhận kill credit.
+6. E2E: tạo nhân vật → nhận vật phẩm → cường hóa → combat → kill credit → logout/login → persistence; ghi PASS/FAIL/SKIPPED từng bước.
+
+### 16.6 Phạm vi
+
+Đây là kết luận kiểm toán và đề xuất, không phải lệnh thực thi. Chỉ đọc jx1-ops; không ghi/sửa/tạo task, dispatch worker hoặc can thiệp worktree, queue, lock, cấu hình, hook, build hay runtime. Chỉ cập nhật sổ nghiên cứu trên chatgpt-research/jx1-system-audit-2026-11-20. Chưa có thay đổi production; Control Plane V2 cần được duyệt và dry-run trước khi xem xét áp dụng.
