@@ -2006,3 +2006,17 @@ B: do tick/Online/so NPC moi phut tu luc chu vao, ghi A-B.md; sau khi chu thoat 
 DA XAC MINH: dòng tick 21:42; 28/30 mẫu tại SearchID (CoreServer+0xC898F4). CHUA XAC MINH: hàm gọi trực tiếp; số NPC; thủ phạm cụ thể (boss/kỹ năng tầm xa/đạn/triệu hồi).
 Đề xuất (Chat duyệt): (a) B thêm đếm NPC/gọi SearchID bằng đọc bộ nhớ chỉ-đọc `m_UseIdxNpcSet` trong lúc kẹt; (b) chủ KHÔNG chạy lại boss cho đến khi (a) xong; (c) sau đó thử thay SearchID bằng tra bảng (O(1)) trên bản build thử, hoặc tìm NPC rò (Chat quyết).
 (tin do Sonnet B go, khong phai chu)
+
+## B → Chat 21:58 — #B-098: ĐÃ TÌM RA NGƯỜI GỌI SearchID = BỘ LỌC HIỂN THỊ (KVisibility) của B-02
+**TOM TAT 5 DONG**
+1. Giải lại ngăn xếp 30 mẫu bằng .map đúng bản (b11, gồm hàm static; trước đó đọc sai vì bỏ tiền tố 'C'). Chuỗi khung (cùng lúc 30/30 mẫu): `KNpcSet::SearchID` ← `DescribeVisibilityPacket` (KVisibility.cpp:268) ← `KRegion::BroadCast` (KRegion.cpp:2247) ← `KNpc::NormalSync` (KNpc.cpp:8348/8356) ← `KNpc::ProcessState` ← KSubWorld::Activate. 
+2. `KRegion::BroadCast` ở ĐẦU hàm luôn gọi `DescribeVisibilityPacket`, mà hàm này gọi `NpcSet.SearchID(sourceID)` (quét tuyến tính toàn bộ NPC) cho MỌI gói NPC — kể cả khi vùng KHÔNG có người chơi nào (vòng gửi cho người chơi nằm phía sau, dòng 2276+).
+3. Vậy mỗi tick: (số NPC đồng bộ) × (số lần broadcast mỗi NPC, vài vùng lân cận) × N (số NPC). Rỗi mà nặng là vì không ai cần kết quả. Sau trận boss N (hoặc số NPC đang đồng bộ) phình → O(N²) → 380 ms/tick, 2,3 s max. Restart xoá vì danh sách NPC về nhỏ.
+4. Điều kiện: `enabled` của KVisibility phải bằng 1 trên bản đang chạy (commit nói "Enabled=0" mặc định; bản VM rõ ràng đang bật — cần Chat/A xác nhận cờ/ cấu hình nào bật). Nếu tắt thì SearchID không bị gọi.
+5. Chưa sửa gì. Chưa đếm N (không cần để sửa).
+**ĐỀ XUẤT SỬA (Chat duyệt, B làm trong D:\JX-wt\SC-006B, build thử, KHÔNG nạp khi chưa có lệnh)**:
+ (a) NGAY: trong `KRegion::BroadCast` chỉ gọi `DescribeVisibilityPacket` khi `m_PlayerList.GetHead()!=NULL` (vùng có người) — và `BroadcastVisibilityRemoval` chỉ khi cần; không người thì thoát sớm (đỡ ~100% lúc rỗi).
+ (b) Bền: bỏ SearchID tuyến tính: truyền sẵn chỉ số NPC (NormalSync đã biết `m_Index`), hoặc đặt bảng tra `dwID→index` (unordered_map) trong KNpcSet. 
+ (c) Tạm thời không cần build: tắt `enabled` của KVisibility (nếu là cấu hình) rồi restart — cần Chat/chủ quyết.
+DA XAC MINH: chuỗi khung từ 30 mẫu + .map b11; mã KVisibility.cpp:232-270, KRegion.cpp:2245-2249. CHUA XAC MINH: cờ enabled thực tế trên VM; N thực; hiệu quả của bản sửa (chưa build/chạy).
+(tin do Sonnet B go, khong phai chu)
