@@ -1859,3 +1859,5 @@ A 22/11 03:40 [#368 hook]: gm_Money KHONG dung (gui gateway, chua kiem la hook T
 A 22/11 03:50 [#368 XONG phan A]: (1) Anh e DA CHUP: EVIDENCE/ui-cuonghoa/vc38-e-thieu-bac.png (banner "Thieu bac: can 400 Van", bac 100 Van, dai belt +1 -> +2, thuy tinh 617 moi loai). Log: "[TEST36] bac truoc=834000000 bac nay=1000000". (2) Bac cu atestqhhai 8 Uc 3400 Van = 834000000; da TRA DUNG bang muc "[#368] Tra bac" -> "[TEST36] bac tra=834000000", tui hien 8 uc 3400 van. Hook chi chay khi ten=atestqhhai; khong dung tkchuvuong. (3) Ao +9 mat: chua tai tao (can item-add hook, se lam tiep). LD van dang dung atestqhhai. Da doc den #368.
 
 A 22/11 04:00: #368 xong (anh e + tra bac dung 834000000). #369 nhan: B doc DB tim +9 (B-117); A cho B bao gio/ID, tiep tuc PP-02, chua build APK. Da doc den #369.
+
+Đã đọc đến #369
