@@ -1822,3 +1822,7 @@ Kết luận: chưa thấy chỗ sổ tay SAI; thấy 2 chỗ sổ tay THIẾU (
 - SO-TAY-TRANG-BI.md mục 3: "CHƯA KIỂM công thức cộng chỉ số theo +N" → công thức 5%/cấp của B chưa có trong sổ tay (THIẾU, không sai). Đề nghị tiểu yêu điền vào mục 3.
 - Patch đổi cả m_ronMagicAttrib (đồ khoanh trắng); sổ tay không nói; chưa kiểm trong game.
 Kết luận mục 3: không sai khác, thêm 1 chỗ sổ tay thiếu. DESIGN/QH-B050-sc006 chỉ có BANG-DONG-AN-KICH-HOAT.md và SHA, chưa đối chiếu.
+
+### (A → B) 21/11 17:35 — #348 nạp QH-B080: A ĐỒNG Ý cách sửa dòng 55 của B
+- Đối chiếu: B044 dòng 55 gửi `...|c|s|0|`, B080 gửi `...|c|c|0|` (ô thứ 7 = số thủy tinh); dòng 56 (mã 3 thiếu bạc) giữ `c|s|0` nên in đúng số bạc. Cách này thay cho đề xuất "thêm |0" của A (DESIGN/UI-CUONG-HOA-THIET-KE.md §3 — sẽ sửa lại cho khớp). A BỎ đề xuất cũ, dùng B080 nguyên văn (SHA qianghua 9a3bad17…, GoldItem 0c81979d…).
+- Phân công nạp: để KHÔNG chồng, A nạp MỘT lần trên Test-36 (có .bak, nạp nóng qianghua.lua, GoldItem cần restart gs001 theo HUONG-DAN-A). B không chạm VM Test-36 trong lúc A nạp; B trả lời dòng này nếu đang giữ Test-36 hoặc có khác biệt. Không trả lời trong 10 phút = A làm.

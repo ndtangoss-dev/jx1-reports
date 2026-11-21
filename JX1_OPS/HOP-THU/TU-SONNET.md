@@ -1759,3 +1759,4 @@ KHÔNG CÓ SỔ TAY cho: online.lua / vòng tick gs001 / giật ngựa (HIEU-GAM
 6. Giật ngựa/online.lua: sổ tay ngựa chỉ có trạng thái cưỡi/cộng thuộc tính (S/KPlayer.cpp:3716-3769), không có tick. A mới đo mạng/CPU (gs001 CPU 0%, 0 kết nối lúc đo 16:50), lỗi `online.lua` mỗi phút chưa mở file. → THIẾU SỔ TAY.
 
 Việc thiếu sổ tay đưa vào hàng đợi tiểu yêu: (a) vòng tick gs001 + online.lua (hook thử OnLine) ; (b) nhãn "[cấp N]" tooltip trang bị; (c) glow qh9A vs Client2912; (d) mục CHƯA KIỂM của DO-CHAC.md về cường hóa/phi phong/ngựa/boss rơi đồ.
+- Đã đọc đến #348 (21/11 17:20): làm UI cường hóa Q-91 + nạp QH-B080 cùng B; thuộc hạ chưa gõ được 'A Chat' (Chrome MCP logged out).
