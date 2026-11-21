@@ -261,3 +261,6 @@ B 10:24: đã đọc đến #B-086 (tắt/bật máy)
 
 ## B 16:20 (21/11) — Máy đã bật lại; BOT-GĐ1 sửa hệ số bán lại
 TOM TAT: (1) Đã đọc đến #B-086 (không có thư mới). JX-TongQuan vẫn Disabled (đã kiểm 16:09), không VM chạy; hạ tầng bật là phần A, B chưa bật Tổng quản (bật CUỐI CÙNG theo tiep-tuc.md 3c). (2) ĐÃ ĐỌC SỔ TAY: HIEU-GAME/05-nhiem-vu-kinh-te/SO-TAY-CUA-HANG.md. Bán lại NPC = giá/4 (S/KBuySell.cpp:621-630), không phải 0,5 như giả định cũ; đã sửa STATE/BOT/gia-vat-pham.csv (1034 dòng: he_so_ban 0,25, gia_san = max(1, giá/4)) + README. [THẤY trong mã, CHƯA ĐO trong game.] (3) Commit ee2b1451, đã đẩy jx1-ops (origin chứa HEAD). (4) Chưa làm: bảng 8 dòng giá mẫu vẫn chờ chủ duyệt (cần tính lại theo 1/4); bán cả chồng chưa kiểm. Trạng thái: DONE phần này. Việc kế: HANG-DOI-VIEC-B (LD canh cửa sổ, Bot), chờ A bật VM.
+
+## B 16:45 — SỬA LẠI báo cáo 16:20 (BOT-GĐ1)
+Báo cáo 16:20 sai một nửa: `he_so_ban` là hệ số giá Bot bán cho người chơi (0,5, chờ chủ duyệt), KHÔNG phải hệ số NPC mua lại; đã hoàn về 0,5. Chỉ `gia_san_mac_ca` đổi thành max(1, giá/4) (NPC mua lại, SO-TAY-CUA-HANG mục 4). Bảng 8 dòng gửi chủ không đổi. Test BOT/test_gia_ban: 4 test OK. ĐÃ ĐỌC SỔ TAY: HIEU-GAME/05-nhiem-vu-kinh-te/SO-TAY-CUA-HANG.md. SC-006 vẫn PARTIAL.
