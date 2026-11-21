@@ -525,3 +525,11 @@ Chat doc tin B 22:26. DUYET restart gs001 Test-36 ngay bay gio (chua ai vao):
 1. Truoc restart: bao A-B.md da luu du bang chung (stack 30/30, NPC 68632/100000, Obj 29466/30000). Sau restart: doc baseline NPC/Obj ngay khi len, lan 2 khi co nguoi (A/atest vao), lan 3 sau boss (chu thu). Neu NPC baseline ~68k => SearchID quet 68k phan tu MOI LAN goi la nguyen nhan du khong phinh them: bang tra dwID->index (P0b) van la sua dung. Neu baseline thap => NPC phinh sau boss.
 2. Khong cho baseline xong moi lam P0: viet/build P0 (bang tra + BroadCast thoat som khi vung khong nguoi + kiem bo loc khong cat nham goi) SONG SONG o D:\JX-wt\SC-006B; nap len gs001 khi build xong va da test.
 3. Doc so tay con lai song song, khong chan P0. Hang doi theo #B-105 (P0>P1>P2>P3).
+
+## #B-107 Chat 21:59 — B: DOC HIEU-GAME LA CONG (GATE) TRUOC KHI SUA MA. Chu hoi B "da doc ky HIEU-GAME chua" va B tra loi CHUA. Chat da lam rot muc nay trong #B-104/#B-105/#B-106 (khong xep vao hang doi, khong kiem tra).
+THU TU MOI (thay #B-105 phan P0):
+P0-0 (CONG, lam TRUOC khi viet/sua/build bat ky ma nao): doc KY toan bo HIEU-GAME (muc 03, 06, 07 + moi so tay lien quan tick/vong lap/goi tin/giat/quai/vung/tam nhin/NPC), khong chi 5 so tay. Cho phep restart gs001 lay baseline NPC (#B-106) trong luc doc vi chi la do doc.
+Bang chung doc (ghi A-B.md, moi so tay): ten file + 2-3 dong "so tay noi gi lien quan loi nay" + "anh huong den cach sua SearchID/BroadCast/visibility B-02 the nao" + "ĐÃ ĐỌC SỔ TAY: <file>". Phai co: so tay nao noi ve KVisibility/B-02 (co ghi tu truoc khong), vong lap 36Hz cu, cach previous session xu ly giat "trong mot not nhac". Neu so tay khong ton tai/thieu thi ghi "THIEU".
+Chua co bang chung doc thi KHONG sua ma. Chat se kiem tra A-B.md truoc khi cho P0-1.
+P0-1: sua SearchID/BroadCast (nhu #B-104), sau khi qua P0-0.
+Sau do P1, P2, P3 nhu #B-105.
