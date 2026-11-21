@@ -1950,3 +1950,16 @@ Trạng thái: PARTIAL.
 ## Chat -> A, B 19:57: CHU XONG, DA THOAT GAME
 A: lam thi nghiem #358 (CHO-SONNET.md): atestqhhai dung 3 phut map it quai (khong phi phong) roi 3 phut Tuong Duong, ghi gio vao A-B.md; roi quay lai UI cuong hoa (thong bao ket qua trong cua so, anh d/e).
 B: doc gs-console tung phut theo gio A ghi; bao thu pham (NPC/vung hay script). Chua ap dung thay doi nao khi chua co bang chung chac.
+
+
+## B → Chat 21:03 — #B-096/#B-097 (ưu tiên 1): PHÁT HIỆN gs001 VẪN NẶNG KHI KHÔNG CÒN AI ONLINE — PARTIAL
+ĐÃ ĐỌC SỔ TAY: SO-TAY-TICK-GS001.md (đọc lượt trước); BAN-DO-DANH-THUONG-LAN-LENH.md / 04-quai-npc-ban-do: CHƯA đọc kỹ lượt này.
+TOM TAT 5 DONG
+1. Số đo VM 20:59 (gs-console, đọc-chỉ): SvrFPS 13-14/18, tick avg ~284-302 ms, max 630-850 ms, over ~1075/1080, Online=0, NetCount=0, KHÔNG có kết nối client nào tới cổng 51189. Luồng chính gs001 (tid 7240) chạy 100% một lõi (102%/10 s).
+2. Mốc: rảnh trước 19:42 tick 0,83 ms. Từ phiên chơi 19:42 tick tăng 18 -> 84 -> 132 ms; sau khi chủ rời (~19:55) KHÔNG về 0,3 ms như phiên 19:01-19:29 mà vọt 430 ms rồi giảm chậm 353 -> 319 -> 309 -> 300 -> 290 -> 302 -> 295 -> 284 ms đến 20:59. Tức là phiên 19:42-19:55 để lại thứ gì đó trong thế giới server làm vòng lặp nặng liên tục, đang tiêu từ từ.
+3. gs001 start 16:44:50, bộ nhớ riêng 6304 MB (WS 503 MB), không tăng trong 20 giây; handles 212, 24 luồng. Không file nào của gs ghi trừ CmdLane_stat.log => KHÔNG phải do in/ghi file mỗi tick.
+4. CmdLane lũy kế (đóng băng từ 20:58, không có client): recv move=6976 skill=351, superseded move=4967 (71%), skill_over=185, expired act=79 move=139, exec skill=87 (chỉ 25% skill nhận được được thực thi), wait_ms skill avg/max=135/391. Ủng hộ H1 (lệnh bị bỏ/trễ) — số này là tích lũy cả đời gs001, chưa tách riêng đợt 19:55.
+5. Ứng viên (CHƯA KIỂM): vật thể tích lại sau phiên 19:42-19:55 (boss Trương Tổng Chính + skill tầm xa bắn cả chục lần: NPC/quái/missile/vật phẩm rơi chờ hết hạn, hoặc quái truy đuổi/tìm đường tốn CPU). Phiên 19:01-19:29 không có chiến đấu nên tick về bình thường.
+DA XAC MINH: tick 13-14/18 và 100% một lõi khi Online=0, không client; không ghi file nào khác. CHUA XAC MINH: vật nào tích lại; tách đợt 19:55 trong CmdLane; độ trễ đánh->máu.
+ĐỀ XUẤT (cần Chat duyệt, KHÔNG làm khi chưa duyệt): (A) lấy mẫu ngăn xếp luồng chính gs001 trên Test-36 (SuspendThread/GetContext/Resume ~vài chục mẫu, rồi map RIP về hàm bằng file map/PDB của bản build nếu có) => biết hàm tốn 300 ms ngay lúc không ai chơi; (B) hoặc restart gs001 (mất ~10 phút nạp) rồi chủ lặp lại đúng kịch bản đánh boss và tôi đo tick từng phút để xác nhận "đánh boss làm tích". Hiện không ai chơi nên (B) làm được ngay nếu Chat duyệt.
+Trạng thái: PARTIAL.

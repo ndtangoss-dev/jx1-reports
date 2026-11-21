@@ -410,7 +410,7 @@ Chat nhan #B-094 (forwarder dung Test-36; giat nam o gs001 gui cham, khong phai 
 2. Doi chieu gio 137 lan cham voi su kien gs001: nap map/NPC, luu nhan vat, script online.lua, qh_dump.log, in console. Tim cai nao khop gio.
 3. Neu thay nguyen nhan chac chan va hook/cau hinh tat duoc an toan tren Test-36 (co ban sao, hoan tac duoc): de xuat ro, CHO chu choi xong moi ap dung (khong restart luc chu dang choi). Bao Chat.
 
-## #B-096 Chat 20:06 — B: VIDEO CHU (19:55:01-19:55:11): BOSS KHONG MAT MAU + VI TRI NHAY LOAN — TRA LOI TREN GS001, KHONG CHI TICK
+## #B-096 [ĐÃ XỬ LÝ 21:03 - PARTIAL] Chat 20:06 — B: VIDEO CHU (19:55:01-19:55:11): BOSS KHONG MAT MAU + VI TRI NHAY LOAN — TRA LOI TREN GS001, KHONG CHI TICK
 SO TAY LIEN QUAN: HIEU-GAME/07-server-luu-tru/SO-TAY-TICK-GS001.md, HIEU-GAME/04-quai-npc-ban-do/ (damage, combat). Ghi "DA DOC SO TAY".
 Chu quay video (Chat xem tung khung): nhan vat chuvuongtestaa cap 466 o Tuong Duong 167/207, danh boss "Truong Tong Chinh". Thay duoc:
 (1) Thanh mau boss DUNG 8.000.000/8.000.000 suot 10 giay du chu bam danh ca tram lan va hieu ung ky nang hien day du tren client => sat thuong KHONG ap duoc (hoac lenh danh khong toi server/bi bo/boss bat tu).
@@ -425,7 +425,7 @@ Bao A-B.md: DA XAC MINH/CHUA KIEM, nguyen nhan ung vien theo bang chung. Khong s
 - Chu xac nhan: KHONG CHI BOSS — moi loai quai danh mai khong chet, ky nang tam xa ban ca chuc lan quai van khong chet => SAT THUONG LEN NPC/QUAI KHONG AP (moi quai, khong rieng boss).
 - Huong dieu tra uu tien: (a) lenh danh/skill den gs001 co khong; (b) damage tinh ra 0 hay bi chan (cap 466 chenh cap, kinh nghiem/he phai, phe/camp, khoang cach, NPC khong the bi danh sau thay doi gan day); (c) thay doi gan day tren Test-36 co the anh huong damage: QH-B080, hook qh_dump, online.lua [TEST-A], menu Phi phong/GM cap 466 nang chi so; (d) lenh bi "superseded"/hang doi day khi tick ~100ms (hon nua so lenh bi bo) => skill khong den kip; (e) hoi A: cac APK cu (vc23) danh quai co chet khong tren cung server? (A tu kiem bang LD/atest, khong dung server).
 
-## #B-097 Chat 20:14 — B: DE XUAT TU SO TAY HIEU-GAME (client/server) CHO LOI "QUAI KHONG CHET + VI TRI NHAY" — KIEM THEO THU TU
+## #B-097 [ĐÃ XỬ LÝ 21:03 - PARTIAL] Chat 20:14 — B: DE XUAT TU SO TAY HIEU-GAME (client/server) CHO LOI "QUAI KHONG CHET + VI TRI NHAY" — KIEM THEO THU TU
 SO TAY LIEN QUAN: HIEU-GAME/03-ky-nang-chien-dau/BAN-DO-DANH-THUONG-LAN-LENH.md (KT-03B), HIEU-CONG-THUC-SAT-THUONG.md (HG-08), 07-server-luu-tru/SO-TAY-GIAT-NGUA-CLIENT.md (HG-S2), SO-TAY-TICK-GS001.md. Ghi "DA DOC SO TAY".
 Chuoi danh (KT-03B): MainAttack -> c2s_npcskill -> CmdLane (1 ACT + 1 MOVE, TTL, BufferBusy) -> DoSkill (hoi chieu, dieu kien, chi phi) -> OnSkill/Cast -> Missle -> ReceiveDamage (S/KNpc.cpp:4494-4503 CalcDamage chan muc tieu khong hop le/mien sat thuong) -> NormalSync -> s2c_syncnpcmin -> client cap nhat mau. KT-03B ghi ro: "chua chot nguyen nhan tren ban dang chay", 3 diem kiem: bo dem exec_skill, dong tac thi trien, mau giam.
 Giai thuyet xep theo kha nang (tat ca CHUA KIEM, B kiem tu 1):
