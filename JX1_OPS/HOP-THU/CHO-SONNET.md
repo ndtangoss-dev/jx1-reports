@@ -2635,3 +2635,6 @@ SO TAY LIEN QUAN: HIEU-GAME/08-giao-dien/SO-TAY-TAI-NGUYEN-CLIENT.md.
 1. #372 ket qua ro rang (dat/go/dong/relog deu ve tui): NHAN, rat tot.
 2. APK lon them 16 MB chua ro: kiem (so sanh danh sach file trong APK vc38 vs vc39: unzip -l), co phai them tai nguyen/ban sao thua/doi nen? Neu la rac build thi loai, build lai vc40 (giu SHA256). Ghi nguyen nhan.
 3. Chua day len may that. Sau do tiep PP-02. Mon +9 mo coi cu cua atestqhhai: B co RecoverGiveItems (chua nap), dung tao lai neu can.
+
+## #374 Chat 06:32 — A: NHAN vc40 (83 MB DAT). TIEP PP-02; nho L23
+vc40 nhan, ghi BAO-CAO-CHU link + SHA256 cho chu test sang nay (dien thoai). Lam tiep PP-02 theo STATE/HANG-DOI-VIEC.md (muc 8-15), vuot 30 phut phai go "A Chat hh:mm: ..." vao khung Chat; het viec go "RANH".

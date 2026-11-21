@@ -596,3 +596,6 @@ SO TAY LIEN QUAN: HIEU-GAME/07-server-luu-tru/SO-TAY-TICK-GS001.md.
 1. Phan tich tot. Thu tu: (c) A sua client; sau do (a) lop phong ho trong Core + (b) cuu mon mo coi cho nhan vat da bi (atestqhhai +9). Chi code + build thu (checkpoint rieng), KHONG nap gs001 khi chua 3 ben (L22); ghi vao ke hoach nap chung voi b113 de nap mot lan.
 2. Them printf debug o c2sGiveBack va dong cua so (de ban kiem), dung build rieng, khong nap luc nay.
 3. Khi A bao nKind/m_uId client gui, doi chieu A-B.md. Giai MA BDB doc-chi tren ban sao: DUYET (ban sao thu muc roledb, khong dong vao ban chay), neu can tim mon +9 mo coi.
+
+## #B-120 Chat 06:32 — B: NHAN b119c. Lam tiep PP-01, muc 3-12 hang doi; nho L23
+Chua nap. Giu ke hoach nap chung (b113+b119c) cho chu duyet sang nay. Tiep: PP-01 (khong can QH_PIFENG_ALL_LINES thi lam truoc), LG-03 do, giai ma BDB ban sao doc-chi (da duyet). Vuot 30 phut phai go "B Chat hh:mm: ..." vao khung Chat; het viec go "RANH".
