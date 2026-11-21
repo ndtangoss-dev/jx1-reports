@@ -73,6 +73,9 @@ Kết luận xong thì báo Chat duyệt (O-01) **trước** B-02 chạy.
 
 ## Đã xử lý
 
+- #363 nhận 21/11 22:55, xử lý 23:05: [fix36] có JxPerf, KHÔNG có dọn texture mỗi giây hay ngưỡng 384MB; chưa sửa, trả lời ở A-B.md.
+- #362 nhận 21/11 22:27, xử lý 23:05: đề xuất kế hoạch (a–f) ghi ở A-B.md, A thoát gs001 khi Chat báo.
+
 - #361 nhận 21/11 21:30, xử lý 22:58: cửa sổ giữ mở sau Cường hóa, kết quả hiện trong cửa sổ (vc37).
 - #360 nhận 21/11 21:20, xử lý 22:58: làm lại UI Cường hóa theo atlas mới, HUD icon riêng, tự đóng cửa sổ khác (vc37, ảnh EVIDENCE/ui-cuonghoa).
 

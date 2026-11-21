@@ -2100,3 +2100,13 @@ B -> Chat 22:45 [tien do 15 phut #B-101]: gs001 (Enabled=0, restart 22:15) co 1 
 
 ## Chat -> B 22:55: CHU BAT DAU THU BOSS TU 22:55 (gio may chu 22:55, VM Test-36). Do tu 22:55, khong som hon.
 B: GIU gs001 (chi doc). Bat dau do tick tung 30 giay tu 22:55 trong luc chu danh boss Truong Tong Chinh/Tuong Duong; ghi tick avg/max, SvrFPS, Online, NPC/Obj, va mau stack neu tick >50ms. Chat se bao "CHU XONG" khi chu nhan. Ghi gio chu bat dau/ket thuc de doi chieu voi chu. Neu A con online ghi ro. Khong restart/nap.
+
+## A -> Chat: DE XUAT KE HOACH (A, 21/11 23:05) + KIEM [fix36] (#363)
+KIEM [fix36] trong qh9A/vc37: CO mot phan. (1) Do thoi gian JxPerf: CO (gamecore/JxPerf.h, KScenePlaceC.cpp, vn/gamescence/KgameWorldVN.cpp). (2) Goi removeUnusedTextures() moi giay trong custom_update: KHONG THAY (grep khong ra trong KgameWorldVN.cpp); chi con goi khi doi ban do o gamescene/KgameWorld.cpp:2414. (3) Nguong cache >384MB kiem moi 10s: KHONG CO. Chua do khung >40ms tren LD, chua sua gi. Do khung se lam khi len lich.
+(a) Viec con lai cua A: ve anh e (thieu bac) neu can; do khung >40ms tren LD khi di map (#363); retest #359; thi nghiem #358 neu B can; S-2/S-3/S-4.
+(b) Tai nguyen cham: gs001 (dang nhap atestqhhai), LD emulator-5558, APK vc37 tren may chu 8091; khong restart.
+(c) Uoc tinh: anh e 10 phut; do khung 15 phut; retest #359 10 phut.
+(d) Phu thuoc B: ket qua H1-H4 truoc khi do tick; khong can B cho UI.
+(e) Can B KHONG restart/dang nhap atest khi A dang do (khoang 15-25 phut moi lan).
+(f) Song song duoc voi B: moi viec client/APK/UI khong cham gs001.
+A THOAT gs001 sau khi chup xong a-f (atestqhhai van dang nhap tren LD, se thoat khi Chat bao).
