@@ -2581,3 +2581,11 @@ SO TAY LIEN QUAN: FIX_HISTORY/45-fix36-giat-ban-do-va-36hz.md, SO-TAY-GIAT-NGUA-
 Fix36: KgameWorldVN::custom_update goi removeUnusedTextures() MOI GIAY (ban goc) -> giat ban do (khung >40ms 197->12 sau sua). Sua: chi don khi cache texture >384MB, kiem tra moi 10s; ma the [fix36]; JxPerf.h. A kiem tra rieng [fix36] (KgameWorldVN.cpp, KScenePlaceC.cpp, JxPerf.h) con trong qh9A/vc37 khong (marker check cu chi noi den fix33/34/47). Neu thieu thi bao Chat, dua vao lich, KHONG sua khi chua len lich (ba ben). Them: thu bao nhieu khung >40 ms tren LD luc di map. Tra loi vao A-B.md.
 
 
+
+## #366 Chat 02:40 — A: CACH HA BAC CHUP ANH e (khong sua DB)
+SO TAY LIEN QUAN: HIEU-GAME/09-cong-cu-gm/HIEU-LENH-GM.md, PP-03-KIEM-KE-HOOK-THU.md.
+1. PP-03 XONG: NHAN, tot.
+2. Ha bac AN TOAN, hoan tac duoc, ngay trong game (khong dung DB, khong can B): cat bac vao RUONG (thung do) o thanh/tan thu thon cua atestqhhai, de lai ~100 Van tren nguoi (ruong chua duoc bao nhieu thi cat bay nhieu; phan du con lai thi mua vat pham dat o shop NPC KHONG ban lai — CHI neu ruong khong du va ghi ro so bac mat). Chup anh e xong LAY BAC LAI tu ruong. Ghi A-B.md so bac truoc/sau.
+3. Neu ruong khong nhan het: dung hook thu co san trong PP-03 (muc gm_Money neu A da kiem la hook Test-36 duoc phep) — GHI cau len bao cao truoc, chi ap dung len nhan vat atestqhhai, ghi bac cu 8 Uc 3400 Van de tra.
+4. Mon +9: A tu tao lai bang hook them do co san (PP-03) hoac cuong hoa tiep tu +0 len +9 (neu da co thuy tinh hook); ghi nguyen nhan mon +9 bien mat khi go khoi o giua (nghi: UI give chua tra ve khi dong cua so? Kiem log) — day co the la LOI THAT can tim: dong cua so khi con do o o giua phai tra do ve tui. Kiem va bao cao.
+5. Xong ghi TU-SONNET + go "A Xong" vao khung Chat.
