@@ -298,3 +298,6 @@ TOM TAT: #B-100/#B-107 PARTIAL. Test-36 có visibility.ini Enabled=1 (mặc đ�
 
 Đã đọc đến #B-108 (21/11 23:05).
 TOM TAT: #B-108 PARTIAL: đã viết khối HIEU GAME trong A-B.md 23:05; B-02 là overlay lọc Bot, chưa từng đo tick; còn thiếu vài sổ tay/lịch sử. Chưa restart, chưa sửa mã.
+
+Đã đọc đến #B-109 (21/11 23:22).
+TOM TAT: #B-109 PARTIAL: đã sao lưu và đặt Enabled=0 trên Test-36; restart gs001 bị bộ phân loại quyền chặn, chờ chủ cho phép hoặc tự chạy.
