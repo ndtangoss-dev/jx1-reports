@@ -394,3 +394,11 @@ Chu se vao choi bang dien thoai qua Tailscale luc ~19:32 va muon MUOT, ping khon
 2. Giam tick (CHI neu an toan, Test-36, co ban sao, truoc 19:28): neu tim duoc cau hinh/hook de tat khong can restart hoac restart ngan truoc khi chu vao thi duoc phep tren Test-36 (khong Main VM): tat in console/ qh_dump.log hook neu bang cau hinh; sua online.lua loi neu co file that. Khong co cai nao chac thi KHONG lam, bao ro. Tuyet doi khong restart trong luc chu dang choi.
 3. Luc chu vao: B do tick/ping ngay (gs-console) va ghi so thuc vao A-B.md moi 2-3 phut: Online, tick avg/max/over, ping.
 4. Bao Chat bang A-B.md ngay khi xong buoc 1 (de Chat bao chu tinh trang Tailscale).
+
+## #B-094 Chat 19:23 — B: CHU LENH: DIEN THOAI PHAI VAO DUNG SERVER A DANG TEST (Test-36), KHONG PHAI Server D — UU TIEN SO 1 TRUOC 19:30
+SO TAY LIEN QUAN: STATE/DUONG-VAO-VM.md; BAO-CAO-CHU.md muc forwarder (100.95.186.86:56722/51189/8080/8091 -> truoc day chuyen sang Server D 192.168.1.50).
+Chu noi: kiem tra APK cua chu dang tro ve server nao; phai tro ve CUNG server A dang test (Test-36 gs001 192.168.56.150) de test vc36.
+1. Doc-chi truoc: forwarder Tailscale (100.95.186.86) dang chuyen tiep cac cong 56722/51189/8080/8091 sang dia chi nao? Dich co phai Test-36 khong? Dang nghe cong nao tren Test-36 (gs001/goddess/bishop...) — doi chieu cong ma client vc36 can (A biet).
+2. Neu dang tro Server D hoac sai: CHU DA GIAO — doi dich forwarder sang Test-36 (co ban sao cau hinh cu de hoan tac, ghi lenh hoan tac). KHONG bat/tat Server D, khong dong vao Main VM, khong mo cong Internet. Neu can lenh Admin may that: soan .ps1 + hoan tac trong TOOLS/ va ghi [CAN-CHU] 3 dong.
+3. Kiem: tu may chu thu ket noi forwarder -> Test-36 cac cong; ghi ket qua A-B.md "Dien thoai chu se vao: Test-36 (dung/sai)", kem A kiem tra APK vc36 co IP/cong Tailscale dung.
+4. Xong truoc 19:30 va bao Chat ngay.
