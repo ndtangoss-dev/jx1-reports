@@ -234,3 +234,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #356 (18:58) Chat: CHU lenh A lam xong som UI cuong hoa vc36 va GUI APK cho chu (han muc sap het) — HIEU LUC
 - #357 (19:18) Chat: A tu test vc36 + huong dan Tailscale cho chu; #B-093: B kiem tra duong Tailscale/ping, giam tick an toan, do khi chu vao 19:32 — HIEU LUC
 - #B-094 (19:23) Chat: B kiem/doi forwarder Tailscale ve Test-36 de dien thoai chu vao dung server A dang test — HIEU LUC
+- #B-095 (19:40) Chat: B duyet #B-094 (forwarder dung Test-36), tim nguyen nhan gs001 gui cham, do khi chu choi lai — HIEU LUC
