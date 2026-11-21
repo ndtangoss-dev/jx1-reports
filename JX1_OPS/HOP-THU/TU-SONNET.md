@@ -1720,3 +1720,11 @@ TÓM TẮT: (1) Build 4 (gs001 79cf3f5c) nạp OK. Tái hiện sập 02:49: mặ
   * CPU gs001: một luồng (id 3788) bận ~101% = luồng chính chạy trọn 1 lõi (1,9s CPU/2s); các luồng còn lại <1%. Vậy luồng chính KẸT 100% một lõi: tick chậm là do công việc trong tick quá nặng, không thiếu CPU tổng (máy 36%).
   * Lỗi lặp mỗi phút: `[Script] Script error, [\script\system\online.lua] please check!` (gần như chắc là hook thử OnLine/qh còn sót): đề nghị B/A xem, vì lỗi script mỗi phút cũng ăn tick.
   * Quái/NPC active ở Tương Dương: KHÔNG đọc được từ console (không in số). Cần hook hoặc lệnh GM đếm: chưa làm.
+
+### 21/11 12:30 — A: LƯU TRẠNG THÁI TẠM DỪNG (#343), sẵn sàng tắt máy
+Đã đọc đến #343.
+* ĐANG LÀM trước khi dừng: đo/đọc nguyên nhân giật + ping 555ms trên LD (chỉ đo, không sửa). Không còn build/nạp/cài APK/restart nào đang chạy do A.
+* XONG (có số): ping LD→Test-36 0 ms, mất gói 0%, 1 hop; gs001 tick TB 0,33–0,53 s (thiết kế ~55 ms), SvrFPS 16/18, luồng chính 101% = kẹt 1 lõi (máy 36%); client ping = trễ xử lý gs001, chỉ hiển thị; dự đoán client bỏ kiểm tường khi getFindPathState=true (KNpcFindPath.cpp ~126-131). Kết luận: giật/xuyên tường chủ yếu do tick gs001 chậm, không phải mạng. Chi tiết ở các mục 11:00–12:10 phía trên. Bảng rơi đồ BOSS (vàng ~0,17% bảng dưới BOSS) đã phân tích (D:\tmp\an1-3.py).
+* CHƯA KIỂM: bảng rơi gán cho 10 boss lv150 và boss nào đang sống; map nhân vật test; số quái/NPC Tương Dương; vì sao Online=0 lúc 10:10; nguyên nhân lỗi `online.lua` mỗi phút; getFindPathState có kẹt true không; sửa Lua dòng 55/56 `|0` và nhãn vc32 trên LD; gỡ hook thử [TEST-A] trong online.lua trước server thật.
+* BƯỚC TIẾP: (1) sau khi máy bật lại, gs001 nạp 7–10 phút: kiểm gs001 lên rồi mới báo chủ vào test; (2) theo BAN-GIAO-CHAT-21-11.md, chờ lệnh Chat; (3) làm các mục CHƯA KIỂM; (4) SC-006 giữ `running`.
+* Tắt máy: console gs001 báo Online=0 (10:07–10:10), không Stop-Process gs001; game trên LD đã đưa về màn hình đăng nhập (đóng/mở lại app, KHÔNG đóng LD).
