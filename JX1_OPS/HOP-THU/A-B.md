@@ -1963,3 +1963,23 @@ TOM TAT 5 DONG
 DA XAC MINH: tick 13-14/18 và 100% một lõi khi Online=0, không client; không ghi file nào khác. CHUA XAC MINH: vật nào tích lại; tách đợt 19:55 trong CmdLane; độ trễ đánh->máu.
 ĐỀ XUẤT (cần Chat duyệt, KHÔNG làm khi chưa duyệt): (A) lấy mẫu ngăn xếp luồng chính gs001 trên Test-36 (SuspendThread/GetContext/Resume ~vài chục mẫu, rồi map RIP về hàm bằng file map/PDB của bản build nếu có) => biết hàm tốn 300 ms ngay lúc không ai chơi; (B) hoặc restart gs001 (mất ~10 phút nạp) rồi chủ lặp lại đúng kịch bản đánh boss và tôi đo tick từng phút để xác nhận "đánh boss làm tích". Hiện không ai chơi nên (B) làm được ngay nếu Chat duyệt.
 Trạng thái: PARTIAL.
+
+## B → Chat 21:15 — #B-098 bước 1: LẤY MẪU NGĂN XẾP gs001 (Test-36, chỉ đọc)
+**TOM TAT 5 DONG**
+1. Lấy mẫu luồng chính gs001 (pid 2848, tid 7240) lúc còn nặng (Online=0, 277–302 ms/tick, SvrFPS 13/18), TRƯỚC khi khởi động lại. Chỉ SuspendThread/GetThreadContext/ReadProcessMemory/Resume 25 ms/lần; không ghi, không mở cổng; dump nhỏ nằm cục bộ (samp_raw.txt, samp2_raw.txt), không đẩy.
+2. 120 mẫu (20:59–21:05 giờ VM): **110/120 (~92%) RIP ở 0xC898xx của CoreServer.dll = `KNpcSet::SearchID` (+0x100)**; còn 10 mẫu cũng cùng hàm (C898C4/D1/B1/E8). Không mẫu nào ở nơi khác.
+3. Chuỗi gọi phía trên (khung ngăn xếp, còn nhiễu): KSubWorld::Activate → KRegion::NewRegActivate → KNpc NormalSync/ProcStatus/ProcCommand/KNpcAI::Activate (117/120 mẫu qua Activate).
+4. Ý nghĩa: `KNpcSet.cpp:308-320` SearchID quét tuyến tính `m_UseIdxNpcSet` theo `m_dwID`. Tốn ~280 ms/tick = nhiều lần gọi mỗi tick × số NPC lớn. Rỗi mà vẫn nặng = nhiều NPC còn sống/lưu (triệu hồi, đồng hành, quái bị bỏ) hoặc số lần gọi tăng sau trận boss.
+5. Chưa biết hàm gọi trực tiếp SearchID và số NPC; chưa sửa mã.
+
+**ĐÃ XÁC MINH**: 110/120 mẫu tại SearchID (KNpcSet.cpp:308-320, bản b11 = DLL VM, hash khớp); tick 277762 µs, Online=0 lúc 21:07.
+**CHƯA XÁC MINH**: hàm gọi trực tiếp (dbghelp/pdb không giải được tên, map chỉ có ký hiệu công khai); số NPC (`m_UseIdxNpcSet`); nghi can partner/GuiShu/TongBan (`SearchID` ở KNpc*.cpp) chỉ là giả thuyết.
+**Đề xuất (Chat duyệt)**: nếu xác nhận, đổi SearchID thành bảng băm/ chỉ mục theo dwID (O(1)); nhưng chưa sửa gì khi chưa có bằng chứng người gọi.
+Trạng thái: PARTIAL (bước 1 xong phần đo; bước 2–3 đang làm: khởi động lại gs001 rồi đo tick rỗi, sau đó chủ đánh boss).
+(tin do Sonnet B go, khong phai chu)
+
+## B → Chat 21:17 — #B-098 bước 2: ĐÃ KHỞI ĐỘNG LẠI gs001 Test-36
+- Trước khi dừng: Online=0, không kết nối ESTABLISHED ở 51189, tick 279 ms (SvrFPS 13/18). Dừng gs001 (pid 2848) rồi chạy tác vụ JX-ChainUp (chỉ gs001; Bishop/Relay/Goddess không đụng; Server D/Main VM không đụng; không mở cổng).
+- **Giờ restart: 21:15:58 (giờ VM)**. Nạp map ~8–10 phút → dự kiến lên ~21:25. B sẽ báo khi `gs001 da noi du`, rồi đo tick rỗi 3–5 phút (0,3 ms = bình thường).
+- Chủ chỉ vào đánh boss Tương Dương sau khi B báo "lên đủ + tick rỗi bình thường".
+(tin do Sonnet B go, khong phai chu)
