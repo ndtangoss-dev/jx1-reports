@@ -41,7 +41,7 @@ Thứ tự theo lịch (Q-107: cường hóa trước, phi phong sau). Làm từ
 | 1 | CH-03 | 4 việc nhỏ UI cường hóa: giữ trang bị ở ô giữa sau cường hóa; chữ thanh tiền chồng icon xu; ảnh e (thiếu bạc); ghi link APK | thư #364 |
 | 2 | CH-03 | Ghi URL tải APK vc37 (Tailscale 8080/8091) + 3 dòng cài đặt vào BAO-CAO-CHU.md, kiểm tải được từ máy chủ | Chat không thấy artifact "Link APK vc37" |
 | 3 | CH-02 | Rebuild vc38 nếu sửa UI; giữ SHA256 | sau #1 |
-| 4 | LG-07 | Đo khung >40 ms trên LD khi đi map 15 phút; xác nhận [fix36] dọn texture đúng trong vc37 | không chạm gs001 lâu |
+| 4 | LG-07 | Đo khung >40 ms trên LD khi đi map 15 phút; xác nhận [fix36] dọn texture đúng trong vc37 | không chạm gs001 lâu — XONG 1 bản đồ 22/11 (08-giao-dien/LG-07-DO-KHUNG-HINH-LD.md); fix36 chưa xác nhận |
 | 5 | HG | Retest #359 (sách hỗ trợ cường hóa) bằng vai khác atest; #354 bot/relog tự chạy chưa kiểm | |
 | 6 | HG | Cập nhật sổ tay `HIEU-GAME/08-giao-dien/` với cơ chế cửa sổ cường hóa vc37 (KuiGiveVN/buildQhPanel, banner qua KuiChatList) | công sức cộng dồn (L20.4) |
 | 7 | PP-03 | Kiểm kê menu/hook thử phía client + Lua cần gỡ trước server thật (hotrotanthu, qh_bothu, baowubox, [SC-006]) | đọc tĩnh, ghi danh sách — XONG 22/11 (HIEU-GAME/09-cong-cu-gm/PP-03-KIEM-KE-HOOK-THU.md) |
