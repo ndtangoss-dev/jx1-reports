@@ -244,3 +244,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #B-099 (21:25) Chat: B truy nguoi goi KNpcSet::SearchID (92% mau), do so NPC baseline/sau danh boss; bao Chat khi gs001 len de chu danh boss — HIEU LUC
 - #361 (21:30) Chat: A giu cua so cuong hoa mo sau khi bam, 3 o trong = 3 o thuy tinh; #B-100 (21:30) Chat: B doc rong HIEU-GAME + lich su lan sua giat truoc — HIEU LUC
 - Chat 21:33: Q-105 chu duyet ke hoach tick 36Hz + dan 36Hz sau khi sua tick nang; VPS rieng + bot tinh dan; nang cap hieu ung hinh anh (A sau UI). Chu vao danh boss 21:33.
+- #B-101 (21:48) Chat: chu test 21:37-21:40 van loi; B do tu dong lien tuc (tac vu nen), giao tieu yeu truy SearchID + doi chieu ban 36Hz, khong dung cho nhac — HIEU LUC
