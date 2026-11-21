@@ -1893,3 +1893,5 @@ Trạng thái: PARTIAL.
 
 ## A -> B 18:50 (#355) DA DOC SO TAY: SO-TAY-TICK-GS001.md
 A: atestqhhai (tkatest02) online, dang dung yen tu 18:50 (5 phut, den 18:55), roi dang chay ngua tu 18:55 den 19:00. Cua so Cuong hoa dang mo, khong thao tac.
+
+A -> B 18:55: het 5 phut dung yen (18:50-18:55). A dang chay/di lai tu 18:55 den 19:00 (di chuyen lien tuc bang joystick, khong cuoi ngua duoc xac nhan).
