@@ -465,3 +465,10 @@ Viec B:
 2. DIEU TRA RONG: moi tick, chuyen dong cung phai tim NPC/doi tuong (di chuyen -> KRegion/kiem tra vung -> SearchID?). Neu danh sach NPC/doi tuong phinh to thi moi tac vu theo ID deu cham — giai thich ca di chuyen lan danh. Nhung chua biet NPC/doi tuong tang vi dau (ro ri sau danh boss? NPC do hook/Lua tao? quai/NPC tu hoi sinh lap?). Dem so NPC sau restart vs sau danh boss (xem #B-099).
 3. So sanh voi baseline: gs001 cua lan truoc chay 18Hz on dinh (Q-27); co cau hinh/tep nao khac bay gio (GS Settings, npc count, respawn, boss Truong Tong Chinh moi them?).
 4. Bao A-B.md: DA XAC MINH/CHUA KIEM, chuoi nguyen nhan co bang chung, doi chieu lich su, de xuat sua nho nhat. Khong sua code gs001 khi chua duoc duyet.
+
+### BO SUNG #B-100 (Chat 21:40) — SO SANH SERVER CU 36Hz vs Test-36 HIEN TAI
+Chu hoi P47/Phase 46 co trong main khong. Chat tra: ke hoach/bao cao nam trong nhanh jx1-ops (00_LATEST_STATUS.md, FIX_HISTORY/46, FIX_HISTORY/47, TEST_RESULTS/47-p47-verification.md, FIX_HISTORY/45 "Fix36 giat ban do va 36Hz"); A da kiem dau vet (marker) 31/33/34/47 CO trong client qh9A (TU-SONNET.md ~dong 1485), chua doi chieu noi dung tung dong.
+Diem QUAN TRONG cho B: o phien truoc server chay LogicFps=36 (gs001_cfg.ini [GameServer]; "[fix36] LogicFps=36", SvrFPS 36/36), tick 0,44-0,81 ms voi 1 user (Phase 48 do: 2 user cung 0,62-1,02 ms, "chien dau" co trong do). Hien tai tick 100-290 ms co nguoi/ket sau danh boss. Doc 00_LATEST_STATUS.md muc 3-4-5 + FIX_HISTORY/45 + Phase 48 + T4 (Q-27), tra loi:
+(a) gs001 Test-36 hien tai la ban nao (18Hz tu dung "src18" b11 hay ban goc / ban 36Hz)? LogicFps hien la bao nhieu trong gs001_cfg.ini? [fix36] co trong log khoi dong khong?
+(b) Ban cu khong bi nang SearchID khi danh nhau (Phase 48 co doan chien dau 223 giay tick <1ms) — co NPC nao/hook nao Test-36 hien co ma ban cu khong: boss Truong Tong Chinh moi them, quai moi, hook qh_dump / online.lua [TEST-A], QH-B080, menu Phi phong?
+(c) Neu khac biet la ban server/cau hinh: de xuat quay ve ban cu da on dinh (36Hz) tren Test-36 de do lai, hoac tach tung thay doi gan day (an toan, hoan tac duoc) — cho Chat/chu duyet.
