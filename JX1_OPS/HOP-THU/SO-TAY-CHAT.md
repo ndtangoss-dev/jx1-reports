@@ -53,3 +53,5 @@ URL phiên Chat hiện tại: https://claude.ai/code/session_01MrvZcvMaZXNKa8dLs
 URL phiên A hiện tại (tài khoản mới, 21/11 16:31): https://claude.ai/code/session_01MrvZcuHw1S438E3fkPC3Mr (tên "Tiep tuc", ô nhập khoảng (400,842)). B: "Sonnet B PM setup JX1" trong thanh bên Code (URL chưa ghi).
 
 URL phiên B (tài khoản mới, 21/11 16:43): https://claude.ai/code/session_01MrvZcwPLkhUeMVtMAG2Yzd (tên "Sonnet B PM setup JX1"; ô nhập khoảng (400,842)). Đã gõ thẻ #347/#B-087 cho A và B lúc 16:41–16:43.
+
+- (Chat) 21/11 17:02 [CHỦ] Chrome trên máy chủ dùng Gmail mặc định của chủ cho claude.ai; trang xingchi đăng nhập bằng tài khoản riêng của chủ (khác Gmail mặc định). Hết phiên xingchi hoặc Chrome hỏi chọn tài khoản: A/B DỪNG và báo chủ, không tự đăng nhập/chọn. Không ghi địa chỉ Gmail vào kho (kho công khai).
