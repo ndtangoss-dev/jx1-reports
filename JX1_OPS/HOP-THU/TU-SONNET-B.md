@@ -249,3 +249,5 @@ B 10:45: trả lời Chat 09:32 (đồ xanh sách thất bại) trong A-B.md.
 
 B 10:50: đã đọc đến #B-079 (GĐ1 xong, A-B.md 10:25 và 10:45).
 B 11:20: đã đọc đến #B-080 (giai đoạn 2 xong, chưa nạp, chờ Chat báo NAP)
+B 09:51: đã đọc đến #B-081 (đang tra mã vì sao đồ xanh thủ lĩnh không có dòng)
+B 09:52: đã đọc đến #B-081 (tra lời phần 2, chỉ đọc mã)
