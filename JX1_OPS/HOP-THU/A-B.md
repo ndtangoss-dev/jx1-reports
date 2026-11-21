@@ -1916,3 +1916,15 @@ TOM TAT 5 DONG
 5. 192.168.1.50:5985 chỉ là WinRM (TIME_WAIT) từ máy chủ, không phải đường game.
 DA XAC MINH: các mục trên (netstat, forwarder.log, socket nối thử, vm_chay ports/do-gs 19:30-19:35). CHUA XAC MINH: APK vc36 có đúng IP/cổng Tailscale (A kiểm); tick gs001 trong phiên chủ 19:01-19:29 (chưa đọc console lúc đó, nên chưa có số); đường DERP/direct.
 Không sửa gì, không restart, không đụng Server D/Main VM. Trạng thái: DONE (kiểm); #B-093 bước giảm tick KHÔNG làm (không có công cụ chắc chắn).
+
+
+## B → Chat/A 19:42 — SỐ TICK THẬT TRONG PHIÊN CHỦ 19:01-19:29 (console gs001, Test-36) — nối #B-092/#B-094
+TOM TAT 5 DONG
+1. Đọc lại bộ đệm console (vm_chay.py gs-console + đọc dòng SvrFPS/Online): trong phiên chủ, Online=1 suốt 19:02–19:29.
+2. ỔN ĐỊNH SUỐT PHIÊN: `SvrFPS 16-17/18, tick avg ≈ 98.000–154.000 us (≈0,1–0,15 s), max ≈ 255.000–550.000 us, over ≈ 830–888` mỗi 1080 vòng (≈80% vòng quá hạn). Thiết kế ~55 ms/vòng ở 18 fps.
+3. Ngay khi chủ thoát (19:29): phút kế `over=531`, rồi `avg 0,3 ms, over=0`. Lúc không ai: 0,29–0,88 ms. => MỘT người online làm tick tăng ~300 lần (0,3 ms → ~100 ms).
+4. Vậy kết luận trước của B ("nặng lúc đăng nhập") ĐÃ SỬA: tick nặng LIÊN TỤC suốt lúc có người, không chỉ lúc vào. Khớp với 137 lần gói >250 ms/gap_max 2,6 s đo ở forwarder.
+5. Còn một phần: `CmdLane recv move=2325 superseded move=1240` (lũy kế ở lần in cuối) — hơn một nửa lệnh di chuyển bị thay thế trong hàng; khớp với server xử lý chậm.
+DA XAC MINH: bảng tick/Online trên (console 19:01-19:31). CHUA XAC MINH: THỦ PHẠM. Điều đo được chỉ loại trừ "tick nặng khi rảnh": cái nặng xuất hiện KHI CÓ NGƯỜI. Nghi phạm (CHUA KIEM): (1) NPC/vùng quanh người chơi chạy Activate+NormalSync (KRegion.cpp:1139-1142) vì vùng chỉ chạy khi có người; (2) `qh_dump.log` hook (KItemList.cpp:1235) chỉ chạy khi mặc phi phong; (3) printf/ghi file script_errors khi script lỗi; (4) cái gì khác theo người (Player::Active).
+CÁCH TÁCH KHÔNG SỬA CODE (đề xuất, cần A/Chat): cho cùng 1 nhân vật đứng 3 phút ở (a) bản đồ ít quái/NPC (làng/bản đồ trống) tháo/không mặc phi phong, rồi (b) Tương Dương/map 53 đông NPC; B đọc `gs-console` tick avg từng phút. Nếu (a) nhẹ, (b) nặng => NPC/Region. Nếu cả hai nặng => cái gì theo nhân vật (hook/script). Mỗi phút một dòng nên cần ≥3 phút/điểm.
+Test: chỉ đọc. Trạng thái: PARTIAL (có số, chưa có thủ phạm).
