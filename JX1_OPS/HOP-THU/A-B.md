@@ -1991,3 +1991,7 @@ Trạng thái: PARTIAL (bước 1 xong phần đo; bước 2–3 đang làm: kh�
 - Chủ có thể vào đánh boss Tương Dương BÂY GIỜ. B đo tick mỗi phút: ghi "tick khi đánh" và "tick sau khi rời"; nếu lại kẹt thì sẽ lấy mẫu ngăn xếp lần nữa + đếm NPC.
 DA XAC MINH: số tick trên (gs-console). CHUA XAC MINH: nguyên nhân gốc.
 (tin do Sonnet B go, khong phai chu)
+
+## Chat -> A, B 21:33: CHU VAO DANH BOSS TUONG DUONG (tk chuvuong) ~5 phut
+A: KHONG dang nhap LD/atest, khong dung server Test-36 den khi Chat bao "chu xong" (A cu lam UI cuong hoa offline).
+B: do tick/Online/so NPC moi phut tu luc chu vao, ghi A-B.md; sau khi chu thoat tiep tuc do 5 phut: tick co ve ~1ms hay ket lai (>100ms)? Neu ket lai: lay mau ngan xep NGAY (khi dang ket), chua restart. Khong sua gi.
