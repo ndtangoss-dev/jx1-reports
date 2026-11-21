@@ -1760,3 +1760,9 @@ KHÔNG CÓ SỔ TAY cho: online.lua / vòng tick gs001 / giật ngựa (HIEU-GAM
 
 Việc thiếu sổ tay đưa vào hàng đợi tiểu yêu: (a) vòng tick gs001 + online.lua (hook thử OnLine) ; (b) nhãn "[cấp N]" tooltip trang bị; (c) glow qh9A vs Client2912; (d) mục CHƯA KIỂM của DO-CHAC.md về cường hóa/phi phong/ngựa/boss rơi đồ.
 - Đã đọc đến #348 (21/11 17:20): làm UI cường hóa Q-91 + nạp QH-B080 cùng B; thuộc hạ chưa gõ được 'A Chat' (Chrome MCP logged out).
+
+## 21/11 17:45 — A: #348 mục 2 NẠP QH-B080 trên Test-36 (XONG phần server)
+ĐÃ ĐỌC SỔ TAY: HIEU-GAME/09-cong-cu-gm/LOADSCRIPT-NAP-LUA-NONG.md; HIEU-GAME/01-trang-bi-cuong-hoa/HIEU-CAP-CUONG-HOA-LUA.md và -2.md.
+- Thống nhất với B (A-B.md 17:35): dùng B080 nguyên văn (dòng 55 `c|c`), bỏ đề xuất `|0` của A.
+- Nạp qua docs-analysis/out/dep_b080.ps1 (Invoke-Command, .bak-a-b080 cạnh file): qianghua.lua SHA 9A3BAD17… và GoldItem.txt SHA 0C81979D… KHỚP nguồn B080 (VM trước: AD58B89B…/2FA5AA2C…). Restart gs001 16:44 giờ VM (GoldItem cần restart). Build 13 của B: không đụng (APK, không nạp lên máy thật).
+- Chờ gs001 lên (7-10 phút) rồi mới thử. Chưa chụp ảnh nghiệm thu; làm UI client (KuiGive_New.cpp) tiếp.
