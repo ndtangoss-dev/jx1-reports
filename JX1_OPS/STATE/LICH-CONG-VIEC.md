@@ -1,14 +1,30 @@
-# LỊCH CÔNG VIỆC CHUNG A–B (Chat điều phối; bản nháp 21/11 22:25, CHỜ A và B xác nhận)
+# LỊCH CÔNG VIỆC CHUNG A–B (Chat điều phối; 21/11 23:05, theo đề xuất A 23:05 và B 22:35; Q-106, Q-107)
 
 ## Bảng khóa tài nguyên dùng chung
-| Tài nguyên | Đang giữ | Từ | Dự kiến trả | Ghi chú |
-|---|---|---|---|---|
-| gs001 Test-36 (restart/đăng nhập) | B (đã restart 22:15 VM, Enabled=0, đọc baseline NPC) / A (atest online?) | 22:15 | ? | A phải báo THOÁT trước khi B restart lại |
-| LD + APK vc37 | A | ? | ? | không ảnh hưởng B nếu A không đăng nhập gs001 |
-| Chủ test trên điện thoại | chưa | | | chỉ sau khi B báo SẴN SÀNG và A đã thoát |
+| Tài nguyên | Đang giữ | Ghi chú |
+|---|---|---|
+| gs001 Test-36 (restart/nạp) | B giữ (chỉ đọc); Enabled=0 | Không restart khi A online. Nạp bản mới cần Chat duyệt + không ai chơi |
+| gs001 đăng nhập atestqhhai | A (LD) | A thoát khi Chat báo / khi xong chụp ảnh |
+| LD emulator-5558 + APK vc37 | A | không ảnh hưởng B |
+| Worktree D:\JX-wt\SC-006B | B | A không đụng |
+| qh9A client / Lua trên VM | A | B không sửa; nạp nóng Lua do A |
 
-## Việc chưa xếp (Chat đã gom, chờ ĐỀ XUẤT từ A và B)
-- A: vc37 UI cường hóa (a-f + HUD); netlog client (#B-102 mục 2); hiệu ứng hình ảnh sau cường hóa.
-- B: đọc HIEU-GAME (cổng); baseline NPC; sửa SearchID/Describe; đo gói tin (#B-102); 36 Hz + đạn mịn (Q-105); tiểu yêu so 36Hz cũ vs b11.
-- Chủ: thử đánh boss sau khi B báo SẴN SÀNG.
-- Dài hạn: BOT, thuê VPS (cần chủ duyệt), nâng hiệu ứng, gỡ hook test trước khi lên server thật.
+## Giai đoạn 1 (bây giờ → vc37 nghiệm thu): CƯỜNG HÓA
+| Ai | Việc | Chạm gs001? | Song song |
+|---|---|---|---|
+| A | vc37 UI cường hóa (a–f + HUD), thoát atest khi xong, ảnh e, retest #359 | có (đăng nhập) | ✔ với B-P0-0/P2 |
+| B | P0-0 đọc nốt sổ tay còn thiếu + khối HIỂU GAME; viết bảng tra SearchID + Describe chỉ khi cần (SC-006B, KHÔNG nạp); tiểu yêu so 36Hz cũ | không | ✔ |
+| Chat | duyệt ảnh vc37; báo chủ nghiệm thu; APK vc37 + ghi chú 3 dòng | | |
+| Chủ | test cường hóa vc37 trên điện thoại | có | sau khi A thoát |
+
+## Giai đoạn 2: PHI PHONG (chỉ sau khi chủ duyệt Cường hóa)
+| Ai | Việc | Chạm gs001? |
+|---|---|---|
+| B | SC-006 server phi phong: 11 bộ theo giới (mantle.txt/GoldItem), nạp bản đúng, đo (khung giờ riêng, A không online) | có (nạp, restart) |
+| A | client phi phong: tên cạnh nhân vật (PaintPifeng), nhãn [cấp N] (SO-TAY-NHAN-CAP), mojibake, tooltip; chạy sau khi B nạp xong hoặc song song nếu chỉ build APK | đăng nhập khi test |
+| Chủ | test phi phong | |
+
+## Việc nền / sau
+- A: đo khung >40ms trên LD (#363) khi di map (15 phút, A tự lên giờ không đụng B).
+- B: P2 sửa SearchID (bảng tra) trong SC-006B, nạp CHỈ khi Chat xếp giờ (không ai chơi), để bật lại lọc Bot; P1 đo gói tin chỉ khi giật quay lại; 36 Hz hoãn (Q-105).
+- Dài hạn: BOT, thuê VPS (chủ duyệt), nâng hiệu ứng, gỡ hook test, Obj pool 29466/30000.

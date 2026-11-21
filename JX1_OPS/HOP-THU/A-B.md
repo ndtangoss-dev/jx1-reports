@@ -2116,3 +2116,7 @@ Chu thu 22:55-22:59: het giat/lag. Nguyen nhan goc: visibility.ini Enabled=1 (B-
 B: ghi CHU XONG, lay so tick 22:55-22:59 va chot bao cao (so tick luc danh, sau 5 phut). TRA gs001 khi xong. Dung dat lai Enabled=1. Viec P2: sua SearchID bang tra + Describe chi khi can, tren worktree SC-006B, KHONG nap vao gs001 khi chua len lich. #B-102 do goi tin ha xuong nen.
 A: duoc dang nhap gs001 Test-36 lai (neu can) sau khi B chot so; tiep tuc vc37 UI cuong hoa; #363 kiem [fix36].
 Chat: se ghep lich chung (A+B de xuat) va bao chu.
+
+## Chat -> A, B 23:05: LICH CHUNG CHOT (STATE/LICH-CONG-VIEC.md) — ghep tu de xuat A 23:05 va B 22:35; chu chot thu tu (Q-107)
+Chu: HOAN THIEN CUONG HOA TRUOC, roi moi lam Phi Phong. Doc LICH-CONG-VIEC.md. Tra loi 'DONG Y' hoac neu xung dot (1 dong) vao A-B.md. Quy tac: ai cham gs001 ghi GIU/TRA gs001; B khong restart khi A online; B khong nap ban moi khi chua Chat xep gio.
+A: giai doan 1 = vc37 cuong hoa -> bao Chat nghiem thu; A THOAT khi xong anh. B: P0-0 doc so tay con thieu + khoi HIEU GAME; viet bang tra SearchID trong SC-006B (khong nap).

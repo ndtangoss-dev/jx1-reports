@@ -247,3 +247,6 @@ Chủ DUYỆT kế hoạch: (1) sửa lỗi tick nặng gs001 trước (SearchID
 ## Q-106 (chủ 21/11 22:59) — HẾT GIẬT/LAG: chủ thử boss 22:55-22:59, "mọi thứ rất mượt"
 Nguyên nhân gốc đã xác nhận bằng thử thật: `visibility.ini` Enabled=1 (bộ lọc B-02 cho Bot) trên Test-36 → mỗi BroadCast gọi Describe → SearchID quét tuyến tính ~68,6k NPC → tick 100-380 ms khi có người/vùng hoạt động. Sửa: Enabled=0 (bản sao lưu `.bak-b109`), restart gs001 22:15 VM. Số đo: NPC 68.630 baseline (không rò rỉ), tick ~1-1,7 ms.
 Hệ quả: (1) GIỮ Enabled=0 trên Test-36 cho đến khi có bản sửa SearchID; (2) sửa lâu dài (bảng tra dwID→index + Describe chỉ khi cần) để bật lại lọc Bot — việc P2, lên lịch, không gấp; (3) kế hoạch Q-105 (36 Hz, đạn mịn) hoãn, chủ quyết sau khi thấy cần (đo đạn tầm xa); (4) #B-102 đo gói tin: hạ xuống nền, chỉ làm lại nếu giật quay lại; (5) cảnh báo Obj pool 29466/30000; (6) trước khi lên server thật: bài học luật "đo tick/ngân sách mỗi tính năng mới" (B-02 chưa đo từng gây lỗi).
+
+## Q-107 (chủ 21/11 23:03) — THỨ TỰ: HOÀN THIỆN CƯỜNG HÓA TRƯỚC, RỒI MỚI LÀM PHI PHONG
+Cường hóa (UI vc37 + nghiệm thu) xong rồi mới làm Phi Phong (client A: tên cạnh nhân vật, nhãn [cấp N], mojibake, 11 bộ theo giới; server B: SC-006 build tiếp, đo). Không chen Phi Phong vào trước.

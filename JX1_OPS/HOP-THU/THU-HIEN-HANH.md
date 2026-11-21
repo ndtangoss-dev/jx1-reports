@@ -259,3 +259,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #363 (22:55) Chat: A kiem [fix36] don texture con trong client hien tai khong; khong sua khi chua len lich — HIEU LUC
 - Chat 22:55: chu bat dau thu boss 22:55; B do tu 22:55
 - Q-106 (22:59) Chat: chu thu boss het giat; goc = Enabled=1 B-02; giu Enabled=0; sua SearchID la P2; Q-105 hoan — HIEU LUC
+- Q-107 + LICH CHUNG (23:05) Chat: cuong hoa truoc, phi phong sau; lich ba ben — HIEU LUC
