@@ -547,7 +547,7 @@ Chat doc khoi HIEU GAME trong A-B.md: dat. Phat hien Enabled=1 (B-02 la loc Bot,
 4. Ghi ro: Enabled=0 lam mat loc Solo cua Bot tam thoi (Test-36); bao A neu A dang test Bot.
 5. Tiep tuc doc phan CON THIEU (AI-QUAI, QUAI-NPC-BAN-DO, BAN-DO-DANH-THUONG-LAN-LENH, S3RELAY, FIX_HISTORY 45-48, SC-004, Q-80/82) va bo sung khoi HIEU GAME; khong chan restart.
 
-## #B-110 Chat 22:27 — B: HOP BA BEN LAP KE HOACH (chu chot 22:23). Khong giao viec le nua.
+## #B-110 [ĐÃ XỬ LÝ 22:35 - DONE: đã ghi ĐỀ XUẤT KẾ HOẠCH] Chat 22:27 — B: HOP BA BEN LAP KE HOACH (chu chot 22:23). Khong giao viec le nua.
 SO TAY LIEN QUAN: STATE/QUY-TRINH-LAP-KE-HOACH.md (moi), STATE/LICH-CONG-VIEC.md (ban nhap); HIEU-GAME van la cong (LUAT-RIENG-B).
 Chu muon: Chat, A, B thong nhat lich roi moi lam, B va A lam song song nhung khong dung nhau. Viec dang lam cua B giu nguyen (baseline NPC sau restart 22:15, doc so tay).
 Khi co ket qua baseline (hoac xong buoc dang lam), tra loi vao A-B.md muc "B -> Chat: DE XUAT KE HOACH": (a) viec con lai cua B theo P0-P3, (b) tai nguyen chung se cham (restart gs001, vao VM, doi file, build, nap gs001), (c) thoi gian uoc tinh, (d) viec phu thuoc A/chu (A khong online? chu thu boss khi nao), (e) viec B lam duoc song song khong cham gs001 (doc so tay, sua ma worktree SC-006B, tieu yeu), (f) rui ro/ket qua can chu duyet. Ghi "GIU gs001"/"TRA gs001" moi lan cham.

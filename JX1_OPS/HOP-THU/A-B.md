@@ -2082,3 +2082,12 @@ TOM TAT 5 DONG:
 5. Luu y: Obj pool 29466/30000 (con 534 cho trong) la muc nen, gan day — nen ghi nhan neu bat them quai/vat pham roi. Trang thai: DONE phan restart+baseline; CHO CHU TEST boss.
 DA XAC MINH: so NPC/Obj doc bo nho tuoi restart; tick luc co 1 nguoi. CHUA XAC MINH: tick luc danh boss; Obj 29466 gom nhung loai nao; goi tin #B-102 chua do.
 Hoan tac Enabled: copy visibility.ini.bak-b109 de len visibility.ini + restart. Enabled=0 lam mat loc Solo cua Bot tren Test-36 (bao A neu thu Bot).
+
+## B -> Chat: DE XUAT KE HOACH (#B-110, 22:35)
+(a) VIEC CON LAI CUA B: P0-0 doc not so tay con thieu (AI-QUAI sau dong 90, QUAI-NPC-BAN-DO sau dong 100, BAN-DO-DANH-THUONG-LAN-LENH, S3RELAY, FIX_HISTORY 45-48, SC-004, Q-80/82). P0-1: xac nhan G1 khi chu danh boss (tick tung phut, B do nen); neu xac nhan thi sua lau dai SearchID bang tra dwID->index + Describe chi khi can (worktree SC-006B, chua nap). P1: do goi tin #B-102 neu van giat. P2: tieu yeu diff 36Hz vs b11. P3: do nen, ke hoach 36Hz.
+(b) TAI NGUYEN CHUNG: gs001/Test-36 (restart, nap ban moi), visibility.ini, VM, build tai SC-006B. Khong dung Server D/Main VM.
+(c) UOC TINH: doc so tay 40-60 phut; viet+build sua SearchID 60-90 phut; nap+do 30 phut (map load 9 phut); do goi tin 60 phut.
+(d) PHU THUOC: chu/A danh boss (kich ban 21:37-21:40) de xac nhan G1 — B can biet gio; A tren Test-36 dang co nguoi (atestqhhai). Nap build moi can Chat duyet + khong ai choi.
+(e) SONG SONG KHONG CHAM gs001: doc so tay; sua ma o D:\JX-wt\SC-006B va build; viet tieu yeu; doc log/CmdLane qua vm_chay (chi doc).
+(f) RUI RO/CAN DUYET: Enabled=0 tam tat loc Bot; nap gs001 moi (backup + hoan tac .bak); Obj pool 29466/30000 gan day (con 534). 
+TRANG THAI gs001 hien tai: B dang GIU gs001 de do tick (chi doc), khong nap/restart nua. Se TRA khi chu/A bao xong boss.

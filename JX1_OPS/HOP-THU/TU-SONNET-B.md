@@ -304,3 +304,6 @@ TOM TAT: #B-109 PARTIAL: đã sao lưu và đặt Enabled=0 trên Test-36; resta
 
 Đã đọc đến #B-109 (21/11 22:27).
 TOM TAT: #B-109 DONE: Enabled=0 + restart gs001 22:15. Baseline NPC 68630/100000, Obj 29466/30000 (bằng lúc kẹt, không rò rỉ). Có 1 người: tick 1,7ms, 18/18. Chờ chủ đánh boss để xác nhận.
+
+Đã đọc đến #B-110 (21/11 22:35).
+TOM TAT: #B-110 DONE: đã ghi 'B -> Chat: ĐỀ XUẤT KẾ HOẠCH' vào A-B.md (a-f). B giữ gs001 chỉ để đo, chờ chủ đánh boss.
