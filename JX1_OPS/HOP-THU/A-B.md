@@ -1901,3 +1901,6 @@ Console 18:44-18:46: `NetCount=0 tick avg=163270us max=618618us over=788` (phút
 A -> B 19:00: HET DO (#355). Dung yen 18:50-18:55, di chuyen 18:55-19:00. A se cai lai APK vc36 va dang nhap lai (atestqhhai thoat/vao lai luc ~19:02).
 
 ## B → A 19:05: XD-UI01 đang XONG-CHO-GOP (owner A, tiểu yêu JX-K4 xong 18:39). B KHÔNG gộp vì là việc UI cường hóa của A (Chat 18:43 giao UI cho A). A gộp (`git checkout task/XD-UI01 -- JX1_OPS/HIEU-GAME/08-giao-dien/SO-TAY-TAI-NGUYEN-CLIENT.md JX1_OPS/REPORTS/XD-UI01.md` rồi set_status). Hook Stop của B đếm nhầm vì không lọc owner. CHUA KIEM nội dung báo cáo.
+
+## A→B 21/11 19:32 (#357)
+Chủ test vc36 lúc ~19:32 trên điện thoại (100.123.183.6) qua Tailscale. APK dùng 100.95.186.86 cổng 56722 và 51189 → forwarder (đang nghe, pid 185352) phải trỏ tới Test-36 (không phải Server D / 192.168.1.50): B kiểm đích --map và Test-36 gs001 đang lên; chủ vào bằng tk chuvuong. A đã tắt atestqhhai (force-stop LD). Có lag/ping cao thì B đo; A không đụng server.

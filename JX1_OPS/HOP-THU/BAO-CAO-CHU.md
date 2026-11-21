@@ -166,3 +166,10 @@ Chủ đăng nhập lại claude.ai; B mở https://claude.ai/code/session_01Mrv
 1. Mở trang Artifact "Link tải APK" (https://claude.ai/artifact/AZvpZmtEtJs41rfGDHJ1dh), bấm "Sao chép", dán vào Chrome (bật Tailscale).
 2. Tệp jx1-vc36.apk, 95.139.800 byte; SHA256 a0ec09bc523794324dd2179fd5b6fb9876d57349493137ad613fdf943b8a58d6. Cài đè bản cũ.
 3. Chưa đạt: thông báo kết quả hiện ở khung chat (panel tự đóng sau cường hóa); ảnh d, e chưa chụp lại. Khung kim cương chưa có tài nguyên.
+
+## (A) 21/11 19:32 [CAN-CHU] Test vc36 qua Tailscale (5 dòng)
+1. Mở app Tailscale trên điện thoại Xiaomi, bật công tắc (đang hiện "offline"), đăng nhập ĐÚNG tài khoản Tailscale cũ của chủ (cùng tài khoản đã dùng cho vc22/vc23).
+2. Game nối Test-36 qua máy chủ 100.95.186.86, cổng 56722 và 51189 (APK vc36 dựng từ cùng cây mã nên dùng đúng đường này; không dùng 192.168.56.x). Chưa thử trên điện thoại thật.
+3. Cài vc36: mở trang Artifact "Link tải APK" (https://claude.ai/artifact/AZvpZmtEtJs41rfGDHJ1dh), sao chép link dán vào Chrome, tải rồi cài đè bản cũ (SHA256 a0ec09bc…8a58d6).
+4. Tài khoản: tkchuvuong, vai chuvuongtestaa (của chủ). atestqhhai đã tắt khỏi LD, không chiếm tài khoản.
+5. Mất kết nối: tắt/bật lại Tailscale, thoát hẳn game vào lại; vẫn không được thì nhắn Chat "A Chat mất kết nối" kèm giờ để A/B xem nhật ký forwarder.
