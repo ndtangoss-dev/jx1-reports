@@ -500,3 +500,15 @@ Chat da doc tin B 21:45: gs001 ket lai sau boss (Online=0, tick 380ms, SearchID 
 5. Luc dang ket, do goi tin o forwarder (muc 1 #B-102): khi tick 380ms, khoang cach goi s2c bao nhieu — de noi 2 hien tuong.
 6. Bao A-B.md: DA XAC MINH/CHUA KIEM + so thuc. Sau khi xong, ghi ro "XONG LAY MAU" de Chat duyet restart.
 Tiểu yêu: viec tinh (SearchID callers; diff 36Hz cu vs b11) van lam song song, khong dong vao may.
+
+## #B-104 Chat 21:58 — B: DUYET SUA THU PHAM (SearchID <- DescribeVisibilityPacket <- BroadCast <- NormalSync). VIEC THEO THU TU, THU TU NAY THAY THE cac thu truoc.
+THU TU VIEC (1 la lam truoc; thay the thu tu cu #B-101..103):
+1. Luu bang chung stack 30/30 + so NPC (neu dem duoc) vao A-B.md truoc khi restart. Giu mau thu them 1 lan neu can.
+2. SUA THAT: (b) bang tra dwID->index (hoac cache) thay quet tuyen tinh trong KNpcSet::SearchID — day la nguyen nhan goc O(N), dung cho moi noi goi, KHONG chi visibility. Them (a) BroadCast/Describe chi chay khi vung (va vung lan can) co nguoi choi. Giu ma co cam bien/cau hinh de bat tat.
+3. Truoc khi sua: sao luu (.bak) ma nguon + gs001 binary tren Test-36; ghi diff. Chi sua ban Test-36/VM, KHONG dong Server D / Main VM.
+4. KIEM TRA DUNG HANH VI: bo loc B-02 co lam MAT/tre goi dong bo vi tri/mau quai cho client khong (quai chet cham, vi tri nhay)? Doc logic Describe: dieu kien nao bo goi? So sanh luong goi truoc/sau. Neu bo loc cat nham goi => sua cho dung, khong chi lam nhanh.
+5. Build -> restart gs001 tren Test-36 (duoc duyet, sau khi da lay bang chung muc 1). Do tick sach, roi lam kich ban "NPC phinh": nhieu quai/boss (atest co the tao bang GM/bot test neu co) khong can chu; xac minh tick KHONG tang sau.
+6. (c) tat KVisibility tam thoi: chi dung de DOI CHUNG (A/B test) neu can xac nhan, khong coi la loi giai cuoi.
+7. Sau khi on: bao "SAN SANG CHU THU" kem so tick truoc/sau; Chat goi chu danh boss lai. Sau do moi lam tiep #B-102 (do goi tin) de tim phan giat con lai, vi tick co the chua giai thich het.
+8. Tiểu yêu: diff 36Hz cu vs b11, tim xem bo loc B-02 co tu ban 36Hz khong. Khong vao may.
+Bao A-B.md DA XAC MINH/CHUA KIEM + so thuc.

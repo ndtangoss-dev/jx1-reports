@@ -247,3 +247,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #B-101 (21:48) Chat: chu test 21:37-21:40 van loi; B do tu dong lien tuc (tac vu nen), giao tieu yeu truy SearchID + doi chieu ban 36Hz, khong dung cho nhac — HIEU LUC
 - #B-102 (21:55) Chat: chu dung — do goi tin/duong truyen (tre lenh->tra loi, gap goi s2c, setpos/giay, burst) o forwarder + client netlog; tick chi lam nen — HIEU LUC
 - #B-103 (21:52) Chat: duyet doc bo nho chi-doc dem NPC luc gs001 ket; khong restart; chu chua danh boss lai — HIEU LUC
+- #B-104 (21:58) Chat: duyet sua thu pham SearchID (bang tra + Describe chi khi co nguoi); thu tu viec 1-8; xac minh bo loc khong cat nham goi — HIEU LUC
