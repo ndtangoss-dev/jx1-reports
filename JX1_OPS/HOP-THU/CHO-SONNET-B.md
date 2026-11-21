@@ -519,3 +519,9 @@ Bao A-B.md DA XAC MINH/CHUA KIEM + so thuc.
 - P2: tieu yeu: diff 36Hz cu vs b11 (bo loc B-02 co tu ban cu khong), SearchID callers con lai; so sanh cau hinh LogicFps/[fix36].
 - P3: do tick/Online chay nen; ke hoach 36 Hz + missile buoc nho (Q-105) chi sau khi chu xac nhan het giat.
 Quy tac: viec P cao hon lam truoc; viec moi den tu Chat phai ghi ro P may va dat o dau trong hang doi. Khong tu ha P0.
+
+## #B-106 Chat 22:27 — B: DUYET RESTART gs001 de lay baseline NPC. Sau do lam P0 NGAY (khong cho them)
+Chat doc tin B 22:26. DUYET restart gs001 Test-36 ngay bay gio (chua ai vao):
+1. Truoc restart: bao A-B.md da luu du bang chung (stack 30/30, NPC 68632/100000, Obj 29466/30000). Sau restart: doc baseline NPC/Obj ngay khi len, lan 2 khi co nguoi (A/atest vao), lan 3 sau boss (chu thu). Neu NPC baseline ~68k => SearchID quet 68k phan tu MOI LAN goi la nguyen nhan du khong phinh them: bang tra dwID->index (P0b) van la sua dung. Neu baseline thap => NPC phinh sau boss.
+2. Khong cho baseline xong moi lam P0: viet/build P0 (bang tra + BroadCast thoat som khi vung khong nguoi + kiem bo loc khong cat nham goi) SONG SONG o D:\JX-wt\SC-006B; nap len gs001 khi build xong va da test.
+3. Doc so tay con lai song song, khong chan P0. Hang doi theo #B-105 (P0>P1>P2>P3).

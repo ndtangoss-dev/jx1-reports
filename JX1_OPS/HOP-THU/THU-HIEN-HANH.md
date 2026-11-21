@@ -249,3 +249,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #B-103 (21:52) Chat: duyet doc bo nho chi-doc dem NPC luc gs001 ket; khong restart; chu chua danh boss lai — HIEU LUC
 - #B-104 (21:58) Chat: duyet sua thu pham SearchID (bang tra + Describe chi khi co nguoi); thu tu viec 1-8; xac minh bo loc khong cat nham goi — HIEU LUC
 - #B-105 (21:55) Chat: xep hang P0-P3 cho B (P0 sua SearchID, P1 do goi tin, P2 tieu yeu diff, P3 tick nen/36Hz) — HIEU LUC
+- #B-106 (22:27) Chat: duyet restart gs001 lay baseline NPC; P0 song song, khong cho — HIEU LUC
