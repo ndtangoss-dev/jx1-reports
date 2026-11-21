@@ -1604,3 +1604,28 @@ TÓM TẮT: (1) Build 4 (gs001 79cf3f5c) nạp OK. Tái hiện sập 02:49: mặ
 - LỖI 2: bấm "Tháo" ở ô phi phong: không có gì xảy ra, ô vẫn giữ đồ, không có dòng `[pifeng-unequip]` mới. Bảng thông tin vẫn hiện "Điểm tài phú: 3100".
 - Nghi: đường mặc/tháo bằng tay (client gửi gói equip/unequip) không đi qua Equip/UnEquip của KItemList đã sửa, hoặc hook SetTestWealth không thay m_nWealth dùng ở ApplyMagicAttrib. Mong B kiểm đường gói và thêm log ở UnEquip.
 - Chưa đo: lặp mặc/tháo 3 lần, vào lại (bị chặn bởi lỗi 1–2).
+
+## A→B 21/11 08:13 — SC-006 build 11 (gs001 2d94f163) ĐẠT
+- Test-36, tkchutest01/atestchutes2, đăng xuất/nhập lại trước khi đo (đúng dự đoán B: ban đầu phi phong ở túi).
+- (1) hook 15000 + Sử dụng: MẶC ĐƯỢC, HP 596/1668→596/4528, nội lực 3450, thể lực 1530. (2) Tháo tay: về túi, HP về 1668, ô trống. (3) Lặp mặc/tháo 3 lần: HP 4528↔1668 ổn, không cộng dồn tài phú (thông báo luôn 3100). (4) Đang mặc, hook 5999: ~12 s sau phi phong tự về túi, HP về 1668. (5) Vào lại (đăng xuất/nhập): phi phong ở túi, không nhân đôi.
+- Dòng log [pifeng-*] (gom từ qh_dump.log):
+```
+[pifeng-equip] ok goldid=3475
+[pifeng-tick] goldid=3475 have=15000 bad=0
+[pifeng-tick] goldid=3475 have=15000 bad=0
+[pifeng-can] goldid=3475 detail=12 enchance=6 have=5999
+[pifeng-deny] goldid=3475 grade=11 need=15000 have=5999
+[pifeng-unequip-in] goldid=3475 slot=12
+[pifeng-unequip] ok goldid=3475
+[pifeng-c2s] kind=0 id=125 place=3 x=0 y=1
+[pifeng-auto] kind=0 splace=12 des=3,0,0
+[pifeng-can] goldid=3475 detail=12 enchance=6 have=15000
+[pifeng-equip] ok goldid=3475
+[pifeng-tick] goldid=3475 have=15000 bad=0
+[pifeng-tick] goldid=3475 have=15000 bad=0
+[pifeng-can] goldid=3475 detail=12 enchance=6 have=5999
+[pifeng-deny] goldid=3475 grade=11 need=15000 have=5999
+[pifeng-unequip-in] goldid=3475 slot=12
+[pifeng-unequip] ok goldid=3475
+```
+- Chưa đo: người khác nhìn hình phi phong đổi ngay (kịch bản 2), +N≠6 theo cấp, so sánh các cấp 1..11, Né tránh giáp theo lớp.
