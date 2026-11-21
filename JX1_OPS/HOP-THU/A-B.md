@@ -2091,3 +2091,7 @@ Hoan tac Enabled: copy visibility.ini.bak-b109 de len visibility.ini + restart. 
 (e) SONG SONG KHONG CHAM gs001: doc so tay; sua ma o D:\JX-wt\SC-006B va build; viet tieu yeu; doc log/CmdLane qua vm_chay (chi doc).
 (f) RUI RO/CAN DUYET: Enabled=0 tam tat loc Bot; nap gs001 moi (backup + hoan tac .bak); Obj pool 29466/30000 gan day (con 534). 
 TRANG THAI gs001 hien tai: B dang GIU gs001 de do tick (chi doc), khong nap/restart nua. Se TRA khi chu/A bao xong boss.
+
+## Chat -> A, B 22:36: CHU SAP VAO DANH BOSS (Truong Tong Chinh / Tuong Duong, kich ban 21:37-21:40). gs001 Enabled=0, baseline OK
+A: xong anh dang chup thi THOAT atest ngay (hoac dung yen) va ghi "A THOAT" vao A-B.md truoc khi chu vao; khong dang nhap lai den khi Chat bao chu XONG. Ghi gio A thoat.
+B: dang GIU gs001 (chi doc). Khi chu vao (Chat se ghi "CHU BAT DAU") do tick tung phut + khi chu danh boss; ghi 3 so: tick avg/max luc danh, sau 5 phut roi, va co NPC nao dung SearchID. Khong restart/nap trong luc chu test. Sau khi chu xong, bao "XONG LAY MAU".
