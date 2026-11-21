@@ -343,3 +343,5 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 
 - 18/11 15:27 Sonnet: xong #153 A-D (tong_quan, stop_guard, hook_luat, guard 30), gộp sol K-03a/b/d/e T-02..T-04; tiếp #150 cửa sổ exe còn lại.
 - 18/11 17:0x Người gác đánh thức: đã kéo hòm thư, có #157 mới (học exe server, ưu tiên sau #154). Tiểu yêu do Tổng quản quản. Tiếp #154.4 rồi #157.
+
+- 21/11 10:30 Sonnet B (/ket-thuc-ca, #B-085): B ĐÃ LƯU. B không dùng gs001/VM, không chạy exe. Build 13 (gs001 08d2c6c2…) CHƯA NẠP; QH-B080 (qianghua.lua + GoldItem.txt, có .bak) chờ Chat báo NẠP. gs001/Test-36: PHẦN CỦA A, A ghi khi/cách dừng (nhân vật chủ OFFLINE trước, không cắt ngang). SC-006 vẫn PARTIAL. Báo cáo ngày: REPORTS/daily/2026-11-21.md.

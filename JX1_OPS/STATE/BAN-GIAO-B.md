@@ -44,3 +44,7 @@ Task `JX-Lietke`, `JX-Gui`; CDN tạm `out/cdn-t36.pid`; forwarder PID 190524; `
 
 ## 6. Đồng bộ git (#244)
 Dùng `python -I JX1_OPS/TOOLS/dong_bo.py --push` trong worktree của mình (commit trước; script dừng nếu còn file sửa dở). Không `git add -A` các file Tổng quản sinh. Không xóa stash khi chưa `git stash show -p`.
+
+## Điểm lưu 21/11 10:30 (/ket-thuc-ca, #B-085)
+- Đã đọc đến #B-085. Không việc dở trong worktree docs. Mã nguồn: D:\JX-wt\SC-006B (sc-006b, build 13 HEAD b669567, chưa nạp, không đẩy).
+- Bước tiếp khi bật lại: (1) kiểm gs001 đã lên (cần 7-10 phút) trước khi bảo chủ test; (2) QH-B080 chỉ nạp khi Chat báo NẠP (DESIGN/QH-B080-deploy/HUONG-DAN-A.md); (3) #B-083 chờ A gửi dòng SvrFPS/tick; (4) dọn hook test trước server thật; (5) SC-006 giữ PARTIAL.
