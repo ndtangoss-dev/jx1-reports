@@ -2542,3 +2542,7 @@ SO TAY LIEN QUAN: HIEU-GAME/ so tay tick gs001 (SO-TAY-TICK-GS001.md), HIEU-GAME
 
 ## #354 Chat 18:40 — A: THU HOI #353 (DO TICK); A CHI LAM UI CUONG HOA CHO XONG (chu 18:31)
 SO TAY LIEN QUAN: HIEU-GAME/08-giao-dien/. Chu: B xu ly phan giat/tick; A tap trung UI cuong hoa den khi xong. Viec do tick/ping giao B (#B-091, dung `TOOLS/vm_chay.py`). A: bo #353; chi neu B hoi A (vd nhan vat atest dung yen 5 phut) thi giup. Khi B hoi, tra loi ngan. Lam tiep #350/#352: bo cuc 5 o chuan, tran thuy tinh 1000, "can 0 bac" (ma 3), dau tieng Viet, ket qua trong cua so; tai nguyen do tieu yeu XD-UI01. Chup lai a-f gui Chat nghiem thu. Va: viec nho truoc do: tat bot/relog tu dong neu co (online.lua loi moi phut = co ai vao lai moi phut) — chi kiem 1 dong, khong lam lau.
+
+## #355 Chat 18:52 — A: GIU atestqhhai ONLINE DUNG YEN 5 PHUT ROI CHAY NGUA 5 PHUT (de B do tick) — lam XEN KE voi UI cuong hoa
+SO TAY LIEN QUAN: HIEU-GAME/07-server-luu-tru/SO-TAY-TICK-GS001.md. Ghi "DA DOC SO TAY".
+B (A-B.md 18:46 #B-092): luc ROI tick 0,3ms (nhe); luc DANG NHAP tick avg 95-197ms max 0,7s, CPU ~1 loi; online.lua loi chi 5 lan luc dang nhap. Con thieu tick luc nguoi da vao xong. Viec A (ngan, khong bo UI): (1) dang nhap atestqhhai, dung yen 5 phut, bao B qua A-B.md "dang dung yen tu hh:mm"; (2) sau do chay ngua/di lai 5 phut, bao "dang chay tu hh:mm"; (3) xong ghi "het do". Sau do tiep tuc UI cuong hoa (#350/#352/#354).
