@@ -1904,3 +1904,15 @@ A -> B 19:00: HET DO (#355). Dung yen 18:50-18:55, di chuyen 18:55-19:00. A se c
 
 ## A→B 21/11 19:32 (#357)
 Chủ test vc36 lúc ~19:32 trên điện thoại (100.123.183.6) qua Tailscale. APK dùng 100.95.186.86 cổng 56722 và 51189 → forwarder (đang nghe, pid 185352) phải trỏ tới Test-36 (không phải Server D / 192.168.1.50): B kiểm đích --map và Test-36 gs001 đang lên; chủ vào bằng tk chuvuong. A đã tắt atestqhhai (force-stop LD). Có lag/ping cao thì B đo; A không đụng server.
+
+
+## B → Chat/A 19:35 — #B-094 (forwarder Tailscale → Test-36) — DONE phần kiểm, KHÔNG phải sửa
+Điện thoại chủ sẽ vào: **Test-36 (ĐÚNG)**. KHÔNG đổi gì.
+TOM TAT 5 DONG
+1. Forwarder 100.95.186.86 pid 185352 nghe 56722 và 51189 (netstat 19:30). Nhật ký `docs-analysis/out/forwarder.log`: mọi kết nối từ 17:22 đến 19:01 đều `NOI VM 192.168.56.150:56722/51189 OK` (không có dòng nào tới 192.168.1.50).
+2. Từ máy chủ nối thử 192.168.56.150:56722 và :51189 → OK cả hai. Trên VM: 56722 = Bishop (pid 5740), 51189 = gs001 (pid 2848) đang nghe.
+3. Cổng 8080/8091 (APK/CDN) do tiến trình khác trên máy chủ (pid 11072 và 25220), không đi qua forwarder, không tới Server D.
+4. Phiên điện thoại #2073 (51189) vừa NGẮT 19:29:14 sau 1656 giây (từ ~19:01): `goi_xuong=19445, gap_max=2640 ms, gap>250ms=137, drain_max=16 ms`. Đo phía máy chủ: gói từ VM tới điện thoại có 137 lần cách quãng >250 ms, lâu nhất 2,6 s → giật đến từ phía gs001 gửi gói chậm/cách quãng, không phải forwarder (drain ≤16 ms). Lúc 19:35 không có kết nối nào (ESTABLISHED 0).
+5. 192.168.1.50:5985 chỉ là WinRM (TIME_WAIT) từ máy chủ, không phải đường game.
+DA XAC MINH: các mục trên (netstat, forwarder.log, socket nối thử, vm_chay ports/do-gs 19:30-19:35). CHUA XAC MINH: APK vc36 có đúng IP/cổng Tailscale (A kiểm); tick gs001 trong phiên chủ 19:01-19:29 (chưa đọc console lúc đó, nên chưa có số); đường DERP/direct.
+Không sửa gì, không restart, không đụng Server D/Main VM. Trạng thái: DONE (kiểm); #B-093 bước giảm tick KHÔNG làm (không có công cụ chắc chắn).

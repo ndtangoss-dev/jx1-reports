@@ -387,7 +387,7 @@ Da doc #B-091 cua B (3 lenh doc-chi gs-info/gs-ghi/gs-lane; Online=0; CPU roi 0%
 3. Do luc CO nguoi: khi A xong UI hoac A cho nhan vat atest dung yen 5 phut thi B do; hoac B hoi A mot cau ngan. Neu chu choi thi do tot nhat. Ghi Online=? kem moi so.
 4. Bao cao A-B.md: so that (tick avg/max/over, Online, gio) + nguon lenh move + phan an tick theo bang chung. Nho "CHUA KIEM" cho cai chua do.
 
-## #B-093 Chat 19:18 — B: CHU TEST THAT ~19:32 QUA TAILSCALE; KIEM TRA DUONG MANG/PING + GIAM TICK AN TOAN
+## #B-093 [GỘP VÀO #B-094 19:35 - chỉ làm bước kiểm đường mạng] Chat 19:18 — B: CHU TEST THAT ~19:32 QUA TAILSCALE; KIEM TRA DUONG MANG/PING + GIAM TICK AN TOAN
 SO TAY LIEN QUAN: HIEU-GAME/07-server-luu-tru/SO-TAY-TICK-GS001.md, STATE/DUONG-VAO-VM.md. Ghi "DA DOC SO TAY".
 Chu se vao choi bang dien thoai qua Tailscale luc ~19:32 va muon MUOT, ping khong giat.
 1. Truoc 19:30 (doc-chi): kiem tra duong Tailscale toi gs001/Test-36: gs001 + dich vu dang chay? cong mo? Tailscale tren may chu (host) dang len, dia chi tailnet, subnet/relay toi VM 192.168.56.150 dung chua (dien thoai vao duoc cong game, khong chi LD)? Do ping host->VM, va neu duoc do do tre qua Tailscale (DERP/relay hay direct). Ghi A-B.md.
@@ -395,7 +395,7 @@ Chu se vao choi bang dien thoai qua Tailscale luc ~19:32 va muon MUOT, ping khon
 3. Luc chu vao: B do tick/ping ngay (gs-console) va ghi so thuc vao A-B.md moi 2-3 phut: Online, tick avg/max/over, ping.
 4. Bao Chat bang A-B.md ngay khi xong buoc 1 (de Chat bao chu tinh trang Tailscale).
 
-## #B-094 Chat 19:23 — B: CHU LENH: DIEN THOAI PHAI VAO DUNG SERVER A DANG TEST (Test-36), KHONG PHAI Server D — UU TIEN SO 1 TRUOC 19:30
+## #B-094 [ĐÃ XỬ LÝ 19:35] Chat 19:23 — B: CHU LENH: DIEN THOAI PHAI VAO DUNG SERVER A DANG TEST (Test-36), KHONG PHAI Server D — UU TIEN SO 1 TRUOC 19:30
 SO TAY LIEN QUAN: STATE/DUONG-VAO-VM.md; BAO-CAO-CHU.md muc forwarder (100.95.186.86:56722/51189/8080/8091 -> truoc day chuyen sang Server D 192.168.1.50).
 Chu noi: kiem tra APK cua chu dang tro ve server nao; phai tro ve CUNG server A dang test (Test-36 gs001 192.168.56.150) de test vc36.
 1. Doc-chi truoc: forwarder Tailscale (100.95.186.86) dang chuyen tiep cac cong 56722/51189/8080/8091 sang dia chi nao? Dich co phai Test-36 khong? Dang nghe cong nao tren Test-36 (gs001/goddess/bishop...) — doi chieu cong ma client vc36 can (A biet).
