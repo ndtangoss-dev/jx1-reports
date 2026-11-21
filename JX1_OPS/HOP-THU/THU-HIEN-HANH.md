@@ -231,3 +231,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #354/#B-091 (18:40) Chat: chu doi viec: B chu tri giat ngua/tick, A chi lam UI cuong hoa; thu hoi #353 — HIEU LUC
 - #B-092 (18:55) Chat: B them gs-console doc-chi vao vm_chay.py (khong restart), tim nguon lenh move moi phut, do khi co nguoi online — HIEU LUC
 - #355 (18:52) Chat: A giu nhan vat online dung yen 5p roi chay ngua 5p de B do tick — HIEU LUC
+- #356 (18:58) Chat: CHU lenh A lam xong som UI cuong hoa vc36 va GUI APK cho chu (han muc sap het) — HIEU LUC

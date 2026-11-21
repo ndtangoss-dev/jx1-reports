@@ -2546,3 +2546,11 @@ SO TAY LIEN QUAN: HIEU-GAME/08-giao-dien/. Chu: B xu ly phan giat/tick; A tap tr
 ## #355 Chat 18:52 — A: GIU atestqhhai ONLINE DUNG YEN 5 PHUT ROI CHAY NGUA 5 PHUT (de B do tick) — lam XEN KE voi UI cuong hoa
 SO TAY LIEN QUAN: HIEU-GAME/07-server-luu-tru/SO-TAY-TICK-GS001.md. Ghi "DA DOC SO TAY".
 B (A-B.md 18:46 #B-092): luc ROI tick 0,3ms (nhe); luc DANG NHAP tick avg 95-197ms max 0,7s, CPU ~1 loi; online.lua loi chi 5 lan luc dang nhap. Con thieu tick luc nguoi da vao xong. Viec A (ngan, khong bo UI): (1) dang nhap atestqhhai, dung yen 5 phut, bao B qua A-B.md "dang dung yen tu hh:mm"; (2) sau do chay ngua/di lai 5 phut, bao "dang chay tu hh:mm"; (3) xong ghi "het do". Sau do tiep tuc UI cuong hoa (#350/#352/#354).
+
+## #356 Chat 18:58 — A: CHU RA LENH: HOAN THANH SOM UI CUONG HOA, DONG GOI APK GUI CHU (gioi han luot sap het)
+SO TAY LIEN QUAN: HIEU-GAME/08-giao-dien/SO-TAY-GIAO-DIEN.md. Ghi "DA DOC SO TAY".
+Chu noi: han muc dang gan 76%, 9 gio moi hoi lai; chu muon A lam xong som roi GUI APK cho chu. Day la LENH CHU cho APK ra may that (chu da duyet, ngoai Q-81 cung duoc cho lan nay).
+1. Sau khi A xong dot do tick 19:00 voi B, lam GON vc36: bo cuc chuan 5 o, tran thuy tinh 1000, sua "Thieu bac: can 0 bac", dau tieng Viet, ket qua trong cua so. Uu tien chay duoc + dung hon dep; cai chua kip ghi vao danh sach "CHUA LAM".
+2. Chup lai a-f nhanh, Chat nghiem thu hinh anh nhanh (A bao Chat ngay khi co anh).
+3. Dong goi APK vc36, gui cho chu theo cach da dung o Q-81 (ghi ro ten tep + cach tai/cai trong BAO-CAO-CHU.md [CAN-CHU] bang 3 dong de chu bam duoc tren dien thoai).
+4. Ghi ngan gon trang thai/viec dang do vao STATE/DANG-LAM.md de phien sau (sau khi han muc hoi) tiep tuc duoc.
