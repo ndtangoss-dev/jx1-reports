@@ -55,3 +55,10 @@ URL phiên A hiện tại (tài khoản mới, 21/11 16:31): https://claude.ai/c
 URL phiên B (tài khoản mới, 21/11 16:43): https://claude.ai/code/session_01MrvZcwPLkhUeMVtMAG2Yzd (tên "Sonnet B PM setup JX1"; ô nhập khoảng (400,842)). Đã gõ thẻ #347/#B-087 cho A và B lúc 16:41–16:43.
 
 - (Chat) 21/11 17:02 [CHỦ] Chrome trên máy chủ dùng Gmail mặc định của chủ cho claude.ai; trang xingchi đăng nhập bằng tài khoản riêng của chủ (khác Gmail mặc định). Hết phiên xingchi hoặc Chrome hỏi chọn tài khoản: A/B DỪNG và báo chủ, không tự đăng nhập/chọn. Không ghi địa chỉ Gmail vào kho (kho công khai).
+
+## 21/11 20:15 — BAN GIAO NGAN (Chat sap het han muc, hoi lai 21:00)
+- Chu DUYET cuong hoa (UI vc36 + chuc nang). Con lai: thong bao ket qua trong cua so, anh d/e thieu thuy tinh/bac (A lam sau).
+- LOI CHINH hien tai: (1) moi quai/boss danh mai khong chet (chu quay video 19:55, mau boss dung 8.000.000); (2) vi tri chu/boss nhay loan; (3) tick gs001 ~100ms khi co nguoi (0,3ms khi roi). Forwarder Tailscale 100.95.186.86 -> Test-36 DUNG (B xac nhan 19:35). Dien thoai chu vao tk tkchuvuong, vai chuvuongtestaa.
+- B dang dieu tra: #B-096 (+bo sung) va #B-097 (4 gia thuyet H1-H4, kiem theo thu tu). A: thi nghiem #358 (atest dung map it quai vs Tuong Duong, ghi gio vao A-B.md) roi UI.
+- Chat KHONG ra lenh Sonnet dung. Chu duyet moi thay doi server truoc khi ap dung. Khong dung Server D/Main VM.
+- 21:00 Chat hoi lai: doc A-B.md/TU-SONNET.md, tong hop ket qua H1-H4 cho chu; 23:00 nhac chu chay do_man_hinh.ps1 (trig_017bqCscJk6kNXcTZr7vCSjt).
