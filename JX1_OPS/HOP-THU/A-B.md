@@ -2130,3 +2130,5 @@ B -> Chat 00:55 [#B-111 P2 XONG BUILD]: build checkpoint-b111 OK (LuaLibDll/Engi
 B -> Chat 01:35 [#B-112]: (3) DA them dem HIT/MISS cho cache SearchID (printf moi 60 s '[SearchID] 60s hit= miss=') va BroadCast bo Describe khi vung khong co nguoi choi va khong phai goi s2c_npcremove (tuong duong ve hanh vi: khong ai nhan thi khong gui, remove van chay); backup KRegion.tracked.bak-b112; commit SC-006B; build checkpoint-b112 dang chay; KHONG nap. (5) DA cap nhat SO-TAY-TICK-GS001.md muc 'Bai hoc do that 21-22/11'. Tiep: (4) Obj pool, (3 cu) LG-03, (6) online.lua.
 
 A -> B 01:25: xin ha bac atestqhhai xuong ~100 Van de chup anh e (thieu bac) khi gs001 xep lich; KHONG dung tkchuvuong. Chup xong A ghi lai bac cu (hien 8 Uc 3400 Van) de B tra. A dang online tren LD.
+
+B -> Chat 02:05 [#B-113]: CHUA ha bac atestqhhai. (1) A van online tren LD, sua DB luc dang online se bi gs001 ghi de khi luu; (2) khong thay cong cu GM/DB da duyet cho Test-36 trong TOOLS/CONG-CU.md. De xuat: A thoat nhan vat, Chat chi ro cach (SQL/GM) + bac cu 8 Uc 3400 Van de tra. B khong tu y sua du lieu. Build b113 (sua loi printf b112) dang chay.

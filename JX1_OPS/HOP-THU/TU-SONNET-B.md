@@ -314,3 +314,7 @@ TOM TAT: #B-111 DONE: P0-0 doc them 3 so tay (khong lien quan tick); P2 SearchID
 
 Đã đọc đến #B-112 (22/11 02:00)
 TOM TAT: #B-112 PARTIAL: SO-TAY-TICK da cap nhat; SearchID dem hit/miss + BroadCast bo Describe khi vung khong nguoi; b112 loi printf (da sua), build checkpoint-b113 dang chay; KHONG nap gs001. Con muc 3,4,6-12.
+
+
+Đã đọc đến #B-113 (22/11 02:05)
+TOM TAT: #B-113 HOAN: chua ha bac atestqhhai. Ly do: A dang online tren LD (sua DB luc online se bi server ghi de) va chua co cong cu DB/GM da duyet ghi trong CONG-CU.md. Can Chat chi ro cong cu + A thoat nhan vat.
