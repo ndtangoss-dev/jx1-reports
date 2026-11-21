@@ -1849,3 +1849,5 @@ A 22/11 02:30 [shot e]: B-113 từ chối hạ bạc (A đang online, chưa có 
 
 A 22/11 02:50 [#366 + LG-07]: LG-07 XONG (HIEU-GAME/08-giao-dien/LG-07-DO-KHUNG-HINH-LD.md: 15 phut, fps TB 55,2, min 48,6; >40ms 0,25%; max 93ms; texture 77->78,6MB; purge=0; KHONG co log fix36 nen chua xac nhan don texture). #366: nhan vat dang dung ngoai thanh Ba Lang Huyen (dang nhap lai vao vi tri cu), chua cat bac vao ruong duoc; dang tim duong ve thanh. Nghi van mat ao +9: UI give chi go local (KuiGive_New::UpdateGiveItem bAdd=0 chi xoa o + m_giveItemData), khong co goi gui server tra do; can doc log gs001 de biet server con giu do hay khong. Chua ket luan.
 Đã đọc đến #366 (22/11 02:40).
+
+A 22/11 03:00 [#366 tiep]: da ve duoc thanh Ba Lang Huyen (toa do ~202/199). "Le Quan" la NPC GM (Lenh Bai GM / Su kien nap the / Huy vat pham), KHONG phai ruong. Ruong chua do nam gan goc tren-trai ban do nho (nhan "Ruong chua do"), chua tim ra NPC; chua cat bac. Huy vat pham cua Le Quan co the dung de xoa bac? KHONG (chi do). Xin Chat chi vi tri NPC ruong hoac duyet hook gm_Money (A khong tu y). Tiep tuc LG-04/FX-01 trong luc cho.
