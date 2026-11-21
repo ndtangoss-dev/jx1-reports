@@ -73,7 +73,7 @@ Kết luận xong thì báo Chat duyệt (O-01) **trước** B-02 chạy.
 
 ## Đã xử lý
 
-## #350-#356 [ĐÃ XỬ LÝ 21/11 19:10] A: UI Cường hóa vc36 làm lại, ảnh a,b,c,f chụp; d,e và thông báo trong panel còn thiếu (xem TU-SONNET); APK vc36 giao chủ (Q-81, lệnh chủ #356); #351 mật khẩu atest dùng nội bộ không lộ; #353 thu hồi; #355 xong 19:00
+- #350-#356 nhận 21/11 17:40-18:58, xử lý 19:10: A: UI Cường hóa vc36 làm lại, ảnh a,b,c,f chụp; d,e và thông báo trong panel còn thiếu (xem TU-SONNET); APK vc36 giao chủ (Q-81, lệnh chủ #356); #351 mật khẩu atest dùng nội bộ không lộ; #353 thu hồi; #355 xong 19:00
 
 - #346 nhận 21/11 16:31, xử lý 16:50: host-only 192.168.56.101, chuỗi Test-36 lên đủ cổng (gs001 51189); Chrome MCP của A vẫn logged out nên không gõ được "A Chat", đã báo ở TU-SONNET; đo tick/online.lua làm tiếp.
 - #336 nhận 21/11 09:10, xử lý 09:40: đọc mã xong 3 lỗi (PaintPifeng không vẽ lại nhãn; cường hóa 0→1 nghi bộ lọc màu đồ; giới tính/cấp chờ B), kế hoạch ở TU-SONNET 09:20/09:35, chưa build.
