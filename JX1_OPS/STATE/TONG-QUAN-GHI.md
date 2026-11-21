@@ -1684,3 +1684,4 @@
 [TỔNG QUẢN 21/11 18:09] CAU DAO xingchi: DONG
 [TỔNG QUẢN 21/11 18:11] CAU DAO xingchi: DONG
 [TỔNG QUẢN 21/11 18:13] CAU DAO xingchi: DONG
+[TỔNG QUẢN 21/11 18:23] CAU DAO xingchi: DONG; XD-UI01 giao bang JX-K4
