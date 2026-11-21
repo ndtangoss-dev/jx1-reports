@@ -73,6 +73,15 @@ Kết luận xong thì báo Chat duyệt (O-01) **trước** B-02 chạy.
 
 ## Đã xử lý
 
+## #368 Chat 01:40 — A: DUYET HOOK HA BAC (chi atestqhhai) + nho B xem log +9
+SO TAY LIEN QUAN: HIEU-GAME/09-cong-cu-gm/PP-03-KIEM-KE-HOOK-THU.md, HIEU-LENH-GM.md.
+1. LG-07, PP-02 chuan bi: NHAN. fps TB 55 la tot; chua xac nhan fix36 thi ghi "CHUA KIEM" (dung).
+2. DUYET: dung hook thu co san (menu [TEST-A]/online.lua hoac gm_Money neu PP-03 da ghi la hook Test-36) CHI len nhan vat atestqhhai de TRU bac xuong ~100 Van; ghi bac cu 8 Uc 3400 Van; chup anh e xong CONG LAI dung so bac cu bang cung hook. Day la nhan vat thu, khong phai tien that. Khong dung tkchuvuong. Khong tim NPC ruong nua.
+3. Ao +9 mat: Chat nho B tra log gs001 (B-116); A tao lai mon +9 bang hook them do va tiep tuc.
+
+[Đã xử lý 03:50: anh e chụp xong (vc38-e-thieu-bac.png), bạc trả đúng 834000000; còn tái tạo áo +9 và theo dõi B-116]
+
+
 ## #367 Chat 01:10 — A: CHU TEST OK Cuong hoa. SANG PHASE 2 PHI PHONG (Q-108)
 SO TAY LIEN QUAN: HIEU-GAME/08-giao-dien/SO-TAY-GIAO-DIEN.md, 09-cong-cu-gm/PP-03-KIEM-KE-HOOK-THU.md.
 Lam theo LICH-CONG-VIEC: PP-02 (client Phi phong) cung B lam PP-01 (server), khong xung dot khoa gs001/LD. Van giu #366 (loi mat do +9, anh e). Moi buoc ghi A-B.md, het luot go "A Xong". Khong nap APK len may that ngoai lenh.
@@ -2595,12 +2604,6 @@ SO TAY LIEN QUAN: HIEU-GAME/09-cong-cu-gm/HIEU-LENH-GM.md, PP-03-KIEM-KE-HOOK-TH
 3. Neu ruong khong nhan het: dung hook thu co san trong PP-03 (muc gm_Money neu A da kiem la hook Test-36 duoc phep) — GHI cau len bao cao truoc, chi ap dung len nhan vat atestqhhai, ghi bac cu 8 Uc 3400 Van de tra.
 4. Mon +9: A tu tao lai bang hook them do co san (PP-03) hoac cuong hoa tiep tu +0 len +9 (neu da co thuy tinh hook); ghi nguyen nhan mon +9 bien mat khi go khoi o giua (nghi: UI give chua tra ve khi dong cua so? Kiem log) — day co the la LOI THAT can tim: dong cua so khi con do o o giua phai tra do ve tui. Kiem va bao cao.
 5. Xong ghi TU-SONNET + go "A Xong" vao khung Chat.
-
-## #368 Chat 01:40 — A: DUYET HOOK HA BAC (chi atestqhhai) + nho B xem log +9
-SO TAY LIEN QUAN: HIEU-GAME/09-cong-cu-gm/PP-03-KIEM-KE-HOOK-THU.md, HIEU-LENH-GM.md.
-1. LG-07, PP-02 chuan bi: NHAN. fps TB 55 la tot; chua xac nhan fix36 thi ghi "CHUA KIEM" (dung).
-2. DUYET: dung hook thu co san (menu [TEST-A]/online.lua hoac gm_Money neu PP-03 da ghi la hook Test-36) CHI len nhan vat atestqhhai de TRU bac xuong ~100 Van; ghi bac cu 8 Uc 3400 Van; chup anh e xong CONG LAI dung so bac cu bang cung hook. Day la nhan vat thu, khong phai tien that. Khong dung tkchuvuong. Khong tim NPC ruong nua.
-3. Ao +9 mat: Chat nho B tra log gs001 (B-116); A tao lai mon +9 bang hook them do va tiep tuc.
 
 ## #369 Chat 02:45 — A: B duoc doc DB tim +9; A tiep tuc PP-02
 Chat da cho B SELECT DB (#B-117) de tim mon +9. A: khi B can, thoat nhan vat/ghi gio + ID mon. Hook ha bac #368 van duyet. Lam tiep PP-02 (ten canh nhan vat, nhan [cap N], mojibake, tooltip); chua build APK khi B chua nap.
