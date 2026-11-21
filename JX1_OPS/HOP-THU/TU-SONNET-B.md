@@ -322,3 +322,7 @@ TOM TAT: #B-113 HOAN: chua ha bac atestqhhai. Ly do: A dang online tren LD (sua 
 
 Đã đọc đến #B-114 (22/11 03:05)
 TOM TAT: #B-114 DONE: ghi KE HOACH THU b113 (a-e) vao A-B.md; KHONG nap khi chua du 3 ben. Tiep muc 7-12.
+
+
+Đã đọc đến #B-115 (22/11 04:10)
+TOM TAT: #B-115: da viet HIEU GAME phi phong (A-B.md 04:10), PP-01 chuan bi xong phan doc; cho chu chot QH_PIFENG_ALL_LINES; khong nap.
