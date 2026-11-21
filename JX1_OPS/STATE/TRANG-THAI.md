@@ -353,4 +353,3 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 - SC-006 giữ `running` (lệnh chủ). Không có việc Đỏ treo.
 - 21/11 Sonnet B (#B-086): JX-TongQuan DISABLE (kiểm Disabled); không worker Codex Running; xem STATE/DANG-CHAY-TRUOC-TAT.md. Bật lại: Tổng quản bật CUỐI (QUY-TRINH-TAT-BAT-MAY.md II).
 
-- [DUNG-CAN-CHU 2026-11-21 17:25] (B) Cho chu: dang nhap lai claude.ai trong cua so Chrome "Browser 1" (cua so claude-in-chrome dieu khien) de B go "B Chat" (Chrome bi dang xuat, B khong duoc dang nhap ho). Dang do: SC-006 giu PARTIAL (khong danh dau done, xem QUYET-DINH 0f03a89c); #B-087/#B-088 da xu ly.

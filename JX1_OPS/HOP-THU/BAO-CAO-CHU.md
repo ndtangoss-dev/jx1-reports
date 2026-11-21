@@ -158,3 +158,6 @@ Kiểm chuỗi Test-36: `python -I JX1_OPS/TOOLS/vm_chay.py ports` thấy 56722,
 ## (B) 21/11 ~17:05 — KHÔNG GÕ ĐƯỢC "B Chat": Chrome đang đăng xuất claude.ai
 - Mở https://claude.ai/code/session_01MrvZcvMaZXNKa8dLsj2hfU thì bị đưa tới trang đăng nhập (Google/Apple/email). B không đăng nhập hộ (cấm gõ mật khẩu/đăng nhập). Chủ cần đăng nhập lại claude.ai trong Chrome; sau đó B gõ "B Chat" ngay.
 - Việc đã xong và đã đẩy (681ae780): rà soát L20 #B-087 trong HOP-THU/A-B.md. Sổ tay thiếu (không sai): dữ liệu GoldItem/GoldMagic phi phong, định dạng thông báo [QH]. Trạng thái PARTIAL (chưa chạy game, chưa mở KItem-EnChanceRong.patch).
+
+## (B) 21/11 ~17:40 — ĐÃ GÕ "B Chat" THẬT
+Chủ đăng nhập lại claude.ai; B mở https://claude.ai/code/session_01MrvZcvMaZXNKa8dLsj2hfU (phiên thuộc chat https://claude.ai/chat/dbbe6155-99bb-4ab4-b8e8-8ffd6768528c "Kết nối GitHub cho trợ lý"), gõ vào ô trả lời của chat đó (không phải ô trong phiên code) và gửi: tóm tắt #B-087/#B-088, SC-006 PARTIAL. Màn hình xác nhận tin hiện trong chat. Chưa thấy Chat trả lời lúc này. Thẻ [DUNG-CAN-CHU 17:25] trong TRANG-THAI.md đã hết việc → xóa.
