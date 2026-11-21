@@ -184,7 +184,7 @@ Mỗi cửa sổ mới cần có: concept được duyệt, layout spec, atlas/s
 - [x] Làm rõ tooltip vật phẩm là cửa sổ độc lập.
 - [x] Tạo concept atlas PNG và ZIP handoff.
 - [x] Lưu quyết định vào Memory.
-- [ ] Đưa atlas/ZIP vào kho GitHub.
+- [ ] Đưa file nhị phân atlas/ZIP trực tiếp vào kho GitHub (tài liệu handover và checksum đã commit trên Git; asset nhị phân hiện được lưu trong ChatGPT Library để giữ nguyên file).
 - [ ] Claude khảo sát source Cocos V3 (chưa thực hiện trong phiên này).
 - [ ] Crop sprite/kiểm alpha/tạo plist.
 - [ ] Tích hợp UI vào nhánh thử nghiệm.
@@ -192,3 +192,11 @@ Mỗi cửa sổ mới cần có: concept được duyệt, layout spec, atlas/s
 - [ ] Chủ dự án duyệt trước khi đưa vào baseline.
 
 **Cảnh báo độ chắc chắn:** Chưa có source Cocos V3 mở trong phiên này để kiểm chứng class/path/callback; các tên module ở trên chỉ là đề xuất. Không được coi báo cáo này là xác nhận rằng UI đã được tích hợp hoặc build thành công.
+
+
+## 11. Bản lưu tài nguyên bền vững
+Các file nhị phân đã được sao lưu vào ChatGPT Library:
+- `/JX1/UI-Assets/JX1_CuongHoa_UI_Asset_Pack.zip`
+- `/JX1/UI-Assets/JX1_CuongHoa_UI_Atlas.png`
+
+Git hiện đã lưu đặc tả, quyết định, checksum, prompt và đường dẫn handover. Hai file nhị phân chưa được commit trực tiếp vào GitHub trong lượt này; không được hiểu nhầm rằng repo đã chứa PNG/ZIP. Dùng bản Library ở trên làm bản lưu nguyên gốc cho tới khi asset được upload vào kho Git phù hợp.
