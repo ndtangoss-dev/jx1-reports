@@ -1861,3 +1861,5 @@ A 22/11 03:50 [#368 XONG phan A]: (1) Anh e DA CHUP: EVIDENCE/ui-cuonghoa/vc38-e
 A 22/11 04:00: #368 xong (anh e + tra bac dung 834000000). #369 nhan: B doc DB tim +9 (B-117); A cho B bao gio/ID, tiep tuc PP-02, chua build APK. Da doc den #369.
 
 Đã đọc đến #369
+
+- 22/11 03:48 A: #370 đang làm. SỰ CỐ của A: bấm mù vào menu [TEST-36] trúng "Don hanh trang" → túi atestqhhai bị xóa sạch (21 món, cả sách; chỉ nhân vật test, bạc nguyên 8 ức 3400 vạn). Khôi phục: gắn TẠM dòng cấp sách vào online.lua (Test-36, backup online.lua.bak-370), đăng nhập lại nhận sách, GỠ NGAY (đã khôi phục từ .bak, 0 dòng TMP370). Bài học: luôn chụp màn hình trước khi bấm menu có nút xóa. Sau đó: "Do XANH" cấp lại 10 món, "[#370] 1 mon tui len +9" báo +9 cho món (0,1) idx=48 (Thanh Đồng Thủ Trạc); tooltip client chưa hiện +9 (chưa kiểm: cần làm mới). Việc kế: đặt món vào ô giữa Cường Hóa, gỡ ra, kiểm túi, relog nếu mất.
