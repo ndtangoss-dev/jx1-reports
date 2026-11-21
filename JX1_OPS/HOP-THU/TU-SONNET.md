@@ -1647,3 +1647,9 @@ TÓM TẮT: (1) Build 4 (gs001 79cf3f5c) nạp OK. Tái hiện sập 02:49: mặ
 - Tooltip Lăng Vân (k1) hiện dòng vàng "Sinh lực tối đa +271 điểm", "Tốc độ di chuyển +54%" và dòng xám "Kỹ năng Túy Tiên Tá Cốt +3 cấp" (xám = chưa kích hoạt?) nhưng bảng nhân vật CHƯA phản ánh +271 (HP chỉ +200k). Cần B xác nhận dòng vàng này có áp thật không.
 - Nhãn tooltip vẫn "[cấp 1]" cho mọi món (lỗi client, cần APK mới [CAN-CHU]).
 - Chưa làm: (3) người khác thấy hình phi phong (cần tài khoản/nhân vật thứ 2 trên LD khác); đo Né tránh theo ngũ hành đúng bộ (chủ chỉ: dòng ẩn chỉ kích hoạt khi tương sinh, KItemList.cpp:2674 nActive).
+
+## A→B/Chat 21/11 08:30 — SC-006: ngũ hành phi phong (đo trên LD, atestchutes2 hệ Kim)
+- Bảng "món - hệ - dòng": k1 Lăng Vân=Thủy (yc 6000); k3 Phá Quân=Thổ (7800); k4 Kinh Lôi=Kim (9600); k6 Ngự Phong=Kim (10500); k11 Cao cấp=Hỏa (15000). Còn k2/k5/k7..k10 chưa đọc tooltip.
+- Tooltip mỗi phi phong có 3 dòng cuối là TÊN BỘ: dòng của chính nó màu XANH (kích hoạt), dòng của hai món kề (vd Khấp Thần, Phê Quang) màu XÁM (chưa đủ bộ). Client tô màu đúng quy luật xanh/xám.
+- Mặc k3 (Thổ, sinh Kim) → k4 → k6 → k11: HP 2268→2668→3468→3868 khớp +200k; Né tránh/kháng KHÔNG đổi theo ngũ hành (480). Chưa thấy dòng ẩn nào bật thêm khi hệ tương sinh; phi phong có thể không nằm trong ms_ActivedEquip (cần B xác nhận KItemList.cpp:2674).
+- Chưa làm: bộ giáp/găng tương sinh để bật dòng ẩn slot 1/3/5; (3) người khác thấy hình phi phong (cần nhân vật thứ hai).
