@@ -307,3 +307,6 @@ TOM TAT: #B-109 DONE: Enabled=0 + restart gs001 22:15. Baseline NPC 68630/100000
 
 Đã đọc đến #B-110 (21/11 22:35).
 TOM TAT: #B-110 DONE: đã ghi 'B -> Chat: ĐỀ XUẤT KẾ HOẠCH' vào A-B.md (a-f). B giữ gs001 chỉ để đo, chờ chủ đánh boss.
+
+Đã đọc đến #B-111 (22/11 00:55)
+TOM TAT: #B-111 DONE: P0-0 doc them 3 so tay (khong lien quan tick); P2 SearchID cache dwID->idx o SC-006B, build checkpoint-b111 OK (commit 3ec3987), CHUA nap gs001. gs001 on dinh tick ~0,85ms over=0. Chua kiem duoc vu ket sau boss.
