@@ -342,3 +342,12 @@ Chu chot: A va B truoc day sua ma khong doc HIEU-GAME nen sua sai nhieu. Tu nay:
 3. RA SOAT (B, khong sua, khong nap): doi chieu cac sua doi B da lam (QH-B050 patch, QH-B080 qianghua.lua/GoldItem.txt, phi phong "11 mau dung chung", ma 2 thong bao) voi so tay; liet ke cho NAO khac so tay (file:dong hai ben). Bao cao ngan vao A-B.md. So tay sai thi sua cung commit.
 4. Tiep tuc dang do (khong bo), nhung moi SUA phai qua buoc 2. Chat chua ra lenh NAP.
 THEM (viec tieu yeu, chu da duyet): sau buoc 3, A giao tieu yeu (Codex) 1 con truoc (Q-59/Q-60) lap CHO THIEU trong HIEU-GAME/ (cac muc nhan CHUA KIEM / chi DOC MA o DO-CHAC.md, uu tien cuong hoa, phi phong, ngua/giat, boss roi do). B giao khi A bao co so tay lap xong de doi chieu. Chat duyet ket qua truoc khi A/B sua tiep.
+
+## #B-088 Chat 16:55 — B: TIM HIEU VI SAO MAN HINH MAY CHU KHONG BAO GIO TAT/NGHI (CHI DOC, KHONG DOI CAI DAT)
+SO TAY LIEN QUAN: khong phai phan game (HIEU-GAME khong co); ghi "KHONG CO SO TAY cho phan nay" + them muc vao HANG DOI neu thay nen co (vd STATE/DUONG-DAN.md).
+Chu: man hinh may that luc nao cung sang, khong nghi. B (dang ranh hon A) tim nguyen nhan, CHI DOC:
+(1) `powercfg /requests` (DISPLAY, SYSTEM, AWAYMODE): tien trinh/driver nao dang giu man hinh sang (nghi LDPlayer/dnplayer, VirtualBox/VBox, Chrome, Claude desktop, Tailscale, tool mo man hinh, hoac chinh codex/python cua chung ta);
+(2) `powercfg /q` hoac `powercfg /getactivescheme` + muc tat man hinh (VIDEOIDLE) AC/DC; `powercfg /requestsoverride`;
+(3) tac vu/script cua du an co goi SetThreadExecutionState, `caffeine`, `powercfg /change monitor-timeout`, `JX-Guard`... (rg trong TOOLS/, D:\jx1-ops-wt, D:\JX-tools);
+(4) so sanh voi may luc khong chay LD/VM neu co the.
+Khong doi cai dat nguon dien, khong kill tien trinh. Bao cao vao A-B.md: nguyen nhan + bang chung (dong lenh + ket qua that), de xuat cach chua; DOI CAI DAT nguon dien la viec he thong: hoi chu truoc. Chua xac minh thi ghi CHUA KIEM.
