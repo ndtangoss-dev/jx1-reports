@@ -1831,3 +1831,5 @@ DA DOC SO TAY: HIEU-GAME/08-giao-dien/CO-CHE-MENU-LUA.md, SO-TAY-GIAO-DIEN.md (c
 Cần tôi quyết định: không
 ĐÃ ĐỌC SỔ TAY: HIEU-GAME/08-giao-dien/SO-TAY-GIAO-DIEN.md, SO-TAY-TAI-NGUYEN-CLIENT.md, CO-CHE-MENU-LUA.md
 Chat nghiệm thu hình ảnh: xem EVIDENCE/ui-cuonghoa.
+
+Đã đọc đến #363 (21/11 23:10): #360/#361 xong (vc37), #362/#363 trả lời ở A-B.md.
