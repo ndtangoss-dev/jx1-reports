@@ -2549,3 +2549,7 @@ SO TAY LIEN QUAN: HIEU-GAME/08-giao-dien/CO-CHE-MENU-LUA.md, SO-TAY-GIAO-DIEN.md
 SO TAY LIEN QUAN: STATE/QUY-TRINH-LAP-KE-HOACH.md (moi), STATE/LICH-CONG-VIEC.md (ban nhap).
 Chu muon: gom viec -> Chat, A, B thong nhat -> xep lich tuan tu/song song khong xung dot -> moi giao. Tu gio Chat khong giao viec le gay xung dot gs001.
 Viec cua A (giu nguyen dang lam: vc37, chup a-f + HUD, thoat atest khi xong). Khi xong buoc dang lam, tra loi vao A-B.md muc "A -> Chat: DE XUAT KE HOACH": (a) viec con lai cua A (liet ke), (b) tai nguyen chung se cham (gs001, dang nhap atest, restart, LD, APK, file tren VM), (c) thoi gian uoc tinh tung viec, (d) viec phu thuoc B, (e) luc nao can B KHONG restart/dang nhap, (f) viec nao A lam duoc song song voi B (khong cham gs001). Ghi "A THOAT" khi roi gs001.
+
+## #363 Chat 22:55 — A: KIEM [fix36] (don texture) CO TRONG CLIENT HIEN TAI KHONG (chu nho co che toi uu "xoa gi do")
+SO TAY LIEN QUAN: FIX_HISTORY/45-fix36-giat-ban-do-va-36hz.md, SO-TAY-GIAT-NGUA-CLIENT.md (HG-S2).
+Fix36: KgameWorldVN::custom_update goi removeUnusedTextures() MOI GIAY (ban goc) -> giat ban do (khung >40ms 197->12 sau sua). Sua: chi don khi cache texture >384MB, kiem tra moi 10s; ma the [fix36]; JxPerf.h. A kiem tra rieng [fix36] (KgameWorldVN.cpp, KScenePlaceC.cpp, JxPerf.h) con trong qh9A/vc37 khong (marker check cu chi noi den fix33/34/47). Neu thieu thi bao Chat, dua vao lich, KHONG sua khi chua len lich (ba ben). Them: thu bao nhieu khung >40 ms tren LD luc di map. Tra loi vao A-B.md.
