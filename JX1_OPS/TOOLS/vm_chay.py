@@ -42,6 +42,7 @@ Get-ChildItem '""" + ROOT + r"""\gs\gameser_log' -File -Recurse | Sort-Object La
 Get-Content C:\JX\chain_up.log -Tail 4""",
     "gs-ghi": r"""Get-ChildItem '""" + ROOT + r"""\gs' -File -Recurse -ErrorAction SilentlyContinue | Where-Object { $_.LastWriteTime -gt (Get-Date).AddMinutes(-15) } | Sort-Object LastWriteTime -Descending | Select-Object -First 15 | % { $_.FullName + ' ' + $_.LastWriteTime.ToString('HH:mm:ss') + ' ' + $_.Length }""",
     "gs-lane": r"""Get-Content '""" + ROOT + r"""\gs\CmdLane_stat.log' -Tail 12""",
+    "gs-console": r"""schtasks /run /tn JX-TMP-console | Out-Null; Start-Sleep 8; $f = Get-Item C:\JX\sql\console.txt; 'console.txt ' + $f.LastWriteTime + ' now=' + (Get-Date); $l = Get-Content $f.FullName; 'tong_dong=' + $l.Count; ($l | Select-String 'SvrFPS|LogicFps|fix36|Script error|Online' | Select-Object -Last 8 | % { $_.Line }); '--- 6 dong cuoi'; $l | Select-Object -Last 6""",
     "ten-co": r"""$fs = [IO.File]::Open('""" + ROOT + r"""\gw\database\roledb', 'Open', 'Read', 'ReadWrite'); $b = New-Object byte[] $fs.Length; [void]$fs.Read($b, 0, $b.Length); $fs.Close()
 $t = [Text.Encoding]::ASCII.GetBytes('%(name)s'); $hit = $false
 for ($i = 0; $i -le $b.Length - $t.Length -and -not $hit; $i++) { if ($b[$i] -eq $t[0]) { $k = 1; while ($k -lt $t.Length -and $b[$i+$k] -eq $t[$k]) { $k++ }; if ($k -eq $t.Length) { $hit = $true } } }
@@ -92,7 +93,7 @@ def main(a):
     if not a:
         sys.exit(__doc__)
     cmd = a[0]
-    if cmd in ("chain-up", "ports", "gs-info", "gs-ghi", "gs-lane"):
+    if cmd in ("chain-up", "ports", "gs-info", "gs-ghi", "gs-lane", "gs-console"):
         print(goi(BLOCKS[cmd]))
     elif cmd == "log":
         if len(a) < 2 or a[1] not in LOGS:

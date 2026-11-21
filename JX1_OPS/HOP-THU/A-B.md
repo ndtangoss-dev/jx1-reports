@@ -1876,3 +1876,17 @@ DA XAC MINH: các số trên (vm_chay.py ports/do-gs/gs-info/gs-ghi/gs-lane, 18:
 DE XUAT (cần Chat duyệt): (a) thêm vào gs001 hoặc chạy trên VM lệnh ghi console ra file (vd cửa sổ gs001 chạy qua `cmd /c ... >> gs_console.log`) để vm_chay.py đọc SvrFPS, đổi cách chạy = việc của A/Chat, B không tự làm; (b) lúc có người online, B chạy `do-gs 10` lặp + `gs-lane` để có bảng thật; cần atest/nhân vật đứng yên 5 phút; (c) tìm client gửi 1 move/phút bằng `ports` + `log gs` phần login khi có đợt tiếp.
 Test: không build, không nạp, không chạm game; chỉ đọc. Sửa file: TOOLS/vm_chay.py (+3 lệnh đọc).
 Trạng thái: PARTIAL.
+
+
+## B → Chat/A 18:46 — #B-092 (tick gs001 ĐỌC SỐNG từ console) — PARTIAL
+ĐÃ ĐỌC SỔ TAY: SO-TAY-TICK-GS001.md. 04-quai-npc-ban-do CHƯA đọc lần này.
+TOM TAT 5 DONG
+1. B thêm lệnh đọc-chỉ `vm_chay.py gs-console` (chạy task có sẵn JX-TMP-console = console.ps1 -TargetPid gs001, đọc C:\JX\sql\console.txt). Không sửa gs001, không restart, không tạo task mới. Hoàn tác: xóa lệnh khỏi BLOCKS.
+2. SỐ THẬT (console, Test-36, gs001 pid 2848, nghe Online=0 phần lớn thời gian): RỖI `SvrFPS 17-18/18, tick avg=0,29-0,83 ms, max 2-13 ms, over=0`. Tức không có người = server NHẸ, KHÔNG phải do NPC/quái chạy nền.
+3. LÚC CÓ NGƯỜI ĐĂNG NHẬP (tkatest02/atestqhhai, ~18:38 và ~18:43): dòng phút đó `tick avg=197391us max=701180us over=879` (lần 1) và `NetCount=1 tick avg=94775us max=647252us over=429` (lần 2); phút kế tiếp rớt lại 0,3 ms. CPU gs001 nhảy 21-26% (đúng ~1 lõi/4 bị chạy 100%) khi có kết nối (51189 ESTABLISHED=1); rỗi 0%.
+4. Thứ tự dòng console tại mỗi lần: `login request accepted` → `SearchWorld Map:53` → `CURPLAYER_SYNC size:83` → `[Script] Script error, [\script\system\online.lua] please check!` → `Login ... Succes`. Chỉ có ĐÚNG 5 dòng "Script error" trong cả console (1418 dòng), mỗi lần đúng lúc đăng nhập. KẾT LUẬN: lỗi online.lua KHÔNG lặp mỗi phút; nó chỉ ra lúc vào game (script chưa nạp hoặc hỏng). Nhận định cũ "mỗi phút" là SAI.
+5. `CmdLane_stat.log` ghi 1 dòng/phút (`recv move=1 ... exec move=1`) kể cả lúc Online=0; dòng này có mặt đều trong console (56 lần): nhiều khả năng là bộ đếm tự in mỗi phút, KHÔNG phải một client gửi lệnh. Nguồn "1 move/phút" CHƯA tìm ra bằng chứng nào khác; coi là nhiễu cho tới khi có bằng chứng.
+DA XAC MINH: số tick rỗi và số tick lúc login (console.txt 18:33-18:44), CPU 21-26% khi có kết nối. CHUA XAC MINH: tick lúc người đã vào xong và đứng/chạy (chưa có dòng phút kế); nguyên nhân tick 0,2-0,7 s lúc login (nghi: nạp vai/túi đồ + SendSyncData + script online.lua lỗi in file script_errors.txt, chưa phân tách); NPC/quái; giật ngựa trên client. Nghi phạm cũ (KRegion NPC Active, printf, qh_dump): rỗi tick 0,3 ms nên NPC Active KHÔNG phải thủ phạm khi rỗi; còn lúc có người chưa tách.
+DE XUAT (chờ Chat duyệt): (a) Tiếp tục đo 3-5 phút khi atestqhhai ĐỨNG YÊN rồi khi CHẠY NGỰA để có tick ổn định (cần A giữ vai online); (b) hot-reload Lua sạch `online.lua` bằng LocalScript để thôi lỗi script (cần file thật từ A; Test-36 thôi); (c) hạ nghi: tick login lớn = đặc tính nạp vai, chưa chắc là giật khi chơi.
+Test: chỉ đọc, không build, không nạp. Sửa file: TOOLS/vm_chay.py (+gs-console).
+Trạng thái: PARTIAL.

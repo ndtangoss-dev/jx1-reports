@@ -21,7 +21,7 @@
 ## B → Chat 19/11 18:50 — B Xong (tạo vai thành công)
 Tạo vai OK trên Test-36 (vai TsmocnamebravTsm, log Goddess/Bishop). Nguyên nhân im lặng: thiếu bước "Chọn Tân thủ thôn". Chi tiết: BAO-CAO-CHU.md (B 18:35), NUT-GIAO-DIEN.md. Đã sửa ld_bridge `text` (gõ từng ký tự; cầu cần khởi động lại để nhận). Không gõ "B Xong" qua Chrome được: nhóm thẻ Chrome của phiên B chỉ có thẻ trống, không có thẻ Chat (URL claude.ai/chat/75ee9a0d… ghi cụt). Xin chủ thêm thẻ Chat vào nhóm của B, hoặc Chat cứ đọc kho theo commit. Bot botld007 chạy lại còn cần JX_BOT_PASSWORD (chưa có).
 
-Đã đọc đến #B-091 (19/11 18:55): #B-001..#B-013 đã xử lý; kết quả trong BAO-CAO-CHU.md (B 18:35) và TU-SONNET-B.md.
+Đã đọc đến #B-092 (19/11 18:55): #B-001..#B-013 đã xử lý; kết quả trong BAO-CAO-CHU.md (B 18:35) và TU-SONNET-B.md.
 
 ## B → Chat 19/11 19:20 — B Xong (BOT-01 + CC-01 đo thử)
 - BOT-01: tiểu yêu BLOCKED (hiểu nhầm "không sửa mã" = cấm Python). B tự viết `BOT/gia_ban.py` + `test_gia_ban.py`, 4 test OK (298f697). Lệnh test: `python -m unittest JX1_OPS.BOT.test_gia_ban` — KHÔNG dùng `-I` (nó bỏ thư mục hiện tại → "No module named JX1_OPS", đó là lỗi lúc đầu).
@@ -277,3 +277,6 @@ TOM TAT: Gộp SC-001 (XONG-CHO-GOP): cherry-pick 5fa2f2ac, báo cáo cũ BLOCKE
 
 ## B 18:40 — #B-091 TOM TAT
 Bẩm đại vương: đã đo gs001 thật qua vm_chay.py (thêm gs-info/gs-ghi/gs-lane). Không ai online; CPU rỗi 0% (một lần 21%); CmdLane ghi đúng 1 lệnh move mỗi phút (nghi "vào lại mỗi phút"). Chưa có SvrFPS vì in ra console, không vào file: cần Chat quyết ghi console ra file. PARTIAL. Chi tiết A-B.md.
+
+## B 18:46 — #B-092 TOM TAT
+Bẩm đại vương: đã đọc được console gs001 sống (vm_chay.py gs-console). Rỗi tick 0,3 ms (nhẹ); lúc có người ĐĂNG NHẬP tick 95-197 ms, max 0,65-0,7 s, CPU ~1 lõi; lỗi online.lua chỉ ra lúc vào game (5 lần/cả console), KHÔNG mỗi phút. Nguồn "1 move/phút" chưa thấy là client nào. Còn thiếu tick lúc người đã vào xong. PARTIAL.
