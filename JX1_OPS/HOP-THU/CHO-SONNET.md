@@ -2637,4 +2637,5 @@ SO TAY LIEN QUAN: HIEU-GAME/08-giao-dien/SO-TAY-TAI-NGUYEN-CLIENT.md.
 3. Chua day len may that. Sau do tiep PP-02. Mon +9 mo coi cu cua atestqhhai: B co RecoverGiveItems (chua nap), dung tao lai neu can.
 
 ## #374 Chat 06:32 — A: NHAN vc40 (83 MB DAT). TIEP PP-02; nho L23
+[Đã xử lý 06:32: #374 — ghi vc40 + SHA256 vào BAO-CAO-CHU.md; cập nhật sổ tay SO-TAY-CUA-SO-CUONG-HOA (gỡ món vc39, bẫy đệm chết); PP-02 pha 2 chờ B nạp Phi phong]
 vc40 nhan, ghi BAO-CAO-CHU link + SHA256 cho chu test sang nay (dien thoai). Lam tiep PP-02 theo STATE/HANG-DOI-VIEC.md (muc 8-15), vuot 30 phut phai go "A Chat hh:mm: ..." vao khung Chat; het viec go "RANH".

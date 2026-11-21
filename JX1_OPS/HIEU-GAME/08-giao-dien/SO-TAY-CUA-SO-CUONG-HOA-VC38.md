@@ -15,6 +15,15 @@ Nguồn: `D:\JX-build\qh9A\Classes\vn\gameui\KuiGiveVN.cpp`, `gameui\KuiGive_New
 - vc38: trước khi bỏ ô, lưu tên và vị trí trang bị vào `g_qhWantName/H/V/Seq/Tm`. `qhTick` đợi `m_qhBag` có lại trang bị cùng tên (ưu tiên cùng vị trí), rồi đặt lại bằng GOI_ADDITEM_CLIENT; hết 20 giây thì bỏ. Kết quả: dù thành công hay thất bại, trang bị ở lại ô giữa và bảng hiện cấp kế (+N → +N+1).
 - Không cần sửa server/Lua.
 
+## Gỡ món khỏi ô giữa (vc39, giữ nguyên ở vc40)
+- Lỗi cũ: chạm ô giữa để gỡ chỉ xóa ô phía client, server không biết nên món mất khỏi túi (cả món +0 lẫn +9).
+- Sửa ở `KuiGive_New::btnCallBackFunc_quxia`: trước `setLock(...,0)` gửi `OperationRequest(GOI_GIVE_ITEM_FAIL, PLAYER_GIVEUI, 1)` → `SendClientCmdGive(uId, n, nKind=0)` → c2s_playergiveback kèm `m_uId`. Server (`c2sGiveBack`) chỉ trả món về túi khi `m_uId != 0`.
+- Kiểm trên LD: đặt, gỡ, đóng cửa sổ, đăng nhập lại đều thấy món trong túi.
+
+## Bẫy build APK: đệm chết (vc39 nặng 99 MB)
+- Đóng gói tăng dần (apkzlib) để lại lỗ trống trong zip chứa `libMyGame.so` cũ; vc39 nặng hơn vc38 16,1 MB dù 987 mục giống nhau.
+- Cách chữa: xóa `intermediates/incremental/packageDebug`, `intermediates/apk/debug`, `outputs/apk/debug` rồi build lại (vc40 = 83.030.371 byte). Làm bước này trước mỗi bản chốt.
+
 ## Bẫy đã gặp
 - Chữ tiền trái phải cỡ nhỏ hơn (19 thay vì 24) khi chuỗi dài hơn 12 ký tự, nếu không đè icon xu.
 - Thứ tự túi đồ đổi sau mỗi lần cường hóa (đồ bị bỏ ra rồi đặt lại): kiểm ảnh trước khi chạm theo tọa độ.
