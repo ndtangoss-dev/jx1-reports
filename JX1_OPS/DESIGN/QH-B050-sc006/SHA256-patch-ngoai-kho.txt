@@ -1,0 +1,14 @@
+a887a10ba900da4b7237d69349802f0200a5cfecb0bf46cd43d653e765f6f79a *sc006-b11-full.patch
+aa564773ba016300d7fa26c3b4af077b190726789ba1d0e5306f544719d6ffb9 *series/0001-SC-002-JxQhScalable-28-29-30-pItemData-khi-Add-that-.patch
+7e2f74790b0a4c93a107b7ff7921f029bc13c420dfe8907d6c0efb61a5582935 *series/0002-SC-006-QhCheckPifeng-sau-doi-cap-cuong-hoa-hinh-phi-.patch
+345d43fdc68a0c198e0374310df7af01bd98cb5f4cc06d11ca7a9cf2ba3fb73b *series/0003-SC-006-scale-thuoc-tinh-nen-28-29-30-SetTestWealth-T.patch
+d58d2b61f9e133db330da489ac826999f05e34baae8faf4d239857c2beddbf39 *series/0004-SC-006-phi-phong-ap-moi-dong-bo-luat-dong-le-an-qh_d.patch
+c1ae34020aac0894661eb3b81038e85f2cce599c93021af02eb42d9edacf7abb *series/0005-SC-006-sua-loi-chuoi-dump.patch
+3d808c29cc6e98fc1e4e71d930b6f924cb132d17b520252f40cd771ed5a547ff *series/0006-SC-006-tai-phu-giam-kiem-lai-phi-phong-moi-nhip-tu-t.patch
+2db2d04d039f3b4c0ece7819b3974e651f28b7410b1e4f9e8d41fba8d32c3724 *series/0007-Engine-chan-tran-bo-dem-KSG_StringSet-GetValue-nghi-.patch
+be8733084c1e1651f3cd5d421c4ba4e7301832ceea50d43f2a6f5825a384fa9a *series/0008-SC-006-kiem-tai-phu-phi-phong-moi-nhip-log-tu-choi.patch
+8dc463218bf02a08b2740209be9bd8f218ed004ed5631806e1b99025e40835c4 *series/0009-SC-006-log-chan-doan-phi-phong-goldid-have.patch
+5bb8905a3de0291e5eb1b0ad65fdd75985eefb8fef2b889c66076eb32640e17e *series/0010-SC-006-tai-phu-so-nguong-tru-phan-cua-chinh-phi-phon.patch
+6e9239b30e060a1b452c44604740c13fd91ba5bdda4316650ab91012b1fc3b21 *series/0011-SC-006-b9-tai-phu-tinh-truc-tiep-tu-cac-mon-0.9-tru-.patch
+f19d91a327c6de8e02a559fce8dbc77cee9110291c4479d6b2cd4b3b3a4b29b9 *series/0012-SC-006-b10-cho-900-nhip-sau-khi-vao-game-moi-tu-thao.patch
+2805c1a5f173c5976607902f3258ab74f9e3438b1a2f69c50cf4a8d2cba7a0fe *series/0013-SC-006-b11-log-c2s-equip-unequip-mac-that-bai-thi-tr.patch
