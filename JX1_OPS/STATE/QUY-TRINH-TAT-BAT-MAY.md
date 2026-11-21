@@ -27,3 +27,5 @@ B: (1) `schtasks /Query` thật → ghi bảng tác vụ thật (tên, trạng t
 
 ## Danh sách thật (B điền)
 (B kiểm bằng schtasks /Query 21/11): JX-TongQuan (nay DISABLED), ~190 tác vụ JX-codex-<ID> (đều Ready), JX-Guard (Disabled), JX-LDCanh (Ready), JX-Forwarder-T36 (Running, thuộc VM), JX-Forwarder-Tailscale, JX-CDN-8080, JX1-Task-Dispatcher (Running, của A/chủ), JX1-ADMIN-* (tay chủ). Tên đúng như bản thiết kế; `/Change /DISABLE` chạy được không cần nâng quyền. Chi tiết: STATE/DANG-CHAY-TRUOC-TAT.md.
+
+- [A 21/11 #349] Sau khi bật LD: chạy `pythonw -I TOOLS/ld_canh_cua_so.py` (nền) để thu nhỏ cửa sổ LD; `--once` kiểm 1 lần (đã thử với LD T36-tester01: thu nhỏ 1 cửa sổ). Đưa vào bước /tiep-tuc.

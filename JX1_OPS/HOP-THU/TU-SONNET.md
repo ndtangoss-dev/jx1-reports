@@ -1766,3 +1766,6 @@ Việc thiếu sổ tay đưa vào hàng đợi tiểu yêu: (a) vòng tick gs00
 - Thống nhất với B (A-B.md 17:35): dùng B080 nguyên văn (dòng 55 `c|c`), bỏ đề xuất `|0` của A.
 - Nạp qua docs-analysis/out/dep_b080.ps1 (Invoke-Command, .bak-a-b080 cạnh file): qianghua.lua SHA 9A3BAD17… và GoldItem.txt SHA 0C81979D… KHỚP nguồn B080 (VM trước: AD58B89B…/2FA5AA2C…). Restart gs001 16:44 giờ VM (GoldItem cần restart). Build 13 của B: không đụng (APK, không nạp lên máy thật).
 - Chờ gs001 lên (7-10 phút) rồi mới thử. Chưa chụp ảnh nghiệm thu; làm UI client (KuiGive_New.cpp) tiếp.
+
+## Đã đọc đến #349 (21/11 17:30)
+#349 xong: chạy ld_canh_cua_so.py nền, --once thu nhỏ 1 cửa sổ LD; ghi bước vào QUY-TRINH-TAT-BAT-MAY.md. Làm tiếp #348 (vc33 đang build).
