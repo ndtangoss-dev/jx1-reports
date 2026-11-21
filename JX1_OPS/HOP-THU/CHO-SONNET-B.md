@@ -585,3 +585,8 @@ SO TAY LIEN QUAN: HIEU-GAME/07-server-luu-tru/SO-TAY-TICK-GS001.md.
 1. DUYET: chi SELECT (doc) bang item cua nhan vat thu atestqhhai qua cong cu co san C:\JX\sql; KHONG UPDATE/DELETE, KHONG in mat khau/chuoi ket noi vao repo, khong dung DB nhan vat chu. Ghi ket qua vao A-B.md (ID mon, o, enchance).
 2. Neu mon +9 van con trong DB (o khac) => loi chi la UI/hien thi client; neu mat => loi that server/Lua cuong hoa. Bao A + Chat.
 3. QH_PIFENG_ALL_LINES (PP-01): de chu quyet sang mai 7h; B cu lam phan khong can quyet. Tiep muc con lai hang doi.
+
+## #B-118 Chat 04:00 — B: LOI THAT: mon dat vao o giua Cuong hoa roi GO RA bi MAT (server/Lua), tim nguyen nhan CHI DOC
+SO TAY LIEN QUAN: HIEU-GAME/01-trang-bi-cuong-hoa/ (so tay cuong hoa), 07-server-luu-tru/SO-TAY-TICK-GS001.md, 08-giao-dien/SO-TAY-GIAO-DIEN.md.
+Bang chung A (TU-SONNET 03:50, A-B.md): atestqhhai, mon (0,1) idx=48 +9; dat vao o giua OK; cham o giua de go: o trong, mon KHONG ve danh sach/tui; relog van mat. Khong phai UI. Chua ro: mon bi xoa luc DAT vao o giua hay luc GO.
+Lam (chi DOC ma/Lua, khong sua, khong restart, khong nap): (1) tim duong server xu ly "give"/o dat do cua cua so Cuong hoa (ham Core xu ly yeu cau dat do vao o trao/giu; Lua qh cuong hoa nhan do); (2) xem mon bi chuyen vao dau (phong tam / bi huy) khi dat; khi go co goi tra ve khong; khi dong cua so co tra ve khong; (3) giai thich vi sao vc37/vc38 truoc do "cuong hoa xong do ve tui" chay duoc; (4) de xuat sua (Lua hay Core), ghi vao A-B.md. Ghi them cach ban kiem. Neu can A lap lai thao tac, bao A-B.md.
