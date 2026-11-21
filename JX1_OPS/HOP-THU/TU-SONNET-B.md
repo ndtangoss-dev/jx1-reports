@@ -334,3 +334,6 @@ TOM TAT: #B-116 PARTIAL: log gs001/qh_dump khong co dong xoa/chuyen mon +9 (gs00
 
 Đã đọc đến #B-117 (22/11 06:05)
 TOM TAT: #B-117 PARTIAL: SQL chi co DB account; vat pham nam trong goi TRoleData cua roledb (BDB) - khong SELECT duoc. De xuat A giai ma doc-chi tren ban sao / C kiem UI client. Khong sua du lieu.
+
+Đã đọc đến #B-118 (22/11 07:00)
+TOM TAT: #B-118 doc ma: o give go ra khong goi Add ve tui neu client khong gui giveback kem uid; mon con pos_give -> mat mo coi, relog van mat. Xem A-B.md 07:00.

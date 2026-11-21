@@ -2175,3 +2175,19 @@ A -> B 22/11 03:50 [#368]: bac atestqhhai da ve dung 834000000 sau khi chup anh 
 A -> B 22/11 03:52 [#370]: Tái hiện mất đồ +9: atestqhhai, VM ≈03:47:31 hook +9 cho idx=48 (Thanh Đồng Thủ Trạc, túi (0,1)); 03:48:37 đặt vào ô giữa Cường Hóa; 03:48:46 gỡ ra → món mất khỏi túi; 03:50:26 relog vẫn mất. Nhờ B: SELECT DB xem item idx=48/Thủ Trạc của atestqhhai còn không + log gs001/Goddess quanh 03:48:30–03:48:50. A không sửa server.
 
 A -> B 22/11 03:56 [#371]: Thêm dữ kiện cho B-118: gỡ tay món THƯỜNG (nhẫn +0, VM 03:52:52) cũng mất; ĐÓNG cửa sổ khi món còn ở ô giữa (áo, 03:53:17→03:53:25) thì món VỀ túi. Vậy chỉ đường "gỡ tay" (chạm ô giữa) làm mất món. A không sửa server; chờ B trả lời.
+
+## B -> Chat 07:00 [#B-118 PARTIAL - da doc ma, co gia thuyet ro, CHUA XAC MINH runtime]
+HIEU GAME: o giua Cuong hoa dung lop "give" (LuaGiveItemUI -> PLAYER_GIVE, ScriptFuns.cpp:24321; Server chi ClearRoom(room_give) :24362) va goi lai qua c2s_playergiveback (KProtocolProcess.cpp:9256 c2sGiveBack).
+TOM TAT 5 DONG
+1. [THAY] c2sGiveBack dau ham: moi m_uId khac 0 -> SearchID -> m_ItemList.Remove(idx) (go khoi danh sach, gui s2c_removeitem cho client, KItemList.cpp:688); mon CHI ve tui neu sau do nKind 0/1/3 goi Add(...pos_equiproom) (KProtocolProcess.cpp:9296-9330, 9335-9350, 9410+).
+2. [THAY] Neu tui khong cho (CheckCanPlaceInEquipment sai) thi ItemSet.Remove = XOA HAN mon (9300-9310, 9345, 9415). Day la duong "mat that" duy nhat co code xoa mon.
+3. [THAY] Mon dat vao o give co nPlace=pos_give; luu DB van ghi local=pos_give (KPlayerDBFuns.cpp:1116 co printf rieng). Khi login, ClearRoom(room_give) (KPlayer.cpp:239) nhung mon nap lai theo pos_give => mon ton tai nhung khong nam o tui/o nao nhin thay (mat mo coi).
+4. [THAY] Neu client tha mon ra khoi o giua ma KHONG gui c2s_playergiveback kem m_uId (hoac gui m_uId=0), Server khong goi Add ve tui: mon van o pos_give, UI trong, relog van mat. Khop trieu chung A (o trong, tui khong thay, relog van mat).
+5. [CHUA XAC MINH] A dung duong nao khi go: giveback nKind=? hay move pos_give->tui (KItemList.cpp:6371/8284 serAutoMoveItem). Console gs001 khong co dong "nLocal==pos_give" / "AutoMoveItems... nghi copy" (da grep console.txt Test-36, 0 dong).
+GIAI THICH vc37/vc38: duong "cuong hoa xong ve tui" la nKind=3 (9410+) co Add ve tui + Lua sysqianghua; khong dung thao tac "go ra bang tay".
+DE XUAT SUA (chua lam, can Chat duyet):
+ (a) Core nho: o cuoi c2sGiveBack va khi dong cua so/login, quet m_Items co nPlace==pos_give -> Add ve tui (phong ho client quen gui uid). Khong doi giao thuc.
+ (b) Core: khi LoadPlayerItemList gap nLocal==pos_give thi doi thanh pos_equiproom (cuu mon mo coi cho nguoi da bi: atestqhhai +9 co the con trong DB, A dang nhap lai sau khi nap).
+ (c) Client (A): khi go mon khoi o giua phai gui c2s_playergiveback nKind=0 kem m_uId cua mon.
+CACH BAN KIEM: A go mon 1 lan; B doc gs001 console/log xem co goi c2sGiveBack khong (hien chua co log -> can them printf, can nap, cho 3 ben). Hoac A bao nKind/m_uId client gui.
+KHONG sua, khong restart, khong nap. Trang thai: PARTIAL.
