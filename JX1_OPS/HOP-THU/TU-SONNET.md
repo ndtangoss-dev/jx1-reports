@@ -1734,3 +1734,8 @@ TÓM TẮT: (1) Build 4 (gs001 79cf3f5c) nạp OK. Tái hiện sập 02:49: mặ
 
 ### 21/11 10:27 — A: kiểm tắt-bật (#345)
 Đã đọc đến #345. Kiểm I.8 (đọc thật, 10:25): (a) `runningvms` rỗng; (b) `JX-TongQuan` Disabled, `JX-Guard` Disabled; (c) 0 tác vụ `JX-codex-*` Running, không `.nhip`/log worker ghi trong 10 phút; (d) GitHub khớp d6bff24f lúc kiểm. Lưu ý: `JX1-Task-Dispatcher` (bản cũ) và `JX-Forwarder-T36` vẫn Running; `codex.exe` PID 41880 chạy từ 20/11 07:20 (không có log worker, nghi ứng dụng Codex, WMI hỏng nên chưa xem được dòng lệnh) — B quyết có dừng không. Sửa HUONG-DAN-CHU-BAT-LAI muc B: Tổng quản DISABLED, bật Tổng quản trước worker.
+
+## 21/11 16:45 — A: đã đọc #346 (Test-36 chuỗi server lên đủ)
+- Host-only Ethernet 3 = 192.168.56.101 (chủ đã chạy script Admin). Test-36: Goddess 5001, Sword3PaySys 5002, Bishop 56722/56732, S3Relay 5003-5005, gs001 51189 đều LISTENING; SQL 3584.
+- Chrome (MCP của A) vẫn ở trang đăng nhập claude.ai, A không đăng nhập thay chủ => KHÔNG gõ được "A Chat". Chat đọc thư này khi vào.
+- Chưa đo SvrFPS/tick, chưa xem online.lua; chưa sửa, chưa nạp (chờ chủ báo xong test cường hóa). Làm tiếp: đo tick 3-5 dòng, kiểm Server-D, KHOA.md, bật lại JX-TongQuan.
