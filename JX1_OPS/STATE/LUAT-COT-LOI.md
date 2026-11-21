@@ -135,3 +135,10 @@ Nguyên nhân sự cố 22/11 00:14: A xong vc37 lúc 22:58, B xong đề xuất
 4. Hết việc trong lịch: gõ `A Chat hh:mm: RẢNH` (không tự bịa việc to; có thể làm việc nền trong LICH-CONG-VIEC.md rồi gõ).
 5. Nếu hộp thoại "Đăng nhập lại" chặn khung nhập thì bấm "Để sau" rồi gõ lại; nếu khung Chat bận, dùng Ctrl+Enter (hàng đợi).
 6. Chat: mỗi thư giao việc kết thúc bằng dòng "XONG thì gõ `A Xong`/`B Xong` vào khung Chat (L23)". Chat chỉ đặt vòng kiểm thưa 30 phút làm lưới an toàn, và đọc tin A/B gõ ngay khi tới. Tổng quản kiểm: A/B im >40 phút mà không có gõ gọi Chat → ghi CHO vào TONG-QUAN-GHI để Chat biết.
+
+## L24 (chủ chốt 22/11 00:32) — KHÔNG KẾT LUẬN "HỎNG / MẤT / KHÔNG CÓ" KHI CHƯA KIỂM ĐẦU VÀO; HÀNG ĐỢI ≥10 VIỆC
+Sự cố 22/11 00:25: Chat chạy `bang_tien_do.py` với `--root` sai thư mục (cha thay vì `JX1_OPS`), ra 0/0, rồi báo chủ "công cụ hỏng, bảng không dựng được" — SAI; chạy đúng ra 93/124 việc. Chủ phải hỏi lại, mất thời gian và niềm tin.
+1. Công cụ ra rỗng/0/lỗi/không thấy: TRƯỚC khi báo chủ "hỏng/mất/không có", Chat (và A, B) phải kiểm lại THAM SỐ và ĐƯỜNG DẪN vào (đường dẫn gốc, thư mục làm việc, tên file, nhánh), chạy lại ít nhất một lần với giá trị đúng, và đọc phần `--help`/đầu tệp công cụ. Chỉ báo "hỏng/mất" khi đã thử đúng mà vẫn rỗng, và nêu đã thử gì.
+2. Khi báo chủ điều có thể sai vì mình chưa kiểm hết, ghi rõ "CHƯA KIỂM: ..." và không dùng giọng chắc chắn ("hỏng", "mất", "không còn").
+3. `TOOLS/bang_tien_do.py` đã tự dò `JX1_OPS` nếu `--root` là thư mục cha, và báo LỖI rõ khi bảng rỗng — chạy chuẩn: `python3 -I JX1_OPS/TOOLS/bang_tien_do.py --root JX1_OPS --out /home/claude/board` rồi đăng artifact (publish_files, `index.html`).
+4. BẢNG TIẾN ĐỘ là nguồn của HÀNG ĐỢI: A và B luôn có ≥10 việc trong `STATE/HANG-DOI-VIEC.md` / `HANG-DOI-VIEC-B.md`; dưới 10 thì nạp lại từ bảng (việc "chờ"/"đang chạy"/"bị chặn") + `LICH-CONG-VIEC.md`. Tổng quản kiểm mỗi vòng; Chat dựng lại bảng và đăng artifact mỗi lần đổi tài khoản và mỗi khi số việc đổi đáng kể, và ghi URL artifact vào `HOP-THU/KHOI-DONG-CHAT.md`.

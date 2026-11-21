@@ -261,3 +261,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - Q-106 (22:59) Chat: chu thu boss het giat; goc = Enabled=1 B-02; giu Enabled=0; sua SearchID la P2; Q-105 hoan — HIEU LUC
 - Q-107 + LICH CHUNG (23:05) Chat: cuong hoa truoc, phi phong sau; lich ba ben — HIEU LUC
 - L23 (00:17): A/B chu dong go vao khung Chat de danh thuc; #364/#B-111 giao viec — HIEU LUC
+- L24 (00:32) Chat: khong ket luan hong/mat khi chua kiem dau vao; bang_tien_do.py tu do JX1_OPS; hang doi >=10 nap tu bang — HIEU LUC

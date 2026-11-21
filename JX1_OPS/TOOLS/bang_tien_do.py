@@ -181,7 +181,16 @@ def main():
     ap.add_argument('--out', default=r'D:\JX-dash')
     ap.add_argument('--graphs', action='store_true', help='chep graph.html server/client vao --out')
     a = ap.parse_args()
-    tot = build(a.root, a.out)
+    root = a.root
+    if not os.path.exists(os.path.join(root, 'TASKS', 'BACKLOG.md')):
+        alt = os.path.join(root, 'JX1_OPS')
+        if os.path.exists(os.path.join(alt, 'TASKS', 'BACKLOG.md')):
+            root = alt  # chu cho nham thu muc cha: tu dung JX1_OPS
+        else:
+            raise SystemExit('LOI: khong thay TASKS/BACKLOG.md duoi --root=%s (dung --root <thu muc JX1_OPS>). KHONG ket luan "bang hong/mat" khi chua kiem tham so.' % a.root)
+    tot = build(root, a.out)
+    if not any(tot.values()):
+        raise SystemExit('LOI: bang rong 0/0, kiem --root va TASKS/BACKLOG.md truoc khi bao.')
     if a.graphs:
         for src, name in ((r'D:\JX-build\src18\jxOnline\graphify-out\graph.html', 'graph-server.html'), (r'D:\Android\b\Client\Classes\graphify-out\graph.html', 'graph-client.html')):
             if os.path.exists(src): shutil.copy2(src, os.path.join(a.out, name))
