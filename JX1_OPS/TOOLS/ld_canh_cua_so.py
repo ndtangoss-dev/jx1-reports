@@ -37,6 +37,10 @@ def sweep():
 
 
 if __name__ == "__main__":
+    import sys
+    if "--once" in sys.argv:
+        print("thu nho %d cua so LD" % len(sweep()))
+        sys.exit(0)
     while True:
         try:
             sweep()
