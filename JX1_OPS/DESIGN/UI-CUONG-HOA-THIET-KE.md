@@ -26,3 +26,6 @@ Nguồn: DESIGN/UI-CUONG-HOA/MO-TA.md + 3 ảnh chuẩn; client `gameui/KuiGive_
 - ĐÃ CHỤP (EVIDENCE/ui-cuonghoa): a (cửa sổ rỗng, có dòng cam nhắc "Thủy tinh tự trừ từ túi"), b (đã đặt đồ, bảng tỉ lệ/bạc/thủy tinh hiện), f0 (đồ trắng bị từ chối, thông báo đúng).
 - CHƯA KIỂM: c (cường hóa 0→1 thành công), d (thiếu 1 loại thủy tinh), e (thiếu bạc), f (đồ đang mặc). Lý do: túi thử chỉ có đồ trắng hoặc +15; cần 1 món xanh/tím/vàng +0.
 - Nghi vấn: bảng cho đồ +15 hiện "Cần bạc: 6553600 vạn", đơn vị "vạn" có thể sai; dòng kết quả (m_qhResult) chưa thấy vì chưa có cường hóa hợp lệ; tiêu đề cửa sổ vẫn là "Giao" (sprite).
+
+### §6b — Ảnh c–f: KẸT, CHƯA KIỂM (21/11)
+Cần món xanh/tím/vàng +0 trong túi. Menu "Bảo vật" (qh_bothu.lua) chỉ mở cho vai tên bắt đầu `atest` (vai atestqhhai, tk tkatest02); mật khẩu tk đó không có trong kho/biến môi trường của A, T36nv1 không qua được cổng tên. Đã thử 3 hướng (tìm công cụ cấp đồ, tìm mật khẩu, quy ước bot_tao_role), đều không ra. Còn CHƯA KIỂM: c (0→1 thành công), d (thiếu 1 loại thủy tinh), e (thiếu bạc), f (đồ đang mặc), đơn vị "vạn", dòng kết quả m_qhResult. Cách gỡ: chủ cấp mật khẩu tkatest02 qua biến môi trường, hoặc nới cổng tên sang `T36` (restart gs001 ~10 phút).

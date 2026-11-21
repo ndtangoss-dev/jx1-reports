@@ -1774,3 +1774,13 @@ Việc thiếu sổ tay đưa vào hàng đợi tiểu yêu: (a) vòng tick gs00
 ĐÃ ĐỌC SỔ TAY: HIEU-GAME/08-giao-dien/SO-TAY-GIAO-DIEN.md, CO-CHE-MENU-LUA.md
 TÓM TẮT: (1) B080 đã nạp Test-36 cùng B, SHA khớp. (2) UI: vc35 cài LD; gốc lỗi là lớp KuiGiveVN. (3) Ảnh a, b, f0 đã đẩy EVIDENCE/ui-cuonghoa. (4) CHƯA KIỂM c,d,e,f: cần món xanh/tím/vàng +0 trong túi T36nv1. (5) §3 tài liệu UI đã cập nhật c|c.
 Cần tôi quyết định: không (A tự cấp món thử qua GM rồi chụp tiếp).
+
+## [A] #348 báo cáo cuối phần giao diện (21/11)
+ĐÃ ĐỌC SỔ TAY: HIEU-GAME/08-giao-dien/SO-TAY-GIAO-DIEN.md, CO-CHE-MENU-LUA.md
+TÓM TẮT 5 DÒNG
+1. UI cường hóa vc35 chạy trên LD: gợi ý + bảng tỉ lệ/bạc/thủy tinh hiện đúng (ảnh a, b, f0).
+2. B080 đã nạp Test-36; §3 thiết kế cập nhật.
+3. Ảnh c, d, e, f CHƯA KIỂM: thiếu món xanh/tím/vàng +0, vai atest cần mật khẩu A không có.
+4. Chưa kiểm: đơn vị "vạn", dòng m_qhResult.
+5. Không gửi APK ra máy thật.
+Cần tôi quyết định: không (chủ có thể cấp mật khẩu tkatest02 qua biến môi trường để chụp nốt).
