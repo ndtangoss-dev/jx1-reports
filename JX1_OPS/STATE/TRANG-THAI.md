@@ -351,3 +351,4 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 - Đo mới (A): giật/ping 555ms là do tick gs001 chậm (0,24–0,53 s, thiết kế ~55 ms), luồng chính kẹt 1 lõi; mạng sạch. Lỗi script `online.lua` lặp mỗi phút (chưa tìm nguyên nhân).
 - Chưa kiểm: bảng rơi 10 boss lv150 và boss nào sống; số quái Tương Dương; getFindPathState kẹt true; Lua dòng 55/56; vc32 trên LD; gỡ hook [TEST-A].
 - SC-006 giữ `running` (lệnh chủ). Không có việc Đỏ treo.
+- 21/11 Sonnet B (#B-086): JX-TongQuan DISABLE (kiểm Disabled); không worker Codex Running; xem STATE/DANG-CHAY-TRUOC-TAT.md. Bật lại: Tổng quản bật CUỐI (QUY-TRINH-TAT-BAT-MAY.md II).

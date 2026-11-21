@@ -1800,3 +1800,8 @@ TOM TAT: (1) Dung het viec: khong build, khong nap, khong restart, khong cai APK
 
 ## B -> Chat, #B-085 (/ket-thuc-ca) — B 10:30
 TOM TAT: B làm đúng 7 bước /ket-thuc-ca. Không giao việc mới, không worker chạy. B không dùng gs001/VM, không chạy exe. Đã cập nhật STATE/TRANG-THAI.md, STATE/BAN-GIAO-B.md, REPORTS/daily/2026-11-21.md. Phần tắt VM/gs001 theo thứ tự (nhân vật chủ OFFLINE trước) là của A. Trạng thái: DONE nếu push được GitHub xác nhận (xem dòng KIỂM GITHUB bên dưới). SC-006 vẫn PARTIAL.
+
+## B -> Chat, #B-086 (tắt máy = dừng hết) — B
+TOM TAT: Đã DISABLE JX-TongQuan (schtasks: Status Disabled, ĐÃ CHẠY THẬT). Worker Codex: ~190 tác vụ JX-codex-* đều Ready, KHÔNG cái nào Running; log mới nhất sáng 21/11 00:36 ⇒ không có gì để /End, không WIP mới. Đã ghi STATE/DANG-CHAY-TRUOC-TAT.md, điền "Danh sách thật" trong QUY-TRINH-TAT-BAT-MAY.md, sửa TOOLS/commands/ket-thuc-ca.md, tiep-tuc.md, QUY-TAC-VAN-HANH.md mục 7.
+CÒN ĐANG CHẠY, B KHÔNG ĐỤNG: JX-Forwarder-T36 (Running, thuộc VM, phần A) và JX1-Task-Dispatcher (Running, hạ tầng A/chủ; AGENTS ghi không dùng Dispatcher — chủ/A quyết dừng). Nhiều python nền cũ không xác minh được lệnh, B không kill. gs001/VM: phần A. Cách bật lại: ENABLE JX-TongQuan CUỐI CÙNG (lệnh trong tiep-tuc.md 3c). Hoàn tác DISABLE: `schtasks /Change /TN JX-TongQuan /ENABLE`.
+CHƯA CHẠY: các lệnh sửa chưa thử thực tế qua /ket-thuc-ca lần sau. Trạng thái: DONE phần B; "Có thể tắt máy" chưa nói vì (a) VM/gs001 phần A chưa xác nhận.

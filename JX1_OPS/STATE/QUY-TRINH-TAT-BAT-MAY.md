@@ -26,4 +26,4 @@ Cơ sở: Tổng quản = Task Scheduler `JX-TongQuan` chạy `TOOLS/tong_quan.p
 B: (1) `schtasks /Query` thật → ghi bảng tác vụ thật (tên, trạng thái) vào mục "Danh sách thật" dưới đây; (2) thực hiện bước I.3–I.6 NGAY cho lần tắt này, ghi `DANG-CHAY-TRUOC-TAT.md`; (3) sửa `TOOLS/commands/ket-thuc-ca.md` + `tiep-tuc.md` (và QUY-TAC-VAN-HANH.md mục 7) theo quy trình này; (4) trả lời chủ: "Tổng quản đã dừng, worker đã dừng, danh sách nằm ở ..., cách bật lại ...". A: kiểm lại bước I.8 và cập nhật `HUONG-DAN-CHU-BAT-LAI-21-11.md` mục B.
 
 ## Danh sách thật (B điền)
-(chưa điền)
+(B kiểm bằng schtasks /Query 21/11): JX-TongQuan (nay DISABLED), ~190 tác vụ JX-codex-<ID> (đều Ready), JX-Guard (Disabled), JX-LDCanh (Ready), JX-Forwarder-T36 (Running, thuộc VM), JX-Forwarder-Tailscale, JX-CDN-8080, JX1-Task-Dispatcher (Running, của A/chủ), JX1-ADMIN-* (tay chủ). Tên đúng như bản thiết kế; `/Change /DISABLE` chạy được không cần nâng quyền. Chi tiết: STATE/DANG-CHAY-TRUOC-TAT.md.

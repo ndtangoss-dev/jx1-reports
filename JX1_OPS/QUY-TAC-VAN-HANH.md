@@ -91,13 +91,14 @@ Mỗi task đang làm luôn có dòng "Bước tiếp theo" đúng thực tế.
 ### `/ket-thuc-ca` (chủ dự án gõ trước khi tắt máy)
 1. Không giao việc mới.
 2. Worker đang chạy: chờ tới điểm dừng an toàn, tối đa 10 phút; quá thì dừng worker, commit phần dở thành `WIP` trên branch task, ghi "Bước tiếp theo".
-3. Server trong VM thử: để nguyên hoặc dừng đúng thứ tự (ghi lại đã làm gì). Không tắt VM bằng cách cắt ngang.
+3. Server trong VM thử: dừng đúng thứ tự (nhân vật chủ OFFLINE trước), ghi lại đã làm gì. Không tắt VM bằng cách cắt ngang. **"Tắt máy" = DỪNG HẾT (chủ chốt 21/11):** DISABLE `JX-TongQuan` TRƯỚC, rồi dừng worker `JX-codex-*`, ghi `STATE/DANG-CHAY-TRUOC-TAT.md`; chi tiết `STATE/QUY-TRINH-TAT-BAT-MAY.md`.
 4. Cập nhật `STATE/TRANG-THAI.md`, `STATE/BAN-GIAO.md`.
 5. Viết báo cáo ngày.
 6. Điểm lưu. Kiểm tra GitHub đã có commit mới.
-7. Nói với chủ dự án một dòng: "Đã lưu. Có thể tắt máy."
+7. Nói "Đã lưu. Có thể tắt máy." CHỈ khi: VM/gs001 đã tắt, JX-TongQuan Disabled, không còn JX-codex-* Running, GitHub có commit cuối.
 
 ### `/tiep-tuc` (chủ dự án gõ khi quay lại, hoặc khi đổi tài khoản, đổi model)
+0. Bật lại theo `STATE/QUY-TRINH-TAT-BAT-MAY.md` phần II: Tổng quản bật CUỐI, sau hạ tầng và phiên Claude (JX-TongQuan phải còn Disabled lúc máy mới lên).
 1. Đọc `README.md` của `JX1_OPS`, rồi `STATE/BAN-GIAO.md`, `STATE/TRANG-THAI.md`.
 2. `git pull` nhánh `jx1-ops`; kiểm tra các worktree, branch task, thay đổi chưa commit.
 3. Kiểm tra môi trường: VM thử đang chạy không, server lên chưa (chạy script bật môi trường nếu cần), LDPlayer, Codex.
