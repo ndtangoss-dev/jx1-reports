@@ -46,3 +46,12 @@ Nội suy 18→60 Hz giữ như vc22 (`jx_interp.txt`=0 tắt). Ra tệp `D:\JX1
 
 | 2026-11-21 16:25 | Sonnet A (phiên mới), /tiep-tuc sau tắt máy | Git khớp origin (06b6843c); thư cuối A #345 đã xử lý, không có thư mới. VM: máy mới mở, cả 3 VM tắt. Bốn `find.exe` Git kẹt (20/11→, ~36 triệu handle) làm VBox không bật được VM (VBoxDrvStub 0xc0000004): đã Stop-Process, VM bật được. Bật headless JX-Test-36 và JX-Server-D 16:20. | Test-36 không ping được: card Host-only máy thật rơi về 169.254.83.226 (cần 192.168.56.101); netsh cần Admin, bị chặn; chủ chạy `docs-analysis/scripts/dat_ip_hostonly_56.ps1` (Admin, có -Undo). Chuỗi server chưa lên (D: chỉ SQL 1433 mở). TongQuan còn DISABLED, chưa bật. |
 - 21/11 17:12 A: BẬT LẠI JX-TongQuan (dry OK, cầu dao xingchi ĐÓNG, HG-S1 SẼ GIAO bằng JX-K4).
+
+## Bàn giao UI JX1 Classic — Cường Hóa (2026-11-21)
+- Chủ dự án đã duyệt concept UI Cường Hóa theo phong cách JX1 Classic; đặc tả chi tiết: [JX1-CUONG-HOA-CLASSIC-UI-HANDOVER-2026-11-21.md](../REPORTS/UI/JX1-CUONG-HOA-CLASSIC-UI-HANDOVER-2026-11-21.md).
+- Quyết định layout: panel Cường Hóa có slot trang bị chính; hai nhánh Bùa May Mắn và Phù Bảo Hộ; tầng dưới 3 loại đá (xanh lá/xanh lam/tím); dưới đó là Nguyên liệu cần, Cần bạc, Tỉ lệ thành công, Chú ý và nút Cường Hóa. Bên phải là lưới trang bị chọn item, không có tiêu đề “Lưới trang bị”; hai vùng tiền tệ ngay dưới lưới.
+- Không có menu chức năng dọc bên trái; không có cửa sổ Hành Trang riêng khi mở Cường Hóa. Tooltip “Tiếu Ngạo Giang Hồ Lục” là cửa sổ nổi riêng, không thuộc panel Cường Hóa.
+- Claude đã kết nối nút Cường Hóa với chức năng hiện có (theo thông tin chủ dự án); asset gốc thiếu các thành phần đồ họa của concept. Cần khảo sát callback và logic thực tế trong source trước khi chỉnh UI.
+- Đã tạo concept atlas PNG 1536×1024 RGBA và ZIP handoff; atlas chưa phải Cocos .plist. Phải crop sprite, kiểm alpha, tạo atlas theo pipeline project; dynamic values/text là Cocos labels; ưu tiên icon game gốc.
+- Rào chắn: giữ Cocos V3 đang chạy làm baseline; triển khai trên nhánh/cây thử nghiệm; chỉ đổi presentation, không đổi server/protocol/công thức/tiêu hao/logic cường hóa. Chưa khảo sát source, chưa tích hợp, chưa build/kiểm LDPlayer14.
+- Tiếp tục: Claude đọc handover report, khảo sát không sửa source, báo đường dẫn/class/callback/data/asset; sau khi chủ duyệt mới crop/tích hợp và kiểm thử.
