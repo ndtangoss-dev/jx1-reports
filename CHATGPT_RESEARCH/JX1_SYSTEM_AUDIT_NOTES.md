@@ -706,3 +706,70 @@ Lượt này chỉ đọc nhánh `jx1-ops` và ghi bổ sung đúng file ghi ch�
 ### 14.6 Giới hạn thao tác của lượt này
 
 Chỉ đọc nhánh jx1-ops, so sánh commit/file và đọc các task/report/hộp thư liên quan. Chỉ cập nhật sổ nghiên cứu trên nhánh chatgpt-research/jx1-system-audit-2026-11-20. Không ghi/sửa/tạo task, không dispatch worker, không can thiệp worktree, queue, lock, cấu hình, hook, build hoặc runtime; không ghi bất kỳ nội dung nào lên jx1-ops.
+
+
+## 15. Đối chiếu tiến độ JX1 — lượt kiểm toán 2026-11-21 06:58 (Asia/Ho_Chi_Minh)
+
+### 15.1 Phạm vi và thay đổi nhánh vận hành
+
+- Chỉ đọc ref jx1-ops; so sánh từ checkpoint đã ghi ở mục 14 là 2384f9df52f7e0061cccf2618ebb36eae7cabba6 đến ref jx1-ops. Kết quả compare: ahead_by=15, behind_by=0.
+- Các file thay đổi được trả về trong compare đều là tài liệu vận hành/hộp thư/trạng thái: HOP-THU/A-B.md, HOP-THU/NHIP-TIM.md, HOP-THU/TU-SONNET-B.md, HOP-THU/TU-SONNET.md, STATE/BAN-GIAO.md, STATE/DANG-LAM.md, STATE/KHOA-XINGCHI.md, STATE/SONNET-SONG.md, STATE/TIEU-YEU.md, STATE/TONG-QUAN-GHI.md. Không có source C++/Lua, binary, build manifest hoặc báo cáo nghiệm thu SC-006 mới trong danh sách file compare.
+- Vì vậy, thay đổi mã/build được ghi trong hộp thư là báo cáo về nhánh/worktree local của worker; không có diff mã tương ứng trên jx1-ops để review độc lập. Không suy tiến độ từ task status, heartbeat hay commit timestamp.
+
+### 15.2 Ma trận tiến độ theo cổng bằng chứng
+
+| Hạng mục | Giao việc / worker bắt đầu | Mã nguồn | Build | Runtime | Nghiệm thu |
+|---|---|---|---|---|---|
+| Cửa sổ cường hóa | H-05 có status DONE nhưng đây là task khảo sát tĩnh. Báo cáo H-05 nói 0/11 ca đề xuất đã chạy. Các ghi nhận A về menu sách và nút Cường hóa mở UI Giao gốc là kiểm tra hỗ trợ/cường hóa, không chứng minh đã hoàn thiện layout cửa sổ theo Q-91. | Không có source diff UI mới trên jx1-ops. | Không có build UI mới trong compare; mốc APK vc31 là bằng chứng cũ. | Không có ca runtime mới chứng minh đủ 5 ô, mũi tên, khóa Bùa/Phù, xác nhận/hủy và thông báo thành công/thất bại. | Chưa nghiệm thu UI. DONE của H-05 chỉ là hoàn tất khảo sát source/protocol, không phải hoàn tất tính năng. |
+| Lag/giật | SC-004 đã bị hủy theo Q-103; không thấy task/worker-start mới cho phép đo trước/sau trong khoảng compare. | Không có diff Fix31/33/34/47 mới trên jx1-ops. | Không có APK benchmark mới. | Báo cáo mốc mượt cũ vẫn ghi gs001 khoảng 25–26% CPU (một lõi), tick có lúc avg 116 ms/max 864 ms, khoảng trống server gửi >250 ms có lúc tối đa 657 ms; DERP khoảng 95 ms. Không có phép đo vc27/vc31 cùng thiết bị, map, tuyến, thời lượng trong lượt này. | Chưa chứng minh lag đã được sửa. |
+| Quái / đạn xuyên quái / kill credit | H-15 và E-08 là khảo sát tĩnh; không có worker runtime mới. | Không có source diff projectile, NPC hurt/death hoặc kill-credit trong compare. | Không có build gameplay mới. | H-15 ghi rõ chưa tái hiện/đo. E-08 xác định gói death không mang killerID; kill credit và runtime vẫn CHƯA KIỂM. E-05b chỉ chạy fixture loopback: TESTER 18/18, BOT 41/41; tạo nhân vật, verify_kill và persistence bị bỏ qua; gs001 thật CHƯA KIỂM. | Chưa nghiệm thu gameplay quái, đạn xuyên quái hoặc BOT kill credit. |
+| Phi phong / tài phú SC-006 | TASKS/SC-006 giao B; A thực sự nạp và thử build 5, 6, 7, 8 trên Test-36/LD; B thực sự làm các vòng sửa và build theo A-B.md/TU-SONNET-B.md. | B báo các thay đổi local: build 6 kiểm tra mỗi nhịp; build 7 thêm log chẩn đoán; build 8 thử loại điểm tài phú của phi phong khỏi tổng. Không có source diff trên jx1-ops để xác minh độc lập. | B báo build 5/5 exit 0 cho build 5–8. Build 8 có gs001 SHA d25a49a725b7eeca4ebbfc08f0bf582dacd362b0e2ff990360de3e643defc31c và CoreServer SHA bd558854edb657acad15ddaa16be491f3a460376cc48e4f2c2b91331dc54f168. | Build 5: A lặp 3 vòng thao tác, không tái hiện crash 0xc0000409; nhưng không chứng minh nguyên nhân crash đã được sửa. Build 6: A xác nhận GoldId 3475 (k11, cần 15000) vẫn tháo/mặc lại được khi panel là 3100. Build 7: qh_dump ghi have=18300, bad=0 trong khi panel 3100; số chênh 15200 phù hợp với việc server tự tính cả phi phong đang mặc. Build 8: own=0 ở cả lúc nạp và lúc mặc lại; vẫn mặc được k11 ở 3100, không có pifeng-can/deny. Đây là FAIL runtime cho điều kiện thiếu tài phú/tự tháo. | Chưa nghiệm thu. Chưa có REPORTS/SC-006.md. Build 8 không đạt. |
+| Thuộc tính / điểm tài phú SC-002 | TASKS/SC-002 vẫn partial. B có ghi local commit f1d3187 và build 5/5 SHA gs001 af223995..., chưa có bằng chứng nghiệm thu toàn bộ. | Không có source diff SC-002 mới trên jx1-ops. | Có build local được báo trong A-B.md; không có manifest/log độc lập trên nhánh vận hành. | Trong log runtime của build 3 thuộc chuỗi SC-006, A ghi đao vàng +1 có qh_dump nền t28=42 từ gốc 40 và t29=120 từ gốc 114. Đây là bằng chứng server-side cho hai giá trị nền trong ca đó, không phải xác minh damage combat. Chưa đo được t30 Né tránh do giáp không hợp môn phái; +40 còn CHƯA XÁC MINH; pItemData++ chưa có ca nghiệm thu riêng. Tooltip client còn sai/lệch. | Chưa nghiệm thu SC-002. REPORTS/SC-002.md vẫn là báo cáo cũ ghi 0/3 mục tiêu sửa mã, không phản ánh các build local được báo sau đó. |
+| Kiểm thử tổng thể | Không có task E2E mới được chứng minh trong compare. | Không có thay đổi TESTER/BOT mới gắn với gameplay của các hạng mục trên. | Không có build E2E mới. | E-05b fixture 18/18 và 41/41 không chạy gs001 thật; E-08 chỉ khảo sát protocol; chưa có kiểm thử damage, kill credit, logout/relogin và persistence end-to-end trên game thật. | Chưa nghiệm thu E2E. |
+
+### 15.3 SC-006 — diễn biến build 8 và bản ghi build 9
+
+- A-B.md ghi rõ build 8 CHƯA ĐẠT: A đã nạp gs001 d25a49a7 và CoreServer bd558854; k11 vẫn được mặc ở panel 3100; log own=0; không có pifeng-can/deny. Đây là bằng chứng runtime trực tiếp mới nhất của A trong A-B.md.
+- TU-SONNET-B.md có thêm một ghi chú build 9: B báo commit local sc-006b 6c10365, build 5/5 exit 0; gs001 SHA dadb7a5fcf5c306e38e53d6dc617d83fb0049b4bb1bbf6906ddfba6cdff23373, CoreServer SHA e46cea45d8323f2a3be435a240f8aa3e9898a251acbccc3617b2828d05b1c12e, Engine SHA 86434231381e2fdefd4f60a1fdc44ee521ff073a4d379b0c58186a5eafa1dcaf. B mô tả build 9 tính tài phú trực tiếp từ các ô trang bị 0..9, bỏ ô phi phong, và chặn trong KItemList::Equip.
+- Bản ghi build 9 ghi giờ 07:05, muộn hơn mốc thời gian chạy kiểm toán được cung cấp là 06:58; vì vậy không dùng nó để nâng kết luận tại mốc 06:58. Ngay cả nếu xét như ghi chú mới nhất đang hiển thị trong file, đó vẫn chỉ là báo cáo build của B: không có bằng chứng A đã nạp build 9 hoặc kiểm thử runtime.
+- DANG-LAM.md dừng ở build 8 lúc 06:40; TU-SONNET-B.md có ghi build 9. A-B.md chưa có kết quả runtime sau build 8. Đây là độ lệch cập nhật giữa các kênh, không được hiểu là build 9 đã pass.
+- TASKS/SC-006.md vẫn status running; STATE/TIEU-YEU.md ghi XONG-CHO-GOP; DANG-LAM.md ghi build 8 PARTIAL/chờ A. SONNET-SONG.md có heartbeat A/B nhưng heartbeat chỉ cho thấy dấu hiệu hoạt động, không chứng minh hoàn thành task.
+- TIEN-DO.md được sinh lúc 02:30 và ghi không có task đang làm, SC-006 chờ gộp; snapshot này cũ hơn các hộp thư/trạng thái sau đó, không dùng làm trạng thái hiện hành.
+- SC-006 khai báo vung_file chỉ gồm KItemList.cpp, KItem.cpp, GoldMagic.txt và GoldItem.txt. Các build trước có báo sửa KPlayer.cpp và Engine/Src/KSG_StringProcess.cpp ngoài phạm vi đó; chưa có diff/scope approval trên jx1-ops. SC-006 còn depends_on SC-002 trong khi SC-002 vẫn partial. Hai cổng scope/dependency chưa được chứng minh đóng.
+
+### 15.4 Kết luận lượt 06:58
+
+- Có tiến triển chẩn đoán và runtime thật ở phi phong, nhưng build 6–8 vẫn FAIL ở điều kiện tài phú thực tế; build 9 chỉ là ghi chú build local chưa có A runtime.
+- Không có thay đổi xác minh được trong lượt này đối với UI cửa sổ cường hóa, lag/giật, đạn xuyên quái/kill credit hoặc nghiệm thu E2E.
+- SC-002 có một phép đo server-side t28/t29 trong log A, nhưng chưa đủ phạm vi để nghiệm thu thuộc tính nền, Né tránh, +40, combat damage và pItemData++.
+- Không có hạng mục nào trong nhóm được chứng minh ACCEPTED cuối cùng.
+
+### 15.5 Nguồn đã đọc trong lượt này
+
+- JX1_OPS/README.md
+- JX1_OPS/STATE/BAN-GIAO.md
+- JX1_OPS/STATE/TIEN-DO.md
+- JX1_OPS/STATE/DANG-LAM.md
+- JX1_OPS/STATE/TIEU-YEU.md
+- JX1_OPS/STATE/SONNET-SONG.md
+- JX1_OPS/STATE/TONG-QUAN-GHI.md
+- JX1_OPS/HOP-THU/A-B.md
+- JX1_OPS/HOP-THU/TU-SONNET.md
+- JX1_OPS/HOP-THU/TU-SONNET-B.md
+- JX1_OPS/TASKS/H-05.md
+- JX1_OPS/REPORTS/H-05-ui-cuong-hoa.md
+- JX1_OPS/TASKS/H-15.md
+- JX1_OPS/REPORTS/H-15-dan-xuyen-quai-fps.md
+- JX1_OPS/TASKS/SC-002.md
+- JX1_OPS/REPORTS/SC-002.md
+- JX1_OPS/TASKS/SC-004.md
+- JX1_OPS/TASKS/SC-006.md
+- JX1_OPS/TASKS/E-05b.md
+- JX1_OPS/TASKS/E-08.md
+- JX1_OPS/REPORTS/DO-MUOT-MOC-GOC.md
+- JX1_OPS/REPORTS/E-08-goi-danh-quai-xac-nhan-kill.md
+- JX1_OPS/DESIGN/TINH-NANG/TAI-PHU-PHI-PHONG.md
+
+### 15.6 Giới hạn thao tác
+
+Chỉ đọc nhánh jx1-ops và ghi bổ sung sổ nghiên cứu trên nhánh chatgpt-research/jx1-system-audit-2026-11-20. Không ghi/sửa/tạo task, không dispatch worker, không can thiệp worktree, queue, lock, cấu hình, hook, build hoặc runtime. Không ghi bất kỳ nội dung nào lên jx1-ops.
