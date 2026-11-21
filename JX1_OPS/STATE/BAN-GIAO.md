@@ -41,3 +41,5 @@ Nội suy 18→60 Hz giữ như vc22 (`jx_interp.txt`=0 tắt). Ra tệp `D:\JX1
 **Chuyển tài khoản**: `/tiep-tuc`; mọi việc nền ở trên; không có việc đỏ treo.
 
 | 2026-11-19 23:10 | Sonnet PM (tai khoan moi), /tiep-tuc | dong_bo OK (het UU); vc23 SHA256 cdef8446 + cert a48601f7 khop BAO-CAO-CHU; D tat, chi JX-Test-36 chay; thu den #276 da xu ly | Chua kiem: RAM (WMI loi), tieu yeu, bench vc23 tren LD |
+
+| 2026-11-21 10:21 | Sonnet A, /ket-thuc-ca (#343,#344) | Test-36 tắt sạch 10:20 sau Online=0; TU-SONNET + TRANG-THAI đã lưu; push | Bật lại: chờ gs001 7–10 phút; làm các mục "Chưa kiểm" ở TRANG-THAI |

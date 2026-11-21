@@ -1728,3 +1728,6 @@ TÓM TẮT: (1) Build 4 (gs001 79cf3f5c) nạp OK. Tái hiện sập 02:49: mặ
 * CHƯA KIỂM: bảng rơi gán cho 10 boss lv150 và boss nào đang sống; map nhân vật test; số quái/NPC Tương Dương; vì sao Online=0 lúc 10:10; nguyên nhân lỗi `online.lua` mỗi phút; getFindPathState có kẹt true không; sửa Lua dòng 55/56 `|0` và nhãn vc32 trên LD; gỡ hook thử [TEST-A] trong online.lua trước server thật.
 * BƯỚC TIẾP: (1) sau khi máy bật lại, gs001 nạp 7–10 phút: kiểm gs001 lên rồi mới báo chủ vào test; (2) theo BAN-GIAO-CHAT-21-11.md, chờ lệnh Chat; (3) làm các mục CHƯA KIỂM; (4) SC-006 giữ `running`.
 * Tắt máy: console gs001 báo Online=0 (10:07–10:10), không Stop-Process gs001; game trên LD đã đưa về màn hình đăng nhập (đóng/mở lại app, KHÔNG đóng LD).
+
+### 21/11 10:21 — A: /ket-thuc-ca xong (#344)
+Đã đọc đến #344. VM Test-36 tắt sạch 10:20 (sau Online=0). Chi tiết STATE/TRANG-THAI.md, REPORTS/daily/2026-11-21-A.md.

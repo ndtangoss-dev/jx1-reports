@@ -345,3 +345,9 @@ Codex/xingchi tra 429 Too Many Requests o moi lenh (ke ca ping 1 tu, effort low)
 - 18/11 17:0x Người gác đánh thức: đã kéo hòm thư, có #157 mới (học exe server, ưu tiên sau #154). Tiểu yêu do Tổng quản quản. Tiếp #154.4 rồi #157.
 
 - 21/11 10:30 Sonnet B (/ket-thuc-ca, #B-085): B ĐÃ LƯU. B không dùng gs001/VM, không chạy exe. Build 13 (gs001 08d2c6c2…) CHƯA NẠP; QH-B080 (qianghua.lua + GoldItem.txt, có .bak) chờ Chat báo NẠP. gs001/Test-36: PHẦN CỦA A, A ghi khi/cách dừng (nhân vật chủ OFFLINE trước, không cắt ngang). SC-006 vẫn PARTIAL. Báo cáo ngày: REPORTS/daily/2026-11-21.md.
+## Điểm lưu 21/11 10:21 – Sonnet A (/ket-thuc-ca, #343+#344)
+- Chủ tắt máy nghỉ. Đã dừng đúng thứ tự: console gs001 báo Online=0 (nhân vật chủ OFFLINE) trước; không Stop-Process; gửi `shutdown /s /t 5` vào VM `JX-Test-36` (Windows tự đóng gs001, Bishop, Goddess, PaySys); 10:20 `VBoxManage list runningvms` rỗng. LD vẫn mở, game ở màn đăng nhập.
+- Khi bật lại: gs001 nạp 7–10 phút; kiểm gs001 lên rồi mới báo chủ vào test.
+- Đo mới (A): giật/ping 555ms là do tick gs001 chậm (0,24–0,53 s, thiết kế ~55 ms), luồng chính kẹt 1 lõi; mạng sạch. Lỗi script `online.lua` lặp mỗi phút (chưa tìm nguyên nhân).
+- Chưa kiểm: bảng rơi 10 boss lv150 và boss nào sống; số quái Tương Dương; getFindPathState kẹt true; Lua dòng 55/56; vc32 trên LD; gỡ hook [TEST-A].
+- SC-006 giữ `running` (lệnh chủ). Không có việc Đỏ treo.
