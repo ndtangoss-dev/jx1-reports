@@ -250,3 +250,6 @@ Hệ quả: (1) GIỮ Enabled=0 trên Test-36 cho đến khi có bản sửa Sea
 
 ## Q-107 (chủ 21/11 23:03) — THỨ TỰ: HOÀN THIỆN CƯỜNG HÓA TRƯỚC, RỒI MỚI LÀM PHI PHONG
 Cường hóa (UI vc37 + nghiệm thu) xong rồi mới làm Phi Phong (client A: tên cạnh nhân vật, nhãn [cấp N], mojibake, 11 bộ theo giới; server B: SC-006 build tiếp, đo). Không chen Phi Phong vào trước.
+
+## Q-108 (22/11 01:08) Chu test xong, bao OK
+Chu noi "Ta test roi. Ok" (Chat hieu: vc38 Cuong hoa dat). Theo Q-107 chuyen sang PHASE 2 Phi Phong (A client PP-02, B server PP-01), van theo LICH-CONG-VIEC. Loi mat do +9 o o giua va anh e thieu bac van phai xong (viec nho). Chu ngu, 7h xem bang.

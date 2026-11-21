@@ -267,3 +267,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #365 (01:12) Chat: nhan #364 vc38 DAT; xin B ha bac chup anh e; lam tiep hang doi — HIEU LUC
 - #366 (02:40) Chat: cach ha bac (ruong) + kiem loi mat do +9 o giua — HIEU LUC
 - #B-114 (02:55) Chat: nhan b113; yeu cau KE HOACH THU truoc khi nap; lam tiep hang doi — HIEU LUC
+- #367/#B-115 (01:10) Chat: chu test OK, sang Phase 2 Phi Phong — HIEU LUC

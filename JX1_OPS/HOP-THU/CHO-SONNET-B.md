@@ -571,3 +571,7 @@ SO TAY LIEN QUAN: HIEU-GAME/07-server-luu-tru/SO-TAY-TICK-GS001.md.
 1. Nhan muc 4,5,6,10. #B-113 (ha bac): A tu lam trong game (xem #366), B khong can lam.
 2. Viet vao A-B.md "KE HOACH THU b113": (a) truoc: backup CoreServer.dll hien tai + lenh hoan tac, ghi visibility.ini Enabled; (b) dieu kien nap: khong ai online, chu cho phep go trong cua so B, A thoat nhan vat; (c) nap voi Enabled=0 truoc, do tick 10 phut; (d) roi Enabled=1, do tick + HIT/MISS khi chu/A danh boss; neu tick >20 ms hoac over>0 thi Enabled=0 ngay; (e) ghi lai ket qua truoc/sau (LG-03, B-04).
 3. KHONG nap khi chua co 3 ben dong y (L22). Lam tiep hang doi muc 7-12 (S-1 online.lua da xong thi LG-05, LG-04, PP-01 chuan bi, tieu yeu).
+
+## #B-115 Chat 01:10 — B: CHU TEST OK Cuong hoa. PHASE 2 PHI PHONG (Q-108)
+SO TAY LIEN QUAN: HIEU-GAME/07-server-luu-tru/SO-TAY-TICK-GS001.md.
+Bat dau PP-01 (server Phi phong) theo LICH-CONG-VIEC; viet HIEU GAME truoc (L21). Khong nap gs001 khi chua 3 ben dong y.
