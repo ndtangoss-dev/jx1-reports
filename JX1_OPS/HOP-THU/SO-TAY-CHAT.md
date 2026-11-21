@@ -45,3 +45,7 @@ GÕ CỬA: (không còn, Q-48; Chat không có lịch kiểm, chủ gọi Chat k
 - 19/11 00:10 Chủ: việc đã chốt thì LÀM, đừng hỏi lại (hỏi làm treo đến sáng). Chat đã gõ vào phiên Sonnet qua Chrome nguyên văn chủ: cho phép tắt Server D + LD instance 0 khi 0 người chơi (quyền thường trực, L11). Ghi quy tắc cho Chat: việc đã nằm trong chỉ đạo của chủ thì làm luôn, chỉ hỏi khi vùng Đỏ mới.
 - **[TỐI QUAN TRỌNG, chủ dặn 19/11 00:56] Chat KHÔNG BAO GIỜ ra lệnh cho Sonnet dừng/chờ/nghỉ. Sonnet làm liên tục, có toàn quyền chủ động để không dừng (trừ vùng Đỏ). Chỉ chủ nói "dừng vòng" mới tạo DUNG-VONG.flag.** Xem LUAT-COT-LOI.md (luật tối thượng).
 - BOT 3 loại: yêu cầu chủ ở DESIGN/BOT/HE-THONG-BOT-3-LOAI.md (chưa giao Sonnet). Trí nhớ Chat: /areas/jx1-bot-system.
+
+
+## GÕ CỬA CHAT MỚI (21/11 16:20)
+URL phiên Chat hiện tại: https://claude.ai/code/session_01MrvZcvMaZXNKa8dLsj2hfU . A/B muốn gọi Chat thì mở URL này, gõ vào ô nhập "A Chat ..." / "B Chat ..." (tin này là Sonnet gõ, không phải chủ). Lịch kiểm Chat: send_later 15 phút, trig_01H5YJstYDgGEnNQY9VqwobS.
