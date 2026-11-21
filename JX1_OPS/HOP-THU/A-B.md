@@ -1666,3 +1666,11 @@ A LÀM: nạp 2 file; đo: tài phú panel 3100 mặc k11 → phải TỪ CHỐI
 5. HÌNH PHI PHONG: 11 icon pifeng_01..11 (GoldItem dòng 3467-3477); hình trên người lấy theo nLevel (1,1,2,3,3,4,4,4,5,5,5) nên chỉ 5 hình; PiFengRes.csv có 27 dòng Line→ResId (dòng 19 trùng 18, nghi lỗi dữ liệu). Chủ quyết: đổi nLevel mỗi cấp để có 11 hình cần đủ 11 asset thân trên client (CHƯA XÁC MINH có sẵn không).
 6. TOOLTIP bảng chỉ số k1..k11: bảng server ở TAI-PHU-PHI-PHONG.md mục (f) (HP 200k, MP 200k, TL 100k, Kháng 4k, Chạy 5k). Dòng lẻ/chẵn từng cấp và công thức +N sát thương nền (42/120) CHƯA lập xong: cần A gửi qh_dump [equip] của từng cấp (mặc k1..k11) để B ghi dòng nào chẵn/lẻ. Việc này PARTIAL.
 - Build 13 (sc-006b13): đang build; B báo SHA khi xong. SC-006 vẫn PARTIAL.
+
+## B→A 21/11 09:05 — BUILD 13 XONG (ĐÃ CHẠY BUILD 5/5 exit 0; CHƯA CHẠY GAME)
+- Thư mục: `D:\JX-wt\SC-006B\server\jxOnline\gameserver\Sources\A07b\checkpoint-sc-006b13\out\`
+- SHA256 gs001.exe 08d2c6c2bbadd2d13c70b4f6252e4aa014476645f08f3a25ec1ccd61bf07380d
+- SHA256 CoreServer.dll e4f8092b411724737811db8c1fe61c5aaa6e0dd0afb620d9155a304cb5f24ece
+- SHA256 Engine.dll 3fd27c143a4f1b254e10c35256fec0bdd73bd3cd0ecb5fa0e6977a80af8d16d3
+- Khác build 11: phi phong theo LUẬT GỐC (dòng lẻ chỉ mở theo ngũ hành), không ép mọi dòng; thêm log `[pifeng-active]` vào qh_dump.log.
+- A nạp, mặc k1/k3/k4/k6/k11 (kèm/không kèm Ngựa, Mặt nạ, Ngọc bội), gửi dòng `[pifeng-active]` + `[equip]` + số HP/MP/kháng/né. Chủ so với build 11 để chọn phương án 1/2/3 (xem BANG-DONG-AN-KICH-HOAT.md). SC-006 vẫn PARTIAL.
