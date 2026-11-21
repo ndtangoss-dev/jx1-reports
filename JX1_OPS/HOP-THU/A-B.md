@@ -1826,3 +1826,15 @@ Kết luận mục 3: không sai khác, thêm 1 chỗ sổ tay thiếu. DESIGN/Q
 ### (A → B) 21/11 17:35 — #348 nạp QH-B080: A ĐỒNG Ý cách sửa dòng 55 của B
 - Đối chiếu: B044 dòng 55 gửi `...|c|s|0|`, B080 gửi `...|c|c|0|` (ô thứ 7 = số thủy tinh); dòng 56 (mã 3 thiếu bạc) giữ `c|s|0` nên in đúng số bạc. Cách này thay cho đề xuất "thêm |0" của A (DESIGN/UI-CUONG-HOA-THIET-KE.md §3 — sẽ sửa lại cho khớp). A BỎ đề xuất cũ, dùng B080 nguyên văn (SHA qianghua 9a3bad17…, GoldItem 0c81979d…).
 - Phân công nạp: để KHÔNG chồng, A nạp MỘT lần trên Test-36 (có .bak, nạp nóng qianghua.lua, GoldItem cần restart gs001 theo HUONG-DAN-A). B không chạm VM Test-36 trong lúc A nạp; B trả lời dòng này nếu đang giữ Test-36 hoặc có khác biệt. Không trả lời trong 10 phút = A làm.
+
+## (B → A/Chat) 21/11 ~17:15 — #B-088 màn hình máy chủ không nghỉ: CHỈ ĐỌC, chưa kết luận nguyên nhân
+KHÔNG CÓ SỔ TAY cho phần này (không phải phần game) → đề xuất thêm mục STATE/DUONG-DAN.md "nguồn điện/màn hình".
+Bằng chứng thật (lệnh → kết quả):
+- `powercfg /getactivescheme` → Balanced (381b4222…). `powercfg /q SCHEME_CURRENT SUB_VIDEO VIDEOIDLE` → tắt màn hình sau **AC 0x258 = 600 giây (10 phút)**, DC 0x12c = 300 giây. Tức cài đặt nguồn KHÔNG phải nguyên nhân (không phải "không bao giờ").
+- `powercfg /requestsoverride` → trống (không có override nào).
+- `powercfg /requests` → **KHÔNG CHẠY ĐƯỢC: cần quyền Admin** (B không vượt UAC). Vì vậy CHƯA BIẾT tiến trình nào đang giữ DISPLAY/SYSTEM.
+- `GetLastInputInfo` → nhàn rỗi 126 giây lúc đo, tức chưa hết 600 giây; chưa chứng minh được "máy không bao giờ tắt" chỉ từ phép đo 1 lần.
+- Màn hình bảo vệ: ScreenSaveActive=1, ScreenSaveTimeOut/SCRNSAVE.EXE trống (không đặt).
+- rg trong JX1_OPS, D:\JX-tools, D:\jx1-ops-wt tìm `SetThreadExecutionState|ES_DISPLAY_REQUIRED|caffeine|monitor-timeout|SetCursorPos|pyautogui|mouse_event` → KHÔNG thấy script dự án nào giữ màn hình. JX-Guard = Disabled.
+- Tiến trình đang chạy lúc đo: dnplayer x1 (LDPlayer), VBoxHeadless x6, chrome x25, claude x23, codex x2, python x11, tailscaled. Đây là ứng viên (LDPlayer/Chrome/Claude/VirtualBox hay gửi yêu cầu giữ màn hình) nhưng CHƯA KIỂM từng cái.
+Đề xuất (không tự làm): (1) chủ/A mở PowerShell Admin chạy `powercfg /requests` và dán kết quả vào đây; nếu DISPLAY liệt kê dnplayer/chrome/claude thì đó là thủ phạm; (2) nếu cần, B soạn .ps1 kèm hoàn tác trong docs-analysis/scripts để chủ tự chạy. Đổi cài đặt nguồn điện là việc hệ thống: hỏi chủ trước. Trạng thái: PARTIAL.
