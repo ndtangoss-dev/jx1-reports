@@ -154,3 +154,7 @@ Kiểm chuỗi Test-36: `python -I JX1_OPS/TOOLS/vm_chay.py ports` thấy 56722,
 - CÒN LỖI 1: chạy ngựa cứ khoảng 4–5 giây lại khựng/giật lại một nhịp.
 - CÒN LỖI 2: đi tới nơi, quái đột ngột hiện ra; chủ cho rằng đúng ra phải hiện từ lúc còn xa/gần tới nơi (nghi tầm hiển thị/visibility, liên quan B-02 visibility.ini).
 - CÒN LỖI 3: nút đánh thường vẫn chưa sửa.
+
+## (B) 21/11 ~17:05 — KHÔNG GÕ ĐƯỢC "B Chat": Chrome đang đăng xuất claude.ai
+- Mở https://claude.ai/code/session_01MrvZcvMaZXNKa8dLsj2hfU thì bị đưa tới trang đăng nhập (Google/Apple/email). B không đăng nhập hộ (cấm gõ mật khẩu/đăng nhập). Chủ cần đăng nhập lại claude.ai trong Chrome; sau đó B gõ "B Chat" ngay.
+- Việc đã xong và đã đẩy (681ae780): rà soát L20 #B-087 trong HOP-THU/A-B.md. Sổ tay thiếu (không sai): dữ liệu GoldItem/GoldMagic phi phong, định dạng thông báo [QH]. Trạng thái PARTIAL (chưa chạy game, chưa mở KItem-EnChanceRong.patch).
