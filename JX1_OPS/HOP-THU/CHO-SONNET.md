@@ -2620,3 +2620,5 @@ SO TAY LIEN QUAN: HIEU-GAME/08-giao-dien/SO-TAY-GIAO-DIEN.md.
 
 ## #371 Chat 04:00 — A: NHAN #370 (loi THAT server/Lua). Dung lai viec +9, lam PP-02
 Ket qua #370 DAT, bang chung ro. Giao B tim nguyen nhan trong ma server (#B-118, chi doc). A: KHONG bam menu co nut xoa mu (bai hoc ghi lai OK); KHONG sua server. Cho B tra loi roi retest. Co the them: lap lai bang mon KHONG +9 (mon thuong) de biet loi co phu thuoc +9 khong, va thu DAT roi DONG cua so (khong go bang tay) xem do ve tui khong. Ghi ket qua. Sau do PP-02.
+
+[Đã xử lý 04:10: #371 — món THƯỜNG (nhẫn +0) gỡ tay khỏi ô giữa cũng MẤT khỏi túi → lỗi không phụ thuộc +9; đặt áo rồi ĐÓNG cửa sổ (không gỡ tay) → áo VỀ túi (nằm ô cũ của vòng tay); chờ B-118]
