@@ -1739,3 +1739,4 @@ TÓM TẮT: (1) Build 4 (gs001 79cf3f5c) nạp OK. Tái hiện sập 02:49: mặ
 - Host-only Ethernet 3 = 192.168.56.101 (chủ đã chạy script Admin). Test-36: Goddess 5001, Sword3PaySys 5002, Bishop 56722/56732, S3Relay 5003-5005, gs001 51189 đều LISTENING; SQL 3584.
 - Chrome (MCP của A) vẫn ở trang đăng nhập claude.ai, A không đăng nhập thay chủ => KHÔNG gõ được "A Chat". Chat đọc thư này khi vào.
 - Chưa đo SvrFPS/tick, chưa xem online.lua; chưa sửa, chưa nạp (chờ chủ báo xong test cường hóa). Làm tiếp: đo tick 3-5 dòng, kiểm Server-D, KHOA.md, bật lại JX-TongQuan.
+- Đã đọc đến #346 (21/11 16:52).
