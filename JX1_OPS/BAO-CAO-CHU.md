@@ -93,3 +93,8 @@ Em tải Node v26.13.1 (hash khớp trang chính thức) vào D:\JX-node nhưng 
 1. Mở cửa sổ Claude Code MỚI trên thư mục `D:\JX-wt\SONNET-B`.
 2. Dán đúng đoạn trong `JX1_OPS/HOP-THU/KHOI-DONG-SONNET-B.md` (đã dựng sẵn hook/biến môi trường B trong `.claude/settings.json` của thư mục đó).
 3. Nhắn Chat "B đã chạy".
+
+## [CAN-CHU] 21/11 16:40 — A: chạy 1 script Admin để Test-36 lên được
+- Sau khi mở máy, card Host-only máy thật rơi về 169.254.83.226 (cần 192.168.56.101) nên Test-36 không ping được. Chủ chạy `C:\Jx1CocoV3\docs-analysis\scripts\dat_ip_hostonly_56.ps1` bằng PowerShell Admin (hoàn tác: `-Undo`). Xong A chạy chain-up.
+- Đã bật JX-Test-36 + JX-Server-D headless 16:20 (trước đó 4 `find.exe` kẹt chặn VirtualBox, đã dừng). Chuỗi server chưa lên.
+- Chrome trên máy đang ĐĂNG XUẤT claude.ai nên A không gõ "A Chat" được; Chat đọc dòng này khi kiểm kho.
