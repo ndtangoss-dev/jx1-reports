@@ -1653,3 +1653,4 @@ TÓM TẮT: (1) Build 4 (gs001 79cf3f5c) nạp OK. Tái hiện sập 02:49: mặ
 - Tooltip mỗi phi phong có 3 dòng cuối là TÊN BỘ: dòng của chính nó màu XANH (kích hoạt), dòng của hai món kề (vd Khấp Thần, Phê Quang) màu XÁM (chưa đủ bộ). Client tô màu đúng quy luật xanh/xám.
 - Mặc k3 (Thổ, sinh Kim) → k4 → k6 → k11: HP 2268→2668→3468→3868 khớp +200k; Né tránh/kháng KHÔNG đổi theo ngũ hành (480). Chưa thấy dòng ẩn nào bật thêm khi hệ tương sinh; phi phong có thể không nằm trong ms_ActivedEquip (cần B xác nhận KItemList.cpp:2674).
 - Chưa làm: bộ giáp/găng tương sinh để bật dòng ẩn slot 1/3/5; (3) người khác thấy hình phi phong (cần nhân vật thứ hai).
+- (A 08:35) Bảng nhân vật khi mặc k11: Y phục/Găng trống, Né tránh 480, kháng hỏa -24%; muốn đo dòng ẩn cần cấp bộ giáp+găng có hệ (menu "Đồ XANH/VÀNG" của hook) — việc kế tiếp. SC-006 giữ running theo lệnh chủ.
