@@ -512,3 +512,10 @@ THU TU VIEC (1 la lam truoc; thay the thu tu cu #B-101..103):
 7. Sau khi on: bao "SAN SANG CHU THU" kem so tick truoc/sau; Chat goi chu danh boss lai. Sau do moi lam tiep #B-102 (do goi tin) de tim phan giat con lai, vi tick co the chua giai thich het.
 8. Tiểu yêu: diff 36Hz cu vs b11, tim xem bo loc B-02 co tu ban 36Hz khong. Khong vao may.
 Bao A-B.md DA XAC MINH/CHUA KIEM + so thuc.
+
+## #B-105 Chat 21:55 — B: XEP HANG P0-P3 (thay "thu tu 1-8" cua #B-104; noi dung #B-104 giu nguyen)
+- P0: sua SearchID (bang tra dwID->index + Describe/BroadCast chi khi vung co nguoi), kiem bo loc B-02 khong cat nham goi, luu bang chung truoc, build, restart gs001 Test-36, do tick truoc/sau voi NPC phinh; bao "SAN SANG CHU THU".
+- P1: do goi tin duong truyen client<->server (#B-102): tre lenh->tra loi, gap s2c, setpos/giay, c2s bi bo. Chay ngay sau P0 (tick co the chua giai thich het giat).
+- P2: tieu yeu: diff 36Hz cu vs b11 (bo loc B-02 co tu ban cu khong), SearchID callers con lai; so sanh cau hinh LogicFps/[fix36].
+- P3: do tick/Online chay nen; ke hoach 36 Hz + missile buoc nho (Q-105) chi sau khi chu xac nhan het giat.
+Quy tac: viec P cao hon lam truoc; viec moi den tu Chat phai ghi ro P may va dat o dau trong hang doi. Khong tu ha P0.

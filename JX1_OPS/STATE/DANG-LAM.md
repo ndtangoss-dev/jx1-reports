@@ -163,3 +163,4 @@ SC-006 build 4 sc-006b4 gs001 79cf3f5c: co m_nQhPifengChk tu thao khi tai phu tu
 
 ## A 21/11 19:10
 UI Cường hóa vc36: bố cục/dấu/trần 1000/đơn vị vạn xong, APK đã giao chủ. Còn: panel tự đóng sau cường hóa nên [QH] hiện ở chat (sửa trong KuiGiveVN: mở lại panel hoặc ghi vào m_qhResult trước khi đóng); chụp d (thiếu thủy tinh), e (thiếu bạc); thử bot/relog (#354); merge task/XD-UI01.
+- [21/11 21:55 HANG DOI B] P0 sửa SearchID/visibility B-02 (#B-104) — ĐANG; P1 đo gói tin đường truyền (#B-102) — CHỜ sau P0; P2 tiểu yêu diff 36Hz cũ vs b11 + SearchID callers — song song; P3 tick nền, 36 Hz/missile (Q-105) — sau khi hết giật.
