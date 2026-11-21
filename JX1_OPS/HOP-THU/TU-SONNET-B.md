@@ -337,3 +337,6 @@ TOM TAT: #B-117 PARTIAL: SQL chi co DB account; vat pham nam trong goi TRoleData
 
 Đã đọc đến #B-118 (22/11 07:00)
 TOM TAT: #B-118 doc ma: o give go ra khong goi Add ve tui neu client khong gui giveback kem uid; mon con pos_give -> mat mo coi, relog van mat. Xem A-B.md 07:00.
+
+Đã đọc đến #B-119 (22/11 07:50)
+TOM TAT: #B-119 build checkpoint-b119c OK (RecoverGiveItems + printf GiveBack, gom b113), chua nap. Xem A-B.md 07:50.

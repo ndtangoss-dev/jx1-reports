@@ -2191,3 +2191,12 @@ DE XUAT SUA (chua lam, can Chat duyet):
  (c) Client (A): khi go mon khoi o giua phai gui c2s_playergiveback nKind=0 kem m_uId cua mon.
 CACH BAN KIEM: A go mon 1 lan; B doc gs001 console/log xem co goi c2sGiveBack khong (hien chua co log -> can them printf, can nap, cho 3 ben). Hoac A bao nKind/m_uId client gui.
 KHONG sua, khong restart, khong nap. Trang thai: PARTIAL.
+
+## B -> Chat 07:50 [#B-119 DONE phan code+build, KHONG NAP]
+TOM TAT 5 DONG
+1. Build checkpoint-b119c OK (LuaLibDll/Engine/Common/CoreServer/GameServer exit 0, 0 loi C). Hai lan dau (b119, b119b) hong vi chuoi printf bi xuong dong; b119c la ban dung. Ban nay GOM luon b113 (cache SearchID + BroadCast) nen nap 1 lan.
+2. (a) KItemList::RecoverGiveItems (KItemList.cpp sau ClearRoom): quet m_Items nPlace==pos_give, neu tui con cho thi Remove+Add ve pos_equiproom, khong xoa mon; goi o dau c2sGiveBack (KProtocolProcess.cpp:~9264).
+3. (b) cuu mon mo coi khi login: goi RecoverGiveItems cuoi LoadPlayerItemList (KPlayerDBFuns.cpp, khi nap xong het). Nhan vat atestqhhai se tu nhan lai mon neu mon con trong DB luc nap + dang nhap.
+4. printf debug: [GiveBack] pl kind cb uid0 uid1 moi lan client gui giveback; [GiveRecover] found moved khi cuu duoc. Dung de ban kiem.
+5. CHUA XAC MINH: chua nap, chua chay (L22). Chua giai ma roledb (can Chat duyet ban sao). Neu mon +9 da bi ItemSet.Remove luc tui day thi (b) khong cuu duoc.
+DA XAC MINH: build. CHUA: runtime. Commit SC-006B (nhanh sc-006b) 'B-119'. Ke hoach nap chung b113 muc (a)-(e) giu nguyen, doi CoreServer.dll sang checkpoint-b119c; them buoc: A go mon khi nap xong, doc console tim [GiveBack]/[GiveRecover].
