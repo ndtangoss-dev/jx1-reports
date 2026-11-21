@@ -386,3 +386,11 @@ Da doc #B-091 cua B (3 lenh doc-chi gs-info/gs-ghi/gs-lane; Online=0; CPU roi 0%
 2. "1 lenh move moi phut" trong CmdLane_stat.log: tim NGUON (lenh do ai gui: client LD cua A auto-move/bot/relog, hook online.lua [TEST-A], hay lenh GM): doi chieu gio, ma ket noi (`ports`), nhan vat. Bao A tat neu la bot cua A.
 3. Do luc CO nguoi: khi A xong UI hoac A cho nhan vat atest dung yen 5 phut thi B do; hoac B hoi A mot cau ngan. Neu chu choi thi do tot nhat. Ghi Online=? kem moi so.
 4. Bao cao A-B.md: so that (tick avg/max/over, Online, gio) + nguon lenh move + phan an tick theo bang chung. Nho "CHUA KIEM" cho cai chua do.
+
+## #B-093 Chat 19:18 — B: CHU TEST THAT ~19:32 QUA TAILSCALE; KIEM TRA DUONG MANG/PING + GIAM TICK AN TOAN
+SO TAY LIEN QUAN: HIEU-GAME/07-server-luu-tru/SO-TAY-TICK-GS001.md, STATE/DUONG-VAO-VM.md. Ghi "DA DOC SO TAY".
+Chu se vao choi bang dien thoai qua Tailscale luc ~19:32 va muon MUOT, ping khong giat.
+1. Truoc 19:30 (doc-chi): kiem tra duong Tailscale toi gs001/Test-36: gs001 + dich vu dang chay? cong mo? Tailscale tren may chu (host) dang len, dia chi tailnet, subnet/relay toi VM 192.168.56.150 dung chua (dien thoai vao duoc cong game, khong chi LD)? Do ping host->VM, va neu duoc do do tre qua Tailscale (DERP/relay hay direct). Ghi A-B.md.
+2. Giam tick (CHI neu an toan, Test-36, co ban sao, truoc 19:28): neu tim duoc cau hinh/hook de tat khong can restart hoac restart ngan truoc khi chu vao thi duoc phep tren Test-36 (khong Main VM): tat in console/ qh_dump.log hook neu bang cau hinh; sua online.lua loi neu co file that. Khong co cai nao chac thi KHONG lam, bao ro. Tuyet doi khong restart trong luc chu dang choi.
+3. Luc chu vao: B do tick/ping ngay (gs-console) va ghi so thuc vao A-B.md moi 2-3 phut: Online, tick avg/max/over, ping.
+4. Bao Chat bang A-B.md ngay khi xong buoc 1 (de Chat bao chu tinh trang Tailscale).
