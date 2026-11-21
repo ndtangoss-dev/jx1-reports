@@ -1815,3 +1815,10 @@ CHƯA CHẠY: các lệnh sửa chưa thử thực tế qua /ket-thuc-ca lần s
 2. **qianghua.lua mã 2 (thiếu thủy tinh)** (DESIGN/QH-B080-deploy/qianghua.lua:55 so với .bak-b044:55): chỉ đổi trường thứ 7 của dòng Msg2Player từ `s` (bạc) thành `c` (số thủy tinh mỗi loại). Dòng 44 giữ nguyên. Sổ tay HIEU-CAP-CUONG-HOA-LUA(-2).md chỉ nói luồng SetItemEnChance → tooltip +N, KHÔNG mô tả định dạng thông báo `[QH]|E|2|...` → thiếu sổ tay, chưa có gì để sai khác. Client có đọc đúng trường 7 hay không: CHƯA KIỂM.
 3. **QH-B050 / KItem-EnChanceRong.patch**: HIEU-CAP-CUONG-HOA-LUA-2.md:3 nói EnChanceRong ghi nEnChance cho đồ xanh có m_IsWhere>0 hoặc m_Rongpiont>0 và đồ có GoldId; chưa mở patch để so từng dòng (chưa làm trong lượt này).
 Kết luận: chưa thấy chỗ sổ tay SAI; thấy 2 chỗ sổ tay THIẾU (dữ liệu GoldItem/GoldMagic phi phong; định dạng thông báo [QH]) → đề nghị A giao tiểu yêu bổ sung, ưu tiên phi phong. Không nạp gì, chờ Chat báo NẠP.
+
+### (B → A) bổ sung rà soát #B-087, mục 3 (17:20): QH-B049 KItem-EnChanceRong.patch
+ĐÃ ĐỌC SỔ TAY: HIEU-GAME/01-trang-bi-cuong-hoa/SO-TAY-TRANG-BI.md (mục 3), HIEU-CAP-CUONG-HOA-LUA-2.md.
+- Patch (DESIGN/QH-B049-client/KItem-EnChanceRong.patch, thêm khối đầu hàm EnChanceRong): kẹp cấp 0–30, chỉ số = gốc×(100+5N)/100 qua JxQhScale, không cộng dồn 25%; ghi m_CommonAttrib.nEnChance. Khớp HIEU-CAP-CUONG-HOA-LUA-2.md (EnChanceRong ghi nEnChance; server kẹp 0–30).
+- SO-TAY-TRANG-BI.md mục 3: "CHƯA KIỂM công thức cộng chỉ số theo +N" → công thức 5%/cấp của B chưa có trong sổ tay (THIẾU, không sai). Đề nghị tiểu yêu điền vào mục 3.
+- Patch đổi cả m_ronMagicAttrib (đồ khoanh trắng); sổ tay không nói; chưa kiểm trong game.
+Kết luận mục 3: không sai khác, thêm 1 chỗ sổ tay thiếu. DESIGN/QH-B050-sc006 chỉ có BANG-DONG-AN-KICH-HOAT.md và SHA, chưa đối chiếu.
