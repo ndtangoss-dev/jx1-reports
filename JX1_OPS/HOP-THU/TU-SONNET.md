@@ -1671,3 +1671,4 @@ TÓM TẮT: (1) Build 4 (gs001 79cf3f5c) nạp OK. Tái hiện sập 02:49: mặ
 - Chưa phủ: 2 nơi gọi khác (KgameWorld.cpp:10763 tương đương và `vn/KgameWorldVN.cpp:5302`) đều đi qua PaintPifeng nên cùng được sửa; chưa kiểm trên máy (APK jx-qh8, chủ đang test LD).
 - (2) 11 bộ phi phong theo giới: asset có sẵn (nam 01-10+22, nữ 01-10+21). Phần còn thiếu là server (mantle.txt/GoldItem: 11 món đúng m_PifengType theo giới) — B làm; phía client `FortuneRank` trong npcbobo.ini (count, khóa 1..N) phải có đủ 11 khóa, chưa đọc được (trong PAK).
 - (3) Menu hotrotanthu.lua "Phi phong 1/2/3, bộ 1-5, 6-10": là hook thử, không đụng; gỡ trước server thật cùng qh_bothu.
+- Đã đọc đến #337 (21/11 10:02): đối chiếu xong, ở mục 10:00.
