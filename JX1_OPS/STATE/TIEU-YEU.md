@@ -1,4 +1,4 @@
-# TIỂU YÊU (Tổng quản tự sinh lúc 2026-11-21 16:45, đừng sửa tay)
+# TIỂU YÊU (Tổng quản tự sinh lúc 2026-11-21 16:55, đừng sửa tay)
 
 **CẦU DAO xingchi: ĐÓNG (bình thường)**
 
@@ -6,7 +6,7 @@ Mức: SONG / IM-NHUNG-SONG (20–60 phút) / TREO (>60, bị dừng chạy lạ
 
 | Mã | Mức | Khóa | Log cuối | Dấu hiệu sống cuối | Lỗi cuối | Lần chạy lại | Mô hình | PID | Chờ token (giây) |
 |---|---|---|---|---|---|---|---|---|---|
-| HG-S1 | SONG | JX-K4 | 16:45 | 16:45 | - | 0 | sol | - | - |
+| HG-S1 | SONG | JX-K4 | 16:55 | 16:55 | loi mang | 0 | sol | - | - |
 | SC-001 | XONG-CHO-GOP | JX-K4 | 19:22 | 19:22 | - | 0 | sol | - | - |
 | SC-006 | XONG-CHO-GOP | JX-K4 | 00:22 | 00:22 | - | 0 | sol | - | <=108 |
 

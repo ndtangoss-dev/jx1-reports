@@ -1644,3 +1644,7 @@
 [TỔNG QUẢN 21/11 10:19] CAU DAO xingchi: DONG
 [TỔNG QUẢN 21/11 16:40] CAU DAO xingchi: DONG; HG-S1 giao bang JX-K4
 [TỔNG QUẢN 21/11 16:45] CAU DAO xingchi: DONG
+[TỔNG QUẢN 21/11 16:47] CAU DAO xingchi: DONG
+[TỔNG QUẢN 21/11 16:49] CAU DAO xingchi: DONG
+[TỔNG QUẢN 21/11 16:51] CAU DAO xingchi: DONG
+[TỔNG QUẢN 21/11 16:55] CAU DAO xingchi: DONG
