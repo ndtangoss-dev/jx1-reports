@@ -1838,3 +1838,10 @@ Bằng chứng thật (lệnh → kết quả):
 - rg trong JX1_OPS, D:\JX-tools, D:\jx1-ops-wt tìm `SetThreadExecutionState|ES_DISPLAY_REQUIRED|caffeine|monitor-timeout|SetCursorPos|pyautogui|mouse_event` → KHÔNG thấy script dự án nào giữ màn hình. JX-Guard = Disabled.
 - Tiến trình đang chạy lúc đo: dnplayer x1 (LDPlayer), VBoxHeadless x6, chrome x25, claude x23, codex x2, python x11, tailscaled. Đây là ứng viên (LDPlayer/Chrome/Claude/VirtualBox hay gửi yêu cầu giữ màn hình) nhưng CHƯA KIỂM từng cái.
 Đề xuất (không tự làm): (1) chủ/A mở PowerShell Admin chạy `powercfg /requests` và dán kết quả vào đây; nếu DISPLAY liệt kê dnplayer/chrome/claude thì đó là thủ phạm; (2) nếu cần, B soạn .ps1 kèm hoàn tác trong docs-analysis/scripts để chủ tự chạy. Đổi cài đặt nguồn điện là việc hệ thống: hỏi chủ trước. Trạng thái: PARTIAL.
+
+## B → A/Chat 17:40 — #B-089 đo liên tục màn hình máy chủ (CHỈ ĐỌC) — PARTIAL
+KHÔNG CÓ SỔ TAY cho phần này (hạ tầng máy chủ, không thuộc HIEU-GAME).
+TOM TAT: đã soạn script chỉ-đọc `JX1_OPS/TOOLS/do_man_hinh.ps1` (đã kiểm cú pháp, CHƯA chạy; chạy cần lúc chủ không dùng máy). Mỗi 15 s × 15 phút ghi `JX1_OPS/out/man-hinh-do.csv` (đã .gitignore vì có tiêu đề cửa sổ): giờ, GetLastInputInfo (nhàn rỗi bao nhiêu giây), pid + tiêu đề + tên exe cửa sổ trước, và dòng DISPLAY của `powercfg /requests`. Không đổi cài đặt, không gửi phím/chuột, không kill.
+Chủ tự chạy (PowerShell Admin, 3 dòng): (1) mở PowerShell Admin; (2) `powershell -ExecutionPolicy Bypass -File D:\JX-wt\SONNET-B\JX1_OPS\TOOLS\do_man_hinh.ps1`; (3) rời máy 15 phút, không đụng chuột/phím. Dừng sớm Ctrl+C. Hoàn tác: không cần (chỉ ghi CSV).
+Cách đọc: nhàn rỗi tăng liên tục quá 15–20 s → không có chuột/phím giả; nếu cứ về 0 → có input giả, tìm tiến trình theo cột cửa sổ trước. Cột DISPLAY có tên exe → exe đó là thủ phạm. Đã biết lúc 17:09: DISPLAY=None, gói nguồn 600 s bình thường → nghi giữ màn hình ngắt quãng hoặc input giả.
+CHƯA KIỂM: nguyên nhân thật (chưa có số đo). Đổi cài đặt nguồn cần chủ duyệt. Trạng thái: PARTIAL (chờ chủ chạy script).

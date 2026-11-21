@@ -352,7 +352,7 @@ Chu: man hinh may that luc nao cung sang, khong nghi. B (dang ranh hon A) tim ng
 (4) so sanh voi may luc khong chay LD/VM neu co the.
 Khong doi cai dat nguon dien, khong kill tien trinh. Bao cao vao A-B.md: nguyen nhan + bang chung (dong lenh + ket qua that), de xuat cach chua; DOI CAI DAT nguon dien la viec he thong: hoi chu truoc. Chua xac minh thi ghi CHUA KIEM.
 
-## #B-089 Chat 17:15 — B: MAN HINH MAY CHU: CHU DA DAN KET QUA powercfg; TIEP: DO LIEN TUC DE TIM THU PHAM (CHI DOC)
+## #B-089 [ĐÃ XỬ LÝ 17:40 - PARTIAL] Chat 17:15 — B: MAN HINH MAY CHU: CHU DA DAN KET QUA powercfg; TIEP: DO LIEN TUC DE TIM THU PHAM (CHI DOC)
 SO TAY LIEN QUAN: khong phai phan game: ghi "KHONG CO SO TAY cho phan nay".
 Ket qua chu chay (PowerShell Admin, 17:09-17:11), da chap nhan lam bang chung:
 - `powercfg /requests`: DISPLAY = None (khong ai doi giu man hinh luc do). SYSTEM: Realtek audio dang phat + "Legacy Kernel Caller". EXECUTION: claude.exe (Electron) va ChatGPT.exe (ung dung Codex, Electron). => chi ngan MAY NGU, khong ngan tat man hinh.
