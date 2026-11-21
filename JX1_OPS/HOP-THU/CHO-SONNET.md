@@ -73,6 +73,8 @@ Kết luận xong thì báo Chat duyệt (O-01) **trước** B-02 chạy.
 
 ## Đã xử lý
 
+- #357 nhận 21/11 19:18, xử lý 19:32: viết 5 dòng Tailscale vào BAO-CAO-CHU, báo B trong A-B (100.95.186.86:56722/51189), tắt atestqhhai; chưa tự đo FPS/ping vc36 trên LD
+
 - #350-#356 nhận 21/11 17:40-18:58, xử lý 19:10: A: UI Cường hóa vc36 làm lại, ảnh a,b,c,f chụp; d,e và thông báo trong panel còn thiếu (xem TU-SONNET); APK vc36 giao chủ (Q-81, lệnh chủ #356); #351 mật khẩu atest dùng nội bộ không lộ; #353 thu hồi; #355 xong 19:00
 
 - #346 nhận 21/11 16:31, xử lý 16:50: host-only 192.168.56.101, chuỗi Test-36 lên đủ cổng (gs001 51189); Chrome MCP của A vẫn logged out nên không gõ được "A Chat", đã báo ở TU-SONNET; đo tick/online.lua làm tiếp.
@@ -2520,11 +2522,3 @@ Chu 16:42: ban, khong test duoc; COI CUONG HOA DA ON; A lam den UI cuong hoa; Ch
 
 ## #349 Chat 16:55 — A: AN CUA SO LDPLAYER NGAY (viec nho, xen truoc UI)
 SO TAY LIEN QUAN: STATE/QUY-TRINH-TAT-BAT-MAY.md, TOOLS/ld_canh_cua_so.py (khong phai phan game). Chu: "khoi dong LD tren may ta lai quen an xuong roi". Luat chu: an cua so LDPlayer ngay (thu nho, khong dong, khong dong vao tien trinh). A: chay `pythonw -I TOOLS/ld_canh_cua_so.py` (co `--once` de kiem 1 lan; chua thu voi LD that) NGAY; kiem LD da thu nho; dua viec an LD vao buoc /tiep-tuc de lan khoi dong sau tu an. Bao 1 dong ket qua. Roi lam tiep #348.
-
-
-## #357 Chat 19:18 — A: CHU SE TEST THAT LUC ~19:32 (tren dien thoai qua Tailscale). KIEM HINH ANH MUOT + PING, CHUAN BI TAILSCALE
-SO TAY LIEN QUAN: HIEU-GAME/08-giao-dien/SO-TAY-GIAO-DIEN.md, DUONG-VAO-VM. Ghi "DA DOC SO TAY".
-1. Truoc 19:30: tu test tren LD ban vc36: mo/dong cuong hoa, keo tui, di chuyen, xem FPS va ping (goc man hinh). Neu thay giat hinh/ping cao do UI (ve lai panel moi frame, anh to) thi sua nhe; neu do server thi bao B.
-2. TAILSCALE: ghi 5 dong cho chu (BAO-CAO-CHU.md [CAN-CHU]) de chu tren dien thoai: bat Tailscale, dang nhap DUNG tai khoan nao, dia chi/IP + cong ket noi game (server nao, lay tu STATE/DUONG-VAO-VM.md), cach cai vc36 de len ban cu, cach thu khi mat ket noi. Kiem tra APK vc36 dung IP/cong Tailscale chu (khong 192.168.56.x).
-3. Giu atestqhhai KHONG online luc 19:30-chu vao (tranh chiem tai khoan); san acc test cho chu: ghi ten acc nao chu dung (KHONG ghi mat khau).
-4. Khong dung toi server khi chua hoi B.
