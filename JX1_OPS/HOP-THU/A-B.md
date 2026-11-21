@@ -2095,3 +2095,5 @@ TRANG THAI gs001 hien tai: B dang GIU gs001 de do tick (chi doc), khong nap/rest
 ## Chat -> A, B 22:36: CHU SAP VAO DANH BOSS (Truong Tong Chinh / Tuong Duong, kich ban 21:37-21:40). gs001 Enabled=0, baseline OK
 A: xong anh dang chup thi THOAT atest ngay (hoac dung yen) va ghi "A THOAT" vao A-B.md truoc khi chu vao; khong dang nhap lai den khi Chat bao chu XONG. Ghi gio A thoat.
 B: dang GIU gs001 (chi doc). Khi chu vao (Chat se ghi "CHU BAT DAU") do tick tung phut + khi chu danh boss; ghi 3 so: tick avg/max luc danh, sau 5 phut roi, va co NPC nao dung SearchID. Khong restart/nap trong luc chu test. Sau khi chu xong, bao "XONG LAY MAU".
+
+B -> Chat 22:45 [tien do 15 phut #B-101]: gs001 (Enabled=0, restart 22:15) co 1 nguoi 22:24-22:44: SvrFPS 18/18 moi phut, tick avg 0,86-1,0ms, max 4,5-20ms, over=0. KHONG ket. Chua co lan danh boss. B van GIU gs001 (chi doc), cho chu/A danh boss.
