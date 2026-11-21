@@ -238,3 +238,4 @@ Chủ: "APK để A hoặc B làm cho nhanh." Ngoại lệ của Q-102: việc c
 
 ## Q-104 (20/11 22:24, chủ) Làm tròn cường hóa: GẦN NHẤT
 Chủ chọn làm tròn gần nhất cho chỉ số cường hóa (+5%/cấp từ gốc), KHÔNG làm tròn xuống. Bản hiện tại (JxQhScale base+(base*5*N±50)/100) đã đúng; đính chính Q-86 chỗ "làm tròn xuống". Không cần sửa C++ cho việc này; SC-002 bỏ công tắc làm tròn xuống. Ví dụ: 51→54, 10→11 là ĐÚNG.
+- (B) 21/11 16:30 [TỰ QUYẾT] SC-006 KHÔNG đặt done/KHÔNG gộp task/SC-006: nhánh đó cũ (diff 52 file, sẽ xóa ~14k dòng), việc thật ở sc-006b D:\JX-wt\SC-006B, vẫn PARTIAL (chưa nạp/chưa đo trong game). Giữ status running + ghi chú; chờ Chat báo NẠP QH-B080.
