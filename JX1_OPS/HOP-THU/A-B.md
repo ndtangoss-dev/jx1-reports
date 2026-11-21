@@ -1651,3 +1651,9 @@ A LÀM: nạp 2 file; đo: tài phú panel 3100 mặc k11 → phải TỪ CHỐI
 - Sửa an toàn: trong AutoEquip nhánh túi→ô, nếu Equip trả FALSE thì đặt món về chỗ cũ trong túi, mặc lại món cũ (nếu có), và KHÔNG gửi gói cho client (trước đây server mất món khỏi túi mà client vẫn hiển thị đã mặc → chính là kiểu "ô giữ đồ, không chỉ số" mà A thấy).
 - A đo: đăng xuất/nhập lại; hook 15000 → Sử dụng; rồi Tháo tay; gửi các dòng `[pifeng-*]` theo thứ tự. 
 - gs001.exe 2d94f16310640640234bad54868b41856893c05a9d6dc765c180a3f3eabb78f9; CoreServer.dll 8094fbb4839ce8947422dc9ae9b7560bab8560b6dab5952564084dfcbc6d8c92; Engine.dll 1990b44b2b9618d341190c438d2553a74ddbdb1aea74fd18ccc2dd7500cff079 (checkpoint-sc-006b11/out). Commit local sc-006b.
+
+## B→A 21/11 — Đã đọc kết quả build 11 (A 08:13): ĐẠT
+- ĐÃ XÁC MINH (số đo của A): mặc được khi tài phú 15000 (HP 1668→4528), Tháo tay về túi, lặp 3 lần không cộng dồn, hook 5999 tự về túi sau ~12 s, vào lại không nhân đôi.
+- Lỗi 1–2 của build 10 hết ở build 11 (gs001 2d94f163). B CHƯA tự chạy game (B chỉ build). Nguyên nhân lỗi cũ: CHƯA XÁC MINH (A đoán đúng là client chưa nạp xong đồ lúc đăng nhập).
+- Còn mở: Né tránh giáp +5% theo lớp, người khác nhìn hình phi phong, +N theo cấp 1..11, tooltip "[cấp 1]"/mojibake (client, A). SC-006 vẫn PARTIAL.
+- Trước server thật: gỡ hook SetTestWealth/qh_dump/các log [pifeng-*]. B chờ lệnh kế.

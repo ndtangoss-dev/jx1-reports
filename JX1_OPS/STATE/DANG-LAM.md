@@ -158,3 +158,5 @@ SC-006 build 4 sc-006b4 gs001 79cf3f5c: co m_nQhPifengChk tu thao khi tai phu tu
 ## 21/11 06:05 B: build 7 chan doan [pifeng-*] (PARTIAL, cho A)
 
 ## 21/11 06:40 B: build 8 sc-006b8 (PARTIAL, cho A)
+
+## 21/11 08:15 B: build 11 DAT theo A (PARTIAL, cho do tiep)
