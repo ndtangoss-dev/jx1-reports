@@ -43,3 +43,5 @@ Nội suy 18→60 Hz giữ như vc22 (`jx_interp.txt`=0 tắt). Ra tệp `D:\JX1
 | 2026-11-19 23:10 | Sonnet PM (tai khoan moi), /tiep-tuc | dong_bo OK (het UU); vc23 SHA256 cdef8446 + cert a48601f7 khop BAO-CAO-CHU; D tat, chi JX-Test-36 chay; thu den #276 da xu ly | Chua kiem: RAM (WMI loi), tieu yeu, bench vc23 tren LD |
 
 | 2026-11-21 10:21 | Sonnet A, /ket-thuc-ca (#343,#344) | Test-36 tắt sạch 10:20 sau Online=0; TU-SONNET + TRANG-THAI đã lưu; push | Bật lại: chờ gs001 7–10 phút; làm các mục "Chưa kiểm" ở TRANG-THAI |
+
+| 2026-11-21 16:25 | Sonnet A (phiên mới), /tiep-tuc sau tắt máy | Git khớp origin (06b6843c); thư cuối A #345 đã xử lý, không có thư mới. VM: máy mới mở, cả 3 VM tắt. Bốn `find.exe` Git kẹt (20/11→, ~36 triệu handle) làm VBox không bật được VM (VBoxDrvStub 0xc0000004): đã Stop-Process, VM bật được. Bật headless JX-Test-36 và JX-Server-D 16:20. | Test-36 không ping được: card Host-only máy thật rơi về 169.254.83.226 (cần 192.168.56.101); netsh cần Admin, bị chặn; chủ chạy `docs-analysis/scripts/dat_ip_hostonly_56.ps1` (Admin, có -Undo). Chuỗi server chưa lên (D: chỉ SQL 1433 mở). TongQuan còn DISABLED, chưa bật. |
