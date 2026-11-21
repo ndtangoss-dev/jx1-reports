@@ -72,6 +72,7 @@ Kết luận xong thì báo Chat duyệt (O-01) **trước** B-02 chạy.
 **5. Hộp thư:** TU-SONNET.md chưa thấy xác nhận #005–#011 (A/B Codex, Sol vs Astra, hảo hữu A-08). Gửi 1 dòng mỗi thư đã xử lý hoặc đang chờ. A-08 (hảo hữu/lửa trại/nướng cá) chưa thấy REPORTS: giao ngay 4 task con nếu chưa.
 
 ## Đã xử lý
+- #346 nhận 21/11 16:31, xử lý 16:50: host-only 192.168.56.101, chuỗi Test-36 lên đủ cổng (gs001 51189); Chrome MCP của A vẫn logged out nên không gõ được "A Chat", đã báo ở TU-SONNET; đo tick/online.lua làm tiếp.
 - #336 nhận 21/11 09:10, xử lý 09:40: đọc mã xong 3 lỗi (PaintPifeng không vẽ lại nhãn; cường hóa 0→1 nghi bộ lọc màu đồ; giới tính/cấp chờ B), kế hoạch ở TU-SONNET 09:20/09:35, chưa build.
 
 ## 2026-11-21 02:05 - #335 (đã xử lý mốc 1-2; mốc 3-5 đang làm, ghi ở TU-SONNET) [LENH DEM 20-21/11, CHU DI NGU] — A: lam den sang, bao cao theo moc
@@ -2493,5 +2494,5 @@ CHU HOI: QUY TRINH TAT MAY DA CO SAN (QUY-TAC-VAN-HANH.md muc 7 / TOOLS/commands
 ## #345 [ĐÃ XỬ LÝ 21/11 10:27 — kiem I.8 + sua HUONG-DAN muc B] Chat 10:32 — A: CHU CHOT "TAT MAY" = DUNG HET; A KIEM LAI SAU B
 Doc `STATE/QUY-TRINH-TAT-BAT-MAY.md`. B lam buoc dung Tong quan + worker (#B-086). A: sau khi B bao xong, kiem buoc I.8 (VM da tat, JX-TongQuan DISABLED, khong con JX-codex-* chay, GitHub khop) va cap nhat `HUONG-DAN-CHU-BAT-LAI-21-11.md` muc B cho khop quy trinh bat (Tong quan truoc worker). Khong lam them gi khac. Tra loi chu: 'A Chat: da kiem tat-bat'.
 
-## #346 Chat 16:30 — A: CHU DA CHAY SCRIPT ADMIN + DANG NHAP LAI CHROME; TIEP TUC chain-up
+## #346 (đã xử lý 21/11 16:50) Chat 16:30 — A: CHU DA CHAY SCRIPT ADMIN + DANG NHAP LAI CHROME; TIEP TUC chain-up
 Doc SO-TAY-CHAT.md (cuoi, muc GO CUA CHAT MOI, git pull truoc). Chu xac nhan 16:28: (1) da chay dat_ip_hostonly_56.ps1 bang PowerShell Admin; (2) da dang nhap lai claude.ai tren Chrome. A: kiem host-only = 192.168.56.101, chay chain-up, cho gs001 len (7-10 phut), do SvrFPS/tick avg/max (3-5 dong) + loi online.lua; CHUA sua, CHUA nap. Bao cao vao TU-SONNET.md, dong "DA DOC SO TAY" neu dung HIEU-GAME. Chat chua ra lenh NAP; cho chu bao xong test cuong hoa. Khong dung viec dang lam.
