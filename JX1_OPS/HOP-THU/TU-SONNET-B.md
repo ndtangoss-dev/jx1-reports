@@ -326,3 +326,7 @@ TOM TAT: #B-114 DONE: ghi KE HOACH THU b113 (a-e) vao A-B.md; KHONG nap khi chua
 
 Đã đọc đến #B-115 (22/11 04:10)
 TOM TAT: #B-115: da viet HIEU GAME phi phong (A-B.md 04:10), PP-01 chuan bi xong phan doc; cho chu chot QH_PIFENG_ALL_LINES; khong nap.
+
+
+Đã đọc đến #B-116 (22/11 04:55)
+TOM TAT: #B-116 PARTIAL: log gs001/qh_dump khong co dong xoa/chuyen mon +9 (gs001 khong ghi log vat pham); can Chat cho phep SELECT DB hoac A cho gio/ID. Khong sua du lieu.
