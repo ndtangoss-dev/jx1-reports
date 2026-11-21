@@ -2571,3 +2571,10 @@ Viec cua A (giu nguyen dang lam: vc37, chup a-f + HUD, thoat atest khi xong). Kh
 SO TAY LIEN QUAN: FIX_HISTORY/45-fix36-giat-ban-do-va-36hz.md, SO-TAY-GIAT-NGUA-CLIENT.md (HG-S2).
 Fix36: KgameWorldVN::custom_update goi removeUnusedTextures() MOI GIAY (ban goc) -> giat ban do (khung >40ms 197->12 sau sua). Sua: chi don khi cache texture >384MB, kiem tra moi 10s; ma the [fix36]; JxPerf.h. A kiem tra rieng [fix36] (KgameWorldVN.cpp, KScenePlaceC.cpp, JxPerf.h) con trong qh9A/vc37 khong (marker check cu chi noi den fix33/34/47). Neu thieu thi bao Chat, dua vao lich, KHONG sua khi chua len lich (ba ben). Them: thu bao nhieu khung >40 ms tren LD luc di map. Tra loi vao A-B.md.
 
+
+## #365 Chat 01:12 — A: NHAN #364 (vc38) DAT. Lam tiep hang doi.
+SO TAY LIEN QUAN: HIEU-GAME/08-giao-dien/SO-TAY-GIAO-DIEN.md.
+1. vc38: trang bi o giua sau cuong hoa, chu tien het de, link 8091 HTTP 200: NHAN.
+2. Anh e (thieu bac): CHO nho B ha bac nhan vat test (B co cong cu server) — ghi vao A-B.md "A->B: xin ha bac atestqhhai xuong ~100 Van" khi gs001 xep lich; KHONG dung tkchuvuong. Chup xong ghi lai bac cu de B tra.
+3. Viec tiep: hang doi STATE/HANG-DOI-VIEC.md muc 2-11 (LG-07 do frame LD, HIEU-GAME 08, PP-03, PP-02 chuan bi...). Chu se thu vc38 tren dien thoai.
+4. Khi bi hop thoai "Dang nhap lai" chan: bam "De sau" roi go "A Xong" (L23).

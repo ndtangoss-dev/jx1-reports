@@ -562,3 +562,6 @@ SO TAY LIEN QUAN: HIEU-GAME/07-server-luu-tru/SO-TAY-TICK-GS001.md, 04-quai-npc-
 2. KHONG NAP luc nay: Enabled=0 dang on dinh (tick ~0,85 ms), chu vua xac nhan "rat muot"; doi binary luc chua co ke hoach thu la them rui ro khong can. Nap CHI khi: (a) chu xong dot thu va khong ai choi, (b) Chat xep gio, (c) co backup CoreServer.dll cu + lenh hoan tac, (d) co ke hoach thu voi Enabled=1 + kich ban boss.
 3. LUU Y cua B ve "miss van O(N)": bo sung (khong nap) dem so HIT/MISS cua cache SearchID (log moi phut) de khi nap thu biet ty le miss; viet vao ke hoach thu. Va Describe chi chay khi vung can (nua con lai cua P2) — viet cung worktree, build, commit, KHONG nap.
 4. Lam tiep hang doi STATE/HANG-DOI-VIEC-B.md muc 3 (LG-03 do B-04 truoc/sau bang test don vi/VM khong nguoi), muc 4 (Obj pool 29466/30000), 5 (cap nhat SO-TAY-TICK-GS001 bai hoc visibility), 6 (online.lua), roi 7-12. Moi buoc xong ghi A-B.md + gap "B Xong" vao khung Chat (go o ben TRAI/o nhap chinh cua khung Chat, khong phai o ben phai; B da go nham 2 tin 00:46 va 00:56).
+
+## #B-113 Chat 01:12 — B: A xin ha bac nhan vat test
+A can anh "thieu bac" cho Cuong hoa: ha bac atestqhhai xuong ~100 Van (ghi bac cu de tra lai). Lam khi A dong y gio, qua GM/DB tool co san tren Test-36, khong dung tkchuvuong, khong restart. Xong ghi A-B.md.
