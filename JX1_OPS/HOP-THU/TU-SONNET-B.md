@@ -21,7 +21,7 @@
 ## B → Chat 19/11 18:50 — B Xong (tạo vai thành công)
 Tạo vai OK trên Test-36 (vai TsmocnamebravTsm, log Goddess/Bishop). Nguyên nhân im lặng: thiếu bước "Chọn Tân thủ thôn". Chi tiết: BAO-CAO-CHU.md (B 18:35), NUT-GIAO-DIEN.md. Đã sửa ld_bridge `text` (gõ từng ký tự; cầu cần khởi động lại để nhận). Không gõ "B Xong" qua Chrome được: nhóm thẻ Chrome của phiên B chỉ có thẻ trống, không có thẻ Chat (URL claude.ai/chat/75ee9a0d… ghi cụt). Xin chủ thêm thẻ Chat vào nhóm của B, hoặc Chat cứ đọc kho theo commit. Bot botld007 chạy lại còn cần JX_BOT_PASSWORD (chưa có).
 
-Đã đọc đến #B-013 (19/11 18:55): #B-001..#B-013 đã xử lý; kết quả trong BAO-CAO-CHU.md (B 18:35) và TU-SONNET-B.md.
+Đã đọc đến #B-091 (19/11 18:55): #B-001..#B-013 đã xử lý; kết quả trong BAO-CAO-CHU.md (B 18:35) và TU-SONNET-B.md.
 
 ## B → Chat 19/11 19:20 — B Xong (BOT-01 + CC-01 đo thử)
 - BOT-01: tiểu yêu BLOCKED (hiểu nhầm "không sửa mã" = cấm Python). B tự viết `BOT/gia_ban.py` + `test_gia_ban.py`, 4 test OK (298f697). Lệnh test: `python -m unittest JX1_OPS.BOT.test_gia_ban` — KHÔNG dùng `-I` (nó bỏ thư mục hiện tại → "No module named JX1_OPS", đó là lỗi lúc đầu).
@@ -274,3 +274,6 @@ TOM TAT: Đã đọc đến #B-089. #B-089 ĐÃ XỬ LÝ 17:40 (chỉ đọc): K
 TOM TAT: Đã đọc đến #B-090. #B-090 ĐÃ XỬ LÝ 18:50 (chỉ đọc): ĐÃ ĐỌC SỔ TAY SO-TAY-TICK-GS001, LOADSCRIPT-NAP-LUA-NONG, BAN-DO-DI-CHUYEN-CUOI-NGUA (chưa mở 04-quai-npc-ban-do). online.lua thật chưa có để đọc; lỗi script = script chưa nạp (KPlayer.cpp:8189-8199), chỉ được gọi lúc vào game (KPlayer.cpp:1056) nên có ai vào lại mỗi phút (CHƯA KIỂM). Nghi phạm tick xếp hạng: NPC Activate+NormalSync, printf, hook qh_dump.log (A-B.md 18:50). Chưa đo, chưa sửa, chưa nạp. Trạng thái: PARTIAL.
 
 TOM TAT: Gộp SC-001 (XONG-CHO-GOP): cherry-pick 5fa2f2ac, báo cáo cũ BLOCKED vì thiếu 2 file Lua (nay đã có ở DESIGN/QH-B044-deploy). Chưa giao lại tiểu yêu (A đã phân tích chuỗi cấp đồ ở BAN-GIAO #311); giữ failed, chờ Chat/A nói có cần chạy lại.
+
+## B 18:40 — #B-091 TOM TAT
+Bẩm đại vương: đã đo gs001 thật qua vm_chay.py (thêm gs-info/gs-ghi/gs-lane). Không ai online; CPU rỗi 0% (một lần 21%); CmdLane ghi đúng 1 lệnh move mỗi phút (nghi "vào lại mỗi phút"). Chưa có SvrFPS vì in ra console, không vào file: cần Chat quyết ghi console ra file. PARTIAL. Chi tiết A-B.md.

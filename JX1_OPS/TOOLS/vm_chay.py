@@ -37,6 +37,11 @@ $cpus = (Get-CimInstance Win32_ComputerSystem).NumberOfLogicalProcessors
 'gs001 CPU%%=' + [math]::Round(($pr.CPU - $c0) / $dt / $cpus * 100, 2) + ' (tren ' + $cpus + ' CPU, ' + [math]::Round($dt,1) + ' s) RAM_MB=' + [math]::Round($pr.WorkingSet64/1MB,1) + ' thread=' + $pr.Threads.Count + ' handle=' + $pr.HandleCount
 'NIC gui_B/s=' + [math]::Round(($s1 - $s0) / $dt) + ' nhan_B/s=' + [math]::Round(($r1 - $r0) / $dt)
 'TCP ESTABLISHED 56722=' + @(Get-NetTCPConnection -State Established -LocalPort 56722 -ErrorAction SilentlyContinue).Count + ' 51189=' + @(Get-NetTCPConnection -State Established -LocalPort 51189 -ErrorAction SilentlyContinue).Count""",
+    "gs-info": r"""$pr = Get-Process gs001 -ErrorAction Stop; 'gs001 start=' + $pr.StartTime + ' now=' + (Get-Date)
+Get-ChildItem '""" + ROOT + r"""\gs\gameser_log' -File -Recurse | Sort-Object LastWriteTime -Descending | Select-Object -First 3 | % { $_.Name + ' ' + $_.LastWriteTime + ' ' + $_.Length }
+Get-Content C:\JX\chain_up.log -Tail 4""",
+    "gs-ghi": r"""Get-ChildItem '""" + ROOT + r"""\gs' -File -Recurse -ErrorAction SilentlyContinue | Where-Object { $_.LastWriteTime -gt (Get-Date).AddMinutes(-15) } | Sort-Object LastWriteTime -Descending | Select-Object -First 15 | % { $_.FullName + ' ' + $_.LastWriteTime.ToString('HH:mm:ss') + ' ' + $_.Length }""",
+    "gs-lane": r"""Get-Content '""" + ROOT + r"""\gs\CmdLane_stat.log' -Tail 12""",
     "ten-co": r"""$fs = [IO.File]::Open('""" + ROOT + r"""\gw\database\roledb', 'Open', 'Read', 'ReadWrite'); $b = New-Object byte[] $fs.Length; [void]$fs.Read($b, 0, $b.Length); $fs.Close()
 $t = [Text.Encoding]::ASCII.GetBytes('%(name)s'); $hit = $false
 for ($i = 0; $i -le $b.Length - $t.Length -and -not $hit; $i++) { if ($b[$i] -eq $t[0]) { $k = 1; while ($k -lt $t.Length -and $b[$i+$k] -eq $t[$k]) { $k++ }; if ($k -eq $t.Length) { $hit = $true } } }
@@ -87,7 +92,7 @@ def main(a):
     if not a:
         sys.exit(__doc__)
     cmd = a[0]
-    if cmd in ("chain-up", "ports"):
+    if cmd in ("chain-up", "ports", "gs-info", "gs-ghi", "gs-lane"):
         print(goi(BLOCKS[cmd]))
     elif cmd == "log":
         if len(a) < 2 or a[1] not in LOGS:

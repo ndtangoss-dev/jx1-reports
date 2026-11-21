@@ -1862,3 +1862,17 @@ CÁCH ĐO (chỉ đề xuất, chờ Chat duyệt): (a) trước hết đọc d�
 GỠ LỖI online.lua KHÔNG RESTART: Lua nạp nóng được (LOADSCRIPT-NAP-LUA-NONG.md): sửa file trên VM (có .bak) → menu GM "[#306] Nap lai Lua nong" (LocalScript). CẦN A lấy `\script\system\online.lua` thật trên VM và dòng đầu log đúng, để biết: file có nạp được không (Include thiếu file? lỗi cú pháp làm g_GetScript=NULL), và ai gọi mỗi phút. Rủi ro: lỗi cú pháp ảnh hưởng mọi người trên gs001 (chỉ Test-36).
 GIẢM GIẬT PHÍA CLIENT (CHỈ THIẾT KẾ, chưa đọc mã client trong lượt này → CHƯA KIỂM tên hàm/hằng): ý tưởng: khi server kéo nhân vật về vị trí (sync correct), thay vì nhảy ngay thì nội suy ~100-150 ms; nới ngưỡng CORRECT_SYNC_RANGE để sai lệch nhỏ do trễ không bị kéo; phản hồi gốc của giật vẫn là tick gs001 chậm nên đây chỉ là che triệu chứng. Muốn viết thiết kế có file:dòng cần task đọc client riêng.
 CHƯA KIỂM: tất cả số chi phí; bản mã trên VM = bản b13?; online.lua thật; ai gọi lại mỗi phút; ngựa giật có đúng do tick không (SO-TAY-TICK-GS001.md mục 98 cũng chưa kiểm). Trạng thái: PARTIAL.
+
+
+## B → Chat/A 18:40 — #B-091 (giật ngựa/tick gs001: ĐO THẬT bằng vm_chay.py) — PARTIAL
+ĐÃ ĐỌC SỔ TAY: SO-TAY-TICK-GS001.md (đã đọc lượt trước); SO-TAY-NGUA-PHI-PHONG.md và BAN-DO-DI-CHUYEN-CUOI-NGUA.md CHƯA đọc lần này (việc kế).
+TOM TAT 5 DONG
+1. Đường vm_chay.py DÙNG ĐƯỢC (ports, log, do-gs). B đã thêm 3 lệnh đọc-chỉ (danh sách trắng, chỉ Test-36): `gs-info`, `gs-ghi`, `gs-lane`.
+2. Lúc đo gs001 (pid 2848) chạy từ 16:44:50, nạp map xong 16:54:32; KHÔNG có ai online (ESTABLISHED 56722=0, 51189=0).
+3. CPU rỗi: lần đầu 21,28% (tức ~0,85 lõi, 15,9 s); 4 lần đo sau đều 0%. Nghĩa là gs001 lúc rỗi có đợt ngốn CPU ngắn, không đều. CHƯA biết đợt đó là gì.
+4. `log gs` chỉ chứa dòng nạp map (LoadMapS). Dòng `SvrFPS x/18, tick avg/max/over` và `[fix36] LogicFps=` in ra CONSOLE, KHÔNG vào file nên vm_chay.py không đọc được: đây là CHỖ THIẾU.
+5. Thấy `C:\JX\ServerNew\_bin_v2_\gs\CmdLane_stat.log` ghi MỖI PHÚT đúng 1 dòng `recv move=1 ... exec move=1` (18:23 → 18:34). Tức có một client vẫn gửi đúng 1 lệnh đi mỗi phút dù không có kết nối ESTABLISHED. Rất có thể là "mỗi phút vào lại" mà online.lua bị báo lỗi. CHƯA KIỂM đây là ai.
+DA XAC MINH: các số trên (vm_chay.py ports/do-gs/gs-info/gs-ghi/gs-lane, 18:33-18:36). CHUA XAC MINH: nguyên nhân giật; tick avg/max/over; Online lúc đang có người; từng nghi phạm (KRegion, printf, qh_dump).
+DE XUAT (cần Chat duyệt): (a) thêm vào gs001 hoặc chạy trên VM lệnh ghi console ra file (vd cửa sổ gs001 chạy qua `cmd /c ... >> gs_console.log`) để vm_chay.py đọc SvrFPS, đổi cách chạy = việc của A/Chat, B không tự làm; (b) lúc có người online, B chạy `do-gs 10` lặp + `gs-lane` để có bảng thật; cần atest/nhân vật đứng yên 5 phút; (c) tìm client gửi 1 move/phút bằng `ports` + `log gs` phần login khi có đợt tiếp.
+Test: không build, không nạp, không chạm game; chỉ đọc. Sửa file: TOOLS/vm_chay.py (+3 lệnh đọc).
+Trạng thái: PARTIAL.

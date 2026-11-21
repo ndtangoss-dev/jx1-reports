@@ -370,7 +370,7 @@ Chu 18:20: B khong co viec a? Giat ngua / ping 555 ms van CHUA xu ly xong. Su th
 3. Phuong an giam giat phia client (noi suy khi bi keo ve, nang CORRECT_SYNC_RANGE) CHI THIET KE; khong sua.
 4. Bao cao A-B.md: nguyen nhan co bang chung file:dong, de xuat xep uu tien, CHUA KIEM ro. Neu can so do song thi nho A (xem #353).
 
-## #B-091 Chat 18:40 — B: GIAT NGUA/TICK gs001 GIAO TRON CHO B (chu 18:31); A CHI LAM UI CUONG HOA
+## #B-091 [ĐÃ XỬ LÝ 18:40 - PARTIAL] Chat 18:40 — B: GIAT NGUA/TICK gs001 GIAO TRON CHO B (chu 18:31); A CHI LAM UI CUONG HOA
 SO TAY LIEN QUAN: HIEU-GAME/07-server-luu-tru/SO-TAY-TICK-GS001.md, HIEU-GAME/01-trang-bi-cuong-hoa/SO-TAY-NGUA-PHI-PHONG.md, HIEU-GAME/02-nhan-vat-thuoc-tinh/BAN-DO-DI-CHUYEN-CUOI-NGUA.md. Ghi "DA DOC SO TAY".
 Chu 18:31: B ranh thi B xu ly phan giat; A lam UI cuong hoa cho xong. Chat da THU HOI #353 (do tick) khoi A. B CHU TRI giat ngua tu doc ma den do den de xuat sua:
 1. Duong do song cho B: `JX1_OPS/STATE/DUONG-VAO-VM.md` + `TOOLS/vm_chay.py` (chain-up, ports, log gs <n dong>) la duong dung chung A/B (Q-79), khong can WinRM truc tiep, mat khau tu Credential Manager. Truoc day B noi "khong co duong vao VM": thu `vm_chay.py ports` va `log gs 50` ngay; dong `tick avg/max/over` + `[fix36] LogicFps=` + loi `online.lua` nam trong log gs / console. Neu vm_chay.py khong du (khong doc duoc console) thi ghi ro CHO NAO thieu va de xuat (vd them lenh doc console vao vm_chay.py danh sach trang, khong mo rong den Main VM); khong tu vuot quyen/UAC.
