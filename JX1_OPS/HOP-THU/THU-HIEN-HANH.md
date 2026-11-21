@@ -257,3 +257,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #362 / #B-110 (22:27) Chat: HOP BA BEN lap ke hoach (QUY-TRINH-LAP-KE-HOACH.md, LICH-CONG-VIEC.md); khong giao viec le nua — HIEU LUC
 - Chat 22:36: A thoat atest, chu vao thu boss (gs001 Enabled=0); B do tick tung phut
 - #363 (22:55) Chat: A kiem [fix36] don texture con trong client hien tai khong; khong sua khi chua len lich — HIEU LUC
+- Chat 22:55: chu bat dau thu boss 22:55; B do tu 22:55
