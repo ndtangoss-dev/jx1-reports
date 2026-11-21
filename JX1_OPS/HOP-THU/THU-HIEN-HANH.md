@@ -245,3 +245,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #361 (21:30) Chat: A giu cua so cuong hoa mo sau khi bam, 3 o trong = 3 o thuy tinh; #B-100 (21:30) Chat: B doc rong HIEU-GAME + lich su lan sua giat truoc — HIEU LUC
 - Chat 21:33: Q-105 chu duyet ke hoach tick 36Hz + dan 36Hz sau khi sua tick nang; VPS rieng + bot tinh dan; nang cap hieu ung hinh anh (A sau UI). Chu vao danh boss 21:33.
 - #B-101 (21:48) Chat: chu test 21:37-21:40 van loi; B do tu dong lien tuc (tac vu nen), giao tieu yeu truy SearchID + doi chieu ban 36Hz, khong dung cho nhac — HIEU LUC
+- #B-102 (21:55) Chat: chu dung — do goi tin/duong truyen (tre lenh->tra loi, gap goi s2c, setpos/giay, burst) o forwarder + client netlog; tick chi lam nen — HIEU LUC
