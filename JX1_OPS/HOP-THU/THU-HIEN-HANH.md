@@ -221,3 +221,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #298/#B-048 (12:08) Q-100 kiến thức chuẩn hóa: dòng ĐÃ ĐỌC KIẾN THỨC; tiểu yêu KT-01..KT-06 (HIEU-GAME/) — HIỆU LỰC
 - #346 (16:30) Chat: chu da chay script Admin host-only + dang nhap Chrome; A tiep chain-up, do tick gs001 — HIEU LUC
 - #347/#B-087 (16:40) Chat: L20 co che tu dong (TRA-LAI-SO-TAY.md), ra soat phan dang do voi so tay — HIEU LUC
+- #348 (16:50) Chat: chu bo qua test, cuong hoa coi on; A lam UI Q-91 + nap QH-B080 (A-B thong nhat), nghiem thu bang anh EVIDENCE/ui-cuonghoa/ — HIEU LUC
