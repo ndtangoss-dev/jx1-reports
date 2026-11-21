@@ -49,3 +49,5 @@ GÕ CỬA: (không còn, Q-48; Chat không có lịch kiểm, chủ gọi Chat k
 
 ## GÕ CỬA CHAT MỚI (21/11 16:20)
 URL phiên Chat hiện tại: https://claude.ai/code/session_01MrvZcvMaZXNKa8dLsj2hfU . A/B muốn gọi Chat thì mở URL này, gõ vào ô nhập "A Chat ..." / "B Chat ..." (tin này là Sonnet gõ, không phải chủ). Lịch kiểm Chat: send_later 15 phút, trig_01H5YJstYDgGEnNQY9VqwobS.
+
+URL phiên A hiện tại (tài khoản mới, 21/11 16:31): https://claude.ai/code/session_01MrvZcuHw1S438E3fkPC3Mr (tên "Tiep tuc", ô nhập khoảng (400,842)). B: "Sonnet B PM setup JX1" trong thanh bên Code (URL chưa ghi).
