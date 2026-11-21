@@ -409,3 +409,13 @@ Chat nhan #B-094 (forwarder dung Test-36; giat nam o gs001 gui cham, khong phai 
 1. Lay tick/SvrFPS cua phien chu 19:0x-19:29 neu console con luu (gs-console / console.txt); neu mat thi do ngay khi chu vao lai, ghi A-B.md moi 2-3 phut: Online, tick avg/max/over, so lan gui >250ms.
 2. Doi chieu gio 137 lan cham voi su kien gs001: nap map/NPC, luu nhan vat, script online.lua, qh_dump.log, in console. Tim cai nao khop gio.
 3. Neu thay nguyen nhan chac chan va hook/cau hinh tat duoc an toan tren Test-36 (co ban sao, hoan tac duoc): de xuat ro, CHO chu choi xong moi ap dung (khong restart luc chu dang choi). Bao Chat.
+
+## #B-096 Chat 20:06 — B: VIDEO CHU (19:55:01-19:55:11): BOSS KHONG MAT MAU + VI TRI NHAY LOAN — TRA LOI TREN GS001, KHONG CHI TICK
+SO TAY LIEN QUAN: HIEU-GAME/07-server-luu-tru/SO-TAY-TICK-GS001.md, HIEU-GAME/04-quai-npc-ban-do/ (damage, combat). Ghi "DA DOC SO TAY".
+Chu quay video (Chat xem tung khung): nhan vat chuvuongtestaa cap 466 o Tuong Duong 167/207, danh boss "Truong Tong Chinh". Thay duoc:
+(1) Thanh mau boss DUNG 8.000.000/8.000.000 suot 10 giay du chu bam danh ca tram lan va hieu ung ky nang hien day du tren client => sat thuong KHONG ap duoc (hoac lenh danh khong toi server/bi bo/boss bat tu).
+(2) VI TRI NHAY LOAN: trong 0,6 giay (20 khung/giay) nhan vat va boss doi cho qua lai ~50-100 px; khung cuoi boss bien mat — nhu server lien tuc keo vi tri ve (chu noi chu cung bi nhay vi tri).
+(3) Client ve muot (45-57 hinh/giay, ping hien 85ms co dinh): loi o server/dong bo, khong phai FPS may.
+(4) Mau chu tut deu 38 moi ~2 giay (2378->2340->2302->2264): co thu gi dang gay sat thuong deu len chu (doc/lua/boss?), trong khi boss khong mat mau.
+Viec B (doc-chi truoc, 19:54-19:56 gio VM): trong nhat ky gs001 / CmdLane / console, tim lenh danh (skill/attack) tu chuvuongtestaa: den server khong? bao nhieu lan? ket qua damage len boss (log damage/KNpc::ReceiveDamage?) hay bi bo "superseded"/hang doi day? Boss do co bat tu/invincible/khac camp, cap 466 vs boss? Ai gay 38 mau deu? Vi tri nhay: server co gui lai toa do (resync) lien tuc khong (SyncPos) — so luong/giay.
+Bao A-B.md: DA XAC MINH/CHUA KIEM, nguyen nhan ung vien theo bang chung. Khong sua gs001 khi chua co bang chung; de xuat sua cho Chat duyet.
