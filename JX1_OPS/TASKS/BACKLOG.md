@@ -217,6 +217,8 @@ Sonnet lấy việc từ trên xuống, theo phụ thuộc. Khi bắt đầu m�
 | CH-02 | Giao diện cường hóa vc37 theo atlas mới (cửa sổ giữ mở, HUD icon, 3 ô thủy tinh) | L3 | A |
 | CH-03 | 4 việc nhỏ UI cường hóa: giữ trang bị ở ô giữa sau khi cường hóa, chữ chồng icon xu, ảnh thiếu bạc, ghi link APK | L3 | A |
 | CH-04 | Chủ test cường hóa vc37 trên điện thoại và duyệt | L3 | Chủ |
+| CH-05 | Sửa mất món gỡ khỏi ô giữa Cường hóa (client giveback) + vc39 | L2 | A |
+| CH-06 | Server bảo hiểm ô give: RecoverGiveItems (b119c, gom b113), chưa nạp | L2 | B |
 | LG-01 | Tìm gốc giật/lag/quái chết trễ khi đánh boss | L3 | B |
 | LG-02 | Sửa lâu dài SearchID: bảng tra dwID→index + Describe chỉ khi cần (để bật lại lọc Bot) | L3 | B |
 | LG-03 | Đo tick và băng thông B-02 trước/sau (việc B-04 bị bỏ sót) | L3 | B |

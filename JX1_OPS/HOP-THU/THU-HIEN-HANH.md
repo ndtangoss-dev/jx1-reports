@@ -273,3 +273,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #370 (03:45) Chat: tim mon +9 bang relog (B khong doc duoc DB) — HIEU LUC
 - #371/#B-118 (04:00) Chat: loi that mat mon o giua Cuong hoa; B tim nguyen nhan chi doc — HIEU LUC
 - #372/#B-119 (04:10) Chat: chon sua (c) client giveback; B chuan bi (a)(b) khong nap — HIEU LUC
+- #373 (04:45) Chat: nhan vc39; kiem APK 99MB — HIEU LUC

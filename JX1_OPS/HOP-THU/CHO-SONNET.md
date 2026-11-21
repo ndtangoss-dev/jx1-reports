@@ -2628,3 +2628,9 @@ SO TAY LIEN QUAN: HIEU-GAME/08-giao-dien/SO-TAY-GIAO-DIEN.md, so tay cuong hoa v
 B doc ma (A-B.md 07:00): server go mon khoi o give CHI tra ve tui khi nhan c2s_playergiveback (KProtocolProcess.cpp:9256 c2sGiveBack) co m_uId != 0; neu client chi xoa o local (KuiGive_New::UpdateGiveItem bAdd=0) thi mon o lai pos_give => mat mo coi (khop trieu chung).
 Lam: (1) doc code client KuiGive_New khi go mon (cham o giua) va khi dong cua so: co gui c2s_playergiveback khong, nKind, m_uId; (2) sua de go mon/dong cua so luon gui giveback nKind=0 kem m_uId cua mon; KHONG doi giao thuc, KHONG sua server; (3) vc39: build, retest bang mon thuong roi +9: dat -> go -> mon ve tui; dat -> dong cua so -> ve tui; relog van con; (4) ghi ket qua + anh; APK link. Khong nap len may that.
 [Đã xử lý 04:12: #372 — sửa client KuiGive_New::btnCallBackFunc_quxia: gỡ món gửi giveback (GOI_GIVE_ITEM_FAIL → SendClientCmdGive nKind=0 kèm m_uId); vc39 build OK; thử món thường + +9: gỡ/đóng đều VỀ túi, còn sau relog]
+
+## #373 Chat 04:45 — A: NHAN vc39 (sua mat mon) DAT; KIEM VI SAO APK 99 MB (vc38 la 83 MB)
+SO TAY LIEN QUAN: HIEU-GAME/08-giao-dien/SO-TAY-TAI-NGUYEN-CLIENT.md.
+1. #372 ket qua ro rang (dat/go/dong/relog deu ve tui): NHAN, rat tot.
+2. APK lon them 16 MB chua ro: kiem (so sanh danh sach file trong APK vc38 vs vc39: unzip -l), co phai them tai nguyen/ban sao thua/doi nen? Neu la rac build thi loai, build lai vc40 (giu SHA256). Ghi nguyen nhan.
+3. Chua day len may that. Sau do tiep PP-02. Mon +9 mo coi cu cua atestqhhai: B co RecoverGiveItems (chua nap), dung tao lai neu can.
