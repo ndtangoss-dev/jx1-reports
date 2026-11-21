@@ -72,6 +72,9 @@ Kết luận xong thì báo Chat duyệt (O-01) **trước** B-02 chạy.
 **5. Hộp thư:** TU-SONNET.md chưa thấy xác nhận #005–#011 (A/B Codex, Sol vs Astra, hảo hữu A-08). Gửi 1 dòng mỗi thư đã xử lý hoặc đang chờ. A-08 (hảo hữu/lửa trại/nướng cá) chưa thấy REPORTS: giao ngay 4 task con nếu chưa.
 
 ## Đã xử lý
+
+## #350-#356 [ĐÃ XỬ LÝ 21/11 19:10] A: UI Cường hóa vc36 làm lại, ảnh a,b,c,f chụp; d,e và thông báo trong panel còn thiếu (xem TU-SONNET); APK vc36 giao chủ (Q-81, lệnh chủ #356); #351 mật khẩu atest dùng nội bộ không lộ; #353 thu hồi; #355 xong 19:00
+
 - #346 nhận 21/11 16:31, xử lý 16:50: host-only 192.168.56.101, chuỗi Test-36 lên đủ cổng (gs001 51189); Chrome MCP của A vẫn logged out nên không gõ được "A Chat", đã báo ở TU-SONNET; đo tick/online.lua làm tiếp.
 - #336 nhận 21/11 09:10, xử lý 09:40: đọc mã xong 3 lỗi (PaintPifeng không vẽ lại nhãn; cường hóa 0→1 nghi bộ lọc màu đồ; giới tính/cấp chờ B), kế hoạch ở TU-SONNET 09:20/09:35, chưa build.
 
@@ -2518,39 +2521,3 @@ Chu 16:42: ban, khong test duoc; COI CUONG HOA DA ON; A lam den UI cuong hoa; Ch
 ## #349 Chat 16:55 — A: AN CUA SO LDPLAYER NGAY (viec nho, xen truoc UI)
 SO TAY LIEN QUAN: STATE/QUY-TRINH-TAT-BAT-MAY.md, TOOLS/ld_canh_cua_so.py (khong phai phan game). Chu: "khoi dong LD tren may ta lai quen an xuong roi". Luat chu: an cua so LDPlayer ngay (thu nho, khong dong, khong dong vao tien trinh). A: chay `pythonw -I TOOLS/ld_canh_cua_so.py` (co `--once` de kiem 1 lan; chua thu voi LD that) NGAY; kiem LD da thu nho; dua viec an LD vao buoc /tiep-tuc de lan khoi dong sau tu an. Bao 1 dong ket qua. Roi lam tiep #348.
 
-## #350 Chat 17:40 — A: NGHIEM THU HINH ANH UI CUONG HOA vc35: CHUA DAT BO CUC CHUAN (PARTIAL) — TRA LAI, LAM TIEP
-SO TAY LIEN QUAN: HIEU-GAME/08-giao-dien/SO-TAY-GIAO-DIEN.md, SO-TAY-TAI-NGUYEN-CLIENT.md (asset khung hinh thoi/o). Ghi dong "DA DOC SO TAY".
-Chat da so anh a, b, f0 (EVIDENCE/ui-cuonghoa/) voi 3 anh chuan (DESIGN/UI-CUONG-HOA/chuan-*.jpg):
-1. DAT: cua so khong chong len tui; dong nhac cam "Thuy tinh tu tru tu tui, khong can dat vao o" co; hien Ti le / Can bac / Can thuy tinh sau khi dat do (anh b); do dang mac / o khong hop le co thong bao (anh f0).
-2. LECH SO VOI CHUAN (chu da giao): (a) van la cua so "Giao" cu (tieu de "Giao", 15 o luoi, nut Xac nhan/Dong); chua co tieu de "Cuong hoa trang bi", day goi y, SO DO 5 O quanh o giua (Trang Bi, 3 Nguyen Lieu, Bua Bao Ho, Phu May Man), mui ten, nut "Cuong hoa", luoi tui + 2 thanh tien nam TRONG cua so; (b) dong "Nguyen lieu can / Can Bac / Ti le / Chu y" chi la 3 dong chu to giua, khong dung bo cuc chuan; (c) chu thieu dau o nhieu cho ("Dat 1 mon trang bi...", "Chi dat 1 trang bi...", "O trang bi trong hoac khong hop le"): anh f0 thong bao hien trong 1 khung xam lon, khong dung khung chuan.
-3. SO LIEU LAM (anh b): "Can thuy tinh moi mau: 32768" va "Can bac: 6553600 van" voi ti le 25%. Luat chu chot: thuy tinh moi loai = min(2^(n-1), 1000) (HIEU-GAME/01.../ban giao 21/11 muc 6); 32768 VUOT TRAN 1000. A kiem: client tu tinh theo cong thuc (TU-SONNET 1446) chu khong lay tu server => client dang thieu tran 1000; sua cho khop server, ghi ro cap n cua mon trong anh. Don vi "van" cung kiem (1 van = 10000 bac; 6553600 van la 65 ti bac - dung cong thuc 2^(n-1)x200 van o n=16?).
-4. TRA LAI: bao cao #348 chi duoc ghi PARTIAL. Tiep tuc dung UI moi theo chuan-1/2 (asset khung hinh thoi: tim trong PAK/spr goc, khong che lai - TU-SONNET 1440). Neu thieu asset thi bao ro asset nao, dung tam khung doi gian nhung dung THU TU/BO CUC chuan. Chup lai a-f (c,d,e,f can mon xanh/tim/vang +0: Chat cho A DUNG menu sach "Do xanh/Do vang" tren tk atest (vai T36nv1/atest...); neu can mat khau tk atest thi hoi chu qua [CAN-CHU] trong BAO-CAO-CHU.md, KHONG ghi mat khau vao kho).
-5. Chat se so lai anh moi va gui chu.
-
-## #351 Chat 17:45 — A: CHU CHO PHEP TU LAY MAT KHAU TK TEST (atest) DE CHUP NOT ANH
-Chu 17:40: cac tai khoan atest do A tu tao va tu luu; chu khong biet nam o dau; chi la tk test tren Test-36, khong lo. A TU LAY mat khau tu noi A da luu (vd %LOCALAPPDATA%\jx1-secrets, file/env cua bot_tao_role, STATE/DUONG-DAN.md chi duong) va TU DIEN vao client LD de chup anh c,d,e,f (#350). Quy tac: chi dung tk TEST tren Test-36 (tkatest02 / vai atest...); KHONG dung tk that cua chu (tkchuvuong); KHONG in mat khau ra chat/log/anh (che o nhap truoc khi chup); KHONG ghi vao kho. Khong lay duoc thi bao [CAN-CHU] ngan trong BAO-CAO-CHU.md. Lam tiep #350.
-
-## #352 Chat 18:10 — A: GIAO TIEU YEU TIM TAI NGUYEN HINH ANH CHO UI CUONG HOA; A LAM VIEC KHAC SONG SONG (chu duyet)
-SO TAY LIEN QUAN: HIEU-GAME/08-giao-dien/SO-TAY-TAI-NGUYEN-CLIENT.md, SO-TAY-GIAO-DIEN.md; anh chuan DESIGN/UI-CUONG-HOA/chuan-1/2/3.jpg. Ghi dong "DA DOC SO TAY".
-Chu 18:08: nen cho tieu yeu ho tro tim tai nguyen hinh anh de A lam viec khac cho nhanh. A lam NGAY:
-1. Giao 1-2 tieu yeu (Codex, toi da 3/khoa, Q-59/Q-60: 1 con truoc, on moi sinh them) task CHI DOC: tim trong PAK/spr/ui goc (client goc, ban copy qh9A/Client2912) CAC TAI NGUYEN cho cua so "Cuong hoa trang bi": khung hinh thoi (o), o giua "Trang Bi", mui ten (xuong/ngang), nen cua so + tieu de, day goi y (khung bo tron), nut "Cuong hoa", o luoi tui + thanh tien (vang/bac), khung o nguyen lieu. Moi muc: duong dan trong PAK, ten/ID spr/frame, kich thuoc, ghi cach nap (ham, ten file ini/uiX). Khong che lai, khong sua. Ket qua ghi vao HIEU-GAME/08-giao-dien/SO-TAY-TAI-NGUYEN-CLIENT.md (muc moi "Tai nguyen UI cuong hoa") kem file:dong/duong dan. Chua tim thay thi ghi "KHONG TIM THAY" + goi y tai nguyen gan nhat.
-2. A trong luc cho: (a) loi "Thieu bac: can 0 bac" (ma 3) cho ra dung so; (b) tran thuy tinh 1000 o client; (c) dau tieng Viet cho cac thong bao UI; (d) ket qua hien trong cua so; (e) dung khung/bo cuc don gian dung THU TU chuan neu tai nguyen chua co.
-3. Bao tien do ngan vao TU-SONNET.md khi co ket qua tai nguyen. Chat chua duyet phat APK ra may that.
-
-## #353 Chat 18:25 — A: DO tick gs001 KHI CO NGUOI ONLINE (viec nho, song song voi #352)
-SO TAY LIEN QUAN: HIEU-GAME/ so tay tick gs001 (SO-TAY-TICK-GS001.md), HIEU-GAME/06-mang-goi-tin/. Chu 18:20 hoi giat ngua + do tin hieu cac cong da xong chua: CHUA. Luc do truoc A thay Online=0 nen khong co so. Nay vai atest dang online tren Test-36: A doc console gs001 (cach cu: task Interactive mu1 + console.ps1 -TargetPid, khong WinRM truc tiep) 3-5 dong `SvrFPS=.. tick avg=.. max=.. over=..` luc atest DANG chay/dung + dong `[fix36] LogicFps=`; ghi ro Online=?; neu Online=1 ma tick van <=55 ms thi ghi "KHONG TAI NGHIEM" (tick chi nang khi co dong NPC/quai thuc hoac phi phong). Them: ping 20 goi 512B LD->Test-36 va `forwarder` cong 56722/51189 (chi doc) neu A thay can cho duong dien thoai. B (#B-090) doc online.lua va ma tim phan an tick. Bao ngan TU-SONNET.md.
-
-## #354 Chat 18:40 — A: THU HOI #353 (DO TICK); A CHI LAM UI CUONG HOA CHO XONG (chu 18:31)
-SO TAY LIEN QUAN: HIEU-GAME/08-giao-dien/. Chu: B xu ly phan giat/tick; A tap trung UI cuong hoa den khi xong. Viec do tick/ping giao B (#B-091, dung `TOOLS/vm_chay.py`). A: bo #353; chi neu B hoi A (vd nhan vat atest dung yen 5 phut) thi giup. Khi B hoi, tra loi ngan. Lam tiep #350/#352: bo cuc 5 o chuan, tran thuy tinh 1000, "can 0 bac" (ma 3), dau tieng Viet, ket qua trong cua so; tai nguyen do tieu yeu XD-UI01. Chup lai a-f gui Chat nghiem thu. Va: viec nho truoc do: tat bot/relog tu dong neu co (online.lua loi moi phut = co ai vao lai moi phut) — chi kiem 1 dong, khong lam lau.
-
-## #355 Chat 18:52 — A: GIU atestqhhai ONLINE DUNG YEN 5 PHUT ROI CHAY NGUA 5 PHUT (de B do tick) — lam XEN KE voi UI cuong hoa
-SO TAY LIEN QUAN: HIEU-GAME/07-server-luu-tru/SO-TAY-TICK-GS001.md. Ghi "DA DOC SO TAY".
-B (A-B.md 18:46 #B-092): luc ROI tick 0,3ms (nhe); luc DANG NHAP tick avg 95-197ms max 0,7s, CPU ~1 loi; online.lua loi chi 5 lan luc dang nhap. Con thieu tick luc nguoi da vao xong. Viec A (ngan, khong bo UI): (1) dang nhap atestqhhai, dung yen 5 phut, bao B qua A-B.md "dang dung yen tu hh:mm"; (2) sau do chay ngua/di lai 5 phut, bao "dang chay tu hh:mm"; (3) xong ghi "het do". Sau do tiep tuc UI cuong hoa (#350/#352/#354).
-
-## #356 Chat 18:58 — A: CHU RA LENH: HOAN THANH SOM UI CUONG HOA, DONG GOI APK GUI CHU (gioi han luot sap het)
-SO TAY LIEN QUAN: HIEU-GAME/08-giao-dien/SO-TAY-GIAO-DIEN.md. Ghi "DA DOC SO TAY".
-Chu noi: han muc dang gan 76%, 9 gio moi hoi lai; chu muon A lam xong som roi GUI APK cho chu. Day la LENH CHU cho APK ra may that (chu da duyet, ngoai Q-81 cung duoc cho lan nay).
-1. Sau khi A xong dot do tick 19:00 voi B, lam GON vc36: bo cuc chuan 5 o, tran thuy tinh 1000, sua "Thieu bac: can 0 bac", dau tieng Viet, ket qua trong cua so. Uu tien chay duoc + dung hon dep; cai chua kip ghi vao danh sach "CHUA LAM".
-2. Chup lai a-f nhanh, Chat nghiem thu hinh anh nhanh (A bao Chat ngay khi co anh).
-3. Dong goi APK vc36, gui cho chu theo cach da dung o Q-81 (ghi ro ten tep + cach tai/cai trong BAO-CAO-CHU.md [CAN-CHU] bang 3 dong de chu bam duoc tren dien thoai).
-4. Ghi ngan gon trang thai/viec dang do vao STATE/DANG-LAM.md de phien sau (sau khi han muc hoi) tiep tuc duoc.

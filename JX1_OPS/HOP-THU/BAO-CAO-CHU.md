@@ -161,3 +161,8 @@ Kiểm chuỗi Test-36: `python -I JX1_OPS/TOOLS/vm_chay.py ports` thấy 56722,
 
 ## (B) 21/11 ~17:40 — ĐÃ GÕ "B Chat" THẬT
 Chủ đăng nhập lại claude.ai; B mở https://claude.ai/code/session_01MrvZcvMaZXNKa8dLsj2hfU (phiên thuộc chat https://claude.ai/chat/dbbe6155-99bb-4ab4-b8e8-8ffd6768528c "Kết nối GitHub cho trợ lý"), gõ vào ô trả lời của chat đó (không phải ô trong phiên code) và gửi: tóm tắt #B-087/#B-088, SC-006 PARTIAL. Màn hình xác nhận tin hiện trong chat. Chưa thấy Chat trả lời lúc này. Thẻ [DUNG-CAN-CHU 17:25] trong TRANG-THAI.md đã hết việc → xóa.
+
+## (A) 21/11 19:10 [CAN-CHU] APK vc36 (UI Cường hóa) — theo lệnh chủ #356
+1. Mở trang Artifact "Link tải APK" (https://claude.ai/artifact/AZvpZmtEtJs41rfGDHJ1dh), bấm "Sao chép", dán vào Chrome (bật Tailscale).
+2. Tệp jx1-vc36.apk, 95.139.800 byte; SHA256 a0ec09bc523794324dd2179fd5b6fb9876d57349493137ad613fdf943b8a58d6. Cài đè bản cũ.
+3. Chưa đạt: thông báo kết quả hiện ở khung chat (panel tự đóng sau cường hóa); ảnh d, e chưa chụp lại. Khung kim cương chưa có tài nguyên.

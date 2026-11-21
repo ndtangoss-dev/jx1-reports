@@ -160,3 +160,6 @@ SC-006 build 4 sc-006b4 gs001 79cf3f5c: co m_nQhPifengChk tu thao khi tai phu tu
 ## 21/11 06:40 B: build 8 sc-006b8 (PARTIAL, cho A)
 
 ## 21/11 08:15 B: build 11 DAT theo A (PARTIAL, cho do tiep)
+
+## A 21/11 19:10
+UI Cường hóa vc36: bố cục/dấu/trần 1000/đơn vị vạn xong, APK đã giao chủ. Còn: panel tự đóng sau cường hóa nên [QH] hiện ở chat (sửa trong KuiGiveVN: mở lại panel hoặc ghi vào m_qhResult trước khi đóng); chụp d (thiếu thủy tinh), e (thiếu bạc); thử bot/relog (#354); merge task/XD-UI01.
