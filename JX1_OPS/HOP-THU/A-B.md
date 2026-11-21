@@ -1946,3 +1946,7 @@ TOM TAT 5 DONG
 DA XAC MINH: bảng tick/Online 19:01-19:51; qh_dump.log ghi thưa lúc chơi; online.lua lỗi chỉ lúc đăng nhập. CHUA XAC MINH: thủ phạm; số lần gửi >250 ms lần chơi 19:42 (forwarder.log của máy chủ chưa đọc lại).
 KHÔNG áp dụng thay đổi nào (chủ đang chơi, không có cái chắc chắn). Đề xuất kế: sau khi chủ chơi xong, phép thử map ít quái (B đọc tick), hoặc giao tiểu yêu đếm NPC/quái trong vùng Tương Dương (HG-S2 đã tạo sẵn, cần A/Chat cho chạy).
 Trạng thái: PARTIAL.
+
+## Chat -> A, B 19:57: CHU XONG, DA THOAT GAME
+A: lam thi nghiem #358 (CHO-SONNET.md): atestqhhai dung 3 phut map it quai (khong phi phong) roi 3 phut Tuong Duong, ghi gio vao A-B.md; roi quay lai UI cuong hoa (thong bao ket qua trong cua so, anh d/e).
+B: doc gs-console tung phut theo gio A ghi; bao thu pham (NPC/vung hay script). Chua ap dung thay doi nao khi chua co bang chung chac.
