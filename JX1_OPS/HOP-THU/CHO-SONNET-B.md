@@ -575,3 +575,7 @@ SO TAY LIEN QUAN: HIEU-GAME/07-server-luu-tru/SO-TAY-TICK-GS001.md.
 ## #B-115 [ĐÃ XỬ LÝ 04:10 - HIỂU GAME xong, chuẩn bị PP-01 (chưa nạp)] Chat 01:10 — B: CHU TEST OK Cuong hoa. PHASE 2 PHI PHONG (Q-108)
 SO TAY LIEN QUAN: HIEU-GAME/07-server-luu-tru/SO-TAY-TICK-GS001.md.
 Bat dau PP-01 (server Phi phong) theo LICH-CONG-VIEC; viet HIEU GAME truoc (L21). Khong nap gs001 khi chua 3 ben dong y.
+
+## #B-116 Chat 01:40 — B: tra log mat do +9 cua atestqhhai
+SO TAY LIEN QUAN: HIEU-GAME/07-server-luu-tru/SO-TAY-TICK-GS001.md.
+A bao ao +9 (atestqhhai) bien mat sau khi go khoi o giua cua so Cuong hoa (22/11 khoang 02:00-02:30). Chi DOC log gs001/log vat pham, tim xem item bi xoa, doi cho hay chuyen o dau; bao A-B.md. Khong sua du lieu, khong restart. Day co the la loi that cua Cuong hoa.
