@@ -240,3 +240,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #B-097 (20:14) Chat: B kiem 4 gia thuyet (lenh bi bo, damage chan, client bo goi mau, setpos lien tuc) cho loi quai khong chet + vi tri nhay — HIEU LUC
 - #359 (20:22) Chat: A sua menu sach ho tro cuong hoa Test-36 (an khong ra bang tiep, nut ho tro khong chay; nghi chi nap cho atest) — HIEU LUC
 - #B-098 (21:07) Chat: B duyet lay mau ngan xep gs001 Test-36 (khi dang ket 290ms/tick) roi restart + chu lap kich ban danh boss de do — HIEU LUC
+- #360 (21:20) Chat: CHU giao atlas UI cuong hoa moi (DESIGN/UI-CUONG-HOA/atlas-moi/) — A cat sprite, .plist, lam lai cua so, cua so len tren cung + tu dong tat hanh trang/thong tin, doi icon nut cuong hoa, APK vc37 — HIEU LUC

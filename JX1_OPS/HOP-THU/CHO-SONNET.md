@@ -2525,3 +2525,16 @@ Chu 16:42: ban, khong test duoc; COI CUONG HOA DA ON; A lam den UI cuong hoa; Ch
 
 ## #349 Chat 16:55 — A: AN CUA SO LDPLAYER NGAY (viec nho, xen truoc UI)
 SO TAY LIEN QUAN: STATE/QUY-TRINH-TAT-BAT-MAY.md, TOOLS/ld_canh_cua_so.py (khong phai phan game). Chu: "khoi dong LD tren may ta lai quen an xuong roi". Luat chu: an cua so LDPlayer ngay (thu nho, khong dong, khong dong vao tien trinh). A: chay `pythonw -I TOOLS/ld_canh_cua_so.py` (co `--once` de kiem 1 lan; chua thu voi LD that) NGAY; kiem LD da thu nho; dua viec an LD vao buoc /tiep-tuc de lan khoi dong sau tu an. Bao 1 dong ket qua. Roi lam tiep #348.
+
+## #360 Chat 21:20 — A: CHU GIAO BO TAI NGUYEN UI CUONG HOA MOI — LAM LAI GIAO DIEN CUA SO CUONG HOA (CHI TRINH BAY, KHONG DOI GAMEPLAY)
+SO TAY LIEN QUAN: HIEU-GAME/08-giao-dien/SO-TAY-GIAO-DIEN.md, SO-TAY-TAI-NGUYEN-CLIENT.md, CO-CHE-MENU-LUA.md. Ghi "DA DOC SO TAY".
+Tai nguyen: `JX1_OPS/DESIGN/UI-CUONG-HOA/atlas-moi/JX1_CuongHoa_UI_Atlas.png` (1536x1024 RGBA) + `README_Cocos_Integration.txt` (toa do vung gan dung: cua so ghep x0-1150,y0-800; mau o/khung x1170-1535,y0-250; Bua May Man/Phu Bao Ho x1290-1530,y140-250; duong noi x1170-1535,y250-410; bang thong tin x1160-1535,y410-550; thanh tieu de x1160-1535,y560-620; nut Cuong Hoa va X x1150-1535,y620-710; icon tien x1160-1380,y710-800; vien/goc x0-1150,y810-1024 va x1170-1535,y900-1024). Day la atlas CONCEPT (chua cat, chua .plist).
+Yeu cau CHU:
+1. Cat atlas thanh tung sprite PNG rieng, giu alpha, cat sat vien trong suot; dung 9-slice cho nen cua so/thanh tieu de/nut/khung o khi can. Tao file .plist + atlas Cocos tuong ung va tich hop vao cua so Cuong hoa HIEN CO (class KuiGive_New.cpp / qh9A). KHONG ve lai nhung thanh phan da co trong atlas.
+2. Icon trang bi/vat pham dung icon THAT trong asset Cocos V3 (khong lay tu atlas). Chu, ti le, so luong, tien bac la DU LIEU DONG (label Cocos: "Nguyen lieu can", "Can Bac", "Ti le thanh cong", "Chu y", "Cuong Hoa"); soat cac chu cai/glyph hong tren atlas (concept sinh anh) va thay bang chu/asset Cocos that.
+3. Bo cuc theo atlas: cua so lon, o trang bi chinh giua tren, hai o Bua May Man (trai) va Phu Bao Ho (phai) noi duong vang, 3 o nguyen lieu duoi; bang thong tin 4 dong; nut Cuong Hoa; BEN PHAI luoi trang bi, HAI o tien ngay duoi luoi. KHONG them menu chuc nang ben trai, KHONG kem cua so Hanh trang rieng trong man hinh nay.
+4. Hanh vi cua so: khi bam nut Cuong hoa thi cua so Cuong hoa hien TREN CUNG; cac cua so dang mo nhu Hanh trang, Thong tin nhan vat... phai TU DONG TAT.
+5. Doi ICON nut "Cuong hoa" tren HUD (goc tren phai, chu khoanh): hien nhin giong het nut "Tu dong chien dau" va sat nut "Thu cong". Dung icon khac (vi du dua tren o/khung/bua trong atlas hoac asset Cocos khac biet ro) va dat cach nut Thu cong ra.
+6. Chi doi trinh bay; khong doi co che gameplay/Lua/server. Giu hop nhat voi viec dang lam #359 (menu sach) — khong gay xung dot.
+7. Chup anh a-f moi (cua so rong, dat do, thanh cong, thieu thuy tinh, thieu bac, khong phai trang bi) + chup HUD voi icon moi, bao Chat nghiem thu hinh anh, roi dong goi APK vc37 cho chu (3 dong huong dan trong BAO-CAO-CHU.md).
+Luu y: day la viec UI, A lam; B van dieu tra server. Khong dung server ngoai Test-36.
