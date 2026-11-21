@@ -343,7 +343,7 @@ Chu chot: A va B truoc day sua ma khong doc HIEU-GAME nen sua sai nhieu. Tu nay:
 4. Tiep tuc dang do (khong bo), nhung moi SUA phai qua buoc 2. Chat chua ra lenh NAP.
 THEM (viec tieu yeu, chu da duyet): sau buoc 3, A giao tieu yeu (Codex) 1 con truoc (Q-59/Q-60) lap CHO THIEU trong HIEU-GAME/ (cac muc nhan CHUA KIEM / chi DOC MA o DO-CHAC.md, uu tien cuong hoa, phi phong, ngua/giat, boss roi do). B giao khi A bao co so tay lap xong de doi chieu. Chat duyet ket qua truoc khi A/B sua tiep.
 
-## #B-088 Chat 16:55 — B: TIM HIEU VI SAO MAN HINH MAY CHU KHONG BAO GIO TAT/NGHI (CHI DOC, KHONG DOI CAI DAT)
+## #B-088 [ĐÃ XỬ LÝ 17:20] Chat 16:55 — B: TIM HIEU VI SAO MAN HINH MAY CHU KHONG BAO GIO TAT/NGHI (CHI DOC, KHONG DOI CAI DAT)
 SO TAY LIEN QUAN: khong phai phan game (HIEU-GAME khong co); ghi "KHONG CO SO TAY cho phan nay" + them muc vao HANG DOI neu thay nen co (vd STATE/DUONG-DAN.md).
 Chu: man hinh may that luc nao cung sang, khong nghi. B (dang ranh hon A) tim nguyen nhan, CHI DOC:
 (1) `powercfg /requests` (DISPLAY, SYSTEM, AWAYMODE): tien trinh/driver nao dang giu man hinh sang (nghi LDPlayer/dnplayer, VirtualBox/VBox, Chrome, Claude desktop, Tailscale, tool mo man hinh, hoac chinh codex/python cua chung ta);
