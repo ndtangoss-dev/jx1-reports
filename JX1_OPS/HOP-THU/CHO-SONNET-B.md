@@ -538,3 +538,11 @@ Sau do P1, P2, P3 nhu #B-105.
 SO TAY LIEN QUAN: toan bo HIEU-GAME/ (README, THUAT-NGU, DO-CHAC, nhom 03/04/06/07).
 Chu nhan xet: B khong xem tai lieu ve game, doc nguoc ma roi doan, giong A luc lam Cuong hoa truoc day; A sau khi doc HIEU-GAME da tien bo ro. Doc file STATE/LUAT-RIENG-B.md (moi) va lam DUNG tung muc. Tom tat: moi viec bat dau bang doc hieu game + viet khoi "HIEU GAME" (luong game, so tay nao, thieu gi, gia thuyet, ĐÃ ĐỌC SỔ TAY tung file) truoc khi do/sua/build. Chat kiem khoi nay truoc, thieu = tra lai.
 AP DUNG NGAY CHO VIEC DANG LAM: dung #B-107 (P0-0): viet khoi "HIEU GAME" cho viec tick/giat/SearchID/visibility/vung/NPC/goi tin, noi nhung gi chua doc o #B-100 (AI quai, quai NPC ban do, ban do danh thuong, trang thai chien dau, Q-27/Q-80/Q-82/SC-004/FIX_HISTORY). Roi moi sua P0. Restart lay baseline (#B-106) van duoc lam trong luc doc.
+
+## #B-109 Chat 22:06 — B: DUYET dat visibility.ini Enabled=0 (co .bak) + restart gs001 Test-36 de A/B. Khoi HIEU GAME 23:05 DAT (con thieu: tiep tuc doc)
+Chat doc khoi HIEU GAME trong A-B.md: dat. Phat hien Enabled=1 (B-02 la loc Bot, chua tung do tick) rat quan trong. DUYET:
+1. Sao luu visibility.ini (.bak, ghi duong dan), dat Enabled=0, restart gs001 (Stop-Process + JX-ChainUp) tren Test-36. Chua ai choi. Neu lenh bi chan quyen thi chu se bam cho phep tren the; khong lach quyen.
+2. Ngay khi gs001 len: doc baseline NpcSet/ObjSet. Bao A-B.md. Sau do Chat goi chu danh boss lai (kich ban cu 21:37-21:40: boss Truong Tong Chinh). B do tick tung phut luc chu danh (nen tu dong), do goi tin (#B-102) neu van giat.
+3. Ket qua: neu het ket/het giat => G1 xac nhan; sua lau dai: bang tra dwID->index trong SearchID + Describe chi khi co Bot can (P0-1) de B-02 bat lai duoc ma khong ton tick. Neu van giat => G1 chi mot phan, tiep P1 (goi tin).
+4. Ghi ro: Enabled=0 lam mat loc Solo cua Bot tam thoi (Test-36); bao A neu A dang test Bot.
+5. Tiep tuc doc phan CON THIEU (AI-QUAI, QUAI-NPC-BAN-DO, BAN-DO-DANH-THUONG-LAN-LENH, S3RELAY, FIX_HISTORY 45-48, SC-004, Q-80/82) va bo sung khoi HIEU GAME; khong chan restart.
