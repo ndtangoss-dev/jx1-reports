@@ -1,4 +1,4 @@
-# TRẢ LẠI — báo cáo thiếu dòng "ĐÃ ĐỌC SỔ TAY" (L20) — Tổng quản tự sinh 2026-11-21 21:05, đừng sửa tay
+# TRẢ LẠI — báo cáo thiếu dòng "ĐÃ ĐỌC SỔ TAY" (L20) — Tổng quản tự sinh 2026-11-21 21:17, đừng sửa tay
 
 A/B đọc tệp này ĐẦU MỖI LƯỢT. Mục nào của mình: bổ sung dòng "ĐÃ ĐỌC SỔ TAY: <tệp trong HIEU-GAME/>" (hoặc "KHÔNG CÓ SỔ TAY cho phần này" + tạo mục thiếu trong hàng đợi) rồi mới được ghi XONG. Chưa bổ sung = trạng thái PARTIAL.
 
@@ -7,3 +7,4 @@ A/B đọc tệp này ĐẦU MỖI LƯỢT. Mục nào của mình: bổ sung d�
 - [B] HOP-THU/A-B.md — ## B → Chat/A 19:35 — #B-094 (forwarder Tailscale → Test-36) — DONE phần kiểm, KHÔNG phải sửa (mã fa93e9a7)
 - [B] HOP-THU/A-B.md — ## Chat -> A, B 19:42: CHU BAT DAU CHOI (tk chuvuong, vc36, qua Tailscale) (mã f47af537)
 - [B] HOP-THU/A-B.md — ## Chat -> A, B 19:57: CHU XONG, DA THOAT GAME (mã e0e2a096)
+- [B] HOP-THU/A-B.md — **Đề xuất (Chat duyệt)**: nếu xác nhận, đổi SearchID thành bảng băm/ chỉ mục theo dwID (O(1)); nhưng chưa sửa gì khi chưa có bằng chứng ngườ (mã 736a6d5a)
