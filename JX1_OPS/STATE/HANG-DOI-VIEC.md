@@ -49,3 +49,13 @@ Thứ tự theo lịch (Q-107: cường hóa trước, phi phong sau). Làm từ
 | 9 | LG-04 | Chuẩn bị bật jx_netlog/JXPERF ghi thời điểm nhận s2c / gửi c2s (không chạy) | chỉ dùng khi giật quay lại |
 | 10 | FX-01 | Khảo sát nâng cấp hiệu ứng hình ảnh: danh sách hiệu ứng thiếu/xấu, ưu tiên, ước tính (đọc HIEU-HIEU-UNG-VU-KHI) | sau cường hóa/phi phong mới làm |
 | 11 | HG | Ảnh d (thiếu thủy tinh) cập nhật cho vc37; chụp bộ ảnh nghiệm thu cuối a–f + HUD | |
+
+## Nạp thêm 22/11 01:50 (Chat, đủ ≥10 việc mở)
+| 8 | PP-02 | Đọc client phi phong: slot phi phong, mantle/ảnh theo giới, tooltip [cấp N]; ghi kế hoạch sửa UI/hiển thị | đọc tĩnh + sổ tay |
+| 9 | PP-02 | Làm cửa sổ/hiển thị Phi phong theo kế hoạch (worktree riêng, khóa LD/APK theo LICH-CONG-VIEC) | sau B có PP-01 |
+| 10 | CH-03 | Lỗi mất áo +9 khi gỡ khỏi ô giữa: tìm nguyên nhân (log B-116), sửa nếu là lỗi client | #366/#368 |
+| 11 | CH-03 | Ảnh e (thiếu bạc) bằng hook trừ bạc atestqhhai, hoàn bạc 8 Ức 3400 Vạn | #368 |
+| 12 | HG | Cập nhật sổ tay 08-giao-dien bằng cơ chế vc38 (giữ trang bị ở giữa) | cộng dồn L20.4 |
+| 13 | FX-01 | Khảo sát nâng cấp hiệu ứng hình ảnh (glow, sét), chỉ đọc | |
+| 14 | HT | Danh sách hook thử client cần gỡ + kế hoạch gỡ có kiểm chứng (từ PP-03) | |
+| 15 | LG-07 | Đo lại fps/frame >40 ms khi đi nhiều map để xác nhận fix36 | |

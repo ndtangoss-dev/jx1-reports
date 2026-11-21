@@ -28,3 +28,9 @@ Thứ tự: P0 → P3. Làm từ trên xuống, xong gõ `B Xong` vào khung Cha
 | 10 | PP-03 | Kiểm kê menu/hook thử phía server cần gỡ trước server thật (menu Phi phong/GM, [TEST-A], qh_dump.log) | đọc tĩnh |
 | 11 | TIEUYEU | Việc cho tiểu yêu: so 36 Hz cũ vs b11; SearchID callers còn lại | Tổng quản giao |
 | 12 | E-01 | Bot client Python không giao diện vào gs001 Test-36 (khi gs001 trống) | việc cũ |
+
+## Nạp thêm 22/11 01:50 (Chat)
+| 13 | LG-03 | KẾ HOẠCH THỬ b113 (#B-114): backup, điều kiện nạp, Enabled=0→1, đo HIT/MISS, ngưỡng hoàn tác | chờ 3 bên |
+| 14 | CH-03 | Tra log gs001 mất áo +9 của atestqhhai (#B-116), chỉ đọc | |
+| 15 | PP-01 | HIỂU GAME phi phong server + kế hoạch nạp + đo (L21) | |
+| 16 | HT | Sổ tay 07: bài học SearchID/Describe (đã làm) + kiểm lại các mục CHƯA KIỂM | |
