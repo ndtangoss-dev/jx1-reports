@@ -1,3 +1,9 @@
+# LƯU Ý ĐẦU TIÊN: ĐÃ CÓ QUY TRÌNH CHÍNH THỨC — ĐỌC TRƯỚC, FILE NÀY CHỈ LÀ BẢN CHỤP TRẠNG THÁI
+- Tắt máy: `/ket-thuc-ca` = `QUY-TAC-VAN-HANH.md` mục 7 + `TOOLS/commands/ket-thuc-ca.md` (cập nhật `STATE/TRANG-THAI.md`, `STATE/BAN-GIAO.md`/`BAN-GIAO-B.md`, báo cáo ngày `REPORTS/daily/`, commit + push, KIỂM GitHub có commit, VM chỉ dừng đúng thứ tự, KHÔNG cắt ngang; kết bằng "Đã lưu. Có thể tắt máy.").
+- Bật lại: `/tiep-tuc` (mục 7): đọc README + BAN-GIAO + TRANG-THAI, git pull, kiểm VM Test-36 và server (`TOOLS/vm_chay.py chain-up`, `ports`), LDPlayer; so thực tế với TRANG-THAI.
+- Đổi tài khoản: `STATE/QUY-TRINH-DOI-TAI-KHOAN.md` (A: phiên mới ở `C:\Jx1CocoV3` gõ `/tiep-tuc`; B: `D:\JX-wt\SONNET-B` + `HOP-THU/KHOI-DONG-SONNET-B.md`; Chat mới: dán "Đọc https://github.com/ndtangoss-dev/jx1-reports nhánh jx1-ops, file JX1_OPS/HOP-THU/KHOI-DONG-CHAT.md, rồi làm theo", sau đó chủ nhắc cách xưng hô). Câu mở đầu ở mục 9 bên dưới chỉ là gợi ý bổ sung.
+- Đường vào VM: `STATE/DUONG-VAO-VM.md` (`TOOLS/vm_chay.py`).
+
 # BÀN GIAO PHIÊN "CHAT" — 21/11/2026 10:15 (đổi tài khoản vì tài khoản cũ đã 91% hạn mức tuần, reset Thứ Năm 26/11 01:00)
 
 Dành cho phiên Chat mới (hoặc chủ) đọc 1 lần là tiếp được. Đọc theo thứ tự 1 → 9.
