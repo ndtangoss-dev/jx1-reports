@@ -1794,3 +1794,13 @@ TÓM TẮT 5 DÒNG
 4. Chưa làm: bố cục chuẩn 5 ô, trần thủy tinh min(2^(n-1),1000), đơn vị "vạn", dấu tiếng Việt, tìm khung kim cương trong PAK.
 5. Việc kế: nạp Lua nóng, chụp c/e/f, rồi dựng vc36.
 Cần tôi quyết định: không
+
+## [A] #350/#351 cập nhật ảnh (21/11 18:00)
+ĐÃ ĐỌC SỔ TAY: HIEU-GAME/08-giao-dien/SO-TAY-GIAO-DIEN.md, SO-TAY-TAI-NGUYEN-CLIENT.md
+TÓM TẮT 5 DÒNG
+1. Đã chụp c, d, e (vc35, tài khoản atest, không lộ mật khẩu): c-thanh-cong-0-len-1, d-thieu-thuy-tinh, e-thieu-bac trong EVIDENCE/ui-cuonghoa/; f dùng f0-do-trang-bi-tu-choi cũ.
+2. c: +0→+1 thành công "tỉ lệ 95%", mỗi loại thủy tinh trừ 1, bạc trừ 200 vạn (20 ức → 19 ức 9800 vạn): khớp 200×2^(n-1) vạn tại n=1.
+3. e lộ lỗi mới: thông báo "Thieu bac: can 0 bac" (đơn vị/số hiển thị sai, chưa kiểm nguồn).
+4. Đã thêm 4 mục thủy tinh/bạc vào menu atest trên VM Test-36 (.bak-menu, chỉ tên atest).
+5. Chưa làm: dựng lại bố cục chuẩn, trần thủy tinh 1000, dấu tiếng Việt, khung kim cương.
+Cần tôi quyết định: không
