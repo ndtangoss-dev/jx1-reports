@@ -1699,3 +1699,64 @@ KẾT LUẬN: bảng 11 cấp tăng đều + ngưỡng tài phú là THIẾT K�
 - hotrotanthu.lua trong C:\Jx1CocoV3\...\gs\script\global\npcchucnang là BẢN GỐC (file 31/08/2025): menu REPHIPHONG 11 mục (Lăng Vân…Cao cấp) gọi AddGoldItem(3465..3475, 0, 1..11). Bản sửa của phiên trước (menu "Phi phong 1/2/3, bộ 1-5, bộ 6-10", .bak-cloak) và KgameWorld.cpp .bak-pfl + jx-qh8.apk KHÔNG có trong thư mục B đọc được → CHƯA ĐỐI CHIẾU được; cần chủ/Chat chỉ đường dẫn bản sửa (hoặc A đối chiếu trên máy chủ). SHA jx-qh8.apk theo Chat: 901C6B00…5888 (B chưa kiểm).
 - Đề xuất B (chờ Chat quyết, KHÔNG làm khi chủ đang test): (1) server: mọi phi phong dùng chung 1 bộ dòng/tên/cấp (bỏ bảng tăng theo cấp 11 + ngưỡng tài phú nếu chủ muốn "giống nhau"); (2) hình theo giới do client; (3) tên cạnh nhân vật: A đối chiếu bản jx-qh8 với cách sửa của A rồi gộp MỘT bản.
 - Build 13 KHÔNG nạp. SC-006 PARTIAL.
+
+## B 10:25 — Trả lời #B-079 (GIAI ĐOẠN 1, CHỈ ĐỌC MÃ; chưa nạp gì, chưa đổi VM)
+Trạng thái: PARTIAL. Chưa build mới, chưa nạp. Build 13 KHÔNG nạp (chờ Chat báo NAP).
+
+**TOM TAT 5 DONG**
+1. Cường hóa GỐC: Lua chỉ nhận đồ xanh hoặc vàng (+1 viên đá), rồi gọi hàm C++ `KItemList::QiangHua` (KItemList.cpp:5393). C++ cũng chặn đồ trắng/tạp hóa (chỉ cho vàng/tím/xanh). Vậy đồ trắng bị từ chối là ĐÚNG GỐC.
+2. Tỉ lệ gốc không nằm trong Lua mà ở gamesetting.ini: `QiangHuaRank=20000,40000,5` (bản gs001 là 1000,2000,5), `QiangHuaSet=10`.
+3. Lần 0→1 và +1→+2 gốc luôn thành công (điều kiện thất bại chỉ khi nEnChance>=2). Tối đa +5 theo cấu hình.
+4. Gốc mỗi cấp +25% (val>>2, cộng dồn), chỉ cho các thuộc tính không nằm trong danh sách cấm. Bản "mình" +5%/cấp, tối đa +15.
+5. Đã soạn sẵn bản sửa dòng 44 `kind==0` (bản nháp, chưa lên VM) kèm bản gốc `.bak-qh-filter`.
+
+**A1 — bản sửa nháp (CHƯA CHẠY)**
+- `DESIGN/QH-B079-deploy/qianghua.lua` (SHA256 08a9c664065fcc2b6026a2a350abb9f259f2ca3003aca35aff2baa377cab3901): dòng 44 `if kind == 0 then ...` (bỏ `(a8==1 or a6>0)`).
+- `DESIGN/QH-B079-deploy/qianghua.lua.bak-qh-filter` (SHA256 ad58b89b091d7445e50ea4143bf8644f64d2a450000b91a8ebdaf88e8d200885) = bản đang chạy B044, để hoàn tác.
+- Đổi file Lua này chỉ cần nạp lại script, KHÔNG cần khởi động lại gs001 (CHƯA XÁC MINH, tùy cách A nạp script). Báo Chat trước nếu A phải restart.
+- CẢNH BÁO quan trọng: nếu chỉ bỏ bộ lọc Lua thì đồ trắng vẫn qua Lua nhưng hàm C++ gốc (KItemList.cpp:5395) và `EnChance` của mình vẫn là cổng thứ hai. Phần C++ của mình (KItem.cpp:3800-3815) chỉ nhân chỉ số khi loại thuộc tính nằm trong JxQhScalable, nên đồ trắng +N vẫn có thể "thành công nhưng không đổi số". Cần Chat quyết: đồ trắng có được cường hóa không? (Gốc: KHÔNG.)
+
+**A3 — GỐC vs MÌNH (cường hóa)**
+| Mục | GỐC (đọc mã) | MÌNH (đang chạy B044/B050) |
+|---|---|---|
+| Đồ nhận | xanh (arr[8]=1) hoặc vàng (arr[6]>0), tím trong C++; trắng/tạp hóa từ chối | giống gốc ở Lua (dòng 44); tím chưa rõ |
+| Nguyên liệu | 1 viên đá: 403 (đồ xanh thường), 404 (nạp cương/纹钢), 405 (辨识); 200.000 bạc mỗi lần (Pay 200000) | tinh thể 239/240/238, 2^(n-1) mỗi loại + 2.000.000 bạc x2^(n-1) (thiết kế mình) |
+| Tỉ lệ thành công | +0→+1 và +1→+2: 100%; từ +2: thất bại khi Random(R0+nRank) < Random(R1), cấu hình 1000,2000 ⇒ khoảng 25% thất bại (CHƯA XÁC MINH công thức g_Random, chỉ đọc mã) | 100-5*(n-1)% (thiết kế mình) |
+| Thất bại | nEnChance 2..9: tụt 2 cấp (nếu < QiangHuaSet=10); >=10 chỉ mất đá, không đổi cấp | không tụt (mã mình báo code 1 "trượt") |
+| Cấp tối đa | QiangHuaRank thứ 3 = +5 (cấu hình hiện tại), cứng 30 | +15 |
+| Mỗi cấp tăng | +25% cộng dồn (val + val>>2, +1 nếu dư>2), tính lại từ giá trị gốc | +5% giá trị gốc mỗi cấp (Q-104 làm tròn gần nhất), tối đa N=30 |
+| Thuộc tính bị bỏ | danh sách ForBitEn: id 85,101,102,103,104,105,114,135,160 (ForbititMap.txt cột 22) KHÔNG nhân | mình thêm 28/29/30/168-172 vào JxQhScalable (SC-002) |
+| Đồ đang mặc | gốc không chặn (C++ không kiểm) | mình từ chối món đang mặc (Q-95) |
+
+LƯU Ý: bản `C:\Jx1CocoV3` KHÔNG còn nguyên gốc: git log KItem.cpp có commit f575ff5 "Cuong hoa moi +5%/cap" và 6cbd69f (đã chứa khối "[qh] cong thuc moi" ở KItem.cpp:3802). Số "+25%" ở trên lấy từ khối mã gốc nằm SAU khối đó (bị `return` chặn) và từ baseline 007d32d (chưa mở diff, CHƯA XÁC MINH). Công tắc "bám gốc" cho phần này cần Chat duyệt.
+
+**A1 — Bảng LOẠI TRANG BỊ → cường hóa được không (GỐC, CHỈ ĐỌC MÃ)**
+| Loại | Cường hóa được? | Điều kiện |
+|---|---|---|
+| Đồ vàng (GoldId>0), mọi ô | CÓ | cần đá, 20W; tăng bằng EnChanceRong + EnChanceBao |
+| Đồ xanh thường | CÓ | đá 403 |
+| Đồ xanh đã 纹钢/辨识 | CÓ | đá 404/405, tăng cả dòng ẩn |
+| Đồ tím | CÓ ở C++ (IsPurple) nhưng Lua gốc không đưa vào (chỉ arr[8]/arr[6]) | CHƯA XÁC MINH |
+| Đồ trắng, tạp hóa (genre 0 thường) | KHÔNG | bị Lua + C++ chặn |
+| Phi phong (genre 0/detail 12) | cùng luật theo màu; dòng 85,114 nằm trong ForBitEn nên KHÔNG nhân | vàng: CÓ nhưng chỉ số cloak không đổi |
+| Vật phẩm khác (genre != 0: thuốc, đá, quest) | KHÔNG | |
+Không có "loại ô" nào bị cấm riêng (vũ khí/giáp/nhẫn/dây chuyền/ngọc đều là genre 0); khác biệt là màu + ForBitEn.
+
+**B2 — TÀI PHÚ → HẠNG → PHI PHONG (GỐC)**
+- Tìm trong server gốc (KPlayer.h, KNpcAttribModify, KItemList): KHÔNG có chuỗi tài phú → hạng → phi phong nào. m_nWealth, magic_special_point, QhPifengWealthOK đều là của mình (QH-B035/B039), nằm ở KItemList.cpp:1149 trở đi của nhánh mình (CHƯA XÁC MINH trên bản baseline 007d32d, chưa mở diff).
+- Gốc: nhãn phi phong cạnh tên = `m_PifengType` = cấp (nLevel) của món phi phong, nếu cấp<=10 lấy trực tiếp, >10 lấy cấp%10 (KItemList.cpp ~1672-1700); vẽ ở KNpc.cpp::PaintPifeng đọc `\Ui\npcbobo.ini` [FortuneRank] count=11 (11 ảnh Spr_1..11). Vậy gốc có ĐÚNG 11 nhãn theo cấp, không theo tài phú.
+- Vì sao chỉ 3 cấp: `mantle.txt` gốc chỉ có 3 món "Phá cựu phi phong" (nLevel 1/2/3, cùng ảnh). Bộ trắng `PiFeng.txt` có 14 cấp, vàng GoldItem 11 cấp gốc (nLevel 1,1,2,3,3,4,4,4,5,5,5 nên chỉ ra 5 hình), nên "3 cấp" là nguồn mantle.txt, không phải do logic.
+- Bảng cấp g=1..11: ngưỡng 6000+900(g-1) (thiết kế mình, công tắc), hình = nLevel (1,1,2,3,3,4,4,4,5,5,5), 5 dòng chỉ số theo `DESIGN/TINH-NANG/TAI-PHU-PHI-PHONG.md` mục f (HP/MP 200g, thể lực 100g, kháng 4g%, tốc chạy 5g).
+- ĐỀ XUẤT cho Chat duyệt (GIAI ĐOẠN 1): bám gốc = bỏ ngưỡng tài phú (công tắc mặc định TẮT) và giữ phi phong mặc theo cấp yêu cầu gốc (type 36=10 / vàng cấp 60). Chưa động dữ liệu.
+
+**B3 — DỮ LIỆU PHI PHONG THEO GỐC (chờ Chat duyệt bảng trên, chưa sửa)**
+- Gốc không có giới tính trong server (không có yêu cầu type 38). Đủ 11 mẫu đồng tên/dòng/cấp = dùng GoldItem 11 mẫu gốc (GoldId 3465..3475) với bộ 5 dòng ở cột GoldMagic 4361-4415; các dòng "Né tránh/Kỹ năng +3" chỉ có ở client (CHƯA XÁC MINH).
+- Phần mình thêm (ngưỡng tài phú, tự tháo, báo [QH]|D, 5 biến thể Vô Cực...) giữ sau công tắc.
+
+**DA XAC MINH / CHUA XAC MINH**
+- ĐÃ ĐỌC MÃ: KItemList.cpp:5393-5525 (QiangHua), ScriptFuns.cpp:7925 (LuaItemQiangHua), qianghua.lua gốc (179 dòng; dòng 150-179 chỉ kiểm số đá), gamesetting.ini (QiangHuaRank/Set), ForbititMap.txt, KItem.cpp:3800-3935, KItem.h:44 (JIACHENG_VAL=2).
+- CHƯA CHẠY: mọi test; chưa có log thật `[QH]|E|code|`. A giúp: chạy 1 lần cường hóa đồ vàng +0 với 200.000 bạc + đá, gửi dòng log; thử 1 món tạp hóa trắng (GetItemProp mảng arr[1],arr[6],arr[8]).
+- CHƯA XÁC MINH: công thức g_Random thật, giá trị QiangHuaRank trên gs001 Test-36 đang chạy (A xem `Settings/gamesetting_gs001.ini`), việc đồ tím.
+- Hỏi A: file `hotrotanthu.lua.bak-cloak` trên VM — chỉ cần A xác nhận còn hay không (B không tự tìm).
+
+**CHAT QUYẾT:** (1) đồ trắng có được cường hóa không (gốc: không)? (2) duyệt bảng gốc trên để B làm giai đoạn 2 (sửa dòng 44 + dữ liệu phi phong + build 14)? (3) ngưỡng tài phú giữ làm công tắc TẮT?
