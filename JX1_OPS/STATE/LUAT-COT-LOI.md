@@ -120,3 +120,5 @@ Kho `HIEU-GAME/` (9 nhóm, mục lục ở `HIEU-GAME/README.md`) là công sứ
 4. Sổ tay sai hoặc thiếu thì sửa ngay tại chỗ (cùng commit với phần sửa) để công sức cộng dồn.
 5. Điều chủ vừa chốt trong chat phải ghi vào kho (QUYET-DINH hoặc thư) NGAY trong lượt đó và liệt kê trong DANG-LAM trước khi nén.
 6. Hàm engine Cocos2d-x lạ (client) thì tra mã Cocos2d-x ĐÚNG PHIÊN BẢN của client (A xác nhận phiên bản từ mã client; nguồn: https://github.com/cocos2d/cocos2d-x, MIT), không dùng tài liệu v4 nếu client cũ hơn. Cocos2d-x không có thông tin giao thức/dữ liệu JX1.
+
+6. CƠ CHẾ TỰ ĐỘNG (chủ duyệt 21/11 16:33): Tổng quản chạy `TOOLS/kiem_so_tay.py` mỗi lần đẩy trạng thái; báo cáo A/B có chữ XONG/DONE về phần game mà thiếu dòng "ĐÃ ĐỌC SỔ TAY" thì được ghi vào `STATE/TRA-LAI-SO-TAY.md`. A và B ĐỌC TỆP NÀY ĐẦU MỖI LƯỢT và bổ sung dòng thiếu; chưa bổ sung = PARTIAL. Mọi thư Chat giao việc có dòng "SỔ TAY LIÊN QUAN: <tệp HIEU-GAME/>". Việc rà lại sửa đổi sai (cường hóa, phi phong, giật ngựa) và lấp chỗ thiếu của sổ tay giao cho tiểu yêu; Chat duyệt kết quả trước khi A/B sửa tiếp.

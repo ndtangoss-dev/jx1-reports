@@ -662,7 +662,11 @@ def push_state(tq_note=None):
         if not os.path.isdir(tq):
             g(repo, 'worktree', 'add', '--detach', tq, 'origin/jx1-ops')
         g(tq, 'reset', '-q', '--hard', 'origin/jx1-ops')
-        files = ['STATE/TIEU-YEU.md', 'STATE/KHOA-XINGCHI.md', 'STATE/TIEN-DO.md', 'STATE/SONNET-SONG.md'] + (['STATE/TONG-QUAN-GHI.md'] if os.path.exists(os.path.join(ROOT, 'STATE', 'TONG-QUAN-GHI.md')) else [])
+        try:  # #346 L20: kiem dong "DA DOC SO TAY" trong bao cao A/B -> STATE/TRA-LAI-SO-TAY.md
+            subprocess.run([sys.executable, os.path.join(ROOT, 'TOOLS', 'kiem_so_tay.py'), ROOT], timeout=30, capture_output=True)
+        except Exception:
+            pass
+        files = ['STATE/TIEU-YEU.md', 'STATE/KHOA-XINGCHI.md', 'STATE/TIEN-DO.md', 'STATE/SONNET-SONG.md'] + (['STATE/TRA-LAI-SO-TAY.md'] if os.path.exists(os.path.join(ROOT, 'STATE', 'TRA-LAI-SO-TAY.md')) else []) + (['STATE/TONG-QUAN-GHI.md'] if os.path.exists(os.path.join(ROOT, 'STATE', 'TONG-QUAN-GHI.md')) else [])
         for f in files:
             shutil.copyfile(os.path.join(ROOT, f), os.path.join(tq, 'JX1_OPS', f))
         if tq_note:

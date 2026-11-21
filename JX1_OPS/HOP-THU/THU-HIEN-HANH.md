@@ -220,3 +220,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #297/#B-047 (11:58) Q-99 VÁ QUY TRÌNH: hồ sơ DESIGN/TINH-NANG/CUONG-HOA.md là nguồn sự thật; STATE/DANG-LAM.md; L3 mới — HIỆU LỰC, đọc đầu tiên
 - #298/#B-048 (12:08) Q-100 kiến thức chuẩn hóa: dòng ĐÃ ĐỌC KIẾN THỨC; tiểu yêu KT-01..KT-06 (HIEU-GAME/) — HIỆU LỰC
 - #346 (16:30) Chat: chu da chay script Admin host-only + dang nhap Chrome; A tiep chain-up, do tick gs001 — HIEU LUC
+- #347/#B-087 (16:40) Chat: L20 co che tu dong (TRA-LAI-SO-TAY.md), ra soat phan dang do voi so tay — HIEU LUC

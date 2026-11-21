@@ -2496,3 +2496,13 @@ Doc `STATE/QUY-TRINH-TAT-BAT-MAY.md`. B lam buoc dung Tong quan + worker (#B-086
 
 ## #346 (đã xử lý 21/11 16:50) Chat 16:30 — A: CHU DA CHAY SCRIPT ADMIN + DANG NHAP LAI CHROME; TIEP TUC chain-up
 Doc SO-TAY-CHAT.md (cuoi, muc GO CUA CHAT MOI, git pull truoc). Chu xac nhan 16:28: (1) da chay dat_ip_hostonly_56.ps1 bang PowerShell Admin; (2) da dang nhap lai claude.ai tren Chrome. A: kiem host-only = 192.168.56.101, chay chain-up, cho gs001 len (7-10 phut), do SvrFPS/tick avg/max (3-5 dong) + loi online.lua; CHUA sua, CHUA nap. Bao cao vao TU-SONNET.md, dong "DA DOC SO TAY" neu dung HIEU-GAME. Chat chua ra lenh NAP; cho chu bao xong test cuong hoa. Khong dung viec dang lam.
+
+## #347 Chat 16:40 — A: LUAT L20 CO CO CHE TU DONG; RA SOAT PHAN DANG DO; DOC SO TAY TRUOC KHI SUA
+SO TAY LIEN QUAN: HIEU-GAME/01-trang-bi-cuong-hoa/ (HIEU-CAP-CUONG-HOA-LUA.md, SO-TAY-NGUA-PHI-PHONG.md, HIEU-HIEU-UNG-VU-KHI.md), HIEU-GAME/06-mang-goi-tin/, HIEU-GAME/DO-CHAC.md.
+Chu chot: truoc day A va B sua ma khong doc HIEU-GAME nen sua sai nhieu. Tu nay:
+1. DAU MOI LUOT doc `STATE/TRA-LAI-SO-TAY.md` (Tong quan tu sinh tu `TOOLS/kiem_so_tay.py`): bao cao co chu XONG/DONE ve phan game ma thieu dong "DA DOC SO TAY: <tep>" bi liet o do; bo sung dong thieu moi duoc ghi XONG; chua bo sung = PARTIAL.
+2. Truoc khi sua/do phan nao: mo so tay nhom tuong ung; viet dong "DA DOC SO TAY: <tep>" vao bao cao. Khong co so tay thi ghi "KHONG CO SO TAY cho phan nay" va them muc thieu vao hang doi cho tieu yeu.
+3. RA SOAT (A, khong sua, khong nap): voi phan dang do cua A (cuong hoa, nhan phi phong/vc32, giat ngua + online.lua), doi chieu viec da lam/dinh lam voi so tay; liet ke cho NAO lam khac so tay (file:dong ca hai ben). Bao cao ngan vao TU-SONNET.md. Neu thay so tay sai thi sua so tay cung commit.
+4. Dang do khong bo: tiep tuc chain-up, do SvrFPS/tick, nhung moi SUA phai qua buoc 2.
+Chat chua ra lenh NAP.
+THEM (viec tieu yeu, chu da duyet): sau buoc 3, A giao tieu yeu (Codex) 1 con truoc (Q-59/Q-60) lap CHO THIEU trong HIEU-GAME/ (cac muc nhan CHUA KIEM / chi DOC MA o DO-CHAC.md, uu tien cuong hoa, phi phong, ngua/giat, boss roi do). B giao khi A bao co so tay lap xong de doi chieu. Chat duyet ket qua truoc khi A/B sua tiep.

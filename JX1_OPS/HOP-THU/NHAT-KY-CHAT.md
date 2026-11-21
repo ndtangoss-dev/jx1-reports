@@ -332,3 +332,4 @@
 - 20/11 01:52 Chat chốt thủy tinh min(2^(n-1),1000) (#B-035d/#283b); gs001 qh-b035 đã lên Test-36 01:43
 
 - [21/11 16:20] Chat mới (tài khoản mới) nhận ca: đã đọc KHOI-DONG-CHAT + BAN-GIAO-CHAT-21-11. Đã nối GitHub (push). Lịch kiểm send_later 15 phút: trig_01H5YJstYDgGEnNQY9VqwobS. Chờ đại vương: báo xong test cường hóa → lệnh "nạp".
+- [21/11 16:40] Chat: duyet 4 viec L20 (chu): thu co SO TAY LIEN QUAN; TOOLS/kiem_so_tay.py gan vao tong_quan.push_state (ban sao .bak-346); #347/#B-087 giao A/B ra soat; viec 3-4 (tieu yeu ra soat cuong hoa/phi phong/giat ngua + lap cho thieu so tay) cho thu sau khi A/B ra soat xong.
