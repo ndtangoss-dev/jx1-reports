@@ -313,3 +313,12 @@ Quy ước: mỗi đề mục nội dung được ghi riêng. ĐỌC MÃ/TÀI LI
 | SO-TAY-CHONG-GIAN-LAN.md | Giao dịch giữa người chơi — JX1_OPS/HIEU-GAME/09-cong-cu-gm/SO-TAY-CHONG-GIAN-LAN.md:85 | ĐỌC MÃ/TÀI LIỆU | JX1_OPS/HIEU-GAME/09-cong-cu-gm/SO-TAY-CHONG-GIAN-LAN.md:85; nhãn tri thức khảo sát tĩnh theo JX1_OPS/DESIGN/MUC-LUC-TRI-THUC.md:6–15. | Có — chưa có chứng cứ trong game cho mục này. |
 
 Độ phủ: 52/52 sổ tay; 305 đề mục nội dung được gắn nhãn. Kiểm tra trong game chỉ chứng minh các ca hẹp được dẫn, chưa thay thế kiểm thử toàn bộ.
+
+## Cập nhật S-4 (A, 21/11/2026): điều đã kiểm động trong game
+| Chủ đề | Nhãn | Bằng chứng và giới hạn |
+|---|---|---|
+| Cường hóa (cửa sổ + giao thức `[QH]|E`) | ĐÃ KIỂM TRONG GAME (LD, qh9A vc37, Test-36) | Cường hóa liên tiếp +0→+9 đúng chi phí; "Thiếu thủy tinh" đúng; EVIDENCE/ui-cuonghoa. Chưa kiểm: thiếu bạc (e), +10→+15, Bùa May Mắn/Phù Bảo Hộ, tỉ lệ thực tế. |
+| Kết quả `[QH]|E` đi qua đâu ở client | ĐÃ KIỂM TRONG GAME | `KuiChatList::addmsg` (không qua `AMessageArrival`). |
+| Nhãn "[cấp N]" tooltip | ĐỌC MÃ | SO-TAY-NHAN-CAP.md; chưa kiểm phi phong. |
+| Glow/sét ở qh9A là phần thêm so với gốc | ĐỌC MÃ (grep) | HIEU-HIEU-UNG-VU-KHI.md mục 5. |
+| Phi phong, ngựa/giật, boss rơi đồ | CHƯA KIỂM | Không có ca thử nào trong phiên này. |
