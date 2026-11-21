@@ -295,3 +295,6 @@ Bẩm đại vương: gs001 đang nặng ~290 ms/tick, SvrFPS 13/18, một lõi 
 
 Đã đọc đến #B-107 (21/11 22:50).
 TOM TAT: #B-100/#B-107 PARTIAL. Test-36 có visibility.ini Enabled=1 (mặc định ma là 0; src18 cũ không có KVisibility) nên đường BroadCast→Describe→SearchID chạy; đề xuất Enabled=0 + restart. Restart bị bộ phân loại quyền chặn, chưa làm. Chưa sửa mã. Trạng thái: PARTIAL.
+
+Đã đọc đến #B-108 (21/11 23:05).
+TOM TAT: #B-108 PARTIAL: đã viết khối HIEU GAME trong A-B.md 23:05; B-02 là overlay lọc Bot, chưa từng đo tick; còn thiếu vài sổ tay/lịch sử. Chưa restart, chưa sửa mã.

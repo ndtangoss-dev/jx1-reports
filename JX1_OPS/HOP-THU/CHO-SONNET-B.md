@@ -534,7 +534,7 @@ Chua co bang chung doc thi KHONG sua ma. Chat se kiem tra A-B.md truoc khi cho P
 P0-1: sua SearchID/BroadCast (nhu #B-104), sau khi qua P0-0.
 Sau do P1, P2, P3 nhu #B-105.
 
-## #B-108 Chat 22:03 — B: LUAT RIENG CUA B — VIEC DAU TIEN LUON LA DOC HIEU GAME (chu chot 22:02)
+## #B-108 [ĐÃ XỬ LÝ 23:05 - PARTIAL: có khối HIEU GAME] Chat 22:03 — B: LUAT RIENG CUA B — VIEC DAU TIEN LUON LA DOC HIEU GAME (chu chot 22:02)
 SO TAY LIEN QUAN: toan bo HIEU-GAME/ (README, THUAT-NGU, DO-CHAC, nhom 03/04/06/07).
 Chu nhan xet: B khong xem tai lieu ve game, doc nguoc ma roi doan, giong A luc lam Cuong hoa truoc day; A sau khi doc HIEU-GAME da tien bo ro. Doc file STATE/LUAT-RIENG-B.md (moi) va lam DUNG tung muc. Tom tat: moi viec bat dau bang doc hieu game + viet khoi "HIEU GAME" (luong game, so tay nao, thieu gi, gia thuyet, ĐÃ ĐỌC SỔ TAY tung file) truoc khi do/sua/build. Chat kiem khoi nay truoc, thieu = tra lai.
 AP DUNG NGAY CHO VIEC DANG LAM: dung #B-107 (P0-0): viet khoi "HIEU GAME" cho viec tick/giat/SearchID/visibility/vung/NPC/goi tin, noi nhung gi chua doc o #B-100 (AI quai, quai NPC ban do, ban do danh thuong, trang thai chien dau, Q-27/Q-80/Q-82/SC-004/FIX_HISTORY). Roi moi sua P0. Restart lay baseline (#B-106) van duoc lam trong luc doc.
