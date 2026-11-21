@@ -258,3 +258,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - Chat 22:36: A thoat atest, chu vao thu boss (gs001 Enabled=0); B do tick tung phut
 - #363 (22:55) Chat: A kiem [fix36] don texture con trong client hien tai khong; khong sua khi chua len lich — HIEU LUC
 - Chat 22:55: chu bat dau thu boss 22:55; B do tu 22:55
+- Q-106 (22:59) Chat: chu thu boss het giat; goc = Enabled=1 B-02; giu Enabled=0; sua SearchID la P2; Q-105 hoan — HIEU LUC

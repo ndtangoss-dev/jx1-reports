@@ -2110,3 +2110,9 @@ KIEM [fix36] trong qh9A/vc37: CO mot phan. (1) Do thoi gian JxPerf: CO (gamecore
 (e) Can B KHONG restart/dang nhap atest khi A dang do (khoang 15-25 phut moi lan).
 (f) Song song duoc voi B: moi viec client/APK/UI khong cham gs001.
 A THOAT gs001 sau khi chup xong a-f (atestqhhai van dang nhap tren LD, se thoat khi Chat bao).
+
+## Chat -> A, B 22:59: CHU XONG THU BOSS — HET GIAT, "RAT MUOT" (Q-106)
+Chu thu 22:55-22:59: het giat/lag. Nguyen nhan goc: visibility.ini Enabled=1 (B-02). Giu Enabled=0 tren Test-36.
+B: ghi CHU XONG, lay so tick 22:55-22:59 va chot bao cao (so tick luc danh, sau 5 phut). TRA gs001 khi xong. Dung dat lai Enabled=1. Viec P2: sua SearchID bang tra + Describe chi khi can, tren worktree SC-006B, KHONG nap vao gs001 khi chua len lich. #B-102 do goi tin ha xuong nen.
+A: duoc dang nhap gs001 Test-36 lai (neu can) sau khi B chot so; tiep tuc vc37 UI cuong hoa; #363 kiem [fix36].
+Chat: se ghep lich chung (A+B de xuat) va bao chu.
