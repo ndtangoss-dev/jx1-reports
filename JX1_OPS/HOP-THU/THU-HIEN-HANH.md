@@ -241,3 +241,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #359 (20:22) Chat: A sua menu sach ho tro cuong hoa Test-36 (an khong ra bang tiep, nut ho tro khong chay; nghi chi nap cho atest) — HIEU LUC
 - #B-098 (21:07) Chat: B duyet lay mau ngan xep gs001 Test-36 (khi dang ket 290ms/tick) roi restart + chu lap kich ban danh boss de do — HIEU LUC
 - #360 (21:20) Chat: CHU giao atlas UI cuong hoa moi (DESIGN/UI-CUONG-HOA/atlas-moi/) — A cat sprite, .plist, lam lai cua so, cua so len tren cung + tu dong tat hanh trang/thong tin, doi icon nut cuong hoa, APK vc37 — HIEU LUC
+- #B-099 (21:25) Chat: B truy nguoi goi KNpcSet::SearchID (92% mau), do so NPC baseline/sau danh boss; bao Chat khi gs001 len de chu danh boss — HIEU LUC

@@ -447,3 +447,12 @@ Chat DUYET theo thu tu (chi Test-36, KHONG Server D/Main VM, khong mo cong ngoai
 2. (B) Xong buoc 1 (hoac khong lay duoc): restart gs001 Test-36 (~10 phut) theo cach A da lam (#310b), khong cham cong 51189 va khong dung toi Server D. Ghi gio restart.
 3. Sau restart: do tick/Online 3-5 phut luc roi (neu ve 0,3ms la binh thuong), roi chu lap kich ban danh boss Tuong Duong; B do tick moi phut tu luc chu vao, ghi 'tick khi danh boss' va 'tick sau khi roi' de xem co "ket" lai khong => tach thu pham (boss/ky nang tam xa/dan).
 4. Khong sua ma/Lua gs001 khi chua co bang chung ham chay cham. Chat se bao chu (chu xin vao danh boss luc B bao xong restart).
+
+## #B-099 Chat 21:25 — B: SearchID 92% — TIM NGUOI GOI + DEM SO NPC; DO LAI SAU RESTART KHI CHU DANH BOSS
+SO TAY LIEN QUAN: HIEU-GAME/04-quai-npc-ban-do/SO-TAY-QUAI-NPC-BAN-DO.md, SO-TAY-AI-QUAI.md, 03-ky-nang-chien-dau/BAN-DO-DANH-THUONG-LAN-LENH.md, SO-TAY-TICK-GS001.md. Ghi "DA DOC SO TAY".
+Chat nhan ket qua 120 mau: 92% o KNpcSet::SearchID (quet tuyen tinh danh sach NPC). Quet tuyen tinh = O(n) moi lan goi; neu so NPC tang (ro ri/khong giai phong sau tran danh boss: quai/boss chet, hieu ung/dan/vat the sinh ra boi ky nang tam xa, NPC tam) thi MOI lan goi cham dan => khop "tick tich dan sau phien danh boss".
+Viec B (doc-chi, KHONG sua code khi chua duoc duyet):
+1. Doc source (KNpcSet.cpp SearchID va moi cho goi): ai goi trong vong tick (NPC Activate/AI tim muc tieu, Missle->Npc, KRegion, CmdLane...)? moi tick goi bao nhieu lan? Tim chi tiet "SearchID" duoc goi theo moi NPC moi tick (O(n^2))?
+2. Do SO NPC/doi tuong trong thế giới (so slot NPC dang dung) ngay sau restart (baseline), roi sau khi chu danh boss 5 phut, roi sau khi chu roi: co tang va khong giam khong? Dung lenh doc-chi co san (gs-info/GM doc) hoac mau ngan xep; neu khong do duoc so NPC, ghi ro.
+3. Khi gs001 len du (~21:25) va tick ve ~0,3ms: bao Chat NGAY de chu vao lap kich ban danh boss Tuong Duong; B do tick + so NPC moi phut, ghi A-B.md. Mau ngan xep lai neu tick tang.
+4. Bao nguyen nhan ung vien theo bang chung; de xuat sua (vd bang tra ID thay quet tuyen tinh, hoac giai phong NPC/dan) cho Chat/chu duyet truoc khi ap dung.
