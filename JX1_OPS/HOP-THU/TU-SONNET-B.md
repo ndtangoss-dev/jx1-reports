@@ -253,3 +253,5 @@ B 09:51: đã đọc đến #B-081 (đang tra mã vì sao đồ xanh thủ lĩnh
 B 09:52: đã đọc đến #B-081 (tra lời phần 2, chỉ đọc mã)
 B 09:57: đã đọc đến #B-082 (đang đọc mã tốc chạy/giật)
 B 09:58: đã đọc đến #B-082 (trả lời, chỉ đọc mã)
+B 10:06: đã đọc đến #B-083 (đang xem cách đo tick gs001)
+B 10:07: đã đọc đến #B-083 (trả lời; không có đường đo sống, nhờ A lấy dòng SvrFPS)
