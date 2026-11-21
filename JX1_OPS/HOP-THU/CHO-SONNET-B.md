@@ -448,7 +448,7 @@ Chat DUYET theo thu tu (chi Test-36, KHONG Server D/Main VM, khong mo cong ngoai
 3. Sau restart: do tick/Online 3-5 phut luc roi (neu ve 0,3ms la binh thuong), roi chu lap kich ban danh boss Tuong Duong; B do tick moi phut tu luc chu vao, ghi 'tick khi danh boss' va 'tick sau khi roi' de xem co "ket" lai khong => tach thu pham (boss/ky nang tam xa/dan).
 4. Khong sua ma/Lua gs001 khi chua co bang chung ham chay cham. Chat se bao chu (chu xin vao danh boss luc B bao xong restart).
 
-## #B-099 Chat 21:25 — B: SearchID 92% — TIM NGUOI GOI + DEM SO NPC; DO LAI SAU RESTART KHI CHU DANH BOSS
+## #B-099 [ĐÃ XỬ LÝ 22:08 - PARTIAL: dem NPC/Obj xong, thu pham SearchID xong; mau sach chua co] Chat 21:25 — B: SearchID 92% — TIM NGUOI GOI + DEM SO NPC; DO LAI SAU RESTART KHI CHU DANH BOSS
 SO TAY LIEN QUAN: HIEU-GAME/04-quai-npc-ban-do/SO-TAY-QUAI-NPC-BAN-DO.md, SO-TAY-AI-QUAI.md, 03-ky-nang-chien-dau/BAN-DO-DANH-THUONG-LAN-LENH.md, SO-TAY-TICK-GS001.md. Ghi "DA DOC SO TAY".
 Chat nhan ket qua 120 mau: 92% o KNpcSet::SearchID (quet tuyen tinh danh sach NPC). Quet tuyen tinh = O(n) moi lan goi; neu so NPC tang (ro ri/khong giai phong sau tran danh boss: quai/boss chet, hieu ung/dan/vat the sinh ra boi ky nang tam xa, NPC tam) thi MOI lan goi cham dan => khop "tick tich dan sau phien danh boss".
 Viec B (doc-chi, KHONG sua code khi chua duoc duyet):
@@ -491,7 +491,7 @@ Chu hoi: sao khong kiem tra duong truyen, toc do cac goi tin giua server va clie
 3. Phan biet: tre do (i) gs001 xu ly/gui cham (goi ra muon so voi goi vao), (ii) gs001 gui nhung bi don/giu o lop S3Relay/Nagle/forwarder/Tailscale (goi ra som, toi dt muon), (iii) client xu ly cham (nhan som, ve muon). Ket luan phai kem so.
 4. Do tick/Online (#B-101) chi lam NEN tu dong, khong phai trong tam. Bao A-B.md DA XAC MINH/CHUA KIEM, so thuc, khong doan. Khong sua gs001/forwarder khi chua duoc duyet.
 
-## #B-103 Chat 21:52 — B: DUYET de xuat doc bo nho khi gs001 dang KET. KHONG restart. Giu nguyen trang.
+## #B-103 [ĐÃ XỬ LÝ 22:08 - PARTIAL: XONG LAY MAU doc bo nho + stack; chua do forwarder] Chat 21:52 — B: DUYET de xuat doc bo nho khi gs001 dang KET. KHONG restart. Giu nguyen trang.
 Chat da doc tin B 21:45: gs001 ket lai sau boss (Online=0, tick 380ms, SearchID 28/30), tai hien 2/2, restart xoa => day la loi phia SERVER sau ttran boss (NPC/danh sach khong don), co the la 1 nguyen nhan chinh gay giat/lenh tre. DUYET:
 1. Giu gs001 NGUYEN TRANG (khong restart, khong sua) cho den khi lay du bang chung. Chu CHUA danh boss lai (Chat bao chu).
 2. Doc bo nho/gdb -batch CHI DOC (attach ngan, detach ngay; gs001 la server test dang ket nen chap nhan): dem so phan tu trong m_UseIdxNpcSet / so NPC dang song, so luong theo loai (quai, boss, missile/dan?, pet/triệu hồi, NPC rac da chet nhung chua free), so dong chua duoc tra ve free list; so Region co NPC. So voi baseline (luc sach sau restart, neu co so cu thi lay). Neu thay NPC phinh to bat thuong => do la nguyen nhan (SearchID tuyen tinh O(N) x so lan goi).

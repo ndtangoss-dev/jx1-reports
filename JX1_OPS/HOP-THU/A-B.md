@@ -2020,3 +2020,17 @@ DA XAC MINH: dòng tick 21:42; 28/30 mẫu tại SearchID (CoreServer+0xC898F4).
  (c) Tạm thời không cần build: tắt `enabled` của KVisibility (nếu là cấu hình) rồi restart — cần Chat/chủ quyết.
 DA XAC MINH: chuỗi khung từ 30 mẫu + .map b11; mã KVisibility.cpp:232-270, KRegion.cpp:2245-2249. CHUA XAC MINH: cờ enabled thực tế trên VM; N thực; hiệu quả của bản sửa (chưa build/chạy).
 (tin do Sonnet B go, khong phai chu)
+
+## B → Chat 22:08 — #B-099 / #B-103: ĐẾM NPC/ĐỐI TƯỢNG KHI gs001 ĐANG KẸT (đọc bộ nhớ chỉ-đọc) — XONG LAY MAU
+**TOM TAT 5 DONG**
+1. Đọc bộ nhớ gs001 (pid 816) chỉ-đọc (ReadProcessMemory, không suspend, không ghi), CoreServer+0x37F4B0 = `NpcSet` (map b11). Tìm hai KLinkArray liền nhau (Free,Use) bằng quét mẫu.
+2. **NpcSet: dùng 68 632 / 100 000 slot (còn trống 31 367).** Đọc 2 lần cách ~1 phút: không đổi (đứng yên, không giảm).
+3. **ObjSet (đối tượng/vật rơi): dùng 29 466 / 30 000 (trống 533) = gần đầy.** Cũng không giảm.
+4. Với N≈68 632, mỗi lần SearchID quét ~68k phần tử; vài trăm–nghìn lần/tick là đủ ra 380 ms (khớp). Bình thường tick ~1 ms nghĩa là N nhỏ hơn nhiều. Số 68 632 chưa có mốc "sạch sau restart" để so (chưa đọc lúc 21:26 — lỗi của B, chưa có công cụ sẵn); sẽ đọc ngay sau restart tiếp theo để chốt phình bao nhiêu.
+5. Chưa phân loại theo loại (quái/boss/pet/đạn): cần offset KNpc (kích thước/ trường Kind) — chưa có. Chưa sửa gì; gs001 nguyên trạng, KHÔNG restart.
+DA XAC MINH: 68632/100000 NPC, 29466/30000 Obj (đọc bộ nhớ 22:05–22:07 VM, 2 lần), SearchID gọi từ DescribeVisibilityPacket←BroadCast←NormalSync (30/30 mẫu). CHUA XAC MINH: mốc sạch; loại NPC chiếm đa số; vì sao boss làm phình (thủ phạm tạo NPC/obj); ObjSet gần đầy là hậu quả của gì (rơi đồ boss? test cũ?).
+Ý nghĩa: tick kẹt = O(N) × số lần broadcast; N lớn do NPC KHÔNG được giải phóng (hoặc spawn quá nhiều). Hai hướng sửa (độc lập): giảm số lần gọi SearchID (đề xuất a/b ở 21:58) và tìm vì sao NPC/Obj không trả về free list.
+XONG LAY MAU (ý #B-103 mục 6): Chat có thể duyệt restart; xin cho B đọc thêm trước khi restart: (i) lấy offset KNpc để đếm theo loại — chỉ-đọc, 10 phút. Nếu Chat muốn restart ngay: B đọc baseline lập tức sau khi gs001 lên.
+Chưa làm (đang làm tiếp): #B-100 (lịch sử/36Hz), #B-101 (đo nền tự động, tiểu yêu), #B-102 (đo gói tin forwarder).
+(tin do Sonnet B go, khong phai chu)
+
