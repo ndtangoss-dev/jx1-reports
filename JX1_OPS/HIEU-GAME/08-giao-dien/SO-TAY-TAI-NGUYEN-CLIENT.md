@@ -174,3 +174,30 @@ Kỹ năng đã dùng: jx1-retrofit, jx1-read-server, jx1-read-client, jx1-param
 [THẤY] Source có comment legacy dùng GBK/CP936 hoặc trộn mã; đọc sai encoding có thể làm lệch điểm định vị. Riêng đường sao âm đã chốt bằng dòng LF vật lý và symbol ASCII tại `engine/KStrBase.cpp:829–873`; không sửa encoding/source và không tự giải nghĩa tên asset chưa đọc. Chi tiết kiểm tài liệu và giới hạn nhịp bàn giao ở `JX1_OPS/REPORTS/SO-17.md`.
 
 liên quan: JX1_OPS/REPORTS/SO-17.md; JX1_OPS/DESIGN/QUY-LUAT-VE-BO-PHAN.md; JX1_OPS/REPORTS/K-02-giao-dien.md; JX1_OPS/REPORTS/K-02-am-thanh.md; JX1_OPS/REPORTS/J-01-animation-nhan-vat-tran.md
+
+## Tài nguyên UI cường hóa
+
+[ĐÃ XÁC MINH] Phần này đối chiếu bản copy `D:/Android/b/Client` với ba JPG trong `JX1_OPS/DESIGN/UI-CUONG-HOA/`. Ảnh 1–2 cho cửa sổ cường hóa, ảnh 3 cho tooltip và hành trang (`MO-TA.md:2–3`). Mọi đường dẫn `Resources/` và `Classes/` bên dưới tính từ root bản copy.
+
+```mermaid
+flowchart LR
+    A["Hộp đặt đồ VN"] --> B["taskbox.spr và nút xác nhận"]
+    A --> C["Hành trang VN"]
+    C --> D["ui_item.png và nhãn tiền, xu"]
+```
+
+| Phần của cửa sổ trong ảnh 1–2 | Kết quả và tài nguyên gần nhất |
+|---|---|
+| Nền và tiêu đề | **KHÔNG TÌM THẤY** nền đúng ảnh. `KuiGiveVN::init` nạp `\ui\task\taskbox.spr` frame 0. `KuiGive_New::init` nạp `\Spr\Ui3\给予界面\给予.spr` frame 0 và gắn tiêu đề `LabelTTF`. Nhánh VN có dòng gắn tiêu đề đang bị comment. `Classes/vn/gameui/KuiGiveVN.cpp:35–44,540–545`, `Classes/gameui/KuiGive_New.cpp:83–92,590–594`. |
+| Dải gợi ý bo tròn | **KHÔNG TÌM THẤY** viền đúng ảnh. `KuiGiveVN::addDialogData` dựng chữ bằng `RichText`. Nền vùng cuộn là `Resources/loadingStart.png` (40 × 3 px), opacity 0. `Classes/vn/gameui/KuiGiveVN.cpp:76–84,517–536`. |
+| Khung ô có chóp thoi | **KHÔNG TÌM THẤY** khung đúng ảnh. `Resources/ui/gameworld/mau_equip1.png` là nền ô có viền mảnh, 58 × 46 px. Điểm nạp trong hộp đặt đồ chưa xác định. |
+| Ô giữa Trang Bị | **KHÔNG TÌM THẤY** khung trung tâm. `KuiGiveVN::AddGiveObject` gọi `Item[].GetImagePath`, lấy frame 0 qua `findinidata_one` và có ảnh dự phòng `\spr\others\问号.spr`. `Classes/vn/gameui/KuiGiveVN.cpp:717–745`. |
+| Mũi tên xuống, ngang, chéo | **KHÔNG TÌM THẤY** bộ mũi tên đúng ảnh. `Resources/ui/main/next.png` là ảnh mũi tên đơn sang phải 47 × 61 px. Điểm nạp trong hộp cường hóa chưa xác định. |
+| Khung ô nguyên liệu | **KHÔNG TÌM THẤY** khung trang trí riêng. `KuiGiveVN::AddGiveObject` dựng màu nền ô qua `KuiEffect` và số lượng bằng `LabelTTF`. Header khai báo ô 40 × 40 đơn vị UI. `Classes/vn/gameui/KuiGiveVN.h:7`, `Classes/vn/gameui/KuiGiveVN.cpp:754–757,777–794`. |
+| Lưới túi | **KHÔNG TÌM THẤY** lưới riêng của cửa sổ. Ảnh rời `Resources/ui/gameworld/UiItem/ui_item.png` có lưới 5 cột × 6 hàng, 336 × 511 px, gần với hành trang trong ảnh 3. `KuiItemVN::init` dùng `CCSprite::create`. `Classes/vn/gameui/KuiItemVN.cpp:65–69`. |
+| Hai thanh vàng/bạc | **KHÔNG TÌM THẤY** hai thanh đặt ngang đúng ảnh. Ảnh `ui_item.png` có hai thanh nền, `KuiItemVN` gắn nhãn tiền và xu lên đó ở `Classes/vn/gameui/KuiItemVN.cpp:110–122,1283–1314`. |
+| Nút Cường hóa | **KHÔNG TÌM THẤY** nút đúng ảnh. `KuiGiveVN::setcoloseButton` nạp `\ui\task\btn_confirm_small.spr` frame 0/1 bằng `findinidata_one` để dựng nút xác nhận. `Classes/vn/gameui/KuiGiveVN.cpp:549–571`. |
+
+[CHƯA XÁC MINH] `ui.pak` và `spr.pak` có trong `Resources/package.ini:24,29`. Không tìm thấy gói ở các vị trí đã kiểm, kể cả trong chỉ mục hai APK sẵn có. Chưa có PAK để kiểm vị trí, ID và kích thước các SPR. Kích thước nêu trong bảng là số đo của PNG rời hoặc đơn vị UI được khai báo trong mã.
+
+Liên quan: [XD-UI01](../../REPORTS/XD-UI01.md), [mô tả ảnh chuẩn](../../DESIGN/UI-CUONG-HOA/MO-TA.md).
