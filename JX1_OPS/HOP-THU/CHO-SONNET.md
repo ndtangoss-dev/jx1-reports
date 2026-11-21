@@ -73,6 +73,12 @@ Kết luận xong thì báo Chat duyệt (O-01) **trước** B-02 chạy.
 
 ## Đã xử lý
 
+## #367 Chat 01:10 — A: CHU TEST OK Cuong hoa. SANG PHASE 2 PHI PHONG (Q-108)
+SO TAY LIEN QUAN: HIEU-GAME/08-giao-dien/SO-TAY-GIAO-DIEN.md, 09-cong-cu-gm/PP-03-KIEM-KE-HOOK-THU.md.
+Lam theo LICH-CONG-VIEC: PP-02 (client Phi phong) cung B lam PP-01 (server), khong xung dot khoa gs001/LD. Van giu #366 (loi mat do +9, anh e). Moi buoc ghi A-B.md, het luot go "A Xong". Khong nap APK len may that ngoai lenh.
+[Đã xử lý 22/11 03:10: nhận; PP-02 chuẩn bị xong, chờ B nạp server phi phong để thử client.]
+
+
 ## #365 Chat 01:12 — A: NHAN #364 (vc38) DAT. Lam tiep hang doi.
 SO TAY LIEN QUAN: HIEU-GAME/08-giao-dien/SO-TAY-GIAO-DIEN.md.
 1. vc38: trang bi o giua sau cuong hoa, chu tien het de, link 8091 HTTP 200: NHAN.
@@ -2589,10 +2595,6 @@ SO TAY LIEN QUAN: HIEU-GAME/09-cong-cu-gm/HIEU-LENH-GM.md, PP-03-KIEM-KE-HOOK-TH
 3. Neu ruong khong nhan het: dung hook thu co san trong PP-03 (muc gm_Money neu A da kiem la hook Test-36 duoc phep) — GHI cau len bao cao truoc, chi ap dung len nhan vat atestqhhai, ghi bac cu 8 Uc 3400 Van de tra.
 4. Mon +9: A tu tao lai bang hook them do co san (PP-03) hoac cuong hoa tiep tu +0 len +9 (neu da co thuy tinh hook); ghi nguyen nhan mon +9 bien mat khi go khoi o giua (nghi: UI give chua tra ve khi dong cua so? Kiem log) — day co the la LOI THAT can tim: dong cua so khi con do o o giua phai tra do ve tui. Kiem va bao cao.
 5. Xong ghi TU-SONNET + go "A Xong" vao khung Chat.
-
-## #367 Chat 01:10 — A: CHU TEST OK Cuong hoa. SANG PHASE 2 PHI PHONG (Q-108)
-SO TAY LIEN QUAN: HIEU-GAME/08-giao-dien/SO-TAY-GIAO-DIEN.md, 09-cong-cu-gm/PP-03-KIEM-KE-HOOK-THU.md.
-Lam theo LICH-CONG-VIEC: PP-02 (client Phi phong) cung B lam PP-01 (server), khong xung dot khoa gs001/LD. Van giu #366 (loi mat do +9, anh e). Moi buoc ghi A-B.md, het luot go "A Xong". Khong nap APK len may that ngoai lenh.
 
 ## #368 Chat 01:40 — A: DUYET HOOK HA BAC (chi atestqhhai) + nho B xem log +9
 SO TAY LIEN QUAN: HIEU-GAME/09-cong-cu-gm/PP-03-KIEM-KE-HOOK-THU.md, HIEU-LENH-GM.md.

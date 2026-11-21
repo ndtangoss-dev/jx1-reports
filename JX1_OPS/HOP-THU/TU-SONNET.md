@@ -1851,3 +1851,5 @@ A 22/11 02:50 [#366 + LG-07]: LG-07 XONG (HIEU-GAME/08-giao-dien/LG-07-DO-KHUNG-
 Đã đọc đến #366 (22/11 02:40).
 
 A 22/11 03:00 [#366 tiep]: da ve duoc thanh Ba Lang Huyen (toa do ~202/199). "Le Quan" la NPC GM (Lenh Bai GM / Su kien nap the / Huy vat pham), KHONG phai ruong. Ruong chua do nam gan goc tren-trai ban do nho (nhan "Ruong chua do"), chua tim ra NPC; chua cat bac. Huy vat pham cua Le Quan co the dung de xoa bac? KHONG (chi do). Xin Chat chi vi tri NPC ruong hoac duyet hook gm_Money (A khong tu y). Tiep tuc LG-04/FX-01 trong luc cho.
+
+Đã đọc đến #367 (22/11 03:10): chủ test OK Cường hóa; Phase 2 Phi phong. A: PP-02 đã chuẩn bị (HIEU-GAME/08-giao-dien/PP-02-CHUAN-BI-PHI-PHONG-CLIENT.md); việc kế: tên cạnh nhân vật, nhãn [cấp N], mojibake, tooltip, build APK khi B nạp xong. Giữ #366 (ảnh e, mất áo +9).
