@@ -361,3 +361,11 @@ B lam (CHI DOC, khong doi cai dat, khong kill):
 1. Soan script PowerShell + hoan tac khong can: chi doc, chay 15 phut khi chu KHONG dung may: moi 15 giay ghi vao docs-analysis/out/man-hinh-do.csv: gio, GetLastInputInfo (nhan roi bao nhieu giay), cua so dang o truc truoc (title + ten exe), `powercfg /requests` rut gon (DISPLAY). Soan vao docs-analysis/scripts, KEM huong dan 3 dong cho chu tu chay bang Admin; HOAC tu chay neu B co dong Admin hop le (khong vuot UAC).
 2. Doc ket qua: nhan roi khong tang qua ~15-20 giay lien tuc => co thao tac gia: tim tien trinh (ten, ca lenh). DISPLAY liet ke exe nao => do la thu pham.
 3. Bao cao vao A-B.md: nguyen nhan + bang chung that, cach chua; doi cai dat nguon dien = hoi chu truoc. Chua kiem thi ghi CHUA KIEM.
+
+## #B-090 Chat 18:25 — B: LAM VIEC GIAT NGUA / TICK gs001 (CHI DOC MA + THIET KE, CHUA SUA, CHUA NAP) — CHU HOI B CO VIEC CHUA
+SO TAY LIEN QUAN: HIEU-GAME/ (doc truoc) 04-quai-npc-ban-do/ (so luong quai/NPC), HIEU-GAME/01-trang-bi-cuong-hoa/SO-TAY-NGUA-PHI-PHONG.md, HIEU-GAME/02-nhan-vat-thuoc-tinh/BAN-DO-DI-CHUYEN-CUOI-NGUA.md, so tay tick gs001 (SO-TAY-TICK-GS001.md trong HIEU-GAME/). Ghi dong "DA DOC SO TAY".
+Chu 18:20: B khong co viec a? Giat ngua / ping 555 ms van CHUA xu ly xong. Su that tu kho: goc = gs001 tick TB 0,33-0,53 s (thiet ke 55 ms), luong chinh ket ~101% 1 loi, may 36%; PARTIAL "giat ngua chua kiem" (b328282). Chua co so do duoc luc dong nguoi. B lam:
+1. Doc `\script\system\online.lua` va noi dung loi `Script error ... online.lua` in moi phut (log gs001/console): tim dong loi, co phai hook thu OnLine/QHBV_Book/[TEST-A] con sot; script loi lap moi nhip an tick. De xuat cach go NHANH (khong restart: nap nong Lua theo HIEU-GAME/09-cong-cu-gm/LOADSCRIPT-NAP-LUA-NONG.md).
+2. Doc ma tim PHAN AN TICK trong vong KSOServer.cpp:1447-1461 (NPC/Player Active, gui goi, printf console dong bo, ghi file qh_dump.log moi ~5 s khi mang phi phong): xep hang nghi pham theo chi phi, cach do tung nhom (them dong in thoi gian Active NPC/Player/mang vao dong in moi phut = build moi, CHI DE XUAT, cho Chat duyet).
+3. Phuong an giam giat phia client (noi suy khi bi keo ve, nang CORRECT_SYNC_RANGE) CHI THIET KE; khong sua.
+4. Bao cao A-B.md: nguyen nhan co bang chung file:dong, de xuat xep uu tien, CHUA KIEM ro. Neu can so do song thi nho A (xem #353).

@@ -227,3 +227,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #350 (17:40) Chat: nghiem thu hinh anh UI cuong hoa vc35 CHUA DAT bo cuc chuan, thuy tinh 32768 vuot tran 1000 — PARTIAL, A lam tiep — HIEU LUC
 - #351 (17:45) Chat: chu cho A tu lay mat khau tk test atest de chup anh nghiem thu — HIEU LUC
 - #352 (18:10) Chat: A giao tieu yeu tim tai nguyen hinh anh UI cuong hoa (chi doc), A lam viec khac song song (chu duyet) — HIEU LUC
+- #353/#B-090 (18:25) Chat: giat ngua/tick gs001: A do song khi atest online, B doc online.lua + ma tick (chi doc) — HIEU LUC
