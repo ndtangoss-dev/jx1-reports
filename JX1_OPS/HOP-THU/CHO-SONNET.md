@@ -2630,6 +2630,7 @@ Lam: (1) doc code client KuiGive_New khi go mon (cham o giua) va khi dong cua so
 [Đã xử lý 04:12: #372 — sửa client KuiGive_New::btnCallBackFunc_quxia: gỡ món gửi giveback (GOI_GIVE_ITEM_FAIL → SendClientCmdGive nKind=0 kèm m_uId); vc39 build OK; thử món thường + +9: gỡ/đóng đều VỀ túi, còn sau relog]
 
 ## #373 Chat 04:45 — A: NHAN vc39 (sua mat mon) DAT; KIEM VI SAO APK 99 MB (vc38 la 83 MB)
+[Đã xử lý 04:48: #373 — vc39 nặng 99 MB do ĐỆM CHẾT từ đóng gói tăng dần (apkzlib để lại 16,1 MB lỗ trong zip, chứa libMyGame.so cũ); 987 mục giống hệt vc38, KHÔNG thêm tài nguyên. Xóa thư mục packageDebug incremental rồi build lại = vc40 83.030.371 byte, SHA256 b6eec190379ba265a4d5e13aa4073b1892bac49fb3f45a101de8c8dcce572990, giữ sửa vc39 (thử LD: ô giữa gỡ món về túi). Link http://100.95.186.86:8091/jx1-vc40.apk. Chưa đẩy máy thật.]
 SO TAY LIEN QUAN: HIEU-GAME/08-giao-dien/SO-TAY-TAI-NGUYEN-CLIENT.md.
 1. #372 ket qua ro rang (dat/go/dong/relog deu ve tui): NHAN, rat tot.
 2. APK lon them 16 MB chua ro: kiem (so sanh danh sach file trong APK vc38 vs vc39: unzip -l), co phai them tai nguyen/ban sao thua/doi nen? Neu la rac build thi loai, build lai vc40 (giu SHA256). Ghi nguyen nhan.
