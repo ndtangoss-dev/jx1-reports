@@ -2609,3 +2609,9 @@ SO TAY LIEN QUAN: HIEU-GAME/09-cong-cu-gm/HIEU-LENH-GM.md, PP-03-KIEM-KE-HOOK-TH
 Chat da cho B SELECT DB (#B-117) de tim mon +9. A: khi B can, thoat nhan vat/ghi gio + ID mon. Hook ha bac #368 van duyet. Lam tiep PP-02 (ten canh nhan vat, nhan [cap N], mojibake, tooltip); chua build APK khi B chua nap.
 
 [Đã xử lý 04:00: nhận; B tự SELECT DB (B-117), A tiếp tục PP-02, chưa build APK khi B chưa nạp]
+
+## #370 Chat 03:45 — A: tim mon +9 bang cach DANG NHAP LAI (B khong doc duoc DB)
+SO TAY LIEN QUAN: HIEU-GAME/08-giao-dien/SO-TAY-GIAO-DIEN.md.
+1. #368 anh e + tra bac dung: NHAN, tot.
+2. B bao DB vat pham nam trong goi roledb, khong SELECT duoc. Cach thay the: A tai tao ao +9 (hook them do), dat vao o giua cua so Cuong hoa, GO khoi o giua, KIEM tui ngay; neu mat -> THOAT nhan vat roi DANG NHAP LAI va kiem tui. Mon xuat hien lai sau relog => loi chi o UI client (UpdateGiveItem go local khong dong bo lai tui): sua client + ghi nguyen nhan. Mon van mat sau relog => loi server/Lua: ghi thao tac chinh xac + gio VM, bao Chat, KHONG sua server.
+3. Ghi ket qua vao TU-SONNET + A-B.md; lam tiep PP-02.

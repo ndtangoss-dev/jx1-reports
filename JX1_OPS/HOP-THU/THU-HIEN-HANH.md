@@ -270,3 +270,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #367/#B-115 (01:10) Chat: chu test OK, sang Phase 2 Phi Phong — HIEU LUC
 - #368/#B-116 (01:40) Chat: duyet hook ha bac atestqhhai; B tra log mat do +9 — HIEU LUC
 - #369/#B-117 (02:45) Chat: duyet SELECT DB tim mon +9 — HIEU LUC
+- #370 (03:45) Chat: tim mon +9 bang relog (B khong doc duoc DB) — HIEU LUC
