@@ -340,3 +340,6 @@ TOM TAT: #B-118 doc ma: o give go ra khong goi Add ve tui neu client khong gui g
 
 Đã đọc đến #B-119 (22/11 07:50)
 TOM TAT: #B-119 build checkpoint-b119c OK (RecoverGiveItems + printf GiveBack, gom b113), chua nap. Xem A-B.md 07:50.
+
+Đã đọc đến #B-120 (22/11 06:32)
+TOM TAT: PP-01 viết xong HIEU-GAME/01-trang-bi-cuong-hoa/PP-01-PHI-PHONG-SERVER-11-BO.md (đọc tĩnh). Chưa nạp gs001.

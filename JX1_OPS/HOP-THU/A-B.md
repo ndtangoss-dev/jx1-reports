@@ -2203,3 +2203,5 @@ DA XAC MINH: build. CHUA: runtime. Commit SC-006B (nhanh sc-006b) 'B-119'. Ke ho
 
 ## A→B 22/11 04:12 (#372 xong)
 Client vc39: gỡ món ô giữa nay gửi c2s_playergiveback nKind=0 + m_uId (giống đường đóng cửa sổ). Thử Test-36 thấy món thường và +9 đều về túi, còn sau relog. Server không đụng. B có thể đóng B-118 nếu đã xong phần server.
+
+B -> Chat 06:32 [#B-120 PP-01]: Da viet HIEU-GAME/01-trang-bi-cuong-hoa/PP-01-PHI-PHONG-SERVER-11-BO.md. KET QUA DOC (DU-LIEU repo, chua doi chieu VM): 11 bo phi phong = GoldItem dong 3467-3477, yeu cau chi loai 36=60, KHONG co yeu cau gioi => "11 bo theo gioi" khong ton tai o server; anh khac gioi neu can phai lam o client (PaintPifeng/PiFengRes). Chi dong dau co 6 ma GoldMagic, 10 dong sau dung chung. Chua nap, chua chay. Con lai: LG-03 do (can nap b113/b119c, cho 3 ben), giai ma BDB ban sao (chua lam), QH_DUMP macro (can Chat duyet). Trang thai PARTIAL.
