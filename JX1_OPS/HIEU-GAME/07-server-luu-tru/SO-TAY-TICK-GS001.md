@@ -132,3 +132,9 @@ liên quan: JX1_OPS/HIEU-GAME/06-mang-goi-tin/SO-TAY-VONG-LAP-SERVER.md; JX1_OPS
 Không sửa mã/configuration; không build, chạy exe, VM hoặc mạng. Không commit/push; Tổng quan tiếp nhận commit. Tệp nhịp được yêu cầu tại D:\JX-wt\HG-S1.nhip nằm ngoài vùng ghi khả dụng; thao tác ghi bị hệ thống từ chối, nên không có mốc nhịp được lưu. Báo cáo và sổ tay nằm trong worktree; kết quả cuối đã ghi vào task.
 
 Kỹ năng đã dùng: jx1-retrofit, jx1-read-server, jx1-read-client (đọc hướng dẫn; không đọc source client vì task không nêu root client), jx1-parameters, jx1-knowledge, jx1-report.
+## Bài học đo thật 21–22/11/2026 (Test-36, B) — cộng dồn
+
+- [ĐO THẬT] gs001 Test-36 từng giật/kẹt: tick 100–380 ms. Gốc: `GS/Settings/visibility.ini` có `Enabled=1` (lớp lọc hiển thị B-02). Mỗi lần `KRegion::BroadCast` gọi `DescribeVisibilityPacket` → `NpcSet.SearchID(dwID)` đi bộ O(N) toàn bộ NPC đang sống (N≈68.630 là mức nền của bản đồ, không phải rò rỉ). Đặt `Enabled=0` rồi khởi động lại gs001: tick 0,85–1,5 ms, SvrFPS 18/18, over=0 (1–2 người, 22:26 → 01:30).
+- [ĐO THẬT] Mức nền sau restart: NPC 68.630/100.000, Obj 29.466/30.000 (Obj còn ~534 chỗ trống — nguy cơ khi thêm vật phẩm/quái).
+- [CHƯA KIỂM] Trận boss Trương Tổng Chính / Tương Dương với `Enabled=0` chưa chạy lại; chưa kết luận hết kẹt sau boss.
+- [BÀI HỌC] Trước khi nghi tick, đọc `visibility.ini` trên VM. `Enabled=1` chỉ nên bật khi thử Bot Solo/Group và phải có `SearchID` nhanh. Phương án sửa (chưa nạp): SC-006B `KNpcSet::SearchID` có cache dwID→idx kiểm `Npc[idx].m_dwID==dwID`; `KRegion::BroadCast` bỏ Describe khi vùng không có người chơi và không phải gói xóa NPC.
