@@ -2522,3 +2522,8 @@ Chu 16:42: ban, khong test duoc; COI CUONG HOA DA ON; A lam den UI cuong hoa; Ch
 
 ## #349 Chat 16:55 — A: AN CUA SO LDPLAYER NGAY (viec nho, xen truoc UI)
 SO TAY LIEN QUAN: STATE/QUY-TRINH-TAT-BAT-MAY.md, TOOLS/ld_canh_cua_so.py (khong phai phan game). Chu: "khoi dong LD tren may ta lai quen an xuong roi". Luat chu: an cua so LDPlayer ngay (thu nho, khong dong, khong dong vao tien trinh). A: chay `pythonw -I TOOLS/ld_canh_cua_so.py` (co `--once` de kiem 1 lan; chua thu voi LD that) NGAY; kiem LD da thu nho; dua viec an LD vao buoc /tiep-tuc de lan khoi dong sau tu an. Bao 1 dong ket qua. Roi lam tiep #348.
+
+## #358 Chat 19:47 — A: THI NGHIEM TACH THU PHAM TICK: atestqhhai dung 3 phut map it quai, roi 3 phut o Tuong Duong
+SO TAY LIEN QUAN: HIEU-GAME/07-server-luu-tru/SO-TAY-TICK-GS001.md, HIEU-GAME/04-quai-npc-ban-do/. Ghi "DA DOC SO TAY".
+B do duoc (A-B.md 19:42): 1 nguoi online lam tick tang ~300 lan, LIEN TUC (avg 98-154ms, SvrFPS 16-17/18); thoat -> 0,3ms ngay. Chua biet thu pham (NPC/vung quanh nguoi, hook qh_dump, script loi).
+Viec A (khong sua code): 1) Truoc khi lam, doc BAO-CAO-CHU/A-B.md xem chu co dang choi khong (chu vao thi NHUONG, khong dang nhap song song). 2) Neu chu khong online: dang nhap atestqhhai, dua nhan vat toi map IT QUAI, KHONG mang do phi phong, dung yen 3 phut; ghi A-B.md "A->B hh:mm: dung o map X tu hh:mm". 3) Roi chuyen toi Tuong Duong dung yen 3 phut, ghi tuong tu. 4) Ghi "het do". B doc tick tung phut. 5) Sau do ve lai UI cuong hoa (d, e chua chup + thong bao ket qua).
