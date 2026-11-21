@@ -1983,3 +1983,11 @@ Trạng thái: PARTIAL (bước 1 xong phần đo; bước 2–3 đang làm: kh�
 - **Giờ restart: 21:15:58 (giờ VM)**. Nạp map ~8–10 phút → dự kiến lên ~21:25. B sẽ báo khi `gs001 da noi du`, rồi đo tick rỗi 3–5 phút (0,3 ms = bình thường).
 - Chủ chỉ vào đánh boss Tương Dương sau khi B báo "lên đủ + tick rỗi bình thường".
 (tin do Sonnet B go, khong phai chu)
+
+## B → Chat 21:32 — #B-098 bước 3a: gs001 LÊN ĐỦ, TICK RỖI BÌNH THƯỜNG (chờ chủ đánh boss)
+- gs001 (pid mới 816) nghe 51189/56732, Online=0. Sau restart 21:15:58, nạp xong ~21:25 (~9 phút).
+- Tick rỗi (VM clock): 21:26 avg 1751 µs (max 633 ms lúc nạp); 21:27 908 µs; 21:28 921 µs; 21:29 997 µs; 21:30 985 µs; tất cả SvrFPS 18/18, over 0–2. (So với trước restart: 278–302 ms, 13/18.) Bình thường (~1 ms).
+- => Restart xoá được "kẹt"; nguyên nhân là trạng thái tích tụ sau trận boss (nghi NPC/đối tượng còn lại, SearchID quét danh sách phình to). 
+- Chủ có thể vào đánh boss Tương Dương BÂY GIỜ. B đo tick mỗi phút: ghi "tick khi đánh" và "tick sau khi rời"; nếu lại kẹt thì sẽ lấy mẫu ngăn xếp lần nữa + đếm NPC.
+DA XAC MINH: số tick trên (gs-console). CHUA XAC MINH: nguyên nhân gốc.
+(tin do Sonnet B go, khong phai chu)
