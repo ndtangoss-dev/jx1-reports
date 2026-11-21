@@ -1784,3 +1784,13 @@ TÓM TẮT 5 DÒNG
 4. Chưa kiểm: đơn vị "vạn", dòng m_qhResult.
 5. Không gửi APK ra máy thật.
 Cần tôi quyết định: không (chủ có thể cấp mật khẩu tkatest02 qua biến môi trường để chụp nốt).
+
+## [A] #350/#351 tiến độ (21/11 17:55)
+ĐÃ ĐỌC SỔ TAY: HIEU-GAME/08-giao-dien/SO-TAY-GIAO-DIEN.md, SO-TAY-TAI-NGUYEN-CLIENT.md
+TÓM TẮT 5 DÒNG
+1. Đã chụp ảnh d (thiếu thủy tinh): EVIDENCE/ui-cuonghoa/d-thieu-thuy-tinh-vc35.png, tài khoản atest, mật khẩu không hiện trong ảnh/log.
+2. Ảnh d xác nhận chữ KHÔNG dấu ("Thieu thuy tinh (can 1 moi loai)") và khung xám lớn: đúng lỗi Chat nêu, chưa sửa.
+3. Ảnh c, e, f CHƯA chụp: VM Test-36 thiếu mục thủy tinh/bạc trong menu atest (cần nạp lại qh_bothu.lua).
+4. Chưa làm: bố cục chuẩn 5 ô, trần thủy tinh min(2^(n-1),1000), đơn vị "vạn", dấu tiếng Việt, tìm khung kim cương trong PAK.
+5. Việc kế: nạp Lua nóng, chụp c/e/f, rồi dựng vc36.
+Cần tôi quyết định: không
