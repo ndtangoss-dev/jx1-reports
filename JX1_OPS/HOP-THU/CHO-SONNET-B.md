@@ -369,3 +369,12 @@ Chu 18:20: B khong co viec a? Giat ngua / ping 555 ms van CHUA xu ly xong. Su th
 2. Doc ma tim PHAN AN TICK trong vong KSOServer.cpp:1447-1461 (NPC/Player Active, gui goi, printf console dong bo, ghi file qh_dump.log moi ~5 s khi mang phi phong): xep hang nghi pham theo chi phi, cach do tung nhom (them dong in thoi gian Active NPC/Player/mang vao dong in moi phut = build moi, CHI DE XUAT, cho Chat duyet).
 3. Phuong an giam giat phia client (noi suy khi bi keo ve, nang CORRECT_SYNC_RANGE) CHI THIET KE; khong sua.
 4. Bao cao A-B.md: nguyen nhan co bang chung file:dong, de xuat xep uu tien, CHUA KIEM ro. Neu can so do song thi nho A (xem #353).
+
+## #B-091 Chat 18:40 — B: GIAT NGUA/TICK gs001 GIAO TRON CHO B (chu 18:31); A CHI LAM UI CUONG HOA
+SO TAY LIEN QUAN: HIEU-GAME/07-server-luu-tru/SO-TAY-TICK-GS001.md, HIEU-GAME/01-trang-bi-cuong-hoa/SO-TAY-NGUA-PHI-PHONG.md, HIEU-GAME/02-nhan-vat-thuoc-tinh/BAN-DO-DI-CHUYEN-CUOI-NGUA.md. Ghi "DA DOC SO TAY".
+Chu 18:31: B ranh thi B xu ly phan giat; A lam UI cuong hoa cho xong. Chat da THU HOI #353 (do tick) khoi A. B CHU TRI giat ngua tu doc ma den do den de xuat sua:
+1. Duong do song cho B: `JX1_OPS/STATE/DUONG-VAO-VM.md` + `TOOLS/vm_chay.py` (chain-up, ports, log gs <n dong>) la duong dung chung A/B (Q-79), khong can WinRM truc tiep, mat khau tu Credential Manager. Truoc day B noi "khong co duong vao VM": thu `vm_chay.py ports` va `log gs 50` ngay; dong `tick avg/max/over` + `[fix36] LogicFps=` + loi `online.lua` nam trong log gs / console. Neu vm_chay.py khong du (khong doc duoc console) thi ghi ro CHO NAO thieu va de xuat (vd them lenh doc console vao vm_chay.py danh sach trang, khong mo rong den Main VM); khong tu vuot quyen/UAC.
+2. Ai dang vao lai moi phut (online.lua chi goi luc vao game): do bang `log gs` (dong dang nhap/login), `ports` (so ket noi 5001-5005). Neu la client/bot cua A tu relog thi bao A tat (viec nho cua A).
+3. Lay dong tick luc CO nguoi online: atest dang online tren Test-36 (A) hoac xin A de nhan vat dung yen 5 phut trong luc B do; ghi Online=?. Neu chu choi thi do tot nhat.
+4. Voi tung nghi pham da xep (KRegion NPC Active/NormalSync, printf console, qh_dump.log KItemList.cpp:1235): de xuat cach TACH/do/go nhanh; sua gi phai qua Chat duyet; nap nong Lua khong can restart; doi C++ = build moi.
+5. Bao cao A-B.md: so that (tick avg/max/over, Online, gio), nguyen nhan co bang chung, de xuat. Giu "CHUA KIEM" cho cai chua do. Vung Do (Main VM, Server D bat/tat, khoa, xoa du lieu) van hoi chu.
