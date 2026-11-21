@@ -45,7 +45,7 @@ Thứ tự theo lịch (Q-107: cường hóa trước, phi phong sau). Làm từ
 | 5 | HG | Retest #359 (sách hỗ trợ cường hóa) bằng vai khác atest; #354 bot/relog tự chạy chưa kiểm | |
 | 6 | HG | Cập nhật sổ tay `HIEU-GAME/08-giao-dien/` với cơ chế cửa sổ cường hóa vc37 (KuiGiveVN/buildQhPanel, banner qua KuiChatList) | công sức cộng dồn (L20.4) |
 | 7 | PP-03 | Kiểm kê menu/hook thử phía client + Lua cần gỡ trước server thật (hotrotanthu, qh_bothu, baowubox, [SC-006]) | đọc tĩnh, ghi danh sách — XONG 22/11 (HIEU-GAME/09-cong-cu-gm/PP-03-KIEM-KE-HOOK-THU.md) |
-| 8 | PP-02 | CHUẨN BỊ phi phong client (đọc SO-TAY-NHAN-CAP, PaintPifeng KgameWorld.cpp:11189, 11 bộ theo giới); chưa sửa | sau chủ duyệt CH-04 mới sửa |
+| 8 | PP-02 | CHUẨN BỊ phi phong client (đọc SO-TAY-NHAN-CAP, PaintPifeng KgameWorld.cpp:11189, 11 bộ theo giới); chưa sửa | sau chủ duyệt CH-04 mới sửa — CHUẨN BỊ XONG 22/11 (08-giao-dien/PP-02-CHUAN-BI-PHI-PHONG-CLIENT.md) |
 | 9 | LG-04 | Chuẩn bị bật jx_netlog/JXPERF ghi thời điểm nhận s2c / gửi c2s (không chạy) | chỉ dùng khi giật quay lại |
 | 10 | FX-01 | Khảo sát nâng cấp hiệu ứng hình ảnh: danh sách hiệu ứng thiếu/xấu, ưu tiên, ước tính (đọc HIEU-HIEU-UNG-VU-KHI) | sau cường hóa/phi phong mới làm |
 | 11 | HG | Ảnh d (thiếu thủy tinh) cập nhật cho vc37; chụp bộ ảnh nghiệm thu cuối a–f + HUD | |
