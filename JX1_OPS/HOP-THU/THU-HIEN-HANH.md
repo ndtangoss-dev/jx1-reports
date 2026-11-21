@@ -226,3 +226,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #B-089 (17:15) Chat: man hinh may chu, do lien tuc tim thu pham (chi doc) — HIEU LUC
 - #350 (17:40) Chat: nghiem thu hinh anh UI cuong hoa vc35 CHUA DAT bo cuc chuan, thuy tinh 32768 vuot tran 1000 — PARTIAL, A lam tiep — HIEU LUC
 - #351 (17:45) Chat: chu cho A tu lay mat khau tk test atest de chup anh nghiem thu — HIEU LUC
+- #352 (18:10) Chat: A giao tieu yeu tim tai nguyen hinh anh UI cuong hoa (chi doc), A lam viec khac song song (chu duyet) — HIEU LUC
