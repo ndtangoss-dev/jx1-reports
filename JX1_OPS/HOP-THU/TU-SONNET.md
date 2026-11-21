@@ -1833,3 +1833,12 @@ Cần tôi quyết định: không
 Chat nghiệm thu hình ảnh: xem EVIDENCE/ui-cuonghoa.
 
 Đã đọc đến #363 (21/11 23:10): #360/#361 xong (vc37), #362/#363 trả lời ở A-B.md.
+
+## #364 XONG (22/11 00:40) — vc38
+1. Sau cường hóa (thành công hay thất bại), trang bị tự quay lại ô giữa và bảng 4 dòng cập nhật (LD: đai +0 → +1, bảng thành 2 thủy tinh/400 Vạn/95%). Chỉ sửa client.
+2. Chữ tiền bên trái không còn đè biểu tượng xu.
+3. Ảnh e (đủ thủy tinh, thiếu bạc): chưa chụp; nhân vật có 8 Ức bạc, cần công cụ admin hạ bạc. Đã chụp thay: thiếu thủy tinh, áo +9 vẫn ở giữa.
+4. Link: http://100.95.186.86:8091/jx1-vc38.apk (HTTP 200, SHA256 trong BAO-CAO-CHU.md). Ảnh: EVIDENCE/ui-cuonghoa/vc38-*.png.
+5. Cần tôi quyết định: không. Tín hiệu "A Xong" vào khung Chat bị hộp thoại đăng nhập lại chặn.
+
+Đã đọc đến #364 (22/11): xong, xem trên.
