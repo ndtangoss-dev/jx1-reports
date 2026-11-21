@@ -1629,3 +1629,21 @@ TÓM TẮT: (1) Build 4 (gs001 79cf3f5c) nạp OK. Tái hiện sập 02:49: mặ
 [pifeng-unequip] ok goldid=3475
 ```
 - Chưa đo: người khác nhìn hình phi phong đổi ngay (kịch bản 2), +N≠6 theo cấp, so sánh các cấp 1..11, Né tránh giáp theo lớp.
+
+## A→B 21/11 08:25 — SC-006: cấp đủ 11 phi phong cho tk chủ + bảng chỉ số THẬT (Test-36, build 11)
+- Tk tkchutest01, vai atestchutes2 (Kim, Võ Đang, lv99). Hook `qhbv_pf` trên VM sửa `for k=1,11` (bản .bak-pf11): menu TEST-36 → "[SC-006] Phi phong 11 cấp" → "11/11 (k1..k11)" vào túi (ô trống 21/30). Tài phú hook 15000 đang đặt. **(1) XONG.**
+- Đo chỉ số thật khi mặc (HP/nội lực/thể lực tối đa, nền 1668/590/100; Sử dụng từ túi):
+| Món | Hệ | Yêu cầu tài phú | cấp k | ΔHP | ΔMP | ΔThể lực |
+|---|---|---|---|---|---|---|
+| Lăng Vân | Thủy | 6000 | 1 | (chưa đo riêng) | | |
+| Phá Quân | Thổ | 7800 | 3 | +600 | +600 | +300 |
+| Ngạo Tuyết | Hỏa | 8700 | 4 | +800 | +800 | +400 |
+| Ngự Phong | Kim | 10500 | 6 | +1200 | +1200 | +600 |
+| Phệ Quang | Thủy | 11400 | 7 | +1400 | +1400 | +700 |
+| Khấp Thần | Kim | 12300 | 8 | chưa đo | | |
+| Cao cấp +6 (gốc) | Hỏa | 15000 | 11 | +2860 | +2860 | +1430 |
+  → HP/MP = 200×k, thể lực = 100×k đúng bảng B (k11 +6 có thêm). Còn thiếu đo: k2, k5, k8, k9, k10 (chuỗi bấm bị lệch).
+- **Né tránh / kháng: KHÔNG ĐỔI theo phi phong.** Đo Phệ Quang (Thủy) rồi Phá Quân (Thổ, tương sinh Kim): Né tránh 480→480, Kháng hỏa -24%, kháng khác 0%; chỉ Chạy 19→17 (tốc chạy 5k nhưng k nhỏ hơn). Chưa thấy dòng ẩn ngũ hành nào áp.
+- Tooltip Lăng Vân (k1) hiện dòng vàng "Sinh lực tối đa +271 điểm", "Tốc độ di chuyển +54%" và dòng xám "Kỹ năng Túy Tiên Tá Cốt +3 cấp" (xám = chưa kích hoạt?) nhưng bảng nhân vật CHƯA phản ánh +271 (HP chỉ +200k). Cần B xác nhận dòng vàng này có áp thật không.
+- Nhãn tooltip vẫn "[cấp 1]" cho mọi món (lỗi client, cần APK mới [CAN-CHU]).
+- Chưa làm: (3) người khác thấy hình phi phong (cần tài khoản/nhân vật thứ 2 trên LD khác); đo Né tránh theo ngũ hành đúng bộ (chủ chỉ: dòng ẩn chỉ kích hoạt khi tương sinh, KItemList.cpp:2674 nActive).
