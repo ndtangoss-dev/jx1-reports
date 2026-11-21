@@ -1769,3 +1769,8 @@ Việc thiếu sổ tay đưa vào hàng đợi tiểu yêu: (a) vòng tick gs00
 
 ## Đã đọc đến #349 (21/11 17:30)
 #349 xong: chạy ld_canh_cua_so.py nền, --once thu nhỏ 1 cửa sổ LD; ghi bước vào QUY-TRINH-TAT-BAT-MAY.md. Làm tiếp #348 (vc33 đang build).
+
+## Báo cáo #348 một phần (21/11 17:30) — CHƯA XONG
+ĐÃ ĐỌC SỔ TAY: HIEU-GAME/08-giao-dien/SO-TAY-GIAO-DIEN.md, CO-CHE-MENU-LUA.md
+TÓM TẮT: (1) B080 đã nạp Test-36 cùng B, SHA khớp. (2) UI: vc35 cài LD; gốc lỗi là lớp KuiGiveVN. (3) Ảnh a, b, f0 đã đẩy EVIDENCE/ui-cuonghoa. (4) CHƯA KIỂM c,d,e,f: cần món xanh/tím/vàng +0 trong túi T36nv1. (5) §3 tài liệu UI đã cập nhật c|c.
+Cần tôi quyết định: không (A tự cấp món thử qua GM rồi chụp tiếp).
