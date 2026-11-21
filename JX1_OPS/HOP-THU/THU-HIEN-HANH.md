@@ -272,3 +272,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #369/#B-117 (02:45) Chat: duyet SELECT DB tim mon +9 — HIEU LUC
 - #370 (03:45) Chat: tim mon +9 bang relog (B khong doc duoc DB) — HIEU LUC
 - #371/#B-118 (04:00) Chat: loi that mat mon o giua Cuong hoa; B tim nguyen nhan chi doc — HIEU LUC
+- #372/#B-119 (04:10) Chat: chon sua (c) client giveback; B chuan bi (a)(b) khong nap — HIEU LUC

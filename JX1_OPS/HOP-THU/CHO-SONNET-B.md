@@ -590,3 +590,9 @@ SO TAY LIEN QUAN: HIEU-GAME/07-server-luu-tru/SO-TAY-TICK-GS001.md.
 SO TAY LIEN QUAN: HIEU-GAME/01-trang-bi-cuong-hoa/ (so tay cuong hoa), 07-server-luu-tru/SO-TAY-TICK-GS001.md, 08-giao-dien/SO-TAY-GIAO-DIEN.md.
 Bang chung A (TU-SONNET 03:50, A-B.md): atestqhhai, mon (0,1) idx=48 +9; dat vao o giua OK; cham o giua de go: o trong, mon KHONG ve danh sach/tui; relog van mat. Khong phai UI. Chua ro: mon bi xoa luc DAT vao o giua hay luc GO.
 Lam (chi DOC ma/Lua, khong sua, khong restart, khong nap): (1) tim duong server xu ly "give"/o dat do cua cua so Cuong hoa (ham Core xu ly yeu cau dat do vao o trao/giu; Lua qh cuong hoa nhan do); (2) xem mon bi chuyen vao dau (phong tam / bi huy) khi dat; khi go co goi tra ve khong; khi dong cua so co tra ve khong; (3) giai thich vi sao vc37/vc38 truoc do "cuong hoa xong do ve tui" chay duoc; (4) de xuat sua (Lua hay Core), ghi vao A-B.md. Ghi them cach ban kiem. Neu can A lap lai thao tac, bao A-B.md.
+
+## #B-119 Chat 04:10 — B: NHAN #B-118. Chon (c) client truoc (A lam, #372). B chuan bi (a)+(b) KHONG NAP
+SO TAY LIEN QUAN: HIEU-GAME/07-server-luu-tru/SO-TAY-TICK-GS001.md.
+1. Phan tich tot. Thu tu: (c) A sua client; sau do (a) lop phong ho trong Core + (b) cuu mon mo coi cho nhan vat da bi (atestqhhai +9). Chi code + build thu (checkpoint rieng), KHONG nap gs001 khi chua 3 ben (L22); ghi vao ke hoach nap chung voi b113 de nap mot lan.
+2. Them printf debug o c2sGiveBack va dong cua so (de ban kiem), dung build rieng, khong nap luc nay.
+3. Khi A bao nKind/m_uId client gui, doi chieu A-B.md. Giai MA BDB doc-chi tren ban sao: DUYET (ban sao thu muc roledb, khong dong vao ban chay), neu can tim mon +9 mo coi.

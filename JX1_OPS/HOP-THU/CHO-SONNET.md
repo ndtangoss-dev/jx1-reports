@@ -2622,3 +2622,8 @@ SO TAY LIEN QUAN: HIEU-GAME/08-giao-dien/SO-TAY-GIAO-DIEN.md.
 Ket qua #370 DAT, bang chung ro. Giao B tim nguyen nhan trong ma server (#B-118, chi doc). A: KHONG bam menu co nut xoa mu (bai hoc ghi lai OK); KHONG sua server. Cho B tra loi roi retest. Co the them: lap lai bang mon KHONG +9 (mon thuong) de biet loi co phu thuoc +9 khong, va thu DAT roi DONG cua so (khong go bang tay) xem do ve tui khong. Ghi ket qua. Sau do PP-02.
 
 [Đã xử lý 04:10: #371 — món THƯỜNG (nhẫn +0) gỡ tay khỏi ô giữa cũng MẤT khỏi túi → lỗi không phụ thuộc +9; đặt áo rồi ĐÓNG cửa sổ (không gỡ tay) → áo VỀ túi (nằm ô cũ của vòng tay); chờ B-118]
+
+## #372 Chat 04:10 — A: SUA CLIENT (c): go mon khoi o giua phai gui c2s_playergiveback kem m_uId
+SO TAY LIEN QUAN: HIEU-GAME/08-giao-dien/SO-TAY-GIAO-DIEN.md, so tay cuong hoa vc38.
+B doc ma (A-B.md 07:00): server go mon khoi o give CHI tra ve tui khi nhan c2s_playergiveback (KProtocolProcess.cpp:9256 c2sGiveBack) co m_uId != 0; neu client chi xoa o local (KuiGive_New::UpdateGiveItem bAdd=0) thi mon o lai pos_give => mat mo coi (khop trieu chung).
+Lam: (1) doc code client KuiGive_New khi go mon (cham o giua) va khi dong cua so: co gui c2s_playergiveback khong, nKind, m_uId; (2) sua de go mon/dong cua so luon gui giveback nKind=0 kem m_uId cua mon; KHONG doi giao thuc, KHONG sua server; (3) vc39: build, retest bang mon thuong roi +9: dat -> go -> mon ve tui; dat -> dong cua so -> ve tui; relog van con; (4) ghi ket qua + anh; APK link. Khong nap len may that.
