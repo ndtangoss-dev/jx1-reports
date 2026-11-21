@@ -263,3 +263,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - L23 (00:17): A/B chu dong go vao khung Chat de danh thuc; #364/#B-111 giao viec — HIEU LUC
 - L24 (00:32) Chat: khong ket luan hong/mat khi chua kiem dau vao; bang_tien_do.py tu do JX1_OPS; hang doi >=10 nap tu bang — HIEU LUC
 - 00:40 Chat: nap lai hang doi A (11 viec) va B (12 viec) tu bang; 20 viec moi vao BACKLOG/TASKS (nhom 21-22/11) — HIEU LUC
+- #B-112 (01:08) Chat: nhan #B-111 (SearchID cache build OK); CHUA NAP gs001; lam tiep hang doi 3-12 — HIEU LUC
