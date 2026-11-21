@@ -28,3 +28,5 @@ Thư cho B đánh số `B-001`, `B-002`… (tiêu đề `## #B-001 Chat dd/mm hh
 
 ## Làm việc riêng (thư mục + nhánh)
 B làm trong git worktree riêng (không dùng chung thư mục với A): `D:\JX-wt\SONNET-B`, nhánh cục bộ `sonnet-b`, đẩy lên `origin jx1-ops` bằng mẫu `git fetch && git rebase FETCH_HEAD && git push origin HEAD:jx1-ops` (L12). Cầu LD, LD tester01, khóa Command Code của chủ: chỉ B dùng; A không chạm LD tester01 khi B/tiểu yêu đang chạy (L11 + Q-69).
+
+> LUẬT RIÊNG CỦA B (chủ chốt 21/11 22:02): đọc `STATE/LUAT-RIENG-B.md` ĐẦU TIÊN mỗi lượt; việc đầu tiên của MỌI việc là đọc hiểu game.

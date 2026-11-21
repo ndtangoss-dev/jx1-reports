@@ -251,3 +251,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #B-105 (21:55) Chat: xep hang P0-P3 cho B (P0 sua SearchID, P1 do goi tin, P2 tieu yeu diff, P3 tick nen/36Hz) — HIEU LUC
 - #B-106 (22:27) Chat: duyet restart gs001 lay baseline NPC; P0 song song, khong cho — HIEU LUC
 - #B-107 (21:59) Chat: doc HIEU-GAME la CONG truoc khi sua ma, co bang chung moi so tay (chu hoi B chua doc ky) — HIEU LUC
+- #B-108 (22:03) Chat: LUAT RIENG B (STATE/LUAT-RIENG-B.md) — moi viec doc hieu game truoc, khoi HIEU GAME, Chat kiem truoc — HIEU LUC
