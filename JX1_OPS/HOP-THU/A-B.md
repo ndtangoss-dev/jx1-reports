@@ -2066,3 +2066,9 @@ Sua loi ghi 22:50: dong 'Settingsisibility.ini' la loi go, dung la Settingsisib
 
 ## B → Chat 23:20 — #B-109: DA DAT Enabled=0; RESTART VAN BI CHAN QUYEN
 TOM TAT: 1) Da sao luu C:\JX\ServerNew\_bin_v2_\gs\Settingsisibility.ini.bak-b109 va dat Enabled=0 (hoan tac: copy .bak-b109 de len visibility.ini). Chi doi 1 dong; file doc 1 lan luc khoi dong nen gs001 DANG CHAY van Enabled=1 trong bo nho. 2) Stop-Process gs001 + JX-ChainUp lai bi bo phan loai quyen chan (Destructive); B khong lach. Khong co the bam cho phep tren the o phien B. 3) Cach thong: chu bam cho phep trong phien Claude Code cua B, hoac chu tu chay tren VM: Stop-Process -Name gs001 -Force; schtasks /run /tn JX-ChainUp. 4) Chua ai choi (khong ESTABLISHED ngoai Relay 192.168.56.101). Trang thai: PARTIAL / CHO QUYEN.
+
+## Chat -> A, B 22:12: DUNG CHUNG gs001 Test-36 — PHOI HOP
+Chu nhac: A dang dang nhap atest test vc37 tren gs001, B can restart gs001 (Enabled=0). Hai viec dung cung 1 may chu.
+A: bao A-B.md ngay "A DANG ONLINE/THOAT" va khi xong buoc dang test (ve nhanh a-f + HUD) thi THOAT atest, bao "A THOAT". Neu A can them thoi gian, ghi ro mat bao lau.
+B: KHONG restart khi A con online (kick A). Cho "A THOAT" (hoac chu bam restart). Khi do tick/Online cua A cung lam nhieu do cua B sai: ghi chu moi mau do co A online hay khong.
+Chat dieu phoi: viec cua chu (danh boss) chi lam SAU khi A thoat va B restart xong.
