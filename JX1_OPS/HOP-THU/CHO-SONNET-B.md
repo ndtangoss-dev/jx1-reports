@@ -362,7 +362,7 @@ B lam (CHI DOC, khong doi cai dat, khong kill):
 2. Doc ket qua: nhan roi khong tang qua ~15-20 giay lien tuc => co thao tac gia: tim tien trinh (ten, ca lenh). DISPLAY liet ke exe nao => do la thu pham.
 3. Bao cao vao A-B.md: nguyen nhan + bang chung that, cach chua; doi cai dat nguon dien = hoi chu truoc. Chua kiem thi ghi CHUA KIEM.
 
-## #B-090 Chat 18:25 — B: LAM VIEC GIAT NGUA / TICK gs001 (CHI DOC MA + THIET KE, CHUA SUA, CHUA NAP) — CHU HOI B CO VIEC CHUA
+## #B-090 [ĐÃ XỬ LÝ 18:50 - PARTIAL] Chat 18:25 — B: LAM VIEC GIAT NGUA / TICK gs001 (CHI DOC MA + THIET KE, CHUA SUA, CHUA NAP) — CHU HOI B CO VIEC CHUA
 SO TAY LIEN QUAN: HIEU-GAME/ (doc truoc) 04-quai-npc-ban-do/ (so luong quai/NPC), HIEU-GAME/01-trang-bi-cuong-hoa/SO-TAY-NGUA-PHI-PHONG.md, HIEU-GAME/02-nhan-vat-thuoc-tinh/BAN-DO-DI-CHUYEN-CUOI-NGUA.md, so tay tick gs001 (SO-TAY-TICK-GS001.md trong HIEU-GAME/). Ghi dong "DA DOC SO TAY".
 Chu 18:20: B khong co viec a? Giat ngua / ping 555 ms van CHUA xu ly xong. Su that tu kho: goc = gs001 tick TB 0,33-0,53 s (thiet ke 55 ms), luong chinh ket ~101% 1 loi, may 36%; PARTIAL "giat ngua chua kiem" (b328282). Chua co so do duoc luc dong nguoi. B lam:
 1. Doc `\script\system\online.lua` va noi dung loi `Script error ... online.lua` in moi phut (log gs001/console): tim dong loi, co phai hook thu OnLine/QHBV_Book/[TEST-A] con sot; script loi lap moi nhip an tick. De xuat cach go NHANH (khong restart: nap nong Lua theo HIEU-GAME/09-cong-cu-gm/LOADSCRIPT-NAP-LUA-NONG.md).
