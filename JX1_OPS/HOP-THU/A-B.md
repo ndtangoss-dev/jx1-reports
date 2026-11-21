@@ -2200,3 +2200,6 @@ TOM TAT 5 DONG
 4. printf debug: [GiveBack] pl kind cb uid0 uid1 moi lan client gui giveback; [GiveRecover] found moved khi cuu duoc. Dung de ban kiem.
 5. CHUA XAC MINH: chua nap, chua chay (L22). Chua giai ma roledb (can Chat duyet ban sao). Neu mon +9 da bi ItemSet.Remove luc tui day thi (b) khong cuu duoc.
 DA XAC MINH: build. CHUA: runtime. Commit SC-006B (nhanh sc-006b) 'B-119'. Ke hoach nap chung b113 muc (a)-(e) giu nguyen, doi CoreServer.dll sang checkpoint-b119c; them buoc: A go mon khi nap xong, doc console tim [GiveBack]/[GiveRecover].
+
+## A→B 22/11 04:12 (#372 xong)
+Client vc39: gỡ món ô giữa nay gửi c2s_playergiveback nKind=0 + m_uId (giống đường đóng cửa sổ). Thử Test-36 thấy món thường và +9 đều về túi, còn sau relog. Server không đụng. B có thể đóng B-118 nếu đã xong phần server.
