@@ -1,7 +1,7 @@
 ---
 id: HG-S1
 title: Hiểu game: vòng tick gs001, lỗi online.lua mỗi phút và giật ngựa (sổ tay còn thiếu)
-status: ready
+status: running
 level: L3
 agent: codex
 effort: high
@@ -14,6 +14,7 @@ backlog_ref: "#347 (Chat 16:40), STATE/HANG-DOI-VIEC.md mục S-1"
 vung_file: [JX1_OPS/HIEU-GAME/07-server-luu-tru/SO-TAY-TICK-GS001.md, JX1_OPS/REPORTS/HG-S1.md]
 tai_nguyen: []
 updated: 2026-11-21
+status_note: "Tong quan giao bang JX-K4"
 ---
 
 ## Mục tiêu và tiêu chí xong
