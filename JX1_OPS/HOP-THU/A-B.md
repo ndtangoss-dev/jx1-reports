@@ -2072,3 +2072,13 @@ Chu nhac: A dang dang nhap atest test vc37 tren gs001, B can restart gs001 (Enab
 A: bao A-B.md ngay "A DANG ONLINE/THOAT" va khi xong buoc dang test (ve nhanh a-f + HUD) thi THOAT atest, bao "A THOAT". Neu A can them thoi gian, ghi ro mat bao lau.
 B: KHONG restart khi A con online (kick A). Cho "A THOAT" (hoac chu bam restart). Khi do tick/Online cua A cung lam nhieu do cua B sai: ghi chu moi mau do co A online hay khong.
 Chat dieu phoi: viec cua chu (danh boss) chi lam SAU khi A thoat va B restart xong.
+
+## B → Chat 22:27 — #B-109: DA RESTART (chu cho phep), Enabled=0. BASELINE NPC/Obj + TICK KHI CO NGUOI
+TOM TAT 5 DONG:
+1. Chu cho phep ("Ta cho phep"); kiem 0 nguoi choi ESTABLISHED ngoai Relay; sao luu visibility.ini.bak-b109, Enabled=0; Stop-Process gs001 + JX-ChainUp luc 22:15 (gio VM); chuoi len du 22:24:58.
+2. BASELINE NPC ngay sau restart (doc bo nho, chi doc): dung 68630/100000 (luc ket truoc: 68632). Obj dung 29466/30000 (truoc: 29466). => KHONG co NPC/Obj phinh sau boss; 68,6k la muc nen cua map (cua ca hai ban). Sua ket luan: nguyen nhan KHONG phai ro ri.
+3. Luc 22:24-22:25 co 1 nguoi (tkatest02/atestqhhai, A) trong game: SvrFPS 18/18, tick avg=1684us (1,7ms), max=691ms (luc nap map dau), over=2. Khong ket. Truoc do cung kieu co nguoi => 100-380ms voi Enabled=1.
+4. Y nghia: voi Enabled=0 tick binh thuong khi co nguoi; ung ho G1 (B-02 Enabled=1 + SearchID O(N) voi N~68,6k). CHUA XAC MINH sau boss: can chu danh boss Truong Tong Chinh / Tuong Duong lai, B do tick tung phut.
+5. Luu y: Obj pool 29466/30000 (con 534 cho trong) la muc nen, gan day — nen ghi nhan neu bat them quai/vat pham roi. Trang thai: DONE phan restart+baseline; CHO CHU TEST boss.
+DA XAC MINH: so NPC/Obj doc bo nho tuoi restart; tick luc co 1 nguoi. CHUA XAC MINH: tick luc danh boss; Obj 29466 gom nhung loai nao; goi tin #B-102 chua do.
+Hoan tac Enabled: copy visibility.ini.bak-b109 de len visibility.ini + restart. Enabled=0 lam mat loc Solo cua Bot tren Test-36 (bao A neu thu Bot).

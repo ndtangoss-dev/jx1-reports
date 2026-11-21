@@ -301,3 +301,6 @@ TOM TAT: #B-108 PARTIAL: đã viết khối HIEU GAME trong A-B.md 23:05; B-02 l
 
 Đã đọc đến #B-109 (21/11 23:22).
 TOM TAT: #B-109 PARTIAL: đã sao lưu và đặt Enabled=0 trên Test-36; restart gs001 bị bộ phân loại quyền chặn, chờ chủ cho phép hoặc tự chạy.
+
+Đã đọc đến #B-109 (21/11 22:27).
+TOM TAT: #B-109 DONE: Enabled=0 + restart gs001 22:15. Baseline NPC 68630/100000, Obj 29466/30000 (bằng lúc kẹt, không rò rỉ). Có 1 người: tick 1,7ms, 18/18. Chờ chủ đánh boss để xác nhận.
