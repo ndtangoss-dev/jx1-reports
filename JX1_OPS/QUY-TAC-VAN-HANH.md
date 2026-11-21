@@ -197,3 +197,6 @@ Siết Q-28 (16/11): tác vụ SYSTEM chỉ chạy bản chép `C:\ProgramData\J
 
 ### Hộp thư Chat ↔ Sonnet (Q-29)
 `HOP-THU/CHO-SONNET.md` (Chat → Sonnet) và `HOP-THU/TU-SONNET.md` (Sonnet → Chat) là kênh chính thức. Sonnet đọc mục "Chưa xử lý" ở đầu ca, sau mỗi task và trước khi dừng (hook Stop chặn dừng khi còn thư, trừ thư đánh dấu `[ĐANG CHỜ]` trong tiêu đề); thư xong thì chuyển xuống "Đã xử lý" kèm giờ và 1 dòng kết quả. Sau mỗi mốc lớn (task Codex xong, giai đoạn xong, lỗi chặn) Sonnet viết 5–10 dòng: đã làm gì, kết quả đo được, điều chưa kiểm, bước kế. Không bao giờ ghi bí mật vào hộp thư.
+
+## 14. Đọc sổ tay game trước khi sửa (chủ chốt 21/11)
+Xem `STATE/LUAT-COT-LOI.md` mục L20. Tóm tắt: trước khi sửa/thử/báo phần nào, đọc sổ tay `HIEU-GAME/` tương ứng; thư, DANG-LAM và báo cáo ghi "ĐÃ ĐỌC SỔ TAY: <file>"; thiếu dòng này không được ghi "XONG". Thứ tự đọc sau khi nén (Q-99) thêm bước: sổ tay `HIEU-GAME/` của phần đang làm, ngay sau hồ sơ `DESIGN/TINH-NANG/`.

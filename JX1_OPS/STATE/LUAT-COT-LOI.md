@@ -111,3 +111,12 @@ Sonnet A (và B khi cần) TỰ TẠO tài khoản test riêng cho mình (vm_cha
 3. Gặp 2 việc xung đột (cùng một lần restart gs001, cùng file): gộp thành MỘT lượt, ghi vào hàng đợi.
 4. Việc nào bỏ qua phải ghi BỎ + lý do vào DANG-LAM; cấm im lặng bỏ. Chat đối chiếu hàng đợi với các thư đã gửi mỗi vòng kiểm.
 5. Trước khi nén chat: hàng đợi phải cập nhật (đã có luật Q-99).
+
+## L20 (chủ chốt 21/11 11:46) — ĐỌC SỔ TAY `HIEU-GAME/` TRƯỚC KHI SỬA BẤT CỨ PHẦN NÀO
+Kho `HIEU-GAME/` (9 nhóm, mục lục ở `HIEU-GAME/README.md`) là công sức đã tích lũy của chủ và các phiên trước. Cấm đọc ngược mã gốc rồi đoán khi sổ tay đã có.
+1. Trước khi sửa, thử hoặc báo một phần nào (trang bị, cường hóa, phi phong, ngựa, quái, rơi đồ, gói tin, giao diện...): mở sổ tay nhóm tương ứng trong `HIEU-GAME/` và đọc.
+2. Mọi thư giao việc, mục DANG-LAM và báo cáo có dòng **"ĐÃ ĐỌC SỔ TAY: <đường dẫn file>"** (hoặc "KHÔNG CÓ SỔ TAY cho phần này" + tạo mục thiếu trong hàng đợi).
+3. Báo cáo thiếu dòng này thì KHÔNG được ghi "XONG"; Chat trả lại, tính một lần trả lại.
+4. Sổ tay sai hoặc thiếu thì sửa ngay tại chỗ (cùng commit với phần sửa) để công sức cộng dồn.
+5. Điều chủ vừa chốt trong chat phải ghi vào kho (QUYET-DINH hoặc thư) NGAY trong lượt đó và liệt kê trong DANG-LAM trước khi nén.
+6. Hàm engine Cocos2d-x lạ (client) thì tra mã Cocos2d-x ĐÚNG PHIÊN BẢN của client (A xác nhận phiên bản từ mã client; nguồn: https://github.com/cocos2d/cocos2d-x, MIT), không dùng tài liệu v4 nếu client cũ hơn. Cocos2d-x không có thông tin giao thức/dữ liệu JX1.

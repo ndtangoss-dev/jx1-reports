@@ -63,3 +63,7 @@ LUẬT MỚI 19/11 10:42 (STATE/LUAT-COT-LOI.md L13): bàn việc gì với ch�
 
 
 ## 8. CẬP NHẬT 19/11 21:40 — ĐỌC FILE `HOP-THU/BAN-GIAO-CHAT-19-11-2140.md` TRƯỚC (đủ luật, hạ tầng, tình hình test độ mượt Q-80/81/82, sự cố đã gặp, việc sau tối nay). Việc đầu tiên: kiểm hai Sonnet bằng commit thật, tạo lại lịch kiểm send_later, báo chủ ngắn (chủ đang chờ test chùy cấp 1/10, chạy nhanh/đánh quái; APK vc23 do A dựng).
+
+
+## 9. LUẬT L20 (21/11) — ĐỌC SỔ TAY `HIEU-GAME/` TRƯỚC KHI GIAO/SỬA VIỆC
+Sau mục 3 (đọc theo thứ tự) thêm: mỗi thư Chat giao cho A/B phải trỏ tới sổ tay `HIEU-GAME/` liên quan và yêu cầu dòng "ĐÃ ĐỌC SỔ TAY" trong báo cáo; trả lại báo cáo thiếu dòng này. Chi tiết: `STATE/LUAT-COT-LOI.md` L20. Trình tự tắt/bật máy: `STATE/QUY-TRINH-TAT-BAT-MAY.md`.
