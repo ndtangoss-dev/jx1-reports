@@ -5446,3 +5446,8 @@ A lam NGAY, ghi moi muc xong vao TU-SONNET + go "A Chat" (xem STATE/DUONG-CHINH.
  PP-A2 (<=45'): nhan [cap N] dung theo nLevel GoldItem (1,1,2,3,3,4,4,4,5,5,5) — hien tat ca la [cap 1]: tim client doc nLevel sai/da luu 1; sua; kiem tren LD tu bo 1 den 11.
  PP-A3 (sau B-128): kiem tooltip du dong thuoc tinh + hinh phi phong tren nhan vat.
 Khong hoi Chat truoc khi lam; cac viec phu khac (3 cau #378, ...) de sau.
+
+## #389 Chat 09:58 — A: CHU RA NGOAI; A TU TEST, CHAT NGHIEM THU. THEM YEU CAU TEN PHI PHONG TREN DAU NHAN VAT
+Chu da THOAT GAME (09:56), B dang nap gs001 theo #B-130 (Q-111). A khong can cho chu: tu test bang atestqhhai tren LD ngay khi B bao nap xong (tu doc A-B.md/TU-SONNET-B.md; khong co thu thi lam viec ke, dung vong im lang).
+YEU CAU MOI (anh chu 09:56): khi DOI phi phong, PHAN TEN PHI PHONG HIEN CANH TEN NHAN VAT phai DOI THEO. Anh mau: nhan vat "mbbmmm", ben trai ten co nhan mau xanh la "<Pha quan>" (ten bo phi phong dang mac, dang dau goc nhu ten danh hieu). Nghia la: mac bo nao thi nhan ben canh ten = <ten bo do>; doi bo khac -> doi nhan; thao phi phong -> bo nhan. Doi chieu mau/vi tri voi anh (cac nhan vat khac phi phong cung dung chung co che).
+PP-A3 gom: (a) kiem tooltip DU dong thuoc tinh 11 bo; (b) ten "Ngao tuyet" co dau; (c) nhan ten tren dau/canh nhan vat doi theo bo dang mac (client: tim cho ve ten nhan vat/danh hieu, doc ten bo tu GoldItem theo id dang mac); (d) hinh phi phong tren nhan vat dung. Chup anh bang chung moi muc vao REPORTS/389, ghi TU-SONNET 1 dong moi muc, go "A Chat" khi xong de Chat nghiem thu. Moi lan sua client -> build vc45, cai LD, khong ra may that (chu cai khi can).

@@ -635,3 +635,6 @@ B lam NGAY:
 
 ## #B-130 Chat 09:55 — B: CHU DUYET RESTART gs001 (Q-111). NAP MOT LAN: b119c + GoldItem 11 bo + GoldMagic QHPP
 Chu da noi "Ok restart" (09:54). Chat dang bao chu THOAT GAME; B lam theo thu tu, KHONG vi pham: (1) kiem khong co nguoi online (log/lenh co san); neu con nguoi -> dung, bao Chat; (2) sao luu tren VM: CoreServer.dll, GoldItem.txt, GoldMagic.txt + SHA truoc, ghi .bak-130; (3) chep ba ban (b119c CoreServer.dll, GoldItem.txt dung 11 bo, GoldMagic co QHPP) tu KHO, ghi SHA nguon/truoc/sau; (4) restart gs001 theo cach da dung (khong dong Server D); (5) cho tick on dinh (≈0.85–1 ms) va kiem log nap GoldItem 3467-3477 + GoldMagic, KHONG loi; (6) neu loi: tra .bak-130 ngay, bao Chat; (7) xong: go cho A 1 dong de A lam PP-A3 (dang nhap atestqhhai, kiem tooltip dong thuoc tinh 11 bo, ten Ngao tuyet co dau, hinh tren nhan vat). Neu classifier chan can chu go phep: bao Chat de Chat nhac chu go vao cua so B.
+
+## #B-131 Chat 09:58 — B: CHU DA THOAT GAME (09:56), DIEU KIEN Q-111 DU. NAP NGAY THEO #B-130
+Chu "ra ngoai", da thoat game; B van kiem khong con nguoi online roi nap. Xong go cho A + Chat: "B Xong nap". Khong cho gi them.

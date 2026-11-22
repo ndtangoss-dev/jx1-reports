@@ -294,3 +294,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #387 (09:27) Chat: A dung vi hop thoai mat khau VM; tiep PP-A2, sua chep_lua_vm.ps1 khong hoi mat khau
 - #388/#B-129 (09:38) Chat: tiet kiem token Q-110 (nen 20%, vong cho im lang, doc tail)
 - #B-130 (09:55) Chat: chu duyet restart gs001 Q-111; B nap mot lan b119c + GoldItem + GoldMagic
+- #389/#B-131 (09:58) Chat: chu thoat game; B nap; A tu test PP-A3 + nhan ten phi phong canh ten nhan vat
