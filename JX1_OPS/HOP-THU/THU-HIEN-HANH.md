@@ -291,3 +291,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - 08:40 KIEM 30P: A xong M3+#375+#384+nguon Lua, dung cho chu; B chua nop #B-125/#B-126 (qua han 08:35); chu dang test vc42 + menu phi phong.
 - #385/#B-128 (08:45) Chat: LAM NGAY HE THONG PHI PHONG (chu test vc42); GO DUNG-VONG — HIEU LUC
 - #386 (09:05) Chat: A dat nen ngu canh 30% + hook do_context (chu duyet)
+- #387 (09:27) Chat: A dung vi hop thoai mat khau VM; tiep PP-A2, sua chep_lua_vm.ps1 khong hoi mat khau
