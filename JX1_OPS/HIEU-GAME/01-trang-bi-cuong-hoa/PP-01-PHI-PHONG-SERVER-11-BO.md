@@ -22,3 +22,8 @@ Giữ nguyên BANG-DONG-AN-KICH-HOAT.md: QH_PIFENG_ALL_LINES=0 = luật gốc (d
 ## CHƯA KIỂM
 - GoldItem/GoldMagic trên VM có giống bản repo không (cần SHA-256 đối chiếu khi được phép đọc VM).
 - 5 dòng thuộc tính server thực sự áp khi mặc (kháng tất cả 114 không đổi theo A: chưa rõ nguyên nhân).
+
+## Đối chiếu VM Test-36 (B-121, 22/11 07:36, chỉ đọc)
+- DA XAC MINH: `gs\Settings\item\GoldItem.txt` trên VM (5946 dòng, SHA-256 0C81979D…3EB5) TRÙNG bản `DESIGN/QH-B080-deploy/phiphong/GoldItem.txt`, KHÔNG phải bản `DU-LIEU/VAT-PHAM/item_004` ở trên (bản đó là bản gốc cũ: tên khác nhau từng bộ). Trên VM, dòng 3467–3477 cùng tên "Phi phong Lăng Vân", ảnh pifeng_01..11, nLevel 1,1,2,3,3,4,4,4,5,5,5, yêu cầu loại 36=60 + 6 mã GoldMagic của mẫu đầu; dòng 3478 là mẫu biến thể. Vẫn không có yêu cầu giới.
+- DA XAC MINH: menu `hotrotanthu.lua` (dòng 113–162) 11 lựa chọn phi phong gọi AddGoldItem(3465..3475) = dòng 3467–3477; hook `qh_bothu.lua` #376 `qhbv_pf` thêm AddGoldItem(3464+k) cùng 11 bộ (dòng 198–206).
+- CHUA KIEM: nhãn [cấp N] (phía client) và hiển thị trong game.

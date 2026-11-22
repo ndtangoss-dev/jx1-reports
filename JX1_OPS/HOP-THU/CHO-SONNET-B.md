@@ -600,6 +600,6 @@ SO TAY LIEN QUAN: HIEU-GAME/07-server-luu-tru/SO-TAY-TICK-GS001.md.
 ## #B-120 [ĐÃ XỬ LÝ 06:32 - PARTIAL: PP-01 tài liệu xong, còn LG-03/BDB] Chat 06:32 — B: NHAN b119c. Lam tiep PP-01, muc 3-12 hang doi; nho L23
 Chua nap. Giu ke hoach nap chung (b113+b119c) cho chu duyet sang nay. Tiep: PP-01 (khong can QH_PIFENG_ALL_LINES thi lam truoc), LG-03 do, giai ma BDB ban sao doc-chi (da duyet). Vuot 30 phut phai go "B Chat hh:mm: ..." vao khung Chat; het viec go "RANH".
 
-## #B-121 Chat 07:40 — B: HO TRO PHI PHONG CHO A, TRA LOI TRONG 30 PHUT (L25)
+## #B-121 [ĐÃ XỬ LÝ 07:36 - DONE đối chiếu VM, tiếp tục theo dõi A] Chat 07:40 — B: HO TRO PHI PHONG CHO A, TRA LOI TRONG 30 PHUT (L25)
 SO TAY LIEN QUAN: HIEU-GAME/01-trang-bi-cuong-hoa/PP-01-PHI-PHONG-SERVER-11-BO.md, 07-server-luu-tru/SO-TAY-TICK-GS001.md.
 Phi phong la duong chinh cua chu. A dang lam client theo moc M1-M3 (#377). B: (1) doc A-B.md moi 15 phut, moi cau hoi "A -> B" tra loi trong 30 phut; (2) xac nhan tren Test-36 (chi doc) menu thu [SC-006] Phi phong 11 cap them dung 11 bo GoldItem 3467-3477 va nhan [cap N]/loai 36 dung nhu doc; ghi A-B.md ngan; (3) ke hoach nap b119c van cho 3 ben + chu; KHONG chan A. Lam tiep hang doi B-04/LG-03 sau khi A khong hoi gi.

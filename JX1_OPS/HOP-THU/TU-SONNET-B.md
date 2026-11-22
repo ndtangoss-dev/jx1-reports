@@ -343,3 +343,6 @@ TOM TAT: #B-119 build checkpoint-b119c OK (RecoverGiveItems + printf GiveBack, g
 
 Đã đọc đến #B-120 (22/11 06:32)
 TOM TAT: PP-01 viết xong HIEU-GAME/01-trang-bi-cuong-hoa/PP-01-PHI-PHONG-SERVER-11-BO.md (đọc tĩnh). Chưa nạp gs001.
+
+Đã đọc đến #B-121 (22/11 07:36)
+TOM TAT: Đối chiếu VM chỉ-đọc: 11 phi phong = GoldItem 3467-3477 đúng, menu hotrotanthu/qh_bothu đúng. Không chặn A.
