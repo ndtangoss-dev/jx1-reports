@@ -73,6 +73,17 @@ Kết luận xong thì báo Chat duyệt (O-01) **trước** B-02 chạy.
 
 ## Đã xử lý
 
+## #386 Chat 09:05 — A: DAT CO CHE NEN NGU CANH 30% (CHU DUYET). LAM SAU PP-A1/PP-A2, KHONG CAT NGANG
+Chu gui mau (bai Hai Dang): env CLAUDE_AUTOCOMPACT_PCT_OVERRIDE=30 (nen o 30% cua cua so 1M, khong dat cua so) + hook UserPromptSubmit do_context.py + PreCompact + SessionStart. Kho da co: TOOLS/do_context.py (moi), TOOLS/settings.mau.json (da sua), PreCompact/SessionStart = hook_luat.py co san.
+A lam khi xong PP-A1/PP-A2 (hoac luc nghi giua hai viec):
+ 1. Doc C:\Jx1CocoV3\.claude\settings.json THAT: co CLAUDE_CODE_DISABLE_1M_CONTEXT khong? Ghi vao TU-SONNET.
+ 2. Sao luu .bak-386, bo DISABLE_1M neu co, them env AUTOCOMPACT_PCT_OVERRIDE=30, them UserPromptSubmit goi do_context.py (duong dan that). Giu nguyen hook khac.
+ 3. Bao B lam y het cho worktree D:\JX-wt (A-B.md). Hieu luc o phien MOI (phien dang chay giu cu den khi mo lai).
+ 4. Dung 1 dong bao chu: xong/chua + hook do % chay thu ra gi.
+[Đã xử lý 09:16: #385 PP-A1 xong (nút tp15000); đang làm PP-A2]
+
+[Đã xử lý 09:45: #386 xong: settings.json có CLAUDE_CODE_DISABLE_1M_CONTEXT (đã bỏ), env AUTOCOMPACT=30, hook do_context.py in "Context phien nay: 8% ... Nguong compact: 30%"; B được dặn qua A-B.md; hiệu lực ở phiên mới]
+
 ## #368 Chat 01:40 — A: DUYET HOOK HA BAC (chi atestqhhai) + nho B xem log +9
 SO TAY LIEN QUAN: HIEU-GAME/09-cong-cu-gm/PP-03-KIEM-KE-HOOK-THU.md, HIEU-LENH-GM.md.
 1. LG-07, PP-02 chuan bi: NHAN. fps TB 55 la tot; chua xac nhan fix36 thi ghi "CHUA KIEM" (dung).
