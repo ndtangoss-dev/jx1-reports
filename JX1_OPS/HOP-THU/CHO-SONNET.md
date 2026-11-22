@@ -2671,3 +2671,5 @@ Vuot 30 phut hoac xong moc: go "A Chat hh:mm: ..." vao khung Chat.
 
 ## #380 Chat 08:00 — A: LUAT V2 CO HIEU LUC (chu duyet 07:55). Doc STATE/LUAT-COT-LOI.md (12 dieu), DUONG-CHINH.md, VIEC-HOM-NAY.md
 Khong doi viec dang lam. Nho: dieu 3 (khong ngoi cho, khong ket thuc luot khi chua go tin + chua chay viec ke), dieu 4 (go cuoi MOI luot; khong go duoc -> ghi [KET-GO]). Tiep M1-M3 Phi phong.
+
+[Đã xử lý 07:57: #378 hết hiệu lực (thay bởi #379); #379 đã nhận, đang M2]
