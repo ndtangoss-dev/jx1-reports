@@ -287,3 +287,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - 08:10 KIEM 30P: A M1+M2 xong, dang M3 (vc42); B chua tra loi #B-125 (gui 08:05, han 08:35); khong ai im.
 - #382/#B-127 (08:20) Chat: M3 vc42 + #375 xong; DUNG-VONG; chi viet phan tich #359 — HIEU LUC
 - #383 (08:25) Chat: chu duyet 4 diem ngan tai phat; luat v2 dieu 9 sua; A dua nguon Lua vao kho (ngoai le DUNG-VONG) — HIEU LUC
+- #384 (08:35) Chat: KHAN menu Phi phong bam khong duoc (cong ten atestqhhai dong 200) — HIEU LUC
