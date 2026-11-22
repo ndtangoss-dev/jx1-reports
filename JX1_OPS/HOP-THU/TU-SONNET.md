@@ -1903,3 +1903,12 @@ Bang chung: script dep_*.ps1, k375*.ps1 trong docs-analysis/out (may A), mtime f
 Da doc den #382
 
 ## 08:20 #383 xong (A): nguon Lua vao kho JX1_OPS/LUA-TEST (qh_bothu.lua, baowubox.lua doc lai tu VM, SHA khop ban 377, PHIEN-BAN.md); script chuan JX1_OPS/TOOLS/chep_lua_vm.ps1 (SHA nguon/truoc/sau, .bak-giờ, Select-String, nhac chay lai menu sach; chi Test-36). Script chua chay thu tren VM. DUNG, cho chu. Đã đọc đến #383
+
+## 08:27 #384 gỡ cổng tên — Đã đọc đến #384
+Kho sửa trước (LUA-TEST/qh_bothu.lua), chép VM bằng chep_lua_vm.ps1: SHA nguồn = SHA sau = B7CC533E…4253C, .bak-082417, Select-String thấy hook, nạp nóng #306 báo "da nap lai qh_bothu.lua". Đã gỡ cổng ở qhbv_en9 (184), qhbv_pf (200), qhbv_lv60 (210), qhbv_en15 (217).
+Kiểm trên LD (atestqhhai, vc42): Phi phong 11/11 OK (REPORTS/376/k384_phiphong.png), +15 cho 50 món OK (k384_15.png), thủy tinh TÍM x600 OK (k384_tt.png). Nhẫn đỏ: không có mục riêng thấy trong menu này, chưa kiểm riêng.
+Bảng GetName() còn lại: | dòng | hàm | ý đồ |
+| 53 | QHBV_Book (đã return ở dòng 52, mã chết) | không ảnh hưởng |
+| 169 | qhbv_bac100 (Trừ bạc) | CỐ Ý, bảo vệ tiền |
+| 175 | qhbv_bacvc (Trả bạc) | CỐ Ý, bảo vệ tiền |
+Chưa thử bằng nhân vật khác của chủ (chỉ có atestqhhai); gỡ cổng đã xác nhận qua mã + chạy lại 3 menu.

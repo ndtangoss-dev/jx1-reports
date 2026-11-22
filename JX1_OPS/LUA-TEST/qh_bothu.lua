@@ -181,7 +181,7 @@ end
 
 -- #370: CHI atestqhhai. Dua DUNG 1 mon trong tui (mon dau tien dang +0) len +9 de thu thao tac go khoi o giua.
 function qhbv_en9()
-	if GetName() ~= "atestqhhai" then return end
+	-- #384: bo cong ten
 	for i = 0, 9 do
 		for j = 0, 9 do
 			local idx, g, d, p = FindItemEx(3, i, j)
@@ -197,7 +197,7 @@ end
 
 -- #376: CHI atestqhhai. 11 phi phong GoldItem 3465..3475 (dong 3467-3477 theo B) de thu client PP-02.
 function qhbv_pf()
-	if GetName() ~= "atestqhhai" then return end
+	-- #384: bo cong ten
 	local n = 0
 	for k = 1, 11 do
 		local idx = AddGoldItem(3464 + k)
@@ -207,14 +207,14 @@ function qhbv_pf()
 end
 
 function qhbv_lv60()
-	if GetName() ~= "atestqhhai" then return end
+	-- #384: bo cong ten
 	SetLevel(60)
 	Msg2Player("[TEST36] cap: "..GetLevel())
 end
 
 -- #377: CHI atestqhhai. Nang +15 moi mon (g==0) o phong 0 va 3 de du diem tai phu mac phi phong (Test-36 only).
 function qhbv_en15()
-	if GetName() ~= "atestqhhai" then return end
+	-- #384: bo cong ten (chu thu bang vai khac)
 	local n = 0
 	for r = 0, 3, 3 do
 		for i = 0, 9 do

@@ -6,3 +6,4 @@ Sửa: sửa file TRONG kho này, ghi dòng vào bảng dưới, rồi chép b�
 | Ngày | Mốc | Ghi chú |
 |---|---|---|
 | 22/11 | 377 | nguồn gốc: đọc lại từ VM |
+| 22/11 | 384 | gỡ cổng tên atestqhhai ở en9, pf, lv60, en15; giữ ở bac100/bacvc |
