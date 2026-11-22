@@ -297,3 +297,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #389/#B-131 (09:58) Chat: chu thoat game; B nap; A tu test PP-A3 + nhan ten phi phong canh ten nhan vat
 - #390/#B-132 (10:06) Chat: duyet huong nhan ten phi phong = danh hieu (server dat theo bo mac); uu tien nap gs001
 - #391/#B-133 (10:25) Chat: chu yeu cau do tu goc phi phong/danh hieu; cho Chat duyet truoc khi lam danh hieu
+- Q-112 (10:20) Chat: luat v2 dieu 6 them "di tu goc len" (chu dan); A/B phai ghi GOC/DU AN TAO + nguon

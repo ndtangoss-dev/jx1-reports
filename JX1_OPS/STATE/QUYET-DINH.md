@@ -265,3 +265,6 @@ Chủ: "nhanh hơn, không tốn quá nhiều token; chọn 16 hay 30 tùy ngư�
 
 ## Q-111 (22/11 09:54) Chủ duyệt restart gs001 (nạp b119c + GoldItem Phi phong 11 bộ + GoldMagic)
 Chủ gõ "Ok restart". Điều kiện thực hiện: chủ đã thoát game (Chat xác nhận bằng một dòng của chủ hoặc B kiểm không có người online); sao lưu trước; một lần nạp cho cả ba bản chờ; Server D không đụng.
+
+## Q-112 (22/11 10:20) Cách làm việc: nghĩ logic game kỹ, đi từ GỐC lên (chủ dặn)
+Chủ: không cắm đầu làm; A và B cùng xem xét logic game thật kỹ; lấy nguồn từ gốc phát triển lên, chỉ thêm vài điều kiện/tính năng theo logic gốc, không sửa ngược cả hệ thống cho hợp cái mới. Đã gộp vào điều 6 LUAT-COT-LOI (không thêm điều mới, không chồng chéo điều 6/7). Ví dụ vi phạm: phi phong (tài phú ảo, dữ liệu vá B080, danh hiệu) làm trước khi xác định gốc.
