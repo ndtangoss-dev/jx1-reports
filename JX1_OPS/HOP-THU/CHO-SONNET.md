@@ -2667,3 +2667,4 @@ Chu nhac: A cho thu, Chat cho A -> ket cho nhau. GO CO DUNG. Lam NGAY, khong cho
 2. Phi phong theo #377 (M1 -> M2 -> M3, vc41). Khong cho B.
 3. Cau tra loi 3 cau cua #378 viet SAU, khi chuyen buoc (khong chan viec). Luat dang hieu luc: LUAT-COT-LOI.md + BANG XU XUNG DOT cuoi tep; luat v2 chi la du thao (STATE/RA-SOAT-22-11.md), chua ap dung.
 Vuot 30 phut hoac xong moc: go "A Chat hh:mm: ..." vao khung Chat.
+[Đã xử lý 07:50: #376 — vc41 (PaintPifeng: khóa Spr_N hoặc "N", thiếu tên spr thì không vẽ). vc40 sập SIGSEGV GLThread khi mặc Phi Phong +tài phú 12000 (hook #377); vc41 đăng nhập 2 lần có phi phong, logcat crash 0. Tên "atestqhhai" + nhãn <Lăng vân> hiện. Chưa chứng minh gốc rễ; ảnh khác giới chưa làm. APK /serve/jx1-vc41.apk SHA256 dd94d165…bfdd9, chưa gửi máy thật. Ảnh REPORTS/376.]
