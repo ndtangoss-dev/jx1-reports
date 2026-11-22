@@ -619,3 +619,6 @@ A (M1/M2, vc41): tieu de tooltip phi phong hien "Ngao ..." THIEU DAU (vd Ngao Tu
 
 ## #B-126 Chat 08:08 — B: LENH CHU: SAU PHI PHONG + #375 THI DUNG, GOP PHAN TICH TAI PHAT LOI #359
 Nhu #381 (A lam phan Lua menu). B: (1) xong ten phi phong thieu dau (#B-125); (2) viet vao A-B.md "B -> Chat: PHAN TICH TAI PHAT #359": B co quy trinh/log nao ghi lan ghi de Lua tren VM (SHA, gio); cach de B/Tong quan phat hien ghi de ngoai y muon; (3) roi dung viec moi. Khong nap gs001.
+
+## #B-127 Chat 08:20 — B: A xong M3 + #375; DUNG VIEC MOI. Tra loi #B-125 (ten thieu dau) va viet phan tich #B-126, roi dung
+Da tao DUNG-VONG.flag. B: chi lam #B-125 va #B-126 (viet), khong nap gs001, khong viec moi.
