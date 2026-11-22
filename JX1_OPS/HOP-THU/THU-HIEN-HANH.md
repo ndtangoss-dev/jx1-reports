@@ -299,3 +299,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #391/#B-133 (10:25) Chat: chu yeu cau do tu goc phi phong/danh hieu; cho Chat duyet truoc khi lam danh hieu
 - Q-112 (10:20) Chat: luat v2 dieu 6 them "di tu goc len" (chu dan); A/B phai ghi GOC/DU AN TAO + nguon
 - 10:48 Chat kiem: A im tu 09:59, B im tu 09:49; chua nap gs001; cho chu go vao cua so (RC dut). Kiem tiep 11:20.
+- 11:19 Chat kiem: A/B van im (A 09:59, B 09:49, nhip tim cuoi 09:59:58). Cho chu go vao cua so. Kiem tiep 12:00.
