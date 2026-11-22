@@ -2648,3 +2648,11 @@ Chu thu sang 22/11 07:11: bam sach "[TEST-36] Ho tro Cuong hoa" khong duoc, gion
 ## #376 Chat 07:30 — A: KHONG CHO B NAP SERVER. LAM PP-02 CLIENT NGAY
 Chu hoi sao A cho B nap server. Loi la o Chat: LICH-CONG-VIEC dong 24 va hang doi muc 9 ghi "sau B nap" — DA SUA. Thuc te: B doc xong PP-01 (A-B.md 06:32): 11 bo phi phong da co san trong GoldItem dong 3467-3477, server KHONG co yeu cau gioi, khong can nap server moi de A lam client. Viec nap b119c/b113 la chuyen rieng, chu duyet sau.
 A lam ngay (sau khi xong #375): ten canh nhan vat, nhan [cap N], mojibake, tooltip phi phong (xem PP-02-CHUAN-BI), anh khac gioi neu can lam o client (PaintPifeng/PiFengRes theo B). Build APK, thu tren LD voi do hook san co. Khong cho tin B.
+
+## #377 Chat 07:40 — A: PHI PHONG LA DUONG CHINH. MOC GIO CU THE, KHONG CHO AI (L25)
+SO TAY LIEN QUAN: HIEU-GAME/08-giao-dien/PP-02-CHUAN-BI-PHI-PHONG-CLIENT.md, 01-trang-bi-cuong-hoa/SO-TAY-NHAN-CAP.md, 01-trang-bi-cuong-hoa/PP-01-PHI-PHONG-SERVER-11-BO.md.
+Chu rat buc: 6 tieng ma Phi phong chua xong 1 viec. Sau khi xong #375 (sach Ho tro Cuong hoa), lam LIEN TUC theo moc, moi moc ghi TU-SONNET + go "A Chat hh:mm: moc N xong" (L23):
+ M1 (<=45 phut): ten/nhan [cap N] tren phi phong dung (SO-TAY-NHAN-CAP) + het mojibake o tooltip phi phong. Chup anh LD.
+ M2 (<=45 phut): hien thi phi phong tren nhan vat (PaintPifeng/PiFengRes), kiem 11 bo bang menu thu co san ([SC-006] Phi phong 11 cap) tren Test-36; chup tung bo (it nhat bo 1, 6, 11).
+ M3 (<=30 phut): build vc41 (xoa packageDebug incremental truoc), ghi link 8091 + SHA256 vao BAO-CAO-CHU.md, go "A Xong" -> Chat bao chu test.
+Neu bi chan o moc nao: ghi ro vi sao 1 dong, lam ngay muc ke tiep (L25.3), khong dung. Khong cho B: neu can du lieu server, tra loi o A-B.md "A -> B" va B tra loi trong 30 phut; A lam phan khac trong luc cho.
