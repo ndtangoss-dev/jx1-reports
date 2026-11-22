@@ -346,3 +346,6 @@ TOM TAT: PP-01 viết xong HIEU-GAME/01-trang-bi-cuong-hoa/PP-01-PHI-PHONG-SERVE
 
 Đã đọc đến #B-121 (22/11 07:36)
 TOM TAT: Đối chiếu VM chỉ-đọc: 11 phi phong = GoldItem 3467-3477 đúng, menu hotrotanthu/qh_bothu đúng. Không chặn A.
+
+Đã đọc đến #B-122 (22/11 07:41)
+TOM TAT: Dừng ở điểm an toàn; đã ghi 3 câu rà soát quy trình vào A-B.md. Không nạp gs001.
