@@ -1915,3 +1915,5 @@ Chưa thử bằng nhân vật khác của chủ (chỉ có atestqhhai); gỡ c�
 
 ## 09:16 #385 PP-A1 xong (Đã đọc đến #385)
 Menu Hỗ trợ test có nút "[#385] Nhận 15000 điểm tài phú" (qhbv_tp15000, KHÔNG cổng tên) = chạy +15 mọi món (phòng 0,3) rồi nhắc: tài phú = 100 × tổng cấp 10 món ĐANG MẶC, mặc đủ 10 món +15 = 15000. Chép VM theo điều 9 (SHA khớp AFD28EEF…, .bak-084211), nạp nóng OK, LD bấm nút ra "+15 cho 50 món". Menu chỉ hiện 16 mục nên nút thay mục #370 en9 (hàm giữ). Chưa kiểm: mặc phi phong cấp 11 ngay sau nút (cần 10 món mặc đủ). Ghi chú: không có hàm Lua đọc tài phú, nên chưa in số tài phú thật.
+
+[A 09:45] #386 xong: bước 1 — settings.json THẬT có CLAUDE_CODE_DISABLE_1M_CONTEXT (đã bỏ); env CLAUDE_AUTOCOMPACT_PCT_OVERRIDE=30; hook UserPromptSubmit do_context.py in "Context phien nay: 8% (83.151 / 1.000.000 token). Nguong compact: 30%"; .bak-386 giữ; B dặn qua A-B.md. Đã đọc đến #387. PP-A2: vc43 chưa đạt (11 bộ vẫn [cấp 1]), vc44 vá GetGoldItemByRong đang build.
