@@ -53,3 +53,10 @@
 
 ## 7. Cách Chat vá
 (a) Không thêm luật nào nữa trước khi chủ duyệt v2; (b) sau duyệt, Chat thực hiện mục 5–6 trong một lượt có bằng chứng (kích thước tệp trước/sau); (c) mỗi 30 phút kiểm theo mục 5.6 và ghi kết quả 1 dòng; (d) báo cáo chủ ngắn: việc xong / đang làm / cần chủ, không xin lỗi dài.
+
+## 8. B tự đánh giá (A-B.md 22/11 07:41, #B-122) — ghi nhận
+- Làm đúng: khối HIỂU GAME trước #B-115/120/121; không nạp/restart gs001 khi chưa đủ ba bên; gõ B Xong/Chat sau mỗi việc.
+- Không theo: gõ nhầm cửa sổ; từng báo đã đọc game khi chưa đọc kỹ; #B-120 viết "11 bộ" từ bản cũ DU-LIEU/item_004 rồi mới đối chiếu VM ở #B-121.
+- Khó theo/xung đột: stop_guard ép gọi công cụ mỗi lượt (B trả lời rỗng, tốn lượt); `cho_thu.py` thoát mã 11 vĩnh viễn (SC-001) nên phải tự viết vòng poll; khối HIỂU GAME bắt buộc cho việc nhỏ chỉ-đọc làm nặng; "trả lời 30 phút" lệch nhịp poll 9 phút.
+- Đề xuất: stop_guard nhường khi có DUNG-VONG.flag; sửa SC-001 để cho_thu hoạt động; khối HIỂU GAME rút một dòng khi việc chỉ đọc; ghi rõ bản chuẩn (VM hay DU-LIEU) cho GoldItem/Settings; gộp A-B.md và TU-SONNET-B.md thành một kênh.
+=> Đưa vào luật v2 (mục 5/6): bản chuẩn dữ liệu = bản đang chạy trên VM; HIỂU GAME rút gọn cho việc chỉ-đọc; sửa SC-001/stop_guard thuộc Tổng quản/A (cần giao sau khi Phi phong ổn).
