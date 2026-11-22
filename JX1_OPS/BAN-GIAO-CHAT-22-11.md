@@ -33,3 +33,8 @@ VM Test-36 (192.168.56.150), gs001 tick ổn (visibility.ini Enabled=0); forward
 
 ## 8. Điều tuyệt đối không làm
 Nhập/xử lý mật khẩu, khóa API; để khóa/email vào kho (kho CÔNG KHAI); đụng Server D/Main VM; khuyên tắt Tailscale; ra lệnh A/B dừng khi chủ chưa nói; gọi "XONG" khi chưa có ảnh/số; né quyền khi hệ thống chặn (delete_trigger bị chặn, computer-use không mở được app Claude — không vòng qua). Vùng Đỏ luôn hỏi chủ: Server D bật/tắt, tiền/VPS, khóa/mật khẩu, xóa dữ liệu, APK ra máy thật ngoài lệnh chủ, Main VM.
+
+## 9. Bàn giao của A và B (12:00, đã đối chiếu)
+- A: `STATE/BAN-GIAO.md` mục "BÀN GIAO A" + `DANG-LAM.md`. Xong: PP-A1, PP-A2 (vc44), #386/#387/#388. Dở: PP-A3 — (a) có ảnh Lăng Vân, các bộ khác chụp lại sau nạp; (c) danh hiệu: mã client liên quan `KNpc.cpp ~5157` + `playertitle.txt` (đề xuất của A chờ Chat duyệt, A chưa đọc #390–#392 trước khi dừng); (d) sprite áo choàng đúng. Lưu ý: menu "Dọn hành trang" xóa cả sách; client build ở `D:\JX-build\qh9A`; LD emulator-5558 đang đăng nhập atestqhhai bản vc44; chưa commit: ảnh k384_*, BAI_HOC blind-tap.
+- B: `STATE/BAN-GIAO-B.md` mục cuối. B dừng 12:00 theo #B-134, không có việc dở, chưa nạp gs001.
+- Lỗi mạng sáng 22/11 (A, B báo "Connection refused"): do proxy hệ thống `127.0.0.1:58036` bật mà chương trình đó không chạy; chủ bỏ tick ở Internet Options → LAN settings. Nếu tái phát: kiểm lại ô này trước, chưa rõ chương trình nào đặt.
