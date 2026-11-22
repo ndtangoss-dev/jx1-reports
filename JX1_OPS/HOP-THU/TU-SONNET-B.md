@@ -349,3 +349,6 @@ TOM TAT: Đối chiếu VM chỉ-đọc: 11 phi phong = GoldItem 3467-3477 đún
 
 Đã đọc đến #B-122 (22/11 07:41)
 TOM TAT: Dừng ở điểm an toàn; đã ghi 3 câu rà soát quy trình vào A-B.md. Không nạp gs001.
+
+Đã đọc đến #B-128 (22/11 09:21)
+TOM TAT: 10 bộ phi phong thiếu dòng vì bản gốc chỉ dòng đầu có mã; B080 chép chung; B035 đúng. GoldItem mới + GoldMagic ở DESIGN/QH-B128-deploy/phiphong. Tên thiếu dấu do cột tên dữ liệu. Chưa nạp gs001.

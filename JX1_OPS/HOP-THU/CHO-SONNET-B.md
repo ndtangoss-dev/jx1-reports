@@ -607,23 +607,23 @@ Phi phong la duong chinh cua chu. A dang lam client theo moc M1-M3 (#377). B: (1
 ## #B-122 [ĐÃ XỬ LÝ 07:41 - DONE, đã dừng điểm an toàn] Chat 07:50 — B: CHU RA LENH DUNG TAT CA (22/11 07:40) DE RA SOAT QUY TRINH. DUNG O DIEM AN TOAN
 Nhu #378. Chat da tao STATE/DUNG-VONG.flag. B: hoan tat buoc dang lam o diem an toan, KHONG nap gs001, KHONG viec moi. Ghi A-B.md (khong gui chu) 3 cau: (1) B da lam gi cho dung L21/L22/L23 va cho nao B KHONG theo (go nham cua so, bao chua doc game...); (2) luat nao kho theo/xung dot; (3) de xuat bo/gop cai gi.
 
-## #B-123 Chat 07:55 — B: CHAY LAI NGAY. THAY #B-122
+## #B-123 [ĐÃ XỬ LÝ 09:21 - DONE] Chat 07:55 — B: CHAY LAI NGAY. THAY #B-122
 Go co dung. B lam tiep: ho tro A Phi phong (tra loi A-B.md trong 30 phut), roi hang doi B-04/LG-03 (khong nap gs001 khi chua 3 ben + phep chu). 3 cau cua #B-122 viet sau, khong chan viec.
 
-## #B-124 Chat 08:00 — B: LUAT V2 CO HIEU LUC. Doc STATE/LUAT-COT-LOI.md, DUONG-CHINH.md, VIEC-HOM-NAY.md
+## #B-124 [ĐÃ XỬ LÝ 09:21 - DONE] Chat 08:00 — B: LUAT V2 CO HIEU LUC. Doc STATE/LUAT-COT-LOI.md, DUONG-CHINH.md, VIEC-HOM-NAY.md
 De xuat cua B (07:41) da vao luat: ban du lieu chuan = ban VM (dieu 6), HIEU GAME rut 1 dong cho viec chi-doc, bao cao trong A-B.md. Tiep ho tro A Phi phong. stop_guard/SC-001: sau Phi phong se giao.
 
-## #B-125 Chat 08:05 — B: A HOI VE TEN PHI PHONG THIEU DAU (tra loi A-B.md trong 30 phut)
+## #B-125 [ĐÃ XỬ LÝ 09:21 - DONE] Chat 08:05 — B: A HOI VE TEN PHI PHONG THIEU DAU (tra loi A-B.md trong 30 phut)
 SO TAY LIEN QUAN: HIEU-GAME/01-trang-bi-cuong-hoa/SO-TAY-NHAN-CAP.md, PP-01-PHI-PHONG-SERVER-11-BO.md.
 A (M1/M2, vc41): tieu de tooltip phi phong hien "Ngao ..." THIEU DAU (vd Ngao Tuyet). Kiem tren VM (chi doc): ten trong GoldItem/ItemName/bang ten dang ma nao (TCVN3/Viet cu hay khong dau trong du lieu goc); xem co phai du lieu ten that su khong dau hay client hien sai. Tra loi A-B.md 1-2 dong: nguon ten + de xuat (sua du lieu hay client). Khong sua/nap gs001.
 
-## #B-126 Chat 08:08 — B: LENH CHU: SAU PHI PHONG + #375 THI DUNG, GOP PHAN TICH TAI PHAT LOI #359
+## #B-126 [ĐÃ XỬ LÝ 09:21 - DONE] Chat 08:08 — B: LENH CHU: SAU PHI PHONG + #375 THI DUNG, GOP PHAN TICH TAI PHAT LOI #359
 Nhu #381 (A lam phan Lua menu). B: (1) xong ten phi phong thieu dau (#B-125); (2) viet vao A-B.md "B -> Chat: PHAN TICH TAI PHAT #359": B co quy trinh/log nao ghi lan ghi de Lua tren VM (SHA, gio); cach de B/Tong quan phat hien ghi de ngoai y muon; (3) roi dung viec moi. Khong nap gs001.
 
-## #B-127 Chat 08:20 — B: A xong M3 + #375; DUNG VIEC MOI. Tra loi #B-125 (ten thieu dau) va viet phan tich #B-126, roi dung
+## #B-127 [ĐÃ XỬ LÝ 09:21 - DONE] Chat 08:20 — B: A xong M3 + #375; DUNG VIEC MOI. Tra loi #B-125 (ten thieu dau) va viet phan tich #B-126, roi dung
 Da tao DUNG-VONG.flag. B: chi lam #B-125 va #B-126 (viet), khong nap gs001, khong viec moi.
 
-## #B-128 Chat 08:45 — B: LAM NGAY DU LIEU PHI PHONG. DA GO DUNG-VONG
+## #B-128 [ĐÃ XỬ LÝ 09:21 - PARTIAL: file + ke hoach xong, cho nap] Chat 08:45 — B: LAM NGAY DU LIEU PHI PHONG. DA GO DUNG-VONG
 SO TAY LIEN QUAN: HIEU-GAME/01-trang-bi-cuong-hoa/PP-01-PHI-PHONG-SERVER-11-BO.md, SO-TAY-NHAN-CAP.md, 07-server-luu-tru/SO-TAY-TICK-GS001.md.
 Chu test vc42 08:37 (xem #385 va STATE/DUONG-CHINH.md): chi Lang Van co dong thuoc tinh, 10 bo con lai khong co; tat ca [cap 1]; "Ngao tuyet" thieu dau; can cach cong 15000 diem tai phu.
 B lam NGAY:
