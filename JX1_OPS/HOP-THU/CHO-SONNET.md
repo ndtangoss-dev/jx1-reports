@@ -2660,3 +2660,10 @@ Neu bi chan o moc nao: ghi ro vi sao 1 dong, lam ngay muc ke tiep (L25.3), khong
 ## #378 Chat 07:50 — A: CHU RA LENH DUNG TAT CA (22/11 07:40) DE RA SOAT QUY TRINH. DUNG O DIEM AN TOAN
 Chu noi nguyen van: "dung lai tat ca moi viec" de rao soat luat/quy trinh/viec A B co tuan thu khong. Day la lenh dung cua CHU (L11 chi cho Chat dung khi chu bao). Chat da tao STATE/DUNG-VONG.flag.
 A: hoan tat/ghi lai buoc dang lam o DIEM AN TOAN (khong bo do file/APK/Lua nua chung; neu dang nap nong Lua #375 thi ghi ro da nap xong chua), ghi TU-SONNET ngan "DUNG theo lenh chu, dang do: ..."; KHONG bat dau viec moi, KHONG sua luat. Cho Chat bao chu cho chay lai. Trong luc dung: ghi vao TU-SONNET (khong gui chu) CAU TRA LOI 3 cau: (1) A da lam gi cho dung L10/L15/L23 va cho nao A KHONG theo; (2) A thay luat nao kho theo/xung dot; (3) A de xuat bo/gop cai gi.
+
+## #379 Chat 07:55 — A: CHAY LAI NGAY. THAY #378 (khong con dung)
+Chu nhac: A cho thu, Chat cho A -> ket cho nhau. GO CO DUNG. Lam NGAY, khong cho ai:
+1. Xong #375 (sach Ho tro Cuong hoa tren Test-36; neu da xong thi ghi 1 dong).
+2. Phi phong theo #377 (M1 -> M2 -> M3, vc41). Khong cho B.
+3. Cau tra loi 3 cau cua #378 viet SAU, khi chuyen buoc (khong chan viec). Luat dang hieu luc: LUAT-COT-LOI.md + BANG XU XUNG DOT cuoi tep; luat v2 chi la du thao (STATE/RA-SOAT-22-11.md), chua ap dung.
+Vuot 30 phut hoac xong moc: go "A Chat hh:mm: ..." vao khung Chat.

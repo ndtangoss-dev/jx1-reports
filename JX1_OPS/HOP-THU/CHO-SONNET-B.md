@@ -606,3 +606,6 @@ Phi phong la duong chinh cua chu. A dang lam client theo moc M1-M3 (#377). B: (1
 
 ## #B-122 [ĐÃ XỬ LÝ 07:41 - DONE, đã dừng điểm an toàn] Chat 07:50 — B: CHU RA LENH DUNG TAT CA (22/11 07:40) DE RA SOAT QUY TRINH. DUNG O DIEM AN TOAN
 Nhu #378. Chat da tao STATE/DUNG-VONG.flag. B: hoan tat buoc dang lam o diem an toan, KHONG nap gs001, KHONG viec moi. Ghi A-B.md (khong gui chu) 3 cau: (1) B da lam gi cho dung L21/L22/L23 va cho nao B KHONG theo (go nham cua so, bao chua doc game...); (2) luat nao kho theo/xung dot; (3) de xuat bo/gop cai gi.
+
+## #B-123 Chat 07:55 — B: CHAY LAI NGAY. THAY #B-122
+Go co dung. B lam tiep: ho tro A Phi phong (tra loi A-B.md trong 30 phut), roi hang doi B-04/LG-03 (khong nap gs001 khi chua 3 ben + phep chu). 3 cau cua #B-122 viet sau, khong chan viec.
