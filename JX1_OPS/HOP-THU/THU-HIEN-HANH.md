@@ -284,3 +284,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #B-125 (08:05) Chat: hoi B ten phi phong thieu dau (A M1+M2 xong, vc41) — HIEU LUC
 - 08:05 KIEM 30P: A M1+M2 xong (vc41 LD OK, crash 0), dang M3 vc42; B tra loi A; khong ai im.
 - #381/#B-126 (08:08) Chat: lenh chu sau Phi phong+#375 thi DUNG, phan tich tai phat #359 — HIEU LUC
+- 08:10 KIEM 30P: A M1+M2 xong, dang M3 (vc42); B chua tra loi #B-125 (gui 08:05, han 08:35); khong ai im.
