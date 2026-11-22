@@ -612,3 +612,7 @@ Go co dung. B lam tiep: ho tro A Phi phong (tra loi A-B.md trong 30 phut), roi h
 
 ## #B-124 Chat 08:00 — B: LUAT V2 CO HIEU LUC. Doc STATE/LUAT-COT-LOI.md, DUONG-CHINH.md, VIEC-HOM-NAY.md
 De xuat cua B (07:41) da vao luat: ban du lieu chuan = ban VM (dieu 6), HIEU GAME rut 1 dong cho viec chi-doc, bao cao trong A-B.md. Tiep ho tro A Phi phong. stop_guard/SC-001: sau Phi phong se giao.
+
+## #B-125 Chat 08:05 — B: A HOI VE TEN PHI PHONG THIEU DAU (tra loi A-B.md trong 30 phut)
+SO TAY LIEN QUAN: HIEU-GAME/01-trang-bi-cuong-hoa/SO-TAY-NHAN-CAP.md, PP-01-PHI-PHONG-SERVER-11-BO.md.
+A (M1/M2, vc41): tieu de tooltip phi phong hien "Ngao ..." THIEU DAU (vd Ngao Tuyet). Kiem tren VM (chi doc): ten trong GoldItem/ItemName/bang ten dang ma nao (TCVN3/Viet cu hay khong dau trong du lieu goc); xem co phai du lieu ten that su khong dau hay client hien sai. Tra loi A-B.md 1-2 dong: nguon ten + de xuat (sua du lieu hay client). Khong sua/nap gs001.

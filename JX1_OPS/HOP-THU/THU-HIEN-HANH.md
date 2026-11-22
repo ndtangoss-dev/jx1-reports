@@ -281,3 +281,5 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #378/#B-122 (07:50) Chat: CHU RA LENH DUNG TAT CA de ra soat; DUNG-VONG.flag — HIEU LUC
 - #379/#B-123 (07:55) Chat: GO DUNG-VONG, chay lai Phi phong; THAY #378/#B-122 — HIEU LUC
 - #380/#B-124 (08:00) Chat: LUAT V2 co hieu luc (chu duyet 07:55) — HIEU LUC
+- #B-125 (08:05) Chat: hoi B ten phi phong thieu dau (A M1+M2 xong, vc41) — HIEU LUC
+- 08:05 KIEM 30P: A M1+M2 xong (vc41 LD OK, crash 0), dang M3 vc42; B tra loi A; khong ai im.
