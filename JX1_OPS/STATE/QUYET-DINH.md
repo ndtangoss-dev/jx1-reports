@@ -262,3 +262,6 @@ Chu noi "Ta test roi. Ok" (Chat hieu: vc38 Cuong hoa dat). Theo Q-107 chuyen san
 
 ## Q-110 (22/11 09:38) Tiết kiệm token, chủ duyệt: nén ở 20% (thay 30% của Q-109), vòng chờ im lặng, đọc thư theo phần mới
 Chủ: "nhanh hơn, không tốn quá nhiều token; chọn 16 hay 30 tùy ngươi". Chat chọn 20% (~200k): ngang mức cũ nhưng nén sớm, êm; nén dày hơn 16% thì tốn công đọc lại bàn giao. Đã gộp vào điều 3 LUAT-COT-LOI (không thêm điều mới). Việc cất thư cũ (file 400–500 KB) làm sau Phi phong.
+
+## Q-111 (22/11 09:54) Chủ duyệt restart gs001 (nạp b119c + GoldItem Phi phong 11 bộ + GoldMagic)
+Chủ gõ "Ok restart". Điều kiện thực hiện: chủ đã thoát game (Chat xác nhận bằng một dòng của chủ hoặc B kiểm không có người online); sao lưu trước; một lần nạp cho cả ba bản chờ; Server D không đụng.

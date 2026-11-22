@@ -293,3 +293,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #386 (09:05) Chat: A dat nen ngu canh 30% + hook do_context (chu duyet)
 - #387 (09:27) Chat: A dung vi hop thoai mat khau VM; tiep PP-A2, sua chep_lua_vm.ps1 khong hoi mat khau
 - #388/#B-129 (09:38) Chat: tiet kiem token Q-110 (nen 20%, vong cho im lang, doc tail)
+- #B-130 (09:55) Chat: chu duyet restart gs001 Q-111; B nap mot lan b119c + GoldItem + GoldMagic
