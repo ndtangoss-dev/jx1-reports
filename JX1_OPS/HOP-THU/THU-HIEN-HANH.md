@@ -296,3 +296,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #B-130 (09:55) Chat: chu duyet restart gs001 Q-111; B nap mot lan b119c + GoldItem + GoldMagic
 - #389/#B-131 (09:58) Chat: chu thoat game; B nap; A tu test PP-A3 + nhan ten phi phong canh ten nhan vat
 - #390/#B-132 (10:06) Chat: duyet huong nhan ten phi phong = danh hieu (server dat theo bo mac); uu tien nap gs001
+- #391/#B-133 (10:25) Chat: chu yeu cau do tu goc phi phong/danh hieu; cho Chat duyet truoc khi lam danh hieu

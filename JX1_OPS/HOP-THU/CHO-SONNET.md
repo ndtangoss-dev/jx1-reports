@@ -5457,3 +5457,12 @@ PP-A3 gom: (a) kiem tooltip DU dong thuoc tinh 11 bo; (b) ten "Ngao tuyet" co da
 
 ## #390 Chat 10:06 — A: DUYET HUONG (c): NHAN <TEN BO> = DANH HIEU (playertitle.txt), SERVER DAT THEO BO MAC
 Duyet de xuat A-B 10:50, kem rang buoc: (1) uu tien hook mac/thao do (B tra loi co hay khong); KHONG vong quet nhieu nguoi choi moi tick (gs001 tung lag, tick phai giu ~1 ms); neu bat buoc quet thi >=1 giay/lan va chi nguoi co phi phong; (2) 11 dong title moi dung dai ID trong, khong de len danh hieu co san (A kiem playertitle.txt, ghi dai chon vao TU-SONNET); mau xanh la nhu anh chu; (3) chi Test-36, Server D khong dung; (4) thao phi phong -> go title; doi bo -> title doi; dang nhap lai voi bo dang mac -> title dung; (5) A lo client (playertitle.txt + vc45); B lo server (playertitle.txt + Lua/hook). Khi du, A gui B danh sach dong de B nap CHUNG voi dot dang nap (neu B chua restart) hoac mot lan restart nua (chu da duyet kieu nap nay, bao Chat truoc khi restart lan hai). Chup bang chung tung bo (mac -> nhan, doi -> doi, thao -> mat) vao REPORTS/389.
+
+## #391 Chat 10:25 — A: CHU YEU CAU DO TU GOC. DUNG LAM HUONG (c) NHU #390 CHO DEN KHI TRA LOI CAU HOI GOC
+Chu: danh hieu LUON GAN CUNG phi phong (logic goc); chinh sua phai di TU GOC len, them it dieu kien/tinh nang theo logic goc, khong sua nguoc he thong cho hop cai moi tao. Chat tra thu: dieu kien tai phu 6000..15000 + diem ao 100×cap cuong hoa la CUA DU AN (QH-B035/B039), khong phai goc (H-08:144 khong co "du X tai phu duoc phi phong cap Y"). GoldItem 11 bo + anh pifeng_01..11 + nLevel la GOC; GoldMagic goc chi dong dau co ma, 10 dong sau trong.
+A tra loi trong 30' (doc MA GOC client truoc, ghi file:dong; chua doc = "CHUA KIEM"), ghi REPORTS/391-GOC-PHI-PHONG.md:
+ 1. Client goc: ten/nhan danh hieu ben ten nhan vat lay tu dau (KPlayer/NormalSync/playertitle.txt)? Phi phong goc (GoldItem DetailType 12) CO truong nao gan voi danh hieu khong (cot GoldItem, GoldMagic, hoac hang so/ham)? Co the id danh hieu = id phi phong theo quy tac goc.
+ 2. Danh sach moi thu A da THEM/SUA ve phi phong tu 21/11 (menu Lua, GoldItem ten, nLevel, tooltip, nhan [cap N], tai phu) -> moi muc ghi "GOC" hay "DU AN TAO", file, ban chay.
+ 3. Co muc nao A sua de hop voi cai moi tao (dung tren cai goc)? Liet ke.
+ 4. Nguon A lay phi phong de sua: file nao/commit nao (ban goc jxbase/B035/B080), SHA.
+Sau do Chat duyet huong. KHONG build vc45 cho danh hieu truoc khi Chat duyet.
