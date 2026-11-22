@@ -52,7 +52,7 @@ Thứ tự theo lịch (Q-107: cường hóa trước, phi phong sau). Làm từ
 
 ## Nạp thêm 22/11 01:50 (Chat, đủ ≥10 việc mở)
 | 8 | PP-02 | Đọc client phi phong: slot phi phong, mantle/ảnh theo giới, tooltip [cấp N]; ghi kế hoạch sửa UI/hiển thị | đọc tĩnh + sổ tay |
-| 9 | PP-02 | Làm cửa sổ/hiển thị Phi phong theo kế hoạch (worktree riêng, khóa LD/APK theo LICH-CONG-VIEC) | sau B có PP-01 |
+| 9 | PP-02 | Làm cửa sổ/hiển thị Phi phong theo kế hoạch (worktree riêng, khóa LD/APK theo LICH-CONG-VIEC) | KHÔNG chờ B (Chat 22/11 07:30): làm ngay; server hiện đã đủ dữ liệu 11 bộ, không cần nạp mới để A làm client |
 | 10 | CH-03 | Lỗi mất áo +9 khi gỡ khỏi ô giữa: tìm nguyên nhân (log B-116), sửa nếu là lỗi client | #366/#368 |
 | 11 | CH-03 | Ảnh e (thiếu bạc) bằng hook trừ bạc atestqhhai, hoàn bạc 8 Ức 3400 Vạn | #368 |
 | 12 | HG | Cập nhật sổ tay 08-giao-dien bằng cơ chế vc38 (giữ trang bị ở giữa) | cộng dồn L20.4 |

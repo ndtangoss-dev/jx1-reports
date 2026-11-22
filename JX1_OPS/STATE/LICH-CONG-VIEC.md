@@ -21,7 +21,7 @@
 | Ai | Việc | Chạm gs001? |
 |---|---|---|
 | B | SC-006 server phi phong: 11 bộ theo giới (mantle.txt/GoldItem), nạp bản đúng, đo (khung giờ riêng, A không online) | có (nạp, restart) |
-| A | client phi phong: tên cạnh nhân vật (PaintPifeng), nhãn [cấp N] (SO-TAY-NHAN-CAP), mojibake, tooltip; chạy sau khi B nạp xong hoặc song song nếu chỉ build APK | đăng nhập khi test |
+| A | client phi phong: tên cạnh nhân vật (PaintPifeng), nhãn [cấp N] (SO-TAY-NHAN-CAP), mojibake, tooltip; KHÔNG CHỜ B: làm ngay (client + build APK không cần server nạp); chỉ test trên LD khi gs001 sẵn (22/11 Chat sửa) | đăng nhập khi test |
 | Chủ | test phi phong | |
 
 ## Việc nền / sau
