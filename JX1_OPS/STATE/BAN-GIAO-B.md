@@ -48,3 +48,11 @@ Dùng `python -I JX1_OPS/TOOLS/dong_bo.py --push` trong worktree của mình (co
 ## Điểm lưu 21/11 10:30 (/ket-thuc-ca, #B-085)
 - Đã đọc đến #B-085. Không việc dở trong worktree docs. Mã nguồn: D:\JX-wt\SC-006B (sc-006b, build 13 HEAD b669567, chưa nạp, không đẩy).
 - Bước tiếp khi bật lại: (1) kiểm gs001 đã lên (cần 7-10 phút) trước khi bảo chủ test; (2) QH-B080 chỉ nạp khi Chat báo NẠP (DESIGN/QH-B080-deploy/HUONG-DAN-A.md); (3) #B-083 chờ A gửi dòng SvrFPS/tick; (4) dọn hook test trước server thật; (5) SC-006 giữ PARTIAL.
+
+## BAN GIAO 22/11 (B dung theo chu 11:49 / #B-134, co DUNG-VONG.flag)
+- Da doc den #B-134. B DUNG. KHONG nap gs001, KHONG chep VM, KHONG build tu luc nhan lenh dung. Khong co buoc nguy hiem dang do: B CHUA nap #B-130/#B-131 (lenh vm_chay gs-info luc 09:5x bi qua gio 200s, khong chay tiep; bkakmz8ac da dung). Tinh trang VM Test-36 la CHUA KIEM LAI sau do (lan doc truoc: GoldMagic VM 3821 dong, khong QHPP).
+- XONG: PP-B1 (#B-128) - GoldItem+GoldMagic dung o DESIGN/QH-B128-deploy/phiphong (SHA dbd525b8.., e676190a..), ly do 10 bo mat dong thuoc tinh (HIEU-GAME/01-trang-bi-cuong-hoa/PP-01-PHI-PHONG-SERVER-11-BO.md muc PP-B1). Tra loi #B-125/126, A (SetTestWealth 15000, nLevel client), #386.
+- #B-129: 2/3 xong; sua .claude/settings.json BI HE THONG CHAN, cho chu tu sua (mau TOOLS/settings.mau.json).
+- KHI CHU NOI "QUAY LAI" (Chat xoa DUNG-VONG.flag + gui thu): lam #B-130/#B-131 theo thu tu: (1) kiem khong nguoi online; (2) backup tren VM CoreServer.dll/GoldItem.txt/GoldMagic.txt + SHA -> *.bak-130; (3) chep b119c CoreServer.dll + GoldItem + GoldMagic tu KHO (ghi SHA nguon/truoc/sau; tim file b119c: JX1_OPS/DESIGN va checkpoint SC-006B, CHUA XAC DINH vi tri); (4) restart gs001 bang JX-ChainUp (cho 8-10 phut nap map); (5) doc log nap GoldItem 3467-3477, tick ~0.85-1 ms; (6) loi thi tra .bak-130; (7) bao A lam PP-A3, go "B Xong nap" vao Chat. Luu y vm_chay.py goi dung timeout 240s: dung lenh nhe, chay nen.
+- Chua gui tin "B Xong" vao khung Chat (Chrome extension mat ket noi). Doc #B-132 (nhan <TEN BO> canh ten) va #B-133 (tra loi cau hoi goc sau khi nap) khi quay lai.
+- Con lai: SC-001 dong XONG-CHO-GOP cu lam cho_thu.py thoat 11 (dung JX1_SONNET=Z tam). File cuc bo khong commit: samp*_raw.txt, build_b1*.txt, *.bak-b*, shortcut .lnk.

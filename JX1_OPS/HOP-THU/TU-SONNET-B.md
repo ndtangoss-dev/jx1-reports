@@ -354,3 +354,5 @@ TOM TAT: Dừng ở điểm an toàn; đã ghi 3 câu rà soát quy trình vào 
 TOM TAT: 10 bộ phi phong thiếu dòng vì bản gốc chỉ dòng đầu có mã; B080 chép chung; B035 đúng. GoldItem mới + GoldMagic ở DESIGN/QH-B128-deploy/phiphong. Tên thiếu dấu do cột tên dữ liệu. Chưa nạp gs001.
 
 ## B 22/11 09:45 - #B-129: (2) vong cho im lang: DA AP DUNG. (3) doc thu theo phan moi: DA AP DUNG. (1) sua .claude/settings.json (bo DISABLE_1M, nen 20%, hook do_context.py) BI HE THONG CHAN (khong cho thuoc ha tu sua cau hinh Claude Code) - cho chu tu sua hoac cap quyen; mau o JX1_OPS/TOOLS/settings.mau.json.
+
+B DUNG theo chu 11:52 (#B-134): viec do dang: khong co (chua nap gs001 #B-130/131). Ban giao o STATE/BAN-GIAO-B.md muc cuoi.
