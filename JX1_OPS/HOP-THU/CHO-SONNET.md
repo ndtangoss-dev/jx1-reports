@@ -2656,3 +2656,7 @@ Chu rat buc: 6 tieng ma Phi phong chua xong 1 viec. Sau khi xong #375 (sach Ho t
  M2 (<=45 phut): hien thi phi phong tren nhan vat (PaintPifeng/PiFengRes), kiem 11 bo bang menu thu co san ([SC-006] Phi phong 11 cap) tren Test-36; chup tung bo (it nhat bo 1, 6, 11).
  M3 (<=30 phut): build vc41 (xoa packageDebug incremental truoc), ghi link 8091 + SHA256 vao BAO-CAO-CHU.md, go "A Xong" -> Chat bao chu test.
 Neu bi chan o moc nao: ghi ro vi sao 1 dong, lam ngay muc ke tiep (L25.3), khong dung. Khong cho B: neu can du lieu server, tra loi o A-B.md "A -> B" va B tra loi trong 30 phut; A lam phan khac trong luc cho.
+
+## #378 Chat 07:50 — A: CHU RA LENH DUNG TAT CA (22/11 07:40) DE RA SOAT QUY TRINH. DUNG O DIEM AN TOAN
+Chu noi nguyen van: "dung lai tat ca moi viec" de rao soat luat/quy trinh/viec A B co tuan thu khong. Day la lenh dung cua CHU (L11 chi cho Chat dung khi chu bao). Chat da tao STATE/DUNG-VONG.flag.
+A: hoan tat/ghi lai buoc dang lam o DIEM AN TOAN (khong bo do file/APK/Lua nua chung; neu dang nap nong Lua #375 thi ghi ro da nap xong chua), ghi TU-SONNET ngan "DUNG theo lenh chu, dang do: ..."; KHONG bat dau viec moi, KHONG sua luat. Cho Chat bao chu cho chay lai. Trong luc dung: ghi vao TU-SONNET (khong gui chu) CAU TRA LOI 3 cau: (1) A da lam gi cho dung L10/L15/L23 va cho nao A KHONG theo; (2) A thay luat nao kho theo/xung dot; (3) A de xuat bo/gop cai gi.
