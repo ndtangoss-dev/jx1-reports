@@ -2703,3 +2703,11 @@ A lam NGAY, ghi moi muc xong vao TU-SONNET + go "A Chat" (xem STATE/DUONG-CHINH.
  PP-A2 (<=45'): nhan [cap N] dung theo nLevel GoldItem (1,1,2,3,3,4,4,4,5,5,5) — hien tat ca la [cap 1]: tim client doc nLevel sai/da luu 1; sua; kiem tren LD tu bo 1 den 11.
  PP-A3 (sau B-128): kiem tooltip du dong thuoc tinh + hinh phi phong tren nhan vat.
 Khong hoi Chat truoc khi lam; cac viec phu khac (3 cau #378, ...) de sau.
+
+## #386 Chat 09:05 — A: DAT CO CHE NEN NGU CANH 30% (CHU DUYET). LAM SAU PP-A1/PP-A2, KHONG CAT NGANG
+Chu gui mau (bai Hai Dang): env CLAUDE_AUTOCOMPACT_PCT_OVERRIDE=30 (nen o 30% cua cua so 1M, khong dat cua so) + hook UserPromptSubmit do_context.py + PreCompact + SessionStart. Kho da co: TOOLS/do_context.py (moi), TOOLS/settings.mau.json (da sua), PreCompact/SessionStart = hook_luat.py co san.
+A lam khi xong PP-A1/PP-A2 (hoac luc nghi giua hai viec):
+ 1. Doc C:\Jx1CocoV3\.claude\settings.json THAT: co CLAUDE_CODE_DISABLE_1M_CONTEXT khong? Ghi vao TU-SONNET.
+ 2. Sao luu .bak-386, bo DISABLE_1M neu co, them env AUTOCOMPACT_PCT_OVERRIDE=30, them UserPromptSubmit goi do_context.py (duong dan that). Giu nguyen hook khac.
+ 3. Bao B lam y het cho worktree D:\JX-wt (A-B.md). Hieu luc o phien MOI (phien dang chay giu cu den khi mo lai).
+ 4. Dung 1 dong bao chu: xong/chua + hook do % chay thu ra gi.
