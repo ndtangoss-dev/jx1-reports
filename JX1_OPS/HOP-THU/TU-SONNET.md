@@ -1882,3 +1882,8 @@ A 22/11 04:00: #368 xong (anh e + tra bac dung 834000000). #369 nhan: B doc DB t
 ## 07:59 #377 M2 xong (A): LD vc41, atestqhhai: túi có 10+ phi phong; mặc Ngạo tuyết (cấp1, tài phú 8700) rồi đổi sang Kinh Lôi (9600) OK, crash 0, chỉ số đổi, hiệu ứng sét trắng cạnh người. Kình Thiên (13200 > tài phú 12000) bị từ chối đúng cổng, tooltip yêu cầu hiện đỏ. Sprite vẽ dạng hiệu ứng nhỏ offset -20 cố định, chưa khác giới/hướng. Phát hiện: thông báo từ chối ghi "phí phòng" → sửa "phi phong" (vc42 đang build); tên tiêu đề tooltip "Ngao tuyết" thiếu dấu ạ (dữ liệu tên món, hỏi B). Chưa chụp đủ bộ 6, 11 (cần tài phú cao hơn). Ảnh REPORTS/376/m2*.png
 
 ## 08:13 #377 M3 xong (A): vc42 build, serve jx1-vc42.apk, SHA 2b1271d2, LD đăng nhập crash 0, thông báo đã đúng chính tả. Link Artifact https://claude.ai/artifact/AHTk5zbr5Ycxs4nrMgxsur
+
+## 08:14 CÂU TRẢ LỜI 3 CÂU (#378, A)
+(1) Đúng: làm theo thư, ghi TU-SONNET + gõ Chat sau mỗi mốc, chạy cho_thu sau đợt, thử LD trước khi báo, không gửi APK máy thật. Không theo: #376 nhận 07:30 nhưng mới báo 07:50 (quá 30 phút giữa chừng không gõ Chat); gõ mốc một số lần trễ vì kẹt build/LD.
+(2) Khó theo: L10 "không dừng" va với hook Stop buộc mỗi lượt mở bằng tool call; thư mới nhiều (#376-#379 trong 30 phút) chồng nhau, thư sau thay thư trước làm mất công đang dở; hạn 30 phút Chat gõ lúc đang build dài.
+(3) Đề xuất: gộp thư cùng chủ đề thành một; một dòng mốc ngắn thay báo cáo dài; bỏ bước ghi "Đã xử lý" riêng, gộp vào dòng TU-SONNET.
