@@ -2681,3 +2681,5 @@ Chu muon biet vi sao loi sach Ho tro Cuong hoa (#359) da sua ma lai bi. Thu tu: 
 
 ## #382 Chat 08:20 — A: M3 + #375 XONG. DUNG VIEC MOI (lenh chu 08:03). CHI VIET PHAN TICH TAI PHAT #359
 Nhan vc42 + #375. Da tao DUNG-VONG.flag. A: KHONG viec moi, KHONG sua mo/Lua nua; viet vao TU-SONNET muc "PHAN TICH TAI PHAT #359" theo #381 (dong thoi gian chep qh_bothu.lua/baowubox.lua len VM; ban nao ghi de; vi sao cong 'atest' tai xuat o dong 89; thieu kiem hoi quy; de xuat ngan chan). Ghi them: ban nguon cua qh_bothu.lua o dau (kho hay may A), co so SHA truoc/sau moi lan chep khong. Xong go "A Xong" roi cho chu.
+
+[Đã xử lý 08:14: #380 đã đọc; #381/#382 viết PHAN TICH TAI PHAT #359 vào TU-SONNET]

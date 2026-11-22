@@ -1887,3 +1887,17 @@ A 22/11 04:00: #368 xong (anh e + tra bac dung 834000000). #369 nhan: B doc DB t
 (1) Đúng: làm theo thư, ghi TU-SONNET + gõ Chat sau mỗi mốc, chạy cho_thu sau đợt, thử LD trước khi báo, không gửi APK máy thật. Không theo: #376 nhận 07:30 nhưng mới báo 07:50 (quá 30 phút giữa chừng không gõ Chat); gõ mốc một số lần trễ vì kẹt build/LD.
 (2) Khó theo: L10 "không dừng" va với hook Stop buộc mỗi lượt mở bằng tool call; thư mới nhiều (#376-#379 trong 30 phút) chồng nhau, thư sau thay thư trước làm mất công đang dở; hạn 30 phút Chat gõ lúc đang build dài.
 (3) Đề xuất: gộp thư cùng chủ đề thành một; một dòng mốc ngắn thay báo cáo dài; bỏ bước ghi "Đã xử lý" riêng, gộp vào dòng TU-SONNET.
+
+## 08:14 PHAN TICH TAI PHAT #359 (A) — theo #381/#382
+Bang chung: script dep_*.ps1, k375*.ps1 trong docs-analysis/out (may A), mtime file, SHA ngan. Chua doc lai nhat ky VM, nen "chua kiem" ghi ro.
+1. Dong thoi gian chep Lua len VM Test-36 (nguon = docs-analysis/out/qh_bothu.lua tren MAY A, KHONG o kho jx1-ops; file nay chua duoc git theo doi):
+ - 20/11 12:40 dep_bothu.ps1: chep qh_bothu.lua, .bak-q99, restart gs001. Khong doc lai SHA sau chep.
+ - 21/11 16:44 dep_b080.ps1: chep qianghua.lua + GoldItem.txt tu kho (QH-B080-deploy); co SHA truoc/sau, .bak-a-b080. Day la lan duy nhat dung chuan.
+ - 21/11 17:52 qh_bothu.moivai.lua (ban co menu moi +1/+6; SHA 4500374e).
+ - 22/11 02:42 dep_368.ps1 (#368): chep qh_bothu.lua tu may A, KHONG .bak, KHONG SHA, KHONG doc lai. Ban nay (SHA d38e6fed, = vm375) la ban A sua o may A luc 03:42 theo mtime, khong co 'bo cong atest' trong qhbv_menu (dong 53 con 'strsub(GetName(),1,5) ~= "atest"').
+ - 22/11 07:13 k375d (#375): chep ban 375 co .bak-375, chi sua qhbv_menu_book; 07:28 k376 va 07:30 k377 chep tiep (.bak-377).
+2. Vi sao loi cu quay lai: sach goi qhbv_menu_book -> qhbv_menu (nguon chi bo cong 'atest' o ham book tu #375; truoc do cong con). Moi lan chep tu mot ban nguon tren may A, ban nao A sua sau thi ghi de ban truoc: vd ban #368 (Tru/Tra bac) duoc dung lam goc, con ban moivai (menu +1/+6) khong duoc gop, nen thay doi cua lan truoc mat.
+3. Thieu kiem: khong co quy trinh doc lai file tren VM sau chep (chi dep_b080 co SHA); khong chay lai test menu sach sau MOI lan chep Lua (chi nhin Select-String); khong co .bak o #368 nen khong biet ban VM truoc do.
+4. De xuat ngan chan (de Chat tong hop, khong tu y viet luat): (a) dat ban nguon qh_bothu.lua trong kho, chep tu do; (b) moi lan chep: SHA nguon/truoc/sau + .bak + 1 dong Select-String vao ham chinh; (c) sau chep chay lai menu sach tren LD (mo sach, tap #376 va 1 muc cu) roi moi bao xong; (d) khong gui hai ban Lua song song, gop vao mot file co so phien ban.
+
+Da doc den #382
