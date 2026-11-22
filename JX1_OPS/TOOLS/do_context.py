@@ -8,7 +8,7 @@ try:
     d = json.loads(sys.stdin.read() or '{}')
     p = d.get('transcript_path')
     win = int(os.environ.get('JX1_CTX_WINDOW', '1000000'))
-    thr = int(os.environ.get('CLAUDE_AUTOCOMPACT_PCT_OVERRIDE', '30'))
+    thr = int(os.environ.get("CLAUDE_AUTOCOMPACT_PCT_OVERRIDE", "20"))
     used = 0
     if p and os.path.exists(p):
         for line in open(p, encoding='utf-8', errors='replace').read().splitlines()[-400:]:

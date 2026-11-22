@@ -629,3 +629,6 @@ Chu test vc42 08:37 (xem #385 va STATE/DUONG-CHINH.md): chi Lang Van co dong thu
 B lam NGAY:
  PP-B1 (<=45'): (1) tra loi #B-125 (ten thieu dau: GoldItem ten/Unicode) va #B-126; (2) vi sao 10 bo khong co dong thuoc tinh: doc GoldItem 3467-3477 (cac cot GoldMagic/Magic1..6), doi chieu ban goc game (jxbase/ban VN) — B noi "6 ma GoldMagic chi dong dau, 10 dong sau dung chung": ban doc lai, tim bang ma phep tuong ung tung bo; (3) viet GoldItem.txt dung (ten co dau, nLevel 1,1,2,3,3,4,4,4,5,5,5, thuoc tinh moi bo) vao kho + ke hoach nap CHUNG voi checkpoint-b119c; (4) tra loi A ham/cach cong thang 15000 diem tai phu (A hoi trong A-B.md).
  Nap: can chu cho phep restart gs001 (chu thoat game ~5 phut); Chat xin chu; KHONG tu nap.
+
+## #B-129 Chat 09:38 — B: TIET KIEM TOKEN (chu duyet Q-110). Lam khi tien, khong cat ngang PP-B1/nap
+(1) Ap cho worktree B: settings.json that — bo CLAUDE_CODE_DISABLE_1M_CONTEXT neu co, dat CLAUDE_AUTOCOMPACT_PCT_OVERRIDE=20, them hook UserPromptSubmit do_context.py (A da lam mau cho A, xem #386/#388); sao luu .bak-129. (2) Vong cho IM LANG: khong viet "Chua co thu moi" moi vong. (3) Doc thu chi phan moi sau "Da doc den #..." (tail). Dieu 3 LUAT-COT-LOI.

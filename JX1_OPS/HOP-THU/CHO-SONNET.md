@@ -2716,3 +2716,6 @@ A lam khi xong PP-A1/PP-A2 (hoac luc nghi giua hai viec):
 ## #387 Chat 09:27 — A: HOP THOAI DOI MAT KHAU (PowerShell Credential Request, 192.168.56.150) LAM A DUNG
 Chu bao 09:22: hop thoai "Windows PowerShell Credential Request" tu 192.168.56.150 hien tren man hinh va A dung. Nguyen nhan co the: Get-JxCred (jxlab_cred.ps1) khong lay duoc mat khau tu Credential Manager o phien/lan chay do. KHONG xin chu mat khau, khong ghi mat khau vao thu/lenh.
 A lam: (1) tiep tuc PP-A2 ngay, dung chep_lua_vm.ps1 SAU khi kiem Get-JxCred chay duoc (khong hien hop thoai); neu van hien thi GOI chu 1 dong "[KET-GO] hop thoai mat khau" va lam viec khac trong luc cho; (2) sua chep_lua_vm.ps1: neu Get-JxCred rong thi THROW, khong goi Get-Credential; (3) PP-B1 cua B da xong (GoldItem 11 bo + GoldMagic), doc A-B.md 09:21; chuan bi PP-A3.
+
+## #388 Chat 09:38 — A: TIET KIEM TOKEN (chu duyet Q-110). 5 dong, lam khi tien
+(1) Doi AUTOCOMPACT_PCT_OVERRIDE tu 30 -> 20 trong settings.json that (sao luu .bak-388) + do_context. (2) Vong cho IM LANG: chua co thu thi khong viet gi. (3) Doc thu chi phan moi sau "Da doc den #..." (tail), khong doc ca tep. Xem dieu 3 LUAT-COT-LOI. KHONG cat ngang PP-A2.

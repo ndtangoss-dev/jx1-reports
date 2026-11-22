@@ -259,3 +259,6 @@ Chu noi "Ta test roi. Ok" (Chat hieu: vc38 Cuong hoa dat). Theo Q-107 chuyen san
 - Thêm hook UserPromptSubmit `do_context.py`; PreCompact/SessionStart giữ `hook_luat.py` (đã khớp ba hook của mẫu).
 - Đã dò xung đột: 5 chỗ nhắc DISABLE_1M/200k đều là bản ghi cũ (ENVIRONMENT.md, settings.mau.json, hai ghi chú DANG-LAM) → ENVIRONMENT.md thêm dòng "ĐÃ THAY bởi Q-109". Không luật v2 nào quy định ngưỡng nén.
 - Đánh đổi: nén thưa hơn (ít mất mạch, ít đọc lại) nhưng mỗi lượt nặng hơn (≈300k thay vì ≈160k trước khi nén). Nếu chủ thấy tốn token, hạ PCT xuống 20.
+
+## Q-110 (22/11 09:38) Tiết kiệm token, chủ duyệt: nén ở 20% (thay 30% của Q-109), vòng chờ im lặng, đọc thư theo phần mới
+Chủ: "nhanh hơn, không tốn quá nhiều token; chọn 16 hay 30 tùy ngươi". Chat chọn 20% (~200k): ngang mức cũ nhưng nén sớm, êm; nén dày hơn 16% thì tốn công đọc lại bàn giao. Đã gộp vào điều 3 LUAT-COT-LOI (không thêm điều mới). Việc cất thư cũ (file 400–500 KB) làm sau Phi phong.

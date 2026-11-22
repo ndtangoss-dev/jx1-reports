@@ -1,7 +1,7 @@
 {
   "_ghi_chu": "Mau quyen cho Claude Code o thu muc du an (.claude/settings.json). Sonnet kiem tra cu phap voi phien ban Claude Code thuc te o task 0-01 truoc khi dung. Danh sach cam la lop bao ve phu, khong thay the QUY-TAC-VAN-HANH muc 3. Hook SessionStart/compact: nhac doc lai trang thai sau khi nen ngu canh; Sonnet kiem tra hoat dong that o task 0-09. 22/11: bo DISABLE_1M_CONTEXT, dat nen o 30% cua cua so 1M (CLAUDE_AUTOCOMPACT_PCT_OVERRIDE=30), them hook UserPromptSubmit do_context.py. PreCompact/SessionStart dung hook_luat.py (precompact, start/postcompact) co san trong settings.json that.",
   "env": {
-    "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "30"
+    "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "20"
   },
   "permissions": {
     "defaultMode": "acceptEdits",
