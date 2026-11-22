@@ -2711,3 +2711,4 @@ A lam khi xong PP-A1/PP-A2 (hoac luc nghi giua hai viec):
  2. Sao luu .bak-386, bo DISABLE_1M neu co, them env AUTOCOMPACT_PCT_OVERRIDE=30, them UserPromptSubmit goi do_context.py (duong dan that). Giu nguyen hook khac.
  3. Bao B lam y het cho worktree D:\JX-wt (A-B.md). Hieu luc o phien MOI (phien dang chay giu cu den khi mo lai).
  4. Dung 1 dong bao chu: xong/chua + hook do % chay thu ra gi.
+[Đã xử lý 09:16: #385 PP-A1 xong (nút tp15000); đang làm PP-A2]

@@ -7,3 +7,5 @@ Sửa: sửa file TRONG kho này, ghi dòng vào bảng dưới, rồi chép b�
 |---|---|---|
 | 22/11 | 377 | nguồn gốc: đọc lại từ VM |
 | 22/11 | 384 | gỡ cổng tên atestqhhai ở en9, pf, lv60, en15; giữ ở bac100/bacvc |
+| 22/11 | 385 | PP-A1: them nut Nhan 15000 diem tai phu (qhbv_tp15000), khong cong ten |
+| 22/11 | 385b | menu chi hien 16 muc: nut tp15000 thay muc #370 en9 (ham en9 giu) |

@@ -1912,3 +1912,6 @@ Bảng GetName() còn lại: | dòng | hàm | ý đồ |
 | 169 | qhbv_bac100 (Trừ bạc) | CỐ Ý, bảo vệ tiền |
 | 175 | qhbv_bacvc (Trả bạc) | CỐ Ý, bảo vệ tiền |
 Chưa thử bằng nhân vật khác của chủ (chỉ có atestqhhai); gỡ cổng đã xác nhận qua mã + chạy lại 3 menu.
+
+## 09:16 #385 PP-A1 xong (Đã đọc đến #385)
+Menu Hỗ trợ test có nút "[#385] Nhận 15000 điểm tài phú" (qhbv_tp15000, KHÔNG cổng tên) = chạy +15 mọi món (phòng 0,3) rồi nhắc: tài phú = 100 × tổng cấp 10 món ĐANG MẶC, mặc đủ 10 món +15 = 15000. Chép VM theo điều 9 (SHA khớp AFD28EEF…, .bak-084211), nạp nóng OK, LD bấm nút ra "+15 cho 50 món". Menu chỉ hiện 16 mục nên nút thay mục #370 en9 (hàm giữ). Chưa kiểm: mặc phi phong cấp 11 ngay sau nút (cần 10 món mặc đủ). Ghi chú: không có hàm Lua đọc tài phú, nên chưa in số tài phú thật.

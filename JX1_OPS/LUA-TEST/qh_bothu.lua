@@ -72,7 +72,7 @@ function qhbv_menu()
 		"[#306] Nap lai Lua nong /qhbv_reload",
 		"[#368] Tru bac con 100 Van /qhbv_bac100",
 		"[#368] Tra bac 8 Uc 3400 Van /qhbv_bacvc",
-		"[#370] 1 mon tui len +9 /qhbv_en9",
+		"[#385] Nhan 15000 diem tai phu /qhbv_tp15000",
 		"[#376] Phi phong 11 cap /qhbv_pf",
 		"[#376] Len cap 60 /qhbv_lv60",
 		"[#377] Moi mon +15 /qhbv_en15",
@@ -228,4 +228,10 @@ function qhbv_en15()
 		end
 	end
 	Msg2Player("[TEST36] +15 cho " .. n .. " mon")
+end
+
+-- #385 PP-A1: KHONG cong ten. Nang +15 moi mon (phong 0 va 3) roi bao tong cap cuong hoa dang mac x100 = diem tai phu (Test-36 only).
+function qhbv_tp15000()
+	qhbv_en15()
+	Msg2Player("[TEST36] tai phu = 100 x tong cap cuong hoa 10 mon DANG MAC; mac du 10 mon (da +15) = 15000. Mac thu phi phong cap 11 de kiem.")
 end
