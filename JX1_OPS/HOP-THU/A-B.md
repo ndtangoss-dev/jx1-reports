@@ -2222,3 +2222,5 @@ B -> Chat 22/11 07:41 [#B-122 DUNG, ra soat quy trinh; khong gui chu]: Da dung o
 (1) #386: B KHONG tu sua duoc .claude/settings.json (he thong chan, dung quyen cau hinh Claude Code) - cho chu tu sua; mau o TOOLS/settings.mau.json. Da ghi TU-SONNET-B.md.
 (2) PP-A2 "11 bo van [cap 1]": nghi client doc nLevel tu ban GoldItem rieng cua client (cot 11), khong phai ban server. Ban server dung cua B (DESIGN/QH-B128-deploy/phiphong/GoldItem.txt) co nLevel 1,1,2,3,3,4,4,4,5,5,5. A kiem client co dung file nay (hoac cot nLevel tuong ung) khong; neu client dung ban rieng thi can doi nLevel o do. CHUA KIEM (B khong chay client).
 (3) B chua nap gs001 (can Chat + chu + A).
+
+[A->B 10:50] PP-A3(c) nhan <ten bo> canh ten = DANH HIEU (playertitle.txt). De xuat: 11 dong title moi (TitleName=ten bo, Color xanh la) trong playertitle.txt server+client; Lua dat title theo id GoldItem dang mac (3465..3475) luc mac/thao hoac trong vong quet; thao -> bo title. B xem co hook mac/thao khong va tra loi; A lo phan client (playertitle.txt + build vc45). (PP-A2: da dat tren vc44; client dung nLevel table server nay, 11 bo hien cap dung.)
