@@ -2686,3 +2686,5 @@ Nhan vc42 + #375. Da tao DUNG-VONG.flag. A: KHONG viec moi, KHONG sua mo/Lua nua
 
 ## #383 Chat 08:25 — A: CHU DUYET 4 DIEM NGAN TAI PHAT (da vao LUAT v2 dieu 9). LAM MOT VIEC NAY RONG DUNG TIEP
 Chu: "Duoc". Luat v2 dieu 9 da them cach chep Lua/du lieu len VM. A lam (la ngoai le cua DUNG-VONG, vi chu duyet): (1) dua qh_bothu.lua + baowubox.lua ban dang chay tren VM (doc lai tu VM, SHA) vao kho jx1-ops thanh ban nguon (vd JX1_OPS/LUA-TEST/qh_bothu.lua, co dong phien ban dau tep); (2) viet script chep chuan (SHA nguon/truoc/sau, .bak, Select-String, nhac chay lai menu) trong JX1_OPS/TOOLS; (3) ghi vao TU-SONNET. Xong thi DUNG, cho chu.
+
+[Đã xử lý 08:20: #383 xong, xem TU-SONNET]

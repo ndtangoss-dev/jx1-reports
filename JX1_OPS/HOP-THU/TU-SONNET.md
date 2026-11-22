@@ -1901,3 +1901,5 @@ Bang chung: script dep_*.ps1, k375*.ps1 trong docs-analysis/out (may A), mtime f
 4. De xuat ngan chan (de Chat tong hop, khong tu y viet luat): (a) dat ban nguon qh_bothu.lua trong kho, chep tu do; (b) moi lan chep: SHA nguon/truoc/sau + .bak + 1 dong Select-String vao ham chinh; (c) sau chep chay lai menu sach tren LD (mo sach, tap #376 va 1 muc cu) roi moi bao xong; (d) khong gui hai ban Lua song song, gop vao mot file co so phien ban.
 
 Da doc den #382
+
+## 08:20 #383 xong (A): nguon Lua vao kho JX1_OPS/LUA-TEST (qh_bothu.lua, baowubox.lua doc lai tu VM, SHA khop ban 377, PHIEN-BAN.md); script chuan JX1_OPS/TOOLS/chep_lua_vm.ps1 (SHA nguon/truoc/sau, .bak-giờ, Select-String, nhac chay lai menu sach; chi Test-36). Script chua chay thu tren VM. DUNG, cho chu. Đã đọc đến #383
