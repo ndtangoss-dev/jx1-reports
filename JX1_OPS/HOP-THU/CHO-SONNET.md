@@ -2694,3 +2694,12 @@ SO TAY LIEN QUAN: HIEU-GAME/08-giao-dien/CO-CHE-MENU-LUA.md; luat v2 dieu 9 (che
 NGUYEN NHAN (Chat doc LUA-TEST/qh_bothu.lua tren kho): qhbv_pf dong 200 co `if GetName() ~= "atestqhhai" then return end` — vai cua chu khong phai atestqhhai nen bam la khong gi. Cung loi gate cua #377 "Moi mon +15" (dong 217) va cac hook dong 184/210. Day LA CUNG LOAI loi #359 (cong ten) — A tu them cong ten luc viet hook #376/#377.
 LAM (ngoai le DUNG-VONG, chu yeu cau): (1) go cong ten khoi qhbv_pf (Phi phong 11 cap) va "+15 moi mon" (de vai chu du tai phu mac phi phong) va hook dong 184/210 NEU la hook thu khong lien quan tien; GIU cong atestqhhai cho Tru/Tra bac (dong 169/175, tien/so du). (2) Quet CA FILE: liet ke MOI cong GetName() con lai, nho moi cong co chu y hay khong; ghi bang vao TU-SONNET. (3) Chep len VM bang TOOLS/chep_lua_vm.ps1 (SHA nguon/truoc/sau, .bak-384, Select-String), nap nong #306, doc lai file tren VM; sau chep mo lai sach tren LD (atestqhhai): menu Phi phong, +15, nhan do, thuy tinh con chay. (4) Sua nguon trong kho LUA-TEST truoc, roi chep. (5) Go "A Xong" + bao chu: "da go cong, chu thu lai". Sau do DUNG.
 [Đã xử lý 08:27: #384 gỡ cổng tên qhbv_pf/+15/en9/lv60, giữ cổng Trừ/Trả bạc; chép VM + nạp nóng + LD kiểm OK]
+
+## #385 Chat 08:45 — A: CHU TEST vc42 (08:37): LAM NGAY HE THONG PHI PHONG. DA GO DUNG-VONG
+SO TAY LIEN QUAN: HIEU-GAME/01-trang-bi-cuong-hoa/SO-TAY-NHAN-CAP.md, PP-01-PHI-PHONG-SERVER-11-BO.md, 08-giao-dien/CO-CHE-MENU-LUA.md.
+Anh chu: MOI phi phong deu [cap 1] (Tuyet The, Lang Van, Kinh Loi, Khap Than, Phe Quang); CHI Lang Van co dong thuoc tinh (Sinh luc +294, Ky nang Tuy Tien Ta Cot +1, Toc do +54%, Khang loi +30%, Noi luc +128, Thoi gian choang 30%), 10 bo con lai chi co ngu hanh/tai phu/dang cap; "Ngao tuyet" thieu dau; thieu nut nhan 15000 tai phu.
+A lam NGAY, ghi moi muc xong vao TU-SONNET + go "A Chat" (xem STATE/DUONG-CHINH.md):
+ PP-A1 (<=30'): them vao qh_bothu.lua nut "[TEST] Nhan 15000 diem tai phu" KHONG cong ten (moi vai). Neu diem tai phu tinh tu cuong hoa trang bi dang mac: hoi B hoac doc ma de co cach cong thang 15000 an toan; neu khong thi nut nang cuong hoa trang bi dang mac/so du den khi du 15000, ghi ro cach. Chep theo luat v2 dieu 9 (chep_lua_vm.ps1).
+ PP-A2 (<=45'): nhan [cap N] dung theo nLevel GoldItem (1,1,2,3,3,4,4,4,5,5,5) — hien tat ca la [cap 1]: tim client doc nLevel sai/da luu 1; sua; kiem tren LD tu bo 1 den 11.
+ PP-A3 (sau B-128): kiem tooltip du dong thuoc tinh + hinh phi phong tren nhan vat.
+Khong hoi Chat truoc khi lam; cac viec phu khac (3 cau #378, ...) de sau.

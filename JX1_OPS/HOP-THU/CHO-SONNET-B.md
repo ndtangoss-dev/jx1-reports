@@ -622,3 +622,10 @@ Nhu #381 (A lam phan Lua menu). B: (1) xong ten phi phong thieu dau (#B-125); (2
 
 ## #B-127 Chat 08:20 — B: A xong M3 + #375; DUNG VIEC MOI. Tra loi #B-125 (ten thieu dau) va viet phan tich #B-126, roi dung
 Da tao DUNG-VONG.flag. B: chi lam #B-125 va #B-126 (viet), khong nap gs001, khong viec moi.
+
+## #B-128 Chat 08:45 — B: LAM NGAY DU LIEU PHI PHONG. DA GO DUNG-VONG
+SO TAY LIEN QUAN: HIEU-GAME/01-trang-bi-cuong-hoa/PP-01-PHI-PHONG-SERVER-11-BO.md, SO-TAY-NHAN-CAP.md, 07-server-luu-tru/SO-TAY-TICK-GS001.md.
+Chu test vc42 08:37 (xem #385 va STATE/DUONG-CHINH.md): chi Lang Van co dong thuoc tinh, 10 bo con lai khong co; tat ca [cap 1]; "Ngao tuyet" thieu dau; can cach cong 15000 diem tai phu.
+B lam NGAY:
+ PP-B1 (<=45'): (1) tra loi #B-125 (ten thieu dau: GoldItem ten/Unicode) va #B-126; (2) vi sao 10 bo khong co dong thuoc tinh: doc GoldItem 3467-3477 (cac cot GoldMagic/Magic1..6), doi chieu ban goc game (jxbase/ban VN) — B noi "6 ma GoldMagic chi dong dau, 10 dong sau dung chung": ban doc lai, tim bang ma phep tuong ung tung bo; (3) viet GoldItem.txt dung (ten co dau, nLevel 1,1,2,3,3,4,4,4,5,5,5, thuoc tinh moi bo) vao kho + ke hoach nap CHUNG voi checkpoint-b119c; (4) tra loi A ham/cach cong thang 15000 diem tai phu (A hoi trong A-B.md).
+ Nap: can chu cho phep restart gs001 (chu thoat game ~5 phut); Chat xin chu; KHONG tu nap.
