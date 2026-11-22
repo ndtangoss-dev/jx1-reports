@@ -143,3 +143,9 @@ Sự cố 22/11 00:25: Chat chạy `bang_tien_do.py` với `--root` sai thư m�
 3. `TOOLS/bang_tien_do.py` đã tự dò `JX1_OPS` nếu `--root` là thư mục cha, và báo LỖI rõ khi bảng rỗng — chạy chuẩn: `python3 -I JX1_OPS/TOOLS/bang_tien_do.py --root JX1_OPS --out /home/claude/board` rồi đăng artifact (publish_files, `index.html`).
 4. BẢNG TIẾN ĐỘ là nguồn của HÀNG ĐỢI: A và B luôn có ≥10 việc trong `STATE/HANG-DOI-VIEC.md` / `HANG-DOI-VIEC-B.md`; dưới 10 thì nạp lại từ bảng (việc "chờ"/"đang chạy"/"bị chặn") + `LICH-CONG-VIEC.md`. Tổng quản kiểm mỗi vòng; Chat dựng lại bảng và đăng artifact mỗi lần đổi tài khoản và mỗi khi số việc đổi đáng kể, và ghi URL artifact vào `HOP-THU/KHOI-DONG-CHAT.md`.
 - **Hàng đợi ≥10 việc và bảng tiến độ cập nhật MỖI GIỜ (chủ dặn 22/11 00:34, đã chốt ở L24):** A và B luôn có ≥10 việc; Chat mỗi giờ dựng lại bảng (`bang_tien_do.py`), cập nhật TASKS, đăng lại artifact, báo chủ đã làm/đang làm/cần thêm gì.
+
+## L25 (22/11 07:35, chu chi dao) — KHONG CHO NHAU, UU TIEN CHU LA TREN HET
+1. Thu tu uu tien cua chu (vd Q-107: Cuong hoa xong -> Phi phong) la DUONG CHINH. Loi phu tim ra giua chung (vd mat mon khi go tay o giua, chi gap tren vai thu) chi sua nhanh neu re (<= 1-2 gio) va KHONG chan duong chinh; lon thi ghi BACKLOG de sau.
+2. Khong viet dieu kien "cho B"/"cho A" trong lich/hang doi tru khi that su phu thuoc (A can file cua B). Mac dinh: A va B lam SONG SONG, moi nguoi lam het hang doi cua minh.
+3. Cho qua 15 phut -> lam ngay muc ke tiep trong hang doi, khong dung. Chat co nghia vu doc lai lich/hang doi tim dieu kien "cho" gay ket moi gio.
+4. Chat moi gio phai nhac A/B neu im > 40 phut (khong chi cap nhat bang); neu cua so A/B khong nhan duoc tin (Remote Control 403) thi bao chu ngay, khong im lang.
