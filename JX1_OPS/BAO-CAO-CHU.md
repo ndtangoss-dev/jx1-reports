@@ -100,3 +100,7 @@ Em tải Node v26.13.1 (hash khớp trang chính thức) vào D:\JX-node nhưng 
 - Sau khi mở máy, card Host-only máy thật rơi về 169.254.83.226 (cần 192.168.56.101) nên Test-36 không ping được. Chủ chạy `C:\Jx1CocoV3\docs-analysis\scripts\dat_ip_hostonly_56.ps1` bằng PowerShell Admin (hoàn tác: `-Undo`). Xong A chạy chain-up.
 - Đã bật JX-Test-36 + JX-Server-D headless 16:20 (trước đó 4 `find.exe` kẹt chặn VirtualBox, đã dừng). Chuỗi server chưa lên.
 - Chrome trên máy đang ĐĂNG XUẤT claude.ai nên A không gõ "A Chat" được; Chat đọc dòng này khi kiểm kho.
+
+## 08:13 APK vc42 (A, #377 M3)
+Link: http://100.95.186.86:8091/jx1-vc42.apk (dán vào Chrome điện thoại, bật Tailscale). 83.030.371 byte. SHA256 2b1271d2b7b5038b8e61bd01d2e5a00b780a5a32b51918ec5342c75e20842eae.
+Sửa: phi phong vẽ không sập (thiếu khóa Spr_N), thông báo từ chối mặc đổi "phí phòng" thành "phi phong". Đã thử LD Test-36: mặc Ngạo tuyết/Kinh Lôi OK, Kình Thiên thiếu tài phú bị từ chối đúng. Chưa gửi máy thật; chưa khác giới/hướng; tên "Ngao" thiếu dấu ở tiêu đề tooltip là dữ liệu tên món.

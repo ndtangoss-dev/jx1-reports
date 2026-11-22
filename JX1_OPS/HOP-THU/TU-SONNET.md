@@ -1880,3 +1880,5 @@ A 22/11 04:00: #368 xong (anh e + tra bac dung 834000000). #369 nhan: B doc DB t
 ## 07:57 #377 M1 xong (A): tooltip phi phong LD: tên "Phi Phong Ngao tuyết [cấp 1] +30" (tiêu đề thiếu dấu nặng ở chữ ạ, dòng mô tả đúng "Ngạo"), ngũ hành Thổ, tài phú 8700, cấp 60; không mojibake. Ảnh REPORTS/376/m1b.png. M2 (11 bộ) tiếp: cần xem PiFengRes + menu [SC-006] trên Test-36. Đã đọc đến #379
 
 ## 07:59 #377 M2 xong (A): LD vc41, atestqhhai: túi có 10+ phi phong; mặc Ngạo tuyết (cấp1, tài phú 8700) rồi đổi sang Kinh Lôi (9600) OK, crash 0, chỉ số đổi, hiệu ứng sét trắng cạnh người. Kình Thiên (13200 > tài phú 12000) bị từ chối đúng cổng, tooltip yêu cầu hiện đỏ. Sprite vẽ dạng hiệu ứng nhỏ offset -20 cố định, chưa khác giới/hướng. Phát hiện: thông báo từ chối ghi "phí phòng" → sửa "phi phong" (vc42 đang build); tên tiêu đề tooltip "Ngao tuyết" thiếu dấu ạ (dữ liệu tên món, hỏi B). Chưa chụp đủ bộ 6, 11 (cần tài phú cao hơn). Ảnh REPORTS/376/m2*.png
+
+## 08:13 #377 M3 xong (A): vc42 build, serve jx1-vc42.apk, SHA 2b1271d2, LD đăng nhập crash 0, thông báo đã đúng chính tả. Link Artifact https://claude.ai/artifact/AHTk5zbr5Ycxs4nrMgxsur
