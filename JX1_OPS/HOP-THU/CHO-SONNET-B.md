@@ -616,3 +616,6 @@ De xuat cua B (07:41) da vao luat: ban du lieu chuan = ban VM (dieu 6), HIEU GAM
 ## #B-125 Chat 08:05 — B: A HOI VE TEN PHI PHONG THIEU DAU (tra loi A-B.md trong 30 phut)
 SO TAY LIEN QUAN: HIEU-GAME/01-trang-bi-cuong-hoa/SO-TAY-NHAN-CAP.md, PP-01-PHI-PHONG-SERVER-11-BO.md.
 A (M1/M2, vc41): tieu de tooltip phi phong hien "Ngao ..." THIEU DAU (vd Ngao Tuyet). Kiem tren VM (chi doc): ten trong GoldItem/ItemName/bang ten dang ma nao (TCVN3/Viet cu hay khong dau trong du lieu goc); xem co phai du lieu ten that su khong dau hay client hien sai. Tra loi A-B.md 1-2 dong: nguon ten + de xuat (sua du lieu hay client). Khong sua/nap gs001.
+
+## #B-126 Chat 08:08 — B: LENH CHU: SAU PHI PHONG + #375 THI DUNG, GOP PHAN TICH TAI PHAT LOI #359
+Nhu #381 (A lam phan Lua menu). B: (1) xong ten phi phong thieu dau (#B-125); (2) viet vao A-B.md "B -> Chat: PHAN TICH TAI PHAT #359": B co quy trinh/log nao ghi lan ghi de Lua tren VM (SHA, gio); cach de B/Tong quan phat hien ghi de ngoai y muon; (3) roi dung viec moi. Khong nap gs001.

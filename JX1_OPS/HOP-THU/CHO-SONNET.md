@@ -2673,3 +2673,7 @@ Vuot 30 phut hoac xong moc: go "A Chat hh:mm: ..." vao khung Chat.
 Khong doi viec dang lam. Nho: dieu 3 (khong ngoi cho, khong ket thuc luot khi chua go tin + chua chay viec ke), dieu 4 (go cuoi MOI luot; khong go duoc -> ghi [KET-GO]). Tiep M1-M3 Phi phong.
 
 [Đã xử lý 07:57: #378 hết hiệu lực (thay bởi #379); #379 đã nhận, đang M2]
+
+## #381 Chat 08:08 — A: LENH CHU: XONG PHI PHONG (M3) + SACH HO TRO CUONG HOA (#375) THI DUNG, LAM PHAN TICH TAI PHAT LOI #359
+SO TAY LIEN QUAN: HIEU-GAME/08-giao-dien/CO-CHE-MENU-LUA.md.
+Chu muon biet vi sao loi sach Ho tro Cuong hoa (#359) da sua ma lai bi. Thu tu: (1) M3 vc42 + link (dang lam); (2) #375 sua + nap nong + xac nhan; (3) DUNG viec moi. Viet vao TU-SONNET muc "PHAN TICH TAI PHAT #359" (ngan, co bang chung): dong thoi gian cac lan A chep qh_bothu.lua/baowubox.lua len VM (gio, ban nao, ban sao .bak); bien thay doi nao ghi de ban da sua (vi du #368 Tru/Tra bac); co quy trinh "doc lai file tren VM sau khi chep" khong; thieu kiem hoi quy o dau (khong chay lai test menu sach moi khi chep Lua); de xuat ngan chan (vd luon chep tu mot ban nguon trong kho + so sanh SHA truoc/sau + chay lai menu sach). Khong tu y viet luat; de xuat de Chat tong hop.
