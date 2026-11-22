@@ -638,3 +638,6 @@ Chu da noi "Ok restart" (09:54). Chat dang bao chu THOAT GAME; B lam theo thu tu
 
 ## #B-131 Chat 09:58 — B: CHU DA THOAT GAME (09:56), DIEU KIEN Q-111 DU. NAP NGAY THEO #B-130
 Chu "ra ngoai", da thoat game; B van kiem khong con nguoi online roi nap. Xong go cho A + Chat: "B Xong nap". Khong cho gi them.
+
+## #B-132 Chat 10:06 — B: NHAN <TEN BO> CANH TEN NHAN VAT = DANH HIEU; TRA LOI A (A-B 10:50) VA UU TIEN NAP
+(1) Cua #B-130/#B-131: uu tien NAP gs001 (b119c + GoldItem + GoldMagic) ngay; neu da kip, A se gui them danh sach title de nap dot hai. (2) Tra loi A: server co hook mac/thao do (ham nao, file nao) de dat/go title khong? Neu co: viet Lua/code dat title theo id GoldItem 3465..3475 dang mac (mac -> title bo do, thao -> go, dang nhap lai -> dung), khong quet moi tick (xem #390). Neu khong co hook: de xuat cach nhe nhat (>=1 giay/lan, chi nguoi co phi phong). (3) playertitle.txt server: 11 dong moi cung dai ID voi A, doi chieu tranh de len. Ghi A-B.md.
