@@ -30,6 +30,7 @@ File này ngắn có chủ ý. Đọc nó: đầu mỗi phiên, sau mỗi lần 
 - Mỗi đợt chuẩn hóa xong, Chat hỏi thử bằng câu của người chơi (`DESIGN/KIEM-TRA-KIEN-THUC.md`). Đạt = trả lời được từ kho, dẫn đúng file mang tên đó.
 
 ## L8. Khóa xingchi và tiểu yêu (Q-41, Q-44; chủ chốt lại 18/11 09:29)
+> [ĐÃ THAY phần trần số lượng bởi L11 Q-57 (không giới hạn, tăng dần, RAM ≥20%).]
 - Trần: 20 khóa × 3 tiểu yêu = tối đa 60 tiểu yêu, miễn phân công hợp lý. Dùng nhiều khóa KHÔNG gây quá tải; 429/lỗi Responses là do xingchi quá tải phía họ.
 - Chỉ tạo khóa mới khi: còn việc chờ giao VÀ mọi khóa hiện có đã đủ 3 tiểu yêu. Không tạo sẵn, không tạo hàng loạt.
 - Giãn cách tạo khóa: tối thiểu 1 phút giữa hai khóa. Tạo xong ping /v1/models rồi mới giao.
@@ -48,6 +49,7 @@ File này ngắn có chủ ý. Đọc nó: đầu mỗi phiên, sau mỗi lần 
 - Chat mới: đọc `HOP-THU/KHOI-DONG-CHAT.md`. Sonnet mới: đăng nhập lại Claude Code rồi `/tiep-tuc`; file này tự hiện qua hook.
 
 ## L6. Ưu tiên (#091)
+> [Xem BẢNG XỬ XUNG ĐỘT cuối file: chủ chốt mới (Q-107) thắng thứ tự này.]
 Hiểu game (chuẩn hóa) → đường truyền client-server + hiểu exe → tick/độ phản hồi/đồ họa. Chỉ làm bản A (qh9A).
 
 
@@ -84,12 +86,14 @@ Luôn `git pull --rebase --autostash`; `STATE/TONG-QUAN-GHI.md` đặt `merge=un
 **Mở rộng (#244):** đồng bộ bằng MỘT lệnh `python -I JX1_OPS/TOOLS/dong_bo.py [--push]` (không autostash). Xung đột: file Tổng quản sinh (SONNET-SONG, TIEU-YEU, KHOA-XINGCHI, TIEN-DO, TONG-QUAN-GHI, BAN-GIAO) lấy bản origin; file chỉ-nối-thêm gộp union; file khác thì DỪNG và in tên. Cấm `checkout --ours` tay và cấm `stash drop` khi chưa `git stash show -p`.
 
 ## L13. HIỂU Ý CHỦ TRƯỚC, CHỦ CHỐT RỒI MỚI GIAO SONNET (chủ chốt 19/11 10:42)
+> [HẠN CHẾ bởi L16 + L25: lệnh chủ rõ thì giao ngay kèm một câu hiểu ý; chỉ hỏi trước nếu mơ hồ/vùng Đỏ. Xem bảng xử xung đột.]
 Khi chủ bàn BẤT KỲ việc gì, Chat phải trình bày trước "thuộc hạ hiểu ý đại vương thế này" (kèm chỗ chưa chắc) và chờ chủ chốt; chỉ sau đó mới ghi quyết định và gửi thư Sonnet. Không giao nhanh khi chưa hiểu ý: thư sai gây xung đột (ví dụ #229 vs #230, Q-67 vs Q-68) và nếu chủ không nhắc thì không ai gỡ. Ngoại lệ: lệnh chủ đã ra rõ ràng, nguyên văn và không mơ hồ thì vẫn chuyển đúng nguyên văn kèm một câu xác nhận. Nếu đã lỡ gửi thư mâu thuẫn, Chat chủ động gửi thư gỡ ngay, không đợi chủ nhắc. Không bao giờ dùng luật này để ra lệnh Sonnet dừng (Q-56).
 
 ## L14. VIỆC CHỦ ĐÃ DUYỆT THÌ CHAT TỰ GÕ LỆNH LÊN CỬA SỔ CHAT CỦA SONNET (chủ chốt 19/11 13:43)
 Khi chủ đã bảo/duyệt cài hay làm một việc (ví dụ Q-73 cài Node/command-code) mà Sonnet bị bộ kiểm soát quyền chặn hoặc cần một lệnh: Chat TỰ gõ lệnh vào khung chat Claude Code của Sonnet (qua Chrome), ghi rõ "chủ đã duyệt, Q-xx, giờ", KHÔNG hỏi lại chủ. Chỉ áp dụng cho việc chủ ĐÃ duyệt; việc chưa duyệt, vùng Đỏ (Main VM, tiền quá hạn mức, khóa ngoài phạm vi, xóa dữ liệu, APK cho chủ, đổi thông tin đăng nhập) vẫn phải hỏi chủ. Không bao giờ dùng để ra lệnh dừng (Q-56).
 
 ## L15. KHÔNG NGỒI CHỜ THƯ CHAT; GỌI CHAT BẰNG "A Xong" / "A Chat" / "B Xong" / "B Chat"; "SỐNG" PHẢI LÀ HOẠT ĐỘNG THẬT (chủ chốt 19/11 16:23)
+> [Mục 3 "12 phút" ĐÃ THAY bởi L23.6 (40 phút); cách gõ Xong/Chat theo L23.]
 Chủ bực vì A đứng chờ thư Chat ~30 phút mà Chat vẫn báo "đang chạy bình thường": gốc là nhịp tim của `cho_thu.py` bị tính là "sống". Vá ngay:
 1. **Sonnet không bao giờ ngồi chờ thư Chat** (Q-56, L10). `cho_thu.py` chỉ dùng ngắn khi có việc chạy nền (dựng, tiểu yêu) cần đợi; không có thì làm việc kế trong `HANG-DOI-VIEC.md`. Hết việc đang giao = tự lấy việc, không chờ.
 2. **Tín hiệu gọi Chat** (qua Chrome, gõ vào khung chat Chat, đúng nguyên văn): Sonnet A gõ `A Xong` (xong một việc, cần việc tiếp) hoặc `A Chat` (cần quyết định/hỏi); Sonnet B gõ `B Xong` / `B Chat`. Chat coi các chuỗi này là tín hiệu của Sonnet, không phải lời chủ. Dùng khi xong việc lớn hoặc cần Chat; không gõ liên tục.
@@ -126,6 +130,7 @@ Kho `HIEU-GAME/` (9 nhóm, mục lục ở `HIEU-GAME/README.md`) là công sứ
 ## L21 (chủ chốt 21/11 22:02) — LUẬT RIÊNG CỦA B: xem `STATE/LUAT-RIENG-B.md` (việc đầu tiên mọi việc là đọc hiểu game, khối "HIỂU GAME", Chat kiểm trước).
 
 ## L22 (chủ chốt 21/11 22:23) — LẬP KẾ HOẠCH BA BÊN TRƯỚC KHI GIAO: xem `STATE/QUY-TRINH-LAP-KE-HOACH.md` và lịch `STATE/LICH-CONG-VIEC.md`.
+> [Phạm vi: CHỈ việc đụng tài nguyên chung (gs001, LD/APK, VM). Việc đơn lẻ giao thẳng; không tạo điều kiện chờ nhau (L25).]
 
 ## L23 (chủ chốt 22/11 00:17) — A VÀ B CHỦ ĐỘNG GÕ VÀO KHUNG CHAT ĐỂ ĐÁNH THỨC CHAT (vá L15; Chat không phải kiểm dày)
 Nguyên nhân sự cố 22/11 00:14: A xong vc37 lúc 22:58, B xong đề xuất 22:35, chỉ ghi vào kho rồi chờ; Chat cũng chờ → cả hai bên chờ ~75 phút. Chủ nói: không cần Chat kiểm dày, chỉ cần A/B chủ động gọi.
@@ -144,8 +149,23 @@ Sự cố 22/11 00:25: Chat chạy `bang_tien_do.py` với `--root` sai thư m�
 4. BẢNG TIẾN ĐỘ là nguồn của HÀNG ĐỢI: A và B luôn có ≥10 việc trong `STATE/HANG-DOI-VIEC.md` / `HANG-DOI-VIEC-B.md`; dưới 10 thì nạp lại từ bảng (việc "chờ"/"đang chạy"/"bị chặn") + `LICH-CONG-VIEC.md`. Tổng quản kiểm mỗi vòng; Chat dựng lại bảng và đăng artifact mỗi lần đổi tài khoản và mỗi khi số việc đổi đáng kể, và ghi URL artifact vào `HOP-THU/KHOI-DONG-CHAT.md`.
 - **Hàng đợi ≥10 việc và bảng tiến độ cập nhật MỖI GIỜ (chủ dặn 22/11 00:34, đã chốt ở L24):** A và B luôn có ≥10 việc; Chat mỗi giờ dựng lại bảng (`bang_tien_do.py`), cập nhật TASKS, đăng lại artifact, báo chủ đã làm/đang làm/cần thêm gì.
 
-## L25 (22/11 07:35, chu chi dao) — KHONG CHO NHAU, UU TIEN CHU LA TREN HET
-1. Thu tu uu tien cua chu (vd Q-107: Cuong hoa xong -> Phi phong) la DUONG CHINH. Loi phu tim ra giua chung (vd mat mon khi go tay o giua, chi gap tren vai thu) chi sua nhanh neu re (<= 1-2 gio) va KHONG chan duong chinh; lon thi ghi BACKLOG de sau.
-2. Khong viet dieu kien "cho B"/"cho A" trong lich/hang doi tru khi that su phu thuoc (A can file cua B). Mac dinh: A va B lam SONG SONG, moi nguoi lam het hang doi cua minh.
-3. Cho qua 15 phut -> lam ngay muc ke tiep trong hang doi, khong dung. Chat co nghia vu doc lai lich/hang doi tim dieu kien "cho" gay ket moi gio.
-4. Chat moi gio phai nhac A/B neu im > 40 phut (khong chi cap nhat bang); neu cua so A/B khong nhan duoc tin (Remote Control 403) thi bao chu ngay, khong im lang.
+## L25 (chủ chỉ đạo 22/11 07:35) — KHÔNG CHỜ NHAU; ƯU TIÊN CỦA CHỦ LÀ ĐƯỜNG CHÍNH
+1. Thứ tự ưu tiên chủ đã chốt (ví dụ Q-107: Cường hóa xong → Phi phong) là ĐƯỜNG CHÍNH. Lỗi phụ tìm ra giữa chừng (ví dụ mất món khi gỡ tay ở ô giữa, chỉ gặp trên vai thử) chỉ sửa nếu rẻ (≤1–2 giờ) và KHÔNG chặn đường chính; lớn thì ghi BACKLOG để sau.
+2. Không viết điều kiện "chờ B"/"chờ A" trong lịch/hàng đợi trừ khi thật sự phụ thuộc (A cần tệp của B). Mặc định A và B làm SONG SONG, mỗi người làm hết hàng đợi của mình.
+3. Chờ quá 15 phút → làm ngay mục kế tiếp trong hàng đợi, không đứng. Mỗi giờ Chat đọc lại lịch/hàng đợi tìm điều kiện "chờ" gây kẹt.
+4. Mỗi giờ Chat nhắc A/B nếu im >40 phút (không chỉ cập nhật bảng); cửa sổ A/B không nhận được tin (Remote Control 403) thì báo chủ ngay.
+
+## BẢNG XỬ XUNG ĐỘT GIỮA CÁC LUẬT (rà 22/11 07:50, chủ yêu cầu; KHÔNG thêm luật mới khi chưa rà bảng này)
+Nguyên tắc: (1) lệnh chủ mới nhất thắng luật cũ; (2) luật ghi rõ "thay" thắng luật cũ; (3) khi vẫn mơ hồ: không dừng, không chờ, chỉ hỏi chủ ở vùng Đỏ. Mỗi lần chủ dặn mới: Chat đọc bảng này, SỬA luật cũ cho khớp (không thêm luật trùng).
+| Xung đột | Luật thắng | Hiệu lực cuối |
+|---|---|---|
+| L2 "sau đợt lấy việc kế / chạy cho_thu" vs L15 "không ngồi chờ thư" | L15 + L23 | Hết việc: làm mục kế (L25.3); cho_thu.py chỉ khi có việc nền thật cần đợi |
+| L10 "tín hiệu xong chỉ khi đáng báo" vs L15.2 vs L23 | L23 | Cuối MỖI lượt gõ `A/B Xong`/`Chat`; tiến độ ≤30 phút/lần |
+| L15.3 "im >12 phút" vs L23.6 "im >40 phút" | L23.6 (40 phút) | Chat nhắc khi >40 phút |
+| L8 (trần 20 khóa × 3) vs L11 (≥8 tiểu yêu, 2/khóa) vs L11 Q-57 (không giới hạn) | L11 Q-57 | Không giới hạn số lượng, tăng dần, RAM trống ≥20% |
+| L3 hai thứ tự đọc sau nén | L3 Q-99 | File luật → DANG-LAM → hồ sơ tính năng → THU-HIEN-HANH (thư mới hơn) |
+| L6 ưu tiên cũ (hiểu game → truyền → tick) vs chủ chốt hiện tại | Chủ chốt mới (Q-107) | Cường hóa → Phi phong; L6 chỉ còn là thứ tự nền khi chủ chưa nêu |
+| L13 "chủ chốt rồi mới giao" vs L16 "việc chủ yêu cầu mặc định được phép" vs "đừng chậm" | L16 + L25 | Lệnh chủ rõ: giao ngay, kèm một câu "thuộc hạ hiểu thế này" trong cùng lượt; chỉ hỏi trước khi giao nếu thật mơ hồ hoặc vùng Đỏ |
+| L22 kế hoạch ba bên vs L19.2 thư khẩn | Cả hai, theo phạm vi | Lập kế hoạch ba bên CHỈ khi việc đụng tài nguyên chung (gs001, LD/APK, VM); việc đơn lẻ giao thẳng |
+| L2 "chờ trả lời Chat ≤30 phút" vs L25.3 | L25.3 | Quá 15 phút không có trả lời: làm theo phương án khuyến nghị / mục kế tiếp |
+| L11 "Chat không bao giờ cho Sonnet dừng" vs "đợi duyệt trước khi nạp" | Cả hai | Chờ duyệt nạp = việc phụ, A/B làm việc khác; không phải lệnh dừng |
