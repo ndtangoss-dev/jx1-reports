@@ -280,3 +280,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #377/#B-121 (07:40) Chat: Phi phong duong chinh, moc M1-M3, khong cho nhau — HIEU LUC
 - #378/#B-122 (07:50) Chat: CHU RA LENH DUNG TAT CA de ra soat; DUNG-VONG.flag — HIEU LUC
 - #379/#B-123 (07:55) Chat: GO DUNG-VONG, chay lai Phi phong; THAY #378/#B-122 — HIEU LUC
+- #380/#B-124 (08:00) Chat: LUAT V2 co hieu luc (chu duyet 07:55) — HIEU LUC

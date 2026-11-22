@@ -609,3 +609,6 @@ Nhu #378. Chat da tao STATE/DUNG-VONG.flag. B: hoan tat buoc dang lam o diem an 
 
 ## #B-123 Chat 07:55 — B: CHAY LAI NGAY. THAY #B-122
 Go co dung. B lam tiep: ho tro A Phi phong (tra loi A-B.md trong 30 phut), roi hang doi B-04/LG-03 (khong nap gs001 khi chua 3 ben + phep chu). 3 cau cua #B-122 viet sau, khong chan viec.
+
+## #B-124 Chat 08:00 — B: LUAT V2 CO HIEU LUC. Doc STATE/LUAT-COT-LOI.md, DUONG-CHINH.md, VIEC-HOM-NAY.md
+De xuat cua B (07:41) da vao luat: ban du lieu chuan = ban VM (dieu 6), HIEU GAME rut 1 dong cho viec chi-doc, bao cao trong A-B.md. Tiep ho tro A Phi phong. stop_guard/SC-001: sau Phi phong se giao.

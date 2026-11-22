@@ -69,3 +69,6 @@ LUẬT MỚI 19/11 10:42 (STATE/LUAT-COT-LOI.md L13): bàn việc gì với ch�
 Sau mục 3 (đọc theo thứ tự) thêm: mỗi thư Chat giao cho A/B phải trỏ tới sổ tay `HIEU-GAME/` liên quan và yêu cầu dòng "ĐÃ ĐỌC SỔ TAY" trong báo cáo; trả lại báo cáo thiếu dòng này. Chi tiết: `STATE/LUAT-COT-LOI.md` L20. Trình tự tắt/bật máy: `STATE/QUY-TRINH-TAT-BAT-MAY.md`.
 
 - (22/11 00:32) Bảng tiến độ artifact MỚI: https://claude.ai/artifact/62BEjdHFr4icZMErbcH7io (slug 28a7bee8-01e2-4cc2-be1e-b09c40d3b600; bản cũ 35675934… thuộc tài khoản cũ). Dựng: `python3 -I JX1_OPS/TOOLS/bang_tien_do.py --root JX1_OPS --out /home/claude/board`. Xem L24.
+
+## 22/11 07:55 LUAT V2 CO HIEU LUC
+Luat: `STATE/LUAT-COT-LOI.md` (v2, 12 dieu). Duong chinh: `STATE/DUONG-CHINH.md`. Viec hom nay: `STATE/VIEC-HOM-NAY.md`.
