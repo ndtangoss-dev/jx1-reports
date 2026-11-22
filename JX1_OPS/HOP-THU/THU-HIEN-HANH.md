@@ -298,3 +298,4 @@ Quy tắc: không sửa thư đã gửi; thư mới ghi rõ "thay thế/bổ sun
 - #390/#B-132 (10:06) Chat: duyet huong nhan ten phi phong = danh hieu (server dat theo bo mac); uu tien nap gs001
 - #391/#B-133 (10:25) Chat: chu yeu cau do tu goc phi phong/danh hieu; cho Chat duyet truoc khi lam danh hieu
 - Q-112 (10:20) Chat: luat v2 dieu 6 them "di tu goc len" (chu dan); A/B phai ghi GOC/DU AN TAO + nguon
+- 10:48 Chat kiem: A im tu 09:59, B im tu 09:49; chua nap gs001; cho chu go vao cua so (RC dut). Kiem tiep 11:20.
