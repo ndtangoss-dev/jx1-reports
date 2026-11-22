@@ -2639,3 +2639,7 @@ SO TAY LIEN QUAN: HIEU-GAME/08-giao-dien/SO-TAY-TAI-NGUYEN-CLIENT.md.
 ## #374 Chat 06:32 — A: NHAN vc40 (83 MB DAT). TIEP PP-02; nho L23
 [Đã xử lý 06:32: #374 — ghi vc40 + SHA256 vào BAO-CAO-CHU.md; cập nhật sổ tay SO-TAY-CUA-SO-CUONG-HOA (gỡ món vc39, bẫy đệm chết); PP-02 pha 2 chờ B nạp Phi phong]
 vc40 nhan, ghi BAO-CAO-CHU link + SHA256 cho chu test sang nay (dien thoai). Lam tiep PP-02 theo STATE/HANG-DOI-VIEC.md (muc 8-15), vuot 30 phut phai go "A Chat hh:mm: ..." vao khung Chat; het viec go "RANH".
+
+## #375 Chat 07:15 — A: KHAN (chu): "Sach - Ho tro Cuong hoa" tren Test-36 BAM KHONG DUOC lai (vai cua chu)
+SO TAY LIEN QUAN: HIEU-GAME/08-giao-dien/CO-CHE-MENU-LUA.md, SO-TAY-GIAO-DIEN.md.
+Chu thu sang 22/11 07:11: bam sach "[TEST-36] Ho tro Cuong hoa" khong duoc, giong loi #359 (cong ten 'atest'). Nghi: luc #368 A copy qh_bothu.lua len Test-36 tu ban trong may A (co the cu, con cong ten 'atest') -> ghi de ban da sua .bak-moivai. Kiem NGAY: (1) mo qh_bothu.lua va item\baowubox.lua tren Test-36, tim cong GetName() so voi 'atest' o qhbv_menu_book va menu sach; (2) so voi .bak-moivai; (3) go cong ten khoi menu Ho tro Cuong hoa (chi 2 muc #368 Tru/Tra bac moi giu cong atestqhhai), copy len VM, nap nong #306, doc lai file tren VM de CHAC (L24: kiem tham so/duong dan truoc khi ket luan); (4) bao chu "da sua". Khong khoi dong lai server. Nho giu ban sao .bak-375.
