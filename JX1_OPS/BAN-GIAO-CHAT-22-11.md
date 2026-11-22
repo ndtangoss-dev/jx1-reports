@@ -4,7 +4,7 @@
 ## 1. Vai trò, xưng hô (không đổi)
 Chủ = "đại vương", Chat = "thuộc hạ", mở đầu "Bẩm đại vương,"; trả lời NGẮN, tiếng Việt thường (chủ dùng điện thoại, không phải lập trình viên). Kiểu này KHÔNG ghi vào kho. Chủ: thời gian và token là quý — không dài dòng, không xin lỗi dài.
 
-## 2. Trạng thái: TẠM DỪNG (chủ 11:37)
+## 2. Trạng thái: TẠM DỪNG (chủ 11:37; 11:49 chủ dặn A và B cũng DỪNG HẲN đến khi chủ nói "quay lại": thư #392 và #B-134)
 - Đã tạo `STATE/DUNG-VONG.flag`. A/B/hook thấy cờ thì không làm tiếp. Muốn chạy lại: CHỦ nói rõ "chạy tiếp" → Chat xóa cờ + gửi thư (xem mục 7).
 - A và B đã DỪNG từ ~09:59 (nhịp tim cuối 09:59:58): cầu Remote Control đứt (403 từ đêm qua) nên Chat không gõ đánh thức được; chỉ chủ gõ trực tiếp trên máy được. Việc đang làm dở ghi ở mục 4.
 - Các lịch kiểm 30–40 phút của Chat (send_later/routine) vẫn có thể bắn: khi thấy DUNG-VONG.flag thì BỎ QUA, không báo chủ.
@@ -14,7 +14,7 @@ Một kênh thư; đường chính = Phi phong (STATE/DUONG-CHINH.md); làm liê
 
 ## 4. Phi phong — tình hình
 - XONG: nút nhận 15000 tài phú trong Hỗ trợ test (không cổng tên; thay mục #370 en9, hàm `qhbv_tp15000`, cộng +15 cho món đang mặc); nhãn [cấp N] đúng (bản APK **vc44**, sửa `KItemGenerator.cpp` GetGoldItemByIndex/ByRong, đã đạt trên LDPlayer, ảnh `REPORTS/385/pa2_vc44_cap.png`); dữ liệu 11 bộ B làm xong: `DESIGN/QH-B128-deploy/phiphong/GoldItem.txt` (SHA dbd525b8…, tên có dấu, nLevel 1,1,2,3,3,4,4,4,5,5,5) + `GoldMagic.txt` (có 55 dòng QHPP, SHA e676190a…); server có sẵn Lua `SetTestWealth(n)` (chỉ Test-36).
-- CHƯA NẠP gs001 (đang cũ từ 22:15 21/11): chủ ĐÃ DUYỆT restart (Q-111) lúc 09:54 và đã thoát game; B chưa kịp nạp vì dừng. Nạp = checkpoint-b119c (CoreServer.dll, nhánh sc-006b) + GoldItem + GoldMagic QHPP, MỘT lần (thư #B-130/#B-131). Sao lưu .bak-130 trước, kiểm không còn người online, giữ Server D, tick ổn định ~0.85–1 ms, lỗi thì trả .bak.
+- CHƯA NẠP gs001 (đang cũ từ 22:15 21/11): chủ ĐÃ DUYỆT restart (Q-111) lúc 09:54 và đã thoát game; B chưa nạp vì dừng; nay TẠM HOÃN theo lệnh dừng #B-134 (muốn nạp phải chờ chủ nói "quay lại"). Nạp = checkpoint-b119c (CoreServer.dll, nhánh sc-006b) + GoldItem + GoldMagic QHPP, MỘT lần (thư #B-130/#B-131). Sao lưu .bak-130 trước, kiểm không còn người online, giữ Server D, tick ổn định ~0.85–1 ms, lỗi thì trả .bak.
 - ĐANG CHỜ, CHƯA LÀM: (a) tooltip đủ dòng thuộc tính 10 bộ (cần nạp); (b) tên "Ngạo tuyết" có dấu (cần nạp); (c) nhãn xanh `<Phá quân>` cạnh tên nhân vật khi đổi phi phong — chủ nói danh hiệu LUÔN gắn cùng phi phong theo logic gốc. A đề xuất 11 dòng `playertitle.txt` + server đặt title theo bộ mặc (A-B 10:50, TU-SONNET 09:59) — Chat CHƯA DUYỆT: chủ yêu cầu đi từ gốc; đã hỏi A (#391) và B (#B-133): danh hiệu/phi phong gốc có nối nhau thế nào, và mọi thứ A/B làm từ 21/11 là GỐC hay DỰ ÁN TẠO (ghi `REPORTS/391-GOC-PHI-PHONG.md`, `REPORTS/B133-GOC-PHI-PHONG.md`). Chưa có câu trả lời.
 - Điều Chat tra được (chưa đọc mã gốc, mã nằm trên máy chủ không ở kho): GỐC = 11 dòng GoldItem 3467–3477, ảnh pifeng_01..11, nLevel, yêu cầu loại 36=60; bản gốc CHỈ dòng Lăng Vân có 6 mã GoldMagic, 10 dòng sau trống. DỰ ÁN TẠO = điểm tài phú ảo 100×tổng cấp cường hóa 10 món + ngưỡng 6000…15000 (QH-B035/B039, `QhCheckPifeng`), 55 dòng QHPP, bản B080 chép 6 mã cho cả 11 dòng. Báo cáo H-08:144: gốc không có luật "đủ X tài phú → phi phong cấp Y". Quyết định chủ còn treo: `QH_PIFENG_ALL_LINES` (0 = luật gốc dòng 1/3/5 theo nActive).
 

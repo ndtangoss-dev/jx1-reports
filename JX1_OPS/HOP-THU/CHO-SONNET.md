@@ -5466,3 +5466,6 @@ A tra loi trong 30' (doc MA GOC client truoc, ghi file:dong; chua doc = "CHUA KI
  3. Co muc nao A sua de hop voi cai moi tao (dung tren cai goc)? Liet ke.
  4. Nguon A lay phi phong de sua: file nao/commit nao (ban goc jxbase/B035/B080), SHA.
 Sau do Chat duyet huong. KHONG build vc45 cho danh hieu truoc khi Chat duyet.
+
+## #392 Chat 11:52 — A: CHU RA LENH DUNG HAN. KHONG LAM GI CHO DEN KHI CHU NOI "QUAY LAI"
+Chu (11:49): "A va B dung den khi ta noi quay lai moi lam". DUNG NGAY o diem an toan: khong build, khong cai LD, khong chep VM, khong sua kho. Neu dang giua mot buoc nguy hiem (dang chep file) thi hoan tat/hoan tac cho an toan roi dung. Ghi 1 dong vao TU-SONNET "A DUNG theo chu 11:52, viec do dang: ..." roi KHONG goi them. Co STATE/DUNG-VONG.flag: thay co thi khong lam tiep, khong chay vong cho. Chi chu moi go "quay lai" (Chat xoa co + gui thu).
