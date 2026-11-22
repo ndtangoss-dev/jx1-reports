@@ -1919,3 +1919,5 @@ Menu Hỗ trợ test có nút "[#385] Nhận 15000 điểm tài phú" (qhbv_tp15
 [A 09:45] #386 xong: bước 1 — settings.json THẬT có CLAUDE_CODE_DISABLE_1M_CONTEXT (đã bỏ); env CLAUDE_AUTOCOMPACT_PCT_OVERRIDE=30; hook UserPromptSubmit do_context.py in "Context phien nay: 8% (83.151 / 1.000.000 token). Nguong compact: 30%"; .bak-386 giữ; B dặn qua A-B.md. Đã đọc đến #387. PP-A2: vc43 chưa đạt (11 bộ vẫn [cấp 1]), vc44 vá GetGoldItemByRong đang build.
 
 [A 10:05] #385 PP-A1 xong; PP-A2 ĐẠT trên LD (vc44, sửa KItemGenerator.cpp GetGoldItemByIndex+GetGoldItemByRong, id 3465..3475 đối chiếu GoldItem.txt VM): Lăng Vân 1, Tuyệt Thế 1, Phá Quân 2, Ngự Phong 4, Phê Quang 4, Khấp Thần 4, Kinh Thiên 5 (khớp 1,1,2,3,3,4,4,4,5,5,5; bộ cấp 3 và 3 bộ cuối chưa chụp). Ảnh REPORTS/385/pa2_vc44_cap.png (trước: pa2_vc43_truoc.png toàn [cấp 1]). Lưu ý: menu "Dọn hành trang" xóa cả sách. APK vc44 chưa ra máy thật. PP-A3 chờ B-128.
+
+[A 10:15] #387 xong (chep_lua_vm.ps1 throw neu cred rong; Get-JxCred khong hien hop thoai), #388 xong (compact 20%, vong cho im lang). Da doc den #388. PP-A3 cho B-128.

@@ -4,7 +4,9 @@ param([Parameter(Mandatory)][string]$Nguon, [Parameter(Mandatory)][string]$Dich,
 . C:\Jx1CocoV3\docs-analysis\scripts\jxlab_cred.ps1
 if ($VM -ne '192.168.56.150') { throw 'Chi Test-36 (192.168.56.150)' }
 $sha0 = (Get-FileHash $Nguon -Algorithm SHA256).Hash
-$s = New-PSSession -ComputerName $VM -Credential (Get-JxCred)
+$cred = Get-JxCred
+if (-not $cred) { throw '[KET-GO] Get-JxCred rong: khong goi Get-Credential, khong xin mat khau' }
+$s = New-PSSession -ComputerName $VM -Credential $cred
 $bak = $Dich + '.bak-' + (Get-Date -Format 'HHmmss')
 $truoc = Invoke-Command -Session $s -ScriptBlock { param($d,$b) $h = (Get-FileHash $d).Hash; Copy-Item $d $b -Force; $h } -ArgumentList $Dich,$bak
 Copy-Item $Nguon -Destination $Dich -ToSession $s -Force
