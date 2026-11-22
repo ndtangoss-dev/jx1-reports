@@ -253,3 +253,9 @@ Cường hóa (UI vc37 + nghiệm thu) xong rồi mới làm Phi Phong (client A
 
 ## Q-108 (22/11 01:08) Chu test xong, bao OK
 Chu noi "Ta test roi. Ok" (Chat hieu: vc38 Cuong hoa dat). Theo Q-107 chuyen sang PHASE 2 Phi Phong (A client PP-02, B server PP-01), van theo LICH-CONG-VIEC. Loi mat do +9 o o giua va anh e thieu bac van phai xong (viec nho). Chu ngu, 7h xem bang.
+
+## Q-109 (22/11 09:00) Nén ngữ cảnh: 1M + nén ở 30% (chủ duyệt, theo mẫu bài Hải Đăng)
+- THAY Q cũ "chuẩn 200k" (ENVIRONMENT.md 16/11, `CLAUDE_CODE_DISABLE_1M_CONTEXT=1`): bỏ DISABLE_1M; đặt `CLAUDE_AUTOCOMPACT_PCT_OVERRIDE=30` (nén ở ~300k của cửa sổ 1M), KHÔNG đặt `autoCompactWindow`.
+- Thêm hook UserPromptSubmit `do_context.py`; PreCompact/SessionStart giữ `hook_luat.py` (đã khớp ba hook của mẫu).
+- Đã dò xung đột: 5 chỗ nhắc DISABLE_1M/200k đều là bản ghi cũ (ENVIRONMENT.md, settings.mau.json, hai ghi chú DANG-LAM) → ENVIRONMENT.md thêm dòng "ĐÃ THAY bởi Q-109". Không luật v2 nào quy định ngưỡng nén.
+- Đánh đổi: nén thưa hơn (ít mất mạch, ít đọc lại) nhưng mỗi lượt nặng hơn (≈300k thay vì ≈160k trước khi nén). Nếu chủ thấy tốn token, hạ PCT xuống 20.

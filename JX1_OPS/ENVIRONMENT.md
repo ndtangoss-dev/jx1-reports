@@ -68,6 +68,7 @@ Việc "VM thử chạy server" [XÁC MINH một phần]: gs001 `A2T2` (exe gố
 3. Máy hiện chạy Main VM 6 GB; bật thêm VM thử 6 GB vẫn đủ RAM (khoảng 24 GB trống).
 
 ## Cửa sổ ngữ cảnh phiên PM (2026-11-16 21:xx)
+- **ĐÃ THAY bởi Q-109 (22/11): bỏ DISABLE_1M, nén ở 30% cửa sổ 1M. Các dòng dưới là lịch sử.**
 - Đặt về chuẩn 200k theo yêu cầu chủ dự án: `.claude/settings.json` của dự án có `env.CLAUDE_CODE_DISABLE_1M_CONTEXT = "1"` [XÁC MINH, JSON hợp lệ]; mẫu `TOOLS/settings.mau.json` cũng đã thêm mục này.
 - Đã gỡ `modelSettings.claude-sonnet-5-5.autoCompactWindow: 400000` khỏi `~/.claude/settings.json` (không còn cấu hình 400k ở settings người dùng) [XÁC MINH].
 - Không đụng cấu hình Codex. Có hiệu lực từ phiên Claude Code mới (phiên hiện tại giữ cài đặt cũ tới khi khởi động lại) [GIẢ THUYẾT, chưa kiểm].
