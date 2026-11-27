@@ -1,3 +1,3 @@
-Sonnet A: hoạt động cuối 01:07:16 (4798 phút trước); commit cuối 12:00; mức TREO (<10 SONG / 10-30 IM / >30 TREO). Cập nhật 09:05:30
-Sonnet B: hoạt động cuối 12:00:12 (7025 phút trước); commit cuối 11:59; mức TREO
-RAM: trống 33.4/47.9 GB (70%). Top 5 bộ nhớ: Unity 3.12 GB; java 1.41 GB; chrome 0.70 GB; chrome 0.52 GB; Unity.ILPP.Runner 0.49 GB
+Sonnet A: hoạt động cuối 01:07:16 (4804 phút trước); commit cuối 12:00; mức TREO (<10 SONG / 10-30 IM / >30 TREO). Cập nhật 09:11:30
+Sonnet B: hoạt động cuối 12:00:12 (7031 phút trước); commit cuối 11:59; mức TREO
+RAM: trống 32.8/47.9 GB (68%). Top 5 bộ nhớ: Unity 3.12 GB; java 1.27 GB; chrome 0.72 GB; chrome 0.62 GB; chrome 0.52 GB
